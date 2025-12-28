@@ -1,0 +1,65 @@
+User-agent: *
+Disallow: /wp-admin/
+# Chặn URL có tham số filter (lọc sản phẩm)
+Disallow: /*?filter_
+
+# Chặn URL có tham số sắp xếp (orderby)
+Disallow: /*?orderby=
+
+# Chặn URL có tham số session/hash (?v=…)
+Disallow: /*?v=
+Disallow: /*?remove
+Disallow: /*?PageSpeed
+Disallow: /*?p
+Disallow: /*?add-to-cart=
+# Chặn URL biến thể sản phẩm (attribute_pa_)
+Disallow: /*?attribute_pa_
+
+# Chặn URL phân trang khi có filter đi kèm
+Disallow: /*/page/*?filter_
+
+
+# protect my site from HTTrack or other software's ripping?
+User-agent: AhrefsBot
+User-agent: Baiduspider
+User-agent: EasouSpider
+User-agent: Ezooms
+User-agent: YandexBot
+User-agent: MJ12bot
+User-agent: SiteSucker
+User-agent: HTTrack
+User-agent: HTTrack Website Copier
+User-agent: Teleport
+User-agent: TeleportPro
+User-agent: EmailCollector
+User-agent: EmailSiphon
+User-agent: WebBandit
+User-agent: WebZIP
+User-agent: WebReaper
+User-agent: WebStripper
+User-agent: Web Downloader
+User-agent: WebCopier
+User-agent: Offline Explorer Pro
+User-agent: Offline Commander
+User-agent: Leech
+User-agent: WebSnake
+User-agent: BlackWidow
+User-agent: HTTP Weazel
+Disallow: /
+
+User-agent: Nutch
+Disallow: /
+
+
+
+Sitemap: https://dioutdoor.vn/post-sitemap.xml
+Sitemap: https://dioutdoor.vn/page-sitemap.xml
+Sitemap: https://dioutdoor.vn/product-sitemap.xml
+Sitemap: https://dioutdoor.vn/category-sitemap.xml
+Sitemap: https://dioutdoor.vn/post_tag-sitemap.xml
+Sitemap: https://dioutdoor.vn/product_cat-sitemap.xml
+Sitemap: https://dioutdoor.vn/product_tag-sitemap.xml
+Sitemap: https://dioutdoor.vn/pa_brands-sitemap.xml
+Sitemap: https://dioutdoor.vn/pa_series-sitemap.xml
+Sitemap: https://dioutdoor.vn/video-sitemap.xml
+

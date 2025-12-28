@@ -1,0 +1,82 @@
+.noteurl{
+    padding: 1rem;
+    background: linear-gradient(to right,#cdde94,#ffe3d5);
+    border-radius: 7px;
+    font-size: 110%;
+}
+.notered{
+    background: linear-gradient(to right,#ffeae2,#ffd7d7);
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border-radius: 7px;
+    font-size: 110%;
+}
+.divurl{
+    padding: 1rem;
+    background: linear-gradient(to right,#cdde94,#ffe3d5);
+    border-radius: 7px;
+    font-size: 110%;
+}
+.divred{
+    background: linear-gradient(to right,#ffeae2,#ffd7d7);
+    padding: 0.5rem;
+    border-radius: 7px;
+    font-size: 100%;
+}
+.divred p, divred li, .divurl p, .divurl li{
+    margin: unset;
+}
+.categorydiv div.tabs-panel{
+    max-height: 600px;
+}
+
+/** CSS thông số kỹ thuật*/
+/* CSS cho bảng và các nút */
+#product-parameters-wrapper {
+    margin-top: 20px;
+}
+#product-parameters-wrapper table {
+    width: 100%;
+    border-collapse: collapse;
+}
+#product-parameters-wrapper th,
+#product-parameters-wrapper td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+#product-parameters-wrapper th {
+    background-color: #f1f1f1;
+}
+.button {
+    padding: 4px 8px;
+    cursor: pointer;
+}
+.button-icon {
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.button-icon i {
+    font-size: 16px;
+}
+/* Hiệu ứng nhấp nháy */
+.highlight-move {
+    animation: highlight 1s ease-in-out forwards;
+}
+
+@keyframes highlight {
+    0% { background-color: transparent; }
+    50% { background-color: #facdc7; }
+    100% { background-color: transparent; }
+}
+/**edit oder woocommerce*/
+/* Vô hiệu hóa con trỏ khi hover vào ngày tháng và số điện thoại */
+.column-order_date, .column-meta{
+    pointer-events: none !important;
+    cursor: default !important;
+}

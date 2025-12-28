@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" autoUpload="On explicit save action" serverName="edit" autoUploadExternalChanges="true" showNewOnTargetInSync="false">
+    <serverData>
+      <paths name="banhang.dioutdoor.vn">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="dioutdoor.vn">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath path="/.well-known" />
+            <excludedPath path="/cgi-bin" />
+            <excludedPath path="/media" />
+            <excludedPath path="/wp-admin" />
+            <excludedPath path="/wp-includes" />
+            <excludedPath local="true" path="$PROJECT_DIR$/.well-known" />
+            <excludedPath local="true" path="$PROJECT_DIR$/cgi-bin" />
+            <excludedPath local="true" path="$PROJECT_DIR$/media" />
+            <excludedPath local="true" path="$PROJECT_DIR$/wp-admin" />
+            <excludedPath local="true" path="$PROJECT_DIR$/wp-includes" />
+            <excludedPath path="/wp-content/upgrade-temp-backup" />
+            <excludedPath path="/wp-content/languages" />
+            <excludedPath path="/wp-content/ewww" />
+            <excludedPath path="/wp-content/uploads" />
+            <excludedPath path="/wp-content/cache" />
+            <excludedPath path="/wp-content/mu-plugins" />
+            <excludedPath path="/wp-content/updraft" />
+            <excludedPath path="/wp-content/upgrade" />
+            <excludedPath path="/wp-content/fonts" />
+            <excludedPath path="/wp-content/wp-rocket-config" />
+            <excludedPath path="/wp-content/themes/twentytwentyfive" />
+            <excludedPath path="/wp-content/themes/twentytwentyfour" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
+      <paths name="edit">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath path="/.well-known" />
+            <excludedPath path="/cgi-bin" />
+            <excludedPath path="/media" />
+            <excludedPath path="/wp-admin" />
+            <excludedPath path="/wp-includes" />
+            <excludedPath local="true" path="$PROJECT_DIR$/.well-known" />
+            <excludedPath local="true" path="$PROJECT_DIR$/cgi-bin" />
+            <excludedPath local="true" path="$PROJECT_DIR$/media" />
+            <excludedPath local="true" path="$PROJECT_DIR$/wp-admin" />
+            <excludedPath local="true" path="$PROJECT_DIR$/wp-includes" />
+            <excludedPath path="/wp-content/upgrade-temp-backup" />
+            <excludedPath path="/wp-content/languages" />
+            <excludedPath path="/wp-content/ewww" />
+            <excludedPath path="/wp-content/uploads" />
+            <excludedPath path="/wp-content/cache" />
+            <excludedPath path="/wp-content/mu-plugins" />
+            <excludedPath path="/wp-content/updraft" />
+            <excludedPath path="/wp-content/upgrade" />
+            <excludedPath path="/wp-content/fonts" />
+            <excludedPath path="/wp-content/wp-rocket-config" />
+            <excludedPath path="/wp-content/themes/twentytwentyfive" />
+            <excludedPath path="/wp-content/themes/twentytwentyfour" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
+      <paths name="wp.dioutdoor.vn">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath path="/.well-known" />
+            <excludedPath path="/cgi-bin" />
+            <excludedPath path="/media" />
+            <excludedPath path="/wp-admin" />
+            <excludedPath path="/wp-includes" />
+            <excludedPath local="true" path="$PROJECT_DIR$/.well-known" />
+            <excludedPath local="true" path="$PROJECT_DIR$/cgi-bin" />
+            <excludedPath local="true" path="$PROJECT_DIR$/media" />
+            <excludedPath local="true" path="$PROJECT_DIR$/wp-admin" />
+            <excludedPath local="true" path="$PROJECT_DIR$/wp-includes" />
+            <excludedPath path="/wp-content/upgrade-temp-backup" />
+            <excludedPath path="/wp-content/languages" />
+            <excludedPath path="/wp-content/ewww" />
+            <excludedPath path="/wp-content/uploads" />
+            <excludedPath path="/wp-content/cache" />
+            <excludedPath path="/wp-content/mu-plugins" />
+            <excludedPath path="/wp-content/updraft" />
+            <excludedPath path="/wp-content/upgrade" />
+            <excludedPath path="/wp-content/fonts" />
+            <excludedPath path="/wp-content/wp-rocket-config" />
+            <excludedPath path="/wp-content/themes/twentytwentyfive" />
+            <excludedPath path="/wp-content/themes/twentytwentyfour" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myAutoUpload" value="ON_EXPLICIT_SAVE" />
+  </component>
+</project>
