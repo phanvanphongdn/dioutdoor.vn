@@ -9,12 +9,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! class_exists( 'Back_In_Stock_Email' ) ) :
+if ( ! class_exists( 'XTS_Email_Wishlist_Back_In_Stock' ) ) :
 
 	/**
 	 * Send back in stock status product.
 	 */
-	class Back_In_Stock_Email extends WC_Email {
+	class XTS_Email_Wishlist_Back_In_Stock extends WC_Email {
 
 		/**
 		 * Receiver user
@@ -41,8 +41,10 @@ if ( ! class_exists( 'Back_In_Stock_Email' ) ) :
 		 * Constructor.
 		 */
 		public function __construct() {
+			$this->template_base = WOODMART_THEMEROOT . '/woocommerce/';
+
 			$this->id          = 'woodmart_back_in_stock_email';
-			$this->title       = esc_html__( 'Wishlist "Back in stock" email', 'woodmart' );
+			$this->title       = esc_html__( 'Wishlist: product back in stock', 'woodmart' );
 			$this->description = esc_html__( 'This email is sent to customers when an item of their wishlist is back in stock', 'woodmart' );
 
 			$this->heading = esc_html__( 'An item of your wishlist is back in stock!', 'woodmart' );
@@ -275,8 +277,29 @@ if ( ! class_exists( 'Back_In_Stock_Email' ) ) :
 				),
 			);
 		}
+
+		/**
+		 * Returns the product image.
+		 *
+		 * @codeCoverageIgnore
+		 *
+		 * @param object       $product Product instance.
+		 * @param array        $size Image size.
+		 * @param string|array $attr Attributes for the image markup. Default empty.
+		 *
+		 * @return string Product image html.
+		 */
+		public function get_product_image_html( $product, $size, $attr = '' ) {
+			$product_image = get_the_post_thumbnail( $product->get_id(), $size, $attr );
+
+			if ( empty( $product_image ) ) {
+				$product_image = wc_placeholder_img( $size, $attr );
+			}
+
+			return $product_image;
+		}
 	}
 
 endif;
 
-return new Back_In_Stock_Email();
+return new XTS_Email_Wishlist_Back_In_Stock();

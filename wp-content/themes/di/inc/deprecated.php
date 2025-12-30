@@ -366,3 +366,180 @@ if ( ! function_exists( 'woodmart_is_compare_iframe' ) ) {
 		return wp_script_is( 'jquery-fixedheadertable', 'enqueued' );
 	}
 }
+
+if ( ! function_exists( 'woodmart_get_attachment_placeholder' ) ) {
+	/**
+	 * Get placeholder image. Needs ID to generate a blurred preview and size.
+	 *
+	 * @param integer $id Attachment ID.
+	 * @param string  $size Image size.
+	 * @return mixed|null
+	 */
+	function woodmart_get_attachment_placeholder( $id, $size ) {
+		_deprecated_function( 'woodmart_get_attachment_placeholder', '8.0', 'woodmart_lazy_get_default_preview' );
+
+		return woodmart_lazy_get_default_preview();
+	}
+}
+
+if ( ! function_exists( 'woodmart_get_placeholder_size' ) ) {
+	function woodmart_get_placeholder_size( $x0, $y0 ) {
+		_deprecated_function( 'woodmart_get_placeholder_size', '8.0' );
+
+		$x = $y = 10;
+
+		if ( $x0 && $x0 < $y0 ) {
+			$y = ( $x * $y0 ) / $x0;
+		}
+
+		if ( $y0 && $x0 > $y0 ) {
+			$x = ( $y * $x0 ) / $y0;
+		}
+
+		$x = ceil( $x );
+		$y = ceil( $y );
+
+		return (int) $x . 'x' . (int) $y;
+	}
+}
+
+if ( ! function_exists( 'woodmart_encode_image' ) ) {
+	function woodmart_encode_image( $id, $url ) {
+		_deprecated_function( 'woodmart_encode_image', '8.0' );
+
+		if ( ! wp_attachment_is_image( $id ) || preg_match( '/^data\:image/', $url ) ) {
+			return $url;
+		}
+
+		$meta_key = '_base64_image.' . md5( $url );
+
+		$img_url = get_post_meta( $id, $meta_key, true );
+
+		if ( $img_url ) {
+			return $img_url;
+		}
+
+		$image_path = preg_replace( '/^.*?wp-content\/uploads\//i', '', $url );
+
+		if ( ( $uploads = wp_get_upload_dir() ) && ( false === $uploads['error'] ) && ( 0 !== strpos( $image_path, $uploads['basedir'] ) ) ) {
+			if ( false !== strpos( $image_path, 'wp-content/uploads' ) ) {
+				$image_path = trailingslashit( $uploads['basedir'] . '/' . _wp_get_attachment_relative_path( $image_path ) ) . basename( $image_path );
+			} else {
+				$image_path = $uploads['basedir'] . '/' . $image_path;
+			}
+		}
+
+		$max_size = 150 * 1024; // MB
+
+		if ( file_exists( $image_path ) && ( ! $max_size || ( filesize( $image_path ) <= $max_size ) ) ) {
+			$filetype = wp_check_filetype( $image_path );
+
+			// Read image path, convert to base64 encoding
+			if ( function_exists( 'woodmart_compress' ) && function_exists( 'woodmart_get_file' ) ) {
+				$imageData = woodmart_compress( woodmart_get_file( $image_path ) );
+			} else {
+				$imageData = '';
+			}
+
+			// Format the image SRC:  data:{mime};base64,{data};
+			$img_url = 'data:image/' . $filetype['ext'] . ';base64,' . $imageData;
+
+			update_post_meta( $id, $meta_key, $img_url );
+
+			return $img_url;
+		}
+
+		return $url;
+	}
+}
+
+
+if ( ! function_exists( 'woodmart_lazy_avatar_image' ) ) {
+	/**
+	 * Filters HTML <img> tag and adds lazy loading attributes. Used for avatar images.
+	 *
+	 * @param string $html Image html.
+	 * @return string
+	 */
+	function woodmart_lazy_avatar_image( $html ) {
+		_deprecated_function( 'woodmart_lazy_avatar_image', '8.0', 'woodmart_lazy_image_standard' );
+
+		return woodmart_lazy_image_standard( $html );
+	}
+}
+
+if ( ! function_exists( 'woodmart_post_meta' ) ) {
+	/**
+	 * Post meta template.
+	 *
+	 * @param array $atts Attributes.
+	 */
+	function woodmart_post_meta( $atts = array() ) {
+		_deprecated_function( 'woodmart_post_meta', '8.2', '' );
+
+		extract(
+			shortcode_atts(
+				array(
+					'author'        => 1,
+					'author_avatar' => 0,
+					'date'          => 1,
+					'author_label'  => 'short',
+					'comments'      => 1,
+					'social_icons'  => 0,
+				),
+				$atts
+			)
+		);
+		?>
+			<ul class="entry-meta-list">
+				<?php if ( get_post_type() === 'post' ) : ?>
+					<li class="modified-date">
+						<?php woodmart_post_modified_date(); ?>
+					</li>
+
+					<?php if ( is_sticky() ) : ?>
+						<li class="meta-featured-post">
+							<?php esc_html_e( 'Featured', 'woodmart' ); ?>
+						</li>
+					<?php endif; ?>
+
+					<?php if ( $author ) : ?>
+						<li class="meta-author">
+							<?php woodmart_post_meta_author( $author_avatar, $author_label ); ?>
+						</li>
+					<?php endif ?>
+
+					<?php if ( $date ) : ?>
+						<li class="meta-date">
+							<?php echo esc_html( _x( 'On', 'meta-date', 'woodmart' ) ) . ' ' . get_the_date(); ?>
+						</li>
+					<?php endif ?>
+
+					<?php if ( $comments && comments_open() ) : ?>
+						<li class="meta-reply">
+							<?php woodmart_post_meta_reply(); ?>
+						</li>
+					<?php endif; ?>
+
+					<?php if ( $social_icons && woodmart_is_social_link_enable( 'share' ) && function_exists( 'woodmart_shortcode_social' ) ) : ?>
+						<li class="hovered-social-icons wd-tltp">
+							<div class="tooltip top">
+								<div class="tooltip-arrow"></div>
+								<div class="tooltip-inner">
+									<?php
+										echo woodmart_shortcode_social( // phpcs:ignore.
+											array(
+												'size'  => 'small',
+												'color' => 'light',
+											)
+										);
+									?>
+								</div>
+							</div>
+						</li>
+					<?php endif ?>
+				<?php endif; ?>
+			</ul>
+		<?php
+	}
+}

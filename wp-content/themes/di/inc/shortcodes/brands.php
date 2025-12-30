@@ -40,6 +40,7 @@ if ( ! function_exists( 'woodmart_shortcode_brands' ) ) {
 					'disable_link'               => 'no',
 					'woodmart_css_id'            => '',
 					'with_bg_color'              => 'no',
+					'with_border'                => 'no',
 					'el_id'                      => '',
 					'el_class'                   => '',
 				)
@@ -86,6 +87,10 @@ if ( ! function_exists( 'woodmart_shortcode_brands' ) ) {
 			$class .= ' wd-with-bg';
 		}
 
+		if ( 'yes' === $with_border ) {
+			$class .= ' wd-with-brd';
+		}
+
 		if ( $alignment ) {
 			$class .= ' text-' . $alignment;
 		}
@@ -120,7 +125,6 @@ if ( ! function_exists( 'woodmart_shortcode_brands' ) ) {
 			$item_class       = ' wd-carousel-item';
 
 			if ( 'yes' === $scroll_carousel_init ) {
-				woodmart_enqueue_js_library( 'waypoints' );
 				$items_wrap_class .= ' scroll-init';
 			}
 
@@ -158,19 +162,22 @@ if ( ! function_exists( 'woodmart_shortcode_brands' ) ) {
 
 		if ( 'random' === $orderby ) {
 			$args['orderby'] = 'id';
-			$brand_count     = wp_count_terms(
-				$attribute,
-				array(
-					'hide_empty' => 'yes' === $hide_empty,
-				)
-			);
 
-			$offset = wp_rand( 0, $brand_count - $number );
+			if ( ! $ids ) {
+				$brand_count = wp_count_terms(
+					$attribute,
+					array(
+						'hide_empty' => 'yes' === $hide_empty,
+					)
+				);
 
-			if ( $offset <= 0 ) {
-				$offset = '';
+				$offset = wp_rand( 0, $brand_count - $number );
+
+				if ( $offset <= 0 ) {
+					$offset = '';
+				}
+				$args['offset'] = $offset;
 			}
-			$args['offset'] = $offset;
 		}
 
 		if ( ! empty( $ids ) ) {
@@ -231,10 +238,12 @@ if ( ! function_exists( 'woodmart_shortcode_brands' ) ) {
 							}
 						}
 
-						if ( is_object( $taxonomy ) && $taxonomy->public ) {
-							$attr_link = get_term_link( $brand->term_id, $brand->taxonomy );
+						if ( ( 'yes' === $filter_in_current_category && is_product_category() ) || ! is_object( $taxonomy ) || ! $taxonomy->public ) {
+							$filter_value = 'product_brand' === $attribute ? $brand->term_id : $brand->slug;
+
+							$attr_link = add_query_arg( $filter_name, $filter_value, $link );
 						} else {
-							$attr_link = add_query_arg( $filter_name, $brand->slug, $link );
+							$attr_link = get_term_link( $brand->term_id, $brand->taxonomy );
 						}
 						?>
 
@@ -261,7 +270,7 @@ if ( ! function_exists( 'woodmart_shortcode_brands' ) ) {
 										<a href="<?php echo esc_url( $attr_link ); ?>" title="<?php echo esc_attr( $brand->name ); ?>" class="wd-fill"></a>
 									<?php endif; ?>
 
-									<img src="<?php echo esc_url( $image ); ?>" alt="<?php echo esc_attr( $brand->name ); ?>" title="<?php echo esc_attr( $brand->name ); ?>">
+									<?php echo apply_filters( 'woodmart_image', '<img src="' . esc_url( $image ) . '" alt="' . esc_attr( $brand->name ) . '" title="' . esc_attr( $brand->name ) . '">' ); ?>
 								<?php endif; ?>
 							</div>
 						</div>

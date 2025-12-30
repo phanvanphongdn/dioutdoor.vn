@@ -12,7 +12,7 @@
  *
  * @see https://docs.woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates
- * @version 6.1.0
+ * @version 9.6.0
  */
 
 // start Woodmart code.
@@ -138,7 +138,7 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 	<?php if ( empty( $available_variations ) && false !== $available_variations ) : ?>
 		<p class="stock out-of-stock"><?php echo esc_html( apply_filters( 'woocommerce_out_of_stock_message', __( 'This product is currently out of stock and unavailable.', 'woocommerce' ) ) ); ?></p>
 	<?php else : ?>
-		<table class="variations" cellspacing="0">
+		<table class="variations" role="presentation">
 			<tbody>
 			<?php $loop = 0; ?>
 			<?php foreach ( $attributes as $attribute_name => $options ) : ?>
@@ -194,7 +194,7 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 					<td class="value cell<?php echo ! empty( $swatches ) ? esc_attr( ' with-swatches' ) : ''; ?>">
 						<?php // start Woodmart code. ?>
 						<?php if ( ! empty( $swatches ) ) : ?>
-							<div class="wd-swatches-product<?php echo esc_attr( $wrapper_class ); ?>" data-id="<?php echo esc_attr( sanitize_title( $attribute_name ) ); ?>">
+							<div class="wd-swatches-product<?php echo esc_attr( $wrapper_class ); ?>" data-id="<?php echo esc_attr( sanitize_title( $attribute_name ) ); ?>" role="radiogroup" aria-labelledby="<?php echo esc_attr( sanitize_title( $attribute_name ) ); ?>">
 								<?php
 								if ( is_array( $options ) ) {
 									$_i = 0;
@@ -249,7 +249,7 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 												if ( is_array( $swatches[ $key ]['image'] ) ) {
 													$image = wp_get_attachment_image( $swatches[ $key ]['image']['id'], 'woocommerce_thumbnail' );
 												} elseif ( $swatches[ $key ]['image'] ) {
-													$image = '<img src="' . $swatches[ $key ]['image'] . '" alt="' . esc_attr__( 'Swatch image', 'woodmart' ) . '">';
+													$image = apply_filters( 'woodmart_image', '<img src="' . $swatches[ $key ]['image'] . '" alt="' . esc_attr__( 'Swatch image', 'woodmart' ) . '">' );
 												}
 
 												$class .= ' wd-bg';
@@ -299,7 +299,7 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 											}
 
 											?>
-												<div class="<?php echo esc_attr( $class ); ?>"<?php echo wp_kses( $title, true ); ?> data-value="<?php echo esc_attr( $term->slug ); ?>" data-title="<?php echo esc_attr( $term->name ); ?>" <?php echo selected( sanitize_title( $selected_value ), sanitize_title( $term->slug ), false ); ?>>
+												<div class="<?php echo esc_attr( $class ); ?>"<?php echo wp_kses( $title, true ); ?> data-value="<?php echo esc_attr( $term->slug ); ?>" <?php echo selected( sanitize_title( $selected_value ), sanitize_title( $term->slug ), false ); ?> role="radio" aria-checked="false" aria-label="<?php echo esc_attr( $term->name ); ?>" tabindex="0">
 													<?php if ( $style || $image ) : ?>
 														<span class="wd-swatch-bg" style="<?php echo esc_attr( $style ); ?>">
 															<?php if ( $image ) : ?>
@@ -358,6 +358,7 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 						<?php
 						wc_dropdown_variation_attribute_options(
 							array(
+								'id'        => $is_quick_shop2 ? sanitize_title( $attribute_name ) . '-' . $product->get_id() : '',
 								'selected'  => $is_quick_shop2 ? '' : false,
 								'options'   => $options,
 								'attribute' => $attribute_name,
@@ -365,13 +366,14 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 								'class'     => 'on' === $swatch_change_image ? 'wd-changes-variation-image' : '',
 							)
 						);
-						echo end( $attribute_keys ) === $attribute_name ? wp_kses_post( apply_filters( 'woocommerce_reset_variations_link', '<div class="wd-reset-var' . $wd_reset_classes . '"><a class="reset_variations" href="#">' . esc_html__( 'Clear', 'woocommerce' ) . '</a></div>' ) ) : '';
+						echo end( $attribute_keys ) === $attribute_name ? wp_kses_post( apply_filters( 'woocommerce_reset_variations_link', '<div class="wd-reset-var' . $wd_reset_classes . '"><a class="reset_variations" href="#" aria-label="' . esc_attr__( 'Clear options', 'woocommerce' ) . '">' . esc_html__( 'Clear', 'woocommerce' ) . '</a></div>' ) ) : '';
 						?>
 					</td>
 				</tr>
 			<?php endforeach; ?>
 		</tbody>
 	</table>
+	<div class="reset_variations_alert screen-reader-text" role="alert" aria-live="polite" aria-relevant="all"></div>
 	<?php do_action( 'woocommerce_after_variations_table' ); ?>
 
 	<div class="single_variation_wrap">

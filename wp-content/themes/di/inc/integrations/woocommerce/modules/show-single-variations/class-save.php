@@ -22,6 +22,10 @@ class Save extends Singleton {
 	 * Register hooks.
 	 */
 	public function init() {
+		if ( ! woodmart_get_opt( 'show_single_variation' ) || ! woodmart_woocommerce_installed() ) {
+			return;
+		}
+
 		add_action( 'save_post_product', array( $this, 'save_product' ), 100, 3 );
 		add_action( 'woocommerce_save_product_variation', array( $this, 'save_variation' ), 10, 2 );
 		add_action( 'woocommerce_new_product_variation', array( $this, 'save_variation' ), 10 );
@@ -63,12 +67,16 @@ class Save extends Singleton {
 			}
 		}
 
-		$taxonomies = apply_filters( 'woodmart_single_variations_taxonomies', array( 'product_cat', 'product_tag' ), $post_id );
+		$taxonomies = apply_filters( 'woodmart_single_variations_taxonomies', array( 'product_cat', 'product_tag', 'product_brand' ), $post_id );
 		$post_metas = apply_filters( 'woodmart_single_variations_post_meta', array( '_woodmart_new_label_date', '_woodmart_new_label' ), $post_id );
 
 		foreach ( $variation_ids as $variation_id ) {
 			if ( $taxonomies ) {
 				foreach ( $taxonomies as $taxonomy ) {
+					if ( ! taxonomy_exists( $taxonomy ) ) {
+						continue;
+					}
+
 					$terms = (array) wp_get_post_terms( $post_id, $taxonomy, array( 'fields' => 'ids' ) );
 					wp_set_post_terms( $variation_id, $terms, $taxonomy );
 				}

@@ -22,21 +22,14 @@ class Admin extends Singleton {
 	public $helper;
 
 	/**
-	 * List of registered tabs.
-	 *
-	 * @var array
-	 */
-	public $tabs;
-
-	/**
 	 * Init.
 	 */
 	public function init() {
+		if ( ! woodmart_get_opt( 'checkout_fields_enabled' ) || ! woodmart_woocommerce_installed() ) {
+			return;
+		}
+
 		$this->helper = Helper::get_instance();
-		$this->tabs   = array(
-			'billing'  => esc_html__( 'Billing details', 'woodmart' ),
-			'shipping' => esc_html__( 'Shipping details', 'woodmart' ),
-		);
 
 		add_action( 'init', array( $this, 'reset_all_fields' ) );
 		add_action( 'admin_menu', array( $this, 'add_admin_page' ) );
@@ -74,19 +67,18 @@ class Admin extends Singleton {
 		$list_table = new Fields_Table();
 
 		$list_table->prepare_items();
-		?>
-		<?php
-			$this->helper->get_template(
-				'checkout-fields-page',
-				array(
-					'base_url'    => $this->get_base_url(),
-					'tabs'        => $this->tabs,
-					'current_tab' => $this->get_current_tab(),
-					'list_table'  => $list_table,
-				)
-			);
-		?>
-		<?php
+		$this->helper->get_template(
+			'checkout-fields-page',
+			array(
+				'base_url'    => $this->get_base_url(),
+				'tabs'        => array(
+					'billing'  => esc_html__( 'Billing details', 'woodmart' ),
+					'shipping' => esc_html__( 'Shipping details', 'woodmart' ),
+				),
+				'current_tab' => $this->get_current_tab(),
+				'list_table'  => $list_table,
+			)
+		);
 	}
 
 	/**
@@ -111,7 +103,7 @@ class Admin extends Singleton {
 	 * @return void
 	 */
 	public function reset_all_fields() {
-		if ( ! isset( $_GET['page'] ) || ! isset( $_GET['reset-all-fields'] ) || 'xts-checkout-fields-page' !== $_GET['page'] || empty( $this->tabs ) ) { // phpcs:ignore
+		if ( ! isset( $_GET['page'] ) || ! isset( $_GET['reset-all-fields'] ) || 'xts-checkout-fields-page' !== $_GET['page'] ) { // phpcs:ignore
 			return;
 		}
 
@@ -128,7 +120,7 @@ class Admin extends Singleton {
 	 * @return string
 	 */
 	public function get_current_tab() {
-		return ! empty( $_GET['tab'] ) && in_array( $_GET['tab'], array_keys( $this->tabs ), true ) ? $_GET['tab'] : 'billing'; // phpcs:ignore.
+		return ! empty( $_GET['tab'] ) && in_array( $_GET['tab'], array( 'billing', 'shipping' ), true ) ? $_GET['tab'] : 'billing'; // phpcs:ignore.
 	}
 
 	/**

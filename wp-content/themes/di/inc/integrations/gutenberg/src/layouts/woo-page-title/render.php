@@ -11,6 +11,8 @@ if ( ! function_exists( 'wd_gutenberg_woo_page_title' ) ) {
 			$classes .= ' wd-stretched';
 		}
 
+		Builder_Data::get_instance()->set_data( 'is_post_layout', Main::get_instance()->has_custom_layout( 'single_post' ) );
+
 		Main::setup_preview();
 
 		Builder_Data::get_instance()->set_data( 'builder', true );
@@ -20,7 +22,7 @@ if ( ! function_exists( 'wd_gutenberg_woo_page_title' ) ) {
 
 		woodmart_enqueue_inline_style( 'el-page-title-builder' );
 
-		if ( is_product_taxonomy() || is_shop() || is_product_category() || is_product_tag() || woodmart_is_product_attribute_archive() ) {
+		if ( is_product_taxonomy() || woodmart_is_shop_archive() ) {
 			woodmart_enqueue_inline_style( 'woo-shop-page-title' );
 
 			if ( ! woodmart_get_opt( 'shop_title' ) ) {

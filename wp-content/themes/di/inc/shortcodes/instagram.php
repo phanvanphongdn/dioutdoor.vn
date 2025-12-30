@@ -139,7 +139,6 @@ if ( ! function_exists( 'woodmart_shortcode_instagram' ) ) {
 			}
 
 			if ( 'yes' === $scroll_carousel_init ) {
-				woodmart_enqueue_js_library( 'waypoints' );
 				$pics_classes .= ' scroll-init';
 			}
 		} else {
@@ -165,8 +164,7 @@ if ( ! function_exists( 'woodmart_shortcode_instagram' ) ) {
 
 		$encoded_atts = json_encode( $parsed_atts );
 
-		if ( is_wp_error( $media_array ) && ( $media_array->get_error_code() === 'invalid_response_429' || apply_filters( 'woodmart_intagram_user_ajax_load', false ) || 'ajax' === $data_source ) ) {
-			woodmart_enqueue_js_script( 'instagram-element' );
+		if ( is_wp_error( $media_array ) && ( $media_array->get_error_code() === 'invalid_response_429' || apply_filters( 'woodmart_intagram_user_ajax_load', false ) ) ) {
 			$class      .= ' wd-error';
 			$media_array = array();
 			$hide_mask   = true;
@@ -307,7 +305,7 @@ if ( ! function_exists( 'woodmart_scrape_instagram' ) ) {
 		$instagram      = get_transient( $transient_name );
 
 		if ( false === $instagram ) {
-			if ( 'scrape' === $data_source || 'ajax' === $data_source ) {
+			if ( 'scrape' === $data_source ) {
 				$instagram = woodmart_get_scrape_insta_images(
 					array(
 						'username'  => $username,
@@ -389,7 +387,7 @@ if ( ! function_exists( 'woodmart_get_api_insta_images' ) ) {
 			);
 		}
 
-		if ( $instagram && woodmart_get_opt( 'insta_delete_outdated_images' ) ) {
+		if ( $instagram && woodmart_get_opt( 'insta_delete_outdated_images', true ) ) {
 			$image_ids   = array_column( $instagram, 'image_id' );
 			$attachments = new WP_Query(
 				array(
@@ -608,23 +606,6 @@ if ( ! function_exists( 'woodmart_get_scrape_insta_images' ) ) {
 		return $instagram;
 	}
 }
-
-if ( ! function_exists( 'woodmart_instagram_ajax_query' ) ) {
-	function woodmart_instagram_ajax_query() {
-		if ( ! empty( $_POST['atts'] ) && ! empty( $_POST['body'] ) ) {
-			$atts = woodmart_clean( $_POST['atts'] );
-
-			$atts['ajax_body'] = trim( $_POST['body'] );
-			$data              = woodmart_shortcode_instagram( $atts );
-
-			wp_send_json( $data );
-		}
-	}
-
-	add_action( 'wp_ajax_woodmart_instagram_ajax_query', 'woodmart_instagram_ajax_query' );
-	add_action( 'wp_ajax_nopriv_woodmart_instagram_ajax_query', 'woodmart_instagram_ajax_query' );
-}
-
 
 if ( ! function_exists( 'woodmart_get_instagram_custom_images' ) ) {
 	function woodmart_get_instagram_custom_images( $images, $size, $link, $likes, $comments ) {

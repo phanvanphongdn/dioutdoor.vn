@@ -232,6 +232,10 @@ class Compare extends Singleton {
 			$_COOKIE[ $this->cookie_name ] = wp_json_encode( $product_ids );
 		}
 
+		if ( class_exists( 'WPBMap' ) ) {
+			WPBMap::addAllMappedShortcodes();
+		}
+
 		wp_send_json(
 			array(
 				'count'     => $this->get_compare_count(),
@@ -387,6 +391,16 @@ class Compare extends Singleton {
 					'value' => 'sku',
 				),
 			);
+
+			if ( taxonomy_exists( 'product_brand' ) ) {
+				$taxonomy = get_taxonomy( 'product_brand' );
+				$label    = $taxonomy->labels->singular_name;
+
+				$options['product_brand'] = array(
+					'name'  => $label,
+					'value' => 'product_brand',
+				);
+			}
 
 			if ( count( $product_attributes ) > 0 ) {
 				foreach ( $product_attributes as $attribute ) {

@@ -50,7 +50,6 @@ if ( ! function_exists( 'woodmart_elementor_infobox_carousel_template' ) ) {
 		}
 
 		if ( 'yes' === $settings['scroll_carousel_init'] ) {
-			woodmart_enqueue_js_library( 'waypoints' );
 			$wrapper_classes .= ' scroll-init';
 		}
 
@@ -167,6 +166,7 @@ if ( ! function_exists( 'woodmart_elementor_infobox_template' ) ) {
 		$content_classes  = '';
 		$icon_classes     = '';
 		$image_output     = '';
+		$title_tag        = ! in_array( $settings['title_tag'], array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'div', 'span' ), true ) ? 'h4' : $settings['title_tag'];
 
 		// Wrapper classes.
 		$wrapper_classes .= ' text-' . $settings['alignment'];
@@ -201,7 +201,8 @@ if ( ! function_exists( 'woodmart_elementor_infobox_template' ) ) {
 		if ( woodmart_elementor_is_edit_mode() && ! strstr( $settings['wrapper_classes'], 'elementor-repeater-item' ) ) {
 			$title_classes .= ' elementor-inline-editing';
 		}
-		$title_classes   .= ' ' . woodmart_get_new_size_classes( 'infobox', $settings['title_size'], 'title' );
+		$title_classes .= ' ' . woodmart_get_new_size_classes( 'infobox', $settings['title_size'], 'title' );
+
 		$wrapper_classes .= woodmart_get_old_classes( ' box-title-' . $settings['title_size'] );
 		$wrapper_classes .= woodmart_get_old_classes( ' woodmart-info-box' );
 
@@ -303,10 +304,10 @@ if ( ! function_exists( 'woodmart_elementor_infobox_template' ) ) {
 					<?php endif; ?>
 
 					<?php if ( $settings['title'] ) : ?>
-						<<?php echo esc_attr( $settings['title_tag'] ); ?>
+						<<?php echo esc_attr( $title_tag ); ?>
 						class="info-box-title title<?php echo esc_attr( $title_classes ); ?>" data-elementor-setting-key="title">
 								<?php echo nl2br( $settings['title'] ); ?>
-						</<?php echo esc_attr( $settings['title_tag'] ); ?>>
+						</<?php echo esc_attr( $title_tag ); ?>>
 					<?php endif; ?>
 
 					<div class="info-box-inner reset-last-child<?php echo esc_attr( $content_classes ); ?>"data-elementor-setting-key="content"><?php echo do_shortcode( wpautop( $settings['content'] ) ); ?></div>

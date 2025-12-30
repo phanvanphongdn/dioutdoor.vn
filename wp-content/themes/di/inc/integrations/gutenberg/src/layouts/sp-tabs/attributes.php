@@ -35,7 +35,8 @@ if ( ! function_exists( 'wd_get_single_product_block_tabs_attrs' ) ) {
 					'type' => 'string',
 				),
 				'tabsAlignment'                  => array(
-					'type' => 'string',
+					'type'       => 'string',
+					'responsive' => true,
 				),
 				'tabsSpaceBetweenTabsTitleH'     => array(
 					'type'       => 'number',
@@ -159,16 +160,37 @@ if ( ! function_exists( 'wd_get_single_product_block_tabs_attrs' ) ) {
 					'type'       => 'number',
 					'responsive' => true,
 				),
+				'tabsBorderWidthLock'            => array(
+					'type'    => 'boolean',
+					'default' => true,
+				),
+				'tabsBorderHoverWidthLock'       => array(
+					'type'    => 'boolean',
+					'default' => true,
+				),
+				'tabsBorderActiveWidthLock'      => array(
+					'type'    => 'boolean',
+					'default' => true,
+				),
 			)
 		);
 
 		$attr->add_attr( wd_get_typography_control_attrs(), 'tabsTitleTp' );
 		$attr->add_attr( wd_get_color_control_attrs( 'tabsTitleTextColor' ) );
 		$attr->add_attr( wd_get_color_control_attrs( 'tabsTitleTextHoverColor' ) );
-		$attr->add_attr( wd_get_color_control_attrs( 'tabsTitleTextHoverColor' ) );
 		$attr->add_attr( wd_get_color_control_attrs( 'tabsTitleTextActiveColor' ) );
+		$attr->add_attr( wd_get_color_control_attrs( 'tabsBgColor' ) );
+		$attr->add_attr( wd_get_color_control_attrs( 'tabsBgHoverColor' ) );
+		$attr->add_attr( wd_get_color_control_attrs( 'tabsBgActiveColor' ) );
+		wd_get_box_shadow_control_attrs( $attr, 'tabsBoxShadow' );
+		wd_get_box_shadow_control_attrs( $attr, 'tabsBoxShadowHover' );
+		wd_get_box_shadow_control_attrs( $attr, 'tabsBoxShadowActive' );
+		wd_get_border_control_attrs( $attr, 'tabsBorder' );
+		wd_get_border_control_attrs( $attr, 'tabsBorderHover' );
+		wd_get_border_control_attrs( $attr, 'tabsBorderActive' );
+		wd_get_padding_control_attrs( $attr, 'tabsPadding' );
 
-		$attr->add_attr( wd_get_box_shadow_control_attrs( 'accordionBoxShadow' ) );
+		wd_get_box_shadow_control_attrs( $attr, 'accordionBoxShadow' );
 		$attr->add_attr( wd_get_color_control_attrs( 'accordionShadowBgColor' ) );
 		$attr->add_attr( wd_get_typography_control_attrs(), 'accordionTitleTp' );
 		$attr->add_attr( wd_get_color_control_attrs( 'accordionTitleTextColor' ) );
@@ -189,7 +211,7 @@ if ( ! function_exists( 'wd_get_single_product_block_tabs_attrs' ) ) {
 		$attr->add_attr( wd_get_typography_control_attrs(), 'additionalInfoTermTp' );
 		$attr->add_attr( wd_get_color_control_attrs( 'additionalInfoTermColor' ) );
 
-		$attr->add_attr( wd_get_advanced_tab_attrs() );
+		wd_get_advanced_tab_attrs( $attr );
 
 		return $attr->get_attr();
 	}

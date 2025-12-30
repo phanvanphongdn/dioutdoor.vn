@@ -8,24 +8,20 @@
 namespace XTS\Modules\Out_Of_Stock_Manager;
 
 use XTS\Admin\Modules\Options;
-use XTS\Singleton;
-use XTS\Modules\Layouts\Main as Builder;
 
 /**
  * Out of stock manager class.
  */
-class Main extends Singleton {
+class Main {
 	/**
-	 * Init.
+	 * Constructor.
 	 */
-	public function init() {
-		$this->add_options();
+	public function __construct() {
+		add_action( 'init', array( $this, 'add_options' ) );
 
-		if ( ! woodmart_get_opt( 'show_out_of_stock_at_the_end' ) ) {
-			return;
+		if ( woodmart_get_opt( 'show_out_of_stock_at_the_end' ) && woodmart_woocommerce_installed() ) {
+			add_filter( 'posts_clauses', array( $this, 'change_main_products_loop_query' ), 2000, 2 );
 		}
-
-		add_filter( 'posts_clauses', array( $this, 'change_main_products_loop_query' ), 2000, 2 );
 	}
 
 	/**
@@ -36,10 +32,12 @@ class Main extends Singleton {
 			array(
 				'id'       => 'show_out_of_stock_at_the_end',
 				'name'     => esc_html__( 'Show "Out of stock" products at the end (experimental)', 'woodmart' ),
-				'hint' => '<video data-src="' . WOODMART_TOOLTIP_URL . 'show_out_of_stock_at_the_end.mp4" autoplay loop muted></video>',
+				'hint'     => '<video data-src="' . WOODMART_TOOLTIP_URL . 'show_out_of_stock_at_the_end.mp4" autoplay loop muted></video>',
 				'type'     => 'switcher',
 				'section'  => 'product_archive_section',
 				'default'  => '0',
+				'on-text'  => esc_html__( 'Yes', 'woodmart' ),
+				'off-text' => esc_html__( 'No', 'woodmart' ),
 				'priority' => 50,
 			)
 		);
@@ -48,20 +46,53 @@ class Main extends Singleton {
 	/**
 	 * Sort out-of-stock products to display last on the main products loop.
 	 *
-	 * @param array    $posts_clauses Associative array of the clauses for the query.
+	 * @param array    $clauses Associative array of the clauses for the query.
 	 * @param WP_Query $query Current query.
 	 */
-	public function change_main_products_loop_query( $posts_clauses, $query ) {
-		global $wpdb;
+	public function change_main_products_loop_query( $clauses, $query ) {
+		$doing_ajax = function_exists( 'is_ajax' ) ? \is_ajax() : ( defined( 'DOING_AJAX' ) && DOING_AJAX );
 
-		if ( is_woocommerce() && 'product_query' === $query->get( 'wc_query' ) ) {
-			$posts_clauses['join']   .= " INNER JOIN $wpdb->postmeta istockstatus ON ($wpdb->posts.ID = istockstatus.post_id) ";
-			$posts_clauses['orderby'] = ' istockstatus.meta_value ASC, ' . $posts_clauses['orderby'];
-			$posts_clauses['where']   = " AND istockstatus.meta_key = '_stock_status' AND istockstatus.meta_value <> '' " . $posts_clauses['where'];
+		if (
+			! woodmart_get_opt( 'show_out_of_stock_at_the_end' ) ||
+			( is_admin() && ! $doing_ajax ) ||
+			! function_exists( 'is_woocommerce' ) ||
+			! is_woocommerce() ||
+			! $query->is_main_query() ||
+			'product_query' !== $query->get( 'wc_query' )
+		) {
+			return $clauses;
 		}
 
-		return $posts_clauses;
+		return self::apply_stock_sorting( $clauses, 'stock_status_meta' );
+	}
+
+	/**
+	 * Apply stock status sorting to clauses.
+	 *
+	 * @param array  $clauses The query clauses.
+	 * @param string $alias   The table alias to use.
+	 *
+	 * @return array Modified clauses.
+	 */
+	public static function apply_stock_sorting( $clauses, $alias = 'stock_status_meta' ) {
+		global $wpdb;
+
+		$clauses['join'] .= " LEFT JOIN {$wpdb->postmeta} AS {$alias} 
+		ON ({$wpdb->posts}.ID = {$alias}.post_id AND {$alias}.meta_key = '_stock_status') ";
+
+		$stock_order = "CASE {$alias}.meta_value 
+			WHEN 'outofstock' THEN 1 
+			ELSE 0 
+		END ASC";
+
+		if ( ! empty( $clauses['orderby'] ) ) {
+			$clauses['orderby'] = $stock_order . ', ' . $clauses['orderby'];
+		} else {
+			$clauses['orderby'] = $stock_order;
+		}
+
+		return $clauses;
 	}
 }
 
-Main::get_instance();
+new Main();

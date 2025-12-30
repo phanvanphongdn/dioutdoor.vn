@@ -20,47 +20,31 @@ use XTS\Singleton;
  */
 class Send_On_Sales_Products extends Singleton {
 	/**
-	 * Name unsubscribed users option.
-	 *
-	 * @var string
-	 */
-	private $unsubscribed_users = 'woodmart_wishlist_unsubscribed_users';
-
-	/**
 	 * Init.
 	 */
 	public function init() {
-		$this->register_crons();
-
 		add_action( 'init', array( $this, 'upgrade_database_wishlist' ) );
 
 		add_action( 'woocommerce_init', array( $this, 'load_wc_mailer' ) );
 		add_action( 'woodmart_remove_product_from_wishlist', array( $this, 'remove_product_from_lists' ) );
+
+		add_action( 'woocommerce_update_product', array( $this, 'register_simple_on_sales_products' ), 10, 2 );
+		add_action( 'woocommerce_update_product_variation', array( $this, 'register_variation_on_sales_products' ), 10, 2 );
+		add_action( 'wc_after_products_starting_sales', array( $this, 'register_scheduled_sales_products' ) );
+
+		add_action( 'woodmart_wishlist_on_sales_products_email', array( $this, 'send_on_sales_products_email' ) );
+
+		add_action( 'init', array( $this, 'schedule_cron_event' ) );
 	}
 
 	/**
-	 * Register crons.
+	 * Schedule cron event on init hook.
+	 *
+	 * @return void
 	 */
-	public function register_crons() {
-		$crons = array();
-
-		$crons['woodmart_wishlist_register_on_sales_products'] = array(
-			'schedule' => apply_filters( 'woodmart_schedule_register_on_sales_products', 'daily' ),
-			'callback' => array( $this, 'register_on_sales_products' ),
-		);
-		$crons['woodmart_wishlist_on_sales_products_email']    = array(
-			'schedule' => apply_filters( 'woodmart_schedule_on_sales_products_email', 'hourly' ),
-			'callback' => array( $this, 'send_on_sales_products_email' ),
-		);
-
-		if ( $crons ) {
-			foreach ( $crons as $hook => $data ) {
-				add_action( $hook, $data['callback'] );
-
-				if ( ! wp_next_scheduled( $hook ) ) {
-					wp_schedule_event( time(), $data['schedule'], $hook );
-				}
-			}
+	public function schedule_cron_event() {
+		if ( ! wp_next_scheduled( 'woodmart_wishlist_on_sales_products_email' ) ) {
+			wp_schedule_event( time(), apply_filters( 'woodmart_schedule_on_sales_products_email', 'hourly' ), 'woodmart_wishlist_on_sales_products_email' );
 		}
 	}
 
@@ -72,44 +56,77 @@ class Send_On_Sales_Products extends Singleton {
 	}
 
 	/**
-	 * Register on sale products.
+	 * Registers a simple product on sale.
 	 *
-	 * @return void
+	 * @param int        $product_id The ID of the product.
+	 * @param WC_Product $product   The product object.
 	 */
-	public function register_on_sales_products() {
-		$products_id_on_sale       = wc_get_product_ids_on_sale();
-		$products_id_on_sale_in_db = $this->get_product_id_which_on_sale();
-		$products_on_sales         = get_option( 'woodmart_wishlist_products_on_sale', array() );
-		$unsubscribed_users        = get_option( $this->unsubscribed_users, array() );
+	public function register_simple_on_sales_products( $product_id, $product ) {
+		if ( $product->is_type( 'simple' ) ) {
+			$this->register_sale_product( $product_id, $product );
+		}
+	}
 
-		if ( $products_id_on_sale_in_db ) {
-			foreach ( $products_id_on_sale_in_db as $product_id ) {
-				if ( ! in_array( $product_id, $products_id_on_sale ) ) { //phpcs:ignore
-					$this->update_on_sale_for_product( $product_id, false );
-				}
+	/**
+	 * Registers a variation product on sale.
+	 *
+	 * @param int        $product_id The ID of the product.
+	 * @param WC_Product $product   The product object.
+	 */
+	public function register_variation_on_sales_products( $product_id, $product ) {
+		if ( $product->is_type( 'variation' ) ) {
+			$this->register_sale_product( $product->get_parent_id(), $product );
+		}
+	}
+
+	/**
+	 * Registers a scheduled products on sale.
+	 *
+	 * @param array $product_ids The IDs of the products.
+	 */
+	public function register_scheduled_sales_products( $product_ids ) {
+		foreach ( $product_ids as $product_id ) {
+			$product = wc_get_product( $product_id );
+
+			if ( $product->is_type( 'variation' ) ) {
+				$this->register_sale_product( $product->get_parent_id(), $product );
+			} elseif ( $product->is_type( 'simple' ) ) {
+				$this->register_sale_product( $product_id, $product );
 			}
 		}
+	}
 
-		if ( $products_id_on_sale ) {
-			foreach ( $products_id_on_sale as $product_id_sale ) {
-				if ( ! in_array( $product_id_sale, $products_id_on_sale_in_db ) ) { //phpcs:ignore
-					$this->update_on_sale_for_product( $product_id_sale, true );
-					$users_id = $this->get_users_id_by_product_id( $product_id_sale );
+	/**
+	 * Registers a product on sale and updates the list of products on sale for users.
+	 *
+	 * @param int        $product_id The ID of the product.
+	 * @param WC_Product $product   The product object.
+	 */
+	public function register_sale_product( $product_id, $product ) {
+		$users_id         = $this->get_users_id_by_product_id( $product_id );
+		$products_on_sale = get_option( 'woodmart_wishlist_products_on_sale', array() );
+		$regular_price    = (float) $product->get_regular_price();
+		$sale_price       = (float) $product->get_sale_price();
 
-					if ( $users_id ) {
-						foreach ( $users_id as $user_id ) {
-							if ( in_array( get_userdata( $user_id )->user_email, $unsubscribed_users, true ) || ! empty( $products_on_sales[ $user_id ] ) && in_array( $products_on_sales, $products_on_sales[ $user_id ], true ) ) {
-								continue;
-							}
+		if ( ! empty( $users_id ) ) {
+			foreach ( $users_id as $user_id ) {
+				if ( $sale_price > 0 && $sale_price < $regular_price ) {
+					if ( woodmart_is_user_unsubscribed_from_mailing( get_userdata( $user_id )->user_email, 'XTS_Email_Wishlist_On_Sale_Products' ) || ( isset( $products_on_sale[ $user_id ] ) && in_array( $product_id, $products_on_sale[ $user_id ], true ) ) ) {
+						continue;
+					}
 
-							$products_on_sales[ $user_id ][] = $product_id_sale;
-						}
+					$products_on_sale[ $user_id ][] = $product_id;
+				} elseif ( isset( $products_on_sale[ $user_id ] ) && in_array( $product_id, $products_on_sale[ $user_id ], true ) ) {
+					$key = array_search( $product_id, $products_on_sale[ $user_id ], true );
+
+					if ( false !== $key ) {
+						unset( $products_on_sale[ $user_id ][ $key ] );
 					}
 				}
 			}
-
-			update_option( 'woodmart_wishlist_products_on_sale', $products_on_sales, false );
 		}
+
+		update_option( 'woodmart_wishlist_products_on_sale', array_filter( $products_on_sale ), false );
 	}
 
 	/**
@@ -118,21 +135,22 @@ class Send_On_Sales_Products extends Singleton {
 	 * @return void
 	 */
 	public function send_on_sales_products_email() {
-		$products_on_sales  = get_option( 'woodmart_wishlist_products_on_sale' );
-		$unsubscribed_users = get_option( $this->unsubscribed_users, array() );
-		$emails_limited     = apply_filters( 'woodmart_wishlist_send_emails_limited', 20 );
-		$counter            = 1;
+		$products_on_sales = get_option( 'woodmart_wishlist_products_on_sale' );
+		$emails_limited    = apply_filters( 'woodmart_wishlist_send_emails_limited', 20 );
+		$counter           = 1;
 
 		if ( ! $products_on_sales ) {
 			return;
 		}
 
 		foreach ( $products_on_sales as $user_id => $products ) {
-			if ( ! $user_id || ! $products ) {
+			$user_email = get_userdata( $user_id )->user_email;
+
+			if ( ! $user_id || ! $products || woodmart_should_skip_subscription_email( $user_email, $user_id ) ) {
 				continue;
 			}
 
-			if ( in_array( get_userdata( $user_id )->user_email, $unsubscribed_users, true ) ) {
+			if ( woodmart_is_user_unsubscribed_from_mailing( $user_email, 'XTS_Email_Wishlist_On_Sale_Products' ) ) {
 				unset( $products_on_sales[ $user_id ] );
 				continue;
 			}

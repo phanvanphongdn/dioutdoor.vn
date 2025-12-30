@@ -13,7 +13,7 @@ return apply_filters(
 	'woodmart_get_versions_to_import',
 	[
 		'main'                  => [
-			'title'      => 'Woodmart Main',
+			'title'      => 'WoodMart Main',
 			'process'    => 'xml,home,options,widgets,headers,images',
 			'type'       => 'version',
 			'base'       => 'base',
@@ -22,6 +22,137 @@ return apply_filters(
 				[
 					'name' => 'Furniture',
 					'slug' => 'furniture',
+				],
+			],
+		],
+		'christmas-2'            => [
+			'title'      => 'Christmas 2',
+			'process'    => 'xml,home,options,widgets,headers,images',
+			'type'       => 'version',
+			'base'       => 'christmas-2_base',
+			'link'       => 'https://woodmart.xtemos.com/christmas-2/',
+			'categories' => [
+				[
+					'name' => 'Mega Store',
+					'slug' => 'mega_store',
+				],
+			],
+		],
+		'pets'            => [
+			'title'      => 'Pets',
+			'process'    => 'xml,home,options,widgets,headers,images',
+			'type'       => 'version',
+			'base'       => 'pets_base',
+			'link'       => 'https://woodmart.xtemos.com/pets/',
+			'categories' => [
+				[
+					'name' => 'Food',
+					'slug' => 'food',
+				],
+				[
+					'name' => 'Mega Store',
+					'slug' => 'mega_store',
+				],
+			],
+		],
+		'vinyls'            => [
+			'title'      => 'Vinyls',
+			'process'    => 'xml,home,options,widgets,headers,images',
+			'type'       => 'version',
+			'base'       => 'vinyls_base',
+			'link'       => 'https://woodmart.xtemos.com/vinyls/',
+			'categories' => [
+				[
+					'name' => 'Service',
+					'slug' => 'service',
+				],
+				[
+					'name' => 'Electronics',
+					'slug' => 'electronics',
+				],
+			],
+		],
+		'handmade-bags'            => [
+			'title'      => 'Handmade bags',
+			'process'    => 'xml,home,options,widgets,headers,images',
+			'type'       => 'version',
+			'base'       => 'handmade-bags_base',
+			'link'       => 'https://woodmart.xtemos.com/handmade-bags/',
+			'categories' => [
+				[
+					'name' => 'Fashion',
+					'slug' => 'fashion',
+				]
+			],
+		],
+		'hemp-shoes'            => [
+			'title'      => 'Hemp shoes',
+			'process'    => 'xml,home,options,widgets,headers,images',
+			'type'       => 'version',
+			'base'       => 'base',
+			'categories' => [
+				[
+					'name' => 'Landing',
+					'slug' => 'landing',
+				],
+				[
+					'name' => 'Fashion',
+					'slug' => 'fashion',
+				]
+			],
+		],
+		't-shirts'            => [
+			'title'      => 'T-shirts',
+			'process'    => 'xml,home,options,widgets,headers,images',
+			'type'       => 'version',
+			'base'       => 't-shirts_base',
+			'link'       => 'https://woodmart.xtemos.com/t-shirts-prints/',
+			'categories' => [
+				[
+					'name' => 'Service',
+					'slug' => 'service',
+				],
+				[
+					'name' => 'Fashion',
+					'slug' => 'fashion',
+				]
+			],
+		],
+		'barbershop'            => [
+			'title'      => 'Barbershop',
+			'process'    => 'xml,home,options,widgets,headers,images',
+			'type'       => 'version',
+			'base'       => 'base',
+			'link'       => 'https://woodmart.xtemos.com/barbershop/',
+			'categories' => [
+				[
+					'name' => 'Service',
+					'slug' => 'service',
+				],
+				[
+					'name' => 'Fashion',
+					'slug' => 'fashion',
+				],
+				[
+					'name' => 'Landing',
+					'slug' => 'landing',
+				],
+			],
+		],
+		'marketplace2'            => [
+			'title'      => 'Marketplace 2',
+			'process'    => 'xml,home,options,widgets,headers',
+			'type'       => 'version',
+			'base'       => 'marketplace2_base',
+			'link'       => 'https://woodmart.xtemos.com/marketplace2/',
+			'categories' => [
+				[
+					'name' => 'Electronics',
+					'slug' => 'electronics',
+				],
+				[
+					'name' => 'Mega Store',
+					'slug' => 'mega_store',
 				],
 			],
 		],
@@ -35,10 +166,6 @@ return apply_filters(
 				[
 					'name' => 'Fashion',
 					'slug' => 'fashion',
-				],
-				[
-					'name' => 'Mega Store',
-					'slug' => 'mega_store',
 				],
 			],
 		],
@@ -1093,21 +1220,8 @@ return apply_filters(
 				],
 			],
 		],
-		'fullscreen'            => [
-			'title'      => 'Fullscreen',
-			'process'    => 'xml,home,widgets,headers,images,options',
-			'type'       => 'version',
-			'base'       => 'base',
-			'link'       => 'https://woodmart.xtemos.com/layout-fullscreen/?opt=layout_fullscreen',
-			'categories' => [
-				[
-					'name' => 'Furniture',
-					'slug' => 'furniture',
-				],
-			],
-		],
 		'video'                 => [
-			'title'      => 'Distortion slider',
+			'title'      => 'Shaders slider',
 			'process'    => 'xml,home,options,widgets,headers,images',
 			'type'       => 'version',
 			'base'       => 'base',
@@ -1242,6 +1356,36 @@ return apply_filters(
 		],
 		'makeup_base' => [
 			'title'   => 'Base content makeup (required)',
+			'process' => 'xml,xml_images,widgets,options,headers',
+			'type'    => 'base',
+		],
+		'marketplace2_base' => [
+			'title'   => 'Base content marketplace2 (required)',
+			'process' => 'xml,xml_images,widgets,options,headers',
+			'type'    => 'base',
+		],
+		't-shirts_base' => [
+			'title'   => 'Base content t-shirts (required)',
+			'process' => 'xml,xml_images,widgets,options,headers',
+			'type'    => 'base',
+		],
+		'handmade-bags_base' => [
+			'title'   => 'Base content handmade-bags (required)',
+			'process' => 'xml,xml_images,widgets,options,headers',
+			'type'    => 'base',
+		],
+		'vinyls_base' => [
+			'title'   => 'Base content vinyls (required)',
+			'process' => 'xml,xml_images,widgets,options,headers',
+			'type'    => 'base',
+		],
+		'pets_base' => [
+			'title'   => 'Base content pets (required)',
+			'process' => 'xml,xml_images,widgets,options,headers',
+			'type'    => 'base',
+		],
+		'christmas-2_base' => [
+			'title'   => 'Base content pets (required)',
 			'process' => 'xml,xml_images,widgets,options,headers',
 			'type'    => 'base',
 		],
@@ -1506,7 +1650,6 @@ return apply_filters(
 			'title'   => 'Product filters',
 			'process' => 'xml',
 			'type'    => 'element',
-			'gutenberg'  => false,
 			'categories' => [
 				[
 					'name' => 'Element',
@@ -1518,7 +1661,6 @@ return apply_filters(
 			'title'   => 'Parallax scrolling',
 			'process' => 'xml',
 			'type'    => 'element',
-			'gutenberg'  => false,
 			'categories' => [
 				[
 					'name' => 'Element',
@@ -1530,7 +1672,6 @@ return apply_filters(
 			'title'   => 'Animations',
 			'process' => 'xml',
 			'type'    => 'element',
-			'gutenberg'  => false,
 			'categories' => [
 				[
 					'name' => 'Element',
@@ -1542,7 +1683,6 @@ return apply_filters(
 			'title'   => 'Sliders',
 			'process' => 'xml,wood_slider',
 			'type'    => 'element',
-			'gutenberg'  => false,
 			'categories' => [
 				[
 					'name' => 'Element',
@@ -1554,7 +1694,6 @@ return apply_filters(
 			'title'   => 'Image Hotspot',
 			'process' => 'xml',
 			'type'    => 'element',
-			'gutenberg'  => false,
 			'categories' => [
 				[
 					'name' => 'Element',
@@ -1566,7 +1705,6 @@ return apply_filters(
 			'title'   => 'List-element',
 			'process' => 'xml',
 			'type'    => 'element',
-			'gutenberg'  => false,
 			'categories' => [
 				[
 					'name' => 'Element',
@@ -1578,7 +1716,6 @@ return apply_filters(
 			'title'   => 'Buttons',
 			'process' => 'xml',
 			'type'    => 'element',
-			'gutenberg'  => false,
 			'categories' => [
 				[
 					'name' => 'Element',
@@ -1590,7 +1727,6 @@ return apply_filters(
 			'title'   => 'Video-element',
 			'process' => 'xml',
 			'type'    => 'element',
-			'gutenberg'  => false,
 			'categories' => [
 				[
 					'name' => 'Element',
@@ -1602,7 +1738,6 @@ return apply_filters(
 			'title'   => 'Timeline',
 			'process' => 'xml',
 			'type'    => 'element',
-			'gutenberg'  => false,
 			'categories' => [
 				[
 					'name' => 'Element',
@@ -1638,7 +1773,6 @@ return apply_filters(
 			'title'   => 'Products Categories',
 			'process' => 'xml',
 			'type'    => 'element',
-			'gutenberg'  => false,
 			'categories' => [
 				[
 					'name' => 'Element',
@@ -1698,7 +1832,6 @@ return apply_filters(
 			'title'   => 'Gradients',
 			'process' => 'xml',
 			'type'    => 'element',
-			'gutenberg'  => false,
 			'categories' => [
 				[
 					'name' => 'Element',
@@ -1710,7 +1843,6 @@ return apply_filters(
 			'title'   => 'Section Dividers',
 			'process' => 'xml',
 			'type'    => 'element',
-			'gutenberg'  => false,
 			'categories' => [
 				[
 					'name' => 'Element',
@@ -1722,7 +1854,6 @@ return apply_filters(
 			'title'   => 'Brands Element',
 			'process' => 'xml',
 			'type'    => 'element',
-			'gutenberg'  => false,
 			'categories' => [
 				[
 					'name' => 'Element',
@@ -1734,7 +1865,6 @@ return apply_filters(
 			'title'   => 'Button with popup',
 			'process' => 'xml',
 			'type'    => 'element',
-			'gutenberg'  => false,
 			'categories' => [
 				[
 					'name' => 'Element',
@@ -1746,7 +1876,6 @@ return apply_filters(
 			'title'   => 'AJAX products tabs',
 			'process' => 'xml',
 			'type'    => 'element',
-			'gutenberg'  => false,
 			'categories' => [
 				[
 					'name' => 'Element',
@@ -1758,7 +1887,6 @@ return apply_filters(
 			'title'   => 'Animated counter',
 			'process' => 'xml',
 			'type'    => 'element',
-			'gutenberg'  => false,
 			'categories' => [
 				[
 					'name' => 'Element',
@@ -1770,7 +1898,6 @@ return apply_filters(
 			'title'   => 'Products widgets',
 			'process' => 'xml',
 			'type'    => 'element',
-			'gutenberg'  => false,
 			'categories' => [
 				[
 					'name' => 'Element',
@@ -1794,7 +1921,6 @@ return apply_filters(
 			'title'   => 'Blog element',
 			'process' => 'xml',
 			'type'    => 'element',
-			'gutenberg'  => false,
 			'categories' => [
 				[
 					'name' => 'Element',
@@ -1806,7 +1932,6 @@ return apply_filters(
 			'title'   => 'Portfolio element',
 			'process' => 'xml',
 			'type'    => 'element',
-			'gutenberg'  => false,
 			'categories' => [
 				[
 					'name' => 'Element',
@@ -1818,7 +1943,6 @@ return apply_filters(
 			'title'   => 'Menu price',
 			'process' => 'xml',
 			'type'    => 'element',
-			'gutenberg'  => false,
 			'categories' => [
 				[
 					'name' => 'Element',
@@ -1830,7 +1954,6 @@ return apply_filters(
 			'title'   => '360 degree view',
 			'process' => 'xml',
 			'type'    => 'element',
-			'gutenberg'  => false,
 			'categories' => [
 				[
 					'name' => 'Element',
@@ -1842,7 +1965,6 @@ return apply_filters(
 			'title'   => 'Countdown timer',
 			'process' => 'xml',
 			'type'    => 'element',
-			'gutenberg'  => false,
 			'categories' => [
 				[
 					'name' => 'Element',
@@ -1854,7 +1976,6 @@ return apply_filters(
 			'title'   => 'Testimonials',
 			'process' => 'xml',
 			'type'    => 'element',
-			'gutenberg'  => false,
 			'categories' => [
 				[
 					'name' => 'Element',
@@ -1866,7 +1987,6 @@ return apply_filters(
 			'title'   => 'Team member',
 			'process' => 'xml',
 			'type'    => 'element',
-			'gutenberg'  => false,
 			'categories' => [
 				[
 					'name' => 'Element',
@@ -1878,7 +1998,6 @@ return apply_filters(
 			'title'   => 'Social Buttons',
 			'process' => 'xml',
 			'type'    => 'element',
-			'gutenberg'  => false,
 			'categories' => [
 				[
 					'name' => 'Element',
@@ -1890,7 +2009,6 @@ return apply_filters(
 			'title'   => 'Instagram',
 			'process' => 'xml',
 			'type'    => 'element',
-			'gutenberg'  => false,
 			'categories' => [
 				[
 					'name' => 'Element',
@@ -1902,7 +2020,6 @@ return apply_filters(
 			'title'   => 'Google maps',
 			'process' => 'xml',
 			'type'    => 'element',
-			'gutenberg'  => false,
 			'categories' => [
 				[
 					'name' => 'Element',
@@ -1914,7 +2031,6 @@ return apply_filters(
 			'title'   => 'Banners',
 			'process' => 'xml',
 			'type'    => 'element',
-			'gutenberg'  => false,
 			'categories' => [
 				[
 					'name' => 'Element',
@@ -1926,7 +2042,6 @@ return apply_filters(
 			'title'   => 'Carousels',
 			'process' => 'xml',
 			'type'    => 'element',
-			'gutenberg'  => false,
 			'categories' => [
 				[
 					'name' => 'Element',
@@ -1938,7 +2053,6 @@ return apply_filters(
 			'title'   => 'Titles',
 			'process' => 'xml',
 			'type'    => 'element',
-			'gutenberg'  => false,
 			'categories' => [
 				[
 					'name' => 'Element',
@@ -1950,7 +2064,6 @@ return apply_filters(
 			'title'   => 'Images gallery',
 			'process' => 'xml',
 			'type'    => 'element',
-			'gutenberg'  => false,
 			'categories' => [
 				[
 					'name' => 'Element',
@@ -1962,7 +2075,6 @@ return apply_filters(
 			'title'   => 'Pricing Tables',
 			'process' => 'xml',
 			'type'    => 'element',
-			'gutenberg'  => false,
 			'categories' => [
 				[
 					'name' => 'Element',
@@ -1974,7 +2086,6 @@ return apply_filters(
 			'title'   => 'Infobox',
 			'process' => 'xml',
 			'type'    => 'element',
-			'gutenberg'  => false,
 			'categories' => [
 				[
 					'name' => 'Element',

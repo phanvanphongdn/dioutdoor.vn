@@ -54,7 +54,9 @@ class Manager extends Singleton {
 	 * Constructor.
 	 */
 	public function init() {
-		$this->set_notices();
+		if ( woodmart_get_opt( 'free_gifts_enabled', 0 ) && woodmart_get_opt( 'free_gifts_limit', 5 ) >= 1 && woodmart_woocommerce_installed() ) {
+			add_action( 'init', array( $this, 'set_notices' ) );
+		}
 	}
 
 	/**
@@ -102,6 +104,7 @@ class Manager extends Singleton {
 			$meta_box_value = maybe_unserialize( get_post_meta( $id, $meta_box_id, true ) );
 
 			if ( 'free_gifts' === $meta_box_id && ! empty( $meta_box_value ) ) {
+				$meta_box_value = array_map( 'intval', $meta_box_value );
 				$meta_box_value = array_values(
 					array_filter(
 						$meta_box_value,
@@ -225,6 +228,10 @@ class Manager extends Singleton {
 		uasort( $conditions, array( $this, 'sort_by_priority' ) );
 
 		foreach ( $conditions as $condition ) {
+			if ( isset( $condition['query'] ) ) {
+				$condition['query'] = apply_filters( 'wpml_object_id', $condition['query'], $condition['type'], true, apply_filters( 'wpml_current_language', null ) );
+			}
+
 			switch ( $condition['type'] ) {
 				case 'all':
 					$is_active = 'include' === $condition['comparison'];
@@ -260,7 +267,9 @@ class Manager extends Singleton {
 					break;
 				case 'product_cat':
 				case 'product_tag':
+				case 'product_brand':
 				case 'product_attr_term':
+				case 'product_shipping_class':
 					$terms = wp_get_post_terms( $product->get_id(), get_taxonomies(), array( 'fields' => 'ids' ) );
 
 					if ( $terms ) {
@@ -300,6 +309,8 @@ class Manager extends Singleton {
 			}
 		}
 
+		$is_active = apply_filters( 'woodmart_check_free_gifts_condition', $is_active, $gift_rule, $product );
+
 		return $is_active;
 	}
 
@@ -307,20 +318,40 @@ class Manager extends Singleton {
 	 * Renurn true if the price in the cart within the rules.
 	 *
 	 * @param array     $gift_rule List of meta box arguments.
-	 * @param int|false $total_price Total cart price.
+	 * @param int|false $cart_price Total or subtotal cart price.
 	 *
 	 * @return bool
 	 */
-	public function check_free_gifts_totals( $gift_rule, $total_price = false ) {
-		if ( false === $total_price ) {
-			$totals      = WC()->cart->get_totals();
-			$total_price = $totals['total'];
+	public function check_free_gifts_totals( $gift_rule, $cart_price = false ) {
+		if ( false === $cart_price ) {
+			$totals     = WC()->cart->get_totals();
+			$cart_price = $totals['subtotal'];
+
+			if ( isset( $gift_rule['free_gifts_cart_price_type'] ) ) {
+				switch ( $gift_rule['free_gifts_cart_price_type'] ) {
+					case 'subtotal':
+						$cart_price = $totals['subtotal'];
+						break;
+					case 'subtotal_after_discount':
+						$cart_price = $totals['subtotal'] - $totals['discount_total'];
+						break;
+					case 'total':
+						$cart_price = $totals['total'];
+						break;
+					default:
+						$cart_price = $totals['subtotal'];
+						break;
+				}
+			}
 		}
 
-		$condition = $total_price >= $gift_rule['free_gifts_cart_total_min'];
+		$min_price = $gift_rule['free_gifts_cart_total_min'];
+		$max_price = $gift_rule['free_gifts_cart_total_max'];
 
-		if ( ! empty( $gift_rule['free_gifts_cart_total_max'] ) ) {
-			$condition = $condition && $total_price <= $gift_rule['free_gifts_cart_total_max'];
+		$condition = $cart_price >= $min_price;
+
+		if ( ! empty( $max_price ) ) {
+			$condition = $condition && $cart_price <= $max_price;
 		}
 
 		return $condition;
@@ -346,7 +377,9 @@ class Manager extends Singleton {
 			case 'product_type':
 			case 'product_cat':
 			case 'product_tag':
+			case 'product_brand':
 			case 'product_attr_term':
+			case 'product_shipping_class':
 				$priority = 30;
 				break;
 			case 'product':
@@ -372,8 +405,8 @@ class Manager extends Singleton {
 	/**
 	 * Check is gift in cart.
 	 *
-	 * @param int     $product_id Product id.
-	 * @param WC_Cart $cart_object WC_Cart instance.
+	 * @param int|string $product_id Product id.
+	 * @param WC_Cart    $cart_object WC_Cart instance.
 	 *
 	 * @return bool
 	 */
@@ -382,33 +415,28 @@ class Manager extends Singleton {
 			$cart_object = WC()->cart;
 		}
 
-		$product              = wc_get_product( $product_id );
-		$variation_id         = 0;
-		$variation_attributes = array();
-		$check_product_id     = $product_id;
+		$cart_items = array_filter(
+			$cart_object->get_cart(),
+			function ( $cart_item ) {
+				return array_key_exists( 'wd_is_free_gift', $cart_item );
+			}
+		);
 
-		if ( ! $product instanceof WC_Product ) {
+		if ( empty( $cart_items ) ) {
 			return false;
 		}
 
-		if ( 'variation' === $product->get_type() ) {
-			$variation_id         = $product_id;
-			$check_product_id     = $product->get_parent_id();
-			$variation_attributes = $product->get_variation_attributes();
-		}
+		$variation_id = 0;
+		$product_id   = intval( $product_id );
 
-		$product_cart_id_manual    = $cart_object->generate_cart_id( $check_product_id, $variation_id, $variation_attributes, array( 'wd_is_free_gift' => true ) );
-		$product_cart_id_automatic = $cart_object->generate_cart_id(
-			$check_product_id,
-			$variation_id,
-			$variation_attributes,
-			array(
-				'wd_is_free_gift'           => true,
-				'wd_is_free_gift_automatic' => true,
-			)
+		$gifts_ids = array_map(
+			function ( $cart_item ) {
+				return ! empty( $cart_item['variation_id'] ) ? $cart_item['variation_id'] : $cart_item['product_id'];
+			},
+			$cart_items
 		);
 
-		return $cart_object->find_product_in_cart( $product_cart_id_manual ) || $cart_object->find_product_in_cart( $product_cart_id_automatic );
+		return in_array( $product_id, $gifts_ids, true );
 	}
 
 	/**

@@ -21,7 +21,7 @@ Options::add_field(
 	array(
 		'id'       => 'footer_content_type',
 		'name'     => esc_html__( 'Footer content', 'woodmart' ),
-		'group'       => esc_html__( 'Content', 'woodmart' ),
+		'group'    => esc_html__( 'Content', 'woodmart' ),
 		'type'     => 'buttons',
 		'section'  => 'footer_section',
 		'options'  => array(
@@ -339,7 +339,7 @@ Options::add_field(
 		'type'     => 'textarea',
 		'wysiwyg'  => false,
 		'name'     => esc_html__( 'Text', 'woodmart' ),
-		'default'  => '[html_block id="258"]',
+		'default'  => '',
 		'section'  => 'prefooter_section',
 		'tags'     => 'prefooter',
 		'requires' => array(

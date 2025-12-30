@@ -28,16 +28,29 @@ class Overal_Delivery_Date {
 	public $shipping_method_id;
 
 	/**
+	 * If set, the delivery date will be calculated from this day.
+	 *
+	 * @var string|false
+	 */
+	public $start_date;
+
+	/**
 	 * Constructor.
 	 *
 	 * @param WC_Product[] $products List of WC_Product class instances.
 	 * @param int|false    $shipping_method_id Shipping method id for calculate date on admin panel.
+	 * @param int|false    $start_date Date of order.
 	 *
 	 * @return void
 	 */
-	public function __construct( $products, $shipping_method_id = false ) {
+	public function __construct( $products, $shipping_method_id = false, $start_date = false ) {
+		if ( ! woodmart_get_opt( 'estimate_delivery_enabled' ) || ! woodmart_woocommerce_installed() ) {
+			return;
+		}
+
 		$this->products           = $products;
 		$this->shipping_method_id = $shipping_method_id;
+		$this->start_date         = $start_date;
 	}
 
 	/**
@@ -55,17 +68,17 @@ class Overal_Delivery_Date {
 		$max_delivery_days = 0;
 
 		foreach ( $this->products as $key => $product ) {
-			$delivery_date = new Delivery_Date( $product, $this->shipping_method_id );
+			$delivery_date = new Delivery_Date( $product, $this->shipping_method_id, $this->start_date );
 			$min           = $delivery_date->get_rule_meta_box( 'est_del_day_min' );
 			$max           = $delivery_date->get_rule_meta_box( 'est_del_day_max' );
-			$skipped_dates = $delivery_date->get_rule_meta_box( 'est_del_skipped_date' );
+			$skipped_dates = $delivery_date->get_all_skipped_dates();
 
-			if ( false === $min || false === $max || false === $skipped_dates || ( is_array( $skipped_dates ) && 7 === count( $skipped_dates ) ) ) {
+			if ( false === $min || false === $max || false === $skipped_dates ) {
 				continue;
 			}
 
-			$current_min = $delivery_date::get_date_after( $min, $skipped_dates );
-			$current_max = $delivery_date::get_date_after( $max, $skipped_dates );
+			$current_min = $delivery_date->get_date_after( $min, $skipped_dates );
+			$current_max = $delivery_date->get_date_after( $max, $skipped_dates );
 
 			if ( $current_min > $min_delivery_days ) {
 				$min_delivery_days = $current_min;
@@ -96,7 +109,7 @@ class Overal_Delivery_Date {
 	}
 
 	/**
-	 * Get delivery text string. Example: 'Overall estimated dispatch dates'.
+	 * Get delivery text string. Example: 'Overall estimated delivery dates'.
 	 *
 	 * @return string
 	 */
@@ -109,7 +122,7 @@ class Overal_Delivery_Date {
 
 		$number = self::is_single_date( $overall ) ? 1 : 2;
 
-		return _n( 'Overall estimated dispatch date', 'Overall estimated dispatch dates', $number, 'woodmart' );
+		return _n( 'Overall estimated delivery date', 'Overall estimated delivery dates', $number, 'woodmart' );
 	}
 
 	/**
@@ -128,7 +141,8 @@ class Overal_Delivery_Date {
 		$format      = '%s';
 
 		if ( ! $single_date ) {
-			$format .= ' - %s';
+			$format .= apply_filters( 'woodmart_dates_separator', ' – ' );
+			$format .= '%s';
 		}
 
 		return sprintf(
@@ -139,7 +153,7 @@ class Overal_Delivery_Date {
 	}
 
 	/**
-	 * Get a ready overal delivery date string. Example: 'Overall estimated dispatch dates: Oct 2, 2024 - Oct 4, 2024'.
+	 * Get a ready overal delivery date string. Example: 'Overall estimated delivery dates: Oct 2, 2024 - Oct 4, 2024'.
 	 *
 	 * @return string
 	 */
@@ -147,7 +161,17 @@ class Overal_Delivery_Date {
 		$text = $this->get_label();
 		$date = $this->get_date();
 
-		return ! empty( $text ) && ! empty( $date ) ? sprintf( '<strong>%s:</strong> %s', $text, $date ) : '';
+		$date_string = '';
+
+		if ( ! empty( $text ) ) {
+			$date_string = '<strong>' . $text . ':</strong> ';
+		}
+
+		if ( ! empty( $date ) ) {
+			$date_string .= $date;
+		}
+
+		return $date_string;
 	}
 
 	/**
@@ -159,12 +183,12 @@ class Overal_Delivery_Date {
 		$text = $this->get_label();
 		$date = $this->get_date();
 
-		if ( empty( $text ) || empty( $date ) ) {
+		if ( empty( $date ) ) {
 			return array();
 		}
 
 		return array(
-			'label' => $text . ': ',
+			'label' => $text ? $text . ': ' : '',
 			'value' => $date,
 		);
 	}

@@ -88,7 +88,7 @@ class Instagram_Api extends Field {
 		$base_url      = 'https://www.facebook.com/v19.0/dialog/oauth';
 		$redirect_uri  = urlencode( 'https://xtemos.com/instagram.php' );
 		$response_type = 'code';
-		$scope         = apply_filters( 'woodmart_instagram_token_scope', 'manage_pages,instagram_basic,public_profile,pages_read_engagement,business_management' );
+		$scope         = apply_filters( 'woodmart_instagram_token_scope', 'instagram_basic,public_profile,pages_read_engagement,business_management' );
 		$return_url    = urlencode( $this->get_return_url() );
 
 		return $base_url . '?response_type=' . $response_type . '&client_id=' . $app_id . '&redirect_uri=' . $redirect_uri . '&scope=' . $scope . '&state=' . $return_url;
@@ -125,6 +125,12 @@ class Instagram_Api extends Field {
 		$instagram_account_id   = get_option( 'instagram_account_id' );
 
 		$account_data = wp_remote_get( 'https://graph.facebook.com/' . $instagram_account_id . '?fields=biography,id,username,website,followers_count,media_count,profile_picture_url,name&access_token=' . $instagram_access_token );
+
+		if ( is_wp_error( $account_data ) ) {
+			echo 'Get connected account data :' . $account_data->get_error_message();
+			return;
+		}
+
 		$data_decoded = json_decode( $account_data['body'] );
 
 		if ( is_object( $data_decoded ) && property_exists( $data_decoded, 'error' ) ) {

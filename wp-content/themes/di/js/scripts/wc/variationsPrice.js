@@ -34,7 +34,7 @@
 				}
 			});
 
-			$form.on('hide_variation', function() {
+			$form.on('click', '.reset_variations', function() {
 				$price.html(priceOriginalHtml);
 			});
 		});

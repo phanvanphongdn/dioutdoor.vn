@@ -27,6 +27,10 @@ class Frontend extends Singleton {
 	 * Constructor.
 	 */
 	public function init() {
+		if ( ! woodmart_get_opt( 'waitlist_enabled' ) || ! woodmart_woocommerce_installed() ) {
+			return;
+		}
+
 		$this->db_storage = DB_Storage::get_instance();
 
 		add_action( 'wp', array( $this, 'add_output_waitlist_subscribe_form' ), 100 );
@@ -98,19 +102,26 @@ class Frontend extends Singleton {
 
 		$is_elemntor_edit = woodmart_is_elementor_installed() && ( woodmart_elementor_is_edit_mode() || woodmart_elementor_is_preview_page() || woodmart_elementor_is_preview_mode() );
 
+		$product_id = $product->get_id();
+
+		$allowed_product_types = apply_filters( 'woodmart_waitlist_allowed_product_types', array( 'simple', 'variable' ) );
+
+		$variable_product_types = apply_filters( 'woodmart_variable_product_types', array( 'variable' ) );
+		$is_variable            = in_array( $product->get_type(), $variable_product_types, true );
+
 		if (
 			! woodmart_get_opt( 'waitlist_enabled' ) ||
 			( woodmart_get_opt( 'waitlist_for_loggined' ) && ! is_user_logged_in() ) ||
 			( ! is_product() && ! $is_elemntor_edit ) ||
 			! $product instanceof WC_Product ||
 			woodmart_loop_prop( 'is_quick_view' ) ||
-			! in_array( $product->get_type(), array( 'simple', 'variable' ), true ) ||
-			( 'variable' === $product->get_type() && empty( $product->get_children() ) )
+			! in_array( $product->get_type(), $allowed_product_types, true ) ||
+			( $is_variable && empty( $product->get_children() ) )
 		) {
 			return;
 		}
 
-		if ( 'variable' === $product->get_type() ) {
+		if ( $is_variable ) {
 			$form_data = $this->get_variable_form_data( $product );
 		} else {
 			$form_data = $this->get_simple_form_data( $product );
@@ -127,7 +138,7 @@ class Frontend extends Singleton {
 			wp_localize_script( 'wd-waitlist-subscribe-form', 'wtl_form_data', $form_data );
 		}
 
-		if ( 'simple' === $product->get_type() ) {
+		if ( $this->is_simple_product( $product ) ) {
 			$state = 'always_open' === woodmart_get_opt( 'waitlist_form_state', 'current_state' ) && ! woodmart_get_opt( 'waitlist_fragments_enable' ) ? 'not-signed' : $form_data['state'];
 
 			wc_get_template( 'single-product/wtl-form-' . $state . '.php', array( 'data' => $form_data ) );
@@ -142,17 +153,25 @@ class Frontend extends Singleton {
 	public function render_template_subscribe_form() {
 		global $product;
 
-		$is_elemntor_edit = woodmart_is_elementor_installed() && ( woodmart_elementor_is_edit_mode() || woodmart_elementor_is_preview_page() || woodmart_elementor_is_preview_mode() );
+		$is_elementos_edit = woodmart_is_elementor_installed() && ( woodmart_elementor_is_edit_mode() || woodmart_elementor_is_preview_page() || woodmart_elementor_is_preview_mode() );
+
+		$allowed_product_types = apply_filters( 'woodmart_waitlist_allowed_product_types', array( 'simple', 'variable' ) );
 
 		if (
 			! woodmart_get_opt( 'waitlist_enabled' ) ||
 			( woodmart_get_opt( 'waitlist_for_loggined' ) && ! is_user_logged_in() ) ||
-			( ! is_product() && ! $is_elemntor_edit ) ||
+			( ! is_product() && ! $is_elementos_edit ) ||
 			! $product instanceof WC_Product ||
-			'variable' !== $product->get_type() ||
-			woodmart_loop_prop( 'is_quick_view' ) ||
-			( 'variable' === $product->get_type() && empty( $product->get_children() ) )
+			! in_array( $product->get_type(), $allowed_product_types, true ) ||
+			woodmart_loop_prop( 'is_quick_view' )
 		) {
+			return;
+		}
+
+		$variable_product_types = apply_filters( 'woodmart_variable_product_types', array( 'variable' ) );
+		$is_variable            = in_array( $product->get_type(), $variable_product_types, true );
+
+		if ( ! $is_variable || ( $is_variable && empty( $product->get_children() ) ) ) {
 			return;
 		}
 
@@ -164,8 +183,14 @@ class Frontend extends Singleton {
 	 * Get actual data for render form.
 	 */
 	public function update_form_data() {
-		$product_id = ! empty( $_GET['product_id'] ) ? absint( $_GET['product_id'] ) : 0;
-		$product    = wc_get_product( $product_id );
+		$product_id        = ! empty( $_GET['product_id'] ) ? absint( $_GET['product_id'] ) : 0;
+		$origin_product_id = $product_id;
+
+		if ( defined( 'WCML_VERSION' ) && defined( 'ICL_SITEPRESS_VERSION' ) ) {
+			$origin_product_id = apply_filters( 'wpml_object_id', $product_id, 'product', true, wpml_get_default_language() );
+		}
+
+		$product = wc_get_product( $product_id );
 
 		if ( empty( $product_id ) || ! $product instanceof WC_Product ) {
 			wp_send_json_error(
@@ -176,9 +201,12 @@ class Frontend extends Singleton {
 			die();
 		}
 
+		$variable_product_types = apply_filters( 'woodmart_variable_product_types', array( 'variable' ) );
+		$is_variable            = in_array( $product->get_type(), $variable_product_types, true );
+
 		$signed_ids = array();
 
-		if ( 'variable' === $product->get_type() && is_user_logged_in() ) {
+		if ( $is_variable && is_user_logged_in() ) {
 			$signed_ids = array_values( // Use array_values ​​to reindex the array so that the response data has an array type.
 				array_filter(
 					$product->get_children(),
@@ -206,7 +234,7 @@ class Frontend extends Singleton {
 			ob_start();
 			wc_get_template( 'single-product/wtl-form-signed.php', array( 'data' => $form_data ) );
 			$response['content'] = ob_get_clean();
-			
+
 			wp_send_json_success( $response );
 		}
 
@@ -220,7 +248,17 @@ class Frontend extends Singleton {
 	 * Add to waitlist ajax action.
 	 */
 	public function add_to_waitlist() {
-		$product_id = ! empty( $_POST['product_id'] ) ? absint( $_POST['product_id'] ) : 0;
+		$product_id     = ! empty( $_POST['product_id'] ) ? absint( $_POST['product_id'] ) : 0;
+		$email_language = '';
+
+		if ( defined( 'WCML_VERSION' ) && defined( 'ICL_SITEPRESS_VERSION' ) ) {
+			$product_id     = apply_filters( 'wpml_object_id', $product_id, 'product', true, wpml_get_default_language() );
+			$email_language = apply_filters( 'wpml_current_language', null );
+		} else {
+			// For non-WPML setups (LOCO Translate, etc.), get the current locale.
+			$email_language = get_locale();
+		}
+
 		$product    = wc_get_product( $product_id );
 		$user_email = ! empty( $_POST['user_email'] ) ? sanitize_email( wp_unslash( $_POST['user_email'] ) ) : '';
 
@@ -260,7 +298,7 @@ class Frontend extends Singleton {
 			die();
 		}
 
-		if ( $this->db_storage->create_subscription( $user_email, $product ) ) {
+		if ( $this->db_storage->create_subscription( $user_email, $product, $email_language ) ) {
 			if ( ! is_user_logged_in() ) {
 				$waitlist                   = $this->db_storage->get_subscription( $product, $user_email );
 				$unsubscribe_token          = $waitlist->unsubscribe_token;
@@ -274,7 +312,7 @@ class Frontend extends Singleton {
 				'state' => 'signed',
 			);
 
-			if ( 'simple' === $product->get_type() ) {
+			if ( $this->is_simple_product( $product ) ) {
 				$form_data = $this->get_simple_form_data( $product );
 
 				ob_start();
@@ -283,15 +321,15 @@ class Frontend extends Singleton {
 			}
 
 			$mailer                     = WC()->mailer();
-			$confirm_subscription_email = $mailer->emails['woodmart_waitlist_confirm_subscription_email'];
+			$confirm_subscription_email = $mailer->emails['XTS_Email_Waitlist_Confirm_Subscription'];
 
 			if ( $confirm_subscription_email->is_enabled() && ( 'all' === $confirm_subscription_email->get_option( 'send_to' ) || ! is_user_logged_in() ) ) {
-				do_action( 'woodmart_waitlist_send_confirm_subscription_email', $user_email, $product );
+				do_action( 'woodmart_waitlist_send_confirm_subscription_email', $user_email, $product, $email_language );
 
 				$response['notice']        = esc_html__( 'Please, confirm your subscription to the waitlist through the email that we have just sent to you.', 'woodmart' );
 				$response['notice_status'] = 'warning';
 			} else {
-				do_action( 'woodmart_waitlist_send_subscribe_email', $user_email, $product );
+				do_action( 'woodmart_waitlist_send_subscribe_email', $user_email, $product, $email_language );
 
 				$this->db_storage->update_waitlist_data( $product, $user_email, array( 'confirmed' => 1 ) );
 			}
@@ -314,8 +352,13 @@ class Frontend extends Singleton {
 	public function remove_from_waitlist_action() {
 		$unsubscribe_token = ! empty( $_POST['unsubscribe_token'] ) ? $_POST['unsubscribe_token'] : '';
 		$product_id        = ! empty( $_POST['product_id'] ) ? absint( $_POST['product_id'] ) : 0;
-		$product           = wc_get_product( $product_id );
-		$data              = array();
+
+		if ( defined( 'WCML_VERSION' ) && defined( 'ICL_SITEPRESS_VERSION' ) ) {
+			$product_id = apply_filters( 'wpml_object_id', $product_id, 'product', true, wpml_get_default_language() );
+		}
+
+		$product = wc_get_product( $product_id );
+		$data    = array();
 
 		if ( empty( $product_id ) || ! $product instanceof WC_Product ) {
 			wp_send_json_error(
@@ -330,7 +373,7 @@ class Frontend extends Singleton {
 			'state' => 'not-signed',
 		);
 
-		if ( 'simple' === $product->get_type() ) {
+		if ( $this->is_simple_product( $product ) ) {
 			$form_data = $this->get_simple_form_data( $product );
 
 			ob_start();
@@ -447,7 +490,13 @@ class Frontend extends Singleton {
 		}
 
 		foreach ( $out_of_stock_ids as $product_id ) {
-			$variation_product   = wc_get_product( $product_id );
+			$origin_product_id = $product_id;
+
+			if ( defined( 'WCML_VERSION' ) && defined( 'ICL_SITEPRESS_VERSION' ) ) {
+				$origin_product_id = apply_filters( 'wpml_object_id', $product_id, 'product', true, wpml_get_default_language() );
+			}
+
+			$variation_product   = wc_get_product( $origin_product_id );
 			$is_user_in_waitlist = $this->check_is_user_in_waitlist( $variation_product );
 
 			if ( ! wp_doing_ajax() && 'always_open' === woodmart_get_opt( 'waitlist_form_state', 'current_state' ) ) {
@@ -473,7 +522,10 @@ class Frontend extends Singleton {
 	 * @return array One-dimensional array that includes global forms and product status data.
 	 */
 	public function get_simple_form_data( $product ) {
-		if( ( 'variable' === $product->get_type() && empty( $this->get_out_of_stock_variations_ids( $product ) ) || ( 'simple' === $product->get_type() && $product->is_in_stock() ) ) ) {
+		$variable_product_types = apply_filters( 'woodmart_variable_product_types', array( 'variable' ) );
+		$is_variable            = in_array( $product->get_type(), $variable_product_types, true );
+
+		if ( ( $is_variable && empty( $this->get_out_of_stock_variations_ids( $product ) ) || ( $this->is_simple_product( $product ) && $product->is_in_stock() ) ) ) {
 			return array();
 		}
 
@@ -500,7 +552,13 @@ class Frontend extends Singleton {
 				return false;
 			}
 
-			if ( in_array( $product->get_id(), array_keys( $cookie_data ), true ) ) {
+			$product_id = $product->get_id();
+
+			if ( defined( 'WCML_VERSION' ) && defined( 'ICL_SITEPRESS_VERSION' ) ) {
+				$product_id = apply_filters( 'wpml_object_id', $product_id, 'product', true, wpml_get_default_language() );
+			}
+
+			if ( in_array( $product_id, array_keys( $cookie_data ), true ) ) {
 				return true;
 			}
 		}
@@ -575,7 +633,12 @@ class Frontend extends Singleton {
 	 */
 	public function remove_from_waitlist_in_my_account_action() {
 		$product_id = ! empty( $_POST['product_id'] ) ? absint( $_POST['product_id'] ) : 0;
-		$product    = wc_get_product( $product_id );
+
+		if ( defined( 'WCML_VERSION' ) && defined( 'ICL_SITEPRESS_VERSION' ) ) {
+			$product_id = apply_filters( 'wpml_object_id', $product_id, 'product', true, wpml_get_default_language() );
+		}
+
+		$product = wc_get_product( $product_id );
 
 		if ( empty( $product_id ) || ! $product instanceof WC_Product ) {
 			wp_send_json_error(
@@ -620,6 +683,17 @@ class Frontend extends Singleton {
 				'notice' => esc_html__( 'Could not remove product from waitlist.', 'woodmart' ),
 			)
 		);
+	}
+
+	/**
+	 * Сheck whether this product can be considered simple.
+	 *
+	 * @param WC_Product $product Product Object.
+	 *
+	 * @return bool
+	 */
+	public function is_simple_product( $product ) {
+		return in_array( $product->get_type(), array( 'simple', 'subscription' ), true );
 	}
 }
 

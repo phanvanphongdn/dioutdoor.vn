@@ -160,7 +160,7 @@ if( ! function_exists( 'woodmart_get_products_shortcode_params' ) ) {
 				),
 				array(
 					'type' => 'autocomplete',
-					'heading' => esc_html__( 'Categories or tags', 'woodmart' ),
+					'heading' => esc_html__( 'Taxonomies', 'woodmart' ),
 					'param_name' => 'taxonomies',
 					'settings' => array(
 						'multiple' => true,
@@ -181,7 +181,7 @@ if( ! function_exists( 'woodmart_get_products_shortcode_params' ) ) {
 						// auto focus input, default true
 					),
 					'param_holder_class' => 'vc_not-for-custom',
-					'hint' => esc_html__( 'Enter categories, tags or custom taxonomies.', 'woodmart' ),
+					'hint' => esc_html__( 'List of product categories, product tags, or product attributes terms.', 'woodmart' ),
 					'dependency' => array(
 						'element' => 'post_type',
 						'value_not_equal_to' => array( 'ids', 'custom' )
@@ -1053,7 +1053,7 @@ if( ! function_exists( 'woodmart_get_products_shortcode_params' ) ) {
 					'param_holder_class' => 'vc_grid-data-type-not-ids',
 					'dependency' => array(
 						'element' => 'post_type',
-						'value_not_equal_to' => array( 'custom', 'recently_viewed', 'top_rated_products' ),
+						'value_not_equal_to' => array( 'custom', 'recently_viewed', 'top_rated_products', 'bestselling' ),
 					),
 					'edit_field_class' => 'vc_col-sm-6 vc_column',
 				),
@@ -1066,7 +1066,7 @@ if( ! function_exists( 'woodmart_get_products_shortcode_params' ) ) {
 					'param_holder_class' => 'vc_grid-data-type-not-ids',
 					'dependency' => array(
 						'element' => 'post_type',
-						'value_not_equal_to' => array( 'ids', 'custom', 'recently_viewed' )
+						'value_not_equal_to' => array( 'ids', 'custom', 'recently_viewed', 'bestselling' )
 					),
 					'edit_field_class' => 'vc_col-sm-6 vc_column',
 				),
@@ -1099,7 +1099,7 @@ if( ! function_exists( 'woodmart_get_products_shortcode_params' ) ) {
 					'hint' => esc_html__( 'Select sorting order.', 'woodmart' ),
 					'dependency' => array(
 						'element' => 'post_type',
-						'value_not_equal_to' => array( 'ids', 'custom', 'recently_viewed', 'top_rated_products' )
+						'value_not_equal_to' => array( 'ids', 'custom', 'recently_viewed', 'top_rated_products', 'bestselling' )
 					),
 					'edit_field_class' => 'vc_col-sm-6 vc_column',
 				),
@@ -1210,7 +1210,7 @@ if( ! function_exists( 'woodmart_vc_autocomplete_taxonomies_field_render' ) ) {
 	function woodmart_vc_autocomplete_taxonomies_field_render( $term ) {
 		$vc_taxonomies_types = vc_taxonomies_types();
 
-		$brands_attribute = woodmart_get_opt( 'brands_attribute' );
+		$brands_attribute = woodmart_get_opt( 'brands_attribute' ) ? woodmart_get_opt( 'brands_attribute' ) : 'product_brand';
 
 		if( !empty( $brands_attribute ) && taxonomy_exists( $brands_attribute ) ) {
 			$vc_taxonomies_types[ $brands_attribute ] = $brands_attribute;
@@ -1234,16 +1234,17 @@ if( ! function_exists( 'woodmart_vc_autocomplete_taxonomies_field_render' ) ) {
 if( ! function_exists( 'woodmart_vc_autocomplete_taxonomies_field_search' ) ) {
 	function woodmart_vc_autocomplete_taxonomies_field_search( $search_string ) {
 		$data = array();
-		$vc_filter_by = vc_post_param( 'vc_filter_by', '' );
-		$vc_taxonomies_types = strlen( $vc_filter_by ) > 0 ? array( $vc_filter_by ) : array_keys( vc_taxonomies_types() );
 
-		$brands_attribute = woodmart_get_opt( 'brands_attribute' );
+		$taxonomy = array( 'product_cat', 'product_tag', 'product_brand' );
 
-		if( !empty( $brands_attribute ) && taxonomy_exists( $brands_attribute ) ) {
-			array_push($vc_taxonomies_types, $brands_attribute);
+		if ( woodmart_woocommerce_installed() && function_exists( 'wc_get_attribute_taxonomies' ) ) {
+			foreach ( wc_get_attribute_taxonomies() as $attribute ) {
+				$taxonomy[] = 'pa_' . $attribute->attribute_name;
+			}
 		}
 
-		$vc_taxonomies = get_terms( $vc_taxonomies_types, array(
+		$vc_taxonomies = get_terms( array(
+			'taxonomy' => $taxonomy,
 			'hide_empty' => false,
 			'search' => $search_string,
 		) );

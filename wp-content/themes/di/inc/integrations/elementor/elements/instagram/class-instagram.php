@@ -104,13 +104,11 @@ class Instagram extends Widget_Base {
 				'label'       => esc_html__( 'Source type', 'woodmart' ),
 				'description' => 'API request type<br>
 Scrape - parse Instagram page and take photos by username. Now deprecated and may be blocked by Instagram.<br>
-AJAX - send AJAX request to the Instagram page on frontend. Works more stable then simple scrape.<br>
 API - the best safe and legal option to obtain Instagram photos. Requires Instagram APP configuration. <br>
 Follow our documentation <a href="https://xtemos.com/docs/woodmart/faq-guides/setup-instagram-api/" target="_blank">here</a>',
 				'type'        => Controls_Manager::SELECT,
 				'options'     => [
 					'scrape' => esc_html__( 'Scrape (deprecated)', 'woodmart' ),
-					'ajax'   => esc_html__( 'AJAX (deprecated)', 'woodmart' ),
 					'api'    => esc_html__( 'API', 'woodmart' ),
 					'images' => esc_html__( 'Images', 'woodmart' ),
 				],
@@ -382,6 +380,22 @@ Follow our documentation <a href="https://xtemos.com/docs/woodmart/faq-guides/se
 				'label' => esc_html__( 'Images', 'woodmart' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
+		);
+
+		$this->add_control(
+			'aspect_ratio',
+			array(
+				'label'     => esc_html__( 'Aspect Ratio', 'woodmart' ),
+				'type'      => Controls_Manager::SELECT,
+				'selectors' => array(
+					'{{WRAPPER}} .wd-insta' => '--wd-aspect-ratio: {{VALUE}};',
+				),
+				'options'   => array(
+					'1/1' => '1:1',
+					'4/5' => '4:5',
+				),
+				'default'   => '1/1',
+			)
 		);
 
 		$this->add_control(

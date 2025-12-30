@@ -276,6 +276,8 @@ woodmartThemeModule.openMobileNavigation             = function(mobileNav) {
 
 	if ( mobileNav ) {
 		mobileNav.classList.add('wd-opened');
+
+		jQuery(mobileNav).trigger('wdOpenSide');
 	}
 
 	if ( closeSide ) {
@@ -296,6 +298,8 @@ woodmartThemeModule.closeMobileNavigation            = function() {
 
 	if (activeMobileNav) {
 		activeMobileNav.classList.remove('wd-opened');
+
+		jQuery(activeMobileNav).trigger('wdCloseSide');
 	}
 
 	if (activeMobileNav && activeCloseSide) {
@@ -318,22 +322,10 @@ woodmartThemeModule.mobileNavigation                 = function() {
 		woodmartThemeModule.mobileNavigationClickAction(mobileNav);
 	});
 
-	window.addEventListener('wdEventStarted', function () {
-		var openersMobileNav = document.querySelectorAll('.wd-header-mobile-nav > a');
+	var openersMobileNav = document.querySelectorAll('.wd-header-mobile-nav > a');
 
-		openersMobileNav.forEach(function(openMobileNav) {
-			openMobileNav.addEventListener('click', function(e) {
-				e.preventDefault();
-				var mobileNavContent = document.querySelector('.wd-side-hidden-nav');
-
-				if (mobileNavContent.classList.contains('wd-opened')) {
-					woodmartThemeModule.closeMobileNavigation();
-				} else {
-					openMobileNav.parentNode.classList.add('wd-opened');
-					woodmartThemeModule.openMobileNavigation(mobileNavContent);
-				}
-			});
-		});
+	openersMobileNav.forEach(function(openMobileNav) {
+		openMobileNav.addEventListener('click', openMobileNavEvent);
 	});
 
 	if (closeSide) {
@@ -348,9 +340,41 @@ woodmartThemeModule.mobileNavigation                 = function() {
 		}, {passive: false});
 	}
 
+	woodmartThemeModule.$document.on('keyup', function(e) {
+		if (e.keyCode === 27) {
+			var mobileNavContent = document.querySelector('.wd-side-hidden-nav');
+
+			if (mobileNavContent.classList.contains('wd-opened')) {
+				woodmartThemeModule.closeMobileNavigation();
+			}
+		}
+	});
+
 	woodmartThemeModule.mobileNavigationCloseSideWidgets(closeSideWidgets);
+}
+
+function openMobileNavEvent(e) {
+	e.preventDefault();
+	var mobileNavContent = document.querySelector('.wd-side-hidden-nav');
+
+	if (mobileNavContent.classList.contains('wd-opened')) {
+		woodmartThemeModule.closeMobileNavigation();
+	} else {
+		this.parentNode.classList.add('wd-opened');
+		woodmartThemeModule.openMobileNavigation(mobileNavContent);
+	}
 }
 
 window.addEventListener('load',function() {
 	woodmartThemeModule.mobileNavigation();
+});
+window.addEventListener('wdUpdatedHeader',function() {
+	woodmartThemeModule.mobileNavigation();
+});
+window.addEventListener('wdHeaderBuilderCloneCreated',function() {
+	var openCloneMobileNav = document.querySelector('.whb-clone .wd-header-mobile-nav > a');
+
+	if (openCloneMobileNav) {
+		openCloneMobileNav.addEventListener('click', openMobileNavEvent);
+	}
 });

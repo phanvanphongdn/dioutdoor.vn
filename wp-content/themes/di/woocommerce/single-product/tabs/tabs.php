@@ -12,7 +12,7 @@
  *
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates
- * @version 3.8.0
+ * @version 9.8.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -80,9 +80,8 @@ if ( woodmart_get_opt( 'dark_version' ) ) {
 							$li_classes .= ' active';
 						}
 						?>
-						<li class="<?php echo esc_attr( $li_classes ); ?>" id="tab-title-<?php echo esc_attr( $key ); ?>"
-							role="tab" aria-controls="tab-<?php echo esc_attr( $key ); ?>">
-							<a class="wd-nav-link" href="#tab-<?php echo esc_attr( $key ); ?>">
+						<li class="<?php echo esc_attr( $li_classes ); ?>" id="tab-title-<?php echo esc_attr( $key ); ?>" role="presentation">
+							<a class="wd-nav-link" href="#tab-<?php echo esc_attr( $key ); ?>" aria-controls="tab-<?php echo esc_attr( $key ); ?>" role="tab">
 								<?php if ( isset( $product_tab['title'] ) ) : ?>
 									<span class="nav-link-text wd-tabs-title">
 										<?php echo wp_kses_post( apply_filters( 'woocommerce_product_' . $key . '_tab_title', $product_tab['title'], $key ) ); ?>
@@ -102,6 +101,7 @@ if ( woodmart_get_opt( 'dark_version' ) ) {
 			$item_wrapper_classes             = woodmart_get_old_classes( ' woodmart-tab-wrapper' );
 			$accordion_title_wrapper_classes  = woodmart_get_old_classes( ' woodmart-accordion-title' );
 			$accordion_title_wrapper_classes .= ' tab-title-' . $key;
+			$accordion_title_wrapper_classes .= ' wd-role-btn';
 			$content_classes                  = ' woocommerce-Tabs-panel woocommerce-Tabs-panel--' . $key;
 			$content_inner_classes            = '';
 
@@ -123,7 +123,7 @@ if ( woodmart_get_opt( 'dark_version' ) ) {
 			}
 
 			if ( isset( $product_tab['callback'] ) && 'comments_template' === $product_tab['callback'] ) {
-				woodmart_enqueue_inline_style( 'mod-comments' );
+				woodmart_enqueue_inline_style( 'post-types-mod-comments' );
 
 				$content_classes .= ' wd-single-reviews';
 
@@ -132,7 +132,7 @@ if ( woodmart_get_opt( 'dark_version' ) ) {
 			}
 			?>
 			<div class="wd-accordion-item<?php echo esc_attr( $item_wrapper_classes ); ?>">
-				<div id="tab-item-title-<?php echo esc_attr( $key ); ?>" class="wd-accordion-title<?php echo esc_attr( $accordion_title_wrapper_classes ); ?>" data-accordion-index="<?php echo esc_attr( $key ); ?>">
+				<div id="tab-item-title-<?php echo esc_attr( $key ); ?>" class="wd-accordion-title<?php echo esc_attr( $accordion_title_wrapper_classes ); ?>" data-accordion-index="<?php echo esc_attr( $key ); ?>" tabindex="0">
 					<div class="wd-accordion-title-text">
 						<?php if ( isset( $product_tab['title'] ) ) : ?>
 							<span>

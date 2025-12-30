@@ -7,7 +7,7 @@
 <div class="product-wrapper">
 	<div class="product-element">
 		<div class="product-element-top wd-quick-shop">
-			<a href="<?php echo esc_url( get_permalink() ); ?>" class="product-image-link">
+			<a href="<?php echo esc_url( get_permalink() ); ?>" class="product-image-link" aria-label="<?php echo esc_attr( get_the_title() ); ?>">
 				<?php
 				/**
 				 * Hook woocommerce_before_shop_loop_item_title.
@@ -60,8 +60,8 @@
 
 			<div class="wd-add-btn wd-add-btn-replace<?php echo woodmart_get_old_classes( ' woodmart-add-btn' ); ?>">
 				<?php do_action( 'woodmart_add_loop_btn' ); ?>
-				<?php do_action( 'woocommerce_after_shop_loop_item' ); ?>
 			</div>
+			<?php do_action( 'woocommerce_after_shop_loop_item' ); ?>
 		</div>
 
 		<div class="wd-buttons wd-pos-r-t<?php echo woodmart_get_old_classes( ' woodmart-buttons' ); ?>">

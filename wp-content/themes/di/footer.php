@@ -18,11 +18,12 @@ if ( woodmart_get_opt( 'footer-style' ) ) {
 	$footer_classes .= ' color-scheme-' . woodmart_get_opt( 'footer-style' );
 }
 ?>
-<?php if ( woodmart_needs_footer() ) : ?>
-	<?php if ( ! woodmart_is_woo_ajax() ) : ?>
-		</div>
-	<?php endif ?>
+<?php if ( woodmart_needs_footer() && ! woodmart_is_woo_ajax() ) : ?>
+	<?php woodmart_page_bottom_part(); ?>
+<?php endif; ?>
 
+</div>
+<?php if ( woodmart_needs_footer() ) : ?>
 		<?php if ( ! $disable_prefooter && ( 'text' === woodmart_get_opt( 'prefooter_content_type', 'text' ) && woodmart_get_opt( 'prefooter_area' ) || 'html_block' === woodmart_get_opt( 'prefooter_content_type' ) && woodmart_get_opt( 'prefooter_html_block' ) ) ) : ?>
 			<?php woodmart_enqueue_inline_style( 'footer-base' ); ?>
 			<div class="wd-prefooter<?php echo woodmart_get_old_classes( ' woodmart-prefooter' ); ?>">
@@ -70,7 +71,6 @@ if ( woodmart_get_opt( 'footer-style' ) ) {
 		<?php endif ?>
 	</div>
 <?php endif ?>
-</div>
 <div class="wd-close-side wd-fill<?php echo woodmart_get_old_classes( ' woodmart-close-side' ); ?>"></div>
 <?php do_action( 'woodmart_before_wp_footer' ); ?>
 <?php wp_footer(); ?>

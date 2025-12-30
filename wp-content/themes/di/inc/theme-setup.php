@@ -24,6 +24,8 @@ if ( ! function_exists( 'woodmart_gallery_shortcode_add_scripts_styles' ) ) {
 
 		ob_start();
 		woodmart_enqueue_inline_style( 'mfp-popup' );
+		woodmart_enqueue_inline_style( 'mod-animations-transform' );
+		woodmart_enqueue_inline_style( 'mod-transform' );
 		$style = ob_get_clean();
 
 		return $style . $output;
@@ -86,7 +88,7 @@ if( ! function_exists( 'woodmart_theme_setup' ) ) {
 		add_editor_style( '/css/editor-style.css' );
 		add_theme_support( 'align-wide' );
 
-		if ( woodmart_get_opt( 'load_text_domain', true ) ) {
+		if ( woodmart_get_opt( 'load_text_domain' ) ) {
 			/**
 			 * Make the theme available for translations.
 			 */
@@ -218,11 +220,11 @@ if( ! function_exists( 'woodmart_widget_init' ) ) {
 						'after_title'   => $after_title,
 					)
 				);
-				
-				register_sidebar( 
+
+				register_sidebar(
 					array(
-						'name'          => esc_html__( 'My Account pages sidebar', 'woodmart' ),
-						'id'            => 'sidebar-my-account',
+						'name'          => esc_html__( 'My Account pages sidebar (Deprecated)', 'woodmart' ),
+						'id'            => 'sidebar-my-account-pages',
 						'description'   => esc_html__( 'Widget Area for My Account, orders and other user pages.', 'woodmart' ),
 						'class'         => '',
 						'before_widget' => '<div id="%1$s" class="wd-widget widget sidebar-widget' . $widget_class . ' widget-my-account %2$s">',
@@ -332,13 +334,13 @@ if( ! function_exists( 'woodmart_register_required_plugins' ) ) {
 	        array(
 	            'name'               => 'Elementor', // The plugin name.
 	            'slug'               => 'elementor', // The plugin slug (typically the folder name).
-	            'required'           => false, // If false, the plugin is only 'recommended' instead of required.
+	            'required'           => true, // If false, the plugin is only 'recommended' instead of required.
 	        ),
 	        array(
 	            'name'               => 'WPBakery Page Builder', // The plugin name.
 	            'slug'               => 'js_composer', // The plugin slug (typically the folder name).
 	            'source'             => WOODMART_PLUGINS_URL . 'js_composer.zip', // The plugin source.
-	            'required'           => false, // If false, the plugin is only 'recommended' instead of required.
+	            'required'           => true, // If false, the plugin is only 'recommended' instead of required.
 	            'version'            => get_option( 'woodmart_js_composer_version', '6.4.1' ), // E.g. 1.0.0. If set, the active plugin must be this version or higher.
 	            'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
 	            'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
@@ -368,6 +370,13 @@ if( ! function_exists( 'woodmart_register_required_plugins' ) ) {
 				'hide_notice'        => true
 			),
 
+			array(
+				'name'               => 'Image Optimizer', // The plugin name.
+				'slug'               => 'woodmart-images-optimizer', // The plugin slug (typically the folder name).
+				'source'             => WOODMART_PLUGINS_URL . 'woodmart-images-optimizer.zip',
+				'version'            => get_option( 'woodmart_woodmart-images-optimizer_version', '1.2.0' ),
+			),
+
 	        array(
 	            'name'      => 'WooCommerce',
 	            'slug'      => 'woocommerce',
@@ -393,16 +402,39 @@ if( ! function_exists( 'woodmart_register_required_plugins' ) ) {
 	        ),
 	    );
 
-		if ( get_option( 'wd_import_theme_version' ) && woodmart_get_current_page_builder() ) {
+		$external_builder = 'wpb' === woodmart_get_current_page_builder() ? 'wpb' : 'elementor';
+		$builder          = 'native' === woodmart_get_opt( 'current_builder' ) ? 'gutenberg' : $external_builder;
+
+		if ( ! empty( $_GET['wd_builder'] ) ) { // phpcs:ignore
+			$builder = wp_unslash( $_GET['wd_builder'] ); // phpcs:ignore
+		}
+
+		if ( ! empty( $_POST['xts_builder'] ) ) { // phpcs:ignore
+			$builder = wp_unslash( $_POST['xts_builder'] ); // phpcs:ignore
+		}
+
+		if ( isset( $_REQUEST['page'], $_REQUEST['plugin'] ) && 'tgmpa-install-plugins' === $_REQUEST['page'] && in_array( $_REQUEST['plugin'], array( 'js_composer', 'elementor' ) ) ) { // phpcs:ignore
+			$builder = 'js_composer' === $_REQUEST['plugin'] ? 'wpb' : 'elementor'; // phpcs:ignore
+		}
+
+		$plugins = array_filter(
+			$plugins,
+			function( $plugin ) use ( $builder ) {
+				if ( 'gutenberg' === $builder ) {
+					return in_array( $plugin['slug'], array( 'elementor', 'js_composer' ), true ) ? '' : $plugin;
+				} elseif ( 'wpb' === $builder ) {
+					return 'elementor' === $plugin['slug'] ? '' : $plugin;
+				} else {
+					return 'js_composer' === $plugin['slug'] ? '' : $plugin;
+				}
+			}
+		);
+
+		if ( ( ( ! isset( $_GET['page'] ) || ! in_array( $_GET['page'], array( 'tgmpa-install-plugins', 'xts_plugins' ), true ) ) && ( ! isset( $_POST['action'] ) || ! in_array( $_POST['action'], array( 'woodmart_deactivate_plugin', 'woodmart_check_plugins' ), true ) ) ) && ! defined( 'WOODMART_IMAGES_OPTIMIZER_VERSION' ) ) {
 			$plugins = array_filter(
 				$plugins,
 				function( $plugin ) {
-					if ( 'gutenberg' === woodmart_get_current_page_builder() && 'native' === woodmart_get_opt( 'current_builder' ) ) {
-						return in_array( $plugin['slug'], array( 'elementor', 'js_composer' ), true ) ? '' : $plugin;
-					}
-
-					$remove_builder_slug = 'wpb' === woodmart_get_current_page_builder() ? 'elementor' : 'js_composer';
-					return $remove_builder_slug !== $plugin['slug'] ? $plugin : '';
+					return 'woodmart-images-optimizer' !== $plugin['slug'] ? $plugin : '';
 				}
 			);
 		}

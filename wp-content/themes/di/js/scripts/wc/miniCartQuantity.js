@@ -35,14 +35,14 @@
 									var dataFooterValue = $(value).find('.shopping-cart-widget-footer');
 									var $itemSelector = $(key).find('.woocommerce-mini-cart-item[data-key="' + itemID + '"]');
 
-									if (!data.cart_hash) {
+									if (!data.cart_hash || !dataItemValue.length) {
 										$(key).replaceWith(value);
 									} else {
 										$itemSelector.replaceWith(dataItemValue);
 										$('.shopping-cart-widget-footer').replaceWith(dataFooterValue);
 									}
 								} else {
-									$(key).replaceWith(value);
+									$(key.replace('_wd', '')).replaceWith(value);
 								}
 							});
 

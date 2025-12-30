@@ -11,6 +11,7 @@ use XTS\Singleton;
 use WC_Product;
 use WC_Order;
 use WC_Order_Item;
+use Automattic\WooCommerce\Utilities\FeaturesUtil;
 
 /**
  * Estimate delivery class.
@@ -29,6 +30,10 @@ class Frontend extends Singleton {
 	 * Init.
 	 */
 	public function init() {
+		if ( ! woodmart_get_opt( 'estimate_delivery_enabled' ) || ! woodmart_woocommerce_installed() ) {
+			return;
+		}
+
 		$this->manager = Manager::get_instance();
 
 		// Enqueue scripts.
@@ -80,7 +85,7 @@ class Frontend extends Singleton {
 		wp_send_json(
 			array(
 				'fragments' => array(
-					'.wd-product-info[data-product-id="' . $product_id . '"] .wd-info-msg' => $delivery_date_string,
+					'.wd-est-del[data-product-id="' . $product_id . '"] .wd-info-msg' => $delivery_date_string,
 				),
 			)
 		);
@@ -102,7 +107,10 @@ class Frontend extends Singleton {
 			woodmart_enqueue_js_script( 'estimate-delivery-on-cart' );
 		}
 
-		if ( woodmart_get_opt( 'estimate_delivery_show_overall' ) && ( is_cart() || is_checkout() || is_wc_endpoint_url( 'view-order' ) || is_wc_endpoint_url( 'order-received' ) ) ) {
+		if (
+			( woodmart_get_opt( 'estimate_delivery_show_on_single_product' ) && is_product() ) ||
+			( woodmart_get_opt( 'estimate_delivery_show_overall' ) && ( is_cart() || is_checkout() ) )
+		) {
 			woodmart_enqueue_inline_style( 'woo-mod-product-info' );
 			woodmart_enqueue_inline_style( 'woo-opt-est-del' );
 		}
@@ -156,11 +164,15 @@ class Frontend extends Singleton {
 			$icon_output = '<span class="wd-info-icon"></span>';
 		}
 
-		woodmart_enqueue_inline_style( 'woo-mod-product-info' );
-		woodmart_enqueue_inline_style( 'woo-opt-est-del' );
+		$tooltip_content = $delivery_date->get_rule_meta_box( 'est_del_tooltip_content' );
 		?>
 		<div class="wd-product-info wd-est-del<?php echo esc_attr( $classes ); ?>" data-product-id="<?php echo esc_attr( $product->get_id() ); ?>">
 			<?php echo $icon_output; // phpcs:ignore. ?><span class="wd-info-msg"><?php echo wp_kses( $delivery_date_string, 'strong' ); ?></span>
+			<?php
+			if ( ! empty( $tooltip_content ) ) {
+				$this->render_tooltip( $tooltip_content );
+			}
+			?>
 		</div>
 		<?php
 	}
@@ -169,15 +181,16 @@ class Frontend extends Singleton {
 	 * Render delivery detail on cart and mini cart pages when options is enabled.
 	 *
 	 * @param object $cart_item Cart item.
+	 * @param bool   $hide_tooltip if this value is true, then the toltip will be hidden.
 	 *
 	 * @return void
 	 */
-	public function render_delivery_detail_on_cart( $cart_item ) {
+	public function render_delivery_detail_on_cart( $cart_item, $hide_tooltip = false ) {
 		if ( is_cart() && ! woodmart_get_opt( 'estimate_delivery_show_on_cart_page' ) ) {
 			return;
 		}
 
-		$this->render_delivery_detail( $cart_item['data'] );
+		$this->render_delivery_detail( $cart_item['data'], false, $hide_tooltip );
 	}
 
 	/**
@@ -215,7 +228,15 @@ class Frontend extends Singleton {
 		$product_id = $order_item->get_variation_id() ? $order_item->get_variation_id() : $order_item->get_product_id();
 		$product    = wc_get_product( $product_id );
 
-		$this->render_delivery_detail( $product );
+		if ( woodmart_is_email_preview_request() ) {
+			$this->render_delivery_detail_on_preview_email();
+		} else {
+			$order        = wc_get_order( $order_item->get_order_id() );
+			$date_created = $order->get_date_created();
+			$order_date   = $date_created ? $date_created->date( 'Y-m-d H:i:s' ) : false;
+
+			$this->render_delivery_detail( $product, $order_date, ! $is_order_detail_page );
+		}
 	}
 
 	/**
@@ -241,11 +262,14 @@ class Frontend extends Singleton {
 			$shipping_method_id = $shipping_method->get_instance_id();
 		}
 
-		$delivery_date = new Delivery_Date( $product, $shipping_method_id );
+		$date_created = $order->get_date_created();
+		$order_date   = $date_created ? $date_created->date( 'Y-m-d H:i:s' ) : false;
+
+		$delivery_date = new Delivery_Date( $product, $shipping_method_id, $order_date );
 		$text          = $delivery_date->get_label();
 		$date          = $delivery_date->get_date();
 
-		if ( empty( $text ) || empty( $date ) ) {
+		if ( empty( $date ) ) {
 			return;
 		}
 		?>
@@ -253,7 +277,9 @@ class Frontend extends Singleton {
 			<table class="display_meta xts-product-detail">
 				<tbody>
 					<tr>
-						<th><?php echo esc_html( $text ) . ': '; ?></th>
+						<?php if ( ! empty( $text ) ) : ?>
+							<th><?php echo esc_html( $text ) . ': '; ?></th>
+						<?php endif; ?>
 						<td>
 							<p><?php echo esc_html( $date ); ?></p>
 						</td>
@@ -278,6 +304,8 @@ class Frontend extends Singleton {
 
 		$order              = wc_get_order( $order_item_id );
 		$shipping_methods   = $order->get_shipping_methods();
+		$date_created       = $order->get_date_created();
+		$order_date         = $date_created ? $date_created->date( 'Y-m-d H:i:s' ) : false;
 		$shipping_method_id = false;
 
 		foreach ( $shipping_methods as $shipping_method ) {
@@ -285,7 +313,7 @@ class Frontend extends Singleton {
 		}
 
 		$products     = $this->get_product_by_order( $order );
-		$overal_dates = new Overal_Delivery_Date( $products, $shipping_method_id );
+		$overal_dates = new Overal_Delivery_Date( $products, $shipping_method_id, $order_date );
 		$text         = $overal_dates->get_label();
 		$date         = $overal_dates->get_date();
 
@@ -294,8 +322,10 @@ class Frontend extends Singleton {
 		}
 		?>
 		<tr>
-			<td class="label"><?php echo esc_html( $text ) . ': '; ?></td>
-			<td width="1%"></td>
+			<?php if ( ! empty( $text ) ) : ?>
+				<td class="label"><?php echo esc_html( $text ) . ': '; ?></td>
+				<td width="1%"></td>
+			<?php endif; ?>
 			<td class="total">
 				<strong><?php echo esc_html( $date ); ?></strong>
 			</td>
@@ -306,27 +336,81 @@ class Frontend extends Singleton {
 	/**
 	 * Render delivery detail.
 	 *
-	 * @param object $product Product pbject.
+	 * @param object    $product Product pbject.
+	 * @param int|false $date_created Order date created.
+	 * @param bool      $hide_tooltip if this value is true, then the toltip will be hidden.
 	 *
 	 * @return void
 	 */
-	public function render_delivery_detail( $product ) {
-		$delivery_date     = new Delivery_Date( $product );
+	public function render_delivery_detail( $product, $date_created = false, $hide_tooltip = false ) {
+		$delivery_date     = new Delivery_Date( $product, false, $date_created );
 		$delivery_text     = $delivery_date->get_label();
 		$delivery_date_str = $delivery_date->get_date();
+		$tooltip_content   = $delivery_date->get_rule_meta_box( 'est_del_tooltip_content' );
 
-		if ( empty( $delivery_text ) || empty( $delivery_date_str ) ) {
+		if ( empty( $delivery_date_str ) ) {
 			return;
 		}
 		?>
 		<div class="wd-product-detail wd-delivery-detail">
+			<?php if ( ! empty( $delivery_text ) ) : ?>
+				<span class="wd-label">
+					<?php echo esc_html( $delivery_text ) . ':'; ?>
+				</span>
+			<?php endif; ?>
+			<span>
+				<?php echo esc_html( $delivery_date_str ); ?>
+			</span>
+			<?php
+			if ( ! $hide_tooltip && ! empty( $tooltip_content ) ) {
+				$this->render_tooltip( $tooltip_content );
+			}
+			?>
+		</div>
+		<?php
+	}
+
+	/**
+	 * Render delivery detail on preview email.
+	 *
+	 * @return void
+	 */
+	public function render_delivery_detail_on_preview_email() {
+		$date_format        = woodmart_get_opt( 'estimate_delivery_date_format', 'M j, Y' );
+		$date_format        = 'default' === $date_format ? get_option( 'date_format' ) : $date_format;
+		$date_format        = apply_filters( 'woodmart_est_del_date_format', $date_format );
+		$delivery_date_str  = wp_date( $date_format, strtotime( 'now' ) );
+		$delivery_date_str .= apply_filters( 'woodmart_dates_separator', ' – ' );
+		$delivery_date_str .= wp_date( $date_format, strtotime( '+2 days' ) );
+		?>
+		<div class="wd-product-detail wd-delivery-detail">
 			<span class="wd-label">
-				<?php echo esc_html( $delivery_text ) . ':'; ?>
+				<?php echo esc_html__( 'Estimated delivery dates', 'woodmart' ) . ':'; ?>
 			</span>
 			<span>
 				<?php echo esc_html( $delivery_date_str ); ?>
 			</span>
 		</div>
+		<?php
+	}
+
+	/**
+	 * Render tooltip.
+	 *
+	 * @param string $content html string.
+	 *
+	 * @return void
+	 */
+	public function render_tooltip( $content ) {
+		woodmart_enqueue_js_library( 'tooltips' );
+		woodmart_enqueue_js_script( 'btns-tooltips' );
+
+		?>
+		<span class="wd-hint wd-tooltip wd-with-html">
+			<span class="wd-tooltip-content">
+				<?php echo wp_kses_post( $content ); ?>
+			</span>
+		</span>
 		<?php
 	}
 
@@ -344,8 +428,10 @@ class Frontend extends Singleton {
 			return $total_rows;
 		}
 
+		$date_created     = $order->get_date_created();
+		$order_date       = $date_created ? $date_created->date( 'Y-m-d H:i:s' ) : false;
 		$products         = $this->get_product_by_order( $order );
-		$overal_dates     = new Overal_Delivery_Date( $products );
+		$overal_dates     = new Overal_Delivery_Date( $products, false, $order_date );
 		$est_del_row_data = $overal_dates->get_date_array();
 
 		if ( empty( $est_del_row_data ) ) {

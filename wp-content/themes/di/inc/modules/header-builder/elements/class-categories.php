@@ -176,13 +176,13 @@ class Categories extends Element {
 					'description'     => esc_html__( 'Border settings for menu title.', 'woodmart' ),
 				),
 				'icon_type'             => array(
-					'id'          => 'icon_type',
-					'title'       => esc_html__( 'Icon type', 'woodmart' ),
-					'type'        => 'selector',
-					'tab'         => esc_html__( 'Style', 'woodmart' ),
-					'group'       => esc_html__( 'Menu title', 'woodmart' ),
-					'value'       => 'default',
-					'options'     => array(
+					'id'      => 'icon_type',
+					'title'   => esc_html__( 'Icon type', 'woodmart' ),
+					'type'    => 'selector',
+					'tab'     => esc_html__( 'Style', 'woodmart' ),
+					'group'   => esc_html__( 'Menu title', 'woodmart' ),
+					'value'   => 'default',
+					'options' => array(
 						'default' => array(
 							'value' => 'default',
 							'label' => esc_html__( 'Default', 'woodmart' ),
@@ -194,7 +194,6 @@ class Categories extends Element {
 							'image' => WOODMART_ASSETS_IMAGES . '/header-builder/upload.jpg',
 						),
 					),
-					'extra_class' => 'xts-col-6',
 				),
 				'custom_icon'           => array(
 					'id'          => 'custom_icon',
@@ -208,6 +207,65 @@ class Categories extends Element {
 						'icon_type' => array(
 							'comparison' => 'equal',
 							'value'      => 'custom',
+						),
+					),
+					'extra_class' => 'xts-col-6',
+				),
+				'custom_icon_width'     => array(
+					'id'          => 'custom_icon_width',
+					'title'       => esc_html__( 'Icon width', 'woodmart' ),
+					'type'        => 'slider',
+					'tab'         => esc_html__( 'Style', 'woodmart' ),
+					'group'       => esc_html__( 'Menu title', 'woodmart' ),
+					'from'        => 0,
+					'to'          => 60,
+					'value'       => 0,
+					'units'       => 'px',
+					'selectors'   => array(
+						'{{WRAPPER}}' => array(
+							'--wd-tools-icon-width: {{VALUE}}px;',
+						),
+					),
+					'requires'    => array(
+						'icon_type' => array(
+							'comparison' => 'equal',
+							'value'      => 'custom',
+						),
+					),
+					'extra_class' => 'xts-col-6',
+				),
+				'icon_width'            => array(
+					'id'          => 'icon_width',
+					'title'       => esc_html__( 'Width', 'woodmart' ),
+					'hint'        => '<video src="' . WOODMART_TOOLTIP_URL . 'hb_icon_width.mp4" autoplay loop muted></video>',
+					'type'        => 'slider',
+					'tab'         => esc_html__( 'Style', 'woodmart' ),
+					'group'       => esc_html__( 'Items icon', 'woodmart' ),
+					'from'        => 0,
+					'to'          => 60,
+					'value'       => '',
+					'units'       => 'px',
+					'selectors'   => array(
+						'{{WRAPPER}} .wd-dropdown-cats > .wd-nav > li > a .wd-nav-img' => array(
+							'--nav-img-width: {{VALUE}}px;',
+						),
+					),
+					'extra_class' => 'xts-col-6',
+				),
+				'icon_height'           => array(
+					'id'          => 'icon_height',
+					'title'       => esc_html__( 'Height', 'woodmart' ),
+					'hint'        => '<video src="' . WOODMART_TOOLTIP_URL . 'hb_icon_height.mp4" autoplay loop muted></video>',
+					'type'        => 'slider',
+					'tab'         => esc_html__( 'Style', 'woodmart' ),
+					'group'       => esc_html__( 'Items icon', 'woodmart' ),
+					'from'        => 0,
+					'to'          => 60,
+					'value'       => '',
+					'units'       => 'px',
+					'selectors'   => array(
+						'{{WRAPPER}} .wd-dropdown-cats > .wd-nav > li > a .wd-nav-img' => array(
+							'--nav-img-height: {{VALUE}}px;',
 						),
 					),
 					'extra_class' => 'xts-col-6',

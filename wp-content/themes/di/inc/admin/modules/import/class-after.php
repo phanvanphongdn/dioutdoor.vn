@@ -80,7 +80,7 @@ class After extends Singleton {
 		$uncategorized = get_term_by( 'id', get_option( 'default_product_cat' ), 'product_cat' );
 		$accessories   = get_term_by( 'name', 'Accessories', 'product_cat' );
 
-		if ( ! $uncategorized ) {
+		if ( ! $uncategorized || ! $accessories ) {
 			return;
 		}
 
@@ -242,7 +242,7 @@ class After extends Singleton {
 
 		$vc_roles->save(
 			array(
-				'administrator' => json_decode( '{"post_types":{"_state":"custom","post":"1","page":"1","woodmart_slide":"1","woodmart_layout":"1","woodmart_size_guide":"1","cms_block":"1","woodmart_sidebar":"0","portfolio":"1","product":"1","woodmart_woo_lv":"0"},"backend_editor":{"_state":"1","disabled_ce_editor":"0"},"frontend_editor":{"_state":"1"},"post_settings":{"_state":"1"},"settings":{"_state":"1"},"templates":{"_state":"1"},"shortcodes":{"_state":"1"},"grid_builder":{"_state":"1"},"presets":{"_state":"1"}}' ),
+				'administrator' => json_decode( '{"post_types":{"_state":"custom","post":"1","page":"1","woodmart_slide":"1","woodmart_layout":"1","woodmart_size_guide":"1","cms_block":"1","wd_floating_block":"1","wd_popup":"1","woodmart_sidebar":"0","portfolio":"1","product":"1","woodmart_woo_lv":"0", "wd_product_tabs":"1"},"backend_editor":{"_state":"1","disabled_ce_editor":"0"},"frontend_editor":{"_state":"1"},"post_settings":{"_state":"1"},"settings":{"_state":"1"},"templates":{"_state":"1"},"shortcodes":{"_state":"1"},"grid_builder":{"_state":"1"},"presets":{"_state":"1"}}' ),
 			)
 		);
 	}
@@ -257,6 +257,9 @@ class After extends Singleton {
 		$post_types[] = 'cms_block';
 		$post_types[] = 'woodmart_slide';
 		$post_types[] = 'woodmart_layout';
+		$post_types[] = 'wd_product_tabs';
+		$post_types[] = 'wd_popup';
+		$post_types[] = 'wd_floating_block';
 
 		update_option( 'elementor_cpt_support', $post_types );
 		update_option( 'elementor_disable_color_schemes', 'yes' );
@@ -458,6 +461,19 @@ class After extends Singleton {
 
 		foreach ( $settings as $key => $setting ) {
 			Plugin::$instance->kits_manager->update_kit_settings_based_on_option( $key, $setting );
+		}
+
+		$current_settings = Plugin::$instance->kits_manager->get_current_settings();
+		$system_typography = ! empty( $current_settings['system_typography'] ) ? $current_settings['system_typography'] : array();
+
+		if ( $system_typography ) {
+			foreach ( $system_typography as $key => $setting ) {
+				if ( isset( $setting['typography_font_family'] ) ) {
+					unset( $system_typography[ $key ]['typography_font_family'] );
+				}
+			}
+
+			Plugin::$instance->kits_manager->update_kit_settings_based_on_option( 'system_typography', $system_typography );
 		}
 	}
 }

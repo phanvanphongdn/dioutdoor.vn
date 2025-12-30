@@ -274,7 +274,7 @@
 
 		// Add product in wishlist.
 		function addProductWishlistAJAX( productId, group, key, callback = '' ) {
-			var $this = $('a[data-product-id=' + productId + ']');
+			var $this = $('.wd-wishlist-btn a[data-product-id=' + productId + ']');
 
 			$.ajax({
 				url     : woodmart_settings.ajaxurl,
@@ -374,8 +374,8 @@
 		function updateButton( $button ) {
 			var addedText = $button.data('added-text');
 
-			if ($button.find('span').length > 0) {
-				$button.find('span').text(addedText);
+			if ($button.find('.wd-action-text').length > 0) {
+				$button.find('.wd-action-text').text(addedText);
 			} else {
 				$button.text(addedText);
 			}
@@ -383,6 +383,7 @@
 			$button.addClass('added');
 
 			woodmartThemeModule.$document.trigger('added_to_wishlist');
+			woodmartThemeModule.$document.trigger('wdUpdateTooltip', $button);
 		}
 	};
 
@@ -419,8 +420,8 @@
 
 			var addedText = $button.data('added-text');
 
-			if ($button.find('span').length > 0) {
-				$button.find('span').text(addedText);
+			if ($button.find('.wd-action-text').length > 0) {
+				$button.find('.wd-action-text').text(addedText);
 			} else {
 				$button.text(addedText);
 			}

@@ -49,6 +49,10 @@ class Frontend extends Singleton {
 	 * Init.
 	 */
 	public function init() {
+		if ( ! woodmart_get_opt( 'bought_together_enabled' ) || ! woodmart_woocommerce_installed() ) {
+			return;
+		}
+
 		add_action( 'woodmart_after_product_tabs', array( $this, 'get_bought_together_products' ) );
 
 		add_action( 'wp_ajax_woodmart_update_frequently_bought_price', array( $this, 'update_frequently_bought_price' ) );
@@ -154,11 +158,15 @@ class Frontend extends Singleton {
 
 		$bundles_id = get_post_meta( $main_product, 'woodmart_fbt_bundles_id', true );
 
-		if ( ! $bundles_id ) {
+		if ( ! $bundles_id || ! is_array( $bundles_id ) ) {
 			return;
 		}
 
 		foreach ( $bundles_id as $bundle_id ) {
+			if ( ! $bundle_id ) {
+				continue;
+			}
+
 			$bundle = get_post( $bundle_id );
 
 			if ( ! $bundle || 'publish' !== $bundle->post_status ) {
@@ -194,22 +202,20 @@ class Frontend extends Singleton {
 
 		woodmart_set_loop_prop( 'show_quick_shop', false );
 
-		if ( ! $settings['is_builder'] ) {
-			echo '<div class="container wd-fbt-wrap">';
-		}
-
-		if ( $content ) {
-			echo wp_kses( $content, true );
-		}
-
-		if ( ! $settings['is_builder'] || $settings['title'] ) {
-			$this->get_heading( $settings['title'], $settings['is_builder'] );
-		}
+		ob_start();
 
 		foreach ( $bundles_data as $bundle_id => $wfbt_products ) {
 			$this->bundle_id               = $bundle_id;
 			$this->wfbt_products           = array();
 			$this->subtotal_products_price = array();
+
+			if ( get_post_meta( $bundle_id, '_woodmart_show_checkbox', true ) && ! $product->is_in_stock() ) {
+				if ( get_post_meta( $bundle_id, '_woodmart_hide_out_of_stock_product', true ) ) {
+					continue;
+				} elseif ( 'yes' === get_option( 'woocommerce_hide_out_of_stock_items' ) ) {
+					continue;
+				}
+			}
 
 			foreach ( $wfbt_products as $wfbt_product ) {
 				if ( empty( $wfbt_product['id'] ) || $this->main_product_id === (int) $wfbt_product['id'] ) {
@@ -226,8 +232,12 @@ class Frontend extends Singleton {
 					continue;
 				}
 
-				if ( get_post_meta( $bundle_id, '_woodmart_show_checkbox', true ) && get_post_meta( $bundle_id, '_woodmart_hide_out_of_stock_product', true ) && ! $current_product->is_in_stock() ) {
-					continue;
+				if ( get_post_meta( $bundle_id, '_woodmart_show_checkbox', true ) && ! $current_product->is_in_stock() ) {
+					if ( get_post_meta( $bundle_id, '_woodmart_hide_out_of_stock_product', true ) ) {
+						continue;
+					} elseif ( 'yes' === get_option( 'woocommerce_hide_out_of_stock_items' ) ) {
+						continue;
+					}
 				}
 
 				$this->wfbt_products[ $wfbt_product['id'] ] = $wfbt_product;
@@ -236,8 +246,26 @@ class Frontend extends Singleton {
 			$this->get_form_content( $settings );
 		}
 
-		if ( ! $settings['is_builder'] ) {
-			echo '</div>';
+		$bundles_content = ob_get_clean();
+
+		if ( $this->wfbt_products && $bundles_content ) {
+			if ( ! $settings['is_builder'] ) {
+				echo '<div class="container wd-fbt-wrap">';
+			}
+
+			if ( $content ) {
+				echo wp_kses( $content, true );
+			}
+
+			if ( ! $settings['is_builder'] || $settings['title'] ) {
+				$this->get_heading( $settings['title'], $settings['is_builder'] );
+			}
+
+			echo $bundles_content; // phpcs:ignore
+
+			if ( ! $settings['is_builder'] ) {
+				echo '</div>';
+			}
 		}
 
 		woodmart_set_loop_prop( 'show_quick_shop', true );
@@ -424,9 +452,9 @@ class Frontend extends Singleton {
 							</label>
 							<span class="price">
 								<?php if ( $variation ) : ?>
-									<?php echo wp_kses( $variation->get_price_html(), true ); ?>
+									<?php echo $variation->get_price_html(); // phpcs:ignore ?>
 								<?php else : ?>
-									<?php echo wp_kses( $current_product->get_price_html(), true ); ?>
+									<?php echo $current_product->get_price_html() // phpcs:ignore; ?>
 								<?php endif; ?>
 							</span>
 						</div>
@@ -435,15 +463,18 @@ class Frontend extends Singleton {
 								<?php if ( empty( $current_product->get_visible_children() ) ) : ?>
 									<p class="stock out-of-stock"><?php echo esc_html( apply_filters( 'woocommerce_out_of_stock_message', __( 'This product is currently out of stock and unavailable.', 'woocommerce' ) ) ); ?></p>
 								<?php else : ?>
-									<select>
+									<label class="screen-reader-text" for="wd-fbt-product-<?php echo esc_attr( $product_id ); ?>-select">
+										<?php esc_html_e( 'Select product variation', 'woodmart' ); ?>
+									</label>
+									<select id="wd-fbt-product-<?php echo esc_attr( $product_id ); ?>-select">
 										<?php foreach ( $current_product->get_visible_children() as $variation_id ) : ?>
 											<?php
 											$variation_product = wc_get_product( $variation_id );
-											$image_src         = wp_get_attachment_image_src( $variation_product->get_image_id(), 'woocommerce_thumbnail' );
+											$image_src         = wp_get_attachment_image_url( $variation_product->get_image_id(), 'woocommerce_thumbnail' );
 											$image_srcset      = wp_get_attachment_image_srcset( $variation_product->get_image_id(), 'woocommerce_thumbnail' );
 											?>
 
-											<option value="<?php echo esc_attr( $variation_product->get_id() ); ?>"<?php echo esc_attr( $variation->get_id() === $variation_product->get_id() ? ' selected="selected"' : '' ); ?> data-image-src="<?php echo esc_url( reset( $image_src ) ); ?>" data-image-srcset="<?php echo esc_attr( $image_srcset ); ?>">
+											<option value="<?php echo esc_attr( $variation_product->get_id() ); ?>"<?php echo esc_attr( $variation->get_id() === $variation_product->get_id() ? ' selected="selected"' : '' ); ?> data-image-src="<?php echo esc_url( $image_src ); ?>" data-image-srcset="<?php echo esc_attr( $image_srcset ); ?>">
 												<?php echo esc_html( wc_get_formatted_variation( $variation_product, true, false, false ) ); ?>
 											</option>
 										<?php endforeach; ?>
@@ -454,11 +485,12 @@ class Frontend extends Singleton {
 					</div>
 				<?php endforeach; ?>
 			</div>
+
 			<div class="wd-fbt-purchase">
 				<div class="price">
 					<?php
 					if ( ! empty( $show_checkbox ) && 'uncheck' === $state_checkbox ) {
-						echo wp_kses( $product->get_price_html(), true );
+						echo $product->get_price_html(); // phpcs:ignore
 					} else {
 						echo wp_kses( $this->get_subtotal_bundle_price(), true );
 					}
@@ -472,9 +504,11 @@ class Frontend extends Singleton {
 					);
 					?>
 				</div>
-				<button class="wd-fbt-purchase-btn single_add_to_cart_button button<?php echo esc_attr( $button_classes ); ?>" type="submit">
-					<?php esc_html_e( 'Add to cart', 'woodmart' ); ?>
-				</button>
+				<?php if ( ! woodmart_get_opt( 'catalog_mode' ) || ! is_user_logged_in() && woodmart_get_opt( 'login_prices' ) ) : ?>
+					<button class="wd-fbt-purchase-btn single_add_to_cart_button button<?php echo esc_attr( $button_classes ); ?>" type="submit">
+						<?php esc_html_e( 'Add to cart', 'woodmart' ); ?>
+					</button>
+				<?php endif; ?>
 			</div>
 			<div class="wd-loader-overlay wd-fill"></div>
 		</form>
@@ -488,6 +522,10 @@ class Frontend extends Singleton {
 	 */
 	private function get_subtotal_bundle_price() {
 		global $product;
+
+		if ( ! is_user_logged_in() && woodmart_get_opt( 'login_prices' ) ) {
+			return woodmart_print_login_to_see();
+		}
 
 		if ( ! $product ) {
 			$product = wc_get_product( $this->main_product_id );
@@ -702,24 +740,31 @@ class Frontend extends Singleton {
 	 * @return false|mixed
 	 */
 	private function get_default_variation_product_id( $product ) {
-		if ( $product->get_default_attributes() ) {
-			$is_default_variation = false;
+		$default_attributes = $product->get_default_attributes();
 
-			foreach ( $product->get_available_variations() as $variation_values ) {
-				foreach ( $variation_values['attributes'] as $key => $attribute_value ) {
-					$attribute_name = str_replace( 'attribute_', '', $key );
-					$default_value  = $product->get_variation_default_attribute( $attribute_name );
+		if ( empty( $default_attributes ) ) {
+			return current( $product->get_visible_children() );
+		}
 
-					if ( $default_value === $attribute_value ) {
-						$is_default_variation = true;
-					} else {
-						$is_default_variation = false;
-					}
+		foreach ( $product->get_children() as $variation_id ) {
+			$variation = wc_get_product( $variation_id );
+
+			if ( ! $variation || ! $variation->exists() ) {
+				continue;
+			}
+
+			$variation_attributes = $variation->get_variation_attributes();
+
+			$is_default_variation = true;
+			foreach ( $default_attributes as $key => $default_value ) {
+				if ( isset( $variation_attributes[ "attribute_$key" ] ) && $variation_attributes[ "attribute_$key" ] !== $default_value ) {
+					$is_default_variation = false;
+					break;
 				}
+			}
 
-				if ( $is_default_variation ) {
-					return $variation_values['variation_id'];
-				}
+			if ( $is_default_variation ) {
+				return $variation_id;
 			}
 		}
 

@@ -75,38 +75,7 @@ woodmart_enqueue_inline_style( 'header-my-account' );
 					?>
 				</span>
 				<span class="wd-tools-text">
-                <?php
-                echo wp_kses($link['label'], 'default');//vucamp
-                $current_user = wp_get_current_user();
-                if (!$current_user->ID) {
-                } else {
-                    $user_roles = $current_user->roles;
-                    $user_role  = array_shift($user_roles);
-
-                    switch ($user_role) {
-                        case 'administrator':
-                            echo ' <img decoding="async" width="30" height="30" src="https://dioutdoor.vn/media/2023/12/member-customer-65x65.png" alt="Thành viên CUSTOMER">';
-                            break;
-                        case 'customer':
-                            echo ' <img decoding="async" width="30" height="30" src="https://dioutdoor.vn/media/2023/12/member-customer-65x65.png" alt="Thành viên CUSTOMER">';
-                            break;
-                        case 'iron':
-                            echo ' <img decoding="async" width="30" height="30" src="https://dioutdoor.vn/media/2023/12/member-iron-65x65.png" alt="Thành viên IRON">';
-                            break;
-                        case 'stainless':
-                            echo ' <img decoding="async" width="30" height="30" src="https://dioutdoor.vn/media/2023/12/member-stainless-65x65.png" alt="Thành viên STAINLESS">';
-                            break;
-                        case 'aluminum':
-                            echo ' <img decoding="async" width="30" height="30" src="https://dioutdoor.vn/media/2023/12/member-aluminum-65x65.png" alt="Thành viên ALUMINUM">';
-                            break;
-                        case 'titanium':
-                            echo ' <img decoding="async" width="30" height="30" src="https://dioutdoor.vn/media/2023/12/member-titanium-65x65.png" alt="Thành viên TITANIUM">';
-                            break;
-                        default:
-                            break;
-                    }
-                }
-                ?>
+				<?php echo wp_kses( $link['label'], 'default' ); ?>
 			</span>
 
 			<?php if ( '8' === $params['icon_design'] || ( isset( $params['wrap_type'], $params['with_username'], $params['icon_design'] ) && 'icon_and_text' === $params['wrap_type'] && $params['with_username'] && in_array( $params['icon_design'], array( '6', '7' ), true ) && 'icon' === $params['display'] ) ) : ?>

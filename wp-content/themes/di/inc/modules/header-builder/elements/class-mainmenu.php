@@ -339,13 +339,13 @@ class Mainmenu extends Element {
 					'extra_class' => 'xts-col-6',
 				),
 				'icon_type'           => array(
-					'id'          => 'icon_type',
-					'title'       => esc_html__( 'Icon type', 'woodmart' ),
-					'type'        => 'selector',
-					'tab'         => esc_html__( 'Style', 'woodmart' ),
-					'group'       => esc_html__( 'Icon', 'woodmart' ),
-					'value'       => 'default',
-					'options'     => array(
+					'id'       => 'icon_type',
+					'title'    => esc_html__( 'Icon type', 'woodmart' ),
+					'type'     => 'selector',
+					'tab'      => esc_html__( 'Style', 'woodmart' ),
+					'group'    => esc_html__( 'Icon', 'woodmart' ),
+					'value'    => 'default',
+					'options'  => array(
 						'default' => array(
 							'value' => 'default',
 							'label' => esc_html__( 'Default', 'woodmart' ),
@@ -357,13 +357,12 @@ class Mainmenu extends Element {
 							'image' => WOODMART_ASSETS_IMAGES . '/header-builder/upload.jpg',
 						),
 					),
-					'requires'    => array(
+					'requires' => array(
 						'full_screen' => array(
 							'comparison' => 'equal',
 							'value'      => true,
 						),
 					),
-					'extra_class' => 'xts-col-6',
 				),
 				'custom_icon'         => array(
 					'id'          => 'custom_icon',
@@ -373,6 +372,29 @@ class Mainmenu extends Element {
 					'group'       => esc_html__( 'Icon', 'woodmart' ),
 					'value'       => '',
 					'description' => '',
+					'requires'    => array(
+						'icon_type' => array(
+							'comparison' => 'equal',
+							'value'      => 'custom',
+						),
+					),
+					'extra_class' => 'xts-col-6',
+				),
+				'custom_icon_width'   => array(
+					'id'          => 'custom_icon_width',
+					'title'       => esc_html__( 'Icon width', 'woodmart' ),
+					'type'        => 'slider',
+					'tab'         => esc_html__( 'Style', 'woodmart' ),
+					'group'       => esc_html__( 'Icon', 'woodmart' ),
+					'from'        => 0,
+					'to'          => 60,
+					'value'       => 0,
+					'units'       => 'px',
+					'selectors'   => array(
+						'{{WRAPPER}}' => array(
+							'--wd-tools-icon-width: {{VALUE}}px;',
+						),
+					),
 					'requires'    => array(
 						'icon_type' => array(
 							'comparison' => 'equal',
@@ -481,6 +503,42 @@ class Mainmenu extends Element {
 						),
 					),
 				),
+				'icon_width'          => array(
+					'id'          => 'icon_width',
+					'title'       => esc_html__( 'Width', 'woodmart' ),
+					'hint'        => '<video src="' . WOODMART_TOOLTIP_URL . 'hb_icon_width.mp4" autoplay loop muted></video>',
+					'type'        => 'slider',
+					'tab'         => esc_html__( 'Style', 'woodmart' ),
+					'group'       => esc_html__( 'Items icon', 'woodmart' ),
+					'from'        => 0,
+					'to'          => 60,
+					'value'       => '',
+					'units'       => 'px',
+					'selectors'   => array(
+						'{{WRAPPER}} > .wd-nav > li > a .wd-nav-img, .wd-fs-menu .wd-nav-fs > li > a .wd-nav-img' => array(
+							'--nav-img-width: {{VALUE}}px;',
+						),
+					),
+					'extra_class' => 'xts-col-6',
+				),
+				'icon_height'         => array(
+					'id'          => 'icon_height',
+					'title'       => esc_html__( 'Height', 'woodmart' ),
+					'hint'        => '<video src="' . WOODMART_TOOLTIP_URL . 'hb_icon_height.mp4" autoplay loop muted></video>',
+					'type'        => 'slider',
+					'tab'         => esc_html__( 'Style', 'woodmart' ),
+					'group'       => esc_html__( 'Items icon', 'woodmart' ),
+					'from'        => 0,
+					'to'          => 60,
+					'value'       => '',
+					'units'       => 'px',
+					'selectors'   => array(
+						'{{WRAPPER}} > .wd-nav > li > a .wd-nav-img, .wd-fs-menu .wd-nav-fs > li > a .wd-nav-img' => array(
+							'--nav-img-height: {{VALUE}}px;',
+						),
+					),
+					'extra_class' => 'xts-col-6',
+				),
 				'bg_overlay'          => array(
 					'id'          => 'bg_overlay',
 					'title'       => esc_html__( 'Background overlay', 'woodmart' ),
@@ -488,7 +546,7 @@ class Mainmenu extends Element {
 					'description' => __( 'Highlight dropdowns by darkening the background behind.', 'woodmart' ),
 					'type'        => 'switcher',
 					'tab'         => esc_html__( 'Style', 'woodmart' ),
-					'group'       => esc_html__( 'Menu', 'woodmart' ),
+					'group'       => esc_html__( 'Extra', 'woodmart' ),
 					'value'       => false,
 					'requires'    => array(
 						'full_screen' => array(
@@ -502,7 +560,7 @@ class Mainmenu extends Element {
 					'title'       => esc_html__( 'Display inline', 'woodmart' ),
 					'type'        => 'switcher',
 					'tab'         => esc_html__( 'Style', 'woodmart' ),
-					'group'       => esc_html__( 'Menu', 'woodmart' ),
+					'group'       => esc_html__( 'Extra', 'woodmart' ),
 					'value'       => false,
 					'description' => esc_html__( 'The width of the element will depend on its content', 'woodmart' ),
 					'requires'    => array(

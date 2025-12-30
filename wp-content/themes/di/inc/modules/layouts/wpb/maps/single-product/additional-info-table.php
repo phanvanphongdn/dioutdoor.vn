@@ -325,30 +325,30 @@ if ( ! function_exists( 'woodmart_get_vc_map_single_product_additional_info_tabl
 				),
 
 				array(
-					'type'       => 'autocomplete',
-					'heading'    => esc_html__( 'Include', 'woodmart' ),
-					'param_name' => 'include',
-					'settings'   => array(
+					'type'          => 'autocomplete',
+					'heading'       => esc_html__( 'Include', 'woodmart' ),
+					'param_name'    => 'include',
+					'settings'      => array(
 						'multiple'   => true,
 						'sortable'   => true,
 						'min_length' => 1,
 					),
-					'dependency' => array(
+					'wd_dependency' => array(
 						'element' => 'data_source',
 						'value'   => array( 'include' ),
 					),
 				),
 
 				array(
-					'type'       => 'autocomplete',
-					'heading'    => esc_html__( 'Exclude', 'woodmart' ),
-					'param_name' => 'exclude',
-					'settings'   => array(
+					'type'          => 'autocomplete',
+					'heading'       => esc_html__( 'Exclude', 'woodmart' ),
+					'param_name'    => 'exclude',
+					'settings'      => array(
 						'multiple'   => true,
 						'sortable'   => true,
 						'min_length' => 1,
 					),
-					'dependency' => array(
+					'wd_dependency' => array(
 						'element' => 'data_source',
 						'value'   => array( 'exclude' ),
 					),

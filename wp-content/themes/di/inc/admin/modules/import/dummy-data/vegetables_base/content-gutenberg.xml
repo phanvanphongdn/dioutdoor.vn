@@ -16,7 +16,7 @@
 	<!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 	<!--    contained in this file into your site. -->
 
-	<!-- generator="WordPress/6.5.5" created="2024-11-14 17:59" -->
+	<!-- generator="WordPress/6.7.2" created="2025-06-09 11:23" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -29,15 +29,13 @@
 	<title>Vegetables gutenberg</title>
 	<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg</link>
 	<description></description>
-	<pubDate>Thu, 14 Nov 2024 17:59:46 +0000</pubDate>
+	<pubDate>Mon, 09 Jun 2025 11:23:23 +0000</pubDate>
 	<language>en-US</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
 	<wp:base_site_url>https://dummy.xtemos.com/woodmart2/</wp:base_site_url>
 	<wp:base_blog_url>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg</wp:base_blog_url>
 
-		<wp:author><wp:author_id>1</wp:author_id><wp:author_login><![CDATA[admin]]></wp:author_login><wp:author_email><![CDATA[adad@adad.ad]]></wp:author_email><wp:author_display_name><![CDATA[admin]]></wp:author_display_name><wp:author_first_name><![CDATA[]]></wp:author_first_name><wp:author_last_name><![CDATA[]]></wp:author_last_name></wp:author>
-	<wp:author><wp:author_id>2</wp:author_id><wp:author_login><![CDATA[zakhar]]></wp:author_login><wp:author_email><![CDATA[zak@asda.as]]></wp:author_email><wp:author_display_name><![CDATA[Mr. Mackay]]></wp:author_display_name><wp:author_first_name><![CDATA[sds]]></wp:author_first_name><wp:author_last_name><![CDATA[scssc]]></wp:author_last_name></wp:author>
-
+	
 			<wp:category>
 			<wp:term_id>1</wp:term_id>
 			<wp:category_nicename><![CDATA[bakery]]></wp:category_nicename>
@@ -743,96 +741,6 @@
 		</wp:termmeta>
 		</wp:term>
 			<wp:term>
-			<wp:term_id>36</wp:term_id>
-			<wp:term_taxonomy><![CDATA[pa_brand]]></wp:term_taxonomy>
-			<wp:term_slug><![CDATA[impossible]]></wp:term_slug>
-			<wp:term_parent><![CDATA[]]></wp:term_parent>
-			<wp:term_name><![CDATA[Impossible]]></wp:term_name>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-36-status]]></wp:meta_key>
-			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[image]]></wp:meta_key>
-			<wp:meta_value><![CDATA[a:2:{s:3:"url";s:111:"http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/08/brand-impossible.png";s:2:"id";s:3:"408";}]]></wp:meta_value>
-		</wp:termmeta>
-		</wp:term>
-			<wp:term>
-			<wp:term_id>37</wp:term_id>
-			<wp:term_taxonomy><![CDATA[pa_brand]]></wp:term_taxonomy>
-			<wp:term_slug><![CDATA[alpro]]></wp:term_slug>
-			<wp:term_parent><![CDATA[]]></wp:term_parent>
-			<wp:term_name><![CDATA[Alpro]]></wp:term_name>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-37-status]]></wp:meta_key>
-			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[image]]></wp:meta_key>
-			<wp:meta_value><![CDATA[a:2:{s:3:"url";s:106:"http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/08/brand-alpro.png";s:2:"id";s:3:"407";}]]></wp:meta_value>
-		</wp:termmeta>
-		</wp:term>
-			<wp:term>
-			<wp:term_id>38</wp:term_id>
-			<wp:term_taxonomy><![CDATA[pa_brand]]></wp:term_taxonomy>
-			<wp:term_slug><![CDATA[union-coffee]]></wp:term_slug>
-			<wp:term_parent><![CDATA[]]></wp:term_parent>
-			<wp:term_name><![CDATA[Union Coffee]]></wp:term_name>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-38-status]]></wp:meta_key>
-			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[image]]></wp:meta_key>
-			<wp:meta_value><![CDATA[a:2:{s:3:"url";s:113:"http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/08/brand-union-coffee.png";s:2:"id";s:3:"415";}]]></wp:meta_value>
-		</wp:termmeta>
-		</wp:term>
-			<wp:term>
-			<wp:term_id>39</wp:term_id>
-			<wp:term_taxonomy><![CDATA[pa_brand]]></wp:term_taxonomy>
-			<wp:term_slug><![CDATA[oatly]]></wp:term_slug>
-			<wp:term_parent><![CDATA[]]></wp:term_parent>
-			<wp:term_name><![CDATA[Oatly]]></wp:term_name>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-39-status]]></wp:meta_key>
-			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[image]]></wp:meta_key>
-			<wp:meta_value><![CDATA[a:2:{s:3:"url";s:106:"http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/08/brand-oatly.png";s:2:"id";s:3:"412";}]]></wp:meta_value>
-		</wp:termmeta>
-		</wp:term>
-			<wp:term>
-			<wp:term_id>40</wp:term_id>
-			<wp:term_taxonomy><![CDATA[pa_brand]]></wp:term_taxonomy>
-			<wp:term_slug><![CDATA[quorn]]></wp:term_slug>
-			<wp:term_parent><![CDATA[]]></wp:term_parent>
-			<wp:term_name><![CDATA[Quorn]]></wp:term_name>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-40-status]]></wp:meta_key>
-			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[image]]></wp:meta_key>
-			<wp:meta_value><![CDATA[a:2:{s:3:"url";s:106:"http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/08/brand-quorn.png";s:2:"id";s:3:"413";}]]></wp:meta_value>
-		</wp:termmeta>
-		</wp:term>
-			<wp:term>
-			<wp:term_id>41</wp:term_id>
-			<wp:term_taxonomy><![CDATA[pa_brand]]></wp:term_taxonomy>
-			<wp:term_slug><![CDATA[mowi]]></wp:term_slug>
-			<wp:term_parent><![CDATA[]]></wp:term_parent>
-			<wp:term_name><![CDATA[Mowi]]></wp:term_name>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-41-status]]></wp:meta_key>
-			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[image]]></wp:meta_key>
-			<wp:meta_value><![CDATA[a:2:{s:3:"url";s:105:"http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/08/brand-mowi.png";s:2:"id";s:3:"411";}]]></wp:meta_value>
-		</wp:termmeta>
-		</wp:term>
-			<wp:term>
 			<wp:term_id>42</wp:term_id>
 			<wp:term_taxonomy><![CDATA[pa_country]]></wp:term_taxonomy>
 			<wp:term_slug><![CDATA[norway]]></wp:term_slug>
@@ -841,36 +749,6 @@
 		<wp:termmeta>
 			<wp:meta_key><![CDATA[xts-term-42-status]]></wp:meta_key>
 			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
-		</wp:termmeta>
-		</wp:term>
-			<wp:term>
-			<wp:term_id>43</wp:term_id>
-			<wp:term_taxonomy><![CDATA[pa_brand]]></wp:term_taxonomy>
-			<wp:term_slug><![CDATA[lightlife]]></wp:term_slug>
-			<wp:term_parent><![CDATA[]]></wp:term_parent>
-			<wp:term_name><![CDATA[Lightlife]]></wp:term_name>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-43-status]]></wp:meta_key>
-			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[image]]></wp:meta_key>
-			<wp:meta_value><![CDATA[a:2:{s:3:"url";s:110:"http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/08/brand-lightlife.png";s:2:"id";s:3:"409";}]]></wp:meta_value>
-		</wp:termmeta>
-		</wp:term>
-			<wp:term>
-			<wp:term_id>44</wp:term_id>
-			<wp:term_taxonomy><![CDATA[pa_brand]]></wp:term_taxonomy>
-			<wp:term_slug><![CDATA[meati]]></wp:term_slug>
-			<wp:term_parent><![CDATA[]]></wp:term_parent>
-			<wp:term_name><![CDATA[Meati]]></wp:term_name>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-44-status]]></wp:meta_key>
-			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[image]]></wp:meta_key>
-			<wp:meta_value><![CDATA[a:2:{s:3:"url";s:106:"http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/08/brand-meati.png";s:2:"id";s:3:"410";}]]></wp:meta_value>
 		</wp:termmeta>
 		</wp:term>
 			<wp:term>
@@ -976,21 +854,6 @@
 		<wp:termmeta>
 			<wp:meta_key><![CDATA[thumbnail_id]]></wp:meta_key>
 			<wp:meta_value><![CDATA[175]]></wp:meta_value>
-		</wp:termmeta>
-		</wp:term>
-			<wp:term>
-			<wp:term_id>48</wp:term_id>
-			<wp:term_taxonomy><![CDATA[pa_brand]]></wp:term_taxonomy>
-			<wp:term_slug><![CDATA[unbun]]></wp:term_slug>
-			<wp:term_parent><![CDATA[]]></wp:term_parent>
-			<wp:term_name><![CDATA[Unbun]]></wp:term_name>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-48-status]]></wp:meta_key>
-			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[image]]></wp:meta_key>
-			<wp:meta_value><![CDATA[a:2:{s:3:"url";s:106:"http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/08/brand-unbun.png";s:2:"id";s:3:"414";}]]></wp:meta_value>
 		</wp:termmeta>
 		</wp:term>
 			<wp:term>
@@ -1409,6 +1272,141 @@
 			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
 		</wp:termmeta>
 		</wp:term>
+			<wp:term>
+			<wp:term_id>77</wp:term_id>
+			<wp:term_taxonomy><![CDATA[product_brand]]></wp:term_taxonomy>
+			<wp:term_slug><![CDATA[alpro]]></wp:term_slug>
+			<wp:term_parent><![CDATA[]]></wp:term_parent>
+			<wp:term_name><![CDATA[Alpro]]></wp:term_name>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[thumbnail_id]]></wp:meta_key>
+			<wp:meta_value><![CDATA[407]]></wp:meta_value>
+		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[xts-term-77-status]]></wp:meta_key>
+			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
+		</wp:termmeta>
+		</wp:term>
+			<wp:term>
+			<wp:term_id>78</wp:term_id>
+			<wp:term_taxonomy><![CDATA[product_brand]]></wp:term_taxonomy>
+			<wp:term_slug><![CDATA[impossible]]></wp:term_slug>
+			<wp:term_parent><![CDATA[]]></wp:term_parent>
+			<wp:term_name><![CDATA[Impossible]]></wp:term_name>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[thumbnail_id]]></wp:meta_key>
+			<wp:meta_value><![CDATA[408]]></wp:meta_value>
+		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[xts-term-78-status]]></wp:meta_key>
+			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
+		</wp:termmeta>
+		</wp:term>
+			<wp:term>
+			<wp:term_id>79</wp:term_id>
+			<wp:term_taxonomy><![CDATA[product_brand]]></wp:term_taxonomy>
+			<wp:term_slug><![CDATA[lightlife]]></wp:term_slug>
+			<wp:term_parent><![CDATA[]]></wp:term_parent>
+			<wp:term_name><![CDATA[Lightlife]]></wp:term_name>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[thumbnail_id]]></wp:meta_key>
+			<wp:meta_value><![CDATA[409]]></wp:meta_value>
+		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[xts-term-79-status]]></wp:meta_key>
+			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
+		</wp:termmeta>
+		</wp:term>
+			<wp:term>
+			<wp:term_id>80</wp:term_id>
+			<wp:term_taxonomy><![CDATA[product_brand]]></wp:term_taxonomy>
+			<wp:term_slug><![CDATA[meati]]></wp:term_slug>
+			<wp:term_parent><![CDATA[]]></wp:term_parent>
+			<wp:term_name><![CDATA[Meati]]></wp:term_name>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[thumbnail_id]]></wp:meta_key>
+			<wp:meta_value><![CDATA[410]]></wp:meta_value>
+		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[xts-term-80-status]]></wp:meta_key>
+			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
+		</wp:termmeta>
+		</wp:term>
+			<wp:term>
+			<wp:term_id>81</wp:term_id>
+			<wp:term_taxonomy><![CDATA[product_brand]]></wp:term_taxonomy>
+			<wp:term_slug><![CDATA[mowi]]></wp:term_slug>
+			<wp:term_parent><![CDATA[]]></wp:term_parent>
+			<wp:term_name><![CDATA[Mowi]]></wp:term_name>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[thumbnail_id]]></wp:meta_key>
+			<wp:meta_value><![CDATA[411]]></wp:meta_value>
+		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[xts-term-81-status]]></wp:meta_key>
+			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
+		</wp:termmeta>
+		</wp:term>
+			<wp:term>
+			<wp:term_id>82</wp:term_id>
+			<wp:term_taxonomy><![CDATA[product_brand]]></wp:term_taxonomy>
+			<wp:term_slug><![CDATA[oatly]]></wp:term_slug>
+			<wp:term_parent><![CDATA[]]></wp:term_parent>
+			<wp:term_name><![CDATA[Oatly]]></wp:term_name>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[thumbnail_id]]></wp:meta_key>
+			<wp:meta_value><![CDATA[412]]></wp:meta_value>
+		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[xts-term-82-status]]></wp:meta_key>
+			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
+		</wp:termmeta>
+		</wp:term>
+			<wp:term>
+			<wp:term_id>83</wp:term_id>
+			<wp:term_taxonomy><![CDATA[product_brand]]></wp:term_taxonomy>
+			<wp:term_slug><![CDATA[quorn]]></wp:term_slug>
+			<wp:term_parent><![CDATA[]]></wp:term_parent>
+			<wp:term_name><![CDATA[Quorn]]></wp:term_name>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[thumbnail_id]]></wp:meta_key>
+			<wp:meta_value><![CDATA[413]]></wp:meta_value>
+		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[xts-term-83-status]]></wp:meta_key>
+			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
+		</wp:termmeta>
+		</wp:term>
+			<wp:term>
+			<wp:term_id>84</wp:term_id>
+			<wp:term_taxonomy><![CDATA[product_brand]]></wp:term_taxonomy>
+			<wp:term_slug><![CDATA[unbun]]></wp:term_slug>
+			<wp:term_parent><![CDATA[]]></wp:term_parent>
+			<wp:term_name><![CDATA[Unbun]]></wp:term_name>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[thumbnail_id]]></wp:meta_key>
+			<wp:meta_value><![CDATA[414]]></wp:meta_value>
+		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[xts-term-84-status]]></wp:meta_key>
+			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
+		</wp:termmeta>
+		</wp:term>
+			<wp:term>
+			<wp:term_id>85</wp:term_id>
+			<wp:term_taxonomy><![CDATA[product_brand]]></wp:term_taxonomy>
+			<wp:term_slug><![CDATA[union-coffee]]></wp:term_slug>
+			<wp:term_parent><![CDATA[]]></wp:term_parent>
+			<wp:term_name><![CDATA[Union Coffee]]></wp:term_name>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[thumbnail_id]]></wp:meta_key>
+			<wp:meta_value><![CDATA[415]]></wp:meta_value>
+		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[xts-term-85-status]]></wp:meta_key>
+			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
+		</wp:termmeta>
+		</wp:term>
 			<wp:term><wp:term_id>49</wp:term_id><wp:term_taxonomy>nav_menu</wp:term_taxonomy><wp:term_slug><![CDATA[all-categories-vegetables]]></wp:term_slug><wp:term_name><![CDATA[All categories Vegetables]]></wp:term_name>
 </wp:term>
 	<wp:term><wp:term_id>62</wp:term_id><wp:term_taxonomy>nav_menu</wp:term_taxonomy><wp:term_slug><![CDATA[footer-menu]]></wp:term_slug><wp:term_name><![CDATA[Footer menu]]></wp:term_name>
@@ -1426,19 +1424,19 @@
 	<wp:term><wp:term_id>67</wp:term_id><wp:term_taxonomy>nav_menu</wp:term_taxonomy><wp:term_slug><![CDATA[mobile-navigation]]></wp:term_slug><wp:term_name><![CDATA[Mobile navigation]]></wp:term_name>
 </wp:term>
 
-	<generator>https://wordpress.org/?v=6.5.5</generator>
+	<generator>https://wordpress.org/?v=6.7.2</generator>
 
 					<item>
 					<title><![CDATA[Oranges]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/product/oranges/</link>
 					<pubDate>Tue, 06 Aug 2024 09:17:20 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?post_type=product&#038;p=89</guid>
 															<wp:post_id>89</wp:post_id>
 					<wp:post_date><![CDATA[2024-08-06 09:17:20]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-08-06 09:17:20]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-10-08 16:16:56]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-10-08 16:16:56]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-02-04 12:56:09]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-02-04 12:56:09]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[open]]></wp:comment_status>
 					<wp:post_name><![CDATA[oranges]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -1447,7 +1445,7 @@
 					<wp:post_type><![CDATA[product]]></wp:post_type>
 												<category domain="pa_country" nicename="australia"><![CDATA[Australia]]></category>
 		<category domain="product_cat" nicename="fresh-fruits"><![CDATA[Fresh Fruits]]></category>
-		<category domain="pa_brand" nicename="quorn"><![CDATA[Quorn]]></category>
+		<category domain="product_brand" nicename="quorn"><![CDATA[Quorn]]></category>
 		<category domain="product_type" nicename="simple"><![CDATA[simple]]></category>
 											<wp:postmeta>
 							<wp:meta_key><![CDATA[_manage_stock]]></wp:meta_key>
@@ -1463,7 +1461,7 @@
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
+							<wp:meta_value><![CDATA[9.6.0]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -1530,13 +1528,13 @@
 					<title><![CDATA[Plums]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/product/plums/</link>
 					<pubDate>Tue, 06 Aug 2024 09:17:20 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?post_type=product&#038;p=90</guid>
 															<wp:post_id>90</wp:post_id>
 					<wp:post_date><![CDATA[2024-08-06 09:17:20]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-08-06 09:17:20]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-10-08 16:17:04]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-10-08 16:17:04]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-02-04 12:56:43]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-02-04 12:56:43]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[open]]></wp:comment_status>
 					<wp:post_name><![CDATA[plums]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -1547,7 +1545,7 @@
 		<category domain="product_visibility" nicename="featured"><![CDATA[featured]]></category>
 		<category domain="product_cat" nicename="fresh-fruits"><![CDATA[Fresh Fruits]]></category>
 		<category domain="product_type" nicename="simple"><![CDATA[simple]]></category>
-		<category domain="pa_brand" nicename="union-coffee"><![CDATA[Union Coffee]]></category>
+		<category domain="product_brand" nicename="union-coffee"><![CDATA[Union Coffee]]></category>
 											<wp:postmeta>
 							<wp:meta_key><![CDATA[_manage_stock]]></wp:meta_key>
 							<wp:meta_value><![CDATA[yes]]></wp:meta_value>
@@ -1562,7 +1560,7 @@
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
+							<wp:meta_value><![CDATA[9.6.0]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -1633,13 +1631,13 @@
 					<title><![CDATA[Durian Whole]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/product/durian-whole/</link>
 					<pubDate>Tue, 06 Aug 2024 09:17:20 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?post_type=product&#038;p=91</guid>
 															<wp:post_id>91</wp:post_id>
 					<wp:post_date><![CDATA[2024-08-06 09:17:20]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-08-06 09:17:20]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-10-08 16:16:31]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-10-08 16:16:31]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-02-04 12:54:46]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-02-04 12:54:46]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[open]]></wp:comment_status>
 					<wp:post_name><![CDATA[durian-whole]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -1648,7 +1646,7 @@
 					<wp:post_type><![CDATA[product]]></wp:post_type>
 												<category domain="pa_country" nicename="australia"><![CDATA[Australia]]></category>
 		<category domain="product_cat" nicename="fresh-fruits"><![CDATA[Fresh Fruits]]></category>
-		<category domain="pa_brand" nicename="lightlife"><![CDATA[Lightlife]]></category>
+		<category domain="product_brand" nicename="lightlife"><![CDATA[Lightlife]]></category>
 		<category domain="product_type" nicename="simple"><![CDATA[simple]]></category>
 											<wp:postmeta>
 							<wp:meta_key><![CDATA[_manage_stock]]></wp:meta_key>
@@ -1664,7 +1662,7 @@
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
+							<wp:meta_value><![CDATA[9.6.0]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -1735,13 +1733,13 @@
 					<title><![CDATA[Dried White Fungus]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/product/dried-white-fungus/</link>
 					<pubDate>Tue, 06 Aug 2024 09:17:20 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?post_type=product&#038;p=92</guid>
 															<wp:post_id>92</wp:post_id>
 					<wp:post_date><![CDATA[2024-08-06 09:17:20]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-08-06 09:17:20]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-10-08 16:16:21]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-10-08 16:16:21]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-02-04 12:54:28]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-02-04 12:54:28]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[open]]></wp:comment_status>
 					<wp:post_name><![CDATA[dried-white-fungus]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -1749,7 +1747,7 @@
 					<wp:menu_order>0</wp:menu_order>
 					<wp:post_type><![CDATA[product]]></wp:post_type>
 												<category domain="pa_country" nicename="australia"><![CDATA[Australia]]></category>
-		<category domain="pa_brand" nicename="impossible"><![CDATA[Impossible]]></category>
+		<category domain="product_brand" nicename="impossible"><![CDATA[Impossible]]></category>
 		<category domain="product_cat" nicename="mushrooms"><![CDATA[Mushrooms]]></category>
 		<category domain="product_type" nicename="simple"><![CDATA[simple]]></category>
 											<wp:postmeta>
@@ -1766,7 +1764,7 @@
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
+							<wp:meta_value><![CDATA[9.6.0]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -1837,13 +1835,13 @@
 					<title><![CDATA[Vegan Bacon]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/product/vegan-bacon/</link>
 					<pubDate>Tue, 06 Aug 2024 09:17:20 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?post_type=product&#038;p=93</guid>
 															<wp:post_id>93</wp:post_id>
 					<wp:post_date><![CDATA[2024-08-06 09:17:20]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-08-06 09:17:20]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-08-06 09:17:23]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-08-06 09:17:23]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-02-04 12:54:32]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-02-04 12:54:32]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[open]]></wp:comment_status>
 					<wp:post_name><![CDATA[vegan-bacon]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -1851,7 +1849,7 @@
 					<wp:menu_order>0</wp:menu_order>
 					<wp:post_type><![CDATA[product]]></wp:post_type>
 												<category domain="product_cat" nicename="bacon"><![CDATA[Bacon]]></category>
-		<category domain="pa_brand" nicename="impossible"><![CDATA[Impossible]]></category>
+		<category domain="product_brand" nicename="impossible"><![CDATA[Impossible]]></category>
 		<category domain="product_type" nicename="simple"><![CDATA[simple]]></category>
 		<category domain="pa_country" nicename="spain"><![CDATA[Spain]]></category>
 											<wp:postmeta>
@@ -1868,7 +1866,7 @@
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
+							<wp:meta_value><![CDATA[9.6.0]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -1895,13 +1893,13 @@
 					<title><![CDATA[Fresh White Eggs]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/product/fresh-white-eggs/</link>
 					<pubDate>Tue, 06 Aug 2024 09:17:33 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?post_type=product&#038;p=145</guid>
 															<wp:post_id>145</wp:post_id>
 					<wp:post_date><![CDATA[2024-08-06 09:17:33]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-08-06 09:17:33]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-08-06 09:17:34]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-08-06 09:17:34]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-02-04 12:54:15]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-02-04 12:54:15]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[open]]></wp:comment_status>
 					<wp:post_name><![CDATA[fresh-white-eggs]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -1909,7 +1907,7 @@
 					<wp:menu_order>0</wp:menu_order>
 					<wp:post_type><![CDATA[product]]></wp:post_type>
 												<category domain="product_cat" nicename="eggs"><![CDATA[Eggs]]></category>
-		<category domain="pa_brand" nicename="impossible"><![CDATA[Impossible]]></category>
+		<category domain="product_brand" nicename="impossible"><![CDATA[Impossible]]></category>
 		<category domain="product_type" nicename="simple"><![CDATA[simple]]></category>
 		<category domain="pa_country" nicename="spain"><![CDATA[Spain]]></category>
 											<wp:postmeta>
@@ -1926,7 +1924,7 @@
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
+							<wp:meta_value><![CDATA[9.6.0]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -1957,13 +1955,13 @@
 					<title><![CDATA[Brown Eggs]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/product/brown-eggs/</link>
 					<pubDate>Tue, 06 Aug 2024 09:17:33 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?post_type=product&#038;p=146</guid>
 															<wp:post_id>146</wp:post_id>
 					<wp:post_date><![CDATA[2024-08-06 09:17:33]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-08-06 09:17:33]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-08-06 09:17:34]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-08-06 09:17:34]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-02-04 12:56:28]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-02-04 12:56:28]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[open]]></wp:comment_status>
 					<wp:post_name><![CDATA[brown-eggs]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -1973,7 +1971,7 @@
 												<category domain="product_cat" nicename="eggs"><![CDATA[Eggs]]></category>
 		<category domain="product_type" nicename="simple"><![CDATA[simple]]></category>
 		<category domain="pa_country" nicename="spain"><![CDATA[Spain]]></category>
-		<category domain="pa_brand" nicename="unbun"><![CDATA[Unbun]]></category>
+		<category domain="product_brand" nicename="unbun"><![CDATA[Unbun]]></category>
 											<wp:postmeta>
 							<wp:meta_key><![CDATA[_manage_stock]]></wp:meta_key>
 							<wp:meta_value><![CDATA[yes]]></wp:meta_value>
@@ -1988,7 +1986,7 @@
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
+							<wp:meta_value><![CDATA[9.6.0]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -2019,20 +2017,20 @@
 					<title><![CDATA[Oat Milk Drink]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/product/oat-milk-drink/</link>
 					<pubDate>Tue, 06 Aug 2024 09:17:33 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?post_type=product&#038;p=147</guid>
 															<wp:post_id>147</wp:post_id>
 					<wp:post_date><![CDATA[2024-08-06 09:17:33]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-08-06 09:17:33]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-08-06 09:17:34]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-08-06 09:17:34]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-02-04 12:54:42]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-02-04 12:54:42]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[open]]></wp:comment_status>
 					<wp:post_name><![CDATA[oat-milk-drink]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
 					<wp:post_parent>0</wp:post_parent>
 					<wp:menu_order>0</wp:menu_order>
 					<wp:post_type><![CDATA[product]]></wp:post_type>
-												<category domain="pa_brand" nicename="lightlife"><![CDATA[Lightlife]]></category>
+												<category domain="product_brand" nicename="lightlife"><![CDATA[Lightlife]]></category>
 		<category domain="product_cat" nicename="milk-cream"><![CDATA[Milk &amp; Cream]]></category>
 		<category domain="product_type" nicename="simple"><![CDATA[simple]]></category>
 		<category domain="pa_country" nicename="spain"><![CDATA[Spain]]></category>
@@ -2050,7 +2048,7 @@
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
+							<wp:meta_value><![CDATA[9.6.0]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -2081,20 +2079,20 @@
 					<title><![CDATA[Oat Milk With Vitamins]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/product/oat-milk-with-vitamins/</link>
 					<pubDate>Tue, 06 Aug 2024 09:17:33 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?post_type=product&#038;p=148</guid>
 															<wp:post_id>148</wp:post_id>
 					<wp:post_date><![CDATA[2024-08-06 09:17:33]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-08-06 09:17:33]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-08-06 09:17:35]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-08-06 09:17:35]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-02-04 12:55:11]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-02-04 12:55:11]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[open]]></wp:comment_status>
 					<wp:post_name><![CDATA[oat-milk-with-vitamins]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
 					<wp:post_parent>0</wp:post_parent>
 					<wp:menu_order>0</wp:menu_order>
 					<wp:post_type><![CDATA[product]]></wp:post_type>
-												<category domain="pa_brand" nicename="meati"><![CDATA[Meati]]></category>
+												<category domain="product_brand" nicename="meati"><![CDATA[Meati]]></category>
 		<category domain="product_cat" nicename="milk-cream"><![CDATA[Milk &amp; Cream]]></category>
 		<category domain="product_type" nicename="simple"><![CDATA[simple]]></category>
 		<category domain="pa_country" nicename="spain"><![CDATA[Spain]]></category>
@@ -2112,7 +2110,7 @@
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
+							<wp:meta_value><![CDATA[9.6.0]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -2143,20 +2141,20 @@
 					<title><![CDATA[Plain With Coconut]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/product/plain-with-coconut/</link>
 					<pubDate>Tue, 06 Aug 2024 09:17:33 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?post_type=product&#038;p=149</guid>
 															<wp:post_id>149</wp:post_id>
 					<wp:post_date><![CDATA[2024-08-06 09:17:33]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-08-06 09:17:33]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-08-06 09:17:35]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-08-06 09:17:35]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-02-04 12:53:44]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-02-04 12:53:44]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[open]]></wp:comment_status>
 					<wp:post_name><![CDATA[plain-with-coconut]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
 					<wp:post_parent>0</wp:post_parent>
 					<wp:menu_order>0</wp:menu_order>
 					<wp:post_type><![CDATA[product]]></wp:post_type>
-												<category domain="pa_brand" nicename="alpro"><![CDATA[Alpro]]></category>
+												<category domain="product_brand" nicename="alpro"><![CDATA[Alpro]]></category>
 		<category domain="product_visibility" nicename="featured"><![CDATA[featured]]></category>
 		<category domain="product_type" nicename="simple"><![CDATA[simple]]></category>
 		<category domain="pa_country" nicename="spain"><![CDATA[Spain]]></category>
@@ -2175,7 +2173,7 @@
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
+							<wp:meta_value><![CDATA[9.6.0]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -2202,13 +2200,13 @@
 					<title><![CDATA[Raspberry Coconut Yog]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/product/raspberry-coconut-yog/</link>
 					<pubDate>Tue, 06 Aug 2024 09:17:33 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?post_type=product&#038;p=150</guid>
 															<wp:post_id>150</wp:post_id>
 					<wp:post_date><![CDATA[2024-08-06 09:17:33]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-08-06 09:17:33]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-08-06 09:17:36]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-08-06 09:17:36]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-02-04 12:56:39]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-02-04 12:56:39]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[open]]></wp:comment_status>
 					<wp:post_name><![CDATA[raspberry-coconut-yog]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -2217,7 +2215,7 @@
 					<wp:post_type><![CDATA[product]]></wp:post_type>
 												<category domain="product_type" nicename="simple"><![CDATA[simple]]></category>
 		<category domain="pa_country" nicename="spain"><![CDATA[Spain]]></category>
-		<category domain="pa_brand" nicename="union-coffee"><![CDATA[Union Coffee]]></category>
+		<category domain="product_brand" nicename="union-coffee"><![CDATA[Union Coffee]]></category>
 		<category domain="product_cat" nicename="yogurt"><![CDATA[Yogurt]]></category>
 											<wp:postmeta>
 							<wp:meta_key><![CDATA[_manage_stock]]></wp:meta_key>
@@ -2233,7 +2231,7 @@
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
+							<wp:meta_value><![CDATA[9.6.0]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -2260,7 +2258,7 @@
 					<title><![CDATA[Footer Vegetables]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?cms_block=footer-vegetables</link>
 					<pubDate>Tue, 06 Aug 2024 09:18:03 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?post_type=cms_block&#038;p=157</guid>
 											<content:encoded><![CDATA[<!-- wp:wd/row {"blockId":"b07c3be4-5260-430b-8b55-2111618932a5","columnsGap":null,"paddingTop":"40","marginBottom":"40","columnsGapMobile":null} -->
 <div id="wd-b07c3be4" class="wp-block-wd-row"><!-- wp:wd/column {"blockId":"4605df7b-3560-4429-a601-827e8f6f0cda","adjacentCount":4} -->
@@ -2405,11 +2403,11 @@
 					<title><![CDATA[Full screen search Vegetables]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?cms_block=full-screen-search-vegetables</link>
 					<pubDate>Tue, 06 Aug 2024 09:18:14 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?post_type=cms_block&#038;p=158</guid>
 											<content:encoded><![CDATA[<!-- wp:wd/row {"blockId":"79addb1a-6488-4b6a-9c10-3aa151742926"} -->
 <div id="wd-79addb1a" class="wp-block-wd-row"><!-- wp:wd/column {"blockId":"1f16bd00-528f-4b48-9e81-7ac5d12d2a66","adjacentCount":4,"adjacentCountTablet":2,"colWidthTablet":50} -->
-<div id="wd-1f16bd00" class="wp-block-wd-column"><!-- wp:wd/products {"blockId":"0ee852bb-bde8-48a7-b420-0a0f999fda75","show_title":true,"post_type":"sale","columns":1,"spacing":"10","items_per_page":"3","product_hover":"small","img_size":"custom","imgSizeCustomWidth":"70","imgSizeCustomHeight":"90","columnsMobile":1} -->
+<div id="wd-1f16bd00" class="wp-block-wd-column"><!-- wp:wd/products {"blockId":"0ee852bb-bde8-48a7-b420-0a0f999fda75","show_title":true,"columns":1,"spacing":"10","items_per_page":"3","product_hover":"small","img_size":"custom","imgSizeCustomWidth":"70","imgSizeCustomHeight":"90","columnsMobile":1} -->
 <!-- wp:wd/title {"blockId":"476aaadf-7257-4a14-908e-9edc079df10c","content":"Popular Products","tpFontSize":"18"} -->
 <h2 id="wd-476aaadf" class="wp-block-wd-title title">Popular Products</h2>
 <!-- /wp:wd/title -->
@@ -2425,7 +2423,7 @@
 <!-- /wp:wd/column -->
 
 <!-- wp:wd/column {"blockId":"41f8de9d-6ad4-472e-bb82-72da65ca78e5","adjacentCount":4,"adjacentCountTablet":2,"colWidthTablet":50} -->
-<div id="wd-41f8de9d" class="wp-block-wd-column"><!-- wp:wd/products {"blockId":"3929f38b-8982-4696-8085-6a20f8783b91","show_title":true,"post_type":"featured","columns":1,"spacing":"10","items_per_page":"3","product_hover":"small","img_size":"custom","imgSizeCustomWidth":"70","imgSizeCustomHeight":"90","columnsMobile":1} -->
+<div id="wd-41f8de9d" class="wp-block-wd-column"><!-- wp:wd/products {"blockId":"3929f38b-8982-4696-8085-6a20f8783b91","show_title":true,"columns":1,"spacing":"10","items_per_page":"3","product_hover":"small","img_size":"custom","imgSizeCustomWidth":"70","imgSizeCustomHeight":"90","columnsMobile":1} -->
 <!-- wp:wd/title {"blockId":"082d19d0-d221-4954-a95a-793ac8d843fd","content":"Popular Cookies \u0026amp; Brownies","tpFontSize":"18"} -->
 <h2 id="wd-082d19d0" class="wp-block-wd-title title">Popular Cookies &amp; Brownies</h2>
 <!-- /wp:wd/title -->
@@ -2433,7 +2431,7 @@
 <!-- /wp:wd/column -->
 
 <!-- wp:wd/column {"blockId":"3d9f8eb3-62ff-43a3-8a75-c03f0cad8ff6","adjacentCount":4,"adjacentCountTablet":2,"colWidthTablet":50} -->
-<div id="wd-3d9f8eb3" class="wp-block-wd-column"><!-- wp:wd/products {"blockId":"c9a67eac-e6e9-4c0b-9261-c39c90820ede","show_title":true,"post_type":"bestselling","query_type":"AND","columns":1,"spacing":"10","items_per_page":"3","product_hover":"small","img_size":"custom","imgSizeCustomWidth":"70","imgSizeCustomHeight":"90","columnsMobile":1} -->
+<div id="wd-3d9f8eb3" class="wp-block-wd-column"><!-- wp:wd/products {"blockId":"c9a67eac-e6e9-4c0b-9261-c39c90820ede","show_title":true,"query_type":"AND","columns":1,"spacing":"10","items_per_page":"3","product_hover":"small","img_size":"custom","imgSizeCustomWidth":"70","imgSizeCustomHeight":"90","columnsMobile":1} -->
 <!-- wp:wd/title {"blockId":"68fbcff5-dc09-419d-b93b-88ee95667ae5","content":"Popular Tea","tpFontSize":"18"} -->
 <h2 id="wd-68fbcff5" class="wp-block-wd-title title">Popular Tea</h2>
 <!-- /wp:wd/title -->
@@ -2443,8 +2441,8 @@
 															<wp:post_id>158</wp:post_id>
 					<wp:post_date><![CDATA[2024-08-06 09:18:14]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-08-06 09:18:14]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-10-08 16:43:40]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-10-08 16:43:40]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-06-09 11:23:11]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-06-09 11:23:11]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[full-screen-search-vegetables]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -2456,7 +2454,7 @@
 					<title><![CDATA[Header menu Vegetables Fruits]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?cms_block=header-menu-vegetables-fruits</link>
 					<pubDate>Tue, 06 Aug 2024 09:18:25 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?post_type=cms_block&#038;p=159</guid>
 											<content:encoded><![CDATA[<!-- wp:wd/container {"blockId":"4f13ac46-eabe-4709-82db-10fcf99ca80a","colGap":"","rowGap":"0","paddingTopTablet":"20","paddingRightTablet":"20","paddingBottomTablet":"20","paddingLeftTablet":"20","paddingLockTablet":true} -->
 <div id="wd-4f13ac46" class="wp-block-wd-container wd-dir-col"><!-- wp:wd/title {"blockId":"2f22248f-85ad-42ba-b0f4-3be658303575","content":"Vegetables \u0026amp; Fruits","tpFontSize":"16","marginBottom":"10"} -->
@@ -2495,7 +2493,7 @@
 					<title><![CDATA[Header menu Vegan Meat]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?cms_block=header-menu-vegan-meat</link>
 					<pubDate>Tue, 06 Aug 2024 09:18:36 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?post_type=cms_block&#038;p=160</guid>
 											<content:encoded><![CDATA[<!-- wp:wd/container {"blockId":"6d9a3375-d15d-424c-b16a-8e709626d45f","rowGap":"0","paddingTopTablet":"20","paddingRightTablet":"20","paddingBottomTablet":"20","paddingLeftTablet":"20","paddingLockTablet":true} -->
 <div id="wd-6d9a3375" class="wp-block-wd-container wd-dir-col"><!-- wp:wd/title {"blockId":"2f22248f-85ad-42ba-b0f4-3be658303575","content":"Vegan Meat","tpFontSize":"16","marginBottom":"10"} -->
@@ -2534,7 +2532,7 @@
 					<title><![CDATA[Header menu Seafood]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?cms_block=header-menu-seafood</link>
 					<pubDate>Tue, 06 Aug 2024 09:18:46 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?post_type=cms_block&#038;p=161</guid>
 											<content:encoded><![CDATA[<!-- wp:wd/container {"blockId":"63d48463-b74c-4c90-9f96-0e20e5daf702","rowGap":"0","paddingTopTablet":"20","paddingRightTablet":"20","paddingBottomTablet":"20","paddingLeftTablet":"20","paddingLockTablet":true} -->
 <div id="wd-63d48463" class="wp-block-wd-container wd-dir-col"><!-- wp:wd/title {"blockId":"2f22248f-85ad-42ba-b0f4-3be658303575","content":"Seafood","tpFontSize":"16","marginBottom":"10"} -->
@@ -2573,7 +2571,7 @@
 					<title><![CDATA[Header menu Dairy]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?cms_block=header-menu-dairy</link>
 					<pubDate>Tue, 06 Aug 2024 09:18:57 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?post_type=cms_block&#038;p=162</guid>
 											<content:encoded><![CDATA[<!-- wp:wd/container {"blockId":"a058c4bf-9a5d-4430-9609-4dd41579337c","rowGap":"0","paddingTopTablet":"20","paddingRightTablet":"20","paddingBottomTablet":"20","paddingLeftTablet":"20","paddingLockTablet":true} -->
 <div id="wd-a058c4bf" class="wp-block-wd-container wd-dir-col"><!-- wp:wd/title {"blockId":"2f22248f-85ad-42ba-b0f4-3be658303575","content":"Dairy","tpFontSize":"16","marginBottom":"10"} -->
@@ -2612,7 +2610,7 @@
 					<title><![CDATA[Header menu Bakery]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?cms_block=header-menu-bakery</link>
 					<pubDate>Tue, 06 Aug 2024 09:19:07 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?post_type=cms_block&#038;p=163</guid>
 											<content:encoded><![CDATA[<!-- wp:wd/container {"blockId":"ca168eab-9f99-4fa8-ae3b-66eaafc0bdcf","rowGap":"0","paddingTopTablet":"20","paddingRightTablet":"20","paddingBottomTablet":"20","paddingLeftTablet":"20","paddingLockTablet":true} -->
 <div id="wd-ca168eab" class="wp-block-wd-container wd-dir-col"><!-- wp:wd/title {"blockId":"2f22248f-85ad-42ba-b0f4-3be658303575","content":"Bakery","tpFontSize":"16","marginBottom":"10"} -->
@@ -2651,7 +2649,7 @@
 					<title><![CDATA[Header menu Beverages]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?cms_block=header-menu-beverages</link>
 					<pubDate>Tue, 06 Aug 2024 09:19:18 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?post_type=cms_block&#038;p=164</guid>
 											<content:encoded><![CDATA[<!-- wp:wd/container {"blockId":"770b7828-a367-4a68-93d3-22c47d066632","rowGap":"0","paddingTopTablet":"20","paddingRightTablet":"20","paddingBottomTablet":"20","paddingLeftTablet":"20","paddingLockTablet":true} -->
 <div id="wd-770b7828" class="wp-block-wd-container wd-dir-col"><!-- wp:wd/title {"blockId":"2f22248f-85ad-42ba-b0f4-3be658303575","content":"Beverages","tpFontSize":"16","marginBottom":"10"} -->
@@ -2690,7 +2688,7 @@
 					<title><![CDATA[Newsletter Vegetables form]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/mc4wp-form/newsletter-vegetables-form/</link>
 					<pubDate>Wed, 07 Aug 2024 15:12:06 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/mc4wp-form/newsletter-vegetables-form/</guid>
 											<content:encoded><![CDATA[<div class="row wd-spacing-20">
   <p class="col">
@@ -2756,20 +2754,20 @@
 					<title><![CDATA[Plant-Based Ground]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/product/plant-based-ground/</link>
 					<pubDate>Tue, 06 Aug 2024 09:17:20 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?post_type=product&#038;p=94</guid>
 															<wp:post_id>94</wp:post_id>
 					<wp:post_date><![CDATA[2024-08-06 09:17:20]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-08-06 09:17:20]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-08-06 09:17:24]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-08-06 09:17:24]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-02-04 12:53:53]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-02-04 12:53:53]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[open]]></wp:comment_status>
 					<wp:post_name><![CDATA[plant-based-ground]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
 					<wp:post_parent>0</wp:post_parent>
 					<wp:menu_order>0</wp:menu_order>
 					<wp:post_type><![CDATA[product]]></wp:post_type>
-												<category domain="pa_brand" nicename="alpro"><![CDATA[Alpro]]></category>
+												<category domain="product_brand" nicename="alpro"><![CDATA[Alpro]]></category>
 		<category domain="product_cat" nicename="beef"><![CDATA[Beef]]></category>
 		<category domain="product_type" nicename="simple"><![CDATA[simple]]></category>
 		<category domain="pa_country" nicename="spain"><![CDATA[Spain]]></category>
@@ -2787,7 +2785,7 @@
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
+							<wp:meta_value><![CDATA[9.6.0]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -2818,13 +2816,13 @@
 					<title><![CDATA[Flippin' Good Burger]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/product/flippin-good-burger/</link>
 					<pubDate>Tue, 06 Aug 2024 09:17:20 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?post_type=product&#038;p=95</guid>
 															<wp:post_id>95</wp:post_id>
 					<wp:post_date><![CDATA[2024-08-06 09:17:20]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-08-06 09:17:20]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-08-06 09:17:24]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-08-06 09:17:24]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-02-04 12:56:47]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-02-04 12:56:47]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[open]]></wp:comment_status>
 					<wp:post_name><![CDATA[flippin-good-burger]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -2835,7 +2833,7 @@
 		<category domain="product_visibility" nicename="featured"><![CDATA[featured]]></category>
 		<category domain="product_type" nicename="simple"><![CDATA[simple]]></category>
 		<category domain="pa_country" nicename="spain"><![CDATA[Spain]]></category>
-		<category domain="pa_brand" nicename="union-coffee"><![CDATA[Union Coffee]]></category>
+		<category domain="product_brand" nicename="union-coffee"><![CDATA[Union Coffee]]></category>
 											<wp:postmeta>
 							<wp:meta_key><![CDATA[_manage_stock]]></wp:meta_key>
 							<wp:meta_value><![CDATA[yes]]></wp:meta_value>
@@ -2850,7 +2848,7 @@
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
+							<wp:meta_value><![CDATA[9.6.0]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -2881,13 +2879,13 @@
 					<title><![CDATA[Future Burger]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/product/future-burger/</link>
 					<pubDate>Tue, 06 Aug 2024 09:17:20 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?post_type=product&#038;p=96</guid>
 															<wp:post_id>96</wp:post_id>
 					<wp:post_date><![CDATA[2024-08-06 09:17:20]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-08-06 09:17:20]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-08-06 09:17:25]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-08-06 09:17:25]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-02-04 12:54:19]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-02-04 12:54:19]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[open]]></wp:comment_status>
 					<wp:post_name><![CDATA[future-burger]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -2895,7 +2893,7 @@
 					<wp:menu_order>0</wp:menu_order>
 					<wp:post_type><![CDATA[product]]></wp:post_type>
 												<category domain="product_cat" nicename="burgers"><![CDATA[Burgers]]></category>
-		<category domain="pa_brand" nicename="impossible"><![CDATA[Impossible]]></category>
+		<category domain="product_brand" nicename="impossible"><![CDATA[Impossible]]></category>
 		<category domain="product_type" nicename="simple"><![CDATA[simple]]></category>
 		<category domain="pa_country" nicename="spain"><![CDATA[Spain]]></category>
 											<wp:postmeta>
@@ -2912,7 +2910,7 @@
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
+							<wp:meta_value><![CDATA[9.6.0]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -2943,13 +2941,13 @@
 					<title><![CDATA[BBQ Slices]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/product/bbq-slices/</link>
 					<pubDate>Tue, 06 Aug 2024 09:17:20 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?post_type=product&#038;p=97</guid>
 															<wp:post_id>97</wp:post_id>
 					<wp:post_date><![CDATA[2024-08-06 09:17:20]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-08-06 09:17:20]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-08-06 09:17:25]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-08-06 09:17:25]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-02-04 12:56:52]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-02-04 12:56:52]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[open]]></wp:comment_status>
 					<wp:post_name><![CDATA[bbq-slices]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -2959,7 +2957,7 @@
 												<category domain="product_cat" nicename="deli-meat"><![CDATA[Deli Meat]]></category>
 		<category domain="product_type" nicename="simple"><![CDATA[simple]]></category>
 		<category domain="pa_country" nicename="spain"><![CDATA[Spain]]></category>
-		<category domain="pa_brand" nicename="union-coffee"><![CDATA[Union Coffee]]></category>
+		<category domain="product_brand" nicename="union-coffee"><![CDATA[Union Coffee]]></category>
 											<wp:postmeta>
 							<wp:meta_key><![CDATA[_manage_stock]]></wp:meta_key>
 							<wp:meta_value><![CDATA[yes]]></wp:meta_value>
@@ -2974,7 +2972,7 @@
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
+							<wp:meta_value><![CDATA[9.6.0]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -3005,20 +3003,20 @@
 					<title><![CDATA[Pizzaroni Stick]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/product/pizzaroni-stick/</link>
 					<pubDate>Tue, 06 Aug 2024 09:17:20 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?post_type=product&#038;p=98</guid>
 															<wp:post_id>98</wp:post_id>
 					<wp:post_date><![CDATA[2024-08-06 09:17:20]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-08-06 09:17:20]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-08-06 09:17:25]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-08-06 09:17:25]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-02-04 12:53:58]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-02-04 12:53:58]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[open]]></wp:comment_status>
 					<wp:post_name><![CDATA[pizzaroni-stick]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
 					<wp:post_parent>0</wp:post_parent>
 					<wp:menu_order>0</wp:menu_order>
 					<wp:post_type><![CDATA[product]]></wp:post_type>
-												<category domain="pa_brand" nicename="alpro"><![CDATA[Alpro]]></category>
+												<category domain="product_brand" nicename="alpro"><![CDATA[Alpro]]></category>
 		<category domain="product_cat" nicename="deli-meat"><![CDATA[Deli Meat]]></category>
 		<category domain="product_visibility" nicename="featured"><![CDATA[featured]]></category>
 		<category domain="product_type" nicename="simple"><![CDATA[simple]]></category>
@@ -3037,7 +3035,7 @@
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
+							<wp:meta_value><![CDATA[9.6.0]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -3068,13 +3066,13 @@
 					<title><![CDATA[Bratwurst Sausages]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/product/bratwurst-sausages/</link>
 					<pubDate>Tue, 06 Aug 2024 09:17:20 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?post_type=product&#038;p=99</guid>
 															<wp:post_id>99</wp:post_id>
 					<wp:post_date><![CDATA[2024-08-06 09:17:20]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-08-06 09:17:20]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-08-06 09:17:26]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-08-06 09:17:26]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-02-04 12:55:51]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-02-04 12:55:51]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[open]]></wp:comment_status>
 					<wp:post_name><![CDATA[bratwurst-sausages]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -3083,7 +3081,7 @@
 					<wp:post_type><![CDATA[product]]></wp:post_type>
 												<category domain="product_cat" nicename="bacon"><![CDATA[Bacon]]></category>
 		<category domain="product_visibility" nicename="featured"><![CDATA[featured]]></category>
-		<category domain="pa_brand" nicename="oatly"><![CDATA[Oatly]]></category>
+		<category domain="product_brand" nicename="oatly"><![CDATA[Oatly]]></category>
 		<category domain="product_type" nicename="simple"><![CDATA[simple]]></category>
 		<category domain="pa_country" nicename="spain"><![CDATA[Spain]]></category>
 											<wp:postmeta>
@@ -3100,7 +3098,7 @@
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
+							<wp:meta_value><![CDATA[9.6.0]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -3127,13 +3125,13 @@
 					<title><![CDATA[Chilli Kabanos Sausage]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/product/chilli-kabanos-sausage/</link>
 					<pubDate>Tue, 06 Aug 2024 09:17:20 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?post_type=product&#038;p=100</guid>
 															<wp:post_id>100</wp:post_id>
 					<wp:post_date><![CDATA[2024-08-06 09:17:20]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-08-06 09:17:20]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-08-06 09:17:26]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-08-06 09:17:26]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-02-04 12:56:13]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-02-04 12:56:13]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[open]]></wp:comment_status>
 					<wp:post_name><![CDATA[chilli-kabanos-sausage]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -3141,7 +3139,7 @@
 					<wp:menu_order>0</wp:menu_order>
 					<wp:post_type><![CDATA[product]]></wp:post_type>
 												<category domain="product_cat" nicename="beef"><![CDATA[Beef]]></category>
-		<category domain="pa_brand" nicename="quorn"><![CDATA[Quorn]]></category>
+		<category domain="product_brand" nicename="quorn"><![CDATA[Quorn]]></category>
 		<category domain="product_type" nicename="simple"><![CDATA[simple]]></category>
 		<category domain="pa_country" nicename="spain"><![CDATA[Spain]]></category>
 											<wp:postmeta>
@@ -3158,7 +3156,7 @@
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
+							<wp:meta_value><![CDATA[9.6.0]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -3189,13 +3187,13 @@
 					<title><![CDATA[Chicken Pieces Lemon &amp; Herb]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/product/chicken-pieces-lemon-herb/</link>
 					<pubDate>Tue, 06 Aug 2024 09:17:20 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?post_type=product&#038;p=101</guid>
 															<wp:post_id>101</wp:post_id>
 					<wp:post_date><![CDATA[2024-08-06 09:17:20]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-08-06 09:17:20]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-08-06 09:17:26]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-08-06 09:17:26]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-02-04 12:55:29]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-02-04 12:55:29]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[open]]></wp:comment_status>
 					<wp:post_name><![CDATA[chicken-pieces-lemon-herb]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -3203,7 +3201,7 @@
 					<wp:menu_order>0</wp:menu_order>
 					<wp:post_type><![CDATA[product]]></wp:post_type>
 												<category domain="product_cat" nicename="chicken"><![CDATA[Chicken]]></category>
-		<category domain="pa_brand" nicename="mowi"><![CDATA[Mowi]]></category>
+		<category domain="product_brand" nicename="mowi"><![CDATA[Mowi]]></category>
 		<category domain="product_type" nicename="simple"><![CDATA[simple]]></category>
 		<category domain="pa_country" nicename="spain"><![CDATA[Spain]]></category>
 											<wp:postmeta>
@@ -3220,7 +3218,7 @@
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
+							<wp:meta_value><![CDATA[9.6.0]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -3251,13 +3249,13 @@
 					<title><![CDATA[Original Chicken Pieces]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/product/original-chicken-pieces/</link>
 					<pubDate>Tue, 06 Aug 2024 09:17:20 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?post_type=product&#038;p=102</guid>
 															<wp:post_id>102</wp:post_id>
 					<wp:post_date><![CDATA[2024-08-06 09:17:20]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-08-06 09:17:20]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-08-06 09:17:27]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-08-06 09:17:27]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-02-04 12:55:56]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-02-04 12:55:56]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[open]]></wp:comment_status>
 					<wp:post_name><![CDATA[original-chicken-pieces]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -3265,7 +3263,7 @@
 					<wp:menu_order>0</wp:menu_order>
 					<wp:post_type><![CDATA[product]]></wp:post_type>
 												<category domain="product_cat" nicename="chicken"><![CDATA[Chicken]]></category>
-		<category domain="pa_brand" nicename="oatly"><![CDATA[Oatly]]></category>
+		<category domain="product_brand" nicename="oatly"><![CDATA[Oatly]]></category>
 		<category domain="product_type" nicename="simple"><![CDATA[simple]]></category>
 		<category domain="pa_country" nicename="spain"><![CDATA[Spain]]></category>
 											<wp:postmeta>
@@ -3282,7 +3280,7 @@
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
+							<wp:meta_value><![CDATA[9.6.0]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -3309,13 +3307,13 @@
 					<title><![CDATA[Atlantic Salmon Portion]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/product/atlantic-salmon-portion/</link>
 					<pubDate>Tue, 06 Aug 2024 09:17:20 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?post_type=product&#038;p=103</guid>
 															<wp:post_id>103</wp:post_id>
 					<wp:post_date><![CDATA[2024-08-06 09:17:20]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-08-06 09:17:20]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-08-06 09:17:27]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-08-06 09:17:27]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-02-04 12:56:57]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-02-04 12:56:57]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[open]]></wp:comment_status>
 					<wp:post_name><![CDATA[atlantic-salmon-portion]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -3325,7 +3323,7 @@
 												<category domain="product_cat" nicename="fresh-fish"><![CDATA[Fresh Fish]]></category>
 		<category domain="pa_country" nicename="norway"><![CDATA[Norway]]></category>
 		<category domain="product_type" nicename="simple"><![CDATA[simple]]></category>
-		<category domain="pa_brand" nicename="union-coffee"><![CDATA[Union Coffee]]></category>
+		<category domain="product_brand" nicename="union-coffee"><![CDATA[Union Coffee]]></category>
 											<wp:postmeta>
 							<wp:meta_key><![CDATA[_manage_stock]]></wp:meta_key>
 							<wp:meta_value><![CDATA[yes]]></wp:meta_value>
@@ -3340,7 +3338,7 @@
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
+							<wp:meta_value><![CDATA[9.6.0]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -3367,20 +3365,20 @@
 					<title><![CDATA[Ora King Salmon]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/product/ora-king-salmon/</link>
 					<pubDate>Tue, 06 Aug 2024 09:17:20 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?post_type=product&#038;p=104</guid>
 															<wp:post_id>104</wp:post_id>
 					<wp:post_date><![CDATA[2024-08-06 09:17:20]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-08-06 09:17:20]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-08-06 09:17:28]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-08-06 09:17:28]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-02-04 12:54:01]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-02-04 12:54:01]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[open]]></wp:comment_status>
 					<wp:post_name><![CDATA[ora-king-salmon]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
 					<wp:post_parent>0</wp:post_parent>
 					<wp:menu_order>0</wp:menu_order>
 					<wp:post_type><![CDATA[product]]></wp:post_type>
-												<category domain="pa_brand" nicename="alpro"><![CDATA[Alpro]]></category>
+												<category domain="product_brand" nicename="alpro"><![CDATA[Alpro]]></category>
 		<category domain="product_visibility" nicename="featured"><![CDATA[featured]]></category>
 		<category domain="product_cat" nicename="fresh-fish"><![CDATA[Fresh Fish]]></category>
 		<category domain="pa_country" nicename="norway"><![CDATA[Norway]]></category>
@@ -3399,7 +3397,7 @@
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
+							<wp:meta_value><![CDATA[9.6.0]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -3426,13 +3424,13 @@
 					<title><![CDATA[Allabacore Loin]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/product/allabacore-loin/</link>
 					<pubDate>Tue, 06 Aug 2024 09:17:20 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?post_type=product&#038;p=105</guid>
 															<wp:post_id>105</wp:post_id>
 					<wp:post_date><![CDATA[2024-08-06 09:17:20]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-08-06 09:17:20]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-08-06 09:17:28]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-08-06 09:17:28]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-02-04 12:54:51]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-02-04 12:54:51]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[open]]></wp:comment_status>
 					<wp:post_name><![CDATA[allabacore-loin]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -3441,7 +3439,7 @@
 					<wp:post_type><![CDATA[product]]></wp:post_type>
 												<category domain="product_visibility" nicename="featured"><![CDATA[featured]]></category>
 		<category domain="product_cat" nicename="fresh-fish"><![CDATA[Fresh Fish]]></category>
-		<category domain="pa_brand" nicename="lightlife"><![CDATA[Lightlife]]></category>
+		<category domain="product_brand" nicename="lightlife"><![CDATA[Lightlife]]></category>
 		<category domain="pa_country" nicename="norway"><![CDATA[Norway]]></category>
 		<category domain="product_type" nicename="simple"><![CDATA[simple]]></category>
 											<wp:postmeta>
@@ -3458,7 +3456,7 @@
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
+							<wp:meta_value><![CDATA[9.6.0]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -3485,13 +3483,13 @@
 					<title><![CDATA[Atlantic Salmon]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/product/atlantic-salmon/</link>
 					<pubDate>Tue, 06 Aug 2024 09:17:20 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?post_type=product&#038;p=106</guid>
 															<wp:post_id>106</wp:post_id>
 					<wp:post_date><![CDATA[2024-08-06 09:17:20]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-08-06 09:17:20]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-08-06 09:17:28]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-08-06 09:17:28]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-02-04 12:55:15]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-02-04 12:55:15]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[open]]></wp:comment_status>
 					<wp:post_name><![CDATA[atlantic-salmon]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -3499,7 +3497,7 @@
 					<wp:menu_order>0</wp:menu_order>
 					<wp:post_type><![CDATA[product]]></wp:post_type>
 												<category domain="product_cat" nicename="fresh-fish"><![CDATA[Fresh Fish]]></category>
-		<category domain="pa_brand" nicename="meati"><![CDATA[Meati]]></category>
+		<category domain="product_brand" nicename="meati"><![CDATA[Meati]]></category>
 		<category domain="pa_country" nicename="norway"><![CDATA[Norway]]></category>
 		<category domain="product_type" nicename="simple"><![CDATA[simple]]></category>
 											<wp:postmeta>
@@ -3516,7 +3514,7 @@
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
+							<wp:meta_value><![CDATA[9.6.0]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -3543,13 +3541,13 @@
 					<title><![CDATA[Pollack]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/product/pollack/</link>
 					<pubDate>Tue, 06 Aug 2024 09:17:20 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?post_type=product&#038;p=107</guid>
 															<wp:post_id>107</wp:post_id>
 					<wp:post_date><![CDATA[2024-08-06 09:17:20]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-08-06 09:17:20]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-08-06 09:17:29]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-08-06 09:17:29]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-02-04 12:54:24]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-02-04 12:54:24]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[open]]></wp:comment_status>
 					<wp:post_name><![CDATA[pollack]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -3557,7 +3555,7 @@
 					<wp:menu_order>0</wp:menu_order>
 					<wp:post_type><![CDATA[product]]></wp:post_type>
 												<category domain="product_cat" nicename="frozen-fish"><![CDATA[Frozen Fish]]></category>
-		<category domain="pa_brand" nicename="impossible"><![CDATA[Impossible]]></category>
+		<category domain="product_brand" nicename="impossible"><![CDATA[Impossible]]></category>
 		<category domain="pa_country" nicename="norway"><![CDATA[Norway]]></category>
 		<category domain="product_type" nicename="simple"><![CDATA[simple]]></category>
 											<wp:postmeta>
@@ -3574,7 +3572,7 @@
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
+							<wp:meta_value><![CDATA[9.6.0]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -3605,13 +3603,13 @@
 					<title><![CDATA[Pink (Hump-Back) Salmon]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/product/pink-hump-back-salmon/</link>
 					<pubDate>Tue, 06 Aug 2024 09:17:20 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?post_type=product&#038;p=108</guid>
 															<wp:post_id>108</wp:post_id>
 					<wp:post_date><![CDATA[2024-08-06 09:17:20]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-08-06 09:17:20]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-08-06 09:17:29]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-08-06 09:17:29]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-02-04 12:54:56]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-02-04 12:54:56]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[open]]></wp:comment_status>
 					<wp:post_name><![CDATA[pink-hump-back-salmon]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -3620,7 +3618,7 @@
 					<wp:post_type><![CDATA[product]]></wp:post_type>
 												<category domain="product_visibility" nicename="featured"><![CDATA[featured]]></category>
 		<category domain="product_cat" nicename="frozen-fish"><![CDATA[Frozen Fish]]></category>
-		<category domain="pa_brand" nicename="lightlife"><![CDATA[Lightlife]]></category>
+		<category domain="product_brand" nicename="lightlife"><![CDATA[Lightlife]]></category>
 		<category domain="pa_country" nicename="norway"><![CDATA[Norway]]></category>
 		<category domain="product_type" nicename="simple"><![CDATA[simple]]></category>
 											<wp:postmeta>
@@ -3637,7 +3635,7 @@
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
+							<wp:meta_value><![CDATA[9.6.0]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -3664,13 +3662,13 @@
 					<title><![CDATA[Cornish Crab (Whole)]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/product/cornish-crab-whole/</link>
 					<pubDate>Tue, 06 Aug 2024 09:17:20 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?post_type=product&#038;p=109</guid>
 															<wp:post_id>109</wp:post_id>
 					<wp:post_date><![CDATA[2024-08-06 09:17:20]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-08-06 09:17:20]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-08-06 09:17:30]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-08-06 09:17:30]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-02-04 12:56:18]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-02-04 12:56:18]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[open]]></wp:comment_status>
 					<wp:post_name><![CDATA[cornish-crab-whole]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -3680,7 +3678,7 @@
 												<category domain="product_visibility" nicename="featured"><![CDATA[featured]]></category>
 		<category domain="product_cat" nicename="fresh-shellfish"><![CDATA[Fresh Shellfish]]></category>
 		<category domain="pa_country" nicename="norway"><![CDATA[Norway]]></category>
-		<category domain="pa_brand" nicename="quorn"><![CDATA[Quorn]]></category>
+		<category domain="product_brand" nicename="quorn"><![CDATA[Quorn]]></category>
 		<category domain="product_type" nicename="simple"><![CDATA[simple]]></category>
 											<wp:postmeta>
 							<wp:meta_key><![CDATA[_manage_stock]]></wp:meta_key>
@@ -3696,7 +3694,7 @@
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
+							<wp:meta_value><![CDATA[9.6.0]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -3723,13 +3721,13 @@
 					<title><![CDATA[Whole Cornish Lobster]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/product/whole-cornish-lobster/</link>
 					<pubDate>Tue, 06 Aug 2024 09:17:20 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?post_type=product&#038;p=110</guid>
 															<wp:post_id>110</wp:post_id>
 					<wp:post_date><![CDATA[2024-08-06 09:17:20]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-08-06 09:17:20]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-08-06 09:17:30]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-08-06 09:17:30]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-02-04 12:55:33]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-02-04 12:55:33]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[open]]></wp:comment_status>
 					<wp:post_name><![CDATA[whole-cornish-lobster]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -3737,7 +3735,7 @@
 					<wp:menu_order>0</wp:menu_order>
 					<wp:post_type><![CDATA[product]]></wp:post_type>
 												<category domain="product_cat" nicename="fresh-shellfish"><![CDATA[Fresh Shellfish]]></category>
-		<category domain="pa_brand" nicename="mowi"><![CDATA[Mowi]]></category>
+		<category domain="product_brand" nicename="mowi"><![CDATA[Mowi]]></category>
 		<category domain="pa_country" nicename="norway"><![CDATA[Norway]]></category>
 		<category domain="product_type" nicename="simple"><![CDATA[simple]]></category>
 											<wp:postmeta>
@@ -3754,7 +3752,7 @@
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
+							<wp:meta_value><![CDATA[9.6.0]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -3781,13 +3779,13 @@
 					<title><![CDATA[Vegan Salted Butter]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/product/vegan-salted-butter/</link>
 					<pubDate>Tue, 06 Aug 2024 09:17:20 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?post_type=product&#038;p=111</guid>
 															<wp:post_id>111</wp:post_id>
 					<wp:post_date><![CDATA[2024-08-06 09:17:20]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-08-06 09:17:20]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-08-06 09:17:30]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-08-06 09:17:30]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-02-04 12:56:00]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-02-04 12:56:00]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[open]]></wp:comment_status>
 					<wp:post_name><![CDATA[vegan-salted-butter]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -3795,7 +3793,7 @@
 					<wp:menu_order>0</wp:menu_order>
 					<wp:post_type><![CDATA[product]]></wp:post_type>
 												<category domain="product_cat" nicename="butter"><![CDATA[Butter]]></category>
-		<category domain="pa_brand" nicename="oatly"><![CDATA[Oatly]]></category>
+		<category domain="product_brand" nicename="oatly"><![CDATA[Oatly]]></category>
 		<category domain="product_type" nicename="simple"><![CDATA[simple]]></category>
 		<category domain="pa_country" nicename="spain"><![CDATA[Spain]]></category>
 											<wp:postmeta>
@@ -3812,7 +3810,7 @@
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
+							<wp:meta_value><![CDATA[9.6.0]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -3839,13 +3837,13 @@
 					<title><![CDATA[Viospread Light &amp; Creamy]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/product/viospread-light-creamy/</link>
 					<pubDate>Tue, 06 Aug 2024 09:17:20 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?post_type=product&#038;p=112</guid>
 															<wp:post_id>112</wp:post_id>
 					<wp:post_date><![CDATA[2024-08-06 09:17:20]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-08-06 09:17:20]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-08-06 09:17:31]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-08-06 09:17:31]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-02-04 12:57:01]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-02-04 12:57:01]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[open]]></wp:comment_status>
 					<wp:post_name><![CDATA[viospread-light-creamy]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -3855,7 +3853,7 @@
 												<category domain="product_cat" nicename="butter"><![CDATA[Butter]]></category>
 		<category domain="product_type" nicename="simple"><![CDATA[simple]]></category>
 		<category domain="pa_country" nicename="spain"><![CDATA[Spain]]></category>
-		<category domain="pa_brand" nicename="union-coffee"><![CDATA[Union Coffee]]></category>
+		<category domain="product_brand" nicename="union-coffee"><![CDATA[Union Coffee]]></category>
 											<wp:postmeta>
 							<wp:meta_key><![CDATA[_manage_stock]]></wp:meta_key>
 							<wp:meta_value><![CDATA[yes]]></wp:meta_value>
@@ -3870,7 +3868,7 @@
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
+							<wp:meta_value><![CDATA[9.6.0]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -3901,13 +3899,13 @@
 					<title><![CDATA[Cheese Cubes]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/product/cheese-cubes/</link>
 					<pubDate>Tue, 06 Aug 2024 09:17:20 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?post_type=product&#038;p=113</guid>
 															<wp:post_id>113</wp:post_id>
 					<wp:post_date><![CDATA[2024-08-06 09:17:20]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-08-06 09:17:20]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-08-06 09:17:31]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-08-06 09:17:31]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-02-04 12:55:47]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-02-04 12:55:47]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[open]]></wp:comment_status>
 					<wp:post_name><![CDATA[cheese-cubes]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -3915,7 +3913,7 @@
 					<wp:menu_order>0</wp:menu_order>
 					<wp:post_type><![CDATA[product]]></wp:post_type>
 												<category domain="product_cat" nicename="cheese"><![CDATA[Cheese]]></category>
-		<category domain="pa_brand" nicename="oatly"><![CDATA[Oatly]]></category>
+		<category domain="product_brand" nicename="oatly"><![CDATA[Oatly]]></category>
 		<category domain="product_type" nicename="simple"><![CDATA[simple]]></category>
 		<category domain="pa_country" nicename="spain"><![CDATA[Spain]]></category>
 											<wp:postmeta>
@@ -3932,7 +3930,7 @@
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
+							<wp:meta_value><![CDATA[9.6.0]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -3963,7 +3961,7 @@
 					<title><![CDATA[Shop]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/shop/</link>
 					<pubDate>Wed, 31 Jul 2024 11:19:18 +0000</pubDate>
-					<dc:creator><![CDATA[admin]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/shop/</guid>
 															<wp:post_id>9</wp:post_id>
 					<wp:post_date><![CDATA[2024-07-31 11:19:18]]></wp:post_date>
@@ -3981,7 +3979,7 @@
 					<title><![CDATA[Contact form Vegetables]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?post_type=wpcf7_contact_form&#038;p=14</link>
 					<pubDate>Wed, 31 Jul 2024 11:19:22 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?post_type=wpcf7_contact_form&#038;p=14</guid>
 											<content:encoded><![CDATA[<div class="wd-grid-g">
 <div class="wd-grid-f-stretch">
@@ -3993,7 +3991,7 @@
 </div>
 1
 [_site_title] "[your-subject]"
-[_site_title] 
+[_site_title]
 [_site_admin_email]
 From: [your-name] [your-email]
 Subject: [your-subject]
@@ -4009,7 +4007,7 @@ Reply-To: [your-email]
 
 
 [_site_title] "[your-subject]"
-[_site_title] 
+[_site_title]
 [your-email]
 Message Body:
 [your-message]
@@ -4045,8 +4043,8 @@ Please enter a telephone number.]]></content:encoded>
 															<wp:post_id>14</wp:post_id>
 					<wp:post_date><![CDATA[2024-07-31 11:19:22]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-07-31 11:19:22]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-10-08 15:49:07]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-10-08 15:49:07]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-01-24 13:45:37]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-01-24 13:45:37]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[contact-form-1]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -4066,7 +4064,7 @@ Please enter a telephone number.]]></content:encoded>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_mail]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:9:{s:6:"active";b:1;s:7:"subject";s:30:"[_site_title] "[your-subject]"";s:6:"sender";s:42:"[_site_title] <wordpress@dummy.xtemos.com>";s:9:"recipient";s:19:"[_site_admin_email]";s:4:"body";s:191:"From: [your-name] [your-email]
+							<wp:meta_value><![CDATA[a:9:{s:6:"active";b:1;s:7:"subject";s:30:"[_site_title] "[your-subject]"";s:6:"sender";s:13:"[_site_title]";s:9:"recipient";s:19:"[_site_admin_email]";s:4:"body";s:191:"From: [your-name] [your-email]
 Subject: [your-subject]
 
 Message Body:
@@ -4077,7 +4075,7 @@ This is a notification that a contact form was submitted on your website ([_site
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_mail_2]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:9:{s:6:"active";b:0;s:7:"subject";s:30:"[_site_title] "[your-subject]"";s:6:"sender";s:42:"[_site_title] <wordpress@dummy.xtemos.com>";s:9:"recipient";s:12:"[your-email]";s:4:"body";s:220:"Message Body:
+							<wp:meta_value><![CDATA[a:9:{s:6:"active";b:0;s:7:"subject";s:30:"[_site_title] "[your-subject]"";s:6:"sender";s:13:"[_site_title]";s:9:"recipient";s:12:"[your-email]";s:4:"body";s:220:"Message Body:
 [your-message]
 
 -- 
@@ -4097,14 +4095,14 @@ This email is a receipt for your contact form submission on our website ([_site_
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_config_validation]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:1:{s:23:"mail.additional_headers";a:1:{i:0;a:2:{s:4:"code";s:22:"invalid_mailbox_syntax";s:4:"args";a:3:{s:7:"message";s:51:"Invalid mailbox syntax is used in the %name% field.";s:6:"params";a:1:{s:4:"name";s:8:"Reply-To";}s:4:"link";s:68:"https://contactform7.com/configuration-errors/invalid-mailbox-syntax";}}}}]]></wp:meta_value>
+							<wp:meta_value><![CDATA[a:2:{s:11:"mail.sender";a:1:{i:0;a:2:{s:4:"code";s:22:"invalid_mailbox_syntax";s:4:"args";a:3:{s:7:"message";s:31:"Invalid mailbox syntax is used.";s:6:"params";a:0:{}s:4:"link";s:68:"https://contactform7.com/configuration-errors/invalid-mailbox-syntax";}}}s:23:"mail.additional_headers";a:1:{i:0;a:2:{s:4:"code";s:22:"invalid_mailbox_syntax";s:4:"args";a:3:{s:7:"message";s:51:"Invalid mailbox syntax is used in the %name% field.";s:6:"params";a:1:{s:4:"name";s:8:"Reply-To";}s:4:"link";s:68:"https://contactform7.com/configuration-errors/invalid-mailbox-syntax";}}}}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[Home Vegetables]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/</link>
 					<pubDate>Mon, 05 Aug 2024 09:40:36 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?page_id=62</guid>
 											<content:encoded><![CDATA[<!-- wp:wd/carousel {"blockId":"4f0d05a3-0da4-418d-a7e8-1faed3b00ead","currentSlide":3,"slidesPerView":"7","spacing":"30","arrows":false,"arrowsTablet":false,"arrowsMobile":false,"paginationControl":false,"paginationControlTablet":false,"paginationControlMobile":false,"syncParentId":"wd_4f0d05a3","marginTop":"-30","scrollbarMobile":true} -->
 <div id="wd-4f0d05a3" class="wp-block-wd-carousel wd-carousel-container"><div class="wd-carousel-inner"><div class="wd-carousel wd-grid" style="--wd-col-lg:7;--wd-col-md:4;--wd-col-sm:2;--wd-gap-lg:30px;--wd-gap-sm:10px" data-scroll_per_page="yes"><div class="wd-carousel-wrap"><!-- wp:wd/carousel-item {"blockId":"920d13b0-d517-4d04-b18c-04713cb6984f"} -->
@@ -4553,7 +4551,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[About Us]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/about-us/</link>
 					<pubDate>Mon, 05 Aug 2024 09:40:50 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?page_id=64</guid>
 											<content:encoded><![CDATA[<!-- wp:wd/row {"blockId":"de21f5a2-4f31-4a6f-b67f-4791df9af869","columnsGap":60,"marginTop":"-30","marginBottom":"80","columnsGapTablet":30,"marginTopTablet":"-15","marginBottomTablet":"60","marginBottomMobile":"40"} -->
 <div id="wd-de21f5a2" class="wp-block-wd-row"><!-- wp:wd/column {"blockId":"281282a9-6696-49b2-852e-1cf8f51150b4","adjacentCount":2} -->
@@ -4810,7 +4808,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[Blog]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/blog/</link>
 					<pubDate>Mon, 05 Aug 2024 09:41:03 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?page_id=66</guid>
 															<wp:post_id>66</wp:post_id>
 					<wp:post_date><![CDATA[2024-08-05 09:41:03]]></wp:post_date>
@@ -4844,7 +4842,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[Contact Us]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/contact-us/</link>
 					<pubDate>Mon, 05 Aug 2024 09:41:17 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?page_id=68</guid>
 											<content:encoded><![CDATA[<!-- wp:wd/row {"blockId":"cce0877d-70e3-446b-92b3-af4a4e746458","marginTop":"-30","marginBottom":"40","marginBottomTablet":"20","marginBottomMobile":"0"} -->
 <div id="wd-cce0877d" class="wp-block-wd-row"><!-- wp:wd/column {"blockId":"f28bf349-faa8-4184-8705-14f6b61e41e4","adjacentCount":2,"colWidth":42,"justifyContent":"center"} -->
@@ -4877,7 +4875,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 <!-- /wp:wd/title -->
 
 <!-- wp:wd/paragraph {"blockId":"a80a88ca-132d-4c34-b8ba-6a4411a72634","tpTextDecoration":"underline","tpFontVariant":"600","tpFontWeight":"600"} -->
-<p id="wd-a80a88ca" class="wp-block-wd-paragraph"><a href="mailto:xtemos.studio@gmail.com"></a><a href="mailto:xtemos.studio@gmail.com">xtemos.studio@gmail.com</a></p>
+<p id="wd-a80a88ca" class="wp-block-wd-paragraph"><a href="mailto:xtemos@mail.com"></a><a href="mailto:xtemos@mail.com">xtemos@mail.com</a></p>
 <!-- /wp:wd/paragraph --></div>
 <!-- /wp:wd/column --></div>
 <!-- /wp:wd/row --></div>
@@ -4923,7 +4921,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[Delivery]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/delivery/</link>
 					<pubDate>Mon, 05 Aug 2024 09:41:27 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?page_id=70</guid>
 											<content:encoded><![CDATA[<!-- wp:wd/container {"blockId":"d5c637e2-fc4d-47d3-b94e-529a62d63f6c","bgColorCode":"#ffffff","paddingTop":"30","paddingRight":"30","paddingBottom":"30","paddingLeft":"30","marginTop":"-30","marginBottom":"30","borderRadius":"10","borderRadiusTop":"10","borderRadiusRight":"10","borderRadiusBottom":"10","borderRadiusLeft":"10","paddingTopMobile":"20","paddingRightMobile":"20","paddingBottomMobile":"20","paddingLeftMobile":"20","paddingLockMobile":true} -->
 <div id="wd-d5c637e2" class="wp-block-wd-container wd-dir-col"><!-- wp:wd/title {"blockId":"a2cbe3c2-ea14-4cdf-a8c7-aac770ca2a4c","content":"Delivery Options Overview","tpFontSize":"28","tpFontSizeTablet":"22","tpFontSizeMobile":"20"} -->
@@ -5098,7 +5096,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[Promotions]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/promotions/</link>
 					<pubDate>Mon, 05 Aug 2024 09:41:41 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?page_id=72</guid>
 											<content:encoded><![CDATA[<!-- wp:wd/row {"blockId":"f24c1a04-7e03-4375-bb42-bad34d986435","columnsGap":20,"marginTop":"-30"} -->
 <div id="wd-f24c1a04" class="wp-block-wd-row"><!-- wp:wd/column {"blockId":"91e72238-9e65-4111-85ee-0a122df0c938","adjacentCount":2} -->
@@ -5233,7 +5231,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[Store Locations]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/store-locations/</link>
 					<pubDate>Mon, 05 Aug 2024 09:41:52 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?page_id=74</guid>
 											<content:encoded><![CDATA[<!-- wp:wd/row {"blockId":"ded7f2d7-0fc8-42aa-aa7d-1f6feb4715f8","marginTop":"-30"} -->
 <div id="wd-ded7f2d7" class="wp-block-wd-row"><!-- wp:wd/column {"blockId":"68db64ae-6da4-4932-89dc-6c64fcf3d383","adjacentCount":2,"colWidth":42,"blocksGap":30,"adjacentCountTablet":1,"colWidthTablet":100,"flexOrderTablet":"1"} -->
@@ -5428,7 +5426,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[Wishlist]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wishlist/</link>
 					<pubDate>Mon, 05 Aug 2024 09:42:03 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?page_id=76</guid>
 											<content:encoded><![CDATA[<!-- wp:shortcode -->
 [woodmart_wishlist]
@@ -5465,13 +5463,13 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[Tomatoes]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/product/tomatoes/</link>
 					<pubDate>Tue, 06 Aug 2024 09:17:19 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?post_type=product&#038;p=85</guid>
 															<wp:post_id>85</wp:post_id>
 					<wp:post_date><![CDATA[2024-08-06 09:17:19]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-08-06 09:17:19]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-10-08 16:17:12]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-10-08 16:17:12]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-02-04 12:55:01]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-02-04 12:55:01]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[open]]></wp:comment_status>
 					<wp:post_name><![CDATA[tomatoes]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -5480,7 +5478,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<wp:post_type><![CDATA[product]]></wp:post_type>
 												<category domain="product_visibility" nicename="featured"><![CDATA[featured]]></category>
 		<category domain="product_cat" nicename="fresh-vegetables"><![CDATA[Fresh Vegetables]]></category>
-		<category domain="pa_brand" nicename="lightlife"><![CDATA[Lightlife]]></category>
+		<category domain="product_brand" nicename="lightlife"><![CDATA[Lightlife]]></category>
 		<category domain="product_type" nicename="simple"><![CDATA[simple]]></category>
 		<category domain="pa_country" nicename="spain"><![CDATA[Spain]]></category>
 											<wp:postmeta>
@@ -5497,7 +5495,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
+							<wp:meta_value><![CDATA[9.6.0]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -5568,13 +5566,13 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[Aubergine]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/product/aubergine/</link>
 					<pubDate>Tue, 06 Aug 2024 09:17:19 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?post_type=product&#038;p=86</guid>
 															<wp:post_id>86</wp:post_id>
 					<wp:post_date><![CDATA[2024-08-06 09:17:19]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-08-06 09:17:19]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-10-08 16:17:47]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-10-08 16:17:47]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-02-04 12:55:37]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-02-04 12:55:37]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[open]]></wp:comment_status>
 					<wp:post_name><![CDATA[aubergine]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -5582,7 +5580,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<wp:menu_order>0</wp:menu_order>
 					<wp:post_type><![CDATA[product]]></wp:post_type>
 												<category domain="product_cat" nicename="fresh-vegetables"><![CDATA[Fresh Vegetables]]></category>
-		<category domain="pa_brand" nicename="mowi"><![CDATA[Mowi]]></category>
+		<category domain="product_brand" nicename="mowi"><![CDATA[Mowi]]></category>
 		<category domain="product_type" nicename="simple"><![CDATA[simple]]></category>
 		<category domain="pa_country" nicename="spain"><![CDATA[Spain]]></category>
 											<wp:postmeta>
@@ -5599,7 +5597,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
+							<wp:meta_value><![CDATA[9.6.0]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -5670,20 +5668,20 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[Baby Tomatoes]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/product/baby-tomatoes/</link>
 					<pubDate>Tue, 06 Aug 2024 09:17:19 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?post_type=product&#038;p=87</guid>
 															<wp:post_id>87</wp:post_id>
 					<wp:post_date><![CDATA[2024-08-06 09:17:19]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-08-06 09:17:19]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-10-08 16:16:13]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-10-08 16:16:13]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-02-04 12:54:05]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-02-04 12:54:05]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[open]]></wp:comment_status>
 					<wp:post_name><![CDATA[baby-tomatoes]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
 					<wp:post_parent>0</wp:post_parent>
 					<wp:menu_order>0</wp:menu_order>
 					<wp:post_type><![CDATA[product]]></wp:post_type>
-												<category domain="pa_brand" nicename="alpro"><![CDATA[Alpro]]></category>
+												<category domain="product_brand" nicename="alpro"><![CDATA[Alpro]]></category>
 		<category domain="product_visibility" nicename="featured"><![CDATA[featured]]></category>
 		<category domain="product_cat" nicename="fresh-vegetables"><![CDATA[Fresh Vegetables]]></category>
 		<category domain="product_type" nicename="simple"><![CDATA[simple]]></category>
@@ -5702,7 +5700,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
+							<wp:meta_value><![CDATA[9.6.0]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -5773,13 +5771,13 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[Green Apples]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/product/green-apples/</link>
 					<pubDate>Tue, 06 Aug 2024 09:17:19 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?post_type=product&#038;p=88</guid>
 															<wp:post_id>88</wp:post_id>
 					<wp:post_date><![CDATA[2024-08-06 09:17:19]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-08-06 09:17:19]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-10-08 16:16:48]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-10-08 16:16:48]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-02-04 12:55:20]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-02-04 12:55:20]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[open]]></wp:comment_status>
 					<wp:post_name><![CDATA[green-apples]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -5788,7 +5786,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<wp:post_type><![CDATA[product]]></wp:post_type>
 												<category domain="pa_country" nicename="australia"><![CDATA[Australia]]></category>
 		<category domain="product_cat" nicename="fresh-fruits"><![CDATA[Fresh Fruits]]></category>
-		<category domain="pa_brand" nicename="meati"><![CDATA[Meati]]></category>
+		<category domain="product_brand" nicename="meati"><![CDATA[Meati]]></category>
 		<category domain="product_type" nicename="simple"><![CDATA[simple]]></category>
 											<wp:postmeta>
 							<wp:meta_key><![CDATA[_manage_stock]]></wp:meta_key>
@@ -5804,7 +5802,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
+							<wp:meta_value><![CDATA[9.6.0]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -5875,20 +5873,20 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[Red Leicester Style Sheese]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/product/red-leicester-style-sheese/</link>
 					<pubDate>Tue, 06 Aug 2024 09:17:20 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?post_type=product&#038;p=114</guid>
 															<wp:post_id>114</wp:post_id>
 					<wp:post_date><![CDATA[2024-08-06 09:17:20]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-08-06 09:17:20]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-08-06 09:17:31]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-08-06 09:17:31]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-02-04 12:53:48]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-02-04 12:53:48]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[open]]></wp:comment_status>
 					<wp:post_name><![CDATA[red-leicester-style-sheese]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
 					<wp:post_parent>0</wp:post_parent>
 					<wp:menu_order>0</wp:menu_order>
 					<wp:post_type><![CDATA[product]]></wp:post_type>
-												<category domain="pa_brand" nicename="alpro"><![CDATA[Alpro]]></category>
+												<category domain="product_brand" nicename="alpro"><![CDATA[Alpro]]></category>
 		<category domain="product_cat" nicename="cheese"><![CDATA[Cheese]]></category>
 		<category domain="product_type" nicename="simple"><![CDATA[simple]]></category>
 		<category domain="pa_country" nicename="spain"><![CDATA[Spain]]></category>
@@ -5906,7 +5904,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
+							<wp:meta_value><![CDATA[9.6.0]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -5933,7 +5931,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[Olive Tapenade Bruschetta With Mango and Eggs]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/2024/02/14/olive-tapenade-bruschetta-with-mango-and-eggs/</link>
 					<pubDate>Wed, 14 Feb 2024 11:27:00 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?p=492</guid>
 											<content:encoded><![CDATA[<!-- wp:wd/paragraph {"blockId":"544c1d1e-5dfa-4cd8-b061-b745fdf52c81"} -->
 <p id="wd-544c1d1e" class="wp-block-wd-paragraph">How would you like to try something truly unique and utterly tasty? Then keep reading and learn how to cook a fiery Caribbean curry made with bananas, prawns, and bonnet chillies.</p>
@@ -5971,7 +5969,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 <!-- /wp:wd/column -->
 
 <!-- wp:wd/column {"blockId":"3812bce9-93b8-4aac-a60f-da9c6f98f685","adjacentCount":2,"colWidth":58,"bgColorCode":"#ffffff","paddingTop":"20","paddingRight":"20","paddingBottom":"20","paddingLeft":"20","paddingLock":true,"borderRadius":"10","borderRadiusTop":"10","borderRadiusRight":"10","borderRadiusBottom":"10","borderRadiusLeft":"10","alignSelf":"start"} -->
-<div id="wd-3812bce9" class="wp-block-wd-column wd-align-s-start"><!-- wp:wd/products {"blockId":"cd78e208-a66f-49ee-a7a5-1c177bcdf16d","show_title":true,"columns":2,"items_per_page":"8","product_hover":"small","img_size":"custom","imgSizeCustomWidth":"70","imgSizeCustomHeight":"90"} -->
+<div id="wd-3812bce9" class="wp-block-wd-column wd-align-s-start"><!-- wp:wd/products {"blockId":"cd78e208-a66f-49ee-a7a5-1c177bcdf16d","show_title":true,"columns":2,"items_per_page":"8","product_hover":"small","img_size":"custom","imgSizeCustomWidth":"70","imgSizeCustomHeight":"90","columnsMobile":1} -->
 <!-- wp:wd/title {"blockId":"caf3a257-d400-4eb9-9e58-a1f000b66318","content":"Available in our store","tpFontSize":"22","tpFontSizeMobile":"20"} -->
 <h2 id="wd-caf3a257" class="wp-block-wd-title title">Available in our store</h2>
 <!-- /wp:wd/title -->
@@ -6008,7 +6006,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 
 <!-- wp:wd/column {"blockId":"d6b28b6f-d01f-40b8-8cdc-a44fe1abc927","adjacentCount":2} -->
 <div id="wd-d6b28b6f" class="wp-block-wd-column"><!-- wp:wd/image {"blockId":"1a3d1b0e-38bd-4c42-832d-bf478d9596d9","image":{"id":525,"url":"https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/08/vg-blog-img-step-1-opt.jpg"},"imageData":{"url":"https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/08/vg-blog-img-step-1-opt.jpg","width":814,"height":750}} -->
-<div id="wd-1a3d1b0e" class="wp-block-wd-image wd-block-image"><img class="wp-image-525" src="https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/08/vg-blog-img-step-1-opt.jpg" /></div>
+<div id="wd-1a3d1b0e" class="wp-block-wd-image wd-block-image"><img class="wp-image-525" src="https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/08/vg-blog-img-step-1-opt.jpg" alt="" /></div>
 <!-- /wp:wd/image --></div>
 <!-- /wp:wd/column --></div>
 <!-- /wp:wd/row -->
@@ -6016,7 +6014,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 <!-- wp:wd/row {"blockId":"490c9860-2425-44a4-90d8-d58710cec194"} -->
 <div id="wd-490c9860" class="wp-block-wd-row"><!-- wp:wd/column {"blockId":"c902000b-7587-43af-9c59-073f5016e460","adjacentCount":2,"flexOrderMobile":"2"} -->
 <div id="wd-c902000b" class="wp-block-wd-column"><!-- wp:wd/image {"blockId":"c6a9ec20-5fb7-4bb7-b718-1011948d2786","image":{"id":527,"url":"http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-2-opt.jpg"},"imageData":{"url":"https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-2-opt.jpg","width":815,"height":750}} -->
-<div id="wd-c6a9ec20" class="wp-block-wd-image wd-block-image"><img class="wp-image-527" src="http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-2-opt.jpg" /></div>
+<div id="wd-c6a9ec20" class="wp-block-wd-image wd-block-image"><img class="wp-image-527" src="http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-2-opt.jpg" alt="" /></div>
 <!-- /wp:wd/image --></div>
 <!-- /wp:wd/column -->
 
@@ -6064,7 +6062,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 
 <!-- wp:wd/column {"blockId":"38f47e0b-6d69-492a-a980-6a11b57c5afc","adjacentCount":2} -->
 <div id="wd-38f47e0b" class="wp-block-wd-column"><!-- wp:wd/image {"blockId":"97659c4f-2577-4bad-a5ec-223171eed3d6","image":{"id":528,"url":"http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-3-opt.jpg"},"imageData":{"url":"https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-3-opt.jpg","width":814,"height":750}} -->
-<div id="wd-97659c4f" class="wp-block-wd-image wd-block-image"><img class="wp-image-528" src="http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-3-opt.jpg" /></div>
+<div id="wd-97659c4f" class="wp-block-wd-image wd-block-image"><img class="wp-image-528" src="http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-3-opt.jpg" alt="" /></div>
 <!-- /wp:wd/image --></div>
 <!-- /wp:wd/column --></div>
 <!-- /wp:wd/row -->
@@ -6072,7 +6070,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 <!-- wp:wd/row {"blockId":"60ae5667-ddac-4f5c-af13-3374c721eef6"} -->
 <div id="wd-60ae5667" class="wp-block-wd-row"><!-- wp:wd/column {"blockId":"1f5752f8-09f8-468a-a6fc-d3164bb0f148","adjacentCount":2,"flexOrderMobile":"2"} -->
 <div id="wd-1f5752f8" class="wp-block-wd-column"><!-- wp:wd/image {"blockId":"159f7a72-309b-41f5-9a79-3ae086f4162b","image":{"id":530,"url":"http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-4-opt.jpg"},"imageData":{"url":"https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-4-opt.jpg","width":815,"height":750}} -->
-<div id="wd-159f7a72" class="wp-block-wd-image wd-block-image"><img class="wp-image-530" src="http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-4-opt.jpg" /></div>
+<div id="wd-159f7a72" class="wp-block-wd-image wd-block-image"><img class="wp-image-530" src="http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-4-opt.jpg" alt="" /></div>
 <!-- /wp:wd/image --></div>
 <!-- /wp:wd/column -->
 
@@ -6097,8 +6095,8 @@ This email is a receipt for your contact form submission on our website ([_site_
 															<wp:post_id>492</wp:post_id>
 					<wp:post_date><![CDATA[2024-02-14 11:27:00]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-02-14 11:27:00]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-10-08 16:41:33]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-10-08 16:41:33]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-05-30 13:17:50]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-05-30 13:17:50]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[open]]></wp:comment_status>
 					<wp:post_name><![CDATA[olive-tapenade-bruschetta-with-mango-and-eggs]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -6135,7 +6133,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[Papaya Smoothie Bowl]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/2024/02/23/papaya-smoothie-bowl/</link>
 					<pubDate>Fri, 23 Feb 2024 11:28:00 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?p=495</guid>
 											<content:encoded><![CDATA[<!-- wp:wd/paragraph {"blockId":"544c1d1e-5dfa-4cd8-b061-b745fdf52c81"} -->
 <p id="wd-544c1d1e" class="wp-block-wd-paragraph">How would you like to try something truly unique and utterly tasty? Then keep reading and learn how to cook a fiery Caribbean curry made with bananas, prawns, and bonnet chillies.</p>
@@ -6173,7 +6171,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 <!-- /wp:wd/column -->
 
 <!-- wp:wd/column {"blockId":"3812bce9-93b8-4aac-a60f-da9c6f98f685","adjacentCount":2,"colWidth":58,"bgColorCode":"#ffffff","paddingTop":"20","paddingRight":"20","paddingBottom":"20","paddingLeft":"20","paddingLock":true,"borderRadius":"10","borderRadiusTop":"10","borderRadiusRight":"10","borderRadiusBottom":"10","borderRadiusLeft":"10","alignSelf":"start"} -->
-<div id="wd-3812bce9" class="wp-block-wd-column wd-align-s-start"><!-- wp:wd/products {"blockId":"cd78e208-a66f-49ee-a7a5-1c177bcdf16d","show_title":true,"columns":2,"items_per_page":"8","product_hover":"small","img_size":"custom","imgSizeCustomWidth":"70","imgSizeCustomHeight":"90"} -->
+<div id="wd-3812bce9" class="wp-block-wd-column wd-align-s-start"><!-- wp:wd/products {"blockId":"cd78e208-a66f-49ee-a7a5-1c177bcdf16d","show_title":true,"columns":2,"items_per_page":"8","product_hover":"small","img_size":"custom","imgSizeCustomWidth":"70","imgSizeCustomHeight":"90","columnsMobile":1} -->
 <!-- wp:wd/title {"blockId":"caf3a257-d400-4eb9-9e58-a1f000b66318","content":"Available in our store","tpFontSize":"22","tpFontSizeMobile":"20"} -->
 <h2 id="wd-caf3a257" class="wp-block-wd-title title">Available in our store</h2>
 <!-- /wp:wd/title -->
@@ -6210,7 +6208,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 
 <!-- wp:wd/column {"blockId":"d6b28b6f-d01f-40b8-8cdc-a44fe1abc927","adjacentCount":2} -->
 <div id="wd-d6b28b6f" class="wp-block-wd-column"><!-- wp:wd/image {"blockId":"1a3d1b0e-38bd-4c42-832d-bf478d9596d9","image":{"id":525,"url":"https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/08/vg-blog-img-step-1-opt.jpg"},"imageData":{"url":"https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/08/vg-blog-img-step-1-opt.jpg","width":814,"height":750}} -->
-<div id="wd-1a3d1b0e" class="wp-block-wd-image wd-block-image"><img class="wp-image-525" src="https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/08/vg-blog-img-step-1-opt.jpg" /></div>
+<div id="wd-1a3d1b0e" class="wp-block-wd-image wd-block-image"><img class="wp-image-525" src="https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/08/vg-blog-img-step-1-opt.jpg" alt="" /></div>
 <!-- /wp:wd/image --></div>
 <!-- /wp:wd/column --></div>
 <!-- /wp:wd/row -->
@@ -6218,7 +6216,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 <!-- wp:wd/row {"blockId":"490c9860-2425-44a4-90d8-d58710cec194"} -->
 <div id="wd-490c9860" class="wp-block-wd-row"><!-- wp:wd/column {"blockId":"c902000b-7587-43af-9c59-073f5016e460","adjacentCount":2,"flexOrderMobile":"2"} -->
 <div id="wd-c902000b" class="wp-block-wd-column"><!-- wp:wd/image {"blockId":"c6a9ec20-5fb7-4bb7-b718-1011948d2786","image":{"id":527,"url":"http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-2-opt.jpg"},"imageData":{"url":"https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-2-opt.jpg","width":815,"height":750}} -->
-<div id="wd-c6a9ec20" class="wp-block-wd-image wd-block-image"><img class="wp-image-527" src="http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-2-opt.jpg" /></div>
+<div id="wd-c6a9ec20" class="wp-block-wd-image wd-block-image"><img class="wp-image-527" src="http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-2-opt.jpg" alt="" /></div>
 <!-- /wp:wd/image --></div>
 <!-- /wp:wd/column -->
 
@@ -6266,7 +6264,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 
 <!-- wp:wd/column {"blockId":"38f47e0b-6d69-492a-a980-6a11b57c5afc","adjacentCount":2} -->
 <div id="wd-38f47e0b" class="wp-block-wd-column"><!-- wp:wd/image {"blockId":"97659c4f-2577-4bad-a5ec-223171eed3d6","image":{"id":528,"url":"http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-3-opt.jpg"},"imageData":{"url":"https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-3-opt.jpg","width":814,"height":750}} -->
-<div id="wd-97659c4f" class="wp-block-wd-image wd-block-image"><img class="wp-image-528" src="http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-3-opt.jpg" /></div>
+<div id="wd-97659c4f" class="wp-block-wd-image wd-block-image"><img class="wp-image-528" src="http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-3-opt.jpg" alt="" /></div>
 <!-- /wp:wd/image --></div>
 <!-- /wp:wd/column --></div>
 <!-- /wp:wd/row -->
@@ -6274,7 +6272,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 <!-- wp:wd/row {"blockId":"60ae5667-ddac-4f5c-af13-3374c721eef6"} -->
 <div id="wd-60ae5667" class="wp-block-wd-row"><!-- wp:wd/column {"blockId":"1f5752f8-09f8-468a-a6fc-d3164bb0f148","adjacentCount":2,"flexOrderMobile":"2"} -->
 <div id="wd-1f5752f8" class="wp-block-wd-column"><!-- wp:wd/image {"blockId":"159f7a72-309b-41f5-9a79-3ae086f4162b","image":{"id":530,"url":"http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-4-opt.jpg"},"imageData":{"url":"https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-4-opt.jpg","width":815,"height":750}} -->
-<div id="wd-159f7a72" class="wp-block-wd-image wd-block-image"><img class="wp-image-530" src="http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-4-opt.jpg" /></div>
+<div id="wd-159f7a72" class="wp-block-wd-image wd-block-image"><img class="wp-image-530" src="http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-4-opt.jpg" alt="" /></div>
 <!-- /wp:wd/image --></div>
 <!-- /wp:wd/column -->
 
@@ -6299,8 +6297,8 @@ This email is a receipt for your contact form submission on our website ([_site_
 															<wp:post_id>495</wp:post_id>
 					<wp:post_date><![CDATA[2024-02-23 11:28:00]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-02-23 11:28:00]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-10-08 16:41:30]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-10-08 16:41:30]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-05-30 13:17:41]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-05-30 13:17:41]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[open]]></wp:comment_status>
 					<wp:post_name><![CDATA[papaya-smoothie-bowl]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -6337,7 +6335,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[Vegan Ube Mochi Waffles]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/2024/02/27/vegan-ube-mochi-waffles/</link>
 					<pubDate>Tue, 27 Feb 2024 11:30:00 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?p=498</guid>
 											<content:encoded><![CDATA[<!-- wp:wd/paragraph {"blockId":"544c1d1e-5dfa-4cd8-b061-b745fdf52c81"} -->
 <p id="wd-544c1d1e" class="wp-block-wd-paragraph">How would you like to try something truly unique and utterly tasty? Then keep reading and learn how to cook a fiery Caribbean curry made with bananas, prawns, and bonnet chillies.</p>
@@ -6375,7 +6373,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 <!-- /wp:wd/column -->
 
 <!-- wp:wd/column {"blockId":"3812bce9-93b8-4aac-a60f-da9c6f98f685","adjacentCount":2,"colWidth":58,"bgColorCode":"#ffffff","paddingTop":"20","paddingRight":"20","paddingBottom":"20","paddingLeft":"20","paddingLock":true,"borderRadius":"10","borderRadiusTop":"10","borderRadiusRight":"10","borderRadiusBottom":"10","borderRadiusLeft":"10","alignSelf":"start"} -->
-<div id="wd-3812bce9" class="wp-block-wd-column wd-align-s-start"><!-- wp:wd/products {"blockId":"cd78e208-a66f-49ee-a7a5-1c177bcdf16d","show_title":true,"columns":2,"items_per_page":"8","product_hover":"small","img_size":"custom","imgSizeCustomWidth":"70","imgSizeCustomHeight":"90"} -->
+<div id="wd-3812bce9" class="wp-block-wd-column wd-align-s-start"><!-- wp:wd/products {"blockId":"cd78e208-a66f-49ee-a7a5-1c177bcdf16d","show_title":true,"columns":2,"items_per_page":"8","product_hover":"small","img_size":"custom","imgSizeCustomWidth":"70","imgSizeCustomHeight":"90","columnsMobile":1} -->
 <!-- wp:wd/title {"blockId":"caf3a257-d400-4eb9-9e58-a1f000b66318","content":"Available in our store","tpFontSize":"22","tpFontSizeMobile":"20"} -->
 <h2 id="wd-caf3a257" class="wp-block-wd-title title">Available in our store</h2>
 <!-- /wp:wd/title -->
@@ -6412,7 +6410,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 
 <!-- wp:wd/column {"blockId":"d6b28b6f-d01f-40b8-8cdc-a44fe1abc927","adjacentCount":2} -->
 <div id="wd-d6b28b6f" class="wp-block-wd-column"><!-- wp:wd/image {"blockId":"1a3d1b0e-38bd-4c42-832d-bf478d9596d9","image":{"id":525,"url":"https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/08/vg-blog-img-step-1-opt.jpg"},"imageData":{"url":"https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/08/vg-blog-img-step-1-opt.jpg","width":814,"height":750}} -->
-<div id="wd-1a3d1b0e" class="wp-block-wd-image wd-block-image"><img class="wp-image-525" src="https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/08/vg-blog-img-step-1-opt.jpg" /></div>
+<div id="wd-1a3d1b0e" class="wp-block-wd-image wd-block-image"><img class="wp-image-525" src="https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/08/vg-blog-img-step-1-opt.jpg" alt="" /></div>
 <!-- /wp:wd/image --></div>
 <!-- /wp:wd/column --></div>
 <!-- /wp:wd/row -->
@@ -6420,7 +6418,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 <!-- wp:wd/row {"blockId":"490c9860-2425-44a4-90d8-d58710cec194"} -->
 <div id="wd-490c9860" class="wp-block-wd-row"><!-- wp:wd/column {"blockId":"c902000b-7587-43af-9c59-073f5016e460","adjacentCount":2,"flexOrderMobile":"2"} -->
 <div id="wd-c902000b" class="wp-block-wd-column"><!-- wp:wd/image {"blockId":"c6a9ec20-5fb7-4bb7-b718-1011948d2786","image":{"id":527,"url":"http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-2-opt.jpg"},"imageData":{"url":"https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-2-opt.jpg","width":815,"height":750}} -->
-<div id="wd-c6a9ec20" class="wp-block-wd-image wd-block-image"><img class="wp-image-527" src="http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-2-opt.jpg" /></div>
+<div id="wd-c6a9ec20" class="wp-block-wd-image wd-block-image"><img class="wp-image-527" src="http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-2-opt.jpg" alt="" /></div>
 <!-- /wp:wd/image --></div>
 <!-- /wp:wd/column -->
 
@@ -6468,7 +6466,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 
 <!-- wp:wd/column {"blockId":"38f47e0b-6d69-492a-a980-6a11b57c5afc","adjacentCount":2} -->
 <div id="wd-38f47e0b" class="wp-block-wd-column"><!-- wp:wd/image {"blockId":"97659c4f-2577-4bad-a5ec-223171eed3d6","image":{"id":528,"url":"http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-3-opt.jpg"},"imageData":{"url":"https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-3-opt.jpg","width":814,"height":750}} -->
-<div id="wd-97659c4f" class="wp-block-wd-image wd-block-image"><img class="wp-image-528" src="http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-3-opt.jpg" /></div>
+<div id="wd-97659c4f" class="wp-block-wd-image wd-block-image"><img class="wp-image-528" src="http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-3-opt.jpg" alt="" /></div>
 <!-- /wp:wd/image --></div>
 <!-- /wp:wd/column --></div>
 <!-- /wp:wd/row -->
@@ -6476,7 +6474,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 <!-- wp:wd/row {"blockId":"60ae5667-ddac-4f5c-af13-3374c721eef6"} -->
 <div id="wd-60ae5667" class="wp-block-wd-row"><!-- wp:wd/column {"blockId":"1f5752f8-09f8-468a-a6fc-d3164bb0f148","adjacentCount":2,"flexOrderMobile":"2"} -->
 <div id="wd-1f5752f8" class="wp-block-wd-column"><!-- wp:wd/image {"blockId":"159f7a72-309b-41f5-9a79-3ae086f4162b","image":{"id":530,"url":"http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-4-opt.jpg"},"imageData":{"url":"https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-4-opt.jpg","width":815,"height":750}} -->
-<div id="wd-159f7a72" class="wp-block-wd-image wd-block-image"><img class="wp-image-530" src="http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-4-opt.jpg" /></div>
+<div id="wd-159f7a72" class="wp-block-wd-image wd-block-image"><img class="wp-image-530" src="http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-4-opt.jpg" alt="" /></div>
 <!-- /wp:wd/image --></div>
 <!-- /wp:wd/column -->
 
@@ -6501,8 +6499,8 @@ This email is a receipt for your contact form submission on our website ([_site_
 															<wp:post_id>498</wp:post_id>
 					<wp:post_date><![CDATA[2024-02-27 11:30:00]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-02-27 11:30:00]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-10-08 16:41:23]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-10-08 16:41:23]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-05-30 13:17:30]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-05-30 13:17:30]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[open]]></wp:comment_status>
 					<wp:post_name><![CDATA[vegan-ube-mochi-waffles]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -6539,7 +6537,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[Vegan Jaffa Cakes]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/2024/03/01/vegan-jaffa-cakes/</link>
 					<pubDate>Fri, 01 Mar 2024 11:30:00 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?p=501</guid>
 											<content:encoded><![CDATA[<!-- wp:wd/paragraph {"blockId":"544c1d1e-5dfa-4cd8-b061-b745fdf52c81"} -->
 <p id="wd-544c1d1e" class="wp-block-wd-paragraph">How would you like to try something truly unique and utterly tasty? Then keep reading and learn how to cook a fiery Caribbean curry made with bananas, prawns, and bonnet chillies.</p>
@@ -6577,7 +6575,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 <!-- /wp:wd/column -->
 
 <!-- wp:wd/column {"blockId":"3812bce9-93b8-4aac-a60f-da9c6f98f685","adjacentCount":2,"colWidth":58,"bgColorCode":"#ffffff","paddingTop":"20","paddingRight":"20","paddingBottom":"20","paddingLeft":"20","paddingLock":true,"borderRadius":"10","borderRadiusTop":"10","borderRadiusRight":"10","borderRadiusBottom":"10","borderRadiusLeft":"10","alignSelf":"start"} -->
-<div id="wd-3812bce9" class="wp-block-wd-column wd-align-s-start"><!-- wp:wd/products {"blockId":"cd78e208-a66f-49ee-a7a5-1c177bcdf16d","show_title":true,"columns":2,"items_per_page":"8","product_hover":"small","img_size":"custom","imgSizeCustomWidth":"70","imgSizeCustomHeight":"90"} -->
+<div id="wd-3812bce9" class="wp-block-wd-column wd-align-s-start"><!-- wp:wd/products {"blockId":"cd78e208-a66f-49ee-a7a5-1c177bcdf16d","show_title":true,"columns":2,"items_per_page":"8","product_hover":"small","img_size":"custom","imgSizeCustomWidth":"70","imgSizeCustomHeight":"90","columnsMobile":1} -->
 <!-- wp:wd/title {"blockId":"caf3a257-d400-4eb9-9e58-a1f000b66318","content":"Available in our store","tpFontSize":"22","tpFontSizeMobile":"20"} -->
 <h2 id="wd-caf3a257" class="wp-block-wd-title title">Available in our store</h2>
 <!-- /wp:wd/title -->
@@ -6614,7 +6612,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 
 <!-- wp:wd/column {"blockId":"d6b28b6f-d01f-40b8-8cdc-a44fe1abc927","adjacentCount":2} -->
 <div id="wd-d6b28b6f" class="wp-block-wd-column"><!-- wp:wd/image {"blockId":"1a3d1b0e-38bd-4c42-832d-bf478d9596d9","image":{"id":525,"url":"https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/08/vg-blog-img-step-1-opt.jpg"},"imageData":{"url":"https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/08/vg-blog-img-step-1-opt.jpg","width":814,"height":750}} -->
-<div id="wd-1a3d1b0e" class="wp-block-wd-image wd-block-image"><img class="wp-image-525" src="https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/08/vg-blog-img-step-1-opt.jpg" /></div>
+<div id="wd-1a3d1b0e" class="wp-block-wd-image wd-block-image"><img class="wp-image-525" src="https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/08/vg-blog-img-step-1-opt.jpg" alt="" /></div>
 <!-- /wp:wd/image --></div>
 <!-- /wp:wd/column --></div>
 <!-- /wp:wd/row -->
@@ -6622,7 +6620,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 <!-- wp:wd/row {"blockId":"490c9860-2425-44a4-90d8-d58710cec194"} -->
 <div id="wd-490c9860" class="wp-block-wd-row"><!-- wp:wd/column {"blockId":"c902000b-7587-43af-9c59-073f5016e460","adjacentCount":2,"flexOrderMobile":"2"} -->
 <div id="wd-c902000b" class="wp-block-wd-column"><!-- wp:wd/image {"blockId":"c6a9ec20-5fb7-4bb7-b718-1011948d2786","image":{"id":527,"url":"http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-2-opt.jpg"},"imageData":{"url":"https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-2-opt.jpg","width":815,"height":750}} -->
-<div id="wd-c6a9ec20" class="wp-block-wd-image wd-block-image"><img class="wp-image-527" src="http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-2-opt.jpg" /></div>
+<div id="wd-c6a9ec20" class="wp-block-wd-image wd-block-image"><img class="wp-image-527" src="http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-2-opt.jpg" alt="" /></div>
 <!-- /wp:wd/image --></div>
 <!-- /wp:wd/column -->
 
@@ -6670,7 +6668,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 
 <!-- wp:wd/column {"blockId":"38f47e0b-6d69-492a-a980-6a11b57c5afc","adjacentCount":2} -->
 <div id="wd-38f47e0b" class="wp-block-wd-column"><!-- wp:wd/image {"blockId":"97659c4f-2577-4bad-a5ec-223171eed3d6","image":{"id":528,"url":"http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-3-opt.jpg"},"imageData":{"url":"https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-3-opt.jpg","width":814,"height":750}} -->
-<div id="wd-97659c4f" class="wp-block-wd-image wd-block-image"><img class="wp-image-528" src="http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-3-opt.jpg" /></div>
+<div id="wd-97659c4f" class="wp-block-wd-image wd-block-image"><img class="wp-image-528" src="http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-3-opt.jpg" alt="" /></div>
 <!-- /wp:wd/image --></div>
 <!-- /wp:wd/column --></div>
 <!-- /wp:wd/row -->
@@ -6678,7 +6676,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 <!-- wp:wd/row {"blockId":"60ae5667-ddac-4f5c-af13-3374c721eef6"} -->
 <div id="wd-60ae5667" class="wp-block-wd-row"><!-- wp:wd/column {"blockId":"1f5752f8-09f8-468a-a6fc-d3164bb0f148","adjacentCount":2,"flexOrderMobile":"2"} -->
 <div id="wd-1f5752f8" class="wp-block-wd-column"><!-- wp:wd/image {"blockId":"159f7a72-309b-41f5-9a79-3ae086f4162b","image":{"id":530,"url":"http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-4-opt.jpg"},"imageData":{"url":"https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-4-opt.jpg","width":815,"height":750}} -->
-<div id="wd-159f7a72" class="wp-block-wd-image wd-block-image"><img class="wp-image-530" src="http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-4-opt.jpg" /></div>
+<div id="wd-159f7a72" class="wp-block-wd-image wd-block-image"><img class="wp-image-530" src="http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-4-opt.jpg" alt="" /></div>
 <!-- /wp:wd/image --></div>
 <!-- /wp:wd/column -->
 
@@ -6703,8 +6701,8 @@ This email is a receipt for your contact form submission on our website ([_site_
 															<wp:post_id>501</wp:post_id>
 					<wp:post_date><![CDATA[2024-03-01 11:30:00]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-03-01 11:30:00]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-10-08 16:41:21]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-10-08 16:41:21]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-05-30 13:17:19]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-05-30 13:17:19]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[open]]></wp:comment_status>
 					<wp:post_name><![CDATA[vegan-jaffa-cakes]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -6741,7 +6739,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[Prawns and Banana Curry]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/2024/03/05/prawns-and-banana-curry/</link>
 					<pubDate>Tue, 05 Mar 2024 11:31:00 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?p=504</guid>
 											<content:encoded><![CDATA[<!-- wp:wd/paragraph {"blockId":"544c1d1e-5dfa-4cd8-b061-b745fdf52c81"} -->
 <p id="wd-544c1d1e" class="wp-block-wd-paragraph">How would you like to try something truly unique and utterly tasty? Then keep reading and learn how to cook a fiery Caribbean curry made with bananas, prawns, and bonnet chillies.</p>
@@ -6779,7 +6777,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 <!-- /wp:wd/column -->
 
 <!-- wp:wd/column {"blockId":"3812bce9-93b8-4aac-a60f-da9c6f98f685","adjacentCount":2,"colWidth":58,"bgColorCode":"#ffffff","paddingTop":"20","paddingRight":"20","paddingBottom":"20","paddingLeft":"20","paddingLock":true,"borderRadius":"10","borderRadiusTop":"10","borderRadiusRight":"10","borderRadiusBottom":"10","borderRadiusLeft":"10","alignSelf":"start"} -->
-<div id="wd-3812bce9" class="wp-block-wd-column wd-align-s-start"><!-- wp:wd/products {"blockId":"cd78e208-a66f-49ee-a7a5-1c177bcdf16d","show_title":true,"columns":2,"items_per_page":"8","product_hover":"small","img_size":"custom","imgSizeCustomWidth":"70","imgSizeCustomHeight":"90"} -->
+<div id="wd-3812bce9" class="wp-block-wd-column wd-align-s-start"><!-- wp:wd/products {"blockId":"cd78e208-a66f-49ee-a7a5-1c177bcdf16d","show_title":true,"columns":2,"items_per_page":"8","product_hover":"small","img_size":"custom","imgSizeCustomWidth":"70","imgSizeCustomHeight":"90","columnsMobile":1} -->
 <!-- wp:wd/title {"blockId":"caf3a257-d400-4eb9-9e58-a1f000b66318","content":"Available in our store","tpFontSize":"22","tpFontSizeMobile":"20"} -->
 <h2 id="wd-caf3a257" class="wp-block-wd-title title">Available in our store</h2>
 <!-- /wp:wd/title -->
@@ -6816,7 +6814,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 
 <!-- wp:wd/column {"blockId":"d6b28b6f-d01f-40b8-8cdc-a44fe1abc927","adjacentCount":2} -->
 <div id="wd-d6b28b6f" class="wp-block-wd-column"><!-- wp:wd/image {"blockId":"1a3d1b0e-38bd-4c42-832d-bf478d9596d9","image":{"id":525,"url":"https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/08/vg-blog-img-step-1-opt.jpg"},"imageData":{"url":"https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/08/vg-blog-img-step-1-opt.jpg","width":814,"height":750}} -->
-<div id="wd-1a3d1b0e" class="wp-block-wd-image wd-block-image"><img class="wp-image-525" src="https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/08/vg-blog-img-step-1-opt.jpg" /></div>
+<div id="wd-1a3d1b0e" class="wp-block-wd-image wd-block-image"><img class="wp-image-525" src="https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/08/vg-blog-img-step-1-opt.jpg" alt="" /></div>
 <!-- /wp:wd/image --></div>
 <!-- /wp:wd/column --></div>
 <!-- /wp:wd/row -->
@@ -6824,7 +6822,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 <!-- wp:wd/row {"blockId":"490c9860-2425-44a4-90d8-d58710cec194"} -->
 <div id="wd-490c9860" class="wp-block-wd-row"><!-- wp:wd/column {"blockId":"c902000b-7587-43af-9c59-073f5016e460","adjacentCount":2,"flexOrderMobile":"2"} -->
 <div id="wd-c902000b" class="wp-block-wd-column"><!-- wp:wd/image {"blockId":"c6a9ec20-5fb7-4bb7-b718-1011948d2786","image":{"id":527,"url":"http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-2-opt.jpg"},"imageData":{"url":"https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-2-opt.jpg","width":815,"height":750}} -->
-<div id="wd-c6a9ec20" class="wp-block-wd-image wd-block-image"><img class="wp-image-527" src="http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-2-opt.jpg" /></div>
+<div id="wd-c6a9ec20" class="wp-block-wd-image wd-block-image"><img class="wp-image-527" src="http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-2-opt.jpg" alt="" /></div>
 <!-- /wp:wd/image --></div>
 <!-- /wp:wd/column -->
 
@@ -6872,7 +6870,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 
 <!-- wp:wd/column {"blockId":"38f47e0b-6d69-492a-a980-6a11b57c5afc","adjacentCount":2} -->
 <div id="wd-38f47e0b" class="wp-block-wd-column"><!-- wp:wd/image {"blockId":"97659c4f-2577-4bad-a5ec-223171eed3d6","image":{"id":528,"url":"http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-3-opt.jpg"},"imageData":{"url":"https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-3-opt.jpg","width":814,"height":750}} -->
-<div id="wd-97659c4f" class="wp-block-wd-image wd-block-image"><img class="wp-image-528" src="http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-3-opt.jpg" /></div>
+<div id="wd-97659c4f" class="wp-block-wd-image wd-block-image"><img class="wp-image-528" src="http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-3-opt.jpg" alt="" /></div>
 <!-- /wp:wd/image --></div>
 <!-- /wp:wd/column --></div>
 <!-- /wp:wd/row -->
@@ -6880,7 +6878,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 <!-- wp:wd/row {"blockId":"60ae5667-ddac-4f5c-af13-3374c721eef6"} -->
 <div id="wd-60ae5667" class="wp-block-wd-row"><!-- wp:wd/column {"blockId":"1f5752f8-09f8-468a-a6fc-d3164bb0f148","adjacentCount":2,"flexOrderMobile":"2"} -->
 <div id="wd-1f5752f8" class="wp-block-wd-column"><!-- wp:wd/image {"blockId":"159f7a72-309b-41f5-9a79-3ae086f4162b","image":{"id":530,"url":"http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-4-opt.jpg"},"imageData":{"url":"https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-4-opt.jpg","width":815,"height":750}} -->
-<div id="wd-159f7a72" class="wp-block-wd-image wd-block-image"><img class="wp-image-530" src="http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-4-opt.jpg" /></div>
+<div id="wd-159f7a72" class="wp-block-wd-image wd-block-image"><img class="wp-image-530" src="http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-4-opt.jpg" alt="" /></div>
 <!-- /wp:wd/image --></div>
 <!-- /wp:wd/column -->
 
@@ -6905,8 +6903,8 @@ This email is a receipt for your contact form submission on our website ([_site_
 															<wp:post_id>504</wp:post_id>
 					<wp:post_date><![CDATA[2024-03-05 11:31:00]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-03-05 11:31:00]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-10-08 16:40:55]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-10-08 16:40:55]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-05-30 13:17:07]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-05-30 13:17:07]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[open]]></wp:comment_status>
 					<wp:post_name><![CDATA[prawns-and-banana-curry]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -6943,7 +6941,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/2024/08/08/166/</link>
 					<pubDate>Tue, 06 Aug 2024 09:21:19 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?p=166</guid>
 											<content:encoded><![CDATA[ ]]></content:encoded>
 															<wp:post_id>166</wp:post_id>
@@ -7015,7 +7013,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/2024/08/08/167/</link>
 					<pubDate>Tue, 06 Aug 2024 09:21:19 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?p=167</guid>
 											<content:encoded><![CDATA[ ]]></content:encoded>
 															<wp:post_id>167</wp:post_id>
@@ -7087,7 +7085,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/2024/08/08/168/</link>
 					<pubDate>Tue, 06 Aug 2024 09:21:19 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?p=168</guid>
 											<content:encoded><![CDATA[ ]]></content:encoded>
 															<wp:post_id>168</wp:post_id>
@@ -7159,7 +7157,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/2024/08/08/169/</link>
 					<pubDate>Tue, 06 Aug 2024 09:21:19 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?p=169</guid>
 											<content:encoded><![CDATA[ ]]></content:encoded>
 															<wp:post_id>169</wp:post_id>
@@ -7231,7 +7229,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/2024/08/08/197/</link>
 					<pubDate>Tue, 06 Aug 2024 09:38:39 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?p=197</guid>
 											<content:encoded><![CDATA[ ]]></content:encoded>
 															<wp:post_id>197</wp:post_id>
@@ -7303,7 +7301,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/2024/08/08/198/</link>
 					<pubDate>Tue, 06 Aug 2024 09:38:39 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?p=198</guid>
 											<content:encoded><![CDATA[ ]]></content:encoded>
 															<wp:post_id>198</wp:post_id>
@@ -7375,7 +7373,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[Weekly Discounts]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/2024/08/08/weekly-discounts/</link>
 					<pubDate>Tue, 06 Aug 2024 09:38:39 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?p=199</guid>
 															<wp:post_id>199</wp:post_id>
 					<wp:post_date><![CDATA[2024-08-08 14:53:00]]></wp:post_date>
@@ -7438,7 +7436,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[Terms of Service]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/2024/08/06/terms-of-service/</link>
 					<pubDate>Tue, 06 Aug 2024 09:42:07 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?p=207</guid>
 															<wp:post_id>207</wp:post_id>
 					<wp:post_date><![CDATA[2024-08-06 09:42:07]]></wp:post_date>
@@ -7493,7 +7491,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[Privacy Policy]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/2024/08/06/privacy-policy/</link>
 					<pubDate>Tue, 06 Aug 2024 09:42:07 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?p=208</guid>
 															<wp:post_id>208</wp:post_id>
 					<wp:post_date><![CDATA[2024-08-06 09:42:07]]></wp:post_date>
@@ -7548,7 +7546,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[Store Refund Policy]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/2024/08/06/store-refund-policy/</link>
 					<pubDate>Tue, 06 Aug 2024 09:42:07 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?p=209</guid>
 															<wp:post_id>209</wp:post_id>
 					<wp:post_date><![CDATA[2024-08-06 09:42:07]]></wp:post_date>
@@ -7603,7 +7601,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/2024/08/06/210/</link>
 					<pubDate>Tue, 06 Aug 2024 09:42:40 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?p=210</guid>
 											<content:encoded><![CDATA[ ]]></content:encoded>
 															<wp:post_id>210</wp:post_id>
@@ -7655,7 +7653,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/2024/08/06/211/</link>
 					<pubDate>Tue, 06 Aug 2024 09:42:40 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?p=211</guid>
 											<content:encoded><![CDATA[ ]]></content:encoded>
 															<wp:post_id>211</wp:post_id>
@@ -7707,7 +7705,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/2024/08/06/212/</link>
 					<pubDate>Tue, 06 Aug 2024 09:42:40 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?p=212</guid>
 											<content:encoded><![CDATA[ ]]></content:encoded>
 															<wp:post_id>212</wp:post_id>
@@ -7759,7 +7757,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/2024/08/06/213/</link>
 					<pubDate>Tue, 06 Aug 2024 09:43:22 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?p=213</guid>
 											<content:encoded><![CDATA[ ]]></content:encoded>
 															<wp:post_id>213</wp:post_id>
@@ -7815,7 +7813,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[(956) 238-7908]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/2024/08/06/956-238-7908/</link>
 					<pubDate>Tue, 06 Aug 2024 09:43:22 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?p=214</guid>
 															<wp:post_id>214</wp:post_id>
 					<wp:post_date><![CDATA[2024-08-06 09:44:03]]></wp:post_date>
@@ -7874,7 +7872,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[Ideas for Breakfast]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/2024/10/10/217/</link>
 					<pubDate>Tue, 06 Aug 2024 09:44:47 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?p=217</guid>
 															<wp:post_id>217</wp:post_id>
 					<wp:post_date><![CDATA[2024-10-10 11:09:46]]></wp:post_date>
@@ -7937,7 +7935,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/2024/10/10/218/</link>
 					<pubDate>Tue, 06 Aug 2024 09:44:47 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?p=218</guid>
 											<content:encoded><![CDATA[ ]]></content:encoded>
 															<wp:post_id>218</wp:post_id>
@@ -8001,7 +7999,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[Weekly Discounts]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/2024/10/10/weekly-discounts-2/</link>
 					<pubDate>Tue, 06 Aug 2024 09:44:47 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?p=219</guid>
 															<wp:post_id>219</wp:post_id>
 					<wp:post_date><![CDATA[2024-10-10 11:09:46]]></wp:post_date>
@@ -8068,7 +8066,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[Home]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/2024/08/06/home/</link>
 					<pubDate>Tue, 06 Aug 2024 09:46:36 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?p=223</guid>
 															<wp:post_id>223</wp:post_id>
 					<wp:post_date><![CDATA[2024-08-06 09:46:36]]></wp:post_date>
@@ -8119,7 +8117,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[Japanese Corn Soup]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/2024/02/03/japanese-corn-soup/</link>
 					<pubDate>Sat, 03 Feb 2024 11:26:00 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?p=489</guid>
 											<content:encoded><![CDATA[<!-- wp:wd/paragraph {"blockId":"544c1d1e-5dfa-4cd8-b061-b745fdf52c81"} -->
 <p id="wd-544c1d1e" class="wp-block-wd-paragraph">How would you like to try something truly unique and utterly tasty? Then keep reading and learn how to cook a fiery Caribbean curry made with bananas, prawns, and bonnet chillies.</p>
@@ -8157,7 +8155,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 <!-- /wp:wd/column -->
 
 <!-- wp:wd/column {"blockId":"3812bce9-93b8-4aac-a60f-da9c6f98f685","adjacentCount":2,"colWidth":58,"bgColorCode":"#ffffff","paddingTop":"20","paddingRight":"20","paddingBottom":"20","paddingLeft":"20","paddingLock":true,"borderRadius":"10","borderRadiusTop":"10","borderRadiusRight":"10","borderRadiusBottom":"10","borderRadiusLeft":"10","alignSelf":"start"} -->
-<div id="wd-3812bce9" class="wp-block-wd-column wd-align-s-start"><!-- wp:wd/products {"blockId":"cd78e208-a66f-49ee-a7a5-1c177bcdf16d","show_title":true,"columns":2,"items_per_page":"8","product_hover":"small","img_size":"custom","imgSizeCustomWidth":"70","imgSizeCustomHeight":"90"} -->
+<div id="wd-3812bce9" class="wp-block-wd-column wd-align-s-start"><!-- wp:wd/products {"blockId":"cd78e208-a66f-49ee-a7a5-1c177bcdf16d","show_title":true,"columns":2,"items_per_page":"8","product_hover":"small","img_size":"custom","imgSizeCustomWidth":"70","imgSizeCustomHeight":"90","columnsMobile":1} -->
 <!-- wp:wd/title {"blockId":"caf3a257-d400-4eb9-9e58-a1f000b66318","content":"Available in our store","tpFontSize":"22","tpFontSizeMobile":"20"} -->
 <h2 id="wd-caf3a257" class="wp-block-wd-title title">Available in our store</h2>
 <!-- /wp:wd/title -->
@@ -8194,7 +8192,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 
 <!-- wp:wd/column {"blockId":"d6b28b6f-d01f-40b8-8cdc-a44fe1abc927","adjacentCount":2} -->
 <div id="wd-d6b28b6f" class="wp-block-wd-column"><!-- wp:wd/image {"blockId":"1a3d1b0e-38bd-4c42-832d-bf478d9596d9","image":{"id":525,"url":"https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/08/vg-blog-img-step-1-opt.jpg"},"imageData":{"url":"https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/08/vg-blog-img-step-1-opt.jpg","width":814,"height":750}} -->
-<div id="wd-1a3d1b0e" class="wp-block-wd-image wd-block-image"><img class="wp-image-525" src="https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/08/vg-blog-img-step-1-opt.jpg" /></div>
+<div id="wd-1a3d1b0e" class="wp-block-wd-image wd-block-image"><img class="wp-image-525" src="https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/08/vg-blog-img-step-1-opt.jpg" alt="" /></div>
 <!-- /wp:wd/image --></div>
 <!-- /wp:wd/column --></div>
 <!-- /wp:wd/row -->
@@ -8202,7 +8200,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 <!-- wp:wd/row {"blockId":"490c9860-2425-44a4-90d8-d58710cec194"} -->
 <div id="wd-490c9860" class="wp-block-wd-row"><!-- wp:wd/column {"blockId":"c902000b-7587-43af-9c59-073f5016e460","adjacentCount":2,"flexOrderMobile":"2"} -->
 <div id="wd-c902000b" class="wp-block-wd-column"><!-- wp:wd/image {"blockId":"c6a9ec20-5fb7-4bb7-b718-1011948d2786","image":{"id":527,"url":"http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-2-opt.jpg"},"imageData":{"url":"https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-2-opt.jpg","width":815,"height":750}} -->
-<div id="wd-c6a9ec20" class="wp-block-wd-image wd-block-image"><img class="wp-image-527" src="http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-2-opt.jpg" /></div>
+<div id="wd-c6a9ec20" class="wp-block-wd-image wd-block-image"><img class="wp-image-527" src="http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-2-opt.jpg" alt="" /></div>
 <!-- /wp:wd/image --></div>
 <!-- /wp:wd/column -->
 
@@ -8250,7 +8248,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 
 <!-- wp:wd/column {"blockId":"38f47e0b-6d69-492a-a980-6a11b57c5afc","adjacentCount":2} -->
 <div id="wd-38f47e0b" class="wp-block-wd-column"><!-- wp:wd/image {"blockId":"97659c4f-2577-4bad-a5ec-223171eed3d6","image":{"id":528,"url":"http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-3-opt.jpg"},"imageData":{"url":"https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-3-opt.jpg","width":814,"height":750}} -->
-<div id="wd-97659c4f" class="wp-block-wd-image wd-block-image"><img class="wp-image-528" src="http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-3-opt.jpg" /></div>
+<div id="wd-97659c4f" class="wp-block-wd-image wd-block-image"><img class="wp-image-528" src="http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-3-opt.jpg" alt="" /></div>
 <!-- /wp:wd/image --></div>
 <!-- /wp:wd/column --></div>
 <!-- /wp:wd/row -->
@@ -8258,7 +8256,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 <!-- wp:wd/row {"blockId":"60ae5667-ddac-4f5c-af13-3374c721eef6"} -->
 <div id="wd-60ae5667" class="wp-block-wd-row"><!-- wp:wd/column {"blockId":"1f5752f8-09f8-468a-a6fc-d3164bb0f148","adjacentCount":2,"flexOrderMobile":"2"} -->
 <div id="wd-1f5752f8" class="wp-block-wd-column"><!-- wp:wd/image {"blockId":"159f7a72-309b-41f5-9a79-3ae086f4162b","image":{"id":530,"url":"http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-4-opt.jpg"},"imageData":{"url":"https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-4-opt.jpg","width":815,"height":750}} -->
-<div id="wd-159f7a72" class="wp-block-wd-image wd-block-image"><img class="wp-image-530" src="http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-4-opt.jpg" /></div>
+<div id="wd-159f7a72" class="wp-block-wd-image wd-block-image"><img class="wp-image-530" src="http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/03/vg-blog-img-step-4-opt.jpg" alt="" /></div>
 <!-- /wp:wd/image --></div>
 <!-- /wp:wd/column -->
 
@@ -8283,8 +8281,8 @@ This email is a receipt for your contact form submission on our website ([_site_
 															<wp:post_id>489</wp:post_id>
 					<wp:post_date><![CDATA[2024-02-03 11:26:00]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-02-03 11:26:00]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-10-08 16:41:27]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-10-08 16:41:27]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-05-30 13:18:00]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-05-30 13:18:00]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[open]]></wp:comment_status>
 					<wp:post_name><![CDATA[japanese-corn-soup]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -8321,7 +8319,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/2024/08/06/224/</link>
 					<pubDate>Tue, 06 Aug 2024 09:46:36 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?p=224</guid>
 											<content:encoded><![CDATA[ ]]></content:encoded>
 															<wp:post_id>224</wp:post_id>
@@ -8373,7 +8371,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/2024/08/06/225/</link>
 					<pubDate>Tue, 06 Aug 2024 09:46:36 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?p=225</guid>
 											<content:encoded><![CDATA[ ]]></content:encoded>
 															<wp:post_id>225</wp:post_id>
@@ -8425,7 +8423,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/2024/08/06/226/</link>
 					<pubDate>Tue, 06 Aug 2024 09:46:36 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?p=226</guid>
 											<content:encoded><![CDATA[ ]]></content:encoded>
 															<wp:post_id>226</wp:post_id>
@@ -8477,7 +8475,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/2024/08/06/227/</link>
 					<pubDate>Tue, 06 Aug 2024 09:46:36 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?p=227</guid>
 											<content:encoded><![CDATA[ ]]></content:encoded>
 															<wp:post_id>227</wp:post_id>
@@ -8529,7 +8527,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/2024/08/06/228/</link>
 					<pubDate>Tue, 06 Aug 2024 09:46:36 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?p=228</guid>
 											<content:encoded><![CDATA[ ]]></content:encoded>
 															<wp:post_id>228</wp:post_id>
@@ -8581,7 +8579,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/2024/08/06/229/</link>
 					<pubDate>Tue, 06 Aug 2024 09:46:36 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?p=229</guid>
 											<content:encoded><![CDATA[ ]]></content:encoded>
 															<wp:post_id>229</wp:post_id>
@@ -8633,7 +8631,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[Home]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/2024/08/06/home-2/</link>
 					<pubDate>Tue, 06 Aug 2024 09:47:15 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?p=230</guid>
 															<wp:post_id>230</wp:post_id>
 					<wp:post_date><![CDATA[2024-08-06 09:47:15]]></wp:post_date>
@@ -8684,7 +8682,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/2024/08/06/231/</link>
 					<pubDate>Tue, 06 Aug 2024 09:47:15 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?p=231</guid>
 											<content:encoded><![CDATA[ ]]></content:encoded>
 															<wp:post_id>231</wp:post_id>
@@ -8736,7 +8734,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/2024/08/06/232/</link>
 					<pubDate>Tue, 06 Aug 2024 09:47:15 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?p=232</guid>
 											<content:encoded><![CDATA[ ]]></content:encoded>
 															<wp:post_id>232</wp:post_id>
@@ -8788,7 +8786,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/2024/08/06/233/</link>
 					<pubDate>Tue, 06 Aug 2024 09:47:15 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?p=233</guid>
 											<content:encoded><![CDATA[ ]]></content:encoded>
 															<wp:post_id>233</wp:post_id>
@@ -8840,7 +8838,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/2024/08/06/234/</link>
 					<pubDate>Tue, 06 Aug 2024 09:47:15 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?p=234</guid>
 											<content:encoded><![CDATA[ ]]></content:encoded>
 															<wp:post_id>234</wp:post_id>
@@ -8892,7 +8890,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/2024/08/06/235/</link>
 					<pubDate>Tue, 06 Aug 2024 09:47:15 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?p=235</guid>
 											<content:encoded><![CDATA[ ]]></content:encoded>
 															<wp:post_id>235</wp:post_id>
@@ -8944,7 +8942,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/2024/08/06/236/</link>
 					<pubDate>Tue, 06 Aug 2024 09:47:15 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?p=236</guid>
 											<content:encoded><![CDATA[ ]]></content:encoded>
 															<wp:post_id>236</wp:post_id>
@@ -8996,7 +8994,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/2024/08/06/237/</link>
 					<pubDate>Tue, 06 Aug 2024 09:48:20 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?p=237</guid>
 											<content:encoded><![CDATA[ ]]></content:encoded>
 															<wp:post_id>237</wp:post_id>
@@ -9056,7 +9054,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/2024/08/06/238/</link>
 					<pubDate>Tue, 06 Aug 2024 09:48:20 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?p=238</guid>
 											<content:encoded><![CDATA[ ]]></content:encoded>
 															<wp:post_id>238</wp:post_id>
@@ -9116,7 +9114,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/2024/08/06/239/</link>
 					<pubDate>Tue, 06 Aug 2024 09:48:20 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?p=239</guid>
 											<content:encoded><![CDATA[ ]]></content:encoded>
 															<wp:post_id>239</wp:post_id>
@@ -9176,7 +9174,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/2024/08/06/240/</link>
 					<pubDate>Tue, 06 Aug 2024 09:48:20 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?p=240</guid>
 											<content:encoded><![CDATA[ ]]></content:encoded>
 															<wp:post_id>240</wp:post_id>
@@ -9236,7 +9234,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/2024/08/06/241/</link>
 					<pubDate>Tue, 06 Aug 2024 09:48:20 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?p=241</guid>
 											<content:encoded><![CDATA[ ]]></content:encoded>
 															<wp:post_id>241</wp:post_id>
@@ -9296,7 +9294,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/2024/08/06/242/</link>
 					<pubDate>Tue, 06 Aug 2024 09:48:20 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?p=242</guid>
 											<content:encoded><![CDATA[ ]]></content:encoded>
 															<wp:post_id>242</wp:post_id>
@@ -9356,7 +9354,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[Weekly Discounts]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/2024/08/06/weekly-discounts-3/</link>
 					<pubDate>Tue, 06 Aug 2024 09:48:20 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?p=243</guid>
 															<wp:post_id>243</wp:post_id>
 					<wp:post_date><![CDATA[2024-08-06 09:49:48]]></wp:post_date>

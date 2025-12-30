@@ -586,15 +586,8 @@ class Themesettingscss {
 			}
 		}
 	<?php elseif ( $site_width && 'enabled' === woodmart_get_opt( 'negative_gap' ) && 'elementor' === woodmart_get_current_page_builder() ) : ?>
-		@media (min-width: <?php echo esc_html( $site_width + 17 ); ?>px) {
-			.platform-Windows .wd-section-stretch > .elementor-container {
-				margin-left: auto;
-				margin-right: auto;
-			}
-		}
-
 		@media (min-width: <?php echo esc_html( $site_width ); ?>px) {
-			html:not(.platform-Windows) .wd-section-stretch > .elementor-container {
+			section.elementor-section.wd-section-stretch > .elementor-container {
 				margin-left: auto;
 				margin-right: auto;
 			}
@@ -612,6 +605,20 @@ class Themesettingscss {
 		<?php if ( isset( $primary_font[0] ) && isset( $primary_font[0]['font-family'] ) ): ?>
 			rs-slides :is(h1,h2,h3,h4,h5,h6)[data-type=text] {
 				font-family: <?php echo esc_html( $primary_font[0]['font-family'] ); ?> !important;
+			}
+		<?php endif; ?>
+	<?php endif; ?>
+<?php endif; ?>
+
+<?php if ( ! apply_filters( 'woodmart_generate_legacy_page_title_bg', false ) && ( ! $this->is_preset_active() || ( $this->is_preset_active() && woodmart_is_opt_changed( 'title-background' ) ) ) ) : ?>
+	<?php if ( woodmart_get_opt( 'title-background' ) ): ?>
+		<?php
+		$settings = woodmart_get_opt( 'title-background' );
+		$title_color = ! empty( $settings['color'] ) ? $settings['color'] : '';
+		?>
+		<?php if ( $title_color ) : ?>
+			.wd-page-title {
+				background-color: <?php echo esc_attr( $title_color ); ?>;
 			}
 		<?php endif; ?>
 	<?php endif; ?>

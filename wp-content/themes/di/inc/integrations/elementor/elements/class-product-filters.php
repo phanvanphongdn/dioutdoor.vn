@@ -10,6 +10,7 @@ use Elementor\Repeater;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Plugin;
+use WC_Tax;
 use WOODMART_Custom_Walker_Category;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -910,16 +911,25 @@ class Product_Filters extends Widget_Base {
 
 		$link = woodmart_filters_get_page_base_url();
 
-		$prices = woodmart_get_filtered_price_new();
+		$prices    = woodmart_get_filtered_price_new();
+		$min_price = isset( $prices->min_price ) ? $prices->min_price : 0;
+		$max_price = isset( $prices->max_price ) ? $prices->max_price : 0;
 
-		$min = apply_filters( 'woocommerce_price_filter_widget_min_amount', floor( ( $prices->min_price ? $prices->min_price : 0 ) ) );
-		$max = apply_filters( 'woocommerce_price_filter_widget_max_amount', ceil( ( $prices->max_price ? $prices->max_price : 0 ) ) );
+		// Check to see if we should add taxes to the prices if store are excl tax but display incl.
+		if ( wc_tax_enabled() && ! wc_prices_include_tax() && 'incl' === get_option( 'woocommerce_tax_display_shop' ) ) {
+			$tax_class = apply_filters( 'woocommerce_price_filter_widget_tax_class', '' ); // Uses standard tax class.
+			$tax_rates = WC_Tax::get_rates( $tax_class );
 
-		if ( $min === $max ) {
-			return;
+			if ( $tax_rates ) {
+				$min_price += WC_Tax::get_tax_total( WC_Tax::calc_exclusive_tax( $min_price, $tax_rates ) );
+				$max_price += WC_Tax::get_tax_total( WC_Tax::calc_exclusive_tax( $max_price, $tax_rates ) );
+			}
 		}
 
-		if ( ( is_shop() || is_product_taxonomy() ) && ! wc()->query->get_main_query()->post_count ) {
+		$min = apply_filters( 'woocommerce_price_filter_widget_min_amount', floor( $min_price ) );
+		$max = apply_filters( 'woocommerce_price_filter_widget_max_amount', ceil( $max_price ) );
+
+		if ( $min === $max || ( ( is_shop() || is_product_taxonomy() ) && ! wc()->query->get_main_query()->post_count && ! $max ) ) {
 			return;
 		}
 
@@ -928,7 +938,7 @@ class Product_Filters extends Widget_Base {
 
 		?>
 		<div class="wd-pf-checkboxes wd-pf-price-range multi_select widget_price_filter wd-col wd-event-<?php echo esc_attr( $settings['show_dropdown_on'] ); ?>">
-			<div class="wd-pf-title">
+			<div class="wd-pf-title" tabindex="0">
 				<span class="title-text">
 					<?php echo esc_html( $settings['price_title'] ); ?>
 				</span>
@@ -989,7 +999,7 @@ class Product_Filters extends Widget_Base {
 		<div class="wd-pf-checkboxes wd-pf-stock multi_select wd-col wd-event-<?php echo esc_attr( $settings['show_dropdown_on'] ); ?>">
 			<input type="hidden" class="result-input" name="stock_status" value="<?php echo esc_attr( $result_value ); ?>">
 
-			<div class="wd-pf-title">
+			<div class="wd-pf-title" tabindex="0">
 				<span class="title-text">
 					<?php echo esc_html( $settings['stock_title'] ); ?>
 				</span>
@@ -1073,7 +1083,7 @@ class Product_Filters extends Widget_Base {
 		<div class="wd-pf-checkboxes wd-pf-sortby wd-col wd-event-<?php echo esc_attr( $settings['show_dropdown_on'] ); ?>">
 			<input type="hidden" class="result-input" name="orderby" value="<?php echo ! empty( $current_filter ) ? esc_attr( $current_filter ) : ''; ?>">
 
-			<div class="wd-pf-title">
+			<div class="wd-pf-title" tabindex="0">
 				<span class="title-text">
 					<?php echo esc_html__( 'Sort by', 'woodmart' ); ?>
 				</span>
@@ -1220,7 +1230,7 @@ class Product_Filters extends Widget_Base {
 
 		?>
 		<div class="wd-pf-checkboxes wd-pf-categories wd-col wd-event-<?php echo esc_attr( $settings['show_dropdown_on'] ); ?>">
-			<div class="wd-pf-title">
+			<div class="wd-pf-title" tabindex="0">
 				<span class="title-text">
 					<?php echo esc_html( $settings['categories_title'] ); ?>
 				</span>

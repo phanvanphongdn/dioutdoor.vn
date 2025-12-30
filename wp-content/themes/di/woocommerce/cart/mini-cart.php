@@ -14,7 +14,7 @@
  *
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates
- * @version 9.3.0
+ * @version 10.0.0
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -28,7 +28,7 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 <div class="shopping-cart-widget-body wd-scroll">
 	<div class="wd-scroll-content">
 
-		<?php if ( ! WC()->cart->is_empty() ) : ?>
+		<?php if ( WC()->cart && ! WC()->cart->is_empty() ) : ?>
 			
 			<ul class="cart_list product_list_widget woocommerce-mini-cart <?php echo esc_attr( $args['list_class'] ); ?>">
 
@@ -58,7 +58,7 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 								<a href="<?php echo esc_url( $product_permalink ); ?>" class="cart-item-link wd-fill"><?php esc_html_e('Show', 'woocommerce'); ?></a>
 								<?php
 									echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
-										'<a href="%s" class="remove remove_from_cart_button" aria-label="%s" data-product_id="%s" data-cart_item_key="%s" data-product_sku="%s" data-success_message="%s">&times;</a>',
+										'<a role="button" href="%s" class="remove remove_from_cart_button" aria-label="%s" data-product_id="%s" data-cart_item_key="%s" data-product_sku="%s" data-success_message="%s">&times;</a>',
 										esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
 										/* translators: %s is the product name */
 										esc_attr( sprintf( __( 'Remove %s from cart', 'woocommerce' ), wp_strip_all_tags( $product_name ) ) ),
@@ -96,7 +96,7 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 										</div>
 									<?php endif; ?>
 									<?php if ( woodmart_get_opt( 'estimate_delivery_enabled' ) && woodmart_get_opt( 'estimate_delivery_show_on_mini_cart' ) ) : ?>
-										<?php Estimate_Delivery_Frontend::get_instance()->render_delivery_detail_on_cart( $cart_item ); ?>
+										<?php Estimate_Delivery_Frontend::get_instance()->render_delivery_detail_on_cart( $cart_item, true ); ?>
 									<?php endif; ?>
 									<?php
 										echo wc_get_formatted_cart_item_data( $cart_item );

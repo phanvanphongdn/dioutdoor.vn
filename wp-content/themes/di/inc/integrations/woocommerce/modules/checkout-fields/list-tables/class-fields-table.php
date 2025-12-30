@@ -46,6 +46,10 @@ class Fields_Table extends WP_List_Table {
 	 * @param array|string $args Array or string of arguments.
 	 */
 	public function __construct( $args = array() ) {
+		if ( ! woodmart_get_opt( 'checkout_fields_enabled' ) || ! woodmart_woocommerce_installed() ) {
+			return;
+		}
+
 		parent::__construct( $args );
 
 		$this->helper = Helper::get_instance();
@@ -92,6 +96,10 @@ class Fields_Table extends WP_List_Table {
 		$current = '';
 
 		if ( ! empty( $item['class'] ) ) {
+			if ( is_string( $item['class'] ) ) {
+				$item['class'] = explode( ' ', $item['class'] );
+			}
+
 			if ( in_array( 'form-row-first', $item['class'], true ) ) {
 				$current = 'form-row-first';
 			} elseif ( in_array( 'form-row-wide', $item['class'], true ) ) {
@@ -221,7 +229,8 @@ class Fields_Table extends WP_List_Table {
 	 */
 	public function prepare_items() {
 		$this->table_data = $this->table_data();
-		usort( $this->table_data, array( $this, 'sort_data' ) );
+
+		woodmart_sort_data( $this->table_data, 'priority', 'asc' );
 
 		$columns  = $this->get_columns();
 		$hidden   = array();
@@ -257,28 +266,6 @@ class Fields_Table extends WP_List_Table {
 	}
 
 	/**
-	 * Sort the data by priority.
-	 *
-	 * @param array $a First array.
-	 * @param array $b Next array.
-	 * @return int
-	 */
-	private function sort_data( $a, $b ) {
-		if ( ! isset( $a['priority'], $b['priority'] ) ) {
-			return 0;
-		}
-
-		$a = $a['priority'];
-		$b = $b['priority'];
-
-		if ( $a === $b ) {
-			return 0;
-		}
-
-		return ( $a < $b ) ? -1 : 1;
-	}
-
-	/**
 	 * Print filters for current table
 	 *
 	 * @param string $which Top / Bottom.
@@ -291,8 +278,9 @@ class Fields_Table extends WP_List_Table {
 			return;
 		}
 
+		$change_options = get_option( 'xts_checkout_fields_manager_options', array() );
 		?>
-		<a href="<?php echo esc_attr( add_query_arg( 'reset-all-fields', true, $this->admin->get_base_url() ) ); ?>" class="xts-reset-all-fields xts-bordered-btn xts-color-warning">
+		<a href="<?php echo esc_attr( add_query_arg( 'reset-all-fields', true, $this->admin->get_base_url() ) ); ?>" class="xts-reset-all-fields xts-bordered-btn xts-color-warning<?php echo empty( $change_options ) ? ' xts-hidden' : ''; ?>">
 			<?php esc_html_e( 'Reset all', 'woodmart' ); ?>
 		</a>
 		<?php

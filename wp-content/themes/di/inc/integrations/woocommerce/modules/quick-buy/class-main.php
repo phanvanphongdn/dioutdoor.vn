@@ -7,8 +7,8 @@
 
 namespace XTS\Modules\Quick_Buy;
 
-use XTS\Admin\Modules\Options;
 use XTS\Singleton;
+use XTS\Admin\Modules\Options;
 use XTS\Modules\Layouts\Main as Builder;
 
 /**
@@ -19,17 +19,10 @@ class Main extends Singleton {
 	 * Constructor.
 	 */
 	public function init() {
-		$this->include_files();
-		$this->add_options();
+		woodmart_include_files( __DIR__, array( './class-redirect' ) );
 
+		add_action( 'init', array( $this, 'add_options' ) );
 		add_action( 'woocommerce_after_add_to_cart_button', array( $this, 'output_quick_buy_button' ), 1 );
-	}
-
-	/**
-	 * Include files.
-	 */
-	public function include_files() {
-		require_once WOODMART_THEMEROOT . '/inc/integrations/woocommerce/modules/quick-buy/class-redirect.php';
 	}
 
 	/**
@@ -94,9 +87,10 @@ class Main extends Singleton {
 	 * @codeCoverageIgnore
 	 */
 	public function output_quick_buy_button() {
-		if ( ! is_singular( 'product' ) && ! woodmart_loop_prop( 'is_quick_view' ) || ! woodmart_get_opt( 'buy_now_enabled' ) ) {
+		if ( ( ! is_singular( 'product' ) && ! woodmart_loop_prop( 'is_quick_view' ) ) || ! woodmart_get_opt( 'buy_now_enabled' ) ) {
 			return;
 		}
+
 		?>
 			<button id="wd-add-to-cart" type="submit" name="wd-add-to-cart" value="<?php echo get_the_ID(); ?>" class="wd-buy-now-btn button alt">
 				<?php esc_html_e( 'Buy now', 'woodmart' ); ?>

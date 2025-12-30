@@ -44,7 +44,7 @@ class Remove extends Singleton {
 	 * Init.
 	 */
 	public function init() {
-		$this->set_categories();
+		add_action( 'init', array( $this, 'set_categories' ) );
 
 		$this->set_versions();
 
@@ -153,6 +153,7 @@ class Remove extends Singleton {
 				$imported_data = $this->delete_terms(
 					array(
 						'product_cat',
+						'product_brand',
 						'pa_brand',
 						'pa_color',
 						'pa_size',
@@ -167,6 +168,7 @@ class Remove extends Singleton {
 						'woodmart_woo_lv',
 						'woodmart_woo_fbt',
 						'wd_woo_discounts',
+						'wd_product_tabs',
 					),
 					$imported_data
 				);
@@ -203,6 +205,16 @@ class Remove extends Singleton {
 				$this->delete_presets();
 
 				$this->categories['presets']['data'] = array();
+			}
+
+			if ( in_array( 'wd_floating_block', $selected_categories, true ) ) {
+				$imported_data                                 = $this->delete_posts( array( 'wd_floating_block' ), $imported_data );
+				$this->categories['wd_floating_block']['data'] = array();
+			}
+
+			if ( in_array( 'wd_popup', $selected_categories, true ) ) {
+				$imported_data                        = $this->delete_posts( array( 'wd_popup' ), $imported_data );
+				$this->categories['wd_popup']['data'] = array();
 			}
 
 			update_option( 'wd_imported_data_' . $version, $imported_data, false );
@@ -514,7 +526,7 @@ class Remove extends Singleton {
 	/**
 	 * Set categories.
 	 */
-	private function set_categories() {
+	public function set_categories() {
 		$this->categories = array(
 			'page'               => array(
 				'title' => esc_html__( 'Pages', 'woodmart' ),
@@ -570,6 +582,14 @@ class Remove extends Singleton {
 			),
 			'wpcf7_contact_form' => array(
 				'title' => esc_html__( 'Contact forms', 'woodmart' ),
+				'data'  => array(),
+			),
+			'wd_floating_block'  => array(
+				'title' => esc_html__( 'Floating blocks', 'woodmart' ),
+				'data'  => array(),
+			),
+			'wd_popup'           => array(
+				'title' => esc_html__( 'Popups', 'woodmart' ),
 				'data'  => array(),
 			),
 		);
@@ -651,6 +671,16 @@ class Remove extends Singleton {
 			if ( ! empty( $imported_data['wpcf7_contact_form'] ) ) {
 				$this->has_data_to_remove                       = true;
 				$this->categories['wpcf7_contact_form']['data'] = $this->categories['wpcf7_contact_form']['data'] + $imported_data['wpcf7_contact_form'];
+			}
+
+			if ( ! empty( $imported_data['wd_floating_block'] ) ) {
+				$this->has_data_to_remove                      = true;
+				$this->categories['wd_floating_block']['data'] = $this->categories['wd_floating_block']['data'] + $imported_data['wd_floating_block'];
+			}
+
+			if ( ! empty( $imported_data['wd_popup'] ) ) {
+				$this->has_data_to_remove             = true;
+				$this->categories['wd_popup']['data'] = $this->categories['wd_popup']['data'] + $imported_data['wd_popup'];
 			}
 		}
 	}

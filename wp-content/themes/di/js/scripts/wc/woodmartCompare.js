@@ -328,8 +328,8 @@
 		function updateButton( $button ) {
 			var addedText = $button.data('added-text');
 
-			if ($button.find('span').length > 0) {
-				$button.find('span').text(addedText);
+			if ($button.find('.wd-action-text').length > 0) {
+				$button.find('.wd-action-text').text(addedText);
 			} else {
 				$button.text(addedText);
 			}
@@ -337,6 +337,7 @@
 			$button.addClass('added');
 
 			woodmartThemeModule.$document.trigger('added_to_compare');
+			woodmartThemeModule.$document.trigger('wdUpdateTooltip', $button);
 		}
 
 		function updateCountWidget(count) {
@@ -381,8 +382,8 @@
 
 			var addedText = $button.data('added-text');
 
-			if ($button.find('span').length > 0) {
-				$button.find('span').text(addedText);
+			if ($button.find('.wd-action-text').length > 0) {
+				$button.find('.wd-action-text').text(addedText);
 			} else {
 				$button.text(addedText);
 			}

@@ -327,7 +327,7 @@
     "grid_swatches_attribute": "pa_color",
     "single_product_variations_price": "1",
     "label_shape": "rounded-sm",
-    "brands_attribute": "pa_brand",
+    "brands_attribute": "",
     "compare": "1",
     "compare_page": "108",
     "fields_compare": [
@@ -436,8 +436,9 @@
     "carousel_arrows_together_border_style": "",
     "carousel_pagin_border_style": "",
     "blog_design": "meta-image",
-    "blog_style": "shadow",
     "blog_columns": "3",
     "blog_spacing": "20",
-    "blog_with_shadow": "0"
+    "blog_with_shadow": "0",
+    "custom_product_tabs_enabled": "1",
+    "legacy_product_tabs_enabled": "0"
 }

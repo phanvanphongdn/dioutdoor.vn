@@ -65,6 +65,8 @@ if ( ! function_exists( 'woodmart_shortcode_title' ) ) {
 
 		$subtitle_class = $title_container_class = $after_title_class = '';
 
+		$tag = ! in_array( $tag, array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'div', 'span' ), true ) ? 'h4' : $tag;
+
 		$title_class .= ' wd-title-color-' . $color;
 		$title_class .= ' wd-title-style-' . $style;
 		$title_class .= ' text-' . $align;
@@ -137,7 +139,7 @@ if ( ! function_exists( 'woodmart_shortcode_title' ) ) {
 			<?php endif; ?>
 
 			<?php
-			if ( $size == 'custom' && ! $title_font_size  ) {
+			if ( function_exists( 'woodmart_responsive_text_size_css' ) && $size == 'custom' && ! $title_font_size  ) {
 				$css = '';
 
 				if ( $desktop_text_size ) {

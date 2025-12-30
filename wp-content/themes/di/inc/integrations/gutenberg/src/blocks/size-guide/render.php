@@ -1,8 +1,12 @@
 <?php
 if ( ! function_exists( 'wd_gutenberg_size_guide' ) ) {
 	function wd_gutenberg_size_guide( $block_attributes ) {
-		if ( empty( $block_attributes['size_guide_id'] ) ) {
+		if ( empty( $block_attributes['size_guide_id'] ) && empty( $block_attributes['inheritProduct'] ) ) {
 			return '';
+		}
+
+		if ( ! empty( $block_attributes['inheritProduct'] ) ) {
+			$block_attributes['size_guide_id'] = 'inherit';
 		}
 
 		return woodmart_size_guide_shortcode(

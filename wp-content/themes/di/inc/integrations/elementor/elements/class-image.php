@@ -293,7 +293,7 @@ class Image extends Widget_Base {
 			);
 		}
 
-		if ( isset( $settings['image']['id'] ) && $settings['image']['id'] ) {
+		if ( ! empty( $settings['image']['id'] ) ) {
 			$icon_output = woodmart_otf_get_image_html(
 				$settings['image']['id'],
 				$settings['image_size'],
@@ -306,8 +306,8 @@ class Image extends Widget_Base {
 					$image_size
 				);
 			}
-		} else {
-			$icon_output = woodmart_get_image_html( $settings, 'image' );
+		} elseif ( ! empty( $settings['image']['url'] ) ) {
+			$icon_output = apply_filters( 'woodmart_image', '<img src="' . esc_url( $settings['image']['url'] ) . '">' );
 		}
 		?>
 

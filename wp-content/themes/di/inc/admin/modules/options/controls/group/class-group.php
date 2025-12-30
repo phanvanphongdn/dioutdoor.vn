@@ -43,7 +43,7 @@ class Group extends Field {
 		);
 
 		foreach ( $inner_fields as $field_args ) {
-			if ( ! isset( $this->options[ $field_args['id'] ] ) ) {
+			if ( ! isset( $this->options[ $field_args['id'] ] ) || ( empty( $this->options[ $field_args['id'] ] ) && '0' !== $this->options[ $field_args['id'] ] ) ) {
 				$this->options[ $field_args['id'] ] = Options::get_default( $field_args );
 			}
 
@@ -102,7 +102,11 @@ class Group extends Field {
 	private function render_inner_fields() {
 		foreach ( $this->inner_fields as $field ) {
 			if ( 'metabox' === $this->_type ) {
-				$field->render( $this->_term );
+				if ( $this->_post ) {
+					$field->render( $this->_post );
+				} elseif ( $this->_term ) {
+					$field->render( $this->_term );
+				}
 			} else {
 				if ( Page::get_instance()->is_inherit_field( $field->get_id() ) ) {
 					$field->inherit_value( true );
@@ -154,7 +158,11 @@ class Group extends Field {
 				}
 
 				if ( 'metabox' === $this->_type ) {
-					$field->_term = $this->_term;
+					if ( $this->_term ) {
+						$field->_term = $this->_term;
+					} else {
+						$field->_post = $this->_post;
+					}
 				}
 
 				$field_value         = $field->get_field_value();
@@ -286,5 +294,3 @@ class Group extends Field {
 		return $output_css;
 	}
 }
-
-

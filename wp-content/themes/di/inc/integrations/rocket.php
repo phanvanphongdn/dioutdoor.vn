@@ -53,13 +53,15 @@ if ( ! function_exists( 'woodmart_delay_js_exclusions' ) ) {
 				'clickOnScrollButton',
 				'searchFullScreen',
 				'menuOffsets',
+				'menuStickyOffsets',
+				'menuOverlay',
 				'menuDropdowns',
+				'clearSearch',
 				'cartWidget',
 				'cart-fragments',
 				'mobileNavigation',
 				'loginSidebar',
 				'menuSetUp',
-				'cart-fragments',
 				'productImages',
 				'cookie.min',
 				'imagesLoaded',
@@ -69,11 +71,33 @@ if ( ! function_exists( 'woodmart_delay_js_exclusions' ) ) {
 				'swiper',
 				'swiperInit',
 				'trackProductViewed',
+				'lazyLoading',
 			)
 		);
 	}
 
 	add_filter( 'rocket_delay_js_exclusions', 'woodmart_delay_js_exclusions' );
+}
+
+if ( ! function_exists( 'woodmart_rocket_exclude_defer_js' ) ) {
+	/**
+	 * Exclude defer files.
+	 *
+	 * @param array $excluded_files Excluded files.
+	 *
+	 * @return array
+	 */
+	function woodmart_rocket_exclude_defer_js( $excluded_files ) {
+		if ( ! is_array( $excluded_files ) ) {
+			$excluded_files = array();
+		}
+
+		$excluded_files[] = 'scrollBar';
+
+		return $excluded_files;
+	}
+
+	add_filter( 'rocket_exclude_defer_js', 'woodmart_rocket_exclude_defer_js' );
 }
 
 if ( ! function_exists( 'woodmart_rejected_uri_exclusions' ) ) {

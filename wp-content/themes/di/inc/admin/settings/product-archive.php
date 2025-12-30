@@ -156,12 +156,14 @@ Options::add_field(
 		'type'        => 'switcher',
 		'section'     => 'products_styles_section',
 		'default'     => false,
+		'on-text'     => esc_html__( 'Yes', 'woodmart' ),
+		'off-text'    => esc_html__( 'No', 'woodmart' ),
 		'priority'    => 20,
 		'requires'    => array(
 			array(
 				'key'     => 'products_hover',
 				'compare' => 'equals',
-				'value'   => array( 'base' ),
+				'value'   => array( 'base', 'fw-button' ),
 			),
 			array(
 				'key'     => 'shop_view',
@@ -2071,6 +2073,8 @@ Options::add_field(
 		'type'        => 'switcher',
 		'section'     => 'widgets_section',
 		'default'     => '1',
+		'on-text'     => esc_html__( 'Yes', 'woodmart' ),
+		'off-text'    => esc_html__( 'No', 'woodmart' ),
 		'priority'    => 20,
 	)
 );
@@ -2088,7 +2092,7 @@ Options::add_field(
 		'max'         => 800,
 		'priority'    => 30,
 		'selectors'   => array(
-			'.woodmart-woocommerce-layered-nav .wd-scroll-content' => array(
+			':is(.woodmart-woocommerce-layered-nav, .wd-product-category-filter) .wd-scroll-content' => array(
 				'max-height: {{VALUE}}px;',
 			),
 		),

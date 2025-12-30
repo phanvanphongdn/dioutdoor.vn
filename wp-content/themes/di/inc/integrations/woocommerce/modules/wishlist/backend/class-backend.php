@@ -24,9 +24,11 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class Backend extends Singleton {
 	/**
-	 * @var array
+	 * Page slug for the wishlist admin page.
+	 *
+	 * @var string
 	 */
-	private $tabs = array();
+	protected $wishlist_page;
 
 	/**
 	 * Base initialization class required for Module class.
@@ -34,11 +36,6 @@ class Backend extends Singleton {
 	 * @since 1.0.0
 	 */
 	public function init() {
-		$this->tabs = array(
-			'xts-all-wishlists'                => esc_html__( 'All wishlists', 'woodmart' ),
-			'xts-popular-products-in-wishlist' => esc_html__( 'Popular products', 'woodmart' ),
-		);
-
 		if ( isset( $_GET['page'] ) && 'xts-wishlist-settings-page' === $_GET['page'] ) {
 			add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 		}
@@ -93,6 +90,8 @@ class Backend extends Singleton {
 	 * Enqueue styles and scripts on wp admin panel.
 	 */
 	public function enqueue_scripts() {
+		wp_enqueue_style( 'woocommerce_admin_styles' );
+
 		wp_enqueue_style(
 			'xts-page-wishlists',
 			WOODMART_ASSETS . '/css/parts/page-wishlists.min.css',
@@ -199,12 +198,15 @@ class Backend extends Singleton {
 		die();
 	}
 
+	/**
+	 * Add screen options to admin page.
+	 *
+	 * @return void
+	 */
 	public function wishlist_screen_options() {
-		global $wishlist_settings_page;
-
 		$screen = get_current_screen();
 
-		if ( ! is_object( $screen ) || $screen->id !== $wishlist_settings_page ) {
+		if ( ! is_object( $screen ) || $screen->id !== $this->wishlist_page ) {
 			return;
 		}
 
@@ -232,9 +234,7 @@ class Backend extends Singleton {
 	 * @return void
 	 */
 	public function register_wishlist_settings_page() {
-		global $wishlist_settings_page;
-
-		$wishlist_settings_page = add_submenu_page(
+		$this->wishlist_page = add_submenu_page(
 			'edit.php?post_type=product',
 			esc_html__( 'Wishlists', 'woodmart' ),
 			esc_html__( 'Wishlists', 'woodmart' ),
@@ -243,7 +243,7 @@ class Backend extends Singleton {
 			array( $this, 'render_wishlist_settings_page' )
 		);
 
-		add_action( 'load-' . $wishlist_settings_page, array( $this, 'wishlist_screen_options' ) );
+		add_action( 'load-' . $this->wishlist_page, array( $this, 'wishlist_screen_options' ) );
 
 		if ( ! method_exists( Menu::class, 'add_plugin_item' ) || ! method_exists( Menu::class, 'add_plugin_category' ) || ! Features::is_enabled( 'navigation' ) ) {
 			return;
@@ -287,7 +287,10 @@ class Backend extends Singleton {
 	 */
 	public function render_wishlist_settings_page() {
 		$list_table  = new Wishlists();
-		$tabs        = $this->get_tabs();
+		$tabs        = array(
+			'xts-all-wishlists'                => esc_html__( 'All wishlists', 'woodmart' ),
+			'xts-popular-products-in-wishlist' => esc_html__( 'Popular products', 'woodmart' ),
+		);
 		$current_tab = $this->get_current_tab();
 		$base_url    = add_query_arg(
 			array(
@@ -297,6 +300,7 @@ class Backend extends Singleton {
 			admin_url( 'edit.php' )
 		);
 		$title       = '';
+
 		$is_users_popular_products = isset( $_GET['tab'] ) && 'xts-users-popular-products' === $_GET['tab'];
 
 		if ( $is_users_popular_products ) {
@@ -308,7 +312,7 @@ class Backend extends Singleton {
 
 			if ( ! empty( $product ) ) {
 				// translators: Product name.
-				$title = sprintf( esc_html__( 'Customers that added "%s" to wishlist', 'woodmart' ), $product->get_name() );
+				$title = $product->get_name();
 			}
 		}
 
@@ -322,7 +326,7 @@ class Backend extends Singleton {
 
 		ob_start();
 		?>
-			<div class="wrap wishlist-settings-page-wrap">
+			<div class="wrap xts-post-type-table wishlist-settings-page-wrap">
 				<h2 class="wp-heading-inline"><?php echo esc_html__( 'Wishlists', 'woodmart' ); ?></h2>
 
 				<?php if ( ! $is_users_popular_products ) : ?>
@@ -362,15 +366,6 @@ class Backend extends Singleton {
 			</div>
 		<?php
 		echo ob_get_clean(); // phpcs:ignore;
-	}
-
-	/**
-	 * Get a list of registered tabs.
-	 *
-	 * @return array
-	 */
-	public function get_tabs() {
-		return $this->tabs;
 	}
 
 	/**

@@ -55,8 +55,12 @@ class Sanitize {
 
 		switch ( $this->_field->args['type'] ) {
 			case 'typography':
-				if ( is_array( $val ) && ! isset( $val[0] ) ) {
-					$val = array( $val );
+				if ( is_array( $val ) ) {
+					$first = reset( $val );
+
+					if ( ! is_array( $first ) ) {
+						$val = array( $val );
+					}
 				}
 				break;
 
@@ -107,6 +111,7 @@ class Sanitize {
 
 			case 'textarea':
 				$val = wp_kses_post( $val );
+
 				break;
 
 			case 'editor':
@@ -146,6 +151,29 @@ class Sanitize {
 			case 'discount_rules':
 			case 'conditions':
 				array_walk_recursive( $val, 'sanitize_text_field' );
+
+				break;
+			case 'timetable':
+				foreach ( $val as $key => $dates ) {
+					foreach ( $dates as $meta_key => $meta_value ) {
+						switch ( $meta_key ) {
+							case 'date_type':
+							case 'iteration':
+								$val[ $key ][ $meta_key ] = sanitize_text_field( $meta_value );
+								break;
+							case 'single_day':
+							case 'first_day':
+							case 'last_day':
+								$pattern = '/^\d{4}-\d{2}-\d{2}$/';
+
+								$val[ $key ][ $meta_key ] = preg_match( $pattern, $meta_value ) ? sanitize_text_field( $meta_value ) : '';
+								break;
+							default:
+								$val[ $key ][ $meta_key ] = '';
+								break;
+						}
+					}
+				}
 
 				break;
 			default:

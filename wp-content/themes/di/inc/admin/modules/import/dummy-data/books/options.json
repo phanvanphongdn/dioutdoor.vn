@@ -20,9 +20,25 @@
     "btns_default_style": "rounded",
     "form_fields_style": "rounded",
     "form_border_width": "1",
+    "text-font": [
+        {
+            "google": "1",
+            "font-family": "Roboto",
+            "font-weight": "400",
+            "font-style": "",
+            "font-subset": "",
+            "font-size": "16",
+            "tablet": {
+                "font-size": ""
+            },
+            "mobile": {
+                "font-size": ""
+            },
+            "color": "rgb(118,118,118)"
+        }
+    ],
     "primary-font": [
         {
-            "custom": "",
             "google": "1",
             "font-family": "Playfair Display",
             "font-weight": "400",
@@ -32,37 +48,8 @@
             "color": "#242424"
         }
     ],
-    "text-font": [
-        {
-            "custom": "",
-            "google": "1",
-            "font-family": "Roboto",
-            "font-weight": "400",
-            "font-style": "",
-            "font-subset": "",
-            "font-size": "14",
-            "tablet": {
-                "font-size": ""
-            },
-            "mobile": {
-                "font-size": ""
-            },
-            "color": "#767676"
-        }
-    ],
-    "secondary-font": [
-        {
-            "custom": "",
-            "google": "1",
-            "font-family": "Italianno",
-            "font-weight": "400",
-            "font-style": "",
-            "font-subset": ""
-        }
-    ],
     "post-titles-font": [
         {
-            "custom": "",
             "google": "1",
             "font-family": "Lora",
             "font-weight": "400",
@@ -75,9 +62,17 @@
             }
         }
     ],
+    "secondary-font": [
+        {
+            "google": "1",
+            "font-family": "Italianno",
+            "font-weight": "400",
+            "font-style": "",
+            "font-subset": ""
+        }
+    ],
     "widget-titles-font": [
         {
-            "custom": "",
             "google": "1",
             "font-family": "Lora",
             "font-weight": "400",
@@ -96,7 +91,6 @@
     ],
     "navigation-font": [
         {
-            "custom": "",
             "google": "1",
             "font-family": "Roboto",
             "font-weight": "500",
@@ -185,7 +179,11 @@
         "position": "center center"
     },
     "popup_html_block": "3224",
-    "additional_tab_content_type": "html_block",
-    "additional_tab_html_block": "242",
-    "portfolio_page": "150"
+    "portfolio_page": "150",
+    "blog_design": "masonry",
+    "blog_columns": "3",
+    "blog_masonry": "0",
+    "blog_archive_layout": "full-width",
+    "custom_product_tabs_enabled": "1",
+    "legacy_product_tabs_enabled": "0"
 }

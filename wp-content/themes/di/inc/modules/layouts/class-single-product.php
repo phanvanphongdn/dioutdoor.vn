@@ -17,7 +17,9 @@ class Single_Product extends Layout_Type {
 
 		$is_active = false;
 
-		$condition['condition_query'] = apply_filters( 'wpml_object_id', $condition['condition_query'], $condition['condition_type'] );
+		if ( 'product_type' !== $condition['condition_type'] ) {
+			$condition['condition_query'] = apply_filters( 'wpml_object_id', $condition['condition_query'], $condition['condition_type'] );
+		}
 
 		switch ( $condition['condition_type'] ) {
 			case 'all':
@@ -31,6 +33,7 @@ class Single_Product extends Layout_Type {
 				break;
 			case 'product_cat':
 			case 'product_tag':
+			case 'product_brand':
 			case 'product_attr_term':
 				$terms = wp_get_post_terms( woodmart_get_the_ID(), get_taxonomies(), array( 'fields' => 'ids' ) );
 
@@ -59,7 +62,7 @@ class Single_Product extends Layout_Type {
 	 * @return bool|string
 	 */
 	public function override_template( $template ) {
-		if ( woodmart_woocommerce_installed() && is_singular( 'product' ) && Main::get_instance()->has_custom_layout( 'single_product' ) ) {
+		if ( woodmart_woocommerce_installed() && is_singular( 'product' ) && Main::get_instance()->has_custom_layout( 'single_product' ) && ! post_password_required() ) {
 			$this->display_template();
 
 			return false;
@@ -71,7 +74,8 @@ class Single_Product extends Layout_Type {
 	/**
 	 * Display custom template.
 	 */
-	private function display_template() {
+	protected function display_template() {
+		parent::display_template();
 		$this->before_template_content();
 
 		woodmart_enqueue_inline_style( 'woo-single-prod-builder' );
@@ -95,9 +99,10 @@ class Single_Product extends Layout_Type {
 	 * @return int
 	 */
 	public static function get_preview_product_id() {
-		$product_id = woodmart_get_opt( 'single_product_builder_post_data' );
+		$product_id      = woodmart_get_opt( 'single_product_builder_post_data' );
+		$preview_product = wc_get_product( $product_id );
 
-		if ( ! $product_id ) {
+		if ( ! $product_id || 'product' !== get_post_type( $product_id ) || ! $preview_product || ! $preview_product->is_visible() ) {
 			$random_product = new WP_Query(
 				array(
 					'posts_per_page' => '1',
@@ -150,6 +155,22 @@ class Single_Product extends Layout_Type {
 		parent::template_content( $type );
 
 		add_filter( 'the_content', 'convert_smilies', 20 );
+	}
+
+	/**
+	 * Get body classes.
+	 *
+	 * @param array $classes Classes for the body element.
+	 * @return array
+	 */
+	public function get_body_classes( $classes ) {
+		parent::get_body_classes( $classes );
+
+		if ( is_singular( 'woodmart_layout' ) && Main::get_instance()->has_custom_layout( 'single_product' ) ) {
+			$classes[] = 'single-product';
+		}
+
+		return $classes;
 	}
 }
 

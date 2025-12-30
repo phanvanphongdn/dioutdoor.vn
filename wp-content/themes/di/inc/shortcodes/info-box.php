@@ -248,6 +248,8 @@ if( ! function_exists( 'woodmart_shortcode_info_box' ) ) {
 								echo '<div class="info-box-subtitle'. esc_attr( $subtitle_class ) .'">' . $subtitle . '</div>';
 							}
 							if( ! empty( $title ) ) {
+								$title_tag = ! in_array( $title_tag, array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'div', 'span' ), true ) ? 'h4' : $title_tag;
+
 								echo '<'. $title_tag .' class="info-box-title title' . esc_attr( $title_class ) . '">' . $title . '</'. $title_tag .'>';
 							}
 						?>
@@ -548,7 +550,6 @@ if( ! function_exists( 'woodmart_shortcode_info_box_carousel' ) ) {
 		}
 
 		if ( $scroll_carousel_init == 'yes' ) {
-			woodmart_enqueue_js_library( 'waypoints' );
 			$class .= ' scroll-init';
 		}
 

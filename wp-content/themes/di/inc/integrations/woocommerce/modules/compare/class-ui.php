@@ -55,7 +55,8 @@ class Ui extends Singleton {
 		?>
 		<div class="wd-compare-btn product-compare-button <?php echo esc_attr( $classes ); ?>">
 			<a href="<?php echo esc_url( $url ); ?>" data-id="<?php echo esc_attr( $product_id ); ?>" rel="nofollow" data-added-text="<?php esc_attr_e( 'Compare products', 'woodmart' ); ?>">
-				<span><?php esc_html_e( 'Compare', 'woodmart' ); ?></span>
+				<span class="wd-added-icon"></span>
+				<span class="wd-action-text"><?php esc_html_e( 'Add to compare', 'woodmart' ); ?></span>
 			</a>
 		</div>
 		<?php
@@ -362,8 +363,9 @@ class Ui extends Singleton {
 				}
 				break;
 
+			case 'product_brand':
 			case 'attribute':
-				if ( woodmart_get_opt( 'brands_attribute' ) === $field_id ) {
+				if ( woodmart_get_opt( 'brands_attribute' ) === $field_id || 'product_brand' === $field_id ) {
 					$brands = wc_get_product_terms( $product['id'], $field_id, array( 'fields' => 'all' ) );
 
 					if ( empty( $brands ) ) {
@@ -372,16 +374,41 @@ class Ui extends Singleton {
 					}
 
 					foreach ( $brands as $brand ) {
-						$image = get_term_meta( $brand->term_id, 'image', true );
+						$image         = get_term_meta( $brand->term_id, 'image', true );
+						$image_content = '';
 
 						if ( is_array( $image ) && isset( $image['id'] ) ) {
-							$image = wp_get_attachment_image_url( $image['id'], 'full' );
+							$image_content = wp_get_attachment_image(
+								$image['id'],
+								'full',
+								false,
+								array(
+									'title' => $brand->name,
+									'alt'   => $brand->name,
+								)
+							);
+						} elseif ( $image ) {
+							$image_content = apply_filters( 'woodmart_image', '<img src="' . esc_url( $image ) . '" title="' . esc_attr( $brand->name ) . '" alt="' . esc_attr( $brand->name ) . '" />' );
+						} elseif ( 'product_brand' === $field_id ) {
+							$thumbnail_id = get_term_meta( $brand->term_id, 'thumbnail_id', true );
+
+							if ( $thumbnail_id ) {
+								$image_content = wp_get_attachment_image(
+									$thumbnail_id,
+									'full',
+									false,
+									array(
+										'title' => $brand->name,
+										'alt'   => $brand->name,
+									)
+								);
+							}
 						}
 
-						if ( ! empty( $image ) ) {
+						if ( ! empty( $image_content ) ) {
 							?>
 							<div class="wd-compare-brand<?php echo esc_attr( woodmart_get_old_classes( ' woodmart-compare-brand' ) ); ?>">
-								<?php echo apply_filters( 'woodmart_image', '<img src="' . esc_url( $image ) . '" title="' . esc_attr( $brand->name ) . '" alt="' . esc_attr( $brand->name ) . '" />' ); //phpcs:ignore ?>
+								<?php echo $image_content; //phpcs:ignore ?>
 							</div>
 							<?php
 						} else {
@@ -437,7 +464,7 @@ class Ui extends Singleton {
 		$fields = array_filter(
 			$fields,
 			function( $field ) {
-				return 'pa_' === substr( $field, 0, 3 );
+				return 'pa_' === substr( $field, 0, 3 ) || 'product_brand' === $field;
 			},
 			ARRAY_FILTER_USE_KEY
 		);

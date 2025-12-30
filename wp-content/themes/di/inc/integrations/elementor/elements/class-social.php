@@ -183,11 +183,35 @@ class Social extends Widget_Base {
 		);
 
 		$this->add_control(
+			'bluesky_link',
+			array(
+				'label'   => esc_html__( 'Bluesky link', 'woodmart' ),
+				'type'    => Controls_Manager::TEXT,
+				'default' => '',
+				'ai'      => array(
+					'active' => false,
+				),
+			)
+		);
+
+		$this->add_control(
 			'isntagram_link',
 			array(
 				'label'   => esc_html__( 'Instagram link', 'woodmart' ),
 				'type'    => Controls_Manager::TEXT,
 				'default' => '#',
+				'ai'      => array(
+					'active' => false,
+				),
+			)
+		);
+
+		$this->add_control(
+			'threads_link',
+			array(
+				'label'   => esc_html__( 'Threads link', 'woodmart' ),
+				'type'    => Controls_Manager::TEXT,
+				'default' => '',
 				'ai'      => array(
 					'active' => false,
 				),
@@ -318,18 +342,6 @@ class Social extends Widget_Base {
 			'spotify_link',
 			array(
 				'label'   => esc_html__( 'Spotify link', 'woodmart' ),
-				'type'    => Controls_Manager::TEXT,
-				'default' => '',
-				'ai'      => array(
-					'active' => false,
-				),
-			)
-		);
-
-		$this->add_control(
-			'skype_link',
-			array(
-				'label'   => esc_html__( 'Skype link', 'woodmart' ),
 				'type'    => Controls_Manager::TEXT,
 				'default' => '',
 				'ai'      => array(

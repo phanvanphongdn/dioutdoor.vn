@@ -24,7 +24,9 @@ Options::add_field(
 		'description' => esc_html__( 'Enable it to load translations from all possible locations. Usually needs to be disabled so the translation will be loaded from the system folder only wp-content/languages/themes and the performance will be better.', 'woodmart' ),
 		'type'        => 'switcher',
 		'section'     => 'performance_other',
-		'default'     => true,
+		'default'     => false,
+		'on-text'     => esc_html__( 'Yes', 'woodmart' ),
+		'off-text'    => esc_html__( 'No', 'woodmart' ),
 		'priority'    => 20,
 	)
 );
@@ -37,7 +39,7 @@ Options::add_field(
 		'id'          => 'disable_gutenberg_css',
 		'name'        => esc_html__( 'Disable default Gutenberg blocks styles', 'woodmart' ),
 		'description' => esc_html__( 'If you are not using default Gutenberg blocks you will not need these files to be loaded.', 'woodmart' ),
-		'group'       => esc_html__( 'Gutenberg', 'woodmart' ),
+		'group'       => esc_html__( 'General', 'woodmart' ),
 		'type'        => 'switcher',
 		'section'     => 'performance_css',
 		'default'     => false,
@@ -45,6 +47,46 @@ Options::add_field(
 		'off-text'    => esc_html__( 'No', 'woodmart' ),
 		'priority'    => 40,
 		'class'       => 'xts-col-6',
+	)
+);
+
+Options::add_field(
+	array(
+		'id'          => 'inline_critical_css',
+		'name'        => esc_html__( 'Convert large CSS files to inline styles', 'woodmart' ),
+		'description' => esc_html__( 'Inline the stylesheet into the HTML to avoid the additional network request (reduce or inline render-blocking stylesheets).', 'woodmart' ),
+		'group'       => esc_html__( 'General', 'woodmart' ),
+		'type'        => 'switcher',
+		'section'     => 'performance_css',
+		'default'     => false,
+		'on-text'     => esc_html__( 'Yes', 'woodmart' ),
+		'off-text'    => esc_html__( 'No', 'woodmart' ),
+		'priority'    => 50,
+		'class'       => 'xts-col-6',
+	)
+);
+
+Options::add_field(
+	array(
+		'id'       => 'advanced_css_notice',
+		'type'     => 'notice',
+		'style'    => 'info',
+		'name'     => '',
+		'group'    => esc_html__( 'Advanced', 'woodmart' ),
+		'content'  => wp_kses(
+			__( 'Our theme is designed to load only the styles required for each specific page. However, if you need to globally load or remove certain CSS files for any reason, you can use the following set of options.', 'woodmart' ),
+			array(
+				'a'      => array(
+					'href'   => true,
+					'target' => true,
+				),
+				'br'     => array(),
+				'strong' => array(),
+				'u'      => array(),
+			)
+		),
+		'section'  => 'performance_css',
+		'priority' => 59,
 	)
 );
 
@@ -92,7 +134,7 @@ Options::add_field(
 		'id'          => 'disable_owl_mobile_devices',
 		'name'        => esc_html__( 'Disable Swiper slider script on mobile devices', 'woodmart' ),
 		'hint'        => '<video data-src="' . WOODMART_TOOLTIP_URL . 'disable-owl-carousel.mp4" autoplay loop muted></video>',
-		'description' => esc_html__( 'Using native browser scrolling feature on mobile devices may improve your page loading and performance on some devices. This option does not apply to the main product carousel and Woodmart slider.', 'woodmart' ),
+		'description' => esc_html__( 'Using native browser scrolling feature on mobile devices may improve your page loading and performance on some devices. This option does not apply to the main product carousel and WoodMart slider.', 'woodmart' ),
 		'group'       => esc_html__( 'General', 'woodmart' ),
 		'type'        => 'switcher',
 		'section'     => 'performance_js',
@@ -128,7 +170,7 @@ Options::add_field(
 		'name'     => '',
 		'group'    => esc_html__( 'Advanced', 'woodmart' ),
 		'content'  => wp_kses(
-			__( 'Our theme is designed in the way to load only scripts and libraries that are required on a particular page. But if you need to load some particular script for some reason globally, you can use the following set of options.', 'woodmart' ),
+			__( 'Our theme is designed to load only the scripts and libraries required for each specific page. However, if you need to load a particular script globally for any reason, you can use the following options.', 'woodmart' ),
 			array(
 				'a'      => array(
 					'href'   => true,
@@ -188,7 +230,7 @@ foreach ( $config_libraries as $key => $libraries ) {
 						'value'   => true,
 					),
 				),
-				'default'  => 'required',
+				'default'  => isset( $library['default'] ) ? $library['default'] : 'required',
 				'priority' => 60,
 				'class'    => 'xts-col-6',
 			)
@@ -284,6 +326,18 @@ Options::add_field(
 
 Options::add_field(
 	array(
+		'id'          => 'lazy_loading_bg_images',
+		'name'        => esc_html__( 'Lazy loading for background images', 'woodmart' ),
+		'description' => esc_html__( 'Enables lazy loading for background images in Gutenberg blocks, improving performance by loading images only when they enter the viewport.', 'woodmart' ),
+		'type'        => 'switcher',
+		'section'     => 'performance_lazy_loading',
+		'default'     => false,
+		'priority'    => 15,
+	)
+);
+
+Options::add_field(
+	array(
 		'id'          => 'lazy_loading_offset',
 		'name'        => esc_html__( 'Offset', 'woodmart' ),
 		'description' => esc_html__( 'Start load images X pixels before the page is scrolled to the item', 'woodmart' ),
@@ -300,70 +354,23 @@ Options::add_field(
 
 Options::add_field(
 	array(
-		'id'          => 'lazy_effect',
-		'name'        => esc_html__( 'Appearance effect', 'woodmart' ),
-		'description' => esc_html__( 'When enabled, your images will be replaced with their blurred small previews. And when the visitor will scroll the page to that image, it will be replaced with an original image.', 'woodmart' ),
-		'type'        => 'buttons',
-		'section'     => 'performance_lazy_loading',
-		'default'     => 'fade',
-		'options'     => array(
-			'fade' => array(
-				'name'  => esc_html__( 'Fade', 'woodmart' ),
-				'hint'        => '<video data-src="' . WOODMART_TOOLTIP_URL . 'lazy-loading-appearance-effect-fade.mp4" autoplay loop muted></video>',
-				'value' => 'fade',
-			),
-			'blur' => array(
-				'name'  => esc_html__( 'Blur', 'woodmart' ),
-				'hint'        => '<video data-src="' . WOODMART_TOOLTIP_URL . 'lazy-loading-appearance-effect-blur.mp4" autoplay loop muted></video>',
-				'value' => 'blur',
-			),
+		'id'       => 'lazy_effect',
+		'name'     => esc_html__( 'Appearance effect', 'woodmart' ),
+		'type'     => 'buttons',
+		'section'  => 'performance_lazy_loading',
+		'default'  => 'none',
+		'options'  => array(
 			'none' => array(
 				'name'  => esc_html__( 'None', 'woodmart' ),
 				'value' => 'none',
 			),
+			'fade' => array(
+				'name'  => esc_html__( 'Fade', 'woodmart' ),
+				'hint'  => '<video data-src="' . WOODMART_TOOLTIP_URL . 'lazy-loading-appearance-effect-fade.mp4" autoplay loop muted></video>',
+				'value' => 'fade',
+			),
 		),
-		'priority'    => 30,
-	)
-);
-
-Options::add_field(
-	array(
-		'id'          => 'lazy_generate_previews',
-		'name'        => esc_html__( 'Generate previews', 'woodmart' ),
-		'description' => esc_html__( 'Create placeholders previews as miniatures from the original images.', 'woodmart' ),
-		'group'       => esc_html__( 'Placeholders', 'woodmart' ),
-		'type'        => 'switcher',
-		'section'     => 'performance_lazy_loading',
-		'default'     => '1',
-		'on-text'     => esc_html__( 'Yes', 'woodmart' ),
-		'off-text'    => esc_html__( 'No', 'woodmart' ),
-		'priority'    => 40,
-	)
-);
-
-Options::add_field(
-	array(
-		'id'          => 'lazy_base_64',
-		'name'        => esc_html__( 'Base 64 encode for placeholders', 'woodmart' ),
-		'description' => esc_html__( 'This option allows you to decrease a number of HTTP requests replacing images with base 64 encoded sources.', 'woodmart' ),
-		'group'       => esc_html__( 'Placeholders', 'woodmart' ),
-		'type'        => 'switcher',
-		'section'     => 'performance_lazy_loading',
-		'default'     => '1',
-		'priority'    => 50,
-	)
-);
-
-Options::add_field(
-	array(
-		'id'          => 'lazy_proprtion_size',
-		'name'        => esc_html__( 'Proportional placeholders size', 'woodmart' ),
-		'description' => esc_html__( 'Will generate proportional image size for the placeholder based on original image size.', 'woodmart' ),
-		'group'       => esc_html__( 'Placeholders', 'woodmart' ),
-		'type'        => 'switcher',
-		'section'     => 'performance_lazy_loading',
-		'default'     => '1',
-		'priority'    => 60,
+		'priority' => 30,
 	)
 );
 
@@ -372,10 +379,9 @@ Options::add_field(
 		'id'          => 'lazy_custom_placeholder',
 		'name'        => esc_html__( 'Upload custom placeholder image', 'woodmart' ),
 		'description' => esc_html__( 'Add your custom image placeholder that will be used before the original image will be loaded.', 'woodmart' ),
-		'group'       => esc_html__( 'Placeholders', 'woodmart' ),
 		'type'        => 'upload',
 		'section'     => 'performance_lazy_loading',
-		'priority'    => 70,
+		'priority'    => 40,
 	)
 );
 
@@ -421,123 +427,6 @@ Options::add_field(
 		'on-text'     => esc_html__( 'Yes', 'woodmart' ),
 		'off-text'    => esc_html__( 'No', 'woodmart' ),
 		'priority'    => 11,
-	)
-);
-
-Options::add_field(
-	array(
-		'id'       => 'elementor_animations',
-		'type'     => 'switcher',
-		'section'  => 'plugins_section',
-		'name'     => esc_html__( 'Load Elementor animations CSS file', 'woodmart' ),
-		'group'    => esc_html__( 'Elementor', 'woodmart' ),
-		'default'  => '1',
-		'priority' => 30,
-	)
-);
-
-Options::add_field(
-	array(
-		'id'       => 'elementor_icons',
-		'type'     => 'switcher',
-		'section'  => 'plugins_section',
-		'name'     => esc_html__( 'Load Elementor icons CSS file', 'woodmart' ),
-		'group'    => esc_html__( 'Elementor', 'woodmart' ),
-		'woodmart',
-		'default'  => '1',
-		'priority' => 40,
-	)
-);
-
-Options::add_field(
-	array(
-		'id'          => 'elementor_dialog_library',
-		'type'        => 'switcher',
-		'section'     => 'plugins_section',
-		'name'        => esc_html__( 'Elementor dialog.js library', 'woodmart' ),
-		'description' => esc_html__( 'Turn it off if you never use it to improve the performance.', 'woodmart' ),
-		'group'       => esc_html__( 'Elementor', 'woodmart' ),
-		'default'     => true,
-		'priority'    => 50,
-	)
-);
-
-Options::add_field(
-	array(
-		'id'          => 'elementor_frontend',
-		'type'        => 'switcher',
-		'section'     => 'plugins_section',
-		'name'        => esc_html__( 'Elementor frontend', 'woodmart' ),
-		'description' => esc_html__( 'Disable Elementor\'s JS files if you are not using most of their widgets.', 'woodmart' ),
-		'group'       => esc_html__( 'Elementor', 'woodmart' ),
-		'default'     => '1',
-		'priority'    => 60,
-	)
-);
-
-Options::add_field(
-	array(
-		'id'       => 'swiper_library',
-		'section'  => 'plugins_section',
-		'name'     => esc_html__( 'Swiper library', 'woodmart' ),
-		'group'    => esc_html__( 'Elementor', 'woodmart' ),
-		'type'     => 'buttons',
-		'options'  => array(
-			'always'   => array(
-				'name'  => esc_html__( 'Always load', 'woodmart' ),
-				'value' => 'always',
-			),
-			'required' => array(
-				'name'  => esc_html__( 'On demand', 'woodmart' ),
-				'value' => 'required',
-			),
-			'not_use'  => array(
-				'name'  => esc_html__( 'Never load', 'woodmart' ),
-				'value' => 'not_use',
-			),
-		),
-		'requires' => array(
-			array(
-				'key'     => 'elementor_frontend',
-				'compare' => 'equals',
-				'value'   => '0',
-			),
-		),
-		'default'  => 'always',
-		'priority' => 70,
-	)
-);
-
-Options::add_field(
-	array(
-		'id'       => 'el_waypoints_library',
-		'section'  => 'plugins_section',
-		'name'     => esc_html__( 'Waypoints library', 'woodmart' ),
-		'group'    => esc_html__( 'Elementor', 'woodmart' ),
-		'type'     => 'buttons',
-		'options'  => array(
-			'always'   => array(
-				'name'  => esc_html__( 'Always load', 'woodmart' ),
-				'value' => 'always',
-			),
-			'required' => array(
-				'name'  => esc_html__( 'On demand', 'woodmart' ),
-				'value' => 'required',
-			),
-			'not_use'  => array(
-				'name'  => esc_html__( 'Never load', 'woodmart' ),
-				'value' => 'not_use',
-			),
-		),
-		'requires' => array(
-			array(
-				'key'     => 'elementor_frontend',
-				'compare' => 'equals',
-				'value'   => '0',
-			),
-		),
-		'default'  => 'always',
-		'priority' => 80,
 	)
 );
 
@@ -618,7 +507,7 @@ Options::add_field(
 	array(
 		'id'          => 'font_awesome_css',
 		'name'        => esc_html__( 'Font Awesome library', 'woodmart' ),
-		'description' => esc_html__( 'You can force Font Awesome 5 library to be loaded on all pages. This option works only if Elementor or WPBakery is active.', 'woodmart' ),
+		'description' => esc_html__( 'You can force Font Awesome library to be loaded on all pages. This option works only if Elementor or WPBakery is active.', 'woodmart' ),
 		'type'        => 'buttons',
 		'section'     => 'fonts_section',
 		'options'     => array(
@@ -713,5 +602,17 @@ Options::add_field(
 			),
 		),
 		'priority' => 40,
+	)
+);
+
+Options::add_field(
+	array(
+		'id'          => 'preload_lcp_image',
+		'name'        => esc_html__( 'Preload LCP Image', 'woodmart' ),
+		'description' => esc_html__( 'Adds priority loading for the Largest Contentful Paint (LCP) image. The image is set in the meta boxes of each page to speed up the display of the main content.', 'woodmart' ),
+		'type'        => 'switcher',
+		'section'     => 'lcp_section',
+		'default'     => false,
+		'priority'    => 10,
 	)
 );

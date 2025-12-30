@@ -61,8 +61,8 @@ if ( 'yes' === $accordion_on_mobile ) {
 					}
 					?>
 					<li class="<?php echo esc_attr( $li_classes ); ?>" id="tab-title-<?php echo esc_attr( $key ); ?>"
-						role="tab" aria-controls="tab-<?php echo esc_attr( $key ); ?>">
-						<a class="wd-nav-link" href="#tab-<?php echo esc_attr( $key ); ?>">
+						role="presentation" aria-controls="tab-<?php echo esc_attr( $key ); ?>">
+						<a class="wd-nav-link" href="#tab-<?php echo esc_attr( $key ); ?>" role="tab">
 							<?php if ( isset( $product_tab['title'] ) ) : ?>
 								<span class="nav-link-text wd-tabs-title">
 									<?php echo wp_kses_post( apply_filters( 'woocommerce_product_' . $key . '_tab_title', $product_tab['title'], $key ) ); ?>

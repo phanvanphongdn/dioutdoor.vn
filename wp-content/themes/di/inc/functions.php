@@ -139,7 +139,7 @@ if ( ! function_exists( 'woodmart_get_link_attributes' ) ) {
 	 * @param boolean $popup Popup.
 	 * @return string
 	 */
-	function woodmart_get_link_attributes( $link, $popup = false ) {
+	function woodmart_get_link_attributes( $link, $popup = false, $custom_attributes = '' ) {
 		$link = ( '||' === $link ) ? '' : $link;
 		$link = woodmart_vc_parse_multi_attribute( $link );
 
@@ -167,6 +167,38 @@ if ( ! function_exists( 'woodmart_get_link_attributes' ) ) {
 			}
 			if ( ! empty( $a_rel ) ) {
 				$attributes[] = 'rel="' . esc_attr( trim( $a_rel ) ) . '"';
+			}
+		}
+
+		if ( $custom_attributes ) {
+			$raw_attributes = explode( ',', $custom_attributes );
+
+			foreach ( $raw_attributes as $attribute ) {
+				$attr_key_value = explode( '|', $attribute );
+
+				$attr_key = mb_strtolower( $attr_key_value[0] );
+
+				// Remove any not allowed characters.
+				preg_match( '/[-_a-z0-9]+/', $attr_key, $attr_key_matches );
+
+				if ( empty( $attr_key_matches[0] ) ) {
+					continue;
+				}
+
+				$attr_key = $attr_key_matches[0];
+
+				// Avoid Javascript events and unescaped href.
+				if ( 'href' === $attr_key || 'on' === substr( $attr_key, 0, 2 ) ) {
+					continue;
+				}
+
+				if ( isset( $attr_key_value[1] ) ) {
+					$attr_value = trim( $attr_key_value[1] );
+				} else {
+					$attr_value = '';
+				}
+
+				$attributes[] = $attr_key . '="' . esc_attr( $attr_value ) . '"';
 			}
 		}
 
@@ -394,7 +426,7 @@ if ( ! function_exists( 'woodmart_get_footer_config' ) ) {
 					),
 				),
 				12 => array(
-					'cols' => array( //vucamp
+					'cols' => array(//vucamp
 						'--wd-col-lg:12;',
                         '--wd-col-md:12;--wd-col-lg:3;',
 						'--wd-col-xs:12;--wd-col-sm:6;--wd-col-md:2;--wd-col-lg:2;',
@@ -412,7 +444,7 @@ if ( ! function_exists( 'woodmart_get_footer_config' ) ) {
 						'--wd-col-xs:12;--wd-col-md:4;--wd-col-lg:2;',
 					),
 				),
-				            19 => array(
+	            19 => array(
                 'cols' => array(
                     'col-12',
                     'col-12 col-sm-6 col-lg-3',
@@ -421,8 +453,8 @@ if ( ! function_exists( 'woodmart_get_footer_config' ) ) {
                     'col-12 col-sm-6 col-md-3 col-lg-2',
                     'col-12 col-sm-6 col-lg-3',
                 ),
-            ),//vucamp
-			)
+            ),//vucamp		
+            	)
 		);
 
 		return ( isset( $configs[ $index ] ) ) ? $configs[ $index ] : array();
@@ -441,10 +473,7 @@ if ( ! function_exists( 'woodmart_get_the_ID' ) ) {
 
 		$page_id = 0;
 
-		$page_for_posts    = get_option( 'page_for_posts' );
-		$page_for_shop     = get_option( 'woocommerce_shop_page_id' );
-		$page_for_projects = woodmart_get_portfolio_page_id();
-		$custom_404_id     = woodmart_get_opt( 'custom_404_page' );
+		$custom_404_id = woodmart_get_opt( 'custom_404_page' );
 
 		if ( isset( $post->ID ) ) {
 			$page_id = $post->ID;
@@ -453,15 +482,13 @@ if ( ! function_exists( 'woodmart_get_the_ID' ) ) {
 		if ( isset( $post->ID ) && ( is_singular( 'page' ) || is_singular( 'post' ) ) ) {
 			$page_id = $post->ID;
 		} elseif ( is_home() || is_singular( 'post' ) || is_search() || is_tag() || is_category() || is_date() || is_author() ) {
-			$page_id = $page_for_posts;
+			$page_id = get_option( 'page_for_posts' );
 		} elseif ( is_archive() && get_post_type() === 'portfolio' ) {
-			$page_id = $page_for_projects;
+			$page_id = woodmart_get_portfolio_page_id();
 		}
 
-		if ( woodmart_woocommerce_installed() && function_exists( 'is_shop' ) ) {
-			if ( is_shop() || is_product_category() || is_product_tag() || woodmart_is_product_attribute_archive() ) {
-				$page_id = $page_for_shop;
-			}
+		if ( woodmart_is_shop_archive() ) {
+			$page_id = get_option( 'woocommerce_shop_page_id' );
 		}
 
 		if ( is_404() && ( 'default' !== $custom_404_id || ! empty( $custom_404_id ) ) ) {
@@ -481,29 +508,46 @@ if ( ! function_exists( 'woodmart_get_html_block' ) ) {
 	 * @return string
 	 */
 	function woodmart_get_html_block( $id, $inline_css = false ) {
-		$id      = apply_filters( 'wpml_object_id', $id, 'cms_block', true );
-		$post    = get_post( $id );
-		$content = '';
+		$id   = apply_filters( 'wpml_object_id', $id, 'cms_block', true );
+		$post = get_post( $id );
 
 		if ( ! $post || 'cms_block' !== $post->post_type || ! $id ) {
 			return '';
 		}
 
+		return woodmart_get_post_content( $id, $inline_css );
+	}
+}
+
+if ( ! function_exists( 'woodmart_get_post_content' ) ) {
+	/**
+	 * Get post content for an active page builder.
+	 *
+	 * @param int     $id Block ID.
+	 * @param boolean $inline_css Inline CSS.
+	 *
+	 * @return string
+	 */
+	function woodmart_get_post_content( $id, $inline_css = false ) {
+		$post_content = get_the_content( null, false, $id );
+		$content      = '';
+
 		if ( woodmart_is_elementor_installed() && Plugin::$instance->documents->get( $id )->is_built_with_elementor() ) {
 			$content .= woodmart_elementor_get_content( $id );
-		} elseif ( has_blocks( $post->post_content ) ) {
+		} elseif ( has_blocks( $post_content ) ) {
 			if ( woodmart_get_opt( 'gutenberg_blocks' ) ) {
 				$content .= Blocks_Assets::get_instance()->get_inline_scripts( $id );
 				$content .= Post_CSS::get_instance()->get_inline_blocks_css( $id, $inline_css );
 			}
 
-			$content .= wp_filter_content_tags( do_shortcode( do_blocks( $post->post_content ) ) );
+			$content .= wp_filter_content_tags( do_shortcode( shortcode_unautop( do_blocks( $post_content ) ) ) );
 		} else {
 			$shortcodes_custom_css          = get_post_meta( $id, '_wpb_shortcodes_custom_css', true );
 			$woodmart_shortcodes_custom_css = get_post_meta( $id, 'woodmart_shortcodes_custom_css', true );
 
 			if ( ! empty( $shortcodes_custom_css ) || ! empty( $woodmart_shortcodes_custom_css ) ) {
 				$content .= '<style data-type="vc_shortcodes-custom-css">';
+
 				if ( ! empty( $shortcodes_custom_css ) ) {
 					$content .= $shortcodes_custom_css;
 				}
@@ -511,10 +555,9 @@ if ( ! function_exists( 'woodmart_get_html_block' ) ) {
 				if ( ! empty( $woodmart_shortcodes_custom_css ) ) {
 					$content .= $woodmart_shortcodes_custom_css;
 				}
+
 				$content .= '</style>';
 			}
-
-			$post_content = $post->post_content;
 
 			if ( ! str_contains( $post_content, '[vc_row' ) && ! has_blocks( $post_content ) ) {
 				$post_content = wpautop( $post_content );
@@ -533,6 +576,8 @@ if ( ! function_exists( 'woodmart_get_html_block' ) ) {
 
 			$content .= do_shortcode( $post_content );
 		}
+
+		woodmart_add_editable_post_to_admin_bar( $id );
 
 		return $content;
 	}
@@ -883,7 +928,7 @@ if ( ! function_exists( 'woodmart_get_col_sizes' ) ) {
 	 * @param integer $desktop_columns Desktop columns.
 	 * @return array
 	 */
-	function woodmart_get_col_sizes( $desktop_columns ) {
+	function woodmart_get_col_sizes( $desktop_columns, $post_type = '' ) {
 		$desktop_columns = (int) $desktop_columns;
 
 		$sizes = array(
@@ -949,6 +994,12 @@ if ( ! function_exists( 'woodmart_get_col_sizes' ) ) {
 			),
 		);
 
+		if ( 'product' === $post_type ) {
+			$sizes['2']['mobile'] = '2';
+			$sizes['3']['mobile'] = '2';
+			$sizes['4']['mobile'] = '2';
+		}
+
 		return isset( $sizes[ $desktop_columns ] ) ? $sizes[ $desktop_columns ] : $sizes['3'];
 	}
 }
@@ -964,6 +1015,7 @@ if ( ! function_exists( 'woodmart_get_grid_attrs' ) ) {
 		$desktop_columns = isset( $settings['columns'] ) ? $settings['columns'] : '3';
 		$tablet_columns  = isset( $settings['columns_tablet'] ) ? $settings['columns_tablet'] : 'auto';
 		$mobile_columns  = isset( $settings['columns_mobile'] ) ? $settings['columns_mobile'] : 'auto';
+		$post_type       = isset( $settings['post_type'] ) ? $settings['post_type'] : '';
 
 		if ( isset( $tablet_columns['size'] ) ) {
 			$tablet_columns = $tablet_columns['size'];
@@ -972,7 +1024,7 @@ if ( ! function_exists( 'woodmart_get_grid_attrs' ) ) {
 			$mobile_columns = $mobile_columns['size'];
 		}
 
-		$auto_columns = woodmart_get_col_sizes( $desktop_columns );
+		$auto_columns = woodmart_get_col_sizes( $desktop_columns, $post_type );
 		$style_attrs  = '';
 
 		if ( ! $tablet_columns || 'auto' === $tablet_columns ) {
@@ -1029,5 +1081,58 @@ if ( ! function_exists( 'woodmart_get_wide_items_array' ) ) {
 		}
 
 		return $items_wide;
+	}
+}
+
+if ( ! function_exists( 'woodmart_get_custom_conditions_list' ) ) {
+	/**
+	 * Get custom conditions list
+	 *
+	 * @return array
+	 */
+	function woodmart_get_custom_conditions_list() {
+		return array(
+			'search'         => esc_html__( 'Search results', 'woodmart' ),
+			'blog'           => esc_html__( 'Default "Your Latest Posts" screen', 'woodmart' ),
+			'front'          => esc_html__( 'Front page', 'woodmart' ),
+			'archives'       => esc_html__( 'All archives', 'woodmart' ),
+			'author'         => esc_html__( 'Author archives', 'woodmart' ),
+			'error404'       => esc_html__( '404 error screens', 'woodmart' ),
+			'shop'           => esc_html__( 'Shop page', 'woodmart' ),
+			'single_product' => esc_html__( 'Single product', 'woodmart' ),
+			'cart'           => esc_html__( 'Cart page', 'woodmart' ),
+			'checkout'       => esc_html__( 'Checkout page', 'woodmart' ),
+			'account'        => esc_html__( 'Account pages', 'woodmart' ),
+			'logged_in'      => esc_html__( 'Is user logged in', 'woodmart' ),
+			'is_mobile'      => esc_html__( 'Is mobile device', 'woodmart' ),
+			'is_rtl'         => esc_html__( 'Is RTL', 'woodmart' ),
+		);
+	}
+}
+
+if ( ! function_exists( 'woodmart_add_editable_post_to_admin_bar' ) ) {
+	/**
+	 * Set template for admin bar.
+	 *
+	 * @param int $post_id Post ID.
+	 * @return void
+	 */
+	function woodmart_add_editable_post_to_admin_bar( $post_id ) {
+		if ( ! woodmart_is_pjax() && is_user_logged_in() && is_admin_bar_showing() && in_array( get_post_type( $post_id ), array( 'cms_block', 'wd_popup', 'wd_floating_block' ), true ) ) {
+			global $woodmart_editable_posts_bar_data;
+
+			$edit_url = get_edit_post_link( $post_id );
+
+			if ( woodmart_is_elementor_installed() && Plugin::$instance->documents->get( $post_id )->is_built_with_elementor() ) {
+				$edit_url = Plugin::$instance->documents->get( $post_id )->get_edit_url();
+			}
+
+			$woodmart_editable_posts_bar_data[] = array(
+				'id'       => $post_id,
+				'title'    => get_the_title( $post_id ),
+				'type'     => get_post_type( $post_id ),
+				'edit_url' => $edit_url,
+			);
+		}
 	}
 }

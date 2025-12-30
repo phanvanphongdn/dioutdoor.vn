@@ -51,11 +51,7 @@ if( ! class_exists( 'WOODMART_Widget_Price_Filter' ) ) {
 		function widget( $args, $instance )	{
 			global $wp, $wp_the_query;
 
-			if ( ! is_post_type_archive( 'product' ) && ! is_tax( get_object_taxonomies( 'product' ) ) ) {
-				return;
-			}
-
-			if ( ! $wp_the_query->post_count ) {
+			if ( ! $this->is_widget_preview() && ( ! is_post_type_archive( 'product' ) && ! is_tax( get_object_taxonomies( 'product' ) ) || ! $wp_the_query->post_count ) ) {
 				return;
 			}
 
@@ -69,9 +65,9 @@ if( ! class_exists( 'WOODMART_Widget_Price_Filter' ) ) {
 			} else {
 				$prices = $this->get_filtered_price_new();
 			}
-			
-			$min = apply_filters( 'woocommerce_price_filter_widget_min_amount', floor( $prices->min_price ) );
-			$max = apply_filters( 'woocommerce_price_filter_widget_max_amount', ceil( $prices->max_price ) );
+
+			$min = apply_filters( 'woocommerce_price_filter_widget_min_amount', ! is_null( $prices->min_price ) ? floor( $prices->min_price ) : 0 );
+			$max = apply_filters( 'woocommerce_price_filter_widget_max_amount', ! is_null( $prices->max_price ) ? ceil( $prices->max_price ) : 0 );
 
 			if ( $min === $max ) {
 				return;
