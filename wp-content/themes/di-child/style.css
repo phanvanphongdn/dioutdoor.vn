@@ -571,7 +571,9 @@ table{
 /********** checkout page *********/
 
  .page.woocommerce-checkout .content-layout-wrapper .site-content
- {background: unset}
+ {max-width: 800px;
+    margin: auto;
+}
 .shop_table tr :is(td,th):first-child {
     padding-inline-start: 10px;
 }

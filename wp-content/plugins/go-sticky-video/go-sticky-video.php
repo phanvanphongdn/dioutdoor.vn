@@ -17,6 +17,7 @@ define('GO_STICKY_VIDEO_URL', plugin_dir_url(__FILE__));
 
 define('GO_STICKY_VIDEO_MIN_PHP', '7.4.0');
 
+define('GO_STICKY_VIDEO_META_ENABLED', '_gosticky_video_enabled');
 define('GO_STICKY_VIDEO_META_TYPE', '_gosticky_video_type');
 define('GO_STICKY_VIDEO_META_MP4_ID', '_gosticky_video_mp4_id');
 define('GO_STICKY_VIDEO_META_URL', '_gosticky_video_url');

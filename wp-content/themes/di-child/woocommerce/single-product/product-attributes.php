@@ -21,11 +21,25 @@ use XTS\Modules\Layouts\Global_Data as Builder_Data;
 
 defined( 'ABSPATH' ) || exit;
 
-if ( ! $product_attributes ) {
+// --- ACF / meta custom ---
+$post_id    = get_the_ID();
+$json_data  = get_post_meta( $post_id, 'info_custom', true ); // hoặc get_field('info_custom', $post_id) nếu bạn lưu bằng ACF field
+$parameters = [];
+
+if ( $json_data ) {
+    $decoded = json_decode( $json_data, true );
+    if ( ! empty( $decoded ) && is_array( $decoded ) ) {
+        $parameters = $decoded;
+    }
+}
+
+// Chỉ return khi cả thuộc tính WooCommerce và custom đều rỗng
+if ( empty( $product_attributes ) && empty( $parameters ) ) {
     return;
 }
 ?>
 <table class="woocommerce-product-attributes shop_attributes">
+     <?php if ( ! empty( $product_attributes ) ) : ?>
     <?php foreach ( $product_attributes as $product_attribute_key => $product_attribute ) : ?>
         <?php
         $attribute_name = str_replace( 'attribute_pa_', '', $product_attribute_key );
@@ -73,24 +87,21 @@ if ( ! $product_attributes ) {
             </td>
         </tr>
     <?php endforeach; ?>
+<?php endif; ?>
 
-
-    <?php //vucamp
-    // Lấy ID sản phẩm hiện tại
-    $post_id = get_the_ID();
-    // Lấy dữ liệu JSON từ trường info_custom
-    $json_data = get_post_meta($post_id, 'info_custom', true);
-    // Kiểm tra và hiển thị dữ liệu nếu tồn tại
-    if ($json_data) {
-        $parameters = json_decode($json_data, true);
-        if (!empty($parameters)) {
-            foreach ($parameters as $parameter) {
-                echo '<tr class="woocommerce-product-attributes-item"><th class="woocommerce-product-attributes-item__label"><span>' . esc_html($parameter['n']) . '</span></th>';
-                echo '<td class="woocommerce-product-attributes-item__value">' . esc_html($parameter['v']) . '</td></tr>';
-            }
+    <?php // vucamp
+    if ( ! empty( $parameters ) ) {
+        foreach ( $parameters as $parameter ) {
+            echo '<tr class="woocommerce-product-attributes-item">';
+            echo '<th class="woocommerce-product-attributes-item__label"><span>' . esc_html( $parameter['n'] ?? '' ) . '</span></th>';
+            echo '<td class="woocommerce-product-attributes-item__value">' . esc_html( $parameter['v'] ?? '' ) . '</td>';
+            echo '</tr>';
         }
     } else {
-        echo '<p class="text-center">Đang cập nhật....</p>';
+        echo '<tr class="woocommerce-product-attributes-item">';
+        echo '<th class="woocommerce-product-attributes-item__label"><span>Thông số</span></th>';
+        echo '<td class="woocommerce-product-attributes-item__value">Đang cập nhật…</td>';
+        echo '</tr>';
     }
     ?>
 </table>

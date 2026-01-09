@@ -10,15 +10,6 @@ add_action( 'wp_enqueue_scripts', 'woodmart_child_enqueue_styles', 10010 );
 // add thumbnail category blog
 add_image_size( 'category-blog', 500, 280 , true);
 
-/// Thêm icon vào payment
-function my_new_paypal_icon() {
-    return 'https://dioutdoor.vn/media/2020/08/payment-bacs.png';
-}
-add_filter( 'woocommerce_bacs_icon', 'my_new_paypal_icon' );
-function my_new_cheque_icon() {
-    return 'https://dioutdoor.vn/media/2020/08/payment-momo.png';
-}
-add_filter( 'woocommerce_cheque_icon', 'my_new_cheque_icon' );
 
 //Xóa woocommerce soạn thoải
 add_action('admin_head', 'Hide_WooCommerce_Breadcrumb');
@@ -466,160 +457,9 @@ function add_custom_css_to_single_product() {
 add_action('wp_enqueue_scripts', 'add_custom_css_to_single_product');
 
 
-//xóa comment yoast seo
-add_filter( 'wpseo_debug_markers', '__return_false' );
-// breadcrumb yoast seo
-
-add_filter( 'wpseo_breadcrumb_links', function( $links ) {
-    //remove shop
-    if ( is_product()  || is_product_taxonomy() ) {
-        unset( $links[1] );
-    }
-    //thêm vào brand
-    if ( is_tax( 'pa_brands' ) ) {
-        $breadcrumb[] = array(
-            'url' => site_url( 'brands' ),
-            'text' => 'Thương hiệu',
-        );
-        array_splice( $links, -1, 0, $breadcrumb );
-    }
-    //thêm danh mục vào producttag
-    if ( is_product_tag() ) {
-        $term = get_queried_object();
-        $acf_category_id = get_field( 'cat_protag', $term );
-        $new_links = [];
-        if ( $acf_category_id ) {
-            $acf_category = get_term( $acf_category_id, 'product_cat' );
-            if ( $acf_category && ! is_wp_error( $acf_category ) ) {
-                // Lấy danh mục cha nếu có
-                $ancestors = get_ancestors( $acf_category->term_id, 'product_cat' );
-                $ancestors = array_reverse( $ancestors );
-                foreach ( $ancestors as $ancestor_id ) {
-                    $ancestor = get_term( $ancestor_id, 'product_cat' );
-                    if ( $ancestor && ! is_wp_error( $ancestor ) ) {
-                        $new_links[] = [
-                            'url' => get_term_link( $ancestor ),
-                            'text' => $ancestor->name,
-                        ];
-                    }
-                }
-                $new_links[] = [
-                    'url' => get_term_link( $acf_category ),
-                    'text' => $acf_category->name,
-                ];
-            }
-        } else {
-            $shop_page_id = wc_get_page_id( 'shop' );
-            $new_links[] = [
-                'url' => get_permalink( $shop_page_id ),
-                'text' => get_the_title( $shop_page_id ),
-            ];
-        }
-        array_splice( $links, 1, 0, $new_links );
-    }
-
-    return $links;
-});
 //
-// Register custom widget
-add_action( 'widgets_init', function() {
-    unregister_widget( 'WC_Widget_Product_Tag_Cloud' ); // Unregister WooCommerce default widget
-    register_widget( 'Custom_WC_Widget_Product_Tag_Cloud' ); // Register custom widget
-});
 
-class Custom_WC_Widget_Product_Tag_Cloud extends WP_Widget {
 
-    public function __construct() {
-        parent::__construct(
-            'custom_wc_widget_product_tag_cloud',
-            __( 'Custom Product Tag Cloud', 'woocommerce' ),
-            array( 'description' => __( 'A custom tag cloud for WooCommerce products.', 'woocommerce' ) )
-        );
-    }
-
-    public function widget( $args, $instance ) {
-        echo $args['before_widget'];
-        echo $args['before_title'] . __( 'Từ khóa liên quan' ) . $args['after_title'];
-
-        echo '<div class="tagcloud">';
-
-        // Get all product IDs matching the current query
-        $product_ids = wc_get_products( array(
-            'limit'    => -1, // Retrieve all products
-            'paginate' => false,
-            'status'   => 'publish',
-            'return'   => 'ids',
-            'category' => is_product_category() ? array( get_queried_object()->slug ) : array(),
-            'tag'      => is_product_tag() ? array( get_queried_object()->slug ) : array(),
-            's'        => is_search() ? get_search_query() : '',
-            'tax_query' => is_product_taxonomy() && strpos( get_queried_object()->taxonomy, 'pa_' ) === 0 ? array(
-                array(
-                    'taxonomy' => get_queried_object()->taxonomy,
-                    'field'    => 'slug',
-                    'terms'    => get_queried_object()->slug,
-                ),
-            ) : array(),
-        ) );
-
-        if ( ! empty( $product_ids ) ) {
-            $tag_ids = array();
-
-            foreach ( $product_ids as $product_id ) {
-                $tags = wp_get_post_terms( $product_id, 'product_tag' );
-                foreach ( $tags as $tag ) {
-                    $tag_ids[] = $tag->term_id;
-                }
-            }
-
-            $tag_ids = array_unique( $tag_ids );
-
-            $output = array();
-            foreach ( $tag_ids as $tag_id ) {
-                $term = get_term( $tag_id, 'product_tag' );
-                if ( $term ) {
-                    $term_link = get_term_link( $term, 'product_tag' );
-                    $output[] = '<a href="' . esc_url( $term_link ) . '">' . esc_html( $term->name ) . '</a>';
-                }
-            }
-
-            if ( ! empty( $output ) ) {
-                echo implode(  $output );
-            } else {
-                echo __( 'Từ khóa trống' );
-            }
-        } else {
-            echo __( 'Sản phẩm trống' );
-        }
-
-        echo '</div>';
-        echo $args['after_widget'];
-    }
-}
-
-add_filter( 'wpseo_robots', 'yoast_seo_robots_woocommerce_filters' );
-
-/**
- * Set WooCommerce filtered and paginated URLs to noindex, nofollow.
- */
-function yoast_seo_robots_woocommerce_filters( $robots ) {
-    // Lấy URL hiện tại
-    $current_url = $_SERVER['REQUEST_URI'];
-
-    // Kiểm tra nếu URL chứa tham số bộ lọc hoặc phân trang
-    if ( is_shop() || is_product_category() || is_product_tag()|| is_product() ) {
-        // Kiểm tra tham số bộ lọc (bắt đầu bằng filter_)
-        if ( strpos( $current_url, 'filter_' ) !== false || strpos( $current_url, 'add-to-cart' ) !== false || strpos( $current_url, 's=' ) !== false  ) {
-            return 'noindex,nofollow';
-        }
-
-        // Kiểm tra phân trang (chuỗi /page/X/)
-        if ( preg_match( '/\/page\/[0-9]+/', $current_url ) ) {
-            return 'noindex,nofollow';
-        }
-    }
-
-    return $robots;
-}
 // thêm note vào hình thức vận chuyển
 function action_woocommerce_after_shipping_rate( $method, $index ) {
 
@@ -635,26 +475,6 @@ function action_woocommerce_after_shipping_rate( $method, $index ) {
     }
 }
 add_action( 'woocommerce_after_shipping_rate', 'action_woocommerce_after_shipping_rate', 10, 2 );
-// Loại bỏ hình ảnh tải ưu tiên
-add_filter('perfmatters_critical_image_exclusions', function($exclusions) {
-    $exclusions = array_merge($exclusions, [
-        'icon-',
-        'logo-',
-        'member-customer',
-        'add-to-basket',
-
-    ]);
-    return $exclusions;
-});
-add_filter('perfmatters_preloads', function($preloads) {
-    if (is_shop() || is_product_category() || is_search() || is_page() || is_tag() || is_product_tag()) {
-        $preloads[] = array(
-            'url' => 'https://dioutdoor.vn/media/2020/07/banner-page-title.jpg',
-            'as' => 'image' // Loại tài nguyên
-        );
-    }
-    return $preloads;
-});
 
 
 /////////// teeem
@@ -703,14 +523,14 @@ function add_custom_payment_notes( $description, $payment_id ) {
         $description .= '<span class="woocommerce-shipping-destination-2"><strong> (Phí giao hàng Thông báo sau)</strong></span>';
     } else {
         if ( 'cod' === $payment_id ) {
-            $description .= '<span class="woocommerce-shipping-destination-2"><strong> (Phí giao hàng 25.000đ)</strong></span>';
+            $description .= '<span class="woocommerce-shipping-destination-2"><strong> (Phí giao hàng +25.000đ)</strong></span>';
         } elseif ( 'payos' === $payment_id ) {
             $cart = WC()->cart;
             $subtotal = $cart ? $cart->subtotal : 0;
             if ( $subtotal >= 300000 ) {
                 $description .= '<span class="woocommerce-shipping-destination-2"> <strong> (Giao hàng miễn phí)</strong></span>';
             } else {
-                $description .= '<span class="woocommerce-shipping-destination-2"><strong> (Phí giao hàng 25.000đ)</strong></span>';
+                $description .= '<span class="woocommerce-shipping-destination-2"><strong> (Phí giao hàng +25.000đ)</strong></span>';
             }
         }
     }
@@ -874,80 +694,5 @@ add_filter( 'rank_math/json_ld', function( $data, $jsonld ) {
     return $data;
 }, 99, 2 );
 
-add_filter( 'woocommerce_structured_data_product', function( $markup, $product ) {
-
-    // Nếu Woo chưa có aggregateRating thì dùng RMP
-    if ( empty( $markup['aggregateRating'] ) && function_exists( 'rmp_get_avg_rating' ) ) {
-        $post_id   = $product->get_id();
-        $avg       = (float) rmp_get_avg_rating( $post_id );
-        $vote_cnt  = function_exists( 'rmp_get_vote_count' ) ? (int) rmp_get_vote_count( $post_id ) : 0;
-
-        if ( $avg > 0 && $vote_cnt > 0 ) {
-            $markup['aggregateRating'] = array(
-                '@type'       => 'AggregateRating',
-                'bestRating'  => '5',
-                'worstRating'  => '1',
-                'ratingCount' => (string) $vote_cnt,
-                'ratingValue' => wc_format_decimal( $avg, 2 ),
-            );
-        }
-    }
-
-    return $markup;
-}, 10, 2 );
 
 
-
-/**
- * DEV ONLY
- * Auto delete ACF data when a field is deleted
- * ⚠️ DANGEROUS ON LIVE SITE
- */
-
-add_action('acf/delete_field', function ($field) {
-
-
-    /* KHÓA AN TOÀN 2: phải bật thủ công
-    if (!defined('ACF_CLEANUP_ON_DELETE') || ACF_CLEANUP_ON_DELETE !== true) {
-        return;
-    }*/
-
-    global $wpdb;
-
-    $tables = ['postmeta']; // 👈 chỉ xóa postmeta cho an toàn
-
-    foreach ($tables as $table) {
-
-        $key_field   = 'meta_key';
-        $value_field = 'meta_value';
-        $table_name  = $wpdb->{$table};
-
-        // Tìm meta_key có reference tới field key
-        $keys = $wpdb->get_col(
-            $wpdb->prepare(
-                "SELECT DISTINCT($key_field)
-                 FROM $table_name
-                 WHERE $value_field = %s",
-                $field['key']
-            )
-        );
-
-        if (!$keys) continue;
-
-        $delete_keys = [];
-        foreach ($keys as $key) {
-            $delete_keys[] = $key;               // _my_field
-            $delete_keys[] = ltrim($key, '_');   // my_field
-        }
-
-        $placeholders = implode(',', array_fill(0, count($delete_keys), '%s'));
-
-        $wpdb->query(
-            $wpdb->prepare(
-                "DELETE FROM $table_name
-                 WHERE $key_field IN ($placeholders)",
-                $delete_keys
-            )
-        );
-    }
-});

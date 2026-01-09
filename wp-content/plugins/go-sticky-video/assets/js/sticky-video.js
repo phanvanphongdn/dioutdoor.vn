@@ -72,12 +72,6 @@
             video.controls = config.playerUi === 'native';
             video.autoplay = isModal ? true : config.autoplay;
             video.loop = true;
-            video.addEventListener('loadedmetadata', function () {
-                if (video.videoWidth && video.videoHeight) {
-                    const ratio = (video.videoHeight / video.videoWidth) * 100;
-                    setAspectRatio(target, ratio);
-                }
-            });
             target.appendChild(video);
             return { type: 'mp4', element: video };
         }
@@ -130,7 +124,7 @@
             return;
         }
         if (instance.type === 'mp4') {
-            instance.element.play().catch(() => {});
+            instance.element.play().catch(() => { });
             return;
         }
         if (instance.type === 'youtube') {
@@ -205,25 +199,6 @@
         showPlayer();
     }
 
-    function setAspectRatio(target, ratio) {
-        if (!ratio || Number.isNaN(ratio)) {
-            return;
-        }
-        const value = `${ratio.toFixed(2)}%`;
-        target.style.setProperty('--gsv-aspect', value);
-    }
-
-    function bindGalleryButtons() {
-        const buttons = document.querySelectorAll('.gsv-gallery-play');
-        buttons.forEach((btn) => {
-            if (btn.dataset.gsvBound) {
-                return;
-            }
-            btn.dataset.gsvBound = '1';
-            btn.addEventListener('click', openModal);
-        });
-    }
-
     function ensureGalleryButton() {
         if (!config.isProduct) {
             return;
@@ -232,22 +207,16 @@
         if (!gallery) {
             return;
         }
-        if (!gallery.querySelector('.gsv-gallery-play')) {
-            const btn = document.createElement('button');
-            btn.type = 'button';
-            btn.className = 'gsv-gallery-play';
-            btn.setAttribute('aria-label', 'Play product video');
-            btn.textContent = '▶';
-            gallery.appendChild(btn);
+        if (gallery.querySelector('.gsv-gallery-play')) {
+            return;
         }
-        bindGalleryButtons();
-    }
-
-    if (config.aspectRatio) {
-        setAspectRatio(surface, config.aspectRatio);
-        if (modalPlayer) {
-            setAspectRatio(modalPlayer, config.aspectRatio);
-        }
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'gsv-gallery-play';
+        btn.setAttribute('aria-label', 'Play product video');
+        btn.textContent = '▶';
+        btn.addEventListener('click', openModal);
+        gallery.appendChild(btn);
     }
 
     stickyInstance = createVideoElement(surface, false);
@@ -297,12 +266,5 @@
     if (config.isProduct) {
         ensureGalleryButton();
         document.addEventListener('DOMContentLoaded', ensureGalleryButton);
-        const gallery = document.querySelector('.woocommerce-product-gallery');
-        if (gallery) {
-            const observer = new MutationObserver(() => {
-                ensureGalleryButton();
-            });
-            observer.observe(gallery, { childList: true, subtree: true });
-        }
     }
 })();

@@ -177,7 +177,9 @@ class GoStickyVideo_Admin_Metabox
                         <?php esc_html_e('YouTube URL', 'go-sticky-video'); ?><br />
                         <input type="url" class="widefat" name="gsv_video_url_youtube" value="<?php echo esc_attr($type === 'youtube' ? $url : ''); ?>" placeholder="https://www.youtube.com/watch?v=..." />
                     </label>
+                     <p class="gsv-small"><?php esc_html_e('https://youtu.be/LXb3EKWsInQ.', 'go-sticky-video'); ?></p>
                 </div>
+                
             </div>
 
             <div id="gsv-pane-vimeo" class="gsv-tab-pane <?php echo $type === 'vimeo' ? 'is-active' : ''; ?>">
@@ -186,6 +188,7 @@ class GoStickyVideo_Admin_Metabox
                         <?php esc_html_e('Vimeo URL', 'go-sticky-video'); ?><br />
                         <input type="url" class="widefat" name="gsv_video_url_vimeo" value="<?php echo esc_attr($type === 'vimeo' ? $url : ''); ?>" placeholder="https://vimeo.com/..." />
                     </label>
+                     <p class="gsv-small"><?php esc_html_e('https://vimeo.com/259400046.', 'go-sticky-video'); ?></p>
                 </div>
             </div>
 

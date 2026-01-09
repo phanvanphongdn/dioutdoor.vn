@@ -8,18 +8,18 @@
 }
 
 .gsv-sticky-wrapper[data-side="left"] {
-    left: 16px;
+    left: 5px;
 }
 
 .gsv-sticky-wrapper[data-side="right"] {
-    right: 16px;
+    right: 5px;
 }
 
 .gsv-sticky-player {
-    background: #0b0b0b;
-    border-radius: 12px;
+    background: #ff1f1c;
+    border: 3px solid #ff1f1c;
+        border-radius: 0 0 10px 10px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     position: relative;
 }
 
@@ -34,7 +34,7 @@
 .gsv-video-surface {
     position: relative;
     width: 100%;
-    padding-top: var(--gsv-aspect, 56.25%);
+    padding-top: 56.25%;
     background: #000;
 }
 
@@ -132,7 +132,7 @@
 
 .gsv-modal-player {
     position: relative;
-    padding-top: var(--gsv-aspect, 56.25%);
+    padding-top: 56.25%;
 }
 
 .gsv-modal-player video,

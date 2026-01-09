@@ -83,7 +83,7 @@ if ( woodmart_get_opt( 'thank_you_page_extra_content' ) ) {
 
 					<?php if ( $order->get_payment_method_title() ) : ?>
 						<li class="woocommerce-order-overview__payment-method method">
-							<?php esc_html_e( 'Payment method:', 'woocommerce' ); ?>
+							<?php esc_html_e( 'Payment:', 'woocommerce' ); ?>
 							<strong><?php echo wp_kses_post( $order->get_payment_method_title() ); ?></strong>
 						</li>
 					<?php endif; ?>
