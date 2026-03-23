@@ -140,9 +140,6 @@ function filter_email_format_string( $string, $email ) {
 }
 */
 
-// thay đổi timezone woodmart
-add_filter( 'woodmart_wp_timezone_element', '__return_true' );
-
 // Cấu hình mặc định khi thêm ảnh
 add_action( 'after_setup_theme', 'wnd_default_image_settings' );
 function wnd_default_image_settings() {
@@ -464,11 +461,11 @@ add_action('wp_enqueue_scripts', 'add_custom_css_to_single_product');
 function action_woocommerce_after_shipping_rate( $method, $index ) {
 
     // Compare (adjust as needed)
-    if (in_array($method->get_id(), ['flat_rate:13','flat_rate:18'])) {
+    if (in_array($method->get_id(), ['flat_rate:13','flat_rate:18','flat_rate:21'])) {
         echo '<a href="#" class="woocommerce-shipping-destination-2 open-ship"> <span class="wd-icon-warning-sign"></span> Phí SHIP cụ thể sẽ được thông báo khi Đi Outdoor gọi điện xác nhận đơn hàng.</a>';
     }
-    if (in_array($method->get_id(), ['local_pickup:15', 'local_pickup:19'])){
-        echo '<a href="#" class="woocommerce-shipping-destination-3 open-ship"><span class="wd-icon-warning-sign"></span> Chỉ hỗ trợ tại Hồ Chí Minh, Đà Nẵng, Hà Nội. </a>';
+    if (in_array($method->get_id(), ['local_pickup:22', 'local_pickup:19'])){
+        echo '<a href="#" class="woocommerce-shipping-destination-3 open-ship"><span class="wd-icon-warning-sign"></span> Chỉ hỗ trợ tại <b>Hồ Chí Minh, Đà Nẵng, Hà Nội.</b> </a>';
     }
     if (in_array($method->get_id(), ['free_shipping:12' , 'free_shipping:17'])) {
         echo '<a href="#" class="woocommerce-shipping-destination-2 open-ship"><span class="wd-icon-warning-sign"></span> Đơn hàng được miễn phí vận chuyển (<10kg).</a>';
@@ -497,8 +494,9 @@ function custom_handling_fee( $cart ) {
         $cart->add_fee( __( 'Phí Giao Hàng', 'woocommerce' ), 0, true ); // Phí "thông báo sau" không tính phí.
     } else {
         $targeted_payment_ids = array(
-            'payos' => ( $subtotal > 300000 ) ? 0 : 25000, // Điều kiện cho payos
+            'vietqr' => ( $subtotal >= 300000 ) ? 0 : 25000, // Điều kiện cho payos
             'cod'   => 25000, // Phí cố định
+           
         );
 
         foreach ( $targeted_payment_ids as $payment_id => $fee_cost ) {
@@ -524,7 +522,7 @@ function add_custom_payment_notes( $description, $payment_id ) {
     } else {
         if ( 'cod' === $payment_id ) {
             $description .= '<span class="woocommerce-shipping-destination-2"><strong> (Phí giao hàng +25.000đ)</strong></span>';
-        } elseif ( 'payos' === $payment_id ) {
+        } elseif ( 'vietqr' === $payment_id ) {
             $cart = WC()->cart;
             $subtotal = $cart ? $cart->subtotal : 0;
             if ( $subtotal >= 300000 ) {
@@ -535,6 +533,39 @@ function add_custom_payment_notes( $description, $payment_id ) {
         }
     }
     return $description;
+}
+
+add_filter( 'woocommerce_package_rates', 'dioutdoor_hide_paid_when_free_available', 100, 2 );
+
+function dioutdoor_hide_paid_when_free_available( $rates, $package ) {
+
+    $has_free_shipping = false;
+
+    // Kiểm tra xem free shipping có khả dụng không
+    foreach ( $rates as $rate_id => $rate ) {
+        if ( $rate->method_id === 'free_shipping' ) {
+            $has_free_shipping = true;
+            break;
+        }
+    }
+
+    // Nếu có free shipping → ẩn các lớp có phí (trừ hỏa tốc)
+    if ( $has_free_shipping ) {
+        foreach ( $rates as $rate_id => $rate ) {
+
+            // ⚡ LỚP HỎA TỐC – LUÔN GIỮ LẠI
+            if ( $rate->method_id === 'local_pickup' ) {
+                continue;
+            }
+
+            // Ẩn flat_rate hoặc các lớp có phí khác
+            if ( $rate->method_id === 'flat_rate' ) {
+                unset( $rates[ $rate_id ] );
+            }
+        }
+    }
+
+    return $rates;
 }
 
 
@@ -560,52 +591,84 @@ add_action('wp_enqueue_scripts', function () {
 // state: all_closed | first_open | all_open (mặc định: all_closed)
 // [product_faqs title="Câu hỏi thường gặp" state="all_closed"]
 add_shortcode('product_faqs', function($atts){
-    if ( ! is_singular('product') ) return '';
+
+    if ( ! is_singular('product') && ! is_tax('product_cat') ) return '';
 
     $atts = shortcode_atts([
         'title' => 'Câu hỏi thường gặp',
-        'state' => 'all_closed', // all_closed | first_open | all_open
+        'state' => 'all_closed',
     ], $atts, 'product_faqs');
 
     if ( ! function_exists('get_field') ) return '';
-    $faqs = get_field('product_faqs', get_the_ID());
+
+    $faqs = [];
+    $is_category = false;
+
+    /** ===== LẤY FAQ ===== */
+
+    if ( is_singular('product') ) {
+
+        $faqs = get_field('product_faqs', get_the_ID());
+
+    } elseif ( is_tax('product_cat') ) {
+
+        $term = get_queried_object();
+        $faqs = get_field('cat_faqs', 'product_cat_' . $term->term_id);
+        $is_category = true;
+
+    }
+
     if ( empty($faqs) || !is_array($faqs) ) return '';
 
-    /** ====== NẠP ASSETS THEO CƠ CHẾ WOODMART (ƯU TIÊN) ====== */
+    /** ===== LOAD WOODMART ASSETS ===== */
+
     if ( function_exists('woodmart_enqueue_js_script') ) {
-        // JS accordion của theme (tương đương di/js/scripts/elements/accordion.min.js)
-        woodmart_enqueue_js_script( 'accordion-element' );
-    }
-    if ( function_exists('woodmart_enqueue_inline_style') ) {
-        // CSS accordion của theme (tương đương 2 file el-accordion*.css)
-        woodmart_enqueue_inline_style( 'accordion' );
-        woodmart_enqueue_inline_style( 'accordion-elem-wpb' );
+        woodmart_enqueue_js_script('accordion-element');
     }
 
-    // Wrapper
+    if ( function_exists('woodmart_enqueue_inline_style') ) {
+        woodmart_enqueue_inline_style('accordion');
+        woodmart_enqueue_inline_style('accordion-elem-wpb');
+    }
+
     ob_start(); ?>
+
     <section class="dioutdoor-product-faqs">
+
         <?php if ( !empty($atts['title']) ) : ?>
-            <h3 class="woodmart-title-container title wd-fontsize-l"><?php echo esc_html($atts['title']); ?></h3>
+            <h3 class="woodmart-title-container title wd-fontsize-l">
+                <?php echo esc_html($atts['title']); ?>
+            </h3>
         <?php endif; ?>
 
         <div class="wd-accordion wd-style-shadow wd-titles-left wd-opener-pos-right wd-opener-style-arrow"
              data-state="<?php echo esc_attr($atts['state']); ?>">
+
             <?php
             $i = 0;
+
             foreach ( $faqs as $row ) :
-                $q = isset($row['question']) ? trim(wp_strip_all_tags($row['question'])) : '';
-                $a = isset($row['answer']) ? trim($row['answer']) : '';
+
+                if ($is_category) {
+                    $q = isset($row['cat_question']) ? trim(wp_strip_all_tags($row['cat_question'])) : '';
+                    $a = isset($row['cat_answer']) ? trim($row['cat_answer']) : '';
+                } else {
+                    $q = isset($row['question']) ? trim(wp_strip_all_tags($row['question'])) : '';
+                    $a = isset($row['answer']) ? trim($row['answer']) : '';
+                }
+
                 if ( $q === '' || $a === '' ) continue;
 
                 $is_open = false;
+
                 if ( $atts['state'] === 'all_open' ) $is_open = true;
                 if ( $atts['state'] === 'first_open' && $i === 0 ) $is_open = true;
 
-                // Một số bản WoodMart thêm class khi mở; nếu JS của theme đã lo, có thể không cần.
                 $item_classes = 'wd-accordion-item' . ( $is_open ? ' wd-opened' : '' );
                 ?>
+
                 <div class="<?php echo esc_attr($item_classes); ?>">
+
                     <div class="wd-accordion-title" data-accordion-index="<?php echo esc_attr($i); ?>">
                         <div class="wd-accordion-title-text">
                             <span><?php echo esc_html($q); ?></span>
@@ -616,19 +679,27 @@ add_shortcode('product_faqs', function($atts){
                     <div class="wd-accordion-content wd-entry-content"
                          data-accordion-index="<?php echo esc_attr($i); ?>"
                         <?php echo $is_open ? '' : 'style="display:none"'; ?>>
-                        <?php
-                        // Cho phép format cơ bản + shortcode trong câu trả lời
-                        echo do_shortcode( wp_kses_post( $a ) );
-                        ?>
+
+                        <?php echo do_shortcode( wp_kses_post( $a ) ); ?>
+
                     </div>
+
                 </div>
+
                 <?php
                 $i++;
-            endforeach; ?>
+
+            endforeach;
+            ?>
+
         </div>
+
     </section>
+
     <?php
+
     return ob_get_clean();
+
 });
 
 /**
@@ -639,23 +710,35 @@ add_shortcode('product_faqs', function($atts){
  */
 add_filter( 'rank_math/json_ld', function( $data, $jsonld ) {
 
-    if ( ! is_singular('product') ) {
+    if ( ! is_singular('product') && ! is_tax('product_cat') ) {
         return $data;
     }
 
-    // ACF chưa có thì thôi
     if ( ! function_exists('get_field') ) {
         return $data;
     }
 
-    $post_id = get_the_ID();
-    $faqs    = get_field('product_faqs', $post_id);
+    $faqs = [];
+    $url  = '';
+
+    if ( is_singular('product') ) {
+
+        $post_id = get_the_ID();
+        $faqs = get_field('product_faqs', $post_id);
+        $url  = get_permalink($post_id);
+
+    } elseif ( is_tax('product_cat') ) {
+
+        $term = get_queried_object();
+        $faqs = get_field('cat_faqs', 'product_cat_' . $term->term_id);
+        $url  = get_term_link($term);
+
+    }
 
     if ( empty($faqs) || ! is_array($faqs) ) {
         return $data;
     }
 
-    // Nếu đã có FAQPage do nơi khác thêm (Rank Math / thủ công) thì bỏ qua để tránh trùng
     foreach ( $data as $entity ) {
         $types = (array) ( $entity['@type'] ?? [] );
         if ( in_array( 'FAQPage', $types, true ) ) {
@@ -664,35 +747,48 @@ add_filter( 'rank_math/json_ld', function( $data, $jsonld ) {
     }
 
     $entities = [];
+
     foreach ( $faqs as $row ) {
-        $q = isset($row['question']) ? trim( wp_strip_all_tags( $row['question'] ) ) : '';
-        $a = isset($row['answer'])   ? trim( $row['answer'] ) : '';
-        if ( $q === '' || $a === '' ) { continue; }
+
+        if ( is_tax('product_cat') ) {
+            $q = isset($row['cat_question']) ? trim( wp_strip_all_tags($row['cat_question']) ) : '';
+            $a = isset($row['cat_answer']) ? trim( $row['cat_answer'] ) : '';
+        } else {
+            $q = isset($row['question']) ? trim( wp_strip_all_tags($row['question']) ) : '';
+            $a = isset($row['answer']) ? trim( $row['answer'] ) : '';
+        }
+
+        if ( $q === '' || $a === '' ) continue;
 
         $entities[] = [
             '@type' => 'Question',
             'name'  => $q,
             'acceptedAnswer' => [
                 '@type' => 'Answer',
-                'text'  => wp_kses_post( $a ),
+                'text'  => wp_kses_post($a),
             ],
         ];
     }
 
-    if ( ! $entities ) {
-        return $data;
-    }
+    if ( ! $entities ) return $data;
 
     $data['di_faq'] = [
         '@context'   => 'https://schema.org',
         '@type'      => 'FAQPage',
-        '@id'        => trailingslashit( get_permalink( $post_id ) ) . '#faq',
-        'url'        => get_permalink( $post_id ),
+        '@id'        => trailingslashit($url) . '#faq',
+        'url'        => $url,
         'mainEntity' => $entities,
     ];
 
     return $data;
-}, 99, 2 );
 
+}, 99, 2 );
+// thêm shortcode  vào elementor toàn theme
+add_action('init', function () {
+    // Chỉ đăng ký nếu Woodmart có sẵn function xử lý
+    if ( function_exists('woodmart_shortcode_countdown_timer') ) {
+        add_shortcode( 'woodmart_countdown_timer', 'woodmart_shortcode_countdown_timer' );
+    }
+}, 20);
 
 

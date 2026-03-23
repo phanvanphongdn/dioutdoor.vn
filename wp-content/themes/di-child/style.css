@@ -545,12 +545,7 @@ table{
     padding-right: 5px;
     padding-left: 5px;
 }
-.page .content-layout-wrapper .site-content{
-    padding-top: 30px;
-    background: #fff;
-    border-radius: 10px;
-    margin-botton:40px;
-}
+
 .whb-top-bar .wd-nav-secondary>li>a{
     font-size: 13px!important;
 }
@@ -569,10 +564,16 @@ table{
     border-radius: 10px 10px 0 0;
 }
 /********** checkout page *********/
-
- .page.woocommerce-checkout .content-layout-wrapper .site-content
+address
+{font-style: unset;}
+ .page.woocommerce-order-received .content-layout-wrapper .site-content
  {max-width: 800px;
     margin: auto;
+    background: #fff;
+        border-radius: 10px;
+}
+.woocommerce-terms-and-conditions-wrapper{
+    display: none;
 }
 .shop_table tr :is(td,th):first-child {
     padding-inline-start: 10px;

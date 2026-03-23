@@ -56,6 +56,50 @@ if ( woodmart_get_opt( 'thank_you_page_extra_content' ) ) {
 			<?php if ( woodmart_get_opt( 'thank_you_page_default_content' ) ) : ?>
 
 				<p class="woocommerce-notice woocommerce-notice--success woocommerce-thankyou-order-received"><?php echo apply_filters( 'woocommerce_thankyou_order_received_text', esc_html__( 'Thank you. Your order has been received.', 'woocommerce' ), $order ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
+<?php
+// Chỉ chạy khi có order
+if ( ! isset( $order ) || ! $order instanceof WC_Order ) {
+    return;
+}
+
+// Chỉ áp dụng cho payment method VietQR
+if ( $order->get_payment_method() !== 'vietqr' ) {
+    return;
+}
+
+$order_created = $order->get_date_created();
+if ( ! $order_created ) {
+    return;
+}
+
+// Thời điểm tự hủy = thời điểm đặt hàng + 24h
+$order_cancel_timestamp = $order_created->getTimestamp() + DAY_IN_SECONDS;
+
+// Format đúng cho Woodmart countdown (theo timezone WP)
+$countdown_date = date_i18n( 'Y-m-d H:i', $order_cancel_timestamp );
+?>
+
+<div class="wd-order-auto-cancel-box">
+    <p style="text-align: center;">
+		   <strong>Vui lòng hoàn tất thanh toán trong thời gian còn lại:</strong>
+    </p>
+
+    <?php
+    // Countdown Woodmart
+    echo do_shortcode(
+        '[woodmart_countdown_timer style="bordered" woodmart_color_scheme="light" date="' . esc_attr( $countdown_date ) . '"]'
+    );
+    ?>
+
+    <p style="color: red;text-align: center;">
+	    Nếu chưa thanh toán khi hết thời gian, đơn hàng sẽ được hệ thống tự động hủy mà không cần thông báo thêm.
+    </p>
+</div>
+<style>
+ .wd-timer {
+    --wd-timer-bg: #444;
+}</style>
+
 
 				<ul class="woocommerce-order-overview woocommerce-thankyou-order-details order_details">
 
@@ -66,7 +110,9 @@ if ( woodmart_get_opt( 'thank_you_page_extra_content' ) ) {
 
 					<li class="woocommerce-order-overview__date date">
 						<?php esc_html_e( 'Date:', 'woocommerce' ); ?>
-						<strong><?php echo wc_format_datetime( $order->get_date_created() ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></strong>
+						<strong>   <?php
+    echo $order->get_date_created()->date_i18n('d/m/Y H:i');
+    ?></strong>
 					</li>
 
 					<?php if ( is_user_logged_in() && $order->get_user_id() === get_current_user_id() && $order->get_billing_email() ) : ?>
