@@ -9,6 +9,7 @@ if ( ! function_exists( 'wd_gutenberg_cart_total' ) ) {
 		}
 
 		$classes = wd_get_gutenberg_element_classes( $block_attributes );
+		$el_id   = wd_get_gutenberg_element_id( $block_attributes );
 
 		Main::setup_preview();
 
@@ -35,7 +36,7 @@ if ( ! function_exists( 'wd_gutenberg_cart_total' ) ) {
 		ob_start();
 
 		?>
-			<div id="<?php echo esc_attr( wd_get_gutenberg_element_id( $block_attributes ) ); ?>" class="wd-cart-totals<?php echo esc_attr( $classes ); ?>">
+			<div <?php echo $el_id ? 'id="' . esc_attr( $el_id ) . '" ' : ''; ?>class="wd-cart-totals<?php echo esc_attr( $classes ); ?>">
 				<?php woocommerce_cart_totals(); ?>
 			</div>
 		<?php

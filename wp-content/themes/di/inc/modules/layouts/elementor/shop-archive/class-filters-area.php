@@ -2,7 +2,7 @@
 /**
  * Filters area element.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Modules\Layouts;

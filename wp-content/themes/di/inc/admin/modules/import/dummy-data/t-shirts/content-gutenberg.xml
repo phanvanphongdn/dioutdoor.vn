@@ -16,7 +16,7 @@
 	<!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 	<!--    contained in this file into your site. -->
 
-	<!-- generator="WordPress/6.7.2" created="2025-06-03 11:07" -->
+	<!-- generator="WordPress/6.7.4" created="2026-02-13 13:19" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -29,21 +29,15 @@
 	<title>t-shirts-gutenberg</title>
 	<link>https://dummy.xtemos.com/woodmart2/t-shirts-gutenberg</link>
 	<description></description>
-	<pubDate>Tue, 03 Jun 2025 11:07:57 +0000</pubDate>
+	<pubDate>Fri, 13 Feb 2026 13:19:25 +0000</pubDate>
 	<language>en-US</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
 	<wp:base_site_url>https://dummy.xtemos.com/woodmart2/</wp:base_site_url>
 	<wp:base_blog_url>https://dummy.xtemos.com/woodmart2/t-shirts-gutenberg</wp:base_blog_url>
 
 	
-					<wp:term>
-			<wp:term_id>0</wp:term_id>
-			<wp:term_taxonomy><![CDATA[]]></wp:term_taxonomy>
-			<wp:term_slug><![CDATA[]]></wp:term_slug>
-			<wp:term_parent><![CDATA[]]></wp:term_parent>
-					</wp:term>
-		
-	<generator>https://wordpress.org/?v=6.7.2</generator>
+							
+	<generator>https://wordpress.org/?v=6.7.4</generator>
 
 					<item>
 					<title><![CDATA[ps-woodmart-logo]]></title>
@@ -255,7 +249,7 @@
 
 <!-- wp:wd/container {"blockId":"5c729d56-36a0-486f-b41f-530b477cb0ab","rowGap":"","metadata":{"name":"Infobox content"}} -->
 <div id="wd-5c729d56" class="wp-block-wd-container wd-dir-col"><!-- wp:wd/paragraph {"blockId":"b9309848-8324-425b-8ced-60287a78a51e"} -->
-<p id="wd-b9309848" class="wp-block-wd-paragraph"><a href="#"><strong>1060 Cudahy Pl, San Diego</strong></a></p>
+<p id="wd-b9309848" class="wp-block-wd-paragraph"><a href="https://woodmart.xtemos.com/t-shirts-prints/contact-us/#"><strong>1060 Cudahy Pl, San Diego</strong></a></p>
 <!-- /wp:wd/paragraph --></div>
 <!-- /wp:wd/container --></div>
 <!-- /wp:wd/infobox -->
@@ -279,7 +273,7 @@
 
 <!-- wp:wd/container {"blockId":"2290b57b-e8b4-4bc8-8dee-d15115bd8c4c","rowGap":"","metadata":{"name":"Infobox content"}} -->
 <div id="wd-2290b57b" class="wp-block-wd-container wd-dir-col"><!-- wp:wd/paragraph {"blockId":"1ebee10a-420c-453c-926e-25ebc7b298b7"} -->
-<p id="wd-1ebee10a" class="wp-block-wd-paragraph">xtemos@mail.com</p>
+<p id="wd-1ebee10a" class="wp-block-wd-paragraph">xtemos.studio@gmail.com</p>
 <!-- /wp:wd/paragraph --></div>
 <!-- /wp:wd/container --></div>
 <!-- /wp:wd/infobox -->
@@ -637,36 +631,36 @@
 					<pubDate>Thu, 22 May 2025 14:16:11 +0000</pubDate>
 					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/t-shirts-gutenberg/?post_type=woodmart_layout&#038;p=358</guid>
-											<content:encoded><![CDATA[<!-- wp:wd/section {"blockId":"c152d25a-14cb-4e14-85f2-4a385b1e29d7","bgColorCode":"#eeeeee","paddingTop":"15","paddingBottom":"15","marginTop":"-55","marginBottom":"25","borderType":"solid","borderColorCode":"#f8f8f8","borderWidth":"15","borderWidthTop":"15","borderWidthRight":"15","borderWidthBottom":"15","borderWidthLeft":"15","borderWidthLock":true,"borderRadius":"30","borderRadiusTop":"30","borderRadiusRight":"30","borderRadiusBottom":"30","borderRadiusLeft":"30"} -->
-<div id="wd-c152d25a" class="wp-block-wd-section"><!-- wp:wd/container {"blockId":"5fc46ed8-7be7-4010-93c3-0648215aef99","textAlign":"center","rowGap":"10"} -->
-<div id="wd-5fc46ed8" class="wp-block-wd-container wd-dir-col wd-align"><!-- wp:wd/sa-archive-title {"blockId":"4831a85c-db32-4153-8e38-ed9af9170ba1","textAlign":"center","tpFontSize":"44","tpFontSizeTablet":"36"} /-->
+											<content:encoded><![CDATA[<!-- wp:wd/section {"blockId":"c152d25a-14cb-4e14-85f2-4a385b1e29d7","blockVersion":"2","bgColorCode":"#eeeeee","paddingTop":"15","paddingBottom":"15","marginTop":"-55","marginBottom":"25","borderType":"solid","borderColorCode":"#f8f8f8","borderWidth":"15","borderWidthTop":"15","borderWidthRight":"15","borderWidthBottom":"15","borderWidthLeft":"15","borderWidthLock":true,"borderRadius":"30","borderRadiusTop":"30","borderRadiusRight":"30","borderRadiusBottom":"30","borderRadiusLeft":"30"} -->
+<div class="wp-block-wd-section wd-c152d25a"><!-- wp:wd/container {"blockId":"5fc46ed8-7be7-4010-93c3-0648215aef99","blockVersion":"2","textAlign":"center","rowGap":"10"} -->
+<div class="wp-block-wd-container wd-dir-col wd-align wd-5fc46ed8"><!-- wp:wd/sa-archive-title {"blockId":"4831a85c-db32-4153-8e38-ed9af9170ba1","blockVersion":"2","textAlign":"center","tpFontSize":"44","tpFontSizeTablet":"36"} /-->
 
-<!-- wp:wd/product-categories {"blockId":"ae673c2a-c490-4de8-8924-7d4f37c66b0f","type":"navigation","product_count":false,"navAlignment":"center","iconWidth":48,"iconHeight":48,"titleFontSize":"16","titleTextTransform":"capitalize","iconWidthTablet":40,"iconHeightTablet":40} /--></div>
+<!-- wp:wd/product-categories {"blockId":"ae673c2a-c490-4de8-8924-7d4f37c66b0f","blockVersion":"2","type":"navigation","product_count":false,"mobile_accordion":"yes","navAlignment":"center","iconWidth":48,"iconHeight":48,"titleFontSize":"16","titleTextTransform":"capitalize","iconWidthTablet":40,"iconHeightTablet":40} /--></div>
 <!-- /wp:wd/container --></div>
 <!-- /wp:wd/section -->
 
-<!-- wp:wd/container {"blockId":"bc314e78-0815-4341-9abd-50e3fd96bef5","direction":"row","justify":"space-between","align":"center","wrap":"wrap","colGap":"40","paddingBottom":"20","marginBottom":"35","borderType":"solid","borderColorVariable":"\u002d\u002dwd-primary-color","borderWidthBottom":"4"} -->
-<div id="wd-bc314e78" class="wp-block-wd-container wd-dir-row wd-align-is-lg-center"><!-- wp:wd/woo-breadcrumbs {"blockId":"90cdd70f-1d81-4b31-9af9-2fee955a319c","nowrapMd":false,"marginRight":"auto","marginUnits":"custom"} /-->
+<!-- wp:wd/container {"blockId":"bc314e78-0815-4341-9abd-50e3fd96bef5","blockVersion":"2","direction":"row","justify":"space-between","align":"center","wrap":"wrap","colGap":"40","paddingBottom":"20","marginBottom":"35","borderType":"solid","borderColorVariable":"\u002d\u002dwd-primary-color","borderWidthBottom":"4"} -->
+<div class="wp-block-wd-container wd-dir-row wd-align-is-lg-center wd-bc314e78"><!-- wp:wd/woo-breadcrumbs {"blockId":"90cdd70f-1d81-4b31-9af9-2fee955a319c","blockVersion":"2","nowrapMd":false,"marginRight":"auto","marginUnits":"custom"} /-->
 
-<!-- wp:wd/sa-per-page {"blockId":"1184c81a-35f0-4e68-9ae1-1fe26434ec34","hideOnTablet":true,"hideOnMobile":true} /-->
+<!-- wp:wd/sa-per-page {"blockId":"1184c81a-35f0-4e68-9ae1-1fe26434ec34","blockVersion":"2","hideOnTablet":true,"hideOnMobile":true} /-->
 
-<!-- wp:wd/sa-view {"blockId":"a279e6b6-e315-45eb-9f2e-2677ca7634de","products_columns_variations":"2,3,4,list","hideOnTablet":true,"hideOnMobile":true} /-->
+<!-- wp:wd/sa-view {"blockId":"a279e6b6-e315-45eb-9f2e-2677ca7634de","blockVersion":"2","products_columns_variations":"2,3,4,list","hideOnTablet":true,"hideOnMobile":true} /-->
 
-<!-- wp:wd/sa-filters-area-btn {"blockId":"a3190a1b-7a14-4c5e-9987-3a8bdf4d09a5"} /-->
+<!-- wp:wd/sa-filters-area-btn {"blockId":"a3190a1b-7a14-4c5e-9987-3a8bdf4d09a5","blockVersion":"2"} /-->
 
-<!-- wp:wd/sa-filters-area {"blockId":"0eaec688-7580-4ac9-aaee-60917ef0b08d","borderType":"solid","borderColorVariable":"\u002d\u002dwd-primary-color","borderWidthTop":"4","borderWidthLock":false,"displayWidth":"full-width"} /--></div>
+<!-- wp:wd/sa-filters-area {"blockId":"0eaec688-7580-4ac9-aaee-60917ef0b08d","blockVersion":"2","borderType":"solid","borderColorVariable":"\u002d\u002dwd-primary-color","borderWidthTop":"4","borderWidthLock":false,"displayWidth":"full-width"} /--></div>
 <!-- /wp:wd/container -->
 
-<!-- wp:wd/sa-active-filters {"blockId":"0b9f6fdb-6ddc-4f81-a917-864ba3542abf"} /-->
+<!-- wp:wd/sa-active-filters {"blockId":"0b9f6fdb-6ddc-4f81-a917-864ba3542abf","blockVersion":"2"} /-->
 
-<!-- wp:wd/woo-notices {"blockId":"5624a0a7-8d64-4ea2-94a6-d9ab1109c1af"} /-->
+<!-- wp:wd/woo-notices {"blockId":"5624a0a7-8d64-4ea2-94a6-d9ab1109c1af","blockVersion":"2"} /-->
 
-<!-- wp:wd/sa-archive-products {"blockId":"d6abfaf1-da03-4295-adfe-082c94264428","marginTopTablet":"0"} /-->]]></content:encoded>
+<!-- wp:wd/sa-archive-products {"blockId":"d6abfaf1-da03-4295-adfe-082c94264428","blockVersion":"2","marginTopTablet":"0"} /-->]]></content:encoded>
 															<wp:post_id>358</wp:post_id>
 					<wp:post_date><![CDATA[2025-05-22 14:16:11]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2025-05-22 14:16:11]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2025-06-03 10:47:52]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2025-06-03 10:47:52]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2026-02-13 13:19:07]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2026-02-13 13:19:07]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[product-archive-layout-t-shirts]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>

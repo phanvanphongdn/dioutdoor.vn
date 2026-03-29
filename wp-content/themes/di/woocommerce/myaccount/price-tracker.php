@@ -4,7 +4,7 @@
  *
  * @var array $data Data for render table.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -14,9 +14,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <div class="wd-pt-content">
 	<?php
-		if ( ! $data_count ) {
-			woodmart_enqueue_inline_style( 'woo-page-empty-page' );
-		}
+	if ( ! $data_count ) {
+		woodmart_enqueue_inline_style( 'woo-mod-empty-block' );
+	}
 	?>
 
 	<?php do_action( 'woodmart_before_price_tracker_table' ); ?>
@@ -75,9 +75,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 				$attributes    = array();
 
 				if ( 'variation' === $product->get_type() ) {
-					foreach ( $product->get_attributes() as $taxonomy => $value ) {
+					foreach ( $product->get_attributes() as $attr => $value ) {
 						$attributes[] = array(
-							'key'     => ucfirst( wc_attribute_label( $taxonomy ) ),
+							'key'     => ucfirst( wc_attribute_label( $attr ) ),
 							'value'   => ucfirst( $value ),
 							'display' => ucfirst( $value ),
 						);
@@ -116,23 +116,27 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<td class="product-desired-price" data-title="<?php esc_attr_e( 'Desired price', 'woodmart' ); ?>">
 							<?php if ( ! empty( $desired_price ) ) : ?>
 								<?php echo wp_kses_post( wc_price( $desired_price ) ); ?>
-							<?php else: ?>
+							<?php else : ?>
 								<span class="wd-cell-empty"></span>
 							<?php endif; ?>
 
 							<div class="wd-desired-price-opener wd-action-btn wd-style-icon">
-								<a href="#" aria-label="<?php esc_attr_e( 'Edit desired price', 'woodmart' ); ?>" title="<?php esc_attr_e( 'Edit desired price', 'woodmart' ); ?>"></a>
+								<a href="#" aria-label="<?php esc_attr_e( 'Edit desired price', 'woodmart' ); ?>" title="<?php esc_attr_e( 'Edit desired price', 'woodmart' ); ?>">
+									<span class="wd-action-icon"></span>
+								</a>
 							</div>
 
 							<div class="wd-desired-price-edit wd-hide" data-product-id="<?php echo esc_attr( $product_id ); ?>" data-variation-id="<?php echo esc_attr( $variation_id ); ?>">
 								<input type="number" name="wd-desired-price-change" min="0" max="<?php echo esc_attr( $product->get_regular_price() ); ?>" value="<?php echo esc_attr( $desired_price ); ?>" data-title="<?php esc_attr_e( 'Edit desired price', 'woodmart' ); ?>">
 
-								<a href="#" class="btn wd-desired-price-save">
+								<a href="#" class="btn btn-accent wd-desired-price-save">
 									<?php esc_html_e( 'Save', 'woodmart' ); ?>
 								</a>
 
 								<div class="wd-desired-price-cancel wd-action-btn wd-style-icon wd-cross-icon">
-									<a href="#" aria-label="<?php esc_attr_e( 'Cancel edit desired price', 'woodmart' ); ?>"></a>
+									<a href="#" aria-label="<?php esc_attr_e( 'Cancel edit desired price', 'woodmart' ); ?>">
+										<span class="wd-action-icon"></span>
+									</a>
 								</div>
 							</div>
 						</td>
@@ -148,19 +152,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<?php wc_get_template( 'loop/pagination.php', $paginate_args ); ?>
 	<?php else : ?>
-		<p class="wd-empty-pt wd-empty-page">
-			<?php esc_html_e( 'Price tracker is empty.', 'woodmart' ); ?>
-		</p>
+		<div class="wd-empty-block wd-empty-pt">
+			<h2 class="wd-empty-block-title">
+				<?php esc_html_e( 'Price tracker is empty.', 'woodmart' ); ?>
+			</h2>
 
-		<div class="wd-empty-page-text">
-			<?php echo wp_kses( __( 'Your price tracker is empty. Head over to the shop and start tracking items to stay updated on discounts.', 'woodmart' ), woodmart_get_allowed_html() ); ?>
-		</div>
+			<p class="wd-empty-block-text">
+				<?php echo wp_kses( __( 'Your price tracker is empty. Head over to the shop and start tracking items to stay updated on discounts.', 'woodmart' ), woodmart_get_allowed_html() ); ?>
+			</p>
 
-		<p class="return-to-shop">
-			<a class="button" href="<?php echo esc_url( apply_filters( 'woodmart_price_tracker_return_to_shop_url', wc_get_page_permalink( 'shop' ) ) ); ?>">
+			<a class="button btn btn-accent wd-empty-block-btn" href="<?php echo esc_url( apply_filters( 'woodmart_price_tracker_return_to_shop_url', wc_get_page_permalink( 'shop' ) ) ); ?>">
 				<?php esc_html_e( 'Return to shop', 'woodmart' ); ?>
 			</a>
-		</p>
+		</div>
 	<?php endif; ?>
 
 	<?php do_action( 'woodmart_after_price_tracker_table' ); ?>

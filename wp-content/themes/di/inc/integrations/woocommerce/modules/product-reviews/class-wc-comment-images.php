@@ -2,7 +2,7 @@
 /**
  * Comment images class.
  *
- * @package xts
+ * @package woodmart
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -16,7 +16,7 @@ use XTS\Admin\Modules\Options\Metaboxes;
  *
  * @since 1.0.0
  */
-class WC_Comment_Images {
+class WC_Comment_Images { // phpcs:ignore.
 	/**
 	 * The meta key of the attachment ID for comment meta.
 	 *
@@ -240,7 +240,7 @@ class WC_Comment_Images {
 	 *
 	 * @return int The comment ID.
 	 */
-	public function get_comment_ID() {
+	public function get_comment_ID() { // phpcs:ignore WordPress.NamingConventions.ValidFunctionName.MethodNameInvalid
 		$comment = get_comment();
 
 		if ( ! $comment ) {
@@ -266,7 +266,7 @@ class WC_Comment_Images {
 
 		ob_start();
 
-		echo woodmart_images_gallery_shortcode(
+		echo woodmart_images_gallery_shortcode( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			array(
 				'ids'              => $this->get_image_ids_meta(),
 				'columns'          => 5,
@@ -328,7 +328,7 @@ class WC_Comment_Images {
 
 		$image_ids = '';
 
-		if ( $_FILES ) {
+		if ( $_FILES ) { // phpcs:ignore WordPress.Security.NonceVerification.Missing
 			$files = $_FILES[ $field_name ]; // phpcs:ignore
 			foreach ( $files['name'] as $key => $value ) {
 				if ( $files['name'][ $key ] ) {
@@ -403,7 +403,7 @@ class WC_Comment_Images {
 		$field_name   = $this->get_upload_field_name();
 		$images_count = woodmart_get_opt( 'single_product_comment_images_count', '3' );
 
-		if ( ! isset( $_FILES[ $field_name ] ) ) {
+		if ( ! isset( $_FILES[ $field_name ] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Missing
 			return $comment_data;
 		}
 
@@ -477,11 +477,11 @@ class WC_Comment_Images {
 
 				<input id="wd-add-img-btn" name="<?php echo esc_attr( $name ); ?>[]" type="file" multiple <?php echo $required ? 'required' : ''; ?> />
 
-				<div class="wd-add-img-msg wd-hint wd-tooltip">
-					<div class="wd-add-img-msg-text">
+				<span class="wd-hint wd-tooltip">
+					<span class="wd-tooltip-content">
 						<?php printf( esc_html__( 'The maximum file size is %s and you can upload up to %s images.', 'woodmart' ), $max_upload_size, woodmart_get_opt( 'single_product_comment_images_count' ) ); // phpcs:ignore ?>
-					</div>
-				</div>
+					</span>
+				</span>
 
 				<div class="wd-add-img-count"></div>
 			</div>

@@ -2,7 +2,7 @@
 /**
  * Additional info table shortcode.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 use XTS\Modules\Layouts\Global_Data as Builder;
@@ -23,6 +23,8 @@ if ( ! function_exists( 'woodmart_shortcode_single_product_additional_info_table
 			'layout'           => 'list',
 			'attr_hide_name'   => 'no',
 			'attr_hide_image'  => 'no',
+			'hide_term_label'  => 'no',
+			'term_hide_image'  => 'no',
 			'style'            => 'bordered',
 			'css'              => '',
 			'include'          => array(),
@@ -34,7 +36,7 @@ if ( ! function_exists( 'woodmart_shortcode_single_product_additional_info_table
 			'title'            => '',
 
 			'icon_library'     => 'fontawesome',
-			'icon_fontawesome' => 'far fa-bell',
+			'icon_fontawesome' => 'fa fa-regular fa-bell',
 			'icon_openiconic'  => 'vc-oi vc-oi-dial',
 			'icon_typicons'    => 'typcn typcn-adjust-brightness',
 			'icon_entypo'      => 'entypo-icon entypo-icon-note',
@@ -79,8 +81,6 @@ if ( ! function_exists( 'woodmart_shortcode_single_product_additional_info_table
 
 		$wrapper_classes .= ' wd-layout-' . $settings['layout'];
 		$wrapper_classes .= ' wd-style-' . $settings['style'];
-		$wrapper_classes .= 'yes' === $settings['attr_hide_name'] ? ' wd-hide-name' : '';
-		$wrapper_classes .= 'yes' === $settings['attr_hide_image'] ? ' wd-hide-image' : '';
 
 		if ( $settings['include'] ) {
 			$settings['include'] = explode( ', ', $settings['include'] );
@@ -128,9 +128,31 @@ if ( ! function_exists( 'woodmart_shortcode_single_product_additional_info_table
 			Builder::get_instance()->set_data( 'wd_product_attributes_exclude', $settings['exclude'] );
 		}
 
-		?>
-		<div class="wd-single-attrs wd-wpb<?php echo esc_attr( $wrapper_classes ); ?>"><?php echo $heading_output ? $heading_output : ''; //phpcs:ignore ?><?php do_action( 'woocommerce_product_additional_information', $product ); // Must be in one line. ?></div>
-		<?php
+		Builder::get_instance()->set_data(
+			'wd_additional_info_table_args',
+			array(
+				// Attributes.
+				'attr_image' => isset( $settings['attr_hide_image'] ) && 'yes' !== $settings['attr_hide_image'],
+				'attr_name'  => isset( $settings['attr_hide_name'] ) && 'yes' !== $settings['attr_hide_name'],
+				// Terms.
+				'term_label' => isset( $settings['hide_term_label'] ) && 'yes' !== $settings['hide_term_label'],
+				'term_image' => isset( $settings['term_hide_image'] ) && 'yes' !== $settings['term_hide_image'],
+			)
+		);
+
+		ob_start();
+
+		do_action( 'woocommerce_product_additional_information', $product ); // Must be in one line.
+
+		$content = ob_get_clean();
+
+		if ( trim( $content ) ) {
+			woodmart_enqueue_inline_style( 'woo-mod-shop-attributes-builder' );
+
+			echo '<div class="wd-single-attrs wd-wpb' . esc_attr( $wrapper_classes ) . '">' . ( $heading_output ? $heading_output : '' ) . wp_kses_post( $content ) . '</div>';  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		}
+
+		Builder::get_instance()->set_data( 'wd_additional_info_table_args', array() );
 
 		Main::restore_preview();
 

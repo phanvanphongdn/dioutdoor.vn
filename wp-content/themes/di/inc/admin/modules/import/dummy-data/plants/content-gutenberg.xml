@@ -16,7 +16,7 @@
 	<!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 	<!--    contained in this file into your site. -->
 
-	<!-- generator="WordPress/6.5.5" created="2025-01-20 15:21" -->
+	<!-- generator="WordPress/6.7.4" created="2026-02-25 15:18" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -29,29 +29,21 @@
 	<title>Plants gutenberg</title>
 	<link>https://dummy.xtemos.com/woodmart2/plants-gutenberg</link>
 	<description></description>
-	<pubDate>Mon, 20 Jan 2025 15:21:56 +0000</pubDate>
+	<pubDate>Wed, 25 Feb 2026 15:18:18 +0000</pubDate>
 	<language>en-US</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
 	<wp:base_site_url>https://dummy.xtemos.com/woodmart2/</wp:base_site_url>
 	<wp:base_blog_url>https://dummy.xtemos.com/woodmart2/plants-gutenberg</wp:base_blog_url>
 
-		<wp:author><wp:author_id>491</wp:author_id><wp:author_login><![CDATA[Ethan Smith]]></wp:author_login><wp:author_email><![CDATA[ethan_smith@asda.as]]></wp:author_email><wp:author_display_name><![CDATA[Ethan Smith]]></wp:author_display_name><wp:author_first_name><![CDATA[Ethan]]></wp:author_first_name><wp:author_last_name><![CDATA[Smith]]></wp:author_last_name></wp:author>
-	<wp:author><wp:author_id>2</wp:author_id><wp:author_login><![CDATA[zakhar]]></wp:author_login><wp:author_email><![CDATA[zak@asda.as]]></wp:author_email><wp:author_display_name><![CDATA[Mr. Mackay]]></wp:author_display_name><wp:author_first_name><![CDATA[sds]]></wp:author_first_name><wp:author_last_name><![CDATA[scssc]]></wp:author_last_name></wp:author>
-
-					<wp:term>
-			<wp:term_id>0</wp:term_id>
-			<wp:term_taxonomy><![CDATA[]]></wp:term_taxonomy>
-			<wp:term_slug><![CDATA[]]></wp:term_slug>
-			<wp:term_parent><![CDATA[]]></wp:term_parent>
-					</wp:term>
-		
-	<generator>https://wordpress.org/?v=6.5.5</generator>
+	
+							
+	<generator>https://wordpress.org/?v=6.7.4</generator>
 
 					<item>
 					<title><![CDATA[Footer Plants]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/plants-gutenberg/?cms_block=footer-plants</link>
 					<pubDate>Tue, 30 Jul 2024 11:54:49 +0000</pubDate>
-					<dc:creator><![CDATA[Ethan Smith]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/plants-gutenberg/?post_type=cms_block&#038;p=227</guid>
 											<content:encoded><![CDATA[<!-- wp:wd/row {"blockId":"e0323257-263a-4160-8267-d73583d389dd","columnsGap":40,"paddingTop":"80","paddingBottom":"60","marginBottom":"30","borderType":"solid","borderColorVariable":"\u002d\u002dwd-primary-color","borderWidthTop":"2","borderWidthBottom":"2","paddingTopTablet":"60","paddingTopMobile":"40","paddingBottomTablet":"40","paddingBottomMobile":"30"} -->
 <div id="wd-e0323257" class="wp-block-wd-row"><!-- wp:wd/column {"blockId":"e7ca3273-b9db-498e-a600-8cfbdc43fc20","adjacentCount":2,"colWidth":43,"paddingRight":"15","borderType":"solid","borderColorVariable":"\u002d\u002dwd-primary-color","borderWidthRight":"2","borderWidthLock":false,"borderWidthRightMobile":"0"} -->
@@ -165,7 +157,7 @@
 <!-- wp:wd/toggle-content {"blockId":"b31b61b8-4afd-4486-bce5-55e982c78532"} -->
 <div id="wd-b31b61b8" class="wp-block-wd-toggle-content wd-toggle-content"><div class="wd-toggle-content-inner"><!-- wp:wd/list {"blockId":"f0803a47-857e-4bdc-9f5a-df455b14501a","iconType":"without"} -->
 <ul id="wd-f0803a47" class="wp-block-wd-list wd-list wd-type-without"><!-- wp:wd/list-item {"blockId":"41017fa4-f4fb-4df8-a4c7-1c34c508fba5","iconType":"without","svg":"","image":""} -->
-<li id="wd-41017fa4" class="wp-block-wd-list-item"><span class="wd-list-content"><a href="#">wood.plants@mail.com</a></span></li>
+<li id="wd-41017fa4" class="wp-block-wd-list-item"><span class="wd-list-content"><a href="#">wood.plants@gmail.com</a></span></li>
 <!-- /wp:wd/list-item -->
 
 <!-- wp:wd/list-item {"blockId":"d5112b44-0ffe-4531-adba-80727c82bedc","iconType":"without","svg":"","image":""} -->
@@ -208,7 +200,7 @@
 					<title><![CDATA[ClashDisplay-Bold]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/plants-gutenberg/clashdisplay-bold/</link>
 					<pubDate>Tue, 30 Jul 2024 12:28:18 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/plants-gutenberg/wp-content/uploads/sites/29/2024/07/ClashDisplay-Bold.woff</guid>
 															<wp:post_id>254</wp:post_id>
 					<wp:post_date><![CDATA[2024-07-30 12:28:18]]></wp:post_date>
@@ -231,7 +223,7 @@
 					<title><![CDATA[ClashDisplay-Bold]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/plants-gutenberg/clashdisplay-bold-2/</link>
 					<pubDate>Tue, 30 Jul 2024 12:28:18 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/plants-gutenberg/wp-content/uploads/sites/29/2024/07/ClashDisplay-Bold.woff2</guid>
 															<wp:post_id>255</wp:post_id>
 					<wp:post_date><![CDATA[2024-07-30 12:28:18]]></wp:post_date>
@@ -254,7 +246,7 @@
 					<title><![CDATA[ClashDisplay-Medium]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/plants-gutenberg/clashdisplay-medium/</link>
 					<pubDate>Tue, 30 Jul 2024 12:28:19 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/plants-gutenberg/wp-content/uploads/sites/29/2024/07/ClashDisplay-Medium.woff</guid>
 															<wp:post_id>256</wp:post_id>
 					<wp:post_date><![CDATA[2024-07-30 12:28:19]]></wp:post_date>
@@ -277,7 +269,7 @@
 					<title><![CDATA[ClashDisplay-Medium]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/plants-gutenberg/clashdisplay-medium-2/</link>
 					<pubDate>Tue, 30 Jul 2024 12:28:19 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/plants-gutenberg/wp-content/uploads/sites/29/2024/07/ClashDisplay-Medium.woff2</guid>
 															<wp:post_id>257</wp:post_id>
 					<wp:post_date><![CDATA[2024-07-30 12:28:19]]></wp:post_date>
@@ -300,7 +292,7 @@
 					<title><![CDATA[Satoshi-Bold]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/plants-gutenberg/satoshi-bold/</link>
 					<pubDate>Tue, 30 Jul 2024 12:28:20 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/plants-gutenberg/wp-content/uploads/sites/29/2024/07/Satoshi-Bold.woff</guid>
 															<wp:post_id>258</wp:post_id>
 					<wp:post_date><![CDATA[2024-07-30 12:28:20]]></wp:post_date>
@@ -323,7 +315,7 @@
 					<title><![CDATA[Satoshi-Bold]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/plants-gutenberg/satoshi-bold-2/</link>
 					<pubDate>Tue, 30 Jul 2024 12:28:20 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/plants-gutenberg/wp-content/uploads/sites/29/2024/07/Satoshi-Bold.woff2</guid>
 															<wp:post_id>259</wp:post_id>
 					<wp:post_date><![CDATA[2024-07-30 12:28:20]]></wp:post_date>
@@ -346,7 +338,7 @@
 					<title><![CDATA[Satoshi-Medium]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/plants-gutenberg/satoshi-medium/</link>
 					<pubDate>Tue, 30 Jul 2024 12:28:21 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/plants-gutenberg/wp-content/uploads/sites/29/2024/07/Satoshi-Medium.woff</guid>
 															<wp:post_id>260</wp:post_id>
 					<wp:post_date><![CDATA[2024-07-30 12:28:21]]></wp:post_date>
@@ -369,7 +361,7 @@
 					<title><![CDATA[Satoshi-Medium]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/plants-gutenberg/satoshi-medium-2/</link>
 					<pubDate>Tue, 30 Jul 2024 12:28:21 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/plants-gutenberg/wp-content/uploads/sites/29/2024/07/Satoshi-Medium.woff2</guid>
 															<wp:post_id>261</wp:post_id>
 					<wp:post_date><![CDATA[2024-07-30 12:28:21]]></wp:post_date>
@@ -392,7 +384,7 @@
 					<title><![CDATA[woodmart-plant-store-logo-1]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/plants-gutenberg/woodmart-plant-store-logo-1/</link>
 					<pubDate>Tue, 30 Jul 2024 13:49:28 +0000</pubDate>
-					<dc:creator><![CDATA[Ethan Smith]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/plants-gutenberg/wp-content/uploads/sites/29/2024/07/woodmart-plant-store-logo-1.svg</guid>
 															<wp:post_id>276</wp:post_id>
 					<wp:post_date><![CDATA[2024-07-30 13:49:28]]></wp:post_date>
@@ -415,7 +407,7 @@
 					<title><![CDATA[payments-1]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/plants-gutenberg/?attachment_id=278</link>
 					<pubDate>Tue, 30 Jul 2024 13:56:48 +0000</pubDate>
-					<dc:creator><![CDATA[Ethan Smith]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/plants-gutenberg/wp-content/uploads/sites/29/2024/07/payments-1.png</guid>
 															<wp:post_id>278</wp:post_id>
 					<wp:post_date><![CDATA[2024-07-30 13:56:48]]></wp:post_date>
@@ -438,7 +430,7 @@
 					<title><![CDATA[wd-furniture-dot-list]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/plants-gutenberg/?attachment_id=650</link>
 					<pubDate>Wed, 31 Jul 2024 14:17:34 +0000</pubDate>
-					<dc:creator><![CDATA[Ethan Smith]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/plants-gutenberg/wp-content/uploads/sites/29/2024/07/wd-furniture-dot-list.svg</guid>
 															<wp:post_id>650</wp:post_id>
 					<wp:post_date><![CDATA[2024-07-31 14:17:34]]></wp:post_date>
@@ -461,7 +453,7 @@
 					<title><![CDATA[Single product layout Plants]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/plants-gutenberg/woodmart_layout/single-product-layout-plants/</link>
 					<pubDate>Fri, 09 Aug 2024 13:47:42 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/plants-gutenberg/?post_type=woodmart_layout&#038;p=698</guid>
 											<content:encoded><![CDATA[<!-- wp:wd/container {"blockId":"4de1911e-82ac-4fcc-83bd-6717246c36c3","direction":"row","justify":"space-between","marginTop":"-20","marginBottom":"20"} -->
 <div id="wd-4de1911e" class="wp-block-wd-container wd-dir-row"><!-- wp:wd/woo-breadcrumbs {"blockId":"eb5030b2-6ea7-4c73-83cb-7947009b47fc","nowrapMd":true} /-->
@@ -560,7 +552,7 @@
 					<title><![CDATA[Product archive layout Plants]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/plants-gutenberg/woodmart_layout/product-archive-layout-plants/</link>
 					<pubDate>Fri, 09 Aug 2024 13:48:18 +0000</pubDate>
-					<dc:creator><![CDATA[Ethan Smith]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/plants-gutenberg/?post_type=woodmart_layout&#038;p=699</guid>
 											<content:encoded><![CDATA[<!-- wp:wd/container {"blockId":"2a0c9034-b342-426a-988d-b3ed5bb88ee9","direction":"row","justify":"space-between","align":"center","wrap":"wrap","colGap":"40","paddingBottom":"20","marginTop":"-20","marginBottom":"40","borderType":"solid","borderColorVariable":"\u002d\u002dwd-primary-color","borderWidthBottom":"2"} -->
 <div id="wd-2a0c9034" class="wp-block-wd-container wd-dir-row wd-align-is-lg-center"><!-- wp:wd/woo-breadcrumbs {"blockId":"092b9405-f54e-4df2-92c7-17d5b9417d96","nowrapMd":false,"marginRight":"auto","marginUnits":"custom"} /-->
@@ -603,7 +595,7 @@
 					<title><![CDATA[Cart layout Plants]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/plants-gutenberg/woodmart_layout/cart-layout-plants/</link>
 					<pubDate>Fri, 09 Aug 2024 13:48:49 +0000</pubDate>
-					<dc:creator><![CDATA[Ethan Smith]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/plants-gutenberg/?post_type=woodmart_layout&#038;p=700</guid>
 											<content:encoded><![CDATA[<!-- wp:wd/woo-checkout-steps {"blockId":"d23c0671-5c5c-4432-acc4-33747a2784bd","marginBottom":"60","marginBottomTablet":"50","marginBottomMobile":"40"} /-->
 
@@ -656,7 +648,7 @@
 					<title><![CDATA[Checkout layout form Plants]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/plants-gutenberg/woodmart_layout/checkout-layout-form-plants/</link>
 					<pubDate>Fri, 09 Aug 2024 13:49:08 +0000</pubDate>
-					<dc:creator><![CDATA[Ethan Smith]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/plants-gutenberg/?post_type=woodmart_layout&#038;p=701</guid>
 											<content:encoded><![CDATA[<!-- wp:wd/container {"blockId":"fa557e3b-b70a-4829-8001-0b3c13204b7a","marginBottom":"80","marginBottomTablet":"60","marginBottomMobile":"40"} -->
 <div id="wd-fa557e3b" class="wp-block-wd-container wd-dir-col"><!-- wp:wd/woo-notices {"blockId":"1268990f-4fb1-464a-99e4-010573ec1257"} /-->

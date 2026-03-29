@@ -24,7 +24,7 @@ class Main {
 			array(
 				'./class-manager',
 				'./class-delivery-date',
-				'./class-overal-delivery-date',
+				'./class-overall-delivery-date',
 				'./class-admin',
 				'./class-frontend',
 			)
@@ -41,7 +41,7 @@ class Main {
 			array(
 				'id'          => 'estimate_delivery_enabled',
 				'name'        => esc_html__( 'Enable "Estimate Delivery"', 'woodmart' ),
-				'hint'     => wp_kses( '<img data-src="' . WOODMART_TOOLTIP_URL . 'estimate-delivery-show-on-single-product.jpg" alt="">', true ),
+				'hint'        => wp_kses( '<img data-src="' . WOODMART_TOOLTIP_URL . 'estimate-delivery-show-on-single-product.jpg" alt="">', true ),
 				'description' => esc_html__( 'The option allows you to display the expected delivery date for orders. When this option is enabled, customers can see the estimated delivery dates.', 'woodmart' ),
 				'type'        => 'switcher',
 				'section'     => 'estimate_delivery_section',
@@ -162,6 +162,29 @@ class Main {
 				'on-text'     => esc_html__( 'On', 'woodmart' ),
 				'off-text'    => esc_html__( 'Off', 'woodmart' ),
 				'priority'    => 80,
+			)
+		);
+
+		Options::add_field(
+			array(
+				'id'          => 'estimate_delivery_display_format',
+				'name'        => esc_html__( 'Display format', 'woodmart' ),
+				'description' => esc_html__( 'Choose how to display delivery time: as specific dates or as number of days.', 'woodmart' ),
+				'group'       => esc_html__( 'Settings', 'woodmart' ),
+				'type'        => 'select',
+				'section'     => 'estimate_delivery_section',
+				'options'     => array(
+					'dates' => array(
+						'name'  => esc_html__( 'Specific dates', 'woodmart' ),
+						'value' => 'dates',
+					),
+					'days'  => array(
+						'name'  => esc_html__( 'Days count', 'woodmart' ),
+						'value' => 'days',
+					),
+				),
+				'default'     => 'dates',
+				'priority'    => 90,
 				'class'       => 'xts-col-6',
 			)
 		);
@@ -175,7 +198,14 @@ class Main {
 				'section'  => 'estimate_delivery_section',
 				'callback' => array( $this, 'get_date_format_options' ),
 				'default'  => 'default',
-				'priority' => 90,
+				'priority' => 100,
+				'requires' => array(
+					array(
+						'key'     => 'estimate_delivery_display_format',
+						'compare' => 'not_equals',
+						'value'   => array( 'days' ),
+					),
+				),
 				'class'    => 'xts-col-6',
 			)
 		);
@@ -191,8 +221,7 @@ class Main {
 				'default'     => false,
 				'on-text'     => esc_html__( 'Yes', 'woodmart' ),
 				'off-text'    => esc_html__( 'No', 'woodmart' ),
-				'priority'    => 100,
-				'class'       => 'xts-col-6',
+				'priority'    => 110,
 			)
 		);
 	}

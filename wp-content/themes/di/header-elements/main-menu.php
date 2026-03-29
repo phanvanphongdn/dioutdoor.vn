@@ -1,4 +1,10 @@
 <?php
+/**
+ * Header main menu element.
+ *
+ * @package woodmart
+ */
+
 use XTS\Modules\Mega_Menu_Walker;
 
 $extra_class = '';
@@ -7,7 +13,7 @@ $location    = 'main-menu';
 $classes     = 'text-' . $params['menu_align'];
 $icon_type   = $params['icon_type'];
 
-if ( $icon_type == 'custom' ) {
+if ( 'custom' === $icon_type ) {
 	$extra_class .= ' wd-tools-custom-icon';
 }
 
@@ -24,14 +30,23 @@ if ( ! empty( $params['icon_alignment'] ) && 'inherit' !== $params['icon_alignme
 	$menu_classes .= ' wd-icon-' . $params['icon_alignment'];
 }
 
+$items_bg_activated = ! empty( $params['items_bg_color'] ) || ! empty( $params['items_bg_color_hover'] ) || ! empty( $params['items_bg_color_active'] );
+
+if ( $items_bg_activated ) {
+	$menu_classes .= ' wd-add-pd';
+}
+
 if ( isset( $params['inline'] ) && $params['inline'] ) {
 	$classes     .= ' wd-inline';
 	$extra_class .= ' wd-inline';
 }
 
-if ( ! empty( $params['icon_design'] ) ) {
-	$classes     .= ' wd-design-' . $params['icon_design'];
+if ( 'text-only' !== $params['style'] && ! empty( $params['icon_design'] ) ) {
 	$extra_class .= ' wd-design-' . $params['icon_design'];
+}
+
+if ( 'text-only' === $params['style'] && ! empty( $params['text_design'] ) ) {
+	$extra_class .= ' wd-design-' . $params['text_design'] . '-text';
 }
 
 if ( '8' === $params['icon_design'] ) {
@@ -57,8 +72,31 @@ if ( isset( $id ) ) {
 	$classes     .= ' whb-' . $id;
 }
 
-$classes     .= woodmart_get_old_classes( ' navigation-style-' . $menu_style );
-$extra_class .= woodmart_get_old_classes( ' full-screen-burger-icon woodmart-burger-icon' );
+$show_tools_inner = false;
+
+if (
+	isset( $params['style'] ) &&
+	(
+		(
+			'text-only' === $params['style'] &&
+			isset( $params['text_design'] ) &&
+			in_array( $params['text_design'], array( '6', '7' ), true )
+		) ||
+		(
+			'text' === $params['style'] &&
+			isset( $params['icon_design'], $params['wrap_type'] ) &&
+			in_array( $params['icon_design'], array( '6', '7' ), true ) &&
+			'icon_and_text' === $params['wrap_type']
+		) ||
+		(
+			'text-only' !== $params['style'] &&
+			isset( $params['icon_design'] ) &&
+			'8' === $params['icon_design']
+		)
+	)
+) {
+	$show_tools_inner = true;
+}
 
 if ( 'bg' === $params['menu_style'] ) {
 	woodmart_enqueue_inline_style( 'bg-navigation' );
@@ -69,19 +107,23 @@ if ( $params['full_screen'] ) {
 	?>
 		<div class="wd-tools-element wd-header-fs-nav<?php echo esc_attr( $extra_class ); ?>">
 			<a href="#" rel="nofollow noopener">
-				<?php if ( '8' === $params['icon_design'] || ( isset( $params['wrap_type'], $params['style'], $params['icon_design'] ) && 'icon_and_text' === $params['wrap_type'] && 'text' === $params['style'] && in_array( $params['icon_design'], array( '6', '7' ), true ) ) ) : ?>
+				<?php if ( $show_tools_inner ) : ?>
 					<span class="wd-tools-inner">
 				<?php endif; ?>
 
-					<span class="wd-tools-icon<?php echo woodmart_get_old_classes( ' woodmart-burger' ); ?>">
-						<?php if ( $icon_type == 'custom' ) : ?>
-							<?php echo whb_get_custom_icon( $params['custom_icon'] ); ?>
-						<?php endif; ?>
-					</span>
+					<?php if ( 'text-only' !== $params['style'] ) : ?>
+						<span class="wd-tools-icon">
+							<?php if ( 'custom' === $icon_type ) : ?>
+								<?php echo whb_get_custom_icon( $params['custom_icon'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+							<?php endif; ?>
+						</span>
+					<?php endif; ?>
 
-					<span class="wd-tools-text"><?php esc_html_e( 'Menu', 'woodmart' ); ?></span>
+					<?php if ( 'icon' !== $params['style'] ) : ?>
+						<span class="wd-tools-text"><?php esc_html_e( 'Menu', 'woodmart' ); ?></span>
+					<?php endif; ?>
 
-				<?php if ( '8' === $params['icon_design'] || ( isset( $params['wrap_type'], $params['style'], $params['icon_design'] ) && 'icon_and_text' === $params['wrap_type'] && 'text' === $params['style'] && in_array( $params['icon_design'], array( '6', '7' ), true ) ) ) : ?>
+				<?php if ( $show_tools_inner ) : ?>
 					</span>
 				<?php endif; ?>
 			</a>
@@ -112,21 +154,22 @@ if ( $params['full_screen'] ) {
 		$menu_link = get_admin_url( null, 'nav-menus.php' );
 		?>
 			<div class="create-nav-msg">
-			<?php
-				printf(
-					wp_kses(
-						__( 'Create your first <a href="%s"><strong>navigation menu here</strong></a> and add it to the "Main menu" location.', 'woodmart' ),
-						array(
-							'a' => array(
-								'href' => array(),
-							),
-						)
-					),
-					$menu_link
-				);
-			?>
+				<?php
+					printf(
+						wp_kses(
+							/* translators: %s: URL to the admin navigation menus screen. */
+							__( 'Create your first <a href="%s"><strong>navigation menu here</strong></a> and add it to the "Main menu" location.', 'woodmart' ),
+							array(
+								'a' => array(
+									'href' => array(),
+								),
+							)
+						),
+						esc_url( $menu_link )
+					);
+				?>
 			</div>
-			<?php
+		<?php
 	}
 	?>
 </nav>

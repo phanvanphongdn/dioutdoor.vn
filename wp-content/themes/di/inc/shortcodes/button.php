@@ -1,17 +1,25 @@
-<?php if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
-	exit( 'No direct script access allowed' );}
-
+<?php
 /**
-* ------------------------------------------------------------------------------------------------
-* Buttons shortcode
-* ------------------------------------------------------------------------------------------------
-*/
+ * Shortcode for Button element.
+ *
+ * @package woodmart
+ */
+
+if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
+	exit( 'No direct script access allowed' );
+}
 
 if ( ! function_exists( 'woodmart_shortcode_button' ) ) {
+	/**
+	 * Button shortcode
+	 *
+	 * @param array $atts Shortcode attributes.
+	 * @param bool  $popup Is popup.
+	 */
 	function woodmart_shortcode_button( $atts, $popup = false ) {
 		$wrap_class = apply_filters( 'vc_shortcodes_css_class', '', '', $atts );
 
-		extract(
+		extract( // phpcs:ignore WordPress.PHP.DontExtract.extract_extract
 			shortcode_atts(
 				array(
 					'title'                         => 'GO',
@@ -86,7 +94,6 @@ if ( ! function_exists( 'woodmart_shortcode_button' ) ) {
 		$id = 'wd-' . $woodmart_css_id;
 
 		$wrap_class .= ' wd-button-wrapper';
-		$wrap_class .= woodmart_get_old_classes( ' woodmart-button-wrapper' );
 		$wrap_class .= woodmart_get_css_animation( $css_animation );
 
 		if ( $bg_color || $bg_color_hover ) {
@@ -110,7 +117,7 @@ if ( ! function_exists( 'woodmart_shortcode_button' ) ) {
 		$btn_class .= ' btn-shape-' . $shape;
 		$btn_class .= ' btn-size-' . $size;
 
-		if ( $full_width == 'yes' ) {
+		if ( 'yes' === $full_width ) {
 			$btn_class .= ' btn-full-width';
 		}
 
@@ -126,11 +133,11 @@ if ( ! function_exists( 'woodmart_shortcode_button' ) ) {
 		}
 
 		$wrap_class .= ' text-' . $align;
-		if ( $button_inline == 'yes' ) {
+		if ( 'yes' === $button_inline ) {
 			$wrap_class .= ' inline-element';
 		}
 
-		if ( $el_class != '' ) {
+		if ( '' !== $el_class ) {
 			$btn_class .= ' ' . $el_class;
 		}
 
@@ -160,7 +167,7 @@ if ( ! function_exists( 'woodmart_shortcode_button' ) ) {
 				$image_output = woodmart_otf_get_image_html( $image, $img_size );
 			}
 
-			$icon = '<span class="wd-btn-icon">' . $image_output .  '</span>';
+			$icon = '<span class="wd-btn-icon">' . $image_output . '</span>';
 		}
 
 		$attributes .= ' class="' . $btn_class . '"';
@@ -180,11 +187,23 @@ if ( ! function_exists( 'woodmart_shortcode_button' ) ) {
 			$bg_color_hover = 'rgba(' . $bg_color_hover['r'] . ', ' . $bg_color_hover['g'] . ', ' . $bg_color_hover['b'] . ',' . $bg_color_hover['a'] . ')';
 		}
 
-		if ( ! empty( $generate_css ) && ( $bg_color && ! woodmart_is_css_encode( $bg_color ) || $bg_color_hover && ! woodmart_is_css_encode( $bg_color_hover ) ) ) {
+		if (
+			! empty( $generate_css ) &&
+			(
+				(
+					$bg_color &&
+					! woodmart_is_css_encode( $bg_color )
+				) ||
+				(
+					$bg_color_hover &&
+					! woodmart_is_css_encode( $bg_color_hover )
+				)
+			)
+		) {
 			$css = '';
-			// Custom Color
+			// Custom Color.
 			$css .= '#' . $id . ' a {';
-			if ( $style == 'bordered' || $style == 'link' ) {
+			if ( 'bordered' === $style || 'link' === $style ) {
 				$css .= 'border-color:' . $bg_color . ';';
 			} else {
 				$css .= 'background-color:' . $bg_color . ';';
@@ -192,10 +211,10 @@ if ( ! function_exists( 'woodmart_shortcode_button' ) ) {
 			$css .= '}';
 
 			$css .= '#' . $id . ' a:hover {';
-			if ( $style == 'bordered' ) {
+			if ( 'bordered' === $style ) {
 				$css .= 'border-color:' . $bg_color_hover . ';';
 				$css .= 'background-color:' . $bg_color_hover . ';';
-			} elseif ( $style == 'link' ) {
+			} elseif ( 'link' === $style ) {
 				$css .= 'border-color:' . $bg_color_hover . ';';
 			} else {
 				$css .= 'background-color:' . $bg_color_hover . ';';
@@ -208,6 +227,5 @@ if ( ! function_exists( 'woodmart_shortcode_button' ) ) {
 		$output .= '</div>';
 
 		return $output;
-
 	}
 }

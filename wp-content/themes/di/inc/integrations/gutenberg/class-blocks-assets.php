@@ -2,7 +2,7 @@
 /**
  * Gutenberg Blocks Assets class.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Gutenberg;
@@ -12,7 +12,7 @@ use XTS\Singleton;
 /**
  * Blocks Assets module.
  *
- * @package Woodmart
+ * @package woodmart
  */
 class Blocks_Assets extends Singleton {
 
@@ -45,7 +45,7 @@ class Blocks_Assets extends Singleton {
 		}
 
 		if ( ! empty( $post->post_content ) && has_blocks( $post->post_content ) ) {
-			$blocks = xts_parse_blocks_from_content( $post->post_content );
+			$blocks = woodmart_parse_blocks_from_content( $post->post_content );
 
 			if ( ! is_array( $blocks ) || empty( $blocks ) ) {
 				return;
@@ -264,7 +264,7 @@ class Blocks_Assets extends Singleton {
 			$assets['styles'][] = 'mod-transform';
 		}
 
-		if ( ! empty( $attrs['overlay'] ) || ! empty( $attrs['bgType'] ) && 'video' === $attrs['bgType'] && ( ! empty( $attrs['bgExternalVideo'] ) || ! empty( $attrs['bgVideo'] ) ) ) {
+		if ( ! empty( $attrs['overlay'] ) || ( ! empty( $attrs['bgType'] ) && 'video' === $attrs['bgType'] && ( ! empty( $attrs['bgExternalVideo'] ) || ! empty( $attrs['bgVideo'] ) ) ) ) {
 			$assets['styles'][] = 'block-background';
 		}
 
@@ -331,7 +331,6 @@ class Blocks_Assets extends Singleton {
 		wp_enqueue_script( 'wd-google-map-api', 'https://maps.google.com/maps/api/js?libraries=geometry&callback=woodmartThemeModule.googleMapsCallback&v=weekly&key=' . woodmart_get_opt( 'google_map_api_key' ), array( 'woodmart-theme' ), $version, true );
 		wp_enqueue_script( 'wd-maplace', WOODMART_THEME_DIR . '/js/libs/maplace' . $minified . '.js', array( 'wd-google-map-api' ), $version, true );
 	}
-
 }
 
 Blocks_Assets::get_instance();

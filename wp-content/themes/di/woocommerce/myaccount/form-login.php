@@ -19,18 +19,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-$tabs         = woodmart_get_opt( 'login_tabs' );
+$tabs         = woodmart_get_opt( 'login_tabs' ); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
 $reg_text     = woodmart_get_opt( 'reg_text' );
 $login_text   = woodmart_get_opt( 'login_text' );
 $account_link = get_permalink( get_option( 'woocommerce_myaccount_page_id' ) );
 
-$class  = 'wd-registration-page';
-$class .= woodmart_get_old_classes( ' woodmart-registration-page' );
+$class = 'wd-registration-page';
 
 if ( $tabs && get_option( 'woocommerce_enable_myaccount_registration' ) === 'yes' ) {
 	woodmart_enqueue_js_script( 'login-tabs' );
 	$class .= ' wd-register-tabs';
-	$class .= woodmart_get_old_classes( ' woodmart-register-tabs' );
 }
 
 if ( get_option( 'woocommerce_enable_myaccount_registration' ) !== 'yes' ) {
@@ -41,7 +39,7 @@ if ( $login_text && $reg_text ) {
 	$class .= ' with-login-reg-info';
 }
 
-if ( isset( $_GET['action'] ) && 'register' === $_GET['action'] && $tabs ) {
+if ( isset( $_GET['action'] ) && 'register' === $_GET['action'] && $tabs ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 	$class .= ' active-register';
 }
 
@@ -84,16 +82,16 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 	<?php if ( $tabs ) : ?>
 		<div class="wd-col col-register-text">
 
-			<p class="title wd-login-divider <?php echo woodmart_get_old_classes( ' wood-login-divider' ); ?>"><span><?php esc_html_e( 'Or', 'woodmart' ); ?></span></p>
+			<p class="title wd-login-divider"><span><?php esc_html_e( 'Or', 'woodmart' ); ?></span></p>
 
 			<?php
 				$reg_title   = woodmart_get_opt( 'reg_title' ) ? woodmart_get_opt( 'reg_title' ) : esc_html__( 'Register', 'woocommerce' );
 				$login_title = woodmart_get_opt( 'login_title' ) ? woodmart_get_opt( 'login_title' ) : esc_html__( 'Login', 'woocommerce' );
 
-				$title = $reg_title;
+				$title = $reg_title; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
 
-			if ( isset( $_GET['action'] ) && 'register' === $_GET['action'] ) {
-				$title = $login_title;
+			if ( isset( $_GET['action'] ) && 'register' === $_GET['action'] ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+				$title = $login_title; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
 			}
 			?>
 
@@ -112,12 +110,12 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 			<?php
 				$button_text = esc_html__( 'Register', 'woocommerce' );
 
-			if ( isset( $_GET['action'] ) && 'register' === $_GET['action'] ) {
+			if ( isset( $_GET['action'] ) && 'register' === $_GET['action'] ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 				$button_text = esc_html__( 'Login', 'woocommerce' );
 			}
 			?>
 
-			<a href="#" rel="nofollow noopener" class="btn wd-switch-to-register" data-login="<?php esc_html_e( 'Login', 'woocommerce' ); ?>" data-login-title="<?php echo esc_attr( $login_title ); ?>" data-reg-title="<?php echo esc_attr( $reg_title ); ?>" data-register="<?php esc_html_e( 'Register', 'woocommerce' ); ?>"><?php echo esc_html( $button_text ); ?></a>
+			<a href="#" rel="nofollow noopener" class="btn btn-default wd-switch-to-register" data-login="<?php esc_html_e( 'Login', 'woocommerce' ); ?>" data-login-title="<?php echo esc_attr( $login_title ); ?>" data-reg-title="<?php echo esc_attr( $reg_title ); ?>" data-register="<?php esc_html_e( 'Register', 'woocommerce' ); ?>"><?php echo esc_html( $button_text ); ?></a>
 
 		</div>
 	<?php endif ?>

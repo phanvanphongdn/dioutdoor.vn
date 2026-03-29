@@ -1,4 +1,10 @@
 <?php
+/**
+ * The template for displaying content in slider layout
+ *
+ * @package woodmart
+ */
+
 $woodmart_loop         = woodmart_loop_prop( 'woodmart_loop' );
 $blog_style            = woodmart_get_opt( 'blog_style', 'shadow' );
 $blog_design           = woodmart_loop_prop( 'blog_design' );
@@ -72,20 +78,22 @@ $carosel_attrs = array(
 					woodmart_enqueue_inline_style( 'swiper' );
 					?>
 					<div class="wd-carousel-inner<?php echo esc_attr( $gallery_inner_classes ); ?>">
-						<div class="wd-carousel wd-grid"<?php echo woodmart_get_carousel_attributes( $carosel_attrs ); // phpcs:ignotr ?>>
+						<div class="wd-carousel wd-grid"<?php echo woodmart_get_carousel_attributes( $carosel_attrs ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 							<div class="wd-carousel-wrap">
 								<?php
 								foreach ( $gallery['images_id'] as $image_id ) {
 									?>
 									<div class="wd-carousel-item">
-										<?php echo woodmart_otf_get_image_html(
+										<?php
+										echo woodmart_otf_get_image_html( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 											$image_id,
 											apply_filters( 'woodmart_gallery_post_format_size', woodmart_get_opt( 'blog_image_size', 'large' ) ),
 											array(
 												'width'  => woodmart_get_opt( 'blog_image_custom_width' ),
 												'height' => woodmart_get_opt( 'blog_image_custom_height' ),
 											)
-										); ?>
+										);
+										?>
 									</div>
 									<?php
 								}
@@ -96,7 +104,7 @@ $carosel_attrs = array(
 					</div>
 				<?php else : ?>
 					<div class="wd-post-img post-img-wrapp">
-						<?php echo woodmart_get_post_thumbnail( woodmart_get_opt('blog_image_size', 'large' ) ); ?>
+						<?php echo woodmart_get_post_thumbnail( woodmart_get_opt( 'blog_image_size', 'large' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 					</div>
 					<?php /* translators: %s: Post title */ ?>
 					<a class="wd-fill" tabindex="-1" href="<?php echo esc_url( get_permalink() ); ?>" aria-label="<?php echo esc_attr( sprintf( __( 'Link on post %s', 'woodmart' ), esc_attr( get_the_title() ) ) ); ?>"></a>
@@ -136,7 +144,7 @@ $carosel_attrs = array(
 						<?php woodmart_post_modified_date(); ?>
 					</div>
 
-					<?php if ( woodmart_is_social_link_enable( 'share' ) ) : ?>
+					<?php if ( woodmart_is_social_link_enabled( 'share' ) ) : ?>
 						<div tabindex="0" class="wd-post-share wd-tltp">
 							<div class="tooltip top">
 								<div class="tooltip-inner">
@@ -165,7 +173,7 @@ $carosel_attrs = array(
 			<?php endif; ?>
 
 			<?php if ( $has_excerpt && $hide_condition ) : ?>
-				<div class="wd-post-excerpt entry-content<?php echo woodmart_get_old_classes( ' woodmart-entry-content' ); // phpcs:ignore. ?>">
+				<div class="wd-post-excerpt entry-content">
 					<?php echo $blog_excerpt; //phpcs:ignore. ?>
 				</div>
 			<?php endif; ?>

@@ -11,7 +11,21 @@ if ( in_array( $params['display'], array( 'form', 'dropdown' ), true ) && ! empt
 	woodmart_enqueue_js_script( 'menu-overlay' );
 }
 
-if ( in_array( $params['display'], array( 'form', 'full-screen-2' ), true ) ) {
+if (
+	'form' === $params['display'] ||
+	(
+		'full-screen' === $params['display'] &&
+		! empty( $params['full_screen_opener'] ) &&
+		'form' === $params['full_screen_opener']
+	) ||
+	(
+		'full-screen-2' === $params['display'] &&
+		(
+			empty( $params['full_screen_opener'] ) ||
+			'form' === $params['full_screen_opener']
+		)
+	)
+) {
 	woodmart_enqueue_inline_style( 'header-search-form' );
 
 	woodmart_search_form( $params );
@@ -29,15 +43,19 @@ if ( '8' === $params['icon_design'] ) {
 			<span class="wd-tools-inner">
 		<?php endif; ?>
 
-			<span class="wd-tools-icon<?php echo esc_attr( woodmart_get_old_classes( ' search-button-icon' ) ); ?>">
-				<?php if ( 'custom' === $params['icon_type'] ) : ?>
-					<?php echo whb_get_custom_icon( $params['custom_icon'] ); // phpcs:ignore. ?>
-				<?php endif; ?>
-			</span>
+			<?php if ( 'text-only' !== $params['style'] ) : ?>
+				<span class="wd-tools-icon">
+					<?php if ( 'custom' === $params['icon_type'] ) : ?>
+						<?php echo whb_get_custom_icon( $params['custom_icon'] ); // phpcs:ignore. ?>
+					<?php endif; ?>
+				</span>
+			<?php endif; ?>
 
-			<span class="wd-tools-text">
-				<?php echo esc_html__( 'Search', 'woodmart' ); ?>
-			</span>
+			<?php if ( 'icon' !== $params['style'] ) : ?>
+				<span class="wd-tools-text">
+					<?php echo esc_html__( 'Search', 'woodmart' ); ?>
+				</span>
+			<?php endif; ?>
 
 		<?php if ( $params['icon_wrapper'] ) : ?>
 			</span>

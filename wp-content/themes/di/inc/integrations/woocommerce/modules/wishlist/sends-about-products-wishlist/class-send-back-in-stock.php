@@ -2,7 +2,7 @@
 /**
  * Send about products wishlists.
  *
- * @package XTS
+ * @package woodmart
  */
 
 namespace XTS\WC_Wishlist;

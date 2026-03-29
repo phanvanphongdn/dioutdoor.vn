@@ -2,7 +2,7 @@
 /**
  * Condition template.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 ?>
@@ -53,7 +53,7 @@
 			<option value="filtered_product_by_term">
 				<?php esc_html_e( 'Filtered by term', 'woodmart' ); ?>
 			</option>
-			<option value="filtered_product_term_any">
+			<option value="filtered_product_term_any" data-query-input="none">
 				<?php esc_html_e( 'Filtered by any attribute', 'woodmart' ); ?>
 			</option>
 			<option value="filtered_product_stock_status">
@@ -90,6 +90,18 @@
 			</option>
 		</select>
 
+		<select class="xts-popup-condition-type" name="wd_layout_condition_type" data-type="cart" aria-label="<?php esc_attr_e( 'Condition type', 'woodmart' ); ?>">
+			<option value="cart">
+				<?php esc_html_e( 'Cart page', 'woodmart' ); ?>
+			</option>
+		</select>
+
+		<select class="xts-popup-condition-type" name="wd_layout_condition_type" data-type="empty_cart" aria-label="<?php esc_attr_e( 'Condition type', 'woodmart' ); ?>">
+			<option value="empty_cart">
+				<?php esc_html_e( 'Empty cart page', 'woodmart' ); ?>
+			</option>
+		</select>
+
 		<select class="xts-popup-condition-type" name="wd_layout_condition_type" data-type="checkout_form" aria-label="<?php esc_attr_e( 'Condition type', 'woodmart' ); ?>">
 			<option value="checkout_form">
 				<?php esc_html_e( 'Checkout page form', 'woodmart' ); ?>
@@ -102,18 +114,78 @@
 			</option>
 		</select>
 
-		<select class="xts-popup-condition-type" name="wd_layout_condition_type" data-type="cart" aria-label="<?php esc_attr_e( 'Condition type', 'woodmart' ); ?>">
-			<option value="cart">
-				<?php esc_html_e( 'Cart page', 'woodmart' ); ?>
+		<select class="xts-popup-condition-type" name="wd_layout_condition_type" data-type="thank_you_page" aria-label="<?php esc_attr_e( 'Condition type', 'woodmart' ); ?>">
+			<option value="all">
+				<?php esc_html_e( 'All orders', 'woodmart' ); ?>
 			</option>
+			<optgroup label="<?php esc_attr_e( 'Products in order', 'woodmart' ); ?>">
+				<option value="products">
+					<?php esc_html_e( 'Product', 'woodmart' ); ?>
+				</option>
+				<option value="product_cat">
+					<?php esc_html_e( 'Product category', 'woodmart' ); ?>
+				</option>
+				<option value="product_cat_children">
+					<?php esc_html_e( 'Child categories', 'woodmart' ); ?>
+				</option>
+				<option value="product_tag">
+					<?php esc_html_e( 'Product tag', 'woodmart' ); ?>
+				</option>
+
+				<?php if ( taxonomy_exists( 'product_brand' ) ) : ?>
+					<option value="product_brand">
+						<?php esc_html_e( 'Product brand', 'woodmart' ); ?>
+					</option>
+				<?php endif; ?>
+
+				<option value="product_attr_term">
+					<?php esc_html_e( 'Product attribute', 'woodmart' ); ?>
+				</option>
+				<option value="product_type">
+					<?php esc_html_e( 'Product type', 'woodmart' ); ?>
+				</option>
+				<option value="product_shipping_class">
+					<?php esc_html_e( 'Shipping class', 'woodmart' ); ?>
+				</option>
+			</optgroup>
+
+			<optgroup label="<?php esc_attr_e( 'Order', 'woodmart' ); ?>">
+				<option value="order_payment_gateway">
+					<?php esc_html_e( 'Payment gateway', 'woodmart' ); ?>
+				</option>
+				<option value="order_shipping_method">
+					<?php esc_html_e( 'Shipping method', 'woodmart' ); ?>
+				</option>
+				<option value="order_shipping_country">
+					<?php esc_html_e( 'Shipping country', 'woodmart' ); ?>
+				</option>
+				<option value="order_billing_country">
+					<?php esc_html_e( 'Billing country', 'woodmart' ); ?>
+				</option>
+			</optgroup>
+
+			<optgroup label="<?php esc_attr_e( 'Totals', 'woodmart' ); ?>">
+				<option value="order_total" data-query-input="number">
+					<?php esc_html_e( 'Order total', 'woodmart' ); ?>
+				</option>
+				<option value="order_subtotal" data-query-input="number">
+					<?php esc_html_e( 'Subtotal', 'woodmart' ); ?>
+				</option>
+				<option value="order_subtotal_after_discount" data-query-input="number">
+					<?php esc_html_e( 'Subtotal after discount', 'woodmart' ); ?>
+				</option>
+			</optgroup>
+
+			<optgroup label="<?php esc_attr_e( 'User', 'woodmart' ); ?>">
+				<option value="user_logged_in" data-query-input="none">
+					<?php esc_html_e( 'Logged in', 'woodmart' ); ?>
+				</option>
+				<option value="user_logged_out" data-query-input="none">
+					<?php esc_html_e( 'Guest', 'woodmart' ); ?>
+				</option>
+			</optgroup>
 		</select>
 
-		<select class="xts-popup-condition-type" name="wd_layout_condition_type" data-type="empty_cart" aria-label="<?php esc_attr_e( 'Condition type', 'woodmart' ); ?>">
-			<option value="empty_cart">
-				<?php esc_html_e( 'Empty cart page', 'woodmart' ); ?>
-			</option>
-		</select>
-		
 		<select class="xts-popup-condition-type" name="wd_layout_condition_type" data-type="single_post" aria-label="<?php esc_attr_e( 'Condition type', 'woodmart' ); ?>">
 			<option value="all">
 				<?php esc_html_e( 'All posts', 'woodmart' ); ?>
@@ -198,6 +270,12 @@
 		</select>
 
 		<select class="xts-popup-condition-query xts-hidden" name="wd_layout_condition_query" placeholder="<?php echo esc_attr__( 'Start typing...', 'woodmart' ); ?>" aria-label="<?php esc_attr_e( 'Condition query', 'woodmart' ); ?>"></select>
+
+		<span class="xts-popup-condition-query-number-wrap xts-hidden">
+			<input type="number" class="xts-popup-condition-query-number" name="wd_layout_condition_query_number_min" min="0" step="0.01" placeholder="<?php esc_attr_e( 'min', 'woodmart' ); ?>" />
+
+			<input type="number" class="xts-popup-condition-query-number" name="wd_layout_condition_query_number_max" min="0" step="0.01" placeholder="<?php esc_attr_e( 'max', 'woodmart' ); ?>" />
+		</span>
 
 		<a href="javascript:void(0);" class="xts-popup-condition-remove xts-bordered-btn xts-color-warning xts-style-icon xts-i-close" title="<?php esc_attr_e( 'Remove condition', 'woodmart' ); ?>"></a>
 	</div>

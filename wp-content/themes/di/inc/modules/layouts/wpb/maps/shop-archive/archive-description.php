@@ -2,7 +2,7 @@
 /**
  * Archive description map.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

@@ -4,7 +4,7 @@
  *
  * @var array $data Data for render form.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 // Exit if accessed directly.
@@ -44,7 +44,7 @@ if ( ! empty( $data['email'] ) ) {
 
 		<?php do_action( 'woodmart_before_waitlist_submit' ); ?>
 
-		<a href="#" class="button wd-wtl-subscribe" <?php echo $submit_attr; // phpcs:ignore. ?>>
+		<a href="#" class="button btn btn-accent wd-wtl-subscribe" <?php echo $submit_attr; // phpcs:ignore. ?>>
 			<?php esc_attr_e( 'Add to waitlist', 'woodmart' ); ?>
 		</a>
 

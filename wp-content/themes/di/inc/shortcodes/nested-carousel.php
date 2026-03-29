@@ -1,6 +1,6 @@
 <?php
 /**
- * Nested carousel shortcode.
+ * Shortcode for Nested Carousel element.
  *
  * @package Elements
  */

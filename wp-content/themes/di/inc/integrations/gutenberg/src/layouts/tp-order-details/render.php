@@ -12,7 +12,7 @@ if ( ! function_exists( 'wd_gutenberg_tp_order_details' ) ) {
 		if ( $order || is_a( $order, 'WC_Order' ) ) {
 			$downloads = $order->get_downloadable_items();
 
-			echo '<div id="' . esc_attr( $el_id ) . '" class="wd-el-tp-order-details' . esc_attr( $wrapper_classes ) . '">';
+			echo '<div ' . ( $el_id ? 'id="' . esc_attr( $el_id ) . '" ' : '' ) . 'class="wd-el-tp-order-details' . esc_attr( $wrapper_classes ) . '">';
 
 			if ( $downloads ) {
 				wc_get_template(

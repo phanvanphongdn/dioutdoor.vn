@@ -1,4 +1,9 @@
 <?php
+/**
+ * Header builder frontend class file.
+ *
+ * @package woodmart
+ */
 
 namespace XTS\Modules\Header_Builder;
 
@@ -7,9 +12,7 @@ use XTS\Modules\Styles_Storage;
 use XTS\Singleton;
 
 /**
- * ------------------------------------------------------------------------------------------------
  * Frontend class that initialize current header for the page and generates its structure HTML + CSS
- * ------------------------------------------------------------------------------------------------
  */
 class Frontend extends Singleton {
 
@@ -25,21 +28,21 @@ class Frontend extends Singleton {
 	 *
 	 * @var array
 	 */
-	private $_element_classes = array();
+	private $element_classes = array();
 
 	/**
 	 * Structure of elements
 	 *
 	 * @var array
 	 */
-	private $_structure = array();
+	private $structure = array();
 
 	/**
 	 * Storage object classes.
 	 *
 	 * @var object
 	 */
-	private $_storage;
+	private $storage;
 
 	/**
 	 * Current header object.
@@ -67,8 +70,7 @@ class Frontend extends Singleton {
 	 * @return void
 	 */
 	public function get_elements() {
-		// Fix VC map issue. Load our elements when Visual Composer is loaded.
-		$this->_element_classes = $this->builder->elements->elements_classes;
+		$this->element_classes = $this->builder->elements->elements_classes;
 	}
 
 	/**
@@ -81,14 +83,14 @@ class Frontend extends Singleton {
 		$this->header = $this->builder->factory->get_header( $id );
 		$styles       = new Styles();
 
-		$this->_storage = new Styles_Storage( $this->get_current_id(), 'option', '', false );
+		$this->storage = new Styles_Storage( $this->get_current_id(), 'option', '', false );
 
-		if ( ! $this->_storage->is_css_exists() ) {
-			$this->_storage->write( $styles->get_all_css( $this->header->get_structure(), $this->header->get_options() ), true );
+		if ( ! $this->storage->is_css_exists() ) {
+			$this->storage->write( $styles->get_all_css( $this->header->get_structure(), $this->header->get_options() ), true );
 		}
 
 		if ( ! is_admin() && ! woodmart_is_header_frontend_editor() ) {
-			$this->_storage->print_styles();
+			$this->storage->print_styles();
 		}
 	}
 
@@ -98,9 +100,9 @@ class Frontend extends Singleton {
 	 * @return void
 	 */
 	public function styles() {
-		$id               = $this->get_current_id();
-		$this->header     = $this->builder->factory->get_header( $id );
-		$this->_structure = $this->header->get_structure();
+		$id              = $this->get_current_id();
+		$this->header    = $this->builder->factory->get_header( $id );
+		$this->structure = $this->header->get_structure();
 	}
 
 	/**
@@ -115,7 +117,7 @@ class Frontend extends Singleton {
 		$custom_post_header      = woodmart_get_opt( 'single_post_header' );
 		$custom_portfolio_header = woodmart_get_opt( 'single_portfolio_header' );
 		$custom_product_header   = woodmart_get_opt( 'single_product_header' );
-		$custom                  = get_post_meta( $page_id, '_woodmart_whb_header', true );
+		$custom                  = woodmart_get_post_meta_value( $page_id, '_woodmart_whb_header' );
 
 		if ( $default_header ) {
 			$id = $default_header;
@@ -123,7 +125,7 @@ class Frontend extends Singleton {
 
 			if ( ! empty( $custom_post_header ) && $custom_post_header !== 'none' && ( is_singular( 'post' ) || is_home() || is_category() || is_tag() || is_search() && !is_search('product') ) ) { //vucamp
 			$id = $custom_post_header;
-			}//vucamp
+		}
 
 		if ( ! empty( $custom_product_header ) && 'none' !== $custom_product_header && woodmart_woocommerce_installed() && is_product() ) {
 			$id = $custom_product_header;
@@ -137,11 +139,11 @@ class Frontend extends Singleton {
 			$id = $custom;
 		}
 
-		if ( current_user_can( 'administrator' ) && woodmart_is_header_frontend_editor() ) {
-			if ( isset( $_GET['whb-header-frontend'] ) ) {
-				$id = esc_attr( $_GET['whb-header-frontend'] );
-			} elseif ( isset( $_POST['id'] ) ) {
-				$id = esc_attr( $_POST['id'] );
+		if ( current_user_can( 'manage_options' ) && woodmart_is_header_frontend_editor() ) {
+			if ( isset( $_GET['whb-header-frontend'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+				$id = esc_attr( wp_unslash( $_GET['whb-header-frontend'] ) ); // phpcs:ignore WordPress.Security
+			} elseif ( isset( $_POST['id'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Missing
+				$id = esc_attr( $_POST['id'] ); // phpcs:ignore WordPress.Security
 			}
 		}
 
@@ -155,12 +157,12 @@ class Frontend extends Singleton {
 	 */
 	public function generate_header() {
 		if ( woodmart_is_header_frontend_editor() ) {
-			$this->_storage->inline_css();
+			$this->storage->inline_css();
 		}
 
 		add_filter( 'wp_min_priority_img_pixels', array( $this, 'get_max_value' ) );
 
-		$this->render_element( $this->_structure );
+		$this->render_element( $this->structure );
 
 		do_action( 'whb_after_header' );
 
@@ -198,13 +200,13 @@ class Frontend extends Singleton {
 								unset( $el['content'][ $key ] );
 							}
 
-							$desktop_col++;
+							++$desktop_col;
 						} elseif ( ! empty( $column['mobile_only'] ) ) {
 							if ( $mobile_col > 1 ) {
 								unset( $el['content'][ $key ] );
 							}
 
-							$mobile_col++;
+							++$mobile_col;
 						}
 					}
 				}
@@ -238,12 +240,12 @@ class Frontend extends Singleton {
 			$children = ob_get_clean();
 		}
 
-		if ( ! woodmart_is_header_frontend_editor() && ( $type == 'Row' && $this->is_empty_row( $el ) || $type == 'Column' && $this->is_empty_column( $el ) ) ) {
+		if ( ! woodmart_is_header_frontend_editor() && ( 'Row' == $type && $this->is_empty_row( $el ) || 'Column' == $type && $this->is_empty_column( $el ) ) ) { // phpcs:ignore.
 			$children = false;
 		}
 
-		if ( isset( $this->_element_classes[ $type ] ) ) {
-			$obj = $this->_element_classes[ $type ];
+		if ( isset( $this->element_classes[ $type ] ) ) {
+			$obj = $this->element_classes[ $type ];
 			$obj->render( $el, $children );
 		}
 	}

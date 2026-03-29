@@ -1,6 +1,19 @@
-<?php use XTS\Modules\Layouts\Main;
+<?php
+/**
+ * My account navigation render.
+ *
+ * @package woodmart
+ */
+
+use XTS\Modules\Layouts\Main;
 
 if ( ! function_exists( 'wd_gutenberg_my_account_navigation' ) ) {
+	/**
+	 * My account navigation render.
+	 *
+	 * @param array $block_attributes Block attributes.
+	 * @return string
+	 */
 	function wd_gutenberg_my_account_navigation( $block_attributes ) {
 		$wrapper_classes = wd_get_gutenberg_element_classes( $block_attributes );
 		$el_id           = wd_get_gutenberg_element_id( $block_attributes );
@@ -120,11 +133,15 @@ if ( ! function_exists( 'wd_gutenberg_my_account_navigation' ) ) {
 			$menu_classes .= ' wd-add-pd';
 		}
 
+		if ( ! empty( $block_attributes['disable_active_style'] ) ) {
+			$menu_classes .= ' wd-dis-act';
+		}
+
 		Main::setup_preview();
 
 		ob_start();
 		?>
-		<div id="<?php echo esc_attr( $el_id ); ?>" class="wd-el-my-acc-nav<?php echo esc_attr( $wrapper_classes ); ?>">
+		<div <?php echo $el_id ? 'id="' . esc_attr( $el_id ) . '" ' : ''; ?>class="wd-el-my-acc-nav<?php echo esc_attr( $wrapper_classes ); ?>">
 			<?php
 			/**
 			 * Display WooCommerce account navigation.

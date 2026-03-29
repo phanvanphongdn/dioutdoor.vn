@@ -2,7 +2,7 @@
 /**
  * My account navigation shortcode.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 use XTS\Modules\Layouts\Main;
@@ -46,6 +46,7 @@ if ( ! function_exists( 'woodmart_shortcode_my_account_nav' ) ) {
 			'nav_box_shadow_enable'        => 'no',
 			'nav_box_shadow_hover_enable'  => 'no',
 			'nav_box_shadow_active_enable' => 'no',
+			'disable_active_style'         => 'no',
 		);
 
 		$settings = wp_parse_args( $settings, $default_settings );
@@ -108,6 +109,10 @@ if ( ! function_exists( 'woodmart_shortcode_my_account_nav' ) ) {
 
 		if ( $nav_bg_activated || $nav_box_shadow_active || $nav_border_active ) {
 			$menu_classes .= ' wd-add-pd';
+		}
+
+		if ( 'yes' === $settings['disable_active_style'] ) {
+			$menu_classes .= ' wd-dis-act';
 		}
 
 		ob_start();

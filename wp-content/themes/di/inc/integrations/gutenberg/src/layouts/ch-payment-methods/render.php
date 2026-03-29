@@ -9,6 +9,7 @@ if ( ! function_exists( 'wd_gutenberg_checkout_payment_methods' ) ) {
 		}
 
 		$classes = wd_get_gutenberg_element_classes( $block_attributes );
+		$el_id   = wd_get_gutenberg_element_id( $block_attributes );
 
 		Main::setup_preview();
 
@@ -25,7 +26,7 @@ if ( ! function_exists( 'wd_gutenberg_checkout_payment_methods' ) ) {
 		wc()->cart->calculate_totals();
 
 		?>
-			<div id="<?php echo esc_attr( wd_get_gutenberg_element_id( $block_attributes ) ); ?>" class="wd-payment-methods<?php echo esc_attr( $classes ); ?>">
+			<div <?php echo $el_id ? 'id="' . esc_attr( $el_id ) . '" ' : ''; ?>class="wd-payment-methods<?php echo esc_attr( $classes ); ?>">
 				<?php woocommerce_checkout_payment(); ?>
 			</div>
 		<?php

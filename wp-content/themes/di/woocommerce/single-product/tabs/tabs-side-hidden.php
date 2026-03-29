@@ -76,7 +76,12 @@ woodmart_enqueue_js_script( 'single-product-tabs-side-hidden' );
 					</span>
 				<?php endif; ?>
 				<div class="close-side-hidden wd-action-btn wd-style-text wd-cross-icon">
-					<a href="#" rel="nofollow"><?php esc_html_e( 'Close', 'woodmart' ); ?></a>
+					<a href="#" rel="nofollow">
+						<span class="wd-action-icon"></span>
+						<span class="wd-action-text">
+							<?php esc_html_e( 'Close', 'woodmart' ); ?>
+						</span>
+					</a>
 				</div>
 			</div>
 			<div class="woocommerce-Tabs-panel panel entry-content wc-tab wd-scroll-content" id="tab-<?php echo esc_attr( $key ); ?>" role="tabpanel" aria-labelledby="tab-title-<?php echo esc_attr( $key ); ?>">

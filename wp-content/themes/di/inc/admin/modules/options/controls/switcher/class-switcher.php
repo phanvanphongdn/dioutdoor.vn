@@ -2,7 +2,7 @@
 /**
  * Switcher form control "on/off".
  *
- * @package xts
+ * @package woodmart
  */
 
 namespace XTS\Admin\Modules\Options\Controls;

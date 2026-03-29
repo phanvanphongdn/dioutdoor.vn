@@ -1,10 +1,20 @@
 <?php
+/**
+ * List element map.
+ *
+ * @package Woodmart
+ */
 
 if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
 	exit( 'No direct script access allowed' );
 }
 
 if ( ! function_exists( 'woodmart_get_vc_map_list' ) ) {
+	/**
+	 * Get map for list shortcode.
+	 *
+	 * @return array
+	 */
 	function woodmart_get_vc_map_list() {
 		$typography = woodmart_get_typography_map(
 			array(
@@ -59,9 +69,9 @@ if ( ! function_exists( 'woodmart_get_vc_map_list' ) ) {
 					'param_name'       => 'color_scheme',
 					'value'            => array(
 						esc_html__( 'Inherit', 'woodmart' ) => '',
-						esc_html__( 'Light', 'woodmart' ) => 'light',
-						esc_html__( 'Dark', 'woodmart' )  => 'dark',
-						esc_html__( 'Custom', 'woodmart' )  => 'custom',
+						esc_html__( 'Light', 'woodmart' )  => 'light',
+						esc_html__( 'Dark', 'woodmart' )   => 'dark',
+						esc_html__( 'Custom', 'woodmart' ) => 'custom',
 					),
 					'edit_field_class' => 'vc_col-sm-6 vc_column',
 				),
@@ -121,9 +131,9 @@ if ( ! function_exists( 'woodmart_get_vc_map_list' ) ) {
 					'heading'          => esc_html__( 'Align', 'woodmart' ),
 					'param_name'       => 'align',
 					'value'            => array(
-						esc_html__( 'Left', 'woodmart' )  => 'left',
+						esc_html__( 'Left', 'woodmart' )   => 'left',
 						esc_html__( 'Center', 'woodmart' ) => 'center',
-						esc_html__( 'Right', 'woodmart' ) => 'right',
+						esc_html__( 'Right', 'woodmart' )  => 'right',
 					),
 					'images_value'     => array(
 						'center' => WOODMART_ASSETS_IMAGES . '/settings/align/center.jpg',
@@ -317,7 +327,7 @@ if ( ! function_exists( 'woodmart_get_vc_map_list' ) ) {
 					'group'      => esc_html__( 'Icon', 'woodmart' ),
 					'heading'    => esc_html__( 'Icon', 'woodmart' ),
 					'param_name' => 'icon_fontawesome',
-					'value'      => 'far fa-bell',
+					'value'      => 'fa fa-regular fa-bell',
 					'settings'   => array(
 						'emptyIcon'    => false,
 						'iconsPerPage' => 50,

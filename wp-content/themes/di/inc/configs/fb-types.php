@@ -58,6 +58,24 @@ return array(
 					'layout-6' => array(
 						'title' => esc_html__( 'Simple6', 'woodmart' ),
 					),
+					'layout-7' => array(
+						'title' => esc_html__( 'Simple7', 'woodmart' ),
+					),
+					'layout-8' => array(
+						'title' => esc_html__( 'Simple8', 'woodmart' ),
+					),
+					'layout-9' => array(
+						'title' => esc_html__( 'Simple9', 'woodmart' ),
+					),
+					'layout-10' => array(
+						'title' => esc_html__( 'Simple10', 'woodmart' ),
+					),
+					'layout-11' => array(
+						'title' => esc_html__( 'Simple11', 'woodmart' ),
+					),
+					'layout-12' => array(
+						'title' => esc_html__( 'Simple12', 'woodmart' ),
+					),
 				),
 			),
 			'newsletter'   => array(
@@ -80,6 +98,24 @@ return array(
 					),
 					'layout-6' => array(
 						'title' => esc_html__( 'Simple6', 'woodmart' ),
+					),
+					'layout-7' => array(
+						'title' => esc_html__( 'Simple7', 'woodmart' ),
+					),
+					'layout-8' => array(
+						'title' => esc_html__( 'Simple8', 'woodmart' ),
+					),
+					'layout-9' => array(
+						'title' => esc_html__( 'Simple9', 'woodmart' ),
+					),
+					'layout-10' => array(
+						'title' => esc_html__( 'Simple10', 'woodmart' ),
+					),
+					'layout-11' => array(
+						'title' => esc_html__( 'Simple11', 'woodmart' ),
+					),
+					'layout-12' => array(
+						'title' => esc_html__( 'Simple12', 'woodmart' ),
 					),
 				),
 			),
@@ -124,6 +160,24 @@ return array(
 					'layout-6' => array(
 						'title' => esc_html__( 'Simple6', 'woodmart' ),
 					),
+					'layout-7' => array(
+						'title' => esc_html__( 'Simple7', 'woodmart' ),
+					),
+					'layout-8' => array(
+						'title' => esc_html__( 'Simple8', 'woodmart' ),
+					),
+					'layout-9' => array(
+						'title' => esc_html__( 'Simple9', 'woodmart' ),
+					),
+					'layout-10' => array(
+						'title' => esc_html__( 'Simple10', 'woodmart' ),
+					),
+					'layout-11' => array(
+						'title' => esc_html__( 'Simple11', 'woodmart' ),
+					),
+					'layout-12' => array(
+						'title' => esc_html__( 'Simple12', 'woodmart' ),
+					),
 				),
 			),
 			'information'  => array(
@@ -146,6 +200,24 @@ return array(
 					),
 					'layout-6' => array(
 						'title' => esc_html__( 'Simple6', 'woodmart' ),
+					),
+					'layout-7' => array(
+						'title' => esc_html__( 'Simple7', 'woodmart' ),
+					),
+					'layout-8' => array(
+						'title' => esc_html__( 'Simple8', 'woodmart' ),
+					),
+					'layout-9' => array(
+						'title' => esc_html__( 'Simple9', 'woodmart' ),
+					),
+					'layout-10' => array(
+						'title' => esc_html__( 'Simple10', 'woodmart' ),
+					),
+					'layout-11' => array(
+						'title' => esc_html__( 'Simple11', 'woodmart' ),
+					),
+					'layout-12' => array(
+						'title' => esc_html__( 'Simple12', 'woodmart' ),
 					),
 				),
 			),
@@ -215,6 +287,33 @@ return array(
 					),
 					'layout-6' => array(
 						'title' => esc_html__( 'Simple6', 'woodmart' ),
+					),
+					'layout-7' => array(
+						'title' => esc_html__( 'Simple7', 'woodmart' ),
+					),
+					'layout-8' => array(
+						'title' => esc_html__( 'Simple8', 'woodmart' ),
+					),
+					'layout-9' => array(
+						'title' => esc_html__( 'Simple9', 'woodmart' ),
+					),
+					'layout-10' => array(
+						'title' => esc_html__( 'Simple10', 'woodmart' ),
+					),
+					'layout-11' => array(
+						'title' => esc_html__( 'Simple11', 'woodmart' ),
+					),
+					'layout-12' => array(
+						'title' => esc_html__( 'Simple12', 'woodmart' ),
+					),
+					'layout-13' => array(
+						'title' => esc_html__( 'Simple13', 'woodmart' ),
+					),
+					'layout-14' => array(
+						'title' => esc_html__( 'Simple14', 'woodmart' ),
+					),
+					'layout-15' => array(
+						'title' => esc_html__( 'Simple15', 'woodmart' ),
 					),
 				),
 			),

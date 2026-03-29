@@ -1,8 +1,8 @@
 <?php
 /**
- * Sidebar shortcode.
+ * Shortcode for Sidebar element.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

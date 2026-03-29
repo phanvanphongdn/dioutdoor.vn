@@ -14,7 +14,7 @@
 	<div class="xts-wizard-img">
 		<img src="<?php echo esc_url( $this->get_image_url( 'key.svg' ) ); ?>" alt="license key">
 	</div>
-	<?php XTS\Registry::getInstance()->activation->form(); ?>
+	<?php XTS\Registry::get_instance()->activation->form(); ?>
 	<?php if ( woodmart_is_license_activated() ) : ?>
 		<?php $this->get_next_button( 'child-theme' ); ?>
 	<?php endif; ?>

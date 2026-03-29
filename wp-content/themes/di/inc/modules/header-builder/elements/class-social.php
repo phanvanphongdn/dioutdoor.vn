@@ -1,22 +1,33 @@
 <?php
+/**
+ * Social buttons element class file.
+ *
+ * @package woodmart
+ */
 
 namespace XTS\Modules\Header_Builder\Elements;
 
 use XTS\Modules\Header_Builder\Element;
 
 /**
- * ------------------------------------------------------------------------------------------------
- * Social buttons element
- * ------------------------------------------------------------------------------------------------
+ * Social buttons element.
  */
 class Social extends Element {
 
+	/**
+	 * Constructor.
+	 */
 	public function __construct() {
 		parent::__construct();
 
 		$this->template_name = 'social';
 	}
 
+	/**
+	 * Map element.
+	 *
+	 * @return void
+	 */
 	public function map() {
 		$this->args = array(
 			'type'            => 'social',
@@ -31,7 +42,7 @@ class Social extends Element {
 			'removable'       => true,
 			'addable'         => true,
 			'params'          => array(
-				'type'             => array(
+				'type'     => array(
 					'id'      => 'type',
 					'title'   => esc_html__( 'Buttons type', 'woodmart' ),
 					'tab'     => esc_html__( 'General', 'woodmart' ),
@@ -48,7 +59,7 @@ class Social extends Element {
 						),
 					),
 				),
-				'el_class'         => array(
+				'el_class' => array(
 					'id'          => 'el_class',
 					'title'       => esc_html__( 'Additional CSS class', 'woodmart' ),
 					'type'        => 'text',
@@ -56,7 +67,7 @@ class Social extends Element {
 					'value'       => '',
 					'description' => esc_html__( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'woodmart' ),
 				),
-				'style'            => array(
+				'style'    => array(
 					'id'      => 'style',
 					'title'   => esc_html__( 'Button style', 'woodmart' ),
 					'tab'     => esc_html__( 'Style', 'woodmart' ),
@@ -96,7 +107,7 @@ class Social extends Element {
 						),
 					),
 				),
-				'form'             => array(
+				'form'     => array(
 					'id'      => 'form',
 					'title'   => esc_html__( 'Button shape', 'woodmart' ),
 					'tab'     => esc_html__( 'Style', 'woodmart' ),
@@ -121,7 +132,7 @@ class Social extends Element {
 						),
 					),
 				),
-				'size'             => array(
+				'size'     => array(
 					'id'      => 'size',
 					'title'   => esc_html__( 'Button size', 'woodmart' ),
 					'tab'     => esc_html__( 'Style', 'woodmart' ),
@@ -143,7 +154,7 @@ class Social extends Element {
 						),
 					),
 				),
-				'color'            => array(
+				'color'    => array(
 					'id'      => 'color',
 					'title'   => esc_html__( 'Color', 'woodmart' ),
 					'tab'     => esc_html__( 'Style', 'woodmart' ),

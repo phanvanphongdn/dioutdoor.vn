@@ -1,4 +1,9 @@
 <?php
+/**
+ * Thank you page layout type.
+ *
+ * @package Woodmart
+ */
 
 namespace XTS\Modules\Layouts;
 
@@ -6,6 +11,9 @@ use Automattic\WooCommerce\Internal\Utilities\Users;
 use WC_Order;
 use WC_Product_Factory;
 
+/**
+ * Thank you page layout type class.
+ */
 class Thank_You_Page extends Layout_Type {
 	/**
 	 * Check.
@@ -27,6 +35,7 @@ class Thank_You_Page extends Layout_Type {
 		$order_id              = $order->get_id();
 		$nonce_is_valid        = wp_verify_nonce( filter_input( INPUT_POST, 'check_submission' ), 'wc_verify_email' );
 		$supplied_email        = null;
+		$is_active             = false;
 
 		if ( $nonce_is_valid ) {
 			$supplied_email = sanitize_email( wp_unslash( filter_input( INPUT_POST, 'email' ) ) );
@@ -36,7 +45,101 @@ class Thank_You_Page extends Layout_Type {
 			return false;
 		}
 
-		return woodmart_is_thank_you_page() || ( wp_is_serving_rest_request() && ! empty( $post ) && 'page' === $post->post_type );
+		if ( empty( $condition['condition_type'] ) || 'all' === $condition['condition_type'] ) {
+			$is_active = true;
+		} else {
+			if ( 'product_type' !== $condition['condition_type'] ) {
+				$condition['condition_query'] = apply_filters( 'wpml_object_id', $condition['condition_query'], $condition['condition_type'] );
+			}
+
+			foreach ( $order->get_items() as $item ) {
+				switch ( $condition['condition_type'] ) {
+					case 'products':
+						$is_active = (int) $item->get_product_id() === (int) $condition['condition_query'] || ( $item->get_variation_id() && (int) $item->get_variation_id() === (int) $condition['condition_query'] );
+						break;
+					case 'product_type':
+						$is_active = WC_Product_Factory::get_product_type( $item->get_product_id() ) === $condition['condition_query'];
+						break;
+					case 'product_cat':
+					case 'product_tag':
+					case 'product_brand':
+					case 'product_attr_term':
+					case 'product_shipping_class':
+						$terms = wp_get_post_terms( $item->get_product_id(), get_taxonomies(), array( 'fields' => 'ids' ) );
+
+						if ( $terms ) {
+							$is_active = in_array( (int) $condition['condition_query'], $terms, true );
+						}
+						break;
+					case 'product_cat_children':
+						$terms         = wp_get_post_terms( $item->get_product_id(), get_taxonomies(), array( 'fields' => 'ids' ) );
+						$term_children = get_term_children( $condition['condition_query'], 'product_cat' );
+
+						if ( $terms ) {
+							$is_active = count( array_diff( $terms, $term_children ) ) !== count( $terms );
+						}
+						break;
+					case 'order_total':
+					case 'order_subtotal':
+					case 'order_subtotal_after_discount':
+						$cart_total = $order->get_total();
+
+						switch ( $condition['condition_type'] ) {
+							case 'cart_subtotal':
+								$cart_total = $order->get_subtotal();
+								break;
+							case 'cart_subtotal_after_discount':
+								$cart_total = $order->get_subtotal() - $order->get_total_discount();
+								break;
+						}
+
+						$cart_total = apply_filters( 'woodmart_thank_you_page_condition_cart_total', $cart_total, $order );
+
+						$min = isset( $condition['condition_query_number_min'] ) ? $condition['condition_query_number_min'] : '';
+						$max = isset( $condition['condition_query_number_max'] ) ? $condition['condition_query_number_max'] : '';
+
+						if ( '' !== $min && '' !== $max ) {
+							$is_active = $cart_total >= $min && $cart_total <= $max;
+						} elseif ( '' !== $min ) {
+							$is_active = $cart_total >= $min;
+						} elseif ( '' !== $max ) {
+							$is_active = $cart_total <= $max;
+						}
+						break;
+					case 'order_payment_gateway':
+						$is_active = $order->get_payment_method() === $condition['condition_query'];
+						break;
+					case 'order_shipping_method':
+						$shipping_methods = $order->get_shipping_methods();
+						$method_ids       = array();
+
+						foreach ( $shipping_methods as $shipping_method ) {
+							$method_ids[] = $shipping_method->get_method_id();
+						}
+
+						$is_active = in_array( $condition['condition_query'], $method_ids, true );
+						break;
+					case 'order_shipping_country':
+						$is_active = in_array( $order->get_shipping_country(), $condition['condition_query'], true );
+						break;
+					case 'order_billing_country':
+						$is_active = in_array( $order->get_billing_country(), $condition['condition_query'], true );
+						break;
+					case 'user_logged_in':
+						$is_active = is_user_logged_in();
+						break;
+					case 'user_logged_out':
+						$is_active = ! is_user_logged_in();
+						break;
+				}
+
+				if ( $is_active ) {
+					break;
+				}
+			}
+		}
+
+		return ( $is_active && woodmart_is_thank_you_page() ) || ( wp_is_serving_rest_request() && ! empty( $post ) && 'page' === $post->post_type );
 	}
 
 	/**
@@ -105,11 +208,13 @@ class Thank_You_Page extends Layout_Type {
 		if (
 			! Main::is_layout_type( 'thank_you_page' ) ||
 			! $random_product ||
-			( 'woodmart_layout' !== $post->post_type ) &&
-			! is_singular( 'woodmart_layout' ) &&
-			! wp_doing_ajax() &&
-			( ! isset( $_POST['action'] ) || 'editpost' !== $_POST['action'] ) &&
-			( ! defined( 'DOING_AUTOSAVE' ) || ! DOING_AUTOSAVE )
+			(
+				( 'woodmart_layout' !== $post->post_type ) &&
+				! is_singular( 'woodmart_layout' ) &&
+				! wp_doing_ajax() &&
+				( ! isset( $_POST['action'] ) || 'editpost' !== $_POST['action'] ) && // phpcs:ignore WordPress.Security
+				( ! defined( 'DOING_AUTOSAVE' ) || ! DOING_AUTOSAVE )
+			)
 		) {
 			return;
 		}

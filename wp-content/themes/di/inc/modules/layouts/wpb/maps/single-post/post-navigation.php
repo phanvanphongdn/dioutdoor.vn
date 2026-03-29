@@ -2,7 +2,7 @@
 /**
  * Post navigation map.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
@@ -24,10 +24,9 @@ if ( ! function_exists( 'woodmart_get_vc_map_single_post_navigation' ) ) {
 
 		$label_typography = woodmart_get_typography_map(
 			array(
-				'key'              => 'label_typography',
-				'group'            => esc_html__( 'Style', 'woodmart' ),
-				'selector'         => '{{WRAPPER}} .wd-page-nav-btn .wd-label',
-				'edit_field_class' => 'vc_col-sm-6 vc_column',
+				'key'      => 'label_typography',
+				'group'    => esc_html__( 'Style', 'woodmart' ),
+				'selector' => '{{WRAPPER}} .wd-page-nav-btn .wd-label',
 			)
 		);
 

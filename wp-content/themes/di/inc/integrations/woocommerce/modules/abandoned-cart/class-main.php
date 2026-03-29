@@ -353,6 +353,7 @@ class Main {
 		$files = array_merge(
 			$files,
 			array(
+				'./functions',
 				'./class-abandoned-cart',
 				'./class-admin',
 				'./class-emails',

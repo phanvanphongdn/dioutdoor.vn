@@ -1,4 +1,10 @@
 <?php
+/**
+ * Blog post content template.
+ *
+ * @package woodmart
+ */
+
 $blog_style            = woodmart_get_opt( 'blog_style', 'shadow' );
 $post_format           = get_post_format();
 $thumb_classes         = '';
@@ -63,7 +69,7 @@ if ( 'quote' === $post_format ) {
 				<div class="wd-carousel-inner<?php echo esc_attr( $gallery_inner_classes ); ?>">
 					<div class="wd-carousel wd-grid" 
 					<?php
-					echo woodmart_get_carousel_attributes(
+					echo woodmart_get_carousel_attributes( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 						array(
 							'slides_per_view' => 1,
 							'autoheight'      => 'yes',
@@ -76,14 +82,16 @@ if ( 'quote' === $post_format ) {
 							foreach ( $gallery['images_id'] as $image_id ) {
 								?>
 								<div class="wd-carousel-item">
-									<?php echo woodmart_otf_get_image_html(
+									<?php
+									echo woodmart_otf_get_image_html( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 										$image_id,
 										apply_filters( 'woodmart_gallery_post_format_size', woodmart_get_opt( 'blog_image_size', 'large' ) ),
 										array(
 											'width'  => woodmart_get_opt( 'blog_image_custom_width' ),
 											'height' => woodmart_get_opt( 'blog_image_custom_height' ),
 										)
-									); ?>
+									);
+									?>
 								</div>
 								<?php
 							}
@@ -124,7 +132,7 @@ if ( 'quote' === $post_format ) {
 							<?php woodmart_post_modified_date(); ?>
 						</div>
 
-						<?php if ( woodmart_is_social_link_enable( 'share' ) ) : ?>
+						<?php if ( woodmart_is_social_link_enabled( 'share' ) ) : ?>
 							<div tabindex="0" class="wd-post-share wd-tltp">
 								<div class="tooltip top">
 									<div class="tooltip-inner">

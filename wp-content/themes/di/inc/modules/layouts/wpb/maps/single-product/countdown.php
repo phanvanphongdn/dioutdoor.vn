@@ -2,10 +2,8 @@
 /**
  * Countdown map.
  *
- * @package Woodmart
+ * @package woodmart
  */
-
-use Elementor\Core\Editor\Data\Globals\Endpoints\Typography;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Direct access not allowed.
@@ -14,6 +12,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! function_exists( 'woodmart_get_vc_map_single_product_countdown' ) ) {
 	/**
 	 * Countdown map.
+	 *
+	 * @return array
 	 */
 	function woodmart_get_vc_map_single_product_countdown() {
 		$typography = woodmart_get_typography_map(
@@ -25,21 +25,19 @@ if ( ! function_exists( 'woodmart_get_vc_map_single_product_countdown' ) ) {
 
 		$time_typography = woodmart_get_typography_map(
 			array(
-				'key'              => 'time',
-				'title'            => esc_html__( 'Numbers typography', 'woodmart' ),
-				'group'            => esc_html__( 'Style', 'woodmart' ),
-				'selector'         => '{{WRAPPER}} .wd-timer-value',
-				'edit_field_class' => 'vc_col-sm-6 vc_column',
+				'key'      => 'time',
+				'title'    => esc_html__( 'Numbers typography', 'woodmart' ),
+				'group'    => esc_html__( 'Style', 'woodmart' ),
+				'selector' => '{{WRAPPER}} .wd-timer-value',
 			)
 		);
 
 		$label_typography = woodmart_get_typography_map(
 			array(
-				'key'              => 'label',
-				'title'            => esc_html__( 'Labels typography', 'woodmart' ),
-				'group'            => esc_html__( 'Style', 'woodmart' ),
-				'selector'         => '{{WRAPPER}} .wd-timer-text',
-				'edit_field_class' => 'vc_col-sm-6 vc_column',
+				'key'      => 'label',
+				'title'    => esc_html__( 'Labels typography', 'woodmart' ),
+				'group'    => esc_html__( 'Style', 'woodmart' ),
+				'selector' => '{{WRAPPER}} .wd-timer-text',
 			)
 		);
 
@@ -382,7 +380,7 @@ if ( ! function_exists( 'woodmart_get_vc_map_single_product_countdown' ) ) {
 						'vertical'   => '0',
 						'blur'       => '9',
 						'spread'     => '0',
-						'color'      => '',
+						'color'      => 'rgba(0, 0, 0, .15)',
 					),
 				),
 
@@ -620,7 +618,7 @@ if ( ! function_exists( 'woodmart_get_vc_map_single_product_countdown' ) ) {
 						'vertical'   => '0',
 						'blur'       => '9',
 						'spread'     => '0',
-						'color'      => '',
+						'color'      => 'rgba(0, 0, 0, .15)',
 					),
 				),
 

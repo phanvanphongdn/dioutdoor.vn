@@ -45,7 +45,7 @@
 				var $this = $(this);
 				var productID = $this.parents('.wd-fbt-product').data('id');
 				var productWrapper = $this.parents('.wd-fbt').find('.wd-product[data-id=' + productID + ']');
-				var $img = productWrapper.find('.product-image-link > img, .product-image-link > picture > img');
+				var $img = productWrapper.find('.wd-product-img-link > img, .wd-product-img-link > picture > img');
 				var imageSrc = $this.find('option:selected').data('image-src');
 				var imageSrcset = $this.find('option:selected').data('image-srcset');
 

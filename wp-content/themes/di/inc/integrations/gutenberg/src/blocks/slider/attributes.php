@@ -65,6 +65,10 @@ if ( ! function_exists( 'wd_get_block_slider_attrs' ) ) {
 				'paginationBorderType' => array(
 					'type' => 'string',
 				),
+				'autoplaySpeed'        => array(
+					'type'    => 'string',
+					'default' => '5000',
+				),
 			)
 		);
 

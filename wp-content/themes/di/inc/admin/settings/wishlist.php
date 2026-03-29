@@ -2,7 +2,7 @@
 /**
  * This is Wishlist options file for Theme settings.
  *
- * @package Woodmart.
+ * @package woodmart.
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

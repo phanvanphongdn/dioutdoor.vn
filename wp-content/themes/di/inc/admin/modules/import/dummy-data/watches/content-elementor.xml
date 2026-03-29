@@ -16,7 +16,7 @@
 	<!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 	<!--    contained in this file into your site. -->
 
-	<!-- generator="WordPress/6.2.4" created="2024-02-16 12:54" -->
+	<!-- generator="WordPress/6.7.4" created="2026-02-25 15:01" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -29,24 +29,19 @@
 	<title>Elementor 2.0 WoodMart dummy</title>
 	<link>https://dummy.xtemos.com/woodmart2/elementor</link>
 	<description>Just another WoodMart Dummy 2.0 Sites site</description>
-	<pubDate>Fri, 16 Feb 2024 12:54:54 +0000</pubDate>
+	<pubDate>Wed, 25 Feb 2026 15:01:43 +0000</pubDate>
 	<language>en-US</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
 	<wp:base_site_url>https://dummy.xtemos.com/woodmart2/</wp:base_site_url>
 	<wp:base_blog_url>https://dummy.xtemos.com/woodmart2/elementor</wp:base_blog_url>
 
-		<wp:author><wp:author_id>2</wp:author_id><wp:author_login><![CDATA[zakhar]]></wp:author_login><wp:author_email><![CDATA[zak@asda.as]]></wp:author_email><wp:author_display_name><![CDATA[Mr. Mackay]]></wp:author_display_name><wp:author_first_name><![CDATA[sds]]></wp:author_first_name><wp:author_last_name><![CDATA[scssc]]></wp:author_last_name></wp:author>
-
-					<wp:term>
+	
+							<wp:term>
 			<wp:term_id>141</wp:term_id>
 			<wp:term_taxonomy><![CDATA[woodmart_slider]]></wp:term_taxonomy>
 			<wp:term_slug><![CDATA[watches-slider]]></wp:term_slug>
 			<wp:term_parent><![CDATA[]]></wp:term_parent>
 			<wp:term_name><![CDATA[Watches slider]]></wp:term_name>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-141-status]]></wp:meta_key>
-			<wp:meta_value><![CDATA[valid]]></wp:meta_value>
-		</wp:termmeta>
 		<wp:termmeta>
 			<wp:meta_key><![CDATA[animation]]></wp:meta_key>
 			<wp:meta_value><![CDATA[fade]]></wp:meta_value>
@@ -203,50 +198,15 @@
 			<wp:meta_key><![CDATA[autoplay_speed]]></wp:meta_key>
 			<wp:meta_value><![CDATA[25000]]></wp:meta_value>
 		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-141-credentials]]></wp:meta_key>
-			<wp:meta_value><![CDATA[requested]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-141-file-data]]></wp:meta_key>
-			<wp:meta_value><![CDATA[a:3:{s:4:"path";s:36:"/2024/02/xts-term-141-1707751445.css";s:13:"theme_version";s:5:"7.4.0";s:8:"site_url";s:32:"4f146f679d9b7d2ba7fe3593044e8d2b";}]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-141-css-data]]></wp:meta_key>
-			<wp:meta_value><![CDATA[#slider-141 .wd-slide {
-	min-height: 700px;
-}
-
-@media (max-width: 1024px) {
-	#slider-141 .wd-slide {
-		min-height: 700px;
-	}
-}
-
-@media (max-width: 767px) {
-	#slider-141 .wd-slide {
-		min-height: 600px;
-	}
-}
-]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-141-version]]></wp:meta_key>
-			<wp:meta_value><![CDATA[7.4.0]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-141-site-url]]></wp:meta_key>
-			<wp:meta_value><![CDATA[4f146f679d9b7d2ba7fe3593044e8d2b]]></wp:meta_value>
-		</wp:termmeta>
 		</wp:term>
-		
-	<generator>https://wordpress.org/?v=6.2.4</generator>
+				
+	<generator>https://wordpress.org/?v=6.7.4</generator>
 
 					<item>
 					<title><![CDATA[watches-best-sellers]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/watches-best-sellers/</link>
 					<pubDate>Mon, 06 Sep 2021 12:05:24 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/watches-best-sellers.svg</guid>
 															<wp:post_id>1785</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-06 12:05:24]]></wp:post_date>
@@ -269,7 +229,7 @@
 					<title><![CDATA[watches-location]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/watches-location/</link>
 					<pubDate>Mon, 06 Sep 2021 12:05:26 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/watches-location.svg</guid>
 															<wp:post_id>1787</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-06 12:05:26]]></wp:post_date>
@@ -292,7 +252,7 @@
 					<title><![CDATA[watches-ship]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/watches-ship/</link>
 					<pubDate>Mon, 06 Sep 2021 12:05:28 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/watches-ship.svg</guid>
 															<wp:post_id>1789</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-06 12:05:28]]></wp:post_date>
@@ -315,7 +275,7 @@
 					<title><![CDATA[watches-instagram-1-opt]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/home-watches/watches-instagram-1-opt/</link>
 					<pubDate>Mon, 06 Sep 2021 12:26:50 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/watches-instagram-1-opt.jpg</guid>
 															<wp:post_id>1818</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-06 12:26:50]]></wp:post_date>
@@ -338,7 +298,7 @@
 					<title><![CDATA[watches-instagram-2-opt]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/home-watches/watches-instagram-2-opt/</link>
 					<pubDate>Mon, 06 Sep 2021 12:26:52 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/watches-instagram-2-opt.jpg</guid>
 															<wp:post_id>1819</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-06 12:26:52]]></wp:post_date>
@@ -361,7 +321,7 @@
 					<title><![CDATA[watches-instagram-3-opt]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/home-watches/watches-instagram-3-opt/</link>
 					<pubDate>Mon, 06 Sep 2021 12:26:54 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/watches-instagram-3-opt.jpg</guid>
 															<wp:post_id>1820</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-06 12:26:54]]></wp:post_date>
@@ -384,7 +344,7 @@
 					<title><![CDATA[watches-instagram-4-opt]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/home-watches/watches-instagram-4-opt/</link>
 					<pubDate>Mon, 06 Sep 2021 12:26:56 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/watches-instagram-4-opt.jpg</guid>
 															<wp:post_id>1821</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-06 12:26:56]]></wp:post_date>
@@ -407,7 +367,7 @@
 					<title><![CDATA[watches-instagram-5-opt]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/home-watches/watches-instagram-5-opt/</link>
 					<pubDate>Mon, 06 Sep 2021 12:26:58 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/watches-instagram-5-opt.jpg</guid>
 															<wp:post_id>1822</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-06 12:26:58]]></wp:post_date>
@@ -430,7 +390,7 @@
 					<title><![CDATA[watches-instagram-6-opt]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/home-watches/watches-instagram-6-opt/</link>
 					<pubDate>Mon, 06 Sep 2021 12:27:00 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/watches-instagram-6-opt.jpg</guid>
 															<wp:post_id>1823</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-06 12:27:00]]></wp:post_date>
@@ -453,7 +413,7 @@
 					<title><![CDATA[watches-banner-1-opt]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/watches-banner-1-opt/</link>
 					<pubDate>Mon, 18 Oct 2021 16:41:24 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/watches-banner-1-opt.jpg</guid>
 															<wp:post_id>4824</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-18 16:41:24]]></wp:post_date>
@@ -476,7 +436,7 @@
 					<title><![CDATA[watches-banner-2-opt]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/watches-banner-2-opt/</link>
 					<pubDate>Mon, 18 Oct 2021 16:41:26 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/watches-banner-2-opt.jpg</guid>
 															<wp:post_id>4825</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-18 16:41:26]]></wp:post_date>
@@ -499,7 +459,7 @@
 					<title><![CDATA[watches-banner-3-opt]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/watches-banner-3-opt/</link>
 					<pubDate>Mon, 18 Oct 2021 16:41:27 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/watches-banner-3-opt.jpg</guid>
 															<wp:post_id>4826</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-18 16:41:27]]></wp:post_date>
@@ -522,7 +482,7 @@
 					<title><![CDATA[watches-banner-4-opt]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/watches-banner-4-opt/</link>
 					<pubDate>Mon, 18 Oct 2021 16:41:29 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/watches-banner-4-opt.jpg</guid>
 															<wp:post_id>4827</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-18 16:41:29]]></wp:post_date>
@@ -545,7 +505,7 @@
 					<title><![CDATA[watches-category-5-min]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/watches-category-5-min/</link>
 					<pubDate>Mon, 18 Oct 2021 16:41:30 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/watches-category-5-min.jpg</guid>
 															<wp:post_id>4828</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-18 16:41:30]]></wp:post_date>
@@ -568,7 +528,7 @@
 					<title><![CDATA[watches-category-6-min]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/watches-category-6-min/</link>
 					<pubDate>Mon, 18 Oct 2021 16:41:32 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/watches-category-6-min.jpg</guid>
 															<wp:post_id>4829</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-18 16:41:32]]></wp:post_date>
@@ -591,7 +551,7 @@
 					<title><![CDATA[watches-product-2]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/watches-product-2/</link>
 					<pubDate>Mon, 18 Oct 2021 16:42:15 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/watches-product-2.jpg</guid>
 															<wp:post_id>4831</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-18 16:42:15]]></wp:post_date>
@@ -614,7 +574,7 @@
 					<title><![CDATA[watches-product-3]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/watches-product-3/</link>
 					<pubDate>Mon, 18 Oct 2021 16:42:17 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/watches-product-3.jpg</guid>
 															<wp:post_id>4832</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-18 16:42:17]]></wp:post_date>
@@ -637,7 +597,7 @@
 					<title><![CDATA[watches-product-4]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/watches-product-4/</link>
 					<pubDate>Mon, 18 Oct 2021 16:42:18 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/watches-product-4.jpg</guid>
 															<wp:post_id>4833</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-18 16:42:18]]></wp:post_date>
@@ -660,7 +620,7 @@
 					<title><![CDATA[watches-slide-1-bg-img-opt]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/woodmart_slide/watches-slide-1/watches-slide-1-bg-img-opt/</link>
 					<pubDate>Mon, 12 Feb 2024 15:23:22 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/watches-slide-1-bg-img-opt.jpg</guid>
 															<wp:post_id>27274</wp:post_id>
 					<wp:post_date><![CDATA[2024-02-12 15:23:22]]></wp:post_date>
@@ -683,7 +643,7 @@
 					<title><![CDATA[watches-slide-2-bg-img-opt]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/woodmart_slide/watches-slide-1-2/watches-slide-2-bg-img-opt/</link>
 					<pubDate>Mon, 12 Feb 2024 15:30:02 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/watches-slide-2-bg-img-opt.jpg</guid>
 															<wp:post_id>27283</wp:post_id>
 					<wp:post_date><![CDATA[2024-02-12 15:30:02]]></wp:post_date>
@@ -706,7 +666,7 @@
 					<title><![CDATA[watches-product-1]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/watches-product-1/</link>
 					<pubDate>Mon, 18 Oct 2021 16:42:12 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/watches-product-1.jpg</guid>
 															<wp:post_id>4830</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-18 16:42:12]]></wp:post_date>
@@ -729,7 +689,7 @@
 					<title><![CDATA[watches-product-5]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/watches-product-5/</link>
 					<pubDate>Mon, 18 Oct 2021 16:42:20 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/watches-product-5.jpg</guid>
 															<wp:post_id>4834</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-18 16:42:20]]></wp:post_date>
@@ -752,7 +712,7 @@
 					<title><![CDATA[watches-product-6]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/watches-product-6/</link>
 					<pubDate>Mon, 18 Oct 2021 16:42:22 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/watches-product-6.jpg</guid>
 															<wp:post_id>4835</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-18 16:42:22]]></wp:post_date>
@@ -775,7 +735,7 @@
 					<title><![CDATA[watches-product-7]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/watches-product-7/</link>
 					<pubDate>Mon, 18 Oct 2021 16:42:24 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/watches-product-7.jpg</guid>
 															<wp:post_id>4836</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-18 16:42:24]]></wp:post_date>
@@ -798,7 +758,7 @@
 					<title><![CDATA[watches-product-8]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/watches-product-8/</link>
 					<pubDate>Mon, 18 Oct 2021 16:42:25 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/watches-product-8.jpg</guid>
 															<wp:post_id>4837</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-18 16:42:25]]></wp:post_date>
@@ -821,7 +781,7 @@
 					<title><![CDATA[watches-product-9]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/watches-product-9/</link>
 					<pubDate>Mon, 18 Oct 2021 16:42:26 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/watches-product-9.jpg</guid>
 															<wp:post_id>4838</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-18 16:42:26]]></wp:post_date>
@@ -844,7 +804,7 @@
 					<title><![CDATA[watches-product-10]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/watches-product-10/</link>
 					<pubDate>Mon, 18 Oct 2021 16:42:27 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/watches-product-10.jpg</guid>
 															<wp:post_id>4839</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-18 16:42:27]]></wp:post_date>
@@ -867,7 +827,7 @@
 					<title><![CDATA[watches-product-11]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/watches-product-11/</link>
 					<pubDate>Mon, 18 Oct 2021 16:42:29 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/watches-product-11.jpg</guid>
 															<wp:post_id>4840</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-18 16:42:29]]></wp:post_date>
@@ -890,7 +850,7 @@
 					<title><![CDATA[watches-product-12]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/watches-product-12/</link>
 					<pubDate>Mon, 18 Oct 2021 16:42:31 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/watches-product-12.jpg</guid>
 															<wp:post_id>4841</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-18 16:42:31]]></wp:post_date>
@@ -913,7 +873,7 @@
 					<title><![CDATA[watches-blog-1]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/watches-blog-1/</link>
 					<pubDate>Mon, 18 Oct 2021 16:43:39 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/watches-blog-1.jpg</guid>
 															<wp:post_id>4842</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-18 16:43:39]]></wp:post_date>
@@ -936,7 +896,7 @@
 					<title><![CDATA[watches-blog-2]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/watches-blog-2/</link>
 					<pubDate>Mon, 18 Oct 2021 16:43:40 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/watches-blog-2.jpg</guid>
 															<wp:post_id>4843</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-18 16:43:40]]></wp:post_date>
@@ -959,7 +919,7 @@
 					<title><![CDATA[watches-blog-3]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/watches-blog-3/</link>
 					<pubDate>Mon, 18 Oct 2021 16:43:43 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/watches-blog-3.jpg</guid>
 															<wp:post_id>4844</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-18 16:43:43]]></wp:post_date>
@@ -982,7 +942,7 @@
 					<title><![CDATA[watches-blog-4]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/watches-blog-4/</link>
 					<pubDate>Mon, 18 Oct 2021 16:43:44 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/watches-blog-4.jpg</guid>
 															<wp:post_id>4845</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-18 16:43:44]]></wp:post_date>
@@ -1005,7 +965,7 @@
 					<title><![CDATA[watches-blog-5]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/watches-blog-5/</link>
 					<pubDate>Mon, 18 Oct 2021 16:43:45 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/watches-blog-5.jpg</guid>
 															<wp:post_id>4846</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-18 16:43:45]]></wp:post_date>
@@ -1028,7 +988,7 @@
 					<title><![CDATA[watches-blog-6]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/watches-blog-6/</link>
 					<pubDate>Mon, 18 Oct 2021 16:43:47 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/watches-blog-6.jpg</guid>
 															<wp:post_id>4847</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-18 16:43:47]]></wp:post_date>
@@ -1051,7 +1011,7 @@
 					<title><![CDATA[watches-blog-7]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/watches-blog-7/</link>
 					<pubDate>Mon, 18 Oct 2021 16:43:49 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/watches-blog-7.jpg</guid>
 															<wp:post_id>4848</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-18 16:43:49]]></wp:post_date>
@@ -1074,7 +1034,7 @@
 					<title><![CDATA[watches-blog-9]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/watches-blog-9/</link>
 					<pubDate>Mon, 18 Oct 2021 16:43:53 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/watches-blog-9.jpg</guid>
 															<wp:post_id>4850</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-18 16:43:53]]></wp:post_date>
@@ -1097,7 +1057,7 @@
 					<title><![CDATA[watches-portfolio-1]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/watches-portfolio-1/</link>
 					<pubDate>Mon, 18 Oct 2021 16:44:59 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/watches-portfolio-1.jpg</guid>
 															<wp:post_id>4851</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-18 16:44:59]]></wp:post_date>
@@ -1120,7 +1080,7 @@
 					<title><![CDATA[watches-portfolio-2]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/watches-portfolio-2/</link>
 					<pubDate>Mon, 18 Oct 2021 16:45:01 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/watches-portfolio-2.jpg</guid>
 															<wp:post_id>4852</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-18 16:45:01]]></wp:post_date>
@@ -1143,7 +1103,7 @@
 					<title><![CDATA[watches-portfolio-4]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/watches-portfolio-4/</link>
 					<pubDate>Mon, 18 Oct 2021 16:45:03 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/watches-portfolio-4.jpg</guid>
 															<wp:post_id>4854</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-18 16:45:03]]></wp:post_date>
@@ -1166,7 +1126,7 @@
 					<title><![CDATA[Home Watches]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/home-watches/</link>
 					<pubDate>Mon, 06 Sep 2021 12:02:34 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/?page_id=1772</guid>
 											<content:encoded><![CDATA[<link rel="stylesheet" id="wd-swiper-css" href="https://dummy.xtemos.com/woodmart2/elementor/wp-content/themes/woodmart/css/parts/lib-swiper.min.css?ver=7.4.0" type="text/css" media="all" /> 						<link rel="stylesheet" id="wd-slider-css" href="https://dummy.xtemos.com/woodmart2/elementor/wp-content/themes/woodmart/css/parts/el-slider.min.css?ver=7.4.0" type="text/css" media="all" /> 						<link rel="stylesheet" id="xts-style-term-141-css" href="https://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/xts-term-141-1707751445.css?ver=7.4.0" type="text/css" media="all">  			<style>							#slide-27273 .wd-slide-container {
 										--wd-align-items: center;
@@ -1795,10 +1755,6 @@
 							<wp:meta_value><![CDATA[[{"id":"2a53192","elType":"container","settings":{"flex_gap":{"size":null,"column":"","row":"","unit":"px","isLinked":true},"margin":{"unit":"px","top":"-40","right":"0","bottom":"7","left":"0","isLinked":""},"boxed_width_tablet":{"unit":"custom","size":"","sizes":[]},"boxed_width_mobile":{"unit":"custom","size":"","sizes":[]},"scroll_y":-80,"padding":{"unit":"px","top":"0","right":"0","bottom":"0","left":"0","isLinked":true},"container_sticky_offset":50},"elements":[{"id":"ffb560f","elType":"widget","settings":{"slider":"watches-slider","sync_parent_id":"wd_65ca39cc27e13","scroll_y":-80},"elements":[],"widgetType":"wd_slider"}],"isInner":false},{"id":"a95fa47","elType":"container","settings":{"wd_section_stretch":"stretch-content","flex_gap":{"size":0,"column":"0","row":"0","unit":"px"},"margin":{"unit":"px","top":"0","right":"0","bottom":"70","left":"0","isLinked":""},"margin_tablet":{"unit":"px","top":"0","right":"0","bottom":"40","left":"0","isLinked":""},"margin_mobile":{"unit":"px","top":"0","right":"0","bottom":"30","left":"0","isLinked":""},"padding":{"unit":"px","top":"0","right":"10","bottom":"0","left":"10","isLinked":false},"flex_align_items":"stretch","scroll_y":-80,"container_sticky_offset":50},"elements":[{"id":"9c4de5a","elType":"widget","settings":{"style":"carousel","spacing":"10","categories_design":"default","slides_per_view":{"size":"4","unit":"px","sizes":[]},"hide_pagination_control":"yes","hide_prev_next_buttons":"yes","number":"4","ids":[""],"scroll_y":"-80","sync_parent_id":"wd_65770464951fb"},"elements":[],"widgetType":"wd_product_categories"}],"isInner":false},{"id":"0a03205","elType":"container","settings":{"el_class":"z-index-h position-relative","margin":{"unit":"px","top":"0","right":"0","bottom":"70","left":"0","isLinked":""},"flex_direction":"column","flex_align_items":"stretch","flex_gap":{"size":10,"column":"10","row":"10","unit":"px"},"margin_tablet":{"unit":"px","top":"0","right":"0","bottom":"60","left":"0","isLinked":false},"scroll_y":-80,"container_sticky_offset":50},"elements":[{"id":"25e4264","elType":"widget","settings":{"subtitle":"","title":"Welcome to WoodMart - The #1 Online <strong><u>Store Of Luxury Watches.<\/u><\/strong>","after_title":"","width":{"unit":"%","size":"50","sizes":[]},"width_tablet":{"unit":"%","size":"60","sizes":[]},"width_mobile":{"unit":"%","size":"100","sizes":[]},"title_typography_typography":"custom","title_typography_font_size":{"unit":"px","size":"36","sizes":[]},"title_typography_font_size_tablet":{"unit":"px","size":"28","sizes":[]},"title_typography_font_size_mobile":{"unit":"px","size":"20","sizes":[]},"title_typography_font_weight":"300","title_typography_line_height":{"unit":"px","size":"46","sizes":[]},"title_typography_line_height_tablet":{"unit":"px","size":"38","sizes":[]},"title_typography_line_height_mobile":{"unit":"px","size":"30","sizes":[]},"scroll_y":"-80","title_decoration_style":"bordered","_margin":{"unit":"px","top":"0","right":"0","bottom":"25","left":"0","isLinked":""}},"elements":[],"widgetType":"wd_title"},{"id":"37f9ba3","elType":"widget","settings":{"title":"","items_per_page":"4","product_hover":"quick","columns":{"size":"4","unit":"px","sizes":[]},"scroll_y":"-80","sync_parent_id":"wd_65770464946dc"},"elements":[],"widgetType":"wd_products"}],"isInner":false},{"id":"acc615a","elType":"container","settings":{"wd_section_stretch":"stretch","content_position":"middle","background_position":"right top","border_width":{"top":"1","left":"0","right":"0","bottom":"0","unit":"px","isLinked":""},"border_border":"solid","border_color":"#ededed","background_repeat":"no-repeat","structure":"20","flex_gap":{"size":30,"column":"30","row":"30","unit":"px","isLinked":true},"margin":{"unit":"px","top":"0","right":"0","bottom":"30","left":"0","isLinked":""},"padding":{"unit":"px","top":"80","right":"15","bottom":"0","left":"15","isLinked":""},"flex_direction":"row","flex_align_items":"center","flex_direction_tablet":"row","margin_tablet":{"unit":"px","top":"0","right":"0","bottom":"50","left":"0","isLinked":false},"padding_tablet":{"unit":"px","top":"60","right":"15","bottom":"0","left":"15","isLinked":false},"scroll_y":-80,"container_sticky_offset":50},"elements":[{"id":"1fb3a1b","elType":"container","settings":{"_column_size":"50","column_sticky_offset":"50","scroll_y":"-80","content_width":"full","container_sticky_offset":50},"elements":[{"id":"6f9061b","elType":"widget","settings":{"ids_size":"full","ids":[{"id":1801,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/09\/watches-image-1-opt.jpg"},{"id":1802,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/09\/watches-image-2-opt.jpg"},{"id":1803,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/09\/watches-image-3-opt.jpg"}],"view":"masonry","spacing":"6","columns":{"size":"2","unit":"px","sizes":[]},"ids_custom_dimension":{"width":"400","height":"269"},"scroll_y":"-80","columns_tablet":{"unit":"px","size":2,"sizes":[]},"columns_mobile":{"unit":"px","size":2,"sizes":[]},"sync_parent_id":"wd_657704648f33c"},"elements":[],"widgetType":"wd_images_gallery"}],"isInner":true},{"id":"f0456d0","elType":"container","settings":{"_column_size":"50","column_sticky_offset":"50","scroll_y":"-80","align":"space-between","content_width":"full","flex_gap":{"column":"30","row":"30","isLinked":true,"unit":"px","size":30},"container_sticky_offset":50},"elements":[{"id":"8716ec3","elType":"widget","settings":{"subtitle":"","title":"As an official stockist of all brands, we offer <strong><u>watches for men &amp; ladies.<\/u><\/strong>","after_title":"","align":"left","title_typography_typography":"custom","title_typography_font_size":{"unit":"px","size":"34","sizes":[]},"title_typography_font_size_tablet":{"unit":"px","size":"26","sizes":[]},"title_typography_font_weight":"300","title_typography_line_height":{"unit":"px","size":"44","sizes":[]},"title_typography_line_height_tablet":{"unit":"px","size":"36","sizes":[]},"scroll_y":"-80","title_decoration_style":"bordered"},"elements":[],"widgetType":"wd_title"},{"id":"be2a309","elType":"widget","settings":{"text":"<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using <strong><a href=\"#\">'Content here, content here'<\/a><\/strong>, making it look like readable English.\u00a0Many desktop publishing packages and web.<\/p>","typography_typography":"custom","typography_font_size":{"unit":"px","size":15,"sizes":[]},"typography_font_size_tablet":{"unit":"px","size":14,"sizes":[]},"scroll_y":-80,"_padding":{"unit":"px","top":"0","right":"0","bottom":"35","left":"0","isLinked":false},"_border_border":"solid","_border_width":{"unit":"px","top":"0","right":"0","bottom":"1","left":"0","isLinked":false},"_border_color":"#EBEBEB"},"elements":[],"widgetType":"wd_text_block"},{"id":"0cdb5bc","elType":"container","settings":{"flex_direction":"row","flex_justify_content":"space-between","flex_align_items":"center","flex_gap":{"column":"","row":"","isLinked":true,"unit":"px","size":null},"scroll_y":-80,"container_sticky_offset":50},"elements":[{"id":"0eb1211","elType":"widget","settings":{"text":"<p>Follow me on <strong><a href=\"https:\/\/twitter.com\/\">Twitter<\/a><\/strong>\u00a0and <strong><a href=\"http:\/\/facebook.com\">Facebook<\/a><\/strong><\/p>","typography_typography":"custom","typography_font_size":{"unit":"px","size":15,"sizes":[]},"typography_font_size_tablet":{"unit":"px","size":14,"sizes":[]},"scroll_y":-80,"_element_width":"auto"},"elements":[],"widgetType":"wd_text_block"},{"id":"e34b50a","elType":"widget","settings":{"image":{"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/09\/watches-austen-opt.jpg","id":1804,"alt":"","source":"library"},"image_size":"custom","alignment":"right","scroll_y":-80,"_element_width":"auto"},"elements":[],"widgetType":"wd_image_or_svg"}],"isInner":true}],"isInner":true}],"isInner":false},{"id":"9600264","elType":"container","settings":{"structure":"30","margin":{"unit":"px","top":"0","right":"0","bottom":"80","left":"0","isLinked":""},"flex_direction":"row","flex_gap":{"size":0,"column":"0","row":"40","unit":"px","isLinked":false},"flex_direction_tablet":"column","flex_justify_content":"space-between","margin_tablet":{"unit":"px","top":"0","right":"0","bottom":"60","left":"0","isLinked":false},"scroll_y":-80,"container_sticky_offset":50},"elements":[{"id":"cb638c8","elType":"widget","settings":{"alignment":"left","btn_text":"READ MORE","image_size":"custom","subtitle":"","title":"<strong>FAST DELIVERY<\/strong>","btn_position":"hover","icon_text_size":"large","image_alignment":"left","btn_color":"primary","btn_style":"link","no_svg_animation":"yes","icon_text":"01.","content":"Massa a erat nam aliquam condi mentu tum in cum proin.","scroll_y":"-80","_padding":{"unit":"custom","top":"20px","right":"8%","bottom":"20px","left":"8%","isLinked":false},"_padding_tablet":{"unit":"%","top":"0","right":"10","bottom":"0","left":"10","isLinked":false},"_padding_mobile":{"unit":"%","top":"","right":"","bottom":"","left":"","isLinked":true},"_border_border":"solid","_border_width":{"unit":"px","top":"0","right":"1","bottom":"0","left":"0","isLinked":false},"_border_width_tablet":{"unit":"px","top":"0","right":"0","bottom":"0","left":"0","isLinked":true},"_border_color":"#81818133","_element_width":"initial","_element_width_tablet":"inherit","_element_custom_width":{"unit":"%","size":33.3,"sizes":[]}},"elements":[],"widgetType":"wd_infobox"},{"id":"4d6e274","elType":"widget","settings":{"alignment":"left","btn_text":"READ MORE","image_size":"custom","subtitle":"","title":"<strong>3 YEARS WARRANTY<\/strong>","btn_position":"hover","icon_text_size":"large","image_alignment":"left","btn_color":"primary","btn_style":"link","no_svg_animation":"yes","icon_text":"02.","content":"Adipiscing proin lobortis nunc luctus conubia ac facilisi.","scroll_y":"-80","_padding":{"unit":"custom","top":"20px","right":"8%","bottom":"20px","left":"8%","isLinked":false},"_padding_tablet":{"unit":"%","top":"0","right":"10","bottom":"0","left":"10","isLinked":false},"_padding_mobile":{"unit":"%","top":"","right":"","bottom":"","left":"","isLinked":true},"_border_border":"solid","_border_width":{"unit":"px","top":"0","right":"1","bottom":"0","left":"0","isLinked":false},"_border_width_tablet":{"unit":"px","top":"0","right":"0","bottom":"0","left":"0","isLinked":true},"_border_color":"#81818133","_element_width":"initial","_element_width_tablet":"inherit","_element_custom_width":{"unit":"%","size":33.3,"sizes":[]}},"elements":[],"widgetType":"wd_infobox"},{"id":"5c819be","elType":"widget","settings":{"alignment":"left","btn_text":"READ MORE","image_size":"custom","subtitle":"","title":"<strong>SWISS HAND MADE<\/strong>","btn_position":"hover","icon_text_size":"large","image_alignment":"left","btn_color":"primary","btn_style":"link","no_svg_animation":"yes","icon_text":"03.","content":"Ulamcorper parturient adipiscing nisi rutrum eleifend class.","scroll_y":"-80","_padding":{"unit":"custom","top":"20px","right":"8%","bottom":"20px","left":"8%","isLinked":false},"_padding_tablet":{"unit":"%","top":"0","right":"10","bottom":"0","left":"10","isLinked":false},"_padding_mobile":{"unit":"%","top":"","right":"","bottom":"","left":"","isLinked":true},"_element_width":"initial","_element_width_tablet":"inherit","_element_custom_width":{"unit":"%","size":33.3,"sizes":[]}},"elements":[],"widgetType":"wd_infobox"}],"isInner":false},{"id":"d6a731c","elType":"container","settings":{"wd_section_stretch":"stretch","background_position":"center center","background_background":"classic","background_color":"#f8f8f8","background_image":{"id":1785,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/09\/watches-best-sellers.svg","alt":"","source":"library"},"el_class":"mobile-bg-img-hidden","structure":"20","margin":{"unit":"px","top":"0","right":"0","bottom":"80","left":"0","isLinked":""},"margin_mobile":{"unit":"px","top":"0","right":"0","bottom":"60","left":"0","isLinked":""},"padding":{"unit":"px","top":"70","right":"15","bottom":"70","left":"15","isLinked":""},"padding_mobile":{"unit":"px","top":"60","right":"15","bottom":"50","left":"15","isLinked":""},"background_repeat":"no-repeat","background_size":"contain","flex_direction":"row","flex_gap":{"size":null,"column":"","row":"","unit":"px","isLinked":true},"scroll_y":-80,"container_sticky_offset":50},"elements":[{"id":"fcbdaed","elType":"container","settings":{"_column_size":"50","column_sticky_offset":"50","scroll_y":"-80","content_width":"full","container_sticky_offset":50},"elements":[{"id":"2aee880","elType":"widget","settings":{"image":{"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/09\/watches-image-4-opt.png","id":1810,"alt":"","source":"library"},"image_size":"full","align":"center","scroll_y":-80},"elements":[],"widgetType":"image"}],"isInner":true},{"id":"e29b346","elType":"container","settings":{"_column_size":"50","flex_gap":{"size":35,"column":"35","row":"35","unit":"px"},"column_sticky_offset":"50","scroll_y":"-80","content_width":"full","container_sticky_offset":50},"elements":[{"id":"252e1fd","elType":"widget","settings":{"subtitle":"","title":"<strong><u>Original<\/u><\/strong> Black Watches.","after_title":"","align":"left","title_typography_typography":"custom","title_typography_font_size":{"unit":"px","size":"46","sizes":[]},"title_typography_font_size_tablet":{"unit":"px","size":"32","sizes":[]},"title_typography_font_weight":"300","title_typography_line_height":{"unit":"px","size":"56","sizes":[]},"title_typography_line_height_tablet":{"unit":"px","size":"42","sizes":[]},"scroll_y":"-80","title_decoration_style":"bordered"},"elements":[],"widgetType":"wd_title"},{"id":"051dad8","elType":"widget","settings":{"text":"<p>It is a long established fact that a reader will be distracted by the readable content of a page when <strong><a href=\"#\">looking at its layout.<\/a><\/strong> The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using sometimes by accident.<\/p>","typography_typography":"custom","typography_font_size":{"unit":"px","size":15,"sizes":[]},"typography_font_size_tablet":{"unit":"px","size":14,"sizes":[]},"scroll_y":-80},"elements":[],"widgetType":"wd_text_block"},{"id":"1f51647","elType":"container","settings":{"structure":"30","flex_direction":"row","flex_gap":{"size":30,"column":"30","row":"30","unit":"px","isLinked":true},"content_width":"full","flex_justify_content":"space-evenly","scroll_y":-80,"container_sticky_offset":50},"elements":[{"id":"c964b29","elType":"widget","settings":{"icon_type":"icon","alignment":"left","btn_text":"","image_size":"custom","subtitle":"","title":"5 ATM Water Resistance","btn_position":"hover","image":{"id":1792,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/09\/weather_drop.svg","alt":"","source":"library"},"image_alignment":"left","title_size":"small","svg_animation":"","image_custom_dimension":{"width":"45","height":"45"},"content":"","icon_text":"53","scroll_y":"-80","_element_width":"initial","_element_width_mobile":"inherit","_element_custom_width":{"unit":"%","size":33.3,"sizes":[]},"_element_custom_width_tablet":{"unit":"%","size":50,"sizes":[]},"_element_custom_width_mobile":{"unit":"%","size":"","sizes":[]}},"elements":[],"widgetType":"wd_infobox"},{"id":"27cb1e8","elType":"widget","settings":{"icon_type":"icon","alignment":"left","btn_text":"","image_size":"custom","subtitle":"","title":"Design Resistance","btn_position":"hover","image":{"id":1790,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/09\/watches-software.svg","alt":"","source":"library"},"image_alignment":"left","title_size":"small","svg_animation":"","image_custom_dimension":{"width":"45","height":"45"},"content":"","icon_text":"53","scroll_y":"-80","_element_width":"initial","_element_width_mobile":"inherit","_element_custom_width":{"unit":"%","size":33.3,"sizes":[]},"_element_custom_width_tablet":{"unit":"%","size":50,"sizes":[]},"_element_custom_width_mobile":{"unit":"%","size":"","sizes":[]}},"elements":[],"widgetType":"wd_infobox"},{"id":"8d5ba55","elType":"widget","settings":{"icon_type":"icon","alignment":"left","btn_text":"","image_size":"custom","subtitle":"","title":"Sapphire Glass","btn_position":"hover","image":{"id":1786,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/09\/watches-diamonds.svg","alt":"","source":"library"},"image_alignment":"left","title_size":"small","svg_animation":"","image_custom_dimension":{"width":"45","height":"45"},"content":"","icon_text":"53","scroll_y":"-80","hide_tablet":"hidden-tablet","hide_mobile":"hidden-mobile","_element_width":"initial","_element_custom_width":{"unit":"%","size":33.3,"sizes":[]}},"elements":[],"widgetType":"wd_infobox"}],"isInner":true},{"id":"3db9fb6","elType":"container","settings":{"structure":"30","flex_direction":"row","flex_align_items":"center","flex_gap":{"size":30,"column":"30","row":"30","unit":"px","isLinked":true},"content_width":"full","flex_justify_content":"space-evenly","scroll_y":-80,"container_sticky_offset":50},"elements":[{"id":"7b34c4e","elType":"widget","settings":{"icon_type":"icon","alignment":"left","btn_text":"","image_size":"custom","subtitle":"","title":"German Steel Band","btn_position":"hover","image":{"id":1791,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/09\/watches-target.svg","alt":"","source":"library"},"image_alignment":"left","title_size":"small","svg_animation":"","image_custom_dimension":{"width":"45","height":"45"},"content":"","icon_text":"53","scroll_y":"-80","_element_width":"initial","_element_width_mobile":"inherit","_element_custom_width":{"unit":"%","size":33.3,"sizes":[]},"_element_custom_width_tablet":{"unit":"%","size":50,"sizes":[]},"_element_custom_width_mobile":{"unit":"%","size":"","sizes":[]}},"elements":[],"widgetType":"wd_infobox"},{"id":"8d3a3f4","elType":"widget","settings":{"icon_type":"icon","alignment":"left","btn_text":"","image_size":"custom","subtitle":"","title":"Material Design","btn_position":"hover","image":{"id":1788,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/09\/watches-pencil-ruler.svg","alt":"","source":"library"},"image_alignment":"left","title_size":"small","svg_animation":"","image_custom_dimension":{"width":"45","height":"45"},"content":"","icon_text":"53","scroll_y":"-80","_element_width":"initial","_element_width_mobile":"inherit","_element_custom_width":{"unit":"%","size":33.3,"sizes":[]},"_element_custom_width_tablet":{"unit":"%","size":50,"sizes":[]},"_element_custom_width_mobile":{"unit":"%","size":"","sizes":[]}},"elements":[],"widgetType":"wd_infobox"},{"id":"7f34bf9","elType":"widget","settings":{"icon_type":"icon","alignment":"left","btn_text":"","image_size":"custom","subtitle":"","title":"Swiss Movement","btn_position":"hover","image":{"id":1784,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/09\/watches-basic_gear.svg","alt":"","source":"library"},"image_alignment":"left","title_size":"small","svg_animation":"","image_custom_dimension":{"width":"45","height":"45"},"content":"","icon_text":"53","scroll_y":"-80","hide_tablet":"hidden-tablet","hide_mobile":"hidden-mobile","_element_width":"initial","_element_custom_width":{"unit":"%","size":33.3,"sizes":[]}},"elements":[],"widgetType":"wd_infobox"}],"isInner":true},{"id":"6c6f4fb","elType":"container","settings":{"flex_direction":"row","flex_gap":{"column":"15","row":"15","isLinked":true,"unit":"px","size":15},"scroll_y":-80,"container_sticky_offset":50},"elements":[{"id":"131672a","elType":"widget","settings":{"color":"primary","size":"large","_element_width":"auto","text":"Add to Cart","scroll_y":"-80"},"elements":[],"widgetType":"wd_button"},{"id":"96128bf","elType":"widget","settings":{"size":"large","style":"bordered","_element_width":"auto","text":"View more","scroll_y":"-80"},"elements":[],"widgetType":"wd_button"}],"isInner":true}],"isInner":true}],"isInner":false},{"id":"3b0c53b","elType":"container","settings":{"margin":{"unit":"px","top":"0","right":"0","bottom":"80","left":"0","isLinked":""},"margin_tablet":{"unit":"px","top":"0","right":"0","bottom":"70","left":"0","isLinked":""},"flex_direction":"column","flex_align_items":"stretch","flex_gap":{"size":null,"column":"","row":"","unit":"px","isLinked":true},"scroll_y":-80,"margin_mobile":{"unit":"px","top":"0","right":"0","bottom":"50","left":"0","isLinked":false},"container_sticky_offset":50},"elements":[{"id":"eade322","elType":"widget","settings":{"subtitle":"","title":"Our <strong><u>Lookbook<\/u><\/strong> By WoodMart","after_title":"","title_typography_typography":"custom","title_typography_font_size":{"unit":"px","size":"36","sizes":[]},"title_typography_font_size_tablet":{"unit":"px","size":"22","sizes":[]},"title_typography_font_weight":"300","title_typography_line_height":{"unit":"em","size":"1.3","sizes":[]},"text_typography_typography":"custom","text_typography_font_size":{"unit":"px","size":15,"sizes":[]},"text_typography_font_size_tablet":{"unit":"px","size":"14","sizes":[]},"scroll_y":"-80","title_decoration_style":"bordered"},"elements":[],"widgetType":"wd_title"},{"id":"1a99266","elType":"widget","settings":{"text":"<p>Tortor dapibus vivamus parturient nostra sit neque non a vestibulum.<\/p>","text_alignment":"center","typography_typography":"custom","typography_font_size":{"unit":"px","size":16,"sizes":[]},"typography_font_size_tablet":{"unit":"px","size":14,"sizes":[]},"_margin":{"unit":"px","top":"0","right":"0","bottom":"10","left":"0","isLinked":false},"scroll_y":-80},"elements":[],"widgetType":"wd_text_block"},{"id":"fba3cc1","elType":"widget","settings":{"spacing":"6","pagination":"disable","columns":{"size":"4","unit":"px","sizes":[]},"posts_per_page":"6","scroll_y":"-80","sync_parent_id":"wd_6577046492c2a","columns_tablet":{"unit":"px","size":3,"sizes":[]},"columns_mobile":{"unit":"px","size":2,"sizes":[]}},"elements":[],"widgetType":"wd_portfolio"}],"isInner":false},{"id":"2d70689","elType":"container","settings":{"margin":{"unit":"px","top":"0","right":"0","bottom":"50","left":"0","isLinked":""},"margin_tablet":{"unit":"px","top":"0","right":"0","bottom":"60","left":"0","isLinked":false},"flex_direction":"column","flex_align_items":"stretch","flex_gap":{"size":null,"column":"","row":"","unit":"px","isLinked":true},"scroll_y":-80,"container_sticky_offset":50},"elements":[{"id":"9fb3265","elType":"widget","settings":{"subtitle":"","title":"WoodMart <strong><u>Magazine<\/u><\/strong>","after_title":"","title_typography_typography":"custom","title_typography_font_size":{"unit":"px","size":"36","sizes":[]},"title_typography_font_size_tablet":{"unit":"px","size":"22","sizes":[]},"title_typography_font_weight":"300","title_typography_line_height":{"unit":"em","size":"1.3","sizes":[]},"text_typography_typography":"custom","text_typography_font_size":{"unit":"px","size":15,"sizes":[]},"text_typography_font_size_tablet":{"unit":"px","size":"14","sizes":[]},"scroll_y":"-80","title_decoration_style":"bordered"},"elements":[],"widgetType":"wd_title"},{"id":"c9201d9","elType":"widget","settings":{"text":"<p>Tortor dapibus vivamus parturient nostra sit neque non a vestibulum.<\/p>","text_alignment":"center","typography_typography":"custom","typography_font_size":{"unit":"px","size":15,"sizes":[]},"typography_font_size_tablet":{"unit":"px","size":14,"sizes":[]},"scroll_y":-80},"elements":[],"widgetType":"wd_text_block"},{"id":"8b6993b","elType":"widget","settings":{"blog_spacing":"20","items_per_page":"3","blog_design":"carousel","blog_carousel_design":"small-images","carousel_small_img":"yes","slides_per_view":{"size":"2","unit":"px","sizes":[]},"img_size":"custom","scroll_y":"-80","img_size_custom":{"width":"600","height":"680"},"sync_parent_id":"wd_657704649128b"},"elements":[],"widgetType":"wd_blog"}],"isInner":false},{"id":"9e6ce7d","elType":"container","settings":{"wd_section_stretch":"stretch-content","border_width":{"top":"1","left":"0","right":"0","bottom":"0","unit":"px","isLinked":""},"border_border":"solid","border_color":"#ededed","flex_gap":{"size":null,"column":"","row":"","unit":"px","isLinked":true},"margin":{"unit":"px","top":"0","right":"0","bottom":"-40","left":"0","isLinked":""},"padding":{"unit":"px","top":"55","right":"0","bottom":"0","left":"0","isLinked":""},"flex_direction":"column","flex_align_items":"stretch","scroll_y":-80,"container_sticky_offset":50},"elements":[{"id":"8e2ee93","elType":"widget","settings":{"subtitle":"","title":"We're Now On <strong><u>Instagram<\/u><\/strong>","after_title":"","title_typography_typography":"custom","title_typography_font_size":{"unit":"px","size":"36","sizes":[]},"title_typography_font_size_tablet":{"unit":"px","size":"22","sizes":[]},"title_typography_font_weight":"300","title_typography_line_height":{"unit":"em","size":"1.3","sizes":[]},"text_typography_font_size":{"unit":"px","size":15,"sizes":[]},"text_typography_font_size_tablet":{"unit":"px","size":"14","sizes":[]},"scroll_y":"-80","title_decoration_style":"bordered","_padding":{"unit":"px","top":"0","right":"15","bottom":"0","left":"15","isLinked":false}},"elements":[],"widgetType":"wd_title"},{"id":"84347b0","elType":"widget","settings":{"text":"<p>Tortor dapibus vivamus parturient nostra sit neque non a vestibulum.<\/p>","text_alignment":"center","typography_typography":"custom","typography_font_size":{"unit":"px","size":16,"sizes":[]},"typography_font_size_tablet":{"unit":"px","size":14,"sizes":[]},"_margin":{"unit":"px","top":"0","right":"0","bottom":"30","left":"0","isLinked":false},"scroll_y":-80,"_padding":{"unit":"px","top":"0","right":"15","bottom":"0","left":"15","isLinked":false}},"elements":[],"widgetType":"wd_text_block"},{"id":"55eb0ab","elType":"widget","settings":{"data_source":"images","number":{"size":"6","unit":"px","sizes":[]},"size":"large","design":"slider","per_row":{"size":"6","unit":"px","sizes":[]},"hide_pagination_control":"yes","hide_prev_next_buttons":"yes","username":"aark_collective","scroll_y":"-80","images":[{"id":1818,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/09\/watches-instagram-1-opt.jpg"},{"id":1819,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/09\/watches-instagram-2-opt.jpg"},{"id":1820,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/09\/watches-instagram-3-opt.jpg"},{"id":1821,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/09\/watches-instagram-4-opt.jpg"},{"id":1822,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/09\/watches-instagram-5-opt.jpg"},{"id":1823,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/09\/watches-instagram-6-opt.jpg"}],"images_size":"full","images_likes":"1000-10000","images_comments":"0-1000","sync_parent_id":"wd_65770464929bf"},"elements":[],"widgetType":"wd_instagram"}],"isInner":false}]]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[_woodmart_prefooter_off]]></wp:meta_key>
 							<wp:meta_value><![CDATA[on]]></wp:meta_value>
 						</wp:postmeta>
@@ -1811,7 +1767,7 @@
 					<title><![CDATA[watches-basic_gear]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/watches-basic_gear/</link>
 					<pubDate>Mon, 06 Sep 2021 12:05:23 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/watches-basic_gear.svg</guid>
 															<wp:post_id>1784</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-06 12:05:23]]></wp:post_date>
@@ -1834,7 +1790,7 @@
 					<title><![CDATA[watches-best-sellers]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/watches-best-sellers/</link>
 					<pubDate>Mon, 06 Sep 2021 12:05:24 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/watches-best-sellers.svg</guid>
 															<wp:post_id>1785</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-06 12:05:24]]></wp:post_date>
@@ -1857,7 +1813,7 @@
 					<title><![CDATA[watches-diamonds]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/watches-diamonds/</link>
 					<pubDate>Mon, 06 Sep 2021 12:05:25 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/watches-diamonds.svg</guid>
 															<wp:post_id>1786</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-06 12:05:25]]></wp:post_date>
@@ -1880,7 +1836,7 @@
 					<title><![CDATA[watches-pencil-ruler]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/watches-pencil-ruler/</link>
 					<pubDate>Mon, 06 Sep 2021 12:05:27 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/watches-pencil-ruler.svg</guid>
 															<wp:post_id>1788</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-06 12:05:27]]></wp:post_date>
@@ -1903,7 +1859,7 @@
 					<title><![CDATA[watches-software]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/watches-software/</link>
 					<pubDate>Mon, 06 Sep 2021 12:05:29 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/watches-software.svg</guid>
 															<wp:post_id>1790</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-06 12:05:29]]></wp:post_date>
@@ -1926,7 +1882,7 @@
 					<title><![CDATA[watches-target]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/watches-target/</link>
 					<pubDate>Mon, 06 Sep 2021 12:05:31 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/watches-target.svg</guid>
 															<wp:post_id>1791</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-06 12:05:31]]></wp:post_date>
@@ -1949,7 +1905,7 @@
 					<title><![CDATA[weather_drop]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/weather_drop/</link>
 					<pubDate>Mon, 06 Sep 2021 12:05:31 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/weather_drop.svg</guid>
 															<wp:post_id>1792</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-06 12:05:31]]></wp:post_date>
@@ -1972,7 +1928,7 @@
 					<title><![CDATA[watches-image-1-opt]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/watches-image-1-opt/</link>
 					<pubDate>Mon, 06 Sep 2021 12:13:20 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/watches-image-1-opt.jpg</guid>
 															<wp:post_id>1801</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-06 12:13:20]]></wp:post_date>
@@ -1995,7 +1951,7 @@
 					<title><![CDATA[watches-image-2-opt]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/watches-image-2-opt/</link>
 					<pubDate>Mon, 06 Sep 2021 12:13:22 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/watches-image-2-opt.jpg</guid>
 															<wp:post_id>1802</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-06 12:13:22]]></wp:post_date>
@@ -2018,7 +1974,7 @@
 					<title><![CDATA[watches-image-3-opt]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/watches-image-3-opt/</link>
 					<pubDate>Mon, 06 Sep 2021 12:13:23 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/watches-image-3-opt.jpg</guid>
 															<wp:post_id>1803</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-06 12:13:23]]></wp:post_date>
@@ -2041,7 +1997,7 @@
 					<title><![CDATA[watches-austen-opt]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/home-watches/watches-austen-opt/</link>
 					<pubDate>Mon, 06 Sep 2021 12:14:07 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/watches-austen-opt.jpg</guid>
 															<wp:post_id>1804</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-06 12:14:07]]></wp:post_date>
@@ -2064,7 +2020,7 @@
 					<title><![CDATA[watches-image-4-opt]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/home-watches/watches-image-4-opt/</link>
 					<pubDate>Mon, 06 Sep 2021 12:18:45 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/watches-image-4-opt.png</guid>
 															<wp:post_id>1810</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-06 12:18:45]]></wp:post_date>
@@ -2087,7 +2043,7 @@
 					<title><![CDATA[watches-instagram-1-opt]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/home-watches/watches-instagram-1-opt/</link>
 					<pubDate>Mon, 06 Sep 2021 12:26:50 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/watches-instagram-1-opt.jpg</guid>
 															<wp:post_id>1818</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-06 12:26:50]]></wp:post_date>
@@ -2110,7 +2066,7 @@
 					<title><![CDATA[watches-portfolio-3]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/watches-portfolio-3/</link>
 					<pubDate>Mon, 18 Oct 2021 16:45:02 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/watches-portfolio-3.jpg</guid>
 															<wp:post_id>4853</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-18 16:45:02]]></wp:post_date>
@@ -2133,7 +2089,7 @@
 					<title><![CDATA[watches-portfolio-5]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/watches-portfolio-5/</link>
 					<pubDate>Mon, 18 Oct 2021 16:45:04 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/watches-portfolio-5.jpg</guid>
 															<wp:post_id>4855</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-18 16:45:04]]></wp:post_date>
@@ -2156,7 +2112,7 @@
 					<title><![CDATA[watches-portfolio-6]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/watches-portfolio-6/</link>
 					<pubDate>Mon, 18 Oct 2021 16:45:05 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/watches-portfolio-6.jpg</guid>
 															<wp:post_id>4856</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-18 16:45:05]]></wp:post_date>
@@ -2179,7 +2135,7 @@
 					<title><![CDATA[watches-portfolio-7]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/watches-portfolio-7/</link>
 					<pubDate>Mon, 18 Oct 2021 16:45:06 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/watches-portfolio-7.jpg</guid>
 															<wp:post_id>4857</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-18 16:45:06]]></wp:post_date>
@@ -2202,7 +2158,7 @@
 					<title><![CDATA[watches-portfolio-8]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/watches-portfolio-8/</link>
 					<pubDate>Mon, 18 Oct 2021 16:45:08 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/watches-portfolio-8.jpg</guid>
 															<wp:post_id>4858</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-18 16:45:08]]></wp:post_date>
@@ -2225,7 +2181,7 @@
 					<title><![CDATA[watches-portfolio-9]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/watches-portfolio-9/</link>
 					<pubDate>Mon, 18 Oct 2021 16:45:09 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/watches-portfolio-9.jpg</guid>
 															<wp:post_id>4859</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-18 16:45:09]]></wp:post_date>
@@ -2248,7 +2204,7 @@
 					<title><![CDATA[wood-logo-dark]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/wood-logo-dark/</link>
 					<pubDate>Thu, 26 Aug 2021 12:45:05 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/08/wood-logo-dark.svg</guid>
 															<wp:post_id>113</wp:post_id>
 					<wp:post_date><![CDATA[2021-08-26 12:45:05]]></wp:post_date>
@@ -2271,7 +2227,7 @@
 					<title><![CDATA[Footer 1 column Dark]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/?cms_block=footer-1-column-darck</link>
 					<pubDate>Tue, 31 Aug 2021 13:41:48 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/?post_type=cms_block&#038;p=818</guid>
 											<content:encoded><![CDATA[<a  href="#">
 								<img  src="http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/08/wood-logo-dark.svg" title="wood-logo-dark" width="220" height="30">							</a>
@@ -2324,10 +2280,6 @@
 							<wp:meta_value><![CDATA[[{"id":"45452fa","elType":"container","settings":{"flex_direction":"column","flex_gap":{"size":null,"column":"","row":"","unit":"px","isLinked":true},"scroll_y":-80,"container_sticky_offset":50},"elements":[{"id":"43a3ae5","elType":"widget","settings":{"image":{"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/08\/wood-logo-dark.svg","id":113,"alt":"","source":"library"},"image_size":"custom","image_custom_dimension":{"width":"220","height":"30"},"on_click_action":"link","link":{"url":"#","is_external":false,"nofollow":false,"custom_attributes":""},"scroll_y":-80},"elements":[],"widgetType":"wd_image_or_svg"},{"id":"aec6db8","elType":"widget","settings":{"text":"<p>Condimentum adipiscing vel neque dis nam parturient orci at scelerisque neque dis nam parturient.<\/p>","scroll_y":-80},"elements":[],"widgetType":"wd_text_block"},{"id":"93c43cf","elType":"widget","settings":{"list_items":[{"list_content":"451 Wall Street, UK, London","_id":"80be36b","image":{"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/08\/wd-cursor-dark.svg","id":824,"alt":"","source":"library"},"item_type":"image","image_size":"custom","image_custom_dimension":{"width":"14","height":"14"}},{"list_content":"Phone: (064) 332-1233","link":{"url":"tel: (064) 332-1233","is_external":false,"nofollow":false,"custom_attributes":""},"_id":"c383cf6","image":{"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/08\/wd-phone-dark.svg","id":823,"alt":"","source":"library"},"item_type":"image","image_size":"custom","image_custom_dimension":{"width":"14","height":"14"}},{"list_content":"Fax: (099) 453-1357","_id":"a511145","image":{"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/08\/wd-envelope-dark.svg","id":825,"alt":"","source":"library"},"item_type":"image","image_size":"custom","image_custom_dimension":{"width":"14","height":"14"}}],"list_type":"image","scroll_y":-80,"image_size":"custom","image_custom_dimension":{"width":"14","height":"14"},"list_items_gap":{"unit":"px","size":7,"sizes":[]}},"elements":[],"widgetType":"wd_list"}],"isInner":false}]]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[_elementor_controls_usage]]></wp:meta_key>
 							<wp:meta_value><![CDATA[a:5:{s:15:"wd_image_or_svg";a:3:{s:5:"count";i:1;s:15:"control_percent";i:3;s:8:"controls";a:1:{s:7:"content";a:1:{s:23:"general_content_section";a:5:{s:5:"image";i:1;s:10:"image_size";i:1;s:22:"image_custom_dimension";i:1;s:15:"on_click_action";i:1;s:4:"link";i:1;}}}}s:13:"wd_text_block";a:3:{s:5:"count";i:1;s:15:"control_percent";i:1;s:8:"controls";a:1:{s:7:"content";a:1:{s:23:"general_content_section";a:1:{s:4:"text";i:1;}}}}s:7:"wd_list";a:3:{s:5:"count";i:1;s:15:"control_percent";i:3;s:8:"controls";a:2:{s:7:"content";a:2:{s:23:"general_content_section";a:1:{s:10:"list_items";i:1;}s:20:"icon_content_section";a:3:{s:9:"list_type";i:1;s:10:"image_size";i:1;s:22:"image_custom_dimension";i:1;}}s:5:"style";a:1:{s:21:"general_style_section";a:1:{s:14:"list_items_gap";i:1;}}}}s:6:"column";a:3:{s:5:"count";i:1;s:15:"control_percent";i:0;s:8:"controls";a:1:{s:6:"layout";a:1:{s:6:"layout";a:1:{s:12:"_inline_size";i:1;}}}}s:7:"section";a:3:{s:5:"count";i:1;s:15:"control_percent";i:0;s:8:"controls";a:0:{}}}]]></wp:meta_value>
 						</wp:postmeta>
@@ -2352,10 +2304,6 @@
 							<wp:meta_value><![CDATA[[{"id":"45452fa","elType":"container","settings":{"flex_direction":"column","flex_gap":{"size":null,"column":"","row":"","unit":"px","isLinked":true},"scroll_y":-80,"container_sticky_offset":50},"elements":[{"id":"43a3ae5","elType":"widget","settings":{"image":{"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/08\/wood-logo-dark.svg","id":113,"alt":"","source":"library"},"image_size":"custom","image_custom_dimension":{"width":"220","height":"30"},"on_click_action":"link","link":{"url":"#","is_external":false,"nofollow":false,"custom_attributes":""},"scroll_y":-80},"elements":[],"widgetType":"wd_image_or_svg"},{"id":"aec6db8","elType":"widget","settings":{"text":"<p>Condimentum adipiscing vel neque dis nam parturient orci at scelerisque neque dis nam parturient.<\/p>","scroll_y":-80},"elements":[],"widgetType":"wd_text_block"},{"id":"93c43cf","elType":"widget","settings":{"list_items":[{"list_content":"451 Wall Street, UK, London","_id":"80be36b","image":{"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/08\/wd-cursor-dark.svg","id":824,"alt":"","source":"library"},"item_type":"image","image_size":"custom","image_custom_dimension":{"width":"14","height":"14"}},{"list_content":"Phone: (064) 332-1233","link":{"url":"tel: (064) 332-1233","is_external":false,"nofollow":false,"custom_attributes":""},"_id":"c383cf6","image":{"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/08\/wd-phone-dark.svg","id":823,"alt":"","source":"library"},"item_type":"image","image_size":"custom","image_custom_dimension":{"width":"14","height":"14"}},{"list_content":"Fax: (099) 453-1357","_id":"a511145","image":{"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/08\/wd-envelope-dark.svg","id":825,"alt":"","source":"library"},"item_type":"image","image_size":"custom","image_custom_dimension":{"width":"14","height":"14"}}],"list_type":"image","scroll_y":-80,"image_size":"custom","image_custom_dimension":{"width":"14","height":"14"},"list_items_gap":{"unit":"px","size":7,"sizes":[]}},"elements":[],"widgetType":"wd_list"}],"isInner":false}]]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[_elementor_controls_usage]]></wp:meta_key>
 							<wp:meta_value><![CDATA[a:5:{s:15:"wd_image_or_svg";a:3:{s:5:"count";i:1;s:15:"control_percent";i:3;s:8:"controls";a:1:{s:7:"content";a:1:{s:23:"general_content_section";a:5:{s:5:"image";i:1;s:10:"image_size";i:1;s:22:"image_custom_dimension";i:1;s:15:"on_click_action";i:1;s:4:"link";i:1;}}}}s:13:"wd_text_block";a:3:{s:5:"count";i:1;s:15:"control_percent";i:1;s:8:"controls";a:1:{s:7:"content";a:1:{s:23:"general_content_section";a:1:{s:4:"text";i:1;}}}}s:7:"wd_list";a:3:{s:5:"count";i:1;s:15:"control_percent";i:3;s:8:"controls";a:2:{s:7:"content";a:2:{s:23:"general_content_section";a:1:{s:10:"list_items";i:1;}s:20:"icon_content_section";a:3:{s:9:"list_type";i:1;s:10:"image_size";i:1;s:22:"image_custom_dimension";i:1;}}s:5:"style";a:1:{s:21:"general_style_section";a:1:{s:14:"list_items_gap";i:1;}}}}s:6:"column";a:3:{s:5:"count";i:1;s:15:"control_percent";i:0;s:8:"controls";a:1:{s:6:"layout";a:1:{s:6:"layout";a:1:{s:12:"_inline_size";i:1;}}}}s:7:"section";a:3:{s:5:"count";i:1;s:15:"control_percent";i:0;s:8:"controls";a:0:{}}}]]></wp:meta_value>
 						</wp:postmeta>
@@ -2364,7 +2312,7 @@
 					<title><![CDATA[wd-phone-dark]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/wd-phone-dark/</link>
 					<pubDate>Tue, 31 Aug 2021 13:45:43 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/08/wd-phone-dark.svg</guid>
 															<wp:post_id>823</wp:post_id>
 					<wp:post_date><![CDATA[2021-08-31 13:45:43]]></wp:post_date>
@@ -2387,7 +2335,7 @@
 					<title><![CDATA[wd-cursor-dark]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/wd-cursor-dark/</link>
 					<pubDate>Tue, 31 Aug 2021 13:45:44 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/08/wd-cursor-dark.svg</guid>
 															<wp:post_id>824</wp:post_id>
 					<wp:post_date><![CDATA[2021-08-31 13:45:44]]></wp:post_date>
@@ -2410,7 +2358,7 @@
 					<title><![CDATA[wd-envelope-dark]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/wd-envelope-dark/</link>
 					<pubDate>Tue, 31 Aug 2021 13:45:45 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/08/wd-envelope-dark.svg</guid>
 															<wp:post_id>825</wp:post_id>
 					<wp:post_date><![CDATA[2021-08-31 13:45:45]]></wp:post_date>
@@ -2433,7 +2381,7 @@
 					<title><![CDATA[watches-instagram-2-opt]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/home-watches/watches-instagram-2-opt/</link>
 					<pubDate>Mon, 06 Sep 2021 12:26:52 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/watches-instagram-2-opt.jpg</guid>
 															<wp:post_id>1819</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-06 12:26:52]]></wp:post_date>
@@ -2456,7 +2404,7 @@
 					<title><![CDATA[watches-instagram-3-opt]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/home-watches/watches-instagram-3-opt/</link>
 					<pubDate>Mon, 06 Sep 2021 12:26:54 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/watches-instagram-3-opt.jpg</guid>
 															<wp:post_id>1820</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-06 12:26:54]]></wp:post_date>
@@ -2479,7 +2427,7 @@
 					<title><![CDATA[watches-instagram-4-opt]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/home-watches/watches-instagram-4-opt/</link>
 					<pubDate>Mon, 06 Sep 2021 12:26:56 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/watches-instagram-4-opt.jpg</guid>
 															<wp:post_id>1821</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-06 12:26:56]]></wp:post_date>
@@ -2502,7 +2450,7 @@
 					<title><![CDATA[watches-instagram-5-opt]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/home-watches/watches-instagram-5-opt/</link>
 					<pubDate>Mon, 06 Sep 2021 12:26:58 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/watches-instagram-5-opt.jpg</guid>
 															<wp:post_id>1822</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-06 12:26:58]]></wp:post_date>
@@ -2525,7 +2473,7 @@
 					<title><![CDATA[watches-instagram-6-opt]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/home-watches/watches-instagram-6-opt/</link>
 					<pubDate>Mon, 06 Sep 2021 12:27:00 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/watches-instagram-6-opt.jpg</guid>
 															<wp:post_id>1823</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-06 12:27:00]]></wp:post_date>
@@ -2548,13 +2496,14 @@
 					<title><![CDATA[Watches slide 1]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/woodmart_slide/watches-slide-1/</link>
 					<pubDate>Mon, 12 Feb 2024 15:24:00 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/elementor/?post_type=woodmart_slide&#038;p=27273</guid>
-											<content:encoded><![CDATA[<link rel="stylesheet" id="wd-section-title-css" href="https://dummy.xtemos.com/woodmart2/elementor/wp-content/themes/woodmart/css/parts/el-section-title.min.css?ver=7.4.0" type="text/css" media="all" /> 					
+											<content:encoded><![CDATA[<link rel="stylesheet" id="wd-section-title-css" href="https://dummy.xtemos.com/woodmart2/elementor/wp-content/themes/woodmart8/css/parts/el-section-title.min.css?ver=8.4.0" type="text/css" media="all" /> 					
 				<h4>Swiss-made stylish</h4> 
 				<h4>brand <strong>Blue Watches</strong></h4> 
-						<link rel="stylesheet" id="wd-text-block-css" href="https://dummy.xtemos.com/woodmart2/elementor/wp-content/themes/woodmart/css/parts/el-text-block.min.css?ver=7.4.0" type="text/css" media="all" /> 					
+								<link rel="stylesheet" id="wd-text-block-css" href="https://dummy.xtemos.com/woodmart2/elementor/wp-content/themes/woodmart8/css/parts/el-text-block.min.css?ver=8.4.0" type="text/css" media="all" /> 					
 			<p>Many desktop publishing packages and web page editors now use lorem ipsum as their default.</p>
+								<link rel="stylesheet" id="wd-button-css" href="https://dummy.xtemos.com/woodmart2/elementor/wp-content/themes/woodmart8/css/parts/el-button.min.css?ver=8.4.0" type="text/css" media="all" /> 					
 			<a  href="#">
 					Add to cart				
 							</a>
@@ -2562,8 +2511,8 @@
 															<wp:post_id>27273</wp:post_id>
 					<wp:post_date><![CDATA[2024-02-12 15:24:00]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-02-12 15:24:00]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-02-12 15:29:40]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-02-12 15:29:40]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2026-02-25 12:31:35]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2026-02-25 12:31:35]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[watches-slide-1]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -2665,28 +2614,29 @@
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_elementor_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[3.18.3]]></wp:meta_value>
+							<wp:meta_value><![CDATA[3.33.6]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_elementor_data]]></wp:meta_key>
 							<wp:meta_value><![CDATA[[{"id":"c21040b","elType":"container","settings":{"flex_direction":"column","flex_gap":{"column":"0","row":"0","isLinked":true,"unit":"px","size":0},"container_sticky_offset":50,"scroll_y":-80},"elements":[{"id":"0cc62af","elType":"widget","settings":{"subtitle":"","title":"Swiss-made stylish","after_title":"","align":"left","title_typography_typography":"custom","title_typography_font_size":{"unit":"px","size":56,"sizes":[]},"title_typography_font_size_tablet":{"unit":"px","size":42,"sizes":[]},"title_typography_font_size_mobile":{"unit":"px","size":26,"sizes":[]},"title_typography_font_weight":"300","scroll_y":-80,"wd_animation":"slide-from-bottom","wd_animation_delay":150},"elements":[],"widgetType":"wd_title"},{"id":"d52bcc2","elType":"widget","settings":{"subtitle":"","title":"brand <strong>Blue Watches<\/strong>","after_title":"","align":"left","title_typography_typography":"custom","title_typography_font_size":{"unit":"px","size":56,"sizes":[]},"title_typography_font_size_tablet":{"unit":"px","size":42,"sizes":[]},"title_typography_font_size_mobile":{"unit":"px","size":26,"sizes":[]},"title_typography_font_weight":"300","_margin":{"unit":"px","top":"0","right":"0","bottom":"10","left":"0","isLinked":false},"scroll_y":-80,"wd_animation":"slide-from-bottom","wd_animation_delay":200},"elements":[],"widgetType":"wd_title"},{"id":"73aead4","elType":"widget","settings":{"text":"<p>Many desktop publishing packages and web page editors now use lorem ipsum as their default.<\/p>","width":{"unit":"px","size":523,"sizes":[]},"width_tablet":{"unit":"px","size":470,"sizes":[]},"width_mobile":{"unit":"px","size":238,"sizes":[]},"typography_typography":"custom","typography_font_size":{"unit":"px","size":22,"sizes":[]},"typography_font_size_tablet":{"unit":"px","size":20,"sizes":[]},"typography_font_size_mobile":{"unit":"px","size":14,"sizes":[]},"_margin":{"unit":"px","top":"0","right":"0","bottom":"30","left":"0","isLinked":false},"scroll_y":-80,"wd_animation":"slide-from-bottom","wd_animation_delay":350},"elements":[],"widgetType":"wd_text_block"},{"id":"8746b6a","elType":"container","settings":{"flex_direction":"row","flex_align_items":"center","flex_wrap":"nowrap","container_sticky_offset":50,"scroll_y":-80},"elements":[{"id":"cff36e0","elType":"widget","settings":{"text":"Add to cart","color":"primary","scroll_y":-80,"wd_animation":"slide-from-bottom","wd_animation_delay":450},"elements":[],"widgetType":"wd_button"},{"id":"cb2f04d","elType":"widget","settings":{"text":"<p>$190.00<\/p>","typography_typography":"custom","typography_font_size":{"unit":"px","size":22,"sizes":[]},"typography_font_size_tablet":{"unit":"px","size":18,"sizes":[]},"text_color":"title","scroll_y":-80,"wd_animation":"slide-from-bottom","wd_animation_delay":450},"elements":[],"widgetType":"wd_text_block"}],"isInner":true}],"isInner":false}]]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
+							<wp:meta_key><![CDATA[_elementor_page_settings]]></wp:meta_key>
+							<wp:meta_value><![CDATA[a:7:{s:10:"hide_title";s:0:"";s:8:"wd_image";a:5:{s:3:"url";s:109:"http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/watches-slide-1-bg-img-opt.jpg";s:2:"id";i:27274;s:4:"size";s:0:"";s:3:"alt";s:0:"";s:6:"source";s:7:"library";}s:24:"wd_image_object_position";s:11:"left center";s:11:"wd_bg_image";a:3:{s:3:"url";s:0:"";s:2:"id";s:0:"";s:4:"size";s:0:"";}s:6:"margin";a:6:{s:4:"unit";s:2:"px";s:3:"top";s:0:"";s:5:"right";s:0:"";s:6:"bottom";s:0:"";s:4:"left";s:0:"";s:8:"isLinked";b:1;}s:7:"padding";a:6:{s:4:"unit";s:2:"px";s:3:"top";s:0:"";s:5:"right";s:0:"";s:6:"bottom";s:0:"";s:4:"left";s:0:"";s:8:"isLinked";b:1;}s:21:"background_background";s:0:"";}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[Watches slide 2]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/woodmart_slide/watches-slide-1-2/</link>
 					<pubDate>Mon, 12 Feb 2024 15:30:23 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/elementor/?post_type=woodmart_slide&#038;p=27282</guid>
-											<content:encoded><![CDATA[<link rel="stylesheet" id="wd-section-title-css" href="https://dummy.xtemos.com/woodmart2/elementor/wp-content/themes/woodmart/css/parts/el-section-title.min.css?ver=7.4.0" type="text/css" media="all" /> 					
+											<content:encoded><![CDATA[<link rel="stylesheet" id="wd-section-title-css" href="https://dummy.xtemos.com/woodmart2/elementor/wp-content/themes/woodmart8/css/parts/el-section-title.min.css?ver=8.4.0" type="text/css" media="all" /> 					
 				<h4>Swiss-made stylish</h4> 
 				<h4>brand <strong>Black Watches</strong></h4> 
-						<link rel="stylesheet" id="wd-text-block-css" href="https://dummy.xtemos.com/woodmart2/elementor/wp-content/themes/woodmart/css/parts/el-text-block.min.css?ver=7.4.0" type="text/css" media="all" /> 					
+								<link rel="stylesheet" id="wd-text-block-css" href="https://dummy.xtemos.com/woodmart2/elementor/wp-content/themes/woodmart8/css/parts/el-text-block.min.css?ver=8.4.0" type="text/css" media="all" /> 					
 			<p>Many desktop publishing packages and web page editors now use lorem ipsum as their default.</p>
+								<link rel="stylesheet" id="wd-button-css" href="https://dummy.xtemos.com/woodmart2/elementor/wp-content/themes/woodmart8/css/parts/el-button.min.css?ver=8.4.0" type="text/css" media="all" /> 					
 			<a  href="#">
 					Add to cart				
 							</a>
@@ -2694,8 +2644,8 @@
 															<wp:post_id>27282</wp:post_id>
 					<wp:post_date><![CDATA[2024-02-12 15:30:23]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-02-12 15:30:23]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-02-12 15:30:51]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-02-12 15:30:51]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2026-02-25 12:31:17]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2026-02-25 12:31:17]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[watches-slide-1-2]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -2797,19 +2747,15 @@
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_elementor_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[3.18.3]]></wp:meta_value>
+							<wp:meta_value><![CDATA[3.33.6]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_elementor_data]]></wp:meta_key>
 							<wp:meta_value><![CDATA[[{"id":"c21040b","elType":"container","settings":{"flex_direction":"column","flex_gap":{"column":"0","row":"0","isLinked":true,"unit":"px","size":0},"container_sticky_offset":50,"scroll_y":-80},"elements":[{"id":"0cc62af","elType":"widget","settings":{"subtitle":"","title":"Swiss-made stylish","after_title":"","align":"left","title_typography_typography":"custom","title_typography_font_size":{"unit":"px","size":56,"sizes":[]},"title_typography_font_size_tablet":{"unit":"px","size":42,"sizes":[]},"title_typography_font_size_mobile":{"unit":"px","size":26,"sizes":[]},"title_typography_font_weight":"300","scroll_y":-80,"wd_animation":"slide-from-bottom","wd_animation_delay":150},"elements":[],"widgetType":"wd_title"},{"id":"d52bcc2","elType":"widget","settings":{"subtitle":"","title":"brand <strong>Black Watches<\/strong>","after_title":"","align":"left","title_typography_typography":"custom","title_typography_font_size":{"unit":"px","size":56,"sizes":[]},"title_typography_font_size_tablet":{"unit":"px","size":42,"sizes":[]},"title_typography_font_size_mobile":{"unit":"px","size":26,"sizes":[]},"title_typography_font_weight":"300","_margin":{"unit":"px","top":"0","right":"0","bottom":"10","left":"0","isLinked":false},"scroll_y":-80,"wd_animation":"slide-from-bottom","wd_animation_delay":200},"elements":[],"widgetType":"wd_title"},{"id":"73aead4","elType":"widget","settings":{"text":"<p>Many desktop publishing packages and web page editors now use lorem ipsum as their default.<\/p>","width":{"unit":"px","size":523,"sizes":[]},"width_tablet":{"unit":"px","size":470,"sizes":[]},"width_mobile":{"unit":"px","size":238,"sizes":[]},"typography_typography":"custom","typography_font_size":{"unit":"px","size":22,"sizes":[]},"typography_font_size_tablet":{"unit":"px","size":20,"sizes":[]},"typography_font_size_mobile":{"unit":"px","size":14,"sizes":[]},"_margin":{"unit":"px","top":"0","right":"0","bottom":"30","left":"0","isLinked":false},"scroll_y":-80,"wd_animation":"slide-from-bottom","wd_animation_delay":350},"elements":[],"widgetType":"wd_text_block"},{"id":"8746b6a","elType":"container","settings":{"flex_direction":"row","flex_align_items":"center","flex_wrap":"nowrap","container_sticky_offset":50,"scroll_y":-80},"elements":[{"id":"cff36e0","elType":"widget","settings":{"text":"Add to cart","color":"primary","scroll_y":-80,"wd_animation":"slide-from-bottom","wd_animation_delay":450},"elements":[],"widgetType":"wd_button"},{"id":"cb2f04d","elType":"widget","settings":{"text":"<p>$190.00<\/p>","typography_typography":"custom","typography_font_size":{"unit":"px","size":22,"sizes":[]},"typography_font_size_tablet":{"unit":"px","size":18,"sizes":[]},"text_color":"title","scroll_y":-80,"wd_animation":"slide-from-bottom","wd_animation_delay":450},"elements":[],"widgetType":"wd_text_block"}],"isInner":true}],"isInner":false}]]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[watches-slide-1]]></wp:meta_value>
+							<wp:meta_key><![CDATA[_elementor_page_settings]]></wp:meta_key>
+							<wp:meta_value><![CDATA[a:7:{s:10:"hide_title";s:0:"";s:8:"wd_image";a:5:{s:3:"url";s:109:"http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/watches-slide-2-bg-img-opt.jpg";s:2:"id";i:27283;s:4:"size";s:0:"";s:3:"alt";s:0:"";s:6:"source";s:7:"library";}s:24:"wd_image_object_position";s:11:"left center";s:11:"wd_bg_image";a:3:{s:3:"url";s:0:"";s:2:"id";s:0:"";s:4:"size";s:0:"";}s:6:"margin";a:6:{s:4:"unit";s:2:"px";s:3:"top";s:0:"";s:5:"right";s:0:"";s:6:"bottom";s:0:"";s:4:"left";s:0:"";s:8:"isLinked";b:1;}s:7:"padding";a:6:{s:4:"unit";s:2:"px";s:3:"top";s:0:"";s:5:"right";s:0:"";s:6:"bottom";s:0:"";s:4:"left";s:0:"";s:8:"isLinked";b:1;}s:21:"background_background";s:0:"";}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 				</channel>

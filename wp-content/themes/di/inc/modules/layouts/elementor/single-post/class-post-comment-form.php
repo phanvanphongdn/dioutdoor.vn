@@ -2,7 +2,7 @@
 /**
  * Single post/project comments form map.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Modules\Layouts;

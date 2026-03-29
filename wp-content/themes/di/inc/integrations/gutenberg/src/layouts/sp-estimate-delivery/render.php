@@ -10,6 +10,7 @@ if ( ! function_exists( 'wd_gutenberg_single_product_estimate_delivery' ) ) {
 		}
 
 		$wrapper_classes = ' wd-style-' . $block_attributes['style'];
+		$el_id           = wd_get_gutenberg_element_id( $block_attributes );
 
 		if ( isset( $block_attributes['iconType'] ) && 'icon' === $block_attributes['iconType'] && $content ) {
 			$wrapper_classes .= ' wd-with-icon';
@@ -19,7 +20,7 @@ if ( ! function_exists( 'wd_gutenberg_single_product_estimate_delivery' ) ) {
 
 		Main::setup_preview();
 		?>
-		<div id="<?php echo esc_attr( wd_get_gutenberg_element_id( $block_attributes ) ); ?>" class="wd-single-est-del<?php echo esc_attr( wd_get_gutenberg_element_classes( $block_attributes ) ); ?>">
+		<div <?php echo $el_id ? 'id="' . esc_attr( $el_id ) . '" ' : ''; ?>class="wd-single-est-del<?php echo esc_attr( wd_get_gutenberg_element_classes( $block_attributes ) ); ?>">
 			<?php Estimate_Delivery_Frontend::get_instance()->render_on_single_product( $wrapper_classes, do_shortcode( $content ) ); ?>
 		</div>
 		<?php

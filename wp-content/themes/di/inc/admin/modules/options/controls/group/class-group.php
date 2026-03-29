@@ -2,7 +2,7 @@
 /**
  * Group control.
  *
- * @package xts
+ * @package woodmart
  */
 
 namespace XTS\Admin\Modules\Options\Controls;
@@ -18,11 +18,19 @@ use XTS\Admin\Modules\Options\Presets;
 use XTS\Registry;
 
 /**
- * Notice control.
+ * Group control class.
  */
 class Group extends Field {
-	public function __construct( $args, $options, $type = 'options', $object = 'post' ) {
-		parent::__construct( $args, $options, $type, $object );
+	/**
+	 * Inner fields.
+	 *
+	 * @param array  $args Arguments for the group control.
+	 * @param array  $options Options array.
+	 * @param string $type Type of options (options/metabox).
+	 * @param string $object_type Object type (post/term).
+	 */
+	public function __construct( $args, $options, $type = 'options', $object_type = 'post' ) {
+		parent::__construct( $args, $options, $type, $object_type );
 
 		$inner_fields = $this->args['inner_fields'];
 
@@ -47,10 +55,13 @@ class Group extends Field {
 				$this->options[ $field_args['id'] ] = Options::get_default( $field_args );
 			}
 
+			// Resolve control class first to avoid ambiguous dynamic instantiation.
+			$control_class = Options::$controls_classes[ $field_args['type'] ];
+
 			if ( 'metabox' === $this->_type ) {
-				$this->inner_fields[ $field_args['id'] ] = new Options::$_controls_classes[ $field_args['type'] ]( $field_args, $this->options, $type, $object );
+				$this->inner_fields[ $field_args['id'] ] = new $control_class( $field_args, $this->options, $type, $object_type );
 			} else {
-				$this->inner_fields[ $field_args['id'] ] = new Options::$_controls_classes[ $field_args['type'] ]( $field_args, $this->options );
+				$this->inner_fields[ $field_args['id'] ] = new $control_class( $field_args, $this->options );
 			}
 		}
 	}
@@ -180,7 +191,7 @@ class Group extends Field {
 	}
 
 	/**
-	 * Output field's css code based on the settings..
+	 * Output field's CSS code based on the settings.
 	 *
 	 * @since 1.0.0
 	 *
@@ -192,7 +203,7 @@ class Group extends Field {
 		}
 
 		$device           = ! empty( $this->args['css_device'] ) ? $this->args['css_device'] : 'desktop';
-		$is_active_preset = 'metabox' !== $this->_type && Registry::getInstance()->themesettingscss->is_preset_active();
+		$is_active_preset = 'metabox' !== $this->_type && Registry::get_instance()->themesettingscss->is_preset_active();
 		$output_css       = array(
 			$device => array(),
 		);
@@ -283,7 +294,7 @@ class Group extends Field {
 					$css = str_replace( '{{' . strtoupper( $field->get_id() ) . '}}', $field_value, $css );
 				}
 
-				if ( ! $generate_css || ! $generate_preset_css && $is_active_preset ) {
+				if ( ! $generate_css || ( ! $generate_preset_css && $is_active_preset ) ) {
 					continue;
 				}
 

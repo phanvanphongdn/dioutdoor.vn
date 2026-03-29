@@ -1,41 +1,39 @@
 <?php
 /**
- * Imagify.
+ * Imagify integration.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 if ( ! defined( 'IMAGIFY_VERSION' ) ) {
 	return;
 }
 
-if ( ! function_exists( 'woodmart_single_product_gallery_images_webp' ) ) {
+if ( ! function_exists( 'woodmart_imagify_disable_webp_for_gallery_images' ) ) {
 	/**
-	 * Single product change class with webp.
+	 * Disables Imagify WebP conversion for product gallery images.
 	 *
-	 * @param string $class CSS Class.
-	 *
-	 * @return string
+	 * @param string $classes CSS class for gallery image.
+	 * @return string Modified CSS class with no-webp flag.
 	 */
-	function woodmart_single_product_gallery_images_webp( $class ) {
-		$class .= ' imagify-no-webp';
+	function woodmart_imagify_disable_webp_for_gallery_images( $classes ) {
+		$classes .= ' imagify-no-webp';
 
-		return $class;
+		return $classes;
 	}
 
-	add_filter( 'woodmart_single_product_gallery_image_class', 'woodmart_single_product_gallery_images_webp' );
+	add_filter( 'woodmart_single_product_gallery_image_class', 'woodmart_imagify_disable_webp_for_gallery_images' );
 }
 
-if ( ! function_exists( 'woodmart_add_webp_to_product_thumbnails_srcset' ) ) {
+if ( ! function_exists( 'woodmart_imagify_convert_srcset_to_webp' ) ) {
 	/**
-	 * Add extension 'webp' to srcset attribute of the image in product gallery.
+	 * Converts product thumbnail srcset URLs to WebP format.
 	 *
-	 * @param string $image_srcset Image srcset.
-	 * @param string $attachment_id Image ID.
-	 *
-	 * @return string
+	 * @param string $image_srcset Image srcset attribute value.
+	 * @param int    $attachment_id Attachment ID.
+	 * @return string Modified srcset with WebP URLs.
 	 */
-	function woodmart_add_webp_to_product_thumbnails_srcset( $image_srcset, $attachment_id ) {
+	function woodmart_imagify_convert_srcset_to_webp( $image_srcset, $attachment_id ) {
 		if ( ! function_exists( 'imagify_path_to_nextgen' ) ) {
 			return $image_srcset;
 		}
@@ -61,6 +59,6 @@ if ( ! function_exists( 'woodmart_add_webp_to_product_thumbnails_srcset' ) ) {
 		return $image_srcset;
 	}
 
-	add_filter( 'woodmart_product_thumbnails_urls_image_srcset', 'woodmart_add_webp_to_product_thumbnails_srcset', 10, 2 );
-	add_filter( 'woodmart_get_webp_image_srcset', 'woodmart_add_webp_to_product_thumbnails_srcset', 10, 2 );
+	add_filter( 'woodmart_product_thumbnails_urls_image_srcset', 'woodmart_imagify_convert_srcset_to_webp', 10, 2 );
+	add_filter( 'woodmart_get_webp_image_srcset', 'woodmart_imagify_convert_srcset_to_webp', 10, 2 );
 }

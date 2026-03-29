@@ -27,23 +27,16 @@
 		function addGalleryLoopEvents( neededProduct ) {
 			$( neededProduct )
 				.on('mouseover mouseout', '.wd-product-grid-slide', function( e ) {
-					let $hoverSlide          = $(this);
-					let $product             = $hoverSlide.closest('.wd-product');
-					let $productsHolder      = $product.closest('.wd-products, .wd-products .wd-carousel');
-					let productsGalleryAtts  = $productsHolder.length > 0 && $productsHolder.data('grid-gallery') ? $productsHolder.data('grid-gallery') : {};
-					let grid_gallery_control = woodmart_settings.grid_gallery_control;
+					let $hoverSlide = $(this);
+					let $product    = $hoverSlide.closest('.wd-product');
 
-					if ( productsGalleryAtts.hasOwnProperty( 'grid_gallery_control' ) && ( null === productsGalleryAtts.grid_gallery_control || ( 'string' === typeof productsGalleryAtts.grid_gallery_control && productsGalleryAtts.grid_gallery_control.length > 0 ) ) ) {
-						grid_gallery_control = productsGalleryAtts.grid_gallery_control;
-					}
-
-					if ( 'hover' !== grid_gallery_control || woodmartThemeModule.$window.width() <= 1024 ) {
+					if ( woodmartThemeModule.$window.width() <= 1024 ) {
 						return;
 					}
 
 					let $imagesIndicator    = $product.find('.wd-product-grid-slider-pagin');
-					let $productImage       = $product.find('.product-image-link > img, .product-image-link > picture > img');
-					let $productImageSource = $product.find('.product-image-link > picture source');
+					let $productImage       = $product.find('.wd-product-img-link > img, .wd-product-img-link > picture > img');
+					let $productImageSource = $product.find('.wd-product-img-link > picture source');
 					let hoverImageUrl;
 					let hoverImageSrcSet;
 					let currentImagesIndicator;
@@ -74,27 +67,10 @@
 				})
 				.on('click', '.wd-prev, .wd-next', function( e ) {
 					e.preventDefault();
-					let $navButton                 = $(this);
-					let $productsHolder            = $navButton.closest('.wd-products, .wd-products .wd-carousel');
-					let productsGalleryAtts        = $productsHolder.length > 0 && $productsHolder.data('grid-gallery') ? $productsHolder.data('grid-gallery') : {};
-					let grid_gallery_control       = woodmart_settings.grid_gallery_control;
-					let grid_gallery_enable_arrows = woodmart_settings.grid_gallery_enable_arrows;
-
-					if ( productsGalleryAtts.hasOwnProperty( 'grid_gallery_control' ) && ( null === productsGalleryAtts.grid_gallery_control || ( 'string' === typeof productsGalleryAtts.grid_gallery_control && productsGalleryAtts.grid_gallery_control.length > 0 ) ) ) {
-						grid_gallery_control = productsGalleryAtts.grid_gallery_control;
-					}
-
-					if ( productsGalleryAtts.hasOwnProperty( 'grid_gallery_enable_arrows' ) && ( null === productsGalleryAtts.grid_gallery_enable_arrows || ( 'string' === typeof productsGalleryAtts.grid_gallery_enable_arrows && productsGalleryAtts.grid_gallery_enable_arrows.length > 0 ) ) ) {
-						grid_gallery_enable_arrows = productsGalleryAtts.grid_gallery_enable_arrows;
-					}
-
-					if ( ( woodmartThemeModule.$window.width() < 1024 && ( ! grid_gallery_enable_arrows || 'none' === grid_gallery_enable_arrows ) ) || ( woodmartThemeModule.$window.width() > 1024 && ( ! grid_gallery_control || 'arrows' !== grid_gallery_control ) ) ) {
-						return;
-					}
-
+					let $navButton          = $(this);
 					let $product            = $navButton.closest('.wd-product');
-					let $productImage       = $product.find('.product-image-link > img, .product-image-link > picture > img');
-					let $productImageSource = $product.find('.product-image-link > picture source');
+					let $productImage       = $product.find('.wd-product-img-link > img, .wd-product-img-link > picture > img');
+					let $productImageSource = $product.find('.wd-product-img-link > picture source');
 					let $imagesList         = $product.find('.wd-product-grid-slide');
 					let index               = $imagesList.hasClass('wd-active') ? $product.find('.wd-product-grid-slide.wd-active').data('image-id') : 0;
 

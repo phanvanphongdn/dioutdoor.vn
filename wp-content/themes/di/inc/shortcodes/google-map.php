@@ -1,8 +1,8 @@
 <?php
-/***
- * Google map shortcodes file.
+/**
+ * Shortcode for Google Map element.
  *
- * @package Shortcode.
+ * @package woodmart.
  */
 
 if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
@@ -39,14 +39,8 @@ if ( ! function_exists( 'woodmart_get_settings_coords_for_google_map' ) ) {
 	}
 }
 
-/**
-* ------------------------------------------------------------------------------------------------
-* Google Map shortcode
-* ------------------------------------------------------------------------------------------------
-*/
-
 if ( ! function_exists( 'woodmart_shortcode_google_map' ) ) {
-	/***
+	/**
 	 * Render tabs shortcode.
 	 *
 	 * @param array  $atts Shortcode attributes.
@@ -126,7 +120,7 @@ if ( ! function_exists( 'woodmart_shortcode_google_map' ) ) {
 			$atts
 		);
 
-		extract( $parsed_atts );
+		extract( $parsed_atts ); // phpcs:ignore WordPress.PHP.DontExtract.extract_extract
 
 		if ( ! $woodmart_css_id ) {
 			$woodmart_css_id = uniqid();

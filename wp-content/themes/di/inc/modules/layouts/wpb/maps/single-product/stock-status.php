@@ -2,7 +2,7 @@
 /**
  * Stock status map.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -14,6 +14,14 @@ if ( ! function_exists( 'woodmart_get_vc_map_single_product_stock_status' ) ) {
 	 * Content map.
 	 */
 	function woodmart_get_vc_map_single_product_stock_status() {
+		$title_typography = woodmart_get_typography_map(
+			array(
+				'key'      => 'typography',
+				'group'    => esc_html__( 'Style', 'woodmart' ),
+				'selector' => '{{WRAPPER}}.wd-single-stock-status p',
+			)
+		);
+
 		return array(
 			'base'        => 'woodmart_single_product_stock_status',
 			'name'        => esc_html__( 'Product stock status', 'woodmart' ),
@@ -22,10 +30,17 @@ if ( ! function_exists( 'woodmart_get_vc_map_single_product_stock_status' ) ) {
 			'icon'        => WOODMART_ASSETS . '/images/vc-icon/sp-icons/sp-stock-status.svg',
 			'params'      => array(
 				array(
-					'group'      => esc_html__( 'Design Options', 'js_composer' ),
+					'group'      => esc_html__( 'Style', 'js_composer' ),
 					'type'       => 'woodmart_css_id',
 					'param_name' => 'woodmart_css_id',
 				),
+
+				$title_typography['font_family'],
+				$title_typography['font_size'],
+				$title_typography['font_weight'],
+				$title_typography['text_transform'],
+				$title_typography['font_style'],
+				$title_typography['line_height'],
 
 				/**
 				 * Design options Tab.

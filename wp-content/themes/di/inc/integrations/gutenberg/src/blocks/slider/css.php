@@ -1,4 +1,10 @@
 <?php
+/**
+ * Gutenberg Slider Block CSS.
+ *
+ * @package woodmart
+ */
+
 use XTS\Gutenberg\Block_CSS;
 
 $slide_selector = $block_selector . ' .wd-slide';
@@ -21,6 +27,18 @@ if ( isset( $attrs['heightType'] ) && 'aspectRatio' === $attrs['heightType'] ) {
 			array(
 				'attr_name' => 'height',
 				'template'  => 'min-height: {{value}}' . $block_css->get_units_for_attribute( 'height' ) . ';',
+			),
+		)
+	);
+}
+
+if ( isset( $attrs['autoplay'] ) && $attrs['autoplay'] && $attrs['paginationStyle'] && '4' === $attrs['paginationStyle'] ) {
+	$block_css->add_css_rules(
+		$block_selector . ' .wd-nav-pagin-wrap',
+		array(
+			array(
+				'attr_name' => 'autoplaySpeed',
+				'template'  => '--wd-autoplay-speed: {{value}}ms;',
 			),
 		)
 	);
@@ -253,22 +271,55 @@ if ( ! empty( $attrs['arrowsCustomSettings'] ) ) {
 }
 
 if ( ! empty( $attrs['paginationCustomSettings'] ) ) {
+	if ( in_array( $attrs['paginationStyle'], array( '1', '3' ), true ) ) {
+		$block_css->add_css_rules(
+			$block_selector . ' .wd-nav-pagin-wrap',
+			array(
+				array(
+					'attr_name' => 'paginationSize',
+					'template'  => '--wd-pagin-size: {{value}}' . $block_css->get_units_for_attribute( 'paginationSize' ) . ';',
+				),
+			)
+		);
+
+		$block_css->add_css_rules(
+			$block_selector . ' .wd-nav-pagin-wrap',
+			array(
+				array(
+					'attr_name' => 'paginationSizeTablet',
+					'template'  => '--wd-pagin-size: {{value}}' . $block_css->get_units_for_attribute( 'paginationSize', 'tablet' ) . ';',
+				),
+			),
+			'tablet'
+		);
+
+		$block_css->add_css_rules(
+			$block_selector . ' .wd-nav-pagin-wrap',
+			array(
+				array(
+					'attr_name' => 'paginationSizeMobile',
+					'template'  => '--wd-pagin-size: {{value}}' . $block_css->get_units_for_attribute( 'paginationSize', 'mobile' ) . ';',
+				),
+			),
+			'mobile'
+		);
+	}
+
 	$block_css->add_css_rules(
 		$block_selector . ' .wd-nav-pagin-wrap',
 		array(
-			array(
-				'attr_name' => 'paginationSize',
-				'template'  => '--wd-pagin-size: {{value}}' . $block_css->get_units_for_attribute( 'paginationSize' ) . ';',
-			),
 			array(
 				'attr_name' => 'paginationBorderRadius',
 				'template'  => '--wd-pagin-radius: {{value}}' . $block_css->get_units_for_attribute( 'paginationBorderRadius' ) . ';',
 			),
 			array(
 				'attr_name' => 'paginationBorderWidth',
-				'template'  => '--wd-pagin-brd: {{value}}' . $block_css->get_units_for_attribute( 'paginationBorderWidth' ) . ' ' . $attrs['paginationBorderType'] . ';',
+				'template'  => '--wd-pagin-brd-width: {{value}}' . $block_css->get_units_for_attribute( 'paginationBorderWidth' ) . ';',
 			),
-
+			array(
+				'attr_name' => 'paginationBorderType',
+				'template'  => '--wd-pagin-brd-style: {{value}};',
+			),
 			array(
 				'attr_name' => 'paginationNormalBgColorCode',
 				'template'  => '--wd-pagin-bg: {{value}};',
@@ -358,10 +409,6 @@ if ( ! empty( $attrs['paginationCustomSettings'] ) ) {
 		$block_selector . ' .wd-nav-pagin-wrap',
 		array(
 			array(
-				'attr_name' => 'paginationSizeTablet',
-				'template'  => '--wd-pagin-size: {{value}}' . $block_css->get_units_for_attribute( 'paginationSize', 'tablet' ) . ';',
-			),
-			array(
 				'attr_name' => 'paginationBorderRadiusTablet',
 				'template'  => '--wd-pagin-radius: {{value}}' . $block_css->get_units_for_attribute( 'paginationBorderRadius', 'tablet' ) . ';',
 			),
@@ -377,10 +424,6 @@ if ( ! empty( $attrs['paginationCustomSettings'] ) ) {
 		$block_selector . ' .wd-nav-pagin-wrap',
 		array(
 			array(
-				'attr_name' => 'paginationSizeMobile',
-				'template'  => '--wd-pagin-size: {{value}}' . $block_css->get_units_for_attribute( 'paginationSize', 'mobile' ) . ';',
-			),
-			array(
 				'attr_name' => 'paginationBorderRadiusMobile',
 				'template'  => '--wd-pagin-radius: {{value}}' . $block_css->get_units_for_attribute( 'paginationBorderRadius', 'mobile' ) . ';',
 			),
@@ -391,6 +434,15 @@ if ( ! empty( $attrs['paginationCustomSettings'] ) ) {
 		),
 		'mobile'
 	);
+
+	if (
+		(
+			$attrs['paginationStyle'] &&
+			in_array( $attrs['paginationStyle'], array( '2', '4' ), true )
+		)
+	) {
+		$block_css->merge_with( wd_get_block_typography_css( $block_selector . ' .wd-nav-pagin li', $attrs, 'paginationTextTp' ) );
+	}
 }
 
 $block_css->merge_with( wd_get_block_shape_divider_css( $block_selector, $attrs, 'shapeDividerTop' ) );
@@ -399,8 +451,9 @@ $block_css->merge_with( wd_get_block_shape_divider_css( $block_selector, $attrs,
 $block_css->merge_with(
 	wd_get_block_advanced_css(
 		array(
-			'selector'       => $block_selector,
-			'selector_hover' => $block_selector_hover,
+			'selector'              => $block_selector,
+			'selector_hover'        => $block_selector_hover,
+			'selector_parent_hover' => $block_selector_parent_hover,
 		),
 		$attrs
 	)

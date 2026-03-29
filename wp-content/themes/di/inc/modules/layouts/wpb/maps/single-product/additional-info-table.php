@@ -2,7 +2,7 @@
 /**
  * Additional info table map.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -23,15 +23,11 @@ if ( ! function_exists( 'woodmart_get_vc_map_single_product_additional_info_tabl
 
 		$name_typography = woodmart_get_typography_map(
 			array(
-				'title'         => esc_html__( 'Name typography', 'woodmart' ),
-				'group'         => esc_html__( 'Style', 'woodmart' ),
-				'key'           => 'attr_name',
-				'selector'      => '{{WRAPPER}} .woocommerce-product-attributes-item__label',
-				'wd_dependency' => array(
-					'element' => 'attributes_style_tabs',
-					'value'   => array( 'name' ),
-				),
-				'dependency'    => array(
+				'title'      => esc_html__( 'Typography', 'woodmart' ),
+				'group'      => esc_html__( 'Style', 'woodmart' ),
+				'key'        => 'attr_name',
+				'selector'   => '{{WRAPPER}} .shop_attributes th',
+				'dependency' => array(
 					'element' => 'attr_hide_name',
 					'value'   => 'no',
 				),
@@ -39,20 +35,20 @@ if ( ! function_exists( 'woodmart_get_vc_map_single_product_additional_info_tabl
 		);
 		$term_typography = woodmart_get_typography_map(
 			array(
-				'title'         => esc_html__( 'Term typography', 'woodmart' ),
-				'group'         => esc_html__( 'Style', 'woodmart' ),
-				'key'           => 'attr_term',
-				'selector'      => '{{WRAPPER}} .woocommerce-product-attributes-item__value',
-				'wd_dependency' => array(
-					'element' => 'attributes_style_tabs',
-					'value'   => array( 'term' ),
+				'title'      => esc_html__( 'Typography', 'woodmart' ),
+				'group'      => esc_html__( 'Style', 'woodmart' ),
+				'key'        => 'attr_term',
+				'selector'   => '{{WRAPPER}} .shop_attributes td',
+				'dependency' => array(
+					'element' => 'hide_term_label',
+					'value'   => 'no',
 				),
 			)
 		);
 
 		return array(
 			'base'        => 'woodmart_single_product_additional_info_table',
-			'name'        => esc_html__( 'Product additional information table', 'woodmart' ),
+			'name'        => esc_html__( 'Product additional information', 'woodmart' ),
 			'category'    => woodmart_get_tab_title_category_for_wpb( esc_html__( 'Single product elements', 'woodmart' ), 'single_product' ),
 			'description' => esc_html__( 'Attributes, dimensions, and weight', 'woodmart' ),
 			'icon'        => WOODMART_ASSETS . '/images/vc-icon/sp-icons/sp-additional-information-table.svg',
@@ -153,7 +149,7 @@ if ( ! function_exists( 'woodmart_get_vc_map_single_product_additional_info_tabl
 					'type'             => 'iconpicker',
 					'heading'          => esc_html__( 'Icon', 'woodmart' ),
 					'param_name'       => 'icon_fontawesome',
-					'value'            => 'far fa-bell',
+					'value'            => 'fa fa-regular fa-bell',
 					'settings'         => array(
 						'emptyIcon'    => false,
 						'iconsPerPage' => 50,
@@ -368,10 +364,11 @@ if ( ! function_exists( 'woodmart_get_vc_map_single_product_additional_info_tabl
 					'type'             => 'dropdown',
 					'param_name'       => 'layout',
 					'value'            => array(
-						esc_html__( 'List', 'woodmart' ) => 'list',
-						esc_html__( 'Grid', 'woodmart' ) => 'grid',
+						esc_html__( 'Default', 'woodmart' ) => 'grid',
+						esc_html__( 'Justify', 'woodmart' ) => 'list',
 						esc_html__( 'Inline', 'woodmart' ) => 'inline',
 					),
+					'std'              => 'list',
 					'wood_tooltip'     => true,
 					'edit_field_class' => 'vc_col-sm-6 vc_column',
 				),
@@ -386,6 +383,95 @@ if ( ! function_exists( 'woodmart_get_vc_map_single_product_additional_info_tabl
 						esc_html__( 'Bordered', 'woodmart' ) => 'bordered',
 					),
 					'std'              => 'bordered',
+					'edit_field_class' => 'vc_col-sm-6 vc_column',
+				),
+
+				array(
+					'heading'    => esc_html__( 'Border type', 'woodmart' ),
+					'group'      => esc_html__( 'Style', 'woodmart' ),
+					'type'       => 'wd_select',
+					'param_name' => 'items_border_type',
+					'style'      => 'select',
+					'selectors'  => array(
+						'{{WRAPPER}}.wd-style-bordered .shop_attributes' => array(
+							'--wd-attr-brd-style: {{VALUE}};',
+						),
+					),
+					'devices'    => array(
+						'desktop' => array(
+							'value' => '',
+						),
+					),
+					'value'      => array(
+						esc_html__( 'Default', 'woodmart' ) => '',
+						esc_html__( 'None', 'woodmart' )   => 'none',
+						esc_html__( 'Solid', 'woodmart' )  => 'solid',
+						esc_html__( 'Dotted', 'woodmart' ) => 'dotted',
+						esc_html__( 'Double', 'woodmart' ) => 'double',
+						esc_html__( 'Dashed', 'woodmart' ) => 'dashed',
+						esc_html__( 'Groove', 'woodmart' ) => 'groove',
+					),
+					'dependency' => array(
+						'element'            => 'style',
+						'value_not_equal_to' => 'default',
+					),
+				),
+				array(
+					'heading'          => esc_html__( 'Border width', 'woodmart' ),
+					'group'            => esc_html__( 'Style', 'woodmart' ),
+					'type'             => 'wd_slider',
+					'param_name'       => 'items_border_width',
+					'devices'          => array(
+						'desktop' => array(
+							'unit' => 'px',
+						),
+						'tablet'  => array(
+							'unit' => 'px',
+						),
+						'mobile'  => array(
+							'unit' => 'px',
+						),
+					),
+					'range'            => array(
+						'px' => array(
+							'min'  => 0,
+							'max'  => 20,
+							'step' => 1,
+						),
+					),
+					'selectors'        => array(
+						'{{WRAPPER}}.wd-style-bordered .shop_attributes' => array(
+							'--wd-attr-brd-width: {{VALUE}}{{UNIT}};',
+						),
+					),
+					'dependency'       => array(
+						'element'            => 'items_border_type',
+						'value_not_equal_to' => array( '', 'eyJkZXZpY2VzIjp7ImRlc2t0b3AiOnsidmFsdWUiOiJub25lIn19fQ==' ),
+					),
+					'wd_dependency'    => array(
+						'element'            => 'style',
+						'value_not_equal_to' => 'default',
+					),
+					'edit_field_class' => 'vc_col-sm-6 vc_column',
+				),
+				array(
+					'heading'          => esc_html__( 'Border color', 'woodmart' ),
+					'group'            => esc_html__( 'Style', 'woodmart' ),
+					'type'             => 'wd_colorpicker',
+					'param_name'       => 'items_border_color',
+					'selectors'        => array(
+						'{{WRAPPER}}.wd-style-bordered .shop_attributes' => array(
+							'--wd-attr-brd-color: {{VALUE}};',
+						),
+					),
+					'dependency'       => array(
+						'element'            => 'items_border_type',
+						'value_not_equal_to' => array( '', 'eyJkZXZpY2VzIjp7ImRlc2t0b3AiOnsidmFsdWUiOiJub25lIn19fQ==' ),
+					),
+					'wd_dependency'    => array(
+						'element'            => 'style',
+						'value_not_equal_to' => 'default',
+					),
 					'edit_field_class' => 'vc_col-sm-6 vc_column',
 				),
 
@@ -490,122 +576,29 @@ if ( ! function_exists( 'woodmart_get_vc_map_single_product_additional_info_tabl
 
 				// Attributes.
 				array(
-					'title'      => esc_html__( 'Attributes', 'woodmart' ),
+					'title'      => esc_html__( 'Attribute names', 'woodmart' ),
 					'group'      => esc_html__( 'Style', 'woodmart' ),
 					'type'       => 'woodmart_title_divider',
 					'param_name' => 'attributes_divider',
 				),
 
 				array(
-					'heading'          => esc_html__( 'Hide image', 'woodmart' ),
-					'group'            => esc_html__( 'Style', 'woodmart' ),
-					'type'             => 'woodmart_switch',
-					'param_name'       => 'attr_hide_image',
-					'true_state'       => 'yes',
-					'false_state'      => 'no',
-					'default'          => 'no',
-					'edit_field_class' => 'vc_col-sm-6 vc_column',
-				),
-
-				array(
-					'heading'     => esc_html__( 'Image width', 'woodmart' ),
+					'heading'     => esc_html__( 'Hide name', 'woodmart' ),
 					'group'       => esc_html__( 'Style', 'woodmart' ),
-					'description' => esc_html__( 'Attribute image container width', 'woodmart' ),
-					'type'        => 'wd_slider',
-					'param_name'  => 'image_width',
-					'selectors'   => array(
-						'{{WRAPPER}} .shop_attributes' => array(
-							'--wd-attr-img-width: {{VALUE}}{{UNIT}};',
-						),
-					),
-					'devices'     => array(
-						'desktop' => array(
-							'value' => '',
-							'unit'  => 'px',
-						),
-						'tablet'  => array(
-							'value' => '',
-							'unit'  => 'px',
-						),
-						'mobile'  => array(
-							'value' => '',
-							'unit'  => 'px',
-						),
-					),
-					'range'       => array(
-						'px' => array(
-							'min'  => 0,
-							'max'  => 300,
-							'step' => 1,
-						),
-					),
-					'dependency'  => array(
-						'element' => 'attr_hide_image',
-						'value'   => array( 'no' ),
-					),
+					'type'        => 'woodmart_switch',
+					'param_name'  => 'attr_hide_name',
+					'true_state'  => 'yes',
+					'false_state' => 'no',
+					'default'     => 'no',
 				),
 
 				array(
-					'type'       => 'woodmart_button_set',
-					'heading'    => esc_html__( 'Typography', 'woodmart' ),
-					'group'      => esc_html__( 'Style', 'woodmart' ),
-					'param_name' => 'attributes_style_tabs',
-					'tabs'       => true,
-					'value'      => array(
-						esc_html__( 'Name', 'woodmart' ) => 'name',
-						esc_html__( 'Term', 'woodmart' ) => 'term',
-					),
-					'default'    => 'name',
-				),
-				array(
-					'heading'          => esc_html__( 'Hide name', 'woodmart' ),
-					'group'            => esc_html__( 'Style', 'woodmart' ),
-					'type'             => 'woodmart_switch',
-					'param_name'       => 'attr_hide_name',
-					'true_state'       => 'yes',
-					'false_state'      => 'no',
-					'default'          => 'no',
-					'wd_dependency'    => array(
-						'element' => 'attributes_style_tabs',
-						'value'   => array( 'name' ),
-					),
-				),
-
-				$name_typography['font_family'],
-				$name_typography['font_size'],
-				$name_typography['font_weight'],
-				$name_typography['text_transform'],
-				$name_typography['font_style'],
-				$name_typography['line_height'],
-
-				array(
-					'heading'          => esc_html__( 'Name color', 'woodmart' ),
-					'group'            => esc_html__( 'Style', 'woodmart' ),
-					'type'             => 'wd_colorpicker',
-					'param_name'       => 'attr_name_color',
-					'selectors'        => array(
-						'{{WRAPPER}} .woocommerce-product-attributes-item__label' => array(
-							'color: {{VALUE}};',
-						),
-					),
-					'wd_dependency'    => array(
-						'element' => 'attributes_style_tabs',
-						'value'   => array( 'name' ),
-					),
-					'dependency'       => array(
-						'element' => 'attr_hide_name',
-						'value'   => 'no',
-					),
-					'edit_field_class' => 'vc_col-sm-6 vc_column',
-				),
-
-				array(
-					'heading'       => esc_html__( 'Name column width', 'woodmart' ),
+					'heading'       => esc_html__( 'Width', 'woodmart' ),
 					'group'         => esc_html__( 'Style', 'woodmart' ),
 					'type'          => 'wd_slider',
 					'param_name'    => 'attr_name_column_width',
 					'selectors'     => array(
-						'{{WRAPPER}} .woocommerce-product-attributes-item__label' => array(
+						'{{WRAPPER}} .shop_attributes th' => array(
 							'width: {{VALUE}}{{UNIT}};',
 						),
 					),
@@ -636,13 +629,102 @@ if ( ! function_exists( 'woodmart_get_vc_map_single_product_additional_info_tabl
 						),
 					),
 					'wd_dependency' => array(
-						'element' => 'attributes_style_tabs',
-						'value'   => array( 'name' ),
+						'element' => 'attr_hide_name',
+						'value'   => 'no',
 					),
 					'dependency'    => array(
 						'element' => 'layout',
 						'value'   => 'inline',
 					),
+				),
+
+				$name_typography['font_family'],
+				$name_typography['font_size'],
+				$name_typography['font_weight'],
+				$name_typography['text_transform'],
+				$name_typography['font_style'],
+				$name_typography['line_height'],
+
+				array(
+					'heading'          => esc_html__( 'Color', 'woodmart' ),
+					'group'            => esc_html__( 'Style', 'woodmart' ),
+					'type'             => 'wd_colorpicker',
+					'param_name'       => 'attr_name_color',
+					'selectors'        => array(
+						'{{WRAPPER}} .shop_attributes th' => array(
+							'color: {{VALUE}};',
+						),
+					),
+					'dependency'       => array(
+						'element' => 'attr_hide_name',
+						'value'   => 'no',
+					),
+					'edit_field_class' => 'vc_col-sm-6 vc_column',
+				),
+
+				array(
+					'heading'          => esc_html__( 'Hide image', 'woodmart' ),
+					'group'            => esc_html__( 'Style', 'woodmart' ),
+					'type'             => 'woodmart_switch',
+					'param_name'       => 'attr_hide_image',
+					'true_state'       => 'yes',
+					'false_state'      => 'no',
+					'default'          => 'no',
+					'edit_field_class' => 'vc_col-sm-6 vc_column',
+				),
+
+				array(
+					'heading'    => esc_html__( 'Image width', 'woodmart' ),
+					'group'      => esc_html__( 'Style', 'woodmart' ),
+					'type'       => 'wd_slider',
+					'param_name' => 'image_width',
+					'selectors'  => array(
+						'{{WRAPPER}} .shop_attributes' => array(
+							'--wd-attr-img-width: {{VALUE}}{{UNIT}};',
+						),
+					),
+					'devices'    => array(
+						'desktop' => array(
+							'value' => '',
+							'unit'  => 'px',
+						),
+						'tablet'  => array(
+							'value' => '',
+							'unit'  => 'px',
+						),
+						'mobile'  => array(
+							'value' => '',
+							'unit'  => 'px',
+						),
+					),
+					'range'      => array(
+						'px' => array(
+							'min'  => 0,
+							'max'  => 300,
+							'step' => 1,
+						),
+					),
+					'dependency' => array(
+						'element' => 'attr_hide_image',
+						'value'   => array( 'no' ),
+					),
+				),
+
+				array(
+					'title'      => esc_html__( 'Attribute terms', 'woodmart' ),
+					'group'      => esc_html__( 'Style', 'woodmart' ),
+					'type'       => 'woodmart_title_divider',
+					'param_name' => 'terms_divider',
+				),
+
+				array(
+					'heading'     => esc_html__( 'Hide name', 'woodmart' ),
+					'group'       => esc_html__( 'Style', 'woodmart' ),
+					'type'        => 'woodmart_switch',
+					'param_name'  => 'hide_term_label',
+					'true_state'  => 'yes',
+					'false_state' => 'no',
+					'default'     => 'no',
 				),
 
 				$term_typography['font_family'],
@@ -653,20 +735,102 @@ if ( ! function_exists( 'woodmart_get_vc_map_single_product_additional_info_tabl
 				$term_typography['line_height'],
 
 				array(
-					'heading'          => esc_html__( 'Term color', 'woodmart' ),
+					'heading'          => esc_html__( 'Color', 'woodmart' ),
 					'group'            => esc_html__( 'Style', 'woodmart' ),
 					'type'             => 'wd_colorpicker',
 					'param_name'       => 'attr_term_color',
 					'selectors'        => array(
-						'{{WRAPPER}} .woocommerce-product-attributes-item__value' => array(
+						'{{WRAPPER}} .shop_attributes td' => array(
 							'color: {{VALUE}};',
 						),
 					),
-					'wd_dependency'    => array(
-						'element' => 'attributes_style_tabs',
-						'value'   => array( 'term' ),
+					'dependency'       => array(
+						'element' => 'hide_term_label',
+						'value'   => 'no',
 					),
 					'edit_field_class' => 'vc_col-sm-6 vc_column',
+				),
+
+				array(
+					'heading'          => esc_html__( 'Link color', 'woodmart' ),
+					'group'            => esc_html__( 'Style', 'woodmart' ),
+					'type'             => 'wd_colorpicker',
+					'param_name'       => 'term_link_color',
+					'selectors'        => array(
+						'{{WRAPPER}} .shop_attributes td' => array(
+							'--wd-link-color: {{VALUE}};',
+						),
+					),
+					'dependency'       => array(
+						'element' => 'hide_term_label',
+						'value'   => 'no',
+					),
+					'edit_field_class' => 'vc_col-sm-6 vc_column',
+				),
+
+				array(
+					'heading'          => esc_html__( 'Link color hover', 'woodmart' ),
+					'group'            => esc_html__( 'Style', 'woodmart' ),
+					'type'             => 'wd_colorpicker',
+					'param_name'       => 'term_link_color_hover',
+					'selectors'        => array(
+						'{{WRAPPER}} .shop_attributes td' => array(
+							'--wd-link-color-hover: {{VALUE}};',
+						),
+					),
+					'dependency'       => array(
+						'element' => 'hide_term_label',
+						'value'   => 'no',
+					),
+					'edit_field_class' => 'vc_col-sm-6 vc_column',
+				),
+
+				array(
+					'heading'          => esc_html__( 'Hide image', 'woodmart' ),
+					'group'            => esc_html__( 'Style', 'woodmart' ),
+					'type'             => 'woodmart_switch',
+					'param_name'       => 'term_hide_image',
+					'true_state'       => 'yes',
+					'false_state'      => 'no',
+					'default'          => 'no',
+					'edit_field_class' => 'vc_col-sm-6 vc_column',
+				),
+
+				array(
+					'heading'    => esc_html__( 'Image width', 'woodmart' ),
+					'group'      => esc_html__( 'Style', 'woodmart' ),
+					'type'       => 'wd_slider',
+					'param_name' => 'term_image_width',
+					'selectors'  => array(
+						'{{WRAPPER}} .shop_attributes' => array(
+							'--wd-term-img-width: {{VALUE}}{{UNIT}};',
+						),
+					),
+					'devices'    => array(
+						'desktop' => array(
+							'value' => '',
+							'unit'  => 'px',
+						),
+						'tablet'  => array(
+							'value' => '',
+							'unit'  => 'px',
+						),
+						'mobile'  => array(
+							'value' => '',
+							'unit'  => 'px',
+						),
+					),
+					'range'      => array(
+						'px' => array(
+							'min'  => 0,
+							'max'  => 300,
+							'step' => 1,
+						),
+					),
+					'dependency' => array(
+						'element' => 'term_hide_image',
+						'value'   => array( 'no' ),
+					),
 				),
 
 				array(
@@ -690,7 +854,7 @@ if ( ! function_exists( 'woodmart_get_vc_map_single_product_additional_info_tabl
 	}
 }
 
-if ( ! function_exists( 'wd_autocomplete_products_attributes_field_search' ) ) {
+if ( ! function_exists( 'woodmart_autocomplete_products_attributes_field_search' ) ) {
 	/**
 	 * Output search autocomplete results.
 	 *
@@ -698,7 +862,7 @@ if ( ! function_exists( 'wd_autocomplete_products_attributes_field_search' ) ) {
 	 *
 	 * @return array
 	 */
-	function wd_autocomplete_products_attributes_field_search( $search ) {
+	function woodmart_autocomplete_products_attributes_field_search( $search ) {
 		$data       = array();
 		$attributes = woodmart_get_products_attributes();
 
@@ -718,11 +882,11 @@ if ( ! function_exists( 'wd_autocomplete_products_attributes_field_search' ) ) {
 		return $data;
 	}
 
-	add_filter( 'vc_autocomplete_woodmart_single_product_additional_info_table_include_callback', 'wd_autocomplete_products_attributes_field_search', 10, 1 );
-	add_filter( 'vc_autocomplete_woodmart_single_product_additional_info_table_exclude_callback', 'wd_autocomplete_products_attributes_field_search', 10, 1 );
+	add_filter( 'vc_autocomplete_woodmart_single_product_additional_info_table_include_callback', 'woodmart_autocomplete_products_attributes_field_search', 10, 1 );
+	add_filter( 'vc_autocomplete_woodmart_single_product_additional_info_table_exclude_callback', 'woodmart_autocomplete_products_attributes_field_search', 10, 1 );
 }
 
-if ( ! function_exists( 'wd_autocomplete_products_attributes_field_render' ) ) {
+if ( ! function_exists( 'woodmart_autocomplete_products_attributes_field_render' ) ) {
 	/**
 	 * Render controls field.
 	 *
@@ -730,7 +894,7 @@ if ( ! function_exists( 'wd_autocomplete_products_attributes_field_render' ) ) {
 	 *
 	 * @return array|bool
 	 */
-	function wd_autocomplete_products_attributes_field_render( $value ) {
+	function woodmart_autocomplete_products_attributes_field_render( $value ) {
 		if ( empty( $value['value'] ) ) {
 			return false;
 		}
@@ -753,6 +917,6 @@ if ( ! function_exists( 'wd_autocomplete_products_attributes_field_render' ) ) {
 		);
 	}
 
-	add_filter( 'vc_autocomplete_woodmart_single_product_additional_info_table_include_render', 'wd_autocomplete_products_attributes_field_render', 10, 1 );
-	add_filter( 'vc_autocomplete_woodmart_single_product_additional_info_table_exclude_render', 'wd_autocomplete_products_attributes_field_render', 10, 1 );
+	add_filter( 'vc_autocomplete_woodmart_single_product_additional_info_table_include_render', 'woodmart_autocomplete_products_attributes_field_render', 10, 1 );
+	add_filter( 'vc_autocomplete_woodmart_single_product_additional_info_table_exclude_render', 'woodmart_autocomplete_products_attributes_field_render', 10, 1 );
 }

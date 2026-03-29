@@ -9,14 +9,14 @@ if ( ! defined( 'RS_REVISION' ) ) {
 	return;
 }
 
-if ( ! function_exists( 'woodmart_revslider_post_saving_during_cart_register' ) ) {
+if ( ! function_exists( 'woodmart_revslider_disable_post_saving_on_cart_register' ) ) {
 	/**
-	 * Skip saving post during cart register.
+	 * Disables RevSlider post saving action during cart registration.
 	 *
-	 * @param bool $skip Skip saving post.
-	 * @return bool
+	 * @param bool $skip Whether to skip cart registration.
+	 * @return bool Original skip value.
 	 */
-	function woodmart_revslider_post_saving_during_cart_register( $skip ) {
+	function woodmart_revslider_disable_post_saving_on_cart_register( $skip ) {
 		if ( class_exists( 'RevSliderFront' ) ) {
 			remove_action( 'save_post', array( 'RevSliderFront', 'set_post_saving' ) );
 		}
@@ -24,5 +24,5 @@ if ( ! function_exists( 'woodmart_revslider_post_saving_during_cart_register' ) 
 		return $skip;
 	}
 
-	add_filter( 'woodmart_skip_register_cart', 'woodmart_revslider_post_saving_during_cart_register' );
+	add_filter( 'woodmart_skip_register_cart', 'woodmart_revslider_disable_post_saving_on_cart_register' );
 }

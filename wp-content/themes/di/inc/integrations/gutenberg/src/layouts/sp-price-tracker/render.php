@@ -9,6 +9,7 @@ if ( ! function_exists( 'wd_gutenberg_single_product_price_tracker_btn' ) ) {
 			return '';
 		}
 
+		$el_id        = wd_get_gutenberg_element_id( $block_attributes );
 		$btn_classes  = 'wd-action-btn wd-pt-icon';
 		$btn_classes .= ' wd-style-' . $block_attributes['style'];
 
@@ -26,7 +27,7 @@ if ( ! function_exists( 'wd_gutenberg_single_product_price_tracker_btn' ) ) {
 
 		if ( empty( $button_html ) ) {
 			Main::restore_preview();
-			
+
 			return '';
 		}
 
@@ -39,7 +40,7 @@ if ( ! function_exists( 'wd_gutenberg_single_product_price_tracker_btn' ) ) {
 
 		$class_instance->render_popup();
 		?>
-		<div id="<?php echo esc_attr( wd_get_gutenberg_element_id( $block_attributes ) ); ?>" class="wd-single-action-btn wd-single-pt-btn<?php echo esc_attr( wd_get_gutenberg_element_classes( $block_attributes ) ); ?>">
+		<div <?php echo $el_id ? 'id="' . esc_attr( $el_id ) . '" ' : ''; ?>class="wd-single-action-btn wd-single-pt-btn<?php echo esc_attr( wd_get_gutenberg_element_classes( $block_attributes ) ); ?>">
 			<?php echo $button_html; // phpcs:ignore. ?>
 		</div>
 		<?php

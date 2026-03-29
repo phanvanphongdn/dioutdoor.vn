@@ -1,5 +1,18 @@
 <?php
+/**
+ * Gutenberg Instagram block render.
+ *
+ * @package woodmart
+ */
+
 if ( ! function_exists( 'wd_gutenberg_instagram' ) ) {
+	/**
+	 * Gutenberg Instagram block render function.
+	 *
+	 * @param array  $block_attributes Block attributes.
+	 * @param string $content Block content.
+	 * @return false|string
+	 */
 	function wd_gutenberg_instagram( $block_attributes, $content ) {
 		$block_attributes['el_class'] = wd_get_gutenberg_element_classes( $block_attributes );
 		$block_attributes['el_id']    = wd_get_gutenberg_element_id( $block_attributes );
@@ -32,7 +45,7 @@ if ( ! function_exists( 'wd_gutenberg_instagram' ) ) {
 
 		$block_attributes['hide_mask'] = isset( $block_attributes['show_meta'] ) ? ! $block_attributes['show_meta'] : 0;
 
-		wd_replace_boolean_to_yes_no( array( 'hide_pagination_control', 'hide_prev_next_buttons', 'scroll_per_page', 'center_mode', 'wrap', 'autoplay', 'hide_scrollbar', 'autoheight', 'disable_overflow_carousel', 'dynamic_pagination_control', 'scroll_carousel_init' ), $block_attributes );
+		woodmart_replace_boolean_to_yes_no( array( 'hide_pagination_control', 'hide_prev_next_buttons', 'scroll_per_page', 'center_mode', 'wrap', 'autoplay', 'hide_scrollbar', 'autoheight', 'disable_overflow_carousel', 'dynamic_pagination_control', 'scroll_carousel_init' ), $block_attributes );
 
 		if ( ! empty( $block_attributes['images_size'] ) && 'custom' === $block_attributes['images_size'] && ( ! empty( $block_attributes['imgSizeCustomHeight'] ) || ! empty( $block_attributes['imgSizeCustomWidth'] ) ) ) {
 			$block_attributes['images_size'] = $block_attributes['imgSizeCustomWidth'] . 'x' . $block_attributes['imgSizeCustomHeight'];

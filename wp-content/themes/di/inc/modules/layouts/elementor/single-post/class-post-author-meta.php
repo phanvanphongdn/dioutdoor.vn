@@ -2,7 +2,7 @@
 /**
  * Post author meta.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Modules\Layouts;

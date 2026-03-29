@@ -1,5 +1,13 @@
-<?php if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
-	exit( 'No direct script access allowed' );}
+<?php
+/**
+ * Reset options version list.
+ *
+ * @package woodmart
+ */
+
+if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
+	exit( 'No direct script access allowed' );
+}
 
 return apply_filters(
 	'woodmart_get_reset_options_version',
@@ -14,7 +22,10 @@ return apply_filters(
 		'widget-titles-font',
 		'blog_style',
 		'blog_with_shadow',
+		'products_hover_type',
 		'products_hover',
+		'product_custom_list',
+		'product_custom_hover',
 		'prefooter_area',
 		'footer-style',
 		'footer-layout',
@@ -249,6 +260,10 @@ return apply_filters(
 		'popup_width',
 		'android_browser_bar_color',
 		'link-color',
+		'link_underline_style',
+		'link_hover_underline_style',
+		'link_underline_color',
+		'link_underline_hover_color',
 		'shop_filters_columns',
 		'shop_filters_columns_tablet',
 		'shop_filters_columns_mobile',
@@ -392,6 +407,7 @@ return apply_filters(
 		'cart_totals_layout',
 		'enable_description_tab',
 		'enable_additional_info_tab',
-		'enable_reviews_tab'
+		'enable_reviews_tab',
+		'shop_view',
 	)
 );

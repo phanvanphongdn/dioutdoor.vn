@@ -2,7 +2,7 @@
 /**
  * Manager class file.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Modules\Layouts;
@@ -146,9 +146,10 @@ class Manager extends Singleton {
 		$predefined_name = isset( $_POST['predefined_name'] ) ? woodmart_clean( $_POST['predefined_name'] ) : ''; // phpcs:ignore
 
 		$post_args = array(
-			'post_title' => $title,
-			'post_type'  => $this->post_type,
-			'meta_input' => array(
+			'post_title'  => $title,
+			'post_type'   => $this->post_type,
+			'post_status' => str_contains( $type, 'loop_item' ) ? 'publish' : 'draft',
+			'meta_input'  => array(
 				$this->type_meta_key       => $type,
 				$this->conditions_meta_key => $data,
 			),
@@ -240,16 +241,29 @@ class Manager extends Singleton {
 			}
 		}
 
-		$post_id = wp_insert_post( $post_args );
-
 		if ( $predefined_name ) {
-			new Import( $post_id, $type, $predefined_name );
+			$imported_post_id = Import::import_xml( $type, $predefined_name );
+
+			if ( ! $imported_post_id ) {
+				wp_send_json_error(
+					array(
+						'message' => esc_html__( 'Failed to import the predefined layout. Please try again.', 'woodmart' ),
+					)
+				);
+			}
+
+			$post_args['ID'] = $imported_post_id;
+			$post_id         = wp_update_post( $post_args );
+		} else {
+			$post_id = wp_insert_post( $post_args );
 		}
+
+		$action = 'external' === woodmart_get_opt( 'current_builder', 'external' ) && 'elementor' === woodmart_get_current_page_builder() && ! str_contains( $type, 'loop_item' ) ? 'elementor' : 'edit';
 
 		$url = add_query_arg(
 			array(
 				'post'           => $post_id,
-				'action'         => 'external' === woodmart_get_opt( 'current_builder', 'external' ) && 'elementor' === woodmart_get_current_page_builder() ? 'elementor' : 'edit',
+				'action'         => $action,
 				'classic-editor' => '',
 			),
 			admin_url( 'post.php' )
@@ -284,6 +298,7 @@ class Manager extends Singleton {
 			case 'product_attr_term':
 			case 'product_brand':
 			case 'filtered_product_by_term':
+			case 'product_shipping_class':
 				$taxonomy = array();
 
 				if ( 'product_cat' === $query_type || 'product_cat_children' === $query_type || 'product_term' === $query_type ) {
@@ -305,6 +320,9 @@ class Manager extends Singleton {
 							}
 						}
 					}
+				}
+				if ( 'product_shipping_class' === $query_type ) {
+					$taxonomy[] = 'product_shipping_class';
 				}
 
 				$terms = get_terms(
@@ -359,10 +377,17 @@ class Manager extends Singleton {
 				}
 				break;
 			case 'product':
+			case 'products':
+				$post_type = 'product';
+
+				if ( 'products' === $query_type ) {
+					$post_type = array( 'product', 'product_variation' );
+				}
+
 				$posts = get_posts(
 					array(
 						's'              => $search,
-						'post_type'      => 'product',
+						'post_type'      => $post_type,
 						'posts_per_page' => 100,
 					)
 				);
@@ -523,6 +548,61 @@ class Manager extends Singleton {
 							);
 					}
 				}
+				break;
+			// Thank you page.
+			case 'order_payment_gateway':
+				if ( woodmart_woocommerce_installed() ) {
+					foreach ( WC()->payment_gateways()->payment_gateways() as $gateway ) {
+						if ( 'yes' === $gateway->enabled ) {
+							$name = $gateway->get_title();
+
+							if ( $search && false === stripos( $name, $search ) ) {
+								continue;
+							}
+
+							$items[] = array(
+								'id'   => $gateway->id,
+								'text' => $gateway->get_title(),
+							);
+						}
+					}
+				}
+
+				break;
+			case 'order_shipping_method':
+				if ( woodmart_woocommerce_installed() ) {
+					foreach ( WC()->shipping()->get_shipping_methods() as $method_id => $method ) {
+						$name = $method->get_method_title();
+
+						if ( $search && false === stripos( $name, $search ) ) {
+							continue;
+						}
+
+						$items[] = array(
+							'id'   => $method_id,
+							'text' => $name,
+						);
+					}
+				}
+
+				break;
+			case 'order_shipping_country':
+			case 'order_billing_country':
+				if ( woodmart_woocommerce_installed() ) {
+					$countries = WC()->countries->get_allowed_countries();
+
+					foreach ( $countries as $code => $name ) {
+						if ( $search && false === stripos( $name, $search ) ) {
+							continue;
+						}
+
+						$items[] = array(
+							'id'   => $code,
+							'text' => $name,
+						);
+					}
+				}
+
 				break;
 		}
 

@@ -1,8 +1,18 @@
 <?php
+/**
+ * Gutenberg Product Categories Block Attributes.
+ *
+ * @package woodmart
+ */
 
 use XTS\Gutenberg\Block_Attributes;
 
 if ( ! function_exists( 'wd_get_block_product_categories_attrs' ) ) {
+	/**
+	 * Get Product Categories Block Attributes.
+	 *
+	 * @return array
+	 */
 	function wd_get_block_product_categories_attrs() {
 		$attr = new Block_Attributes();
 
@@ -25,8 +35,8 @@ if ( ! function_exists( 'wd_get_block_product_categories_attrs' ) ) {
 					'default' => true,
 				),
 				'mobile_accordion'               => array(
-					'type'    => 'boolean',
-					'default' => true,
+					'type'    => 'string',
+					'default' => 'no',
 				),
 				'shop_categories_ancestors'      => array(
 					'type' => 'boolean',
@@ -62,6 +72,10 @@ if ( ! function_exists( 'wd_get_block_product_categories_attrs' ) ) {
 				),
 				'color_scheme'                   => array(
 					'type' => 'string',
+				),
+				'categories_with_shadow'         => array(
+					'type'    => 'string',
+					'default' => '',
 				),
 				'navAlignment'                   => array(
 					'type'       => 'string',

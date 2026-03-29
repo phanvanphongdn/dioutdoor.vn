@@ -2,7 +2,7 @@
 /**
  * Post meta value map.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
@@ -16,9 +16,8 @@ if ( ! function_exists( 'woodmart_get_vc_map_tp_order_meta' ) ) {
 	function woodmart_get_vc_map_tp_order_meta() {
 		$typography = woodmart_get_typography_map(
 			array(
-				'key'              => 'typography',
-				'selector'         => '{{WRAPPER}}',
-				'edit_field_class' => 'vc_col-sm-6 vc_column',
+				'key'      => 'typography',
+				'selector' => '{{WRAPPER}}',
 			)
 		);
 

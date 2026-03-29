@@ -96,7 +96,7 @@ class Countdown extends Widget_Base {
 			array(
 				'label'   => esc_html__( 'Date', 'woodmart' ),
 				'type'    => Controls_Manager::DATE_TIME,
-				'default' => date( 'Y-m-d', strtotime( ' +2 months' ) ),
+				'default' => gmdate( 'Y-m-d', strtotime( ' +2 months' ) ),
 			)
 		);
 
@@ -382,7 +382,7 @@ class Countdown extends Widget_Base {
 				'size_units' => array( 'px' ),
 				'range'      => array(
 					'px' => array(
-						'min'  => 1,
+						'min'  => 0,
 						'max'  => 200,
 						'step' => 1,
 					),
@@ -524,7 +524,6 @@ class Countdown extends Widget_Base {
 						'active' === $settings['style'] ? 'wd-bg-active' : '',
 						! $settings['labels'] ? 'wd-labels-hide' : '',
 						'inline' === $settings['layout'] ? 'wd-layout-inline' : '',
-						woodmart_get_old_classes( ' woodmart-timer' ),
 					),
 					'data-end-date'       => array(
 						apply_filters( 'wd_countdown_timer_end_date', $settings['date'] ),
@@ -544,8 +543,8 @@ class Countdown extends Widget_Base {
 		woodmart_enqueue_inline_style( 'countdown' );
 
 		?>
-		<div <?php echo $this->get_render_attribute_string( 'wrapper' ); ?>>
-			<div <?php echo $this->get_render_attribute_string( 'timer' ); ?>>
+		<div <?php echo $this->get_render_attribute_string( 'wrapper' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+			<div <?php echo $this->get_render_attribute_string( 'timer' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 				<span class="wd-item wd-timer-days">
 					<span class="wd-timer-value">
 						0
@@ -555,9 +554,7 @@ class Countdown extends Widget_Base {
 					</span>
 				</span>
 				<?php if ( $separator ) : ?>
-					<div class="wd-sep">
-						<?php echo esc_html( $settings['separator_text'] ); ?>
-					</div>
+					<div class="wd-sep"><?php echo esc_html( $settings['separator_text'] ); ?></div>
 				<?php endif; ?>
 				<span class="wd-item wd-timer-hours">
 					<span class="wd-timer-value">
@@ -568,9 +565,7 @@ class Countdown extends Widget_Base {
 					</span>
 				</span>
 				<?php if ( $separator ) : ?>
-					<div class="wd-sep">
-						<?php echo esc_html( $settings['separator_text'] ); ?>
-					</div>
+					<div class="wd-sep"><?php echo esc_html( $settings['separator_text'] ); ?></div>
 				<?php endif; ?>
 				<span class="wd-item wd-timer-min">
 					<span class="wd-timer-value">
@@ -581,9 +576,7 @@ class Countdown extends Widget_Base {
 					</span>
 				</span>
 				<?php if ( $separator ) : ?>
-					<div class="wd-sep">
-						<?php echo esc_html( $settings['separator_text'] ); ?>
-					</div>
+					<div class="wd-sep"><?php echo esc_html( $settings['separator_text'] ); ?></div>
 				<?php endif; ?>
 				<span class="wd-item wd-timer-sec">
 					<span class="wd-timer-value">

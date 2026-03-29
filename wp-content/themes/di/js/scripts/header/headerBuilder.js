@@ -2,7 +2,7 @@
 (function($) {
 	woodmartThemeModule.headerBuilder = function() {
 		var $header         = $('.whb-header'),
-		    $headerBanner   = $('.header-banner'),
+		    $headerBanner   = $('.wd-hb'),
 		    $stickyElements = $('.whb-sticky-row'),
 		    $firstSticky    = '',
 		    $window         = woodmartThemeModule.$window,
@@ -85,11 +85,11 @@
 			var windowHeight = woodmartThemeModule.$window.height();
 			var documentHeight = woodmartThemeModule.$document.height();
 
-			if ($headerBanner.length > 0 && woodmartThemeModule.$body.hasClass('header-banner-display')) {
+			if ($headerBanner.length > 0 && $headerBanner.hasClass('wd-display')) {
 				after += $headerBanner[0].offsetHeight;
 			}
 
-			if (!$('.close-header-banner').length && $header.hasClass('whb-scroll-stick')) {
+			if (!$('.wd-hb-close').length && $header.hasClass('whb-scroll-stick')) {
 				after = stickAfter;
 			}
 

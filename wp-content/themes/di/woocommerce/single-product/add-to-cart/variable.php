@@ -33,7 +33,7 @@ if ( 'yes' === woodmart_loop_prop( 'hide_out_of_stock_products' ) && $available_
 		}
 	}
 
-	$variations_json = wp_json_encode( $available_variations_new ) ;
+	$variations_json = wp_json_encode( $available_variations_new );
 } else {
 	$variations_json = wp_json_encode( $available_variations );
 }
@@ -61,7 +61,6 @@ if ( $is_quick_shop2 ) {
 
 	$is_single_product = false;
 	$form_classes     .= ' wd-quick-shop-2';
-	$form_classes     .= ' wd-clear-' . woodmart_get_opt( 'quick_shop_clear_action', 'none' );
 } elseif ( ! $is_quick_shop && woodmart_get_opt( 'single_product_swatches_limit' ) ) {
 	$swatch_limit = (int) woodmart_get_opt( 'single_product_swatches_limit_count', 10 );
 }
@@ -70,25 +69,25 @@ if ( $is_quick_shop ) {
 	$form_classes .= ' wd-reset-bottom-lg wd-reset-bottom-md wd-label-top-lg wd-label-top-md';
 }
 
+if ( $is_quick_shop || $is_quick_shop2 ) {
+	$form_classes .= ' wd-clear-' . woodmart_get_opt( 'quick_shop_clear_action', 'none' );
+}
+
 if ( woodmart_get_opt( 'swatches_labels_name' ) ) {
 	$form_classes .= ' wd-swatches-name';
 }
 
-if ( ! $is_quick_shop && ! $is_quick_shop2 ) {
-	if ( woodmart_get_opt( 'single_product_variations_price' ) ) {
-		woodmart_enqueue_js_script( 'variations-price' );
-		$form_classes .= ' wd-price-outside';
-	}
+if ( ! $is_quick_shop && ! $is_quick_shop2 && woodmart_get_opt( 'single_product_variations_price' ) ) {
+	woodmart_enqueue_js_script( 'variations-price' );
+	$form_classes .= ' wd-price-outside';
 }
 
 if ( $is_builder ) {
 	if ( ! empty( Builder_Data::get_instance()->get_data( 'form_classes' ) ) ) {
 		$form_classes .= Builder_Data::get_instance()->get_data( 'form_classes' );
 	}
-} else {
-	if ( 'default' === woodmart_get_opt( 'product_design' ) && ! $is_quick_shop ) {
+} elseif ( 'default' === woodmart_get_opt( 'product_design' ) && ! $is_quick_shop ) {
 		$form_classes .= ' wd-reset-side-lg';
-	}
 }
 
 if ( ! $is_quick_shop && ! $is_builder && ! $is_quick_shop2 ) {
@@ -144,7 +143,7 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 			<?php foreach ( $attributes as $attribute_name => $options ) : ?>
 				<?php
 				// start Woodmart code.
-				$loop++;
+				++$loop;
 				$swatches            = woodmart_has_swatches( $product->get_id(), $attribute_name, $options, $available_variations, $swatches_use_variation_images );
 				$active_variations   = woodmart_get_active_variations( $attribute_name, $available_variations );
 				$swatch_size         = woodmart_wc_get_attribute_term( $attribute_name, 'swatch_size' );
@@ -152,7 +151,7 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 				$swatch_style        = woodmart_wc_get_attribute_term( $attribute_name, 'swatch_style' );
 				$swatch_shape        = woodmart_wc_get_attribute_term( $attribute_name, 'swatch_shape' );
 				$swatch_change_image = woodmart_wc_get_attribute_term( $attribute_name, 'change_image' );
-				$wrapper_class       = woodmart_get_old_classes( ' swatches-on-single' );
+				$wrapper_class       = '';
 
 				if ( taxonomy_exists( $attribute_name ) ) {
 					if ( ! $swatch_style ) {
@@ -197,12 +196,12 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 							<div class="wd-swatches-product<?php echo esc_attr( $wrapper_class ); ?>" data-id="<?php echo esc_attr( sanitize_title( $attribute_name ) ); ?>" role="radiogroup" aria-labelledby="<?php echo esc_attr( sanitize_title( $attribute_name ) ); ?>">
 								<?php
 								if ( is_array( $options ) ) {
-									$_i = 0;
+									$_i             = 0;
 									$selected_value = '';
 
 									if ( ! $is_quick_shop2 ) {
-										if ( isset( $_REQUEST[ 'attribute_' . $attribute_name ] ) ) {
-											$selected_value = $_REQUEST[ 'attribute_' . $attribute_name ];
+										if ( isset( $_REQUEST[ 'attribute_' . $attribute_name ] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+											$selected_value = $_REQUEST[ 'attribute_' . $attribute_name ]; // phpcs:ignore WordPress.Security.NonceVerification.Recommended, WordPress.Security.ValidatedSanitizedInput.MissingUnslash, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 										} elseif ( isset( $selected_attributes[ $attribute_name ] ) ) {
 											$selected_value = $selected_attributes[ $attribute_name ];
 										}
@@ -213,33 +212,29 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 										$terms          = wc_get_product_terms( $product->get_id(), $attribute_name, array( 'fields' => 'all' ) );
 										$options_fliped = array_flip( $options );
 
-										foreach ( $terms as $term ) {
-											if ( ! in_array( $term->slug, $options ) ) {
+										foreach ( $terms as $term ) { // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
+											if ( ! in_array( $term->slug, $options, true ) ) {
 												continue;
 											}
 
-											$key    = $options_fliped[ $term->slug ];
-											$style  = '';
-											$image  = '';
-											$class  = 'wd-swatch';
-											$class .= woodmart_get_old_classes( ' swatch-on-single woodmart-swatch' );
+											$key   = $options_fliped[ $term->slug ];
+											$style = '';
+											$image = '';
+											$class = 'wd-swatch';
 
 											if ( ! empty( $swatches[ $key ]['color'] ) ) {
 												$class .= ' wd-bg';
-												$class .= woodmart_get_old_classes( ' swatch-with-bg' );
 
 												if ( ! woodmart_get_opt( 'swatches_labels_name' ) ) {
 													$class .= ' wd-tooltip';
 												}
 
 												$style = 'background-color:' . $swatches[ $key ]['color'];
-
 											} elseif ( $swatches_use_variation_images && $grid_swatches_attribute === $attribute_name && isset( $swatches[ $key ]['image_src'] ) ) {
 												$image = wp_get_attachment_image( get_post_thumbnail_id( $swatches[ $key ]['variation_id'] ), 'woocommerce_thumbnail' );
 
 												if ( ! empty( $image ) ) {
 													$class .= ' wd-bg';
-													$class .= woodmart_get_old_classes( ' swatch-with-bg' );
 
 													if ( ! woodmart_get_opt( 'swatches_labels_name' ) ) {
 														$class .= ' wd-tooltip';
@@ -253,18 +248,12 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 												}
 
 												$class .= ' wd-bg';
-												$class .= woodmart_get_old_classes( ' swatch-with-bg' );
 
 												if ( ! woodmart_get_opt( 'swatches_labels_name' ) ) {
 													$class .= ' wd-tooltip';
 												}
 											} else {
 												$class .= ' wd-text';
-												$class .= woodmart_get_old_classes( ' text-only' );
-											}
-
-											if ( in_array( $swatch_size, array( 'default', 'large', 'xlarge' ), true ) ) {
-												$class .= woodmart_get_old_classes( ' swatch-size-' . $swatch_size );
 											}
 
 											if ( $selected_value === $term->slug ) {
@@ -272,14 +261,14 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 											}
 
 											if ( 'yes' === get_option( 'woocommerce_hide_out_of_stock_items' ) && $active_variations ) {
-												if ( in_array( $term->slug, $active_variations ) ) {
+												if ( in_array( $term->slug, $active_variations, true ) ) {
 													$class .= ' wd-enabled';
 												} else {
 													$class .= ' wd-disabled';
 												}
 											}
 
-											$title = woodmart_get_opt( 'swatches_labels_name' ) ? ' title="' . $term->name . '"' : '';
+											$title = woodmart_get_opt( 'swatches_labels_name' ) ? ' title="' . $term->name . '"' : ''; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
 
 											if ( $swatch_limit && count( $options ) > $swatch_limit + $more_limit_swathes && ( array_key_first( $attributes ) === $attribute_name || $is_single_product ) ) {
 												if ( $_i >= $swatch_limit ) {
@@ -312,7 +301,7 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 													</span>
 												</div>
 											<?php
-											$_i++;
+											++$_i;
 										}
 									} else {
 										foreach ( $options as $option ) {
@@ -323,7 +312,7 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 											}
 
 											if ( 'yes' === get_option( 'woocommerce_hide_out_of_stock_items' ) && $active_variations ) {
-												if ( in_array( $term->slug, $active_variations ) ) {
+												if ( in_array( $term->slug, $active_variations, true ) ) {
 													$class .= ' wd-enabled';
 												} else {
 													$class .= ' wd-disabled';
@@ -343,11 +332,11 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 												}
 											}
 
-											$title = woodmart_get_opt( 'swatches_labels_name' ) ? 'title="' . $term->name . '"' : '';
+											$title = woodmart_get_opt( 'swatches_labels_name' ) ? 'title="' . $term->name . '"' : ''; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
 
-											echo '<div class="' . esc_attr( $class ) . '" ' . $title . ' data-value="' . esc_attr( sanitize_title( $option ) ) . '" data-title="' . esc_attr( $term->name ) . '" ' . selected( sanitize_title( $selected_value ), sanitize_title( $option ), false ) . '>' . esc_html( apply_filters( 'woocommerce_variation_option_name', $option ) ) . '</div>';
+											echo '<div class="' . esc_attr( $class ) . '" ' . $title . ' data-value="' . esc_attr( sanitize_title( $option ) ) . '" data-title="' . esc_attr( $term->name ) . '" ' . selected( sanitize_title( $selected_value ), sanitize_title( $option ), false ) . '>' . esc_html( apply_filters( 'woocommerce_variation_option_name', $option ) ) . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
-											$_i++;
+											++$_i;
 										}
 									}
 								}
@@ -374,7 +363,7 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 		</tbody>
 	</table>
 	<div class="reset_variations_alert screen-reader-text" role="alert" aria-live="polite" aria-relevant="all"></div>
-	<?php do_action( 'woocommerce_after_variations_table' ); ?>
+		<?php do_action( 'woocommerce_after_variations_table' ); ?>
 
 	<div class="single_variation_wrap">
 		<?php

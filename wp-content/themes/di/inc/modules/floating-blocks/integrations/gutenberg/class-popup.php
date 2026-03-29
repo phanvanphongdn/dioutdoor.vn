@@ -2,7 +2,7 @@
 /**
  * Floating block metaboxes.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Modules\Floating_Blocks\Integrations;

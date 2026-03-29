@@ -23,8 +23,8 @@
 				var html = [
 					'<div class="added-to-cart">',
 					'<h3>' + woodmart_settings.added_to_cart + '</h3>',
-					'<a href="#" class="btn close-popup">' + woodmart_settings.continue_shopping + '</a>',
-					'<a href="' + woodmart_settings.cart_url + '" class="btn view-cart">' + woodmart_settings.view_cart + '</a>',
+					'<a href="#" class="btn btn-default close-popup">' + woodmart_settings.continue_shopping + '</a>',
+					'<a href="' + woodmart_settings.cart_url + '" class="btn btn-accent view-cart">' + woodmart_settings.view_cart + '</a>',
 					'</div>'
 				].join('');
 

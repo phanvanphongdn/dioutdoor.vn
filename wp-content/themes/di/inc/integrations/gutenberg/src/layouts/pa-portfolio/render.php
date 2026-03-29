@@ -1,4 +1,17 @@
-<?php if ( ! function_exists( 'wd_gutenberg_portfolio_archive' ) ) {
+<?php
+/**
+ * Portfolio Archive block render.
+ *
+ * @package woodmart
+ */
+
+if ( ! function_exists( 'wd_gutenberg_portfolio_archive' ) ) {
+	/**
+	 * Render Portfolio Archive block.
+	 *
+	 * @param array $block_attributes Block attributes.
+	 * @return string
+	 */
 	function wd_gutenberg_portfolio_archive( $block_attributes ) {
 		$block_attributes['is_wpb']          = false;
 		$block_attributes['el_id']           = wd_get_gutenberg_element_id( $block_attributes );
@@ -16,15 +29,15 @@
 			$block_attributes['portfolio_columns_mobile'] = $block_attributes['columnsMobile'];
 		}
 
-		if ( ! empty( $block_attributes['spacing'] ) && 'inherit' !== $block_attributes['portfolio_style'] ) {
+		if ( isset( $block_attributes['spacing'] ) && 'inherit' !== $block_attributes['portfolio_style'] ) {
 			$block_attributes['portfolio_spacing'] = $block_attributes['spacing'];
 		}
 
-		if ( ! empty( $block_attributes['spacingTablet'] ) && 'inherit' !== $block_attributes['portfolio_style'] ) {
+		if ( isset( $block_attributes['spacingTablet'] ) && 'inherit' !== $block_attributes['portfolio_style'] ) {
 			$block_attributes['portfolio_spacing_tablet'] = $block_attributes['spacingTablet'];
 		}
 
-		if ( ! empty( $block_attributes['spacingMobile'] ) && 'inherit' !== $block_attributes['portfolio_style'] ) {
+		if ( isset( $block_attributes['spacingMobile'] ) && 'inherit' !== $block_attributes['portfolio_style'] ) {
 			$block_attributes['portfolio_spacing_mobile'] = $block_attributes['spacingMobile'];
 		}
 

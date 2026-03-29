@@ -16,7 +16,7 @@
 	<!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 	<!--    contained in this file into your site. -->
 
-	<!-- generator="WordPress/6.5.5" created="2024-10-29 11:57" -->
+	<!-- generator="WordPress/6.7.4" created="2026-01-29 10:41" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -29,15 +29,13 @@
 	<title>Gutenberg base</title>
 	<link>https://dummy.xtemos.com/woodmart2/gutenberg</link>
 	<description></description>
-	<pubDate>Tue, 29 Oct 2024 11:57:53 +0000</pubDate>
+	<pubDate>Thu, 29 Jan 2026 10:41:30 +0000</pubDate>
 	<language>en-US</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
 	<wp:base_site_url>https://dummy.xtemos.com/woodmart2/</wp:base_site_url>
 	<wp:base_blog_url>https://dummy.xtemos.com/woodmart2/gutenberg</wp:base_blog_url>
 
-		<wp:author><wp:author_id>2</wp:author_id><wp:author_login><![CDATA[Mr. Mackay]]></wp:author_login><wp:author_email><![CDATA[zak@asda.as]]></wp:author_email><wp:author_display_name><![CDATA[Mr. Mackay]]></wp:author_display_name><wp:author_first_name><![CDATA[sds]]></wp:author_first_name><wp:author_last_name><![CDATA[scssc]]></wp:author_last_name></wp:author>
-	<wp:author><wp:author_id>491</wp:author_id><wp:author_login><![CDATA[Ethan Smith]]></wp:author_login><wp:author_email><![CDATA[ethan_smith@asda.as]]></wp:author_email><wp:author_display_name><![CDATA[Ethan Smith]]></wp:author_display_name><wp:author_first_name><![CDATA[Ethan]]></wp:author_first_name><wp:author_last_name><![CDATA[Smith]]></wp:author_last_name></wp:author>
-
+	
 					<wp:term>
 			<wp:term_id>0</wp:term_id>
 			<wp:term_taxonomy><![CDATA[]]></wp:term_taxonomy>
@@ -45,7 +43,7 @@
 			<wp:term_parent><![CDATA[]]></wp:term_parent>
 					</wp:term>
 		
-	<generator>https://wordpress.org/?v=6.5.5</generator>
+	<generator>https://wordpress.org/?v=6.7.4</generator>
 
 					<item>
 					<title><![CDATA[coffee-popup]]></title>
@@ -534,7 +532,7 @@
 					<title><![CDATA[Footer 1 column Light]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/gutenberg/?cms_block=footer-1-column-light</link>
 					<pubDate>Fri, 24 May 2024 13:40:27 +0000</pubDate>
-					<dc:creator><![CDATA[Ethan Smith]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/gutenberg/?post_type=cms_block&#038;p=12962</guid>
 											<content:encoded><![CDATA[<!-- wp:wd/row {"blockId":"44ed7d08-e070-4837-b8c5-83401769c4d1","paddingTop":"40","paddingBottom":"40"} -->
 <div id="wd-44ed7d08" class="wp-block-wd-row"><!-- wp:wd/column {"blockId":"d5a06582-d2b6-4d73-83f9-ccc08f331d22","adjacentCount":5,"colWidth":25,"adjacentCountTablet":2,"adjacentCountMobile":1,"colWidthTablet":50,"colWidthMobile":100} -->
@@ -723,211 +721,211 @@
 					<pubDate>Wed, 26 Jun 2024 15:42:30 +0000</pubDate>
 					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/gutenberg/?page_id=19926</guid>
-											<content:encoded><![CDATA[<!-- wp:wd/slider {"blockId":"142c00b3-4bcb-4d3a-98c0-ee26551b20c8","pagination":false,"paginationTablet":false,"paginationMobile":false,"autoplay":true,"autoplaySpeed":"25000","stretch":true,"height":"820","marginBottom":"80","heightTablet":"620","heightMobile":"480","marginBottomTablet":"60","marginBottomMobile":"40"} -->
-<div id="wd-142c00b3" class="wp-block-wd-slider wd-slider wd-carousel-container wd-anim-slide wd-stretched"><div class="wd-carousel-inner"><div class="wd-carousel wd-grid" data-effect="slide" data-wrap="yes" data-autoheight="yes" data-sliding_speed="700" style="--wd-col-lg:1;--wd-col-md:1;--wd-col-sm:1" data-autoplay="yes" data-speed="25000"><div class="wd-carousel-wrap"><!-- wp:wd/slider-item {"blockId":"47c103a9-7e6a-4529-8b24-d65500a1371b","align":"flex-start","bgImage":{"id":19940,"url":"http://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/coffee-slide-1.jpg"},"bgColorCode":"#e2ede9"} -->
-<div id="wd-47c103a9" class="wp-block-wd-slider-item wd-slide wd-carousel-item"><div class="wd-slide-container"><!-- wp:wd/title {"blockId":"6082d844-66fa-42aa-9610-5addb6b6e8dd","content":"Start your day with a good cup of coffee","tpFontSize":"54","tpLineHeight":"1.2","colorVariable":"\u002d\u002dwd-primary-color","animation":"slide-from-left","animationDelay":"250","displayWidth":"custom","customWidth":"597","tpFontSizeTablet":"38","tpFontSizeMobile":"26","tpLineHeightUnits":"em","displayWidthTablet":"custom","displayWidthMobile":"custom","customWidthTablet":"400","customWidthMobile":"230"} -->
-<h2 id="wd-6082d844" class="wp-block-wd-title title wd-animation wd-transform wd-animation-slide-from-left wd_delay_250 wd-custom-width">Start your day with a good cup of coffee</h2>
+											<content:encoded><![CDATA[<!-- wp:wd/slider {"blockId":"142c00b3-4bcb-4d3a-98c0-ee26551b20c8","blockVersion":"2","pagination":false,"paginationTablet":false,"paginationMobile":false,"autoplay":true,"autoplaySpeed":"25000","stretch":true,"height":"820","marginBottom":"80","heightTablet":"620","heightMobile":"480","marginBottomTablet":"60","marginBottomMobile":"40"} -->
+<div class="wp-block-wd-slider wd-slider wd-carousel-container wd-anim-slide wd-stretched wd-autoplay-on wd-142c00b3"><div class="wd-carousel-inner"><div class="wd-carousel wd-grid" data-effect="slide" data-wrap="yes" data-autoheight="yes" data-sliding_speed="700" style="--wd-col-lg:1;--wd-col-md:1;--wd-col-sm:1;" data-autoplay="yes" data-speed="25000"><div class="wd-carousel-wrap"><!-- wp:wd/slider-item {"blockId":"47c103a9-7e6a-4529-8b24-d65500a1371b","blockVersion":"2","align":"flex-start","aspectRatio":"","bgImage":{"id":19940,"url":"http://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/coffee-slide-1.jpg"},"bgColorCode":"#e2ede9"} -->
+<div class="wp-block-wd-slider-item wd-slide wd-carousel-item wd-47c103a9"><div class="wd-slide-container"><!-- wp:wd/title {"blockId":"6082d844-66fa-42aa-9610-5addb6b6e8dd","blockVersion":"2","content":"Start your day with a good cup of coffee","tpFontSize":"54","tpLineHeight":"1.2","colorVariable":"\u002d\u002dwd-primary-color","animation":"slide-from-left","animationDelay":"250","displayWidth":"custom","customWidth":"597","tpFontSizeTablet":"38","tpFontSizeMobile":"26","tpLineHeightUnits":"em","displayWidthTablet":"custom","displayWidthMobile":"custom","customWidthTablet":"400","customWidthMobile":"230"} -->
+<h2 class="wp-block-wd-title title wd-animation wd-transform wd-animation-slide-from-left wd_delay_250 wd-6082d844 wd-custom-width">Start your day with a good cup of coffee</h2>
 <!-- /wp:wd/title -->
 
-<!-- wp:wd/paragraph {"blockId":"adb28c85-d9c2-48ab-a8b5-2a3ae0c56daf","marginBottom":"15","animation":"slide-from-left","animationDelay":"275","hideOnMobile":true,"displayWidth":"custom","customWidth":"604","displayWidthTablet":"custom","customWidthTablet":"445"} -->
-<p id="wd-adb28c85" class="wp-block-wd-paragraph wd-hide-sm wd-animation wd-transform wd-animation-slide-from-left wd_delay_275 wd-custom-width">Anyway, you still use Lorem Ipsum and rightly so, as it will always have a place in the web workers toolbox, as things happen, not always the way you like it, not always in the preferred order even if your less design.</p>
+<!-- wp:wd/paragraph {"blockId":"adb28c85-d9c2-48ab-a8b5-2a3ae0c56daf","blockVersion":"2","marginBottom":"15","animation":"slide-from-left","animationDelay":"275","hideOnMobile":true,"displayWidth":"custom","customWidth":"604","displayWidthTablet":"custom","customWidthTablet":"445"} -->
+<p class="wp-block-wd-paragraph wd-hide-sm wd-animation wd-transform wd-animation-slide-from-left wd_delay_275 wd-adb28c85 wd-custom-width">Anyway, you still use Lorem Ipsum and rightly so, as it will always have a place in the web workers toolbox, as things happen, not always the way you like it, not always in the preferred order even if your less design.</p>
 <!-- /wp:wd/paragraph -->
 
-<!-- wp:wd/container {"blockId":"92a5ed52-2ddc-4441-8a41-5911000c0439","direction":"row","animation":"slide-from-left","animationDelay":"300","displayWidth":"","directionTablet":"row","directionMobile":"row"} -->
-<div id="wd-92a5ed52" class="wp-block-wd-container wd-dir-row wd-dir-row-md wd-dir-row-sm wd-animation wd-transform wd-animation-slide-from-left wd_delay_300"><!-- wp:wd/button {"blockId":"ad89eaed-d0f0-4c94-b806-1488230da9f0","predefinedColor":"primary"} -->
-<a id="wd-ad89eaed" class="wp-block-wd-button btn btn-style-default btn-color-primary btn-size-default btn-shape-rectangle" href="#"><span>Read more</span></a>
+<!-- wp:wd/container {"blockId":"92a5ed52-2ddc-4441-8a41-5911000c0439","blockVersion":"2","direction":"row","animation":"slide-from-left","animationDelay":"300","displayWidth":"","directionTablet":"row","directionMobile":"row"} -->
+<div class="wp-block-wd-container wd-dir-row wd-dir-row-md wd-dir-row-sm wd-animation wd-transform wd-animation-slide-from-left wd_delay_300 wd-92a5ed52"><!-- wp:wd/button {"blockId":"ad89eaed-d0f0-4c94-b806-1488230da9f0","blockVersion":"2","predefinedColor":"primary"} -->
+<a class="wp-block-wd-button btn btn-style-default btn-color-primary btn-size-default btn-shape-rectangle wd-ad89eaed" href="#"><span>Read more</span></a>
 <!-- /wp:wd/button -->
 
-<!-- wp:wd/button {"blockId":"38c3b693-f380-4cf6-97e7-1860a18c30e4","design":"bordered","predefinedColor":"","bgHoverColorCode":"#c0c9c5","borderType":"solid","borderColorCode":"#c0c9c5","borderWidth":"2","borderWidthTop":"2","borderWidthRight":"2","borderWidthBottom":"2","borderWidthLeft":"2","transitionBackground":0.3} -->
-<a id="wd-38c3b693" class="wp-block-wd-button btn btn-style-bordered btn-size-default btn-shape-rectangle" href="#"><span>View more</span></a>
+<!-- wp:wd/button {"blockId":"38c3b693-f380-4cf6-97e7-1860a18c30e4","blockVersion":"2","design":"bordered","predefinedColor":"","bgHoverColorCode":"#c0c9c5","borderType":"solid","borderColorCode":"#c0c9c5","borderWidth":"2","borderWidthTop":"2","borderWidthRight":"2","borderWidthBottom":"2","borderWidthLeft":"2","transitionBackground":0.3} -->
+<a class="wp-block-wd-button btn btn-style-bordered btn-size-default btn-shape-rectangle wd-38c3b693" href="#"><span>View more</span></a>
 <!-- /wp:wd/button --></div>
 <!-- /wp:wd/container --></div><div class="wd-slide-bg wd-fill"></div></div>
 <!-- /wp:wd/slider-item -->
 
-<!-- wp:wd/slider-item {"blockId":"bda84ca8-59fb-4a5c-a308-bf80505be3b1","bgImage":{"id":19941,"url":"http://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/coffee-slide-2.jpg"},"bgColorCode":"#e2ede9"} -->
-<div id="wd-bda84ca8" class="wp-block-wd-slider-item wd-slide wd-carousel-item"><div class="wd-slide-container"><!-- wp:wd/title {"blockId":"95d2f4ac-7c3b-4121-9f53-5192667464e7","textAlign":"center","content":"A cup of hot coffee is what you need","tpFontSize":"54","tpLineHeight":"1.2","colorVariable":"\u002d\u002dwd-primary-color","animation":"slide-from-left","animationDelay":"250","alignSelf":"center","displayWidth":"custom","customWidth":"597","tpFontSizeTablet":"38","tpFontSizeMobile":"26","tpLineHeightUnits":"em","displayWidthTablet":"custom","displayWidthMobile":"custom","customWidthTablet":"606","customWidthMobile":"230"} -->
-<h2 id="wd-95d2f4ac" class="wp-block-wd-title title wd-align wd-animation wd-transform wd-animation-slide-from-left wd_delay_250 wd-custom-width wd-align-s-center">A cup of hot coffee is what you need</h2>
+<!-- wp:wd/slider-item {"blockId":"bda84ca8-59fb-4a5c-a308-bf80505be3b1","blockVersion":"2","aspectRatio":"","bgImage":{"id":19941,"url":"http://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/coffee-slide-2.jpg"},"bgColorCode":"#e2ede9"} -->
+<div class="wp-block-wd-slider-item wd-slide wd-carousel-item wd-bda84ca8"><div class="wd-slide-container"><!-- wp:wd/title {"blockId":"95d2f4ac-7c3b-4121-9f53-5192667464e7","blockVersion":"2","textAlign":"center","content":"A cup of hot coffee is what you need","tpFontSize":"54","tpLineHeight":"1.2","colorVariable":"\u002d\u002dwd-primary-color","animation":"slide-from-left","animationDelay":"250","alignSelf":"center","displayWidth":"custom","customWidth":"597","tpFontSizeTablet":"38","tpFontSizeMobile":"26","tpLineHeightUnits":"em","displayWidthTablet":"custom","displayWidthMobile":"custom","customWidthTablet":"606","customWidthMobile":"230"} -->
+<h2 class="wp-block-wd-title title wd-align wd-animation wd-transform wd-animation-slide-from-left wd_delay_250 wd-95d2f4ac wd-custom-width wd-align-s-center">A cup of hot coffee is what you need</h2>
 <!-- /wp:wd/title -->
 
-<!-- wp:wd/paragraph {"blockId":"b0232f46-17cc-4f58-be43-359b2ad8a53c","textAlign":"center","marginBottom":"15","animation":"slide-from-left","animationDelay":"275","hideOnMobile":true,"alignSelf":"center","displayWidth":"custom","customWidth":"604","displayWidthTablet":"custom","customWidthTablet":"595"} -->
-<p id="wd-b0232f46" class="wp-block-wd-paragraph wd-align wd-hide-sm wd-animation wd-transform wd-animation-slide-from-left wd_delay_275 wd-custom-width wd-align-s-center">How can you evaluate content without design? No typography, no colors, no layout, no styles, all those things that convey the important signals that beyond the mere textual, hierarchies of information, weight.</p>
+<!-- wp:wd/paragraph {"blockId":"b0232f46-17cc-4f58-be43-359b2ad8a53c","blockVersion":"2","textAlign":"center","marginBottom":"15","animation":"slide-from-left","animationDelay":"275","hideOnMobile":true,"alignSelf":"center","displayWidth":"custom","customWidth":"604","displayWidthTablet":"custom","customWidthTablet":"595"} -->
+<p class="wp-block-wd-paragraph wd-align wd-hide-sm wd-animation wd-transform wd-animation-slide-from-left wd_delay_275 wd-b0232f46 wd-custom-width wd-align-s-center">How can you evaluate content without design? No typography, no colors, no layout, no styles, all those things that convey the important signals that beyond the mere textual, hierarchies of information, weight.</p>
 <!-- /wp:wd/paragraph -->
 
-<!-- wp:wd/container {"blockId":"2f88bbc8-af25-4a23-9d62-f9e018924330","direction":"row","justify":"center","animation":"slide-from-left","animationDelay":"300","displayWidth":"","directionTablet":"row","directionMobile":"row"} -->
-<div id="wd-2f88bbc8" class="wp-block-wd-container wd-dir-row wd-dir-row-md wd-dir-row-sm wd-animation wd-transform wd-animation-slide-from-left wd_delay_300"><!-- wp:wd/button {"blockId":"412f18fc-652e-413a-a135-ca3e902d2fb5","predefinedColor":"primary"} -->
-<a id="wd-412f18fc" class="wp-block-wd-button btn btn-style-default btn-color-primary btn-size-default btn-shape-rectangle" href="#"><span>Read more</span></a>
+<!-- wp:wd/container {"blockId":"2f88bbc8-af25-4a23-9d62-f9e018924330","blockVersion":"2","direction":"row","justify":"center","animation":"slide-from-left","animationDelay":"300","displayWidth":"","directionTablet":"row","directionMobile":"row"} -->
+<div class="wp-block-wd-container wd-dir-row wd-dir-row-md wd-dir-row-sm wd-animation wd-transform wd-animation-slide-from-left wd_delay_300 wd-2f88bbc8"><!-- wp:wd/button {"blockId":"412f18fc-652e-413a-a135-ca3e902d2fb5","blockVersion":"2","predefinedColor":"primary"} -->
+<a class="wp-block-wd-button btn btn-style-default btn-color-primary btn-size-default btn-shape-rectangle wd-412f18fc" href="#"><span>Read more</span></a>
 <!-- /wp:wd/button -->
 
-<!-- wp:wd/button {"blockId":"8ea9e2fa-9a1c-4ad8-8e4e-2a8be1ca4499","design":"bordered","predefinedColor":"","bgHoverColorCode":"#c0c9c5","borderType":"solid","borderColorCode":"#c0c9c5","borderWidth":"2","borderWidthTop":"2","borderWidthRight":"2","borderWidthBottom":"2","borderWidthLeft":"2","transitionBackground":0.3} -->
-<a id="wd-8ea9e2fa" class="wp-block-wd-button btn btn-style-bordered btn-size-default btn-shape-rectangle" href="#"><span>View more</span></a>
+<!-- wp:wd/button {"blockId":"8ea9e2fa-9a1c-4ad8-8e4e-2a8be1ca4499","blockVersion":"2","design":"bordered","predefinedColor":"","bgHoverColorCode":"#c0c9c5","borderType":"solid","borderColorCode":"#c0c9c5","borderWidth":"2","borderWidthTop":"2","borderWidthRight":"2","borderWidthBottom":"2","borderWidthLeft":"2","transitionBackground":0.3} -->
+<a class="wp-block-wd-button btn btn-style-bordered btn-size-default btn-shape-rectangle wd-8ea9e2fa" href="#"><span>View more</span></a>
 <!-- /wp:wd/button --></div>
 <!-- /wp:wd/container --></div><div class="wd-slide-bg wd-fill"></div></div>
 <!-- /wp:wd/slider-item -->
 
-<!-- wp:wd/slider-item {"blockId":"1d5a0ed3-21b3-4224-89a5-be3e5ef2774c","align":"flex-start","bgImage":{"id":19942,"url":"http://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/coffee-slide-3.jpg"},"bgColorCode":"#e2ede9"} -->
-<div id="wd-1d5a0ed3" class="wp-block-wd-slider-item wd-slide wd-carousel-item"><div class="wd-slide-container"><!-- wp:wd/title {"blockId":"2f39ca8c-dcab-4500-b85e-4b228a9ce482","content":"Everything you need to know coffee","tpFontSize":"54","tpLineHeight":"1.2","colorVariable":"\u002d\u002dwd-primary-color","animation":"slide-from-left","animationDelay":"250","displayWidth":"custom","customWidth":"597","tpFontSizeTablet":"38","tpFontSizeMobile":"26","tpLineHeightUnits":"em","displayWidthTablet":"custom","displayWidthMobile":"custom","customWidthTablet":"400","customWidthMobile":"230"} -->
-<h2 id="wd-2f39ca8c" class="wp-block-wd-title title wd-animation wd-transform wd-animation-slide-from-left wd_delay_250 wd-custom-width">Everything you need to know coffee</h2>
+<!-- wp:wd/slider-item {"blockId":"1d5a0ed3-21b3-4224-89a5-be3e5ef2774c","blockVersion":"2","align":"flex-start","aspectRatio":"","bgImage":{"id":19942,"url":"http://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/coffee-slide-3.jpg"},"bgColorCode":"#e2ede9"} -->
+<div class="wp-block-wd-slider-item wd-slide wd-carousel-item wd-1d5a0ed3"><div class="wd-slide-container"><!-- wp:wd/title {"blockId":"2f39ca8c-dcab-4500-b85e-4b228a9ce482","blockVersion":"2","content":"Everything you need to know coffee","tpFontSize":"54","tpLineHeight":"1.2","colorVariable":"\u002d\u002dwd-primary-color","animation":"slide-from-left","animationDelay":"250","displayWidth":"custom","customWidth":"597","tpFontSizeTablet":"38","tpFontSizeMobile":"26","tpLineHeightUnits":"em","displayWidthTablet":"custom","displayWidthMobile":"custom","customWidthTablet":"400","customWidthMobile":"230"} -->
+<h2 class="wp-block-wd-title title wd-animation wd-transform wd-animation-slide-from-left wd_delay_250 wd-2f39ca8c wd-custom-width">Everything you need to know coffee</h2>
 <!-- /wp:wd/title -->
 
-<!-- wp:wd/paragraph {"blockId":"88911d94-4461-487c-9346-abdd814aaa60","marginBottom":"15","animation":"slide-from-left","animationDelay":"275","hideOnMobile":true,"displayWidth":"custom","customWidth":"604","displayWidthTablet":"custom","customWidthTablet":"445"} -->
-<p id="wd-88911d94" class="wp-block-wd-paragraph wd-hide-sm wd-animation wd-transform wd-animation-slide-from-left wd_delay_275 wd-custom-width">Settling you has separate supplied bed. Concluded resembled layout&nbsp; suspected his resources curiosity joy. Led all cottage met enabled attempt through talking delight. Dare he feet my tell busy.</p>
+<!-- wp:wd/paragraph {"blockId":"88911d94-4461-487c-9346-abdd814aaa60","blockVersion":"2","marginBottom":"15","animation":"slide-from-left","animationDelay":"275","hideOnMobile":true,"displayWidth":"custom","customWidth":"604","displayWidthTablet":"custom","customWidthTablet":"445"} -->
+<p class="wp-block-wd-paragraph wd-hide-sm wd-animation wd-transform wd-animation-slide-from-left wd_delay_275 wd-88911d94 wd-custom-width">Settling you has separate supplied bed. Concluded resembled layout&nbsp; suspected his resources curiosity joy. Led all cottage met enabled attempt through talking delight. Dare he feet my tell busy.</p>
 <!-- /wp:wd/paragraph -->
 
-<!-- wp:wd/container {"blockId":"351b1281-5ded-40df-a482-a6681339634e","direction":"row","animation":"slide-from-left","animationDelay":"300","displayWidth":"","directionTablet":"row","directionMobile":"row"} -->
-<div id="wd-351b1281" class="wp-block-wd-container wd-dir-row wd-dir-row-md wd-dir-row-sm wd-animation wd-transform wd-animation-slide-from-left wd_delay_300"><!-- wp:wd/button {"blockId":"31a6428c-ac03-44d1-aeee-1ed637226742","predefinedColor":"primary"} -->
-<a id="wd-31a6428c" class="wp-block-wd-button btn btn-style-default btn-color-primary btn-size-default btn-shape-rectangle" href="#"><span>Read more</span></a>
+<!-- wp:wd/container {"blockId":"351b1281-5ded-40df-a482-a6681339634e","blockVersion":"2","direction":"row","animation":"slide-from-left","animationDelay":"300","displayWidth":"","directionTablet":"row","directionMobile":"row"} -->
+<div class="wp-block-wd-container wd-dir-row wd-dir-row-md wd-dir-row-sm wd-animation wd-transform wd-animation-slide-from-left wd_delay_300 wd-351b1281"><!-- wp:wd/button {"blockId":"31a6428c-ac03-44d1-aeee-1ed637226742","blockVersion":"2","predefinedColor":"primary"} -->
+<a class="wp-block-wd-button btn btn-style-default btn-color-primary btn-size-default btn-shape-rectangle wd-31a6428c" href="#"><span>Read more</span></a>
 <!-- /wp:wd/button -->
 
-<!-- wp:wd/button {"blockId":"48c84fa8-8116-4866-aa94-d265923d08b2","design":"bordered","predefinedColor":"","bgHoverColorCode":"#c0c9c5","borderType":"solid","borderColorCode":"#c0c9c5","borderWidth":"2","borderWidthTop":"2","borderWidthRight":"2","borderWidthBottom":"2","borderWidthLeft":"2","transitionBackground":0.3} -->
-<a id="wd-48c84fa8" class="wp-block-wd-button btn btn-style-bordered btn-size-default btn-shape-rectangle" href="#"><span>View more</span></a>
+<!-- wp:wd/button {"blockId":"48c84fa8-8116-4866-aa94-d265923d08b2","blockVersion":"2","design":"bordered","predefinedColor":"","bgHoverColorCode":"#c0c9c5","borderType":"solid","borderColorCode":"#c0c9c5","borderWidth":"2","borderWidthTop":"2","borderWidthRight":"2","borderWidthBottom":"2","borderWidthLeft":"2","transitionBackground":0.3} -->
+<a class="wp-block-wd-button btn btn-style-bordered btn-size-default btn-shape-rectangle wd-48c84fa8" href="#"><span>View more</span></a>
 <!-- /wp:wd/button --></div>
 <!-- /wp:wd/container --></div><div class="wd-slide-bg wd-fill"></div></div>
 <!-- /wp:wd/slider-item --></div></div><div class="wd-nav-arrows wd-slider-arrows wd-custom-style wd-pos-sep wd-style-1 color-scheme-dark"><div class="wd-btn-arrow wd-prev"><div class="wd-arrow-inner"></div></div><div class="wd-btn-arrow wd-next"><div class="wd-arrow-inner"></div></div></div></div></div>
 <!-- /wp:wd/slider -->
 
-<!-- wp:wd/title {"blockId":"030bd7e2-d5f8-4891-a2d8-bf99e9e0e772","textAlign":"center","content":"Our Coffee","tpFontSize":"36","colorVariable":"\u002d\u002dwd-primary-color","marginBottom":"10","tpFontSizeTablet":"26"} -->
-<h2 id="wd-030bd7e2" class="wp-block-wd-title title wd-align">Our Coffee</h2>
+<!-- wp:wd/title {"blockId":"030bd7e2-d5f8-4891-a2d8-bf99e9e0e772","blockVersion":"2","textAlign":"center","content":"Our Coffee","tpFontSize":"36","colorVariable":"\u002d\u002dwd-primary-color","marginBottom":"10","tpFontSizeTablet":"26"} -->
+<h2 class="wp-block-wd-title title wd-align wd-030bd7e2">Our Coffee</h2>
 <!-- /wp:wd/title -->
 
-<!-- wp:wd/paragraph {"blockId":"8332e9f4-9d84-4b2e-8e35-66db731eb465","textAlign":"center","marginBottom":"10"} -->
-<p id="wd-8332e9f4" class="wp-block-wd-paragraph wd-align">You begin with a text, you sculpt information.</p>
+<!-- wp:wd/paragraph {"blockId":"8332e9f4-9d84-4b2e-8e35-66db731eb465","blockVersion":"2","textAlign":"center","marginBottom":"10"} -->
+<p class="wp-block-wd-paragraph wd-align wd-8332e9f4">You begin with a text, you sculpt information.</p>
 <!-- /wp:wd/paragraph -->
 
-<!-- wp:wd/products-tabs {"blockId":"2d67bbda-8d43-4395-89ee-46cf33358ce9","marginBottom":"80","marginBottomTablet":"60","marginBottomMobile":"40"} -->
-<div id="wd-2d67bbda" class="wp-block-wd-products-tabs wd-tabs wd-products-tabs tabs-design-default wd-hover-parent"><!-- wp:wd/products-tabs-header {"blockId":"16474a89-4311-4459-9c03-cda028559294","hasTitle":false,"titleStyle":"underline","alignment":"center"} -->
-<div id="wd-16474a89" class="wp-block-wd-products-tabs-header wd-tabs-header wd-align"><div class="wd-nav-wrapper wd-nav-tabs-wrapper"><ul class="wd-nav wd-nav-tabs products-tabs-title wd-icon-pos-start wd-style-underline"><!-- wp:wd/products-tabs-tab {"blockId":"b578b6fe-7f81-4646-b910-fc2951522542","title":"All","items_per_page":"4"} -->
-<li id="wd-b578b6fe" class="wp-block-wd-products-tabs-tab" data-atts="{&quot;items_per_page&quot;:&quot;4&quot;,&quot;el_id&quot;:&quot;wd-b578b6fe&quot;}"><a href="#" class="wd-nav-link"><span class="tab-label nav-link-text">All</span></a></li>
+<!-- wp:wd/products-tabs {"blockId":"2d67bbda-8d43-4395-89ee-46cf33358ce9","blockVersion":"2","marginBottom":"80","marginBottomTablet":"60","marginBottomMobile":"40"} -->
+<div class="wp-block-wd-products-tabs wd-tabs wd-products-tabs tabs-design-default wd-2d67bbda"><!-- wp:wd/products-tabs-header {"blockId":"16474a89-4311-4459-9c03-cda028559294","blockVersion":"2","hasTitle":false,"titleStyle":"underline","alignment":"center"} -->
+<div class="wp-block-wd-products-tabs-header wd-tabs-header wd-align wd-16474a89"><div class="wd-nav-wrapper wd-nav-tabs-wrapper wd-mb-action-swipe"><ul class="wd-nav wd-nav-tabs products-tabs-title wd-icon-pos-start wd-style-underline"><!-- wp:wd/products-tabs-tab {"blockId":"1c43441b-ccb8-4332-8956-a32260fa0179","blockVersion":"2","title":"All","items_per_page":"4"} -->
+<li class="wp-block-wd-products-tabs-tab wd-1c43441b" data-atts="{&quot;items_per_page&quot;:&quot;4&quot;,&quot;wrapper_classes&quot;:&quot;wd-1c43441b&quot;}"><a href="#" class="wd-nav-link"><span class="tab-label nav-link-text">All</span></a></li>
 <!-- /wp:wd/products-tabs-tab -->
 
-<!-- wp:wd/products-tabs-tab {"blockId":"73d0769a-3800-455b-b841-20e5b30435eb","title":"SINGLE ORIGIN","order":"DESC","items_per_page":"4"} -->
-<li id="wd-73d0769a" class="wp-block-wd-products-tabs-tab" data-atts="{&quot;items_per_page&quot;:&quot;4&quot;,&quot;order&quot;:&quot;DESC&quot;,&quot;el_id&quot;:&quot;wd-73d0769a&quot;}"><a href="#" class="wd-nav-link"><span class="tab-label nav-link-text">SINGLE ORIGIN</span></a></li>
+<!-- wp:wd/products-tabs-tab {"blockId":"73d0769a-3800-455b-b841-20e5b30435eb","blockVersion":"2","title":"SINGLE ORIGIN","order":"DESC","items_per_page":"4"} -->
+<li class="wp-block-wd-products-tabs-tab wd-73d0769a" data-atts="{&quot;items_per_page&quot;:&quot;4&quot;,&quot;order&quot;:&quot;DESC&quot;,&quot;wrapper_classes&quot;:&quot;wd-73d0769a&quot;}"><a href="#" class="wd-nav-link"><span class="tab-label nav-link-text">SINGLE ORIGIN</span></a></li>
 <!-- /wp:wd/products-tabs-tab -->
 
-<!-- wp:wd/products-tabs-tab {"blockId":"42d7b29a-d0cf-439d-864c-d2f9b4b59324","title":"SPECIALTY","items_per_page":"4"} -->
-<li id="wd-42d7b29a" class="wp-block-wd-products-tabs-tab" data-atts="{&quot;items_per_page&quot;:&quot;4&quot;,&quot;el_id&quot;:&quot;wd-42d7b29a&quot;}"><a href="#" class="wd-nav-link"><span class="tab-label nav-link-text">SPECIALTY</span></a></li>
+<!-- wp:wd/products-tabs-tab {"blockId":"42d7b29a-d0cf-439d-864c-d2f9b4b59324","blockVersion":"2","title":"SPECIALTY","items_per_page":"4"} -->
+<li class="wp-block-wd-products-tabs-tab wd-42d7b29a" data-atts="{&quot;items_per_page&quot;:&quot;4&quot;,&quot;wrapper_classes&quot;:&quot;wd-42d7b29a&quot;}"><a href="#" class="wd-nav-link"><span class="tab-label nav-link-text">SPECIALTY</span></a></li>
 <!-- /wp:wd/products-tabs-tab -->
 
-<!-- wp:wd/products-tabs-tab {"blockId":"0719d2ed-61a4-410d-9ed5-95317c097aca","title":"DECAF","order":"DESC","items_per_page":"4"} -->
-<li id="wd-0719d2ed" class="wp-block-wd-products-tabs-tab" data-atts="{&quot;items_per_page&quot;:&quot;4&quot;,&quot;order&quot;:&quot;DESC&quot;,&quot;el_id&quot;:&quot;wd-0719d2ed&quot;}"><a href="#" class="wd-nav-link"><span class="tab-label nav-link-text">DECAF</span></a></li>
+<!-- wp:wd/products-tabs-tab {"blockId":"0719d2ed-61a4-410d-9ed5-95317c097aca","blockVersion":"2","title":"DECAF","order":"DESC","items_per_page":"4"} -->
+<li class="wp-block-wd-products-tabs-tab wd-0719d2ed" data-atts="{&quot;items_per_page&quot;:&quot;4&quot;,&quot;order&quot;:&quot;DESC&quot;,&quot;wrapper_classes&quot;:&quot;wd-0719d2ed&quot;}"><a href="#" class="wd-nav-link"><span class="tab-label nav-link-text">DECAF</span></a></li>
 <!-- /wp:wd/products-tabs-tab --></ul></div></div>
 <!-- /wp:wd/products-tabs-header -->
 
-<!-- wp:wd/products-tabs-products {"blockId":"b578b6fe-7f81-4646-b910-fc2951522542","title":"All","items_per_page":"4"} /--></div>
+<!-- wp:wd/products-tabs-products {"blockId":"b578b6fe-7f81-4646-b910-fc2951522542","blockVersion":"2","title":"All","items_per_page":"4"} /--></div>
 <!-- /wp:wd/products-tabs -->
 
-<!-- wp:wd/section {"blockId":"91919f9d-8d38-45d2-b764-0edf064fffb0","blockGap":110,"bgImage":{"id":19935,"url":"http://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/coffee-bg.jpg"},"bgPosition":"center left","bgRepeat":"no-repeat","marginBottom":"80","blockGapTablet":80,"blockGapMobile":60,"bgDisplaySizeTablet":"custom","bgCustomDisplaySizeTablet":"0","marginBottomTablet":"60","marginBottomMobile":"40"} -->
-<div id="wd-91919f9d" class="wp-block-wd-section"><!-- wp:wd/row {"blockId":"68c87d64-c90f-42e9-95db-8fe47906d431","columnsGapMobile":40} -->
-<div id="wd-68c87d64" class="wp-block-wd-row"><!-- wp:wd/column {"blockId":"b58b43ec-66e7-41fd-a95c-224cdf5497ce","adjacentCount":2,"colWidth":58,"flexOrderMobile":"2"} -->
-<div id="wd-b58b43ec" class="wp-block-wd-column"><!-- wp:wd/cover {"blockId":"c8916f49-0146-4196-8b00-755f5c6ac236","hover":"zoom-in","contentAlignVertical":"end","height":"502","bgImage":{"id":19936,"url":"http://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/coffee-banner-1.jpg"},"paddingTop":"0","paddingRight":"0","paddingBottom":"0","paddingLeft":"0","paddingLock":true,"heightTablet":"472"} -->
-<div id="wd-c8916f49" class="wp-block-wd-cover wd-hover-parent wd-hover-zoom-in"><div class="wd-block-cover-img"></div><a class="wd-block-cover-link wd-fill" href="#" aria-label="Cover link"></a><!-- wp:wd/container {"blockId":"c41cf50f-da3f-43fe-a555-c744b8e59cb4","bgColorCode":"#f3f3f3","paddingTop":"30","paddingRight":"30","paddingBottom":"30","paddingLeft":"30","paddingLock":true,"displayWidth":"custom","customWidth":"408","metadata":{"name":"Banner content"}} -->
-<div id="wd-c41cf50f" class="wp-block-wd-container wd-dir-col wd-custom-width"><!-- wp:wd/title {"blockId":"9c1a95d0-d45e-4320-8b04-0dfee0c7c5de","content":"Check out our coffee shop","tpFontSize":"34","colorVariable":"\u002d\u002dwd-primary-color","tpFontSizeTablet":"26"} -->
-<h2 id="wd-9c1a95d0" class="wp-block-wd-title title">Check out our coffee shop</h2>
+<!-- wp:wd/section {"blockId":"91919f9d-8d38-45d2-b764-0edf064fffb0","blockVersion":"2","blockGap":110,"bgImage":{"id":19935,"url":"http://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/coffee-bg.jpg"},"bgPosition":"center left","bgRepeat":"no-repeat","marginBottom":"80","blockGapTablet":80,"blockGapMobile":60,"bgDisplaySizeTablet":"custom","bgCustomDisplaySizeTablet":"0","marginBottomTablet":"60","marginBottomMobile":"40"} -->
+<div class="wp-block-wd-section wd-91919f9d"><!-- wp:wd/row {"blockId":"68c87d64-c90f-42e9-95db-8fe47906d431","blockVersion":"2","columnsGapMobile":40} -->
+<div class="wp-block-wd-row wd-68c87d64"><!-- wp:wd/column {"blockId":"b58b43ec-66e7-41fd-a95c-224cdf5497ce","blockVersion":"2","adjacentCount":2,"colWidth":58,"flexOrderMobile":"2"} -->
+<div class="wp-block-wd-column wd-b58b43ec"><!-- wp:wd/cover {"blockId":"c8916f49-0146-4196-8b00-755f5c6ac236","blockVersion":"2","hover":"zoom-in","contentAlignVertical":"end","height":"502","bgImage":{"id":19936,"url":"http://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/coffee-banner-1.jpg"},"paddingTop":"0","paddingRight":"0","paddingBottom":"0","paddingLeft":"0","paddingLock":true,"heightTablet":"472"} -->
+<div class="wp-block-wd-cover wd-hover-parent wd-hover-zoom-in wd-c8916f49"><div class="wd-block-cover-img"></div><a class="wd-block-cover-link wd-fill" href="#" aria-label="Cover link"></a><!-- wp:wd/container {"blockId":"c41cf50f-da3f-43fe-a555-c744b8e59cb4","blockVersion":"2","bgColorCode":"#f3f3f3","paddingTop":"30","paddingRight":"30","paddingBottom":"30","paddingLeft":"30","paddingLock":true,"displayWidth":"custom","customWidth":"408","metadata":{"name":"Banner content"}} -->
+<div class="wp-block-wd-container wd-dir-col wd-c41cf50f wd-custom-width"><!-- wp:wd/title {"blockId":"9c1a95d0-d45e-4320-8b04-0dfee0c7c5de","blockVersion":"2","content":"Check out our coffee shop","tpFontSize":"34","colorVariable":"\u002d\u002dwd-primary-color","tpFontSizeTablet":"26"} -->
+<h2 class="wp-block-wd-title title wd-9c1a95d0">Check out our coffee shop</h2>
 <!-- /wp:wd/title -->
 
-<!-- wp:wd/paragraph {"blockId":"a55a004b-1b44-40d5-a384-8ca46f9ccea9"} -->
-<p id="wd-a55a004b" class="wp-block-wd-paragraph">Design is no afterthought, far from.</p>
+<!-- wp:wd/paragraph {"blockId":"a55a004b-1b44-40d5-a384-8ca46f9ccea9","blockVersion":"2"} -->
+<p class="wp-block-wd-paragraph wd-a55a004b">Design is no afterthought, far from.</p>
 <!-- /wp:wd/paragraph -->
 
-<!-- wp:wd/button {"blockId":"4ae6fd34-1f3f-4370-86cd-22d626fa547c","design":"link","predefinedColor":"primary","marginTop":"10"} -->
-<a id="wd-4ae6fd34" class="wp-block-wd-button btn btn-style-link btn-color-primary btn-size-default" href="#"><span>Find Us</span></a>
+<!-- wp:wd/button {"blockId":"4ae6fd34-1f3f-4370-86cd-22d626fa547c","blockVersion":"2","design":"link","predefinedColor":"primary","marginTop":"10"} -->
+<a class="wp-block-wd-button btn btn-style-link btn-color-primary btn-size-default wd-4ae6fd34" href="#"><span>Find Us</span></a>
 <!-- /wp:wd/button --></div>
 <!-- /wp:wd/container --></div>
 <!-- /wp:wd/cover --></div>
 <!-- /wp:wd/column -->
 
-<!-- wp:wd/column {"blockId":"b8eaab65-3f2b-4549-8edd-5ea99a711866","adjacentCount":2,"colWidth":42,"blocksGap":10,"alignItems":"center","justifyContent":"flex-end","flexOrderMobile":"1"} -->
-<div id="wd-b8eaab65" class="wp-block-wd-column wd-align-is-lg-center"><!-- wp:wd/title {"blockId":"e7bc41d0-8ba4-4d01-be24-b9fbfe5095b3","textAlign":"center","content":"Try new flavors first","tpFontSize":"32","colorVariable":"\u002d\u002dwd-primary-color","tpFontSizeTablet":"26"} -->
-<h2 id="wd-e7bc41d0" class="wp-block-wd-title title wd-align">Try new flavors first</h2>
+<!-- wp:wd/column {"blockId":"b8eaab65-3f2b-4549-8edd-5ea99a711866","blockVersion":"2","adjacentCount":2,"colWidth":42,"blocksGap":10,"alignItems":"center","justifyContent":"flex-end","flexOrderMobile":"1"} -->
+<div class="wp-block-wd-column wd-align-is-lg-center wd-b8eaab65"><!-- wp:wd/title {"blockId":"e7bc41d0-8ba4-4d01-be24-b9fbfe5095b3","blockVersion":"2","textAlign":"center","content":"Try new flavors first","tpFontSize":"32","colorVariable":"\u002d\u002dwd-primary-color","tpFontSizeTablet":"26"} -->
+<h2 class="wp-block-wd-title title wd-align wd-e7bc41d0">Try new flavors first</h2>
 <!-- /wp:wd/title -->
 
-<!-- wp:wd/paragraph {"blockId":"60ebf87c-1fe8-4398-ae13-46c68c369c4f","textAlign":"center","marginBottom":"10"} -->
-<p id="wd-60ebf87c" class="wp-block-wd-paragraph wd-align">You come to the point, make things.</p>
+<!-- wp:wd/paragraph {"blockId":"60ebf87c-1fe8-4398-ae13-46c68c369c4f","blockVersion":"2","textAlign":"center","marginBottom":"10"} -->
+<p class="wp-block-wd-paragraph wd-align wd-60ebf87c">You come to the point, make things.</p>
 <!-- /wp:wd/paragraph -->
 
-<!-- wp:wd/button {"blockId":"9de01107-f6c0-4514-962d-ea0c1f77a142","design":"link","predefinedColor":"primary","marginBottom":"10","alignSelf":"center"} -->
-<a id="wd-9de01107" class="wp-block-wd-button btn btn-style-link btn-color-primary btn-size-default wd-align-s-center" href="#"><span>Contact us</span></a>
+<!-- wp:wd/button {"blockId":"9de01107-f6c0-4514-962d-ea0c1f77a142","blockVersion":"2","design":"link","predefinedColor":"primary","marginBottom":"10","alignSelf":"center"} -->
+<a class="wp-block-wd-button btn btn-style-link btn-color-primary btn-size-default wd-9de01107 wd-align-s-center" href="#"><span>Contact us</span></a>
 <!-- /wp:wd/button -->
 
-<!-- wp:wd/image {"blockId":"e62737ff-2572-45b9-81f0-fae2b49e9fe7","image":{"id":19937,"url":"http://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/coffee-image-1.jpg"},"imageData":{"url":"https://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/coffee-image-1.jpg","width":292,"height":304}} -->
-<div id="wd-e62737ff" class="wp-block-wd-image wd-block-image"><img class="wp-image-19937" src="http://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/coffee-image-1.jpg" alt="" /></div>
+<!-- wp:wd/image {"blockId":"e62737ff-2572-45b9-81f0-fae2b49e9fe7","blockVersion":"2","image":{"id":19937,"url":"http://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/coffee-image-1.jpg"},"imageData":{"url":"https://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/coffee-image-1.jpg","width":292,"height":304}} -->
+<div class="wp-block-wd-image wd-block-image wd-e62737ff"><img class="wp-image-19937" src="http://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/coffee-image-1.jpg" alt=""/></div>
 <!-- /wp:wd/image --></div>
 <!-- /wp:wd/column --></div>
 <!-- /wp:wd/row -->
 
-<!-- wp:wd/row {"blockId":"5d1299f2-0fdc-4069-9159-771c8eef1b82","displayWidth":"full-width","columnsGapMobile":40} -->
-<div id="wd-5d1299f2" class="wp-block-wd-row wd-custom-width"><!-- wp:wd/column {"blockId":"d06ddbed-5555-4611-933f-05c8a8c81fd9","adjacentCount":2,"colWidth":50,"blocksGap":null,"alignItems":"flex-end","justifyContent":"center","adjacentCountTablet":1,"adjacentCountMobile":1,"colWidthTablet":100,"colWidthMobile":100} -->
-<div id="wd-d06ddbed" class="wp-block-wd-column wd-align-is-lg-flex-end"><!-- wp:wd/container {"blockId":"5237dfe5-dcc7-45ac-8a9e-68a2f3523dab","colGap":"","rowGap":"0","displayWidth":"custom","customWidth":"579","displayWidthTablet":"full-width"} -->
-<div id="wd-5237dfe5" class="wp-block-wd-container wd-dir-col wd-custom-width"><!-- wp:wd/icon {"blockId":"c7ae9244-c0a4-42e7-b070-488d83b39e13","image":{"id":19938,"url":"http://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/coffee-svg-1.svg"},"width":"80","height":"80","marginBottom":"20"} -->
-<div id="wd-c7ae9244" class="wp-block-wd-icon"><img class="wp-image-19938" src="http://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/coffee-svg-1.svg" alt="" /></div>
+<!-- wp:wd/row {"blockId":"5d1299f2-0fdc-4069-9159-771c8eef1b82","blockVersion":"2","displayWidth":"full-width","columnsGapMobile":40} -->
+<div class="wp-block-wd-row wd-5d1299f2 wd-custom-width"><!-- wp:wd/column {"blockId":"d06ddbed-5555-4611-933f-05c8a8c81fd9","blockVersion":"2","adjacentCount":2,"colWidth":50,"alignItems":"flex-end","justifyContent":"center","adjacentCountTablet":1,"adjacentCountMobile":1,"colWidthTablet":100,"colWidthMobile":100} -->
+<div class="wp-block-wd-column wd-align-is-lg-flex-end wd-d06ddbed"><!-- wp:wd/container {"blockId":"5237dfe5-dcc7-45ac-8a9e-68a2f3523dab","blockVersion":"2","colGap":"","rowGap":"0","displayWidth":"custom","customWidth":"579","displayWidthTablet":"full-width"} -->
+<div class="wp-block-wd-container wd-dir-col wd-5237dfe5 wd-custom-width"><!-- wp:wd/icon {"blockId":"c7ae9244-c0a4-42e7-b070-488d83b39e13","blockVersion":"2","image":{"id":19938,"url":"http://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/coffee-svg-1.svg"},"width":"80","height":"80","marginBottom":"20"} -->
+<div class="wp-block-wd-icon wd-c7ae9244"><img class="wp-image-19938" src="http://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/coffee-svg-1.svg" alt=""/></div>
 <!-- /wp:wd/icon -->
 
-<!-- wp:wd/title {"blockId":"0537b835-1de6-456b-8ade-77a12944075f","content":"Finely ground coffee beans","tpFontSize":"44","tpLineHeight":"1.2","colorVariable":"\u002d\u002dwd-primary-color","marginBottom":"10","displayWidth":"","customWidth":"","tpFontSizeTablet":"26","tpLineHeightUnits":"em"} -->
-<h2 id="wd-0537b835" class="wp-block-wd-title title">Finely ground coffee beans</h2>
+<!-- wp:wd/title {"blockId":"0537b835-1de6-456b-8ade-77a12944075f","blockVersion":"2","content":"Finely ground coffee beans","tpFontSize":"44","tpLineHeight":"1.2","colorVariable":"\u002d\u002dwd-primary-color","marginBottom":"10","displayWidth":"","customWidth":"","tpFontSizeTablet":"26","tpLineHeightUnits":"em"} -->
+<h2 class="wp-block-wd-title title wd-0537b835">Finely ground coffee beans</h2>
 <!-- /wp:wd/title -->
 
-<!-- wp:wd/paragraph {"blockId":"e93096b6-6a9e-4153-a362-182920aefb88","marginBottom":"30","displayWidth":"","customWidth":""} -->
-<p id="wd-e93096b6" class="wp-block-wd-paragraph">Settling you has separate supplied bed. Concluded resembled suspected his resources curiosity joy. Led all cottage met enabled attempt through talking delight.</p>
+<!-- wp:wd/paragraph {"blockId":"e93096b6-6a9e-4153-a362-182920aefb88","blockVersion":"2","marginBottom":"30","displayWidth":"","customWidth":""} -->
+<p class="wp-block-wd-paragraph wd-e93096b6">Settling you has separate supplied bed. Concluded resembled suspected his resources curiosity joy. Led all cottage met enabled attempt through talking delight.</p>
 <!-- /wp:wd/paragraph -->
 
-<!-- wp:wd/container {"blockId":"cfc52ace-25e0-425b-ba3b-aed9f9db1336","direction":"row","animationDelay":"300","displayWidth":"","directionTablet":"row","directionMobile":"row"} -->
-<div id="wd-cfc52ace" class="wp-block-wd-container wd-dir-row wd-dir-row-md wd-dir-row-sm"><!-- wp:wd/button {"blockId":"187a58e2-2b3f-4f59-8e26-f39a17142bf0","predefinedColor":"primary"} -->
-<a id="wd-187a58e2" class="wp-block-wd-button btn btn-style-default btn-color-primary btn-size-default btn-shape-rectangle" href="#"><span>Read more</span></a>
+<!-- wp:wd/container {"blockId":"cfc52ace-25e0-425b-ba3b-aed9f9db1336","blockVersion":"2","direction":"row","animationDelay":"300","displayWidth":"","directionTablet":"row","directionMobile":"row"} -->
+<div class="wp-block-wd-container wd-dir-row wd-dir-row-md wd-dir-row-sm wd-cfc52ace"><!-- wp:wd/button {"blockId":"187a58e2-2b3f-4f59-8e26-f39a17142bf0","blockVersion":"2","predefinedColor":"primary"} -->
+<a class="wp-block-wd-button btn btn-style-default btn-color-primary btn-size-default btn-shape-rectangle wd-187a58e2" href="#"><span>Read more</span></a>
 <!-- /wp:wd/button -->
 
-<!-- wp:wd/button {"blockId":"eefd8b24-e95d-41df-bf0f-0182d2c3ba5a","design":"bordered","predefinedColor":"","bgHoverColorCode":"#c0c9c5","borderType":"solid","borderColorCode":"#c0c9c5","borderWidth":"2","borderWidthTop":"2","borderWidthRight":"2","borderWidthBottom":"2","borderWidthLeft":"2","transitionBackground":0.3} -->
-<a id="wd-eefd8b24" class="wp-block-wd-button btn btn-style-bordered btn-size-default btn-shape-rectangle" href="#"><span>View more</span></a>
+<!-- wp:wd/button {"blockId":"eefd8b24-e95d-41df-bf0f-0182d2c3ba5a","blockVersion":"2","design":"bordered","predefinedColor":"","bgHoverColorCode":"#c0c9c5","borderType":"solid","borderColorCode":"#c0c9c5","borderWidth":"2","borderWidthTop":"2","borderWidthRight":"2","borderWidthBottom":"2","borderWidthLeft":"2","transitionBackground":0.3} -->
+<a class="wp-block-wd-button btn btn-style-bordered btn-size-default btn-shape-rectangle wd-eefd8b24" href="#"><span>View more</span></a>
 <!-- /wp:wd/button --></div>
 <!-- /wp:wd/container --></div>
 <!-- /wp:wd/container --></div>
 <!-- /wp:wd/column -->
 
-<!-- wp:wd/column {"blockId":"3a8b60df-7353-432f-b9a6-ea8666736500","adjacentCount":2,"colWidth":50,"justifyContent":"center","adjacentCountTablet":1,"adjacentCountMobile":1,"colWidthTablet":100,"colWidthMobile":100,"justifyContentTablet":"center"} -->
-<div id="wd-3a8b60df" class="wp-block-wd-column"><!-- wp:wd/image {"blockId":"a33d8919-1b08-4646-9793-4a8f21f9c6d5","image":{"id":19934,"url":"http://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/coffee-parallax-scroll-1.jpg"},"imageData":{"url":"https://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/coffee-parallax-scroll-1.jpg","width":1040,"height":580},"marginRight":"-360","marginRightTablet":"0"} -->
-<div id="wd-a33d8919" class="wp-block-wd-image wd-block-image"><img class="wp-image-19934" src="http://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/coffee-parallax-scroll-1.jpg" alt="" /></div>
+<!-- wp:wd/column {"blockId":"3a8b60df-7353-432f-b9a6-ea8666736500","blockVersion":"2","adjacentCount":2,"colWidth":50,"justifyContent":"center","adjacentCountTablet":1,"adjacentCountMobile":1,"colWidthTablet":100,"colWidthMobile":100,"justifyContentTablet":"center"} -->
+<div class="wp-block-wd-column wd-3a8b60df"><!-- wp:wd/image {"blockId":"a33d8919-1b08-4646-9793-4a8f21f9c6d5","blockVersion":"2","image":{"id":19934,"url":"http://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/coffee-parallax-scroll-1.jpg"},"imageData":{"url":"https://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/coffee-parallax-scroll-1.jpg","width":1040,"height":580},"marginRight":"-360","marginRightTablet":"0"} -->
+<div class="wp-block-wd-image wd-block-image wd-a33d8919"><img class="wp-image-19934" src="http://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/coffee-parallax-scroll-1.jpg" alt=""/></div>
 <!-- /wp:wd/image --></div>
 <!-- /wp:wd/column --></div>
 <!-- /wp:wd/row --></div>
 <!-- /wp:wd/section -->
 
-<!-- wp:wd/title {"blockId":"925c23b8-14a0-4f5d-a04b-fa0492b31146","textAlign":"center","content":"Brewing Equipment","tpFontSize":"36","colorVariable":"\u002d\u002dwd-primary-color","marginBottom":"10","tpFontSizeTablet":"26"} -->
-<h2 id="wd-925c23b8" class="wp-block-wd-title title wd-align">Brewing Equipment</h2>
+<!-- wp:wd/title {"blockId":"925c23b8-14a0-4f5d-a04b-fa0492b31146","blockVersion":"2","textAlign":"center","content":"Brewing Equipment","tpFontSize":"36","colorVariable":"\u002d\u002dwd-primary-color","marginBottom":"10","tpFontSizeTablet":"26"} -->
+<h2 class="wp-block-wd-title title wd-align wd-925c23b8">Brewing Equipment</h2>
 <!-- /wp:wd/title -->
 
-<!-- wp:wd/paragraph {"blockId":"5c5aa03a-3a53-4236-9a25-f91f556557fd","textAlign":"center"} -->
-<p id="wd-5c5aa03a" class="wp-block-wd-paragraph wd-align">Even if your less into design and more into content strategy.</p>
+<!-- wp:wd/paragraph {"blockId":"5c5aa03a-3a53-4236-9a25-f91f556557fd","blockVersion":"2","textAlign":"center"} -->
+<p class="wp-block-wd-paragraph wd-align wd-5c5aa03a">Even if your less into design and more into content strategy.</p>
 <!-- /wp:wd/paragraph -->
 
-<!-- wp:wd/products {"blockId":"37ffdbc3-55d3-4316-8a87-ed57f41125d6","layout":"carousel","items_per_page":"5","marginBottom":"80","hide_pagination_control":true,"sync_parent_id":"wd_37ffdbc3","marginBottomTablet":"60","marginBottomMobile":"40","hide_pagination_controlTablet":true,"hide_pagination_controlMobile":true} /-->
+<!-- wp:wd/products {"blockId":"37ffdbc3-55d3-4316-8a87-ed57f41125d6","blockVersion":"2","layout":"carousel","items_per_page":"5","marginBottom":"80","hide_pagination_control":true,"sync_parent_id":"wd_37ffdbc3","marginBottomTablet":"60","marginBottomMobile":"40","hide_pagination_controlTablet":true,"hide_pagination_controlMobile":true} /-->
 
-<!-- wp:wd/section {"blockId":"c31e4b9f-2ae6-4388-9a09-3dceb0712769","marginBottom":"80","marginBottomTablet":"60","marginBottomMobile":"40"} -->
-<div id="wd-c31e4b9f" class="wp-block-wd-section"><!-- wp:wd/row {"blockId":"28bde45b-d522-4134-ab32-e66c5005ed37","displayWidth":"full-width","columnsGapMobile":40} -->
-<div id="wd-28bde45b" class="wp-block-wd-row wd-custom-width"><!-- wp:wd/column {"blockId":"be8bffcf-e814-42b2-b7a9-d3cc6628c348","adjacentCount":2,"colWidth":50,"justifyContent":"center","adjacentCountTablet":1,"colWidthTablet":100,"justifyContentTablet":"center","flexOrderTablet":"1","flexOrderMobile":"2"} -->
-<div id="wd-be8bffcf" class="wp-block-wd-column"><!-- wp:wd/image {"blockId":"49dc3fd0-ad9a-4549-b5c8-f7dbcee1d34b","image":{"id":19933,"url":"http://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/coffee-parallax-scroll-2.jpg"},"imageData":{"url":"https://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/coffee-parallax-scroll-2.jpg","width":1040,"height":580},"marginLeftTablet":"0"} -->
-<div id="wd-49dc3fd0" class="wp-block-wd-image wd-block-image"><img class="wp-image-19933" src="http://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/coffee-parallax-scroll-2.jpg" alt="" /></div>
+<!-- wp:wd/section {"blockId":"c31e4b9f-2ae6-4388-9a09-3dceb0712769","blockVersion":"2","marginBottom":"80","marginBottomTablet":"60","marginBottomMobile":"40"} -->
+<div class="wp-block-wd-section wd-c31e4b9f"><!-- wp:wd/row {"blockId":"28bde45b-d522-4134-ab32-e66c5005ed37","blockVersion":"2","displayWidth":"full-width","columnsGapMobile":40} -->
+<div class="wp-block-wd-row wd-28bde45b wd-custom-width"><!-- wp:wd/column {"blockId":"be8bffcf-e814-42b2-b7a9-d3cc6628c348","blockVersion":"2","adjacentCount":2,"colWidth":50,"justifyContent":"center","adjacentCountTablet":1,"colWidthTablet":100,"justifyContentTablet":"center","flexOrderTablet":"1","flexOrderMobile":"2"} -->
+<div class="wp-block-wd-column wd-be8bffcf"><!-- wp:wd/image {"blockId":"49dc3fd0-ad9a-4549-b5c8-f7dbcee1d34b","blockVersion":"2","image":{"id":19933,"url":"http://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/coffee-parallax-scroll-2.jpg"},"imageData":{"url":"https://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/coffee-parallax-scroll-2.jpg","width":1040,"height":580},"marginLeftTablet":"0"} -->
+<div class="wp-block-wd-image wd-block-image wd-49dc3fd0"><img class="wp-image-19933" src="http://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/coffee-parallax-scroll-2.jpg" alt=""/></div>
 <!-- /wp:wd/image --></div>
 <!-- /wp:wd/column -->
 
-<!-- wp:wd/column {"blockId":"5c909d33-9887-41d3-b213-3eab0263726e","adjacentCount":2,"colWidth":50,"blocksGap":null,"justifyContent":"center","adjacentCountTablet":1,"colWidthTablet":100,"flexOrderMobile":"1"} -->
-<div id="wd-5c909d33" class="wp-block-wd-column"><!-- wp:wd/container {"blockId":"fe5c4d61-af93-4efb-87be-43f8203d45db","rowGap":"0","displayWidth":"custom","customWidth":"479","displayWidthTablet":"full-width"} -->
-<div id="wd-fe5c4d61" class="wp-block-wd-container wd-dir-col wd-custom-width"><!-- wp:wd/icon {"blockId":"65e8222b-b473-462d-acca-55aad26df5e0","image":{"id":19939,"url":"http://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/coffee-svg-2.svg"},"width":"80","marginBottom":"20"} -->
-<div id="wd-65e8222b" class="wp-block-wd-icon"><img class="wp-image-19939" src="http://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/coffee-svg-2.svg" alt="" /></div>
+<!-- wp:wd/column {"blockId":"5c909d33-9887-41d3-b213-3eab0263726e","blockVersion":"2","adjacentCount":2,"colWidth":50,"justifyContent":"center","adjacentCountTablet":1,"colWidthTablet":100,"flexOrderMobile":"1"} -->
+<div class="wp-block-wd-column wd-5c909d33"><!-- wp:wd/container {"blockId":"fe5c4d61-af93-4efb-87be-43f8203d45db","blockVersion":"2","rowGap":"0","displayWidth":"custom","customWidth":"479","displayWidthTablet":"full-width"} -->
+<div class="wp-block-wd-container wd-dir-col wd-fe5c4d61 wd-custom-width"><!-- wp:wd/icon {"blockId":"65e8222b-b473-462d-acca-55aad26df5e0","blockVersion":"2","image":{"id":19939,"url":"http://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/coffee-svg-2.svg"},"width":"80","marginBottom":"20"} -->
+<div class="wp-block-wd-icon wd-65e8222b"><img class="wp-image-19939" src="http://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/coffee-svg-2.svg" alt=""/></div>
 <!-- /wp:wd/icon -->
 
-<!-- wp:wd/title {"blockId":"1b9f55c3-73a4-4c5f-b801-91c3eb453697","content":"Choose for your perfect coffee roast","tpFontSize":"44","tpLineHeight":"1.2","colorVariable":"\u002d\u002dwd-primary-color","marginBottom":"10","displayWidth":"","customWidth":"","tpFontSizeTablet":"26","tpLineHeightUnits":"em"} -->
-<h2 id="wd-1b9f55c3" class="wp-block-wd-title title">Choose for your perfect coffee roast</h2>
+<!-- wp:wd/title {"blockId":"1b9f55c3-73a4-4c5f-b801-91c3eb453697","blockVersion":"2","content":"Choose for your perfect coffee roast","tpFontSize":"44","tpLineHeight":"1.2","colorVariable":"\u002d\u002dwd-primary-color","marginBottom":"10","displayWidth":"","customWidth":"","tpFontSizeTablet":"26","tpLineHeightUnits":"em"} -->
+<h2 class="wp-block-wd-title title wd-1b9f55c3">Choose for your perfect coffee roast</h2>
 <!-- /wp:wd/title -->
 
-<!-- wp:wd/paragraph {"blockId":"cab78083-b90c-4e25-906a-63c8631cdff3","marginBottom":"30","displayWidth":"","customWidth":""} -->
-<p id="wd-cab78083" class="wp-block-wd-paragraph">Anyway, you still use Lorem Ipsum and rightly so, as it will the always have a place in web workers toolbox, as happen checkpoints always things, not the way.</p>
+<!-- wp:wd/paragraph {"blockId":"cab78083-b90c-4e25-906a-63c8631cdff3","blockVersion":"2","marginBottom":"30","displayWidth":"","customWidth":""} -->
+<p class="wp-block-wd-paragraph wd-cab78083">Anyway, you still use Lorem Ipsum and rightly so, as it will the always have a place in web workers toolbox, as happen checkpoints always things, not the way.</p>
 <!-- /wp:wd/paragraph -->
 
-<!-- wp:wd/container {"blockId":"ac68b295-470a-465c-afdd-a22a24b54ea8","direction":"row","animationDelay":"300","displayWidth":"","directionTablet":"row","directionMobile":"row"} -->
-<div id="wd-ac68b295" class="wp-block-wd-container wd-dir-row wd-dir-row-md wd-dir-row-sm"><!-- wp:wd/button {"blockId":"414fb785-adc1-4772-a233-aa6f887e2246","predefinedColor":"primary"} -->
-<a id="wd-414fb785" class="wp-block-wd-button btn btn-style-default btn-color-primary btn-size-default btn-shape-rectangle" href="#"><span>Read more</span></a>
+<!-- wp:wd/container {"blockId":"ac68b295-470a-465c-afdd-a22a24b54ea8","blockVersion":"2","direction":"row","animationDelay":"300","displayWidth":"","directionTablet":"row","directionMobile":"row"} -->
+<div class="wp-block-wd-container wd-dir-row wd-dir-row-md wd-dir-row-sm wd-ac68b295"><!-- wp:wd/button {"blockId":"414fb785-adc1-4772-a233-aa6f887e2246","blockVersion":"2","predefinedColor":"primary"} -->
+<a class="wp-block-wd-button btn btn-style-default btn-color-primary btn-size-default btn-shape-rectangle wd-414fb785" href="#"><span>Read more</span></a>
 <!-- /wp:wd/button -->
 
-<!-- wp:wd/button {"blockId":"4ded9e0e-0859-4035-8808-0046f662e9f8","design":"bordered","predefinedColor":"","bgHoverColorCode":"#c0c9c5","borderType":"solid","borderColorCode":"#c0c9c5","borderWidth":"2","borderWidthTop":"2","borderWidthRight":"2","borderWidthBottom":"2","borderWidthLeft":"2","transitionBackground":0.3} -->
-<a id="wd-4ded9e0e" class="wp-block-wd-button btn btn-style-bordered btn-size-default btn-shape-rectangle" href="#"><span>View more</span></a>
+<!-- wp:wd/button {"blockId":"4ded9e0e-0859-4035-8808-0046f662e9f8","blockVersion":"2","design":"bordered","predefinedColor":"","bgHoverColorCode":"#c0c9c5","borderType":"solid","borderColorCode":"#c0c9c5","borderWidth":"2","borderWidthTop":"2","borderWidthRight":"2","borderWidthBottom":"2","borderWidthLeft":"2","transitionBackground":0.3} -->
+<a class="wp-block-wd-button btn btn-style-bordered btn-size-default btn-shape-rectangle wd-4ded9e0e" href="#"><span>View more</span></a>
 <!-- /wp:wd/button --></div>
 <!-- /wp:wd/container --></div>
 <!-- /wp:wd/container --></div>
@@ -935,20 +933,20 @@
 <!-- /wp:wd/row --></div>
 <!-- /wp:wd/section -->
 
-<!-- wp:wd/title {"blockId":"a1ba1d7f-a633-429f-b5a9-e741609b1049","textAlign":"center","content":"Our Articles","tpFontSize":"36","colorVariable":"\u002d\u002dwd-primary-color","marginBottom":"10","tpFontSizeTablet":"26"} -->
-<h2 id="wd-a1ba1d7f" class="wp-block-wd-title title wd-align">Our Articles</h2>
+<!-- wp:wd/title {"blockId":"a1ba1d7f-a633-429f-b5a9-e741609b1049","blockVersion":"2","textAlign":"center","content":"Our Articles","tpFontSize":"36","colorVariable":"\u002d\u002dwd-primary-color","marginBottom":"10","tpFontSizeTablet":"26"} -->
+<h2 class="wp-block-wd-title title wd-align wd-a1ba1d7f">Our Articles</h2>
 <!-- /wp:wd/title -->
 
-<!-- wp:wd/paragraph {"blockId":"b31a09c6-ac72-417d-9252-d4ddc656ee86","textAlign":"center","marginBottom":"30"} -->
-<p id="wd-b31a09c6" class="wp-block-wd-paragraph wd-align">It's content strategy gone awry right from the start.</p>
+<!-- wp:wd/paragraph {"blockId":"b31a09c6-ac72-417d-9252-d4ddc656ee86","blockVersion":"2","textAlign":"center","marginBottom":"30"} -->
+<p class="wp-block-wd-paragraph wd-align wd-b31a09c6">It's content strategy gone awry right from the start.</p>
 <!-- /wp:wd/paragraph -->
 
-<!-- wp:wd/blog {"blockId":"f2b15b37-d430-46da-9142-a13e426ab36b","items_per_page":"4","layout":"carousel","blog_carousel_design":"mask","blog_grid_design":"mask","img_size":"custom","imgSizeCustomWidth":"500","imgSizeCustomHeight":"526","hide_pagination_control":true,"sync_parent_id":"wd_c5b6c2d8","hide_pagination_controlTablet":true,"hide_pagination_controlMobile":true} /-->]]></content:encoded>
+<!-- wp:wd/blog {"blockId":"f2b15b37-d430-46da-9142-a13e426ab36b","blockVersion":"2","items_per_page":"4","layout":"carousel","blog_carousel_design":"mask","blog_grid_design":"mask","img_size":"custom","imgSizeCustomWidth":"500","imgSizeCustomHeight":"526","hide_pagination_control":true,"sync_parent_id":"wd_c5b6c2d8","hide_pagination_controlTablet":true,"hide_pagination_controlMobile":true} /-->]]></content:encoded>
 															<wp:post_id>19926</wp:post_id>
 					<wp:post_date><![CDATA[2024-06-26 15:42:30]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-06-26 15:42:30]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-10-29 11:03:12]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-10-29 11:03:12]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2026-01-29 10:41:05]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2026-01-29 10:41:05]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[home-coffee]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -956,20 +954,8 @@
 					<wp:menu_order>0</wp:menu_order>
 					<wp:post_type><![CDATA[page]]></wp:post_type>
 																					<wp:postmeta>
-							<wp:meta_key><![CDATA[_woodmart_whb_header]]></wp:meta_key>
-							<wp:meta_value><![CDATA[none]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[_woodmart_title_off]]></wp:meta_key>
 							<wp:meta_value><![CDATA[on]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_woodmart_page-title-size]]></wp:meta_key>
-							<wp:meta_value><![CDATA[inherit]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_woodmart_title_image]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_woodmart_main_layout]]></wp:meta_key>
@@ -980,7 +966,7 @@
 					<title><![CDATA[Prefooter Coffee]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/gutenberg/?cms_block=prefooter-coffee</link>
 					<pubDate>Wed, 26 Jun 2024 15:44:30 +0000</pubDate>
-					<dc:creator><![CDATA[Ethan Smith]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/gutenberg/?post_type=cms_block&#038;p=19928</guid>
 											<content:encoded><![CDATA[<!-- wp:wd/section {"blockId":"87e39aef-7b15-4529-a249-4ca710de98e1","bgColorCode":"#f3f3f3","paddingTop":"40","marginBottom":"-40"} -->
 <div id="wd-87e39aef" class="wp-block-wd-section"><!-- wp:wd/row {"blockId":"993acb2d-e6e8-4aac-ae72-9608dc849c22","columnsGapMobile":30} -->
@@ -1341,7 +1327,7 @@
 					<title><![CDATA[wd-cursor-light]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/gutenberg/?attachment_id=34179</link>
 					<pubDate>Mon, 28 Oct 2024 10:31:47 +0000</pubDate>
-					<dc:creator><![CDATA[Ethan Smith]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/05/wd-cursor-light.svg</guid>
 															<wp:post_id>34179</wp:post_id>
 					<wp:post_date><![CDATA[2024-10-28 10:31:47]]></wp:post_date>
@@ -1364,7 +1350,7 @@
 					<title><![CDATA[wd-phone-light]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/gutenberg/?attachment_id=34181</link>
 					<pubDate>Mon, 28 Oct 2024 10:31:48 +0000</pubDate>
-					<dc:creator><![CDATA[Ethan Smith]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/05/wd-phone-light.svg</guid>
 															<wp:post_id>34181</wp:post_id>
 					<wp:post_date><![CDATA[2024-10-28 10:31:48]]></wp:post_date>
@@ -1387,7 +1373,7 @@
 					<title><![CDATA[wd-envelope-light]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/gutenberg/?attachment_id=34180</link>
 					<pubDate>Mon, 28 Oct 2024 10:31:47 +0000</pubDate>
-					<dc:creator><![CDATA[Ethan Smith]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/05/wd-envelope-light.svg</guid>
 															<wp:post_id>34180</wp:post_id>
 					<wp:post_date><![CDATA[2024-10-28 10:31:47]]></wp:post_date>

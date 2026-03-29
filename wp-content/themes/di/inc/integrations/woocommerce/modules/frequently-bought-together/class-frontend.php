@@ -65,12 +65,12 @@ class Frontend extends Singleton {
 	 * @return void
 	 */
 	public function update_frequently_bought_price() {
-		if ( empty( $_POST['main_product'] ) || empty( $_POST['products_id'] ) || empty( $_POST['bundle_id'] ) ) {
+		if ( empty( $_POST['main_product'] ) || empty( $_POST['products_id'] ) || empty( $_POST['bundle_id'] ) ) { // phpcs:ignore WordPress.Security
 			return;
 		}
 
-		$bundle_id    = sanitize_text_field( wp_unslash( $_POST['bundle_id'] ) );
-		$main_product = sanitize_text_field( wp_unslash( $_POST['main_product'] ) );
+		$bundle_id    = sanitize_text_field( wp_unslash( $_POST['bundle_id'] ) ); // phpcs:ignore WordPress.Security
+		$main_product = sanitize_text_field( wp_unslash( $_POST['main_product'] ) ); // phpcs:ignore WordPress.Security
 		$products_id  = woodmart_clean( $_POST['products_id'] ); //phpcs:ignore
 		$fbt_products = get_post_meta( $bundle_id, '_woodmart_fbt_products', true );
 		$fragments    = array();
@@ -109,7 +109,9 @@ class Frontend extends Singleton {
 
 		$fbt_count = count( $this->subtotal_products_price );
 
-		$fragments[ 'div.wd-fbt-bundle-' . $this->bundle_id . ' .wd-fbt-purchase .price' ]       = '<span class="price">' . $this->get_subtotal_bundle_price() . '</span>';
+		$fragments[ 'div.wd-fbt-bundle-' . $this->bundle_id . ' .wd-fbt-purchase .price' ] = '<span class="price">' . $this->get_subtotal_bundle_price() . '</span>';
+
+		// translators: %s is the number of items in the bundle.
 		$fragments[ 'div.wd-fbt-bundle-' . $this->bundle_id . ' .wd-fbt-purchase .wd-fbt-desc' ] = '<div class="wd-fbt-desc">' . sprintf( _n( 'For %s item', 'For %s items', $fbt_count, 'woodmart' ), $fbt_count ) . '</div>';
 
 		wp_send_json(
@@ -122,8 +124,8 @@ class Frontend extends Singleton {
 	/**
 	 * Get bought together products content.
 	 *
-	 * @param array $element_settings Settings.
-	 *
+	 * @param array  $element_settings Settings.
+	 * @param string $content Content.
 	 * @return void
 	 */
 	public function get_bought_together_products( $element_settings = array(), $content = '' ) {
@@ -274,7 +276,7 @@ class Frontend extends Singleton {
 		remove_filter( 'woodmart_product_label_output', array( $this, 'added_sale_label' ) );
 		remove_filter( 'woocommerce_product_get_image_id', array( $this, 'update_variation_image' ) );
 
-		if ( woodmart_get_opt( 'catalog_mode' ) || ! is_user_logged_in() && woodmart_get_opt( 'login_prices' ) ) {
+		if ( woodmart_get_opt( 'catalog_mode' ) || ( ! is_user_logged_in() && woodmart_get_opt( 'login_prices' ) ) ) {
 			return;
 		}
 
@@ -499,12 +501,13 @@ class Frontend extends Singleton {
 				<div class="wd-fbt-desc">
 					<?php
 					echo wp_kses(
+						// translators: %s is the number of items in the bundle.
 						sprintf( _n( 'For %s item', 'For %s items', $fbt_count, 'woodmart' ), $fbt_count ),
 						true
 					);
 					?>
 				</div>
-				<?php if ( ! woodmart_get_opt( 'catalog_mode' ) || ! is_user_logged_in() && woodmart_get_opt( 'login_prices' ) ) : ?>
+				<?php if ( ! woodmart_get_opt( 'catalog_mode' ) || ( ! is_user_logged_in() && woodmart_get_opt( 'login_prices' ) ) ) : ?>
 					<button class="wd-fbt-purchase-btn single_add_to_cart_button button<?php echo esc_attr( $button_classes ); ?>" type="submit">
 						<?php esc_html_e( 'Add to cart', 'woodmart' ); ?>
 					</button>
@@ -706,7 +709,8 @@ class Frontend extends Singleton {
 			}
 		}
 
-		$label = '<span class="onsale product-label wd-fbt-sale-label">' . sprintf( _x( '-%d%%', 'sale percentage', 'woodmart' ), $discount ) . '</span>';
+		// translators: %d is the discount percentage.
+		$label = '<span class="onsale product-label wd-fbt-sale-label wd-shape-round">' . sprintf( _x( '-%d%%', 'sale percentage', 'woodmart' ), $discount ) . '</span>';
 
 		array_unshift( $content, $label );
 

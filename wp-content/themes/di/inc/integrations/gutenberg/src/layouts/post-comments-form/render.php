@@ -18,7 +18,7 @@ if ( ! function_exists( 'wd_gutenberg_single_post_comments_form' ) ) {
 		woodmart_enqueue_inline_style( 'post-types-mod-comments' );
 		woodmart_enqueue_inline_style( 'single-post-el-comments' );
 		?>
-		<div id="<?php echo esc_attr( $el_id ); ?>" class="wd-single-post-comments-form<?php echo esc_attr( $wrapper_classes ); ?>">
+		<div <?php echo $el_id ? 'id="' . esc_attr( $el_id ) . '" ' : ''; ?>class="wd-single-post-comments-form<?php echo esc_attr( $wrapper_classes ); ?>">
 			<div id="comments" class="wd-post-comments-form comments-area">
 				<?php comment_form( array( 'comment_notes_after' => '' ), get_the_ID() ); ?>
 			</div>

@@ -2,7 +2,7 @@
 /**
  * Elementor functions file.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 use Elementor\Plugin;
@@ -272,6 +272,47 @@ if ( ! function_exists( 'woodmart_get_posts_by_query' ) ) {
 				}
 				break;
 
+			case 'product_cat':
+			case 'product_cat_children':
+			case 'product_tag':
+			case 'product_brand':
+			case 'product_attr_term':
+			case 'product_shipping_class':
+				$taxonomy = array();
+
+				if ( 'product_cat_children' === $query_type ) {
+					$taxonomy[] = 'product_cat';
+				} elseif ( 'product_attr_term' === $query_type ) {
+					foreach ( wc_get_attribute_taxonomies() as $attribute ) {
+						$taxonomy[] = 'pa_' . $attribute->attribute_name;
+					}
+				} elseif ( 'product_brand' !== $query_type || taxonomy_exists( 'product_brand' ) ) {
+					$taxonomy[] = $query_type;
+				}
+
+				if ( empty( $taxonomy ) ) {
+					break;
+				}
+
+				$terms = get_terms(
+					array(
+						'hide_empty' => false,
+						'fields'     => 'all',
+						'taxonomy'   => $taxonomy,
+						'search'     => $search_string,
+					)
+				);
+
+				if ( ! empty( $terms ) ) {
+					foreach ( $terms as $term ) {
+						$results[] = array(
+							'id'   => $term->term_id,
+							'text' => $term->name . ' (ID: ' . $term->term_id . ') (Tax: ' . $term->taxonomy . ')',
+						);
+					}
+				}
+				break;
+
 			default:
 				$query = new WP_Query(
 					array(
@@ -353,6 +394,44 @@ if ( ! function_exists( 'woodmart_get_posts_title_by_id' ) ) {
 					$term = get_term( $id );
 					if ( $term && ! is_wp_error( $term ) ) {
 						$results[ $id ] = $term->name . ' (ID: ' . $term->term_id . ')';
+					}
+				}
+				break;
+
+			case 'product_cat':
+			case 'product_cat_children':
+			case 'product_tag':
+			case 'product_brand':
+			case 'product_attr_term':
+			case 'product_shipping_class':
+				$taxonomy = array();
+
+				if ( 'product_cat_children' === $query_type ) {
+					$taxonomy[] = 'product_cat';
+				} elseif ( 'product_attr_term' === $query_type ) {
+					foreach ( wc_get_attribute_taxonomies() as $attribute ) {
+						$taxonomy[] = 'pa_' . $attribute->attribute_name;
+					}
+				} elseif ( 'product_brand' !== $query_type || taxonomy_exists( 'product_brand' ) ) {
+					$taxonomy[] = $query_type;
+				}
+
+				if ( empty( $taxonomy ) ) {
+					break;
+				}
+
+				$terms = get_terms(
+					array(
+						'hide_empty' => false,
+						'fields'     => 'all',
+						'taxonomy'   => $taxonomy,
+						'include'    => $ids,
+					)
+				);
+
+				if ( ! empty( $terms ) ) {
+					foreach ( $terms as $term ) {
+						$results[ $term->term_id ] = $term->name . ' (ID: ' . $term->term_id . ') (Tax: ' . $term->taxonomy . ')';
 					}
 				}
 				break;
@@ -568,4 +647,38 @@ if ( ! function_exists( 'woodmart_add_custom_post_types_for_elementor' ) ) {
 	}
 
 	add_filter( 'elementor/settings/controls/checkbox_list_cpt/post_type_objects', 'woodmart_add_custom_post_types_for_elementor' );
+}
+
+if ( ! function_exists( 'woodmart_update_elementor_page_settings' ) ) {
+	/**
+	 * Update elementor page settings
+	 *
+	 * @param int    $post_id Post ID.
+	 * @param string $meta_key Meta key.
+	 * @param mixed  $meta_value Meta value.
+	 * @since 1.0.0
+	 */
+	function woodmart_update_elementor_page_settings( $post_id, $meta_key, $meta_value ) {
+		if ( woodmart_is_elementor_installed() ) {
+			$doc = Plugin::$instance->documents->get( $post_id );
+
+			if ( $doc && $doc->is_built_with_elementor() ) {
+				$settings = $doc->get_settings();
+
+				if ( null === $meta_value ) {
+					if ( isset( $settings[ 'wd_' . $meta_key ] ) ) {
+						unset( $settings[ 'wd_' . $meta_key ] );
+					}
+				} else {
+					$settings[ 'wd_' . $meta_key ] = $meta_value;
+				}
+
+				$doc->save_settings( $settings );
+
+				return true;
+			}
+		}
+
+		return false;
+	}
 }

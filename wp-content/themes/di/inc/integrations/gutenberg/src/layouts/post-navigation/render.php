@@ -9,7 +9,7 @@ if ( ! function_exists( 'wd_gutenberg_single_post_navigation' ) ) {
 
 		Main::setup_preview();
 		?>
-		<div id="<?php echo esc_attr( $el_id ); ?>" class="wd-single-post-nav<?php echo esc_attr( $wrapper_classes ); ?>">
+		<div <?php echo $el_id ? 'id="' . esc_attr( $el_id ) . '" ' : ''; ?>class="wd-single-post-nav<?php echo esc_attr( $wrapper_classes ); ?>">
 			<?php woodmart_posts_navigation(); ?>
 		</div>
 		<?php

@@ -1,8 +1,8 @@
 <?php
-/***
- * Accordion shortcodes file.
+/**
+ * Shortcode for Accordion element.
  *
- * @package Shortcode.
+ * @package woodmart.
  */
 
 if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
@@ -10,7 +10,7 @@ if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
 }
 
 if ( ! function_exists( 'woodmart_shortcode_accordion' ) ) {
-	/***
+	/**
 	 * Render accordion shortcode.
 	 *
 	 * @param array  $args Shortcode attributes.
@@ -140,7 +140,7 @@ if ( ! function_exists( 'woodmart_shortcode_accordion' ) ) {
 						'content'          => '',
 						'html_block_id'    => '',
 
-						/***
+						/**
 						 * Tab Icon.
 						 */
 						'icon_libraries'   => 'fontawesome',
@@ -148,7 +148,7 @@ if ( ! function_exists( 'woodmart_shortcode_accordion' ) ) {
 						'image'            => '',
 						'image_size'       => '30x30',
 
-						/***
+						/**
 						 * Icon libraries.
 						 */
 						'icon_fontawesome' => '',

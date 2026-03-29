@@ -154,16 +154,14 @@ class Install_Plugins extends Singleton {
 
 			if ( ! $tgmpa->is_plugin_installed( $slug ) ) {
 				$plugins[ $slug ]['status'] = 'install';
+			} elseif ( $tgmpa->does_plugin_have_update( $slug ) ) {
+				$plugins[ $slug ]['status'] = 'update';
+			} elseif ( $tgmpa->can_plugin_activate( $slug ) ) {
+				$plugins[ $slug ]['status'] = 'activate';
+			} elseif ( $tgmpa->does_plugin_require_update( $slug ) ) {
+				$plugins[ $slug ]['status'] = 'require_update';
 			} else {
-				if ( $tgmpa->does_plugin_have_update( $slug ) ) {
-					$plugins[ $slug ]['status'] = 'update';
-				} elseif ( $tgmpa->can_plugin_activate( $slug ) ) {
-					$plugins[ $slug ]['status'] = 'activate';
-				} elseif ( $tgmpa->does_plugin_require_update( $slug ) ) {
-					$plugins[ $slug ]['status'] = 'require_update';
-				} else {
-					$plugins[ $slug ]['status'] = 'deactivate';
-				}
+				$plugins[ $slug ]['status'] = 'deactivate';
 			}
 		}
 
@@ -187,7 +185,6 @@ class Install_Plugins extends Singleton {
 			'mailchimp-for-wp',
 			'safe-svg',
 			'woodmart-images-optimizer',
-			'revslider',
 		);
 
 		$plugins = array_replace( array_flip( $order ), $plugins );
@@ -202,7 +199,6 @@ class Install_Plugins extends Singleton {
 		}
 
 		if ( Setup_Wizard::get_instance()->is_setup() ) {
-			unset( $plugins['revslider'] );
 			unset( $plugins['woodmart-images-optimizer'] );
 		}
 
@@ -238,7 +234,6 @@ class Install_Plugins extends Singleton {
 		$tgmpa   = call_user_func( array( get_class( $GLOBALS['tgmpa'] ), 'get_instance' ) );
 		$output  = array();
 
-		unset( $plugins['revslider'] );
 		unset( $plugins['woodmart-images-optimizer'] );
 
 		foreach ( $plugins as $slug => $plugin ) {

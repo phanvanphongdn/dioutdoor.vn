@@ -2,7 +2,7 @@
 /**
  * Create metabox object with fields.
  *
- * @package xts
+ * @package woodmart
  */
 
 namespace XTS\Admin\Modules\Options;
@@ -493,9 +493,6 @@ class Metabox {
 				}
 			);
 
-			if ( ! isset( $section['icon'] ) ) {
-				ar( $section );
-			}
 			?>
 				<li class="<?php echo ( $key === $this->get_last_tab() ) ? 'xts-active-nav' : ''; ?>">
 					<a class="<?php echo esc_html( $section['icon'] ); ?>" href="" data-id="<?php echo esc_attr( $key ); ?>">

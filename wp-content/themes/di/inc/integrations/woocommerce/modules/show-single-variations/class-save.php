@@ -2,7 +2,7 @@
 /**
  * Class save.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Modules\Show_Single_Variations;

@@ -16,7 +16,7 @@
 	<!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 	<!--    contained in this file into your site. -->
 
-	<!-- generator="WordPress/6.7.2" created="2025-04-29 08:48" -->
+	<!-- generator="WordPress/6.7.4" created="2026-02-25 15:15" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -29,23 +29,19 @@
 	<title>admin</title>
 	<link>https://dummy.xtemos.com/woodmart2</link>
 	<description>Just another WordPress site</description>
-	<pubDate>Tue, 29 Apr 2025 08:48:21 +0000</pubDate>
+	<pubDate>Wed, 25 Feb 2026 15:15:01 +0000</pubDate>
 	<language>en-US</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
 	<wp:base_site_url>https://dummy.xtemos.com/woodmart2/</wp:base_site_url>
 	<wp:base_blog_url>https://dummy.xtemos.com/woodmart2</wp:base_blog_url>
 
 	
-					<wp:term>
+							<wp:term>
 			<wp:term_id>136</wp:term_id>
 			<wp:term_taxonomy><![CDATA[woodmart_slider]]></wp:term_taxonomy>
 			<wp:term_slug><![CDATA[black-friday-slider]]></wp:term_slug>
 			<wp:term_parent><![CDATA[]]></wp:term_parent>
 			<wp:term_name><![CDATA[Black friday slider]]></wp:term_name>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-136-status]]></wp:meta_key>
-			<wp:meta_value><![CDATA[valid]]></wp:meta_value>
-		</wp:termmeta>
 		<wp:termmeta>
 			<wp:meta_key><![CDATA[animation]]></wp:meta_key>
 			<wp:meta_value><![CDATA[parallax]]></wp:meta_value>
@@ -210,44 +206,9 @@
 			<wp:meta_key><![CDATA[autoplay_speed]]></wp:meta_key>
 			<wp:meta_value><![CDATA[25000]]></wp:meta_value>
 		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-136-css-data]]></wp:meta_key>
-			<wp:meta_value><![CDATA[#slider-136 .wd-slide {
-	min-height: 465px;
-}
-
-@media (max-width: 1024px) {
-	#slider-136 .wd-slide {
-		min-height: 465px;
-	}
-}
-
-@media (max-width: 767px) {
-	#slider-136 .wd-slide {
-		min-height: 465px;
-	}
-}
-]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-136-version]]></wp:meta_key>
-			<wp:meta_value><![CDATA[8.1.1]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-136-site-url]]></wp:meta_key>
-			<wp:meta_value><![CDATA[2627e05bd2ed84553aaf2287a327d184]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-136-credentials]]></wp:meta_key>
-			<wp:meta_value><![CDATA[requested]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-136-file-data]]></wp:meta_key>
-			<wp:meta_value><![CDATA[a:3:{s:4:"path";s:36:"/2025/04/xts-term-136-1745109067.css";s:13:"theme_version";s:5:"8.1.1";s:8:"site_url";s:32:"2627e05bd2ed84553aaf2287a327d184";}]]></wp:meta_value>
-		</wp:termmeta>
 		</wp:term>
-		
-	<generator>https://wordpress.org/?v=6.7.2</generator>
+				
+	<generator>https://wordpress.org/?v=6.7.4</generator>
 
 					<item>
 					<title><![CDATA[black-friday-call-icon]]></title>
@@ -1497,8 +1458,8 @@ SHARE WITH YOUR FRIENDS!" css=".vc_custom_1629107227559{margin-bottom: 30px !imp
 															<wp:post_id>9542</wp:post_id>
 					<wp:post_date><![CDATA[2024-01-16 13:45:24]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-01-16 13:45:24]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-01-16 15:30:16]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-01-16 15:30:16]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2026-02-25 13:30:15]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2026-02-25 13:30:15]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[black-friday-slide-1]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -1509,42 +1470,6 @@ SHARE WITH YOUR FRIENDS!" css=".vc_custom_1629107227559{margin-bottom: 30px !imp
 											<wp:postmeta>
 							<wp:meta_key><![CDATA[bg_color]]></wp:meta_key>
 							<wp:meta_value><![CDATA[rgb(0,0,0)]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:85:"http://dummy.xtemos.com/woodmart2/wp-content/uploads/2024/01/black-friday-slide-1.jpg";s:2:"id";s:4:"9543";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_size_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[cover]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_position_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[center center]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_tablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_mobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[content_width]]></wp:meta_key>
-							<wp:meta_value><![CDATA[1200]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[content_width_tablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[1200]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[content_width_mobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[500]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[vertical_align]]></wp:meta_key>
-							<wp:meta_value><![CDATA[middle]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[horizontal_align]]></wp:meta_key>
@@ -1570,6 +1495,14 @@ SHARE WITH YOUR FRIENDS!" css=".vc_custom_1629107227559{margin-bottom: 30px !imp
 							<wp:meta_key><![CDATA[_wpb_shortcodes_custom_css_updated]]></wp:meta_key>
 							<wp:meta_value><![CDATA[1]]></wp:meta_value>
 						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[image]]></wp:meta_key>
+							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:85:"http://dummy.xtemos.com/woodmart2/wp-content/uploads/2024/01/black-friday-slide-1.jpg";s:2:"id";s:4:"9543";}]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_wpb_vc_editor_type]]></wp:meta_key>
+							<wp:meta_value><![CDATA[backend]]></wp:meta_value>
+						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[Black friday slide 2]]></title>
@@ -1581,8 +1514,8 @@ SHARE WITH YOUR FRIENDS!" css=".vc_custom_1629107227559{margin-bottom: 30px !imp
 															<wp:post_id>9546</wp:post_id>
 					<wp:post_date><![CDATA[2024-01-16 14:46:04]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-01-16 14:46:04]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-01-16 15:30:26]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-01-16 15:30:26]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2026-02-25 13:31:10]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2026-02-25 13:31:10]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[black-friday-slide-1-2]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -1605,42 +1538,6 @@ SHARE WITH YOUR FRIENDS!" css=".vc_custom_1629107227559{margin-bottom: 30px !imp
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[bg_color]]></wp:meta_key>
 							<wp:meta_value><![CDATA[rgb(0,0,0)]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:113:"http://dummy.xtemos.com/woodmart2/wp-content/uploads/revslider/black-friday/retail-black-friday-slider-two-bg.jpg";s:2:"id";s:4:"3699";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_size_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[cover]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_position_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[center center]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_tablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_mobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[content_width]]></wp:meta_key>
-							<wp:meta_value><![CDATA[1200]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[content_width_tablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[1200]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[content_width_mobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[500]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[vertical_align]]></wp:meta_key>
-							<wp:meta_value><![CDATA[middle]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[horizontal_align]]></wp:meta_key>
@@ -1667,8 +1564,12 @@ SHARE WITH YOUR FRIENDS!" css=".vc_custom_1629107227559{margin-bottom: 30px !imp
 							<wp:meta_value><![CDATA[1]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[black-friday-slide-1]]></wp:meta_value>
+							<wp:meta_key><![CDATA[image]]></wp:meta_key>
+							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:113:"http://dummy.xtemos.com/woodmart2/wp-content/uploads/revslider/black-friday/retail-black-friday-slider-two-bg.jpg";s:2:"id";s:4:"3699";}]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_wpb_vc_editor_type]]></wp:meta_key>
+							<wp:meta_value><![CDATA[backend]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -1681,8 +1582,8 @@ SHARE WITH YOUR FRIENDS!" css=".vc_custom_1629107227559{margin-bottom: 30px !imp
 															<wp:post_id>9553</wp:post_id>
 					<wp:post_date><![CDATA[2024-01-16 15:21:21]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-01-16 15:21:21]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-01-16 15:30:37]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-01-16 15:30:37]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2026-02-25 13:32:07]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2026-02-25 13:32:07]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[black-friday-slide-1-2-2]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -1719,42 +1620,6 @@ SHARE WITH YOUR FRIENDS!" css=".vc_custom_1629107227559{margin-bottom: 30px !imp
 							<wp:meta_value><![CDATA[rgb(0,0,0)]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:85:"http://dummy.xtemos.com/woodmart2/wp-content/uploads/2024/01/black-friday-slide-3.jpg";s:2:"id";s:4:"9554";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_size_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[cover]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_position_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[center center]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_tablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_mobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[content_width]]></wp:meta_key>
-							<wp:meta_value><![CDATA[1200]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[content_width_tablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[1200]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[content_width_mobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[500]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[vertical_align]]></wp:meta_key>
-							<wp:meta_value><![CDATA[middle]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[horizontal_align]]></wp:meta_key>
 							<wp:meta_value><![CDATA[center]]></wp:meta_value>
 						</wp:postmeta>
@@ -1779,8 +1644,12 @@ SHARE WITH YOUR FRIENDS!" css=".vc_custom_1629107227559{margin-bottom: 30px !imp
 							<wp:meta_value><![CDATA[1]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[black-friday-slide-1-2]]></wp:meta_value>
+							<wp:meta_key><![CDATA[image]]></wp:meta_key>
+							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:85:"http://dummy.xtemos.com/woodmart2/wp-content/uploads/2024/01/black-friday-slide-3.jpg";s:2:"id";s:4:"9554";}]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_wpb_vc_editor_type]]></wp:meta_key>
+							<wp:meta_value><![CDATA[backend]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 				</channel>

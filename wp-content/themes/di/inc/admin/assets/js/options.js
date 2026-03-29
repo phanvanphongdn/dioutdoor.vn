@@ -1,6 +1,6 @@
 var woodmartOptions;
 
-/* global jQuery, wp, xtsTypography, WebFont, woodmartConfig */
+/* global _, WebFont, woodmartConfig, woodmart_media_init */
 
 (function($) {
 	'use strict';
@@ -49,7 +49,7 @@ var woodmartOptions;
 
 				woodmartOptionsAdmin.editorControl();
 
-				$options.on('click', '.xts-reset-options-btn', function(e) {
+				$options.on('click', '.xts-reset-options-btn', function() {
 					return confirm(
 						'Are you sure you want to reset ALL settings (not only this section) to default values? This process cannot be undone. Continue?');
 				});
@@ -72,7 +72,7 @@ var woodmartOptions;
 
 					var $sectionLink = $('.xts-nav-vertical [data-id="' + section + '"]');
 
-					if ($sectionLink.length == 0) {
+					if ($sectionLink.length === 0) {
 						return true;
 					}
 
@@ -171,7 +171,7 @@ var woodmartOptions;
 					var $color = $(this),
 					    $input = $color.find('input[type="text"]');
 
-					if ($color.hasClass('xts-field-inited')) {
+					if ($color.hasClass('xts-field-inited') || $color.closest('.xts-item-template').length) {
 						return;
 					}
 
@@ -229,7 +229,7 @@ var woodmartOptions;
 					$removeBtn.on('click', function(e) {
 						e.preventDefault();
 
-						if ($preview.find('img').length == 1) {
+						if ($preview.find('img').length === 1) {
 							$preview.find('img').remove();
 						}
 
@@ -354,7 +354,7 @@ var woodmartOptions;
 					$select.each(function() {
 						var $select2 = $(this);
 
-						if ($select2.hasClass('xts-field-inited')) {
+						if ($select2.hasClass('xts-field-inited') || $select2.closest('.xts-item-template').length) {
 							return;
 						}
 
@@ -440,7 +440,7 @@ var woodmartOptions;
 					var value = $field.data('value');
 					var search = $field.data('search');
 
-					if ($field.hasClass('xts-field-inited') || $field.parents('.xts-item-template').length) {
+					if ($field.hasClass('xts-field-inited') || $field.closest('.xts-item-template').length) {
 						return;
 					}
 
@@ -607,7 +607,6 @@ var woodmartOptions;
 
 				$bgs.each(function() {
 					var $bg               = $(this),
-					    $uploadBtn        = $bg.find('.xts-upload-btn'),
 					    $removeBtn        = $bg.find('.xts-remove-upload-btn'),
 					    $inputURL         = $bg.find('input.xts-upload-input-url'),
 					    $inputID          = $bg.find('input.xts-upload-input-id'),
@@ -629,7 +628,7 @@ var woodmartOptions;
 					}
 
 					$colorInput.wpColorPicker({
-						change: function(e) {
+						change: function() {
 							updatePreview();
 						},
 						clear: function() {
@@ -805,6 +804,12 @@ var woodmartOptions;
 					    '800italic': 'Extra Bold 800 Italic',
 					    '900italic': 'Black 900 Italic'
 				    };
+				
+				var select2DefaultWithoutClear = {
+					width     : '100%',
+					allowClear: false,
+					theme     : 'xts'
+				};
 
 				$typography.each(function() {
 					var $parent = $(this);
@@ -837,6 +842,7 @@ var woodmartOptions;
 						$parent.find('[name^="xts-woodmart-options"]:first').trigger('change');
 
 						initTypographySection($parent, $template.attr('data-id'));
+						$(document).trigger('xts_section_changed');
 					});
 
 					$parent.on('click', '.xts-typography-btn-remove',
@@ -882,7 +888,7 @@ var woodmartOptions;
 
 					//init when value is changed
 					$section.find(
-						'.xts-typography-family, .xts-typography-style, .xts-typography-subset').on(
+						'.xts-typography-family, .xts-typography-style').on(
 						'change',
 						function() {
 							$(this).siblings('input[type="hidden"]').trigger('change');
@@ -914,7 +920,7 @@ var woodmartOptions;
 						stdFonts.children.push({
 							id      : i,
 							text    : val,
-							selected: (i == $family.data('value'))
+							selected: (i === $family.data('value'))
 						});
 					});
 
@@ -923,7 +929,7 @@ var woodmartOptions;
 							id      : i,
 							text    : i,
 							google  : true,
-							selected: (i == $family.data('value'))
+							selected: (i === $family.data('value'))
 						});
 					});
 
@@ -931,7 +937,7 @@ var woodmartOptions;
 						customFonts.children.push({
 							id      : i,
 							text    : i,
-							selected: (i == $family.data('value'))
+							selected: (i === $family.data('value'))
 						});
 					});
 
@@ -969,14 +975,14 @@ var woodmartOptions;
 							}
 						).on(
 							'select2:unselecting',
-							function(e) {
+							function() {
 								$(this).one('select2:opening', function(ev) {
 									ev.preventDefault();
 								});
 							}
 						).on(
 							'select2:unselect',
-							function(e) {
+							function() {
 								$familyInput.val('').trigger('change');
 
 								$googleInput.val('false').trigger('change');
@@ -1006,7 +1012,7 @@ var woodmartOptions;
 						'select2:select',
 						function(e) {
 							var val = e.params.data.id;
-							if (val != 'custom') {
+							if (val !== 'custom') {
 								return;
 							}
 							$customInput.val(true).trigger('change');
@@ -1017,7 +1023,7 @@ var woodmartOptions;
 						'select2:unselect',
 						function(e) {
 							var val = e.params.data.id;
-							if (val != 'custom') {
+							if (val !== 'custom') {
 								return;
 							}
 							$customInput.val('').trigger('change');
@@ -1029,7 +1035,7 @@ var woodmartOptions;
 
 					// Color picker fields
 					$color.wpColorPicker({
-						change: function(event, ui) {
+						change: function() {
 							// needed for palette click
 							setTimeout(function() {
 								updatePreview($section);
@@ -1039,7 +1045,7 @@ var woodmartOptions;
 					$colorHover.wpColorPicker();
 
 					$background.wpColorPicker({
-						change: function(event, ui) {
+						change: function() {
 							// needed for palette click
 							setTimeout(function() {
 								updatePreview($section);
@@ -1130,9 +1136,9 @@ var woodmartOptions;
 					sectionFields.preview.slideDown();
 				}
 
-				function loadGoogleFont(family, style, script) {
+				function loadGoogleFont(family, style) {
 
-					if (family == null || family == 'inherit') {
+					if (family === null || family === 'inherit') {
 						return;
 					}
 
@@ -1142,10 +1148,6 @@ var woodmartOptions;
 
 					if (style && style !== '') {
 						link += ':' + style.replace(/\-/g, ' ');
-					}
-
-					if (script && script !== '') {
-						link += '&subset=' + script;
 					}
 
 					if (typeof (WebFont) !== 'undefined' && WebFont) {
@@ -1168,9 +1170,6 @@ var woodmartOptions;
 							'.xts-typography-style-input'),
 						weightInput: $section.find(
 							'.xts-typography-weight-input'),
-						subsetInput: $section.find(
-							'.xts-typography-subset-input'),
-						subset     : $section.find('select.xts-typography-subset'),
 						googleInput: $section.find(
 							'.xts-typography-google-input'),
 						preview    : $section.find('.xts-typography-preview'),
@@ -1189,7 +1188,6 @@ var woodmartOptions;
 					}
 
 					var style = sectionFields.style.val();
-					var script = sectionFields.subset.val();
 
 					// Is selected font a google font?
 					var google;
@@ -1206,14 +1204,9 @@ var woodmartOptions;
 					// client
 					if (init) {
 						style = sectionFields.style.data('value');
-						script = sectionFields.subset.data('value');
 
 						if (style !== '') {
 							style = String(style);
-						}
-
-						if (typeof (script) !== undefined) {
-							script = String(script);
 						}
 					}
 
@@ -1231,8 +1224,6 @@ var woodmartOptions;
 					} else {
 						details = defaultVariants;
 					}
-
-					sectionFields.subsetInput.val(script);
 
 					// If we changed the font. Selecting variable is set to
 					// true only when family field is opened
@@ -1264,58 +1255,11 @@ var woodmartOptions;
 								}
 							);
 
-							// destroy select2
-							if (sectionFields.subset.data('select2')) {
-								sectionFields.style.select2('destroy');
-							}
-
 							// Instert new HTML
 							sectionFields.style.html(html);
 
 							// Init select2
-							sectionFields.style.select2(select2Defaults);
-
-							// SUBSETS
-							selected = '';
-							html = '<option value=""></option>';
-
-							$.each(
-								details.subsets,
-								function(index, subset) {
-									if (subset.id === script ||
-										woodmartOptionsAdmin.size(
-											details.subsets) === 1) {
-										selected = ' selected="selected"';
-										script = subset.id;
-										sectionFields.subset.val(script);
-									} else {
-										selected = '';
-									}
-
-									if ( subset.hasOwnProperty('name') && null !== subset.name ) {
-										html += '<option value="' + subset.id +
-											'"' + selected + '>' +
-											subset.name.replace(
-												/\+/g, ' '
-											) + '</option>';
-									}
-								}
-							);
-
-							// Destroy select2
-							if (sectionFields.subset.data('select2')) {
-								sectionFields.subset.select2('destroy');
-							}
-
-							// Inset new HTML
-							sectionFields.subset.html(html);
-
-							// Init select2
-							sectionFields.subset.select2(select2Defaults);
-
-							sectionFields.subset.parent().fadeIn('fast');
-							// $( '#' + mainID + ' .typography-family-backup'
-							// ).fadeIn( 'fast' );
+							sectionFields.style.select2(select2DefaultWithoutClear);
 						} else {
 							if (details) {
 								$.each(
@@ -1338,19 +1282,11 @@ var woodmartOptions;
 									}
 								);
 
-								// Destory select2
-								if (sectionFields.subset.data('select2')) {
-									sectionFields.style.select2('destroy');
-								}
-
 								// Insert new HTML
 								sectionFields.style.html(html);
 
 								// Init select2
-								sectionFields.style.select2(select2Defaults);
-
-								// Prettify things
-								sectionFields.subset.parent().fadeOut('fast');
+								sectionFields.style.select2(select2DefaultWithoutClear);
 							}
 						}
 
@@ -1360,7 +1296,7 @@ var woodmartOptions;
 					// Check if the selected value exists. If not, empty it.
 					// Else, apply it.
 					if (sectionFields.style.find(
-						'option[value=\'' + style + '\']').length === 0) {
+						'option[value=\'' + style + '\']').length === 0){
 						style = '';
 						sectionFields.style.val('');
 					} else if (style === '400') {
@@ -1379,19 +1315,8 @@ var woodmartOptions;
 
 					sectionFields.weightInput.val(style);
 
-
-
-
-					// Handle empty subset select
-					if (sectionFields.subset.find(
-						'option[value=\'' + script + '\']').length === 0) {
-						script = '';
-						sectionFields.subset.val('');
-						sectionFields.subsetInput.val(script);
-					}
-
 					if (google) {
-						loadGoogleFont(family, style, script);
+						loadGoogleFont(family, style);
 					}
 
 					if (!init) {
@@ -1462,11 +1387,10 @@ var woodmartOptions;
 			},
 
 			makeBool: function(val) {
-				if (val == 'false' || val == '0' || val === false || val ===
+				if (val === 'false' || val === '0' || val === false || val ===
 					0) {
 					return false;
-				} else if (val == 'true' || val == '1' || val === true || val ==
-					1) {
+				} else if (val === 'true' || val === '1' || val === true || val === 1) {
 					return true;
 				}
 			},
@@ -1527,6 +1451,10 @@ var woodmartOptions;
 				$ranges.each(function() {
 					const $control = $(this);
 
+					if ($control.closest('.xts-typography-template').length) {
+						return;
+					}
+
 					$control.find('.xts-responsive-range').each(function () {
 						initSlider($(this));
 					});
@@ -1550,6 +1478,12 @@ var woodmartOptions;
 
 						$btn.addClass('xts-active').siblings().removeClass('xts-active');
 						$range.attr('data-unit', $btn.data('unit'));
+
+						// Update step attribute on input number.
+						const $mainInput = $range.closest('.xts-responsive-range-wrapper').siblings('.xts-responsive-range-value');
+						const settings = $mainInput.data('settings');
+						const rangeSettings = settings.range[$btn.data('unit')];
+						$range.find('.xts-range-field-value').attr('step', rangeSettings.step);
 
 						updateSlider($range);
 						setMainValue($range.closest('.xts-responsive-range-wrapper').siblings('.xts-responsive-range-value'));
@@ -1664,7 +1598,7 @@ var woodmartOptions;
 
 				$dimensions.find('.xts-device').on('click', function () {
 					const $this = $(this);
-					const $wrapper = $this.closest('.xts-option-control');
+					const $wrapper = $this.closest('.xts-dimensions-control');
 
 					$this.addClass('xts-active').siblings().removeClass('xts-active');
 					$wrapper.find('.xts-control-tab-content')
@@ -1675,13 +1609,13 @@ var woodmartOptions;
 
 				$dimensions.find('.xts-lock-units').off('click').on('click', function () {
 					const $this = $(this);
-					const $wrapper = $this.closest('.xts-control-tab-content');
-					const $control = $this.closest('.xts-option-control')
+					const $wrapper = $this.parent();
+					const $control = $this.parents('.xts-option-control')
 
 					$control.find('.xts-lock-units').toggleClass('xts-active');
 
 					if ( $this.hasClass('xts-active') ) {
-						$wrapper.find('.xts-dimensions-field input').filter((_, el) => $(el).val()).first().trigger('change');
+						$wrapper.find('input').filter((_, el) => $(el).val()).first().trigger('change');
 						setMainValue($wrapper.closest('.xts-option-control').find('.xts-dimensions-value'));
 					}
 				});
@@ -1697,13 +1631,13 @@ var woodmartOptions;
 
 				$dimensions.find('.xts-dimensions-field input').on('change keyup', function (e) {
 					const $this = $(this);
-					const $wrapper = $this.closest('.xts-option-control');
-					const $mainInput = $wrapper.find('.xts-dimensions-value');
+					const $wrapper = $this.closest('.xts-control-tab-content');
+					const $mainInput = $this.closest('.xts-option-control').find('.xts-dimensions-value');
 					const settings = $mainInput.data('settings');
 					const isLocked = $wrapper.find('.xts-lock-units').hasClass('xts-active');
 					let valueNew = $this.val();
 
-					if (valueNew && settings.range) {
+					if (valueNew && settings?.range) {
 						const unit = $this.closest('.xts-control-tab-content').data('unit');
 						let rangeSettings = settings.range[unit]?.[$this.data('key')] ?? settings.range[unit]?.['-'];
 
@@ -1714,7 +1648,7 @@ var woodmartOptions;
 					}
 
 					if (isLocked) {
-						$wrapper.find('.xts-active .xts-dimensions-field input').not($this).val(valueNew);
+						$wrapper.find('input').not($this).val(valueNew);
 					}
 
 					if (e.type !== 'keyup') {
@@ -1723,6 +1657,10 @@ var woodmartOptions;
 				});
 
 				function setMainValue($input, updateAttr = false) {
+					if (! $input) {
+						return
+					}
+
 					const settings = $input.data('settings');
 					const $tabs = $input.siblings('.xts-dimensions').find('.xts-control-tab-content');
 					const results = { devices: {}, is_lock: $input.closest('.xts-option-control').find('.xts-lock-units').hasClass('xts-active') };
@@ -1989,14 +1927,14 @@ var woodmartOptions;
 					    dependencies = $field.data('dependency').split(';');
 
 					dependencies.forEach(function(dependency) {
-						if (dependency.length == 0) {
+						if (dependency.length === 0) {
 							return;
 						}
 						var data = dependency.split(':');
 
 						var $parentField = $('.xts-' + data[0] + '-field');
 
-						$parentField.on('change', 'input, select', function(e) {
+						$parentField.on('change', 'input, select', function() {
 							testFieldDependency($field, dependencies);
 						});
 
@@ -2010,30 +1948,31 @@ var woodmartOptions;
 				function testFieldDependency($field, dependencies) {
 					var show = true;
 					dependencies.forEach(function(dependency) {
-						if (dependency.length == 0 || show == false) {
+						if (dependency.length === 0 || show === false) {
 							return;
 						}
-						var data         = dependency.split(':'),
-						    $parentField = $('.xts-' + data[0] + '-field'),
-						    value        = $parentField.find('.xts-option-control input, .xts-option-control select').val();
+						var data         = dependency.split(':');
+						var $parentField = $('.xts-' + data[0] + '-field');
+						var value        = $parentField.find('.xts-option-control input, .xts-option-control select').val();
+						var values       = [];
 
 						switch (data[1]) {
 							case 'equals':
-								var values = data[2].split(',');
+								values = data[2].split(',');
 								show = false;
 								for (let i = 0; i < values.length; i++) {
 									const element = values[i];
-									if (value == element) {
+									if (value === element) {
 										show = true;
 									}
 								}
 								break;
 							case 'not_equals':
-								var values = data[2].split(',');
+								values = data[2].split(',');
 								show = true;
 								for (let i = 0; i < values.length; i++) {
 									const element = values[i];
-									if (value == element) {
+									if (value === element) {
 										show = false;
 									}
 								}
@@ -2104,11 +2043,11 @@ var woodmartOptions;
 						}, 300);
 					},
 
-					open: function( event, ui ) {
+					open: function() {
 						$searchForm.addClass('xts-searched');
 					},
 
-					close: function( event, ui ) {
+						close: function() {
 						$searchForm.removeClass('xts-searched');
 					}
 
@@ -2273,6 +2212,7 @@ var woodmartOptions;
 					var $field = $checkbox.closest('.xts-field');
 					var checked = $checkbox.prop('checked');
 					var name = $checkbox.data('name');
+					var innerInputID = '';
 
 					var addField = function(name) {
 						var current     = $fieldsToSave.val();
@@ -2307,7 +2247,7 @@ var woodmartOptions;
 						$field.removeClass('xts-field-disabled');
 
 						if ( $field.hasClass('xts-group-control') ) {
-							var innerInputID = $field.find('.xts-group-settings').data('inputs-id')
+							innerInputID = $field.find('.xts-group-settings').data('inputs-id')
 
 							if ( innerInputID ) {
 								$.each(innerInputID, function(index, value) {
@@ -2320,7 +2260,7 @@ var woodmartOptions;
 						if ( $field.hasClass('xts-group-control') ) {
 
 							if ( $field.hasClass('xts-group-control') ) {
-								var innerInputID = $field.find('.xts-group-settings').data('inputs-id')
+								innerInputID = $field.find('.xts-group-settings').data('inputs-id')
 
 								if ( innerInputID ) {
 									$.each(innerInputID, function(index, value) {
@@ -2359,7 +2299,7 @@ var woodmartOptions;
 					woodmartOptionsAdmin.uploadListControl(true);
 				});
 
-				$(document).on('widget-updated widget-added', function(e, widget) {
+				$(document).on('widget-updated widget-added', function() {
 					woodmart_media_init();
 					woodmartOptionsAdmin.selectControl(true);
 					woodmartOptionsAdmin.uploadControl(true);

@@ -13,7 +13,7 @@
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 9.7.0
+ * @version 10.5.0
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -279,7 +279,10 @@ wp_enqueue_script( 'imagesloaded' );
 					$html         .= get_the_post_thumbnail( $post->ID, $thumb_image_size, $attributes );
 					$html         .= '</a></figure></div>';
 				} else {
-					$wrapper_classname = $product->is_type( 'variable' ) && ! empty( $product->get_available_variations( 'image' ) ) ?
+					// Check for visible children with prices to determine if variation image swapping is possible.
+					// Using get_visible_children() + get_price() is more efficient than get_available_variations()
+					// as it uses cached IDs and synced price data rather than loading all variation objects.
+					$wrapper_classname = $product->is_type( 'variable' ) && ! empty( $product->get_visible_children() ) && '' !== $product->get_price() ?
 					'woocommerce-product-gallery__image woocommerce-product-gallery__image--placeholder' :
 					'woocommerce-product-gallery__image--placeholder';
 

@@ -15,7 +15,7 @@ return apply_filters( 'woodmart_get_base_options', array(
 	'disable_footer' => true,
 	'disable_copyrights' => true,
 	'copyrights-layout' => 'centered',
-	'copyrights' => 'Based on <a href="http://woodmart.xtemos.com"><strong>WoodMart</strong></a> theme<i class="fa fa-copyright"></i> ' . date( 'Y' ) . ' <a href="https://themeforest.net/item/woodmart-woocommerce-wordpress-theme/20264492"><strong>WooCommerce Themes</strong></a>.',
+	'copyrights' => 'Based on <a href="http://woodmart.xtemos.com"><strong>WoodMart</strong></a> theme© ' . date( 'Y' ) . ' <a href="https://themeforest.net/item/woodmart-woocommerce-wordpress-theme/20264492"><strong>WooCommerce Themes</strong></a>.',
 	'blog_excerpt' => 'excerpt',
 	'page-title-design' => 'centered',
 	'page-title-color' => 'light',

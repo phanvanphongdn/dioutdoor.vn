@@ -1,4 +1,4 @@
-/* global woodmart_settings */
+/* global woodmart_settings, woodmartThemeModule */
 (function($) {
 	$.each([
 		'frontend/element_ready/wd_products.default',
@@ -17,13 +17,18 @@
 		var btnSelector = '.wd-product.product-type-variable .add_to_cart_button';
 
 		woodmartThemeModule.$document.on('click', btnSelector, function(e) {
+				var $this = $(this);
+
+				if ($this.parents('.wd-loop-prod-btn').length) {
+					return;
+				}
+
 				e.preventDefault();
 
-				var $this        = $(this),
-				    $product     = $this.parents('.product').first(),
-				    $content     = $product.find('.wd-quick-shop'),
-				    id           = $product.data('id'),
-				    loadingClass = 'btn-loading';
+				var $product     = $this.parents('.product').first();
+				var $content     = $product.find('.wd-quick-shop');
+				var id           = $product.data('id');
+				var loadingClass = 'btn-loading';
 
 				if ($this.hasClass(loadingClass)) {
 					return;
@@ -58,7 +63,7 @@
 							$product.addClass('quick-shop-shown quick-shop-loaded');
 							woodmartThemeModule.$body.trigger('woodmart-quick-view-displayed');
 						});
-					},
+					}
 				});
 			})
 			.on('click', '.quick-shop-close', function(e) {

@@ -1,8 +1,8 @@
-<?php
+<?php // phpcs:ignore phpcs: WordPress.Files.FileName.NotHyphenatedLowercase
 /**
  * The template for displaying floating blocks.
  *
- * @package xts
+ * @package woodmart
  */
 
 use Elementor\Plugin;
@@ -45,10 +45,6 @@ get_header();
 		$wrapper_classes .= ' container';
 	}
 
-	if ( isset( $page_settings[ $prefix . 'close_btn' ] ) && ! $page_settings[ $prefix . 'close_btn' ] ) {
-		$btn_classes .= ' wd-hide';
-	}
-
 	if ( ! empty( $page_settings[ $prefix . 'close_btn_display' ] ) ) {
 		$btn_classes .= ' wd-style-' . $page_settings[ $prefix . 'close_btn_display' ];
 	} else {
@@ -59,17 +55,22 @@ get_header();
 	?>
 	<div id="<?php echo esc_attr( 'wd-fb-' . get_the_ID() ); ?>" class="<?php echo esc_attr( $wrapper_classes ); ?>">
 		<div class="wd-fb-wrap">
-			<div class="<?php echo esc_attr( $btn_classes ); ?>">
-				<a title="<?php esc_html_e( 'Close', 'woodmart' ); ?>" href="#" rel="nofollow">
-					<span><?php esc_html_e( 'Close', 'woodmart' ); ?></span>
-				</a>
-			</div>
+			<?php if ( isset( $page_settings[ $prefix . 'close_btn' ] ) && $page_settings[ $prefix . 'close_btn' ] ) : ?>
+				<div class="<?php echo esc_attr( $btn_classes ); ?>">
+					<a title="<?php esc_html_e( 'Close', 'woodmart' ); ?>" href="#" rel="nofollow">
+						<span class="wd-action-icon"></span>
+						<span class="wd-action-text">
+							<?php esc_html_e( 'Close', 'woodmart' ); ?>
+						</span>
+					</a>
+				</div>
+			<?php endif; ?>
 			<div class="wd-fb">
 				<?php if ( ! empty( $bg_image['id'] ) ) : ?>
 					<div class="wd-fb-bg wd-fill">
 						<?php
 						$image_size = isset( $bg_image['size'] ) ? $bg_image['size'] : 'full';
-						echo woodmart_otf_get_image_html(
+						echo woodmart_otf_get_image_html( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 							$bg_image['id'],
 							$image_size,
 							false

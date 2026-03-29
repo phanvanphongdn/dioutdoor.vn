@@ -1,6 +1,6 @@
 <?php
 /**
- * Marquee shortcode.
+ * Shortcode for Marquee element.
  *
  * @package Elements
  */
@@ -13,16 +13,15 @@ if ( ! function_exists( 'woodmart_shortcode_marquee' ) ) {
 	/**
 	 * Render marquee shortcode.
 	 *
-	 * @param array  $atts Shortcode attributes.
-	 * @param string $content Inner content (shortcode).
+	 * @param array $atts Shortcode attributes.
 	 *
 	 * @return false|string
 	 */
-	function woodmart_shortcode_marquee( $atts, $content ) {
+	function woodmart_shortcode_marquee( $atts ) {
 		$atts = shortcode_atts(
 			array(
 				'woodmart_css_id'  => '',
-				'icon_fontawesome' => 'far fa-bell',
+				'icon_fontawesome' => 'fa fa-regular fa-bell',
 				'icon_openiconic'  => 'vc-oi vc-oi-dial',
 				'icon_typicons'    => 'typcn typcn-adjust-brightness',
 				'icon_entypo'      => 'entypo-icon entypo-icon-note',
@@ -56,7 +55,7 @@ if ( ! function_exists( 'woodmart_shortcode_marquee' ) ) {
 		}
 
 		$icon_output = '';
-		$icon_class  = 'wd-marquee-icon wd-icon ';
+		$icon_class  = 'wd-icon ';
 		$icon_class .= $atts[ 'icon_' . $atts['icon_library'] ];
 
 		if ( 'without' !== $atts['icon_type'] ) {

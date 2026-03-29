@@ -2,13 +2,14 @@
 /**
  * Stock status map.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Modules\Layouts;
 
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
+use Elementor\Group_Control_Typography;
 use Elementor\Plugin;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -85,12 +86,12 @@ class Stock_Status extends Widget_Base {
 			)
 		);
 
-		$this->add_control(
-			'reviews_note',
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
 			array(
-				'type'            => Controls_Manager::RAW_HTML,
-				'raw'             => esc_html__( 'Note: This element have not options', 'woodmart' ),
-				'content_classes' => 'elementor-panel-alert elementor-panel-alert-info',
+				'name'     => 'typography',
+				'label'    => esc_html__( 'Typography', 'woodmart' ),
+				'selector' => '{{WRAPPER}}.wd-single-stock-status p',
 			)
 		);
 

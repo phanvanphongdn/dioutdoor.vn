@@ -1,16 +1,29 @@
 <?php
+/**
+ * Render for SP Add to Cart block.
+ *
+ * @package Woodmart
+ */
 
 use XTS\Modules\Layouts\Global_Data as Builder;
 use XTS\Modules\Layouts\Main;
 use XTS\Modules\Waitlist\Frontend as Waitlist_Frontend;
 
 if ( ! function_exists( 'wd_gutenberg_single_product_add_to_cart' ) ) {
+	/**
+	 * Render SP Add to Cart block.
+	 *
+	 * @param array $block_attributes Block attributes.
+	 *
+	 * @return string
+	 */
 	function wd_gutenberg_single_product_add_to_cart( $block_attributes ) {
-		if ( woodmart_get_opt( 'catalog_mode' ) || ! is_user_logged_in() && woodmart_get_opt( 'login_prices' ) ) {
+		if ( woodmart_get_opt( 'catalog_mode' ) || ( ! is_user_logged_in() && woodmart_get_opt( 'login_prices' ) ) ) {
 			return '';
 		}
 
 		$classes = wd_get_gutenberg_element_classes( $block_attributes );
+		$el_id   = wd_get_gutenberg_element_id( $block_attributes );
 
 		$form_classes  = ' wd-reset-' . $block_attributes['clearButtonPosition'] . '-lg';
 		$form_classes .= ' wd-reset-' . $block_attributes['clearButtonPositionTablet'] . '-md';
@@ -49,12 +62,20 @@ if ( ! function_exists( 'wd_gutenberg_single_product_add_to_cart' ) ) {
 			$classes .= ' wd-stock-status-off';
 		}
 
+		if ( ! empty( $block_attributes['addToCartDesign'] ) && 'default' !== $block_attributes['addToCartDesign'] ) {
+			$classes .= ' wd-atc-btn-style-' . $block_attributes['addToCartDesign'];
+		}
+
+		if ( ! empty( $block_attributes['buyNowDesign'] ) && 'default' !== $block_attributes['buyNowDesign'] ) {
+			$classes .= ' wd-bn-btn-style-' . $block_attributes['buyNowDesign'];
+		}
+
 		global $product;
 
 		ob_start();
 
 		?>
-			<div id="<?php echo esc_attr( wd_get_gutenberg_element_id( $block_attributes ) ); ?>" class="wd-single-add-cart<?php echo esc_attr( $classes ); ?>">
+			<div <?php echo $el_id ? 'id="' . esc_attr( $el_id ) . '" ' : ''; ?>class="wd-single-add-cart<?php echo esc_attr( $classes ); ?>">
 				<?php woocommerce_template_single_add_to_cart(); ?>
 
 				<?php

@@ -2,7 +2,7 @@
 /**
  * Import headers.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Admin\Modules\Import;
@@ -44,11 +44,11 @@ class Headers {
 	}
 
 	/**
-	 * Import rev sliders.
+	 * Import headers.
 	 */
 	private function import_headers() {
 		try {
-			for ( $i = 1; $i <= 5; $i ++ ) {
+			for ( $i = 1; $i <= 5; $i++ ) {
 				$header = $this->helpers->get_file_path( 'header-' . $i . '.json', $this->version );
 
 				if ( 'elementor' === $this->helpers->get_page_builder() && file_exists( $this->helpers->get_version_folder_path( $this->version ) . 'header-' . $i . '-elementor.json' ) ) {
@@ -69,10 +69,10 @@ class Headers {
 	/**
 	 * Create new header.
 	 *
-	 * @param string $file    File.
-	 * @param bool   $default Default header.
+	 * @param string $file       File.
+	 * @param bool   $is_default Default header.
 	 */
-	private function create_new_header( $file, $default = false ) {
+	private function create_new_header( $file, $is_default = false ) {
 		$builder       = Header_Builder::get_instance();
 		$imported_data = get_option( 'wd_imported_data_' . $this->version );
 
@@ -88,7 +88,7 @@ class Headers {
 
 		update_option( 'wd_imported_data_' . $this->version, $imported_data, false );
 
-		if ( $default ) {
+		if ( $is_default ) {
 			update_option( 'whb_main_header', $header_data['id'] );
 		}
 	}

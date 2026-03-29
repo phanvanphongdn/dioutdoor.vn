@@ -2,7 +2,7 @@
 /**
  * Visitor counter shortcode.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 use XTS\Modules\Layouts\Main;
@@ -30,7 +30,7 @@ if ( ! function_exists( 'woodmart_shortcode_single_product_visitor_counter' ) ) 
 			'title'            => '',
 
 			'icon_library'     => 'fontawesome',
-			'icon_fontawesome' => 'far fa-bell',
+			'icon_fontawesome' => 'fa fa-regular fa-bell',
 			'icon_openiconic'  => 'vc-oi vc-oi-dial',
 			'icon_typicons'    => 'typcn typcn-adjust-brightness',
 			'icon_entypo'      => 'entypo-icon entypo-icon-note',

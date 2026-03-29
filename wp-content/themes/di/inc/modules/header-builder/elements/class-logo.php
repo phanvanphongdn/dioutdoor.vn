@@ -1,21 +1,32 @@
 <?php
+/**
+ * Logo element class file.
+ *
+ * @package woodmart
+ */
 
 namespace XTS\Modules\Header_Builder\Elements;
 
 use XTS\Modules\Header_Builder\Element;
 
 /**
- * ------------------------------------------------------------------------------------------------
  * Logo image element
- * ------------------------------------------------------------------------------------------------
  */
 class Logo extends Element {
 
+	/**
+	 * Constructor.
+	 */
 	public function __construct() {
 		parent::__construct();
 		$this->template_name = 'logo';
 	}
 
+	/**
+	 * Map element.
+	 *
+	 * @return void
+	 */
 	public function map() {
 		$this->args = array(
 			'type'            => 'logo',

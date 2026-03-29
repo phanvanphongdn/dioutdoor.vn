@@ -6,6 +6,7 @@ use XTS\Modules\Layouts\Main;
 if ( ! function_exists( 'wd_gutenberg_woo_page_title' ) ) {
 	function wd_gutenberg_woo_page_title( $block_attributes ) {
 		$classes = wd_get_gutenberg_element_classes( $block_attributes );
+		$el_id   = wd_get_gutenberg_element_id( $block_attributes );
 
 		if ( ! empty( $block_attributes['stretch'] ) ) {
 			$classes .= ' wd-stretched';
@@ -36,7 +37,7 @@ if ( ! function_exists( 'wd_gutenberg_woo_page_title' ) ) {
 		}
 
 		?>
-		<div id="<?php echo esc_attr( wd_get_gutenberg_element_id( $block_attributes ) ); ?>" class="wd-page-title-el<?php echo esc_attr( $classes ); ?>">
+		<div <?php echo $el_id ? 'id="' . esc_attr( $el_id ) . '" ' : ''; ?>class="wd-page-title-el<?php echo esc_attr( $classes ); ?>">
 			<?php woodmart_page_title(); ?>
 		</div>
 		<?php

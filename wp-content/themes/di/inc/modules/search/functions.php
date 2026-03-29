@@ -18,19 +18,28 @@ if ( ! function_exists( 'woodmart_search_form' ) ) {
 
 		switch ( $search_type ) {
 			case 'full-screen-2':
-				$dropdown_search_args    = isset( $args['dropdown_search_args'] ) ? $args['dropdown_search_args'] : $args;
 				$full_screen_search_args = isset( $args['full_screen_search_args'] ) ? $args['full_screen_search_args'] : $args;
-				$dropdown_form           = new Dropdown_Search( $dropdown_search_args );
 
-				$dropdown_form->render();
+				if ( empty( $args['full_screen_opener'] ) || 'form' === $args['full_screen_opener'] ) {
+					$dropdown_search_args = isset( $args['dropdown_search_args'] ) ? $args['dropdown_search_args'] : $args;
+					$dropdown_form        = new Dropdown_Search( $dropdown_search_args );
+
+					$dropdown_form->render();
+				}
 
 				Full_Screen_Search::add_args( $full_screen_search_args );
 				break;
 			case 'full-screen':
-				$search_args = isset( $args['full_screen_search_args'] ) ? $args['full_screen_search_args'] : $args;
+				$full_screen_search_args = isset( $args['full_screen_search_args'] ) ? $args['full_screen_search_args'] : $args;
 
-				Full_Screen_Search::add_args( $search_args );
+				if ( ! empty( $args['full_screen_opener'] ) && 'form' === $args['full_screen_opener'] ) {
+					$dropdown_search_args = isset( $args['dropdown_search_args'] ) ? $args['dropdown_search_args'] : $args;
+					$dropdown_form        = new Dropdown_Search( $dropdown_search_args );
 
+					$dropdown_form->render();
+				}
+
+				Full_Screen_Search::add_args( $full_screen_search_args );
 				break;
 			case 'dropdown':
 			case 'form':
@@ -38,7 +47,6 @@ if ( ! function_exists( 'woodmart_search_form' ) ) {
 				$dropdown_form = new Dropdown_Search( $search_args );
 
 				$dropdown_form->render();
-
 				break;
 		}
 	}

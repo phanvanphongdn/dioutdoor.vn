@@ -2,7 +2,7 @@
 /**
  * Emails class file.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Modules\Waitlist;
@@ -111,11 +111,11 @@ class Emails extends Singleton {
 	 * @return array
 	 */
 	public function register_email( $emails ) {
-		include_once XTS_WAITLIST_DIR . 'emails/class-waitlist-email.php'; // Include parent waitlists class.
+		include_once XTS_WAITLIST_DIR . 'emails/class-xts-email-waitlist.php'; // Include parent waitlists class.
 
-		$emails['XTS_Email_Waitlist_Back_In_Stock']        = include XTS_WAITLIST_DIR . 'emails/class-instock-email.php';
-		$emails['XTS_Email_Waitlist_Subscribe']            = include XTS_WAITLIST_DIR . 'emails/class-subscribe-email.php';
-		$emails['XTS_Email_Waitlist_Confirm_Subscription'] = include XTS_WAITLIST_DIR . 'emails/class-confirm-subscription-email.php';
+		$emails['XTS_Email_Waitlist_Back_In_Stock']        = include XTS_WAITLIST_DIR . 'emails/class-xts-email-waitlist-back-in-stock.php';
+		$emails['XTS_Email_Waitlist_Subscribe']            = include XTS_WAITLIST_DIR . 'emails/class-xts-email-waitlist-subscribe.php';
+		$emails['XTS_Email_Waitlist_Confirm_Subscription'] = include XTS_WAITLIST_DIR . 'emails/class-xts-email-waitlist-confirm-subscription.php';
 
 		return $emails;
 	}

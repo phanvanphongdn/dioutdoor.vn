@@ -1,8 +1,15 @@
 <?php
+/**
+ * Functions file.
+ *
+ * @package woodmart
+ */
+
 use Elementor\Plugin;
 use XTS\Gutenberg\Blocks_Assets;
 use XTS\Gutenberg\Post_CSS;
 use XTS\Registry;
+use XTS\Admin\Modules\Options\Google_Fonts\Google_Fonts;
 
 if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
 	exit( 'No direct script access allowed' );
@@ -13,13 +20,14 @@ if ( ! function_exists( 'woodmart_get_opt' ) ) {
 	 * Get theme option.
 	 *
 	 * @param string $slug Option slug.
-	 * @param string $default Default value.
+	 * @param string $default_val Default value.
+	 *
 	 * @return mixed|null
 	 */
-	function woodmart_get_opt( $slug = '', $default = false ) {
+	function woodmart_get_opt( $slug = '', $default_val = false ) {
 		global $woodmart_options, $xts_woodmart_options;
 
-		$opt = $default;
+		$opt = $default_val;
 
 		if ( isset( $xts_woodmart_options[ $slug ] ) ) {
 			$opt = $xts_woodmart_options[ $slug ];
@@ -43,8 +51,8 @@ if ( ! function_exists( 'woodmart_page_ID' ) ) {
 	 *
 	 * @return mixed
 	 */
-	function woodmart_page_ID() {
-		return Registry::getInstance()->layout->get_page_id();
+	function woodmart_page_ID() { // phpcs:ignore
+		return Registry::get_instance()->layout->get_page_id();
 	}
 }
 
@@ -55,7 +63,7 @@ if ( ! function_exists( 'woodmart_get_content_inline_style' ) ) {
 	 * @return mixed
 	 */
 	function woodmart_get_content_inline_style() {
-		return Registry::getInstance()->layout->get_content_inline_style();
+		return Registry::get_instance()->layout->get_content_inline_style();
 	}
 }
 
@@ -66,7 +74,7 @@ if ( ! function_exists( 'woodmart_get_page_layout' ) ) {
 	 * @return mixed
 	 */
 	function woodmart_get_page_layout() {
-		return Registry::getInstance()->layout->get_page_layout();
+		return Registry::get_instance()->layout->get_page_layout();
 	}
 }
 
@@ -93,16 +101,16 @@ if ( ! function_exists( 'woodmart_get_color_value' ) ) {
 	 * Get color value.
 	 *
 	 * @param string $key Option key.
-	 * @param string $default Default value.
+	 * @param string $default_val Default value.
 	 * @return mixed
 	 */
-	function woodmart_get_color_value( $key, $default ) {
+	function woodmart_get_color_value( $key, $default_val ) {
 		$color = woodmart_get_opt( $key );
 
 		if ( isset( $color['idle'] ) && $color['idle'] ) {
 			return $color['idle'];
 		} else {
-			return $default;
+			return $default_val;
 		}
 	}
 }
@@ -137,24 +145,33 @@ if ( ! function_exists( 'woodmart_get_link_attributes' ) ) {
 	 *
 	 * @param string  $link Link.
 	 * @param boolean $popup Popup.
+	 * @param string  $custom_attributes Custom attributes.
+	 *
 	 * @return string
 	 */
 	function woodmart_get_link_attributes( $link, $popup = false, $custom_attributes = '' ) {
 		$link = ( '||' === $link ) ? '' : $link;
-		$link = woodmart_vc_parse_multi_attribute( $link );
+
+		if ( $link && ! is_array( $link ) && strpos( $link, 'url:' ) === false && strpos( $link, 'title:' ) === false && strpos( $link, 'target:' ) === false && strpos( $link, 'rel:' ) === false ) { // Fix for widget Banner.
+			$link = array( 'url' => esc_url( $link ) );
+		} elseif ( function_exists( 'woodmart_vc_parse_multi_attribute' ) ) {
+			$link = woodmart_vc_parse_multi_attribute( $link );
+		}
 
 		$use_link = false;
 
 		if ( isset( $link['url'] ) && strlen( $link['url'] ) > 0 ) {
 			$use_link = true;
 			$a_href   = apply_filters( 'woodmart_extra_menu_url', $link['url'] );
+			// Ensure URL is properly escaped
+			$a_href = esc_url( $a_href );
 			if ( $popup ) {
-				$a_href = $link['url'];
+				$a_href = esc_url( $link['url'] );
 			}
 
-			$a_title  = $link['title'];
-			$a_target = $link['target'];
-			$a_rel    = $link['rel'];
+			$a_title  = isset( $link['title'] ) ? sanitize_text_field( $link['title'] ) : '';
+			$a_target = isset( $link['target'] ) ? sanitize_text_field( $link['target'] ) : '';
+			$a_rel    = isset( $link['rel'] ) ? sanitize_text_field( $link['rel'] ) : '';
 		}
 
 		$attributes = array();
@@ -426,7 +443,7 @@ if ( ! function_exists( 'woodmart_get_footer_config' ) ) {
 					),
 				),
 				12 => array(
-					'cols' => array(//vucamp
+					'cols' => array(
 						'--wd-col-lg:12;',
                         '--wd-col-md:12;--wd-col-lg:3;',
 						'--wd-col-xs:12;--wd-col-sm:6;--wd-col-md:2;--wd-col-lg:2;',
@@ -453,8 +470,8 @@ if ( ! function_exists( 'woodmart_get_footer_config' ) ) {
                     'col-12 col-sm-6 col-md-3 col-lg-2',
                     'col-12 col-sm-6 col-lg-3',
                 ),
-            ),//vucamp		
-            	)
+            ),//vucamp				
+			)
 		);
 
 		return ( isset( $configs[ $index ] ) ) ? $configs[ $index ] : array();
@@ -468,7 +485,7 @@ if ( ! function_exists( 'woodmart_get_the_ID' ) ) {
 	 *
 	 * @return false|int|mixed|null
 	 */
-	function woodmart_get_the_ID() {
+	function woodmart_get_the_ID() { // phpcs:ignore
 		global $post;
 
 		$page_id = 0;
@@ -535,7 +552,7 @@ if ( ! function_exists( 'woodmart_get_post_content' ) ) {
 		if ( woodmart_is_elementor_installed() && Plugin::$instance->documents->get( $id )->is_built_with_elementor() ) {
 			$content .= woodmart_elementor_get_content( $id );
 		} elseif ( has_blocks( $post_content ) ) {
-			if ( woodmart_get_opt( 'gutenberg_blocks' ) ) {
+			if ( woodmart_is_gutenberg_blocks_enabled() ) {
 				$content .= Blocks_Assets::get_instance()->get_inline_scripts( $id );
 				$content .= Post_CSS::get_instance()->get_inline_blocks_css( $id, $inline_css );
 			}
@@ -544,6 +561,36 @@ if ( ! function_exists( 'woodmart_get_post_content' ) ) {
 		} else {
 			$shortcodes_custom_css          = get_post_meta( $id, '_wpb_shortcodes_custom_css', true );
 			$woodmart_shortcodes_custom_css = get_post_meta( $id, 'woodmart_shortcodes_custom_css', true );
+			$fonts                          = get_post_meta( $id, 'woodmart_shortcodes_fonts', true );
+
+			if ( ! empty( $fonts ) && is_array( $fonts ) ) {
+				$fonts = array_map(
+					function ( $font ) {
+						if ( empty( $font ) || ! array_key_exists( 'font-family', $font ) || empty( $font['font-family'] ) ) {
+							return;
+						}
+
+						$font_data = wp_parse_args(
+							$font,
+							array(
+								'font-family' => '',
+								'font-weight' => '',
+								'font-style'  => '',
+								'font-subset' => '',
+							)
+						);
+
+						return $font_data;
+					},
+					array_values( $fonts )
+				);
+
+				ob_start();
+
+				Google_Fonts::get_instance()->enqueue_inline_fonts( $fonts, $id );
+
+				$content .= ob_get_clean();
+			}
 
 			if ( ! empty( $shortcodes_custom_css ) || ! empty( $woodmart_shortcodes_custom_css ) ) {
 				$content .= '<style data-type="vc_shortcodes-custom-css">';
@@ -587,11 +634,11 @@ if ( ! function_exists( 'woodmart_get_static_blocks_array' ) ) {
 	/**
 	 * Get static blocks array.
 	 *
-	 * @param boolean $new New.
-	 * @param boolean $empty Empty.
+	 * @param boolean $is_new New.
+	 * @param boolean $is_empty Empty.
 	 * @return array
 	 */
-	function woodmart_get_static_blocks_array( $new = false, $empty = false ) {
+	function woodmart_get_static_blocks_array( $is_new = false, $is_empty = false ) {
 		$args         = array(
 			'posts_per_page' => 500, // phpcs:ignore
 			'post_type'      => 'cms_block',
@@ -599,8 +646,8 @@ if ( ! function_exists( 'woodmart_get_static_blocks_array' ) ) {
 		$blocks_posts = get_posts( $args );
 		$array        = array();
 		foreach ( $blocks_posts as $post ) :
-			if ( $new ) {
-				if ( $empty ) {
+			if ( $is_new ) {
+				if ( $is_empty ) {
 					$array[''] = array(
 						'name'  => esc_html__( 'Select', 'woodmart' ),
 						'value' => '',
@@ -611,7 +658,7 @@ if ( ! function_exists( 'woodmart_get_static_blocks_array' ) ) {
 					'value' => $post->ID,
 				);
 			} else {
-				if ( $empty ) {
+				if ( $is_empty ) {
 					$array[ esc_html__( 'Select', 'woodmart' ) ] = '';
 				}
 				$array[ $post->post_title . ' (ID:' . $post->ID . ')' ] = $post->ID;
@@ -643,13 +690,40 @@ if ( ! function_exists( 'woodmart_get_html_blocks_array_with_empty' ) ) {
 	}
 }
 
-if ( ! function_exists( 'woodmart_get_elementor_html_blocks_array' ) ) {
+if ( ! function_exists( 'woodmart_get_loop_items_array_with_empty' ) ) {
+	/**
+	 * Function to get array of Loop items in WPB element array style.
+	 *
+	 * @return array
+	 */
+	function woodmart_get_loop_items_array_with_empty() {
+		$posts        = array();
+		$blocks_posts = get_posts(
+			array(
+				'posts_per_page' => 100, // phpcs:ignore
+				'post_type'      => 'woodmart_layout',
+				'meta_key'       => 'wd_layout_type', // phpcs:ignore
+				'meta_value'     => 'product_loop_item', // phpcs:ignore
+			)
+		);
+
+		$posts[ esc_html__( 'Select', 'woodmart' ) ] = '';
+
+		foreach ( $blocks_posts as $post ) {
+			$posts[ $post->post_title . ' (ID:' . $post->ID . ')' ] = $post->ID;
+		}
+
+		return $posts;
+	}
+}
+
+if ( ! function_exists( 'woodmart_get_elementor_blocks_array' ) ) {
 	/**
 	 * Function to get array of HTML Blocks.
 	 *
 	 * @return array
 	 */
-	function woodmart_get_elementor_html_blocks_array() {
+	function woodmart_get_elementor_blocks_array() {
 		$output = array();
 
 		$posts = get_posts(
@@ -668,6 +742,35 @@ if ( ! function_exists( 'woodmart_get_elementor_html_blocks_array' ) ) {
 		return $output;
 	}
 }
+
+if ( ! function_exists( 'woodmart_get_elementor_loop_items_array' ) ) {
+	/**
+	 * Function to get array of HTML Blocks.
+	 *
+	 * @return array
+	 */
+	function woodmart_get_elementor_loop_items_array() {
+		$output = array();
+
+		$posts = get_posts(
+			array(
+				'posts_per_page' => 500, // phpcs:ignore
+				'post_type'      => 'woodmart_layout',
+				'meta_key'       => 'wd_layout_type', // phpcs:ignore
+				'meta_value'     => 'product_loop_item', // phpcs:ignore
+			)
+		);
+
+		$output['0'] = esc_html__( 'Select', 'woodmart' );
+
+		foreach ( $posts as $post ) {
+			$output[ $post->ID ] = $post->post_title;
+		}
+
+		return $output;
+	}
+}
+
 
 if ( ! function_exists( 'woodmart_get_related_posts_args' ) ) {
 	/**
@@ -693,7 +796,6 @@ if ( ! function_exists( 'woodmart_get_related_posts_args' ) ) {
 				'showposts'           => 12,
 				'ignore_sticky_posts' => 1,
 			);
-
 		}
 
 		return $args;
@@ -719,7 +821,7 @@ if ( ! function_exists( 'woodmart_get_related_projects_args' ) ) {
 			$args = array(
 				'post_type'    => 'portfolio',
 				'post__not_in' => array( $post_id ),
-				'tax_query'    => array(
+				'tax_query'    => array( // phpcs:ignore
 					array(
 						'taxonomy'         => 'project-cat',
 						'terms'            => $tax_ids,
@@ -746,7 +848,7 @@ if ( ! function_exists( 'woodmart_strip_shortcode_gallery' ) ) {
 			foreach ( $matches as $shortcode ) {
 				if ( 'gallery' === $shortcode[2] ) {
 					$pos = strpos( $content, $shortcode[0] );
-					if ( $pos !== false ) {
+					if ( false !== $pos ) {
 						return substr_replace( $content, '', $pos, strlen( $shortcode[0] ) );
 					}
 				}
@@ -781,7 +883,7 @@ if ( ! function_exists( 'woodmart_excerpt_from_content' ) ) {
 				$excerpt .= '...';
 			}
 		} else {
-			$limit++;
+			++$limit;
 			$excerpt = explode( ' ', $post_content, $limit );
 			if ( count( $excerpt ) >= $limit ) {
 				array_pop( $excerpt );
@@ -791,9 +893,9 @@ if ( ! function_exists( 'woodmart_excerpt_from_content' ) ) {
 			}
 		}
 
-		$excerpt = strip_tags( $excerpt );
+		$excerpt = wp_strip_all_tags( $excerpt );
 
-		if ( trim( $excerpt ) == '...' ) {
+		if ( '...' === trim( $excerpt ) ) {
 			return '';
 		}
 
@@ -856,13 +958,13 @@ if ( ! function_exists( 'woodmart_get_sidebars_array' ) ) {
 	/**
 	 * Get registered sidebars dropdown.
 	 *
-	 * @param boolean $new New.
+	 * @param boolean $is_new New.
 	 * @return array
 	 */
-	function woodmart_get_sidebars_array( $new = false ) {
+	function woodmart_get_sidebars_array( $is_new = false ) {
 		global $wp_registered_sidebars;
 		$sidebars = array();
-		if ( $new ) {
+		if ( $is_new ) {
 			$sidebars['none'] = array(
 				'name'  => esc_html__( 'None', 'woodmart' ),
 				'value' => 'none',
@@ -871,7 +973,7 @@ if ( ! function_exists( 'woodmart_get_sidebars_array' ) ) {
 			$sidebars['none'] = 'none';
 		}
 		foreach ( $wp_registered_sidebars as $id => $sidebar ) {
-			if ( $new ) {
+			if ( $is_new ) {
 				$sidebars[ $id ] = array(
 					'name'  => $sidebar['name'],
 					'value' => $id,
@@ -905,8 +1007,8 @@ if ( ! function_exists( 'woodmart_pages_ids_from_template' ) ) {
 	function woodmart_pages_ids_from_template( $name ) {
 		$pages = get_pages(
 			array(
-				'meta_key'   => '_wp_page_template',
-				'meta_value' => $name . '.php',
+				'meta_key'   => '_wp_page_template', // phpcs:ignore
+				'meta_value' => $name . '.php', // phpcs:ignore
 			)
 		);
 
@@ -926,6 +1028,8 @@ if ( ! function_exists( 'woodmart_get_col_sizes' ) ) {
 	 * Get auto column sizes.
 	 *
 	 * @param integer $desktop_columns Desktop columns.
+	 * @param string  $post_type Post type.
+	 *
 	 * @return array
 	 */
 	function woodmart_get_col_sizes( $desktop_columns, $post_type = '' ) {
@@ -1054,7 +1158,7 @@ if ( ! function_exists( 'woodmart_get_grid_attrs' ) ) {
 			$style_attrs .= '--wd-gap-md:' . $settings['spacing_tablet'] . 'px;';
 		}
 
-		if ( isset( $settings['spacing'], $settings['spacing_mobile'] ) && ! $settings['spacing_mobile'] && in_array( (int) $settings['spacing'], array( 20, 30 ), true ) ) {
+		if ( isset( $settings['spacing'], $settings['spacing_mobile'] ) && '' === (string) $settings['spacing_mobile'] && in_array( (int) $settings['spacing'], array( 20, 30 ), true ) ) {
 			$settings['spacing_mobile'] = 10;
 		}
 
@@ -1118,7 +1222,7 @@ if ( ! function_exists( 'woodmart_add_editable_post_to_admin_bar' ) ) {
 	 * @return void
 	 */
 	function woodmart_add_editable_post_to_admin_bar( $post_id ) {
-		if ( ! woodmart_is_pjax() && is_user_logged_in() && is_admin_bar_showing() && in_array( get_post_type( $post_id ), array( 'cms_block', 'wd_popup', 'wd_floating_block' ), true ) ) {
+		if ( ! woodmart_is_pjax() && is_user_logged_in() && is_admin_bar_showing() && in_array( get_post_type( $post_id ), array( 'cms_block', 'wd_popup', 'wd_floating_block', 'woodmart_layout' ), true ) ) {
 			global $woodmart_editable_posts_bar_data;
 
 			$edit_url = get_edit_post_link( $post_id );
@@ -1134,5 +1238,117 @@ if ( ! function_exists( 'woodmart_add_editable_post_to_admin_bar' ) ) {
 				'edit_url' => $edit_url,
 			);
 		}
+	}
+}
+
+if ( ! function_exists( 'woodmart_get_post_meta_value' ) ) {
+	/**
+	 * Get post meta value considering Elementor settings.
+	 *
+	 * @param int    $post_id Post ID.
+	 * @param string $meta_key Meta key.
+	 * @return mixed
+	 */
+	function woodmart_get_post_meta_value( $post_id, $meta_key ) {
+		if ( woodmart_is_elementor_installed() ) {
+			$doc = Plugin::$instance->documents->get( $post_id );
+
+			if ( $doc && $doc->is_built_with_elementor() ) {
+				$elementor_options = $doc->get_settings_for_display();
+				if ( isset( $elementor_options[ 'wd_' . $meta_key ] ) ) {
+					return $elementor_options[ 'wd_' . $meta_key ];
+				}
+			}
+		}
+
+		return get_post_meta( $post_id, $meta_key, true );
+	}
+}
+
+if ( ! function_exists( 'woodmart_get_theme_settings_product_loop_items_array' ) ) {
+	/**
+	 * Function to get array of Product Loop Items in theme settings array style.
+	 *
+	 * @return array
+	 */
+	function woodmart_get_theme_settings_product_loop_items_array() {
+		$args         = array(
+			'posts_per_page' => 100,
+			'post_type'      => 'woodmart_layout',
+			'meta_key'       => 'wd_layout_type', // phpcs:ignore
+			'meta_value'     => 'product_loop_item', // phpcs:ignore
+		);
+		$blocks_posts = get_posts( $args );
+		$array        = array();
+		foreach ( $blocks_posts as $post ) {
+			$array[ $post->ID ] = array(
+				'name'  => $post->post_title . ' (ID:' . $post->ID . ')',
+				'value' => $post->ID,
+			);
+		}
+
+		return $array;
+	}
+}
+
+if ( ! function_exists( 'woodmart_is_builder_editor_preview' ) ) {
+	/**
+	 * Check if we are in Elementor or Gutenberg editor preview.
+	 *
+	 * @return boolean
+	 */
+	function woodmart_is_builder_editor_preview() {
+		if (
+			(
+				function_exists( 'wd_gutenberg_is_rest_api' ) &&
+				wd_gutenberg_is_rest_api()
+			) ||
+			(
+				function_exists( 'woodmart_elementor_is_edit_mode' ) &&
+				woodmart_elementor_is_edit_mode()
+			)
+		) {
+			return true;
+		}
+
+		return false;
+	}
+}
+
+if ( ! function_exists( 'woodmart_is_gutenberg_blocks_enabled' ) ) {
+	/**
+	 * Enable Gutenberg blocks.
+	 *
+	 * @return array[]
+	 */
+	function woodmart_is_gutenberg_blocks_enabled() {
+		return apply_filters( 'woodmart_is_gutenberg_blocks_enabled', true );
+	}
+}
+
+if ( ! function_exists( 'woodmart_get_document_title' ) ) {
+	/**
+	 * Returns document title for the current page.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return string
+	 */
+	function woodmart_get_document_title() {
+		$title = wp_get_document_title();
+
+		$post_meta = get_post_meta( woodmart_get_the_ID(), '_yoast_wpseo_title', true );
+		if ( is_object( get_queried_object() ) && property_exists( get_queried_object(), 'term_id' ) && function_exists( 'YoastSEO' ) ) {
+			$taxonomy_helper = YoastSEO()->helpers->taxonomy;
+			$meta            = $taxonomy_helper->get_term_meta( get_queried_object() );
+
+			if ( isset( $meta['wpseo_title'] ) && $meta['wpseo_title'] ) {
+				$title = wpseo_replace_vars( $meta['wpseo_title'], get_queried_object() );
+			}
+		} elseif ( $post_meta && function_exists( 'wpseo_replace_vars' ) ) {
+			$title = wpseo_replace_vars( $post_meta, get_post( woodmart_get_the_ID() ) );
+		}
+
+		return $title;
 	}
 }

@@ -46,7 +46,7 @@ $block_css->add_css_rules(
 );
 
 $block_css->add_css_rules(
-	'.wd-hover-parent:hover ' . $block_selector,
+	$block_selector_parent_hover,
 	array(
 		array(
 			'attr_name' => 'colorParentHoverCode',
@@ -258,8 +258,9 @@ $block_css->merge_with( wd_get_block_typography_css( $mark_selector, $attrs, 'ma
 $block_css->merge_with(
 	wd_get_block_advanced_css(
 		array(
-			'selector'       => $block_selector,
-			'selector_hover' => $block_selector_hover,
+			'selector'              => $block_selector,
+			'selector_hover'        => $block_selector_hover,
+			'selector_parent_hover' => $block_selector_parent_hover,
 		),
 		$attrs
 	)

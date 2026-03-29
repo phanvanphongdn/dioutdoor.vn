@@ -7,6 +7,7 @@ woodmartThemeModule.trackProductViewed = function() {
 
 	var singleProduct = document.querySelector('.single-product-page');
 	var cookiesName = 'woodmart_recently_viewed_products';
+	var maxProducts = parseInt(woodmart_settings.max_recently_viewed_products, 10);
 
 	if ( ! singleProduct || 'undefined' === typeof Cookies ) {
 		return;
@@ -27,11 +28,15 @@ woodmartThemeModule.trackProductViewed = function() {
 
 		recentlyProduct.unshift(singleProductID);
 
+		if (recentlyProduct.length > maxProducts) {
+			recentlyProduct = recentlyProduct.slice(0, maxProducts);
+		}
+
 		recentlyProduct = recentlyProduct.join('|');
 	}
 
 	Cookies.set(cookiesName, recentlyProduct, {
-		expires: 7,
+		expires: parseInt(woodmart_settings.cookie_expires, 10),
 		path   : woodmart_settings.cookie_path,
 		secure : woodmart_settings.cookie_secure_param
 	});

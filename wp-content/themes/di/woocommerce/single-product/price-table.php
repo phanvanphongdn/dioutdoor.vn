@@ -4,7 +4,7 @@
  *
  * @var array $data Data for render table.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 // Exit if accessed directly.

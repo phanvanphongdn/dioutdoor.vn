@@ -2,7 +2,7 @@
 /**
  * Waitlist emails plain template.
  *
- * @package XTS
+ * @package woodmart
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

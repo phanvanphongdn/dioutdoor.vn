@@ -2,14 +2,34 @@
 /**
  * Predefined layouts template.
  *
- * @package Woodmart
+ * @package woodmart
  *
  * @var array $layouts Layouts.
  */
 
+$current_tab = isset( $_GET['wd_layout_type_tab'] ) ? $_GET['wd_layout_type_tab'] : ''; // phpcs:ignore WordPress.Security
+
+switch ( $current_tab ) {
+	case 'checkout':
+		$current_tab = 'checkout_form';
+		break;
+	case 'post':
+		$current_tab = 'single_post';
+		break;
+	case 'archive':
+		$current_tab = 'blog_archive';
+		break;
+	case 'my_account':
+		$current_tab = 'my_account_page';
+		break;
+	case 'loop_item':
+		$current_tab = 'product_loop_item';
+		break;
+}
+
 ?>
 <?php foreach ( $layouts as $layout_type => $values ) : ?>
-	<div class="xts-popup-predefined-layouts xts-images-set xts-hidden" data-type="<?php echo esc_attr( $layout_type ); ?>">
+	<div class="xts-popup-predefined-layouts xts-images-set<?php echo $current_tab !== $layout_type ? ' xts-hidden' : ''; ?>" data-type="<?php echo esc_attr( $layout_type ); ?>">
 		<div class="xts-popup-label"><?php esc_html_e( 'Predefined layouts', 'woodmart' ); ?></div>
 		<div class="xts-btns-set">
 			<?php foreach ( $values as $layout => $data ) : ?>

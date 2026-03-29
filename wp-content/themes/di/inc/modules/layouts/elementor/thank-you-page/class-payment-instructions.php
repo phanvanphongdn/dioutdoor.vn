@@ -2,7 +2,7 @@
 /**
  * Order payment method text.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Modules\Layouts;

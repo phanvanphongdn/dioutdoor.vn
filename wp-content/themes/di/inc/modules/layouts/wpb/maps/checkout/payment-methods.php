@@ -2,7 +2,7 @@
 /**
  * Payment methods map.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -16,10 +16,9 @@ if ( ! function_exists( 'woodmart_get_vc_map_checkout_payment_methods' ) ) {
 	function woodmart_get_vc_map_checkout_payment_methods() {
 		$title_typography = woodmart_get_typography_map(
 			array(
-				'key'              => 'title_typography',
-				'group'            => esc_html__( 'Style', 'woodmart' ),
-				'selector'         => '{{WRAPPER}} .payment_methods li > label',
-				'edit_field_class' => 'vc_col-sm-6 vc_column',
+				'key'      => 'title_typography',
+				'group'    => esc_html__( 'Style', 'woodmart' ),
+				'selector' => '{{WRAPPER}} .payment_methods li > label',
 			)
 		);
 
@@ -106,7 +105,7 @@ if ( ! function_exists( 'woodmart_get_vc_map_checkout_payment_methods' ) ) {
 					'type'             => 'wd_colorpicker',
 					'param_name'       => 'payment_description_background_color',
 					'selectors'        => array(
-						'{{WRAPPER}} .payment_box' => array(
+						'{{WRAPPER}} .payment_box'        => array(
 							'background-color: {{VALUE}};',
 						),
 						'{{WRAPPER}} .payment_box:before' => array(
@@ -157,9 +156,9 @@ if ( ! function_exists( 'woodmart_get_vc_map_checkout_payment_methods' ) ) {
 						),
 					),
 					'value'      => array(
-						esc_html__( 'Left', 'woodmart' ) => 'left',
+						esc_html__( 'Left', 'woodmart' )   => 'left',
 						esc_html__( 'Center', 'woodmart' ) => 'center',
-						esc_html__( 'Right', 'woodmart' ) => 'right',
+						esc_html__( 'Right', 'woodmart' )  => 'right',
 						esc_html__( 'Full width', 'woodmart' ) => 'full-width',
 					),
 				),

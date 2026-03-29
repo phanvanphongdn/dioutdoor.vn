@@ -1,11 +1,14 @@
 <?php
+/**
+ * Headers list class file.
+ *
+ * @package woodmart
+ */
 
 namespace XTS\Modules\Header_Builder;
 
 /**
- * ------------------------------------------------------------------------------------------------
- * Manage headers lists in the database. CRUD
- * ------------------------------------------------------------------------------------------------
+ * Manage headers lists in the database. CRUD operations.
  */
 class Headers_List {
 	/**

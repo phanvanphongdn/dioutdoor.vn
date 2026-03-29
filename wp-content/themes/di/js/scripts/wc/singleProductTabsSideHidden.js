@@ -35,6 +35,7 @@ woodmartThemeModule.singleProductTabsDescHidden = function() {
 							tabsTitle.classList.add('wd-active');
 
 							window.dispatchEvent(new Event('wdOpenDescHiddenTab'));
+							woodmartThemeModule.$document.trigger('wood-images-loaded');
 						}, 10);
 					}
 

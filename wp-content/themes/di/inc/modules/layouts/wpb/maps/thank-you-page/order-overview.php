@@ -2,7 +2,7 @@
 /**
  * Order overview map.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
@@ -16,17 +16,15 @@ if ( ! function_exists( 'woodmart_get_vc_map_tp_order_overview' ) ) {
 	function woodmart_get_vc_map_tp_order_overview() {
 		$typography_label = woodmart_get_typography_map(
 			array(
-				'key'              => 'typography_label',
-				'selector'         => '{{WRAPPER}} .woocommerce-thankyou-order-details li > span',
-				'edit_field_class' => 'vc_col-sm-6 vc_column',
+				'key'      => 'typography_label',
+				'selector' => '{{WRAPPER}} .woocommerce-thankyou-order-details li > span',
 			)
 		);
 
 		$typography_value = woodmart_get_typography_map(
 			array(
-				'key'              => 'typography_value',
-				'selector'         => '{{WRAPPER}} .woocommerce-thankyou-order-details :is(strong,.amount)',
-				'edit_field_class' => 'vc_col-sm-6 vc_column',
+				'key'      => 'typography_value',
+				'selector' => '{{WRAPPER}} .woocommerce-thankyou-order-details :is(strong,.amount)',
 			)
 		);
 

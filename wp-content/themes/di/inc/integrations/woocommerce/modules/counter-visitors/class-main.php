@@ -2,7 +2,7 @@
 /**
  * Count products visits.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Modules\Visitor_Counter;

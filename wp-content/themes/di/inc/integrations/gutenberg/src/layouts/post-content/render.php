@@ -20,7 +20,7 @@ if ( ! function_exists( 'wd_gutenberg_single_post_content' ) ) {
 
 		ob_start();
 		?>
-		<div id="<?php echo esc_attr( $el_id ); ?>" class="wd-single-post-content<?php echo esc_attr( $wrapper_classes ); ?>">
+		<div <?php echo $el_id ? 'id="' . esc_attr( $el_id ) . '" ' : ''; ?>class="wd-single-post-content<?php echo esc_attr( $wrapper_classes ); ?>">
 			<?php
 			echo apply_filters('the_content', $content); //phpcs:ignore.
 

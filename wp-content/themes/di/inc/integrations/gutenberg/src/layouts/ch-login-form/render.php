@@ -9,6 +9,7 @@ if ( ! function_exists( 'wd_gutenberg_checkout_login_form' ) ) {
 		}
 
 		$classes = wd_get_gutenberg_element_classes( $block_attributes );
+		$el_id   = wd_get_gutenberg_element_id( $block_attributes );
 
 		if ( ! empty( $block_attributes['align'] ) || ! empty( $block_attributes['alignTablet'] ) || ! empty( $block_attributes['alignMobile'] ) ) {
 			$classes .= ' wd-align';
@@ -21,7 +22,7 @@ if ( ! function_exists( 'wd_gutenberg_checkout_login_form' ) ) {
 		woodmart_enqueue_inline_style( 'woo-mod-login-form' );
 
 		?>
-			<div id="<?php echo esc_attr( wd_get_gutenberg_element_id( $block_attributes ) ); ?>" class="wd-checkout-login<?php echo esc_attr( $classes ); ?>">
+			<div <?php echo $el_id ? 'id="' . esc_attr( $el_id ) . '" ' : ''; ?>class="wd-checkout-login<?php echo esc_attr( $classes ); ?>">
 				<?php woocommerce_checkout_login_form(); ?>
 			</div>
 		<?php

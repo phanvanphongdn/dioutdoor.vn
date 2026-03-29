@@ -2,7 +2,7 @@
 /**
  * Free shipping progress bar.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Modules\Shipping_Progress_Bar;
@@ -87,6 +87,32 @@ class Main {
 				),
 				'default'     => '100',
 				'priority'    => 30,
+			)
+		);
+
+		Options::add_field(
+			array(
+				'id'          => 'shipping_progress_bar_base_price',
+				'name'        => esc_html__( 'Base price', 'woodmart' ),
+				'description' => esc_html__( 'Select whether the free shipping eligibility is based on the cart\'s total amount (including taxes and discounts), the subtotal amount (excluding taxes and discounts), or the displayed subtotal (depending on the price display settings in WooCommerce settings)', 'woodmart' ),
+				'section'     => 'shipping_progress_bar',
+				'type'        => 'select',
+				'options'     => array(
+					'displayed_subtotal' => array(
+						'name'  => esc_html__( 'Displayed subtotal', 'woodmart' ),
+						'value' => 'displayed_subtotal',
+					),
+					'subtotal'           => array(
+						'name'  => esc_html__( 'Subtotal', 'woodmart' ),
+						'value' => 'subtotal',
+					),
+					'total'              => array(
+						'name'  => esc_html__( 'Total', 'woodmart' ),
+						'value' => 'total',
+					),
+				),
+				'default'     => 'displayed_subtotal',
+				'priority'    => 35,
 			)
 		);
 

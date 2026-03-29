@@ -1,10 +1,18 @@
 <?php
+/**
+ * Visual Composer map for Mega Menu element.
+ *
+ * @package woodmart
+ */
 
 if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
 	exit( 'No direct script access allowed' );
 }
 
 if ( ! function_exists( 'woodmart_get_vc_map_mega_menu' ) ) {
+	/**
+	 * Get VC map for Mega Menu element.
+	 */
 	function woodmart_get_vc_map_mega_menu() {
 		$item_typography = woodmart_get_typography_map(
 			array(
@@ -1078,7 +1086,6 @@ if ( ! function_exists( 'woodmart_get_vc_map_mega_menu' ) ) {
 				),
 				array(
 					'type'       => 'css_editor',
-					'group'      => esc_html__( 'Style', 'woodmart' ),
 					'param_name' => 'css',
 					'group'      => esc_html__( 'Design Options', 'js_composer' ),
 				),

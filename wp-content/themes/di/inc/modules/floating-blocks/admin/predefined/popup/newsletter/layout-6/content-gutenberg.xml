@@ -137,7 +137,7 @@
 <h2 id="wd-9cfdf7d0" class="wp-block-wd-title title wd-custom-width">DO YOU LIKE THE THEME? SHARE WITH YOUR FRIENDS!</h2>
 <!-- /wp:wd/title -->
 
-<!-- wp:wd/mailchimp {"blockId":"46ae6a90-5e1b-43d9-8eb5-c5a5d02055fa","form_id":"74","marginTop":"10","marginBottom":"30","displayWidth":"custom","customWidth":"420"} /-->
+<!-- wp:wd/mailchimp {"blockId":"46ae6a90-5e1b-43d9-8eb5-c5a5d02055fa","form_id":"","marginTop":"10","marginBottom":"30","displayWidth":"custom","customWidth":"420"} /-->
 
 <!-- wp:wd/paragraph {"blockId":"50c49a52-97e3-42d9-a945-042cb57694e1"} -->
 <p id="wd-50c49a52" class="wp-block-wd-paragraph">Will be used in accordance with our&nbsp;<a href="#">Privacy Policy</a></p>

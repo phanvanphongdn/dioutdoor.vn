@@ -2,7 +2,7 @@
 /**
  * Page heading map.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Elementor;

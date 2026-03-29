@@ -2,7 +2,7 @@
 /**
  * The Template for displaying the review order product table within checkout.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -21,7 +21,7 @@ foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
 		$sku_output = '';
 
 		if ( woodmart_get_opt( 'show_sku_in_checkout_page' ) ) {
-			$sku = $_product->get_sku() ? $_product->get_sku() : esc_html__( 'N/A', 'woocommerce' ) ;
+			$sku = $_product->get_sku() ? $_product->get_sku() : esc_html__( 'N/A', 'woocommerce' );
 
 			ob_start();
 			?>
@@ -29,7 +29,7 @@ foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
 				<span class="wd-label">
 					<?php echo esc_html__( 'SKU:', 'woodmart' ); ?>
 				</span>
-				<span>
+				<span class="wd-sku">
 					<?php echo esc_html( $sku ); ?>
 				</span>
 			</div>
@@ -45,7 +45,7 @@ foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
 			</strong>
 			<input type="hidden" name="cart[<?php echo esc_attr( $cart_item_key ); ?>][qty]" value="<?php echo esc_attr( $cart_item['quantity'] ); ?>" />
 			<?php
-			echo $sku_output;
+			echo wp_kses( $sku_output, true );
 
 			$product_quantity = ob_get_clean();
 		} else {
@@ -80,7 +80,8 @@ foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
 		<tr class="<?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
 			<td class="wd-checkout-prod">
 				<?php if ( woodmart_get_opt( 'checkout_remove_button' ) ) : ?>
-					<div class="wd-checkout-remove-btn-wrapp"><?php
+					<div class="wd-checkout-remove-btn-wrapp">
+					<?php
 						woodmart_enqueue_js_script( 'checkout-remove-btn' );
 
 						echo apply_filters( // phpcs:ignore.
@@ -95,7 +96,8 @@ foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
 							),
 							$cart_item_key
 						);
-					?></div>
+					?>
+					</div>
 				<?php endif; ?>
 
 				<?php if ( woodmart_get_opt( 'checkout_show_product_image' ) ) : ?>

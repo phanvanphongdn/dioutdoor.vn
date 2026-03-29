@@ -2,10 +2,10 @@
 /**
  * Products brands map.
  *
- * @package xts
+ * @package woodmart
  */
 
-namespace XTS\Elementor;
+namespace XTS\Elementor; // phpcs:ignore.
 
 use Elementor\Group_Control_Border;
 use Elementor\Widget_Base;
@@ -107,11 +107,12 @@ class Products_Brands extends Widget_Base {
 				'type'    => Controls_Manager::SELECT,
 				'default' => '',
 				'options' => array(
-					''        => '',
-					'name'    => esc_html__( 'Name', 'woodmart' ),
-					'term_id' => esc_html__( 'ID', 'woodmart' ),
-					'slug'    => esc_html__( 'Slug', 'woodmart' ),
-					'random'  => esc_html__( 'Random order', 'woodmart' ),
+					''           => '',
+					'name'       => esc_html__( 'Name', 'woodmart' ),
+					'term_id'    => esc_html__( 'ID', 'woodmart' ),
+					'slug'       => esc_html__( 'Slug', 'woodmart' ),
+					'menu_order' => esc_html__( 'Menu order', 'woodmart' ),
+					'random'     => esc_html__( 'Random order', 'woodmart' ),
 				),
 			)
 		);
@@ -468,7 +469,7 @@ class Products_Brands extends Widget_Base {
 
 		$settings = wp_parse_args( $this->get_settings_for_display(), array_merge( woodmart_get_carousel_atts(), $default_settings ) );
 
-		$carousel_id = 'brands_' . rand( 1000, 9999 );
+		$carousel_id = 'brands_' . rand( 1000, 9999 ); // phpcs:ignore;
 
 		$attribute = woodmart_get_opt( 'brands_attribute' );
 
@@ -578,18 +579,23 @@ class Products_Brands extends Widget_Base {
 			$args['orderby'] = $settings['orderby'];
 		}
 
+		if ( 'menu_order' === $settings['orderby'] ) {
+			$args['order']   = ! empty( $args['order'] ) ? $args['order'] : 'ASC';
+			$args['orderby'] = 'menu_order';
+		}
+
 		if ( 'random' === $settings['orderby'] ) {
 			$args['orderby'] = 'id';
 
 			if ( ! $settings['ids'] ) {
-				$brand_count     = wp_count_terms(
+				$brand_count = wp_count_terms( // phpcs:ignore.
 					$attribute,
 					array(
 						'hide_empty' => $settings['hide_empty'],
 					)
 				);
 
-				$offset = rand( 0, $brand_count - (int) $settings['number'] );
+				$offset = wp_rand( 0, $brand_count - (int) $settings['number'] );
 				if ( $offset <= 0 ) {
 					$offset = '';
 				}
@@ -623,12 +629,12 @@ class Products_Brands extends Widget_Base {
 		}
 
 		?>
-		<div <?php echo $this->get_render_attribute_string( 'wrapper' ); ?>>
+		<div <?php echo $this->get_render_attribute_string( 'wrapper' );  // phpcs:ignore. ?>>
 			<?php if ( 'carousel' === $settings['style'] ) : ?>
 				<div class="wd-carousel-inner">
 			<?php endif; ?>
 
-			<div <?php echo $this->get_render_attribute_string( 'items_wrapper' ); ?> <?php echo $carousel_attr; ?>>
+			<div <?php echo $this->get_render_attribute_string( 'items_wrapper' ); ?> <?php echo $carousel_attr; // phpcs:ignore. ?>>
 				<?php if ( 'carousel' === $settings['style'] ) : ?>
 					<div class="wd-carousel-wrap">
 				<?php endif; ?>
@@ -658,7 +664,7 @@ class Products_Brands extends Widget_Base {
 						}
 						?>
 
-						<div <?php echo $this->get_render_attribute_string( 'items' ); ?>>
+						<div <?php echo $this->get_render_attribute_string( 'items' ); // phpcs:ignore. ?>>
 							<div class="wd-brand-item brand-item">
 								<?php if ( 'list' === $settings['style'] || ! $image || ( is_array( $image ) && empty( $image['id'] ) ) ) : ?>
 									<?php if ( 'yes' !== $settings['disable_link'] ) : ?>
@@ -681,7 +687,7 @@ class Products_Brands extends Widget_Base {
 										<a title="<?php echo esc_html( $brand->name ); ?>" href="<?php echo esc_url( $attr_link ); ?>" class="wd-fill"></a>
 									<?php endif; ?>
 
-									<?php echo apply_filters( 'woodmart_image', '<img src="' . esc_url( $image ) . '" alt="' . esc_attr( $brand->name ) . '" title="' . esc_attr( $brand->name ) . '">' ); ?>
+									<?php echo apply_filters( 'woodmart_image', '<img src="' . esc_url( $image ) . '" alt="' . esc_attr( $brand->name ) . '" title="' . esc_attr( $brand->name ) . '">' ); // phpcs:ignore. ?>
 								<?php endif; ?>
 							</div>
 						</div>

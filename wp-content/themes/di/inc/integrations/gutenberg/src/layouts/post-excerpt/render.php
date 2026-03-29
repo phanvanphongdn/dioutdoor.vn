@@ -16,7 +16,7 @@ if ( ! function_exists( 'wd_gutenberg_single_post_excerpt' ) ) {
 		$excerpt = get_post_field( 'post_excerpt', get_the_ID() );
 
 		if ( $excerpt ) : ?>
-			<div id="<?php echo esc_attr( $el_id ); ?>" class="wd-single-post-excerpt<?php echo esc_attr( $wrapper_classes ); ?>">
+			<div <?php echo $el_id ? 'id="' . esc_attr( $el_id ) . '" ' : ''; ?>class="wd-single-post-excerpt<?php echo esc_attr( $wrapper_classes ); ?>">
 				<?php echo $excerpt; // phpcs:ignore. ?>
 			</div>
 			<?php

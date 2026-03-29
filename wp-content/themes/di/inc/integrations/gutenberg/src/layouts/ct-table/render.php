@@ -26,10 +26,12 @@ if ( ! function_exists( 'wd_gutenberg_cart_table' ) ) {
 			$update_cart_btn_classes .= ' wd-hide';
 		}
 
+		$el_id = wd_get_gutenberg_element_id( $block_attributes );
+
 		ob_start();
 
 		?>
-		<div id="<?php echo esc_attr( wd_get_gutenberg_element_id( $block_attributes ) ); ?>" class="wd-cart-table<?php echo esc_attr( wd_get_gutenberg_element_classes( $block_attributes ) ); ?>">
+		<div <?php echo $el_id ? 'id="' . esc_attr( $el_id ) . '" ' : ''; ?>class="wd-cart-table<?php echo esc_attr( wd_get_gutenberg_element_classes( $block_attributes ) ); ?>">
 			<form class="woocommerce-cart-form" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
 
 				<?php do_action( 'woocommerce_before_cart_table' ); ?>
@@ -165,14 +167,14 @@ if ( ! function_exists( 'wd_gutenberg_cart_table' ) ) {
 											<?php esc_html_e( 'Coupon:', 'woocommerce' ); ?>
 										</label>
 										<input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" />
-										<button type="submit" class="button<?php echo esc_attr( function_exists( 'wc_wp_theme_get_element_class_name' ) && wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?>" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?>">
+										<button type="submit" class="button btn btn-accent<?php echo esc_attr( function_exists( 'wc_wp_theme_get_element_class_name' ) && wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?>" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?>">
 											<?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?>
 										</button>
 										<?php do_action( 'woocommerce_cart_coupon' ); ?>
 									</div>
 								<?php endif; ?>
 
-								<button type="submit" class="button<?php echo esc_attr( $update_cart_btn_classes ); ?>" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>">
+								<button type="submit" class="button btn btn-default<?php echo esc_attr( $update_cart_btn_classes ); ?>" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>">
 									<?php esc_html_e( 'Update cart', 'woocommerce' ); ?>
 								</button>
 

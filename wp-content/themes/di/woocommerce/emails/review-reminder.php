@@ -2,7 +2,7 @@
 /**
  * Review reminder emails html template.
  *
- * @package XTS
+ * @package woodmart
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

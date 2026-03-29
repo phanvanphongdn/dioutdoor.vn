@@ -1,4 +1,11 @@
-<?php if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
+<?php
+/**
+ * Shortcode for Team Member element.
+ *
+ * @package woodmart
+ */
+
+if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
 	exit( 'No direct script access allowed' );
 }
 
@@ -19,7 +26,6 @@ if ( ! function_exists( 'woodmart_shortcode_team_member_show_member_social' ) ) 
 		$classes .= ' wd-style-' . $settings['style'];
 		$classes .= ' wd-size-' . $settings['size'];
 		$classes .= ' wd-shape-' . $settings['form'];
-		$classes .= woodmart_get_old_classes( ' woodmart-social-icons' );
 
 		if ( 'default' !== $settings['style'] ) {
 			woodmart_enqueue_inline_style( 'social-icons-styles' );
@@ -54,11 +60,6 @@ if ( ! function_exists( 'woodmart_shortcode_team_member_show_member_social' ) ) 
 	}
 }
 
-/**
-* ------------------------------------------------------------------------------------------------
-* Team member shortcode
-* ------------------------------------------------------------------------------------------------
-*/
 if ( ! function_exists( 'woodmart_shortcode_team_member' ) ) {
 	/**
 	 * Team member element shortcode.

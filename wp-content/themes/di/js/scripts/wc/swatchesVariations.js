@@ -126,6 +126,7 @@
 
 					var value = $this.data('value');
 					var id = $this.parent().data('id');
+					var $select = $variation_form.find('select#' + CSS.escape(id));
 
 					resetSwatches($variation_form);
 
@@ -133,11 +134,15 @@
 						$this.parents('.wd-swatches-limited').find('.wd-swatch-divider').trigger('click');
 					}
 
-					if ($this.hasClass('wd-active') || $this.hasClass('wd-disabled')) {
+					if ( $this.parents('.variations_form.wd-clear-double').length && $this.hasClass('wd-active') ) {
+						$select.val('').trigger('change');
+						$this.removeClass('wd-active');
+
+						return;
+					} else if ($this.hasClass('wd-active') || $this.hasClass('wd-disabled')) {
 						return;
 					}
 
-					var $select = $variation_form.find('select#' + CSS.escape(id));
 					$select.val(value).trigger('change');
 					$this.parent().find('.wd-active').removeClass('wd-active');
 					$this.addClass('wd-active');

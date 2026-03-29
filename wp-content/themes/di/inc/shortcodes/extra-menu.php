@@ -1,25 +1,45 @@
-<?php if ( ! defined( 'WOODMART_THEME_DIR' ) ) exit( 'No direct script access allowed' );
-
+<?php
 /**
-* ------------------------------------------------------------------------------------------------
-* Extra menu (part of the mega menu)
-* ------------------------------------------------------------------------------------------------
-*/
+ * Shortcode for Extra Menu element.
+ *
+ * @package woodmart
+ */
 
-if( ! function_exists( 'woodmart_shortcode_extra_menu' ) ) {
-	function woodmart_shortcode_extra_menu($atts = array(), $content = null) {
-		$output = $class = $liclass = $label_out = '';
-		extract(shortcode_atts( array(
-			'link'          => '',
-			'title'         => '',
-			'label'         => 'primary',
-			'label_text'    => '',
-			'image'         => '',
-			'image_size'    => '',
-			'css_animation' => 'none',
-			'el_class'      => '',
-			'css'           => '',
-		), $atts ));
+if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
+	exit( 'No direct script access allowed' );
+}
+
+if ( ! function_exists( 'woodmart_shortcode_extra_menu' ) ) {
+	/**
+	 * Extra menu shortcode.
+	 *
+	 * @param array  $atts    Shortcode attributes.
+	 * @param string $content Shortcode content.
+	 *
+	 * @return string
+	 */
+	function woodmart_shortcode_extra_menu( $atts = array(), $content = null ) {
+		$output    = '';
+		$class     = '';
+		$liclass   = '';
+		$label_out = '';
+
+		extract( // phpcs:ignore WordPress.PHP.DontExtract.extract_extract
+			shortcode_atts(
+				array(
+					'link'          => '',
+					'title'         => '',
+					'label'         => 'primary',
+					'label_text'    => '',
+					'image'         => '',
+					'image_size'    => '',
+					'css_animation' => 'none',
+					'el_class'      => '',
+					'css'           => '',
+				),
+				$atts
+			)
+		);
 
 		if ( woodmart_get_menu_label_tag( $label, $label_text ) ) {
 			$liclass .= woodmart_get_menu_label_class( $label );
@@ -31,7 +51,6 @@ if( ! function_exists( 'woodmart_shortcode_extra_menu' ) ) {
 		$class .= apply_filters( 'vc_shortcodes_css_class', '', '', $atts );
 		$class .= ' mega-menu-list wd-sub-accented wd-wpb';
 		$class .= woodmart_get_css_animation( $css_animation );
-		$class .= woodmart_get_old_classes( ' sub-menu' );
 
 		if ( $css ) {
 			$class .= ' ' . vc_shortcode_custom_css_class( $css );
@@ -50,16 +69,20 @@ if( ! function_exists( 'woodmart_shortcode_extra_menu' ) ) {
 
 			<ul class="wd-sub-menu<?php echo esc_attr( $class ); ?>" >
 				<li class="<?php echo esc_attr( $liclass ); ?>">
-					<a <?php echo woodmart_get_link_attributes( $link ); ?>>
-						<?php if ( $image_output ) : ?>
-							<?php echo $image_output; ?>
-						<?php endif; ?>
+					<?php if ( ! empty( $title ) ) : ?>
+						<a <?php echo woodmart_get_link_attributes( $link ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+							<?php if ( $image_output ) : ?>
+								<?php echo $image_output; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+							<?php endif; ?>
 
-						<span class="nav-link-text">
-							<?php echo wp_kses( vc_value_from_safe( $title ), woodmart_get_allowed_html() ); ?>
-						</span>
-						<?php echo woodmart_get_menu_label_tag( $label, $label_text ); ?>
-					</a>
+							<span class="nav-link-text">
+								<?php echo wp_kses( vc_value_from_safe( $title ), woodmart_get_allowed_html() ); ?>
+							</span>
+
+							<?php echo woodmart_get_menu_label_tag( $label, $label_text ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+						</a>
+					<?php endif; ?>
+
 					<ul class="sub-sub-menu">
 						<?php echo do_shortcode( $content ); ?>
 					</ul>
@@ -75,18 +98,33 @@ if( ! function_exists( 'woodmart_shortcode_extra_menu' ) ) {
 }
 
 
-if( ! function_exists( 'woodmart_shortcode_extra_menu_list' ) ) {
-	function woodmart_shortcode_extra_menu_list($atts, $content) {
-		$output = $class = $label_out = '';
-		extract(shortcode_atts( array(
-			'link' => '',
-			'title' => '',
-			'image' => '',
-			'image_size' => '',
-			'label' => 'primary',
-			'label_text' => '',
-			'el_class' => ''
-		), $atts ));
+if ( ! function_exists( 'woodmart_shortcode_extra_menu_list' ) ) {
+	/**
+	 * Extra menu list item shortcode
+	 *
+	 * @param array $atts Shortcode attributes.
+	 *
+	 * @return string
+	 */
+	function woodmart_shortcode_extra_menu_list( $atts ) {
+		$output    = '';
+		$class     = '';
+		$label_out = '';
+
+		extract( // phpcs:ignore WordPress.PHP.DontExtract.extract_extract
+			shortcode_atts(
+				array(
+					'link'       => '',
+					'title'      => '',
+					'image'      => '',
+					'image_size' => '',
+					'label'      => 'primary',
+					'label_text' => '',
+					'el_class'   => '',
+				),
+				$atts
+			)
+		);
 
 		if ( woodmart_get_menu_label_tag( $label, $label_text ) ) {
 			$class .= woodmart_get_menu_label_class( $label );
@@ -106,13 +144,13 @@ if( ! function_exists( 'woodmart_shortcode_extra_menu_list' ) ) {
 		?>
 
 		<li class="<?php echo esc_attr( $class ); ?>">
-			<a <?php echo woodmart_get_link_attributes( $link ); ?>>
+			<a <?php echo woodmart_get_link_attributes( $link ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 				<?php if ( $image_output ) : ?>
-					<?php echo $image_output; ?>
+					<?php echo $image_output; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 				<?php endif; ?>
 
 				<?php echo wp_kses( vc_value_from_safe( $title ), woodmart_get_allowed_html() ); ?>
-				<?php echo woodmart_get_menu_label_tag( $label, $label_text ); ?>
+				<?php echo woodmart_get_menu_label_tag( $label, $label_text ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 			</a>
 		</li>
 
@@ -124,7 +162,15 @@ if( ! function_exists( 'woodmart_shortcode_extra_menu_list' ) ) {
 	}
 }
 
-if( ! function_exists( 'woodmart_get_menu_label_tag' ) ) {
+if ( ! function_exists( 'woodmart_get_menu_label_tag' ) ) {
+	/**
+	 * Get menu label tag
+	 *
+	 * @param string $label      Label type.
+	 * @param string $label_text Label text.
+	 *
+	 * @return string
+	 */
 	function woodmart_get_menu_label_tag( $label, $label_text ) {
 		if ( empty( $label_text ) ) {
 			return '';
@@ -135,12 +181,18 @@ if( ! function_exists( 'woodmart_get_menu_label_tag' ) ) {
 }
 
 
-if( ! function_exists( 'woodmart_get_menu_label_class' ) ) {
+if ( ! function_exists( 'woodmart_get_menu_label_class' ) ) {
+	/**
+	 * Get menu label class
+	 *
+	 * @param string $label Label type.
+	 *
+	 * @return string
+	 */
 	function woodmart_get_menu_label_class( $label ) {
-		$class = '';
+		$class  = '';
 		$class .= ' item-with-label';
 		$class .= ' item-label-' . $label;
 		return $class;
 	}
 }
-

@@ -2,7 +2,7 @@
 /**
  * Upload your custom fonts.
  *
- * @package xts
+ * @package woodmart
  */
 
 namespace XTS\Admin\Modules\Options\Controls;

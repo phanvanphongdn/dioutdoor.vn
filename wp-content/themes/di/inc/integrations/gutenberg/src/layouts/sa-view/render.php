@@ -20,10 +20,12 @@ if ( ! function_exists( 'wd_gutenberg_shop_archive_view' ) ) {
 		$block_attributes['products_view']    = woodmart_new_get_shop_view( '', true );
 		$block_attributes['products_columns'] = woodmart_new_get_products_columns_per_row( '', true );
 
+		$el_id = wd_get_gutenberg_element_id( $block_attributes );
+
 		woodmart_enqueue_inline_style( 'woo-shop-el-products-view' );
 
 		?>
-			<div id="<?php echo esc_attr( wd_get_gutenberg_element_id( $block_attributes ) ); ?>" class="wd-shop-view<?php echo esc_attr( wd_get_gutenberg_element_classes( $block_attributes ) ); ?>">
+			<div <?php echo $el_id ? 'id="' . esc_attr( $el_id ) . '" ' : ''; ?>class="wd-shop-view<?php echo esc_attr( wd_get_gutenberg_element_classes( $block_attributes ) ); ?>">
 				<?php woodmart_products_view_select( false, $block_attributes ); ?>
 			</div>
 		<?php

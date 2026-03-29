@@ -1,6 +1,16 @@
 <?php
+/**
+ * Typography control attributes.
+ *
+ * @package woodmart
+ */
 
 if ( ! function_exists( 'wd_get_typography_control_attrs' ) ) {
+	/**
+	 * Get typography control attributes.
+	 *
+	 * @return array
+	 */
 	function wd_get_typography_control_attrs() {
 		return array(
 			'fontFamily'                  => array(
@@ -58,9 +68,6 @@ if ( ! function_exists( 'wd_get_typography_control_attrs' ) ) {
 				'type' => 'string',
 			),
 			'fontStyle'                   => array(
-				'type' => 'string',
-			),
-			'fontSubset'                  => array(
 				'type' => 'string',
 			),
 			'google'                      => array(

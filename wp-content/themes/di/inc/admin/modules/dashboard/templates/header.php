@@ -84,25 +84,25 @@ if ( woodmart_get_opt( 'white_label' ) ) {
 							'class'     => woodmart_is_license_activated() ? '' : 'xts-license-not-activated',
 						),
 						array(
-							'link'       => array(
+							'link' => array(
 								'url' => admin_url( 'admin.php?page=xts_plugins' ),
 							),
+							'type' => 'page',
+							'slug' => 'xts_plugins',
+							'icon' => 'puzzle',
+							'text' => esc_html__( 'Plugins', 'woodmart' ),
+						),
+						array(
+							'link'       => array(
+								'url' => admin_url( 'admin.php?page=xts_patcher' ),
+							),
 							'type'       => 'page',
-							'slug'       => 'xts_plugins',
+							'slug'       => 'xts_patcher',
 							'icon'       => 'tools',
 							'text'       => esc_html__( 'Tools', 'woodmart' ),
 							'condition'  => current_user_can( apply_filters( 'woodmart_capability_menu_page', 'manage_options', 'xts_plugins' ) ),
 							'child_menu' => array(
 								'items' => array(
-									array(
-										'link' => array(
-											'url' => admin_url( 'admin.php?page=xts_plugins' ),
-										),
-										'type' => 'page',
-										'slug' => 'xts_plugins',
-										'icon' => 'puzzle',
-										'text' => esc_html__( 'Plugins', 'woodmart' ),
-									),
 									array(
 										'link' => array(
 											'url' => admin_url( 'admin.php?page=xts_patcher' ),

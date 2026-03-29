@@ -2,7 +2,7 @@
 /**
  * Dropdown search template.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 ?>

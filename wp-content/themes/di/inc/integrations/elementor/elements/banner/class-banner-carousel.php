@@ -2,7 +2,7 @@
 /**
  * Banners carousel map.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Elementor;
@@ -235,22 +235,28 @@ class Banner_Carousel extends Widget_Base {
 		$repeater->add_responsive_control(
 			'image_height',
 			array(
-				'label'     => esc_html__( 'Banner height', 'woodmart' ),
-				'type'      => Controls_Manager::SLIDER,
-				'default'   => array(
+				'label'      => esc_html__( 'Banner height', 'woodmart' ),
+				'type'       => Controls_Manager::SLIDER,
+				'size_units' => array( 'px', 'vh' ),
+				'default'    => array(
 					'size' => 340,
 				),
-				'range'     => array(
+				'range'      => array(
 					'px' => array(
 						'min'  => 100,
 						'max'  => 2000,
 						'step' => 1,
 					),
+					'vh' => array(
+						'min'  => 0,
+						'max'  => 100,
+						'step' => 1,
+					),
 				),
-				'selectors' => array(
+				'selectors'  => array(
 					'{{WRAPPER}} {{CURRENT_ITEM}}' => '--wd-img-height: {{SIZE}}{{UNIT}};',
 				),
-				'condition' => array(
+				'condition'  => array(
 					'custom_height' => array( 'Yes' ),
 				),
 			)
@@ -329,9 +335,9 @@ class Banner_Carousel extends Widget_Base {
 		$repeater->add_control(
 			'date',
 			array(
-				'label'   => esc_html__( 'Date', 'woodmart' ),
-				'type'    => Controls_Manager::DATE_TIME,
-				'default' => date( 'Y-m-d', strtotime( ' +2 months' ) ),
+				'label'     => esc_html__( 'Date', 'woodmart' ),
+				'type'      => Controls_Manager::DATE_TIME,
+				'default'   => gmdate( 'Y-m-d', strtotime( ' +2 months' ) ),
 				'condition' => array(
 					'show_countdown' => array( 'yes' ),
 				),
@@ -860,16 +866,16 @@ class Banner_Carousel extends Widget_Base {
 
 		$this->add_control(
 			'countdown_style',
-			[
+			array(
 				'label'   => esc_html__( 'Background', 'woodmart' ),
 				'type'    => Controls_Manager::SELECT,
-				'options' => [
+				'options' => array(
 					'simple' => esc_html__( 'Default', 'woodmart' ),
 					'active' => esc_html__( 'Primary color', 'woodmart' ),
 					'custom' => esc_html__( 'Custom', 'woodmart' ),
-				],
+				),
 				'default' => 'simple',
-			]
+			)
 		);
 
 		$this->add_control(
@@ -888,31 +894,31 @@ class Banner_Carousel extends Widget_Base {
 
 		$this->add_control(
 			'countdown_color_scheme',
-			[
+			array(
 				'label'   => esc_html__( 'Color scheme', 'woodmart' ),
 				'type'    => Controls_Manager::SELECT,
-				'options' => [
+				'options' => array(
 					''      => esc_html__( 'Inherit', 'woodmart' ),
 					'light' => esc_html__( 'Light', 'woodmart' ),
 					'dark'  => esc_html__( 'Dark', 'woodmart' ),
-				],
+				),
 				'default' => '',
-			]
+			)
 		);
 
 		$this->add_control(
 			'countdown_size',
-			[
+			array(
 				'label'   => esc_html__( 'Predefined size', 'woodmart' ),
 				'type'    => Controls_Manager::SELECT,
-				'options' => [
+				'options' => array(
 					'small'  => esc_html__( 'Small (20px)', 'woodmart' ),
 					'medium' => esc_html__( 'Medium (24px)', 'woodmart' ),
 					'large'  => esc_html__( 'Large (28px)', 'woodmart' ),
 					'xlarge' => esc_html__( 'Extra Large (42px)', 'woodmart' ),
-				],
+				),
 				'default' => 'medium',
-			]
+			)
 		);
 
 		$this->end_controls_section();

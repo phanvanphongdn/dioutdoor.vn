@@ -2,7 +2,7 @@
 /**
  * Popup template.
  *
- * @package Woodmart
+ * @package woodmart
  *
  * @var string $btn_text     Button text.
  * @var string $btn_classes  Button classes.

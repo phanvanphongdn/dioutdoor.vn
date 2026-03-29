@@ -2,7 +2,7 @@
 /**
  * Global map file.
  *
- * @package xts
+ * @package woodmart
  */
 
 use Elementor\Controls_Manager;

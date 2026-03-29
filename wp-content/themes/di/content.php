@@ -3,8 +3,9 @@
  * The default template for displaying content
  *
  * Used for both single and index/archive/search.
+ *
+ * @package woodmart
  */
-// woodmart_setup_loop();
 
 $woodmart_loop         = woodmart_loop_prop( 'woodmart_loop' );
 $is_large_image        = 'large_image' === woodmart_get_opt( 'single_post_design' );
@@ -98,9 +99,9 @@ if ( 'gallery' === $post_format && $gallery_slider ) {
 									}
 									?>
 										<div class="wd-carousel-item">
-										<?php echo apply_filters( 'woodmart_image', '<img src="' . esc_url( $src ) . '" />' ); ?>
+											<?php echo wp_kses_post( apply_filters( 'woodmart_image', '<img src="' . esc_url( $src ) . '" />' ) ); ?>
 										</div>
-										<?php
+									<?php
 								}
 								?>
 							</div>
@@ -115,7 +116,7 @@ if ( 'gallery' === $post_format && $gallery_slider ) {
 	</header>
 
 	<?php if ( woodmart_loop_prop( 'parts_text' ) ) : ?>
-		<div class="wd-entry-content<?php echo woodmart_get_old_classes( ' woodmart-entry-content' ); //phpcs:ignore. ?>">
+		<div class="wd-entry-content">
 			<?php woodmart_get_content( woodmart_loop_prop( 'parts_btn' ), true ); ?>
 
 			<?php
@@ -139,5 +140,5 @@ if ( 'gallery' === $post_format && $gallery_slider ) {
 
 
 <?php
-// Increase loop count
+// Increase loop count.
 woodmart_set_loop_prop( 'woodmart_loop', $woodmart_loop + 1 );

@@ -47,7 +47,7 @@ class Rating_Criteria extends Singleton {
 
 	/**
 	 * Check show criteria star rating html structure.
-	 * 
+	 *
 	 * @param string $comment_id A numeric string, for compatibility reasons.
 	 * @return bool
 	 */
@@ -59,7 +59,7 @@ class Rating_Criteria extends Singleton {
 		}
 
 		foreach ( array_keys( $summary_criteria_list ) as $criteria_id ) {
-			$criteria_rating = intval( get_comment_meta( $comment_id, $criteria_id,true ) );
+			$criteria_rating = intval( get_comment_meta( $comment_id, $criteria_id, true ) );
 
 			if ( 0 !== $criteria_rating ) {
 				return true;
@@ -73,7 +73,7 @@ class Rating_Criteria extends Singleton {
 	 * This method add wrapper for star rating html.
 	 *
 	 * @codeCoverageIgnore
-	 * @param  WP_Comment $comment
+	 * @param  WP_Comment $comment The comment object.
 	 * @return void
 	 */
 	public function render_star_rating( $comment ) {
@@ -91,20 +91,21 @@ class Rating_Criteria extends Singleton {
 		<?php if ( $rating && wc_review_ratings_enabled() ) : ?>
 			<div class="wd-star-ratings wd-event-hover">
 				<div class="wd-star-rating-wrap">
-					<?php echo wc_get_rating_html( $rating ); // WPCS: XSS ok. ?>
+					<?php echo wc_get_rating_html( $rating ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 				</div>
 
 				<div class="wd-criteria-wrap wd-dropdown">
 					<?php foreach ( $summary_criteria_list as $criteria_id => $criteria_title ) : ?>
 						<?php
-							$criteria_rating = intval( get_comment_meta( $comment_id, $criteria_id,true ) );
+							$criteria_rating = intval( get_comment_meta( $comment_id, $criteria_id, true ) );
 
-							if ( 0 === $criteria_rating ) {
-								continue;
-							}
+						if ( 0 === $criteria_rating ) {
+							continue;
+						}
 						?>
 						<div class="wd-star-rating-wrap">
-							<div class="star-rating" role="img" aria-label="<?php echo esc_attr( sprintf( __( 'Rated %s out of 5', 'woodmart' ), $criteria_rating ) ); ?>">
+							<?php $rating_text = __( 'Rated ', 'woodmart' ) . $criteria_rating . __( ' out of 5', 'woodmart' ); ?>
+							<div class="star-rating" role="img" aria-label="<?php echo esc_attr( $rating_text ); ?>">
 								<?php echo wp_kses( woodmart_get_star_rating_html( $criteria_rating ), true ); ?>
 							</div>
 							<div class="wd-rating-label">
@@ -126,6 +127,11 @@ class Rating_Criteria extends Singleton {
 	 */
 	public function get_criteria_stars_ratings_fields() {
 		$summary_criteria_list = $this->get_summary_criteria_list();
+		$default_rating_label  = sprintf(
+			'<label for="rating">%s%s</label>',
+			esc_html__( 'Your rating', 'woocommerce' ),
+			wc_review_ratings_required() ? '&nbsp;<span class="required">*</span>' : ''
+		);
 
 		ob_start();
 
@@ -133,12 +139,7 @@ class Rating_Criteria extends Singleton {
 		?>
 		<div class="wd-review-criteria-wrap">
 			<div class="comment-form-rating">
-				<label for="rating">
-					<?php echo esc_html__( 'Your rating', 'woocommerce' ); ?>
-					<?php if ( wc_review_ratings_required() ): ?>
-						&nbsp;<span class="required">*</span>
-					<?php endif; ?>
-				</label>
+				<?php echo wp_kses_post( $default_rating_label ); ?>
 				<select name="rating" id="rating" required>
 					<option value="">
 						<?php echo esc_html__( 'Rate&hellip;', 'woocommerce' ); ?>
@@ -162,13 +163,17 @@ class Rating_Criteria extends Singleton {
 			</div>
 
 			<?php foreach ( $summary_criteria_list as $criteria_id => $criteria_title ) : ?>
+				<?php
+				$creteria_rating_label = sprintf(
+					'<label for="%s">%s%s</label>',
+					esc_attr( $criteria_id ),
+					esc_html( $criteria_title ),
+					woodmart_get_opt( 'reviews_criteria_rating_required' ) ? '&nbsp;<span class="required">*</span>' : ''
+				);
+				?>
+
 				<div class="wd-review-criteria comment-form-rating" data-criteria-id=<?php echo esc_attr( $criteria_id ); ?>>
-					<label for="<?php echo esc_attr( $criteria_id ); ?>">
-						<?php echo esc_html( $criteria_title ); ?>
-						<?php if ( woodmart_get_opt( 'reviews_criteria_rating_required' ) ) : ?>
-							<span class="required">*</span>
-						<?php endif; ?>
-					</label>
+					<?php echo wp_kses_post( $creteria_rating_label ); ?>
 					<div class="stars">
 						<span>
 							<a class="star-1" href="#">1</a>
@@ -200,7 +205,7 @@ class Rating_Criteria extends Singleton {
 					</select>
 				</div>
 			<?php endforeach; ?>
-			<input type="hidden" name="summary_criteria_ids" value="<?php echo implode( ',', array_keys( $summary_criteria_list ) ); ?>">
+			<input type="hidden" name="summary_criteria_ids" value="<?php echo esc_attr( implode( ',', array_keys( $summary_criteria_list ) ) ); ?>">
 		</div>
 		<?php
 		return ob_get_clean();
@@ -223,8 +228,8 @@ class Rating_Criteria extends Singleton {
 		$this->clear_transient( $comment_id );
 
 		foreach ( array_keys( $summary_criteria_list ) as $criteria_key ) {
-			if ( isset( $_POST[ $criteria_key ], $_POST['comment_post_ID'] ) && in_array( $_POST[ $criteria_key ], array( '1', '2', '3', '4', '5' ), true ) && 'product' === get_post_type( absint( $_POST['comment_post_ID'] ) ) ) {
-				add_comment_meta( $comment_id, $criteria_key, $_POST[ $criteria_key ], true );
+			if ( isset( $_POST[ $criteria_key ], $_POST['comment_post_ID'] ) && in_array( $_POST[ $criteria_key ], array( '1', '2', '3', '4', '5' ), true ) && 'product' === get_post_type( absint( $_POST['comment_post_ID'] ) ) ) { // phpcs:ignore WordPress.Security.NonceVerification
+				add_comment_meta( $comment_id, $criteria_key, $_POST[ $criteria_key ], true ); // phpcs:ignore WordPress.Security
 			}
 		}
 	}
@@ -237,8 +242,8 @@ class Rating_Criteria extends Singleton {
 	public function get_summary_criteria_list() {
 		$criteria_ids_list = array();
 
-		if ( isset( $_REQUEST['summary_criteria_ids'] ) && ! empty( $_REQUEST['summary_criteria_ids'] ) ) {
-			$criteria_ids_list = explode( ',', $_REQUEST['summary_criteria_ids'] );
+		if ( isset( $_REQUEST['summary_criteria_ids'] ) && ! empty( $_REQUEST['summary_criteria_ids'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			$criteria_ids_list = explode( ',', $_REQUEST['summary_criteria_ids'] );  // phpcs:ignore WordPress.Security
 		}
 
 		if ( ! empty( $criteria_ids_list ) ) {
@@ -260,18 +265,18 @@ class Rating_Criteria extends Singleton {
 	/**
 	 * Clear woodmart_criteria_hash transients.
 	 *
-	 * @param int $comment_ID Current comment id.
+	 * @param int $comment_id Current comment id.
 	 * @return void
 	 */
-	public function clear_transient( $comment_ID ) {
+	public function clear_transient( $comment_id ) {
 		if ( ! $this->is_criteria_enabled() ) {
 			return;
 		}
 
-		$product_id = get_comment( $comment_ID )->comment_post_ID;
+		$product_id = get_comment( $comment_id )->comment_post_ID;
 
 		foreach ( $this->get_summary_criteria_list() as $criteria_id => $criteria_title ) {
-			delete_transient( 'woodmart_criteria_hash_' . $product_id . '_' . $criteria_id );
+			delete_transient( 'wd_reviews_by_criteria_' . $product_id . '_' . $criteria_id );
 		}
 	}
 
@@ -294,26 +299,29 @@ class Rating_Criteria extends Singleton {
 		$product_id = Helper::get_product_id();
 
 		foreach ( $this->get_summary_criteria_list() as $criteria_id => $criteria_title ) {
-			$comments = get_transient( 'woodmart_criteria_hash_' . $product_id . '_' . $criteria_id );
+			$comments = get_transient( 'wd_reviews_by_criteria_' . $product_id . '_' . $criteria_id );
 
 			if ( ! $comments ) {
 				$comments = get_comments(
 					array(
 						'post_id'            => $product_id,
+						'fields'             => 'ids',
 						'order'              => 'ASC',
 						'orderby'            => 'comment_date',
 						'post_type'          => 'product',
 						'status'             => 'approve',
 						'include_unapproved' => array( is_user_logged_in() ? get_current_user_id() : wp_get_unapproved_comment_author_email() ),
-						'meta_key'           => $criteria_id,
+						'meta_key'           => $criteria_id, // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key
 					)
 				);
 
-				set_transient( 'woodmart_criteria_hash_' . $product_id . '_' . $criteria_id ,  $comments );
+				set_transient( 'wd_reviews_by_criteria_' . $product_id . '_' . $criteria_id, $comments );
 			}
 
-			foreach ( $comments as $comment ) {
-				$criteria_rating_list[ $criteria_id ][] = get_comment_meta( $comment->comment_ID, $criteria_id, true );
+			if ( is_array( $comments ) ) {
+				foreach ( $comments as $comment_id ) {
+					$criteria_rating_list[ $criteria_id ][] = get_comment_meta( $comment_id, $criteria_id, true );
+				}
 			}
 		}
 
@@ -343,7 +351,7 @@ class Rating_Criteria extends Singleton {
 		$options                         = Options::get_options();
 
 		for ( $i = 1; $i <= 6; $i++ ) {
-			$criteria_slug_id = 'reviews_rating_summary_criteria_' . $i . '_slug';
+			$criteria_slug_id  = 'reviews_rating_summary_criteria_' . $i . '_slug';
 			$criteria_title_id = 'reviews_rating_summary_criteria_' . $i;
 
 			if ( ! isset( $options[ $criteria_slug_id ] ) || ! isset( $options[ $criteria_title_id ] ) ) {

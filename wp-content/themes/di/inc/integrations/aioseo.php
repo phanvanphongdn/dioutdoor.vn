@@ -1,6 +1,6 @@
 <?php
 /**
- * AIOSEO.
+ * AIOSEO integration.
  *
  * @package woodmart
  */
@@ -14,13 +14,12 @@ add_action( 'wp_head', 'woodmart_page_css_files_enable', 2 );
 
 if ( ! function_exists( 'woodmart_page_css_files_disable' ) ) {
 	/**
-	 * Exclude layout posts from AIOSEO.
+	 * Exclude layout posts from AIOSEO sitemap.
 	 *
-	 * @param array  $ids post ids.
-	 * @param string $type post type.
+	 * @param array $ids post ids.
 	 * @return array
 	 */
-	function woodmart_aioseo_exclude_layout( $ids, $type ) {
+	function woodmart_aioseo_exclude_layout( $ids ) {
 		$query = new WP_Query(
 			array(
 				'post_type'      => 'woodamrt_layout',

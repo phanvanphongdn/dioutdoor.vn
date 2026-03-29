@@ -2,13 +2,14 @@
 /**
  * Object that handles theme options page.
  *
- * @package xts
+ * @package woodmart
  */
 
 namespace XTS\Admin\Modules\Options;
 
 use XTS\Admin\Modules\Options;
 use XTS\Admin\Modules\Options\Presets;
+use XTS\Admin\Modules\Options\Google_Fonts\Local_Data;
 use XTS\Singleton;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -114,6 +115,8 @@ class Page extends Singleton {
 		if ( isset( $_GET['settings-updated'] ) ) { // phpcs:ignore
 			do_action( 'xts_theme_settings_save' );
 		}
+
+		$failed_loading_fonts = woodmart_get_opt( 'local_google_fonts' ) ? Local_Data::get_instance()->get_failed_fonts() : array();
 		?>
 		<script>
 			var woodmart_settings = {
@@ -154,7 +157,22 @@ class Page extends Singleton {
 						</div>
 						<div class="xts-col">
 							<div class="xts-sections">
-								<div class="xts-notices-wrapper"><?php $this->display_message(); ?></div>
+								<div class="xts-notices-wrapper">
+									<div class="xts-notices">
+										<?php $this->display_message(); ?>
+										<?php if ( ! empty( $failed_loading_fonts ) ) : ?>
+											<div class="xts-notice xts-warning">
+												<?php
+													printf(
+														// translators: %s - list of failed loading fonts.
+														esc_html__( 'Some fonts failed to load: %s', 'woodmart' ),
+														esc_html( implode( ', ', $failed_loading_fonts ) )
+													);
+												?>
+											</div>
+										<?php endif; ?>
+									</div>
+								</div>
 								<?php $this->display_sections(); ?>
 								<div class="xts-options-actions">
 									<input type="hidden" class="xts-last-tab-input" name="xts-<?php echo esc_attr( $this->opt_name ); ?>-options[last_tab]" value="<?php echo esc_attr( $this->get_last_tab() ); ?>" />

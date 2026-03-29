@@ -44,10 +44,10 @@ class Emails extends Singleton {
 
 		$redirect   = apply_filters( 'woodmart_abandoned_cart_after_unsubscribe_redirect', remove_query_arg( array( 'token', 'email', 'action' ) ) );
 		$token      = woodmart_clean( $_GET['token'] ); //phpcs:ignore.
-		$user_email = isset( $_GET['email'] ) ? sanitize_email( wp_unslash( $_GET['email'] ) ) : '';
+		$user_email = isset( $_GET['email'] ) ? sanitize_email( wp_unslash( $_GET['email'] ) ) : ''; //phpcs:ignore.
 		$result     = false;
 
-		if ( ! empty( $user_email ) && $this->validate_unsubscribe_token( $user_email, $token ) ) {
+		if ( ! empty( $user_email ) && ! empty( $token ) && $this->validate_unsubscribe_token( $user_email, $token ) ) {
 			$result = woodmart_unsubscribe_user_from_mailing( $user_email, 'XTS_Email_Abandoned_Cart' );
 		}
 
@@ -63,6 +63,7 @@ class Emails extends Singleton {
 
 	/**
 	 * Validate the unsubscribe token for an email.
+	 * Finds the abandoned cart record and compares the plain token with hashed stored token.
 	 *
 	 * @param string $email The email to validate.
 	 * @param string $token The token to validate.
@@ -70,9 +71,33 @@ class Emails extends Singleton {
 	 * @return bool True if the token is valid, false otherwise.
 	 */
 	public function validate_unsubscribe_token( $email, $token ) {
-		$expected_token = hash_hmac( 'sha256', $email, 'woodmart_abandoned_cart_unsubscribe' );
+		$carts = get_posts(
+			array(
+				'post_type'      => Abandoned_Cart::get_instance()->post_type_name,
+				'posts_per_page' => 1,
+				'orderby'        => 'date',
+				'order'          => 'DESC',
+				'meta_query'     => array( //phpcs:ignore
+					array(
+						'key'   => '_user_email',
+						'value' => $email,
+					),
+					array(
+						'key'     => '_unsubscribe_token',
+						'compare' => 'EXISTS',
+					),
+				),
+			)
+		);
 
-		return hash_equals( $expected_token, $token );
+		if ( ! $carts ) {
+			return false;
+		}
+
+		$cart              = $carts[0];
+		$stored_token_hash = get_post_meta( $cart->ID, '_unsubscribe_token', true );
+
+		return wp_check_password( $token, $stored_token_hash );
 	}
 
 	/**
@@ -83,7 +108,7 @@ class Emails extends Singleton {
 	 * @return array
 	 */
 	public function register_email( $emails ) {
-		$emails['XTS_Email_Abandoned_Cart'] = include WOODMART_THEMEROOT . '/inc/integrations/woocommerce/modules/abandoned-cart/emails/class-abandoned-cart-email.php';
+		$emails['XTS_Email_Abandoned_Cart'] = include WOODMART_THEMEROOT . '/inc/integrations/woocommerce/modules/abandoned-cart/emails/class-xts-email-abandoned-cart.php';
 
 		return $emails;
 	}
@@ -133,9 +158,7 @@ class Emails extends Singleton {
 			'_user_currency',
 			'_cart_status',
 			'_language',
-			'_cart',
 			'_order_totals',
-			'_subtotal',
 		);
 
 		foreach ( $carts as $id => $cart ) {
@@ -146,15 +169,35 @@ class Emails extends Singleton {
 			);
 
 			foreach ( $meta_keys as $meta_key ) {
-				$cart_data[ $meta_key ] = maybe_unserialize( get_post_meta( $cart->ID, $meta_key, true ) );
+				if ( '_order_totals' === $meta_key ) {
+					$order_totals_db = get_post_meta( $cart->ID, $meta_key, true );
+
+					if ( is_array( $order_totals_db ) ) {
+						$cart_data[ $meta_key ] = $order_totals_db;
+					} else {
+						$cart_data[ $meta_key ] = maybe_unserialize( $order_totals_db );
+					}
+
+					continue;
+				}
+
+				$cart_data[ $meta_key ] = get_post_meta( $cart->ID, $meta_key, true );
 			}
 
+			$cart_obj = woodmart_get_abandoned_cart_object_from_db( $cart->ID );
+
 			if (
+				! $cart_obj instanceof \WC_Cart ||
 				woodmart_is_user_unsubscribed_from_mailing( $cart_data['_user_email'], 'XTS_Email_Abandoned_Cart' ) ||
-				( 0 !== absint( $cart_data['_user_id'] ) && woodmart_should_skip_subscription_email( $cart_data['_user_email'], $cart_data['_user_id'] ) )
+				(
+					0 !== absint( $cart_data['_user_id'] ) &&
+					woodmart_should_skip_subscription_email( $cart_data['_user_email'], $cart_data['_user_id'] )
+				)
 			) {
 				continue;
 			}
+
+			$cart_data['_cart'] = $cart_obj;
 
 			do_action( 'woodmart_send_abandoned_cart', (object) $cart_data );
 
@@ -232,16 +275,36 @@ class Emails extends Singleton {
 		$dummy_product->set_price( 25 );
 
 		$dummy_cart = new class( $dummy_product ) {
+			/**
+			 * Dummy product.
+			 *
+			 * @var WC_Product
+			 */
 			private $dummy_product;
 
+			/**
+			 * Constructor.
+			 *
+			 * @param WC_Product $dummy_product Dummy product.
+			 */
 			public function __construct( $dummy_product ) {
 				$this->dummy_product = $dummy_product;
 			}
 
+			/**
+			 * Get subtotal.
+			 *
+			 * @return float
+			 */
 			public function get_subtotal() {
 				return 25;
 			}
 
+			/**
+			 * Get cart contents.
+			 *
+			 * @return array
+			 */
 			public function get_cart_contents() {
 				return array(
 					array(

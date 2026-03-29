@@ -1,16 +1,27 @@
-<?php if ( ! defined( 'WOODMART_THEME_DIR' ) ) exit( 'No direct script access allowed' );
-
+<?php
 /**
-* ------------------------------------------------------------------------------------------------
-* Image hotspot shortcode
-* ------------------------------------------------------------------------------------------------
-*/
+ * Shortcode for Image Hotspot element.
+ *
+ * @package woodmart
+ */
+
+if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
+	exit( 'No direct script access allowed' );
+}
 
 if ( ! function_exists( 'woodmart_image_hotspot_shortcode' ) ) {
+	/**
+	 * Image hotspot shortcode
+	 *
+	 * @param array  $atts Shortcode attributes.
+	 * @param string $content Shortcode content.
+	 *
+	 * @return string
+	 */
 	function woodmart_image_hotspot_shortcode( $atts, $content ) {
-		$image   = '';
+		$image      = '';
 		$video_attr = '';
-		$classes = apply_filters( 'vc_shortcodes_css_class', '', '', $atts );
+		$classes    = apply_filters( 'vc_shortcodes_css_class', '', '', $atts );
 
 		$atts = shortcode_atts(
 			array(
@@ -73,16 +84,23 @@ if ( ! function_exists( 'woodmart_image_hotspot_shortcode' ) ) {
 	}
 }
 
-/**
-* ------------------------------------------------------------------------------------------------
-* Image hotspot shortcode
-* ------------------------------------------------------------------------------------------------
-*/
-
 if ( ! function_exists( 'woodmart_hotspot_shortcode' ) ) {
+	/**
+	 * Image hotspot shortcode
+	 *
+	 * @param array  $atts Shortcode attributes.
+	 * @param string $content Shortcode content.
+	 *
+	 * @return string
+	 */
 	function woodmart_hotspot_shortcode( $atts, $content ) {
-		$output = $classes = $content_classes = $product = $image = '';
-		extract(
+		$output          = '';
+		$classes         = '';
+		$content_classes = '';
+		$product         = '';
+		$image           = '';
+
+		extract( // phpcs:ignore WordPress.PHP.DontExtract.extract_extract
 			shortcode_atts(
 				array(
 					'hotspot'               => '',
@@ -112,7 +130,7 @@ if ( ! function_exists( 'woodmart_hotspot_shortcode' ) ) {
 			$product = wc_get_product( apply_filters( 'wpml_object_id', $product_id, 'product', true ) );
 		}
 
-		if ( $hotspot_type == 'product' && $product ) {
+		if ( 'product' === $hotspot_type && $product ) {
 			$rating_count = $product->get_rating_count();
 			$average      = $product->get_average_rating();
 
@@ -133,7 +151,9 @@ if ( ! function_exists( 'woodmart_hotspot_shortcode' ) ) {
 					' ',
 					array_filter(
 						array(
+							'btn',
 							'button',
+							'btn-accent',
 							'product_type_' . $product->get_type(),
 							$product->is_purchasable() && $product->is_in_stock() ? 'add_to_cart_button' : '',
 							$product->supports( 'ajax_add_to_cart' ) ? 'ajax_add_to_cart' : '',
@@ -157,12 +177,12 @@ if ( ! function_exists( 'woodmart_hotspot_shortcode' ) ) {
 				$output .= wc_get_rating_html( $average, $rating_count );
 			}
 				$output .= '<div class="price">' . $product->get_price_html() . '</div>';
-				$output .= '<div class="hotspot-content-text wd-more-desc reset-last-child' . woodmart_get_old_classes( ' woodmart-more-desc' ) . '"><div class="wd-more-desc-inner' . woodmart_get_old_classes( ' woodmart-more-desc-inner' ) . '">' . do_shortcode( $product->get_short_description() ) . '</div><a href="#" rel="nofollow" class="wd-more-desc-btn" aria-label="' . esc_html__( 'Read more description', 'woodmart' ) . '"></a></div>';
+				$output .= '<div class="hotspot-content-text wd-more-desc reset-last-child"><div class="wd-more-desc-inner">' . do_shortcode( $product->get_short_description() ) . '</div><a href="#" rel="nofollow" class="wd-more-desc-btn" aria-label="' . esc_html__( 'Read more description', 'woodmart' ) . '"></a></div>';
 				$output .= '<a href="' . esc_url( $args['url'] ) . '" class="' . esc_attr( $args['class'] ) . '" ' . $args['attributes'] . '>' . esc_html( $args['text'] ) . '</a>';
 			$output     .= '</div>';
 		}
 
-		if ( $hotspot_type == 'text' && ( $title || $content || $link_text ) ) {
+		if ( 'text' === $hotspot_type && ( $title || $content || $link_text ) ) {
 			if ( $link ) {
 				$attributes = woodmart_get_link_attributes( $link );
 			}
@@ -192,7 +212,7 @@ if ( ! function_exists( 'woodmart_hotspot_shortcode' ) ) {
 				$output .= '<div class="hotspot-content-text reset-last-child">' . $content . '</div>';
 			}
 			if ( $link_text && $link ) {
-				$output .= '<a class="btn" ' . $attributes . '>' . esc_html( $link_text ) . '</a>';
+				$output .= '<a class="btn btn-accent" ' . $attributes . '>' . esc_html( $link_text ) . '</a>';
 			}
 			$output .= '</div>';
 		}
@@ -203,13 +223,15 @@ if ( ! function_exists( 'woodmart_hotspot_shortcode' ) ) {
 		echo '<div class="wd-image-hotspot' . esc_attr( $classes ) . '" style="left: ' . esc_attr( $left ) . '%; top: ' . esc_attr( $top ) . '%;">';
 			echo '<span class="hotspot-sonar"></span>';
 			echo '<div class="hotspot-btn wd-role-btn wd-fill" tabindex="0"></div>';
-			echo apply_filters( 'woodmart_hotspot_content', $output );
+			echo apply_filters( 'woodmart_hotspot_content', $output ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		echo '</div>';
-
 	}
 }
 
 if ( ! function_exists( 'woodmart_get_hotspot_image' ) ) {
+	/**
+	 * Get hotspot image via ajax
+	 */
 	function woodmart_get_hotspot_image() {
 		check_ajax_referer( 'woodmart-get-hotspot-image-nonce', 'security' );
 
@@ -231,7 +253,7 @@ if ( ! function_exists( 'woodmart_get_hotspot_image' ) ) {
 				'status' => 'warning',
 				'html'   => '<div class="woodmart-warning">' . esc_html__( 'You need to upload an image for the parent element first.', 'woodmart' ) . '</div>',
 			);
-			echo json_encode( $response );
+			echo wp_json_encode( $response );
 			die();
 		}
 
@@ -240,7 +262,7 @@ if ( ! function_exists( 'woodmart_get_hotspot_image' ) ) {
 			'html'   => $html,
 		);
 
-		echo json_encode( $response );
+		echo wp_json_encode( $response );
 		die();
 	}
 

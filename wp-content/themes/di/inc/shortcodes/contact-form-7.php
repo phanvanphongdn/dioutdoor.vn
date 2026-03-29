@@ -1,8 +1,8 @@
 <?php
 /**
- * contact_form_7 shortcode.
+ * Shortcode for Contact form 7 element.
  *
- * @package Elements
+ * @package woodmart
  */
 
 if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
@@ -13,12 +13,11 @@ if ( ! function_exists( 'woodmart_shortcode_contact_form_7' ) ) {
 	/**
 	 * Render contact_form_7 shortcode.
 	 *
-	 * @param array  $settings Shortcode attributes.
-	 * @param string $content Inner content (shortcode).
+	 * @param array $settings Shortcode attributes.
 	 *
 	 * @return false|string
 	 */
-	function woodmart_shortcode_contact_form_7( $settings, $content ) {
+	function woodmart_shortcode_contact_form_7( $settings ) {
 		$settings = wp_parse_args(
 			$settings,
 			array(

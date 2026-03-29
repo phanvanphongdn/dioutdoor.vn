@@ -1,4 +1,9 @@
 <?php
+/**
+ * VC Carousel Map Settings.
+ *
+ * @package woodmart
+ */
 
 if ( ! function_exists( 'woodmart_get_vc_carousel_map' ) ) {
 	/**
@@ -1326,6 +1331,48 @@ if ( ! function_exists( 'woodmart_vc_column_custom_options' ) ) {
 					'value'   => array( 'offcanvas' ),
 				),
 			),
+			array(
+				'type'             => 'wd_slider',
+				'param_name'       => 'wd_off_canvas_sidebar_width',
+				'heading'          => esc_html__( 'Off-canvas sidebar width', 'woodmart' ),
+				'devices'          => array(
+					'desktop' => array(
+						'unit'  => 'px',
+						'value' => '',
+					),
+					'tablet'  => array(
+						'unit'  => 'px',
+						'value' => '',
+					),
+					'mobile'  => array(
+						'unit'  => 'px',
+						'value' => '',
+					),
+				),
+				'range'            => array(
+					'px' => array(
+						'min'  => 0,
+						'max'  => 1000,
+						'step' => 1,
+					),
+					'%'  => array(
+						'min'  => 0,
+						'max'  => 100,
+						'step' => 1,
+					),
+				),
+				'selectors'        => array(
+					'{{WRAPPER}}.wpb_column.wd-side-hidden' => array(
+						'--wd-side-hidden-w: {{VALUE}}{{UNIT}};',
+					),
+				),
+				'generate_zero'    => true,
+				'dependency'       => array(
+					'element' => 'wd_column_role',
+					'value'   => array( 'offcanvas' ),
+				),
+				'edit_field_class' => 'vc_col-sm-12 vc_column',
+			),
 		);
 
 		$design_option = array(
@@ -1569,7 +1616,6 @@ if ( ! function_exists( 'woodmart_vc_column_custom_options' ) ) {
 	}
 
 	add_action( 'vc_before_init', 'woodmart_vc_column_custom_options' );
-
 }
 
 if ( ! function_exists( 'woodmart_vc_section_custom_options' ) ) {
@@ -1836,8 +1882,8 @@ if ( ! function_exists( 'woodmart_vc_empty_space_custom_options' ) ) {
 				'group'            => esc_html__( 'Advanced', 'woodmart' ),
 				'tabs'             => true,
 				'value'            => array(
-					esc_html__( 'Desktop', 'woodmart' )  => 'desktop',
-					esc_html__( 'Tablet', 'woodmart' ) => 'tablet',
+					esc_html__( 'Desktop', 'woodmart' ) => 'desktop',
+					esc_html__( 'Tablet', 'woodmart' )  => 'tablet',
 					esc_html__( 'Mobile', 'woodmart' )  => 'mobile',
 				),
 				'default'          => 'desktop',
@@ -2485,6 +2531,13 @@ if ( ! function_exists( 'woodmart_get_responsive_dependency_width_map' ) ) {
 }
 
 if ( ! function_exists( 'woodmart_get_vc_z_index_map' ) ) {
+	/**
+	 * Get z index map.
+	 *
+	 * @param string $key name needed field.
+	 *
+	 * @return array
+	 */
 	function woodmart_get_vc_z_index_map( $key ) {
 		$fields = array(
 			'wd_z_index'        => array(

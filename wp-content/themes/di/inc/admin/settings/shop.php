@@ -1,4 +1,10 @@
 <?php
+/**
+ * Shop settings.
+ *
+ * @package woodmart
+ */
+
 if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
 	exit( 'No direct script access allowed' );
 }
@@ -16,12 +22,12 @@ Options::add_field(
 		'options'     => array(
 			'popup'   => array(
 				'name'  => esc_html__( 'Show popup', 'woodmart' ),
-				'hint'        => '<video data-src="' . WOODMART_TOOLTIP_URL . 'action-after-add-to-cart-show-popup.mp4" autoplay loop muted></video>',
+				'hint'  => '<video data-src="' . WOODMART_TOOLTIP_URL . 'action-after-add-to-cart-show-popup.mp4" autoplay loop muted></video>',
 				'value' => 'popup',
 			),
 			'widget'  => array(
 				'name'  => esc_html__( 'Display widget', 'woodmart' ),
-				'hint'        => '<video data-src="' . WOODMART_TOOLTIP_URL . 'action-after-add-to-cart-display-widget.mp4" autoplay loop muted></video>',
+				'hint'  => '<video data-src="' . WOODMART_TOOLTIP_URL . 'action-after-add-to-cart-display-widget.mp4" autoplay loop muted></video>',
 				'value' => 'widget',
 			),
 			'nothing' => array(
@@ -323,12 +329,12 @@ Options::add_field(
 			),
 			'btn'    => array(
 				'name'  => esc_html__( 'Clear button', 'woodmart' ),
-				'hint'        => '<video data-src="' . WOODMART_TOOLTIP_URL . 'quick_shop_clear_action_button.mp4" autoplay loop muted></video>',
+				'hint'  => '<video data-src="' . WOODMART_TOOLTIP_URL . 'quick_shop_clear_action_button.mp4" autoplay loop muted></video>',
 				'value' => 'btn',
 			),
 			'double' => array(
 				'name'  => esc_html__( 'On second click', 'woodmart' ),
-				'hint'        => '<video data-src="' . WOODMART_TOOLTIP_URL . 'quick_shop_clear_action_click.mp4" autoplay loop muted></video>',
+				'hint'  => '<video data-src="' . WOODMART_TOOLTIP_URL . 'quick_shop_clear_action_click.mp4" autoplay loop muted></video>',
 				'value' => 'double',
 			),
 		),
@@ -337,11 +343,6 @@ Options::add_field(
 				'key'     => 'quick_shop_variable',
 				'compare' => 'equals',
 				'value'   => '1',
-			),
-			array(
-				'key'     => 'quick_shop_variable_type',
-				'compare' => 'equals',
-				'value'   => 'variation_form',
 			),
 		),
 		'default'  => 'none',
@@ -353,7 +354,7 @@ Options::add_field(
 	array(
 		'id'           => 'grid_swatches_attribute',
 		'name'         => esc_html__( 'Grid swatch attribute to display', 'woodmart' ),
-		'hint'        => '<video data-src="' . WOODMART_TOOLTIP_URL . 'grid-swatch-attribute-to-display.mp4" autoplay loop muted></video>',
+		'hint'         => '<video data-src="' . WOODMART_TOOLTIP_URL . 'grid-swatch-attribute-to-display.mp4" autoplay loop muted></video>',
 		'description'  => esc_html__( 'Choose the attribute that will be shown on the product grid.', 'woodmart' ),
 		'group'        => esc_html__( 'Attribute swatches', 'woodmart' ),
 		'type'         => 'select',
@@ -483,12 +484,12 @@ Options::add_field(
 		'group'       => esc_html__( 'Attribute swatches', 'woodmart' ),
 		'type'        => 'switcher',
 		'section'     => 'variable_products_section',
-		't_tab'       => [
+		't_tab'       => array(
 			'id'    => 'swatches_scroll_top_tabs',
 			'tab'   => esc_html__( 'Desktop', 'woodmart' ),
 			'icon'  => 'xts-i-desktop',
 			'style' => 'devices',
-		],
+		),
 		'default'     => false,
 		'priority'    => 90,
 	)
@@ -502,11 +503,11 @@ Options::add_field(
 		'group'       => esc_html__( 'Attribute swatches', 'woodmart' ),
 		'type'        => 'switcher',
 		'section'     => 'variable_products_section',
-		't_tab'       => [
+		't_tab'       => array(
 			'id'   => 'swatches_scroll_top_tabs',
 			'tab'  => esc_html__( 'Mobile', 'woodmart' ),
 			'icon' => 'xts-i-phone',
-		],
+		),
 		'default'     => false,
 		'priority'    => 95,
 	)
@@ -560,7 +561,7 @@ Options::add_field(
 	array(
 		'id'          => 'ajax_variation_threshold',
 		'name'        => esc_html__( 'AJAX variation threshold', 'woodmart' ),
-		'description' => esc_html__( 'Increase this value if you noticed a problem with additional variations images function.', 'woodmart' ),
+		'description' => esc_html__( 'Increase this value if you have a lot of variations and don\'t want to load them via AJAX. This also affects how swatches are displayed on the shop page. If a product has more variations than this threshold, swatches will not be shown on the shop page.', 'woodmart' ),
 		'group'       => esc_html__( 'Variations images', 'woodmart' ),
 		'type'        => 'range',
 		'section'     => 'variable_products_section',
@@ -649,7 +650,7 @@ Options::add_field(
 				'value' => 'rectangular',
 				'image' => WOODMART_ASSETS_IMAGES . '/settings/product-label/rectangular.jpg',
 			),
-			'rounded-sm' => array(
+			'rounded-sm'  => array(
 				'name'  => esc_html__( 'Rounded small', 'woodmart' ),
 				'value' => 'rounded-sm',
 				'image' => WOODMART_ASSETS_IMAGES . '/settings/product-label/rounded-small.jpg',
@@ -1194,12 +1195,12 @@ Options::add_field(
 		'options'  => array(
 			'layout-1' => array(
 				'name'  => esc_html__( 'Layout 1', 'woodmart' ),
-				'hint'        => wp_kses( '<img data-src="' . WOODMART_TOOLTIP_URL . 'cart-totals-layout-1.jpg" alt="">', true ),
+				'hint'  => wp_kses( '<img data-src="' . WOODMART_TOOLTIP_URL . 'cart-totals-layout-1.jpg" alt="">', true ),
 				'value' => 'layout-1',
 			),
 			'layout-2' => array(
 				'name'  => esc_html__( 'Layout 2', 'woodmart' ),
-				'hint'        => wp_kses( '<img data-src="' . WOODMART_TOOLTIP_URL . 'cart-totals-layout-2.jpg" alt="">', true ),
+				'hint'  => wp_kses( '<img data-src="' . WOODMART_TOOLTIP_URL . 'cart-totals-layout-2.jpg" alt="">', true ),
 				'value' => 'layout-2',
 			),
 		),
@@ -1287,6 +1288,7 @@ Options::add_field(
 		'type'         => 'select',
 		'section'      => 'thank_you_page_section',
 		'name'         => esc_html__( 'HTML Block', 'woodmart' ),
+		'description'  => function_exists( 'woodmart_get_html_block_links' ) ? woodmart_get_html_block_links() : '',
 		'select2'      => true,
 		'empty_option' => true,
 		'autocomplete' => array(

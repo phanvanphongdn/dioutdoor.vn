@@ -20,7 +20,7 @@ if ( ! function_exists( 'wd_gutenberg_tp_order_meta' ) ) {
 		ob_start();
 
 		?>
-		<div id="<?php echo esc_attr( $el_id ); ?>" class="wd-tp-order-meta<?php echo esc_attr( $wrapper_classes ); ?>">
+		<div <?php echo $el_id ? 'id="' . esc_attr( $el_id ) . '" ' : ''; ?>class="wd-tp-order-meta<?php echo esc_attr( $wrapper_classes ); ?>">
 			<?php
 			switch ( $block_attributes['orderData'] ) {
 				case 'order_id':

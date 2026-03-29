@@ -2,18 +2,18 @@
 /**
  * Gutenberg google fonts class.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Gutenberg;
 
 use XTS\Singleton;
-use XTS\Admin\Modules\Options\Google_Fonts as Global_Google_Fonts;
+use XTS\Admin\Modules\Options\Google_Fonts\Google_Fonts as Global_Google_Fonts;
 
 /**
  * Google Fonts module.
  *
- * @package Woodmart
+ * @package woodmart
  */
 class Google_Fonts extends Singleton {
 
@@ -107,6 +107,22 @@ class Google_Fonts extends Singleton {
 		foreach ( $fonts as $font ) {
 			Global_Google_Fonts::add_google_font( $font );
 		}
+	}
+
+	/**
+	 * Enqueue inline google fonts.
+	 *
+	 * @param int $post_id Post ID.
+	 * @return void
+	 */
+	public function enqueue_inline_google_fonts( $post_id ) {
+		$fonts = get_post_meta( $post_id, 'xts_blocks_google_fonts', true );
+
+		if ( empty( $fonts ) ) {
+			return;
+		}
+
+		Global_Google_Fonts::get_instance()->enqueue_inline_fonts( $fonts, $post_id );
 	}
 
 	/**

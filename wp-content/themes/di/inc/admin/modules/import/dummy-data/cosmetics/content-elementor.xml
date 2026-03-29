@@ -16,7 +16,7 @@
 	<!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 	<!--    contained in this file into your site. -->
 
-	<!-- generator="WordPress/6.7.3" created="2025-09-01 12:55" -->
+	<!-- generator="WordPress/6.7.4" created="2026-02-25 14:56" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -29,14 +29,14 @@
 	<title>Elementor 2.0 WoodMart dummy</title>
 	<link>https://dummy.xtemos.com/woodmart2/elementor</link>
 	<description>Just another WoodMart Dummy 2.0 Sites site</description>
-	<pubDate>Mon, 01 Sep 2025 12:55:59 +0000</pubDate>
+	<pubDate>Wed, 25 Feb 2026 14:56:09 +0000</pubDate>
 	<language>en-US</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
 	<wp:base_site_url>https://dummy.xtemos.com/woodmart2/</wp:base_site_url>
 	<wp:base_blog_url>https://dummy.xtemos.com/woodmart2/elementor</wp:base_blog_url>
 
 	
-					<wp:term>
+							<wp:term>
 			<wp:term_id>137</wp:term_id>
 			<wp:term_taxonomy><![CDATA[woodmart_slider]]></wp:term_taxonomy>
 			<wp:term_slug><![CDATA[cosmetics-slider]]></wp:term_slug>
@@ -206,48 +206,9 @@
 			<wp:meta_key><![CDATA[autoplay_speed]]></wp:meta_key>
 			<wp:meta_value><![CDATA[25000]]></wp:meta_value>
 		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-137-css-data]]></wp:meta_key>
-			<wp:meta_value><![CDATA[#slider-137 .wd-slide {
-	min-height: 700px;
-}
-
-@media (max-width: 1024px) {
-	#slider-137 .wd-slide {
-		min-height: 700px;
-	}
-}
-
-@media (max-width: 767px) {
-	#slider-137 .wd-slide {
-		min-height: 600px;
-	}
-}
-]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-137-version]]></wp:meta_key>
-			<wp:meta_value><![CDATA[8.2.0]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-137-site-url]]></wp:meta_key>
-			<wp:meta_value><![CDATA[573d753390f46baa14c4ee4b10cec742]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-137-credentials]]></wp:meta_key>
-			<wp:meta_value><![CDATA[requested]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-137-file-data]]></wp:meta_key>
-			<wp:meta_value><![CDATA[a:3:{s:4:"path";s:36:"/2025/08/xts-term-137-1755639662.css";s:13:"theme_version";s:5:"8.2.0";s:8:"site_url";s:32:"573d753390f46baa14c4ee4b10cec742";}]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-137-status]]></wp:meta_key>
-			<wp:meta_value><![CDATA[valid]]></wp:meta_value>
-		</wp:termmeta>
 		</wp:term>
-		
-	<generator>https://wordpress.org/?v=6.7.3</generator>
+				
+	<generator>https://wordpress.org/?v=6.7.4</generator>
 
 					<item>
 					<title><![CDATA[wd-inst-cosmetics-1]]></title>
@@ -270,10 +231,6 @@
 																					<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/09/wd-inst-cosmetics-1.jpg]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -298,10 +255,6 @@
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/09/wd-inst-cosmetics-2.jpg]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[wd-inst-cosmetics-3]]></title>
@@ -324,10 +277,6 @@
 																					<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/09/wd-inst-cosmetics-3.jpg]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -352,10 +301,6 @@
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/09/wd-inst-cosmetics-4.jpg]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[wd-inst-cosmetics-5]]></title>
@@ -378,10 +323,6 @@
 																					<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/09/wd-inst-cosmetics-5.jpg]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -406,10 +347,6 @@
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/09/wd-inst-cosmetics-6.jpg]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[cosmetics-page-title]]></title>
@@ -432,10 +369,6 @@
 																					<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/cosmetics-page-title.jpg]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -460,10 +393,6 @@
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/cosmetics-category-1.jpg]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[cosmetics-category-2]]></title>
@@ -486,10 +415,6 @@
 																					<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/cosmetics-category-2.jpg]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -514,10 +439,6 @@
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/cosmetics-category-3.jpg]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[cosmetics-category-4]]></title>
@@ -540,10 +461,6 @@
 																					<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/cosmetics-category-4.jpg]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -568,10 +485,6 @@
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/cosmetics-category-5.jpg]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[cosmetics-product-8]]></title>
@@ -594,10 +507,6 @@
 																					<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/cosmetics-product-8.jpg]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -622,10 +531,6 @@
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/cosmetics-product-9.jpg]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[cosmetics-product-10]]></title>
@@ -648,10 +553,6 @@
 																					<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/cosmetics-product-10.jpg]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -676,10 +577,6 @@
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/cosmetics-product-11.jpg]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[cosmetics-product-12]]></title>
@@ -702,10 +599,6 @@
 																					<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/cosmetics-product-12.jpg]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -730,10 +623,6 @@
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2024/02/cosmetics-slide-1-bg-opt.jpg]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[cosmetics-slide-2-bg-opt]]></title>
@@ -756,10 +645,6 @@
 																					<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2024/02/cosmetics-slide-2-bg-opt.jpg]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -1380,10 +1265,6 @@ Products						</h4>
 							<wp:meta_key><![CDATA[_elementor_controls_usage]]></wp:meta_key>
 							<wp:meta_value><![CDATA[a:14:{s:17:"slider_revolution";a:3:{s:5:"count";i:1;s:15:"control_percent";i:2;s:8:"controls";a:2:{s:7:"content";a:1:{s:15:"content_section";a:2:{s:9:"shortcode";i:1;s:14:"revslidertitle";i:1;}}s:8:"advanced";a:1:{s:8:"wd_extra";a:1:{s:8:"scroll_y";i:1;}}}}s:6:"column";a:3:{s:5:"count";i:22;s:15:"control_percent";i:1;s:8:"controls";a:3:{s:8:"advanced";a:3:{s:8:"wd_extra";a:2:{s:20:"column_sticky_offset";i:22;s:8:"scroll_y";i:22;}s:16:"section_advanced";a:3:{s:7:"z_index";i:1;s:6:"margin";i:1;s:7:"padding";i:4;}s:19:"_section_responsive";a:2:{s:11:"hide_mobile";i:1;s:11:"hide_tablet";i:1;}}s:6:"layout";a:1:{s:6:"layout";a:3:{s:21:"space_between_widgets";i:3;s:12:"_inline_size";i:2;s:5:"align";i:2;}}s:5:"style";a:1:{s:14:"wd_extra_style";a:1:{s:15:"wd_color_scheme";i:1;}}}}s:7:"section";a:3:{s:5:"count";i:12;s:15:"control_percent";i:2;s:8:"controls";a:3:{s:6:"layout";a:3:{s:15:"wd_extra_layout";a:1:{s:18:"wd_section_stretch";i:6;}s:14:"section_layout";a:2:{s:3:"gap";i:4;s:16:"content_position";i:4;}s:17:"section_structure";a:1:{s:9:"structure";i:7;}}s:8:"advanced";a:1:{s:16:"section_advanced";a:2:{s:6:"margin";i:12;s:7:"padding";i:5;}}s:5:"style";a:2:{s:14:"section_border";a:3:{s:12:"border_width";i:3;s:13:"border_border";i:3;s:12:"border_color";i:3;}s:18:"section_background";a:5:{s:21:"background_background";i:1;s:16:"background_color";i:1;s:15:"background_size";i:1;s:17:"background_repeat";i:1;s:19:"background_position";i:1;}}}}s:9:"wd_banner";a:3:{s:5:"count";i:3;s:15:"control_percent";i:9;s:8:"controls";a:3:{s:7:"content";a:2:{s:21:"image_content_section";a:3:{s:10:"image_size";i:3;s:22:"image_custom_dimension";i:3;s:5:"image";i:3;}s:15:"content_section";a:4:{s:5:"title";i:3;s:8:"subtitle";i:3;s:7:"content";i:3;s:8:"btn_text";i:3;}}s:5:"style";a:4:{s:20:"button_style_section";a:4:{s:12:"btn_position";i:3;s:9:"btn_color";i:3;s:9:"btn_style";i:3;s:8:"btn_size";i:3;}s:21:"general_style_section";a:3:{s:5:"hover";i:3;s:21:"woodmart_color_scheme";i:3;s:10:"title_size";i:3;}s:20:"layout_style_section";a:4:{s:5:"width";i:3;s:14:"text_alignment";i:3;s:20:"horizontal_alignment";i:3;s:18:"vertical_alignment";i:3;}s:22:"subtitle_style_section";a:1:{s:14:"subtitle_color";i:3;}}s:8:"advanced";a:1:{s:8:"wd_extra";a:1:{s:8:"scroll_y";i:3;}}}}s:10:"wd_infobox";a:3:{s:5:"count";i:9;s:15:"control_percent";i:4;s:8:"controls";a:3:{s:7:"content";a:2:{s:20:"icon_content_section";a:5:{s:9:"icon_type";i:6;s:10:"image_size";i:9;s:5:"image";i:3;s:22:"image_custom_dimension";i:3;s:9:"icon_text";i:3;}s:15:"content_section";a:5:{s:8:"btn_text";i:9;s:8:"subtitle";i:9;s:5:"title";i:9;s:7:"content";i:9;s:4:"link";i:3;}}s:5:"style";a:4:{s:22:"button_content_section";a:3:{s:9:"btn_color";i:3;s:9:"btn_style";i:3;s:12:"btn_position";i:6;}s:22:"subtitle_style_section";a:1:{s:14:"subtitle_color";i:3;}s:21:"general_style_section";a:3:{s:9:"alignment";i:6;s:10:"title_size";i:3;s:15:"image_alignment";i:6;}s:18:"icon_style_section";a:1:{s:14:"icon_text_size";i:3;}}s:8:"advanced";a:3:{s:19:"_section_background";a:2:{s:22:"_background_background";i:3;s:17:"_background_color";i:3;}s:8:"wd_extra";a:1:{s:8:"scroll_y";i:9;}s:14:"_section_style";a:2:{s:7:"_margin";i:3;s:8:"_padding";i:3;}}}}s:8:"wd_title";a:3:{s:5:"count";i:8;s:15:"control_percent";i:5;s:8:"controls";a:3:{s:7:"content";a:1:{s:23:"general_content_section";a:3:{s:8:"subtitle";i:8;s:5:"title";i:8;s:11:"after_title";i:8;}}s:5:"style";a:3:{s:21:"general_style_section";a:3:{s:4:"size";i:6;s:5:"align";i:1;s:5:"width";i:3;}s:22:"subtitle_style_section";a:4:{s:14:"subtitle_color";i:4;s:30:"subtitle_typography_typography";i:4;s:31:"subtitle_typography_font_family";i:4;s:29:"subtitle_typography_font_size";i:4;}s:19:"title_style_section";a:4:{s:27:"title_typography_typography";i:6;s:28:"title_typography_font_weight";i:8;s:22:"title_decoration_style";i:2;s:26:"title_typography_font_size";i:2;}}s:8:"advanced";a:2:{s:14:"_section_style";a:1:{s:7:"_margin";i:3;}s:8:"wd_extra";a:1:{s:8:"scroll_y";i:6;}}}}s:9:"wd_button";a:3:{s:5:"count";i:6;s:15:"control_percent";i:3;s:8:"controls";a:3:{s:5:"style";a:1:{s:21:"general_style_section";a:2:{s:5:"color";i:4;s:5:"style";i:4;}}s:7:"content";a:1:{s:23:"general_content_section";a:1:{s:4:"text";i:6;}}s:8:"advanced";a:3:{s:8:"wd_extra";a:1:{s:8:"scroll_y";i:6;}s:17:"_section_position";a:1:{s:14:"_element_width";i:4;}s:14:"_section_style";a:1:{s:7:"_margin";i:4;}}}}s:11:"wd_products";a:3:{s:5:"count";i:2;s:15:"control_percent";i:3;s:8:"controls";a:3:{s:5:"style";a:2:{s:20:"layout_style_section";a:2:{s:6:"layout";i:2;s:14:"items_per_page";i:2;}s:22:"carousel_style_section";a:2:{s:15:"slides_per_view";i:2;s:23:"hide_pagination_control";i:2;}}s:7:"content";a:1:{s:23:"general_content_section";a:1:{s:7:"orderby";i:2;}}s:8:"advanced";a:1:{s:8:"wd_extra";a:1:{s:8:"scroll_y";i:2;}}}}s:21:"wd_product_categories";a:3:{s:5:"count";i:1;s:15:"control_percent";i:4;s:8:"controls";a:3:{s:7:"content";a:1:{s:23:"general_content_section";a:3:{s:7:"orderby";i:1;s:3:"ids";i:1;s:6:"number";i:1;}}s:5:"style";a:1:{s:20:"layout_style_section";a:3:{s:5:"style";i:1;s:7:"spacing";i:1;s:7:"columns";i:1;}}s:8:"advanced";a:1:{s:8:"wd_extra";a:1:{s:8:"scroll_y";i:1;}}}}s:15:"wd_image_or_svg";a:3:{s:5:"count";i:5;s:15:"control_percent";i:2;s:8:"controls";a:1:{s:7:"content";a:1:{s:23:"general_content_section";a:4:{s:5:"image";i:5;s:9:"alignment";i:2;s:10:"image_size";i:3;s:22:"image_custom_dimension";i:3;}}}}s:11:"text-editor";a:3:{s:5:"count";i:2;s:15:"control_percent";i:3;s:8:"controls";a:3:{s:7:"content";a:1:{s:14:"section_editor";a:1:{s:6:"editor";i:2;}}s:5:"style";a:1:{s:13:"section_style";a:4:{s:21:"typography_typography";i:2;s:20:"typography_font_size";i:2;s:16:"wd_content_align";i:1;s:16:"wd_content_width";i:1;}}s:8:"advanced";a:1:{s:14:"_section_style";a:1:{s:7:"_margin";i:1;}}}}s:18:"wd_countdown_timer";a:3:{s:5:"count";i:1;s:15:"control_percent";i:3;s:8:"controls";a:3:{s:5:"style";a:1:{s:21:"general_style_section";a:2:{s:21:"woodmart_color_scheme";i:1;s:4:"size";i:1;}}s:7:"content";a:1:{s:23:"general_content_section";a:1:{s:4:"date";i:1;}}s:8:"advanced";a:1:{s:8:"wd_extra";a:1:{s:8:"scroll_y";i:1;}}}}s:7:"wd_blog";a:3:{s:5:"count";i:1;s:15:"control_percent";i:4;s:8:"controls";a:3:{s:5:"style";a:2:{s:21:"general_style_section";a:3:{s:12:"blog_spacing";i:1;s:14:"items_per_page";i:1;s:11:"blog_design";i:1;}s:22:"carousel_style_section";a:2:{s:15:"slides_per_view";i:1;s:23:"hide_pagination_control";i:1;}}s:7:"content";a:1:{s:23:"general_content_section";a:1:{s:5:"order";i:1;}}s:8:"advanced";a:1:{s:8:"wd_extra";a:1:{s:8:"scroll_y";i:1;}}}}s:12:"wd_instagram";a:3:{s:5:"count";i:1;s:15:"control_percent";i:6;s:8:"controls";a:3:{s:7:"content";a:2:{s:23:"general_content_section";a:2:{s:11:"data_source";i:1;s:8:"username";i:1;}s:14:"images_section";a:2:{s:6:"images";i:1;s:11:"images_size";i:1;}}s:5:"style";a:1:{s:22:"layout_content_section";a:5:{s:6:"design";i:1;s:7:"per_row";i:1;s:23:"hide_pagination_control";i:1;s:22:"hide_prev_next_buttons";i:1;s:6:"number";i:1;}}s:8:"advanced";a:1:{s:8:"wd_extra";a:1:{s:8:"scroll_y";i:1;}}}}}]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[cosmetics-banner-1]]></title>
@@ -1406,10 +1287,6 @@ Products						</h4>
 																					<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/09/cosmetics-banner-1.jpg]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -1434,10 +1311,6 @@ Products						</h4>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/09/cosmetics-banner-2.jpg]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[cosmetics-banner-3]]></title>
@@ -1460,10 +1333,6 @@ Products						</h4>
 																					<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/09/cosmetics-banner-3.jpg]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -1488,10 +1357,6 @@ Products						</h4>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/09/cosmetics-bg-girl.png]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[cosmetics-product-1]]></title>
@@ -1514,10 +1379,6 @@ Products						</h4>
 																					<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/cosmetics-product-1.jpg]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -1542,10 +1403,6 @@ Products						</h4>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/cosmetics-product-2.jpg]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[cosmetics-product-3]]></title>
@@ -1568,10 +1425,6 @@ Products						</h4>
 																					<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/cosmetics-product-3.jpg]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -1596,10 +1449,6 @@ Products						</h4>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/cosmetics-product-4.jpg]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[cosmetics-product-5]]></title>
@@ -1622,10 +1471,6 @@ Products						</h4>
 																					<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/cosmetics-product-5.jpg]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -1650,10 +1495,6 @@ Products						</h4>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/cosmetics-product-6.jpg]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[cosmetics-product-7]]></title>
@@ -1676,10 +1517,6 @@ Products						</h4>
 																					<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/cosmetics-product-7.jpg]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -1704,10 +1541,6 @@ Products						</h4>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/cosmetics-blog-1.jpg]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[cosmetics-blog-2]]></title>
@@ -1730,10 +1563,6 @@ Products						</h4>
 																					<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/cosmetics-blog-2.jpg]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -1758,10 +1587,6 @@ Products						</h4>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/cosmetics-blog-3.jpg]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[cosmetics-blog-4]]></title>
@@ -1784,10 +1609,6 @@ Products						</h4>
 																					<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/cosmetics-blog-4.jpg]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -1812,10 +1633,6 @@ Products						</h4>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/cosmetics-blog-5.jpg]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[cosmetics-blog-6]]></title>
@@ -1838,10 +1655,6 @@ Products						</h4>
 																					<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/cosmetics-blog-6.jpg]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -1866,10 +1679,6 @@ Products						</h4>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/cosmetics-blog-7.jpg]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[cosmetics-blog-9]]></title>
@@ -1893,10 +1702,6 @@ Products						</h4>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/cosmetics-blog-9.jpg]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[wood-logo-dark]]></title>
@@ -1919,10 +1724,6 @@ Products						</h4>
 																					<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/08/wood-logo-dark.svg]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -2009,10 +1810,6 @@ Products						</h4>
 							<wp:meta_key><![CDATA[_elementor_controls_usage]]></wp:meta_key>
 							<wp:meta_value><![CDATA[a:5:{s:15:"wd_image_or_svg";a:3:{s:5:"count";i:1;s:15:"control_percent";i:3;s:8:"controls";a:1:{s:7:"content";a:1:{s:23:"general_content_section";a:5:{s:5:"image";i:1;s:10:"image_size";i:1;s:22:"image_custom_dimension";i:1;s:15:"on_click_action";i:1;s:4:"link";i:1;}}}}s:13:"wd_text_block";a:3:{s:5:"count";i:1;s:15:"control_percent";i:1;s:8:"controls";a:1:{s:7:"content";a:1:{s:23:"general_content_section";a:1:{s:4:"text";i:1;}}}}s:7:"wd_list";a:3:{s:5:"count";i:1;s:15:"control_percent";i:3;s:8:"controls";a:2:{s:7:"content";a:2:{s:23:"general_content_section";a:1:{s:10:"list_items";i:1;}s:20:"icon_content_section";a:3:{s:9:"list_type";i:1;s:10:"image_size";i:1;s:22:"image_custom_dimension";i:1;}}s:5:"style";a:1:{s:21:"general_style_section";a:1:{s:14:"list_items_gap";i:1;}}}}s:6:"column";a:3:{s:5:"count";i:1;s:15:"control_percent";i:0;s:8:"controls";a:1:{s:6:"layout";a:1:{s:6:"layout";a:1:{s:12:"_inline_size";i:1;}}}}s:7:"section";a:3:{s:5:"count";i:1;s:15:"control_percent";i:0;s:8:"controls";a:0:{}}}]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[wd-phone-dark]]></title>
@@ -2035,10 +1832,6 @@ Products						</h4>
 																					<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/08/wd-phone-dark.svg]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -2063,10 +1856,6 @@ Products						</h4>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/08/wd-cursor-dark.svg]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[wd-envelope-dark]]></title>
@@ -2089,10 +1878,6 @@ Products						</h4>
 																					<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/08/wd-envelope-dark.svg]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -2117,10 +1902,6 @@ Products						</h4>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/09/cosmetics-cream.svg]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[cosmetics-fashion]]></title>
@@ -2143,10 +1924,6 @@ Products						</h4>
 																					<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/09/cosmetics-fashion.svg]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -2171,10 +1948,6 @@ Products						</h4>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/09/cosmetics-medical.svg]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[cosmetics-img-right-collage]]></title>
@@ -2197,10 +1970,6 @@ Products						</h4>
 																					<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/09/cosmetics-img-right-collage.jpg]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -2225,10 +1994,6 @@ Products						</h4>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/09/cosmetics-infobox-1.jpg]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[cosmetics-infobox-2]]></title>
@@ -2251,10 +2016,6 @@ Products						</h4>
 																					<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/09/cosmetics-infobox-2.jpg]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -2279,10 +2040,6 @@ Products						</h4>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/09/cosmetics-infobox-3.jpg]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[wd-inst-cosmetics-1]]></title>
@@ -2305,10 +2062,6 @@ Products						</h4>
 																					<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/09/wd-inst-cosmetics-1.jpg]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -2333,10 +2086,6 @@ Products						</h4>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/09/wd-inst-cosmetics-2.jpg]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[wd-inst-cosmetics-3]]></title>
@@ -2359,10 +2108,6 @@ Products						</h4>
 																					<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/09/wd-inst-cosmetics-3.jpg]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -2387,10 +2132,6 @@ Products						</h4>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/09/wd-inst-cosmetics-4.jpg]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[wd-inst-cosmetics-5]]></title>
@@ -2413,10 +2154,6 @@ Products						</h4>
 																					<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/09/wd-inst-cosmetics-5.jpg]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -2441,10 +2178,6 @@ Products						</h4>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/09/wd-inst-cosmetics-6.jpg]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[Cosmetics slide 2]]></title>
@@ -2452,26 +2185,24 @@ Products						</h4>
 					<pubDate>Mon, 12 Feb 2024 13:23:11 +0000</pubDate>
 					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/elementor/?post_type=woodmart_slide&#038;p=27018</guid>
-											<content:encoded><![CDATA[Montesa
-
-Fix your look
-
-Organic Skincare.
-
-There are many variations of passages of Lorem Ipsum available, but the majority have suffered altera.
-
-<a href="#">
-Read more
-</a>
-<a href="#">
-Shop now
-</a>
-<img src="http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/cosmetics-slide-2-img-opt.png" sizes="(max-width: 505px) 100vw, 505px" srcset="https://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/cosmetics-slide-2-img-opt.png 505w, https://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/cosmetics-slide-2-img-opt-229x300.png 229w, https://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/cosmetics-slide-2-img-opt-130x171.png 130w" alt="" width="505" height="663" />]]></content:encoded>
+											<content:encoded><![CDATA[<link rel="stylesheet" id="wd-text-block-css" href="https://dummy.xtemos.com/woodmart2/elementor/wp-content/themes/woodmart8/css/parts/el-text-block.min.css?ver=8.4.0" type="text/css" media="all" /> 					
+			<p>Montesa</p>
+			<p>Fix your look</p>
+			<p>Organic Skincare.</p>
+			<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered altera.</p>
+								<link rel="stylesheet" id="wd-button-css" href="https://dummy.xtemos.com/woodmart2/elementor/wp-content/themes/woodmart8/css/parts/el-button.min.css?ver=8.4.0" type="text/css" media="all" /> 					
+			<a  href="#">
+					Read more				
+							</a>
+			<a  href="#" style="--btn-color:#333;">
+					Shop now				
+							</a>
+								<img width="505" height="663" src="http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/cosmetics-slide-2-img-opt.png" alt="" decoding="async" loading="lazy" srcset="https://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/cosmetics-slide-2-img-opt.png 505w, https://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/cosmetics-slide-2-img-opt-229x300.png 229w, https://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/cosmetics-slide-2-img-opt-130x171.png 130w" sizes="auto, (max-width: 505px) 100vw, 505px" />]]></content:encoded>
 															<wp:post_id>27018</wp:post_id>
 					<wp:post_date><![CDATA[2024-02-12 13:23:11]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-02-12 13:23:11]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-02-12 13:35:12]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-02-12 13:35:12]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2026-02-25 10:56:19]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2026-02-25 10:56:19]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[cosmetics-slide-1-2]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -2561,19 +2292,15 @@ Shop now
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_elementor_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[3.18.3]]></wp:meta_value>
+							<wp:meta_value><![CDATA[3.33.6]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_elementor_data]]></wp:meta_key>
 							<wp:meta_value><![CDATA[[{"id":"bfb79bf","elType":"container","settings":{"flex_gap":{"column":"","row":"","isLinked":true,"unit":"px","size":null},"container_sticky_offset":50,"scroll_y":-80,"flex_direction":"row","flex_direction_mobile":"column"},"elements":[{"id":"0108793","elType":"container","settings":{"content_width":"full","width":{"unit":"%","size":50,"sizes":[]},"width_mobile":{"unit":"%","size":100,"sizes":[]},"boxed_width":{"unit":"%","size":56,"sizes":[]},"boxed_width_tablet":{"unit":"%","size":"","sizes":[]},"boxed_width_mobile":{"unit":"%","size":"","sizes":[]},"flex_justify_content":"center","flex_gap":{"column":"0","row":"0","isLinked":true,"unit":"px","size":0},"margin":{"unit":"px","top":"0","right":"0","bottom":"60","left":"0","isLinked":false},"container_sticky_offset":50,"scroll_y":-80},"elements":[{"id":"e8c1d38","elType":"widget","settings":{"text":"<p>Montesa<\/p>","typography_typography":"custom","typography_font_family":"Satisfy","typography_font_size":{"unit":"px","size":48,"sizes":[]},"typography_font_size_tablet":{"unit":"px","size":40,"sizes":[]},"typography_font_size_mobile":{"unit":"px","size":36,"sizes":[]},"typography_font_weight":"400","text_color":"primary","scroll_y":-80,"wd_animation":"slide-from-bottom","wd_animation_duration":"fast","text_alignment":"center","typography_line_height":{"unit":"em","size":1.3,"sizes":[]}},"elements":[],"widgetType":"wd_text_block"},{"id":"8b61158","elType":"widget","settings":{"text":"<p>Fix your look<\/p>","typography_typography":"custom","typography_font_family":"Lato","typography_font_size":{"unit":"px","size":58,"sizes":[]},"typography_font_size_tablet":{"unit":"px","size":42,"sizes":[]},"typography_font_size_mobile":{"unit":"px","size":38,"sizes":[]},"typography_font_weight":"700","text_color":"title","scroll_y":-80,"wd_animation":"slide-from-bottom","wd_animation_duration":"fast","wd_animation_delay":200,"text_alignment":"center","typography_line_height":{"unit":"em","size":1.3,"sizes":[]}},"elements":[],"widgetType":"wd_text_block"},{"id":"240d823","elType":"widget","settings":{"text":"<p>Organic Skincare.<\/p>","typography_typography":"custom","typography_font_family":"Lato","typography_font_size":{"unit":"px","size":58,"sizes":[]},"typography_font_size_tablet":{"unit":"px","size":42,"sizes":[]},"typography_font_size_mobile":{"unit":"px","size":38,"sizes":[]},"typography_font_weight":"300","text_color":"title","_margin":{"unit":"px","top":"0","right":"0","bottom":"10","left":"0","isLinked":false},"scroll_y":-80,"wd_animation":"slide-from-bottom","wd_animation_duration":"fast","wd_animation_delay":300,"text_alignment":"center","typography_line_height":{"unit":"em","size":1.3,"sizes":[]}},"elements":[],"widgetType":"wd_text_block"},{"id":"a3330b8","elType":"widget","settings":{"text":"<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered altera.<\/p>","typography_typography":"custom","typography_font_size":{"unit":"px","size":18,"sizes":[]},"typography_font_size_tablet":{"unit":"px","size":16,"sizes":[]},"typography_font_size_mobile":{"unit":"px","size":14,"sizes":[]},"_margin":{"unit":"px","top":"0","right":"0","bottom":"30","left":"0","isLinked":false},"scroll_y":-80,"wd_animation":"slide-from-bottom","wd_animation_duration":"fast","wd_animation_delay":400,"text_alignment":"center","width":{"unit":"px","size":480,"sizes":[]},"width_tablet":{"unit":"px","size":430,"sizes":[]}},"elements":[],"widgetType":"wd_text_block"},{"id":"3025e59","elType":"container","settings":{"content_width":"full","flex_direction":"row","flex_justify_content":"center","flex_wrap":"nowrap","container_sticky_offset":50,"scroll_y":-80},"elements":[{"id":"b37766a","elType":"widget","settings":{"text":"Read more","color":"primary","size":"large","align":"left","scroll_y":-80,"wd_animation":"slide-from-bottom","wd_animation_duration":"fast","wd_animation_delay":450},"elements":[],"widgetType":"wd_button"},{"id":"ae75f32","elType":"widget","settings":{"text":"Shop now","color":"custom","size":"large","align":"left","scroll_y":-80,"wd_animation":"slide-from-bottom","wd_animation_duration":"fast","wd_animation_delay":450,"style":"bordered","bg_color":"#CECECE","color_scheme":"dark","bg_color_hover":"#C9C9C9"},"elements":[],"widgetType":"wd_button"}],"isInner":true}],"isInner":true},{"id":"a00eadb","elType":"container","settings":{"content_width":"full","width":{"unit":"%","size":50,"sizes":[]},"boxed_width":{"unit":"%","size":50,"sizes":[]},"boxed_width_tablet":{"unit":"%","size":"","sizes":[]},"boxed_width_mobile":{"unit":"%","size":"","sizes":[]},"container_sticky_offset":50,"scroll_y":-80,"hide_mobile":"hidden-mobile"},"elements":[{"id":"7163e92","elType":"widget","settings":{"image":{"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2024\/02\/cosmetics-slide-2-img-opt.png","id":27021,"size":"","alt":"","source":"library"},"scroll_y":-80,"wd_animation":"zoom-in","wd_animation_delay":150},"elements":[],"widgetType":"wd_image_or_svg"}],"isInner":true}],"isInner":false}]]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[cosmetics-slide-1]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
+							<wp:meta_key><![CDATA[_elementor_page_settings]]></wp:meta_key>
+							<wp:meta_value><![CDATA[a:6:{s:10:"hide_title";s:0:"";s:8:"wd_image";a:5:{s:3:"url";s:107:"http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/cosmetics-slide-2-bg-opt.jpg";s:2:"id";i:27019;s:4:"size";s:0:"";s:3:"alt";s:0:"";s:6:"source";s:7:"library";}s:11:"wd_bg_image";a:3:{s:3:"url";s:0:"";s:2:"id";s:0:"";s:4:"size";s:0:"";}s:6:"margin";a:6:{s:4:"unit";s:2:"px";s:3:"top";s:0:"";s:5:"right";s:0:"";s:6:"bottom";s:0:"";s:4:"left";s:0:"";s:8:"isLinked";b:1;}s:7:"padding";a:6:{s:4:"unit";s:2:"px";s:3:"top";s:0:"";s:5:"right";s:0:"";s:6:"bottom";s:0:"";s:4:"left";s:0:"";s:8:"isLinked";b:1;}s:21:"background_background";s:0:"";}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -2598,10 +2325,6 @@ Shop now
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2024/02/cosmetics-slide-2-img-opt.png]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[Cosmetics slide 1]]></title>
@@ -2609,22 +2332,20 @@ Shop now
 					<pubDate>Mon, 12 Feb 2024 13:12:18 +0000</pubDate>
 					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/elementor/?post_type=woodmart_slide&#038;p=27008</guid>
-											<content:encoded><![CDATA[Commodo
-
-The Best Natural
-
-&amp; Organic Mascara.
-
-There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.
-
-<a href="#">
-Read more
-</a>]]></content:encoded>
+											<content:encoded><![CDATA[<link rel="stylesheet" id="wd-text-block-css" href="https://dummy.xtemos.com/woodmart2/elementor/wp-content/themes/woodmart8/css/parts/el-text-block.min.css?ver=8.4.0" type="text/css" media="all" /> 					
+			<p>Commodo</p>
+			<p>The Best Natural</p>
+			<p>&amp; Organic Mascara.</p>
+			<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
+								<link rel="stylesheet" id="wd-button-css" href="https://dummy.xtemos.com/woodmart2/elementor/wp-content/themes/woodmart8/css/parts/el-button.min.css?ver=8.4.0" type="text/css" media="all" /> 					
+			<a  href="#">
+					Read more				
+							</a>]]></content:encoded>
 															<wp:post_id>27008</wp:post_id>
 					<wp:post_date><![CDATA[2024-02-12 13:12:18]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-02-12 13:12:18]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-02-12 13:35:20]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-02-12 13:35:20]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2026-02-25 10:56:02]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2026-02-25 10:56:02]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[cosmetics-slide-1]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -2710,15 +2431,15 @@ Read more
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_elementor_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[3.18.3]]></wp:meta_value>
+							<wp:meta_value><![CDATA[3.33.6]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_elementor_data]]></wp:meta_key>
 							<wp:meta_value><![CDATA[[{"id":"bfb79bf","elType":"container","settings":{"flex_gap":{"column":"0","row":"0","isLinked":true,"unit":"px","size":0},"margin":{"unit":"px","top":"0","right":"0","bottom":"60","left":"0","isLinked":false},"container_sticky_offset":50,"scroll_y":-80},"elements":[{"id":"e8c1d38","elType":"widget","settings":{"text":"<p>Commodo<\/p>","typography_typography":"custom","typography_font_family":"Satisfy","typography_font_size":{"unit":"px","size":48,"sizes":[]},"typography_font_size_tablet":{"unit":"px","size":40,"sizes":[]},"typography_font_size_mobile":{"unit":"px","size":36,"sizes":[]},"typography_font_weight":"400","text_color":"primary","scroll_y":-80,"wd_animation":"slide-from-bottom","wd_animation_duration":"fast","typography_line_height":{"unit":"em","size":1.3,"sizes":[]}},"elements":[],"widgetType":"wd_text_block"},{"id":"8b61158","elType":"widget","settings":{"text":"<p>The Best Natural<\/p>","typography_typography":"custom","typography_font_family":"Lato","typography_font_size":{"unit":"px","size":58,"sizes":[]},"typography_font_size_tablet":{"unit":"px","size":42,"sizes":[]},"typography_font_size_mobile":{"unit":"px","size":38,"sizes":[]},"typography_font_weight":"700","text_color":"title","scroll_y":-80,"wd_animation":"slide-from-bottom","wd_animation_duration":"fast","wd_animation_delay":200,"typography_line_height":{"unit":"em","size":1.3,"sizes":[]}},"elements":[],"widgetType":"wd_text_block"},{"id":"240d823","elType":"widget","settings":{"text":"<p>&amp; Organic Mascara.<\/p>","typography_typography":"custom","typography_font_family":"Lato","typography_font_size":{"unit":"px","size":58,"sizes":[]},"typography_font_size_tablet":{"unit":"px","size":42,"sizes":[]},"typography_font_size_mobile":{"unit":"px","size":38,"sizes":[]},"typography_font_weight":"300","text_color":"title","_margin":{"unit":"px","top":"0","right":"0","bottom":"10","left":"0","isLinked":false},"scroll_y":-80,"wd_animation":"slide-from-bottom","wd_animation_duration":"fast","wd_animation_delay":300,"typography_line_height":{"unit":"em","size":1.3,"sizes":[]}},"elements":[],"widgetType":"wd_text_block"},{"id":"a3330b8","elType":"widget","settings":{"text":"<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.<\/p>","typography_typography":"custom","typography_font_size":{"unit":"px","size":18,"sizes":[]},"typography_font_size_tablet":{"unit":"px","size":16,"sizes":[]},"typography_font_size_mobile":{"unit":"px","size":14,"sizes":[]},"_margin":{"unit":"px","top":"0","right":"0","bottom":"30","left":"0","isLinked":false},"scroll_y":-80,"wd_animation":"slide-from-bottom","wd_animation_duration":"fast","wd_animation_delay":400},"elements":[],"widgetType":"wd_text_block"},{"id":"b37766a","elType":"widget","settings":{"text":"Read more","color":"primary","size":"large","align":"left","scroll_y":-80,"wd_animation":"slide-from-bottom","wd_animation_duration":"fast","wd_animation_delay":450},"elements":[],"widgetType":"wd_button"}],"isInner":false}]]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
+							<wp:meta_key><![CDATA[_elementor_page_settings]]></wp:meta_key>
+							<wp:meta_value><![CDATA[a:6:{s:10:"hide_title";s:0:"";s:8:"wd_image";a:5:{s:3:"url";s:107:"http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/cosmetics-slide-1-bg-opt.jpg";s:2:"id";i:27010;s:4:"size";s:0:"";s:3:"alt";s:0:"";s:6:"source";s:7:"library";}s:11:"wd_bg_image";a:3:{s:3:"url";s:0:"";s:2:"id";s:0:"";s:4:"size";s:0:"";}s:6:"margin";a:6:{s:4:"unit";s:2:"px";s:3:"top";s:0:"";s:5:"right";s:0:"";s:6:"bottom";s:0:"";s:4:"left";s:0:"";s:8:"isLinked";b:1;}s:7:"padding";a:6:{s:4:"unit";s:2:"px";s:3:"top";s:0:"";s:5:"right";s:0:"";s:6:"bottom";s:0:"";s:4:"left";s:0:"";s:8:"isLinked";b:1;}s:21:"background_background";s:0:"";}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 				</channel>

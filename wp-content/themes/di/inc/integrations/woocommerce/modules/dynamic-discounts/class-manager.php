@@ -2,7 +2,7 @@
 /**
  * Manager class file.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Modules\Dynamic_Discounts;
@@ -122,7 +122,7 @@ class Manager extends Singleton {
 		$current_meta_boxes = array();
 
 		foreach ( $default_meta_boxes as $meta_box_id ) {
-			$current_meta_boxes[ $meta_box_id ] = maybe_unserialize( get_post_meta( $id, $meta_box_id, true ) );
+			$current_meta_boxes[ $meta_box_id ] = get_post_meta( $id, $meta_box_id, true );
 		}
 
 		set_transient( $this->wd_transient_discounts_rule . '_' . $id, $current_meta_boxes );

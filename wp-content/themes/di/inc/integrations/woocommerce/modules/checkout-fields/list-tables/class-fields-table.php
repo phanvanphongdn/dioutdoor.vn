@@ -2,7 +2,7 @@
 /**
  * This file describes class for render view all checkout detail fields.
  *
- * @package Woodmart.
+ * @package woodmart.
  */
 
 namespace XTS\Modules\Checkout_Fields\List_Table;

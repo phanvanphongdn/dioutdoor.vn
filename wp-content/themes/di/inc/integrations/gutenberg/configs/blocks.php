@@ -10,7 +10,9 @@
 		'wd/button'                       => array(),
 		'wd/icon'                         => array(),
 		'wd/image'                        => array(),
-		'wd/cover'                        => array(),
+		'wd/cover'                        => array(
+			'attributes' => wd_get_block_cover_attrs(),
+		),
 		'wd/divider'                      => array(),
 		'wd/gallery'                      => array(),
 		'wd/gallery-item'                 => array(),

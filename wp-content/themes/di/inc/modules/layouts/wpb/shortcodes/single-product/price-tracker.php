@@ -2,7 +2,7 @@
 /**
  * Price tracker shortcode.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 use XTS\Modules\Price_Tracker\Frontend as Price_Tracker_Frontend;

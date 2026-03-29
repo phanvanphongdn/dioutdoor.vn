@@ -2,7 +2,7 @@
 /**
  * Admin floating blocks class file.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Modules\Floating_Blocks;
@@ -54,7 +54,8 @@ class Manager extends Singleton {
 	public function get_active_editor( $post_id ) {
 		if ( defined( 'WPB_VC_VERSION' ) && ! wp_is_serving_rest_request() ) {
 			$vc_data = get_post_meta( $post_id, '_wpb_vc_js_status', true );
-			if ( 'true' === $vc_data || get_post_meta( $post_id, '_wpb_shortcodes_custom_css', true ) ) {
+
+			if ( 'true' === $vc_data || get_post_meta( $post_id, '_wpb_shortcodes_custom_css', true ) || get_post_meta( $post_id, 'woodmart_shortcodes_custom_css', true ) ) {
 				return 'wpb';
 			}
 		}

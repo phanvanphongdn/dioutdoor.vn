@@ -120,10 +120,10 @@ class Frontend extends Singleton {
 				</p>
 
 				<div class="wd-pt-signed-btns">
-					<a href="#" class="btn wd-close-popup">
+					<a href="#" class="btn btn-accent wd-close-popup">
 						<?php esc_html_e( 'Continue shopping', 'woodmart' ); ?>
 					</a>
-					<a href="<?php echo esc_url( wc_get_account_endpoint_url( 'price-tracker' ) ); ?>" class="btn wd-pt-view">
+					<a href="<?php echo esc_url( wc_get_account_endpoint_url( 'price-tracker' ) ); ?>" class="btn btn-default wd-pt-view">
 						<?php esc_html_e( 'View subscriptions', 'woodmart' ); ?>
 					</a>
 				</div>
@@ -145,7 +145,7 @@ class Frontend extends Singleton {
 						<span>
 							<?php esc_html_e( 'The price will be reduced to', 'woodmart' ); ?>
 						</span>
-						<input type="number" name="wd-pt-user-desired-price" min="1" max="<?php echo esc_attr( $this->get_max_price( $product ) ); ?>">
+						<input type="number" name="wd-pt-user-desired-price" min="0" max="<?php echo esc_attr( $this->get_max_price( $product ) ); ?>">
 						<span>
 							<?php echo esc_html( $current_currency ); ?>
 						</span>
@@ -165,7 +165,7 @@ class Frontend extends Singleton {
 					</label>
 				<?php endif; ?>
 
-				<a href="#" class="btn wd-pt-add">
+				<a href="#" class="btn btn-accent wd-pt-add">
 					<?php esc_attr_e( 'Add to price tracker', 'woodmart' ); ?>
 				</a>
 			</div>
@@ -177,6 +177,8 @@ class Frontend extends Singleton {
 
 	/**
 	 * Render subscribe button.
+	 *
+	 * @param string $button_classes Additional button classes.
 	 */
 	public function render_button( $button_classes = '' ) {
 		if ( ! $this->should_be_rendered() ) {
@@ -211,7 +213,9 @@ class Frontend extends Singleton {
 				rel="nofollow"
 				class="<?php echo esc_attr( $btn_data['link_classes'] ); ?>"
 			>
-				<span class="wd-added-icon"></span>
+				<span class="wd-action-icon">
+					<span class="wd-check-icon"></span>
+				</span>
 				<span class="wd-action-text"><?php echo esc_html( $btn_data['button_text'] ); ?></span>
 			</a>
 		</div>
@@ -224,7 +228,7 @@ class Frontend extends Singleton {
 	 * @return void
 	 */
 	public function update_price_tracker_form() {
-		if ( empty( $_GET['action'] ) || 'woodmart_update_price_tracker_form' !== $_GET['action'] ) {
+		if ( empty( $_GET['action'] ) || 'woodmart_update_price_tracker_form' !== $_GET['action'] ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 			return;
 		}
 
@@ -253,7 +257,7 @@ class Frontend extends Singleton {
 	 * Add to price tracker ajax action.
 	 */
 	public function add_to_price_tracker() {
-		if ( ! wp_verify_nonce( $_POST['security'] ? $_POST['security'] : '', 'woodmart_price_tracker_add' ) ) {
+		if ( ! wp_verify_nonce( $_POST['security'] ? $_POST['security'] : '', 'woodmart_price_tracker_add' ) ) { // phpcs:ignore
 			wp_send_json_error(
 				array(
 					'notice' => esc_html__( 'Security check failed.', 'woodmart' ),
@@ -379,7 +383,7 @@ class Frontend extends Singleton {
 	 * Ajax action for removing subscription on single product page.
 	 */
 	public function remove_from_price_tracker() {
-		if ( ! wp_verify_nonce( $_POST['security'] ? $_POST['security'] : '', 'woodmart_price_tracker_remove' ) ) {
+		if ( ! wp_verify_nonce( $_POST['security'] ? $_POST['security'] : '', 'woodmart_price_tracker_remove' ) ) { // phpcs:ignore
 			wp_send_json_error(
 				array(
 					'notice' => esc_html__( 'Security check failed.', 'woodmart' ),
@@ -440,7 +444,7 @@ class Frontend extends Singleton {
 	 * Ajax action for removing subscription on my account page.
 	 */
 	public function remove_from_price_tracker_in_my_account_action() {
-		if ( ! wp_verify_nonce( $_POST['security'] ? $_POST['security'] : '', 'woodmart_price_tracker_remove' ) ) {
+		if ( ! wp_verify_nonce( $_POST['security'] ? $_POST['security'] : '', 'woodmart_price_tracker_remove' ) ) { // phpcs:ignore
 			wp_send_json_error(
 				array(
 					'notice' => esc_html__( 'Security check failed.', 'woodmart' ),
@@ -511,7 +515,7 @@ class Frontend extends Singleton {
 	 * Update desired price for a product.
 	 */
 	public function update_price_tracker_desired_price_action() {
-		if ( ! wp_verify_nonce( $_POST['security'] ? $_POST['security'] : '', 'woodmart_price_tracker_update_desired_price' ) ) {
+		if ( ! wp_verify_nonce( $_POST['security'] ? $_POST['security'] : '', 'woodmart_price_tracker_update_desired_price' ) ) { // phpcs:ignore
 			wp_send_json_error(
 				array(
 					'notice' => esc_html__( 'Security check failed.', 'woodmart' ),
@@ -698,8 +702,6 @@ class Frontend extends Singleton {
 		if ( woodmart_get_opt( 'price_tracker_enabled' ) ) {
 			$localized['pt_button_text_not_tracking']   = __( 'Track price', 'woodmart' );
 			$localized['pt_button_text_stop_tracking']  = __( 'Stop tracking', 'woodmart' );
-			$localized['pt_button_text_watch_tracking'] = __( 'Tracking enabled', 'woodmart' );
-			$localized['pt_endpoint_url']               = wc_get_account_endpoint_url( 'price-tracker' );
 			$localized['pt_policy_check_msg']           = esc_html__( 'You must accept our Privacy Policy to join the Price tracker.', 'woodmart' );
 			$localized['pt_desired_price_check_msg']    = esc_html__( 'You must specify the desired price for this product.', 'woodmart' );
 			$localized['pt_subscribe_popup']            = ! is_user_logged_in() || ! woodmart_get_opt( 'price_tracker_use_loggedin_email' );
@@ -790,11 +792,13 @@ class Frontend extends Singleton {
 		if ( is_ajax() ) {
 			$product_id = 0;
 
+			// phpcs:disable WordPress.Security.NonceVerification.Recommended
 			if ( ! empty( $_REQUEST['variation_id'] ) ) {
 				$product_id = absint( $_REQUEST['variation_id'] );
 			} elseif ( ! empty( $_REQUEST['product_id'] ) ) {
 				$product_id = absint( $_REQUEST['product_id'] );
 			}
+			// phpcs:enable WordPress.Security.NonceVerification.Recommended
 		} else {
 			global $product;
 
@@ -901,13 +905,25 @@ class Frontend extends Singleton {
 			}
 		}
 
-		if ( $is_signed_product && ( ! is_ajax() || ( isset( $_REQUEST['action'] ) && 'woodmart_update_price_tracker_form' === $_REQUEST['action'] ) ) ) {
+		if (
+			$is_signed_product &&
+			(
+				! is_ajax() ||
+				(
+					isset( $_REQUEST['action'] ) && // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+					in_array(
+						$_REQUEST['action'], // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+						array(
+							'woodmart_update_price_tracker_form',
+							'woodmart_add_to_price_tracker',
+						),
+						true
+					)
+				)
+			)
+		) {
 			$btn_data['button_text']     = __( 'Stop tracking', 'woodmart' );
 			$btn_data['button_classes'] .= ' wd-pt-remove';
-		} elseif ( $is_signed_product && is_ajax() ) {
-			$btn_data['button_text']  = __( 'Tracking enabled', 'woodmart' );
-			$btn_data['button_link']  = wc_get_account_endpoint_url( 'price-tracker' );
-			$btn_data['link_classes'] = 'added';
 		} elseif ( ! empty( $this->get_render_popup_fields() ) ) {
 			$btn_data['button_link']  = '#wd-popup-pt';
 			$btn_data['link_classes'] = 'wd-open-popup';
@@ -1018,7 +1034,7 @@ class Frontend extends Singleton {
 			'woodmart_update_price_tracker_form',
 		);
 
-		if ( in_array( $_REQUEST['action'], $allowed_actions, true ) ) {
+		if ( in_array( $_REQUEST['action'], $allowed_actions, true ) ) { // phpcs:ignore WordPress.Security
 			return true;
 		}
 
@@ -1028,6 +1044,7 @@ class Frontend extends Singleton {
 	/**
 	 * Check if this is an allowed product type.
 	 *
+	 * @param string $product_type Product type.
 	 * @return bool
 	 */
 	public function is_allowed_product_type( $product_type ) {

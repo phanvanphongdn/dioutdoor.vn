@@ -2,7 +2,7 @@
 /**
  * Unit of measurement.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Modules\Unit_Of_Measure;

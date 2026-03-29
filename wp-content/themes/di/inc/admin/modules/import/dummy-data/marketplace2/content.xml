@@ -16,7 +16,7 @@
 	<!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 	<!--    contained in this file into your site. -->
 
-	<!-- generator="WordPress/6.7.3" created="2025-09-30 12:31" -->
+	<!-- generator="WordPress/6.7.4" created="2026-02-25 15:34" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -29,20 +29,14 @@
 	<title>Marketplace 2</title>
 	<link>https://dummy.xtemos.com/woodmart2/marketplace2</link>
 	<description></description>
-	<pubDate>Tue, 30 Sep 2025 12:31:12 +0000</pubDate>
+	<pubDate>Wed, 25 Feb 2026 15:34:05 +0000</pubDate>
 	<language>en-US</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
 	<wp:base_site_url>https://dummy.xtemos.com/woodmart2/</wp:base_site_url>
 	<wp:base_blog_url>https://dummy.xtemos.com/woodmart2/marketplace2</wp:base_blog_url>
 
 	
-					<wp:term>
-			<wp:term_id>0</wp:term_id>
-			<wp:term_taxonomy><![CDATA[]]></wp:term_taxonomy>
-			<wp:term_slug><![CDATA[]]></wp:term_slug>
-			<wp:term_parent><![CDATA[]]></wp:term_parent>
-					</wp:term>
-			<wp:term>
+										<wp:term>
 			<wp:term_id>347</wp:term_id>
 			<wp:term_taxonomy><![CDATA[woodmart_slider]]></wp:term_taxonomy>
 			<wp:term_slug><![CDATA[marketplace-2-slider]]></wp:term_slug>
@@ -216,48 +210,9 @@
 			<wp:meta_key><![CDATA[autoplay_speed]]></wp:meta_key>
 			<wp:meta_value><![CDATA[30000]]></wp:meta_value>
 		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-347-version]]></wp:meta_key>
-			<wp:meta_value><![CDATA[8.2.0]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-347-site-url]]></wp:meta_key>
-			<wp:meta_value><![CDATA[e1816af90b8a3c5cc163b707160cb94f]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-347-css-data]]></wp:meta_key>
-			<wp:meta_value><![CDATA[#slider-347 .wd-slide {
-	min-height: 575px;
-}
-
-@media (max-width: 1024px) {
-	#slider-347 .wd-slide {
-		min-height: 500px;
-	}
-}
-
-@media (max-width: 767px) {
-	#slider-347 .wd-slide {
-		min-height: 500px;
-	}
-}
-]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-347-credentials]]></wp:meta_key>
-			<wp:meta_value><![CDATA[requested]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-347-file-data]]></wp:meta_key>
-			<wp:meta_value><![CDATA[a:3:{s:4:"path";s:36:"/2025/06/xts-term-347-1748947112.css";s:13:"theme_version";s:5:"8.2.0";s:8:"site_url";s:32:"e1816af90b8a3c5cc163b707160cb94f";}]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-347-status]]></wp:meta_key>
-			<wp:meta_value><![CDATA[valid]]></wp:meta_value>
-		</wp:termmeta>
 		</wp:term>
-		
-	<generator>https://wordpress.org/?v=6.7.3</generator>
+				
+	<generator>https://wordpress.org/?v=6.7.4</generator>
 
 					<item>
 					<title><![CDATA[mplc-slider-slide-1-opt]]></title>
@@ -1440,8 +1395,8 @@ A client that’s unhappy for a reason is a problem, a client that’s unhappy t
 															<wp:post_id>1120</wp:post_id>
 					<wp:post_date><![CDATA[2025-01-03 14:43:01]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2025-01-03 14:43:01]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2025-01-03 15:21:26]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2025-01-03 15:21:26]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2026-02-25 14:42:23]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2026-02-25 14:42:23]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[marketplace-2-slide-1]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -1454,44 +1409,8 @@ A client that’s unhappy for a reason is a problem, a client that’s unhappy t
 							<wp:meta_value><![CDATA[rgb(236,224,210)]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:110:"http://dummy.xtemos.com/woodmart2/marketplace2/wp-content/uploads/sites/41/2025/01/mplc-slider-slide-1-opt.jpg";s:2:"id";s:4:"1121";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_size_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[cover]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_position_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[center center]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_tablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_mobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[content_width]]></wp:meta_key>
-							<wp:meta_value><![CDATA[1200]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[content_width_tablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[1200]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[content_width_mobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[500]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[vertical_align]]></wp:meta_key>
 							<wp:meta_value><![CDATA[top]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[horizontal_align]]></wp:meta_key>
-							<wp:meta_value><![CDATA[left]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[slide_animation]]></wp:meta_key>
@@ -1513,6 +1432,14 @@ A client that’s unhappy for a reason is a problem, a client that’s unhappy t
 							<wp:meta_key><![CDATA[_wpb_shortcodes_custom_css_updated]]></wp:meta_key>
 							<wp:meta_value><![CDATA[1]]></wp:meta_value>
 						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[image]]></wp:meta_key>
+							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:110:"http://dummy.xtemos.com/woodmart2/marketplace2/wp-content/uploads/sites/41/2025/01/mplc-slider-slide-1-opt.jpg";s:2:"id";s:4:"1121";}]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_wpb_vc_editor_type]]></wp:meta_key>
+							<wp:meta_value><![CDATA[backend]]></wp:meta_value>
+						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[Marketplace 2 slide 2]]></title>
@@ -1524,8 +1451,8 @@ A client that’s unhappy for a reason is a problem, a client that’s unhappy t
 															<wp:post_id>1125</wp:post_id>
 					<wp:post_date><![CDATA[2025-01-03 15:02:39]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2025-01-03 15:02:39]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2025-01-03 15:21:36]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2025-01-03 15:21:36]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2026-02-25 14:42:38]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2026-02-25 14:42:38]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[marketplace-2-slide-1-2]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -1550,44 +1477,8 @@ A client that’s unhappy for a reason is a problem, a client that’s unhappy t
 							<wp:meta_value><![CDATA[rgb(230,230,216)]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:110:"http://dummy.xtemos.com/woodmart2/marketplace2/wp-content/uploads/sites/41/2025/01/mplc-slider-slide-2-opt.jpg";s:2:"id";s:4:"1126";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_size_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[cover]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_position_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[center center]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_tablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_mobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[content_width]]></wp:meta_key>
-							<wp:meta_value><![CDATA[1200]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[content_width_tablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[1200]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[content_width_mobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[500]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[vertical_align]]></wp:meta_key>
 							<wp:meta_value><![CDATA[top]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[horizontal_align]]></wp:meta_key>
-							<wp:meta_value><![CDATA[left]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[slide_animation]]></wp:meta_key>
@@ -1610,8 +1501,12 @@ A client that’s unhappy for a reason is a problem, a client that’s unhappy t
 							<wp:meta_value><![CDATA[1]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[marketplace-2-slide-1]]></wp:meta_value>
+							<wp:meta_key><![CDATA[image]]></wp:meta_key>
+							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:110:"http://dummy.xtemos.com/woodmart2/marketplace2/wp-content/uploads/sites/41/2025/01/mplc-slider-slide-2-opt.jpg";s:2:"id";s:4:"1126";}]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_wpb_vc_editor_type]]></wp:meta_key>
+							<wp:meta_value><![CDATA[backend]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -1624,8 +1519,8 @@ A client that’s unhappy for a reason is a problem, a client that’s unhappy t
 															<wp:post_id>1128</wp:post_id>
 					<wp:post_date><![CDATA[2025-01-03 15:08:20]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2025-01-03 15:08:20]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2025-09-30 12:30:12]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2025-09-30 12:30:12]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2026-02-25 14:42:53]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2026-02-25 14:42:53]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[marketplace-2-slide-1-2-2]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -1662,18 +1557,6 @@ A client that’s unhappy for a reason is a problem, a client that’s unhappy t
 							<wp:meta_value><![CDATA[rgb(100,137,167)]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:110:"http://dummy.xtemos.com/woodmart2/marketplace2/wp-content/uploads/sites/41/2025/01/mplc-slider-slide-3-opt.jpg";s:2:"id";s:4:"1129";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_size_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[cover]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_position_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[center center]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[vertical_align]]></wp:meta_key>
 							<wp:meta_value><![CDATA[top]]></wp:meta_value>
 						</wp:postmeta>
@@ -1698,12 +1581,12 @@ A client that’s unhappy for a reason is a problem, a client that’s unhappy t
 							<wp:meta_value><![CDATA[1]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[marketplace-2-slide-1-2]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wpb_vc_editor_type]]></wp:meta_key>
 							<wp:meta_value><![CDATA[backend]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[image]]></wp:meta_key>
+							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:110:"http://dummy.xtemos.com/woodmart2/marketplace2/wp-content/uploads/sites/41/2025/01/mplc-slider-slide-3-opt.jpg";s:2:"id";s:4:"1129";}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>

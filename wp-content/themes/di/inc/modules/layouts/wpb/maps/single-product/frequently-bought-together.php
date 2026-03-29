@@ -2,7 +2,7 @@
 /**
  * Frequently bought together map.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

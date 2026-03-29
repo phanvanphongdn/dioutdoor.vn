@@ -2,7 +2,7 @@
 /**
  * Price map.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -17,7 +17,7 @@ if ( ! function_exists( 'woodmart_get_vc_map_single_product_price' ) ) {
 		$typography_price = woodmart_get_typography_map(
 			array(
 				'key'           => 'price',
-				'selector'      => '{{WRAPPER}} .price, {{WRAPPER}} .price del, {{WRAPPER}} .amount',
+				'selector'      => '{{WRAPPER}}.wd-single-price .price',
 				'wd_dependency' => array(
 					'element' => 'price_style_tabs',
 					'value'   => array( 'main_price' ),
@@ -28,7 +28,7 @@ if ( ! function_exists( 'woodmart_get_vc_map_single_product_price' ) ) {
 		$typography_old_price = woodmart_get_typography_map(
 			array(
 				'key'           => 'old_price',
-				'selector'      => '{{WRAPPER}} .price del, {{WRAPPER}} del .amount',
+				'selector'      => '{{WRAPPER}}.wd-single-price .price del',
 				'wd_dependency' => array(
 					'element' => 'price_style_tabs',
 					'value'   => array( 'old_price' ),
@@ -96,8 +96,8 @@ if ( ! function_exists( 'woodmart_get_vc_map_single_product_price' ) ) {
 					'tabs'             => true,
 					'value'            => array(
 						esc_html__( 'Regular price', 'woodmart' ) => 'main_price',
-						esc_html__( 'Old price', 'woodmart' )  => 'old_price',
-						esc_html__( 'Suffix', 'woodmart' )     => 'suffix',
+						esc_html__( 'Old price', 'woodmart' ) => 'old_price',
+						esc_html__( 'Suffix', 'woodmart' ) => 'suffix',
 					),
 					'default'          => 'main_price',
 					'edit_field_class' => 'vc_col-sm-12 vc_column',
@@ -111,11 +111,11 @@ if ( ! function_exists( 'woodmart_get_vc_map_single_product_price' ) ) {
 				$typography_price['line_height'],
 
 				array(
-					'heading'          => esc_html__( 'Text color', 'woodmart' ),
+					'heading'          => esc_html__( 'Color', 'woodmart' ),
 					'type'             => 'wd_colorpicker',
 					'param_name'       => 'main_price_text_color',
 					'selectors'        => array(
-						'{{WRAPPER}} .price, {{WRAPPER}} .amount, {{WRAPPER}} del' => array(
+						'{{WRAPPER}}.wd-single-price :is(.price, del)' => array(
 							'color: {{VALUE}};',
 						),
 					),
@@ -134,11 +134,11 @@ if ( ! function_exists( 'woodmart_get_vc_map_single_product_price' ) ) {
 				$typography_old_price['line_height'],
 
 				array(
-					'heading'          => esc_html__( 'Text color', 'woodmart' ),
+					'heading'          => esc_html__( 'Color', 'woodmart' ),
 					'type'             => 'wd_colorpicker',
 					'param_name'       => 'old_price_text_color',
 					'selectors'        => array(
-						'{{WRAPPER}} .price del, {{WRAPPER}} del .amount' => array(
+						'{{WRAPPER}}.wd-single-price .price del' => array(
 							'color: {{VALUE}};',
 						),
 					),
@@ -157,7 +157,7 @@ if ( ! function_exists( 'woodmart_get_vc_map_single_product_price' ) ) {
 				$typography_suffix['line_height'],
 
 				array(
-					'heading'          => esc_html__( 'Text color', 'woodmart' ),
+					'heading'          => esc_html__( 'Color', 'woodmart' ),
 					'type'             => 'wd_colorpicker',
 					'param_name'       => 'suffix_text_color',
 					'selectors'        => array(

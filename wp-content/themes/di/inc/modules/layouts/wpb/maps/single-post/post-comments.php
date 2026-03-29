@@ -2,7 +2,7 @@
 /**
  * Post comments map.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -16,10 +16,9 @@ if ( ! function_exists( 'woodmart_get_vc_map_single_post_comments' ) ) {
 	function woodmart_get_vc_map_single_post_comments() {
 		$title_typography = woodmart_get_typography_map(
 			array(
-				'key'              => 'title_typography',
-				'group'            => esc_html__( 'Style', 'woodmart' ),
-				'selector'         => '{{WRAPPER}} .wd-post-comments .comments-title',
-				'edit_field_class' => 'vc_col-sm-6 vc_column',
+				'key'      => 'title_typography',
+				'group'    => esc_html__( 'Style', 'woodmart' ),
+				'selector' => '{{WRAPPER}} .wd-post-comments .comments-title',
 			)
 		);
 

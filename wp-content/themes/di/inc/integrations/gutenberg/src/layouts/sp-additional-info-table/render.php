@@ -1,20 +1,26 @@
 <?php
+/**
+ * Single product block additional info table render.
+ *
+ * @package woodmart
+ */
 
 use XTS\Modules\Layouts\Global_Data as Builder;
 use XTS\Modules\Layouts\Main;
 
 if ( ! function_exists( 'wd_gutenberg_single_product_additional_info_table' ) ) {
+	/**
+	 * Render the single product block additional info table.
+	 *
+	 * @param array  $block_attributes The block attributes.
+	 * @param string $inner_content The inner content.
+	 * @return string The rendered content.
+	 */
 	function wd_gutenberg_single_product_additional_info_table( $block_attributes, $inner_content ) {
+		$el_id    = wd_get_gutenberg_element_id( $block_attributes );
 		$classes  = wd_get_gutenberg_element_classes( $block_attributes );
 		$classes .= ' wd-layout-' . $block_attributes['layout'];
 		$classes .= ' wd-style-' . $block_attributes['style'];
-
-		if ( empty( $block_attributes['attrImage'] ) ) {
-			$classes .= ' wd-hide-image';
-		}
-		if ( empty( $block_attributes['attrName'] ) ) {
-			$classes .= ' wd-hide-name';
-		}
 
 		Main::setup_preview();
 
@@ -40,7 +46,8 @@ if ( ! function_exists( 'wd_gutenberg_single_product_additional_info_table' ) ) 
 
 			if ( in_array( 'weight', $raw_include, true ) ) {
 				$include[] = 'weight';
-			} elseif ( in_array( 'dimensions', $raw_include, true ) ) {
+			}
+			if ( in_array( 'dimensions', $raw_include, true ) ) {
 				$include[] = 'dimensions';
 			}
 		}
@@ -51,7 +58,8 @@ if ( ! function_exists( 'wd_gutenberg_single_product_additional_info_table' ) ) 
 
 			if ( in_array( 'weight', $raw_exclude, true ) ) {
 				$exclude[] = 'weight';
-			} elseif ( in_array( 'dimensions', $raw_exclude, true ) ) {
+			}
+			if ( in_array( 'dimensions', $raw_exclude, true ) ) {
 				$exclude[] = 'dimensions';
 			}
 		}
@@ -77,7 +85,23 @@ if ( ! function_exists( 'wd_gutenberg_single_product_additional_info_table' ) ) 
 
 		ob_start();
 
+		Builder::get_instance()->set_data(
+			'wd_additional_info_table_args',
+			array(
+				// Attributes.
+				'attr_image' => ! empty( $block_attributes['attrImage'] ),
+				'attr_name'  => ! empty( $block_attributes['attrName'] ),
+				// Terms.
+				'term_label' => ! empty( $block_attributes['termLabel'] ),
+				'term_image' => ! empty( $block_attributes['termImage'] ),
+			)
+		);
+
+		woodmart_enqueue_inline_style( 'woo-mod-shop-attributes-builder' );
+
 		do_action( 'woocommerce_product_additional_information', $product );
+
+		Builder::get_instance()->set_data( 'wd_additional_info_table_args', array() );
 
 		Builder::get_instance()->set_data( 'wd_product_attributes_include', array() );
 		Builder::get_instance()->set_data( 'wd_product_attributes_exclude', array() );
@@ -92,7 +116,7 @@ if ( ! function_exists( 'wd_gutenberg_single_product_additional_info_table' ) ) 
 		ob_start();
 
 		?>
-		<div id="<?php echo esc_attr( wd_get_gutenberg_element_id( $block_attributes ) ); ?>" class="wd-single-attrs<?php echo esc_attr( $classes ); ?>">
+		<div <?php echo $el_id ? 'id="' . esc_attr( $el_id ) . '" ' : ''; ?>class="wd-single-attrs<?php echo esc_attr( $classes ); ?>">
 			<?php if ( ! empty( $block_attributes['title'] ) ) : ?>
 				<?php echo do_shortcode( $inner_content ); ?>
 			<?php endif; ?>

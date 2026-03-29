@@ -1,28 +1,35 @@
-<?php if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
+<?php
+/**
+ * Woodmart Quick view functions
+ *
+ * @package woodmart
+ */
+
+if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
 	exit( 'No direct script access allowed' );
 }
 
-/**
- * ------------------------------------------------------------------------------------------------
- * Function returns quick view of the product by ID
- * ------------------------------------------------------------------------------------------------
- */
-
-if( ! function_exists( 'woodmart_quick_view' ) ) {
-	function woodmart_quick_view($id = false) {
-		if( isset($_GET['id']) ) {
-			$id = sanitize_text_field( (int) $_GET['id'] );
+if ( ! function_exists( 'woodmart_quick_view' ) ) {
+	/**
+	 * Quick view function.
+	 *
+	 * @param int|bool $id Product ID.
+	 * @return void
+	 */
+	function woodmart_quick_view( $id = false ) {
+		if ( isset( $_GET['id'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			$id = sanitize_text_field( (int) $_GET['id'] ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 		}
-		if( ! $id || ! woodmart_woocommerce_installed() ) {
+
+		if ( ! $id || ! woodmart_woocommerce_installed() ) {
 			return;
 		}
 
-		if ( class_exists('WPBMap') ) {
+		if ( class_exists( 'WPBMap' ) ) {
 			WPBMap::addAllMappedShortcodes();
 		}
 
 		global $post, $product;
-
 
 		$args = apply_filters(
 			'woodmart_quick_view_posts_args',
@@ -46,11 +53,11 @@ if( ! function_exists( 'woodmart_quick_view' ) ) {
 
 		echo '<div class="wd-popup popup-quick-view wd-scroll-content">';
 
-		foreach( $quick_posts as $post ) :
-			setup_postdata($post);
-			$product = wc_get_product($post);
-        	remove_action( 'woocommerce_single_product_summary', 'woodmart_before_compare_button', 33 );
-        	remove_action( 'woocommerce_single_product_summary', 'woodmart_add_to_compare_single_btn', 33 );
+		foreach ( $quick_posts as $post ) : // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
+			setup_postdata( $post );
+			$product = wc_get_product( $post );
+			remove_action( 'woocommerce_single_product_summary', 'woodmart_before_compare_button', 33 );
+			remove_action( 'woocommerce_single_product_summary', 'woodmart_add_to_compare_single_btn', 33 );
 			remove_action( 'woocommerce_single_product_summary', 'woodmart_after_compare_button', 37 );
 
 			if ( woodmart_get_opt( 'attr_after_short_desc' ) ) {
@@ -68,26 +75,28 @@ if( ! function_exists( 'woodmart_quick_view' ) ) {
 				remove_action( 'woocommerce_single_product_summary', array( XTS\Modules\Compare\UI::get_instance(), 'add_to_compare_single_btn' ), 33 );
 			}
 
-			//Remove before and after add to cart button text
+			// Remove before and after add to cart button text
 			remove_action( 'woocommerce_single_product_summary', 'woodmart_before_add_to_cart_area', 25 );
 			remove_action( 'woocommerce_single_product_summary', 'woodmart_after_add_to_cart_area', 31 );
 
-        	remove_action( 'woocommerce_before_single_product', 'wc_print_notices', 10 );
+			remove_action( 'woocommerce_before_single_product', 'wc_print_notices', 10 );
 
-        	// Add brand image
-        	add_action( 'woocommerce_single_product_summary', 'woodmart_product_brand', 8 );
+			// Add brand image
+			add_action( 'woocommerce_single_product_summary', 'woodmart_product_brand', 8 );
 
-        	// Disable add to cart button for catalog mode
-			if( woodmart_get_opt( 'catalog_mode' ) ) {
+			// Disable add to cart button for catalog mode
+			if ( woodmart_get_opt( 'catalog_mode' ) ) {
 				remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
-			} elseif( ! $quick_view_variable ) {
+			} elseif ( ! $quick_view_variable ) {
 				// If no needs to show variations
 				remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
 				add_action( 'woocommerce_single_product_summary', 'woocommerce_template_loop_add_to_cart', 30 );
 			}
 
-			if( woodmart_get_opt( 'product_share' ) ) add_action( 'woocommerce_single_product_summary', 'woodmart_product_share_buttons', 45 );
-			get_template_part('woocommerce/content', 'quick-view-' . $quick_view_layout );
+			if ( woodmart_get_opt( 'product_share' ) ) {
+				add_action( 'woocommerce_single_product_summary', 'woodmart_product_share_buttons', 45 );
+			}
+			get_template_part( 'woocommerce/content', 'quick-view-' . $quick_view_layout );
 		endforeach;
 
 		echo '</div>';
@@ -99,17 +108,30 @@ if( ! function_exists( 'woodmart_quick_view' ) ) {
 
 	add_action( 'wp_ajax_woodmart_quick_view', 'woodmart_quick_view' );
 	add_action( 'wp_ajax_nopriv_woodmart_quick_view', 'woodmart_quick_view' );
-
 }
 
-if( ! function_exists( 'woodmart_product_images_slider' ) ) {
+if ( ! function_exists( 'woodmart_product_images_slider' ) ) {
+	/**
+	 * Quick view product images slider.
+	 *
+	 * @return void
+	 */
 	function woodmart_product_images_slider() {
 		wc_get_template( 'quick-view/product-images.php' );
 	}
 }
 
-if( ! function_exists( 'woodmart_quick_view_btn' ) ) {
-	function woodmart_quick_view_btn( $id = false ) {
+if ( ! function_exists( 'woodmart_quick_view_btn' ) ) {
+	/**
+	 * Quick view button.
+	 *
+	 * @param int|bool $id Product ID.
+	 * @param string   $classes Extra classes.
+	 * @param string   $link_classes Extra link classes.
+	 *
+	 * @return void
+	 */
+	function woodmart_quick_view_btn( $id = false, $classes = ' wd-action-btn wd-style-icon', $link_classes = '' ) {
 		if ( ! woodmart_get_opt( 'quick_view' ) ) {
 			return;
 		}
@@ -118,14 +140,7 @@ if( ! function_exists( 'woodmart_quick_view_btn' ) ) {
 			$id = get_the_ID();
 		}
 
-		$classes        = '';
 		$data_attribute = '';
-
-		if ( 'buttons-on-hover' === woodmart_loop_prop( 'product_hover' ) && 'list' !== woodmart_loop_prop( 'products_view' ) ) {
-			$classes .= ' wd-tooltip';
-		}
-
-		$classes .= woodmart_get_old_classes( ' wd-quick-view-btn' );
 
 		if ( woodmart_get_opt( 'show_single_variation' ) ) {
 			$product = wc_get_product( $id );
@@ -148,7 +163,7 @@ if( ! function_exists( 'woodmart_quick_view_btn' ) ) {
 		woodmart_enqueue_js_script( 'woocommerce-quantity' );
 		wp_enqueue_script( 'wc-add-to-cart-variation' );
 		wp_enqueue_script( 'imagesloaded' );
-		
+
 		woodmart_enqueue_inline_style( 'mfp-popup' );
 		woodmart_enqueue_inline_style( 'mod-animations-transform' );
 		woodmart_enqueue_inline_style( 'mod-transform' );
@@ -162,13 +177,18 @@ if( ! function_exists( 'woodmart_quick_view_btn' ) ) {
 		}
 
 		?>
-		<div class="quick-view wd-action-btn wd-style-icon wd-quick-view-icon<?php echo esc_attr( $classes ); ?>">
+		<div class="wd-quick-view-btn wd-quick-view-icon<?php echo esc_attr( $classes ); ?>">
 			<a
 				href="<?php echo esc_url( get_the_permalink( $id ) ); ?>"
-				class="open-quick-view quick-view-button"
+				class="open-quick-view<?php echo esc_attr( $link_classes ); ?>"
 				rel="nofollow"
 				data-id="<?php echo esc_attr( $id ); ?>"
-				<?php echo wp_kses( $data_attribute, true ); ?>><?php esc_html_e( 'Quick view', 'woodmart' ); ?></a>
+				<?php echo wp_kses( $data_attribute, true ); ?>>
+					<span class="wd-action-icon"></span>
+					<span class="wd-action-text">
+						<?php esc_html_e( 'Quick view', 'woodmart' ); ?>
+					</span>
+			</a>
 		</div>
 		<?php
 	}

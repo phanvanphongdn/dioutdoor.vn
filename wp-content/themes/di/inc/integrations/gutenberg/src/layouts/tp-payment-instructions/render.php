@@ -12,7 +12,7 @@ if ( ! function_exists( 'wd_gutenberg_tp_payment_instructions' ) ) {
 
 		if ( $order && is_a( $order, 'WC_Order' ) ) {
 			$payment_method = $order->get_payment_method();
-			echo '<div id="' . esc_attr( $el_id ) . '" class="wd-el-tp-payment-instructions' . esc_attr( $wrapper_classes ) . '">';
+			echo '<div ' . ( $el_id ? 'id="' . esc_attr( $el_id ) . '" ' : '' ) . 'class="wd-el-tp-payment-instructions' . esc_attr( $wrapper_classes ) . '">';
 			do_action( 'woocommerce_thankyou_' . $payment_method, $order->get_id() );
 			echo '</div>';
 		}

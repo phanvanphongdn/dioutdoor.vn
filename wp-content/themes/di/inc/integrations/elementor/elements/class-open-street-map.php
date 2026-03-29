@@ -2,7 +2,7 @@
 /**
  * Open street map.
  *
- * @package xts
+ * @package woodmart
  */
 
 namespace XTS\Elementor;
@@ -322,7 +322,7 @@ class Open_Street_Map extends Widget_Base {
 			array(
 				'label'       => esc_html__( 'Content', 'woodmart' ),
 				'type'        => Controls_Manager::SELECT,
-				'options'     => woodmart_get_elementor_html_blocks_array(),
+				'options'     => woodmart_get_elementor_blocks_array( 'cms_block' ),
 				'description' => function_exists( 'woodmart_get_html_block_links' ) ? woodmart_get_html_block_links() : '',
 				'default'     => '0',
 				'condition'   => array(
@@ -469,6 +469,7 @@ class Open_Street_Map extends Widget_Base {
 				'default'     => '',
 				'input_type'  => 'url',
 				'description' => sprintf(
+					// translators: 1 and 2 opening and closing anchor tags, 4 example url.
 					__( 'You can find more Open Street Maps styles on the website: %1$s OpenStreetMap Wiki %2$s Just copy url and paste it here. For example: %4$s', 'woodmart' ),
 					'<a target="_blank" href="https://wiki.openstreetmap.org/wiki/Raster_tile_providers">',
 					'</a>',

@@ -2,7 +2,7 @@
 /**
  * Page css files.
  *
- * @package xts
+ * @package woodmart
  */
 
 namespace XTS\Modules;

@@ -15,7 +15,7 @@ if ( ! function_exists( 'wd_gutenberg_single_post_tags' ) ) {
 
 		if ( get_the_tag_list() ) : ?>
 			<?php woodmart_enqueue_inline_style( 'single-post-el-tags' ); ?>
-			<div id="<?php echo esc_attr( $el_id ); ?>" class="wd-single-post-tags-list<?php echo esc_attr( $wrapper_classes ); ?>">
+			<div <?php echo $el_id ? 'id="' . esc_attr( $el_id ) . '" ' : ''; ?>class="wd-single-post-tags-list<?php echo esc_attr( $wrapper_classes ); ?>">
 				<div class="wd-tags-list wd-style-1">
 					<?php echo wp_kses( get_the_tag_list(), woodmart_get_allowed_html() ); ?>
 				</div>

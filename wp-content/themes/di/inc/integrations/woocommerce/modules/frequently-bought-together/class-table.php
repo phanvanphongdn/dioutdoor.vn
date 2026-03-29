@@ -13,7 +13,7 @@ use WP_List_Table;
 /**
  * Class Table
  *
- * @package Woodmart
+ * @package woodmart
  */
 class Bundles_Table extends WP_List_Table {
 	/**

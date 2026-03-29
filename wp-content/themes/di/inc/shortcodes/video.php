@@ -1,13 +1,22 @@
-<?php if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
-	exit( 'No direct script access allowed' );}
-
+<?php
 /**
- * ------------------------------------------------------------------------------------------------
- * Video shortcode
- * ------------------------------------------------------------------------------------------------
+ * Shortcode for Video element.
+ *
+ * @package woodmart
  */
 
+if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
+	exit( 'No direct script access allowed' );
+}
+
 if ( ! function_exists( 'woodmart_shortcode_video' ) ) {
+	/**
+	 * Video shortcode
+	 *
+	 * @param array $settings Shortcode settings.
+	 *
+	 * @return false|string
+	 */
 	function woodmart_shortcode_video( $settings ) {
 		$default_settings = array(
 			'video_type'               => 'hosted',
@@ -225,7 +234,7 @@ if ( ! function_exists( 'woodmart_shortcode_video' ) ) {
 
 			$video_html = '<iframe ' . implode( ' ', $frame_attributes ) . '></iframe>';
 
-			$settings['link'] = preg_replace( "#^[^:/.]*[:/]+#i", "", $video_url );
+			$settings['link'] = preg_replace( '#^[^:/.]*[:/]+#i', '', $video_url );
 		}
 
 		// Button settings.
@@ -242,7 +251,7 @@ if ( ! function_exists( 'woodmart_shortcode_video' ) ) {
 		if ( 'action_button' === $settings['video_action_button'] || 'yes' === $settings['video_overlay_lightbox'] || 'play' === $settings['video_action_button'] ) {
 			woodmart_enqueue_js_library( 'magnific' );
 			woodmart_enqueue_js_script( 'video-element-popup' );
-			
+
 			woodmart_enqueue_inline_style( 'mfp-popup' );
 			woodmart_enqueue_inline_style( 'mod-animations-transform' );
 			woodmart_enqueue_inline_style( 'mod-transform' );
@@ -253,8 +262,17 @@ if ( ! function_exists( 'woodmart_shortcode_video' ) ) {
 
 		?>
 		<div class="wd-el-video wd-wpb<?php echo esc_attr( $wrapper_classes ); ?>">
-			<?php if ( 'hosted' === $settings['video_type'] || 'without' === $settings['video_action_button'] || 'overlay' === $settings['video_action_button'] && 'yes' !== $settings['video_overlay_lightbox'] ) : ?>
-				<?php echo apply_filters( 'woodmart_video_html', $video_html, $settings ); ?>
+			<?php
+			if (
+				'hosted' === $settings['video_type'] ||
+				'without' === $settings['video_action_button'] ||
+				(
+					'overlay' === $settings['video_action_button'] &&
+					'yes' !== $settings['video_overlay_lightbox']
+				)
+			) :
+				?>
+				<?php echo apply_filters( 'woodmart_video_html', $video_html, $settings ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 			<?php endif; ?>
 
 			<?php if ( 'action_button' === $settings['video_action_button'] && $settings['button_text'] ) : ?>
@@ -263,7 +281,7 @@ if ( ! function_exists( 'woodmart_shortcode_video' ) ) {
 				$settings['title']         = $settings['button_text'];
 				$settings['link']          = 'url:' . $settings['link'] . '|||';
 				?>
-				<?php echo woodmart_shortcode_button( $settings, true ); ?>
+				<?php echo woodmart_shortcode_button( $settings, true ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 			<?php endif; ?>
 
 			<?php if ( 'play' === $settings['video_action_button'] ) : ?>

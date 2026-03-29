@@ -2,7 +2,7 @@
 /**
  * Post tags map.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
@@ -16,10 +16,9 @@ if ( ! function_exists( 'woodmart_get_vc_map_single_post_tags' ) ) {
 	function woodmart_get_vc_map_single_post_tags() {
 		$typography = woodmart_get_typography_map(
 			array(
-				'key'              => 'typography',
-				'group'            => esc_html__( 'Style', 'woodmart' ),
-				'selector'         => '{{WRAPPER}} .wd-tags-list a',
-				'edit_field_class' => 'vc_col-sm-6 vc_column',
+				'key'      => 'typography',
+				'group'    => esc_html__( 'Style', 'woodmart' ),
+				'selector' => '{{WRAPPER}} .wd-tags-list a',
 			)
 		);
 

@@ -1,15 +1,24 @@
-<?php if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
-	exit( 'No direct script access allowed' );}
+<?php
+/**
+ * Shortcode for Page Heading element.
+ *
+ * @package woodmart
+ */
+
+if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
+	exit( 'No direct script access allowed' );
+}
 
 use XTS\Modules\Layouts\Main;
 
-/**
-* ------------------------------------------------------------------------------------------------
-* Breadcrumbs shortcode
-* ------------------------------------------------------------------------------------------------
-*/
-
 if ( ! function_exists( 'woodmart_shortcode_page_heading' ) ) {
+	/**
+	 * Shortcode to display page heading.
+	 *
+	 * @param array $settings Shortcode settings.
+	 *
+	 * @return string
+	 */
 	function woodmart_shortcode_page_heading( $settings ) {
 		global $post;
 

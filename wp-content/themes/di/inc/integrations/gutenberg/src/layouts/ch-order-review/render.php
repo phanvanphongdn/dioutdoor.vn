@@ -12,6 +12,7 @@ if ( ! function_exists( 'wd_gutenberg_checkout_order_review' ) ) {
 		}
 
 		$classes = wd_get_gutenberg_element_classes( $block_attributes );
+		$el_id   = wd_get_gutenberg_element_id( $block_attributes );
 
 		if ( Checkout_Order_Table::get_instance()->is_enable_woodmart_product_table_template() ) {
 			$classes .= ' wd-manage-on';
@@ -28,7 +29,7 @@ if ( ! function_exists( 'wd_gutenberg_checkout_order_review' ) ) {
 		ob_start();
 
 		?>
-			<div id="<?php echo esc_attr( wd_get_gutenberg_element_id( $block_attributes ) ); ?>" class="wd-order-table<?php echo esc_attr( $classes ); ?>">
+			<div <?php echo $el_id ? 'id="' . esc_attr( $el_id ) . '" ' : ''; ?>class="wd-order-table<?php echo esc_attr( $classes ); ?>">
 				<?php
 				woocommerce_order_review();
 

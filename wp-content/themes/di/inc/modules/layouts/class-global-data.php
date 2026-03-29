@@ -1,9 +1,17 @@
 <?php
+/**
+ * Global data class.
+ *
+ * @package woodmart
+ */
 
 namespace XTS\Modules\Layouts;
 
 use XTS\Singleton;
 
+/**
+ * Global data class.
+ */
 class Global_Data extends Singleton {
 	/**
 	 * This static property stores an array of global data

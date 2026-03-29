@@ -2,11 +2,10 @@
 /**
  * Registry helper class.
  *
- * @package xts
+ * @package Woodmart
  */
 
-
-namespace XTS;
+namespace XTS; // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedNamespaceFound
 
 if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
 	exit( 'No direct script access allowed' );
@@ -31,7 +30,7 @@ class Registry {
 	private $known_objects = array();
 
 	/**
-	 * Restrict direct initialization, use Registry::getInstance() instead
+	 * Restrict direct initialization, use Registry::get_instance() instead
 	 */
 	private function __construct() {}
 
@@ -40,14 +39,13 @@ class Registry {
 	 *
 	 * @return  Registry
 	 */
-	public static function getInstance() {
+	public static function get_instance() {
 		if ( ! isset( self::$instance ) ) {
 			self::$instance = new self();
 		}
 
 		return self::$instance;
 	}
-
 
 	/**
 	 * Dynamically load missing object and assign it to the Registry property.
@@ -56,11 +54,11 @@ class Registry {
 	 *
 	 * @return object
 	 */
-	function __get( $obj ) {
+	public function __get( $obj ) {
 		if ( ! isset( $this->known_objects[ $obj ] ) ) {
 			try {
 				$this->save_object( $obj );
-			} catch ( Exception $e ) {
+			} catch ( \Exception $e ) {
 				echo esc_html( $e->getTraceAsString() );
 			}
 		}
@@ -69,7 +67,7 @@ class Registry {
 	}
 
 	/**
-	 * Init c
+	 * Save object to the registry if it exists and is not already assigned.
 	 *
 	 * @param string $obj Object name (first char will be converted to upper case).
 	 *
@@ -91,6 +89,6 @@ class Registry {
 	 * Prevent users to clone the instance
 	 */
 	public function __clone() {
-		trigger_error( 'Clone is not allowed.', E_USER_ERROR );
+		wp_trigger_error( __METHOD__, 'Clone is not allowed.', E_USER_ERROR );
 	}
 }

@@ -16,7 +16,7 @@
 	<!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 	<!--    contained in this file into your site. -->
 
-	<!-- generator="WordPress/6.7.4" created="2025-10-28 13:28" -->
+	<!-- generator="WordPress/6.7.4" created="2026-02-23 09:37" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -29,20 +29,14 @@
 	<title>christmas-2-gutenberg</title>
 	<link>https://dummy.xtemos.com/woodmart2/christmas-2-gutenberg</link>
 	<description></description>
-	<pubDate>Tue, 28 Oct 2025 13:28:24 +0000</pubDate>
+	<pubDate>Mon, 23 Feb 2026 09:37:48 +0000</pubDate>
 	<language>en-US</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
 	<wp:base_site_url>https://dummy.xtemos.com/woodmart2/</wp:base_site_url>
 	<wp:base_blog_url>https://dummy.xtemos.com/woodmart2/christmas-2-gutenberg</wp:base_blog_url>
 
 	
-					<wp:term>
-			<wp:term_id>0</wp:term_id>
-			<wp:term_taxonomy><![CDATA[]]></wp:term_taxonomy>
-			<wp:term_slug><![CDATA[]]></wp:term_slug>
-			<wp:term_parent><![CDATA[]]></wp:term_parent>
-					</wp:term>
-		
+							
 	<generator>https://wordpress.org/?v=6.7.4</generator>
 
 					<item>
@@ -50,7 +44,7 @@
 					<link>https://dummy.xtemos.com/woodmart2/christmas-2-gutenberg/?cms_block=footer-christmas-shop</link>
 					<pubDate>Wed, 22 Oct 2025 12:02:51 +0000</pubDate>
 					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
-					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/christmas-2-gutenberg/?post_type=cms_block&#038;p=202</guid>
+					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/christmas-shop-gutenberg/?post_type=cms_block&#038;p=202</guid>
 											<content:encoded><![CDATA[<!-- wp:wd/section {"blockId":"062264cd-8925-461a-8da9-6017d22c6769","bgColorVariable":"\u002d\u002dwd-alternative-color","paddingTop":"40","paddingBottom":"40","marginBottom":"0"} -->
 <div id="wd-062264cd" class="wp-block-wd-section"><!-- wp:wd/row {"blockId":"f2b5e6a6-89f8-46a3-a4f5-0403a2d8e8ef"} -->
 <div id="wd-f2b5e6a6" class="wp-block-wd-row"><!-- wp:wd/column {"blockId":"9b8ff595-803c-4fcf-91cf-bafa4040e883","adjacentCount":2,"adjacentCountTablet":1,"colWidthTablet":100} -->
@@ -242,12 +236,12 @@
 <!-- /wp:wd/paragraph -->
 
 <!-- wp:wd/gallery {"blockId":"29ad6c64-9f26-4ce7-8008-8e300331e548","columns":2,"spacing":"10","rounding":"0","displayWidth":"custom","customWidth":"280","columnsMobile":2} -->
-<div id="wd-29ad6c64" class="wp-block-wd-gallery wd-grid-g wd-caption-mask wd-custom-width" style="--wd-col-lg:2;--wd-col-md:2;--wd-col-sm:2;--wd-gap-lg:10px;"><!-- wp:wd/gallery-item {"blockId":"b0a5cff6-8c5d-43cf-9cf2-e30e6aa70f2f","image":{"id":208,"url":"https://dummy.xtemos.com/woodmart2/christmas-2-gutenberg/wp-content/uploads/sites/61/2025/10/xms-google-play-badge-opt.svg"},"imageData":{"url":"https://dummy.xtemos.com/woodmart2/christmas-2-gutenberg/wp-content/uploads/sites/61/2025/10/xms-google-play-badge-opt.svg"}} -->
-<div id="wd-b0a5cff6" class="wp-block-wd-gallery-item wd-col"><div class="wd-block-image"><img class="wp-image-208" src="https://dummy.xtemos.com/woodmart2/christmas-2-gutenberg/wp-content/uploads/sites/61/2025/10/xms-google-play-badge-opt.svg" alt=""/></div></div>
+<div id="wd-29ad6c64" class="wp-block-wd-gallery wd-grid-g wd-caption-mask wd-custom-width" style="--wd-col-lg:2;--wd-col-md:2;--wd-col-sm:2;--wd-gap-lg:10px;"><!-- wp:wd/gallery-item {"blockId":"b0a5cff6-8c5d-43cf-9cf2-e30e6aa70f2f","image":{"id":208,"url":"https://dummy.xtemos.com/woodmart2/christmas-shop-gutenberg/wp-content/uploads/sites/61/2025/10/xms-google-play-badge-opt.svg"},"imageData":{"url":"https://dummy.xtemos.com/woodmart2/christmas-shop-gutenberg/wp-content/uploads/sites/61/2025/10/xms-google-play-badge-opt.svg"}} -->
+<div id="wd-b0a5cff6" class="wp-block-wd-gallery-item wd-col"><div class="wd-block-image"><img class="wp-image-208" src="https://dummy.xtemos.com/woodmart2/christmas-shop-gutenberg/wp-content/uploads/sites/61/2025/10/xms-google-play-badge-opt.svg" alt=""/></div></div>
 <!-- /wp:wd/gallery-item -->
 
-<!-- wp:wd/gallery-item {"blockId":"2cf379e2-61e2-4961-b829-28dd4f524f75","image":{"id":209,"url":"https://dummy.xtemos.com/woodmart2/christmas-2-gutenberg/wp-content/uploads/sites/61/2025/10/xms-app-store-badge-opt.svg"},"imageData":{"url":"https://dummy.xtemos.com/woodmart2/christmas-2-gutenberg/wp-content/uploads/sites/61/2025/10/xms-app-store-badge-opt.svg"}} -->
-<div id="wd-2cf379e2" class="wp-block-wd-gallery-item wd-col"><div class="wd-block-image"><img class="wp-image-209" src="https://dummy.xtemos.com/woodmart2/christmas-2-gutenberg/wp-content/uploads/sites/61/2025/10/xms-app-store-badge-opt.svg" alt=""/></div></div>
+<!-- wp:wd/gallery-item {"blockId":"2cf379e2-61e2-4961-b829-28dd4f524f75","image":{"id":209,"url":"https://dummy.xtemos.com/woodmart2/christmas-shop-gutenberg/wp-content/uploads/sites/61/2025/10/xms-app-store-badge-opt.svg"},"imageData":{"url":"https://dummy.xtemos.com/woodmart2/christmas-shop-gutenberg/wp-content/uploads/sites/61/2025/10/xms-app-store-badge-opt.svg"}} -->
+<div id="wd-2cf379e2" class="wp-block-wd-gallery-item wd-col"><div class="wd-block-image"><img class="wp-image-209" src="https://dummy.xtemos.com/woodmart2/christmas-shop-gutenberg/wp-content/uploads/sites/61/2025/10/xms-app-store-badge-opt.svg" alt=""/></div></div>
 <!-- /wp:wd/gallery-item --></div>
 <!-- /wp:wd/gallery --></div>
 <!-- /wp:wd/column --></div>
@@ -280,7 +274,7 @@
 					<link>https://dummy.xtemos.com/woodmart2/christmas-2-gutenberg/?attachment_id=204</link>
 					<pubDate>Wed, 22 Oct 2025 12:03:18 +0000</pubDate>
 					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
-					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/christmas-2-gutenberg/wp-content/uploads/sites/61/2025/10/xms-shipping-box-opt.svg</guid>
+					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/christmas-shop-gutenberg/wp-content/uploads/sites/61/2025/10/xms-shipping-box-opt.svg</guid>
 															<wp:post_id>204</wp:post_id>
 					<wp:post_date><![CDATA[2025-10-22 12:03:18]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2025-10-22 12:03:18]]></wp:post_date_gmt>
@@ -303,7 +297,7 @@
 					<link>https://dummy.xtemos.com/woodmart2/christmas-2-gutenberg/?attachment_id=205</link>
 					<pubDate>Wed, 22 Oct 2025 12:03:29 +0000</pubDate>
 					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
-					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/christmas-2-gutenberg/wp-content/uploads/sites/61/2025/10/xms-security-shield-opt.svg</guid>
+					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/christmas-shop-gutenberg/wp-content/uploads/sites/61/2025/10/xms-security-shield-opt.svg</guid>
 															<wp:post_id>205</wp:post_id>
 					<wp:post_date><![CDATA[2025-10-22 12:03:29]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2025-10-22 12:03:29]]></wp:post_date_gmt>
@@ -326,7 +320,7 @@
 					<link>https://dummy.xtemos.com/woodmart2/christmas-2-gutenberg/?attachment_id=207</link>
 					<pubDate>Wed, 22 Oct 2025 12:03:38 +0000</pubDate>
 					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
-					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/christmas-2-gutenberg/wp-content/uploads/sites/61/2025/10/xms-support-human-opt.svg</guid>
+					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/christmas-shop-gutenberg/wp-content/uploads/sites/61/2025/10/xms-support-human-opt.svg</guid>
 															<wp:post_id>207</wp:post_id>
 					<wp:post_date><![CDATA[2025-10-22 12:03:38]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2025-10-22 12:03:38]]></wp:post_date_gmt>
@@ -349,7 +343,7 @@
 					<link>https://dummy.xtemos.com/woodmart2/christmas-2-gutenberg/home-christmas-shop/xms-product-return/</link>
 					<pubDate>Wed, 22 Oct 2025 12:22:05 +0000</pubDate>
 					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
-					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/christmas-2-gutenberg/wp-content/uploads/sites/61/2025/10/xms-product-return.svg</guid>
+					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/christmas-shop-gutenberg/wp-content/uploads/sites/61/2025/10/xms-product-return.svg</guid>
 															<wp:post_id>217</wp:post_id>
 					<wp:post_date><![CDATA[2025-10-22 12:22:05]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2025-10-22 12:22:05]]></wp:post_date_gmt>
@@ -372,45 +366,45 @@
 					<link>https://dummy.xtemos.com/woodmart2/christmas-2-gutenberg/woodmart_layout/products-archive-layout-shop-christmas-shop/</link>
 					<pubDate>Wed, 22 Oct 2025 12:50:10 +0000</pubDate>
 					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
-					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/christmas-2-gutenberg/?post_type=woodmart_layout&#038;p=293</guid>
-											<content:encoded><![CDATA[<!-- wp:wd/section {"blockId":"adb9cce1-923f-4c16-9c8f-b2b2f1ad5d0b","bgColorCode":"#e1edeb","paddingTop":"30","paddingBottom":"30","marginTop":"-40","paddingTopTablet":"20","paddingBottomTablet":"20"} -->
-<div id="wd-adb9cce1" class="wp-block-wd-section"><!-- wp:wd/container {"blockId":"feddbec5-ee9e-43c1-9e02-ca12c40a7df7","textAlign":"center","colGap":"","rowGap":"10"} -->
-<div id="wd-feddbec5" class="wp-block-wd-container wd-dir-col wd-align"><!-- wp:wd/woo-breadcrumbs {"blockId":"19cb74b4-8101-4e3b-b721-af407d690e15"} /-->
+					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/christmas-shop-gutenberg/?post_type=woodmart_layout&#038;p=293</guid>
+											<content:encoded><![CDATA[<!-- wp:wd/section {"blockId":"adb9cce1-923f-4c16-9c8f-b2b2f1ad5d0b","blockVersion":"2","bgColorCode":"#e1edeb","paddingTop":"30","paddingBottom":"30","marginTop":"-40","paddingTopTablet":"20","paddingBottomTablet":"20"} -->
+<div class="wp-block-wd-section wd-adb9cce1"><!-- wp:wd/container {"blockId":"feddbec5-ee9e-43c1-9e02-ca12c40a7df7","blockVersion":"2","textAlign":"center","colGap":"","rowGap":"10"} -->
+<div class="wp-block-wd-container wd-dir-col wd-align wd-feddbec5"><!-- wp:wd/woo-breadcrumbs {"blockId":"19cb74b4-8101-4e3b-b721-af407d690e15","blockVersion":"2"} /-->
 
-<!-- wp:wd/page-heading {"blockId":"7180b281-822c-4b39-82b7-ac546a232032","tpFontSize":"58","tpLineHeight":"1.2","tpFontSizeTablet":"36","tpLineHeightUnits":"em"} /--></div>
+<!-- wp:wd/page-heading {"blockId":"7180b281-822c-4b39-82b7-ac546a232032","blockVersion":"2","tpFontSize":"58","tpLineHeight":"1.2","tpFontSizeTablet":"36","tpLineHeightUnits":"em"} /--></div>
 <!-- /wp:wd/container --></div>
 <!-- /wp:wd/section -->
 
-<!-- wp:wd/off-canvas {"blockId":"097530a7-b877-4ef0-8a94-be64acbd5827"} -->
-<div id="wd-097530a7" class="wp-block-wd-off-canvas"><!-- wp:wd/off-sidebar {"blockId":"aba2bd04-ca9e-41c1-9827-07b74ee9f0ef","offCanvasDesktop":true} -->
-<div id="wd-aba2bd04" class="wp-block-wd-off-sidebar wd-left wd-hide-lg wd-hide-md-sm wd-hide-sm"><div class="wd-heading"><div class="close-side-widget wd-action-btn wd-style-text wd-cross-icon"><a href="#" rel="nofollow noopener">Close</a></div></div><div class="wd-content"><!-- wp:wd/sidebar {"blockId":"0d34df4f-2464-40a2-84dc-04dbc0c62307","sidebar_id":"sidebar-shop"} /--></div></div>
+<!-- wp:wd/off-canvas {"blockId":"41e1e2ca-8d12-450d-b712-585b7d1dce99","blockVersion":"2"} -->
+<div class="wp-block-wd-off-canvas wd-41e1e2ca"><!-- wp:wd/off-sidebar {"blockId":"c6afc7dc-2041-43bb-840d-af4849f84d86","blockVersion":"2","offCanvasDesktop":true} -->
+<div class="wp-block-wd-off-sidebar wd-left wd-hide-lg wd-hide-md-sm wd-hide-sm wd-c6afc7dc"><div class="wd-heading"><div class="close-side-widget wd-action-btn wd-style-text wd-cross-icon"><a href="#" rel="nofollow noopener"><span class="wd-action-icon"></span><span class="wd-action-text">Close</span></a></div></div><div class="wd-content"><!-- wp:wd/sidebar {"blockId":"e9795d17-a06c-4b47-b027-c46293dc0e31","blockVersion":"2","sidebar_id":"sidebar-shop"} /--></div></div>
 <!-- /wp:wd/off-sidebar -->
 
-<!-- wp:wd/off-content {"blockId":"767566f0-7f00-4a3c-b1b8-f211113ac802"} -->
-<div id="wd-767566f0" class="wp-block-wd-off-content"><!-- wp:wd/container {"blockId":"719b858d-99da-466a-8e2a-35d9f62dcb10","direction":"row","align":"center","wrap":"wrap","colGap":"30","marginTop":"10","marginTopTablet":"0"} -->
-<div id="wd-719b858d" class="wp-block-wd-container wd-dir-row wd-align-is-lg-center"><!-- wp:wd/off-canvas-button {"blockId":"211d8e7a-ddac-40dd-8537-5e0007ff4901","btnContent":"Filters","stickyBtn":true,"marginRight":"auto","marginUnits":"custom","displayWidth":""} -->
-<div id="wd-211d8e7a" class="wp-block-wd-off-canvas-button wd-off-canvas-btn wd-action-btn wd-style-text wd-burger-icon"><a href="#" rel="nofollow">Filters</a><div class="wd-sidebar-opener wd-show-on-scroll wd-action-btn wd-style-icon wd-burger-icon"><a href="#" rel="nofollow"></a></div></div>
+<!-- wp:wd/off-content {"blockId":"3f35473d-1f5f-46f7-8260-4035c6a2c696","blockVersion":"2"} -->
+<div class="wp-block-wd-off-content wd-3f35473d"><!-- wp:wd/container {"blockId":"719b858d-99da-466a-8e2a-35d9f62dcb10","blockVersion":"2","direction":"row","align":"center","wrap":"wrap","colGap":"30","marginTop":"10","marginTopTablet":"0"} -->
+<div class="wp-block-wd-container wd-dir-row wd-align-is-lg-center wd-719b858d"><!-- wp:wd/off-canvas-button {"blockId":"211d8e7a-ddac-40dd-8537-5e0007ff4901","blockVersion":"2","btnContent":"Filters","stickyBtn":true,"onlyStickyButton":false,"marginRight":"auto","marginUnits":"custom","displayWidth":""} -->
+<div class="wp-block-wd-off-canvas-button wd-off-canvas-btn wd-action-btn wd-style-text wd-burger-icon wd-211d8e7a"><a href="#" rel="nofollow"><span class="wd-action-icon"></span><span class="wd-action-text">Filters</span></a><div class="wd-sidebar-opener wd-show-on-scroll wd-action-btn wd-style-icon wd-burger-icon"><a href="#" rel="nofollow"><span class="wd-action-icon"></span></a></div></div>
 <!-- /wp:wd/off-canvas-button -->
 
-<!-- wp:wd/sa-per-page {"blockId":"359a83a6-e572-4aea-865a-908861b9b65f","hideOnTablet":true,"hideOnMobile":true} /-->
+<!-- wp:wd/sa-per-page {"blockId":"359a83a6-e572-4aea-865a-908861b9b65f","blockVersion":"2","hideOnTablet":true,"hideOnMobile":true} /-->
 
-<!-- wp:wd/sa-view {"blockId":"1d612e87-84c4-4b99-b550-b8991099f3c5","hideOnTablet":true,"hideOnMobile":true} /-->
+<!-- wp:wd/sa-view {"blockId":"1d612e87-84c4-4b99-b550-b8991099f3c5","blockVersion":"2","hideOnTablet":true,"hideOnMobile":true} /-->
 
-<!-- wp:wd/sa-orderby {"blockId":"001a393c-ba3b-4d1d-bfe8-a57dfae430a7","style":"underline","mobileIcon":true} /--></div>
+<!-- wp:wd/sa-orderby {"blockId":"001a393c-ba3b-4d1d-bfe8-a57dfae430a7","blockVersion":"2","style":"underline","mobileIcon":true} /--></div>
 <!-- /wp:wd/container -->
 
-<!-- wp:wd/sa-active-filters {"blockId":"9c8069bb-bdcb-433b-880e-386894cff1ac","paddingTop":"5","paddingRight":"15","paddingBottom":"5","paddingLeft":"15","marginUnits":"custom","borderType":"solid","borderColorCode":"rgba(0,0,0,0.11)","borderWidth":"1","borderWidthTop":"1","borderWidthRight":"1","borderWidthBottom":"1","borderWidthLeft":"1","borderWidthLock":true,"borderRadius":"30","borderRadiusTop":"30","borderRadiusRight":"30","borderRadiusBottom":"30","borderRadiusLeft":"30","displayWidth":"fit-content","displayWidthTablet":"fit-content"} /-->
+<!-- wp:wd/sa-active-filters {"blockId":"9c8069bb-bdcb-433b-880e-386894cff1ac","blockVersion":"2","paddingTop":"5","paddingRight":"15","paddingBottom":"5","paddingLeft":"15","marginUnits":"custom","borderType":"solid","borderColorCode":"rgba(0,0,0,0.11)","borderWidth":"1","borderWidthTop":"1","borderWidthRight":"1","borderWidthBottom":"1","borderWidthLeft":"1","borderWidthLock":true,"borderRadius":"30","borderRadiusTop":"30","borderRadiusRight":"30","borderRadiusBottom":"30","borderRadiusLeft":"30","displayWidth":"fit-content","displayWidthTablet":"fit-content"} /-->
 
-<!-- wp:wd/woo-notices {"blockId":"49a247c8-6c3d-4acf-84fe-b9c9aeb619a9"} /-->
+<!-- wp:wd/woo-notices {"blockId":"49a247c8-6c3d-4acf-84fe-b9c9aeb619a9","blockVersion":"2"} /-->
 
-<!-- wp:wd/sa-archive-products {"blockId":"75091cab-45bc-4dda-ba97-ca60385becfd","marginTop":"10","marginTopTablet":"0"} /--></div>
+<!-- wp:wd/sa-archive-products {"blockId":"75091cab-45bc-4dda-ba97-ca60385becfd","blockVersion":"2","marginTop":"10","marginTopTablet":"0"} /--></div>
 <!-- /wp:wd/off-content --></div>
 <!-- /wp:wd/off-canvas -->]]></content:encoded>
 															<wp:post_id>293</wp:post_id>
 					<wp:post_date><![CDATA[2025-10-22 12:50:10]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2025-10-22 12:50:10]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2025-10-23 15:27:46]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2025-10-23 15:27:46]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2026-02-23 09:37:25]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2026-02-23 09:37:25]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[products-archive-layout-shop-christmas-shop]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -431,7 +425,7 @@
 					<link>https://dummy.xtemos.com/woodmart2/christmas-2-gutenberg/woodmart_layout/single-product-layout-christmas-shop/</link>
 					<pubDate>Wed, 22 Oct 2025 12:56:39 +0000</pubDate>
 					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
-					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/christmas-2-gutenberg/?post_type=woodmart_layout&#038;p=295</guid>
+					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/christmas-shop-gutenberg/?post_type=woodmart_layout&#038;p=295</guid>
 											<content:encoded><![CDATA[<!-- wp:wd/section {"blockId":"6b491ca2-1631-401e-9859-54b2ece753f5","bgColorCode":"#e1edeb","paddingTop":"15","paddingBottom":"15","marginTop":"-40","marginBottom":"40","marginBottomTablet":"20"} -->
 <div id="wd-6b491ca2" class="wp-block-wd-section"><!-- wp:wd/container {"blockId":"f2baa15e-316c-43c1-8331-17a9ff5708d5","direction":"row","justify":"space-between","align":"center","wrap":"wrap","rowGap":"10"} -->
 <div id="wd-f2baa15e" class="wp-block-wd-container wd-dir-row wd-align-is-lg-center"><!-- wp:wd/woo-breadcrumbs {"blockId":"8a950701-c147-460e-bb5e-adb51bf18ca7","nowrapMd":true} /-->
@@ -556,7 +550,7 @@
 					<link>https://dummy.xtemos.com/woodmart2/christmas-2-gutenberg/woodmart_layout/single-product-layout-christmas-shop/xms-product-delivery/</link>
 					<pubDate>Wed, 22 Oct 2025 12:54:09 +0000</pubDate>
 					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
-					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/christmas-2-gutenberg/wp-content/uploads/sites/61/2025/10/xms-product-delivery.svg</guid>
+					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/christmas-shop-gutenberg/wp-content/uploads/sites/61/2025/10/xms-product-delivery.svg</guid>
 															<wp:post_id>296</wp:post_id>
 					<wp:post_date><![CDATA[2025-10-22 12:54:09]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2025-10-22 12:54:09]]></wp:post_date_gmt>
@@ -579,7 +573,7 @@
 					<link>https://dummy.xtemos.com/woodmart2/christmas-2-gutenberg/woodmart_layout/checkout-layout-christmas-shop/</link>
 					<pubDate>Wed, 22 Oct 2025 12:58:20 +0000</pubDate>
 					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
-					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/christmas-2-gutenberg/?post_type=woodmart_layout&#038;p=298</guid>
+					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/christmas-shop-gutenberg/?post_type=woodmart_layout&#038;p=298</guid>
 											<content:encoded><![CDATA[<!-- wp:wd/container {"blockId":"ba133058-2852-4916-af03-2335bcb51df3","rowGap":"","marginBottom":"30","displayWidth":"custom","customWidth":"680","marginBottomMobile":"0","alignSelfTablet":"center","displayWidthTablet":"custom","displayWidthMobile":"custom"} -->
 <div id="wd-ba133058" class="wp-block-wd-container wd-dir-col wd-custom-width wd-align-s-center-md"><!-- wp:wd/woo-notices {"blockId":"b67a2db6-663a-4c54-ae69-8ad6e1e12155"} /-->
 
@@ -642,7 +636,7 @@
 					<link>https://dummy.xtemos.com/woodmart2/christmas-2-gutenberg/woodmart_layout/portfolio-layout-christmas-shop/</link>
 					<pubDate>Wed, 22 Oct 2025 12:58:59 +0000</pubDate>
 					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
-					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/christmas-2-gutenberg/?post_type=woodmart_layout&#038;p=299</guid>
+					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/christmas-shop-gutenberg/?post_type=woodmart_layout&#038;p=299</guid>
 											<content:encoded><![CDATA[<!-- wp:wd/section {"blockId":"aa8d5efd-33e4-416a-a45e-5908dc96fee5","bgColorCode":"#e1edeb","paddingTop":"30","paddingBottom":"30","marginTop":"-40","marginBottom":"40","paddingTopTablet":"20","paddingBottomTablet":"20"} -->
 <div id="wd-aa8d5efd" class="wp-block-wd-section"><!-- wp:wd/container {"blockId":"2f05ae78-34cd-4270-ba04-32f347c619cb","textAlign":"center","rowGap":"10"} -->
 <div id="wd-2f05ae78" class="wp-block-wd-container wd-dir-col wd-align"><!-- wp:wd/breadcrumbs {"blockId":"23bbb824-7cf5-4421-a34a-bb4b3ccf527d"} /-->
@@ -677,7 +671,7 @@
 					<link>https://dummy.xtemos.com/woodmart2/christmas-2-gutenberg/woodmart_layout/single-project-layout/</link>
 					<pubDate>Wed, 22 Oct 2025 13:00:17 +0000</pubDate>
 					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
-					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/christmas-2-gutenberg/?post_type=woodmart_layout&#038;p=300</guid>
+					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/christmas-shop-gutenberg/?post_type=woodmart_layout&#038;p=300</guid>
 											<content:encoded><![CDATA[<!-- wp:wd/section {"blockId":"aa8d5efd-33e4-416a-a45e-5908dc96fee5","bgColorCode":"#e1edeb","paddingTop":"30","paddingBottom":"30","marginTop":"-40","marginBottom":"40","paddingTopTablet":"20","paddingBottomTablet":"20"} -->
 <div id="wd-aa8d5efd" class="wp-block-wd-section"><!-- wp:wd/container {"blockId":"2f05ae78-34cd-4270-ba04-32f347c619cb","textAlign":"center","rowGap":"10"} -->
 <div id="wd-2f05ae78" class="wp-block-wd-container wd-dir-col wd-align"><!-- wp:wd/breadcrumbs {"blockId":"23bbb824-7cf5-4421-a34a-bb4b3ccf527d"} /-->
@@ -720,7 +714,7 @@
 					<link>https://dummy.xtemos.com/woodmart2/christmas-2-gutenberg/woodmart_layout/lost-password-layout-christmas-shop/</link>
 					<pubDate>Wed, 22 Oct 2025 13:17:41 +0000</pubDate>
 					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
-					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/christmas-2-gutenberg/?post_type=woodmart_layout&#038;p=303</guid>
+					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/christmas-shop-gutenberg/?post_type=woodmart_layout&#038;p=303</guid>
 											<content:encoded><![CDATA[<!-- wp:wd/section {"blockId":"aa8d5efd-33e4-416a-a45e-5908dc96fee5","bgColorCode":"#e1edeb","paddingTop":"30","paddingBottom":"30","marginTop":"-40","marginBottom":"40","paddingTopTablet":"20","paddingBottomTablet":"20"} -->
 <div id="wd-aa8d5efd" class="wp-block-wd-section"><!-- wp:wd/container {"blockId":"2f05ae78-34cd-4270-ba04-32f347c619cb","textAlign":"center","rowGap":"10"} -->
 <div id="wd-2f05ae78" class="wp-block-wd-container wd-dir-col wd-align"><!-- wp:wd/woo-breadcrumbs {"blockId":"02e7f0a9-f044-4afb-b42a-fd652f65a1d0"} /-->
@@ -757,7 +751,7 @@
 					<link>https://dummy.xtemos.com/woodmart2/christmas-2-gutenberg/woodmart_layout/login-register-layout-christmas-shop/</link>
 					<pubDate>Wed, 22 Oct 2025 13:18:07 +0000</pubDate>
 					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
-					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/christmas-2-gutenberg/?post_type=woodmart_layout&#038;p=304</guid>
+					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/christmas-shop-gutenberg/?post_type=woodmart_layout&#038;p=304</guid>
 											<content:encoded><![CDATA[<!-- wp:wd/section {"blockId":"aa8d5efd-33e4-416a-a45e-5908dc96fee5","bgColorCode":"#e1edeb","paddingTop":"30","paddingBottom":"30","marginTop":"-40","marginBottom":"40","paddingTopTablet":"20","paddingBottomTablet":"20"} -->
 <div id="wd-aa8d5efd" class="wp-block-wd-section"><!-- wp:wd/container {"blockId":"2f05ae78-34cd-4270-ba04-32f347c619cb","textAlign":"center","rowGap":"10"} -->
 <div id="wd-2f05ae78" class="wp-block-wd-container wd-dir-col wd-align"><!-- wp:wd/woo-breadcrumbs {"blockId":"7db14e66-3673-4e0d-b071-ccb598cbac2d","textAlign":"center"} /-->
@@ -814,7 +808,7 @@
 					<link>https://dummy.xtemos.com/woodmart2/christmas-2-gutenberg/woodmart_layout/my-account-layout-christmas-shop/</link>
 					<pubDate>Wed, 22 Oct 2025 13:18:50 +0000</pubDate>
 					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
-					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/christmas-2-gutenberg/?post_type=woodmart_layout&#038;p=305</guid>
+					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/christmas-shop-gutenberg/?post_type=woodmart_layout&#038;p=305</guid>
 											<content:encoded><![CDATA[<!-- wp:wd/container {"blockId":"bdf012a3-267a-414a-b1e6-4d6eeabc57ed","rowGap":"40","colorScheme":"light","bgImage":{"id":365,"url":"http://dummy.xtemos.com/woodmart2/christmas-2-gutenberg/wp-content/uploads/sites/61/2025/10/xms-customer-service-bg-opt.jpg","width":1564,"height":378},"bgPosition":"top right","bgRepeat":"no-repeat","bgDisplaySize":"cover","bgColorCode":"#0b5244","bgParentHoverImage":{"id":619,"url":"https://woodmart.xtemos.com/christmas-shop/wp-content/uploads/sites/29/2025/07/xms-customer-service-bg.jpg","width":1564,"height":378},"bgParentHoverPosition":"center right","bgParentHoverRepeat":"no-repeat","bgParentHoverDisplaySize":"cover","bgParentHoverColorVariable":"\u002d\u002dwd-alternative-color","paddingTop":"60","paddingRight":"30","paddingBottom":"30","paddingLeft":"30","marginBottom":"60","borderRadius":"4","borderRadiusTop":"4","borderRadiusRight":"4","borderRadiusBottom":"4","borderRadiusLeft":"4","displayWidth":"","customWidth":"","rowGapTablet":"20","bgDisplaySizeTablet":"custom","bgCustomDisplaySizeTablet":"0","bgParentHoverPositionTablet":"center right","paddingTopTablet":"30","paddingTopMobile":"20","paddingRightTablet":"30","paddingRightMobile":"20","paddingBottomTablet":"30","paddingBottomMobile":"20","paddingLeftTablet":"30","paddingLeftMobile":"20","paddingLockTablet":true,"paddingLockMobile":true,"marginBottomTablet":"40"} -->
 <div id="wd-bdf012a3" class="wp-block-wd-container wd-dir-col color-scheme-light"><!-- wp:wd/container {"blockId":"bf42c239-c733-4b5e-b872-29f5df7ae80b","rowGap":"10"} -->
 <div id="wd-bf42c239" class="wp-block-wd-container wd-dir-col"><!-- wp:wd/title {"blockId":"d3114337-3314-4c70-a156-975478467607","content":"My management center","tpFontSize":"32","tpLineHeight":"1.2","tpFontSizeTablet":"32","tpFontSizeMobile":"26","tpLineHeightUnits":"em"} -->
@@ -857,7 +851,7 @@
 					<link>https://dummy.xtemos.com/woodmart2/christmas-2-gutenberg/?wd_popup=popup-christmas-shop</link>
 					<pubDate>Wed, 22 Oct 2025 13:22:07 +0000</pubDate>
 					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
-					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/christmas-2-gutenberg/?post_type=wd_popup&#038;p=308</guid>
+					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/christmas-shop-gutenberg/?post_type=wd_popup&#038;p=308</guid>
 											<content:encoded><![CDATA[<!-- wp:wd/row {"blockId":"21c55e31-2f01-4db5-8be5-73647ca66b5f","columnsGap":0} -->
 <div id="wd-21c55e31" class="wp-block-wd-row"><!-- wp:wd/column {"blockId":"408d20dd-e63d-40e0-96ee-150d9ed0408a","adjacentCount":2,"colWidth":40,"bgImage":{"id":351,"url":"http://dummy.xtemos.com/woodmart2/christmas-2-gutenberg/wp-content/uploads/sites/61/2025/10/xms-popup-tree-opt.jpg","width":280,"height":441},"bgPosition":"center center","bgRepeat":"no-repeat","bgDisplaySize":"cover","minHeight":"240"} -->
 <div id="wd-408d20dd" class="wp-block-wd-column"></div>
@@ -892,32 +886,8 @@
 					<wp:post_type><![CDATA[wd_popup]]></wp:post_type>
 												<category domain="wd_popup_cat" nicename="uncategorized"><![CDATA[Uncategorized]]></category>
 											<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_widthUnitsTablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[px]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_widthUnitsMobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[px]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_widthUnits]]></wp:meta_key>
-							<wp:meta_value><![CDATA[px]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[wd_width]]></wp:meta_key>
 							<wp:meta_value><![CDATA[742]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_heightUnitsTablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[px]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_heightUnitsMobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[px]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_heightUnits]]></wp:meta_key>
-							<wp:meta_value><![CDATA[px]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[wd_close_btn]]></wp:meta_key>
@@ -1016,100 +986,16 @@
 							<wp:meta_value><![CDATA[a:1:{i:0;a:2:{s:10:"comparison";s:7:"include";s:4:"type";s:3:"all";}}]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_marginTopTablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_marginTopMobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_marginTop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_marginRightTablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_marginRightMobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_marginRight]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_marginBottomTablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_marginBottomMobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_marginBottom]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_marginLeftTablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_marginLeftMobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_marginLeft]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_marginUnits]]></wp:meta_key>
-							<wp:meta_value><![CDATA[px]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_paddingTopTablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_paddingTopMobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[wd_paddingTop]]></wp:meta_key>
 							<wp:meta_value><![CDATA[0]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_paddingRightTablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_paddingRightMobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[wd_paddingRight]]></wp:meta_key>
 							<wp:meta_value><![CDATA[0]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_paddingBottomTablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_paddingBottomMobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[wd_paddingBottom]]></wp:meta_key>
 							<wp:meta_value><![CDATA[0]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_paddingLeftTablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_paddingLeftMobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[wd_paddingLeft]]></wp:meta_key>
@@ -1120,88 +1006,60 @@
 							<wp:meta_value><![CDATA[1]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_paddingUnits]]></wp:meta_key>
-							<wp:meta_value><![CDATA[px]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[wd_box_shadowPosition]]></wp:meta_key>
 							<wp:meta_value><![CDATA[outline]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[wd_box_shadowHorizontalTablet]]></wp:meta_key>
+							<wp:meta_value><![CDATA[0]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[wd_box_shadowHorizontalMobile]]></wp:meta_key>
+							<wp:meta_value><![CDATA[0]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[wd_box_shadowHorizontal]]></wp:meta_key>
+							<wp:meta_value><![CDATA[0]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[wd_box_shadowVerticalTablet]]></wp:meta_key>
+							<wp:meta_value><![CDATA[0]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[wd_box_shadowVerticalMobile]]></wp:meta_key>
+							<wp:meta_value><![CDATA[0]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[wd_box_shadowVertical]]></wp:meta_key>
+							<wp:meta_value><![CDATA[0]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[wd_box_shadowBlurTablet]]></wp:meta_key>
+							<wp:meta_value><![CDATA[0]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[wd_box_shadowBlurMobile]]></wp:meta_key>
+							<wp:meta_value><![CDATA[0]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[wd_box_shadowBlur]]></wp:meta_key>
 							<wp:meta_value><![CDATA[10]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_borderWidthUnits]]></wp:meta_key>
-							<wp:meta_value><![CDATA[px]]></wp:meta_value>
+							<wp:meta_key><![CDATA[wd_box_shadowSpreadTablet]]></wp:meta_key>
+							<wp:meta_value><![CDATA[0]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_borderRadiusTablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
+							<wp:meta_key><![CDATA[wd_box_shadowSpreadMobile]]></wp:meta_key>
+							<wp:meta_value><![CDATA[0]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_borderRadiusMobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_borderRadius]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_borderRadiusTopTablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_borderRadiusTopMobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_borderRadiusTop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_borderRadiusRightTablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_borderRadiusRightMobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_borderRadiusRight]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_borderRadiusBottomTablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_borderRadiusBottomMobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_borderRadiusBottom]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_borderRadiusLeftTablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_borderRadiusLeftMobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_borderRadiusLeft]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
+							<wp:meta_key><![CDATA[wd_box_shadowSpread]]></wp:meta_key>
+							<wp:meta_value><![CDATA[0]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[wd_borderRadiusLock]]></wp:meta_key>
 							<wp:meta_value><![CDATA[1]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_borderRadiusUnits]]></wp:meta_key>
-							<wp:meta_value><![CDATA[px]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[wd_backgroundType]]></wp:meta_key>
@@ -1239,49 +1097,13 @@
 							<wp:meta_key><![CDATA[wd_backgroundVideoFallback]]></wp:meta_key>
 							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_backgroundCustomPositionXUnitsTablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[px]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_backgroundCustomPositionXUnitsMobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[px]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_backgroundCustomPositionXUnits]]></wp:meta_key>
-							<wp:meta_value><![CDATA[px]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_backgroundCustomPositionYUnitsTablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[px]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_backgroundCustomPositionYUnitsMobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[px]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_backgroundCustomPositionYUnits]]></wp:meta_key>
-							<wp:meta_value><![CDATA[px]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_backgroundCustomDisplaySizeUnitsTablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[px]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_backgroundCustomDisplaySizeUnitsMobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[px]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_backgroundCustomDisplaySizeUnits]]></wp:meta_key>
-							<wp:meta_value><![CDATA[px]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[Floating block Christmas shop]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/christmas-2-gutenberg/?wd_floating_block=floating-block-christmas-shop</link>
 					<pubDate>Wed, 22 Oct 2025 13:24:20 +0000</pubDate>
 					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
-					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/christmas-2-gutenberg/?post_type=wd_floating_block&#038;p=310</guid>
+					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/christmas-shop-gutenberg/?post_type=wd_floating_block&#038;p=310</guid>
 											<content:encoded><![CDATA[<!-- wp:wd/container {"blockId":"48d47a4c-75fe-4550-9da2-c57f04f80e10","textAlign":"center","colGap":"","rowGap":"10","colorScheme":"light"} -->
 <div id="wd-48d47a4c" class="wp-block-wd-container wd-dir-col color-scheme-light wd-align"><!-- wp:wd/title {"blockId":"1af6dfb3-70d4-457e-abe1-18abf7593063","content":"1+1=3","tpFontSize":"48","tpLineHeight":"1.2","tpFontVariant":"500","tpFontWeight":"500","tpLineHeightUnits":"em"} -->
 <h2 id="wd-1af6dfb3" class="wp-block-wd-title title">1+1=3</h2>
@@ -1312,32 +1134,8 @@
 					<wp:post_type><![CDATA[wd_floating_block]]></wp:post_type>
 												<category domain="wd_floating_block_cat" nicename="uncategorized"><![CDATA[Uncategorized]]></category>
 											<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_widthUnitsTablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[px]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_widthUnitsMobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[px]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_widthUnits]]></wp:meta_key>
-							<wp:meta_value><![CDATA[px]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[wd_width]]></wp:meta_key>
 							<wp:meta_value><![CDATA[320]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_heightUnitsTablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[px]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_heightUnitsMobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[px]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_heightUnits]]></wp:meta_key>
-							<wp:meta_value><![CDATA[px]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[wd_positioning_area]]></wp:meta_key>
@@ -1436,188 +1234,80 @@
 							<wp:meta_value><![CDATA[rgba(255,255,255,0.9)]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_marginTopTablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_marginTopMobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[wd_marginTop]]></wp:meta_key>
 							<wp:meta_value><![CDATA[90]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_marginRightTablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_marginRightMobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_marginRight]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_marginBottomTablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_marginBottomMobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_marginBottom]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_marginLeftTablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_marginLeftMobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_marginLeft]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_marginUnits]]></wp:meta_key>
-							<wp:meta_value><![CDATA[px]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_paddingTopTablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_paddingTopMobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[wd_paddingTop]]></wp:meta_key>
 							<wp:meta_value><![CDATA[70]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_paddingRightTablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_paddingRightMobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[wd_paddingRight]]></wp:meta_key>
 							<wp:meta_value><![CDATA[20]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_paddingBottomTablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_paddingBottomMobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[wd_paddingBottom]]></wp:meta_key>
 							<wp:meta_value><![CDATA[80]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_paddingLeftTablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_paddingLeftMobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[wd_paddingLeft]]></wp:meta_key>
 							<wp:meta_value><![CDATA[20]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_paddingUnits]]></wp:meta_key>
-							<wp:meta_value><![CDATA[px]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[wd_box_shadowPosition]]></wp:meta_key>
 							<wp:meta_value><![CDATA[outline]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
+							<wp:meta_key><![CDATA[wd_box_shadowHorizontalTablet]]></wp:meta_key>
+							<wp:meta_value><![CDATA[0]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[wd_box_shadowHorizontalMobile]]></wp:meta_key>
+							<wp:meta_value><![CDATA[0]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[wd_box_shadowHorizontal]]></wp:meta_key>
+							<wp:meta_value><![CDATA[0]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[wd_box_shadowVerticalTablet]]></wp:meta_key>
+							<wp:meta_value><![CDATA[0]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[wd_box_shadowVerticalMobile]]></wp:meta_key>
+							<wp:meta_value><![CDATA[0]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[wd_box_shadowVertical]]></wp:meta_key>
+							<wp:meta_value><![CDATA[0]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[wd_box_shadowBlurTablet]]></wp:meta_key>
+							<wp:meta_value><![CDATA[0]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[wd_box_shadowBlurMobile]]></wp:meta_key>
+							<wp:meta_value><![CDATA[0]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
 							<wp:meta_key><![CDATA[wd_box_shadowBlur]]></wp:meta_key>
 							<wp:meta_value><![CDATA[10]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_borderWidthUnits]]></wp:meta_key>
-							<wp:meta_value><![CDATA[px]]></wp:meta_value>
+							<wp:meta_key><![CDATA[wd_box_shadowSpreadTablet]]></wp:meta_key>
+							<wp:meta_value><![CDATA[0]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_borderRadiusTablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
+							<wp:meta_key><![CDATA[wd_box_shadowSpreadMobile]]></wp:meta_key>
+							<wp:meta_value><![CDATA[0]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_borderRadiusMobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_borderRadius]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_borderRadiusTopTablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_borderRadiusTopMobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_borderRadiusTop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_borderRadiusRightTablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_borderRadiusRightMobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_borderRadiusRight]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_borderRadiusBottomTablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_borderRadiusBottomMobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_borderRadiusBottom]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_borderRadiusLeftTablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_borderRadiusLeftMobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_borderRadiusLeft]]></wp:meta_key>
-							<wp:meta_value><![CDATA[]]></wp:meta_value>
+							<wp:meta_key><![CDATA[wd_box_shadowSpread]]></wp:meta_key>
+							<wp:meta_value><![CDATA[0]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[wd_borderRadiusLock]]></wp:meta_key>
 							<wp:meta_value><![CDATA[1]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_borderRadiusUnits]]></wp:meta_key>
-							<wp:meta_value><![CDATA[px]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[wd_backgroundType]]></wp:meta_key>
@@ -1662,42 +1352,6 @@
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[wd_backgroundPosition]]></wp:meta_key>
 							<wp:meta_value><![CDATA[center center]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_backgroundCustomPositionXUnitsTablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[px]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_backgroundCustomPositionXUnitsMobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[px]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_backgroundCustomPositionXUnits]]></wp:meta_key>
-							<wp:meta_value><![CDATA[px]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_backgroundCustomPositionYUnitsTablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[px]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_backgroundCustomPositionYUnitsMobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[px]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_backgroundCustomPositionYUnits]]></wp:meta_key>
-							<wp:meta_value><![CDATA[px]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_backgroundCustomDisplaySizeUnitsTablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[px]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_backgroundCustomDisplaySizeUnitsMobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[px]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[wd_backgroundCustomDisplaySizeUnits]]></wp:meta_key>
-							<wp:meta_value><![CDATA[px]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -1751,7 +1405,7 @@
 					<link>https://dummy.xtemos.com/woodmart2/christmas-2-gutenberg/?attachment_id=203</link>
 					<pubDate>Wed, 22 Oct 2025 12:03:04 +0000</pubDate>
 					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
-					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/christmas-2-gutenberg/wp-content/uploads/sites/61/2025/10/xms-logo-footer.svg</guid>
+					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/christmas-shop-gutenberg/wp-content/uploads/sites/61/2025/10/xms-logo-footer.svg</guid>
 															<wp:post_id>203</wp:post_id>
 					<wp:post_date><![CDATA[2025-10-22 12:03:04]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2025-10-22 12:03:04]]></wp:post_date_gmt>
@@ -1774,7 +1428,7 @@
 					<link>https://dummy.xtemos.com/woodmart2/christmas-2-gutenberg/?attachment_id=208</link>
 					<pubDate>Wed, 22 Oct 2025 12:03:51 +0000</pubDate>
 					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
-					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/christmas-2-gutenberg/wp-content/uploads/sites/61/2025/10/xms-google-play-badge-opt.svg</guid>
+					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/christmas-shop-gutenberg/wp-content/uploads/sites/61/2025/10/xms-google-play-badge-opt.svg</guid>
 															<wp:post_id>208</wp:post_id>
 					<wp:post_date><![CDATA[2025-10-22 12:03:51]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2025-10-22 12:03:51]]></wp:post_date_gmt>
@@ -1797,7 +1451,7 @@
 					<link>https://dummy.xtemos.com/woodmart2/christmas-2-gutenberg/?attachment_id=209</link>
 					<pubDate>Wed, 22 Oct 2025 12:03:52 +0000</pubDate>
 					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
-					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/christmas-2-gutenberg/wp-content/uploads/sites/61/2025/10/xms-app-store-badge-opt.svg</guid>
+					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/christmas-shop-gutenberg/wp-content/uploads/sites/61/2025/10/xms-app-store-badge-opt.svg</guid>
 															<wp:post_id>209</wp:post_id>
 					<wp:post_date><![CDATA[2025-10-22 12:03:52]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2025-10-22 12:03:52]]></wp:post_date_gmt>
@@ -1820,7 +1474,7 @@
 					<link>https://dummy.xtemos.com/woodmart2/christmas-2-gutenberg/?attachment_id=210</link>
 					<pubDate>Wed, 22 Oct 2025 12:04:15 +0000</pubDate>
 					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
-					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/christmas-2-gutenberg/wp-content/uploads/sites/61/2025/10/guaranteed-safe-checkout-filled.png</guid>
+					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/christmas-shop-gutenberg/wp-content/uploads/sites/61/2025/10/guaranteed-safe-checkout-filled.png</guid>
 															<wp:post_id>210</wp:post_id>
 					<wp:post_date><![CDATA[2025-10-22 12:04:15]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2025-10-22 12:04:15]]></wp:post_date_gmt>
@@ -1843,7 +1497,7 @@
 					<link>https://dummy.xtemos.com/woodmart2/christmas-2-gutenberg/woodmart_layout/cart-layout-christmas-shop/</link>
 					<pubDate>Wed, 22 Oct 2025 16:18:19 +0000</pubDate>
 					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
-					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/christmas-2-gutenberg/?post_type=woodmart_layout&#038;p=323</guid>
+					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/christmas-shop-gutenberg/?post_type=woodmart_layout&#038;p=323</guid>
 											<content:encoded><![CDATA[<!-- wp:wd/row {"blockId":"56b46867-a09f-49f8-a2dd-f0be4d64b0aa"} -->
 <div id="wd-56b46867" class="wp-block-wd-row"><!-- wp:wd/column {"blockId":"35dbf9b8-d2a9-4bb2-8db7-01d47b61aa72","adjacentCount":2,"colWidth":66.67,"blocksGap":30,"adjacentCountTablet":1,"colWidthTablet":100} -->
 <div id="wd-35dbf9b8" class="wp-block-wd-column"><!-- wp:wd/title {"blockId":"d8b92d6a-d3ce-44e7-8537-44e4ea556b9a","design":"with-image","content":"Check your selected products","iconPositionHorizontal":"start","bgColorCode":"#e1edeb","paddingTop":"15","paddingRight":"15","paddingBottom":"15","paddingLeft":"15","paddingLock":true,"borderRadius":"4","borderRadiusTop":"4","borderRadiusRight":"4","borderRadiusBottom":"4","borderRadiusLeft":"4","tpFontSizeMobile":"1.2","tpFontSizeUnitsMobile":"em"} -->

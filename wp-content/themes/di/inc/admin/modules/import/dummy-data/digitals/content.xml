@@ -16,7 +16,7 @@
 	<!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 	<!--    contained in this file into your site. -->
 
-	<!-- generator="WordPress/6.2.4" created="2024-02-08 12:17" -->
+	<!-- generator="WordPress/6.7.4" created="2026-02-25 15:40" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -29,24 +29,19 @@
 	<title>admin</title>
 	<link>https://dummy.xtemos.com/woodmart2</link>
 	<description>Just another WordPress site</description>
-	<pubDate>Thu, 08 Feb 2024 12:17:22 +0000</pubDate>
+	<pubDate>Wed, 25 Feb 2026 15:40:59 +0000</pubDate>
 	<language>en-US</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
 	<wp:base_site_url>https://dummy.xtemos.com/woodmart2/</wp:base_site_url>
 	<wp:base_blog_url>https://dummy.xtemos.com/woodmart2</wp:base_blog_url>
 
-		<wp:author><wp:author_id>2</wp:author_id><wp:author_login><![CDATA[Mr. Mackay]]></wp:author_login><wp:author_email><![CDATA[zak@asda.as]]></wp:author_email><wp:author_display_name><![CDATA[Mr. Mackay]]></wp:author_display_name><wp:author_first_name><![CDATA[sds]]></wp:author_first_name><wp:author_last_name><![CDATA[scssc]]></wp:author_last_name></wp:author>
-
-					<wp:term>
+	
+							<wp:term>
 			<wp:term_id>146</wp:term_id>
 			<wp:term_taxonomy><![CDATA[woodmart_slider]]></wp:term_taxonomy>
 			<wp:term_slug><![CDATA[digitals-slider]]></wp:term_slug>
 			<wp:term_parent><![CDATA[]]></wp:term_parent>
 			<wp:term_name><![CDATA[Digitals slider]]></wp:term_name>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-146-status]]></wp:meta_key>
-			<wp:meta_value><![CDATA[valid]]></wp:meta_value>
-		</wp:termmeta>
 		<wp:termmeta>
 			<wp:meta_key><![CDATA[animation]]></wp:meta_key>
 			<wp:meta_value><![CDATA[fade]]></wp:meta_value>
@@ -211,44 +206,9 @@
 			<wp:meta_key><![CDATA[autoplay_speed]]></wp:meta_key>
 			<wp:meta_value><![CDATA[25000]]></wp:meta_value>
 		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-146-css-data]]></wp:meta_key>
-			<wp:meta_value><![CDATA[#slider-146 .wd-slide {
-	min-height: 650px;
-}
-
-@media (max-width: 1024px) {
-	#slider-146 .wd-slide {
-		min-height: 650px;
-	}
-}
-
-@media (max-width: 767px) {
-	#slider-146 .wd-slide {
-		min-height: 550px;
-	}
-}
-]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-146-version]]></wp:meta_key>
-			<wp:meta_value><![CDATA[7.4.0]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-146-site-url]]></wp:meta_key>
-			<wp:meta_value><![CDATA[65c5e7a3e87c59ae65d18b8d3b912a1e]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-146-credentials]]></wp:meta_key>
-			<wp:meta_value><![CDATA[requested]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-146-file-data]]></wp:meta_key>
-			<wp:meta_value><![CDATA[a:3:{s:4:"path";s:36:"/2024/02/xts-term-146-1707232374.css";s:13:"theme_version";s:5:"7.4.0";s:8:"site_url";s:32:"65c5e7a3e87c59ae65d18b8d3b912a1e";}]]></wp:meta_value>
-		</wp:termmeta>
 		</wp:term>
-		
-	<generator>https://wordpress.org/?v=6.2.4</generator>
+				
+	<generator>https://wordpress.org/?v=6.7.4</generator>
 
 					<item>
 					<title><![CDATA[digitals-1-header-row]]></title>
@@ -458,75 +418,6 @@
 						</wp:postmeta>
 										</item>
 								<item>
-					<title><![CDATA[digitals-product-2]]></title>
-					<link>https://dummy.xtemos.com/woodmart2/digitals-product-2/</link>
-					<pubDate>Fri, 17 Sep 2021 11:59:43 +0000</pubDate>
-					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
-					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/wp-content/uploads/2021/09/digitals-product-2.jpg</guid>
-															<wp:post_id>5792</wp:post_id>
-					<wp:post_date><![CDATA[2021-09-17 11:59:43]]></wp:post_date>
-					<wp:post_date_gmt><![CDATA[2021-09-17 11:59:43]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2021-09-17 11:59:43]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2021-09-17 11:59:43]]></wp:post_modified_gmt>
-					<wp:comment_status><![CDATA[open]]></wp:comment_status>
-					<wp:post_name><![CDATA[digitals-product-2]]></wp:post_name>
-					<wp:status><![CDATA[inherit]]></wp:status>
-					<wp:post_parent>0</wp:post_parent>
-					<wp:menu_order>0</wp:menu_order>
-					<wp:post_type><![CDATA[attachment]]></wp:post_type>
-											<wp:attachment_url><![CDATA[http://dummy.xtemos.com/woodmart2/wp-content/uploads/2021/09/digitals-product-2.jpg]]></wp:attachment_url>
-																					<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-							<wp:meta_value><![CDATA[2021/09/digitals-product-2.jpg]]></wp:meta_value>
-						</wp:postmeta>
-										</item>
-								<item>
-					<title><![CDATA[digitals-product-3]]></title>
-					<link>https://dummy.xtemos.com/woodmart2/digitals-product-3/</link>
-					<pubDate>Fri, 17 Sep 2021 11:59:45 +0000</pubDate>
-					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
-					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/wp-content/uploads/2021/09/digitals-product-3.jpg</guid>
-															<wp:post_id>5793</wp:post_id>
-					<wp:post_date><![CDATA[2021-09-17 11:59:45]]></wp:post_date>
-					<wp:post_date_gmt><![CDATA[2021-09-17 11:59:45]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2021-09-17 11:59:45]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2021-09-17 11:59:45]]></wp:post_modified_gmt>
-					<wp:comment_status><![CDATA[open]]></wp:comment_status>
-					<wp:post_name><![CDATA[digitals-product-3]]></wp:post_name>
-					<wp:status><![CDATA[inherit]]></wp:status>
-					<wp:post_parent>0</wp:post_parent>
-					<wp:menu_order>0</wp:menu_order>
-					<wp:post_type><![CDATA[attachment]]></wp:post_type>
-											<wp:attachment_url><![CDATA[http://dummy.xtemos.com/woodmart2/wp-content/uploads/2021/09/digitals-product-3.jpg]]></wp:attachment_url>
-																					<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-							<wp:meta_value><![CDATA[2021/09/digitals-product-3.jpg]]></wp:meta_value>
-						</wp:postmeta>
-										</item>
-								<item>
-					<title><![CDATA[digitals-product-4]]></title>
-					<link>https://dummy.xtemos.com/woodmart2/digitals-product-4/</link>
-					<pubDate>Fri, 17 Sep 2021 11:59:47 +0000</pubDate>
-					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
-					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/wp-content/uploads/2021/09/digitals-product-4.jpg</guid>
-															<wp:post_id>5794</wp:post_id>
-					<wp:post_date><![CDATA[2021-09-17 11:59:47]]></wp:post_date>
-					<wp:post_date_gmt><![CDATA[2021-09-17 11:59:47]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2021-09-17 11:59:47]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2021-09-17 11:59:47]]></wp:post_modified_gmt>
-					<wp:comment_status><![CDATA[open]]></wp:comment_status>
-					<wp:post_name><![CDATA[digitals-product-4]]></wp:post_name>
-					<wp:status><![CDATA[inherit]]></wp:status>
-					<wp:post_parent>0</wp:post_parent>
-					<wp:menu_order>0</wp:menu_order>
-					<wp:post_type><![CDATA[attachment]]></wp:post_type>
-											<wp:attachment_url><![CDATA[http://dummy.xtemos.com/woodmart2/wp-content/uploads/2021/09/digitals-product-4.jpg]]></wp:attachment_url>
-																					<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-							<wp:meta_value><![CDATA[2021/09/digitals-product-4.jpg]]></wp:meta_value>
-						</wp:postmeta>
-										</item>
-								<item>
 					<title><![CDATA[digitals-product-5]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/digitals-product-5/</link>
 					<pubDate>Fri, 17 Sep 2021 11:59:47 +0000</pubDate>
@@ -708,6 +599,75 @@
 																					<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/09/digitals-product-12.jpg]]></wp:meta_value>
+						</wp:postmeta>
+										</item>
+								<item>
+					<title><![CDATA[digitals-slide-1]]></title>
+					<link>https://dummy.xtemos.com/woodmart2/blog/woodmart_slide/digitals-slide-1/digitals-slide-1/</link>
+					<pubDate>Fri, 26 Jan 2024 10:51:28 +0000</pubDate>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
+					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/wp-content/uploads/2024/01/digitals-slide-1.jpg</guid>
+															<wp:post_id>9751</wp:post_id>
+					<wp:post_date><![CDATA[2024-01-26 10:51:28]]></wp:post_date>
+					<wp:post_date_gmt><![CDATA[2024-01-26 10:51:28]]></wp:post_date_gmt>
+					<wp:post_modified><![CDATA[2024-01-26 10:51:28]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2024-01-26 10:51:28]]></wp:post_modified_gmt>
+					<wp:comment_status><![CDATA[open]]></wp:comment_status>
+					<wp:post_name><![CDATA[digitals-slide-1]]></wp:post_name>
+					<wp:status><![CDATA[inherit]]></wp:status>
+					<wp:post_parent>9750</wp:post_parent>
+					<wp:menu_order>0</wp:menu_order>
+					<wp:post_type><![CDATA[attachment]]></wp:post_type>
+											<wp:attachment_url><![CDATA[http://dummy.xtemos.com/woodmart2/wp-content/uploads/2024/01/digitals-slide-1.jpg]]></wp:attachment_url>
+																					<wp:postmeta>
+							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+							<wp:meta_value><![CDATA[2024/01/digitals-slide-1.jpg]]></wp:meta_value>
+						</wp:postmeta>
+										</item>
+								<item>
+					<title><![CDATA[digitals-slide-2]]></title>
+					<link>https://dummy.xtemos.com/woodmart2/blog/woodmart_slide/digitals-slide-1-2/digitals-slide-2/</link>
+					<pubDate>Fri, 26 Jan 2024 12:05:59 +0000</pubDate>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
+					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/wp-content/uploads/2024/01/digitals-slide-2.jpg</guid>
+															<wp:post_id>9755</wp:post_id>
+					<wp:post_date><![CDATA[2024-01-26 12:05:59]]></wp:post_date>
+					<wp:post_date_gmt><![CDATA[2024-01-26 12:05:59]]></wp:post_date_gmt>
+					<wp:post_modified><![CDATA[2024-01-26 12:05:59]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2024-01-26 12:05:59]]></wp:post_modified_gmt>
+					<wp:comment_status><![CDATA[open]]></wp:comment_status>
+					<wp:post_name><![CDATA[digitals-slide-2]]></wp:post_name>
+					<wp:status><![CDATA[inherit]]></wp:status>
+					<wp:post_parent>9754</wp:post_parent>
+					<wp:menu_order>0</wp:menu_order>
+					<wp:post_type><![CDATA[attachment]]></wp:post_type>
+											<wp:attachment_url><![CDATA[http://dummy.xtemos.com/woodmart2/wp-content/uploads/2024/01/digitals-slide-2.jpg]]></wp:attachment_url>
+																					<wp:postmeta>
+							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+							<wp:meta_value><![CDATA[2024/01/digitals-slide-2.jpg]]></wp:meta_value>
+						</wp:postmeta>
+										</item>
+								<item>
+					<title><![CDATA[digitals-slide-3]]></title>
+					<link>https://dummy.xtemos.com/woodmart2/blog/woodmart_slide/digitals-slide-1-2-2/digitals-slide-3/</link>
+					<pubDate>Fri, 26 Jan 2024 12:06:46 +0000</pubDate>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
+					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/wp-content/uploads/2024/01/digitals-slide-3.jpg</guid>
+															<wp:post_id>9757</wp:post_id>
+					<wp:post_date><![CDATA[2024-01-26 12:06:46]]></wp:post_date>
+					<wp:post_date_gmt><![CDATA[2024-01-26 12:06:46]]></wp:post_date_gmt>
+					<wp:post_modified><![CDATA[2024-01-26 12:06:46]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2024-01-26 12:06:46]]></wp:post_modified_gmt>
+					<wp:comment_status><![CDATA[open]]></wp:comment_status>
+					<wp:post_name><![CDATA[digitals-slide-3]]></wp:post_name>
+					<wp:status><![CDATA[inherit]]></wp:status>
+					<wp:post_parent>9756</wp:post_parent>
+					<wp:menu_order>0</wp:menu_order>
+					<wp:post_type><![CDATA[attachment]]></wp:post_type>
+											<wp:attachment_url><![CDATA[http://dummy.xtemos.com/woodmart2/wp-content/uploads/2024/01/digitals-slide-3.jpg]]></wp:attachment_url>
+																					<wp:postmeta>
+							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+							<wp:meta_value><![CDATA[2024/01/digitals-slide-3.jpg]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -940,75 +900,6 @@
 						</wp:postmeta>
 										</item>
 								<item>
-					<title><![CDATA[digitals-img-grid-1]]></title>
-					<link>https://dummy.xtemos.com/woodmart2/home-digitals/digitals-img-grid-1/</link>
-					<pubDate>Wed, 04 Aug 2021 13:00:36 +0000</pubDate>
-					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
-					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/wp-content/uploads/2021/08/digitals-img-grid-1.jpg</guid>
-															<wp:post_id>2343</wp:post_id>
-					<wp:post_date><![CDATA[2021-08-04 13:00:36]]></wp:post_date>
-					<wp:post_date_gmt><![CDATA[2021-08-04 13:00:36]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2021-08-04 13:00:36]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2021-08-04 13:00:36]]></wp:post_modified_gmt>
-					<wp:comment_status><![CDATA[open]]></wp:comment_status>
-					<wp:post_name><![CDATA[digitals-img-grid-1]]></wp:post_name>
-					<wp:status><![CDATA[inherit]]></wp:status>
-					<wp:post_parent>2308</wp:post_parent>
-					<wp:menu_order>0</wp:menu_order>
-					<wp:post_type><![CDATA[attachment]]></wp:post_type>
-											<wp:attachment_url><![CDATA[http://dummy.xtemos.com/woodmart2/wp-content/uploads/2021/08/digitals-img-grid-1.jpg]]></wp:attachment_url>
-																					<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-							<wp:meta_value><![CDATA[2021/08/digitals-img-grid-1.jpg]]></wp:meta_value>
-						</wp:postmeta>
-										</item>
-								<item>
-					<title><![CDATA[digitals-phone-app-img]]></title>
-					<link>https://dummy.xtemos.com/woodmart2/home-digitals/digitals-phone-app-img/</link>
-					<pubDate>Wed, 04 Aug 2021 13:40:45 +0000</pubDate>
-					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
-					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/wp-content/uploads/2021/08/digitals-phone-app-img.png</guid>
-															<wp:post_id>2362</wp:post_id>
-					<wp:post_date><![CDATA[2021-08-04 13:40:45]]></wp:post_date>
-					<wp:post_date_gmt><![CDATA[2021-08-04 13:40:45]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2021-08-04 13:40:45]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2021-08-04 13:40:45]]></wp:post_modified_gmt>
-					<wp:comment_status><![CDATA[open]]></wp:comment_status>
-					<wp:post_name><![CDATA[digitals-phone-app-img]]></wp:post_name>
-					<wp:status><![CDATA[inherit]]></wp:status>
-					<wp:post_parent>2308</wp:post_parent>
-					<wp:menu_order>0</wp:menu_order>
-					<wp:post_type><![CDATA[attachment]]></wp:post_type>
-											<wp:attachment_url><![CDATA[http://dummy.xtemos.com/woodmart2/wp-content/uploads/2021/08/digitals-phone-app-img.png]]></wp:attachment_url>
-																					<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-							<wp:meta_value><![CDATA[2021/08/digitals-phone-app-img.png]]></wp:meta_value>
-						</wp:postmeta>
-										</item>
-								<item>
-					<title><![CDATA[digitals-newslatter-img-products]]></title>
-					<link>https://dummy.xtemos.com/woodmart2/home-digitals/digitals-newslatter-img-products/</link>
-					<pubDate>Wed, 04 Aug 2021 14:15:56 +0000</pubDate>
-					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
-					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/wp-content/uploads/2021/08/digitals-newslatter-img-products.png</guid>
-															<wp:post_id>2392</wp:post_id>
-					<wp:post_date><![CDATA[2021-08-04 14:15:56]]></wp:post_date>
-					<wp:post_date_gmt><![CDATA[2021-08-04 14:15:56]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2021-08-04 14:15:56]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2021-08-04 14:15:56]]></wp:post_modified_gmt>
-					<wp:comment_status><![CDATA[open]]></wp:comment_status>
-					<wp:post_name><![CDATA[digitals-newslatter-img-products]]></wp:post_name>
-					<wp:status><![CDATA[inherit]]></wp:status>
-					<wp:post_parent>2308</wp:post_parent>
-					<wp:menu_order>0</wp:menu_order>
-					<wp:post_type><![CDATA[attachment]]></wp:post_type>
-											<wp:attachment_url><![CDATA[http://dummy.xtemos.com/woodmart2/wp-content/uploads/2021/08/digitals-newslatter-img-products.png]]></wp:attachment_url>
-																					<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-							<wp:meta_value><![CDATA[2021/08/digitals-newslatter-img-products.png]]></wp:meta_value>
-						</wp:postmeta>
-										</item>
-								<item>
 					<title><![CDATA[digitals-blog-1]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/digitals-blog-1/</link>
 					<pubDate>Fri, 17 Sep 2021 11:57:39 +0000</pubDate>
@@ -1216,6 +1107,75 @@
 						</wp:postmeta>
 										</item>
 								<item>
+					<title><![CDATA[digitals-product-2]]></title>
+					<link>https://dummy.xtemos.com/woodmart2/digitals-product-2/</link>
+					<pubDate>Fri, 17 Sep 2021 11:59:43 +0000</pubDate>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
+					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/wp-content/uploads/2021/09/digitals-product-2.jpg</guid>
+															<wp:post_id>5792</wp:post_id>
+					<wp:post_date><![CDATA[2021-09-17 11:59:43]]></wp:post_date>
+					<wp:post_date_gmt><![CDATA[2021-09-17 11:59:43]]></wp:post_date_gmt>
+					<wp:post_modified><![CDATA[2021-09-17 11:59:43]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2021-09-17 11:59:43]]></wp:post_modified_gmt>
+					<wp:comment_status><![CDATA[open]]></wp:comment_status>
+					<wp:post_name><![CDATA[digitals-product-2]]></wp:post_name>
+					<wp:status><![CDATA[inherit]]></wp:status>
+					<wp:post_parent>0</wp:post_parent>
+					<wp:menu_order>0</wp:menu_order>
+					<wp:post_type><![CDATA[attachment]]></wp:post_type>
+											<wp:attachment_url><![CDATA[http://dummy.xtemos.com/woodmart2/wp-content/uploads/2021/09/digitals-product-2.jpg]]></wp:attachment_url>
+																					<wp:postmeta>
+							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+							<wp:meta_value><![CDATA[2021/09/digitals-product-2.jpg]]></wp:meta_value>
+						</wp:postmeta>
+										</item>
+								<item>
+					<title><![CDATA[digitals-product-3]]></title>
+					<link>https://dummy.xtemos.com/woodmart2/digitals-product-3/</link>
+					<pubDate>Fri, 17 Sep 2021 11:59:45 +0000</pubDate>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
+					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/wp-content/uploads/2021/09/digitals-product-3.jpg</guid>
+															<wp:post_id>5793</wp:post_id>
+					<wp:post_date><![CDATA[2021-09-17 11:59:45]]></wp:post_date>
+					<wp:post_date_gmt><![CDATA[2021-09-17 11:59:45]]></wp:post_date_gmt>
+					<wp:post_modified><![CDATA[2021-09-17 11:59:45]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2021-09-17 11:59:45]]></wp:post_modified_gmt>
+					<wp:comment_status><![CDATA[open]]></wp:comment_status>
+					<wp:post_name><![CDATA[digitals-product-3]]></wp:post_name>
+					<wp:status><![CDATA[inherit]]></wp:status>
+					<wp:post_parent>0</wp:post_parent>
+					<wp:menu_order>0</wp:menu_order>
+					<wp:post_type><![CDATA[attachment]]></wp:post_type>
+											<wp:attachment_url><![CDATA[http://dummy.xtemos.com/woodmart2/wp-content/uploads/2021/09/digitals-product-3.jpg]]></wp:attachment_url>
+																					<wp:postmeta>
+							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+							<wp:meta_value><![CDATA[2021/09/digitals-product-3.jpg]]></wp:meta_value>
+						</wp:postmeta>
+										</item>
+								<item>
+					<title><![CDATA[digitals-product-4]]></title>
+					<link>https://dummy.xtemos.com/woodmart2/digitals-product-4/</link>
+					<pubDate>Fri, 17 Sep 2021 11:59:47 +0000</pubDate>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
+					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/wp-content/uploads/2021/09/digitals-product-4.jpg</guid>
+															<wp:post_id>5794</wp:post_id>
+					<wp:post_date><![CDATA[2021-09-17 11:59:47]]></wp:post_date>
+					<wp:post_date_gmt><![CDATA[2021-09-17 11:59:47]]></wp:post_date_gmt>
+					<wp:post_modified><![CDATA[2021-09-17 11:59:47]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2021-09-17 11:59:47]]></wp:post_modified_gmt>
+					<wp:comment_status><![CDATA[open]]></wp:comment_status>
+					<wp:post_name><![CDATA[digitals-product-4]]></wp:post_name>
+					<wp:status><![CDATA[inherit]]></wp:status>
+					<wp:post_parent>0</wp:post_parent>
+					<wp:menu_order>0</wp:menu_order>
+					<wp:post_type><![CDATA[attachment]]></wp:post_type>
+											<wp:attachment_url><![CDATA[http://dummy.xtemos.com/woodmart2/wp-content/uploads/2021/09/digitals-product-4.jpg]]></wp:attachment_url>
+																					<wp:postmeta>
+							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+							<wp:meta_value><![CDATA[2021/09/digitals-product-4.jpg]]></wp:meta_value>
+						</wp:postmeta>
+										</item>
+								<item>
 					<title><![CDATA[wood-logo-white-reserve]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/wood-logo-white-reserve/</link>
 					<pubDate>Wed, 21 Jun 2017 08:17:11 +0000</pubDate>
@@ -1267,6 +1227,29 @@
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wpb_shortcodes_custom_css_updated]]></wp:meta_key>
 							<wp:meta_value><![CDATA[1]]></wp:meta_value>
+						</wp:postmeta>
+										</item>
+								<item>
+					<title><![CDATA[digitals-img-grid-1]]></title>
+					<link>https://dummy.xtemos.com/woodmart2/home-digitals/digitals-img-grid-1/</link>
+					<pubDate>Wed, 04 Aug 2021 13:00:36 +0000</pubDate>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
+					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/wp-content/uploads/2021/08/digitals-img-grid-1.jpg</guid>
+															<wp:post_id>2343</wp:post_id>
+					<wp:post_date><![CDATA[2021-08-04 13:00:36]]></wp:post_date>
+					<wp:post_date_gmt><![CDATA[2021-08-04 13:00:36]]></wp:post_date_gmt>
+					<wp:post_modified><![CDATA[2021-08-04 13:00:36]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2021-08-04 13:00:36]]></wp:post_modified_gmt>
+					<wp:comment_status><![CDATA[open]]></wp:comment_status>
+					<wp:post_name><![CDATA[digitals-img-grid-1]]></wp:post_name>
+					<wp:status><![CDATA[inherit]]></wp:status>
+					<wp:post_parent>2308</wp:post_parent>
+					<wp:menu_order>0</wp:menu_order>
+					<wp:post_type><![CDATA[attachment]]></wp:post_type>
+											<wp:attachment_url><![CDATA[http://dummy.xtemos.com/woodmart2/wp-content/uploads/2021/08/digitals-img-grid-1.jpg]]></wp:attachment_url>
+																					<wp:postmeta>
+							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+							<wp:meta_value><![CDATA[2021/08/digitals-img-grid-1.jpg]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -1385,6 +1368,52 @@
 						</wp:postmeta>
 										</item>
 								<item>
+					<title><![CDATA[digitals-phone-app-img]]></title>
+					<link>https://dummy.xtemos.com/woodmart2/home-digitals/digitals-phone-app-img/</link>
+					<pubDate>Wed, 04 Aug 2021 13:40:45 +0000</pubDate>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
+					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/wp-content/uploads/2021/08/digitals-phone-app-img.png</guid>
+															<wp:post_id>2362</wp:post_id>
+					<wp:post_date><![CDATA[2021-08-04 13:40:45]]></wp:post_date>
+					<wp:post_date_gmt><![CDATA[2021-08-04 13:40:45]]></wp:post_date_gmt>
+					<wp:post_modified><![CDATA[2021-08-04 13:40:45]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2021-08-04 13:40:45]]></wp:post_modified_gmt>
+					<wp:comment_status><![CDATA[open]]></wp:comment_status>
+					<wp:post_name><![CDATA[digitals-phone-app-img]]></wp:post_name>
+					<wp:status><![CDATA[inherit]]></wp:status>
+					<wp:post_parent>2308</wp:post_parent>
+					<wp:menu_order>0</wp:menu_order>
+					<wp:post_type><![CDATA[attachment]]></wp:post_type>
+											<wp:attachment_url><![CDATA[http://dummy.xtemos.com/woodmart2/wp-content/uploads/2021/08/digitals-phone-app-img.png]]></wp:attachment_url>
+																					<wp:postmeta>
+							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+							<wp:meta_value><![CDATA[2021/08/digitals-phone-app-img.png]]></wp:meta_value>
+						</wp:postmeta>
+										</item>
+								<item>
+					<title><![CDATA[digitals-newslatter-img-products]]></title>
+					<link>https://dummy.xtemos.com/woodmart2/home-digitals/digitals-newslatter-img-products/</link>
+					<pubDate>Wed, 04 Aug 2021 14:15:56 +0000</pubDate>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
+					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/wp-content/uploads/2021/08/digitals-newslatter-img-products.png</guid>
+															<wp:post_id>2392</wp:post_id>
+					<wp:post_date><![CDATA[2021-08-04 14:15:56]]></wp:post_date>
+					<wp:post_date_gmt><![CDATA[2021-08-04 14:15:56]]></wp:post_date_gmt>
+					<wp:post_modified><![CDATA[2021-08-04 14:15:56]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2021-08-04 14:15:56]]></wp:post_modified_gmt>
+					<wp:comment_status><![CDATA[open]]></wp:comment_status>
+					<wp:post_name><![CDATA[digitals-newslatter-img-products]]></wp:post_name>
+					<wp:status><![CDATA[inherit]]></wp:status>
+					<wp:post_parent>2308</wp:post_parent>
+					<wp:menu_order>0</wp:menu_order>
+					<wp:post_type><![CDATA[attachment]]></wp:post_type>
+											<wp:attachment_url><![CDATA[http://dummy.xtemos.com/woodmart2/wp-content/uploads/2021/08/digitals-newslatter-img-products.png]]></wp:attachment_url>
+																					<wp:postmeta>
+							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+							<wp:meta_value><![CDATA[2021/08/digitals-newslatter-img-products.png]]></wp:meta_value>
+						</wp:postmeta>
+										</item>
+								<item>
 					<title><![CDATA[Digitals slide 1]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/blog/woodmart_slide/digitals-slide-1/</link>
 					<pubDate>Fri, 26 Jan 2024 10:53:16 +0000</pubDate>
@@ -1394,8 +1423,8 @@
 															<wp:post_id>9750</wp:post_id>
 					<wp:post_date><![CDATA[2024-01-26 10:53:16]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-01-26 10:53:16]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-01-26 12:44:40]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-01-26 12:44:40]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2026-02-25 10:42:43]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2026-02-25 10:42:43]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[digitals-slide-1]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -1406,50 +1435,6 @@
 											<wp:postmeta>
 							<wp:meta_key><![CDATA[woodmart_shortcodes_custom_css]]></wp:meta_key>
 							<wp:meta_value><![CDATA[.wd-rs-65b3a6bd2dc63 > .vc_column-inner > .wpb_wrapper{align-items: center;}#wd-65b3a0070bf60.wd-text-block{line-height:42px;font-size:32px;}#wd-65b3a000a0cce{--wd-max-width:500px;}#wd-65b3a000a0cce .woodmart-title-container{line-height:50px;font-size:40px;}#wd-65b39ff923030.wd-text-block{line-height:26px;font-size:16px;}#wd-65b39ff923030{--wd-max-width:500px;}#wd-65b3a91a2b6e8.wd-text-block{line-height:38px;font-size:28px;}@media (max-width: 1199px) {#wd-65b3a0070bf60.wd-text-block{line-height:38px;font-size:28px;}#wd-65b3a000a0cce{--wd-max-width:442px;}#wd-65b3a000a0cce .woodmart-title-container{line-height:42px;font-size:32px;}#wd-65b39ff923030{--wd-max-width:388px;}}@media (max-width: 767px) {#wd-65b3a0070bf60.wd-text-block{line-height:36px;font-size:26px;}#wd-65b3a000a0cce .woodmart-title-container{line-height:38px;font-size:28px;}html .wd-rs-65b3a000a0cce{margin-bottom:30px !important;}}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_color]]></wp:meta_key>
-							<wp:meta_value><![CDATA[#fefefe]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:81:"http://dummy.xtemos.com/woodmart2/wp-content/uploads/2024/01/digitals-slide-1.jpg";s:2:"id";s:4:"9751";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_size_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[cover]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_position_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[center center]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_tablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_mobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[content_width]]></wp:meta_key>
-							<wp:meta_value><![CDATA[1200]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[content_width_tablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[1200]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[content_width_mobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[500]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[vertical_align]]></wp:meta_key>
-							<wp:meta_value><![CDATA[middle]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[horizontal_align]]></wp:meta_key>
-							<wp:meta_value><![CDATA[left]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[vertical_align_mobile]]></wp:meta_key>
@@ -1475,6 +1460,14 @@
 							<wp:meta_key><![CDATA[_wpb_shortcodes_custom_css_updated]]></wp:meta_key>
 							<wp:meta_value><![CDATA[1]]></wp:meta_value>
 						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[image]]></wp:meta_key>
+							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:81:"http://dummy.xtemos.com/woodmart2/wp-content/uploads/2024/01/digitals-slide-1.jpg";s:2:"id";s:4:"9751";}]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_wpb_vc_editor_type]]></wp:meta_key>
+							<wp:meta_value><![CDATA[backend]]></wp:meta_value>
+						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[Digitals slide 2]]></title>
@@ -1486,8 +1479,8 @@
 															<wp:post_id>9754</wp:post_id>
 					<wp:post_date><![CDATA[2024-01-26 12:05:48]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-01-26 12:05:48]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-02-02 13:40:05]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-02-02 13:40:05]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2026-02-25 10:42:23]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2026-02-25 10:42:23]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[digitals-slide-1-2]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -1516,46 +1509,6 @@
 							<wp:meta_value><![CDATA[rgb(0,0,0)]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:81:"http://dummy.xtemos.com/woodmart2/wp-content/uploads/2024/01/digitals-slide-2.jpg";s:2:"id";s:4:"9755";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_size_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[cover]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_position_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[center center]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_tablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_mobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[content_width]]></wp:meta_key>
-							<wp:meta_value><![CDATA[1200]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[content_width_tablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[1200]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[content_width_mobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[500]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[vertical_align]]></wp:meta_key>
-							<wp:meta_value><![CDATA[middle]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[horizontal_align]]></wp:meta_key>
-							<wp:meta_value><![CDATA[left]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[vertical_align_mobile]]></wp:meta_key>
 							<wp:meta_value><![CDATA[middle]]></wp:meta_value>
 						</wp:postmeta>
@@ -1580,8 +1533,12 @@
 							<wp:meta_value><![CDATA[1]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[digitals-slide-1]]></wp:meta_value>
+							<wp:meta_key><![CDATA[image]]></wp:meta_key>
+							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:81:"http://dummy.xtemos.com/woodmart2/wp-content/uploads/2024/01/digitals-slide-2.jpg";s:2:"id";s:4:"9755";}]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_wpb_vc_editor_type]]></wp:meta_key>
+							<wp:meta_value><![CDATA[backend]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -1594,8 +1551,8 @@
 															<wp:post_id>9756</wp:post_id>
 					<wp:post_date><![CDATA[2024-01-26 12:06:48]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-01-26 12:06:48]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-02-02 13:40:13]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-02-02 13:40:13]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2026-02-25 10:42:02]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2026-02-25 10:42:02]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[digitals-slide-1-2-2]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -1636,46 +1593,6 @@
 							<wp:meta_value><![CDATA[rgb(31,58,89)]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:81:"http://dummy.xtemos.com/woodmart2/wp-content/uploads/2024/01/digitals-slide-3.jpg";s:2:"id";s:4:"9757";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_size_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[cover]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_position_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[center center]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_tablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_mobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[content_width]]></wp:meta_key>
-							<wp:meta_value><![CDATA[1200]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[content_width_tablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[1200]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[content_width_mobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[500]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[vertical_align]]></wp:meta_key>
-							<wp:meta_value><![CDATA[middle]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[horizontal_align]]></wp:meta_key>
-							<wp:meta_value><![CDATA[left]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[vertical_align_mobile]]></wp:meta_key>
 							<wp:meta_value><![CDATA[middle]]></wp:meta_value>
 						</wp:postmeta>
@@ -1700,8 +1617,12 @@
 							<wp:meta_value><![CDATA[1]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[digitals-slide-1-2]]></wp:meta_value>
+							<wp:meta_key><![CDATA[image]]></wp:meta_key>
+							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:81:"http://dummy.xtemos.com/woodmart2/wp-content/uploads/2024/01/digitals-slide-3.jpg";s:2:"id";s:4:"9757";}]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_wpb_vc_editor_type]]></wp:meta_key>
+							<wp:meta_value><![CDATA[backend]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 				</channel>

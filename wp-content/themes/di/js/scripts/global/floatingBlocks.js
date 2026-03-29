@@ -23,7 +23,7 @@
 
 			set(key, array) {
 				Cookies.set(key, JSON.stringify(array), {
-					expires: 7,
+					expires: parseInt(woodmart_settings.cookie_expires),
 					path: '/',
 					secure: woodmart_settings.cookie_secure_param,
 				})
@@ -316,10 +316,6 @@
 				wrapClass += ' wd-scrolling-on'
 			}
 
-			if (!closeBtn) {
-				btnClass += ' wd-hide'
-			}
-
 			if (options?.close_btn_display) {
 				btnClass += ' wd-style-' + options.close_btn_display
 			}
@@ -339,18 +335,19 @@
 				removalDelay: 600,
 				fixedContentPos: !enablePageScrolling,
 				tClose: woodmart_settings.close,
-				closeMarkup:
+				closeMarkup: closeBtn ?
 					'<div class="' +
 					btnClass +
 					'">' +
 					'<a title="' +
 					woodmart_settings.close +
 					'" href="#" rel="nofollow">' +
-					'<span>' +
+					'<span class="wd-action-icon"></span>' +
+					'<span class="wd-action-text">' +
 					woodmart_settings.close +
 					'</span>' +
 					'</a>' +
-					'</div>',
+					'</div>' : '',
 				enableEscapeKey: closeByESC,
 				closeOnBgClick: closeByOverlay,
 				callbacks: {
@@ -418,7 +415,8 @@
 		}
 
 		function closeBlock($block) {
-			const $floatingWrapper = $block.parents('.wd-fb-wrap')
+			const $floatingWrapper = $block.closest('.wd-fb-wrap')
+
 			if (!$floatingWrapper.length) return
 
 			$floatingWrapper.trigger('fbClose')
@@ -529,7 +527,7 @@
 					function(e) {
 						if (!$content.hasClass('wd-hide')) {
 							e.preventDefault()
-							closeBlock($content.find('.wd-fb-close'))
+							closeBlock($content)
 						}
 					}
 				)
@@ -588,7 +586,7 @@
 					pages++
 
 					Cookies.set('woodmart_shown_pages', pages, {
-						expires: 7,
+						expires: parseInt(woodmart_settings.cookie_expires),
 						path: '/',
 						secure: woodmart_settings.cookie_secure_param,
 					})

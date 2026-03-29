@@ -26,6 +26,8 @@ if ( ! isset( $this->attrs['pagination'] ) || $this->attrs['pagination'] || ! is
 			$assets['styles'][] = 'slider-dots-style-2';
 		} elseif ( '3' === $this->attrs['paginationStyle'] ) {
 			$assets['styles'][] = 'slider-dots-style-3';
+		} elseif ( '4' === $this->attrs['paginationStyle'] ) {
+			$assets['styles'][] = 'slider-pagin-style-4';
 		}
 	}
 }

@@ -2,7 +2,7 @@
 /**
  * Import process.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Admin\Modules\Import;
@@ -56,6 +56,8 @@ class Process {
 	 * Constructor.
 	 *
 	 * @param string $version Version slug.
+	 * @param string $current_process Current process name.
+	 * @param string $type Version type.
 	 */
 	public function __construct( $version, $current_process, $type ) {
 		$this->version             = $version;
@@ -64,6 +66,10 @@ class Process {
 		$this->version_list        = woodmart_get_config( 'versions' );
 		$this->is_version_imported = $this->is_version_imported();
 		$this->helpers             = Helpers::get_instance();
+
+		if ( 'elementor' === $this->helpers->get_page_builder() ) {
+			add_filter( 'action_scheduler_queue_runner_concurrent_batches', '__return_false' );
+		}
 
 		$this->run_import();
 	}
@@ -87,10 +93,6 @@ class Process {
 		if ( 'other' === $this->current_process ) {
 			if ( $this->need_process( 'widgets' ) ) {
 				new Widgets( $this->version );
-			}
-
-			if ( $this->need_process( 'sliders' ) && ! $this->is_version_imported ) {
-				new Sliders( $this->version );
 			}
 
 			if ( $this->need_process( 'options' ) ) {

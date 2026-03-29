@@ -1,4 +1,10 @@
 <?php
+/**
+ * Product archive settings.
+ *
+ * @package woodmart
+ */
+
 if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
 	exit( 'No direct script access allowed' );
 }
@@ -74,9 +80,51 @@ Options::add_field(
  */
 Options::add_field(
 	array(
+		'id'       => 'products_hover_type',
+		'name'     => esc_html__( 'Product layout type for grid', 'woodmart' ),
+		'type'     => 'buttons',
+		'section'  => 'products_styles_section',
+		'default'  => 'predefined',
+		'options'  => array(
+			'predefined' => array(
+				'name'  => esc_html__( 'Predefined', 'woodmart' ),
+				'value' => 'predefined',
+			),
+			'custom'     => array(
+				'name'  => esc_html__( 'Custom', 'woodmart' ),
+				'value' => 'custom',
+			),
+		),
+		'priority' => 5,
+	)
+);
+
+Options::add_field(
+	array(
+		'id'           => 'product_custom_hover',
+		'name'         => esc_html__( 'Custom product layout for grid', 'woodmart' ),
+		'type'         => 'select',
+		'section'      => 'products_styles_section',
+		'select2'      => true,
+		'empty_option' => true,
+		'callback'     => 'woodmart_get_theme_settings_product_loop_items_array',
+		'description'  => function_exists( 'woodmart_get_html_block_links' ) ? woodmart_get_html_block_links( 'edit.php?post_type=woodmart_layout&wd_layout_type_tab=loop_item&create_template', __( 'layout', 'woodmart' ) ) : '',
+		'requires'     => array(
+			array(
+				'key'     => 'products_hover_type',
+				'compare' => 'equals',
+				'value'   => 'custom',
+			),
+		),
+		'priority'     => 7,
+	)
+);
+
+Options::add_field(
+	array(
 		'id'          => 'products_hover',
-		'name'        => esc_html__( 'Hover on product', 'woodmart' ),
-		'description' => esc_html__( 'Choose one of those hover effects for products', 'woodmart' ),
+		'name'        => esc_html__( 'Predefined product layout for grid', 'woodmart' ),
+		'description' => esc_html__( 'Choose one of those predefined product layouts for grid.', 'woodmart' ),
 		'type'        => 'buttons',
 		'section'     => 'products_styles_section',
 		'default'     => 'base',
@@ -140,9 +188,9 @@ Options::add_field(
 		'priority'    => 10,
 		'requires'    => array(
 			array(
-				'key'     => 'shop_view',
+				'key'     => 'products_hover_type',
 				'compare' => 'not_equals',
-				'value'   => 'list',
+				'value'   => 'custom',
 			),
 		),
 	)
@@ -166,11 +214,37 @@ Options::add_field(
 				'value'   => array( 'base', 'fw-button' ),
 			),
 			array(
-				'key'     => 'shop_view',
+				'key'     => 'products_hover_type',
 				'compare' => 'not_equals',
-				'value'   => 'list',
+				'value'   => 'custom',
 			),
 		),
+	)
+);
+
+Options::add_field(
+	array(
+		'id'           => 'product_custom_list',
+		'name'         => esc_html__( 'Custom product layout for list', 'woodmart' ),
+		'description'  => function_exists( 'woodmart_get_html_block_links' ) ? woodmart_get_html_block_links( 'edit.php?post_type=woodmart_layout&wd_layout_type_tab=loop_item&create_template', __( 'layout', 'woodmart' ) ) : '',
+		'type'         => 'select',
+		'section'      => 'products_styles_section',
+		'select2'      => true,
+		'empty_option' => true,
+		'callback'     => 'woodmart_get_theme_settings_product_loop_items_array',
+		'priority'     => 21,
+	)
+);
+
+Options::add_field(
+	array(
+		'id'       => 'product_custom_hover_notice',
+		'type'     => 'notice',
+		'style'    => 'info',
+		'name'     => '',
+		'content'  => esc_html__( 'The options below do not apply to custom product layouts, as they are managed via each layout’s individual settings.', 'woodmart' ),
+		'section'  => 'products_styles_section',
+		'priority' => 25,
 	)
 );
 
@@ -299,127 +373,6 @@ Options::add_field(
 
 Options::add_field(
 	array(
-		'id'          => 'stretch_product_desktop',
-		'name'        => esc_html__( 'Even product grid for desktop', 'woodmart' ),
-		'description' => esc_html__( 'Align the product hover content to the bottom of the products row.', 'woodmart' ),
-		'group'       => esc_html__( 'Layout', 'woodmart' ),
-		'hint'        => '<video data-src="' . WOODMART_TOOLTIP_URL . 'even-product-grid.mp4" autoplay loop muted></video>',
-		'type'        => 'switcher',
-		'section'     => 'products_styles_section',
-		'default'     => false,
-		'priority'    => 100,
-		'requires'    => array(
-			array(
-				'key'     => 'products_hover',
-				'compare' => 'equals',
-				'value'   => array( 'icons', 'alt', 'button', 'standard', 'tiled', 'quick', 'base', 'fw-button', 'buttons-on-hover' ),
-			),
-		),
-		't_tab'       => array(
-			'id'    => 'stretch_product_tabs',
-			'tab'   => esc_html__( 'Desktop', 'woodmart' ),
-			'icon'  => 'xts-i-desktop',
-			'style' => 'devices',
-		),
-	)
-);
-
-Options::add_field(
-	array(
-		'id'          => 'stretch_product_tablet',
-		'name'        => esc_html__( 'Even product grid for tablet', 'woodmart' ),
-		'description' => esc_html__( 'Align the product hover content to the bottom of the products row.', 'woodmart' ),
-		'group'       => esc_html__( 'Layout', 'woodmart' ),
-		'type'        => 'switcher',
-		'section'     => 'products_styles_section',
-		'default'     => false,
-		'priority'    => 110,
-		'requires'    => array(
-			array(
-				'key'     => 'products_hover',
-				'compare' => 'equals',
-				'value'   => array( 'icons', 'alt', 'button', 'standard', 'tiled', 'quick', 'base', 'fw-button', 'buttons-on-hover' ),
-			),
-		),
-		't_tab'       => array(
-			'id'   => 'stretch_product_tabs',
-			'tab'  => esc_html__( 'Tablet', 'woodmart' ),
-			'icon' => 'xts-i-tablet',
-		),
-	)
-);
-
-Options::add_field(
-	array(
-		'id'          => 'stretch_product_mobile',
-		'name'        => esc_html__( 'Even product grid for mobile', 'woodmart' ),
-		'description' => esc_html__( 'Align the product hover content to the bottom of the products row.', 'woodmart' ),
-		'group'       => esc_html__( 'Layout', 'woodmart' ),
-		'type'        => 'switcher',
-		'section'     => 'products_styles_section',
-		'default'     => false,
-		'priority'    => 120,
-		'requires'    => array(
-			array(
-				'key'     => 'products_hover',
-				'compare' => 'equals',
-				'value'   => array( 'icons', 'alt', 'button', 'standard', 'tiled', 'quick', 'base', 'fw-button', 'buttons-on-hover' ),
-			),
-		),
-		't_tab'       => array(
-			'id'   => 'stretch_product_tabs',
-			'tab'  => esc_html__( 'Mobile', 'woodmart' ),
-			'icon' => 'xts-i-phone',
-		),
-	)
-);
-
-Options::add_field(
-	array(
-		'id'          => 'product_title_lines_limit',
-		'name'        => esc_html__( 'Product title lines limit', 'woodmart' ),
-		'hint'        => '<video data-src="' . WOODMART_TOOLTIP_URL . 'product-title-lines-limit.mp4" autoplay loop muted></video>',
-		'description' => esc_html__( 'Specify the maximum number of product title lines if it does not fit on one line.', 'woodmart' ),
-		'group'       => esc_html__( 'Layout', 'woodmart' ),
-		'type'        => 'buttons',
-		'section'     => 'products_styles_section',
-		'options'     => array(
-			'one'  => array(
-				'name'  => esc_html__( 'One line', 'woodmart' ),
-				'value' => 'one',
-			),
-			'two'  => array(
-				'name'  => esc_html__( 'Two line', 'woodmart' ),
-				'value' => 'one',
-			),
-			'none' => array(
-				'name'  => esc_html__( 'None', 'woodmart' ),
-				'value' => 'none',
-			),
-		),
-		'default'     => 'none',
-		'priority'    => 130,
-	)
-);
-
-Options::add_field(
-	array(
-		'id'          => 'show_empty_star_rating',
-		'name'        => esc_html__( 'Show empty star rating', 'woodmart' ),
-		'hint'        => wp_kses( '<img data-src="' . WOODMART_TOOLTIP_URL . 'show-empty-star-rating.jpg" alt="">', true ),
-		'description' => esc_html__( 'Show empty star rating even if the product has no ratings.', 'woodmart' ),
-		'group'       => esc_html__( 'Layout', 'woodmart' ),
-		'type'        => 'switcher',
-		'section'     => 'products_styles_section',
-		'default'     => false,
-		'on-text'     => esc_html__( 'Yes', 'woodmart' ),
-		'off-text'    => esc_html__( 'No', 'woodmart' ),
-		'priority'    => 140,
-	)
-);
-
-Options::add_field(
-	array(
 		'id'          => 'hover_image',
 		'name'        => esc_html__( 'Hover image', 'woodmart' ),
 		'description' => esc_html__( 'Disable - Enable hover image for products on the shop page.', 'woodmart' ),
@@ -526,6 +479,34 @@ Options::add_field(
 
 Options::add_field(
 	array(
+		'id'          => 'product_title_lines_limit',
+		'name'        => esc_html__( 'Product title lines limit', 'woodmart' ),
+		'hint'        => '<video data-src="' . WOODMART_TOOLTIP_URL . 'product-title-lines-limit.mp4" autoplay loop muted></video>',
+		'description' => esc_html__( 'Specify the maximum number of product title lines if it does not fit on one line.', 'woodmart' ),
+		'group'       => esc_html__( 'Elements', 'woodmart' ),
+		'type'        => 'buttons',
+		'section'     => 'products_styles_section',
+		'options'     => array(
+			'one'  => array(
+				'name'  => esc_html__( 'One line', 'woodmart' ),
+				'value' => 'one',
+			),
+			'two'  => array(
+				'name'  => esc_html__( 'Two lines', 'woodmart' ),
+				'value' => 'one',
+			),
+			'none' => array(
+				'name'  => esc_html__( 'None', 'woodmart' ),
+				'value' => 'none',
+			),
+		),
+		'default'     => 'none',
+		'priority'    => 190,
+	)
+);
+
+Options::add_field(
+	array(
 		'id'          => 'product_quantity',
 		'name'        => esc_html__( 'Quantity input on product', 'woodmart' ),
 		'hint'        => wp_kses( '<img data-src="' . WOODMART_TOOLTIP_URL . 'quantity-input-on-product.jpg" alt="">', true ),
@@ -534,7 +515,7 @@ Options::add_field(
 		'type'        => 'switcher',
 		'section'     => 'products_styles_section',
 		'default'     => false,
-		'priority'    => 190,
+		'priority'    => 200,
 	)
 );
 
@@ -570,7 +551,7 @@ Options::add_field(
 				'value'   => array( 'base', 'fw-button' ),
 			),
 		),
-		'priority' => 200,
+		'priority' => 210,
 	)
 );
 
@@ -594,7 +575,7 @@ Options::add_field(
 			),
 		),
 		'default'  => 'thumbnail',
-		'priority' => 210,
+		'priority' => 220,
 	)
 );
 
@@ -613,7 +594,7 @@ Options::add_field(
 				'value'   => 'after_title',
 			),
 		),
-		'priority' => 220,
+		'priority' => 230,
 	)
 );
 
@@ -627,7 +608,7 @@ Options::add_field(
 		'type'        => 'switcher',
 		'section'     => 'products_styles_section',
 		'default'     => false,
-		'priority'    => 230,
+		'priority'    => 240,
 	)
 );
 
@@ -641,7 +622,7 @@ Options::add_field(
 		'type'        => 'switcher',
 		'section'     => 'products_styles_section',
 		'default'     => false,
-		'priority'    => 240,
+		'priority'    => 250,
 	)
 );
 
@@ -656,7 +637,7 @@ Options::add_field(
 		'default'  => true,
 		'on-text'  => esc_html__( 'Yes', 'woodmart' ),
 		'off-text' => esc_html__( 'No', 'woodmart' ),
-		'priority' => 250,
+		'priority' => 260,
 	)
 );
 
@@ -671,7 +652,7 @@ Options::add_field(
 		'default'  => false,
 		'on-text'  => esc_html__( 'Yes', 'woodmart' ),
 		'off-text' => esc_html__( 'No', 'woodmart' ),
-		'priority' => 260,
+		'priority' => 270,
 	)
 );
 
@@ -686,7 +667,7 @@ Options::add_field(
 		'default'  => false,
 		'on-text'  => esc_html__( 'Yes', 'woodmart' ),
 		'off-text' => esc_html__( 'No', 'woodmart' ),
-		'priority' => 270,
+		'priority' => 280,
 	)
 );
 
@@ -701,7 +682,23 @@ Options::add_field(
 		'default'  => false,
 		'on-text'  => esc_html__( 'Yes', 'woodmart' ),
 		'off-text' => esc_html__( 'No', 'woodmart' ),
-		'priority' => 280,
+		'priority' => 290,
+	)
+);
+
+Options::add_field(
+	array(
+		'id'          => 'show_empty_star_rating',
+		'name'        => esc_html__( 'Show empty star rating', 'woodmart' ),
+		'hint'        => wp_kses( '<img data-src="' . WOODMART_TOOLTIP_URL . 'show-empty-star-rating.jpg" alt="">', true ),
+		'description' => esc_html__( 'Show empty star rating even if the product has no ratings.', 'woodmart' ),
+		'group'       => esc_html__( 'Elements', 'woodmart' ),
+		'type'        => 'switcher',
+		'section'     => 'products_styles_section',
+		'default'     => false,
+		'on-text'     => esc_html__( 'Yes', 'woodmart' ),
+		'off-text'    => esc_html__( 'No', 'woodmart' ),
+		'priority'    => 300,
 	)
 );
 
@@ -904,7 +901,7 @@ Options::add_field(
 	array(
 		'id'       => 'hide_categories_subcategories',
 		'name'     => esc_html__( 'Hide subcategories', 'woodmart' ),
-		'hint'        => '<video data-src="' . WOODMART_TOOLTIP_URL . 'hide-categories-subcategories.mp4" autoplay loop muted></video>',
+		'hint'     => '<video data-src="' . WOODMART_TOOLTIP_URL . 'hide-categories-subcategories.mp4" autoplay loop muted></video>',
 		'group'    => esc_html__( 'Elements', 'woodmart' ),
 		'type'     => 'switcher',
 		'section'  => 'categories_styles_section',
@@ -1287,7 +1284,7 @@ Options::add_field(
 			'drilldown' => array(
 				'name'  => esc_html__( 'Drilldown', 'woodmart' ),
 				'value' => 'side-hidden',
-				'hint'  => '<video  data-src="' . WOODMART_TOOLTIP_URL . 'hb_mobile_menu_menu_layout_drilldown.mp4" autoplay loop muted></video>'
+				'hint'  => '<video  data-src="' . WOODMART_TOOLTIP_URL . 'hb_mobile_menu_menu_layout_drilldown.mp4" autoplay loop muted></video>',
 			),
 		),
 		'requires' => array(
@@ -1432,11 +1429,11 @@ Options::add_field(
 				'name'  => esc_html__( 'Default', 'woodmart' ),
 				'value' => 'default',
 			),
-			'dark'  => array(
+			'dark'    => array(
 				'name'  => esc_html__( 'Dark', 'woodmart' ),
 				'value' => 'dark',
 			),
-			'light' => array(
+			'light'   => array(
 				'name'  => esc_html__( 'Light', 'woodmart' ),
 				'value' => 'light',
 			),
@@ -1462,7 +1459,7 @@ Options::add_field(
 	array(
 		'id'       => 'mobile_categories_close_btn',
 		'name'     => esc_html__( 'Mobile categories show close button', 'woodmart' ),
-		'hint'  => '<video data-src="' . WOODMART_TOOLTIP_URL . 'hb_mobile_menu_close_btn.mp4" autoplay loop muted></video>',
+		'hint'     => '<video data-src="' . WOODMART_TOOLTIP_URL . 'hb_mobile_menu_close_btn.mp4" autoplay loop muted></video>',
 		'group'    => esc_html__( 'Categories', 'woodmart' ),
 		'type'     => 'switcher',
 		'section'  => 'shop_page_title_section',
@@ -1675,8 +1672,8 @@ Options::add_field(
 Options::add_field(
 	array(
 		'id'          => 'products_spacing',
-		'name'        => esc_html__( 'Space between products on desktop', 'woodmart' ),
-		'description' => esc_html__( 'You can set different spacing between blocks on shop page', 'woodmart' ),
+		'name'        => esc_html__( 'Space between grid products on desktop', 'woodmart' ),
+		'description' => esc_html__( 'You can set different spacing between grid products on shop page', 'woodmart' ),
 		'group'       => esc_html__( 'Grid', 'woodmart' ),
 		'type'        => 'buttons',
 		'section'     => 'products_grid_section',
@@ -1734,8 +1731,8 @@ Options::add_field(
 Options::add_field(
 	array(
 		'id'          => 'products_spacing_tablet',
-		'name'        => esc_html__( 'Space between products on tablet', 'woodmart' ),
-		'description' => esc_html__( 'You can set different spacing between blocks on shop page', 'woodmart' ),
+		'name'        => esc_html__( 'Space between grid products on tablet', 'woodmart' ),
+		'description' => esc_html__( 'You can set different spacing between grid products on shop page', 'woodmart' ),
 		'group'       => esc_html__( 'Grid', 'woodmart' ),
 		'type'        => 'buttons',
 		'section'     => 'products_grid_section',
@@ -1786,8 +1783,8 @@ Options::add_field(
 Options::add_field(
 	array(
 		'id'          => 'products_spacing_mobile',
-		'name'        => esc_html__( 'Space between products on mobile', 'woodmart' ),
-		'description' => esc_html__( 'You can set different spacing between blocks on shop page', 'woodmart' ),
+		'name'        => esc_html__( 'Space between grid products on mobile', 'woodmart' ),
+		'description' => esc_html__( 'You can set different spacing between grid products on shop page', 'woodmart' ),
 		'group'       => esc_html__( 'Grid', 'woodmart' ),
 		'type'        => 'buttons',
 		'section'     => 'products_grid_section',
@@ -1835,6 +1832,168 @@ Options::add_field(
 	)
 );
 
+Options::add_field(
+	array(
+		'id'          => 'products_list_spacing',
+		'name'        => esc_html__( 'Space between list products on desktop', 'woodmart' ),
+		'description' => esc_html__( 'You can set different spacing between list products on shop page', 'woodmart' ),
+		'group'       => esc_html__( 'Grid', 'woodmart' ),
+		'type'        => 'buttons',
+		'section'     => 'products_grid_section',
+		'options'     => array(
+			0  => array(
+				'name'  => 0,
+				'value' => 0,
+			),
+			2  => array(
+				'name'  => 2,
+				'value' => 2,
+			),
+			6  => array(
+				'name'  => 5,
+				'value' => 6,
+			),
+			10 => array(
+				'name'  => 10,
+				'value' => 10,
+			),
+			20 => array(
+				'name'  => 20,
+				'value' => 20,
+			),
+			30 => array(
+				'name'  => 30,
+				'value' => 30,
+			),
+		),
+		'default'     => 30,
+		'priority'    => 45,
+		'requires'    => array(
+			array(
+				'key'     => 'shop_view',
+				'compare' => 'not_equals',
+				'value'   => 'grid',
+			),
+		),
+		't_tab'       => array(
+			'id'       => 'products_list_spacing_tabs',
+			'tab'      => esc_html__( 'Desktop', 'woodmart' ),
+			'icon'     => 'xts-i-desktop',
+			'style'    => 'devices',
+			'requires' => array(
+				array(
+					'key'     => 'shop_view',
+					'compare' => 'not_equals',
+					'value'   => 'grid',
+				),
+			),
+		),
+	)
+);
+
+Options::add_field(
+	array(
+		'id'          => 'products_list_spacing_tablet',
+		'name'        => esc_html__( 'Space between list products on tablet', 'woodmart' ),
+		'description' => esc_html__( 'You can set different spacing between list products on shop page', 'woodmart' ),
+		'group'       => esc_html__( 'Grid', 'woodmart' ),
+		'type'        => 'buttons',
+		'section'     => 'products_grid_section',
+		'is_deselect' => true,
+		'options'     => array(
+			'0'  => array(
+				'name'  => 0,
+				'value' => '0',
+			),
+			'2'  => array(
+				'name'  => 2,
+				'value' => '2',
+			),
+			'6'  => array(
+				'name'  => 5,
+				'value' => '6',
+			),
+			'10' => array(
+				'name'  => 10,
+				'value' => '10',
+			),
+			'20' => array(
+				'name'  => 20,
+				'value' => '20',
+			),
+			'30' => array(
+				'name'  => 30,
+				'value' => '30',
+			),
+		),
+		'default'     => '',
+		'priority'    => 46,
+		'requires'    => array(
+			array(
+				'key'     => 'shop_view',
+				'compare' => 'not_equals',
+				'value'   => 'grid',
+			),
+		),
+		't_tab'       => array(
+			'id'   => 'products_list_spacing_tabs',
+			'tab'  => esc_html__( 'Tablet', 'woodmart' ),
+			'icon' => 'xts-i-tablet',
+		),
+	)
+);
+
+Options::add_field(
+	array(
+		'id'          => 'products_list_spacing_mobile',
+		'name'        => esc_html__( 'Space between list products on mobile', 'woodmart' ),
+		'description' => esc_html__( 'You can set different spacing between list products on shop page', 'woodmart' ),
+		'group'       => esc_html__( 'Grid', 'woodmart' ),
+		'type'        => 'buttons',
+		'section'     => 'products_grid_section',
+		'is_deselect' => true,
+		'options'     => array(
+			'0'  => array(
+				'name'  => 0,
+				'value' => '0',
+			),
+			'2'  => array(
+				'name'  => 2,
+				'value' => '2',
+			),
+			'6'  => array(
+				'name'  => 5,
+				'value' => '6',
+			),
+			'10' => array(
+				'name'  => 10,
+				'value' => '10',
+			),
+			'20' => array(
+				'name'  => 20,
+				'value' => '20',
+			),
+			'30' => array(
+				'name'  => 30,
+				'value' => '30',
+			),
+		),
+		'default'     => '',
+		'priority'    => 47,
+		'requires'    => array(
+			array(
+				'key'     => 'shop_view',
+				'compare' => 'not_equals',
+				'value'   => 'grid',
+			),
+		),
+		't_tab'       => array(
+			'id'   => 'products_list_spacing_tabs',
+			'tab'  => esc_html__( 'Mobile', 'woodmart' ),
+			'icon' => 'xts-i-phone',
+		),
+	)
+);
 
 Options::add_field(
 	array(
@@ -1912,6 +2071,98 @@ Options::add_field(
 
 Options::add_field(
 	array(
+		'id'          => 'stretch_product_desktop',
+		'name'        => esc_html__( 'Even product grid for desktop', 'woodmart' ),
+		'description' => esc_html__( 'Align the product hover content to the bottom of the products row.', 'woodmart' ),
+		'group'       => esc_html__( 'Grid', 'woodmart' ),
+		'hint'        => '<video data-src="' . WOODMART_TOOLTIP_URL . 'even-product-grid.mp4" autoplay loop muted></video>',
+		'type'        => 'switcher',
+		'section'     => 'products_grid_section',
+		'default'     => false,
+		'priority'    => 61,
+		'requires'    => array(
+			array(
+				'key'     => 'products_hover',
+				'compare' => 'equals',
+				'value'   => array( 'icons', 'alt', 'button', 'standard', 'tiled', 'quick', 'base', 'fw-button', 'buttons-on-hover' ),
+			),
+			array(
+				'key'     => 'products_hover_type',
+				'compare' => 'not_equals',
+				'value'   => 'custom',
+			),
+		),
+		't_tab'       => array(
+			'id'    => 'stretch_product_tabs',
+			'tab'   => esc_html__( 'Desktop', 'woodmart' ),
+			'icon'  => 'xts-i-desktop',
+			'style' => 'devices',
+		),
+	)
+);
+
+Options::add_field(
+	array(
+		'id'          => 'stretch_product_tablet',
+		'name'        => esc_html__( 'Even product grid for tablet', 'woodmart' ),
+		'description' => esc_html__( 'Align the product hover content to the bottom of the products row.', 'woodmart' ),
+		'group'       => esc_html__( 'Grid', 'woodmart' ),
+		'type'        => 'switcher',
+		'section'     => 'products_grid_section',
+		'default'     => false,
+		'priority'    => 62,
+		'requires'    => array(
+			array(
+				'key'     => 'products_hover',
+				'compare' => 'equals',
+				'value'   => array( 'icons', 'alt', 'button', 'standard', 'tiled', 'quick', 'base', 'fw-button', 'buttons-on-hover' ),
+			),
+			array(
+				'key'     => 'products_hover_type',
+				'compare' => 'not_equals',
+				'value'   => 'custom',
+			),
+		),
+		't_tab'       => array(
+			'id'   => 'stretch_product_tabs',
+			'tab'  => esc_html__( 'Tablet', 'woodmart' ),
+			'icon' => 'xts-i-tablet',
+		),
+	)
+);
+
+Options::add_field(
+	array(
+		'id'          => 'stretch_product_mobile',
+		'name'        => esc_html__( 'Even product grid for mobile', 'woodmart' ),
+		'description' => esc_html__( 'Align the product hover content to the bottom of the products row.', 'woodmart' ),
+		'group'       => esc_html__( 'Grid', 'woodmart' ),
+		'type'        => 'switcher',
+		'section'     => 'products_grid_section',
+		'default'     => false,
+		'priority'    => 63,
+		'requires'    => array(
+			array(
+				'key'     => 'products_hover',
+				'compare' => 'equals',
+				'value'   => array( 'icons', 'alt', 'button', 'standard', 'tiled', 'quick', 'base', 'fw-button', 'buttons-on-hover' ),
+			),
+			array(
+				'key'     => 'products_hover_type',
+				'compare' => 'not_equals',
+				'value'   => 'custom',
+			),
+		),
+		't_tab'       => array(
+			'id'   => 'stretch_product_tabs',
+			'tab'  => esc_html__( 'Mobile', 'woodmart' ),
+			'icon' => 'xts-i-phone',
+		),
+	)
+);
+
+Options::add_field(
+	array(
 		'id'          => 'products_masonry',
 		'name'        => esc_html__( 'Masonry grid', 'woodmart' ),
 		'hint'        => wp_kses( '<img data-src="' . WOODMART_TOOLTIP_URL . 'product-archive-masonry-grid.jpg" alt="">', true ),
@@ -1920,7 +2171,7 @@ Options::add_field(
 		'type'        => 'switcher',
 		'section'     => 'products_grid_section',
 		'default'     => false,
-		'priority'    => 62,
+		'priority'    => 67,
 		'requires'    => array(
 			array(
 				'key'     => 'shop_view',
@@ -1941,7 +2192,7 @@ Options::add_field(
 		'type'        => 'switcher',
 		'section'     => 'products_grid_section',
 		'default'     => false,
-		'priority'    => 63,
+		'priority'    => 68,
 		'requires'    => array(
 			array(
 				'key'     => 'shop_view',
@@ -2520,7 +2771,7 @@ Options::add_field(
 	array(
 		'id'           => 'shop_filters_content',
 		'name'         => esc_html__( 'Shop filters HTML Block', 'woodmart' ),
-		'description'  => esc_html__( 'You can create an HTML Block in Dashboard -> HTML Blocks and add Product filters page builder element there.', 'woodmart' ),
+		'description'  => ( function_exists( 'woodmart_get_html_block_links' ) ? woodmart_get_html_block_links() : '' ) . esc_html__( 'You can create an HTML Block in Dashboard -> HTML Blocks and add Product filters page builder element there.', 'woodmart' ),
 		'group'        => esc_html__( 'Content', 'woodmart' ),
 		'type'         => 'select',
 		'section'      => 'shop_filters_section',

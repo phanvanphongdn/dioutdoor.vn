@@ -5,7 +5,7 @@
 	});
 
 	woodmartThemeModule.shopPageInit = function() {
-		woodmartThemeModule.clickOnScrollButton(woodmartThemeModule.shopLoadMoreBtn, false, woodmart_settings.infinit_scroll_offset);
+		woodmartThemeModule.clickOnScrollButton('.wd-products-load-more.load-on-scroll', false, woodmart_settings.infinit_scroll_offset);
 
 		$('body > .tooltip').remove();
 

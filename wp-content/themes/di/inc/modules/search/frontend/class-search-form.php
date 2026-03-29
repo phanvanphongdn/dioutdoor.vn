@@ -115,8 +115,6 @@ class Search_Form {
 			$wrapper_classes .= ' color-scheme-light';
 		}
 
-		$wrapper_classes .= woodmart_get_old_classes( ' woodmart-search-' . $this->args['type'] );
-
 		return $wrapper_classes;
 	}
 
@@ -145,12 +143,10 @@ class Search_Form {
 
 		if ( $this->args['show_categories'] && 'product' === $this->args['post_type'] ) {
 			$class .= ' wd-with-cat';
-			$class .= woodmart_get_old_classes( ' has-categories-dropdown' );
 		}
 
 		if ( $this->args['search_style'] ) {
 			$class .= ' wd-style-' . $this->args['search_style'];
-			$class .= woodmart_get_old_classes( ' search-style-' . $this->args['search_style'] );
 		}
 
 		if ( 'product' === $this->args['post_type'] && $this->args['show_categories'] && $this->args['cat_selector_style'] ) {
@@ -233,7 +229,6 @@ class Search_Form {
 
 		if ( 'custom' === $this->args['icon_type'] ) {
 			$btn_classes .= ' wd-with-img';
-			$btn_classes .= woodmart_get_old_classes( ' woodmart-searchform-custom-icon' );
 		}
 
 		return $btn_classes;
@@ -271,8 +266,6 @@ class Search_Form {
 		if ( 'light' === whb_get_dropdowns_color() ) {
 			$dropdowns_classes .= ' color-scheme-light';
 		}
-
-		$dropdowns_classes .= woodmart_get_old_classes( ' woodmart-search-results' );
 
 		return $dropdowns_classes;
 	}
@@ -481,20 +474,18 @@ class Search_Form {
 				$dropdown_classes .= ' color-scheme-dark';
 			}
 
-			$dropdown_classes .= woodmart_get_old_classes( ' list-wrapper' );
-
 			woodmart_enqueue_inline_style( 'wd-search-cat' );
 
 			woodmart_enqueue_js_script( 'simple-dropdown' );
 			woodmart_enqueue_js_script( 'menu-setup' );
 			?>
-			<div class="wd-search-cat wd-event-click wd-scroll<?php echo esc_attr( woodmart_get_old_classes( ' search-by-category' ) ); ?>">
+			<div class="wd-search-cat wd-event-click wd-scroll">
 				<input type="hidden" name="product_cat" value="0" disabled>
 				<div tabindex="0" class="wd-search-cat-btn wd-role-btn" aria-label="<?php esc_attr_e( 'Select category', 'woodmart' ); ?>" rel="nofollow" data-val="0">
 					<span><?php esc_html_e( 'Select category', 'woodmart' ); ?></span>
 				</div>
 				<div class="wd-dropdown wd-dropdown-search-cat wd-dropdown-menu wd-scroll-content wd-design-default<?php echo esc_attr( $dropdown_classes ); ?>">
-					<ul class="wd-sub-menu<?php echo esc_attr( woodmart_get_old_classes( ' sub-menu' ) ); ?>">
+					<ul class="wd-sub-menu">
 						<li style="display:none;"><a href="#" data-val="0"><?php esc_html_e( 'Select category', 'woodmart' ); ?></a></li>
 						<?php
 						if ( ! apply_filters( 'woodmart_show_only_parent_categories_dropdown', false ) ) {

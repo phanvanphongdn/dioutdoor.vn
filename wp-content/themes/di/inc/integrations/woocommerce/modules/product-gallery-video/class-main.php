@@ -2,7 +2,7 @@
 /**
  * Product image gallery with video.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Modules\Product_Gallery_Video;
@@ -188,7 +188,7 @@ class Main {
 		foreach ( $attachments_settings as $attachment_id => $settings ) {
 			$settings = json_decode( wp_unslash( $settings ), true );
 
-			if ( empty( $settings['video_type'] ) || 'youtube' === $settings['video_type'] && empty( $settings['youtube_url'] ) || 'vimeo' === $settings['video_type'] && empty( $settings['vimeo_url'] ) || 'mp4' === $settings['video_type'] && empty( $settings['upload_video_id'] ) ) {
+			if ( empty( $settings['video_type'] ) || ( 'youtube' === $settings['video_type'] && empty( $settings['youtube_url'] ) ) || ( 'vimeo' === $settings['video_type'] && empty( $settings['vimeo_url'] ) ) || ( 'mp4' === $settings['video_type'] && empty( $settings['upload_video_id'] ) ) ) {
 				continue;
 			}
 
@@ -302,7 +302,7 @@ class Main {
 				$attributes[] = 'muted';
 			}
 
-			if ( $settings['autoplay'] || 'native' === $settings['video_control'] && $settings['hide_gallery_img'] ) {
+			if ( $settings['autoplay'] || ( 'native' === $settings['video_control'] && $settings['hide_gallery_img'] ) ) {
 				$attributes[] = 'src="' . $settings['upload_video_url'] . '"';
 			} else {
 				$attributes[] = 'data-lazy-load="' . $settings['upload_video_url'] . '"';
@@ -369,7 +369,7 @@ class Main {
 				$attrs .= '&autoplay=1&mute=1';
 			}
 
-			if ( $settings['autoplay'] || 'native' === $settings['video_control'] && $settings['hide_gallery_img'] ) {
+			if ( $settings['autoplay'] || ( 'native' === $settings['video_control'] && $settings['hide_gallery_img'] ) ) {
 				$attributes[] = 'src="' . $player_url . '?' . $attrs . '"';
 			} else {
 				$attributes[] = 'data-lazy-load="' . $player_url . '?' . $attrs . '"';
@@ -397,7 +397,7 @@ class Main {
 				$attrs .= '&autoplay=1&muted=1';
 			}
 
-			if ( $settings['autoplay'] || 'native' === $settings['video_control'] && $settings['hide_gallery_img'] ) {
+			if ( $settings['autoplay'] || ( 'native' === $settings['video_control'] && $settings['hide_gallery_img'] ) ) {
 				$attributes[] = 'src="' . $player_url . '?' . $attrs . '"';
 			} else {
 				$attributes[] = 'data-lazy-load="' . $player_url . '?' . $attrs . '"';
@@ -444,7 +444,9 @@ class Main {
 		?>
 		<div class="wd-video-actions">
 			<div class="wd-play-video wd-action-btn wd-style-icon-bg-text wd-play-icon">
-				<a href="#"></a>
+				<a href="#">
+					<span class="wd-action-icon"></span>
+				</a>
 			</div>
 		</div>
 		<?php

@@ -2,7 +2,7 @@
 /**
  * Box shadow.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 if ( ! defined( 'WOODMART_THEME_DIR' ) ) {

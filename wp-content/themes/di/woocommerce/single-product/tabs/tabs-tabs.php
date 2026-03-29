@@ -20,6 +20,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+use XTS\Modules\Layouts\Main;
+
 /**
  * Filter tabs and allow third parties to add their own.
  *
@@ -120,7 +122,11 @@ if ( 'yes' === $accordion_on_mobile ) {
 
 			<div class="woocommerce-Tabs-panel panel entry-content wc-tab<?php echo esc_attr( $content_classes ); ?>" id="tab-<?php echo esc_attr( $key ); ?>" role="tabpanel" aria-labelledby="tab-title-<?php echo esc_attr( $key ); ?>" data-accordion-index="<?php echo esc_attr( $key ); ?>">
 				<?php if ( isset( $product_tab['callback'] ) ) : ?>
-					<?php call_user_func( $product_tab['callback'], $key, $product_tab ); ?>
+					<?php
+					Main::setup_preview();
+					call_user_func( $product_tab['callback'], $key, $product_tab );
+					Main::restore_preview();
+					?>
 				<?php endif; ?>
 			</div>
 

@@ -229,7 +229,7 @@ class Admin extends Singleton {
 	 * @return void
 	 */
 	public function enqueue_scripts() {
-		$is_recovered_cart_order_page = ! empty( $_GET['id'] ) && ! empty( $_GET['page'] ) && 'wc-orders' === $_GET['page'] && get_post_meta( $_GET['id'], '_wd_is_recovered_cart', true );
+		$is_recovered_cart_order_page = ! empty( $_GET['id'] ) && ! empty( $_GET['page'] ) && 'wc-orders' === $_GET['page'] && get_post_meta( absint( $_GET['id'] ), '_wd_is_recovered_cart', true ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended, WordPress.Security.ValidatedSanitizedInput.MissingUnslash, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 
 		if ( get_post_type() !== $this->post_type_name && ! $is_recovered_cart_order_page ) {
 			return;
@@ -249,7 +249,11 @@ class Admin extends Singleton {
 	 * @return void
 	 */
 	public function show_cart_metabox( $post ) {
-		$cart       = maybe_unserialize( get_post_meta( $post->ID, '_cart', true ) );
+		$cart = woodmart_get_abandoned_cart_object_from_db( $post->ID );
+
+		if ( ! $cart instanceof \WC_Cart ) {
+			return;
+		}
 		$list_table = new Cart_Content_Table( $cart );
 
 		$list_table->prepare_items();
@@ -356,8 +360,19 @@ class Admin extends Singleton {
 		include WOODMART_THEMEROOT . '/inc/integrations/woocommerce/modules/abandoned-cart/templates/' . $template_name . '.php';
 	}
 
+	/**
+	 * Delete abandoned cart.
+	 *
+	 * @return void
+	 */
 	public function delete_abandoned_cart() {
-		if ( ! isset( $_GET['action'] ) || 'woodmart_delete_abandoned_cart' !== $_GET['action'] || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_GET['security'] ) ), 'woodmart_delete_abandoned_cart' ) || empty( $_GET['cart_id'] ) ) {
+		if (
+			! isset( $_GET['action'] ) ||
+			empty( $_GET['cart_id'] ) ||
+			empty( $_GET['security'] ) ||
+			'woodmart_delete_abandoned_cart' !== $_GET['action'] ||
+			! wp_verify_nonce( sanitize_text_field( wp_unslash( $_GET['security'] ) ), 'woodmart_delete_abandoned_cart' )
+		) {
 			return;
 		}
 

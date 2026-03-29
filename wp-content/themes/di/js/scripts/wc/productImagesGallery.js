@@ -123,7 +123,7 @@ woodmartThemeModule.productImagesGallery = function( replaceGallery = false) {
 						}
 					}
 
-					return '<li class="' + className + '" tabindex="0" role="option" aria-label="' + label + '"><span>' + innerContent + '</span></li>';
+					return '<li class="' + className + '" tabindex="0" aria-label="' + label + '"><span>' + innerContent + '</span></li>';
 				}
 			};
 		}

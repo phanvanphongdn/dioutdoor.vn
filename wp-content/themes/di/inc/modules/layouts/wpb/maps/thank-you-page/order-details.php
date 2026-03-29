@@ -2,7 +2,7 @@
 /**
  * Order details map.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
@@ -16,9 +16,8 @@ if ( ! function_exists( 'woodmart_get_vc_map_tp_order_details' ) ) {
 	function woodmart_get_vc_map_tp_order_details() {
 		$typography_title = woodmart_get_typography_map(
 			array(
-				'key'              => 'typography',
-				'selector'         => '{{WRAPPER}} :is(.woocommerce-order-details__title,.woocommerce-order-downloads__title)',
-				'edit_field_class' => 'vc_col-sm-6 vc_column',
+				'key'      => 'typography',
+				'selector' => '{{WRAPPER}} :is(.woocommerce-order-details__title,.woocommerce-order-downloads__title)',
 			)
 		);
 

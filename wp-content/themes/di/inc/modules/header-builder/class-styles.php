@@ -1,7 +1,15 @@
 <?php
+/**
+ * Header builder styles class file.
+ *
+ * @package woodmart
+ */
 
 namespace XTS\Modules\Header_Builder;
 
+/**
+ * Styles class that generates CSS for the header builder.
+ */
 class Styles {
 
 	/**
@@ -80,10 +88,6 @@ class Styles {
 		}
 
 		if ( 'categories' === $el['type'] ) {
-			if ( isset( $el['params']['background'] ) && $el['params']['background']['value'] ) {
-				$css .= '.' . $selector . ' .menu-opener { ' . $this->generate_background_css( $el['params']['background']['value'] ) . ' }';
-			}
-
 			if ( isset( $el['params']['border'] ) && $el['params']['border']['value'] ) {
 				$sides = isset( $el['params']['border']['value']['sides'] ) ? $el['params']['border']['value']['sides'] : array( 'bottom' );
 				$css  .= '.' . $selector . ' .menu-opener { ' . $this->generate_border_css( $el['params']['border']['value'], $sides ) . ' }';
@@ -109,12 +113,97 @@ class Styles {
 
 		if ( isset( $el['params'] ) && $el['params'] ) {
 			foreach ( $el['params'] as $params ) {
-				if ( empty( $params['selectors'] ) || ( isset( $params['generate_zero'] ) && '' === $params['value'] ) || ( ! isset( $params['generate_zero'] ) && empty( $params['value'] ) ) || ! $this->check_dependencies( $params['id'], $el ) ) {
+				if ( ( empty( $params['selectors'] ) && empty( $params['selector'] ) ) || ( isset( $params['generate_zero'] ) && '' === $params['value'] ) || ( ! isset( $params['generate_zero'] ) && empty( $params['value'] ) ) || ! $this->check_dependencies( $params['id'], $el ) ) {
+					continue;
+				}
+
+				if ( ! empty( $params['selector'] ) && 'bg' === $params['type'] ) {
+					$bg_css = $this->generate_background_css( $params['value'] );
+
+					if ( $bg_css ) {
+						$active_selector = str_replace( '{{WRAPPER}}', $selector, $params['selector'] );
+
+						$css_selectors[ $active_selector ][] = $bg_css;
+					}
+
 					continue;
 				}
 
 				foreach ( $params['selectors'] as $selectors => $attributes ) {
+					if ( 'group' === $params['type'] && ! empty( $params['fields'] ) ) {
+						foreach ( $params['fields'] as $field ) {
+							$field_value = isset( $params['value'][ $field['id'] ] ) ? $params['value'][ $field['id'] ] : '';
+
+							if ( empty( $field['selectors'] ) || ( isset( $field['generate_zero'] ) && '' === $field_value ) || ( ! isset( $params['generate_zero'] ) && empty( $field_value ) ) ) {
+								continue;
+							}
+
+							foreach ( $field['selectors'] as $field_selectors => $field_attributes ) {
+								$active_selector = str_replace( '{{WRAPPER}}', $selector, $field_selectors );
+
+								foreach ( $field_attributes as $field_attribute ) {
+									$value = $field_value;
+
+									if ( isset( $field_value['r'] ) && isset( $field_value['g'] ) && isset( $field_value['b'] ) && isset( $field_value['a'] ) ) {
+										$value = 'rgba(' . $field_value['r'] . ', ' . $field_value['g'] . ', ' . $field_value['b'] . ', ' . $field_value['a'] . ')';
+									}
+
+									$css_selectors[ $active_selector ][] = "\t" . str_replace( '{{VALUE}}', $value, $field_attribute ) . "\n";
+								}
+							}
+						}
+					}
+
 					$active_selector = str_replace( '{{WRAPPER}}', $selector, $selectors );
+
+					if ( 'group' === $params['type'] ) {
+						$group_values   = $params['value'];
+						$default_values = array();
+
+						foreach ( $params['fields'] as $field ) {
+							$default_values[ $field['id'] ] = isset( $field['value'] ) ? $field['value'] : '';
+						}
+
+						$group_values = wp_parse_args( $group_values, $default_values );
+
+						foreach ( $attributes as $attribute ) {
+							$css_atts = $attribute;
+
+							preg_match_all( '/{{([A-Z_]+)}}/', $attribute, $matches );
+
+							$placeholders = $matches[1];
+
+							$all_exists = true;
+
+							foreach ( $placeholders as $ph ) {
+								$lower_key = strtolower( $ph );
+								if ( ! isset( $group_values[ $lower_key ] ) ) {
+									$all_exists = false;
+									break;
+								}
+							}
+
+							if ( ! $all_exists ) {
+								continue;
+							}
+
+							foreach ( $group_values as $key => $value ) {
+								if ( is_array( $value ) && isset( $value['r'] ) && isset( $value['g'] ) && isset( $value['b'] ) && isset( $value['a'] ) ) {
+									$value = 'rgba(' . $value['r'] . ', ' . $value['g'] . ', ' . $value['b'] . ', ' . $value['a'] . ')';
+								}
+
+								if ( isset( $params['fields'][ $key ]['allowed_css_values'] ) && ! in_array( $value, $params['fields'][ $key ]['allowed_css_values'], true ) ) {
+									$value = '';
+								}
+
+								$css_atts = str_replace( '{{' . strtoupper( $key ) . '}}', $value, $css_atts );
+							}
+
+							$css_selectors[ $active_selector ][] = "\t" . $css_atts . "\n";
+						}
+
+						continue;
+					}
 
 					foreach ( $attributes as $attribute ) {
 						$value = $params['value'];
@@ -157,34 +246,34 @@ class Styles {
 		$css = '';
 
 		if ( isset( $bg['background-color'] ) ) {
-			extract( $bg['background-color'] );
+			extract( $bg['background-color'] ); // phpcs:ignore WordPress.PHP.DontExtract.extract_extract
 		}
 
 		if ( isset( $r ) && isset( $g ) && isset( $b ) && isset( $a ) ) {
-			$css .= 'background-color: rgba(' . $r . ', ' . $g . ', ' . $b . ', ' . $a . ');';
+			$css .= "\t" . 'background-color: rgba(' . $r . ', ' . $g . ', ' . $b . ', ' . $a . ');' . "\n";
 		}
 
 		if ( isset( $bg['background-image'] ) ) {
-			extract( $bg['background-image'] );
+			extract( $bg['background-image'] ); // phpcs:ignore WordPress.PHP.DontExtract.extract_extract
 		}
 
 		if ( isset( $url ) ) {
-			$css .= 'background-image: url(' . $url . ');';
+			$css .= "\t" . 'background-image: url(' . $url . ');' . "\n";
 
 			if ( isset( $bg['background-size'] ) ) {
-				$css .= 'background-size: ' . $bg['background-size'] . ';';
+				$css .= "\t" . 'background-size: ' . $bg['background-size'] . ';' . "\n";
 			}
 
 			if ( isset( $bg['background-attachment'] ) ) {
-				$css .= 'background-attachment: ' . $bg['background-attachment'] . ';';
+				$css .= "\t" . 'background-attachment: ' . $bg['background-attachment'] . ';' . "\n";
 			}
 
 			if ( isset( $bg['background-position'] ) ) {
-				$css .= 'background-position: ' . $bg['background-position'] . ';';
+				$css .= "\t" . 'background-position: ' . $bg['background-position'] . ';' . "\n";
 			}
 
 			if ( isset( $bg['background-repeat'] ) ) {
-				$css .= 'background-repeat: ' . $bg['background-repeat'] . ';';
+				$css .= "\t" . 'background-repeat: ' . $bg['background-repeat'] . ';' . "\n";
 			}
 		}
 
@@ -207,10 +296,10 @@ class Styles {
 		if ( ! empty( $bg['background-blur'] ) ) {
 			$backdrop_styles .= ' blur(' . $bg['background-blur'] . 'px)';
 		}
-		if ( isset( $bg['background-brightness'] ) && 1 != $bg['background-brightness'] && ( $bg['background-brightness'] || 0 == $bg['background-brightness'] ) ) { //phpcs:ignore
+		if ( isset( $bg['background-brightness'] ) && 1 !== (float) $bg['background-brightness'] && ( $bg['background-brightness'] || 0 === (float) $bg['background-brightness'] ) ) {
 			$backdrop_styles .= ' brightness(' . $bg['background-brightness'] . ')';
 		}
-		if ( ! empty( $bg['background-contrast'] ) && 100 !== (int) $bg['background-contrast'] ) { //phpcs:ignore
+		if ( ! empty( $bg['background-contrast'] ) && 100 !== (int) $bg['background-contrast'] ) {
 			$backdrop_styles .= ' contrast(' . $bg['background-contrast'] . '%)';
 		}
 		if ( ! empty( $bg['background-grayscale'] ) ) {
@@ -222,10 +311,10 @@ class Styles {
 		if ( ! empty( $bg['background-invert'] ) ) {
 			$backdrop_styles .= ' invert(' . $bg['background-invert'] . '%)';
 		}
-		if ( ! empty( $bg['background-opacity'] ) && 100 !== (int) $bg['background-opacity'] ) { //phpcs:ignore
+		if ( ! empty( $bg['background-opacity'] ) && 100 !== (int) $bg['background-opacity'] ) {
 			$backdrop_styles .= ' opacity(' . $bg['background-opacity'] . '%)';
 		}
-		if ( ! empty( $bg['background-saturate'] ) && 100 !== (int) $bg['background-saturate'] ) { //phpcs:ignore
+		if ( ! empty( $bg['background-saturate'] ) && 100 !== (int) $bg['background-saturate'] ) {
 			$backdrop_styles .= ' saturate(' . $bg['background-saturate'] . '%)';
 		}
 		if ( ! empty( $bg['background-sepia'] ) ) {
@@ -254,10 +343,10 @@ class Styles {
 		$css = '';
 
 		if ( is_array( $border ) ) {
-			extract( $border );
+			extract( $border ); // phpcs:ignore WordPress.PHP.DontExtract.extract_extract
 		}
 		if ( isset( $color ) ) {
-			extract( $color );
+			extract( $color ); // phpcs:ignore WordPress.PHP.DontExtract.extract_extract	
 		}
 
 		if ( isset( $r ) && isset( $g ) && isset( $b ) && isset( $a ) && isset( $width ) ) {
@@ -283,7 +372,7 @@ class Styles {
 	 * @return false|string
 	 */
 	public function get_header_css( $options ) {
-		$sticky_clone  = $options['sticky_clone'] && 'slide' === $options['sticky_effect'];
+		$sticky_clone = $options['sticky_clone'] && 'slide' === $options['sticky_effect'];
 
 		ob_start();
 
@@ -311,7 +400,7 @@ class Styles {
 	--wd-header-sticky-h: calc(var(--wd-top-bar-sticky-h) + var(--wd-header-general-sticky-h) + var(--wd-header-bottom-sticky-h) + var(--wd-header-clone-h) + var(--wd-header-brd-w));
 	--wd-header-sm-h: calc(var(--wd-top-bar-sm-h) + var(--wd-header-general-sm-h) + var(--wd-header-bottom-sm-h) + var(--wd-header-brd-w));
 }
-
+<?php /* phpcs:disable Generic.WhiteSpace.ScopeIndent.Incorrect */ ?>
 <?php if ( ! $options['top-bar']['hide_desktop'] ) : ?>
 <?php // DROPDOWN ALIGN BOTTOM IN TOP BAR. ?>
 .whb-top-bar .wd-dropdown {
@@ -410,7 +499,7 @@ class Styles {
 	height: <?php echo esc_html( $options['sticky_height'] / 2 - 10 ); ?>px;
 }
 <?php endif; ?>
-
+<?php /* phpcs:enable Generic.WhiteSpace.ScopeIndent.Incorrect */ ?>
 		<?php
 
 		return ob_get_clean();
@@ -424,35 +513,109 @@ class Styles {
 	 * @return bool - return true if all dependencies for this option have been met, or the no dependencies option.
 	 */
 	private function check_dependencies( $option_id, $el ) {
-		$res = array();
+		$params = $el['params'];
 
-		if ( ! isset( $el['params'][ $option_id ]['requires'] ) ) {
+		if ( isset( $params[ $option_id ]['conditions'] ) ) {
+			return $this->evaluate_condition(
+				$params[ $option_id ]['conditions'],
+				$params
+			);
+		}
+
+		if ( ! isset( $params[ $option_id ]['condition'] ) ) {
 			return true;
 		}
 
-		foreach ( $el['params'][ $option_id ]['requires'] as $require_option => $require_condition ) {
-			if ( is_array( $require_condition['value'] ) ) {
-				foreach ( $require_condition['value'] as $require_condition_value ) {
-					if ( 'equal' === $require_condition['comparison'] ) {
-						if ( $el['params'][ $require_option ]['value'] === $require_condition_value ) {
-							$res[ $require_option ] = true;
-							break;
-						} else {
-							$res[ $require_option ] = false;
-						}
-					} else {
-						$res[ $require_option ] = $el['params'][ $require_option ]['value'] !== $require_condition_value;
+		$condition = $params[ $option_id ]['condition'];
+		$terms     = array();
+
+		foreach ( $condition as $field => $rule ) {
+			$terms[] = array(
+				'field'      => $field,
+				'comparison' => $rule['comparison'],
+				'value'      => $rule['value'],
+			);
+		}
+
+		return $this->evaluate_condition(
+			array(
+				'relation' => 'and',
+				'terms'    => $terms,
+			),
+			$params
+		);
+	}
+
+	/**
+	 * Evaluate condition.
+	 *
+	 * @param array $condition Condition.
+	 * @param array $params Params.
+	 * @return bool
+	 */
+	private function evaluate_condition( $condition, $params ) {
+		if ( isset( $condition['field'] ) ) {
+			return $this->check_simple_condition( $condition['field'], $condition, $params );
+		}
+
+		if ( isset( $condition['relation'] ) && isset( $condition['terms'] ) ) {
+			$relation = strtolower( $condition['relation'] );
+			$terms    = $condition['terms'];
+
+			if ( 'and' === $relation ) {
+				foreach ( $terms as $term ) {
+					if ( ! $this->evaluate_condition( $term, $params ) ) {
+						return false;
 					}
 				}
-			} else {
-				if ( 'equal' === $require_condition['comparison'] ) {
-					$res[ $require_option ] = $el['params'][ $require_option ]['value'] === $require_condition['value'];
-				} else {
-					$res[ $require_option ] = $el['params'][ $require_option ]['value'] !== $require_condition['value'];
+				return true;
+			}
+
+			if ( 'or' === $relation ) {
+				foreach ( $terms as $term ) {
+					if ( $this->evaluate_condition( $term, $params ) ) {
+						return true;
+					}
 				}
+				return false;
 			}
 		}
 
-		return ! in_array( false, $res );
+		return false;
+	}
+
+	/**
+	 * Check simple condition.
+	 *
+	 * @param string $field Field.
+	 * @param array  $rule Rule.
+	 * @param array  $params Params.
+	 * @return bool
+	 */
+	private function check_simple_condition( $field, $rule, $params ) {
+		$actual = isset( $params[ $field ]['value'] ) ? $params[ $field ]['value'] : ( $params[ $field ] ?? null );
+
+		if ( null === $actual ) {
+			return false;
+		}
+
+		$comparison = $rule['comparison'];
+		$value      = $rule['value'];
+
+		if ( 'equal' === $comparison ) {
+			if ( is_array( $value ) ) {
+				return in_array( $actual, $value, true );
+			}
+			return $actual === $value;
+		}
+
+		if ( 'not_equal' === $comparison ) {
+			if ( is_array( $value ) ) {
+				return ! in_array( $actual, $value, true );
+			}
+			return $actual !== $value;
+		}
+
+		return false;
 	}
 }

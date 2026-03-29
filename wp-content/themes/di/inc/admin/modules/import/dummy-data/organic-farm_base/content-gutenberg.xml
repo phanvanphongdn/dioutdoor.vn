@@ -16,7 +16,7 @@
 	<!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 	<!--    contained in this file into your site. -->
 
-	<!-- generator="WordPress/6.7.4" created="2025-10-06 09:05" -->
+	<!-- generator="WordPress/6.7.4" created="2026-02-13 13:13" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -29,101 +29,89 @@
 	<title>Farm gutenberg</title>
 	<link>https://dummy.xtemos.com/woodmart2/farm-gutenberg</link>
 	<description></description>
-	<pubDate>Mon, 06 Oct 2025 09:05:22 +0000</pubDate>
+	<pubDate>Fri, 13 Feb 2026 13:13:41 +0000</pubDate>
 	<language>en-US</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
 	<wp:base_site_url>https://dummy.xtemos.com/woodmart2/</wp:base_site_url>
 	<wp:base_blog_url>https://dummy.xtemos.com/woodmart2/farm-gutenberg</wp:base_blog_url>
 
 	
-			<wp:category>
+					<wp:category>
 			<wp:term_id>1</wp:term_id>
 			<wp:category_nicename><![CDATA[uncategorized]]></wp:category_nicename>
 			<wp:category_parent><![CDATA[]]></wp:category_parent>
 			<wp:cat_name><![CDATA[Uncategorized]]></wp:cat_name>
 		</wp:category>
-			<wp:category>
+							<wp:category>
 			<wp:term_id>27</wp:term_id>
 			<wp:category_nicename><![CDATA[agroecology]]></wp:category_nicename>
 			<wp:category_parent><![CDATA[]]></wp:category_parent>
 			<wp:cat_name><![CDATA[Agroecology]]></wp:cat_name>
 		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-27-status]]></wp:meta_key>
-			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
 			<wp:meta_key><![CDATA[_woodmart_blog_design]]></wp:meta_key>
 			<wp:meta_value><![CDATA[inherit]]></wp:meta_value>
 		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[wd_page_css_files]]></wp:meta_key>
+			<wp:meta_value><![CDATA[a:44:{i:0;s:10:"style-base";i:1;s:13:"int-wordfence";i:2;s:16:"woocommerce-base";i:3;s:15:"mod-star-rating";i:4;s:25:"woocommerce-block-notices";i:5;s:25:"woo-opt-hide-larger-price";i:6;s:9:"wp-blocks";i:7;s:15:"block-paragraph";i:8;s:11:"block-image";i:9;s:12:"block-layout";i:10;s:11:"block-title";i:11;s:13:"header-banner";i:12;s:10:"block-icon";i:13;s:7:"marquee";i:14;s:16:"block-fw-section";i:15;s:11:"header-base";i:16;s:9:"mod-tools";i:17;s:18:"woo-mod-login-form";i:18;s:17:"header-my-account";i:19;s:20:"header-elements-base";i:20;s:16:"header-cart-side";i:21;s:11:"header-cart";i:22;s:20:"widget-shopping-cart";i:23;s:19:"widget-product-list";i:24;s:26:"header-mobile-nav-dropdown";i:25;s:10:"page-title";i:26;s:14:"blog-loop-base";i:27;s:25:"post-types-mod-predefined";i:28;s:24:"blog-loop-design-masonry";i:29;s:34:"post-types-mod-categories-style-bg";i:30;s:28:"post-types-mod-date-style-bg";i:31;s:15:"blog-mod-author";i:32;s:12:"social-icons";i:33;s:24:"blog-mod-comments-button";i:34;s:15:"widget-collapse";i:35;s:11:"footer-base";i:36;s:7:"el-menu";i:37;s:13:"block-divider";i:38;s:19:"social-icons-styles";i:39;s:10:"scroll-top";i:40;s:14:"wd-search-form";i:41;s:17:"wd-search-results";i:42;s:18:"wd-search-dropdown";i:43;s:25:"header-my-account-sidebar";}]]></wp:meta_value>
+		</wp:termmeta>
 		</wp:category>
-			<wp:category>
+							<wp:category>
 			<wp:term_id>28</wp:term_id>
 			<wp:category_nicename><![CDATA[food-safety]]></wp:category_nicename>
 			<wp:category_parent><![CDATA[]]></wp:category_parent>
 			<wp:cat_name><![CDATA[Food Safety]]></wp:cat_name>
 		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-28-status]]></wp:meta_key>
-			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
 			<wp:meta_key><![CDATA[_woodmart_blog_design]]></wp:meta_key>
 			<wp:meta_value><![CDATA[inherit]]></wp:meta_value>
 		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[wd_page_css_files]]></wp:meta_key>
+			<wp:meta_value><![CDATA[a:44:{i:0;s:10:"style-base";i:1;s:13:"int-wordfence";i:2;s:16:"woocommerce-base";i:3;s:15:"mod-star-rating";i:4;s:25:"woocommerce-block-notices";i:5;s:25:"woo-opt-hide-larger-price";i:6;s:9:"wp-blocks";i:7;s:15:"block-paragraph";i:8;s:11:"block-image";i:9;s:12:"block-layout";i:10;s:11:"block-title";i:11;s:13:"header-banner";i:12;s:10:"block-icon";i:13;s:7:"marquee";i:14;s:16:"block-fw-section";i:15;s:11:"header-base";i:16;s:9:"mod-tools";i:17;s:18:"woo-mod-login-form";i:18;s:17:"header-my-account";i:19;s:20:"header-elements-base";i:20;s:16:"header-cart-side";i:21;s:11:"header-cart";i:22;s:20:"widget-shopping-cart";i:23;s:19:"widget-product-list";i:24;s:26:"header-mobile-nav-dropdown";i:25;s:10:"page-title";i:26;s:14:"blog-loop-base";i:27;s:25:"post-types-mod-predefined";i:28;s:24:"blog-loop-design-masonry";i:29;s:34:"post-types-mod-categories-style-bg";i:30;s:28:"post-types-mod-date-style-bg";i:31;s:15:"blog-mod-author";i:32;s:12:"social-icons";i:33;s:24:"blog-mod-comments-button";i:34;s:15:"widget-collapse";i:35;s:11:"footer-base";i:36;s:7:"el-menu";i:37;s:13:"block-divider";i:38;s:19:"social-icons-styles";i:39;s:10:"scroll-top";i:40;s:14:"wd-search-form";i:41;s:17:"wd-search-results";i:42;s:18:"wd-search-dropdown";i:43;s:25:"header-my-account-sidebar";}]]></wp:meta_value>
+		</wp:termmeta>
 		</wp:category>
-			<wp:category>
+							<wp:category>
 			<wp:term_id>29</wp:term_id>
 			<wp:category_nicename><![CDATA[forage-silage]]></wp:category_nicename>
 			<wp:category_parent><![CDATA[]]></wp:category_parent>
 			<wp:cat_name><![CDATA[Forage &amp; Silage]]></wp:cat_name>
 		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-29-status]]></wp:meta_key>
-			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
 			<wp:meta_key><![CDATA[_woodmart_blog_design]]></wp:meta_key>
 			<wp:meta_value><![CDATA[inherit]]></wp:meta_value>
 		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[wd_page_css_files]]></wp:meta_key>
+			<wp:meta_value><![CDATA[a:44:{i:0;s:10:"style-base";i:1;s:13:"int-wordfence";i:2;s:16:"woocommerce-base";i:3;s:15:"mod-star-rating";i:4;s:25:"woocommerce-block-notices";i:5;s:25:"woo-opt-hide-larger-price";i:6;s:9:"wp-blocks";i:7;s:15:"block-paragraph";i:8;s:11:"block-image";i:9;s:12:"block-layout";i:10;s:11:"block-title";i:11;s:13:"header-banner";i:12;s:10:"block-icon";i:13;s:7:"marquee";i:14;s:16:"block-fw-section";i:15;s:11:"header-base";i:16;s:9:"mod-tools";i:17;s:18:"woo-mod-login-form";i:18;s:17:"header-my-account";i:19;s:20:"header-elements-base";i:20;s:16:"header-cart-side";i:21;s:11:"header-cart";i:22;s:20:"widget-shopping-cart";i:23;s:19:"widget-product-list";i:24;s:26:"header-mobile-nav-dropdown";i:25;s:10:"page-title";i:26;s:14:"blog-loop-base";i:27;s:25:"post-types-mod-predefined";i:28;s:24:"blog-loop-design-masonry";i:29;s:34:"post-types-mod-categories-style-bg";i:30;s:28:"post-types-mod-date-style-bg";i:31;s:15:"blog-mod-author";i:32;s:12:"social-icons";i:33;s:24:"blog-mod-comments-button";i:34;s:15:"widget-collapse";i:35;s:11:"footer-base";i:36;s:7:"el-menu";i:37;s:13:"block-divider";i:38;s:19:"social-icons-styles";i:39;s:10:"scroll-top";i:40;s:14:"wd-search-form";i:41;s:17:"wd-search-results";i:42;s:18:"wd-search-dropdown";i:43;s:25:"header-my-account-sidebar";}]]></wp:meta_value>
+		</wp:termmeta>
 		</wp:category>
-			<wp:category>
+							<wp:category>
 			<wp:term_id>30</wp:term_id>
 			<wp:category_nicename><![CDATA[organic]]></wp:category_nicename>
 			<wp:category_parent><![CDATA[]]></wp:category_parent>
 			<wp:cat_name><![CDATA[Organic]]></wp:cat_name>
 		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-30-status]]></wp:meta_key>
-			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
 			<wp:meta_key><![CDATA[_woodmart_blog_design]]></wp:meta_key>
 			<wp:meta_value><![CDATA[inherit]]></wp:meta_value>
 		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[wd_page_css_files]]></wp:meta_key>
+			<wp:meta_value><![CDATA[a:44:{i:0;s:10:"style-base";i:1;s:13:"int-wordfence";i:2;s:16:"woocommerce-base";i:3;s:15:"mod-star-rating";i:4;s:25:"woocommerce-block-notices";i:5;s:25:"woo-opt-hide-larger-price";i:6;s:9:"wp-blocks";i:7;s:15:"block-paragraph";i:8;s:11:"block-image";i:9;s:12:"block-layout";i:10;s:11:"block-title";i:11;s:13:"header-banner";i:12;s:10:"block-icon";i:13;s:7:"marquee";i:14;s:16:"block-fw-section";i:15;s:11:"header-base";i:16;s:9:"mod-tools";i:17;s:18:"woo-mod-login-form";i:18;s:17:"header-my-account";i:19;s:20:"header-elements-base";i:20;s:16:"header-cart-side";i:21;s:11:"header-cart";i:22;s:20:"widget-shopping-cart";i:23;s:19:"widget-product-list";i:24;s:26:"header-mobile-nav-dropdown";i:25;s:10:"page-title";i:26;s:14:"blog-loop-base";i:27;s:25:"post-types-mod-predefined";i:28;s:24:"blog-loop-design-masonry";i:29;s:34:"post-types-mod-categories-style-bg";i:30;s:28:"post-types-mod-date-style-bg";i:31;s:15:"blog-mod-author";i:32;s:12:"social-icons";i:33;s:24:"blog-mod-comments-button";i:34;s:15:"widget-collapse";i:35;s:11:"footer-base";i:36;s:7:"el-menu";i:37;s:13:"block-divider";i:38;s:19:"social-icons-styles";i:39;s:10:"scroll-top";i:40;s:14:"wd-search-form";i:41;s:17:"wd-search-results";i:42;s:18:"wd-search-dropdown";i:43;s:25:"header-my-account-sidebar";}]]></wp:meta_value>
+		</wp:termmeta>
 		</wp:category>
-					<wp:term>
+									<wp:term>
 			<wp:term_id>15</wp:term_id>
 			<wp:term_taxonomy><![CDATA[product_cat]]></wp:term_taxonomy>
 			<wp:term_slug><![CDATA[uncategorized]]></wp:term_slug>
 			<wp:term_parent><![CDATA[]]></wp:term_parent>
 			<wp:term_name><![CDATA[Uncategorized]]></wp:term_name>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-15-status]]></wp:meta_key>
-			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
-		</wp:termmeta>
 		</wp:term>
-			<wp:term>
+							<wp:term>
 			<wp:term_id>16</wp:term_id>
 			<wp:term_taxonomy><![CDATA[product_cat]]></wp:term_taxonomy>
 			<wp:term_slug><![CDATA[milk]]></wp:term_slug>
 			<wp:term_parent><![CDATA[]]></wp:term_parent>
 			<wp:term_name><![CDATA[Milk]]></wp:term_name>
 		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-16-status]]></wp:meta_key>
-			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[product_count_product_cat]]></wp:meta_key>
-			<wp:meta_value><![CDATA[2]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
 			<wp:meta_key><![CDATA[title_image]]></wp:meta_key>
 			<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
 		</wp:termmeta>
@@ -139,22 +127,18 @@
 			<wp:meta_key><![CDATA[category_extra_description_type]]></wp:meta_key>
 			<wp:meta_value><![CDATA[text]]></wp:meta_value>
 		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[wd_page_css_files]]></wp:meta_key>
+			<wp:meta_value><![CDATA[a:58:{i:0;s:16:"widget-woo-other";i:1;s:19:"widget-price-filter";i:2;s:10:"style-base";i:3;s:13:"int-wordfence";i:4;s:16:"woocommerce-base";i:5;s:15:"mod-star-rating";i:6;s:25:"woocommerce-block-notices";i:7;s:21:"widget-active-filters";i:8;s:16:"woo-shop-builder";i:9;s:25:"woo-opt-hide-larger-price";i:10;s:9:"wp-blocks";i:11;s:15:"block-paragraph";i:12;s:11:"block-image";i:13;s:11:"block-title";i:14;s:11:"block-table";i:15;s:13:"header-banner";i:16;s:10:"block-icon";i:17;s:7:"marquee";i:18;s:16:"block-fw-section";i:19;s:11:"header-base";i:20;s:9:"mod-tools";i:21;s:18:"woo-mod-login-form";i:22;s:17:"header-my-account";i:23;s:20:"header-elements-base";i:24;s:16:"header-cart-side";i:25;s:11:"header-cart";i:26;s:20:"widget-shopping-cart";i:27;s:19:"widget-product-list";i:28;s:26:"header-mobile-nav-dropdown";i:29;s:15:"block-container";i:30;s:7:"el-menu";i:31;s:12:"block-anchor";i:32;s:12:"block-layout";i:33;s:26:"woo-el-breadcrumbs-builder";i:34;s:12:"product-loop";i:35;s:21:"woo-loop-prod-el-base";i:36;s:29:"product-loop-buttons-on-hover";i:37;s:33:"woo-mod-loop-prod-add-btn-replace";i:38;s:19:"woo-opt-products-bg";i:39;s:20:"woo-opt-stretch-cont";i:40;s:31:"woo-opt-stretch-cont-predefined";i:41;s:6:"swiper";i:42;s:24:"woo-loop-prod-predefined";i:43;s:9:"mfp-popup";i:44;s:24:"mod-animations-transform";i:45;s:13:"mod-transform";i:46;s:13:"swiper-arrows";i:47;s:12:"swiper-pagin";i:48;s:15:"widget-collapse";i:49;s:11:"footer-base";i:50;s:13:"block-divider";i:51;s:12:"social-icons";i:52;s:19:"social-icons-styles";i:53;s:10:"scroll-top";i:54;s:14:"wd-search-form";i:55;s:17:"wd-search-results";i:56;s:18:"wd-search-dropdown";i:57;s:25:"header-my-account-sidebar";}]]></wp:meta_value>
+		</wp:termmeta>
 		</wp:term>
-			<wp:term>
+							<wp:term>
 			<wp:term_id>17</wp:term_id>
 			<wp:term_taxonomy><![CDATA[product_cat]]></wp:term_taxonomy>
 			<wp:term_slug><![CDATA[butter]]></wp:term_slug>
 			<wp:term_parent><![CDATA[]]></wp:term_parent>
 			<wp:term_name><![CDATA[Butter]]></wp:term_name>
 		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-17-status]]></wp:meta_key>
-			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[product_count_product_cat]]></wp:meta_key>
-			<wp:meta_value><![CDATA[2]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
 			<wp:meta_key><![CDATA[title_image]]></wp:meta_key>
 			<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
 		</wp:termmeta>
@@ -170,22 +154,18 @@
 			<wp:meta_key><![CDATA[category_extra_description_type]]></wp:meta_key>
 			<wp:meta_value><![CDATA[text]]></wp:meta_value>
 		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[wd_page_css_files]]></wp:meta_key>
+			<wp:meta_value><![CDATA[a:58:{i:0;s:16:"widget-woo-other";i:1;s:19:"widget-price-filter";i:2;s:10:"style-base";i:3;s:13:"int-wordfence";i:4;s:16:"woocommerce-base";i:5;s:15:"mod-star-rating";i:6;s:25:"woocommerce-block-notices";i:7;s:21:"widget-active-filters";i:8;s:16:"woo-shop-builder";i:9;s:25:"woo-opt-hide-larger-price";i:10;s:9:"wp-blocks";i:11;s:15:"block-paragraph";i:12;s:11:"block-image";i:13;s:11:"block-title";i:14;s:11:"block-table";i:15;s:13:"header-banner";i:16;s:10:"block-icon";i:17;s:7:"marquee";i:18;s:16:"block-fw-section";i:19;s:11:"header-base";i:20;s:9:"mod-tools";i:21;s:18:"woo-mod-login-form";i:22;s:17:"header-my-account";i:23;s:20:"header-elements-base";i:24;s:16:"header-cart-side";i:25;s:11:"header-cart";i:26;s:20:"widget-shopping-cart";i:27;s:19:"widget-product-list";i:28;s:26:"header-mobile-nav-dropdown";i:29;s:15:"block-container";i:30;s:7:"el-menu";i:31;s:12:"block-anchor";i:32;s:12:"block-layout";i:33;s:26:"woo-el-breadcrumbs-builder";i:34;s:12:"product-loop";i:35;s:21:"woo-loop-prod-el-base";i:36;s:29:"product-loop-buttons-on-hover";i:37;s:33:"woo-mod-loop-prod-add-btn-replace";i:38;s:19:"woo-opt-products-bg";i:39;s:20:"woo-opt-stretch-cont";i:40;s:31:"woo-opt-stretch-cont-predefined";i:41;s:6:"swiper";i:42;s:24:"woo-loop-prod-predefined";i:43;s:9:"mfp-popup";i:44;s:24:"mod-animations-transform";i:45;s:13:"mod-transform";i:46;s:13:"swiper-arrows";i:47;s:12:"swiper-pagin";i:48;s:15:"widget-collapse";i:49;s:11:"footer-base";i:50;s:13:"block-divider";i:51;s:12:"social-icons";i:52;s:19:"social-icons-styles";i:53;s:10:"scroll-top";i:54;s:14:"wd-search-form";i:55;s:17:"wd-search-results";i:56;s:18:"wd-search-dropdown";i:57;s:25:"header-my-account-sidebar";}]]></wp:meta_value>
+		</wp:termmeta>
 		</wp:term>
-			<wp:term>
+							<wp:term>
 			<wp:term_id>18</wp:term_id>
 			<wp:term_taxonomy><![CDATA[product_cat]]></wp:term_taxonomy>
 			<wp:term_slug><![CDATA[yogurt]]></wp:term_slug>
 			<wp:term_parent><![CDATA[]]></wp:term_parent>
 			<wp:term_name><![CDATA[Yogurt]]></wp:term_name>
 		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-18-status]]></wp:meta_key>
-			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[product_count_product_cat]]></wp:meta_key>
-			<wp:meta_value><![CDATA[3]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
 			<wp:meta_key><![CDATA[title_image]]></wp:meta_key>
 			<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
 		</wp:termmeta>
@@ -201,22 +181,18 @@
 			<wp:meta_key><![CDATA[category_extra_description_type]]></wp:meta_key>
 			<wp:meta_value><![CDATA[text]]></wp:meta_value>
 		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[wd_page_css_files]]></wp:meta_key>
+			<wp:meta_value><![CDATA[a:58:{i:0;s:16:"widget-woo-other";i:1;s:19:"widget-price-filter";i:2;s:10:"style-base";i:3;s:13:"int-wordfence";i:4;s:16:"woocommerce-base";i:5;s:15:"mod-star-rating";i:6;s:25:"woocommerce-block-notices";i:7;s:21:"widget-active-filters";i:8;s:16:"woo-shop-builder";i:9;s:25:"woo-opt-hide-larger-price";i:10;s:9:"wp-blocks";i:11;s:15:"block-paragraph";i:12;s:11:"block-image";i:13;s:11:"block-title";i:14;s:11:"block-table";i:15;s:13:"header-banner";i:16;s:10:"block-icon";i:17;s:7:"marquee";i:18;s:16:"block-fw-section";i:19;s:11:"header-base";i:20;s:9:"mod-tools";i:21;s:18:"woo-mod-login-form";i:22;s:17:"header-my-account";i:23;s:20:"header-elements-base";i:24;s:16:"header-cart-side";i:25;s:11:"header-cart";i:26;s:20:"widget-shopping-cart";i:27;s:19:"widget-product-list";i:28;s:26:"header-mobile-nav-dropdown";i:29;s:15:"block-container";i:30;s:7:"el-menu";i:31;s:12:"block-anchor";i:32;s:12:"block-layout";i:33;s:26:"woo-el-breadcrumbs-builder";i:34;s:12:"product-loop";i:35;s:21:"woo-loop-prod-el-base";i:36;s:29:"product-loop-buttons-on-hover";i:37;s:33:"woo-mod-loop-prod-add-btn-replace";i:38;s:19:"woo-opt-products-bg";i:39;s:20:"woo-opt-stretch-cont";i:40;s:31:"woo-opt-stretch-cont-predefined";i:41;s:6:"swiper";i:42;s:24:"woo-loop-prod-predefined";i:43;s:9:"mfp-popup";i:44;s:24:"mod-animations-transform";i:45;s:13:"mod-transform";i:46;s:13:"swiper-arrows";i:47;s:12:"swiper-pagin";i:48;s:15:"widget-collapse";i:49;s:11:"footer-base";i:50;s:13:"block-divider";i:51;s:12:"social-icons";i:52;s:19:"social-icons-styles";i:53;s:10:"scroll-top";i:54;s:14:"wd-search-form";i:55;s:17:"wd-search-results";i:56;s:18:"wd-search-dropdown";i:57;s:25:"header-my-account-sidebar";}]]></wp:meta_value>
+		</wp:termmeta>
 		</wp:term>
-			<wp:term>
+							<wp:term>
 			<wp:term_id>19</wp:term_id>
 			<wp:term_taxonomy><![CDATA[product_cat]]></wp:term_taxonomy>
 			<wp:term_slug><![CDATA[sour-cream]]></wp:term_slug>
 			<wp:term_parent><![CDATA[]]></wp:term_parent>
 			<wp:term_name><![CDATA[Sour cream]]></wp:term_name>
 		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-19-status]]></wp:meta_key>
-			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[product_count_product_cat]]></wp:meta_key>
-			<wp:meta_value><![CDATA[2]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
 			<wp:meta_key><![CDATA[title_image]]></wp:meta_key>
 			<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
 		</wp:termmeta>
@@ -232,22 +208,18 @@
 			<wp:meta_key><![CDATA[category_extra_description_type]]></wp:meta_key>
 			<wp:meta_value><![CDATA[text]]></wp:meta_value>
 		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[wd_page_css_files]]></wp:meta_key>
+			<wp:meta_value><![CDATA[a:58:{i:0;s:16:"widget-woo-other";i:1;s:19:"widget-price-filter";i:2;s:10:"style-base";i:3;s:13:"int-wordfence";i:4;s:16:"woocommerce-base";i:5;s:15:"mod-star-rating";i:6;s:25:"woocommerce-block-notices";i:7;s:21:"widget-active-filters";i:8;s:16:"woo-shop-builder";i:9;s:25:"woo-opt-hide-larger-price";i:10;s:9:"wp-blocks";i:11;s:15:"block-paragraph";i:12;s:11:"block-image";i:13;s:11:"block-title";i:14;s:11:"block-table";i:15;s:13:"header-banner";i:16;s:10:"block-icon";i:17;s:7:"marquee";i:18;s:16:"block-fw-section";i:19;s:11:"header-base";i:20;s:9:"mod-tools";i:21;s:18:"woo-mod-login-form";i:22;s:17:"header-my-account";i:23;s:20:"header-elements-base";i:24;s:16:"header-cart-side";i:25;s:11:"header-cart";i:26;s:20:"widget-shopping-cart";i:27;s:19:"widget-product-list";i:28;s:26:"header-mobile-nav-dropdown";i:29;s:15:"block-container";i:30;s:7:"el-menu";i:31;s:12:"block-anchor";i:32;s:12:"block-layout";i:33;s:26:"woo-el-breadcrumbs-builder";i:34;s:12:"product-loop";i:35;s:21:"woo-loop-prod-el-base";i:36;s:29:"product-loop-buttons-on-hover";i:37;s:33:"woo-mod-loop-prod-add-btn-replace";i:38;s:19:"woo-opt-products-bg";i:39;s:20:"woo-opt-stretch-cont";i:40;s:31:"woo-opt-stretch-cont-predefined";i:41;s:6:"swiper";i:42;s:24:"woo-loop-prod-predefined";i:43;s:9:"mfp-popup";i:44;s:24:"mod-animations-transform";i:45;s:13:"mod-transform";i:46;s:13:"swiper-arrows";i:47;s:12:"swiper-pagin";i:48;s:15:"widget-collapse";i:49;s:11:"footer-base";i:50;s:13:"block-divider";i:51;s:12:"social-icons";i:52;s:19:"social-icons-styles";i:53;s:10:"scroll-top";i:54;s:14:"wd-search-form";i:55;s:17:"wd-search-results";i:56;s:18:"wd-search-dropdown";i:57;s:25:"header-my-account-sidebar";}]]></wp:meta_value>
+		</wp:termmeta>
 		</wp:term>
-			<wp:term>
+							<wp:term>
 			<wp:term_id>20</wp:term_id>
 			<wp:term_taxonomy><![CDATA[product_cat]]></wp:term_taxonomy>
 			<wp:term_slug><![CDATA[cheese]]></wp:term_slug>
 			<wp:term_parent><![CDATA[]]></wp:term_parent>
 			<wp:term_name><![CDATA[Cheese]]></wp:term_name>
 		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-20-status]]></wp:meta_key>
-			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[product_count_product_cat]]></wp:meta_key>
-			<wp:meta_value><![CDATA[3]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
 			<wp:meta_key><![CDATA[title_image]]></wp:meta_key>
 			<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
 		</wp:termmeta>
@@ -263,74 +235,54 @@
 			<wp:meta_key><![CDATA[category_extra_description_type]]></wp:meta_key>
 			<wp:meta_value><![CDATA[text]]></wp:meta_value>
 		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[wd_page_css_files]]></wp:meta_key>
+			<wp:meta_value><![CDATA[a:58:{i:0;s:16:"widget-woo-other";i:1;s:19:"widget-price-filter";i:2;s:10:"style-base";i:3;s:13:"int-wordfence";i:4;s:16:"woocommerce-base";i:5;s:15:"mod-star-rating";i:6;s:25:"woocommerce-block-notices";i:7;s:21:"widget-active-filters";i:8;s:16:"woo-shop-builder";i:9;s:25:"woo-opt-hide-larger-price";i:10;s:9:"wp-blocks";i:11;s:15:"block-paragraph";i:12;s:11:"block-image";i:13;s:11:"block-title";i:14;s:11:"block-table";i:15;s:13:"header-banner";i:16;s:10:"block-icon";i:17;s:7:"marquee";i:18;s:16:"block-fw-section";i:19;s:11:"header-base";i:20;s:9:"mod-tools";i:21;s:18:"woo-mod-login-form";i:22;s:17:"header-my-account";i:23;s:20:"header-elements-base";i:24;s:16:"header-cart-side";i:25;s:11:"header-cart";i:26;s:20:"widget-shopping-cart";i:27;s:19:"widget-product-list";i:28;s:26:"header-mobile-nav-dropdown";i:29;s:15:"block-container";i:30;s:7:"el-menu";i:31;s:12:"block-anchor";i:32;s:12:"block-layout";i:33;s:26:"woo-el-breadcrumbs-builder";i:34;s:12:"product-loop";i:35;s:21:"woo-loop-prod-el-base";i:36;s:29:"product-loop-buttons-on-hover";i:37;s:33:"woo-mod-loop-prod-add-btn-replace";i:38;s:19:"woo-opt-products-bg";i:39;s:20:"woo-opt-stretch-cont";i:40;s:31:"woo-opt-stretch-cont-predefined";i:41;s:6:"swiper";i:42;s:24:"woo-loop-prod-predefined";i:43;s:9:"mfp-popup";i:44;s:24:"mod-animations-transform";i:45;s:13:"mod-transform";i:46;s:13:"swiper-arrows";i:47;s:12:"swiper-pagin";i:48;s:15:"widget-collapse";i:49;s:11:"footer-base";i:50;s:13:"block-divider";i:51;s:12:"social-icons";i:52;s:19:"social-icons-styles";i:53;s:10:"scroll-top";i:54;s:14:"wd-search-form";i:55;s:17:"wd-search-results";i:56;s:18:"wd-search-dropdown";i:57;s:25:"header-my-account-sidebar";}]]></wp:meta_value>
+		</wp:termmeta>
 		</wp:term>
-			<wp:term>
+							<wp:term>
 			<wp:term_id>21</wp:term_id>
 			<wp:term_taxonomy><![CDATA[pa_size]]></wp:term_taxonomy>
 			<wp:term_slug><![CDATA[0-25-gal]]></wp:term_slug>
 			<wp:term_parent><![CDATA[]]></wp:term_parent>
 			<wp:term_name><![CDATA[0.25 gal]]></wp:term_name>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-21-status]]></wp:meta_key>
-			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
-		</wp:termmeta>
 		</wp:term>
-			<wp:term>
+							<wp:term>
 			<wp:term_id>22</wp:term_id>
 			<wp:term_taxonomy><![CDATA[pa_size]]></wp:term_taxonomy>
 			<wp:term_slug><![CDATA[0-5-gal]]></wp:term_slug>
 			<wp:term_parent><![CDATA[]]></wp:term_parent>
 			<wp:term_name><![CDATA[0.5 gal]]></wp:term_name>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-22-status]]></wp:meta_key>
-			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
-		</wp:termmeta>
 		</wp:term>
-			<wp:term>
+							<wp:term>
 			<wp:term_id>23</wp:term_id>
 			<wp:term_taxonomy><![CDATA[pa_size]]></wp:term_taxonomy>
 			<wp:term_slug><![CDATA[1-gal]]></wp:term_slug>
 			<wp:term_parent><![CDATA[]]></wp:term_parent>
 			<wp:term_name><![CDATA[1 gal]]></wp:term_name>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-23-status]]></wp:meta_key>
-			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
-		</wp:termmeta>
 		</wp:term>
-			<wp:term>
+							<wp:term>
 			<wp:term_id>24</wp:term_id>
 			<wp:term_taxonomy><![CDATA[pa_size]]></wp:term_taxonomy>
 			<wp:term_slug><![CDATA[1-lb]]></wp:term_slug>
 			<wp:term_parent><![CDATA[]]></wp:term_parent>
 			<wp:term_name><![CDATA[1 lb]]></wp:term_name>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-24-status]]></wp:meta_key>
-			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
-		</wp:termmeta>
 		</wp:term>
-			<wp:term>
+							<wp:term>
 			<wp:term_id>25</wp:term_id>
 			<wp:term_taxonomy><![CDATA[pa_size]]></wp:term_taxonomy>
 			<wp:term_slug><![CDATA[4-oz]]></wp:term_slug>
 			<wp:term_parent><![CDATA[]]></wp:term_parent>
 			<wp:term_name><![CDATA[4 oz]]></wp:term_name>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-25-status]]></wp:meta_key>
-			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
-		</wp:termmeta>
 		</wp:term>
-			<wp:term>
+							<wp:term>
 			<wp:term_id>26</wp:term_id>
 			<wp:term_taxonomy><![CDATA[pa_size]]></wp:term_taxonomy>
 			<wp:term_slug><![CDATA[8-oz]]></wp:term_slug>
 			<wp:term_parent><![CDATA[]]></wp:term_parent>
 			<wp:term_name><![CDATA[8 oz]]></wp:term_name>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-26-status]]></wp:meta_key>
-			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
-		</wp:termmeta>
 		</wp:term>
-			<wp:term><wp:term_id>31</wp:term_id><wp:term_taxonomy>nav_menu</wp:term_taxonomy><wp:term_slug><![CDATA[categories-organic-farm]]></wp:term_slug><wp:term_name><![CDATA[Categories Organic Farm]]></wp:term_name>
+					<wp:term><wp:term_id>31</wp:term_id><wp:term_taxonomy>nav_menu</wp:term_taxonomy><wp:term_slug><![CDATA[categories-organic-farm]]></wp:term_slug><wp:term_name><![CDATA[Categories Organic Farm]]></wp:term_name>
 </wp:term>
 	<wp:term><wp:term_id>32</wp:term_id><wp:term_taxonomy>nav_menu</wp:term_taxonomy><wp:term_slug><![CDATA[footer-menu-organic-farm]]></wp:term_slug><wp:term_name><![CDATA[Footer menu Organic Farm]]></wp:term_name>
 </wp:term>
@@ -402,14 +354,6 @@
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_stock_status]]></wp:meta_key>
 							<wp:meta_value><![CDATA[instock]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[import-placeholder-for-14]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
@@ -507,14 +451,6 @@
 							<wp:meta_value><![CDATA[instock]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[import-placeholder-for-15]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[_regular_price]]></wp:meta_key>
 							<wp:meta_value><![CDATA[15.12]]></wp:meta_value>
 						</wp:postmeta>
@@ -558,14 +494,6 @@
 							<wp:meta_value><![CDATA[instock]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[import-placeholder-for-16]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[_regular_price]]></wp:meta_key>
 							<wp:meta_value><![CDATA[3.78]]></wp:meta_value>
 						</wp:postmeta>
@@ -607,14 +535,6 @@
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_stock_status]]></wp:meta_key>
 							<wp:meta_value><![CDATA[instock]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[import-placeholder-for-17]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_regular_price]]></wp:meta_key>
@@ -713,10 +633,6 @@
 							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[1]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
 							<wp:meta_value><![CDATA[166]]></wp:meta_value>
 						</wp:postmeta>
@@ -809,10 +725,6 @@
 							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[2]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
 							<wp:meta_value><![CDATA[165]]></wp:meta_value>
 						</wp:postmeta>
@@ -899,10 +811,6 @@
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_woodmart_title_image]]></wp:meta_key>
 							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[3]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
@@ -993,10 +901,6 @@
 							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[4]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
 							<wp:meta_value><![CDATA[167]]></wp:meta_value>
 						</wp:postmeta>
@@ -1083,10 +987,6 @@
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_woodmart_title_image]]></wp:meta_key>
 							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[5]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
@@ -1177,10 +1077,6 @@
 							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[6]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
 							<wp:meta_value><![CDATA[162]]></wp:meta_value>
 						</wp:postmeta>
@@ -1269,10 +1165,6 @@
 							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[7]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
 							<wp:meta_value><![CDATA[161]]></wp:meta_value>
 						</wp:postmeta>
@@ -1359,10 +1251,6 @@
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_woodmart_title_image]]></wp:meta_key>
 							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[8]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
@@ -1989,8 +1877,8 @@
 															<wp:post_id>114</wp:post_id>
 					<wp:post_date><![CDATA[2024-07-24 11:25:01]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-07-24 11:25:01]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-10-23 14:09:58]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-10-23 14:09:58]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-10-09 11:33:38]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-10-09 11:33:38]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[home-farm]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -1998,20 +1886,8 @@
 					<wp:menu_order>0</wp:menu_order>
 					<wp:post_type><![CDATA[page]]></wp:post_type>
 																					<wp:postmeta>
-							<wp:meta_key><![CDATA[_woodmart_whb_header]]></wp:meta_key>
-							<wp:meta_value><![CDATA[none]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[_woodmart_title_off]]></wp:meta_key>
 							<wp:meta_value><![CDATA[on]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_woodmart_page-title-size]]></wp:meta_key>
-							<wp:meta_value><![CDATA[inherit]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_woodmart_title_image]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_woodmart_main_layout]]></wp:meta_key>
@@ -2243,14 +2119,6 @@ This email is a receipt for your contact form submission on our website ([_site_
 							<wp:meta_value><![CDATA[instock]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[import-placeholder-for-18]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
 							<wp:meta_value><![CDATA[41]]></wp:meta_value>
 						</wp:postmeta>
@@ -2346,14 +2214,6 @@ This email is a receipt for your contact form submission on our website ([_site_
 							<wp:meta_value><![CDATA[instock]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[import-placeholder-for-19]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[_regular_price]]></wp:meta_key>
 							<wp:meta_value><![CDATA[5.6]]></wp:meta_value>
 						</wp:postmeta>
@@ -2397,14 +2257,6 @@ This email is a receipt for your contact form submission on our website ([_site_
 							<wp:meta_value><![CDATA[instock]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[import-placeholder-for-20]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[_regular_price]]></wp:meta_key>
 							<wp:meta_value><![CDATA[1.4]]></wp:meta_value>
 						</wp:postmeta>
@@ -2446,14 +2298,6 @@ This email is a receipt for your contact form submission on our website ([_site_
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_stock_status]]></wp:meta_key>
 							<wp:meta_value><![CDATA[instock]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[import-placeholder-for-21]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_regular_price]]></wp:meta_key>
@@ -2526,14 +2370,6 @@ This email is a receipt for your contact form submission on our website ([_site_
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_stock_status]]></wp:meta_key>
 							<wp:meta_value><![CDATA[instock]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[import-placeholder-for-22]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
@@ -2631,14 +2467,6 @@ This email is a receipt for your contact form submission on our website ([_site_
 							<wp:meta_value><![CDATA[instock]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[import-placeholder-for-23]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[_regular_price]]></wp:meta_key>
 							<wp:meta_value><![CDATA[6.4]]></wp:meta_value>
 						</wp:postmeta>
@@ -2682,14 +2510,6 @@ This email is a receipt for your contact form submission on our website ([_site_
 							<wp:meta_value><![CDATA[instock]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[import-placeholder-for-24]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[_regular_price]]></wp:meta_key>
 							<wp:meta_value><![CDATA[3.2]]></wp:meta_value>
 						</wp:postmeta>
@@ -2731,14 +2551,6 @@ This email is a receipt for your contact form submission on our website ([_site_
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_stock_status]]></wp:meta_key>
 							<wp:meta_value><![CDATA[instock]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[import-placeholder-for-25]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_regular_price]]></wp:meta_key>
@@ -2809,14 +2621,6 @@ This email is a receipt for your contact form submission on our website ([_site_
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_stock_status]]></wp:meta_key>
 							<wp:meta_value><![CDATA[instock]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[import-placeholder-for-26]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_regular_price]]></wp:meta_key>
@@ -2933,14 +2737,6 @@ This email is a receipt for your contact form submission on our website ([_site_
 							<wp:meta_value><![CDATA[instock]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[import-placeholder-for-27]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[_regular_price]]></wp:meta_key>
 							<wp:meta_value><![CDATA[6]]></wp:meta_value>
 						</wp:postmeta>
@@ -3054,14 +2850,6 @@ This email is a receipt for your contact form submission on our website ([_site_
 							<wp:meta_value><![CDATA[instock]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[import-placeholder-for-28]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[_regular_price]]></wp:meta_key>
 							<wp:meta_value><![CDATA[6]]></wp:meta_value>
 						</wp:postmeta>
@@ -3173,14 +2961,6 @@ This email is a receipt for your contact form submission on our website ([_site_
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_stock_status]]></wp:meta_key>
 							<wp:meta_value><![CDATA[instock]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[import-placeholder-for-29]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_regular_price]]></wp:meta_key>
@@ -3297,14 +3077,6 @@ This email is a receipt for your contact form submission on our website ([_site_
 							<wp:meta_value><![CDATA[instock]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[import-placeholder-for-30]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[_regular_price]]></wp:meta_key>
 							<wp:meta_value><![CDATA[9.12]]></wp:meta_value>
 						</wp:postmeta>
@@ -3419,14 +3191,6 @@ This email is a receipt for your contact form submission on our website ([_site_
 							<wp:meta_value><![CDATA[instock]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[import-placeholder-for-31]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[_regular_price]]></wp:meta_key>
 							<wp:meta_value><![CDATA[17.90]]></wp:meta_value>
 						</wp:postmeta>
@@ -3539,14 +3303,6 @@ This email is a receipt for your contact form submission on our website ([_site_
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_stock_status]]></wp:meta_key>
 							<wp:meta_value><![CDATA[instock]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[import-placeholder-for-32]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_regular_price]]></wp:meta_key>
@@ -3666,14 +3422,6 @@ This email is a receipt for your contact form submission on our website ([_site_
 							<wp:meta_value><![CDATA[instock]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[import-placeholder-for-33]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
 							<wp:meta_value><![CDATA[67]]></wp:meta_value>
 						</wp:postmeta>
@@ -3769,14 +3517,6 @@ This email is a receipt for your contact form submission on our website ([_site_
 							<wp:meta_value><![CDATA[instock]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[import-placeholder-for-34]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[_regular_price]]></wp:meta_key>
 							<wp:meta_value><![CDATA[16.39]]></wp:meta_value>
 						</wp:postmeta>
@@ -3820,14 +3560,6 @@ This email is a receipt for your contact form submission on our website ([_site_
 							<wp:meta_value><![CDATA[instock]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[import-placeholder-for-35]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[_regular_price]]></wp:meta_key>
 							<wp:meta_value><![CDATA[5.46]]></wp:meta_value>
 						</wp:postmeta>
@@ -3869,14 +3601,6 @@ This email is a receipt for your contact form submission on our website ([_site_
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_stock_status]]></wp:meta_key>
 							<wp:meta_value><![CDATA[instock]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[import-placeholder-for-36]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_regular_price]]></wp:meta_key>
@@ -3947,14 +3671,6 @@ This email is a receipt for your contact form submission on our website ([_site_
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_stock_status]]></wp:meta_key>
 							<wp:meta_value><![CDATA[instock]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[import-placeholder-for-37]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_regular_price]]></wp:meta_key>
@@ -4113,6 +3829,10 @@ This email is a receipt for your contact form submission on our website ([_site_
 							<wp:meta_value><![CDATA[default]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_opanchor]]></wp:meta_key>
 							<wp:meta_value><![CDATA[enable]]></wp:meta_value>
 						</wp:postmeta>
@@ -4182,6 +3902,10 @@ This email is a receipt for your contact form submission on our website ([_site_
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_design]]></wp:meta_key>
 							<wp:meta_value><![CDATA[default]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_opanchor]]></wp:meta_key>
@@ -4255,6 +3979,10 @@ This email is a receipt for your contact form submission on our website ([_site_
 							<wp:meta_value><![CDATA[default]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_opanchor]]></wp:meta_key>
 							<wp:meta_value><![CDATA[enable]]></wp:meta_value>
 						</wp:postmeta>
@@ -4324,6 +4052,10 @@ This email is a receipt for your contact form submission on our website ([_site_
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_design]]></wp:meta_key>
 							<wp:meta_value><![CDATA[default]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_opanchor]]></wp:meta_key>
@@ -4397,6 +4129,10 @@ This email is a receipt for your contact form submission on our website ([_site_
 							<wp:meta_value><![CDATA[default]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_opanchor]]></wp:meta_key>
 							<wp:meta_value><![CDATA[enable]]></wp:meta_value>
 						</wp:postmeta>
@@ -4466,6 +4202,10 @@ This email is a receipt for your contact form submission on our website ([_site_
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_design]]></wp:meta_key>
 							<wp:meta_value><![CDATA[default]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_opanchor]]></wp:meta_key>
@@ -4543,6 +4283,10 @@ This email is a receipt for your contact form submission on our website ([_site_
 							<wp:meta_value><![CDATA[default]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_opanchor]]></wp:meta_key>
 							<wp:meta_value><![CDATA[enable]]></wp:meta_value>
 						</wp:postmeta>
@@ -4616,6 +4360,10 @@ This email is a receipt for your contact form submission on our website ([_site_
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_design]]></wp:meta_key>
 							<wp:meta_value><![CDATA[default]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_opanchor]]></wp:meta_key>
@@ -4693,6 +4441,10 @@ This email is a receipt for your contact form submission on our website ([_site_
 							<wp:meta_value><![CDATA[default]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_opanchor]]></wp:meta_key>
 							<wp:meta_value><![CDATA[enable]]></wp:meta_value>
 						</wp:postmeta>
@@ -4768,6 +4520,10 @@ This email is a receipt for your contact form submission on our website ([_site_
 							<wp:meta_value><![CDATA[default]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_opanchor]]></wp:meta_key>
 							<wp:meta_value><![CDATA[enable]]></wp:meta_value>
 						</wp:postmeta>
@@ -4839,6 +4595,10 @@ This email is a receipt for your contact form submission on our website ([_site_
 							<wp:meta_value><![CDATA[default]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_image-type]]></wp:meta_key>
 							<wp:meta_value><![CDATA[image]]></wp:meta_value>
 						</wp:postmeta>
@@ -4889,6 +4649,10 @@ This email is a receipt for your contact form submission on our website ([_site_
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_design]]></wp:meta_key>
 							<wp:meta_value><![CDATA[default]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_image-type]]></wp:meta_key>
@@ -4943,6 +4707,10 @@ This email is a receipt for your contact form submission on our website ([_site_
 							<wp:meta_value><![CDATA[default]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_image-type]]></wp:meta_key>
 							<wp:meta_value><![CDATA[image]]></wp:meta_value>
 						</wp:postmeta>
@@ -4995,6 +4763,10 @@ This email is a receipt for your contact form submission on our website ([_site_
 							<wp:meta_value><![CDATA[default]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_image-type]]></wp:meta_key>
 							<wp:meta_value><![CDATA[image]]></wp:meta_value>
 						</wp:postmeta>
@@ -5009,15 +4781,15 @@ This email is a receipt for your contact form submission on our website ([_site_
 										</item>
 								<item>
 					<title><![CDATA[Milk]]></title>
-					<link>https://dummy.xtemos.com/woodmart2/farm-gutenberg/2024/08/12/milk-3/</link>
+					<link>https://dummy.xtemos.com/woodmart2/farm-gutenberg/2026/02/13/milk-3/</link>
 					<pubDate>Wed, 24 Jul 2024 12:26:30 +0000</pubDate>
 					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/farm-gutenberg/?p=137</guid>
 															<wp:post_id>137</wp:post_id>
-					<wp:post_date><![CDATA[2024-08-12 07:36:53]]></wp:post_date>
+					<wp:post_date><![CDATA[2026-02-13 13:12:27]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-07-24 12:26:30]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-08-12 07:36:53]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-08-12 07:36:53]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2026-02-13 13:12:27]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2026-02-13 13:12:27]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[milk-3]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -5043,11 +4815,15 @@ This email is a receipt for your contact form submission on our website ([_site_
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
-							<wp:meta_value><![CDATA[#milk]]></wp:meta_value>
+							<wp:meta_value><![CDATA[https://dummy.xtemos.com/woodmart2/farm-gutenberg/shop/#milk]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_design]]></wp:meta_key>
 							<wp:meta_value><![CDATA[default]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_opanchor]]></wp:meta_key>
@@ -5069,18 +4845,22 @@ This email is a receipt for your contact form submission on our website ([_site_
 							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2024-07-24]]></wp:meta_value>
 						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
+							<wp:meta_value><![CDATA[2024-08-12]]></wp:meta_value>
+						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[Butter]]></title>
-					<link>https://dummy.xtemos.com/woodmart2/farm-gutenberg/2024/08/12/butter-3/</link>
+					<link>https://dummy.xtemos.com/woodmart2/farm-gutenberg/2026/02/13/butter-3/</link>
 					<pubDate>Wed, 24 Jul 2024 12:26:30 +0000</pubDate>
 					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/farm-gutenberg/?p=138</guid>
 															<wp:post_id>138</wp:post_id>
-					<wp:post_date><![CDATA[2024-08-12 07:36:53]]></wp:post_date>
+					<wp:post_date><![CDATA[2026-02-13 13:12:27]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-07-24 12:26:30]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-08-12 07:36:53]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-08-12 07:36:53]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2026-02-13 13:12:27]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2026-02-13 13:12:27]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[butter-3]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -5106,11 +4886,15 @@ This email is a receipt for your contact form submission on our website ([_site_
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
-							<wp:meta_value><![CDATA[#butter]]></wp:meta_value>
+							<wp:meta_value><![CDATA[https://dummy.xtemos.com/woodmart2/farm-gutenberg/shop/#butter]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_design]]></wp:meta_key>
 							<wp:meta_value><![CDATA[default]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_opanchor]]></wp:meta_key>
@@ -5132,18 +4916,22 @@ This email is a receipt for your contact form submission on our website ([_site_
 							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2024-07-24]]></wp:meta_value>
 						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
+							<wp:meta_value><![CDATA[2024-08-12]]></wp:meta_value>
+						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[Yogurt]]></title>
-					<link>https://dummy.xtemos.com/woodmart2/farm-gutenberg/2024/08/12/yogurt-3/</link>
+					<link>https://dummy.xtemos.com/woodmart2/farm-gutenberg/2026/02/13/yogurt-3/</link>
 					<pubDate>Wed, 24 Jul 2024 12:26:30 +0000</pubDate>
 					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/farm-gutenberg/?p=139</guid>
 															<wp:post_id>139</wp:post_id>
-					<wp:post_date><![CDATA[2024-08-12 07:36:53]]></wp:post_date>
+					<wp:post_date><![CDATA[2026-02-13 13:12:27]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-07-24 12:26:30]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-08-12 07:36:53]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-08-12 07:36:53]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2026-02-13 13:12:27]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2026-02-13 13:12:27]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[yogurt-3]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -5169,11 +4957,15 @@ This email is a receipt for your contact form submission on our website ([_site_
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
-							<wp:meta_value><![CDATA[#yogurt]]></wp:meta_value>
+							<wp:meta_value><![CDATA[https://dummy.xtemos.com/woodmart2/farm-gutenberg/shop/#yogurt]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_design]]></wp:meta_key>
 							<wp:meta_value><![CDATA[default]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_image-type]]></wp:meta_key>
@@ -5190,6 +4982,10 @@ This email is a receipt for your contact form submission on our website ([_site_
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2024-07-24]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
+							<wp:meta_value><![CDATA[2024-08-12]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -5281,15 +5077,15 @@ This email is a receipt for your contact form submission on our website ([_site_
 										</item>
 								<item>
 					<title><![CDATA[Sour Cream]]></title>
-					<link>https://dummy.xtemos.com/woodmart2/farm-gutenberg/2024/08/12/sour-cream-3/</link>
+					<link>https://dummy.xtemos.com/woodmart2/farm-gutenberg/2026/02/13/sour-cream-3/</link>
 					<pubDate>Wed, 24 Jul 2024 12:26:30 +0000</pubDate>
 					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/farm-gutenberg/?p=140</guid>
 															<wp:post_id>140</wp:post_id>
-					<wp:post_date><![CDATA[2024-08-12 07:36:53]]></wp:post_date>
+					<wp:post_date><![CDATA[2026-02-13 13:12:27]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-07-24 12:26:30]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-08-12 07:36:53]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-08-12 07:36:53]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2026-02-13 13:12:27]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2026-02-13 13:12:27]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[sour-cream-3]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -5315,11 +5111,15 @@ This email is a receipt for your contact form submission on our website ([_site_
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
-							<wp:meta_value><![CDATA[#sour-cream]]></wp:meta_value>
+							<wp:meta_value><![CDATA[https://dummy.xtemos.com/woodmart2/farm-gutenberg/shop/#sour-cream]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_design]]></wp:meta_key>
 							<wp:meta_value><![CDATA[default]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_opanchor]]></wp:meta_key>
@@ -5341,18 +5141,22 @@ This email is a receipt for your contact form submission on our website ([_site_
 							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2024-07-24]]></wp:meta_value>
 						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
+							<wp:meta_value><![CDATA[2024-08-12]]></wp:meta_value>
+						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[Cheese]]></title>
-					<link>https://dummy.xtemos.com/woodmart2/farm-gutenberg/2024/08/12/cheese-3/</link>
+					<link>https://dummy.xtemos.com/woodmart2/farm-gutenberg/2026/02/13/cheese-3/</link>
 					<pubDate>Wed, 24 Jul 2024 12:26:30 +0000</pubDate>
 					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/farm-gutenberg/?p=141</guid>
 															<wp:post_id>141</wp:post_id>
-					<wp:post_date><![CDATA[2024-08-12 07:36:53]]></wp:post_date>
+					<wp:post_date><![CDATA[2026-02-13 13:12:27]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-07-24 12:26:30]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-08-12 07:36:53]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-08-12 07:36:53]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2026-02-13 13:12:27]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2026-02-13 13:12:27]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[cheese-3]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -5378,11 +5182,15 @@ This email is a receipt for your contact form submission on our website ([_site_
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
-							<wp:meta_value><![CDATA[#cheese]]></wp:meta_value>
+							<wp:meta_value><![CDATA[https://dummy.xtemos.com/woodmart2/farm-gutenberg/shop/#cheese]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_design]]></wp:meta_key>
 							<wp:meta_value><![CDATA[default]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_opanchor]]></wp:meta_key>
@@ -5403,6 +5211,10 @@ This email is a receipt for your contact form submission on our website ([_site_
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2024-07-24]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
+							<wp:meta_value><![CDATA[2024-08-12]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -5443,6 +5255,10 @@ This email is a receipt for your contact form submission on our website ([_site_
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_design]]></wp:meta_key>
 							<wp:meta_value><![CDATA[default]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_image-type]]></wp:meta_key>
@@ -5497,6 +5313,10 @@ This email is a receipt for your contact form submission on our website ([_site_
 							<wp:meta_value><![CDATA[default]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_image-type]]></wp:meta_key>
 							<wp:meta_value><![CDATA[image]]></wp:meta_value>
 						</wp:postmeta>
@@ -5549,6 +5369,10 @@ This email is a receipt for your contact form submission on our website ([_site_
 							<wp:meta_value><![CDATA[default]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_image-type]]></wp:meta_key>
 							<wp:meta_value><![CDATA[image]]></wp:meta_value>
 						</wp:postmeta>
@@ -5599,6 +5423,10 @@ This email is a receipt for your contact form submission on our website ([_site_
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_design]]></wp:meta_key>
 							<wp:meta_value><![CDATA[default]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_image-type]]></wp:meta_key>

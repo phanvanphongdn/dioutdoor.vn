@@ -15,7 +15,7 @@ if ( ! function_exists( 'wd_gutenberg_single_post_comments_btn' ) ) {
 
 		if ( comments_open() || pings_open() ) : ?>
 			<?php woodmart_enqueue_inline_style( 'blog-mod-comments-button' ); ?>
-			<div id="<?php echo esc_attr( $el_id ); ?>" class="wd-single-post-reply<?php echo esc_attr( $wrapper_classes ); ?>">
+			<div <?php echo $el_id ? 'id="' . esc_attr( $el_id ) . '" ' : ''; ?>class="wd-single-post-reply<?php echo esc_attr( $wrapper_classes ); ?>">
 				<div class="wd-post-reply wd-style-1">
 					<?php woodmart_post_meta_reply(); ?>
 				</div>

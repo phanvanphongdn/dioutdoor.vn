@@ -1,4 +1,10 @@
 <?php
+/**
+ * Blog post with meta and image template.
+ *
+ * @package woodmart
+ */
+
 $woodmart_loop  = woodmart_loop_prop( 'woodmart_loop' );
 $blog_style     = woodmart_get_opt( 'blog_style', 'shadow' );
 $post_format    = get_post_format();
@@ -73,14 +79,16 @@ if ( has_post_thumbnail() || ! empty( $gallery['ids'] ) ) {
 						foreach ( $gallery['images_id'] as $image_id ) {
 							?>
 							<div class="wd-carousel-item">
-								<?php echo woodmart_otf_get_image_html(
+								<?php
+								echo woodmart_otf_get_image_html(  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 									$image_id,
 									apply_filters( 'woodmart_gallery_post_format_size', woodmart_get_opt( 'blog_image_size', 'large' ) ),
 									array(
 										'width'  => woodmart_get_opt( 'blog_image_custom_width' ),
 										'height' => woodmart_get_opt( 'blog_image_custom_height' ),
 									)
-								); ?>
+								);
+								?>
 							</div>
 							<?php
 						}
@@ -106,7 +114,7 @@ if ( has_post_thumbnail() || ! empty( $gallery['ids'] ) ) {
 				</div>
 
 				<div class="wd-post-actions">
-					<?php if ( woodmart_is_social_link_enable( 'share' ) && function_exists( 'woodmart_shortcode_social' ) ) : ?>
+					<?php if ( woodmart_is_social_link_enabled( 'share' ) && function_exists( 'woodmart_shortcode_social' ) ) : ?>
 						<div tabindex="0" class="wd-post-share wd-tltp">
 							<div class="tooltip top">
 								<div class="tooltip-inner">

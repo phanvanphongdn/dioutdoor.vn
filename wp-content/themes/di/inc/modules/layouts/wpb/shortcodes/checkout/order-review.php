@@ -2,7 +2,7 @@
 /**
  * Order review shortcode.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 use XTS\Modules\Checkout_Order_Table;

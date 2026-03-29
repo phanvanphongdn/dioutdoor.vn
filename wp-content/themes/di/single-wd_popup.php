@@ -1,8 +1,8 @@
-<?php
+<?php // phpcs:ignore phpcs: WordPress.Files.FileName.NotHyphenatedLowercase
 /**
  * The template for displaying custom popups.
  *
- * @package xts
+ * @package woodmart
  */
 
 use Elementor\Plugin;
@@ -42,10 +42,6 @@ get_header();
 
 	$btn_classes = 'wd-popup-close wd-action-btn wd-cross-icon';
 
-	if ( isset( $page_settings[ $prefix . 'close_btn' ] ) && ! $page_settings[ $prefix . 'close_btn' ] ) {
-		$btn_classes .= ' wd-hide';
-	}
-
 	if ( ! empty( $page_settings[ $prefix . 'close_btn_display' ] ) ) {
 		$btn_classes .= ' wd-style-' . $page_settings[ $prefix . 'close_btn_display' ];
 	} else {
@@ -58,11 +54,14 @@ get_header();
 		<div class="mfp-container mfp-s-ready mfp-inline-holder">
 			<div class="mfp-content">
 				<div class="wd-popup-wrap">
-					<div class="<?php echo esc_attr( $btn_classes ); ?>">
-						<a title="<?php esc_html_e( 'Close', 'woodmart' ); ?>" href="#" rel="nofollow">
-							<span><?php esc_html_e( 'Close', 'woodmart' ); ?></span>
-						</a>
-					</div>
+					<?php if ( isset( $page_settings[ $prefix . 'close_btn' ] ) && $page_settings[ $prefix . 'close_btn' ] ) : ?>
+						<div class="<?php echo esc_attr( $btn_classes ); ?>">
+							<a title="<?php esc_html_e( 'Close', 'woodmart' ); ?>" href="#" rel="nofollow">
+								<span class="wd-action-icon"></span>
+								<span class="wd-action-text"><?php esc_html_e( 'Close', 'woodmart' ); ?></span>
+							</a>
+						</div>
+					<?php endif; ?>
 					<div class="wd-popup wd-scroll-content">
 						<div class="wd-popup-inner wd-entry-content">
 							<?php while ( have_posts() ) : ?>

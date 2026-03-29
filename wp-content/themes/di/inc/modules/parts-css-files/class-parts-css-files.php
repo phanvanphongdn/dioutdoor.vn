@@ -2,7 +2,7 @@
 /**
  * Page css files.
  *
- * @package xts
+ * @package woodmart
  */
 
 namespace XTS\Modules;
@@ -249,7 +249,7 @@ class Parts_Css_Files extends Singleton {
 		$files = array();
 
 		if ( 'post' === $data['type'] ) {
-			if ( $this->is_mobile && get_post_meta( $data['id'], '_woodmart_mobile_content', true ) ) {
+			if ( $this->is_mobile && woodmart_get_post_meta_value( $data['id'], '_woodmart_mobile_content' ) ) {
 				$meta = get_post_meta( $data['id'], 'wd_page_css_files_mobile', true );
 			} else {
 				$meta = get_post_meta( $data['id'], 'wd_page_css_files', true );
@@ -402,7 +402,7 @@ class Parts_Css_Files extends Singleton {
 		}
 
 		if ( isset( $data['type'] ) && 'post' === $data['type'] ) {
-			if ( $this->is_mobile && get_post_meta( $data['id'], '_woodmart_mobile_content', true ) ) {
+			if ( $this->is_mobile && woodmart_get_post_meta_value( $data['id'], '_woodmart_mobile_content' ) ) {
 				update_post_meta( $data['id'], 'wd_page_css_files_mobile', $this->inline_enqueue_styles_mobile );
 			} else {
 				update_post_meta( $data['id'], 'wd_page_css_files', $this->inline_enqueue_styles );

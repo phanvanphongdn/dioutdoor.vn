@@ -1,52 +1,61 @@
-<?php if ( ! defined('WOODMART_THEME_DIR')) exit('No direct script access allowed');
-
+<?php // phpcs:ignore WordPress.Files.FileName.InvalidClassFileName
 /**
- * Register widget based on VC_MAP parameters that display author area shortcode
+ * Author area widget.
  *
+ * @package woodmart
  */
 
-if ( ! class_exists( 'WOODMART_Author_Area_Widget' ) ) {
-	class WOODMART_Author_Area_Widget extends WPH_Widget {
-	
-		function __construct() {
-			if( ! function_exists( 'woodmart_get_author_area_params' ) ) return;
-		
-			// Configure widget array
-			$args = array( 
-				// Widget Backend label
-				'label' => esc_html__( 'WOODMART Author Information', 'woodmart' ), 
-				// Widget Backend Description								
-				'description' => esc_html__( 'Small information block about blog author', 'woodmart' ), 	
-				'slug' => 'woodmart-author-information',
-			 );
-		
-			// Configure the widget fields
-		
-			// fields array
-			$args['fields'] = woodmart_get_author_area_params();
+if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
+	exit( 'No direct script access allowed' );
+}
 
-			// create widget
-			$this->create_widget( $args );
+/**
+ * Register widget based on VC_MAP parameters that display author area shortcode.
+ */
+class WOODMART_Author_Area_Widget extends WPH_Widget {
+
+	/**
+	 * Constructor.
+	 */
+	public function __construct() {
+		if ( ! function_exists( 'woodmart_get_author_area_params' ) ) {
+			return;
 		}
-		
-		// Output function
 
-		function widget( $args, $instance )	{
-			extract($args);
+		$args = array(
+			'label'       => esc_html__( 'WOODMART Author Information', 'woodmart' ),
+			'description' => esc_html__( 'Small information block about blog author', 'woodmart' ),
+			'slug'        => 'woodmart-author-information',
+		);
 
-			echo wp_kses_post( $before_widget );
+		$args['fields'] = woodmart_get_author_area_params();
+		$this->create_widget( $args );
+	}
 
-			if(!empty($instance['title'])) { echo wp_kses_post( $before_title ) . $instance['title'] . wp_kses_post( $after_title ); };
+	/**
+	 * Widget output.
+	 *
+	 * @param array $args The widget arguments.
+	 * @param array $instance The widget instance.
+	 * @return void
+	 */
+	public function widget( $args, $instance ) {
+		extract( $args ); // phpcs:ignore WordPress.PHP.DontExtract.extract_extract
 
-			do_action( 'wpiw_before_widget', $instance );
+		echo wp_kses_post( $before_widget );
 
-			$instance['title'] = '';
-
-			echo woodmart_shortcode_author_area( $instance, $instance['content'] );
-
-			do_action( 'wpiw_after_widget', $instance );
-
-			echo wp_kses_post( $after_widget );
+		if ( ! empty( $instance['title'] ) ) {
+			echo wp_kses_post( $before_title ) . $instance['title'] . wp_kses_post( $after_title ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
-	} // class
+
+		do_action( 'wpiw_before_widget', $instance );
+
+		$instance['title'] = '';
+
+		echo woodmart_shortcode_author_area( $instance, $instance['content'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+
+		do_action( 'wpiw_after_widget', $instance );
+
+		echo wp_kses_post( $after_widget );
+	}
 }

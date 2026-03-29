@@ -11,7 +11,7 @@ if ( ! function_exists( 'wd_gutenberg_my_account_login' ) ) {
 
 		ob_start();
 		?>
-		<div id="<?php echo esc_attr( $el_id ); ?>" class="wd-el-my-account-login<?php echo esc_attr( $wrapper_classes ); ?>">
+		<div <?php echo $el_id ? 'id="' . esc_attr( $el_id ) . '" ' : ''; ?>class="wd-el-my-account-login<?php echo esc_attr( $wrapper_classes ); ?>">
 			<?php woodmart_login_form( true, add_query_arg( 'action', 'login', $account_link ) ); ?>
 		</div>
 		<?php

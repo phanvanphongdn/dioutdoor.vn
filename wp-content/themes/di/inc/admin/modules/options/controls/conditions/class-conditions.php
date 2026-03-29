@@ -32,10 +32,10 @@ class Conditions extends Field {
 	 * @param array  $args Field args array.
 	 * @param array  $options Options from the database.
 	 * @param string $type Field type.
-	 * @param string $object $object Object for post or term.
+	 * @param string $meta_type Meta type.
 	 */
-	public function __construct( $args, $options, $type = 'options', $object = 'post' ) {
-		parent::__construct( $args, $options, $type, $object );
+	public function __construct( $args, $options, $type = 'options', $meta_type = 'post' ) {
+		parent::__construct( $args, $options, $type, $meta_type );
 
 		$this->set_inner_fields();
 
@@ -207,7 +207,7 @@ class Conditions extends Field {
 					)
 				);
 
-				if ( count( $terms ) > 0 ) {
+				if ( is_array( $terms ) && count( $terms ) > 0 ) {
 					foreach ( $terms as $term ) {
 						$items[] = array(
 							'id'   => $term->term_id,
@@ -396,7 +396,7 @@ class Conditions extends Field {
 							'pa_' . $attribute->attribute_name
 						);
 
-						if ( ! $term || $term instanceof WP_Error ) {
+						if ( ! $term || $term instanceof \WP_Error ) {
 							continue;
 						} else {
 							break;
@@ -517,10 +517,10 @@ class Conditions extends Field {
 	 */
 	public function render_control() {
 		$option_id                = $this->args['id'];
-		$conditions               = maybe_unserialize( $this->get_field_value() );
+		$conditions               = $this->get_field_value();
 		$selected_condition_query = array();
 
-		if ( empty( $conditions ) ) {
+		if ( empty( $conditions ) || ! is_array( $conditions ) ) {
 			$conditions = array(
 				array(
 					'comparison' => 'include',

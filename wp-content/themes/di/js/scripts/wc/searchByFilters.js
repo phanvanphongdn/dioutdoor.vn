@@ -7,7 +7,10 @@
 	woodmartThemeModule.searchByFilters = function() {
 		$('.wd-filter-search input').on('keyup', function() {
 			var $this = $(this);
-			var val = $this.val().toLowerCase();
+			var val = $this.val()
+				.toLowerCase()
+				.normalize('NFD')
+				.replace(/[\u0300-\u036f]/g, '');
 
 			if (0 < val.length) {
 				$this.parent().addClass('wd-active');
@@ -17,7 +20,10 @@
 
 			$this.parents('.wd-filter-wrapper').find('ul > li').each(function() {
 				var $this = $(this);
-				var $data = $this.find('.wd-filter-lable').text().toLowerCase();
+				var $data = $this.find('.wd-filter-lable').text()
+					.toLowerCase()
+					.normalize('NFD')
+					.replace(/[\u0300-\u036f]/g, '');
 
 				if ($data.indexOf(val) > -1) {
 					$this.show();

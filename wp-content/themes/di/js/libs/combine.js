@@ -1674,6 +1674,11 @@
 	$html.addClass('platform-' + jscd.os);
 	
 })(jQuery);
+/**
+ * IMPORTANT WOODMART NOTICE: this file is a modified version of the original isotope.pkgd.js file.
+ * If you update this file, ensure to re-apply fixes (see: https://github.com/metafizzy/flickity/pull/900).
+ */
+
 /*!
  * Isotope PACKAGED v3.0.6
  *
@@ -2328,10 +2333,14 @@
     // make array of elems
     elems = utils.makeArray( elems );
     var ffElems = [];
-
+    var isElement = function (elem) {
+      return (
+        typeof HTMLElement === "object" ? elem instanceof HTMLElement : elem && typeof elem === "object" && elem !== null && elem.nodeType === 1 && typeof elem.nodeName === "string"
+      );
+    };
     elems.forEach( function( elem ) {
       // check that elem is an actual element
-      if ( !( elem instanceof HTMLElement ) ) {
+      if ( !( isElement(elem) ) ) {
         return;
       }
       // add elem if no selector
@@ -5237,6 +5246,11 @@
 
 }));
 
+/**
+ * IMPORTANT WOODMART NOTICE: this file is a modified version of the original isotope.pkgd.js file.
+ * If you update this file, ensure to re-apply fixes (see: https://github.com/metafizzy/flickity/pull/900).
+ */
+
 /*!
  * Packery v3.0.0
  * Gapless, draggable grid layouts
@@ -5889,10 +5903,15 @@
 		// make array of elems
 		elems = utils.makeArray( elems );
 		var ffElems = [];
+		var isElement = function (elem) {
+			return (
+			  typeof HTMLElement === "object" ? elem instanceof HTMLElement : elem && typeof elem === "object" && elem !== null && elem.nodeType === 1 && typeof elem.nodeName === "string"
+			);
+		 };
 
 		elems.forEach( function( elem ) {
 			// check that elem is an actual element
-			if ( !( elem instanceof HTMLElement ) ) {
+			if ( !( isElement(elem) ) ) {
 				return;
 			}
 			// add elem if no selector
@@ -23804,14 +23823,14 @@ MagnificPopup.prototype = {
 		
 		var windowStyles = {};
 
-		if( mfp.fixedContentPos ) {
-            if(mfp._hasScrollBar(windowHeight)){
-                var s = mfp._getScrollbarSize();
-                if(s) {
-                    windowStyles.marginRight = s;
-                }
-            }
-        }
+		// if( mfp.fixedContentPos ) {
+        //     if(mfp._hasScrollBar(windowHeight)){
+        //         var s = mfp._getScrollbarSize();
+        //         if(s) {
+        //             windowStyles.marginRight = s;
+        //         }
+        //     }
+        // }
 
 		if(mfp.fixedContentPos) {
 			if(!mfp.isIE7) {
@@ -25650,7 +25669,7 @@ $.magnificPopup.registerModule(RETINA_NS, {
             }
 
             // moveTarget
-            if (jQuery.type(settings.moveTarget) === "string") {
+            if (typeof settings.moveTarget === "string") {
                 settings.moveTarget = $(this.element).parent(settings.moveTarget);
             }
 
@@ -39662,7 +39681,11 @@ if (typeof jQuery === 'undefined') {
     this.type      = type
     this.$element  = $(element)
     this.options   = this.getOptions(options)
-    this.$viewport = this.options.viewport && $(document).find($.isFunction(this.options.viewport) ? this.options.viewport.call(this, this.$element) : (this.options.viewport.selector || this.options.viewport))
+    this.$viewport = this.options.viewport && $(document).find(
+        typeof this.options.viewport === 'function'
+            ? this.options.viewport.call(this, this.$element)
+            : (this.options.viewport.selector || this.options.viewport)
+    );
     this.inState   = { click: false, hover: false, focus: false }
 
     if (this.$element[0] instanceof document.constructor && !this.options.selector) {

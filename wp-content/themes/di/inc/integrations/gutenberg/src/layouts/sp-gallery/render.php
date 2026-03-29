@@ -9,9 +9,11 @@ if ( ! function_exists( 'wd_gutenberg_single_product_gallery' ) ) {
 		wp_enqueue_script( 'zoom' );
 		wp_enqueue_script( 'wc-single-product' );
 
+		$el_id = wd_get_gutenberg_element_id( $block_attributes );
+
 		Main::setup_preview();
 		?>
-			<div id="<?php echo esc_attr( wd_get_gutenberg_element_id( $block_attributes ) ); ?>" class="wd-single-gallery<?php echo esc_attr( wd_get_gutenberg_element_classes( $block_attributes ) ); ?>">
+			<div <?php echo $el_id ? 'id="' . esc_attr( $el_id ) . '" ' : ''; ?>class="wd-single-gallery<?php echo esc_attr( wd_get_gutenberg_element_classes( $block_attributes ) ); ?>">
 				<?php
 				wc_get_template(
 					'single-product/product-image.php',

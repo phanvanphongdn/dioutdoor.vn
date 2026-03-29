@@ -2,7 +2,7 @@
 /**
  * Frequently bought together map.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Modules\Layouts;

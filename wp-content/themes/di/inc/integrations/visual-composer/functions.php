@@ -2,7 +2,7 @@
 /**
  * This file adds some custom properties to the WPB editor.
  *
- * @package Woodmart.
+ * @package woodmart.
  */
 
 if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
@@ -143,19 +143,19 @@ if ( ! function_exists( 'woodmart_vc_extra_classes' ) ) {
 	/**
 	 * Adds classes depending on the passed settings.
 	 *
-	 * @param string $class list of classes.
+	 * @param string $classes list of classes.
 	 * @param mixed  $base .
 	 * @param array  $atts list of settings.
 	 * @return string new classes.
 	 */
-	function woodmart_vc_extra_classes( $class, $base, $atts ) {
+	function woodmart_vc_extra_classes( $classes, $base, $atts ) {
 		if ( isset( $atts['wd_z_index'] ) && 'yes' === $atts['wd_z_index'] ) {
-			$class .= ' wd-z-index';
+			$classes .= ' wd-z-index';
 		}
 
 		if ( 'vc_column' === $base || 'vc_column_inner' === $base ) {
 			if ( ! empty( $atts['vertical_alignment'] ) || ! empty( $atts['horizontal_alignment'] ) ) {
-				$class .= ' wd-enabled-flex';
+				$classes .= ' wd-enabled-flex';
 			}
 		}
 
@@ -163,108 +163,107 @@ if ( ! function_exists( 'woodmart_vc_extra_classes' ) ) {
 			woodmart_enqueue_inline_style( 'int-wpb-opt-off-canvas-column' );
 
 			if ( isset( $atts['wd_column_role_offcanvas_desktop'] ) && 'yes' === $atts['wd_column_role_offcanvas_desktop'] ) {
-				$class .= ' wd-col-offcanvas-lg';
+				$classes .= ' wd-col-offcanvas-lg';
 			}
 
 			if ( isset( $atts['wd_column_role_offcanvas_tablet'] ) && 'yes' === $atts['wd_column_role_offcanvas_tablet'] ) {
-				$class .= ' wd-col-offcanvas-md-sm';
+				$classes .= ' wd-col-offcanvas-md-sm';
 			}
 
 			if ( isset( $atts['wd_column_role_offcanvas_mobile'] ) && 'yes' === $atts['wd_column_role_offcanvas_mobile'] ) {
-				$class .= ' wd-col-offcanvas-sm';
+				$classes .= ' wd-col-offcanvas-sm';
 			}
 
 			if ( isset( $atts['wd_column_role_content_desktop'] ) && 'yes' === $atts['wd_column_role_content_desktop'] ) {
-				$class .= ' wd-col-content-lg';
+				$classes .= ' wd-col-content-lg';
 			}
 
 			if ( isset( $atts['wd_column_role_content_tablet'] ) && 'yes' === $atts['wd_column_role_content_tablet'] ) {
-				$class .= ' wd-col-content-md-sm';
+				$classes .= ' wd-col-content-md-sm';
 			}
 
 			if ( isset( $atts['wd_column_role_content_mobile'] ) && 'yes' === $atts['wd_column_role_content_mobile'] ) {
-				$class .= ' wd-col-content-sm';
+				$classes .= ' wd-col-content-sm';
 			}
 
 			if ( isset( $atts['wd_off_canvas_alignment'] ) && ! empty( $atts['wd_off_canvas_alignment'] ) ) {
-				$class .= ' wd-alignment-' . $atts['wd_off_canvas_alignment'];
+				$classes .= ' wd-alignment-' . $atts['wd_off_canvas_alignment'];
 			}
 		}
 
 		if ( ! empty( $atts['woodmart_inline'] ) && 'yes' === $atts['woodmart_inline'] ) {
-			$class .= ' inline-element';
+			$classes .= ' inline-element';
 		}
 		if ( ! empty( $atts['woodmart_color_scheme'] ) && ( 'vc_column' === $base ||
 		'vc_column_inner' === $base || 'vc_empty_space' === $base || 'vc_column_text' === $base ) ) {
-			$class .= ' color-scheme-' . $atts['woodmart_color_scheme'];
+			$classes .= ' color-scheme-' . $atts['woodmart_color_scheme'];
 		}
 		if ( isset( $atts['text_larger'] ) && 'yes' === $atts['text_larger'] ) {
-			$class .= ' text-larger';
+			$classes .= ' text-larger';
 		}
 		if ( isset( $atts['woodmart_sticky_column'] ) && 'true' === $atts['woodmart_sticky_column'] ) {
-			$class .= ' woodmart-sticky-column';
+			$classes .= ' woodmart-sticky-column';
 
 			if ( isset( $atts['woodmart_sticky_column_offset'] ) && $atts['woodmart_sticky_column_offset'] ) {
-				$class .= ' wd_sticky_offset_' . $atts['woodmart_sticky_column_offset'];
+				$classes .= ' wd_sticky_offset_' . $atts['woodmart_sticky_column_offset'];
 			}
 			woodmart_enqueue_js_library( 'sticky-kit' );
 			woodmart_enqueue_js_script( 'sticky-column' );
 		}
 		if ( isset( $atts['woodmart_parallax'] ) && $atts['woodmart_parallax'] ) {
-			$class .= ' wd-parallax';
-			$class .= woodmart_get_old_classes( ' woodmart-parallax' );
+			$classes .= ' wd-parallax';
 			woodmart_enqueue_js_library( 'parallax' );
 			woodmart_enqueue_js_script( 'parallax' );
 		}
 		if ( isset( $atts['woodmart_disable_overflow'] ) && $atts['woodmart_disable_overflow'] ) {
-			$class .= ' wd-disable-overflow';
+			$classes .= ' wd-disable-overflow';
 		}
 		if ( isset( $atts['woodmart_gradient_switch'] ) && 'yes' === $atts['woodmart_gradient_switch'] && apply_filters( 'woodmart_gradients_enabled', true ) ) {
-			$class .= ' wd-row-gradient-enable';
+			$classes .= ' wd-row-gradient-enable';
 		}
 		// Bg option.
 		if ( ! empty( $atts['woodmart_bg_position'] ) ) {
-			$class .= ' wd-bg-' . $atts['woodmart_bg_position'];
+			$classes .= ' wd-bg-' . $atts['woodmart_bg_position'];
 		}
 		// Text align option.
 		if ( ! empty( $atts['woodmart_text_align'] ) ) {
-			$class .= ' text-' . $atts['woodmart_text_align'];
+			$classes .= ' text-' . $atts['woodmart_text_align'];
 		}
 		// Responsive opt.
 		if ( isset( $atts['woodmart_hide_large'] ) && $atts['woodmart_hide_large'] ) {
-			$class .= ' hidden-lg';
+			$classes .= ' hidden-lg';
 		}
 		if ( isset( $atts['woodmart_hide_medium'] ) && $atts['woodmart_hide_medium'] ) {
-			$class .= ' hidden-md hidden-sm';
+			$classes .= ' hidden-md hidden-sm';
 		}
 		if ( isset( $atts['woodmart_hide_small'] ) && $atts['woodmart_hide_small'] ) {
-			$class .= ' hidden-xs';
+			$classes .= ' hidden-xs';
 		}
 		// Row reverse opt.
 		if ( isset( $atts['row_reverse_mobile'] ) && $atts['row_reverse_mobile'] ) {
-			$class .= ' row-reverse-mobile';
+			$classes .= ' row-reverse-mobile';
 		}
 		if ( isset( $atts['row_reverse_tablet'] ) && $atts['row_reverse_tablet'] ) {
-			$class .= ' row-reverse-tablet';
+			$classes .= ' row-reverse-tablet';
 		}
 
 		// Hide bg img on mobile.
 		if ( isset( $atts['mobile_bg_img_hidden'] ) && 'yes' === $atts['mobile_bg_img_hidden'] ) {
-			$class .= ' mobile-bg-img-hidden';
+			$classes .= ' mobile-bg-img-hidden';
 		}
 
 		// Hide bg img on tablet.
 		if ( isset( $atts['tablet_bg_img_hidden'] ) && 'yes' === $atts['tablet_bg_img_hidden'] ) {
-			$class .= ' tablet-bg-img-hidden';
+			$classes .= ' tablet-bg-img-hidden';
 		}
 
 		// Reset margin (deprecated).
 		if ( isset( $atts['mobile_reset_margin'] ) && 'yes' === $atts['mobile_reset_margin'] ) {
-			$class .= ' reset-margin-mobile';
+			$classes .= ' reset-margin-mobile';
 		}
 
 		if ( isset( $atts['tablet_reset_margin'] ) && 'yes' === $atts['tablet_reset_margin'] ) {
-			$class .= ' reset-margin-tablet';
+			$classes .= ' reset-margin-tablet';
 		}
 
 		if ( ! empty( $atts['css_animation'] ) && 'none' !== $atts['css_animation'] ) {
@@ -272,15 +271,14 @@ if ( ! function_exists( 'woodmart_vc_extra_classes' ) ) {
 		}
 
 		if ( ! empty( $atts['wd_animation'] ) && 'none' !== $atts['wd_animation'] ) {
-			$class .= ' wd-animation';
-			$class .= ' wd-transform';
-			$class .= ' wd-animation-' . $atts['wd_animation'];
+			$classes .= ' wd-animation';
+			$classes .= ' wd-transform';
+			$classes .= ' wd-animation-' . $atts['wd_animation'];
 
 			$duration = ! empty( $atts['wd_animation_duration'] ) ? $atts['wd_animation_duration'] : 'normal';
-			$class   .= ' wd-animation-' . $duration;
-
+			$classes .= ' wd-animation-' . $duration;
 			if ( ! empty( $atts['wd_animation_delay'] ) ) {
-				$class .= ' wd_delay_' . $atts['wd_animation_delay'];
+				$classes .= ' wd_delay_' . $atts['wd_animation_delay'];
 			}
 
 			woodmart_enqueue_js_script( 'css-animations' );
@@ -290,39 +288,56 @@ if ( ! function_exists( 'woodmart_vc_extra_classes' ) ) {
 		}
 
 		if ( ! empty( $atts['woodmart_css_id'] ) ) {
-			$class .= ' wd-rs-' . $atts['woodmart_css_id'];
+			$classes .= ' wd-rs-' . $atts['woodmart_css_id'];
 		}
 
 		if ( ! empty( $atts['woodmart_stretch_content'] ) ) {
-			$class .= ' wd-' . $atts['woodmart_stretch_content'];
+			$classes .= ' wd-' . $atts['woodmart_stretch_content'];
 		}
 
 		if ( isset( $atts['wd_hide_on_desktop'] ) && 'yes' === $atts['wd_hide_on_desktop'] ) {
-			$class .= ' hidden-lg';
+			$classes .= ' hidden-lg';
 		}
 
 		if ( isset( $atts['wd_hide_on_tablet'] ) && 'yes' === $atts['wd_hide_on_tablet'] ) {
-			$class .= ' hidden-md hidden-sm';
+			$classes .= ' hidden-md hidden-sm';
 		}
 
 		if ( isset( $atts['wd_hide_on_mobile'] ) && 'yes' === $atts['wd_hide_on_mobile'] ) {
-			$class .= ' hidden-xs';
+			$classes .= ' hidden-xs';
 		}
 
 		if ( isset( $atts['wd_collapsible_content_switcher'] ) && 'yes' === $atts['wd_collapsible_content_switcher'] ) {
 			woodmart_enqueue_inline_style( 'collapsible-content' );
 
-			$class .= ' wd-collapsible-content';
+			$classes .= ' wd-collapsible-content';
 		}
 
 		/**
 		 * Single Product Layout.
 		 */
-		if ( ( isset( $atts['width_desktop'] ) && ! empty( $atts['width_desktop'] ) ) || ( isset( $atts['width_tablet'] ) && ! empty( $atts['width_tablet'] ) || ( isset( $atts['width_mobile'] ) && ! empty( $atts['width_mobile'] ) ) ) ) {
-			$class .= ' wd-enabled-width';
+		if (
+			(
+				isset(
+					$atts['width_desktop']
+				) &&
+				! empty( $atts['width_desktop'] )
+			) ||
+			(
+				(
+					isset( $atts['width_tablet'] ) &&
+					! empty( $atts['width_tablet'] )
+				) ||
+				(
+					isset( $atts['width_mobile'] ) &&
+					! empty( $atts['width_mobile'] )
+				)
+			)
+		) {
+			$classes .= ' wd-enabled-width';
 		}
 
-		return $class;
+		return $classes;
 	}
 }
 
@@ -411,12 +426,12 @@ if ( ! function_exists( 'woodmart_wpml_pb_shortcode_encode_urlencoded_json' ) ) 
 	/**
 	 * Encode urlencoded json.
 	 *
-	 * @param string $string String.
+	 * @param string $str String.
 	 * @param string $encoding Format.
 	 * @param array  $original_string Original string.
 	 * @return string
 	 */
-	function woodmart_wpml_pb_shortcode_encode_urlencoded_json( $string, $encoding, $original_string ) {
+	function woodmart_wpml_pb_shortcode_encode_urlencoded_json( $str, $encoding, $original_string ) {
 		if ( 'urlencoded_json' === $encoding ) {
 			$output = array();
 
@@ -427,9 +442,9 @@ if ( ! function_exists( 'woodmart_wpml_pb_shortcode_encode_urlencoded_json' ) ) 
 				$output[ $i ][ $key ] = $value;
 			}
 
-			$string = urlencode( wp_json_encode( $output ) ); // phpcs:ignore;
+			$str = rawurlencode( wp_json_encode( $output ) );
 		}
-		return $string;
+		return $str;
 	}
 
 	add_filter( 'wpml_pb_shortcode_encode', 'woodmart_wpml_pb_shortcode_encode_urlencoded_json', 10, 3 );
@@ -439,26 +454,26 @@ if ( ! function_exists( 'woodmart_wpml_pb_shortcode_decode_urlencoded_json' ) ) 
 	/**
 	 * Decode urlencoded json.
 	 *
-	 * @param string $string String.
+	 * @param string $str String.
 	 * @param string $encoding Format.
 	 * @param string $original_string Original string.
 	 * @return string
 	 */
-	function woodmart_wpml_pb_shortcode_decode_urlencoded_json( $string, $encoding, $original_string ) {
+	function woodmart_wpml_pb_shortcode_decode_urlencoded_json( $str, $encoding, $original_string ) {
 		if ( 'urlencoded_json' === $encoding ) {
 			$rows = json_decode( urldecode( $original_string ), true );
 
-			$string = array();
+			$str = array();
 
 			foreach ( $rows as $i => $row ) {
 				foreach ( $row as $key => $value ) {
 					if ( in_array( $key, array( 'list', 'list-content' ), true ) ) {
-						$string[ $key . '_' . $i ] = array(
+						$str[ $key . '_' . $i ] = array(
 							'value'     => $value,
 							'translate' => true,
 						);
 					} else {
-						$string[ $key . '_' . $i ] = array(
+						$str[ $key . '_' . $i ] = array(
 							'value'     => $value,
 							'translate' => false,
 						);
@@ -467,7 +482,7 @@ if ( ! function_exists( 'woodmart_wpml_pb_shortcode_decode_urlencoded_json' ) ) 
 			}
 		}
 
-		return $string;
+		return $str;
 	}
 
 	add_filter( 'wpml_pb_shortcode_decode', 'woodmart_wpml_pb_shortcode_decode_urlencoded_json', 10, 3 );
@@ -477,13 +492,14 @@ if ( ! function_exists( 'woodmart_get_gradient_attr' ) ) {
 	/**
 	 * Get gradient attribute.
 	 *
-	 * @param $output
-	 * @param $obj
-	 * @param $attr
+	 * @param string            $output Output html.
+	 * @param WPBakeryShortCode $obj WPBakeryShortCode object.
+	 * @param array             $attr Attributes.
+	 *
 	 * @return array|mixed|string|string[]|null
 	 */
 	function woodmart_get_gradient_attr( $output, $obj, $attr ) {
-		if ( isset( $attr['woodmart_gradient_switch'] ) && $attr['woodmart_gradient_switch'] == 'yes' ) {
+		if ( isset( $attr['woodmart_gradient_switch'] ) && 'yes' === $attr['woodmart_gradient_switch'] ) {
 			$gradient_css = woodmart_get_gradient_css( $attr['woodmart_color_gradient'] );
 			$output       = preg_replace_callback(
 				'/wd-row-gradient-enable.*?>/',
@@ -608,7 +624,8 @@ if ( ! function_exists( 'woodmart_get_gradient_css' ) ) {
 	/**
 	 * Get gradient css.
 	 *
-	 * @param $gradient_attr
+	 * @param string $gradient_attr Gradient attribute string.
+	 *
 	 * @return string
 	 */
 	function woodmart_get_gradient_css( $gradient_attr ) {
@@ -623,16 +640,16 @@ if ( ! function_exists( 'woodmart_responsive_text_size_css' ) ) {
 	 * Get responsive text size css.
 	 *
 	 * @param integer $id ID.
-	 * @param string  $class Class.
+	 * @param string  $classes Classes.
 	 * @param integer $data Data.
 	 * @param string  $action Action.
 	 * @return string|void
 	 */
-	function woodmart_responsive_text_size_css( $id, $class, $data, $action = 'echo' ) {
+	function woodmart_responsive_text_size_css( $id, $classes, $data, $action = 'echo' ) {
 		if ( 'return' === $action ) {
-			return '#' . $id . ' .' . $class . '{font-size:' . $data . 'px;line-height:' . intval( $data + 10 ) . 'px;}';
+			return '#' . $id . ' .' . $classes . '{font-size:' . $data . 'px;line-height:' . intval( $data + 10 ) . 'px;}'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		} else {
-			echo '#' . $id . ' .' . $class . '{font-size:' . $data . 'px;line-height:' . intval( $data + 10 ) . 'px;}';
+			echo '#' . $id . ' .' . $classes . '{font-size:' . $data . 'px;line-height:' . intval( $data + 10 ) . 'px;}'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
 	}
 }
@@ -660,4 +677,62 @@ if ( ! function_exists( 'woodmart_register_vc_roles' ) ) {
 	}
 
 	add_action( 'admin_init', 'woodmart_register_vc_roles' );
+}
+
+if ( ! function_exists( 'woodmart_vc_parse_multi_attribute' ) ) {
+	/**
+	 * Parse multi attribute and sanitize data.
+	 *
+	 * @param string|array $value Value.
+	 * @return array
+	 */
+	function woodmart_vc_parse_multi_attribute( $value ) {
+		$result = array(
+			'url'    => '',
+			'title'  => '',
+			'target' => '',
+			'rel'    => '',
+		);
+
+		if ( $value && ! is_array( $value ) && strpos( $value, 'url:' ) === false && strpos( $value, 'title:' ) === false && strpos( $value, 'target:' ) === false && strpos( $value, 'rel:' ) === false ) { // Fix for widget Banner.
+			$result['url'] = esc_url( $value );
+
+			return $result;
+		}
+
+		if ( is_array( $value ) ) {
+			$params_pairs = $value;
+		} else {
+			$params_pairs = explode( '|', $value );
+		}
+
+		if ( ! empty( $params_pairs ) ) {
+			foreach ( $params_pairs as $pair ) {
+				$param = preg_split( '/\:/', $pair );
+				if ( ! empty( $param[0] ) && isset( $param[1] ) ) {
+					$key   = sanitize_text_field( $param[0] );
+					$value = rawurldecode( $param[1] );
+
+					// Sanitize each field appropriately.
+					if ( 'url' === $key ) {
+						$result[ $key ] = esc_url( $value );
+					} elseif ( 'title' === $key ) {
+						$result[ $key ] = sanitize_text_field( $value );
+					} elseif ( 'target' === $key ) {
+						// Only allow _blank, _self, _parent, _top
+						$allowed_targets = array( '_blank', '_self', '_parent', '_top' );
+						$value           = sanitize_text_field( $value );
+						$result[ $key ]  = in_array( $value, $allowed_targets, true ) ? $value : '';
+					} elseif ( 'rel' === $key ) {
+						// Sanitize rel values (no-opener, no-referrer, etc.)
+						$result[ $key ] = sanitize_text_field( $value );
+					} else {
+						$result[ $key ] = sanitize_text_field( $value );
+					}
+				}
+			}
+		}
+
+		return $result;
+	}
 }

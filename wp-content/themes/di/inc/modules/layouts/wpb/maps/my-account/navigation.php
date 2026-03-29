@@ -2,7 +2,7 @@
 /**
  * Post content map.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -461,6 +461,10 @@ if ( ! function_exists( 'woodmart_get_vc_map_my_account_nav' ) ) {
 				$item_typography['text_transform'],
 				$item_typography['font_style'],
 				$item_typography['line_height'],
+				/**
+				 * Style tab.
+				 * Items tabs.
+				 */
 				array(
 					'type'             => 'woodmart_button_set',
 					'group'            => esc_html__( 'Style', 'woodmart' ),
@@ -472,6 +476,27 @@ if ( ! function_exists( 'woodmart_get_vc_map_my_account_nav' ) ) {
 					),
 					'edit_field_class' => 'vc_col-sm-12 vc_column',
 				),
+				/**
+				 * Disable active style.
+				 */
+				array(
+					'type'             => 'woodmart_switch',
+					'group'            => esc_html__( 'Style', 'woodmart' ),
+					'heading'          => esc_html__( 'Disable active style', 'woodmart' ),
+					'param_name'       => 'disable_active_style',
+					'true_state'       => 'yes',
+					'false_state'      => 'no',
+					'default'          => 'no',
+					'wd_dependency'    => array(
+						'element' => 'items_tabs',
+						'value'   => array( 'active' ),
+					),
+					'edit_field_class' => 'vc_col-sm-6 vc_column',
+				),
+
+				/**
+				 * Color.
+				 */
 				array(
 					'heading'          => esc_html__( 'Color', 'woodmart' ),
 					'group'            => esc_html__( 'Style', 'woodmart' ),
@@ -520,7 +545,9 @@ if ( ! function_exists( 'woodmart_get_vc_map_my_account_nav' ) ) {
 					),
 					'edit_field_class' => 'vc_col-sm-12 vc_column',
 				),
-				// Background.
+				/**
+				 * Background color.
+				 */
 				array(
 					'type'             => 'woodmart_switch',
 					'group'            => esc_html__( 'Style', 'woodmart' ),

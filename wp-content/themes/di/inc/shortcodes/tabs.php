@@ -1,8 +1,8 @@
 <?php
-/***
- * Tabs & tab shortcodes file.
+/**
+ * Shortcode for Tabs element.
  *
- * @package Shortcode.
+ * @package woodmart
  */
 
 if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
@@ -10,7 +10,7 @@ if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
 }
 
 if ( ! function_exists( 'woodmart_shortcode_tabs' ) ) {
-	/***
+	/**
 	 * Render tabs shortcode.
 	 *
 	 * @param array  $attr Shortcode attributes.
@@ -84,6 +84,8 @@ if ( ! function_exists( 'woodmart_shortcode_tabs' ) ) {
 		if ( 'inherit' !== $attr['tabs_title_color_scheme'] && 'custom' !== $attr['tabs_title_color_scheme'] ) {
 			$nav_tabs_wrapper_classes .= ' color-scheme-' . $attr['tabs_title_color_scheme'];
 		}
+
+		$nav_tabs_wrapper_classes .= ' wd-mb-action-swipe';
 
 		$nav_tabs_classes  = ' wd-icon-pos-' . $attr['icon_position'];
 		$nav_tabs_classes .= ' wd-style-' . $attr['tabs_style'];
@@ -165,7 +167,7 @@ if ( ! function_exists( 'woodmart_shortcode_tabs' ) ) {
 									'content'             => '',
 									'html_block_id'       => '',
 
-									/***
+									/**
 									 * Tab Icon.
 									 */
 									'tabs_icon_libraries' => 'fontawesome',
@@ -173,7 +175,7 @@ if ( ! function_exists( 'woodmart_shortcode_tabs' ) ) {
 									'tabs_image'          => '',
 									'tabs_image_size'     => '30x30',
 
-									/***
+									/**
 									 * Icon libraries.
 									 */
 									'icon_fontawesome'    => '',

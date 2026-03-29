@@ -2,7 +2,7 @@
 /**
  * This file describes class for render view waiting lists in WordPress admin panel.
  *
- * @package Woodmart.
+ * @package woodmart.
  */
 
 namespace XTS\Modules\Abandoned_Cart\List_Table;
@@ -311,15 +311,15 @@ class Abandoned_Cart_Table extends WP_List_Table {
 			);
 
 			foreach ( $meta_keys as $meta_key ) {
-				$item_data[ $meta_key ] = maybe_unserialize( get_post_meta( $post_id, $meta_key, true ) );
+				$item_data[ $meta_key ] = get_post_meta( $post_id, $meta_key, true );
 			}
 
 			$item_data['_user_name'] = $this->get_user_name( $item_data );
 
-			$cart_data = maybe_unserialize( get_post_meta( $post_id, '_cart', true ) );
+			$cart = woodmart_get_abandoned_cart_object_from_db( $post_id );
 
-			if ( ! empty( $cart_data ) ) {
-				$item_data['_cart_subtotal'] = $this->get_cart_subtotal( $cart_data );
+			if ( ! empty( $cart ) && $cart instanceof \WC_Cart ) {
+				$item_data['_cart_subtotal'] = $this->get_cart_subtotal( $cart );
 			}
 
 			$items[] = $item_data;

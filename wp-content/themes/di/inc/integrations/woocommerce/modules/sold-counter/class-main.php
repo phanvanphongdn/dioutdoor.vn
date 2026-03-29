@@ -2,7 +2,7 @@
 /**
  * The main class for sold counter module.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Modules\Sold_Counter;

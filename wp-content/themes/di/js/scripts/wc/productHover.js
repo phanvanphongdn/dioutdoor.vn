@@ -10,7 +10,7 @@
 		});
 	};
 
-	woodmartThemeModule.$document.on('wdProductMoreDescriptionOpen', function(event, $product) {
+	woodmartThemeModule.$document.on('wdProductHoverContentRecalc', function(event, $product) {
 		woodmartThemeModule.productHoverRecalc($product);
 	});
 
@@ -28,9 +28,9 @@
 			return;
 		}
 
-		var heightHideInfo = $el.find('.fade-in-block').outerHeight();
+		var heightHideInfo = $el.find('.wd-product-card-hover').outerHeight();
 
-		$el.find('.content-product-imagin').css({
+		$el.find('.wd-product-card-bg').css({
 			marginBottom: -heightHideInfo
 		});
 
@@ -49,7 +49,7 @@
 			$hoverBase.on('click', function(e) {
 				var $this = $(this);
 				var hoverClass = 'state-hover';
-				if (!$this.hasClass(hoverClass) && !$this.hasClass('wd-fade-off') && woodmart_settings.base_hover_mobile_click === 'no') {
+				if (!$this.hasClass('wp-block-wd-li-product-card') && !$this.hasClass(hoverClass) && !$this.hasClass('wd-fade-off') && woodmart_settings.base_hover_mobile_click === 'no') {
 					e.preventDefault();
 					$('.' + hoverClass).removeClass(hoverClass);
 					$this.addClass(hoverClass);
@@ -65,9 +65,8 @@
 
 		$hoverBase.on('mouseenter mousemove touchstart', function() {
 			var $product = $(this);
-			var $content = $product.find('.wd-more-desc');
 
-			if ($content.hasClass('wd-height-calculated')) {
+			if ($product.hasClass('wd-height-calculated')) {
 				return;
 			}
 
@@ -75,7 +74,7 @@
 				woodmartThemeModule.productHoverRecalc($product);
 			});
 
-			$content.addClass('wd-height-calculated');
+			$product.addClass('wd-height-calculated');
 		});
 
 		function productHolderWidth($holder) {
@@ -101,7 +100,7 @@
 
 			var $this = $(this);
 
-			if ($this.hasClass('wd-hover-fw-button')) {
+			if ($this.hasClass('wd-hover-fw-button') || $this.hasClass('wp-block-wd-li-product-card')) {
 				return;
 			}
 

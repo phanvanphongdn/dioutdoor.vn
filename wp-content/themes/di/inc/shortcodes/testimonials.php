@@ -1,12 +1,23 @@
 <?php
+/**
+ * Shortcode for Testimonials element.
+ *
+ * @package woodmart
+ */
+
 if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
 	exit( 'No direct script access allowed' );
 }
 
-
-
-
 if ( ! function_exists( 'woodmart_shortcode_testimonials' ) ) {
+	/**
+	 * Testimonials shortcode
+	 *
+	 * @param array  $atts    Shortcode attributes.
+	 * @param string $content Shortcode content.
+	 *
+	 * @return string
+	 */
 	function woodmart_shortcode_testimonials( $atts = array(), $content = null ) {
 		global $woodmart_testimonials_style;
 
@@ -42,7 +53,7 @@ if ( ! function_exists( 'woodmart_shortcode_testimonials' ) ) {
 			$atts
 		);
 
-		extract( $parsed_atts );
+		extract( $parsed_atts ); // phpcs:ignore WordPress.PHP.DontExtract.extract_extract
 
 		ob_start();
 
@@ -132,7 +143,7 @@ if ( ! function_exists( 'woodmart_shortcode_testimonials' ) ) {
 				<?php if ( 'slider' === $layout ) : ?>
 					<div class="wd-carousel-inner">
 				<?php endif; ?>
-				<div class="<?php echo esc_attr( $class ); ?>" <?php echo $carousel_atts; ?>>
+				<div class="<?php echo esc_attr( $class ); ?>" <?php echo $carousel_atts; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 					<?php if ( 'slider' === $layout ) : ?>
 						<div class="wd-carousel-wrap">
 					<?php endif; ?>
@@ -166,12 +177,20 @@ if ( ! function_exists( 'woodmart_shortcode_testimonials' ) ) {
 }
 
 if ( ! function_exists( 'woodmart_shortcode_testimonial' ) ) {
+	/**
+	 * Testimonial shortcode
+	 *
+	 * @param array  $atts    Shortcode attributes.
+	 * @param string $content Shortcode content.
+	 *
+	 * @return string
+	 */
 	function woodmart_shortcode_testimonial( $atts, $content ) {
 		global $woodmart_testimonials_style;
 
 		$class = '';
 
-		extract(
+		extract( // phpcs:ignore WordPress.PHP.DontExtract.extract_extract
 			shortcode_atts(
 				array(
 					'image'      => '',

@@ -1,7 +1,7 @@
 /* global woodmart_settings */
 (function($) {
 	woodmartThemeModule.searchFullScreen = function() {
-		woodmartThemeModule.$body.on('click', '.wd-header-search.wd-display-full-screen > a, .wd-search-form.wd-display-full-screen-2', function(e) {
+		woodmartThemeModule.$body.on('click', '.wd-header-search.wd-display-full-screen > a, .wd-header-search.wd-display-full-screen-2 > a, .wd-search-form.wd-display-full-screen, .wd-search-form.wd-display-full-screen-2', function(e) {
 			e.preventDefault();
 
 			var $this = $(this);
@@ -14,8 +14,8 @@
 			if (isOpened()) {
 				closeWidget();
 			} else {
-				if ( ! $this.hasClass('wd-display-full-screen-2') ) {
-					$wrapper = $('.wd-search-full-screen');
+				if ( ! $this.hasClass('wd-display-full-screen-2') && ! $this.parent().hasClass('wd-display-full-screen-2') ) {
+					$wrapper = $('.wd-search-full-screen');					
 					calculationOffset();
 				}
 
@@ -25,13 +25,15 @@
 			}
 		});
 
-		woodmartThemeModule.$body.on('click', '.wd-close-search a, .wd-page-wrapper, .header-banner', function(event) {
+		woodmartThemeModule.$body.on('click', '.wd-close-search a, .wd-page-wrapper, .wd-hb', function(event) {
+			var isCloseBtn   = $(event.target).closest('.wd-close-search a').length;
+			var isFullScreen = $(event.target).closest('.wd-search-full-screen').length;
 
-			if (!$(event.target).is('.wd-close-search a') && $(event.target).closest('.wd-search-full-screen').length) {
+			if (!isCloseBtn && isFullScreen) {
 				return;
 			}
 
-			if ( $(event.target).is('.wd-close-search a') ) {
+			if ( isCloseBtn ) {
 				event.preventDefault();
 			}
 
@@ -71,8 +73,11 @@
 				}
 			} else {
 				offset = $mainHeader.outerHeight() + barHeight;
-				if (woodmartThemeModule.$body.hasClass('header-banner-display')) {
-					offset += $('.header-banner').outerHeight();
+
+				$headerBanner = $('.wd-hb-wrapp');
+
+				if ($headerBanner.length > 0 && $headerBanner.hasClass('wd-display')) {
+					offset += $headerBanner.outerHeight();
 				}
 			}
 

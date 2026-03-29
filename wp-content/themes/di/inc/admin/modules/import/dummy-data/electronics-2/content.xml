@@ -16,7 +16,7 @@
 	<!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 	<!--    contained in this file into your site. -->
 
-	<!-- generator="WordPress/6.5.5" created="2024-11-01 13:39" -->
+	<!-- generator="WordPress/6.7.4" created="2026-02-25 15:12" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -29,24 +29,19 @@
 	<title>admin</title>
 	<link>https://dummy.xtemos.com/woodmart2</link>
 	<description>Just another WordPress site</description>
-	<pubDate>Fri, 01 Nov 2024 13:39:06 +0000</pubDate>
+	<pubDate>Wed, 25 Feb 2026 15:12:16 +0000</pubDate>
 	<language>en-US</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
 	<wp:base_site_url>https://dummy.xtemos.com/woodmart2/</wp:base_site_url>
 	<wp:base_blog_url>https://dummy.xtemos.com/woodmart2</wp:base_blog_url>
 
-		<wp:author><wp:author_id>2</wp:author_id><wp:author_login><![CDATA[Mr. Mackay]]></wp:author_login><wp:author_email><![CDATA[zak@asda.as]]></wp:author_email><wp:author_display_name><![CDATA[Mr. Mackay]]></wp:author_display_name><wp:author_first_name><![CDATA[sds]]></wp:author_first_name><wp:author_last_name><![CDATA[scssc]]></wp:author_last_name></wp:author>
-
-					<wp:term>
+	
+							<wp:term>
 			<wp:term_id>145</wp:term_id>
 			<wp:term_taxonomy><![CDATA[woodmart_slider]]></wp:term_taxonomy>
 			<wp:term_slug><![CDATA[electronics-2-slider]]></wp:term_slug>
 			<wp:term_parent><![CDATA[]]></wp:term_parent>
 			<wp:term_name><![CDATA[Electronics-2 slider]]></wp:term_name>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-145-status]]></wp:meta_key>
-			<wp:meta_value><![CDATA[valid]]></wp:meta_value>
-		</wp:termmeta>
 		<wp:termmeta>
 			<wp:meta_key><![CDATA[animation]]></wp:meta_key>
 			<wp:meta_value><![CDATA[distortion]]></wp:meta_value>
@@ -219,46 +214,11 @@
 			<wp:meta_key><![CDATA[autoplay_speed]]></wp:meta_key>
 			<wp:meta_value><![CDATA[25000]]></wp:meta_value>
 		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-145-css-data]]></wp:meta_key>
-			<wp:meta_value><![CDATA[#slider-145 .wd-slide {
-	min-height: 900px;
-}
-
-@media (max-width: 1024px) {
-	#slider-145 .wd-slide {
-		min-height: 600px;
-	}
-}
-
-@media (max-width: 767px) {
-	#slider-145 .wd-slide {
-		min-height: 710px;
-	}
-}
-]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-145-version]]></wp:meta_key>
-			<wp:meta_value><![CDATA[7.6.0]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-145-site-url]]></wp:meta_key>
-			<wp:meta_value><![CDATA[65c5e7a3e87c59ae65d18b8d3b912a1e]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-145-credentials]]></wp:meta_key>
-			<wp:meta_value><![CDATA[requested]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-145-file-data]]></wp:meta_key>
-			<wp:meta_value><![CDATA[a:3:{s:4:"path";s:36:"/2024/11/xts-term-145-1730467959.css";s:13:"theme_version";s:5:"7.6.0";s:8:"site_url";s:32:"65c5e7a3e87c59ae65d18b8d3b912a1e";}]]></wp:meta_value>
-		</wp:termmeta>
 		</wp:term>
-			<wp:term><wp:term_id>85</wp:term_id><wp:term_taxonomy>nav_menu</wp:term_taxonomy><wp:term_slug><![CDATA[top-bar-left-electronics-2]]></wp:term_slug><wp:term_name><![CDATA[Top Bar Left Electronics-2]]></wp:term_name>
+					<wp:term><wp:term_id>85</wp:term_id><wp:term_taxonomy>nav_menu</wp:term_taxonomy><wp:term_slug><![CDATA[top-bar-left-electronics-2]]></wp:term_slug><wp:term_name><![CDATA[Top Bar Left Electronics-2]]></wp:term_name>
 </wp:term>
 
-	<generator>https://wordpress.org/?v=6.5.5</generator>
+	<generator>https://wordpress.org/?v=6.7.4</generator>
 
 					<item>
 					<title><![CDATA[electronics-2-popup]]></title>
@@ -1806,6 +1766,10 @@ SHARE WITH YOUR FRIENDS!" css=".vc_custom_1629107227559{margin-bottom: 30px !imp
 							<wp:meta_value><![CDATA[2021-08-10]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_image-type]]></wp:meta_key>
 							<wp:meta_value><![CDATA[image]]></wp:meta_value>
 						</wp:postmeta>
@@ -1867,6 +1831,10 @@ SHARE WITH YOUR FRIENDS!" css=".vc_custom_1629107227559{margin-bottom: 30px !imp
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021-08-10]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_image-type]]></wp:meta_key>
@@ -1960,8 +1928,8 @@ SHARE WITH YOUR FRIENDS!" css=".vc_custom_1629107227559{margin-bottom: 30px !imp
 															<wp:post_id>9677</wp:post_id>
 					<wp:post_date><![CDATA[2024-01-23 14:39:58]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-01-23 14:39:58]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-02-05 14:55:24]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-02-05 14:55:24]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2026-02-25 13:17:56]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2026-02-25 13:17:56]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[electronics-2-slide-1]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -1978,26 +1946,6 @@ SHARE WITH YOUR FRIENDS!" css=".vc_custom_1629107227559{margin-bottom: 30px !imp
 							<wp:meta_value><![CDATA[rgb(234,232,235)]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:94:"http://dummy.xtemos.com/woodmart2/wp-content/uploads/2024/01/white-electronics-s1-bg-1-opt.jpg";s:2:"id";s:4:"9678";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_size_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[cover]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_position_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[center center]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_tablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_mobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[content_without_padding]]></wp:meta_key>
 							<wp:meta_value><![CDATA[on]]></wp:meta_value>
 						</wp:postmeta>
@@ -2006,20 +1954,12 @@ SHARE WITH YOUR FRIENDS!" css=".vc_custom_1629107227559{margin-bottom: 30px !imp
 							<wp:meta_value><![CDATA[1195]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[content_width_tablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[1200]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[content_width_mobile]]></wp:meta_key>
 							<wp:meta_value><![CDATA[505]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[vertical_align]]></wp:meta_key>
 							<wp:meta_value><![CDATA[bottom]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[horizontal_align]]></wp:meta_key>
-							<wp:meta_value><![CDATA[left]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[slide_animation]]></wp:meta_key>
@@ -2036,6 +1976,14 @@ SHARE WITH YOUR FRIENDS!" css=".vc_custom_1629107227559{margin-bottom: 30px !imp
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wpb_shortcodes_custom_css_updated]]></wp:meta_key>
 							<wp:meta_value><![CDATA[1]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[image]]></wp:meta_key>
+							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:94:"http://dummy.xtemos.com/woodmart2/wp-content/uploads/2024/01/white-electronics-s1-bg-1-opt.jpg";s:2:"id";s:4:"9678";}]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_wpb_vc_editor_type]]></wp:meta_key>
+							<wp:meta_value><![CDATA[backend]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -2071,8 +2019,8 @@ SHARE WITH YOUR FRIENDS!" css=".vc_custom_1629107227559{margin-bottom: 30px !imp
 															<wp:post_id>9684</wp:post_id>
 					<wp:post_date><![CDATA[2024-01-23 15:02:10]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-01-23 15:02:10]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-02-05 14:55:37]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-02-05 14:55:37]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2026-02-25 13:20:06]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2026-02-25 13:20:06]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[electronics-2-slide-1-2]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -2101,48 +2049,12 @@ SHARE WITH YOUR FRIENDS!" css=".vc_custom_1629107227559{margin-bottom: 30px !imp
 							<wp:meta_value><![CDATA[rgb(234,232,235)]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:92:"http://dummy.xtemos.com/woodmart2/wp-content/uploads/2024/01/white-electronics-s3-bg-new.jpg";s:2:"id";s:4:"9689";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_size_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[cover]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_position_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[center center]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_tablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_mobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[content_without_padding]]></wp:meta_key>
 							<wp:meta_value><![CDATA[on]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[content_width]]></wp:meta_key>
 							<wp:meta_value><![CDATA[1195]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[content_width_tablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[1200]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[content_width_mobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[500]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[vertical_align]]></wp:meta_key>
-							<wp:meta_value><![CDATA[middle]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[horizontal_align]]></wp:meta_key>
-							<wp:meta_value><![CDATA[left]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[slide_animation]]></wp:meta_key>
@@ -2161,8 +2073,12 @@ SHARE WITH YOUR FRIENDS!" css=".vc_custom_1629107227559{margin-bottom: 30px !imp
 							<wp:meta_value><![CDATA[1]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[electronics-2-slide-1]]></wp:meta_value>
+							<wp:meta_key><![CDATA[image]]></wp:meta_key>
+							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:92:"http://dummy.xtemos.com/woodmart2/wp-content/uploads/2024/01/white-electronics-s3-bg-new.jpg";s:2:"id";s:4:"9689";}]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_wpb_vc_editor_type]]></wp:meta_key>
+							<wp:meta_value><![CDATA[backend]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -2198,8 +2114,8 @@ SHARE WITH YOUR FRIENDS!" css=".vc_custom_1629107227559{margin-bottom: 30px !imp
 															<wp:post_id>9686</wp:post_id>
 					<wp:post_date><![CDATA[2024-01-23 15:03:52]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-01-23 15:03:52]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-02-05 14:55:43]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-02-05 14:55:43]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2026-02-25 13:19:49]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2026-02-25 13:19:49]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[electronics-2-slide-1-2-2]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -2240,48 +2156,12 @@ SHARE WITH YOUR FRIENDS!" css=".vc_custom_1629107227559{margin-bottom: 30px !imp
 							<wp:meta_value><![CDATA[rgb(234,232,235)]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:92:"http://dummy.xtemos.com/woodmart2/wp-content/uploads/2024/01/white-electronics-s2-bg-new.jpg";s:2:"id";s:4:"9688";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_size_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[cover]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_position_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[center center]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_tablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_mobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[content_without_padding]]></wp:meta_key>
 							<wp:meta_value><![CDATA[on]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[content_width]]></wp:meta_key>
 							<wp:meta_value><![CDATA[1195]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[content_width_tablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[1200]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[content_width_mobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[500]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[vertical_align]]></wp:meta_key>
-							<wp:meta_value><![CDATA[middle]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[horizontal_align]]></wp:meta_key>
-							<wp:meta_value><![CDATA[left]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[slide_animation]]></wp:meta_key>
@@ -2300,8 +2180,12 @@ SHARE WITH YOUR FRIENDS!" css=".vc_custom_1629107227559{margin-bottom: 30px !imp
 							<wp:meta_value><![CDATA[1]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[electronics-2-slide-1-2]]></wp:meta_value>
+							<wp:meta_key><![CDATA[image]]></wp:meta_key>
+							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:92:"http://dummy.xtemos.com/woodmart2/wp-content/uploads/2024/01/white-electronics-s2-bg-new.jpg";s:2:"id";s:4:"9688";}]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_wpb_vc_editor_type]]></wp:meta_key>
+							<wp:meta_value><![CDATA[backend]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>

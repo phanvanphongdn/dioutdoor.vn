@@ -75,8 +75,6 @@ div[id*="elementor-panel-category-wd-"] {
 	-webkit-box-ordinal-group: 1;
 }
 
-
-
 //**** ELEMENTOR XTS BUTTONS ****//
 
 .elementor-control-type-wd_buttons {
@@ -90,6 +88,12 @@ div[id*="elementor-panel-category-wd-"] {
 		margin-top: 10px;
 		width: 100% !important;
 	}
+}
+
+//**** ELEMENTOR HIDE TITLE ****//
+
+.elementor-control-hide_title {
+	display: none;
 }
 
 //**** ELEMENTOR OPTION ANIMATION ****//
@@ -124,7 +128,8 @@ div[id*="elementor-panel-category-wd-"] {
 // ------------------------------------------------------------------------------------------------
 
 .cms_block-template-default,
-.woodmart_slide-template-default {
+.woodmart_slide-template-default,
+.wd_product_tabs-template-default {
 
 	.website-wrapper {
 
@@ -166,15 +171,26 @@ div[id*="elementor-panel-category-wd-"] {
 	}
 }
 
+//**** BUTTONS IN EDITOR ****//
+
+a {
+
+	&.button {
+
+		&.elementor-inline-editing {
+			min-height: var(--btn-height,42px);
+		}
+	}
+}
+
 //**** POPUP FLOATING BLOCK IN EDITOR ****//
 
-// .wd_popup-template-default,
-// .wd_floating_block-template-default {
+.wd_floating_block-template-default {
 
-// 	.wd-page-wrapper {
-// 		height: 100vh;
-// 	}
-// }
+	.wd-page-wrapper {
+		height: 100vh;
+	}
+}
 
 //**** FLOATING BLOCK IN EDITOR ****//
 
@@ -223,11 +239,11 @@ div[id*="elementor-panel-category-wd-"] {
 		}
 
 		.elementor-add-section-close {
-			inset-inline-start: 10px;
+			inset-inline-end: 10px;
 		}
 
 		.elementor-add-section-back {
-			inset-inline-end: 10px;
+			inset-inline-start: 10px;
 		}
 	}
 }

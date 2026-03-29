@@ -1,8 +1,8 @@
 <?php
-/***
- * Open street map shortcodes file.
+/**
+ * Shortcode for Open Street Map element.
  *
- * @package Shortcode.
+ * @package woodmart.
  */
 
 if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
@@ -50,7 +50,7 @@ if ( ! function_exists( 'woodmart_get_settings_coords_for_open_street_map' ) ) {
 }
 
 if ( ! function_exists( 'woodmart_shortcode_open_street_map' ) ) {
-	/***
+	/**
 	 * Render tabs shortcode.
 	 *
 	 * @param array  $attr Shortcode attributes.

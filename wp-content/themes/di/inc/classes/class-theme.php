@@ -2,10 +2,10 @@
 /**
  * Main theme class.
  *
- * @package xts
+ * @package woodmart
  */
 
-namespace XTS;
+namespace XTS; // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedNamespaceFound
 
 if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
 	exit( 'No direct script access allowed' );
@@ -60,6 +60,7 @@ class Theme {
 			'helpers',
 			'functions',
 			'actions',
+			'template-tags/class-woodmart-custom-walker-category',
 			'template-tags/template-tags',
 			'template-tags/portfolio',
 			'theme-setup',
@@ -74,7 +75,9 @@ class Theme {
 			// Woocommerce integration.
 			'integrations/woocommerce/functions',
 			'integrations/woocommerce/helpers',
+			'integrations/woocommerce/class-woodmart-wc-product-cat-list-walker',
 			'integrations/woocommerce/template-tags',
+			'integrations/woocommerce/class-woodmart-walker-category',
 
 			// General modules.
 			'modules/parts-css-files/class-parts-css-files',
@@ -161,6 +164,8 @@ class Theme {
 			'integrations/rocket',
 			'integrations/woo-preview-emails',
 			'integrations/woocs',
+			'integrations/woosb',
+			'integrations/wooco',
 			'integrations/wcpay',
 			'integrations/curcy',
 			'integrations/rank-math',
@@ -185,7 +190,7 @@ class Theme {
 	 */
 	private function register_classes() {
 		foreach ( $this->register_classes as $class ) {
-			Registry::getInstance()->$class;
+			Registry::get_instance()->$class;
 		}
 	}
 

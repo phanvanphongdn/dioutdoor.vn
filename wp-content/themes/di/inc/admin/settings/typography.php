@@ -1,7 +1,14 @@
 <?php
+/**
+ * Typography settings.
+ *
+ * @package woodmart
+ */
+
 if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
 	exit( 'No direct script access allowed' );
 }
+
 use XTS\Admin\Modules\Options;
 
 Options::add_field(
@@ -20,7 +27,7 @@ Options::add_field(
 		),
 		'default'      => array(
 			array(
-				'font-family' => 'Lato',
+				'font-family' => 'System font stack',
 				'color'       => '#767676',
 				'font-size'   => '14',
 				'font-weight' => '400',
@@ -48,7 +55,7 @@ Options::add_field(
 		),
 		'default'        => array(
 			array(
-				'font-family' => 'Poppins',
+				'font-family' => 'var(--wd-text-font)',
 				'font-weight' => '600',
 				'color'       => '#242424',
 			),
@@ -78,7 +85,7 @@ Options::add_field(
 		),
 		'default'        => array(
 			array(
-				'font-family' => 'Poppins',
+				'font-family' => 'var(--wd-title-font)',
 				'font-weight' => '500',
 				'color'       => '#333333',
 				'hover'       => array(
@@ -108,7 +115,7 @@ Options::add_field(
 		),
 		'default'      => array(
 			array(
-				'font-family' => 'Lato',
+				'font-family' => 'var(--wd-text-font)',
 				'font-weight' => '400',
 			),
 		),
@@ -137,7 +144,7 @@ Options::add_field(
 		),
 		'default'        => array(
 			array(
-				'font-family'    => 'Poppins',
+				'font-family'    => 'var(--wd-title-font)',
 				'font-weight'    => '600',
 				'font-size'      => '16',
 				'color'          => '#333',
@@ -167,7 +174,7 @@ Options::add_field(
 		),
 		'default'        => array(
 			array(
-				'font-family'    => 'Lato',
+				'font-family'    => 'var(--wd-text-font)',
 				'font-weight'    => '700',
 				'font-size'      => '13',
 				'text-transform' => 'uppercase',

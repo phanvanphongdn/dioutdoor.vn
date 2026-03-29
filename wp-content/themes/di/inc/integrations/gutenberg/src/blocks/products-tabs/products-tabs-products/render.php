@@ -1,5 +1,17 @@
 <?php
+/**
+ * Gutenberg Products Tab Block Render.
+ *
+ * @package woodmart
+ */
+
 if ( ! function_exists( 'wd_gutenberg_products_tab' ) ) {
+	/**
+	 * Render Products Tab Block.
+	 *
+	 * @param array $block_attributes Block attributes.
+	 * @return false|string
+	 */
 	function wd_gutenberg_products_tab( $block_attributes ) {
 		if ( ! woodmart_woocommerce_installed() ) {
 			return '';
@@ -47,7 +59,7 @@ if ( ! function_exists( 'wd_gutenberg_products_tab' ) ) {
 
 		$block_attributes['wrapper_classes'] = ' wd-tab-content wd-active wd-in';
 
-		wd_replace_boolean_to_yes_no( array( 'hide_out_of_stock', 'center_mode', 'scroll_per_page', 'hide_pagination_control', 'hide_prev_next_buttons', 'hide_scrollbar', 'wrap', 'autoplay', 'autoheight', 'disable_overflow_carousel', 'dynamic_pagination_control', 'scroll_carousel_init' ), $block_attributes );
+		woodmart_replace_boolean_to_yes_no( array( 'hide_out_of_stock', 'center_mode', 'scroll_per_page', 'hide_pagination_control', 'hide_prev_next_buttons', 'hide_scrollbar', 'wrap', 'autoplay', 'autoheight', 'disable_overflow_carousel', 'dynamic_pagination_control', 'scroll_carousel_init' ), $block_attributes );
 
 		if ( ! empty( $block_attributes['img_size'] ) && 'custom' === $block_attributes['img_size'] && ( ! empty( $block_attributes['imgSizeCustomHeight'] ) || ! empty( $block_attributes['imgSizeCustomWidth'] ) ) ) {
 			woodmart_set_loop_prop(
@@ -65,7 +77,7 @@ if ( ! function_exists( 'wd_gutenberg_products_tab' ) ) {
 			<div id="<?php echo esc_attr( wd_get_gutenberg_element_id( $block_attributes ) ); ?>" class="wd-tabs-content-wrapper<?php echo esc_attr( wd_get_gutenberg_element_classes( $block_attributes ) ); ?>">
 				<?php woodmart_sticky_loader(); ?>
 
-				<?php echo woodmart_shortcode_products( $block_attributes ); ?>
+				<?php echo woodmart_shortcode_products( $block_attributes ); // phpcs:ignore WordPress.Security ?>
 			</div>
 		<?php
 

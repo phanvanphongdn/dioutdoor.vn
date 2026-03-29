@@ -2,7 +2,7 @@
 /**
  * Price tracker email template.
  *
- * @package XTS
+ * @package woodmart
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

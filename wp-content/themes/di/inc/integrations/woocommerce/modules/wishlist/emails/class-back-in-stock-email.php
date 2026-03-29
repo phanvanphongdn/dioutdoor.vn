@@ -2,7 +2,7 @@
 /**
  * Send back in stock status product.
  *
- * @package XTS
+ * @package woodmart
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

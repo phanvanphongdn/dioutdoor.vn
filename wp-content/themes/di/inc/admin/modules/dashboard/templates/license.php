@@ -1,3 +1,3 @@
 <?php
 
-XTS\Registry::getInstance()->activation->form();
+XTS\Registry::get_instance()->activation->form();

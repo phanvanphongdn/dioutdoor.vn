@@ -2,12 +2,13 @@
 /**
  * Add to cart map.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Modules\Layouts;
 
 use Elementor\Group_Control_Typography;
+use Elementor\Group_Control_Border;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Plugin;
@@ -71,13 +72,8 @@ class Add_To_Cart extends Widget_Base {
 	 * Register the widget controls.
 	 */
 	protected function register_controls() {
-
 		/**
-		 * Content tab
-		 */
-
-		/**
-		 * General settings
+		 * General styles.
 		 */
 		$this->start_controls_section(
 			'general_style_section',
@@ -120,27 +116,44 @@ class Add_To_Cart extends Widget_Base {
 			)
 		);
 
+		$this->add_control(
+			'button_design',
+			array(
+				'label'        => esc_html__( 'Stretch', 'woodmart' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'label_on'     => esc_html__( 'Yes', 'woodmart' ),
+				'label_off'    => esc_html__( 'No', 'woodmart' ),
+				'default'      => 'default',
+				'return_value' => 'full',
+				'prefix_class' => 'wd-btn-design-',
+			)
+		);
+
 		$this->end_controls_section();
 
+		/**
+		 * Add to cart button styles.
+		 */
 		$this->start_controls_section(
-			'button_style_section',
+			'add_to_cart_button_style_section',
 			array(
-				'label' => esc_html__( 'Button', 'woodmart' ),
+				'label' => esc_html__( 'Add to cart button', 'woodmart' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			)
 		);
 
 		$this->add_control(
-			'button_design',
+			'add_to_cart_design',
 			array(
 				'label'        => esc_html__( 'Design', 'woodmart' ),
 				'type'         => Controls_Manager::SELECT,
 				'options'      => array(
-					'default' => esc_html__( 'Default', 'woodmart' ),
-					'full'    => esc_html__( 'Full width button', 'woodmart' ),
+					'default'  => esc_html__( 'Inherit from Theme Settings', 'woodmart' ),
+					'bordered' => esc_html__( 'Bordered', 'woodmart' ),
+					'flat'     => esc_html__( 'Flat', 'woodmart' ),
 				),
-				'prefix_class' => 'wd-btn-design-',
 				'default'      => 'default',
+				'prefix_class' => 'wd-atc-btn-style-',
 			)
 		);
 
@@ -153,8 +166,280 @@ class Add_To_Cart extends Widget_Base {
 			)
 		);
 
+		$this->start_controls_tabs( 'add_to_cart_tabs' );
+
+		$this->start_controls_tab(
+			'add_to_cart_normal_tab',
+			array(
+				'label' => esc_html__( 'Normal', 'woodmart' ),
+			)
+		);
+
+		$this->add_control(
+			'add_to_cart_color_normal',
+			array(
+				'label'     => esc_html__( 'Text color', 'woodmart' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'{{WRAPPER}} .single_add_to_cart_button' => '--btn-accented-color: {{VALUE}}',
+				),
+			)
+		);
+
+		$this->add_control(
+			'add_to_cart_bg_color_normal',
+			array(
+				'label'     => esc_html__( 'Background color', 'woodmart' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'{{WRAPPER}} .single_add_to_cart_button' => '--btn-accented-bgcolor: {{VALUE}}',
+				),
+			)
+		);
+
+		$this->add_group_control(
+			Group_Control_Border::get_type(),
+			array(
+				'name'      => 'add_to_cart_border',
+				'label'     => esc_html__( 'Border', 'woodmart' ),
+				'selector'  => '{{WRAPPER}} .single_add_to_cart_button',
+				'separator' => 'before',
+			)
+		);
+
+		$this->add_responsive_control(
+			'add_to_cart_border_radius',
+			array(
+				'label'      => esc_html__( 'Border radius', 'woodmart' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => array( 'px' ),
+				'selectors'  => array(
+					'{{WRAPPER}} .single_add_to_cart_button' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				),
+				'condition'  => array(
+					'add_to_cart_border_border!' => array( '', 'none' ),
+				),
+			)
+		);
+
+		$this->end_controls_tab();
+
+		$this->start_controls_tab(
+			'add_to_cart_hover_tab',
+			array(
+				'label' => esc_html__( 'Hover', 'woodmart' ),
+			)
+		);
+
+		$this->add_control(
+			'add_to_cart_color_hover',
+			array(
+				'label'     => esc_html__( 'Text color', 'woodmart' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'{{WRAPPER}} .single_add_to_cart_button' => '--btn-accented-color-hover: {{VALUE}}',
+				),
+			)
+		);
+
+		$this->add_control(
+			'add_to_cart_bg_color_hover',
+			array(
+				'label'     => esc_html__( 'Background color', 'woodmart' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'{{WRAPPER}} .single_add_to_cart_button' => '--btn-accented-bgcolor-hover: {{VALUE}}',
+				),
+			)
+		);
+
+		$this->add_group_control(
+			Group_Control_Border::get_type(),
+			array(
+				'name'      => 'add_to_cart_border_hover',
+				'label'     => esc_html__( 'Border', 'woodmart' ),
+				'selector'  => '{{WRAPPER}} .single_add_to_cart_button:hover',
+				'separator' => 'before',
+			)
+		);
+
+		$this->add_responsive_control(
+			'add_to_cart_border_radius_hover',
+			array(
+				'label'      => esc_html__( 'Border radius', 'woodmart' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => array( 'px' ),
+				'selectors'  => array(
+					'{{WRAPPER}} .single_add_to_cart_button:hover' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				),
+				'condition'  => array(
+					'add_to_cart_border_hover_border!' => array( '', 'none' ),
+				),
+			)
+		);
+
+		$this->end_controls_tab();
+
+		$this->end_controls_tabs();
+
 		$this->end_controls_section();
 
+		/**
+		 * Buy now button styles.
+		 */
+		$this->start_controls_section(
+			'buy_now_button_style_section',
+			array(
+				'label' => esc_html__( 'Buy now button', 'woodmart' ),
+				'tab'   => Controls_Manager::TAB_STYLE,
+			)
+		);
+
+		$this->add_control(
+			'buy_now_design',
+			array(
+				'label'        => esc_html__( 'Design', 'woodmart' ),
+				'type'         => Controls_Manager::SELECT,
+				'options'      => array(
+					'default'  => esc_html__( 'Inherit from Theme Settings', 'woodmart' ),
+					'bordered' => esc_html__( 'Bordered', 'woodmart' ),
+					'flat'     => esc_html__( 'Flat', 'woodmart' ),
+				),
+				'default'      => 'default',
+				'prefix_class' => 'wd-bn-btn-style-',
+			)
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			array(
+				'label'    => esc_html__( 'Typography', 'woodmart' ),
+				'name'     => 'buy_now_typography',
+				'selector' => '{{WRAPPER}} .wd-buy-now-btn',
+			)
+		);
+
+		$this->start_controls_tabs( 'buy_now_tabs' );
+
+		$this->start_controls_tab(
+			'buy_now_normal_tab',
+			array(
+				'label' => esc_html__( 'Normal', 'woodmart' ),
+			)
+		);
+
+		$this->add_control(
+			'buy_now_color_normal',
+			array(
+				'label'     => esc_html__( 'Text color', 'woodmart' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'{{WRAPPER}} .wd-buy-now-btn' => '--btn-accented-color: {{VALUE}}',
+				),
+			)
+		);
+
+		$this->add_control(
+			'buy_now_bg_color_normal',
+			array(
+				'label'     => esc_html__( 'Background color', 'woodmart' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'{{WRAPPER}} .wd-buy-now-btn' => '--btn-accented-bgcolor: {{VALUE}}',
+				),
+			)
+		);
+
+		$this->add_group_control(
+			Group_Control_Border::get_type(),
+			array(
+				'name'      => 'buy_now_border',
+				'label'     => esc_html__( 'Border', 'woodmart' ),
+				'selector'  => '{{WRAPPER}} .wd-buy-now-btn',
+				'separator' => 'before',
+			)
+		);
+
+		$this->add_responsive_control(
+			'buy_now_border_radius',
+			array(
+				'label'      => esc_html__( 'Border radius', 'woodmart' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => array( 'px' ),
+				'selectors'  => array(
+					'{{WRAPPER}} .wd-buy-now-btn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				),
+				'condition'  => array(
+					'buy_now_border_border!' => array( '', 'none' ),
+				),
+			)
+		);
+
+		$this->end_controls_tab();
+
+		$this->start_controls_tab(
+			'buy_now_hover_tab',
+			array(
+				'label' => esc_html__( 'Hover', 'woodmart' ),
+			)
+		);
+
+		$this->add_control(
+			'buy_now_color_hover',
+			array(
+				'label'     => esc_html__( 'Text color', 'woodmart' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'{{WRAPPER}} .wd-buy-now-btn' => '--btn-accented-color-hover: {{VALUE}}',
+				),
+			)
+		);
+
+		$this->add_control(
+			'buy_now_bg_color_hover',
+			array(
+				'label'     => esc_html__( 'Background color', 'woodmart' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'{{WRAPPER}} .wd-buy-now-btn' => '--btn-accented-bgcolor-hover: {{VALUE}}',
+				),
+			)
+		);
+
+		$this->add_group_control(
+			Group_Control_Border::get_type(),
+			array(
+				'name'      => 'buy_now_border_hover',
+				'label'     => esc_html__( 'Border', 'woodmart' ),
+				'selector'  => '{{WRAPPER}} .wd-buy-now-btn:hover',
+				'separator' => 'before',
+			)
+		);
+
+		$this->add_responsive_control(
+			'buy_now_border_radius_hover`',
+			array(
+				'label'      => esc_html__( 'Border radius', 'woodmart' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => array( 'px' ),
+				'selectors'  => array(
+					'{{WRAPPER}} .wd-buy-now-btn:hover' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				),
+				'condition'  => array(
+					'buy_now_border_hover_border!' => array( '', 'none' ),
+				),
+			)
+		);
+
+		$this->end_controls_tab();
+
+		$this->end_controls_tabs();
+
+		$this->end_controls_section();
+
+		/**
+		 * Variable product styles.
+		 */
 		$this->start_controls_section(
 			'variable_product_style_section',
 			array(
@@ -239,7 +524,7 @@ class Add_To_Cart extends Widget_Base {
 			array(
 				'label'    => esc_html__( 'Typography', 'woodmart' ),
 				'name'     => 'main_price_typography',
-				'selector' => '{{WRAPPER}} .price',
+				'selector' => '{{WRAPPER}} .variations_form .woocommerce-variation-price .price',
 			)
 		);
 
@@ -249,7 +534,7 @@ class Add_To_Cart extends Widget_Base {
 				'label'     => esc_html__( 'Text color', 'woodmart' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
-					'{{WRAPPER}} .price, {{WRAPPER}} .amount, {{WRAPPER}} del' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .variations_form .woocommerce-variation-price :is(.price, del)' => 'color: {{VALUE}}',
 				),
 			)
 		);
@@ -268,7 +553,7 @@ class Add_To_Cart extends Widget_Base {
 			array(
 				'label'    => esc_html__( 'Typography', 'woodmart' ),
 				'name'     => 'old_price_typography',
-				'selector' => '{{WRAPPER}} .price del, {{WRAPPER}} del .amount',
+				'selector' => '{{WRAPPER}} .variations_form .woocommerce-variation-price .price del',
 			)
 		);
 
@@ -278,7 +563,7 @@ class Add_To_Cart extends Widget_Base {
 				'label'     => esc_html__( 'Text color', 'woodmart' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
-					'{{WRAPPER}} .price del, {{WRAPPER}} del .amount' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .variations_form .woocommerce-variation-price .price del' => 'color: {{VALUE}}',
 				),
 			)
 		);
@@ -317,6 +602,9 @@ class Add_To_Cart extends Widget_Base {
 
 		$this->end_controls_section();
 
+		/**
+		 * Stock status styles.
+		 */
 		$this->start_controls_section(
 			'stock_status_style_section',
 			array(
@@ -344,7 +632,7 @@ class Add_To_Cart extends Widget_Base {
 				'type'         => 'wd_css_class',
 				'default'      => 'wd-stock-status-off',
 				'prefix_class' => '',
-				'condition' => array(
+				'condition'    => array(
 					'enable_stock_status!' => array( 'yes' ),
 				),
 			)
@@ -369,7 +657,7 @@ class Add_To_Cart extends Widget_Base {
 
 		$settings = wp_parse_args( $this->get_settings_for_display(), $default_settings );
 
-		if ( woodmart_get_opt( 'catalog_mode' ) || ! is_user_logged_in() && woodmart_get_opt( 'login_prices' ) ) {
+		if ( woodmart_get_opt( 'catalog_mode' ) || ( ! is_user_logged_in() && woodmart_get_opt( 'login_prices' ) ) ) {
 			return;
 		}
 

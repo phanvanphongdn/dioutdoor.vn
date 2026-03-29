@@ -1,20 +1,42 @@
 <?php
+/**
+ * Single Product Block Price Tracker button attributes.
+ *
+ * @package woodmart
+ */
 
 use XTS\Gutenberg\Block_Attributes;
 
 if ( ! function_exists( 'wd_get_single_product_block_price_tracker_btn_attrs' ) ) {
+	/**
+	 * Get Single Product Block Price Tracker button attributes.
+	 *
+	 * @return array[]
+	 */
 	function wd_get_single_product_block_price_tracker_btn_attrs() {
 		$attr = new Block_Attributes();
 
 		$attr->add_attr(
 			array(
-				'style'     => array(
+				'style'                 => array(
 					'type'    => 'string',
 					'default' => 'text',
 				),
-				'iconSize'  => array(
+				'iconSize'              => array(
 					'type'       => 'number',
 					'responsive' => true,
+				),
+				'linkPaddingLock'       => array(
+					'type'    => 'boolean',
+					'default' => true,
+				),
+				'linkPaddingLockTablet' => array(
+					'type'    => 'boolean',
+					'default' => true,
+				),
+				'linkPaddingLockMobile' => array(
+					'type'    => 'boolean',
+					'default' => true,
 				),
 			)
 		);

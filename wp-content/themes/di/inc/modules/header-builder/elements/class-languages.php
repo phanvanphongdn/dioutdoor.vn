@@ -1,21 +1,33 @@
 <?php
+/**
+ * Languages element class file.
+ *
+ * @package woodmart
+ */
+
 namespace XTS\Modules\Header_Builder\Elements;
 
 use XTS\Modules\Header_Builder\Element;
 
 /**
- * ------------------------------------------------------------------------------------------------
- * Languages element
- * ------------------------------------------------------------------------------------------------
+ * Languages element.
  */
 class Languages extends Element {
 
+	/**
+	 * Constructor.
+	 */
 	public function __construct() {
 		parent::__construct();
 
 		$this->template_name = 'languages';
 	}
 
+	/**
+	 * Map element.
+	 *
+	 * @return void
+	 */
 	public function map() {
 		$this->args = array(
 			'type'            => 'languages',

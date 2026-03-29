@@ -7,9 +7,11 @@
 
 namespace XTS\Modules\Custom_Product_Tabs;
 
+use Elementor\Plugin;
 use XTS\Singleton;
 use XTS\Admin\Modules\Options\Metaboxes;
 use XTS\Admin\Modules\Dashboard\Status_Button;
+use WP_Post;
 
 /**
  * Custom product tabs class.
@@ -76,11 +78,11 @@ class Admin extends Singleton {
 	 * @return void
 	 */
 	public function clear_transients_on_ajax() {
-		if ( ! wp_doing_ajax() || empty( $_POST['action'] ) || empty( $_POST['id'] ) || 'wd_change_post_status' !== $_POST['action'] ) {
+		if ( ! wp_doing_ajax() || empty( $_POST['action'] ) || empty( $_POST['id'] ) || 'wd_change_post_status' !== $_POST['action'] ) { // phpcs:ignore WordPress.Security.NonceVerification.Missing
 			return;
 		}
 
-		$post = get_post( $_POST['id'] );
+		$post = get_post( $_POST['id'] ); // phpcs:ignore WordPress.Security
 
 		if ( ! $post || 'wd_product_tabs' !== $post->post_type ) {
 			return;
@@ -102,6 +104,33 @@ class Admin extends Singleton {
 				'post_types' => array( 'wd_product_tabs' ),
 			)
 		);
+
+		if ( woodmart_is_elementor_installed() && is_admin() && ! empty( $_GET['post'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			$doc = Plugin::$instance->documents->get( absint( $_GET['post'] ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+
+			if ( $doc && $doc->is_built_with_elementor() ) {
+				$metabox->add_section(
+					array(
+						'id'       => 'warning',
+						'name'     => '',
+						'priority' => 10,
+					)
+				);
+
+				$metabox->add_field(
+					array(
+						'id'       => 'elementor_warning',
+						'section'  => 'warning',
+						'type'     => 'notice',
+						'style'    => 'info',
+						'name'     => '',
+						'content'  => esc_html__( 'Custom tabs metaboxes moved to Elementor Post Settings', 'woodmart' ) . woodmart_get_admin_tooltip( 'elementor-custom-tabs-settings.jpg' ),
+						'priority' => 10,
+					)
+				);
+				return;
+			}
+		}
 
 		$metabox->add_section(
 			array(

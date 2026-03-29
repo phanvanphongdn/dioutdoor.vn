@@ -2,10 +2,10 @@
 /**
  * Activate theme.
  *
- * @package xts
+ * @package woodmart
  */
 
-namespace XTS;
+namespace XTS; // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedNamespaceFound
 
 if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
 	exit( 'No direct script access allowed' );
@@ -19,8 +19,8 @@ class Activation {
 	private $_notices         = null;
 
 	function __construct() {
-		$this->_api     = Registry::getInstance()->api;
-		$this->_notices = Registry::getInstance()->notices;
+		$this->_api     = Registry::get_instance()->api;
+		$this->_notices = Registry::get_instance()->notices;
 
 		$this->process_form();
 	}
@@ -194,10 +194,6 @@ class Activation {
 			'post'
 		);
 
-		if ( isset( $_GET['xtemos_debug'] ) ) {
-			ar( $response );
-		}
-
 		if ( is_wp_error( $response ) ) {
 			$this->_notices->add_error( esc_html__( 'The API server can\'t be reached. Please, contact your hosting provider to check the connectivity with our xtemos.com server. If you need further help, please, contact our support center too.', 'woodmart' ) );
 			return;
@@ -217,7 +213,7 @@ class Activation {
 
 		$this->activate( $code, $data['token'], $dev );
 
-		$this->_notices->add_success( esc_html__( 'The license is verified and theme is activated successfully. Auto updates function is enabled.', 'woodmart' ) );
+		$this->_notices->add_success( esc_html__( 'The license has been verified and the theme has been successfully activated. The automatic update feature is enabled.', 'woodmart' ) );
 	}
 
 	/**

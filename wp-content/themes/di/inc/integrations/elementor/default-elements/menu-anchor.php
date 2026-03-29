@@ -2,7 +2,7 @@
 /**
  * Elementor column custom controls
  *
- * @package xts
+ * @package woodmart
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

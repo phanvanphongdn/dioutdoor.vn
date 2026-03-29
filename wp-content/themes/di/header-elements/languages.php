@@ -1,9 +1,16 @@
 <?php
+/**
+ * Header language switcher element.
+ *
+ * @package woodmart
+ */
 
 $languages    = function_exists( 'icl_get_languages' ) ? icl_get_languages() : array();
 $flag_url     = '';
 $current_lang = esc_html__( 'Languages', 'woodmart' );
 $current_url  = '';
+$extra_class  = ' wd-event-' . $params['mouse_event'];
+$classes      = ' whb-' . $id;
 
 if ( $languages ) {
 	foreach ( $languages as $key => $language ) {
@@ -11,6 +18,7 @@ if ( $languages ) {
 			$flag_url     = $language['country_flag_url'];
 			$current_lang = $language['native_name'];
 			$current_url  = $language['url'];
+			$extra_class .= ' wpml-ls-item-' . $language['language_code'];
 
 			unset( $languages[ $key ] );
 		}
@@ -19,15 +27,14 @@ if ( $languages ) {
 
 woodmart_enqueue_js_script( 'menu-setup' );
 
-$extra_class = ' wd-event-' . $params['mouse_event'];
-$classes     = ' whb-' . $id;
 ?>
 
 <div class="wd-header-nav wd-header-secondary-nav<?php echo esc_attr( $classes ); ?>">
 	<ul class="menu wd-nav wd-nav-header wd-nav-secondary wd-style-default">
 		<li class="menu-item<?php echo esc_attr( $languages || ! $flag_url ? ' menu-item-has-children' . $extra_class : '' ); ?>">
-			<a href="<?php echo esc_url( $current_url ); ?>" class="woodmart-nav-link">
+			<a href="<?php echo esc_url( $current_url ); ?>" class="woodmart-nav-link wpml-ls-link">
 				<?php if ( $flag_url && $params['show_language_flag'] ) : ?>
+					<?php // translators: %s: Language name. ?>
 					<img src="<?php echo esc_url( $flag_url ); ?>" alt="<?php echo esc_attr( sprintf( __( 'Flag for %s', 'woodmart' ), $current_lang ) ); ?>" class="wd-nav-img">
 				<?php endif; ?>
 				<span class="nav-link-text">
@@ -39,9 +46,10 @@ $classes     = ' whb-' . $id;
 					<ul class="wd-sub-menu sub-menu">
 						<?php if ( $languages ) : ?>
 							<?php foreach ( $languages as $language ) : ?>
-								<li class="menu-item">
-									<a href="<?php echo esc_url( $language['url'] ); ?>" hreflang="<?php echo esc_attr( $language['language_code'] ); ?>" class="woodmart-nav-link">
+								<li class="menu-item wpml-ls-item-<?php echo esc_attr( $language['language_code'] ); ?>">
+									<a href="<?php echo esc_url( $language['url'] ); ?>" hreflang="<?php echo esc_attr( $language['language_code'] ); ?>" class="woodmart-nav-link wpml-ls-link">
 										<?php if ( $language['country_flag_url'] && $params['show_language_flag'] ) : ?>
+											<?php // translators: %s: Language name. ?>
 											<img src="<?php echo esc_url( $language['country_flag_url'] ); ?>" alt="<?php echo esc_attr( sprintf( __( 'Flag for %s', 'woodmart' ), $language['native_name'] ) ); ?>" class="wd-nav-img">
 										<?php endif; ?>
 										<span class="nav-link-text">

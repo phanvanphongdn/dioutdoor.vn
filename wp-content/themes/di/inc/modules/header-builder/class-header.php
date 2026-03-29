@@ -1,4 +1,9 @@
 <?php
+/**
+ * Header class file.
+ *
+ * @package woodmart
+ */
 
 namespace XTS\Modules\Header_Builder;
 
@@ -6,102 +11,99 @@ use XTS\Modules\Header_Builder;
 use XTS\Modules\Styles_Storage;
 
 /**
- * ------------------------------------------------------------------------------------------------
  * Class to handle header structure. Save/get to/from the database.
- * ------------------------------------------------------------------------------------------------
  */
-
 class Header {
 
 	/**
 	 * Elements map.
 	 *
-	 * @var
+	 * @var object
 	 */
-	private $_elements;
+	private $elements;
 
 	/**
 	 * Header ID.
 	 *
 	 * @var int|string
 	 */
-	private $_id = 'none';
+	private $id = 'none';
 
 	/**
 	 * Header name.
 	 *
 	 * @var string
 	 */
-	private $_name = 'none';
+	private $name = 'none';
 
 	/**
 	 * Header structure.
 	 *
 	 * @var string
 	 */
-	private $_structure;
+	private $structure;
 
 	/**
 	 * Header settings.
 	 *
 	 * @var array
 	 */
-	private $_settings;
+	private $settings;
 
 	/**
 	 * Object class.
 	 *
 	 * @var Styles_Storage
 	 */
-	private $_storage;
+	private $storage;
 
 	/**
 	 * Header options.
 	 *
 	 * @var array
 	 */
-	private $_header_options = array();
+	private $header_options = array();
 
 	/**
 	 * Structure row elements.
 	 *
 	 * @var array
 	 */
-	private $_structure_elements = array( 'top-bar', 'general-header', 'header-bottom' );
+	private $structure_elements = array( 'top-bar', 'general-header', 'header-bottom' );
 
 	/**
 	 * Structure column elements.
 	 *
 	 * @var array
 	 */
-	private $_structure_elements_types = array( 'logo', 'search', 'cart', 'wishlist', 'account', 'compare', 'burger', 'mainmenu', 'mobilesearch', 'burger' );
+	private $structure_elements_types = array( 'logo', 'search', 'cart', 'wishlist', 'account', 'compare', 'burger', 'mainmenu', 'mobilesearch', 'burger' );
 
 	/**
 	 * Object main class.
 	 *
 	 * @var null
 	 */
-	private $_builder = null;
+	private $builder = null;
 
 	/**
 	 * Construct.
 	 *
 	 * @param object  $elements Elements.
 	 * @param integer $id Header IS.
-	 * @param boolean $new Is new header.
+	 * @param boolean $is_new Is new header.
 	 */
-	public function __construct( $elements, $id, $new = false ) {
-		$this->_elements = $elements;
-		$this->_id       = ( $id ) ? $id : WOODMART_HB_DEFAULT_ID;
-		$this->_builder = Header_Builder::get_instance();
+	public function __construct( $elements, $id, $is_new = false ) {
+		$this->elements = $elements;
+		$this->id       = ( $id ) ? $id : WOODMART_HB_DEFAULT_ID;
+		$this->builder  = Header_Builder::get_instance();
 
-		if ( $new ) {
+		if ( $is_new ) {
 			$this->create_empty();
 		} else {
 			$this->load();
 		}
 
-		$this->_storage = new Styles_Storage( $this->get_id(), 'option', '', false );
+		$this->storage = new Styles_Storage( $this->get_id(), 'option', '', false );
 	}
 
 	/**
@@ -140,7 +142,7 @@ class Header {
 	 * @return void
 	 */
 	public function set_name( $name ) {
-		$this->_name = $name;
+		$this->name = $name;
 	}
 
 	/**
@@ -155,7 +157,7 @@ class Header {
 			$structure = woodmart_get_config( 'header-builder-structure' );
 		}
 
-		$this->_structure = $structure;
+		$this->structure = $structure;
 	}
 
 	/**
@@ -166,7 +168,7 @@ class Header {
 	 * @return void
 	 */
 	public function set_settings( $settings = array() ) {
-		$this->_settings = $settings;
+		$this->settings = $settings;
 	}
 
 
@@ -176,7 +178,7 @@ class Header {
 	 * @return int
 	 */
 	public function get_id() {
-		return $this->_id;
+		return $this->id;
 	}
 
 	/**
@@ -185,7 +187,7 @@ class Header {
 	 * @return string
 	 */
 	public function get_name() {
-		return $this->_name;
+		return $this->name;
 	}
 
 	/**
@@ -194,7 +196,7 @@ class Header {
 	 * @return array
 	 */
 	public function get_structure() {
-		$structure = $this->validate_sceleton( $this->_structure );
+		$structure = $this->validate_sceleton( $this->structure );
 		$structure = $this->validate_element( $structure );
 
 		return $structure;
@@ -206,7 +208,7 @@ class Header {
 	 * @return array
 	 */
 	public function get_settings() {
-		return $this->validate_settings( $this->_settings );
+		return $this->validate_settings( $this->settings );
 	}
 
 	/**
@@ -216,9 +218,9 @@ class Header {
 	 */
 	public function save() {
 		$styles   = new Styles();
-		$autoload = $this->_builder->manager->get_default_header() === $this->get_id();
+		$autoload = $this->builder->manager->get_default_header() === $this->get_id();
 
-		$this->_storage->write( $styles->get_all_css( $this->get_structure(), $this->get_options() ) );
+		$this->storage->write( $styles->get_all_css( $this->get_structure(), $this->get_options() ) );
 
 		update_option( 'whb_' . $this->get_id(), $this->get_raw_data(), $autoload );
 	}
@@ -232,8 +234,8 @@ class Header {
 		return array(
 			'name'      => $this->get_name(),
 			'id'        => $this->get_id(),
-			'structure' => $this->_structure,
-			'settings'  => $this->_settings,
+			'structure' => $this->structure,
+			'settings'  => $this->settings,
 		);
 	}
 
@@ -260,13 +262,13 @@ class Header {
 	 */
 	private function set_header_options( $elements ) {
 		foreach ( $elements as $element => $params ) {
-			if ( ! in_array( $element, array_merge( $this->_structure_elements, $this->_structure_elements_types ) ) ) {
+			if ( ! in_array( $element, array_merge( $this->structure_elements, $this->structure_elements_types ), true ) ) {
 				continue;
 			}
 
 			foreach ( $params as $key => $param ) {
 				if ( isset( $param['value'] ) ) {
-					$this->_header_options[ $element ][ $key ] = $param['value'];
+					$this->header_options[ $element ][ $key ] = $param['value'];
 				}
 			}
 		}
@@ -278,8 +280,8 @@ class Header {
 	 * @return array
 	 */
 	public function get_options() {
-		$this->validate_settings( $this->_settings );
-		return $this->transform_settings_to_values( $this->_header_options );
+		$this->validate_settings( $this->settings );
+		return $this->transform_settings_to_values( $this->header_options );
 	}
 
 	/**
@@ -294,7 +296,7 @@ class Header {
 
 		$settings = $this->validate_element_params( $settings, $default_settings );
 
-		$this->_header_options = array_merge( $settings, $this->_header_options );
+		$this->header_options = array_merge( $settings, $this->header_options );
 
 		return $settings;
 	}
@@ -311,7 +313,7 @@ class Header {
 			if ( isset( $value['value'] ) ) {
 				$settings[ $key ] = $value['value'];
 			}
-			if ( in_array( $key, $this->_structure_elements ) ) {
+			if ( in_array( $key, $this->structure_elements, true ) ) {
 				if ( $value['hide_desktop'] ) {
 					$settings[ $key ]['height'] = 0;
 				}
@@ -357,12 +359,11 @@ class Header {
 		$params = array();
 
 		foreach ( $elements as $key => $element ) {
-
 			if ( isset( $element['params'] ) && is_array( $element['params'] ) ) {
 				$params[ $element['id'] ] = $element['params'];
 			}
 
-			if ( in_array( $element['type'], $this->_structure_elements_types ) ) {
+			if ( in_array( $element['type'], $this->structure_elements_types, true ) ) {
 				$params[ $element['type'] ] = $element['params'];
 			}
 
@@ -378,25 +379,25 @@ class Header {
 	 * Grab parameters from elements.
 	 *
 	 * @param array  $elements Header elements.
-	 * @param string $parent Parents element.
+	 * @param string $parent_id Parents element ID.
 	 *
 	 * @return array
 	 */
-	private function grab_content_from_elements( $elements, $parent = 'root' ) {
+	private function grab_content_from_elements( $elements, $parent_id = 'root' ) {
 
-		$structure_elements            = array();
-		$structure_elements[ $parent ] = array();
+		$structure_elements               = array();
+		$structure_elements[ $parent_id ] = array();
 
 		foreach ( $elements as $key => $element ) {
 			if ( isset( $element['content'] ) && is_array( $element['content'] ) ) {
 				$structure_elements = array_merge( $structure_elements, $this->grab_content_from_elements( $element['content'], $element['id'] ) );
 			} else {
-				$structure_elements[ $parent ][ $element['id'] ] = $element;
+				$structure_elements[ $parent_id ][ $element['id'] ] = $element;
 			}
 		}
 
-		if ( empty( $structure_elements[ $parent ] ) ) {
-			unset( $structure_elements[ $parent ] );
+		if ( empty( $structure_elements[ $parent_id ] ) ) {
+			unset( $structure_elements[ $parent_id ] );
 		}
 
 		return $structure_elements;
@@ -497,7 +498,7 @@ class Header {
 	/**
 	 * Validate element.
 	 *
-	 * @param array $el
+	 * @param array $el Element.
 	 *
 	 * @return mixed
 	 */
@@ -505,11 +506,11 @@ class Header {
 
 		$type = ucfirst( $el['type'] );
 
-		if ( ! isset( $this->_elements->elements_classes[ $type ] ) ) {
+		if ( ! isset( $this->elements->elements_classes[ $type ] ) ) {
 			return $el;
 		}
 
-		$el_class = $this->_elements->elements_classes[ $type ];
+		$el_class = $this->elements->elements_classes[ $type ];
 
 		$el = $this->validate_element_args( $el, $el_class->get_args() );
 
@@ -520,12 +521,12 @@ class Header {
 	 * Validate element args.
 	 *
 	 * @param array $args Args.
-	 * @param array $default Default settings.
+	 * @param array $default_args Default args.
 	 *
 	 * @return mixed
 	 */
-	private function validate_element_args( $args, $default ) {
-		foreach ( $default as $key => $value ) {
+	private function validate_element_args( $args, $default_args ) {
+		foreach ( $default_args as $key => $value ) {
 			if ( 'params' === $key && isset( $args[ $key ] ) ) {
 				$args[ $key ] = $this->validate_element_params( $args[ $key ], $value );
 			} elseif ( 'content' === $key && isset( $args[ $key ] ) ) {
@@ -542,18 +543,18 @@ class Header {
 	 * Validate element params.
 	 *
 	 * @param array $params Element params.
-	 * @param array $default Element default params.
+	 * @param array $default_args Element default params.
 	 *
 	 * @return array
 	 */
-	private function validate_element_params( $params, $default ) {
-		$params = wp_parse_args( $params, $default );
+	private function validate_element_params( $params, $default_args ) {
+		$params = wp_parse_args( $params, $default_args );
 
 		foreach ( $params as $key => $value ) {
-			if ( ! isset( $default[ $key ] ) ) {
+			if ( ! isset( $default_args[ $key ] ) ) {
 				unset( $params[ $key ] );
 			} else {
-				$params[ $key ] = $this->validate_param( $params[ $key ], $default[ $key ] );
+				$params[ $key ] = $this->validate_param( $params[ $key ], $default_args[ $key ] );
 			}
 		}
 

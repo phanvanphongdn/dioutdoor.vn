@@ -16,7 +16,7 @@
 	<!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 	<!--    contained in this file into your site. -->
 
-	<!-- generator="WordPress/6.5.5" created="2024-11-01 13:22" -->
+	<!-- generator="WordPress/6.7.4" created="2026-02-26 12:03" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -29,24 +29,19 @@
 	<title>admin</title>
 	<link>https://dummy.xtemos.com/woodmart2</link>
 	<description>Just another WordPress site</description>
-	<pubDate>Fri, 01 Nov 2024 13:22:01 +0000</pubDate>
+	<pubDate>Thu, 26 Feb 2026 12:03:41 +0000</pubDate>
 	<language>en-US</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
 	<wp:base_site_url>https://dummy.xtemos.com/woodmart2/</wp:base_site_url>
 	<wp:base_blog_url>https://dummy.xtemos.com/woodmart2</wp:base_blog_url>
 
-		<wp:author><wp:author_id>2</wp:author_id><wp:author_login><![CDATA[Mr. Mackay]]></wp:author_login><wp:author_email><![CDATA[zak@asda.as]]></wp:author_email><wp:author_display_name><![CDATA[Mr. Mackay]]></wp:author_display_name><wp:author_first_name><![CDATA[sds]]></wp:author_first_name><wp:author_last_name><![CDATA[scssc]]></wp:author_last_name></wp:author>
-
-					<wp:term>
+	
+							<wp:term>
 			<wp:term_id>147</wp:term_id>
 			<wp:term_taxonomy><![CDATA[woodmart_slider]]></wp:term_taxonomy>
 			<wp:term_slug><![CDATA[jewellery-slider]]></wp:term_slug>
 			<wp:term_parent><![CDATA[]]></wp:term_parent>
 			<wp:term_name><![CDATA[Jewellery slider]]></wp:term_name>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-147-status]]></wp:meta_key>
-			<wp:meta_value><![CDATA[valid]]></wp:meta_value>
-		</wp:termmeta>
 		<wp:termmeta>
 			<wp:meta_key><![CDATA[animation]]></wp:meta_key>
 			<wp:meta_value><![CDATA[fade]]></wp:meta_value>
@@ -211,46 +206,34 @@
 			<wp:meta_key><![CDATA[autoplay_speed]]></wp:meta_key>
 			<wp:meta_value><![CDATA[25000]]></wp:meta_value>
 		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-147-css-data]]></wp:meta_key>
-			<wp:meta_value><![CDATA[#slider-147 .wd-slide {
-	min-height: 650px;
-}
-
-@media (max-width: 1024px) {
-	#slider-147 .wd-slide {
-		min-height: 650px;
-	}
-}
-
-@media (max-width: 767px) {
-	#slider-147 .wd-slide {
-		min-height: 550px;
-	}
-}
-]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-147-version]]></wp:meta_key>
-			<wp:meta_value><![CDATA[7.6.0]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-147-site-url]]></wp:meta_key>
-			<wp:meta_value><![CDATA[65c5e7a3e87c59ae65d18b8d3b912a1e]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-147-credentials]]></wp:meta_key>
-			<wp:meta_value><![CDATA[requested]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-147-file-data]]></wp:meta_key>
-			<wp:meta_value><![CDATA[a:3:{s:4:"path";s:36:"/2024/11/xts-term-147-1730467251.css";s:13:"theme_version";s:5:"7.6.0";s:8:"site_url";s:32:"65c5e7a3e87c59ae65d18b8d3b912a1e";}]]></wp:meta_value>
-		</wp:termmeta>
 		</wp:term>
-		
-	<generator>https://wordpress.org/?v=6.5.5</generator>
+				
+	<generator>https://wordpress.org/?v=6.7.4</generator>
 
 					<item>
+					<title><![CDATA[jewelry-bg-slider-2.jpg]]></title>
+					<link>https://dummy.xtemos.com/woodmart2/jewelry-bg-slider-2-jpg/</link>
+					<pubDate>Thu, 05 Aug 2021 08:57:24 +0000</pubDate>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
+					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/wp-content/uploads/revslider/jewelry/jewelry-bg-slider-2.jpg</guid>
+															<wp:post_id>2462</wp:post_id>
+					<wp:post_date><![CDATA[2021-08-05 08:57:24]]></wp:post_date>
+					<wp:post_date_gmt><![CDATA[2021-08-05 08:57:24]]></wp:post_date_gmt>
+					<wp:post_modified><![CDATA[2021-08-05 08:57:24]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2021-08-05 08:57:24]]></wp:post_modified_gmt>
+					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+					<wp:post_name><![CDATA[jewelry-bg-slider-2-jpg]]></wp:post_name>
+					<wp:status><![CDATA[inherit]]></wp:status>
+					<wp:post_parent>0</wp:post_parent>
+					<wp:menu_order>0</wp:menu_order>
+					<wp:post_type><![CDATA[attachment]]></wp:post_type>
+											<wp:attachment_url><![CDATA[http://dummy.xtemos.com/woodmart2/wp-content/uploads/revslider/jewelry/jewelry-bg-slider-2.jpg]]></wp:attachment_url>
+																					<wp:postmeta>
+							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+							<wp:meta_value><![CDATA[revslider/jewelry/jewelry-bg-slider-2.jpg]]></wp:meta_value>
+						</wp:postmeta>
+										</item>
+								<item>
 					<title><![CDATA[jewellery-page-title]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/jewellery-page-title/</link>
 					<pubDate>Thu, 05 Aug 2021 09:06:10 +0000</pubDate>
@@ -573,52 +556,6 @@
 						</wp:postmeta>
 										</item>
 								<item>
-					<title><![CDATA[jewellery-product-7]]></title>
-					<link>https://dummy.xtemos.com/woodmart2/jewellery-product-7/</link>
-					<pubDate>Fri, 17 Sep 2021 14:20:13 +0000</pubDate>
-					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
-					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/wp-content/uploads/2021/09/jewellery-product-7.jpg</guid>
-															<wp:post_id>5823</wp:post_id>
-					<wp:post_date><![CDATA[2021-09-17 14:20:13]]></wp:post_date>
-					<wp:post_date_gmt><![CDATA[2021-09-17 14:20:13]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2021-09-17 14:20:13]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2021-09-17 14:20:13]]></wp:post_modified_gmt>
-					<wp:comment_status><![CDATA[open]]></wp:comment_status>
-					<wp:post_name><![CDATA[jewellery-product-7]]></wp:post_name>
-					<wp:status><![CDATA[inherit]]></wp:status>
-					<wp:post_parent>0</wp:post_parent>
-					<wp:menu_order>0</wp:menu_order>
-					<wp:post_type><![CDATA[attachment]]></wp:post_type>
-											<wp:attachment_url><![CDATA[http://dummy.xtemos.com/woodmart2/wp-content/uploads/2021/09/jewellery-product-7.jpg]]></wp:attachment_url>
-																					<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-							<wp:meta_value><![CDATA[2021/09/jewellery-product-7.jpg]]></wp:meta_value>
-						</wp:postmeta>
-										</item>
-								<item>
-					<title><![CDATA[jewellery-product-8]]></title>
-					<link>https://dummy.xtemos.com/woodmart2/jewellery-product-8/</link>
-					<pubDate>Fri, 17 Sep 2021 14:20:16 +0000</pubDate>
-					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
-					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/wp-content/uploads/2021/09/jewellery-product-8.jpg</guid>
-															<wp:post_id>5824</wp:post_id>
-					<wp:post_date><![CDATA[2021-09-17 14:20:16]]></wp:post_date>
-					<wp:post_date_gmt><![CDATA[2021-09-17 14:20:16]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2021-09-17 14:20:16]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2021-09-17 14:20:16]]></wp:post_modified_gmt>
-					<wp:comment_status><![CDATA[open]]></wp:comment_status>
-					<wp:post_name><![CDATA[jewellery-product-8]]></wp:post_name>
-					<wp:status><![CDATA[inherit]]></wp:status>
-					<wp:post_parent>0</wp:post_parent>
-					<wp:menu_order>0</wp:menu_order>
-					<wp:post_type><![CDATA[attachment]]></wp:post_type>
-											<wp:attachment_url><![CDATA[http://dummy.xtemos.com/woodmart2/wp-content/uploads/2021/09/jewellery-product-8.jpg]]></wp:attachment_url>
-																					<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-							<wp:meta_value><![CDATA[2021/09/jewellery-product-8.jpg]]></wp:meta_value>
-						</wp:postmeta>
-										</item>
-								<item>
 					<title><![CDATA[jewellery-product-9]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/jewellery-product-9/</link>
 					<pubDate>Fri, 17 Sep 2021 14:20:18 +0000</pubDate>
@@ -688,26 +625,49 @@
 						</wp:postmeta>
 										</item>
 								<item>
-					<title><![CDATA[jewellery-product-12]]></title>
-					<link>https://dummy.xtemos.com/woodmart2/jewellery-product-12/</link>
-					<pubDate>Fri, 17 Sep 2021 14:20:23 +0000</pubDate>
+					<title><![CDATA[jewelry-slide-bg-2]]></title>
+					<link>https://dummy.xtemos.com/woodmart2/blog/woodmart_slide/jewellery-slide-1/jewelry-slide-bg-2/</link>
+					<pubDate>Fri, 26 Jan 2024 13:41:27 +0000</pubDate>
 					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
-					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/wp-content/uploads/2021/09/jewellery-product-12.jpg</guid>
-															<wp:post_id>5828</wp:post_id>
-					<wp:post_date><![CDATA[2021-09-17 14:20:23]]></wp:post_date>
-					<wp:post_date_gmt><![CDATA[2021-09-17 14:20:23]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2021-09-17 14:20:23]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2021-09-17 14:20:23]]></wp:post_modified_gmt>
+					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/wp-content/uploads/2024/01/jewelry-slide-bg-2.jpg</guid>
+															<wp:post_id>9813</wp:post_id>
+					<wp:post_date><![CDATA[2024-01-26 13:41:27]]></wp:post_date>
+					<wp:post_date_gmt><![CDATA[2024-01-26 13:41:27]]></wp:post_date_gmt>
+					<wp:post_modified><![CDATA[2024-01-26 13:41:27]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2024-01-26 13:41:27]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[open]]></wp:comment_status>
-					<wp:post_name><![CDATA[jewellery-product-12]]></wp:post_name>
+					<wp:post_name><![CDATA[jewelry-slide-bg-2]]></wp:post_name>
 					<wp:status><![CDATA[inherit]]></wp:status>
-					<wp:post_parent>0</wp:post_parent>
+					<wp:post_parent>9812</wp:post_parent>
 					<wp:menu_order>0</wp:menu_order>
 					<wp:post_type><![CDATA[attachment]]></wp:post_type>
-											<wp:attachment_url><![CDATA[http://dummy.xtemos.com/woodmart2/wp-content/uploads/2021/09/jewellery-product-12.jpg]]></wp:attachment_url>
+											<wp:attachment_url><![CDATA[http://dummy.xtemos.com/woodmart2/wp-content/uploads/2024/01/jewelry-slide-bg-2.jpg]]></wp:attachment_url>
 																					<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-							<wp:meta_value><![CDATA[2021/09/jewellery-product-12.jpg]]></wp:meta_value>
+							<wp:meta_value><![CDATA[2024/01/jewelry-slide-bg-2.jpg]]></wp:meta_value>
+						</wp:postmeta>
+										</item>
+								<item>
+					<title><![CDATA[jewelry-bg-slider-2]]></title>
+					<link>https://dummy.xtemos.com/woodmart2/blog/woodmart_slide/jewellery-slide-1-2/jewelry-bg-slider-2/</link>
+					<pubDate>Fri, 26 Jan 2024 14:47:57 +0000</pubDate>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
+					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/wp-content/uploads/2024/01/jewelry-bg-slider-2.jpg</guid>
+															<wp:post_id>9818</wp:post_id>
+					<wp:post_date><![CDATA[2024-01-26 14:47:57]]></wp:post_date>
+					<wp:post_date_gmt><![CDATA[2024-01-26 14:47:57]]></wp:post_date_gmt>
+					<wp:post_modified><![CDATA[2024-01-26 14:47:57]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2024-01-26 14:47:57]]></wp:post_modified_gmt>
+					<wp:comment_status><![CDATA[open]]></wp:comment_status>
+					<wp:post_name><![CDATA[jewelry-bg-slider-2]]></wp:post_name>
+					<wp:status><![CDATA[inherit]]></wp:status>
+					<wp:post_parent>9817</wp:post_parent>
+					<wp:menu_order>0</wp:menu_order>
+					<wp:post_type><![CDATA[attachment]]></wp:post_type>
+											<wp:attachment_url><![CDATA[http://dummy.xtemos.com/woodmart2/wp-content/uploads/2024/01/jewelry-bg-slider-2.jpg]]></wp:attachment_url>
+																					<wp:postmeta>
+							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+							<wp:meta_value><![CDATA[2024/01/jewelry-bg-slider-2.jpg]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -808,52 +768,6 @@
 																					<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/08/jewellery-product-banner-1.jpg]]></wp:meta_value>
-						</wp:postmeta>
-										</item>
-								<item>
-					<title><![CDATA[jewellery-product-banner-2]]></title>
-					<link>https://dummy.xtemos.com/woodmart2/home-jewellery/jewellery-product-banner-2/</link>
-					<pubDate>Thu, 05 Aug 2021 09:11:48 +0000</pubDate>
-					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
-					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/wp-content/uploads/2021/08/jewellery-product-banner-2.jpg</guid>
-															<wp:post_id>2470</wp:post_id>
-					<wp:post_date><![CDATA[2021-08-05 09:11:48]]></wp:post_date>
-					<wp:post_date_gmt><![CDATA[2021-08-05 09:11:48]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2021-08-05 09:11:48]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2021-08-05 09:11:48]]></wp:post_modified_gmt>
-					<wp:comment_status><![CDATA[open]]></wp:comment_status>
-					<wp:post_name><![CDATA[jewellery-product-banner-2]]></wp:post_name>
-					<wp:status><![CDATA[inherit]]></wp:status>
-					<wp:post_parent>2458</wp:post_parent>
-					<wp:menu_order>0</wp:menu_order>
-					<wp:post_type><![CDATA[attachment]]></wp:post_type>
-											<wp:attachment_url><![CDATA[http://dummy.xtemos.com/woodmart2/wp-content/uploads/2021/08/jewellery-product-banner-2.jpg]]></wp:attachment_url>
-																					<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-							<wp:meta_value><![CDATA[2021/08/jewellery-product-banner-2.jpg]]></wp:meta_value>
-						</wp:postmeta>
-										</item>
-								<item>
-					<title><![CDATA[jewellery-banner-img-1]]></title>
-					<link>https://dummy.xtemos.com/woodmart2/home-jewellery/jewellery-banner-img-1/</link>
-					<pubDate>Thu, 05 Aug 2021 09:15:51 +0000</pubDate>
-					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
-					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/wp-content/uploads/2021/08/jewellery-banner-img-1.jpg</guid>
-															<wp:post_id>2474</wp:post_id>
-					<wp:post_date><![CDATA[2021-08-05 09:15:51]]></wp:post_date>
-					<wp:post_date_gmt><![CDATA[2021-08-05 09:15:51]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2021-08-05 09:15:51]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2021-08-05 09:15:51]]></wp:post_modified_gmt>
-					<wp:comment_status><![CDATA[open]]></wp:comment_status>
-					<wp:post_name><![CDATA[jewellery-banner-img-1]]></wp:post_name>
-					<wp:status><![CDATA[inherit]]></wp:status>
-					<wp:post_parent>2458</wp:post_parent>
-					<wp:menu_order>0</wp:menu_order>
-					<wp:post_type><![CDATA[attachment]]></wp:post_type>
-											<wp:attachment_url><![CDATA[http://dummy.xtemos.com/woodmart2/wp-content/uploads/2021/08/jewellery-banner-img-1.jpg]]></wp:attachment_url>
-																					<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-							<wp:meta_value><![CDATA[2021/08/jewellery-banner-img-1.jpg]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -1202,26 +1116,72 @@
 						</wp:postmeta>
 										</item>
 								<item>
-					<title><![CDATA[diamond-1]]></title>
-					<link>https://dummy.xtemos.com/woodmart2/home-jewellery/diamond-1/</link>
-					<pubDate>Fri, 01 Nov 2024 13:21:11 +0000</pubDate>
+					<title><![CDATA[jewellery-product-7]]></title>
+					<link>https://dummy.xtemos.com/woodmart2/jewellery-product-7/</link>
+					<pubDate>Fri, 17 Sep 2021 14:20:13 +0000</pubDate>
 					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
-					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/wp-content/uploads/2024/11/diamond-1.svg</guid>
-															<wp:post_id>10159</wp:post_id>
-					<wp:post_date><![CDATA[2024-11-01 13:21:11]]></wp:post_date>
-					<wp:post_date_gmt><![CDATA[2024-11-01 13:21:11]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-11-01 13:21:11]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-11-01 13:21:11]]></wp:post_modified_gmt>
+					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/wp-content/uploads/2021/09/jewellery-product-7.jpg</guid>
+															<wp:post_id>5823</wp:post_id>
+					<wp:post_date><![CDATA[2021-09-17 14:20:13]]></wp:post_date>
+					<wp:post_date_gmt><![CDATA[2021-09-17 14:20:13]]></wp:post_date_gmt>
+					<wp:post_modified><![CDATA[2021-09-17 14:20:13]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2021-09-17 14:20:13]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[open]]></wp:comment_status>
-					<wp:post_name><![CDATA[diamond-1]]></wp:post_name>
+					<wp:post_name><![CDATA[jewellery-product-7]]></wp:post_name>
 					<wp:status><![CDATA[inherit]]></wp:status>
-					<wp:post_parent>2458</wp:post_parent>
+					<wp:post_parent>0</wp:post_parent>
 					<wp:menu_order>0</wp:menu_order>
 					<wp:post_type><![CDATA[attachment]]></wp:post_type>
-											<wp:attachment_url><![CDATA[http://dummy.xtemos.com/woodmart2/wp-content/uploads/2024/11/diamond-1.svg]]></wp:attachment_url>
+											<wp:attachment_url><![CDATA[http://dummy.xtemos.com/woodmart2/wp-content/uploads/2021/09/jewellery-product-7.jpg]]></wp:attachment_url>
 																					<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-							<wp:meta_value><![CDATA[2024/11/diamond-1.svg]]></wp:meta_value>
+							<wp:meta_value><![CDATA[2021/09/jewellery-product-7.jpg]]></wp:meta_value>
+						</wp:postmeta>
+										</item>
+								<item>
+					<title><![CDATA[jewellery-product-8]]></title>
+					<link>https://dummy.xtemos.com/woodmart2/jewellery-product-8/</link>
+					<pubDate>Fri, 17 Sep 2021 14:20:16 +0000</pubDate>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
+					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/wp-content/uploads/2021/09/jewellery-product-8.jpg</guid>
+															<wp:post_id>5824</wp:post_id>
+					<wp:post_date><![CDATA[2021-09-17 14:20:16]]></wp:post_date>
+					<wp:post_date_gmt><![CDATA[2021-09-17 14:20:16]]></wp:post_date_gmt>
+					<wp:post_modified><![CDATA[2021-09-17 14:20:16]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2021-09-17 14:20:16]]></wp:post_modified_gmt>
+					<wp:comment_status><![CDATA[open]]></wp:comment_status>
+					<wp:post_name><![CDATA[jewellery-product-8]]></wp:post_name>
+					<wp:status><![CDATA[inherit]]></wp:status>
+					<wp:post_parent>0</wp:post_parent>
+					<wp:menu_order>0</wp:menu_order>
+					<wp:post_type><![CDATA[attachment]]></wp:post_type>
+											<wp:attachment_url><![CDATA[http://dummy.xtemos.com/woodmart2/wp-content/uploads/2021/09/jewellery-product-8.jpg]]></wp:attachment_url>
+																					<wp:postmeta>
+							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+							<wp:meta_value><![CDATA[2021/09/jewellery-product-8.jpg]]></wp:meta_value>
+						</wp:postmeta>
+										</item>
+								<item>
+					<title><![CDATA[jewellery-product-12]]></title>
+					<link>https://dummy.xtemos.com/woodmart2/jewellery-product-12/</link>
+					<pubDate>Fri, 17 Sep 2021 14:20:23 +0000</pubDate>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
+					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/wp-content/uploads/2021/09/jewellery-product-12.jpg</guid>
+															<wp:post_id>5828</wp:post_id>
+					<wp:post_date><![CDATA[2021-09-17 14:20:23]]></wp:post_date>
+					<wp:post_date_gmt><![CDATA[2021-09-17 14:20:23]]></wp:post_date_gmt>
+					<wp:post_modified><![CDATA[2021-09-17 14:20:23]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2021-09-17 14:20:23]]></wp:post_modified_gmt>
+					<wp:comment_status><![CDATA[open]]></wp:comment_status>
+					<wp:post_name><![CDATA[jewellery-product-12]]></wp:post_name>
+					<wp:status><![CDATA[inherit]]></wp:status>
+					<wp:post_parent>0</wp:post_parent>
+					<wp:menu_order>0</wp:menu_order>
+					<wp:post_type><![CDATA[attachment]]></wp:post_type>
+											<wp:attachment_url><![CDATA[http://dummy.xtemos.com/woodmart2/wp-content/uploads/2021/09/jewellery-product-12.jpg]]></wp:attachment_url>
+																					<wp:postmeta>
+							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+							<wp:meta_value><![CDATA[2021/09/jewellery-product-12.jpg]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -1261,29 +1221,6 @@
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[woodmart_shortcodes_custom_css]]></wp:meta_key>
 							<wp:meta_value><![CDATA[#wd-6165a968036bd{--li-mb:7px;}]]></wp:meta_value>
-						</wp:postmeta>
-										</item>
-								<item>
-					<title><![CDATA[wood-logo-dark]]></title>
-					<link>https://dummy.xtemos.com/woodmart2/wood-logo-dark/</link>
-					<pubDate>Thu, 15 Jul 2021 13:49:44 +0000</pubDate>
-					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
-					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/wp-content/uploads/2021/07/wood-logo-dark.svg</guid>
-															<wp:post_id>704</wp:post_id>
-					<wp:post_date><![CDATA[2021-07-15 13:49:44]]></wp:post_date>
-					<wp:post_date_gmt><![CDATA[2021-07-15 13:49:44]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-02-07 14:15:44]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-02-07 14:15:44]]></wp:post_modified_gmt>
-					<wp:comment_status><![CDATA[open]]></wp:comment_status>
-					<wp:post_name><![CDATA[wood-logo-dark]]></wp:post_name>
-					<wp:status><![CDATA[inherit]]></wp:status>
-					<wp:post_parent>0</wp:post_parent>
-					<wp:menu_order>0</wp:menu_order>
-					<wp:post_type><![CDATA[attachment]]></wp:post_type>
-											<wp:attachment_url><![CDATA[http://dummy.xtemos.com/woodmart2/wp-content/uploads/2021/07/wood-logo-dark.svg]]></wp:attachment_url>
-																					<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-							<wp:meta_value><![CDATA[2021/07/wood-logo-dark.svg]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -1356,6 +1293,29 @@
 						</wp:postmeta>
 										</item>
 								<item>
+					<title><![CDATA[jewellery-product-banner-2]]></title>
+					<link>https://dummy.xtemos.com/woodmart2/home-jewellery/jewellery-product-banner-2/</link>
+					<pubDate>Thu, 05 Aug 2021 09:11:48 +0000</pubDate>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
+					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/wp-content/uploads/2021/08/jewellery-product-banner-2.jpg</guid>
+															<wp:post_id>2470</wp:post_id>
+					<wp:post_date><![CDATA[2021-08-05 09:11:48]]></wp:post_date>
+					<wp:post_date_gmt><![CDATA[2021-08-05 09:11:48]]></wp:post_date_gmt>
+					<wp:post_modified><![CDATA[2021-08-05 09:11:48]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2021-08-05 09:11:48]]></wp:post_modified_gmt>
+					<wp:comment_status><![CDATA[open]]></wp:comment_status>
+					<wp:post_name><![CDATA[jewellery-product-banner-2]]></wp:post_name>
+					<wp:status><![CDATA[inherit]]></wp:status>
+					<wp:post_parent>2458</wp:post_parent>
+					<wp:menu_order>0</wp:menu_order>
+					<wp:post_type><![CDATA[attachment]]></wp:post_type>
+											<wp:attachment_url><![CDATA[http://dummy.xtemos.com/woodmart2/wp-content/uploads/2021/08/jewellery-product-banner-2.jpg]]></wp:attachment_url>
+																					<wp:postmeta>
+							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+							<wp:meta_value><![CDATA[2021/08/jewellery-product-banner-2.jpg]]></wp:meta_value>
+						</wp:postmeta>
+										</item>
+								<item>
 					<title><![CDATA[jewellery-girl-auth-img]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/home-jewellery/jewellery-girl-auth-img/</link>
 					<pubDate>Thu, 05 Aug 2021 09:12:59 +0000</pubDate>
@@ -1399,6 +1359,29 @@
 																					<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/08/jewellery-collage-girl-img.png]]></wp:meta_value>
+						</wp:postmeta>
+										</item>
+								<item>
+					<title><![CDATA[jewellery-banner-img-1]]></title>
+					<link>https://dummy.xtemos.com/woodmart2/home-jewellery/jewellery-banner-img-1/</link>
+					<pubDate>Thu, 05 Aug 2021 09:15:51 +0000</pubDate>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
+					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/wp-content/uploads/2021/08/jewellery-banner-img-1.jpg</guid>
+															<wp:post_id>2474</wp:post_id>
+					<wp:post_date><![CDATA[2021-08-05 09:15:51]]></wp:post_date>
+					<wp:post_date_gmt><![CDATA[2021-08-05 09:15:51]]></wp:post_date_gmt>
+					<wp:post_modified><![CDATA[2021-08-05 09:15:51]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2021-08-05 09:15:51]]></wp:post_modified_gmt>
+					<wp:comment_status><![CDATA[open]]></wp:comment_status>
+					<wp:post_name><![CDATA[jewellery-banner-img-1]]></wp:post_name>
+					<wp:status><![CDATA[inherit]]></wp:status>
+					<wp:post_parent>2458</wp:post_parent>
+					<wp:menu_order>0</wp:menu_order>
+					<wp:post_type><![CDATA[attachment]]></wp:post_type>
+											<wp:attachment_url><![CDATA[http://dummy.xtemos.com/woodmart2/wp-content/uploads/2021/08/jewellery-banner-img-1.jpg]]></wp:attachment_url>
+																					<wp:postmeta>
+							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+							<wp:meta_value><![CDATA[2021/08/jewellery-banner-img-1.jpg]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -1655,6 +1638,52 @@
 						</wp:postmeta>
 										</item>
 								<item>
+					<title><![CDATA[diamond-1]]></title>
+					<link>https://dummy.xtemos.com/woodmart2/home-jewellery/diamond-1/</link>
+					<pubDate>Fri, 01 Nov 2024 13:21:11 +0000</pubDate>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
+					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/wp-content/uploads/2024/11/diamond-1.svg</guid>
+															<wp:post_id>10159</wp:post_id>
+					<wp:post_date><![CDATA[2024-11-01 13:21:11]]></wp:post_date>
+					<wp:post_date_gmt><![CDATA[2024-11-01 13:21:11]]></wp:post_date_gmt>
+					<wp:post_modified><![CDATA[2024-11-01 13:21:11]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2024-11-01 13:21:11]]></wp:post_modified_gmt>
+					<wp:comment_status><![CDATA[open]]></wp:comment_status>
+					<wp:post_name><![CDATA[diamond-1]]></wp:post_name>
+					<wp:status><![CDATA[inherit]]></wp:status>
+					<wp:post_parent>2458</wp:post_parent>
+					<wp:menu_order>0</wp:menu_order>
+					<wp:post_type><![CDATA[attachment]]></wp:post_type>
+											<wp:attachment_url><![CDATA[http://dummy.xtemos.com/woodmart2/wp-content/uploads/2024/11/diamond-1.svg]]></wp:attachment_url>
+																					<wp:postmeta>
+							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+							<wp:meta_value><![CDATA[2024/11/diamond-1.svg]]></wp:meta_value>
+						</wp:postmeta>
+										</item>
+								<item>
+					<title><![CDATA[wood-logo-dark]]></title>
+					<link>https://dummy.xtemos.com/woodmart2/wood-logo-dark/</link>
+					<pubDate>Thu, 15 Jul 2021 13:49:44 +0000</pubDate>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
+					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/wp-content/uploads/2021/07/wood-logo-dark.svg</guid>
+															<wp:post_id>704</wp:post_id>
+					<wp:post_date><![CDATA[2021-07-15 13:49:44]]></wp:post_date>
+					<wp:post_date_gmt><![CDATA[2021-07-15 13:49:44]]></wp:post_date_gmt>
+					<wp:post_modified><![CDATA[2024-02-07 14:15:44]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2024-02-07 14:15:44]]></wp:post_modified_gmt>
+					<wp:comment_status><![CDATA[open]]></wp:comment_status>
+					<wp:post_name><![CDATA[wood-logo-dark]]></wp:post_name>
+					<wp:status><![CDATA[inherit]]></wp:status>
+					<wp:post_parent>0</wp:post_parent>
+					<wp:menu_order>0</wp:menu_order>
+					<wp:post_type><![CDATA[attachment]]></wp:post_type>
+											<wp:attachment_url><![CDATA[http://dummy.xtemos.com/woodmart2/wp-content/uploads/2021/07/wood-logo-dark.svg]]></wp:attachment_url>
+																					<wp:postmeta>
+							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+							<wp:meta_value><![CDATA[2021/07/wood-logo-dark.svg]]></wp:meta_value>
+						</wp:postmeta>
+										</item>
+								<item>
 					<title><![CDATA[Jewellery slide 1]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/blog/woodmart_slide/jewellery-slide-1/</link>
 					<pubDate>Fri, 26 Jan 2024 13:41:32 +0000</pubDate>
@@ -1664,8 +1693,8 @@
 															<wp:post_id>9812</wp:post_id>
 					<wp:post_date><![CDATA[2024-01-26 13:41:32]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-01-26 13:41:32]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-02-01 13:22:25]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-02-01 13:22:25]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2026-02-25 10:52:36]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2026-02-25 10:52:36]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[jewellery-slide-1]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -1678,60 +1707,12 @@
 							<wp:meta_value><![CDATA[rgb(158,112,114)]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:83:"http://dummy.xtemos.com/woodmart2/wp-content/uploads/2024/01/jewelry-slide-bg-2.jpg";s:2:"id";s:4:"9813";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_size_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[cover]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_position_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[center center]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_tablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_mobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:86:"http://dummy.xtemos.com/woodmart2/wp-content/uploads/2024/01/wd-jewelry-slide-bg-1.jpg";s:2:"id";s:4:"9816";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_size_mobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[cover]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_position_mobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[custom]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[bg_image_position_x_mobile]]></wp:meta_key>
 							<wp:meta_value><![CDATA[-700px]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[bg_image_position_y_mobile]]></wp:meta_key>
 							<wp:meta_value><![CDATA[0px]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[content_width]]></wp:meta_key>
-							<wp:meta_value><![CDATA[1200]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[content_width_tablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[1200]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[content_width_mobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[500]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[vertical_align]]></wp:meta_key>
-							<wp:meta_value><![CDATA[middle]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[horizontal_align]]></wp:meta_key>
-							<wp:meta_value><![CDATA[left]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[slide_animation]]></wp:meta_key>
@@ -1753,6 +1734,26 @@
 							<wp:meta_key><![CDATA[_wpb_shortcodes_custom_css_updated]]></wp:meta_key>
 							<wp:meta_value><![CDATA[1]]></wp:meta_value>
 						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[image]]></wp:meta_key>
+							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:83:"http://dummy.xtemos.com/woodmart2/wp-content/uploads/2024/01/jewelry-slide-bg-2.jpg";s:2:"id";s:4:"9813";}]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[image_object_position_mobile]]></wp:meta_key>
+							<wp:meta_value><![CDATA[custom]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[image_object_position_x_mobile]]></wp:meta_key>
+							<wp:meta_value><![CDATA[-700px]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[image_object_position_y_mobile]]></wp:meta_key>
+							<wp:meta_value><![CDATA[0px]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_wpb_vc_editor_type]]></wp:meta_key>
+							<wp:meta_value><![CDATA[backend]]></wp:meta_value>
+						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[Jewellery slide 2]]></title>
@@ -1765,8 +1766,8 @@ A MODERN TWIST" title_font_size="eyJwYXJhbV90eXBlIjoid29vZG1hcnRfcmVzcG9uc2l2ZV9
 															<wp:post_id>9817</wp:post_id>
 					<wp:post_date><![CDATA[2024-01-26 14:48:01]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-01-26 14:48:01]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-01-26 14:51:33]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-01-26 14:51:33]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2026-02-25 10:51:47]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2026-02-25 10:51:47]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[jewellery-slide-1-2]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -1791,60 +1792,12 @@ A MODERN TWIST" title_font_size="eyJwYXJhbV90eXBlIjoid29vZG1hcnRfcmVzcG9uc2l2ZV9
 							<wp:meta_value><![CDATA[rgb(92,103,97)]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:84:"http://dummy.xtemos.com/woodmart2/wp-content/uploads/2024/01/jewelry-bg-slider-2.jpg";s:2:"id";s:4:"9818";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_size_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[cover]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_position_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[center center]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_tablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_mobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:86:"http://dummy.xtemos.com/woodmart2/wp-content/uploads/2024/01/wd-jewelry-slide-bg-2.jpg";s:2:"id";s:4:"9819";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_size_mobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[cover]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_position_mobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[custom]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[bg_image_position_x_mobile]]></wp:meta_key>
 							<wp:meta_value><![CDATA[-625px]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[bg_image_position_y_mobile]]></wp:meta_key>
 							<wp:meta_value><![CDATA[0px]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[content_width]]></wp:meta_key>
-							<wp:meta_value><![CDATA[1200]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[content_width_tablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[1200]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[content_width_mobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[500]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[vertical_align]]></wp:meta_key>
-							<wp:meta_value><![CDATA[middle]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[horizontal_align]]></wp:meta_key>
-							<wp:meta_value><![CDATA[left]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[slide_animation]]></wp:meta_key>
@@ -1867,8 +1820,24 @@ A MODERN TWIST" title_font_size="eyJwYXJhbV90eXBlIjoid29vZG1hcnRfcmVzcG9uc2l2ZV9
 							<wp:meta_value><![CDATA[1]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[jewellery-slide-1]]></wp:meta_value>
+							<wp:meta_key><![CDATA[image]]></wp:meta_key>
+							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:84:"http://dummy.xtemos.com/woodmart2/wp-content/uploads/2024/01/jewelry-bg-slider-2.jpg";s:2:"id";s:4:"9818";}]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[image_object_position_mobile]]></wp:meta_key>
+							<wp:meta_value><![CDATA[custom]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[image_object_position_x_mobile]]></wp:meta_key>
+							<wp:meta_value><![CDATA[-625px]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[image_object_position_y_mobile]]></wp:meta_key>
+							<wp:meta_value><![CDATA[0px]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_wpb_vc_editor_type]]></wp:meta_key>
+							<wp:meta_value><![CDATA[backend]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 				</channel>

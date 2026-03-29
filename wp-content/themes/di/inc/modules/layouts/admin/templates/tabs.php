@@ -2,7 +2,7 @@
 /**
  * Tabs template.
  *
- * @package Woodmart
+ * @package woodmart
  *
  * @var array  $tabs        Tabs.
  * @var string $current_tab Current tab.

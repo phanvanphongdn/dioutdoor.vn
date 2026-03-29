@@ -2,7 +2,7 @@
 /**
  * Edit conditions template.
  *
- * @package Woodmart
+ * @package woodmart
  *
  * @var Admin  $admin      Admin instance.
  * @var string $type       Layout type.

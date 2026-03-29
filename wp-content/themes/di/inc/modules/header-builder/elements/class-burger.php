@@ -1,21 +1,32 @@
 <?php
+/**
+ * Burger element class file.
+ *
+ * @package woodmart
+ */
 
 namespace XTS\Modules\Header_Builder\Elements;
 
 use XTS\Modules\Header_Builder\Element;
 
 /**
- * ------------------------------------------------------------------------------------------------
  * Mobile menu burger icon
- * ------------------------------------------------------------------------------------------------
  */
 class Burger extends Element {
 
+	/**
+	 * Constructor.
+	 */
 	public function __construct() {
 		parent::__construct();
 		$this->template_name = 'burger';
 	}
 
+	/**
+	 * Map element.
+	 *
+	 * @return void
+	 */
 	public function map() {
 		$search_extra_content_options = array(
 			array(
@@ -108,7 +119,7 @@ class Burger extends Element {
 					'tab'         => esc_html__( 'General', 'woodmart' ),
 					'group'       => esc_html__( 'Elements', 'woodmart' ),
 					'value'       => true,
-					'requires'    => array(
+					'condition'   => array(
 						'languages' => array(
 							'comparison' => 'equal',
 							'value'      => true,
@@ -135,7 +146,7 @@ class Burger extends Element {
 					'tab'         => esc_html__( 'General', 'woodmart' ),
 					'group'       => esc_html__( 'Search form', 'woodmart' ),
 					'value'       => false,
-					'requires'    => array(
+					'condition'   => array(
 						'search_form' => array(
 							'comparison' => 'equal',
 							'value'      => true,
@@ -153,7 +164,7 @@ class Burger extends Element {
 					'on-text'     => esc_html__( 'Yes', 'woodmart' ),
 					'off-text'    => esc_html__( 'No', 'woodmart' ),
 					'value'       => false,
-					'requires'    => array(
+					'condition'   => array(
 						'search_form' => array(
 							'comparison' => 'equal',
 							'value'      => true,
@@ -161,14 +172,14 @@ class Burger extends Element {
 					),
 				),
 				'search_extra_content_enabled' => array(
-					'id'       => 'search_extra_content_enabled',
-					'title'    => esc_html__( 'Search extra content', 'woodmart' ),
-					'hint'     => '<video src="' . WOODMART_TOOLTIP_URL . 'full-screen-search-extra-content.mp4" autoplay loop muted></video>',
-					'tab'      => esc_html__( 'General', 'woodmart' ),
-					'group'    => esc_html__( 'Search form', 'woodmart' ),
-					'type'     => 'switcher',
-					'value'    => false,
-					'requires' => array(
+					'id'        => 'search_extra_content_enabled',
+					'title'     => esc_html__( 'Search extra content', 'woodmart' ),
+					'hint'      => '<video src="' . WOODMART_TOOLTIP_URL . 'full-screen-search-extra-content.mp4" autoplay loop muted></video>',
+					'tab'       => esc_html__( 'General', 'woodmart' ),
+					'group'     => esc_html__( 'Search form', 'woodmart' ),
+					'type'      => 'switcher',
+					'value'     => false,
+					'condition' => array(
 						'search_form' => array(
 							'comparison' => 'equal',
 							'value'      => true,
@@ -183,7 +194,7 @@ class Burger extends Element {
 					'value'       => '',
 					'options'     => $search_extra_content_options,
 					'description' => $search_extra_content_description,
-					'requires'    => array(
+					'condition'   => array(
 						'search_form'                  => array(
 							'comparison' => 'equal',
 							'value'      => true,
@@ -203,7 +214,7 @@ class Burger extends Element {
 					'tab'         => esc_html__( 'General', 'woodmart' ),
 					'group'       => esc_html__( 'Search form', 'woodmart' ),
 					'value'       => true,
-					'requires'    => array(
+					'condition'   => array(
 						'search_form' => array(
 							'comparison' => 'equal',
 							'value'      => true,
@@ -221,7 +232,7 @@ class Burger extends Element {
 					'to'          => 50,
 					'value'       => 20,
 					'units'       => '',
-					'requires'    => array(
+					'condition'   => array(
 						'search_form' => array(
 							'comparison' => 'equal',
 							'value'      => true,
@@ -233,13 +244,13 @@ class Burger extends Element {
 					),
 				),
 				'post_type'                    => array(
-					'id'       => 'post_type',
-					'title'    => esc_html__( 'Post type', 'woodmart' ),
-					'type'     => 'selector',
-					'tab'      => esc_html__( 'General', 'woodmart' ),
-					'group'    => esc_html__( 'Search form', 'woodmart' ),
-					'value'    => 'product',
-					'options'  => array(
+					'id'        => 'post_type',
+					'title'     => esc_html__( 'Post type', 'woodmart' ),
+					'type'      => 'selector',
+					'tab'       => esc_html__( 'General', 'woodmart' ),
+					'group'     => esc_html__( 'Search form', 'woodmart' ),
+					'value'     => 'product',
+					'options'   => array(
 						'product'   => array(
 							'value' => 'product',
 							'label' => esc_html__( 'Product', 'woodmart' ),
@@ -261,7 +272,7 @@ class Burger extends Element {
 							'label' => esc_html__( 'All post types', 'woodmart' ),
 						),
 					),
-					'requires' => array(
+					'condition' => array(
 						'search_form' => array(
 							'comparison' => 'equal',
 							'value'      => true,
@@ -277,7 +288,7 @@ class Burger extends Element {
 					'tab'         => esc_html__( 'General', 'woodmart' ),
 					'group'       => esc_html__( 'Search form', 'woodmart' ),
 					'value'       => false,
-					'requires'    => array(
+					'condition'   => array(
 						'search_form' => array(
 							'comparison' => 'equal',
 							'value'      => true,
@@ -310,7 +321,7 @@ class Burger extends Element {
 					'group'       => esc_html__( 'Category', 'woodmart' ),
 					'value'       => '',
 					'description' => esc_html__( 'You can rewrite mobile menu tab title with this option. Or leave empty to have a default one - Menu.', 'woodmart' ),
-					'requires'    => array(
+					'condition'   => array(
 						'categories_menu' => array(
 							'comparison' => 'equal',
 							'value'      => true,
@@ -326,7 +337,7 @@ class Burger extends Element {
 					'group'       => esc_html__( 'Category', 'woodmart' ),
 					'value'       => '',
 					'description' => esc_html__( 'You can rewrite mobile menu tab title with this option. Or leave empty to have a default one - Categories.', 'woodmart' ),
-					'requires'    => array(
+					'condition'   => array(
 						'categories_menu' => array(
 							'comparison' => 'equal',
 							'value'      => true,
@@ -343,7 +354,7 @@ class Burger extends Element {
 					'value'       => '',
 					'callback'    => 'get_menu_options_with_empty',
 					'description' => esc_html__( 'Choose which menu to display.', 'woodmart' ),
-					'requires'    => array(
+					'condition'   => array(
 						'categories_menu' => array(
 							'comparison' => 'equal',
 							'value'      => true,
@@ -358,7 +369,7 @@ class Burger extends Element {
 					'group'       => esc_html__( 'Category', 'woodmart' ),
 					'value'       => false,
 					'description' => esc_html__( 'Swap the positions of the first and secondary menus.', 'woodmart' ),
-					'requires'    => array(
+					'condition'   => array(
 						'categories_menu' => array(
 							'comparison' => 'equal',
 							'value'      => true,
@@ -406,7 +417,7 @@ class Burger extends Element {
 							'hint'  => '<video src="' . WOODMART_TOOLTIP_URL . 'hb_mobile_menu_menu_drilldown_animation_fade_in.mp4" autoplay loop muted></video>',
 						),
 					),
-					'requires'    => array(
+					'condition'   => array(
 						'menu_layout' => array(
 							'comparison' => 'equal',
 							'value'      => 'drilldown',
@@ -462,28 +473,32 @@ class Burger extends Element {
 					'title'       => esc_html__( 'Display', 'woodmart' ),
 					'type'        => 'selector',
 					'tab'         => esc_html__( 'Style', 'woodmart' ),
-					'group'       => esc_html__( 'Icon', 'woodmart' ),
+					'group'       => esc_html__( 'Button', 'woodmart' ),
 					'value'       => 'icon',
 					'options'     => array(
-						'icon' => array(
+						'text-only' => array(
+							'value' => 'text-only',
+							'label' => esc_html__( 'Text', 'woodmart' ),
+						),
+						'icon'      => array(
 							'value' => 'icon',
 							'label' => esc_html__( 'Icon', 'woodmart' ),
 						),
-						'text' => array(
+						'text'      => array(
 							'value' => 'text',
 							'label' => esc_html__( 'Icon with text', 'woodmart' ),
 						),
 					),
-					'description' => esc_html__( 'You can show the icon only or display "Menu" text too.', 'woodmart' ),
+					'description' => esc_html__( 'Select whether to display only the icon, only the text, or both together.', 'woodmart' ),
 				),
 				'icon_design'                  => array(
-					'id'      => 'icon_design',
-					'title'   => esc_html__( 'Icon design', 'woodmart' ),
-					'type'    => 'selector',
-					'tab'     => esc_html__( 'Style', 'woodmart' ),
-					'group'   => esc_html__( 'Icon', 'woodmart' ),
-					'value'   => '1',
-					'options' => array(
+					'id'        => 'icon_design',
+					'title'     => esc_html__( 'Design', 'woodmart' ),
+					'type'      => 'selector',
+					'tab'       => esc_html__( 'Style', 'woodmart' ),
+					'group'     => esc_html__( 'Button', 'woodmart' ),
+					'value'     => '1',
+					'options'   => array(
 						'1' => array(
 							'value' => '1',
 							'label' => esc_html__( 'First', 'woodmart' ),
@@ -505,15 +520,148 @@ class Burger extends Element {
 							'image' => WOODMART_ASSETS_IMAGES . '/header-builder/mobile-menu-icons/fourth.jpg',
 						),
 					),
+					'condition' => array(
+						'style' => array(
+							'comparison' => 'not_equal',
+							'value'      => array( 'text-only' ),
+						),
+					),
+				),
+				'text_design'                  => array(
+					'id'        => 'text_design',
+					'title'     => esc_html__( 'Design', 'woodmart' ),
+					'type'      => 'selector',
+					'tab'       => esc_html__( 'Style', 'woodmart' ),
+					'group'     => esc_html__( 'Button', 'woodmart' ),
+					'value'     => '1',
+					'options'   => array(
+						'1' => array(
+							'value' => '1',
+							'label' => esc_html__( 'First', 'woodmart' ),
+							'image' => WOODMART_ASSETS_IMAGES . '/header-builder/mobile-menu-icons/text-first.jpg',
+						),
+						'6' => array(
+							'value' => '6',
+							'label' => esc_html__( 'Second', 'woodmart' ),
+							'image' => WOODMART_ASSETS_IMAGES . '/header-builder/mobile-menu-icons/text-second.jpg',
+						),
+						'7' => array(
+							'value' => '7',
+							'label' => esc_html__( 'Third', 'woodmart' ),
+							'image' => WOODMART_ASSETS_IMAGES . '/header-builder/mobile-menu-icons/text-third.jpg',
+						),
+					),
+					'condition' => array(
+						'style' => array(
+							'comparison' => 'equal',
+							'value'      => array( 'text-only' ),
+						),
+					),
+				),
+				'text_color'                   => array(
+					'id'          => 'text_color',
+					'title'       => esc_html__( 'Color', 'woodmart' ),
+					'tab'         => esc_html__( 'Style', 'woodmart' ),
+					'group'       => esc_html__( 'Button', 'woodmart' ),
+					'type'        => 'color',
+					'value'       => '',
+					'selectors'   => array(
+						'whb-row .{{WRAPPER}}.wd-tools-element .wd-tools-inner' => array(
+							'color: {{VALUE}};',
+						),
+					),
+					'condition'   => array(
+						'style'       => array(
+							'comparison' => 'equal',
+							'value'      => array( 'text-only' ),
+						),
+						'text_design' => array(
+							'comparison' => 'equal',
+							'value'      => array( '7' ),
+						),
+					),
+					'extra_class' => 'xts-col-6',
+				),
+				'text_hover_color'             => array(
+					'id'          => 'text_hover_color',
+					'title'       => esc_html__( 'Hover color', 'woodmart' ),
+					'tab'         => esc_html__( 'Style', 'woodmart' ),
+					'group'       => esc_html__( 'Button', 'woodmart' ),
+					'type'        => 'color',
+					'value'       => '',
+					'selectors'   => array(
+						'whb-row .{{WRAPPER}}.wd-tools-element:hover .wd-tools-inner' => array(
+							'color: {{VALUE}};',
+						),
+					),
+					'condition'   => array(
+						'style'       => array(
+							'comparison' => 'equal',
+							'value'      => array( 'text-only' ),
+						),
+						'text_design' => array(
+							'comparison' => 'equal',
+							'value'      => array( '7' ),
+						),
+					),
+					'extra_class' => 'xts-col-6',
+				),
+				'text_bg_color'                => array(
+					'id'          => 'text_bg_color',
+					'title'       => esc_html__( 'Background color', 'woodmart' ),
+					'tab'         => esc_html__( 'Style', 'woodmart' ),
+					'group'       => esc_html__( 'Button', 'woodmart' ),
+					'type'        => 'color',
+					'value'       => '',
+					'selectors'   => array(
+						'whb-row .{{WRAPPER}}.wd-tools-element .wd-tools-inner' => array(
+							'background-color: {{VALUE}};',
+						),
+					),
+					'condition'   => array(
+						'style'       => array(
+							'comparison' => 'equal',
+							'value'      => array( 'text-only' ),
+						),
+						'text_design' => array(
+							'comparison' => 'equal',
+							'value'      => array( '7' ),
+						),
+					),
+					'extra_class' => 'xts-col-6',
+				),
+				'text_bg_hover_color'          => array(
+					'id'          => 'text_bg_hover_color',
+					'title'       => esc_html__( 'Hover background color', 'woodmart' ),
+					'tab'         => esc_html__( 'Style', 'woodmart' ),
+					'group'       => esc_html__( 'Button', 'woodmart' ),
+					'type'        => 'color',
+					'value'       => '',
+					'selectors'   => array(
+						'whb-row .{{WRAPPER}}.wd-tools-element:hover .wd-tools-inner' => array(
+							'background-color: {{VALUE}};',
+						),
+					),
+					'condition'   => array(
+						'style'       => array(
+							'comparison' => 'equal',
+							'value'      => array( 'text-only' ),
+						),
+						'text_design' => array(
+							'comparison' => 'equal',
+							'value'      => array( '7' ),
+						),
+					),
+					'extra_class' => 'xts-col-6',
 				),
 				'wrap_type'                    => array(
-					'id'       => 'wrap_type',
-					'title'    => esc_html__( 'Background wrap type', 'woodmart' ),
-					'type'     => 'selector',
-					'tab'      => esc_html__( 'Style', 'woodmart' ),
-					'group'    => esc_html__( 'Icon', 'woodmart' ),
-					'value'    => 'icon_only',
-					'options'  => array(
+					'id'        => 'wrap_type',
+					'title'     => esc_html__( 'Background wrap type', 'woodmart' ),
+					'type'      => 'selector',
+					'tab'       => esc_html__( 'Style', 'woodmart' ),
+					'group'     => esc_html__( 'Button', 'woodmart' ),
+					'value'     => 'icon_only',
+					'options'   => array(
 						'icon_only'     => array(
 							'value' => 'icon_only',
 							'label' => esc_html__( 'Icon only', 'woodmart' ),
@@ -525,7 +673,7 @@ class Burger extends Element {
 							'image' => WOODMART_ASSETS_IMAGES . '/header-builder/bg-wrap-type/menu-wrap-icon-and-text.jpg',
 						),
 					),
-					'requires' => array(
+					'condition' => array(
 						'style'       => array(
 							'comparison' => 'equal',
 							'value'      => 'text',
@@ -540,7 +688,7 @@ class Burger extends Element {
 					'id'          => 'color',
 					'title'       => esc_html__( 'Color', 'woodmart' ),
 					'tab'         => esc_html__( 'Style', 'woodmart' ),
-					'group'       => esc_html__( 'Icon', 'woodmart' ),
+					'group'       => esc_html__( 'Button', 'woodmart' ),
 					'type'        => 'color',
 					'value'       => '',
 					'selectors'   => array(
@@ -548,10 +696,39 @@ class Burger extends Element {
 							'color: {{VALUE}};',
 						),
 					),
-					'requires'    => array(
-						'icon_design' => array(
-							'comparison' => 'equal',
-							'value'      => array( '7', '8' ),
+					'conditions'  => array(
+						'relation' => 'or',
+						'terms'    => array(
+							array(
+								'relation' => 'and',
+								'terms'    => array(
+									array(
+										'field'      => 'style',
+										'comparison' => 'not_equal',
+										'value'      => array( 'text-only' ),
+									),
+									array(
+										'field'      => 'icon_design',
+										'comparison' => 'equal',
+										'value'      => array( '7' ),
+									),
+								),
+							),
+							array(
+								'relation' => 'and',
+								'terms'    => array(
+									array(
+										'field'      => 'style',
+										'comparison' => 'equal',
+										'value'      => array( 'text' ),
+									),
+									array(
+										'field'      => 'icon_design',
+										'comparison' => 'equal',
+										'value'      => array( '8' ),
+									),
+								),
+							),
 						),
 					),
 					'extra_class' => 'xts-col-6',
@@ -560,7 +737,7 @@ class Burger extends Element {
 					'id'          => 'hover_color',
 					'title'       => esc_html__( 'Hover color', 'woodmart' ),
 					'tab'         => esc_html__( 'Style', 'woodmart' ),
-					'group'       => esc_html__( 'Icon', 'woodmart' ),
+					'group'       => esc_html__( 'Button', 'woodmart' ),
 					'type'        => 'color',
 					'value'       => '',
 					'selectors'   => array(
@@ -568,10 +745,39 @@ class Burger extends Element {
 							'color: {{VALUE}};',
 						),
 					),
-					'requires'    => array(
-						'icon_design' => array(
-							'comparison' => 'equal',
-							'value'      => array( '7', '8' ),
+					'conditions'  => array(
+						'relation' => 'or',
+						'terms'    => array(
+							array(
+								'relation' => 'and',
+								'terms'    => array(
+									array(
+										'field'      => 'style',
+										'comparison' => 'not_equal',
+										'value'      => array( 'text-only' ),
+									),
+									array(
+										'field'      => 'icon_design',
+										'comparison' => 'equal',
+										'value'      => array( '7' ),
+									),
+								),
+							),
+							array(
+								'relation' => 'and',
+								'terms'    => array(
+									array(
+										'field'      => 'style',
+										'comparison' => 'equal',
+										'value'      => array( 'text' ),
+									),
+									array(
+										'field'      => 'icon_design',
+										'comparison' => 'equal',
+										'value'      => array( '8' ),
+									),
+								),
+							),
 						),
 					),
 					'extra_class' => 'xts-col-6',
@@ -580,7 +786,7 @@ class Burger extends Element {
 					'id'          => 'bg_color',
 					'title'       => esc_html__( 'Background color', 'woodmart' ),
 					'tab'         => esc_html__( 'Style', 'woodmart' ),
-					'group'       => esc_html__( 'Icon', 'woodmart' ),
+					'group'       => esc_html__( 'Button', 'woodmart' ),
 					'type'        => 'color',
 					'value'       => '',
 					'selectors'   => array(
@@ -588,7 +794,11 @@ class Burger extends Element {
 							'background-color: {{VALUE}};',
 						),
 					),
-					'requires'    => array(
+					'condition'   => array(
+						'style'       => array(
+							'comparison' => 'not_equal',
+							'value'      => array( 'text-only' ),
+						),
 						'icon_design' => array(
 							'comparison' => 'equal',
 							'value'      => array( '7', '8' ),
@@ -600,7 +810,7 @@ class Burger extends Element {
 					'id'          => 'bg_hover_color',
 					'title'       => esc_html__( 'Hover background color', 'woodmart' ),
 					'tab'         => esc_html__( 'Style', 'woodmart' ),
-					'group'       => esc_html__( 'Icon', 'woodmart' ),
+					'group'       => esc_html__( 'Button', 'woodmart' ),
 					'type'        => 'color',
 					'value'       => '',
 					'selectors'   => array(
@@ -608,7 +818,11 @@ class Burger extends Element {
 							'background-color: {{VALUE}};',
 						),
 					),
-					'requires'    => array(
+					'condition'   => array(
+						'style'       => array(
+							'comparison' => 'not_equal',
+							'value'      => array( 'text-only' ),
+						),
 						'icon_design' => array(
 							'comparison' => 'equal',
 							'value'      => array( '7', '8' ),
@@ -620,7 +834,7 @@ class Burger extends Element {
 					'id'          => 'icon_color',
 					'title'       => esc_html__( 'Icon color', 'woodmart' ),
 					'tab'         => esc_html__( 'Style', 'woodmart' ),
-					'group'       => esc_html__( 'Icon', 'woodmart' ),
+					'group'       => esc_html__( 'Button', 'woodmart' ),
 					'type'        => 'color',
 					'value'       => '',
 					'selectors'   => array(
@@ -628,7 +842,11 @@ class Burger extends Element {
 							'color: {{VALUE}};',
 						),
 					),
-					'requires'    => array(
+					'condition'   => array(
+						'style'       => array(
+							'comparison' => 'not_equal',
+							'value'      => array( 'text-only' ),
+						),
 						'icon_design' => array(
 							'comparison' => 'equal',
 							'value'      => '8',
@@ -640,7 +858,7 @@ class Burger extends Element {
 					'id'          => 'icon_hover_color',
 					'title'       => esc_html__( 'Hover icon color', 'woodmart' ),
 					'tab'         => esc_html__( 'Style', 'woodmart' ),
-					'group'       => esc_html__( 'Icon', 'woodmart' ),
+					'group'       => esc_html__( 'Button', 'woodmart' ),
 					'type'        => 'color',
 					'value'       => '',
 					'selectors'   => array(
@@ -648,7 +866,11 @@ class Burger extends Element {
 							'color: {{VALUE}};',
 						),
 					),
-					'requires'    => array(
+					'condition'   => array(
+						'style'       => array(
+							'comparison' => 'not_equal',
+							'value'      => array( 'text-only' ),
+						),
 						'icon_design' => array(
 							'comparison' => 'equal',
 							'value'      => '8',
@@ -660,7 +882,7 @@ class Burger extends Element {
 					'id'          => 'icon_bg_color',
 					'title'       => esc_html__( 'Icon background color', 'woodmart' ),
 					'tab'         => esc_html__( 'Style', 'woodmart' ),
-					'group'       => esc_html__( 'Icon', 'woodmart' ),
+					'group'       => esc_html__( 'Button', 'woodmart' ),
 					'type'        => 'color',
 					'value'       => '',
 					'selectors'   => array(
@@ -668,7 +890,11 @@ class Burger extends Element {
 							'background-color: {{VALUE}};',
 						),
 					),
-					'requires'    => array(
+					'condition'   => array(
+						'style'       => array(
+							'comparison' => 'not_equal',
+							'value'      => array( 'text-only' ),
+						),
 						'icon_design' => array(
 							'comparison' => 'equal',
 							'value'      => '8',
@@ -680,7 +906,7 @@ class Burger extends Element {
 					'id'          => 'icon_bg_hover_color',
 					'title'       => esc_html__( 'Hover icon background color', 'woodmart' ),
 					'tab'         => esc_html__( 'Style', 'woodmart' ),
-					'group'       => esc_html__( 'Icon', 'woodmart' ),
+					'group'       => esc_html__( 'Button', 'woodmart' ),
 					'type'        => 'color',
 					'value'       => '',
 					'selectors'   => array(
@@ -688,7 +914,11 @@ class Burger extends Element {
 							'background-color: {{VALUE}};',
 						),
 					),
-					'requires'    => array(
+					'condition'   => array(
+						'style'       => array(
+							'comparison' => 'not_equal',
+							'value'      => array( 'text-only' ),
+						),
 						'icon_design' => array(
 							'comparison' => 'equal',
 							'value'      => '8',
@@ -697,13 +927,13 @@ class Burger extends Element {
 					'extra_class' => 'xts-col-6',
 				),
 				'icon_type'                    => array(
-					'id'      => 'icon_type',
-					'title'   => esc_html__( 'Icon type', 'woodmart' ),
-					'type'    => 'selector',
-					'tab'     => esc_html__( 'Style', 'woodmart' ),
-					'group'   => esc_html__( 'Icon', 'woodmart' ),
-					'value'   => 'default',
-					'options' => array(
+					'id'        => 'icon_type',
+					'title'     => esc_html__( 'Icon type', 'woodmart' ),
+					'type'      => 'selector',
+					'tab'       => esc_html__( 'Style', 'woodmart' ),
+					'group'     => esc_html__( 'Button', 'woodmart' ),
+					'value'     => 'default',
+					'options'   => array(
 						'default' => array(
 							'value' => 'default',
 							'label' => esc_html__( 'Default', 'woodmart' ),
@@ -715,16 +945,26 @@ class Burger extends Element {
 							'image' => WOODMART_ASSETS_IMAGES . '/header-builder/upload.jpg',
 						),
 					),
+					'condition' => array(
+						'style' => array(
+							'comparison' => 'not_equal',
+							'value'      => array( 'text-only' ),
+						),
+					),
 				),
 				'custom_icon'                  => array(
 					'id'          => 'custom_icon',
 					'title'       => esc_html__( 'Upload an image', 'woodmart' ),
 					'type'        => 'image',
 					'tab'         => esc_html__( 'Style', 'woodmart' ),
-					'group'       => esc_html__( 'Icon', 'woodmart' ),
+					'group'       => esc_html__( 'Button', 'woodmart' ),
 					'value'       => '',
 					'description' => '',
-					'requires'    => array(
+					'condition'   => array(
+						'style'     => array(
+							'comparison' => 'not_equal',
+							'value'      => array( 'text-only' ),
+						),
 						'icon_type' => array(
 							'comparison' => 'equal',
 							'value'      => 'custom',
@@ -737,7 +977,7 @@ class Burger extends Element {
 					'title'       => esc_html__( 'Icon width', 'woodmart' ),
 					'type'        => 'slider',
 					'tab'         => esc_html__( 'Style', 'woodmart' ),
-					'group'       => esc_html__( 'Icon', 'woodmart' ),
+					'group'       => esc_html__( 'Button', 'woodmart' ),
 					'from'        => 0,
 					'to'          => 60,
 					'value'       => 0,
@@ -747,7 +987,11 @@ class Burger extends Element {
 							'--wd-tools-icon-width: {{VALUE}}px;',
 						),
 					),
-					'requires'    => array(
+					'condition'   => array(
+						'style'     => array(
+							'comparison' => 'not_equal',
+							'value'      => array( 'text-only' ),
+						),
 						'icon_type' => array(
 							'comparison' => 'equal',
 							'value'      => 'custom',
@@ -758,6 +1002,7 @@ class Burger extends Element {
 				'icon_width'                   => array(
 					'id'          => 'icon_width',
 					'title'       => esc_html__( 'Width', 'woodmart' ),
+'hint'        => '<video src="' . WOODMART_TOOLTIP_URL . 'hb_icon_width.mp4" autoplay loop muted></video>',
 					'type'        => 'slider',
 					'tab'         => esc_html__( 'Style', 'woodmart' ),
 					'group'       => esc_html__( 'Items icon', 'woodmart' ),
@@ -775,6 +1020,7 @@ class Burger extends Element {
 				'icon_height'                  => array(
 					'id'          => 'icon_height',
 					'title'       => esc_html__( 'Height', 'woodmart' ),
+					'hint'        => '<video src="' . WOODMART_TOOLTIP_URL . 'hb_icon_height.mp4" autoplay loop muted></video>',
 					'type'        => 'slider',
 					'tab'         => esc_html__( 'Style', 'woodmart' ),
 					'group'       => esc_html__( 'Items icon', 'woodmart' ),

@@ -6,7 +6,7 @@
  * @var string $id Field id.
  * @var string $text_on The text that will be displayed when the button is on.
  * @var string $text_off The text that will be displayed when the button is off.
- * @package Woodmart
+ * @package woodmart
  */
 
 $classes = '';

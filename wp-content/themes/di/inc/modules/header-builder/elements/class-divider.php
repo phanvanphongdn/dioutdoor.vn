@@ -1,22 +1,33 @@
 <?php
+/**
+ * Divider element class file.
+ *
+ * @package woodmart
+ */
 
 namespace XTS\Modules\Header_Builder\Elements;
 
 use XTS\Modules\Header_Builder\Element;
 
 /**
- * ------------------------------------------------------------------------------------------------
- * Simple vertical line
- * ------------------------------------------------------------------------------------------------
+ * Simple vertical line.
  */
 class Divider extends Element {
 
+	/**
+	 * Constructor.
+	 */
 	public function __construct() {
 		parent::__construct();
 
 		$this->template_name = 'divider';
 	}
 
+	/**
+	 * Map element.
+	 *
+	 * @return void
+	 */
 	public function map() {
 		$this->args = array(
 			'type'            => 'divider',
@@ -64,6 +75,13 @@ class Divider extends Element {
 		);
 	}
 
+	/**
+	 * Check if element has border.
+	 *
+	 * @param array $params Element arguments.
+	 *
+	 * @return bool
+	 */
 	public function has_border( $params ) {
 		return( isset( $params['border'] ) && isset( $params['border']['width'] ) && (int) $params['border']['width'] > 1 );
 	}

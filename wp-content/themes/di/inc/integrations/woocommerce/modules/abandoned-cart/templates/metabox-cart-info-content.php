@@ -2,7 +2,7 @@
 /**
  * Cart info metabox template.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 ?>

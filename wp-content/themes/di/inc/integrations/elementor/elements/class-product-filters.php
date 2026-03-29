@@ -1,6 +1,8 @@
 <?php
 /**
  * Product filters map.
+ *
+ * @package woodmart
  */
 
 namespace XTS\Elementor;
@@ -88,6 +90,7 @@ class Product_Filters extends Widget_Base {
 			$taxonomy = get_taxonomy( 'product_brand' );
 			$label    = $taxonomy->labels->singular_name;
 
+			// Translators: 1: Product Attribute label.
 			$output['product_brand'] = sprintf( _x( 'Product %s', 'Product Attribute', 'woocommerce' ), $label );
 		}
 
@@ -588,19 +591,19 @@ class Product_Filters extends Widget_Base {
 		$this->add_responsive_control(
 			'space_between',
 			array(
-				'label'     => esc_html__( 'Space between', 'woodmart' ),
-				'type'      => Controls_Manager::SLIDER,
-				'default'   => array(
+				'label'       => esc_html__( 'Space between', 'woodmart' ),
+				'type'        => Controls_Manager::SLIDER,
+				'default'     => array(
 					'size' => 10,
 				),
-				'range'     => array(
+				'range'       => array(
 					'px' => array(
 						'min'  => 0,
 						'max'  => 30,
 						'step' => 1,
 					),
 				),
-				'selectors' => array(
+				'selectors'   => array(
 					'{{WRAPPER}}' => '--wd-gap: {{SIZE}}px',
 				),
 				'render_type' => 'template',
@@ -798,7 +801,6 @@ class Product_Filters extends Widget_Base {
 				'wrapper' => array(
 					'class'  => array(
 						'wd-product-filters',
-						woodmart_get_old_classes( 'woodmart-product-filters' ),
 						'wd-style-' . $settings['style'],
 						$settings['woodmart_color_scheme'] ? 'color-scheme-' . $settings['woodmart_color_scheme'] : '',
 					),
@@ -851,7 +853,7 @@ class Product_Filters extends Widget_Base {
 
 		woodmart_enqueue_js_script( 'product-filters' );
 		?>
-		<form <?php echo $this->get_render_attribute_string( 'wrapper' ); ?>>
+		<form <?php echo $this->get_render_attribute_string( 'wrapper' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 			<?php foreach ( $settings['items'] as $index => $item ) : ?>
 				<?php
 				$item['show_selected_values'] = $settings['show_selected_values'];
@@ -874,7 +876,7 @@ class Product_Filters extends Widget_Base {
 
 		<?php if ( 'click' === $settings['submit_form_on'] ) : ?>
 			<div class="wd-pf-btn wd-col">
-				<button type="submit">
+				<button type="submit" class="btn btn-accent">
 					<?php esc_html_e( 'Filter', 'woodmart' ); ?>
 				</button>
 			</div>
@@ -883,6 +885,11 @@ class Product_Filters extends Widget_Base {
 		<?php
 	}
 
+	/**
+	 * Price filter template.
+	 *
+	 * @param array $settings Widget settings.
+	 */
 	public function price_filter_template( $settings ) {
 		$default_settings = array(
 			'price_title'      => esc_html__( 'Filter by price', 'woodmart' ),
@@ -933,8 +940,8 @@ class Product_Filters extends Widget_Base {
 			return;
 		}
 
-		$min_price = isset( $_GET['min_price'] ) ? wc_clean( wp_unslash( $_GET['min_price'] ) ) : $min;
-		$max_price = isset( $_GET['max_price'] ) ? wc_clean( wp_unslash( $_GET['max_price'] ) ) : $max;
+		$min_price = isset( $_GET['min_price'] ) ? wc_clean( wp_unslash( $_GET['min_price'] ) ) : $min; // phpcs:ignore WordPress.Security.NonceVerification.Recommended, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+		$max_price = isset( $_GET['max_price'] ) ? wc_clean( wp_unslash( $_GET['max_price'] ) ) : $max; // phpcs:ignore WordPress.Security.NonceVerification.Recommended, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 
 		?>
 		<div class="wd-pf-checkboxes wd-pf-price-range multi_select widget_price_filter wd-col wd-event-<?php echo esc_attr( $settings['show_dropdown_on'] ); ?>">
@@ -971,6 +978,11 @@ class Product_Filters extends Widget_Base {
 		<?php
 	}
 
+	/**
+	 * Stock filter template.
+	 *
+	 * @param array $settings Widget settings.
+	 */
 	public function stock_filter_template( $settings ) {
 		$default_settings = array(
 			'stock_title'      => esc_html__( 'Stock status', 'woodmart' ),
@@ -981,8 +993,8 @@ class Product_Filters extends Widget_Base {
 		);
 		$settings         = wp_parse_args( $settings, $default_settings );
 		$filter_name      = 'stock_status';
-		$current_filter   = isset( $_GET[ $filter_name ] ) ? explode( ',', $_GET[ $filter_name ] ) : array();
-		$result_value     = isset( $_GET[ $filter_name ] ) ? $_GET[ $filter_name ] : '';
+		$current_filter   = isset( $_GET[ $filter_name ] ) ? explode( ',', wp_unslash( $_GET[ $filter_name ] ) ) : array(); // phpcs:ignore WordPress.Security.NonceVerification.Recommended, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+		$result_value     = isset( $_GET[ $filter_name ] ) ? wp_unslash( $_GET[ $filter_name ] ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 		$link             = woodmart_filters_get_page_base_url();
 		$options          = array(
 			'onsale'      => esc_html__( 'On sale', 'woodmart' ),
@@ -1024,7 +1036,7 @@ class Product_Filters extends Widget_Base {
 					<ul class="wd-scroll-content">
 						<?php foreach ( $options as $slug => $name ) : ?>
 							<?php
-							$current_filter   = ! empty( $_GET[ $filter_name ] ) ? explode( ',', $_GET[ $filter_name ] ) : array();
+							$current_filter   = ! empty( $_GET[ $filter_name ] ) ? explode( ',', wp_unslash( $_GET[ $filter_name ] ) ) : array(); // phpcs:ignore WordPress.Security.NonceVerification.Recommended, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 							$is_active_filter = in_array( $slug, $current_filter, true );
 							$link             = remove_query_arg( $filter_name, $link );
 
@@ -1060,6 +1072,11 @@ class Product_Filters extends Widget_Base {
 		<?php
 	}
 
+	/**
+	 * Orderby filter template.
+	 *
+	 * @param array $settings Widget settings.
+	 */
 	public function orderby_filter_template( $settings ) {
 		$options = apply_filters(
 			'woocommerce_catalog_orderby',
@@ -1077,7 +1094,7 @@ class Product_Filters extends Widget_Base {
 			'show_dropdown_on' => 'click',
 		);
 		$settings         = wp_parse_args( $settings, $default_settings );
-		$current_filter   = isset( $_GET['orderby'] ) ? wc_clean( wp_unslash( $_GET['orderby'] ) ) : '';
+		$current_filter   = isset( $_GET['orderby'] ) ? wc_clean( wp_unslash( $_GET['orderby'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 		$link             = woodmart_filters_get_page_base_url();
 		?>
 		<div class="wd-pf-checkboxes wd-pf-sortby wd-col wd-event-<?php echo esc_attr( $settings['show_dropdown_on'] ); ?>">
@@ -1133,6 +1150,11 @@ class Product_Filters extends Widget_Base {
 		<?php
 	}
 
+	/**
+	 * Attributes filter template.
+	 *
+	 * @param array $settings Widget settings.
+	 */
 	public function attributes_filter_template( $settings ) {
 		$default_settings = array(
 			'attributes_title'     => esc_html__( 'Filter by', 'woodmart' ),
@@ -1173,6 +1195,11 @@ class Product_Filters extends Widget_Base {
 		);
 	}
 
+	/**
+	 * Categories filter template.
+	 *
+	 * @param array $settings Widget settings.
+	 */
 	public function categories_filter_template( $settings ) {
 		global $wp_query;
 
@@ -1199,7 +1226,7 @@ class Product_Filters extends Widget_Base {
 
 		if ( 'order' === $settings['order_by'] ) {
 			$list_args['orderby']  = 'meta_value_num';
-			$list_args['meta_key'] = 'order';
+			$list_args['meta_key'] = 'order'; // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key
 		}
 
 		$cat_ancestors = array();
@@ -1222,7 +1249,7 @@ class Product_Filters extends Widget_Base {
 			$is_cat_has_children = get_term_children( $current_cat->term_id, 'product_cat' );
 			if ( $is_cat_has_children ) {
 				$list_args['child_of'] = $current_cat->term_id;
-			} elseif ( $current_cat->parent != 0 ) {
+			} elseif ( 0 !== $current_cat->parent ) {
 				$list_args['child_of'] = $current_cat->parent;
 			}
 			$list_args['depth'] = 1;
@@ -1250,7 +1277,7 @@ class Product_Filters extends Widget_Base {
 				<div class="wd-scroll">
 					<ul class="wd-scroll-content">
 						<?php if ( $settings['show_categories_ancestors'] && isset( $current_cat ) && isset( $is_cat_has_children ) && $is_cat_has_children ) : ?>
-							<li style="display:none;" class="wd-active cat-item cat-item-<?php echo $current_cat->term_id; ?>">
+							<li style="display:none;" class="wd-active cat-item cat-item-<?php echo esc_attr( $current_cat->term_id ); ?>">
 								<a class="pf-value" href="<?php echo esc_url( get_category_link( $current_cat->term_id ) ); ?>" data-val="<?php echo esc_attr( $current_cat->slug ); ?>" data-title="<?php echo esc_attr( $current_cat->name ); ?>">
 									<?php echo esc_html( $current_cat->name ); ?>
 								</a>

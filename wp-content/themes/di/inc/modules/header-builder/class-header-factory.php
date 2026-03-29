@@ -1,23 +1,31 @@
 <?php
+/**
+ * Header factory class file.
+ *
+ * @package woodmart
+ */
 
 namespace XTS\Modules\Header_Builder;
 
 /**
- * ------------------------------------------------------------------------------------------------
  * Wrapper for our header class instance. CRUD actions
- * ------------------------------------------------------------------------------------------------
  */
 class Header_Factory {
 
-	private $_elements = null;
-	private $_list     = null;
+	/**
+	 * Elements object classes.
+	 *
+	 * @var null
+	 */
+	private $elements = null;
 
 	/**
 	 * Constructor
+	 *
+	 * @param object $elements Elements object classes.
 	 */
-	public function __construct( $elements, $list ) {
-		$this->_elements = $elements;
-		$this->_list     = $list;
+	public function __construct( $elements ) {
+		$this->elements = $elements;
 	}
 
 	/**
@@ -28,7 +36,7 @@ class Header_Factory {
 	 * @return Header
 	 */
 	public function get_header( $id ) {
-		return new Header( $this->_elements, $id );
+		return new Header( $this->elements, $id );
 	}
 
 	/**
@@ -42,7 +50,7 @@ class Header_Factory {
 	 * @return Header
 	 */
 	public function update_header( $id, $name, $structure, $settings ) {
-		$header = new Header( $this->_elements, $id );
+		$header = new Header( $this->elements, $id );
 
 		$header->set_name( $name );
 		$header->set_structure( $structure );
@@ -64,7 +72,7 @@ class Header_Factory {
 	 * @return Header
 	 */
 	public function create_new( $id, $name, $structure = false, $settings = false ) {
-		$header = new Header( $this->_elements, $id, true );
+		$header = new Header( $this->elements, $id, true );
 
 		if ( $structure ) {
 			$header->set_structure( $structure );
@@ -89,7 +97,7 @@ class Header_Factory {
 	 * @return Header
 	 */
 	public function draft_header( $id, $name, $structure = false, $settings = false ) {
-		$header = new Header( $this->_elements, $id, true );
+		$header = new Header( $this->elements, $id, true );
 
 		if ( $structure ) {
 			$header->set_structure( $structure );

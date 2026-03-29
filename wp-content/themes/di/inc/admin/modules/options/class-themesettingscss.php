@@ -2,7 +2,7 @@
 /**
  * Dynamic css
  *
- * @package xts
+ * @package woodmart
  */
 
 namespace XTS;

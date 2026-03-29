@@ -1,4 +1,9 @@
 <?php
+/**
+ * Header builder backend class file.
+ *
+ * @package woodmart
+ */
 
 namespace XTS\Modules\Header_Builder;
 
@@ -6,9 +11,7 @@ use XTS\Modules\Header_Builder;
 use XTS\Singleton;
 
 /**
- * ------------------------------------------------------------------------------------------------
  * Backend class that enqueues main scripts and CSS.
- * ------------------------------------------------------------------------------------------------
  */
 class Backend extends Singleton {
 
@@ -17,7 +20,7 @@ class Backend extends Singleton {
 	 *
 	 * @var null
 	 */
-	private $_builder = null;
+	private $builder = null;
 
 	/**
 	 * Initialize class.
@@ -25,12 +28,12 @@ class Backend extends Singleton {
 	 * @return void
 	 */
 	public function init() {
-		$this->_builder = Header_Builder::get_instance();
+		$this->builder = Header_Builder::get_instance();
 
-		if ( isset( $_GET['page'] ) && 'xts_header_builder' === $_GET['page'] ) { //phpcs:ignore
+		if ( isset( $_GET['page'] ) && 'xts_header_builder' === $_GET['page'] ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 			add_action( 'admin_enqueue_scripts', array( $this, 'scripts' ), 50 );
 			add_filter( 'woodmart_admin_localized_string_array', array( $this, 'add_localized_settings' ) );
-		} elseif ( woodmart_is_header_frontend_editor() ) { //phpcs:ignore
+		} elseif ( woodmart_is_header_frontend_editor() ) {
 			add_action( 'wp_enqueue_scripts', array( $this, 'scripts' ), 10002 );
 			add_action( 'wp_footer', array( $this, 'output_placeholder' ) );
 			add_filter( 'woodmart_localized_string_array', array( $this, 'add_localized_settings' ) );
@@ -94,13 +97,13 @@ class Backend extends Singleton {
 			'woodmart-admin-builder',
 			'headerBuilder',
 			array(
-				'sceleton'        => $this->_builder->factory->get_header( false )->get_structure(),
-				'settings'        => $this->_builder->factory->get_header( false )->get_settings(),
+				'sceleton'        => $this->builder->factory->get_header( false )->get_structure(),
+				'settings'        => $this->builder->factory->get_header( false )->get_settings(),
 				'name'            => WOODMART_HB_DEFAULT_NAME,
 				'id'              => WOODMART_HB_DEFAULT_ID,
-				'headersList'     => $this->_builder->list->get_all(),
-				'headersExamples' => $this->_builder->list->get_examples(),
-				'defaultHeader'   => $this->_builder->manager->get_default_header(),
+				'headersList'     => $this->builder->list->get_all(),
+				'headersExamples' => $this->builder->list->get_examples(),
+				'defaultHeader'   => $this->builder->manager->get_default_header(),
 				'texts'           => array(
 					'managerTitle'                       => __( 'Headers builder', 'woodmart' ),
 					'description'                        => __( 'Here you can manage your header layouts, create new ones, import and export. You can set which header to use for all pages by default.', 'woodmart' ),
@@ -208,8 +211,15 @@ class Backend extends Singleton {
 		wp_enqueue_media();
 	}
 
+	/**
+	 * Add localized settings.
+	 *
+	 * @param array $localize Localized settings.
+	 *
+	 * @return array
+	 */
 	public function add_localized_settings( $localize ) {
-		if ( ! current_user_can( 'administrator' ) ) {
+		if ( ! current_user_can( 'manage_options' ) ) {
 			return $localize;
 		}
 

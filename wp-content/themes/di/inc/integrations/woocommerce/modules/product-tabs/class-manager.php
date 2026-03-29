@@ -44,7 +44,7 @@ class Manager extends Singleton {
 		$tabs_ids = get_posts(
 			array(
 				'fields'         => 'ids',
-				'posts_per_page' => apply_filters( 'woodmart_product_tabs_rule_limit', 100 ),
+				'posts_per_page' => -1,
 				'post_type'      => 'wd_product_tabs',
 				'post_status'    => 'publish',
 				'orderby'        => 'date',
@@ -58,7 +58,7 @@ class Manager extends Singleton {
 	}
 
 	/**
-	 * Get lsit of allowed tabs for this product.
+	 * Get list of allowed tabs for this product.
 	 *
 	 * @param WC_Product $product Product instance.
 	 *
@@ -67,22 +67,23 @@ class Manager extends Singleton {
 	public function get_allowed_tabs( $product ) {
 		$tabs_ids     = $this->get_all_tabs_ids();
 		$allowed_tabs = array();
+		$limit        = apply_filters( 'woodmart_custom_product_tabs_limit', 100 );
 
 		foreach ( $tabs_ids as $id ) {
 			$id = apply_filters( 'wpml_object_id', $id, 'wd_product_tabs', true, apply_filters( 'wpml_current_language', null ) );
 
-			$conditions = maybe_unserialize( get_post_meta( $id, 'product_tab_condition', true ) );
+			$conditions = woodmart_get_post_meta_value( $id, 'product_tab_condition' );
 
 			if ( ! is_array( $conditions ) ) {
 				continue;
 			}
 
 			if ( $this->check_condition( $conditions, $product ) ) {
-				$title = maybe_unserialize( get_post_meta( $id, 'product_tab_title', true ) );
+				$title = woodmart_get_post_meta_value( $id, 'product_tab_title' );
 				$title = ! empty( $title ) ? $title : get_the_title( $id );
 
 				$tab_key  = get_post_field( 'post_name', $id );
-				$priority = maybe_unserialize( get_post_meta( $id, 'product_tab_priority', true ) );
+				$priority = woodmart_get_post_meta_value( $id, 'product_tab_priority' );
 				$priority = ! empty( $priority ) && is_numeric( $priority ) ? $priority : 130;
 
 				$allowed_tabs[ $tab_key ] = array(
@@ -91,6 +92,10 @@ class Manager extends Singleton {
 					'content'  => woodmart_get_post_content( $id ),
 					'callback' => array( $this, 'get_product_tab_content' ),
 				);
+			}
+
+			if ( count( $allowed_tabs ) >= $limit ) {
+				break;
 			}
 		}
 
@@ -134,6 +139,11 @@ class Manager extends Singleton {
 		uasort( $conditions, array( $this, 'sort_by_priority' ) );
 
 		foreach ( $conditions as $condition ) {
+			// Elementor transfer.
+			if ( ! isset( $condition['query'] ) && isset( $condition[ 'query_' . $condition['type'] ] ) ) {
+				$condition['query'] = $condition[ 'query_' . $condition['type'] ];
+			}
+
 			if ( isset( $condition['query'] ) ) {
 				$condition['query'] = apply_filters( 'wpml_object_id', $condition['query'], $condition['type'], true, apply_filters( 'wpml_current_language', null ) );
 			}

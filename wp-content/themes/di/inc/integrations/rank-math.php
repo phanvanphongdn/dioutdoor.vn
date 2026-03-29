@@ -1,39 +1,39 @@
 <?php
 /**
- * Rank Math.
+ * Rank Math integration.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 if ( ! defined( 'RANK_MATH_VERSION' ) ) {
 	return;
 }
 
-if ( ! function_exists( 'woodmart_rank_math_excluded_post_types' ) ) {
+if ( ! function_exists( 'woodmart_rank_math_exclude_layout_post_type' ) ) {
 	/**
-	 * Exclude WoodMart layout post type from Rank Math sitemap.
+	 * Excludes WoodMart layout post type from Rank Math sitemap.
 	 *
-	 * @param array $post_type Post type.
-	 * @return array
+	 * @param array $post_types List of post types.
+	 * @return array Filtered post types without WoodMart layout.
 	 */
-	function woodmart_rank_math_excluded_post_types( $post_type ) {
-		if ( isset( $post_type['woodmart_layout'] ) ) {
-			unset( $post_type['woodmart_layout'] );
+	function woodmart_rank_math_exclude_layout_post_type( $post_types ) {
+		if ( isset( $post_types['woodmart_layout'] ) ) {
+			unset( $post_types['woodmart_layout'] );
 		}
 
-		return $post_type;
+		return $post_types;
 	}
 
-	add_filter( 'rank_math/excluded_post_types', 'woodmart_rank_math_excluded_post_types' );
+	add_filter( 'rank_math/excluded_post_types', 'woodmart_rank_math_exclude_layout_post_type' );
 }
 
-if ( ! function_exists( 'woodmart_rank_math_update_shortcode_title' ) ) {
+if ( ! function_exists( 'woodmart_rank_math_fix_title_shortcode_compatibility' ) ) {
 	/**
-	 * Update WoodMart title shortcode to work with Rank Math.
+	 * Fixes WoodMart title shortcode compatibility with Rank Math content analysis.
 	 *
 	 * @return void
 	 */
-	function woodmart_rank_math_update_shortcode_title() {
+	function woodmart_rank_math_fix_title_shortcode_compatibility() {
 		if ( 'wpb' !== woodmart_get_current_page_builder() ) {
 			return;
 		}
@@ -73,5 +73,5 @@ if ( ! function_exists( 'woodmart_rank_math_update_shortcode_title' ) ) {
 		<?php
 	}
 
-	add_filter( 'admin_footer-post.php', 'woodmart_rank_math_update_shortcode_title' );
+	add_filter( 'admin_footer-post.php', 'woodmart_rank_math_fix_title_shortcode_compatibility' );
 }

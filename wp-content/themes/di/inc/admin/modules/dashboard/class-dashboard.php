@@ -1,16 +1,20 @@
 <?php
+/**
+ * Dashboard admin module.
+ *
+ * @package woodmart
+ */
 
 namespace XTS\Admin\Modules;
 
-use Elementor\Plugin;
 use XTS\Modules\Dynamic_Discounts\Manager as Dynamic_Discounts_Manager;
-use XTS\Modules\Layouts\Main;
 use XTS\Modules\Patcher\Client;
-use XTS\Admin\Modules\Options;
 use XTS\Admin\Modules\Options\Presets;
-use XTS\Admin\Modules\Setup_Wizard;
 use XTS\Singleton;
 
+/**
+ * Dashboard class.
+ */
 class Dashboard extends Singleton {
 	/**
 	 * Constructor.
@@ -228,69 +232,6 @@ class Dashboard extends Singleton {
 			)
 		);
 
-		$pages_id = array();
-
-		if ( woodmart_woocommerce_installed() && is_singular( 'product' ) && Main::get_instance()->has_custom_layout( 'single_product' ) ) {
-			$pages_id[] = Main::get_instance()->get_layout_id( 'single_product' );
-		} elseif ( woodmart_woocommerce_installed() && woodmart_is_shop_archive() && Main::get_instance()->has_custom_layout( 'shop_archive' ) ) {
-			$pages_id[] = Main::get_instance()->get_layout_id( 'shop_archive' );
-		} elseif ( woodmart_woocommerce_installed() && is_cart() && Main::get_instance()->has_custom_layout( 'cart' ) ) {
-			$pages_id[] = Main::get_instance()->get_layout_id( 'cart' );
-		} elseif ( woodmart_woocommerce_installed() && is_cart() && Main::get_instance()->has_custom_layout( 'empty_cart' ) ) {
-			$pages_id[] = Main::get_instance()->get_layout_id( 'empty_cart' );
-		} elseif ( woodmart_woocommerce_installed() && is_checkout() && ( Main::get_instance()->has_custom_layout( 'checkout_content' ) || Main::get_instance()->has_custom_layout( 'checkout_form' ) ) ) {
-			$pages_id[] = Main::get_instance()->get_layout_id( 'checkout_content' );
-			$pages_id[] = Main::get_instance()->get_layout_id( 'checkout_form' );
-		} elseif ( woodmart_woocommerce_installed() && is_account_page() && Main::get_instance()->has_custom_layout( 'my_account_page' ) ) {
-			$pages_id[] = Main::get_instance()->get_layout_id( 'my_account_page' );
-		} elseif ( woodmart_woocommerce_installed() && woodmart_is_thank_you_page() && Main::get_instance()->has_custom_layout( 'thank_you_page' ) ) {
-			$pages_id[] = Main::get_instance()->get_layout_id( 'thank_you_page' );
-		} elseif (
-			( is_singular( 'post' ) && Main::get_instance()->has_custom_layout( 'single_post' ) ) ||
-			( is_singular( 'portfolio' ) && Main::get_instance()->has_custom_layout( 'single_portfolio' ) )
-		) {
-			$pages_id[] = Main::get_instance()->get_layout_id( is_singular( 'portfolio' ) ? 'single_portfolio' : 'single_post' );
-		} elseif (
-			( woodmart_is_blog_archive() && Main::get_instance()->has_custom_layout( 'blog_archive' ) ) ||
-			( woodmart_is_portfolio_archive() && Main::get_instance()->has_custom_layout( 'portfolio_archive' ) )
-		) {
-			$pages_id[] = Main::get_instance()->get_layout_id( woodmart_is_portfolio_archive() ? 'portfolio_archive' : 'blog_archive' );
-		}
-
-		if ( $pages_id ) {
-			$admin_bar->add_node(
-				array(
-					'id'     => 'xts_layouts_on_this_page',
-					'title'  => esc_html__( 'On this page:', 'woodmart' ),
-					'parent' => 'xts_layouts',
-					'meta'   => array(
-						'class' => 'xts-admin-bar-separator',
-					),
-				)
-			);
-
-			foreach ( $pages_id as $page_id ) {
-				$edit_link = get_edit_post_link( $page_id );
-
-				if ( woodmart_is_elementor_installed() && 'builder' === get_post_meta( $page_id, '_elementor_edit_mode', true )
-				) {
-					$edit_link = Plugin::$instance->documents->get( $page_id )->get_edit_url();
-				}
-
-				$admin_bar->add_node(
-					array(
-						'id'     => 'xts_layouts_edit_current_' . $page_id,
-						'title'  => get_the_title( $page_id ),
-						'href'   => $edit_link,
-						'parent' => 'xts_layouts',
-						'meta'   => array(
-							'title' => '',
-						),
-					)
-				);
-			}
-		}
-
 		if ( woodmart_get_opt( 'woodmart_slider', '1' ) ) {
 			$admin_bar->add_node(
 				array(
@@ -504,7 +445,7 @@ class Dashboard extends Singleton {
 			$separator_position = $separator_position + base_convert( substr( md5( 'separator-xts_dashboard-wp-menu-separator xts-dashboard' ), -4 ), 16, 10 ) * 0.00001;
 		}
 
-		$menu[ $separator_position ] = array( '', 'read', 'separator-xts_dashboard', '', 'wp-menu-separator xts-dashboard' );
+		$menu[ $separator_position ] = array( '', 'read', 'separator-xts_dashboard', '', 'wp-menu-separator xts-dashboard' ); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
 
 		add_menu_page(
 			$theme_name,
@@ -791,6 +732,8 @@ class Dashboard extends Singleton {
 				$class   = 'boxed' === woodmart_get_opt( 'site_width' ) ? 'xts-wrapper-boxed' : 'xts-wrapper-boxed-2';
 				$classes = wd_add_cssclass( $class, $classes );
 			}
+
+			$classes = wd_add_cssclass( 'wd', $classes );
 		}
 
 		return $classes;
@@ -811,8 +754,10 @@ class Dashboard extends Singleton {
 
 		if ( in_array( $current_page, $this->get_allowed_pages(), true ) || ( ( 'edit.php' === $hook_suffix || 'edit-tags.php' === $hook_suffix ) && in_array( $current_post_type, $this->get_allowed_post_types(), true ) ) ) {
 			if ( ! woodmart_is_core_installed() ) {
+				// translators: %s Admin URL.
 				$message = sprintf( __( '<strong>Important:</strong> The WoodMart Core plugin is not installed. You can install the plugin <a href="%s">here</a>.', 'woodmart' ), esc_url( admin_url( 'admin.php?page=xts_plugins' ) ) );
 			} else {
+				// translators: %s Admin URL.
 				$message = sprintf( __( '<strong>Important:</strong> The WoodMart Core plugin is outdated. You can update the plugin <a href="%s">here</a>.', 'woodmart' ), esc_url( admin_url( 'admin.php?page=xts_plugins' ) ) );
 			}
 

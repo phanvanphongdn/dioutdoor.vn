@@ -1,13 +1,23 @@
-<?php if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
-	exit( 'No direct script access allowed' );}
-
+<?php
 /**
-* ------------------------------------------------------------------------------------------------
-* Pricing tables shortcodes
-* ------------------------------------------------------------------------------------------------
-*/
+ * Shortcode for Pricing Tables element.
+ *
+ * @package woodmart
+ */
+
+if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
+	exit( 'No direct script access allowed' );
+}
 
 if ( ! function_exists( 'woodmart_shortcode_pricing_tables' ) ) {
+	/**
+	 * Pricing Tables shortcode
+	 *
+	 * @param array  $atts shortcode attributes.
+	 * @param string $content shortcode content.
+	 *
+	 * @return string
+	 */
 	function woodmart_shortcode_pricing_tables( $atts = array(), $content = null ) {
 		$classes     = '';
 		$style_attrs = '';
@@ -83,11 +93,21 @@ if ( ! function_exists( 'woodmart_shortcode_pricing_tables' ) ) {
 }
 
 if ( ! function_exists( 'woodmart_shortcode_pricing_plan' ) ) {
-	function woodmart_shortcode_pricing_plan( $atts, $content ) {
+	/**
+	 * Pricing Plan shortcode
+	 *
+	 * @param array $atts shortcode attributes.
+	 *
+	 * @return string
+	 */
+	function woodmart_shortcode_pricing_plan( $atts ) {
 		global $wpdb, $post;
 
-		$output = $class = $bg_style = '';
-		extract(
+		$output   = '';
+		$class    = '';
+		$bg_style = '';
+
+		extract( // phpcs:ignore WordPress.PHP.DontExtract.extract_extract
 			shortcode_atts(
 				array(
 					'name'          => '',
@@ -119,13 +139,13 @@ if ( ! function_exists( 'woodmart_shortcode_pricing_plan' ) ) {
 			$class .= ' price-with-label label-color-' . $label_color;
 		}
 
-		if ( $best_option == 'yes' ) {
+		if ( 'yes' === $best_option ) {
 			$class .= ' price-highlighted';
 		}
 
 		$class .= ' price-style-' . $style;
 
-		if ( $with_bg_image == 'yes' && $bg_image ) {
+		if ( 'yes' === $with_bg_image && $bg_image ) {
 			$class   .= ' with-bg-image';
 			$image    = woodmart_otf_get_image_url( $bg_image, 'full' );
 			$bg_style = 'background-image:url(' . esc_url( $image ) . ')';
@@ -138,9 +158,9 @@ if ( ! function_exists( 'woodmart_shortcode_pricing_plan' ) ) {
 
 		$product = false;
 
-		if ( $button_type == 'product' && ! empty( $id ) && function_exists( 'wc_setup_product_data' ) ) {
+		if ( 'product' === $button_type && ! empty( $id ) && function_exists( 'wc_setup_product_data' ) ) {
 			$product_data = get_post( $id );
-			$product      = is_object( $product_data ) && in_array( $product_data->post_type, array( 'product', 'product_variation' ) ) ? wc_setup_product_data( $product_data ) : false;
+			$product      = is_object( $product_data ) && in_array( $product_data->post_type, array( 'product', 'product_variation' ), true ) ? wc_setup_product_data( $product_data ) : false;
 		}
 
 		ob_start();
@@ -162,7 +182,7 @@ if ( ! function_exists( 'woodmart_shortcode_pricing_plan' ) ) {
 							</span>
 						<?php endif ?>
 
-						<?php if ( $price_value != '' ) : ?>
+						<?php if ( '' !== $price_value ) : ?>
 							<span class="wd-price-value">
 								<?php echo wp_kses( $price_value, woodmart_get_allowed_html() ); ?>
 							</span>
@@ -184,7 +204,7 @@ if ( ! function_exists( 'woodmart_shortcode_pricing_plan' ) ) {
 						</div>
 					<?php endif ?>
 					<div class="wd-plan-footer">
-						<?php if ( $button_type == 'product' && $product ) : ?>
+						<?php if ( 'product' === $button_type && $product ) : ?>
 							<?php
 							if ( 'nothing' !== woodmart_get_opt( 'add_to_cart_action' ) ) {
 								woodmart_enqueue_js_script( 'action-after-add-to-cart' );
@@ -201,7 +221,7 @@ if ( ! function_exists( 'woodmart_shortcode_pricing_plan' ) ) {
 							?>
 						<?php else : ?>
 							<?php if ( $button_label ) : ?>
-								<a <?php echo woodmart_get_link_attributes( $link ); ?> class="button price-plan-btn">
+								<a <?php echo woodmart_get_link_attributes( $link ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> class="button price-plan-btn">
 									<?php echo wp_kses( $button_label, woodmart_get_allowed_html() ); ?>
 								</a>
 							<?php endif ?>
@@ -214,7 +234,7 @@ if ( ! function_exists( 'woodmart_shortcode_pricing_plan' ) ) {
 		$output = ob_get_contents();
 		ob_end_clean();
 
-		if ( $button_type == 'product' && function_exists( 'wc_setup_product_data' ) ) {
+		if ( 'product' === $button_type && function_exists( 'wc_setup_product_data' ) ) {
 			// Restore Product global in case this is shown inside a product post
 			wc_setup_product_data( $post );
 		}

@@ -35,7 +35,7 @@ if ( ! function_exists( 'wd_gutenberg_single_post_author_meta' ) ) {
 
 		woodmart_enqueue_inline_style( 'blog-mod-author' );
 		?>
-		<div id="<?php echo esc_attr( $el_id ); ?>" class="wd-single-post-author<?php echo esc_attr( $wrapper_classes ); ?>">
+		<div <?php echo $el_id ? 'id="' . esc_attr( $el_id ) . '" ' : ''; ?>class="wd-single-post-author<?php echo esc_attr( $wrapper_classes ); ?>">
 			<div class="wd-post-author">
 				<?php woodmart_post_meta_author( $author_avatar, $author_label, $author_name, $avatar_size ? $avatar_size : 22 ); ?>
 			</div>

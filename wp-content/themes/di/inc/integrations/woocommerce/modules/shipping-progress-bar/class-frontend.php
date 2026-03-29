@@ -9,7 +9,7 @@ namespace XTS\Modules\Shipping_Progress_Bar;
 
 use XTS\Singleton;
 use XTS\Modules\Layouts\Main as Builder;
-	
+
 /**
  * Shipping progress bar frontend class.
  */
@@ -80,30 +80,30 @@ class Frontend extends Singleton {
 	/**
 	 * Add shipping progress bar fragment.
 	 *
-	 * @param array $array Fragments.
+	 * @param array $fragments Fragments.
 	 *
 	 * @return array
 	 */
-	public function get_shipping_progress_bar_checkout_fragments( $array ) {
+	public function get_shipping_progress_bar_checkout_fragments( $fragments ) {
 		ob_start();
 
 		$this->render_shipping_progress_bar();
 
 		$content = ob_get_clean();
 
-		$array['div.wd-free-progress-bar'] = $content;
+		$fragments['div.wd-free-progress-bar'] = $content;
 
-		return $array;
+		return $fragments;
 	}
 
 	/**
 	 * Add shipping progress bar fragment.
 	 *
-	 * @param array $array Fragments.
+	 * @param array $fragments Fragments.
 	 *
 	 * @return array
 	 */
-	public function get_shipping_progress_bar_fragments( $array ) {
+	public function get_shipping_progress_bar_fragments( $fragments ) {
 		ob_start();
 
 		$this->render_shipping_progress_bar();
@@ -111,12 +111,12 @@ class Frontend extends Singleton {
 		$content = ob_get_clean();
 
 		if ( apply_filters( 'woodmart_update_fragments_fix', true ) ) {
-			$array['div.wd-free-progress-bar_wd'] = $content;
+			$fragments['div.wd-free-progress-bar_wd'] = $content;
 		} else {
-			$array['div.wd-free-progress-bar'] = $content;
+			$fragments['div.wd-free-progress-bar'] = $content;
 		}
 
-		return $array;
+		return $fragments;
 	}
 
 	/**
@@ -135,11 +135,26 @@ class Frontend extends Singleton {
 		$limit           = 0;
 		$free_shipping   = false;
 
-		if ( ! is_object( WC() ) || ! property_exists( WC(), 'cart' ) || ! is_object( WC()->cart ) || ! method_exists( WC()->cart, 'get_displayed_subtotal' ) ) {
-			$total       = 0;
+		if ( ! is_object( WC() ) || ! property_exists( WC(), 'cart' ) || ! is_object( WC()->cart ) ) {
+			$cart_price  = 0;
 			$calculation = 'custom';
 		} else {
-			$total = floatval( WC()->cart->get_displayed_subtotal() );
+			$cart_object = WC()->cart;
+			$totals      = $cart_object->get_totals();
+
+			switch ( woodmart_get_opt( 'shipping_progress_bar_base_price', 'displayed_subtotal' ) ) {
+				case 'subtotal':
+					$cart_price = floatval( $totals['subtotal'] );
+					break;
+				case 'total':
+					$cart_price = floatval( $totals['total'] );
+					break;
+				default:
+					$cart_price = floatval( WC()->cart->get_displayed_subtotal() );
+					break;
+			}
+
+			$cart_price = apply_filters( 'woodmart_shipping_progress_bar_cart_price', $cart_price, $cart_object );
 		}
 
 		if ( 'wc' === $calculation ) {
@@ -156,9 +171,9 @@ class Frontend extends Singleton {
 			$limit = woodmart_get_opt( 'shipping_progress_bar_amount' );
 		}
 
-		if ( $total && 'include' === woodmart_get_opt( 'shipping_progress_bar_include_coupon' ) && WC()->cart->get_coupons() ) {
+		if ( $cart_price && 'include' === woodmart_get_opt( 'shipping_progress_bar_include_coupon' ) && WC()->cart->get_coupons() ) {
 			foreach ( WC()->cart->get_coupons() as $coupon ) {
-				$total -= WC()->cart->get_coupon_discount_amount( $coupon->get_code(), WC()->cart->display_cart_ex_tax );
+				$cart_price -= WC()->cart->get_coupon_discount_amount( $coupon->get_code(), WC()->cart->display_cart_ex_tax );
 
 				if ( $coupon->get_free_shipping() ) {
 					$free_shipping = true;
@@ -173,14 +188,14 @@ class Frontend extends Singleton {
 			return;
 		}
 
-		if ( $total < $limit && ! $free_shipping ) {
-			$percent = floor( ( $total / $limit ) * 100 );
-			$message = str_replace( '[remainder]', wc_price( $limit - $total ), woodmart_get_opt( 'shipping_progress_bar_message_initial' ) );
+		if ( $cart_price < $limit && ! $free_shipping ) {
+			$percent = floor( ( $cart_price / $limit ) * 100 );
+			$message = str_replace( '[remainder]', wc_price( $limit - $cart_price ), woodmart_get_opt( 'shipping_progress_bar_message_initial' ) );
 		} else {
 			$message = woodmart_get_opt( 'shipping_progress_bar_message_success' );
 		}
 
-		if ( 0 === (int) $total || $percent < 0 ) {
+		if ( 0 === (int) $cart_price || $percent < 0 ) {
 			$wrapper_classes .= ' wd-progress-hide';
 		}
 

@@ -110,7 +110,7 @@ class Manager extends Singleton {
 		$current_meta_boxes = array();
 
 		foreach ( $meta_boxes_keys as $meta_box_id ) {
-			$meta_box_value = maybe_unserialize( get_post_meta( $id, $meta_box_id, true ) );
+			$meta_box_value = get_post_meta( $id, $meta_box_id, true );
 
 			if ( 'est_del_shipping_method' === $meta_box_id && is_array( $meta_box_value ) ) {
 				$meta_box_value = array_filter( $meta_box_value );
@@ -198,7 +198,7 @@ class Manager extends Singleton {
 	 */
 	public function get_rule_for_product( $product, $shipping_method_id = false ) {
 		if ( ! $product instanceof WC_Product ) {
-			return;
+			return array();
 		}
 
 		$product_in_stock = is_single() || is_ajax() ? $this->check_product_in_stock_on_single_page( $product ) : true;
@@ -208,7 +208,7 @@ class Manager extends Singleton {
 			return array();
 		}
 
-		$user_method = $shipping_method_id ? $shipping_method_id : $this->get_selected_method();
+		$user_method = $shipping_method_id ? $shipping_method_id : $this->get_selected_method( $product );
 		$rules       = $this->group_rules_by_shipping_method();
 
 		if ( empty( $rules ) ) {
@@ -406,9 +406,11 @@ class Manager extends Singleton {
 	/**
 	 * Get current shipping method.
 	 *
+	 * @param WC_Product|null $product Product object to get vendor-specific shipping method.
+	 *
 	 * @return string|null
 	 */
-	public function get_selected_method() {
+	public function get_selected_method( $product = null ) {
 		if ( ! isset( WC()->session ) ) {
 			return null;
 		}
@@ -441,17 +443,18 @@ class Manager extends Singleton {
 			return null;
 		}
 
-		foreach ( $selected_shipping_method as $method ) {
-			if ( false === $method ) {
-				continue;
-			}
+		$package_index = apply_filters( 'woodmart_get_shipping_package_index', 0, $product );
+		$method        = isset( $selected_shipping_method[ $package_index ] ) ? $selected_shipping_method[ $package_index ] : reset( $selected_shipping_method );
 
-			if ( false !== strpos( $method, ':' ) ) {
-				$method    = explode( ':', $method );
-				$method_id = isset( $method[1] ) ? $method[1] : null;
-			} else {
-				$method_id = $this->get_shipping_method_instance_id( $method );
-			}
+		if ( false === $method ) {
+			return null;
+		}
+
+		if ( false !== strpos( $method, ':' ) ) {
+			$method    = explode( ':', $method );
+			$method_id = isset( $method[1] ) ? $method[1] : null;
+		} else {
+			$method_id = $this->get_shipping_method_instance_id( $method );
 		}
 
 		return $method_id ? strval( $method_id ) : null;

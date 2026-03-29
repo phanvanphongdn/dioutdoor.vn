@@ -1,4 +1,10 @@
 <?php
+/**
+ * Header secondary menu element.
+ *
+ * @package woodmart
+ */
+
 use XTS\Modules\Mega_Menu_Walker;
 
 $menu_style = ( $params['menu_style'] ) ? $params['menu_style'] : 'default';
@@ -20,8 +26,14 @@ if ( ! empty( $params['icon_alignment'] ) && 'inherit' !== $params['icon_alignme
 	$menu_classes .= ' wd-icon-' . $params['icon_alignment'];
 }
 
+$items_bg_activated = ! empty( $params['items_bg_color'] ) || ! empty( $params['items_bg_color_hover'] ) || ! empty( $params['items_bg_color_active'] );
+
+if ( $items_bg_activated ) {
+	$menu_classes .= ' wd-add-pd';
+}
+
 if ( isset( $params['inline'] ) && $params['inline'] ) {
-	$classes = ' wd-inline';
+	$classes .= ' wd-inline';
 }
 
 if ( ! empty( $params['bg_overlay'] ) ) {
@@ -29,8 +41,6 @@ if ( ! empty( $params['bg_overlay'] ) ) {
 
 	$classes .= ' wd-with-overlay';
 }
-
-$classes .= woodmart_get_old_classes( ' navigation-style-' . $menu_style );
 
 $menu_object = wp_get_nav_menu_object( $params['menu_id'] );
 

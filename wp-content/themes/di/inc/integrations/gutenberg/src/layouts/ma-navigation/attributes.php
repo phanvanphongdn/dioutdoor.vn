@@ -1,8 +1,18 @@
 <?php
+/**
+ * My account navigation attributes.
+ *
+ * @package woodmart
+ */
 
 use XTS\Gutenberg\Block_Attributes;
 
 if ( ! function_exists( 'wd_get_my_account_navigation_attrs' ) ) {
+	/**
+	 * Get my account navigation attributes.
+	 *
+	 * @return array
+	 */
 	function wd_get_my_account_navigation_attrs() {
 		$attr = new Block_Attributes();
 
@@ -75,6 +85,9 @@ if ( ! function_exists( 'wd_get_my_account_navigation_attrs' ) ) {
 				'navBorderActiveWidthLock' => array(
 					'type'    => 'boolean',
 					'default' => true,
+				),
+				'disable_active_style'     => array(
+					'type' => 'boolean',
 				),
 			)
 		);

@@ -1,10 +1,18 @@
 <?php
+/**
+ * Main layouts class.
+ *
+ * @package woodmart
+ */
 
 namespace XTS\Modules\Layouts;
 
 use XTS\Modules\Layouts\Global_Data as Builder_Data;
 use XTS\Singleton;
 
+/**
+ * Main class.
+ */
 class Main extends Singleton {
 	/**
 	 * Layout.
@@ -21,12 +29,16 @@ class Main extends Singleton {
 	private $is_custom_layout = false;
 
 	/**
+	 * Layout directory.
+	 *
+	 * @var string
+	 */
+	private $layout_directory = WOODMART_THEMEROOT . '/inc/modules/layouts/';
+
+	/**
 	 * Constructor.
 	 */
 	public function init() {
-		define( 'XTS_LAYOUTS_DIR', WOODMART_THEMEROOT . '/inc/modules/layouts/' );
-		define( 'XTS_LAYOUTS_TEMPLATES_DIR', '/inc/modules/layouts/templates/' );
-
 		$this->include_classes_files();
 
 		add_action( 'init', array( $this, 'include_files' ), 10 );
@@ -58,23 +70,24 @@ class Main extends Singleton {
 	 * Include classes files.
 	 */
 	public function include_classes_files() {
-		require_once XTS_LAYOUTS_DIR . 'admin/class-admin.php';
-		require_once XTS_LAYOUTS_DIR . 'admin/class-conditions-cache.php';
-		require_once XTS_LAYOUTS_DIR . 'admin/class-manager.php';
-		require_once XTS_LAYOUTS_DIR . 'admin/class-import.php';
-		require_once XTS_LAYOUTS_DIR . 'class-layout-type.php';
+		require_once $this->layout_directory . 'admin/class-admin.php';
+		require_once $this->layout_directory . 'admin/class-conditions-cache.php';
+		require_once $this->layout_directory . 'admin/class-manager.php';
+		require_once $this->layout_directory . 'admin/class-import.php';
+		require_once $this->layout_directory . 'class-layout-type.php';
 
 		if ( woodmart_woocommerce_installed() ) {
-			require_once XTS_LAYOUTS_DIR . 'class-checkout.php';
-			require_once XTS_LAYOUTS_DIR . 'class-thank-you-page.php';
-			require_once XTS_LAYOUTS_DIR . 'class-my-account.php';
-			require_once XTS_LAYOUTS_DIR . 'class-cart.php';
-			require_once XTS_LAYOUTS_DIR . 'class-shop-archive.php';
-			require_once XTS_LAYOUTS_DIR . 'class-single-product.php';
+			require_once $this->layout_directory . 'class-checkout.php';
+			require_once $this->layout_directory . 'class-thank-you-page.php';
+			require_once $this->layout_directory . 'class-my-account.php';
+			require_once $this->layout_directory . 'class-cart.php';
+			require_once $this->layout_directory . 'class-shop-archive.php';
+			require_once $this->layout_directory . 'class-single-product.php';
+			require_once $this->layout_directory . 'class-loop-item.php';
 		}
 
-		require_once XTS_LAYOUTS_DIR . 'class-single-post.php';
-		require_once XTS_LAYOUTS_DIR . 'class-posts-archive.php';
+		require_once $this->layout_directory . 'class-single-post.php';
+		require_once $this->layout_directory . 'class-posts-archive.php';
 	}
 
 	/**
@@ -84,11 +97,11 @@ class Main extends Singleton {
 		$current_builder = woodmart_get_current_page_builder();
 
 		if ( 'wpb' === $current_builder ) {
-			foreach ( glob( XTS_LAYOUTS_DIR . 'wpb/**/**/*.php', GLOB_NOSORT ) as $file ) {
+			foreach ( glob( $this->layout_directory . 'wpb/**/**/*.php', GLOB_NOSORT ) as $file ) {
 				require_once $file;
 			}
 
-			require_once XTS_LAYOUTS_DIR . 'wpb/maps/register-maps.php';
+			require_once $this->layout_directory . 'wpb/maps/register-maps.php';
 		} elseif ( 'elementor' === $current_builder ) {
 			add_action( 'elementor/widgets/register', array( $this, 'register_layout_widgets' ) );
 		}
@@ -132,7 +145,7 @@ class Main extends Singleton {
 	 * @return void
 	 */
 	public function register_widgets_by_pattern( $pattern ) {
-		$files = glob( XTS_LAYOUTS_DIR . $pattern );
+		$files = glob( $this->layout_directory . $pattern );
 		natsort( $files );
 		foreach ( $files as $file ) {
 			require_once $file;
@@ -292,6 +305,22 @@ class Main extends Singleton {
 
 					if ( 'shop_archive' === $type ) {
 						$is_active = Shop_Archive::get_instance()->check( $condition );
+
+						if ( apply_filters( 'woodmart_allow_conditions_with_filter', true ) ) {
+							if ( $has_filtered_condition && ! $is_active_prev_condition && $is_active ) {
+								unset( $sorted_data[ $post_id ] );
+								break;
+							}
+
+							if ( str_contains( $condition['condition_type'], 'filtered' ) && 'include' === $condition['condition_comparison'] ) {
+								if ( ! $is_active ) {
+									unset( $sorted_data[ $post_id ] );
+									break;
+								}
+
+								$has_filtered_condition = true;
+							}
+						}
 					}
 
 					if ( 'checkout_form' === $type || 'checkout_content' === $type ) {
@@ -319,33 +348,13 @@ class Main extends Singleton {
 					$is_active = Posts_Archive::get_instance()->check( $condition, $type );
 				}
 
-				if ( 'shop_archive' === $type ) {
-					if ( apply_filters( 'woodmart_allow_conditions_with_filter', true ) ) {
-						if ( $has_filtered_condition && ! $is_active_prev_condition && $is_active ) {
-							unset( $sorted_data[ $post_id ] );
-							break;
-						}
-
-						if ( str_contains( $condition['condition_type'], 'filtered' ) && 'include' === $condition['condition_comparison'] ) {
-							if ( ! $is_active ) {
-								unset( $sorted_data[ $post_id ] );
-								break;
-							}
-
-							$has_filtered_condition = true;
-						}
-					}
-				}
-
 				if ( $is_active && $post && 'publish' === $post->post_status ) {
 					$sorted_data[ $post_id ][ $condition['condition_comparison'] ][] = array(
 						'is_active' => $is_active,
 						'priority'  => $this->get_condition_priority( $condition['condition_type'] ),
 					);
 
-					if ( 'shop_archive' === $type ) {
-						$is_active_prev_condition = true;
-					}
+					$is_active_prev_condition = true;
 				}
 			}
 		}
@@ -397,6 +406,9 @@ class Main extends Singleton {
 			case 'product_cats':
 			case 'product_tags':
 			case 'product_attr':
+			case 'order_total':
+			case 'order_subtotal':
+			case 'order_subtotal_after_discount':
 				$priority = 30;
 				break;
 			case 'product_cat_children':
@@ -410,6 +422,7 @@ class Main extends Singleton {
 			case 'product_brand':
 			case 'product_attr_term':
 			case 'product_term':
+			case 'product_shipping_class':
 				$priority = 70;
 				break;
 			case 'filtered_product_term':
@@ -419,6 +432,7 @@ class Main extends Singleton {
 				$priority = 80;
 				break;
 			case 'product':
+			case 'products':
 				$priority = 90;
 				break;
 		}
@@ -429,7 +443,8 @@ class Main extends Singleton {
 	/**
 	 * Setup preview.
 	 *
-	 * @param array $query_args  Query arguments.
+	 * @param array $query_args Query arguments.
+	 * @param int   $force_post_id Force post ID.
 	 */
 	public static function setup_preview( $query_args = array(), $force_post_id = false ) {
 		global $post;
@@ -443,13 +458,14 @@ class Main extends Singleton {
 		}
 
 		$layout_type     = get_post_meta( $post_id, 'wd_layout_type', true );
-		$setup_condition = ( wp_doing_ajax() && isset( $_POST['action'] ) && 'wd_layout_create' === $_POST['action'] ); // phpcs:ignore
+		$setup_condition = ( wp_doing_ajax() && isset( $_POST['action'] ) && 'wd_layout_create' === $_POST['action'] ); // phpcs:ignore WordPress.Security.NonceVerification.Missing
 
-		if ( 'single_post' === $layout_type || 'single_portfolio' === $layout_type || $setup_condition ) {
+		$is_post_layout = isset( $_POST['type'] ) && in_array( $_POST['type'], array( 'single_post', 'single_portfolio' ), true ); // phpcs:ignore WordPress.Security.NonceVerification.Missing
+		if ( 'single_post' === $layout_type || 'single_portfolio' === $layout_type || ( $setup_condition && $is_post_layout ) ) {
 			Single_Post::setup_postdata();
 		}
 
-		if ( 'blog_archive' === $layout_type || 'portfolio_archive' === $layout_type ) { // phpcs:ignore
+		if ( 'blog_archive' === $layout_type || 'portfolio_archive' === $layout_type ) {
 			$query_args = array(
 				'post_type' => 'blog_archive' === $layout_type ? 'post' : 'portfolio',
 				'paged'     => get_query_var( 'paged', 1 ),
@@ -466,7 +482,8 @@ class Main extends Singleton {
 			return;
 		}
 
-		if ( 'single_product' === $layout_type || $setup_condition || $force_post_id ) { // phpcs:ignore
+		$is_product_layout = isset( $_POST['type'] ) && 'single_product' === $_POST['type']; // phpcs:ignore WordPress.Security.NonceVerification.Missing
+		if ( 'single_product' === $layout_type || ( $setup_condition && $is_product_layout ) || $force_post_id ) {
 			Single_Product::setup_postdata( $force_post_id );
 		} elseif ( 'shop_archive' === $layout_type ) {
 			if ( ! $query_args ) {
@@ -488,6 +505,8 @@ class Main extends Singleton {
 
 	/**
 	 * Restore preview.
+	 *
+	 * @param bool $force_post_id Force post ID.
 	 */
 	public static function restore_preview( $force_post_id = false ) {
 		if ( woodmart_woocommerce_installed() ) {
@@ -514,17 +533,19 @@ class Main extends Singleton {
 
 		if ( 'elementor' === woodmart_get_current_page_builder() ) {
 			$layout_id = Builder_Data::get_instance()->get_data( 'layout_id' ) ? Builder_Data::get_instance()->get_data( 'layout_id' ) : get_the_ID();
-		} elseif ( ( 'post.php' === $GLOBALS['pagenow'] || wp_doing_ajax() ) && ( isset( $_GET['post'] ) || isset( $_REQUEST['post_id'] ) || isset( $_POST['post_ID'] ) ) ) { //phpcs:ignore
-			if ( isset( $_GET['post'] ) && $_GET['post'] ) { //phpcs:ignore
-				$layout_id = woodmart_clean( $_GET['post'] ); //phpcs:ignore
-			} elseif ( isset( $_REQUEST['post_id'] ) && $_REQUEST['post_id'] ) { //phpcs:ignore
-				$layout_id = woodmart_clean( $_REQUEST['post_id'] ); //phpcs:ignore
-			} elseif ( isset( $_POST['post_ID'] ) && $_POST['post_ID'] ) { //phpcs:ignore
-				$layout_id = woodmart_clean( $_POST['post_ID'] ); //phpcs:ignore
+		} elseif ( ( 'post.php' === $GLOBALS['pagenow'] || wp_doing_ajax() ) && ( isset( $_GET['post'] ) || isset( $_REQUEST['post_id'] ) || isset( $_POST['post_ID'] ) ) ) { // phpcs:ignore WordPress.Security
+			// phpcs:disable WordPress.Security
+			if ( isset( $_GET['post'] ) && $_GET['post'] ) {
+				$layout_id = woodmart_clean( $_GET['post'] );
+			} elseif ( isset( $_REQUEST['post_id'] ) && $_REQUEST['post_id'] ) {
+				$layout_id = woodmart_clean( $_REQUEST['post_id'] );
+			} elseif ( isset( $_POST['post_ID'] ) && $_POST['post_ID'] ) {
+				$layout_id = woodmart_clean( $_POST['post_ID'] );
 			}
+			// phpcs:enable
 		} elseif ( function_exists( 'vc_is_inline' ) && vc_is_inline() ) {
 			$layout_id = (int) vc_get_param( 'vc_post_id' );
-		} elseif ( 'post-new.php' === $GLOBALS['pagenow'] && ( ! isset( $_REQUEST['post_type'] ) || 'woodmart_layout' !== $_REQUEST['post_type'] ) ) {
+		} elseif ( 'post-new.php' === $GLOBALS['pagenow'] && ( ! isset( $_REQUEST['post_type'] ) || 'woodmart_layout' !== $_REQUEST['post_type'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 			return false;
 		} elseif ( is_admin() ) {
 			return true;
@@ -532,7 +553,7 @@ class Main extends Singleton {
 			$layout_id = get_the_ID();
 		}
 
-		if ( isset( $_POST['action'] ) && 'wd_layout_create' === $_POST['action'] ) { // phpcs:ignore
+		if ( isset( $_POST['action'] ) && 'wd_layout_create' === $_POST['action'] ) { // phpcs:ignore WordPress.Security.NonceVerification.Missing
 			return true;
 		}
 

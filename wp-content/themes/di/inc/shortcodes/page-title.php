@@ -1,6 +1,6 @@
 <?php
 /**
- * Page title shortcode.
+ * Shortcode for Page Title element.
  *
  * @package WoodMart
  */

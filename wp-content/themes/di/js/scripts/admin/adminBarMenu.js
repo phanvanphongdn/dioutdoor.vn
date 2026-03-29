@@ -40,14 +40,24 @@
 					return;
 				}
 
+				if (! $menuItem.find('.ab-submenu').length) {
+					$menuItem.append('<div class="ab-sub-wrapper"><ul class="ab-submenu"></ul></div>');
+					$menuItem.find('.ab-item').prepend('<span class="wp-admin-bar-arrow" aria-hidden="true"></span>');
+					$menuItem.addClass('menupop');
+				}
+
 				if (! $menuItem.find('.xts-admin-bar-separator').length) {
 					$menuItem.find('.ab-submenu').append(
 						`<li class="xts-admin-bar-separator"><div class="ab-item ab-empty-item">${woodmart_settings.on_this_page}</div></li>`
 					);
 				}
 
+				if ($menuItem.find('.ab-submenu a[data-id="' + postData.id + '"]').length ) {
+					return;
+				}
+
 				$menuItem.find('.ab-submenu').append(
-					`<li><a href="${postData.edit_url}" class="ab-item" target="_blank">${postData.title}</a></li>`
+					`<li><a href="${postData.edit_url}" class="ab-item" data-id="${postData.id}" target="_blank">${postData.title}</a></li>`
 				);
 			});
 		}

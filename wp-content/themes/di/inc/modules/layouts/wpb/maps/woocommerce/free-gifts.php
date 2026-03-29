@@ -2,7 +2,7 @@
 /**
  * Manual free gifts table map.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

@@ -29,7 +29,7 @@ class Setup_Wizard extends Singleton {
 	 * Constructor.
 	 */
 	public function init() {
-		if ( isset( $_GET['skip_setup'] ) ) {
+		if ( isset( $_GET['skip_setup'] ) ) { // phpcs:ignore WordPress.Security
 			update_option( 'woodmart_setup_status', 'done', false );
 		}
 
@@ -38,7 +38,7 @@ class Setup_Wizard extends Singleton {
 			do_action( 'woodmart_setup_wizard' );
 		}
 
-		if ( defined( 'DOING_AJAX' ) || isset( $_GET['page'] ) && ( 'xts_dashboard' === $_GET['page'] || 'tgmpa-install-plugins' === $_GET['page'] ) ) {
+		if ( defined( 'DOING_AJAX' ) || ( isset( $_GET['page'] ) && ( 'xts_dashboard' === $_GET['page'] || 'tgmpa-install-plugins' === $_GET['page'] ) ) ) { // phpcs:ignore WordPress.Security
 			add_action( 'admin_init', array( $this, 'prevent_plugins_redirect' ), 1 );
 		}
 
@@ -121,7 +121,7 @@ class Setup_Wizard extends Singleton {
 
 		$page = 'welcome';
 
-		if ( ! empty( $_GET['step'] ) && in_array( $_GET['step'], array( 'activation', 'child-theme',  'page-builder', 'plugins', 'prebuilt-websites', 'done') ) ) { // phpcs:ignore
+		if ( ! empty( $_GET['step'] ) && in_array( $_GET['step'], array( 'activation', 'child-theme',  'page-builder', 'plugins', 'prebuilt-websites', 'done'), true ) ) { // phpcs:ignore
 			$page = trim( wp_unslash( $_GET['step'] ) ); // phpcs:ignore
 		}
 
@@ -274,12 +274,7 @@ class Setup_Wizard extends Singleton {
 
 			if ( 'gutenberg' === $builder ) {
 				$xts_woodmart_options['current_builder']               = 'native';
-				$xts_woodmart_options['gutenberg_blocks']              = true;
 				$xts_woodmart_options['enable_gutenberg_for_products'] = true;
-			} else {
-				$xts_woodmart_options['current_builder']               = 'external';
-				$xts_woodmart_options['gutenberg_blocks']              = false;
-				$xts_woodmart_options['enable_gutenberg_for_products'] = false;
 			}
 
 			$options->update_options( $xts_woodmart_options );

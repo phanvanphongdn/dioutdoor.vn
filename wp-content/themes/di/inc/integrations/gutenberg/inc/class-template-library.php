@@ -2,7 +2,7 @@
 /**
  * Gutenberg post CSS class.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Gutenberg;
@@ -13,7 +13,7 @@ use XTS\Singleton;
 /**
  * Post CSS module.
  *
- * @package Woodmart
+ * @package woodmart
  */
 class Template_Library extends Singleton {
 

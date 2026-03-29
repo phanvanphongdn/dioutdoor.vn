@@ -1,9 +1,17 @@
 <?php
+/**
+ * Mega Menu Walker Class.
+ *
+ * @package woodmart
+ */
 
 namespace XTS\Modules;
 
 use Walker_Nav_Menu;
 
+/**
+ * Class Mega_Menu_Walker
+ */
 class Mega_Menu_Walker extends Walker_Nav_Menu {
 	/**
 	 * Design.
@@ -41,6 +49,13 @@ class Mega_Menu_Walker extends Walker_Nav_Menu {
 		$this->whb_settings = whb_get_settings();
 	}
 
+	/**
+	 * Get drilldown back button HTML.
+	 *
+	 * @param string $tag HTML tag to use for the button container.
+	 *
+	 * @return string
+	 */
 	public function get_drilldown_back_button( $tag = 'div' ) {
 		if ( ! isset( $this->whb_settings['burger']['menu_layout'] ) || 'drilldown' !== $this->whb_settings['burger']['menu_layout'] ) {
 			return '';
@@ -48,12 +63,12 @@ class Mega_Menu_Walker extends Walker_Nav_Menu {
 
 		ob_start();
 		?>
-		<<?php echo $tag; ?> class="wd-drilldown-back">
+		<<?php echo $tag; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> class="wd-drilldown-back">
 		<span class="wd-nav-opener"></span>
 		<a href="#">
 			<?php esc_html_e( 'Back', 'woodmart' ); ?>
 		</a>
-		</<?php echo $tag; ?>>
+		</<?php echo $tag; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 		<?php
 		return ob_get_clean();
 	}
@@ -75,7 +90,7 @@ class Mega_Menu_Walker extends Walker_Nav_Menu {
 		$is_nav_fs     = strstr( $args->menu_class, 'wd-nav-fs' );
 		$classes       = '';
 		$style         = get_post_meta( $this->id, '_menu_item_style_' . $this->design, true );
-		$scroll = get_post_meta( $this->id, '_menu_item_scroll', true );
+		$scroll        = get_post_meta( $this->id, '_menu_item_scroll', true );
 
 		if ( 0 === $depth && ! $is_nav_mobile ) {
 			if ( 'default' !== $this->color_scheme ) {
@@ -98,8 +113,6 @@ class Mega_Menu_Walker extends Walker_Nav_Menu {
 				$classes .= ' wd-scroll';
 			}
 
-			$classes .= woodmart_get_old_classes( ' sub-menu-dropdown' );
-
 			$output .= $indent . '<div class="' . trim( $classes ) . '">';
 
 			if ( 'full-height' === $this->design ) {
@@ -116,20 +129,16 @@ class Mega_Menu_Walker extends Walker_Nav_Menu {
 
 		if ( 0 === $depth ) {
 			if ( ( 'full-width' === $this->design || 'sized' === $this->design || 'full-height' === $this->design ) && ! $is_nav_mobile ) {
-				$sub_menu_class  = 'wd-sub-menu wd-sub-accented wd-grid-f-inline';
-				$sub_menu_class .= woodmart_get_old_classes( ' sub-menu' );
+				$sub_menu_class = 'wd-sub-menu wd-sub-accented wd-grid-f-inline';
 			} else {
-				$sub_menu_class  = 'wd-sub-menu';
-				$sub_menu_class .= woodmart_get_old_classes( ' sub-menu' );
+				$sub_menu_class = 'wd-sub-menu';
 			}
+		} elseif ( 'default' === $this->design && ! $is_nav_mobile && ! $is_nav_fs ) {
+			$sub_menu_class = 'sub-sub-menu wd-dropdown';
+		} elseif ( 'default' === $this->design && $is_nav_fs ) {
+			$sub_menu_class = 'sub-sub-menu wd-dropdown-fs-menu';
 		} else {
-			if ( 'default' === $this->design && ! $is_nav_mobile && ! $is_nav_fs ) {
-				$sub_menu_class = 'sub-sub-menu wd-dropdown';
-			} elseif ( 'default' === $this->design && $is_nav_fs ) {
-				$sub_menu_class = 'sub-sub-menu wd-dropdown-fs-menu';
-			} else {
-				$sub_menu_class = 'sub-sub-menu';
-			}
+			$sub_menu_class = 'sub-sub-menu';
 		}
 
 		if ( ! $is_nav_mobile && 0 === $depth ) {
@@ -249,7 +258,16 @@ class Mega_Menu_Walker extends Walker_Nav_Menu {
 			woodmart_enqueue_inline_style( 'dropdown-full-height' );
 		}
 
-		if ( 'full-height' === $design || 'yes' === $scroll && ( 'full-width' === $design || 'sized' === $design ) ) {
+		if (
+			'full-height' === $design ||
+			(
+				'yes' === $scroll &&
+				(
+					'full-width' === $design ||
+					'sized' === $design
+				)
+			)
+		) {
 			woodmart_enqueue_inline_style( 'header-mod-content-calc' );
 		}
 
@@ -258,7 +276,6 @@ class Mega_Menu_Walker extends Walker_Nav_Menu {
 		}
 
 		if ( 0 === $depth && ! $is_nav_mobile ) {
-			$classes[] = woodmart_get_old_classes( 'menu-item-design-' . $design );
 			if ( 'sized' === $design || 'full-width' === $design || 'aside' === $design || 'full-height' === $design ) {
 				$classes[] = 'menu-mega-dropdown';
 			} else {
@@ -284,7 +301,8 @@ class Mega_Menu_Walker extends Walker_Nav_Menu {
 			woodmart_enqueue_js_library( 'waypoints' );
 			woodmart_enqueue_js_script( 'one-page-menu' );
 			$classes[] = 'onepage-link';
-			$key       = array_search( 'current-menu-item', $classes );
+			$key       = array_search( 'current-menu-item', $classes, true );
+
 			if ( false !== $key ) {
 				unset( $classes[ $key ] );
 			}
@@ -398,7 +416,7 @@ class Mega_Menu_Walker extends Walker_Nav_Menu {
 		 * @param array  $args   An array of {@see wp_nav_menu()} arguments.
 		 * @param int    $depth  Depth of menu item. Used for padding.
 		 */
-		$atts          = apply_filters( 'nav_menu_link_attributes', $atts, $item, $args, $depth );
+		$atts = apply_filters( 'nav_menu_link_attributes', $atts, $item, $args, $depth );
 
 		if ( array_key_exists( 'class', $atts ) ) {
 			$atts['class'] .= ' woodmart-nav-link';
@@ -450,7 +468,7 @@ class Mega_Menu_Walker extends Walker_Nav_Menu {
 					}
 
 					if ( $icon_data ) {
-						$image_output .= '<img src="' . esc_url( $icon_data ) . '" alt="' . esc_attr( $item->title ) . '" ' . $icon_attrs . ' class="wd-nav-img' . woodmart_get_old_classes( ' category-icon' ) . '" loading="lazy"/>';
+						$image_output .= '<img src="' . esc_url( $icon_data ) . '" alt="' . esc_attr( $item->title ) . '" ' . $icon_attrs . ' class="wd-nav-img" loading="lazy"/>';
 					}
 				}
 			}
@@ -495,7 +513,6 @@ class Mega_Menu_Walker extends Walker_Nav_Menu {
 
 				$classes .= ' wd-design-' . $design;
 				$classes .= ' color-scheme-' . $this->color_scheme;
-				$classes .= woodmart_get_old_classes( ' sub-menu-dropdown' );
 
 				if ( 'full-height' === $this->design || 'yes' === $scroll ) {
 					$classes .= ' wd-scroll';

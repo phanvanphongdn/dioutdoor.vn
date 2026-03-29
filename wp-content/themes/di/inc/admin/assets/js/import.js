@@ -71,14 +71,6 @@
 			var action = $(this).hasClass('xts-color-alt') ? 'activate' : 'import';
 			var confirmRemove = 'none';
 
-			if ($this.hasClass('xts-need-rs')) {
-				var needRs = confirm('The Slider Revolution plugin is not activated. Activate the plugin first or you can skip this and import the version without a slider.');
-
-				if (!needRs) {
-					return;
-				}
-			}
-
 			if (clickBase && clickBase !== currentBase && $importWrapper.hasClass('xts-base-imported')) {
 				confirmRemove = confirm('WARNING! To import this demo version you need to remove all the previously imported content with all pages, products, and images. Do you want to remove the content and import this version?');
 			}
@@ -253,10 +245,6 @@
 						data    : [
 							{
 								'name' : 'page',
-								'value': 'on'
-							},
-							{
-								'name' : 'rev_sliders',
 								'value': 'on'
 							},
 							{

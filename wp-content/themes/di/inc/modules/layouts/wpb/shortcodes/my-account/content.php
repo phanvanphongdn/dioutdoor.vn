@@ -2,7 +2,7 @@
 /**
  * My account content shortcode.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 use XTS\Modules\Layouts\Main;
@@ -44,12 +44,14 @@ if ( ! function_exists( 'woodmart_shortcode_my_account_content' ) ) {
 				$ui_instance = Ui::get_instance();
 				if ( $ui_instance->is_editable() ) {
 					add_action( 'woocommerce_before_shop_loop_item', array( $ui_instance, 'output_settings_btn' ) );
+					add_action( 'woodmart_loop_item_content', array( $ui_instance, 'output_settings_btn' ), 5 );
 				}
 
 				echo $ui_instance->wishlist_page_content(); // phpcs:ignore.
 
 				if ( $ui_instance->is_editable() ) {
 					remove_action( 'woocommerce_before_shop_loop_item', array( $ui_instance, 'output_settings_btn' ) );
+					remove_action( 'woodmart_loop_item_content', array( $ui_instance, 'output_settings_btn' ), 5 );
 				}
 			} else {
 				remove_action( 'woocommerce_account_dashboard', 'woodmart_my_account_links', 10 );

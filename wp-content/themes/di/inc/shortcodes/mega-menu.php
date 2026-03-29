@@ -1,4 +1,9 @@
 <?php
+/**
+ * Shortcode for Mega Menu element.
+ *
+ * @package woodmart
+ */
 
 if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
 	exit( 'No direct script access allowed' );
@@ -6,16 +11,18 @@ if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
 
 use XTS\Modules\Mega_Menu_Walker;
 
-/**
-* ------------------------------------------------------------------------------------------------
-* Mega Menu widget
-* ------------------------------------------------------------------------------------------------
-*/
-
 if ( ! function_exists( 'woodmart_shortcode_mega_menu' ) ) {
-	function woodmart_shortcode_mega_menu( $atts, $content ) {
-		$output = $title_html = '';
-		$class  = apply_filters( 'vc_shortcodes_css_class', '', '', $atts );
+	/**
+	 * Mega Menu shortcode.
+	 *
+	 * @param array $atts Shortcode attributes.
+	 *
+	 * @return string
+	 */
+	function woodmart_shortcode_mega_menu( $atts ) {
+		$output     = '';
+		$title_html = '';
+		$class      = apply_filters( 'vc_shortcodes_css_class', '', '', $atts );
 
 		$atts = shortcode_atts(
 			array(
@@ -65,9 +72,7 @@ if ( ! function_exists( 'woodmart_shortcode_mega_menu' ) ) {
 			$widget_id = 'wd-' . $atts['woodmart_css_id'];
 		}
 
-		$menu_classes  = ' wd-nav-' . $atts['design'];
-		$menu_classes .= woodmart_get_old_classes( ' ' . $atts['design'] . '-navigation' );
-		$menu_classes .= woodmart_get_old_classes( ' navigation-style-' . $atts['style'] );
+		$menu_classes = ' wd-nav-' . $atts['design'];
 
 		if ( 'horizontal' === $atts['design'] ) {
 			if ( $atts['alignment'] ) {
@@ -124,7 +129,7 @@ if ( ! function_exists( 'woodmart_shortcode_mega_menu' ) ) {
 		}
 		?>
 
-			<div id="<?php echo esc_attr( $widget_id ); ?>" class="wd-menu widget_nav_mega_menu<?php echo esc_attr( $class ); ?>">
+			<div id="<?php echo esc_attr( $widget_id ); ?>" class="wd-menu widget_nav_mega_menu wd-nav-wrapper<?php echo esc_attr( $class ); ?>">
 
 				<?php if ( 'vertical' === $atts['design'] && $atts['title'] ) : ?>
 					<h5 class="widget-title<?php echo esc_attr( $title_classes ); ?>">

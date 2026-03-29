@@ -2,7 +2,7 @@
 /**
  * Basic field abstract class.
  *
- * @package xts
+ * @package woodmart
  */
 
 namespace XTS\Admin\Modules\Options;
@@ -410,7 +410,7 @@ abstract class Field {
 	 *
 	 * @return string input field name.
 	 */
-	public function get_input_name( $subkey = false, $subkey2 = false, $subkey3 = false ) {
+	public function get_input_name( $subkey = false, $subkey2 = false, $subkey3 = false, $subkey4 = false ) {
 		$name = 'xts-' . $this->opt_name . '-options';
 
 		$name .= '[' . $this->args['id'] . ']';
@@ -429,6 +429,10 @@ abstract class Field {
 
 		if ( false !== $subkey3 ) {
 			$name .= '[' . $subkey3 . ']';
+		}
+
+		if ( false !== $subkey4 ) {
+			$name .= '[' . $subkey4 . ']';
 		}
 
 		return $name;

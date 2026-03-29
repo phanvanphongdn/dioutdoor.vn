@@ -2,7 +2,7 @@
 /**
  * WooCommerce hook shortcode.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 use XTS\Modules\Layouts\Main;
@@ -45,8 +45,6 @@ if ( ! function_exists( 'woodmart_shortcode_woocommerce_hook' ) ) {
 		if ( $settings['css'] ) {
 			$wrapper_classes .= ' ' . vc_shortcode_custom_css_class( $settings['css'] );
 		}
-
-		ob_start();
 
 		Main::setup_preview();
 
@@ -161,24 +159,38 @@ if ( ! function_exists( 'woodmart_shortcode_woocommerce_hook' ) ) {
 			return '';
 		}
 
-		?>
-		<div class="wd-wpb<?php echo esc_attr( $wrapper_classes ); ?>"><?php // Must be in one line.
-			if ( 'woocommerce_before_checkout_form' === $settings['hook'] || 'woocommerce_after_checkout_form' === $settings['hook'] ) {
-				do_action( $settings['hook'], WC()->checkout() );
-			} elseif ( in_array( $settings['hook'], array( 'woocommerce_thankyou', 'woocommerce_before_thankyou', 'woocommerce_order_details_after_order_table' ), true ) ) {
-				$order_id = (int) get_query_var( 'order-received' );
-				$order    = $order_id ? wc_get_order( $order_id ) : '';
-				if ( $order ) {
-					if ( 'woocommerce_order_details_after_order_table' === $settings['hook'] ) {
-						do_action( $settings['hook'], $order );
-					} else {
-						do_action( $settings['hook'], $order_id );
-					}
+		ob_start();
+
+		if ( 'woocommerce_before_checkout_form' === $settings['hook'] || 'woocommerce_after_checkout_form' === $settings['hook'] ) {
+			do_action( $settings['hook'], WC()->checkout() );
+		} elseif ( in_array( $settings['hook'], array( 'woocommerce_thankyou', 'woocommerce_before_thankyou', 'woocommerce_order_details_after_order_table' ), true ) ) {
+			$order_id = (int) get_query_var( 'order-received' );
+			$order    = $order_id ? wc_get_order( $order_id ) : '';
+			if ( $order ) {
+				if ( 'woocommerce_order_details_after_order_table' === $settings['hook'] ) {
+					do_action( $settings['hook'], $order );
+				} else {
+					do_action( $settings['hook'], $order_id );
 				}
-			} else {
-				do_action( $settings['hook'] );
 			}
-		?></div>
+		} else {
+			do_action( $settings['hook'] );
+		}
+
+		$hook_data = ob_get_clean();
+
+		if ( empty( $hook_data ) ) {
+			Main::restore_preview();
+
+			return '';
+		}
+
+		ob_start();
+
+		?>
+		<div class="wd-wpb wd-el-hook<?php echo esc_attr( $wrapper_classes ); ?>">
+			<?php echo $hook_data; ?>
+		</div>
 		<?php
 
 		Main::restore_preview();

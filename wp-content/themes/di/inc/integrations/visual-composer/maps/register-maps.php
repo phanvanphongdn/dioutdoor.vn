@@ -2,7 +2,7 @@
 /**
  * Register vc elements maps.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 use XTS\Modules\Layouts\Main;

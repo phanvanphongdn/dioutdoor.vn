@@ -1,18 +1,39 @@
-<?php if ( ! defined( 'WOODMART_THEME_DIR' ) ) exit( 'No direct script access allowed' );
-
+<?php
 /**
-* ------------------------------------------------------------------------------------------------
-* Widget user panel
-* ------------------------------------------------------------------------------------------------
-*/
+ * Shortcode for User Panel element.
+ *
+ * @package woodmart
+ */
 
-if( ! function_exists( 'woodmart_shortcode_user_panel' )) {
-	function woodmart_shortcode_user_panel($atts) {
-		if( ! woodmart_woocommerce_installed() ) return;
-		$click = $output = $title_out = $class = '';
-		extract(shortcode_atts( array(
-			'title' => '',
-		), $atts ));
+if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
+	exit( 'No direct script access allowed' );
+}
+
+if ( ! function_exists( 'woodmart_shortcode_user_panel' ) ) {
+	/**
+	 * User panel shortcode
+	 *
+	 * @param array $atts Shortcode attributes.
+	 *
+	 * @return string
+	 */
+	function woodmart_shortcode_user_panel( $atts ) {
+		if ( ! woodmart_woocommerce_installed() ) {
+			return;
+		}
+		$click     = '';
+		$output    = '';
+		$title_out = '';
+		$class     = '';
+
+		extract( // phpcs:ignore WordPress.PHP.DontExtract.extract_extract
+			shortcode_atts(
+				array(
+					'title' => '',
+				),
+				$atts
+			)
+		);
 
 		$class .= ' ';
 
@@ -22,13 +43,22 @@ if( ! function_exists( 'woodmart_shortcode_user_panel' )) {
 
 			<div class="woodmart-user-panel<?php echo esc_attr( $class ); ?>">
 
-				<?php if ( ! is_user_logged_in() ): ?>
-					<?php printf( wp_kses( __('Please, <a href="%s">log in</a>', 'woodmart'), array(
-							'a' => array(
-								'href' => array()
+				<?php if ( ! is_user_logged_in() ) : ?>
+					<?php
+					printf(
+						wp_kses(
+							// Translators: %s - link to login page.
+							__( 'Please, <a href="%s">log in</a>', 'woodmart' ),
+							array(
+								'a' => array(
+									'href' => array(),
+								),
 							)
-						) ), get_permalink( get_option('woocommerce_myaccount_page_id') )); ?>
-				<?php else: ?>
+						),
+						esc_url( get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ) )
+					);
+					?>
+				<?php else : ?>
 
 
 					<div class="user-avatar">
@@ -36,10 +66,21 @@ if( ! function_exists( 'woodmart_shortcode_user_panel' )) {
 					</div>
 
 					<div class="user-info">
-						<span><?php printf( wp_kses( __('Welcome, <strong>%s</strong>', 'woodmart'), array(
-								'strong' => array()								
-							) ), $user->user_login ) ?></span>
-						<a href="<?php echo esc_url( wp_logout_url( home_url('/') ) ); ?>" class="logout-link btn"><?php esc_html_e('Logout', 'woodmart'); ?></a>
+						<span>
+						<?php
+						printf(
+							wp_kses(
+								// Translators: %s - user login.
+								__( 'Welcome, <strong>%s</strong>', 'woodmart' ),
+								array(
+									'strong' => array(),
+								)
+							),
+							esc_html( $user->user_login )
+						)
+						?>
+							</span>
+						<a href="<?php echo esc_url( wp_logout_url( home_url( '/' ) ) ); ?>" class="logout-link btn"><?php esc_html_e( 'Logout', 'woodmart' ); ?></a>
 					</div>
 
 				<?php endif ?>

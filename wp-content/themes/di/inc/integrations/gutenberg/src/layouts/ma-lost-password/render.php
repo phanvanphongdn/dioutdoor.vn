@@ -10,7 +10,7 @@ if ( ! function_exists( 'wd_gutenberg_my_account_lost_pass' ) ) {
 
 		ob_start();
 		?>
-		<div id="<?php echo esc_attr( $el_id ); ?>" class="wd-el-my-account-lost-password<?php echo esc_attr( $wrapper_classes ); ?>">
+		<div <?php echo $el_id ? 'id="' . esc_attr( $el_id ) . '" ' : ''; ?>class="wd-el-my-account-lost-password<?php echo esc_attr( $wrapper_classes ); ?>">
 			<?php
 			$endpoint = WC()->query->get_current_endpoint();
 

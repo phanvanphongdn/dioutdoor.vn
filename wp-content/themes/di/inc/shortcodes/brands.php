@@ -1,13 +1,22 @@
-<?php if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
-	exit( 'No direct script access allowed' );}
-
+<?php
 /**
- * ------------------------------------------------------------------------------------------------
- * Brands carousel/grid/list shortcode
- * ------------------------------------------------------------------------------------------------
+ * Shortcode for Brands element.
+ *
+ * @package woodmart
  */
 
+if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
+	exit( 'No direct script access allowed' );
+}
+
 if ( ! function_exists( 'woodmart_shortcode_brands' ) ) {
+	/**
+	 * Display product brands in carousel, grid, or list layout.
+	 *
+	 * @param array $atts Attributes.
+	 *
+	 * @return string HTML output of brands shortcode.
+	 */
 	function woodmart_shortcode_brands( $atts ) {
 		$parsed_atts = shortcode_atts(
 			array_merge(
@@ -48,13 +57,7 @@ if ( ! function_exists( 'woodmart_shortcode_brands' ) ) {
 			$atts
 		);
 
-		extract( $parsed_atts );
-
-		if ( ! empty( $el_id ) ) {
-			$carousel_id = $el_id;
-		} else {
-			$carousel_id = 'brands_' . wp_rand( 1000, 9999 );
-		}
+		extract( $parsed_atts ); // phpcs:ignore;
 
 		$nav_classes = '';
 		$attribute   = woodmart_get_opt( 'brands_attribute' );
@@ -69,8 +72,8 @@ if ( ! function_exists( 'woodmart_shortcode_brands' ) ) {
 
 		ob_start();
 
-		$class  = 'wd-brands brands-widget slider-' . $carousel_id;
-		$class .= apply_filters( 'vc_shortcodes_css_class', '', '', $parsed_atts );
+		$class  = 'wd-brands brands-widget';
+		$class .= apply_filters( 'vc_shortcodes_css_class', '', '', $parsed_atts ); // phpcs:ignore.
 
 		if ( ! empty( $css ) ) {
 			$class .= ' ' . vc_shortcode_custom_css_class( $css );
@@ -106,7 +109,7 @@ if ( ! function_exists( 'woodmart_shortcode_brands' ) ) {
 
 			$custom_sizes = apply_filters( 'woodmart_brands_shortcode_custom_sizes', false );
 
-			$parsed_atts['carousel_id']     = $carousel_id;
+			$parsed_atts['carousel_id']     = $el_id;
 			$parsed_atts['slides_per_view'] = $per_row;
 			$parsed_atts['custom_sizes']    = $custom_sizes;
 
@@ -160,11 +163,15 @@ if ( ! function_exists( 'woodmart_shortcode_brands' ) ) {
 			$args['orderby'] = $orderby;
 		}
 
+		if ( 'menu_order' === $orderby ) {
+			$args['order'] = $order ? $order : 'ASC';
+		}
+
 		if ( 'random' === $orderby ) {
 			$args['orderby'] = 'id';
 
 			if ( ! $ids ) {
-				$brand_count = wp_count_terms(
+				$brand_count = wp_count_terms( // phpcs:ignore.
 					$attribute,
 					array(
 						'hide_empty' => 'yes' === $hide_empty,
@@ -206,7 +213,7 @@ if ( ! function_exists( 'woodmart_shortcode_brands' ) ) {
 		}
 		?>
 
-		<div id="<?php echo esc_attr( $carousel_id ); ?>" class="<?php echo esc_attr( $class ); ?>">
+		<div <?php echo $el_id ? 'id="' . esc_attr( $el_id ) . '" ' : ''; ?>class="<?php echo esc_attr( $class ); ?>">
 			<?php if ( ! empty( $title ) ) : ?>
 				<h3 class="title">
 					<?php echo wp_kses( $title, true ); ?>
@@ -217,7 +224,7 @@ if ( ! function_exists( 'woodmart_shortcode_brands' ) ) {
 				<div class="wd-carousel-inner">
 			<?php endif; ?>
 
-			<div class="<?php echo esc_attr( $items_wrap_class ); ?>" <?php echo $carousel_atts; ?>>
+			<div class="<?php echo esc_attr( $items_wrap_class ); ?>" <?php echo $carousel_atts; // phpcs:ignore. ?>>
 				<?php if ( 'carousel' === $style ) : ?>
 					<div class="wd-carousel-wrap">
 				<?php endif; ?>
@@ -270,7 +277,7 @@ if ( ! function_exists( 'woodmart_shortcode_brands' ) ) {
 										<a href="<?php echo esc_url( $attr_link ); ?>" title="<?php echo esc_attr( $brand->name ); ?>" class="wd-fill"></a>
 									<?php endif; ?>
 
-									<?php echo apply_filters( 'woodmart_image', '<img src="' . esc_url( $image ) . '" alt="' . esc_attr( $brand->name ) . '" title="' . esc_attr( $brand->name ) . '">' ); ?>
+									<?php echo apply_filters( 'woodmart_image', '<img src="' . esc_url( $image ) . '" alt="' . esc_attr( $brand->name ) . '" title="' . esc_attr( $brand->name ) . '">' ); // phpcs:ignore. ?>
 								<?php endif; ?>
 							</div>
 						</div>

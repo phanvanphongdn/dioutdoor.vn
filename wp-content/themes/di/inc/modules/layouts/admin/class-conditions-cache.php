@@ -2,7 +2,7 @@
 /**
  * Layout conditions cache class file.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Modules\Layouts;

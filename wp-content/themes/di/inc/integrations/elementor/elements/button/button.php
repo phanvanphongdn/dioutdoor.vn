@@ -2,7 +2,7 @@
 /**
  * Button template function.
  *
- * @package xts
+ * @package woodmart
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -10,8 +10,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! function_exists( 'woodmart_elementor_button_template' ) ) {
+	/**
+	 * Button template function.
+	 *
+	 * @param array $settings Element settings.
+	 */
 	function woodmart_elementor_button_template( $settings ) {
-		$default_settings = [
+		$default_settings = array(
 			'text'                        => 'Read more',
 			'link'                        => '',
 			'button_smooth_scroll'        => 'no',
@@ -43,7 +48,7 @@ if ( ! function_exists( 'woodmart_elementor_button_template' ) ) {
 			'bg_color_hover'              => '',
 			'custom_classes'              => '',
 			'inline_edit'                 => true,
-		];
+		);
 
 		$settings = wp_parse_args( $settings, $default_settings );
 
@@ -55,7 +60,6 @@ if ( ! function_exists( 'woodmart_elementor_button_template' ) ) {
 		$inline_editing_key = '';
 
 		$wrapper_classes .= 'wd-button-wrapper';
-		$wrapper_classes .= woodmart_get_old_classes( ' woodmart-button-wrapper' );
 		$wrapper_classes .= ' text-' . $settings['align'];
 
 		if ( 'yes' === $settings['button_collapsible_content'] ) {
@@ -108,9 +112,9 @@ if ( ! function_exists( 'woodmart_elementor_button_template' ) ) {
 			$link_classes .= ' btn-icon-pos-' . $settings['icon_position'];
 			$icon_output   = woodmart_elementor_get_render_icon(
 				$settings['icon'],
-				[
+				array(
 					'class' => 'wd-icon',
-				],
+				),
 				'span'
 			);
 		} elseif ( 'image' === $settings['icon_type'] && ! empty( $settings['image'] ) ) {
@@ -137,15 +141,15 @@ if ( ! function_exists( 'woodmart_elementor_button_template' ) ) {
 		woodmart_enqueue_inline_style( 'button' );
 
 		?>
-		<div class="<?php echo esc_attr( $wrapper_classes ); ?>" <?php echo $wrapper_attrs; ?>>
-			<a class="<?php echo esc_attr( $link_classes ); ?>" <?php echo $link_attrs; ?>>
+		<div class="<?php echo esc_attr( $wrapper_classes ); ?>" <?php echo $wrapper_attrs; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+			<a class="<?php echo esc_attr( $link_classes ); ?>" <?php echo $link_attrs; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 				<span class="wd-btn-text<?php echo esc_attr( $text_classes ); ?>" data-elementor-setting-key="<?php echo esc_attr( $inline_editing_key ); ?>text">
 					<?php echo esc_html( $settings['text'] ); ?>
 				</span>
 
 				<?php if ( $icon_output ) : ?>
 					<span class="wd-btn-icon">
-						<?php echo $icon_output; ?>
+						<?php echo $icon_output; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 					</span>
 				<?php endif; ?>
 			</a>

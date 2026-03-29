@@ -1,4 +1,9 @@
 <?php
+/**
+ * Image functions.
+ *
+ * @package woodmart
+ */
 
 use Elementor\Group_Control_Image_Size;
 
@@ -218,6 +223,12 @@ if ( ! function_exists( 'woodmart_get_image_dimensions_by_size_key' ) ) {
 }
 
 if ( ! function_exists( 'woodmart_get_image_size' ) ) {
+	/**
+	 * Get image size by thumb size.
+	 *
+	 * @param string $thumb_size Thumb size.
+	 * @return array|int[]|mixed|string
+	 */
 	function woodmart_get_image_size( $thumb_size ) {
 		if ( in_array( $thumb_size, array( 'thumbnail', 'thumb', 'medium', 'large', 'full' ), true ) ) {
 			$images_sizes = woodmart_get_all_image_sizes();
@@ -248,6 +259,13 @@ if ( ! function_exists( 'woodmart_get_image_size' ) ) {
 }
 
 if ( ! function_exists( 'woodmart_get_image_src' ) ) {
+	/**
+	 * Get image src by thumb id and size.
+	 *
+	 * @param int    $thumb_id Thumb ID.
+	 * @param string $thumb_size Thumb size.
+	 * @return false|mixed|string
+	 */
 	function woodmart_get_image_src( $thumb_id, $thumb_size ) {
 		if ( ! $thumb_size ) {
 			return false;
@@ -264,12 +282,11 @@ if ( ! function_exists( 'woodmart_allow_wp_kses_allowed_html' ) ) {
 	/**
 	 * Allowed SVG tags.
 	 *
-	 * @param array  $tags Allowed tags.
-	 * @param string $context Context.
+	 * @param array $tags Allowed tags.
 	 * @return array
 	 */
-	function woodmart_allow_wp_kses_allowed_html( $tags, $context ) {
-		if ( woodmart_get_opt( 'gutenberg_blocks' ) ) {
+	function woodmart_allow_wp_kses_allowed_html( $tags ) {
+		if ( woodmart_is_gutenberg_blocks_enabled() ) {
 			$tags['iframe'] = array(
 				'src'             => true,
 				'width'           => true,
@@ -529,16 +546,17 @@ if ( ! function_exists( 'woodmart_get_default_image_sizes' ) ) {
 	/**
 	 * Get default image sizes.
 	 *
+	 * @param bool $with_custom Include custom size option.
 	 * @return array
 	 */
 	function woodmart_get_default_image_sizes( $with_custom = true ) {
 		$image_sizes_raw = apply_filters(
 			'image_size_names_choose',
 			array(
-				'full'      => __( 'Full Size' ),
-				'thumbnail' => __( 'Thumbnail' ),
-				'medium'    => __( 'Medium' ),
-				'large'     => __( 'Large' ),
+				'full'      => __( 'Full Size', 'woodmart' ),
+				'thumbnail' => __( 'Thumbnail', 'woodmart' ),
+				'medium'    => __( 'Medium', 'woodmart' ),
+				'large'     => __( 'Large', 'woodmart' ),
 			)
 		);
 

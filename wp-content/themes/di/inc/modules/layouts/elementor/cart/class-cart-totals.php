@@ -2,7 +2,7 @@
 /**
  * Cart totals map.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Modules\Layouts;

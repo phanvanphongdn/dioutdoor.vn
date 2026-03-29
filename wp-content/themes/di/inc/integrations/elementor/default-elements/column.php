@@ -2,7 +2,7 @@
 /**
  * Elementor column custom controls
  *
- * @package xts
+ * @package woodmart
  */
 
 use Elementor\Controls_Manager;
@@ -104,171 +104,11 @@ if ( ! function_exists( 'woodmart_add_column_custom_controls' ) ) {
 		$element->start_controls_section(
 			'wd_extra',
 			array(
-				'label' => esc_html__( '[XTemos] Extra', 'woodmart' ),
-				'tab'   => Controls_Manager::TAB_ADVANCED,
-			)
-		);
-
-		/**
-		 * Column role.
-		 */
-		$element->add_control(
-			'wd_column_role_heading',
-			array(
-				'label'     => esc_html__( 'Off canvas column ', 'woodmart' ),
-				'type'      => Controls_Manager::HEADING,
-				'separator' => 'before',
-			)
-		);
-
-		$element->add_control(
-			'wd_column_role',
-			array(
-				'label'       => __( 'Column role for "off-canvas layout"', 'woodmart' ),
-				'description' => esc_html__( 'You can create your page layout with an off-canvas sidebar. In this case, you need to have two columns: one will be set as the off-canvas sidebar and another as the content. NOTE: you need to also display the Off-canvas button element somewhere in your content column to open the sidebar. Also, you need to enable them on specific devices synchronously.', 'woodmart' ),
-				'type'        => Controls_Manager::SELECT,
-				'options'     => array(
-					''          => esc_html__( 'None', 'woodmart' ),
-					'offcanvas' => esc_html__( 'Off canvas column', 'woodmart' ),
-					'content'   => esc_html__( 'Content column', 'woodmart' ),
+				'label'     => esc_html__( '[XTemos] Extra', 'woodmart' ),
+				'tab'       => Controls_Manager::TAB_ADVANCED,
+				'condition' => array(
+					'wd_column_role' => array( '' ),
 				),
-				'render_type' => 'template',
-				'default'     => '',
-			)
-		);
-
-		$element->add_control(
-			'wd_column_role_offcanvas_desktop',
-			array(
-				'label'        => esc_html__( 'Desktop', 'woodmart' ),
-				'type'         => Controls_Manager::SWITCHER,
-				'default'      => '',
-				'label_on'     => esc_html__( 'Yes', 'woodmart' ),
-				'label_off'    => esc_html__( 'No', 'woodmart' ),
-				'return_value' => 'lg',
-				'prefix_class' => 'wd-col-offcanvas-',
-				'condition'    => array(
-					'wd_column_role' => 'offcanvas',
-				),
-				'render_type'  => 'template',
-			)
-		);
-
-		$element->add_control(
-			'wd_column_role_offcanvas_tablet',
-			array(
-				'label'        => esc_html__( 'Tablet', 'woodmart' ),
-				'type'         => Controls_Manager::SWITCHER,
-				'default'      => '',
-				'label_on'     => esc_html__( 'Yes', 'woodmart' ),
-				'label_off'    => esc_html__( 'No', 'woodmart' ),
-				'return_value' => 'md-sm',
-				'prefix_class' => 'wd-col-offcanvas-',
-				'condition'    => array(
-					'wd_column_role' => 'offcanvas',
-				),
-				'render_type'  => 'template',
-			)
-		);
-
-		$element->add_control(
-			'wd_column_role_offcanvas_mobile',
-			array(
-				'label'        => esc_html__( 'Mobile', 'woodmart' ),
-				'type'         => Controls_Manager::SWITCHER,
-				'default'      => '',
-				'label_on'     => esc_html__( 'Yes', 'woodmart' ),
-				'label_off'    => esc_html__( 'No', 'woodmart' ),
-				'return_value' => 'sm',
-				'prefix_class' => 'wd-col-offcanvas-',
-				'condition'    => array(
-					'wd_column_role' => 'offcanvas',
-				),
-				'render_type'  => 'template',
-			)
-		);
-
-		$element->add_control(
-			'wd_column_role_content_desktop',
-			array(
-				'label'        => esc_html__( 'Desktop', 'woodmart' ),
-				'type'         => Controls_Manager::SWITCHER,
-				'default'      => '',
-				'label_on'     => esc_html__( 'Yes', 'woodmart' ),
-				'label_off'    => esc_html__( 'No', 'woodmart' ),
-				'return_value' => 'lg',
-				'prefix_class' => 'wd-col-content-',
-				'condition'    => array(
-					'wd_column_role' => 'content',
-				),
-				'render_type'  => 'template',
-			)
-		);
-
-		$element->add_control(
-			'wd_column_role_content_tablet',
-			array(
-				'label'        => esc_html__( 'Tablet', 'woodmart' ),
-				'type'         => Controls_Manager::SWITCHER,
-				'default'      => '',
-				'label_on'     => esc_html__( 'Yes', 'woodmart' ),
-				'label_off'    => esc_html__( 'No', 'woodmart' ),
-				'return_value' => 'md-sm',
-				'prefix_class' => 'wd-col-content-',
-				'condition'    => array(
-					'wd_column_role' => 'content',
-				),
-				'render_type'  => 'template',
-			)
-		);
-
-		$element->add_control(
-			'wd_column_role_content_mobile',
-			array(
-				'label'        => esc_html__( 'Mobile', 'woodmart' ),
-				'type'         => Controls_Manager::SWITCHER,
-				'default'      => '',
-				'label_on'     => esc_html__( 'Yes', 'woodmart' ),
-				'label_off'    => esc_html__( 'No', 'woodmart' ),
-				'return_value' => 'sm',
-				'prefix_class' => 'wd-col-content-',
-				'condition'    => array(
-					'wd_column_role' => 'content',
-				),
-				'render_type'  => 'template',
-			)
-		);
-
-		$element->add_control(
-			'wd_off_canvas_alignment',
-			array(
-				'label'        => esc_html__( 'Off canvas alignment', 'woodmart' ),
-				'type'         => 'wd_buttons',
-				'options'      => array(
-					'left'  => array(
-						'title' => esc_html__( 'Left', 'woodmart' ),
-						'image' => WOODMART_ASSETS_IMAGES . '/settings/sidebar-layout/left.png',
-						'style' => 'col-2',
-					),
-					'right' => array(
-						'title' => esc_html__( 'Right', 'woodmart' ),
-						'image' => WOODMART_ASSETS_IMAGES . '/settings/sidebar-layout/right.png',
-					),
-				),
-				'condition'    => array(
-					'wd_column_role' => 'offcanvas',
-				),
-				'render_type'  => 'template',
-				'default'      => 'left',
-				'prefix_class' => 'wd-alignment-',
-			)
-		);
-
-		$element->add_control(
-			'wd_column_role_hr',
-			array(
-				'type'  => Controls_Manager::DIVIDER,
-				'style' => 'thick',
 			)
 		);
 
@@ -493,6 +333,203 @@ if ( ! function_exists( 'woodmart_add_column_custom_controls' ) ) {
 			$element,
 			array(
 				'wd_column_role' => '',
+			)
+		);
+
+		$element->end_controls_section();
+
+		$element->start_controls_section(
+			'wd_off_canvas_sidebar',
+			array(
+				'label' => esc_html__( 'Off-canvas layout', 'woodmart' ),
+				'tab'   => Controls_Manager::TAB_ADVANCED,
+			)
+		);
+
+		/**
+		 * Column role.
+		 */
+		$element->add_control(
+			'wd_column_role_heading',
+			array(
+				'label'     => esc_html__( 'Off canvas column ', 'woodmart' ),
+				'type'      => Controls_Manager::HEADING,
+				'separator' => 'before',
+			)
+		);
+
+		$element->add_control(
+			'wd_column_role',
+			array(
+				'label'       => __( 'Column role for "off-canvas layout"', 'woodmart' ),
+				'description' => esc_html__( 'You can create your page layout with an off-canvas sidebar. In this case, you need to have two columns: one will be set as the off-canvas sidebar and another as the content. NOTE: you need to also display the Off-canvas button element somewhere in your content column to open the sidebar. Also, you need to enable them on specific devices synchronously.', 'woodmart' ),
+				'type'        => Controls_Manager::SELECT,
+				'options'     => array(
+					''          => esc_html__( 'None', 'woodmart' ),
+					'offcanvas' => esc_html__( 'Off canvas column', 'woodmart' ),
+					'content'   => esc_html__( 'Content column', 'woodmart' ),
+				),
+				'render_type' => 'template',
+				'default'     => '',
+			)
+		);
+
+		$element->add_control(
+			'wd_column_role_offcanvas_desktop',
+			array(
+				'label'        => esc_html__( 'Desktop', 'woodmart' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'default'      => '',
+				'label_on'     => esc_html__( 'Yes', 'woodmart' ),
+				'label_off'    => esc_html__( 'No', 'woodmart' ),
+				'return_value' => 'lg',
+				'prefix_class' => 'wd-col-offcanvas-',
+				'condition'    => array(
+					'wd_column_role' => 'offcanvas',
+				),
+				'render_type'  => 'template',
+			)
+		);
+
+		$element->add_control(
+			'wd_column_role_offcanvas_tablet',
+			array(
+				'label'        => esc_html__( 'Tablet', 'woodmart' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'default'      => '',
+				'label_on'     => esc_html__( 'Yes', 'woodmart' ),
+				'label_off'    => esc_html__( 'No', 'woodmart' ),
+				'return_value' => 'md-sm',
+				'prefix_class' => 'wd-col-offcanvas-',
+				'condition'    => array(
+					'wd_column_role' => 'offcanvas',
+				),
+				'render_type'  => 'template',
+			)
+		);
+
+		$element->add_control(
+			'wd_column_role_offcanvas_mobile',
+			array(
+				'label'        => esc_html__( 'Mobile', 'woodmart' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'default'      => '',
+				'label_on'     => esc_html__( 'Yes', 'woodmart' ),
+				'label_off'    => esc_html__( 'No', 'woodmart' ),
+				'return_value' => 'sm',
+				'prefix_class' => 'wd-col-offcanvas-',
+				'condition'    => array(
+					'wd_column_role' => 'offcanvas',
+				),
+				'render_type'  => 'template',
+			)
+		);
+
+		$element->add_control(
+			'wd_column_role_content_desktop',
+			array(
+				'label'        => esc_html__( 'Desktop', 'woodmart' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'default'      => '',
+				'label_on'     => esc_html__( 'Yes', 'woodmart' ),
+				'label_off'    => esc_html__( 'No', 'woodmart' ),
+				'return_value' => 'lg',
+				'prefix_class' => 'wd-col-content-',
+				'condition'    => array(
+					'wd_column_role' => 'content',
+				),
+				'render_type'  => 'template',
+			)
+		);
+
+		$element->add_control(
+			'wd_column_role_content_tablet',
+			array(
+				'label'        => esc_html__( 'Tablet', 'woodmart' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'default'      => '',
+				'label_on'     => esc_html__( 'Yes', 'woodmart' ),
+				'label_off'    => esc_html__( 'No', 'woodmart' ),
+				'return_value' => 'md-sm',
+				'prefix_class' => 'wd-col-content-',
+				'condition'    => array(
+					'wd_column_role' => 'content',
+				),
+				'render_type'  => 'template',
+			)
+		);
+
+		$element->add_control(
+			'wd_column_role_content_mobile',
+			array(
+				'label'        => esc_html__( 'Mobile', 'woodmart' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'default'      => '',
+				'label_on'     => esc_html__( 'Yes', 'woodmart' ),
+				'label_off'    => esc_html__( 'No', 'woodmart' ),
+				'return_value' => 'sm',
+				'prefix_class' => 'wd-col-content-',
+				'condition'    => array(
+					'wd_column_role' => 'content',
+				),
+				'render_type'  => 'template',
+			)
+		);
+
+		$element->add_control(
+			'wd_off_canvas_alignment',
+			array(
+				'label'        => esc_html__( 'Off canvas alignment', 'woodmart' ),
+				'type'         => 'wd_buttons',
+				'options'      => array(
+					'left'  => array(
+						'title' => esc_html__( 'Left', 'woodmart' ),
+						'image' => WOODMART_ASSETS_IMAGES . '/settings/sidebar-layout/left.png',
+						'style' => 'col-2',
+					),
+					'right' => array(
+						'title' => esc_html__( 'Right', 'woodmart' ),
+						'image' => WOODMART_ASSETS_IMAGES . '/settings/sidebar-layout/right.png',
+					),
+				),
+				'condition'    => array(
+					'wd_column_role' => 'offcanvas',
+				),
+				'render_type'  => 'template',
+				'default'      => 'left',
+				'prefix_class' => 'wd-alignment-',
+			)
+		);
+
+		$element->add_responsive_control(
+			'wd_off_canvas_sidebar_width',
+			array(
+				'label'      => esc_html__( 'Off-canvas sidebar width', 'woodmart' ),
+				'type'       => Controls_Manager::SLIDER,
+				'size_units' => array( 'px', '%' ),
+				'range'      => array(
+					'px' => array(
+						'min'  => 0,
+						'max'  => 1000,
+						'step' => 1,
+					),
+					'%'  => array(
+						'min'  => 0,
+						'max'  => 100,
+						'step' => 1,
+					),
+				),
+				'default'    => array(
+					'unit' => 'px',
+					'size' => 300,
+				),
+				'devices'    => array( 'desktop', 'tablet', 'mobile' ),
+				'selectors'  => array(
+					'{{WRAPPER}}' => '--wd-side-hidden-w: {{SIZE}}{{UNIT}};',
+				),
+				'condition'  => array(
+					'wd_column_role' => 'offcanvas',
+				),
 			)
 		);
 

@@ -24,11 +24,17 @@
 	woodmartThemeModule.btnsToolTips = function() {
 		// Bootstrap tooltips
 		$(woodmart_settings.tooltip_top_selector).on('mouseenter', function() {
-			initTooltip($(this), 'top');
+			var $this = $(this);
+			var placement = getTooltipPosition($this);
+
+			initTooltip($this, placement);
 		});
 		document.querySelectorAll(woodmart_settings.tooltip_top_selector).forEach(el => {
 			el.addEventListener('touchstart', function(event) {
-				initTooltip($(this), 'top');
+				var $this = $(this);
+				var placement = getTooltipPosition($this);
+
+				initTooltip($this, placement);
 			}, { passive: true });
 		});
 
@@ -130,6 +136,29 @@
 			});
 
 			$el.addClass('wd-tooltip-inited');
+		}
+
+		function getTooltipPosition($el) {
+			if ( ! $el.is('[class*="wd-tooltip-"]') ) {
+				return 'top';
+			}
+
+			let placement = 'top';
+			const classes = $el.attr('class').split(' ');
+
+			for (let i = 0; i < classes.length; i++) {
+				if (classes[i].indexOf('wd-tooltip-') === 0) {
+					placement = classes[i].replace('wd-tooltip-', '');
+				}
+			}
+
+			if ('start' === placement) {
+				placement = woodmartThemeModule.$body.hasClass('rtl') ? 'right' : 'left';
+			} else if ('end' === placement) {
+				placement = woodmartThemeModule.$body.hasClass('rtl') ? 'left' : 'right';
+			}
+
+			return placement;
 		}
 	};
 

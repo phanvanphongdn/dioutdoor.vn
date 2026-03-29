@@ -2,7 +2,7 @@
 /**
  * Class query.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Modules\Show_Single_Variations;
@@ -263,15 +263,29 @@ class Query extends Singleton {
 				$attribute_values   = wc_get_product_terms( $product->get_id(), $attribute->get_name(), array( 'fields' => 'all' ) );
 
 				if ( ! $attribute->get_variation() ) {
-					foreach ( $attribute_values as $attribute_value ) {
+					foreach ( $attribute_values as $key => $attribute_value ) {
+						$term_id    = $attribute_value->term_id;
 						$value_name = esc_html( $attribute_value->name );
-						$tooltip    = get_term_meta( $attribute_value->term_id, 'pa_term_hint', true );
+						$tooltip    = get_term_meta( $term_id, 'pa_term_hint', true );
+						$image      = get_term_meta( $term_id, 'pa_term_image', true );
+						$image_url  = '';
 
-						if ( $attribute_taxonomy->attribute_public ) {
-							$value_name = '<a href="' . esc_url( get_term_link( $attribute_value->term_id, $attribute->get_name() ) ) . '" rel="tag">' . $value_name . '</a>';
+						if ( ! empty( $image ) && is_array( $image ) && isset( $image['url'] ) ) {
+							$image_url = $image['url'];
 						}
 
-						$values[] = woodmart_get_term_hint_html( $value_name, $tooltip );
+						if ( $attribute_taxonomy->attribute_public ) {
+							$value_name = '<a href="' . esc_url( get_term_link( $term_id, $attribute->get_name() ) ) . '" rel="tag">' . $value_name . '</a>';
+						}
+
+						$values[] = woodmart_get_term_html(
+							array(
+								'term_name'      => $value_name,
+								'image_url'      => $image_url,
+								'tooltip'        => $tooltip,
+								'show_separator' => array_key_last( $attribute_values ) !== $key,
+							)
+						);
 					}
 				} else {
 					$term_slug = $product->get_attributes()[ $attribute->get_name() ];
@@ -283,30 +297,55 @@ class Query extends Singleton {
 					$term       = get_term_by( 'slug', $term_slug, $attribute->get_name() );
 					$value_name = $term->name;
 					$tooltip    = get_term_meta( $term->term_id, 'pa_term_hint', true );
+					$image      = get_term_meta( $term->term_id, 'pa_term_image', true );
+					$image_url  = '';
 
-					if ( $attribute_taxonomy->attribute_public ) {
-						$value_name = '<a href="' . esc_url( get_term_link( get_term_by( 'slug', $term_slug, $attribute->get_name() )->term_id, $attribute->get_name() ) ) . '" rel="tag">' . $value_name . '</a>';
+					if ( ! empty( $image ) && is_array( $image ) && isset( $image['url'] ) ) {
+						$image_url = $image['url'];
 					}
 
-					$values[] = woodmart_get_term_hint_html( $value_name, $tooltip );
+					if ( $attribute_taxonomy->attribute_public ) {
+						$value_name = '<a href="' . esc_url( get_term_link( $term->term_id, $attribute->get_name() ) ) . '" rel="tag">' . $value_name . '</a>';
+					}
+
+					$values[] = woodmart_get_term_html(
+						array(
+							'term_name'      => $value_name,
+							'image_url'      => $image_url,
+							'tooltip'        => $tooltip,
+							'show_separator' => false,
+						)
+					);
 				}
 			} else {
 				$values = $attribute->get_options();
 
-				foreach ( $values as &$value ) {
-					$value = woodmart_get_term_hint_html( make_clickable( esc_html( $value ) ), '' );
+				foreach ( $values as $key => $value ) {
+					$values[ $key ] = woodmart_get_term_html(
+						array(
+							'term_name'      => make_clickable( esc_html( $value ) ),
+							'show_separator' => array_key_last( $values ) !== $key,
+						)
+					);
 				}
 			}
 
 			$product_attributes[ 'attribute_' . sanitize_title_with_dashes( $attribute->get_name() ) ] = array(
 				'label' => wc_attribute_label( $attribute->get_name() ),
-				'value' => apply_filters( 'woocommerce_attribute', implode( ', ', $values ), $attribute, $values ),
+				'value' => apply_filters( 'woocommerce_attribute', implode( '', $values ), $attribute, $values ),
 			);
 		}
 
 		return $product_attributes;
 	}
 
+	/**
+	 * Add variations to related products.
+	 *
+	 * @param array $query Query.
+	 * @param int   $product_id Product ID.
+	 * @return array
+	 */
 	public function add_variations_to_related_products( $query, $product_id ) {
 		if ( woodmart_get_opt( 'show_single_variation' ) ) {
 			global $wpdb;
@@ -318,7 +357,7 @@ class Query extends Singleton {
 
 			$pm_alias     = 'wd_postmeta';
 			$join_snippet = $wpdb->prepare(
-				" LEFT JOIN {$wpdb->postmeta} AS {$pm_alias} ON ( p.ID = {$pm_alias}.post_id AND {$pm_alias}.meta_key = %s AND {$pm_alias}.meta_value = %s ) ",
+				" LEFT JOIN {$wpdb->postmeta} AS {$pm_alias} ON ( p.ID = {$pm_alias}.post_id AND {$pm_alias}.meta_key = %s AND {$pm_alias}.meta_value = %s ) ", // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared
 				'_wd_show_variation',
 				'no'
 			);

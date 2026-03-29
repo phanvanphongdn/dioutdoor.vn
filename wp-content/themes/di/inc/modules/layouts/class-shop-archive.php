@@ -30,7 +30,8 @@ class Shop_Archive extends Layout_Type {
 				$is_active = is_shop();
 				break;
 			case 'product_search':
-				$is_active = is_search() && 'product' === get_query_var( 'post_type' );
+				$query_vars = get_query_var( 'post_type' );
+				$is_active  = is_search() && ( 'product' === $query_vars || ( is_array( $query_vars ) && in_array( 'product', $query_vars, true ) ) );
 				break;
 			case 'product_term':
 				$object      = get_queried_object();

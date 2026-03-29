@@ -16,7 +16,7 @@
 	<!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 	<!--    contained in this file into your site. -->
 
-	<!-- generator="WordPress/6.7.4" created="2025-10-13 11:40" -->
+	<!-- generator="WordPress/6.7.4" created="2026-02-25 15:11" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -29,20 +29,14 @@
 	<title>admin</title>
 	<link>https://dummy.xtemos.com/woodmart2</link>
 	<description>Just another WordPress site</description>
-	<pubDate>Mon, 13 Oct 2025 11:40:12 +0000</pubDate>
+	<pubDate>Wed, 25 Feb 2026 15:11:19 +0000</pubDate>
 	<language>en-US</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
 	<wp:base_site_url>https://dummy.xtemos.com/woodmart2/</wp:base_site_url>
 	<wp:base_blog_url>https://dummy.xtemos.com/woodmart2</wp:base_blog_url>
 
 	
-					<wp:term>
-			<wp:term_id>0</wp:term_id>
-			<wp:term_taxonomy><![CDATA[]]></wp:term_taxonomy>
-			<wp:term_slug><![CDATA[]]></wp:term_slug>
-			<wp:term_parent><![CDATA[]]></wp:term_parent>
-					</wp:term>
-			<wp:term>
+										<wp:term>
 			<wp:term_id>158</wp:term_id>
 			<wp:term_taxonomy><![CDATA[woodmart_slider]]></wp:term_taxonomy>
 			<wp:term_slug><![CDATA[electronics-slider]]></wp:term_slug>
@@ -54,143 +48,15 @@
 		</wp:termmeta>
 		<wp:termmeta>
 			<wp:meta_key><![CDATA[height]]></wp:meta_key>
-			<wp:meta_value><![CDATA[470]]></wp:meta_value>
+			<wp:meta_value><![CDATA[eyJkZXZpY2VzIjp7ImRlc2t0b3AiOnsidmFsdWUiOiI0NzAiLCJ1bml0IjoicHgifX19]]></wp:meta_value>
 		</wp:termmeta>
 		<wp:termmeta>
 			<wp:meta_key><![CDATA[height_tablet]]></wp:meta_key>
-			<wp:meta_value><![CDATA[660]]></wp:meta_value>
+			<wp:meta_value><![CDATA[eyJkZXZpY2VzIjp7ImRlc2t0b3AiOnsidmFsdWUiOiI2NjAiLCJ1bml0IjoicHgifX19]]></wp:meta_value>
 		</wp:termmeta>
 		<wp:termmeta>
 			<wp:meta_key><![CDATA[height_mobile]]></wp:meta_key>
-			<wp:meta_value><![CDATA[450]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[arrows_hover_style]]></wp:meta_key>
-			<wp:meta_value><![CDATA[disable]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[arrows_size]]></wp:meta_key>
-			<wp:meta_value><![CDATA[eyJkZXZpY2VzIjp7ImRlc2t0b3AiOnsidmFsdWUiOiIiLCJ1bml0IjoicHgifSwidGFibGV0Ijp7InZhbHVlIjoiIiwidW5pdCI6InB4In0sIm1vYmlsZSI6eyJ2YWx1ZSI6IiIsInVuaXQiOiJweCJ9fX0=]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[arrows_icon_size]]></wp:meta_key>
-			<wp:meta_value><![CDATA[eyJkZXZpY2VzIjp7ImRlc2t0b3AiOnsidmFsdWUiOiIiLCJ1bml0IjoicHgifSwidGFibGV0Ijp7InZhbHVlIjoiIiwidW5pdCI6InB4In0sIm1vYmlsZSI6eyJ2YWx1ZSI6IiIsInVuaXQiOiJweCJ9fX0=]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[arrows_offset_h]]></wp:meta_key>
-			<wp:meta_value><![CDATA[eyJkZXZpY2VzIjp7ImRlc2t0b3AiOnsidmFsdWUiOiIiLCJ1bml0IjoicHgifSwidGFibGV0Ijp7InZhbHVlIjoiIiwidW5pdCI6InB4In0sIm1vYmlsZSI6eyJ2YWx1ZSI6IiIsInVuaXQiOiJweCJ9fX0=]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[arrows_offset_v]]></wp:meta_key>
-			<wp:meta_value><![CDATA[eyJkZXZpY2VzIjp7ImRlc2t0b3AiOnsidmFsdWUiOiIiLCJ1bml0IjoicHgifSwidGFibGV0Ijp7InZhbHVlIjoiIiwidW5pdCI6InB4In0sIm1vYmlsZSI6eyJ2YWx1ZSI6IiIsInVuaXQiOiJweCJ9fX0=]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[arrows_color]]></wp:meta_key>
-			<wp:meta_value><![CDATA[a:1:{s:4:"idle";s:0:"";}]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[arrows_color_hover]]></wp:meta_key>
-			<wp:meta_value><![CDATA[a:1:{s:4:"idle";s:0:"";}]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[arrows_bg_color]]></wp:meta_key>
-			<wp:meta_value><![CDATA[a:1:{s:4:"idle";s:0:"";}]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[arrows_bg_color_hover]]></wp:meta_key>
-			<wp:meta_value><![CDATA[a:1:{s:4:"idle";s:0:"";}]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[arrows_border_radius]]></wp:meta_key>
-			<wp:meta_value><![CDATA[eyJkZXZpY2VzIjp7ImRlc2t0b3AiOnsidmFsdWUiOiIiLCJ1bml0IjoicHgifX19]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[arrows_border_width]]></wp:meta_key>
-			<wp:meta_value><![CDATA[eyJkZXZpY2VzIjp7ImRlc2t0b3AiOnsidmFsdWUiOiIiLCJ1bml0IjoicHgifX19]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[arrows_border_color]]></wp:meta_key>
-			<wp:meta_value><![CDATA[a:1:{s:4:"idle";s:0:"";}]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[arrows_border_color_hover]]></wp:meta_key>
-			<wp:meta_value><![CDATA[a:1:{s:4:"idle";s:0:"";}]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[arrows_box_shadow_color]]></wp:meta_key>
-			<wp:meta_value><![CDATA[a:1:{s:4:"idle";s:0:"";}]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[arrows_box_shadow_offset_x]]></wp:meta_key>
-			<wp:meta_value><![CDATA[eyJkZXZpY2VzIjp7ImRlc2t0b3AiOnsidmFsdWUiOiIiLCJ1bml0IjoicHgifX19]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[arrows_box_shadow_offset_y]]></wp:meta_key>
-			<wp:meta_value><![CDATA[eyJkZXZpY2VzIjp7ImRlc2t0b3AiOnsidmFsdWUiOiIiLCJ1bml0IjoicHgifX19]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[arrows_box_shadow_blur]]></wp:meta_key>
-			<wp:meta_value><![CDATA[eyJkZXZpY2VzIjp7ImRlc2t0b3AiOnsidmFsdWUiOiIiLCJ1bml0IjoicHgifX19]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[arrows_box_shadow_spread]]></wp:meta_key>
-			<wp:meta_value><![CDATA[eyJkZXZpY2VzIjp7ImRlc2t0b3AiOnsidmFsdWUiOiIiLCJ1bml0IjoicHgifX19]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[pagination_horizon_align]]></wp:meta_key>
-			<wp:meta_value><![CDATA[center]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[pagination_size]]></wp:meta_key>
-			<wp:meta_value><![CDATA[eyJkZXZpY2VzIjp7ImRlc2t0b3AiOnsidmFsdWUiOiIiLCJ1bml0IjoicHgifSwidGFibGV0Ijp7InZhbHVlIjoiIiwidW5pdCI6InB4In0sIm1vYmlsZSI6eyJ2YWx1ZSI6IiIsInVuaXQiOiJweCJ9fX0=]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[pagination_bg_color]]></wp:meta_key>
-			<wp:meta_value><![CDATA[a:1:{s:4:"idle";s:0:"";}]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[pagination_bg_color_hover]]></wp:meta_key>
-			<wp:meta_value><![CDATA[a:1:{s:4:"idle";s:0:"";}]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[pagination_bg_color_active]]></wp:meta_key>
-			<wp:meta_value><![CDATA[a:1:{s:4:"idle";s:0:"";}]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[pagination_bg_color_wrapper]]></wp:meta_key>
-			<wp:meta_value><![CDATA[a:1:{s:4:"idle";s:0:"";}]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[pagination_color_idle]]></wp:meta_key>
-			<wp:meta_value><![CDATA[a:1:{s:4:"idle";s:0:"";}]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[pagination_color_hover]]></wp:meta_key>
-			<wp:meta_value><![CDATA[a:1:{s:4:"idle";s:0:"";}]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[pagination_color_active]]></wp:meta_key>
-			<wp:meta_value><![CDATA[a:1:{s:4:"idle";s:0:"";}]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[pagination_border_radius]]></wp:meta_key>
-			<wp:meta_value><![CDATA[eyJkZXZpY2VzIjp7ImRlc2t0b3AiOnsidmFsdWUiOiIiLCJ1bml0IjoicHgifX19]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[pagination_border_width]]></wp:meta_key>
-			<wp:meta_value><![CDATA[eyJkZXZpY2VzIjp7ImRlc2t0b3AiOnsidmFsdWUiOiIiLCJ1bml0IjoicHgifX19]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[pagination_border_color]]></wp:meta_key>
-			<wp:meta_value><![CDATA[a:1:{s:4:"idle";s:0:"";}]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[pagination_border_color_hover]]></wp:meta_key>
-			<wp:meta_value><![CDATA[a:1:{s:4:"idle";s:0:"";}]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[pagination_border_active_color]]></wp:meta_key>
-			<wp:meta_value><![CDATA[a:1:{s:4:"idle";s:0:"";}]]></wp:meta_value>
+			<wp:meta_value><![CDATA[eyJkZXZpY2VzIjp7ImRlc2t0b3AiOnsidmFsdWUiOiI0NTAiLCJ1bml0IjoicHgifX19]]></wp:meta_value>
 		</wp:termmeta>
 		<wp:termmeta>
 			<wp:meta_key><![CDATA[autoplay]]></wp:meta_key>
@@ -200,47 +66,8 @@
 			<wp:meta_key><![CDATA[autoplay_speed]]></wp:meta_key>
 			<wp:meta_value><![CDATA[25000]]></wp:meta_value>
 		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-158-css-data]]></wp:meta_key>
-			<wp:meta_value><![CDATA[#slider-158 .wd-slide {
-	min-height: 470px;
-}
-
-@media (max-width: 1024px) {
-	#slider-158 .wd-slide {
-		min-height: 660px;
-	}
-}
-
-@media (max-width: 767px) {
-	#slider-158 .wd-slide {
-		min-height: 450px;
-	}
-}
-]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-158-version]]></wp:meta_key>
-			<wp:meta_value><![CDATA[8.2.0]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-158-site-url]]></wp:meta_key>
-			<wp:meta_value><![CDATA[65c5e7a3e87c59ae65d18b8d3b912a1e]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-158-credentials]]></wp:meta_key>
-			<wp:meta_value><![CDATA[requested]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-158-file-data]]></wp:meta_key>
-			<wp:meta_value><![CDATA[a:3:{s:4:"path";s:36:"/2025/08/xts-term-158-1755392114.css";s:13:"theme_version";s:5:"8.2.0";s:8:"site_url";s:32:"65c5e7a3e87c59ae65d18b8d3b912a1e";}]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-158-status]]></wp:meta_key>
-			<wp:meta_value><![CDATA[valid]]></wp:meta_value>
-		</wp:termmeta>
 		</wp:term>
-		
+				
 	<generator>https://wordpress.org/?v=6.7.4</generator>
 
 					<item>
@@ -1231,8 +1058,8 @@ dapibus porttitor adipiscing[/promo_banner][/banners_carousel][/vc_column][/vc_r
 															<wp:post_id>10061</wp:post_id>
 					<wp:post_date><![CDATA[2024-02-08 15:22:50]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-02-08 15:22:50]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-02-08 15:23:42]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-02-08 15:23:42]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2026-02-25 13:12:45]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2026-02-25 13:12:45]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[electronics-slide-1]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -1245,10 +1072,6 @@ dapibus porttitor adipiscing[/promo_banner][/banners_carousel][/vc_column][/vc_r
 							<wp:meta_value><![CDATA[rgb(242,242,242)]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[bg_image_size_desktop]]></wp:meta_key>
 							<wp:meta_value><![CDATA[cover]]></wp:meta_value>
 						</wp:postmeta>
@@ -1257,40 +1080,8 @@ dapibus porttitor adipiscing[/promo_banner][/banners_carousel][/vc_column][/vc_r
 							<wp:meta_value><![CDATA[center center]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_tablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_mobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[content_width]]></wp:meta_key>
-							<wp:meta_value><![CDATA[1200]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[content_width_tablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[1200]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[content_width_mobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[500]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[vertical_align]]></wp:meta_key>
-							<wp:meta_value><![CDATA[middle]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[horizontal_align]]></wp:meta_key>
-							<wp:meta_value><![CDATA[left]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[slide_animation]]></wp:meta_key>
 							<wp:meta_value><![CDATA[none]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
-							<wp:meta_value><![CDATA[10062]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[woodmart_shortcodes_custom_css]]></wp:meta_key>
@@ -1304,28 +1095,17 @@ dapibus porttitor adipiscing[/promo_banner][/banners_carousel][/vc_column][/vc_r
 							<wp:meta_key><![CDATA[_wpb_shortcodes_custom_css_updated]]></wp:meta_key>
 							<wp:meta_value><![CDATA[1]]></wp:meta_value>
 						</wp:postmeta>
-										</item>
-								<item>
-					<title><![CDATA[w-electronic-slide-1]]></title>
-					<link>https://dummy.xtemos.com/woodmart2/blog/woodmart_slide/electronics-slide-1/w-electronic-slide-1/</link>
-					<pubDate>Thu, 08 Feb 2024 15:23:25 +0000</pubDate>
-					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
-					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/wp-content/uploads/2024/02/w-electronic-slide-1.jpg</guid>
-															<wp:post_id>10062</wp:post_id>
-					<wp:post_date><![CDATA[2024-02-08 15:23:25]]></wp:post_date>
-					<wp:post_date_gmt><![CDATA[2024-02-08 15:23:25]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-02-08 15:23:25]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-02-08 15:23:25]]></wp:post_modified_gmt>
-					<wp:comment_status><![CDATA[open]]></wp:comment_status>
-					<wp:post_name><![CDATA[w-electronic-slide-1]]></wp:post_name>
-					<wp:status><![CDATA[inherit]]></wp:status>
-					<wp:post_parent>10061</wp:post_parent>
-					<wp:menu_order>0</wp:menu_order>
-					<wp:post_type><![CDATA[attachment]]></wp:post_type>
-											<wp:attachment_url><![CDATA[http://dummy.xtemos.com/woodmart2/wp-content/uploads/2024/02/w-electronic-slide-1.jpg]]></wp:attachment_url>
-																					<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-							<wp:meta_value><![CDATA[2024/02/w-electronic-slide-1.jpg]]></wp:meta_value>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[image]]></wp:meta_key>
+							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:85:"http://dummy.xtemos.com/woodmart2/wp-content/uploads/2024/02/w-electronic-slide-1.jpg";s:2:"id";s:5:"10062";}]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_wpb_vc_editor_type]]></wp:meta_key>
+							<wp:meta_value><![CDATA[backend]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_wpb_post_custom_layout]]></wp:meta_key>
+							<wp:meta_value><![CDATA[default]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -1338,8 +1118,8 @@ dapibus porttitor adipiscing[/promo_banner][/banners_carousel][/vc_column][/vc_r
 															<wp:post_id>10063</wp:post_id>
 					<wp:post_date><![CDATA[2024-02-08 15:25:21]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-02-08 15:25:21]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-02-08 15:25:21]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-02-08 15:25:21]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2026-02-25 13:12:42]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2026-02-25 13:12:42]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[electronics-slide-1-2]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -1364,22 +1144,6 @@ dapibus porttitor adipiscing[/promo_banner][/banners_carousel][/vc_column][/vc_r
 							<wp:meta_value><![CDATA[rgb(242,242,242)]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:82:"http://dummy.xtemos.com/woodmart2/wp-content/uploads/2024/02/accessories_large.jpg";s:2:"id";s:5:"10064";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_size_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[contain]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_position_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[right center]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_tablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[bg_image_position_tablet]]></wp:meta_key>
 							<wp:meta_value><![CDATA[custom]]></wp:meta_value>
 						</wp:postmeta>
@@ -1390,10 +1154,6 @@ dapibus porttitor adipiscing[/promo_banner][/banners_carousel][/vc_column][/vc_r
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[bg_image_position_y_tablet]]></wp:meta_key>
 							<wp:meta_value><![CDATA[0px]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_mobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[bg_image_size_mobile]]></wp:meta_key>
@@ -1412,26 +1172,6 @@ dapibus porttitor adipiscing[/promo_banner][/banners_carousel][/vc_column][/vc_r
 							<wp:meta_value><![CDATA[-20px]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[content_width]]></wp:meta_key>
-							<wp:meta_value><![CDATA[1200]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[content_width_tablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[1200]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[content_width_mobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[500]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[vertical_align]]></wp:meta_key>
-							<wp:meta_value><![CDATA[middle]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[horizontal_align]]></wp:meta_key>
-							<wp:meta_value><![CDATA[left]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[slide_animation]]></wp:meta_key>
 							<wp:meta_value><![CDATA[none]]></wp:meta_value>
 						</wp:postmeta>
@@ -1448,8 +1188,24 @@ dapibus porttitor adipiscing[/promo_banner][/banners_carousel][/vc_column][/vc_r
 							<wp:meta_value><![CDATA[1]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[electronics-slide-1]]></wp:meta_value>
+							<wp:meta_key><![CDATA[image]]></wp:meta_key>
+							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:82:"http://dummy.xtemos.com/woodmart2/wp-content/uploads/2024/02/accessories_large.jpg";s:2:"id";s:5:"10064";}]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[image_object_fit]]></wp:meta_key>
+							<wp:meta_value><![CDATA[contain]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[image_object_position]]></wp:meta_key>
+							<wp:meta_value><![CDATA[right center]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_wpb_vc_editor_type]]></wp:meta_key>
+							<wp:meta_value><![CDATA[backend]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_wpb_post_custom_layout]]></wp:meta_key>
+							<wp:meta_value><![CDATA[default]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -1462,8 +1218,8 @@ dapibus porttitor adipiscing[/promo_banner][/banners_carousel][/vc_column][/vc_r
 															<wp:post_id>10065</wp:post_id>
 					<wp:post_date><![CDATA[2024-02-08 15:27:00]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-02-08 15:27:00]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-02-08 15:27:00]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-02-08 15:27:00]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2026-02-25 13:10:32]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2026-02-25 13:10:32]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[electronics-slide-1-2-2]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -1500,22 +1256,6 @@ dapibus porttitor adipiscing[/promo_banner][/banners_carousel][/vc_column][/vc_r
 							<wp:meta_value><![CDATA[rgb(0,0,0)]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:75:"http://dummy.xtemos.com/woodmart2/wp-content/uploads/2024/02/hero_large.jpg";s:2:"id";s:5:"10066";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_size_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[contain]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_position_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[right center]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_tablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[bg_image_position_tablet]]></wp:meta_key>
 							<wp:meta_value><![CDATA[custom]]></wp:meta_value>
 						</wp:postmeta>
@@ -1526,10 +1266,6 @@ dapibus porttitor adipiscing[/promo_banner][/banners_carousel][/vc_column][/vc_r
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[bg_image_position_y_tablet]]></wp:meta_key>
 							<wp:meta_value><![CDATA[0px]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_mobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[bg_image_size_mobile]]></wp:meta_key>
@@ -1548,26 +1284,6 @@ dapibus porttitor adipiscing[/promo_banner][/banners_carousel][/vc_column][/vc_r
 							<wp:meta_value><![CDATA[20px]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[content_width]]></wp:meta_key>
-							<wp:meta_value><![CDATA[1200]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[content_width_tablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[1200]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[content_width_mobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[500]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[vertical_align]]></wp:meta_key>
-							<wp:meta_value><![CDATA[middle]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[horizontal_align]]></wp:meta_key>
-							<wp:meta_value><![CDATA[left]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[slide_animation]]></wp:meta_key>
 							<wp:meta_value><![CDATA[none]]></wp:meta_value>
 						</wp:postmeta>
@@ -1584,8 +1300,24 @@ dapibus porttitor adipiscing[/promo_banner][/banners_carousel][/vc_column][/vc_r
 							<wp:meta_value><![CDATA[1]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[electronics-slide-1-2]]></wp:meta_value>
+							<wp:meta_key><![CDATA[image]]></wp:meta_key>
+							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:75:"http://dummy.xtemos.com/woodmart2/wp-content/uploads/2024/02/hero_large.jpg";s:2:"id";s:5:"10066";}]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[image_object_fit]]></wp:meta_key>
+							<wp:meta_value><![CDATA[contain]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[image_object_position]]></wp:meta_key>
+							<wp:meta_value><![CDATA[right center]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_wpb_vc_editor_type]]></wp:meta_key>
+							<wp:meta_value><![CDATA[backend]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_wpb_post_custom_layout]]></wp:meta_key>
+							<wp:meta_value><![CDATA[default]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 				</channel>

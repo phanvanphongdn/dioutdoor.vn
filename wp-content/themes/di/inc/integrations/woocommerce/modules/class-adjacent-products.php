@@ -2,8 +2,8 @@
 /**
  * Woodmart WooCommerce Adjacent Products Class
  *
- * @since    2.4.3
- * @package  xts
+ * @since   2.4.3
+ * @package woodmart
  */
 
 namespace XTS\Modules;

@@ -2,7 +2,7 @@
 /**
  * Payment instructions map.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
@@ -16,9 +16,8 @@ if ( ! function_exists( 'woodmart_get_vc_map_tp_payment_instructions' ) ) {
 	function woodmart_get_vc_map_tp_payment_instructions() {
 		$instructions_typography = woodmart_get_typography_map(
 			array(
-				'key'              => 'instructions_typography',
-				'selector'         => '{{WRAPPER}} p',
-				'edit_field_class' => 'vc_col-sm-6 vc_column',
+				'key'      => 'instructions_typography',
+				'selector' => '{{WRAPPER}} p',
 			)
 		);
 

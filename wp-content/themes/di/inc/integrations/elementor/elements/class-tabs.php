@@ -2,7 +2,7 @@
 /**
  * Tabs map.
  *
- * @package Woodmart.
+ * @package woodmart.
  */
 
 namespace XTS\Elementor;
@@ -86,13 +86,13 @@ class Tabs extends Widget_Base {
 
 		$this->add_control(
 			'description',
-			[
+			array(
 				'label'     => esc_html__( 'Description', 'woodmart' ),
 				'type'      => Controls_Manager::TEXTAREA,
-				'condition' => [
+				'condition' => array(
 					'design' => array( 'default', 'aside' ),
-				],
-			]
+				),
+			)
 		);
 
 		$this->add_control(
@@ -184,7 +184,7 @@ class Tabs extends Widget_Base {
 			array(
 				'label'       => esc_html__( 'Content', 'woodmart' ),
 				'type'        => Controls_Manager::SELECT,
-				'options'     => woodmart_get_elementor_html_blocks_array(),
+				'options'     => woodmart_get_elementor_blocks_array( 'cms_block' ),
 				'description' => function_exists( 'woodmart_get_html_block_links' ) ? woodmart_get_html_block_links() : '',
 				'default'     => '0',
 				'condition'   => array(
@@ -997,7 +997,7 @@ class Tabs extends Widget_Base {
 			if ( woodmart_is_svg( $tabs_parent_settings['image']['url'] ) ) {
 				if ( $render_svg_with_image_tag ) {
 					$custom_image_size = 'custom' !== $tabs_parent_settings['image_size'] && 'full' !== $tabs_parent_settings['image_size'] ? $tabs_parent_settings['image_size'] : $custom_image_size;
-					$image_output      = '<span class="img-wrapper">' .  woodmart_get_svg_html( $tabs_parent_settings['image']['id'], $custom_image_size ) . '</span>';
+					$image_output      = '<span class="img-wrapper">' . woodmart_get_svg_html( $tabs_parent_settings['image']['id'], $custom_image_size ) . '</span>';
 				} else {
 					$image_output = '<span class="svg-icon img-wrapper" style="width:' . esc_attr( $custom_image_size['width'] ) . 'px; height:' . esc_attr( $custom_image_size['height'] ) . 'px;">' . woodmart_get_any_svg( $tabs_parent_settings['image']['url'], wp_rand( 999, 9999 ) ) . '</span>';
 				}
@@ -1008,6 +1008,8 @@ class Tabs extends Widget_Base {
 		if ( 'inherit' !== $tabs_parent_settings['title_text_color_scheme'] ) {
 			$tabs_nav_wrapper_classes .= ' color-scheme-' . $tabs_parent_settings['title_text_color_scheme'];
 		}
+
+		$tabs_nav_wrapper_classes = ' wd-mb-action-swipe';
 
 		$content_classes_wrapper = '';
 		if ( 'inherit' !== $tabs_parent_settings['content_text_color_scheme'] && 'custom' !== $tabs_parent_settings['content_text_color_scheme'] ) {
@@ -1092,7 +1094,7 @@ class Tabs extends Widget_Base {
 						<?php if ( 'html_block' === $tab['content_type'] ) : ?>
 							<?php echo woodmart_get_html_block( $tab['content_html_block'] ); // phpcs:ignore ?>
 						<?php elseif ( 'text' === $tab['content_type'] ) : ?>
-							<div <?php echo $this->get_render_attribute_string( $tab_content_setting_key ); ?>>
+							<div <?php echo $this->get_render_attribute_string( $tab_content_setting_key ); // phpcs:ignore ?>>
 								<?php echo do_shortcode( $tab['content_text'] ); ?>
 							</div>
 						<?php endif; ?>

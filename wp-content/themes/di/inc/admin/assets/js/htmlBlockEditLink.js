@@ -33,7 +33,7 @@
 			var $select = $parent.find('select');
 
 			if (!$select.length) {
-				$select = $parent.parent().find('select');
+				$select = $parent.parent().parent().find('select');
 			}
 
 			if ( ! $select.length ) {

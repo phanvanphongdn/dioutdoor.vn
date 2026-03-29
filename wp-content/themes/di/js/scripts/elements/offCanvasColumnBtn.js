@@ -29,7 +29,7 @@
 
 			if (0 === $colOffCanvas.find('.wd-heading').length) {
 				$colOffCanvas.prepend(
-					'<div class="wd-heading"><div class="close-side-widget wd-action-btn wd-style-text wd-cross-icon"><a href="#" rel="nofollow">' + woodmart_settings.off_canvas_column_close_btn_text + '</a></div></div>'
+					'<div class="wd-heading"><div class="close-side-widget wd-action-btn wd-style-text wd-cross-icon"><a href="#" rel="nofollow"><span class="wd-action-icon"></span><span class="wd-action-text">' + woodmart_settings.off_canvas_column_close_btn_text + '</span></a></div></div>'
 				);
 			}
 

@@ -2,7 +2,7 @@
 /**
  * Elementor Fb_Document class file.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Modules\Floating_Blocks\Integrations;

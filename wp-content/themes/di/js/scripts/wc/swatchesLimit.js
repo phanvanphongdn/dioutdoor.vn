@@ -22,6 +22,8 @@
 				$this.parents('.wd-products.grid-masonry').isotope('layout');
 			}
 
+			woodmartThemeModule.$document.trigger('wdProductHoverContentRecalc', [$this.parents('.wd-hover-with-fade')]);
+
 			woodmartThemeModule.$document.trigger('wood-images-loaded');
 		});
 	};

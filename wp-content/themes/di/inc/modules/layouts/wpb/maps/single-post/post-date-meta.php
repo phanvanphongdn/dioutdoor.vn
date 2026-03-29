@@ -2,7 +2,7 @@
 /**
  * Post date meta map.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 if ( ! defined( 'WOODMART_THEME_DIR' ) ) {

@@ -1,8 +1,8 @@
 {
 	"enableStatusBarItem": true,
 	"enableQuickPick": true,
-	"uploadOnSave": true,
-	"autoDelete": true,
+	"uploadOnSave": false,
+	"autoDelete": false,
 	"checkGitignore": false,
 	"activeTargets": [
 		"edit","di"
@@ -17,10 +17,10 @@
 		{
 			"name": "edit",
 			"type": "ftp",
-			"host": "localhost",
+			"host": "45.252.248.83",
 			"port": 21,
-			"user": "admin",
-			"password": "123456",
+			"user": "bfqaombi",
+			"password": "-14F6Ved0lFe;T",
 			"dir": "/edit.dioutdoor.vn",
 			"baseDir": "/",
 			"privateKey": null,

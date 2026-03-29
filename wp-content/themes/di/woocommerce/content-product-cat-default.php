@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 
 <div <?php wc_product_cat_class( $args['classes'], $args['category'] ); ?> data-loop="<?php echo esc_attr( $args['woocommerce_loop'] ); ?>">
-	<?php if ( woodmart_loop_prop( 'products_with_background' ) || woodmart_loop_prop( 'products_bordered_grid' ) && 'inside' === woodmart_loop_prop( 'products_bordered_grid_style' ) ) : ?>
+	<?php if ( woodmart_loop_prop( 'products_with_background' ) || ( woodmart_loop_prop( 'products_bordered_grid' ) && 'inside' === woodmart_loop_prop( 'products_bordered_grid_style' ) ) ) : ?>
 		<div class="wd-cat-wrap">
 	<?php endif; ?>
 
@@ -32,7 +32,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 				<?php
 				/**
-				 * woocommerce_before_subcategory_title hook
+				 * Trigger woocommerce_before_subcategory_title hook.
 				 *
 				 * @hooked woodmart_category_thumb_double_size - 10
 				 */
@@ -41,7 +41,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</a>
 		</div>
 		<div class="wd-cat-content hover-mask">
-			<h3 class="wd-entities-title<?php echo woodmart_get_old_classes( ' category-title' ); ?>">
+			<h3 class="wd-entities-title">
 				<?php
 				echo esc_html( $args['category']->name );
 				?>
@@ -72,7 +72,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			<?php
 			/**
-			 * woocommerce_after_subcategory_title hook
+			 * Trigger woocommerce_after_subcategory_title hook.
 			 */
 			do_action( 'woocommerce_after_subcategory_title', $args['category'] );
 			?>
@@ -83,7 +83,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php do_action( 'woocommerce_after_subcategory', $args['category'] ); ?>
 	</div>
 
-	<?php if ( woodmart_loop_prop( 'products_with_background' ) || woodmart_loop_prop( 'products_bordered_grid' ) && 'inside' === woodmart_loop_prop( 'products_bordered_grid_style' ) ) : ?>
+	<?php if ( woodmart_loop_prop( 'products_with_background' ) || ( woodmart_loop_prop( 'products_bordered_grid' ) && 'inside' === woodmart_loop_prop( 'products_bordered_grid_style' ) ) ) : ?>
 		</div>
 	<?php endif; ?>
 </div>

@@ -29,6 +29,11 @@ $current = isset( $current ) ? $current : wc_get_loop_prop( 'current_page' );
 $base    = isset( $base ) ? $base : esc_url_raw( str_replace( 999999999, '%#%', remove_query_arg( 'add-to-cart', get_pagenum_link( 999999999, false ) ) ) );
 $format  = isset( $format ) ? $format : '';
 
+// Show pagination in Gutenberg and Elementor editor preview.
+if ( woodmart_is_builder_editor_preview() ) {
+	$total = 2;
+}
+
 if ( $total <= 1 ) {
 	return;
 }
@@ -56,16 +61,16 @@ if ( function_exists( 'wcfm_is_store_page' ) && wcfm_is_store_page() ) {
 		<?php woodmart_enqueue_js_library( 'waypoints' ); ?>
 	<?php endif; ?>
 	<div class="wd-loop-footer products-footer">
-		<?php if ( $pagination == 'more-btn' || $pagination == 'infinit' ) : ?>
+		<?php if ( 'more-btn' === $pagination || 'infinit' === $pagination ) : ?>
 			<?php if ( get_next_posts_link() ) : ?>
 				<?php woodmart_enqueue_inline_style( 'load-more-button' ); ?>
-				<a href="<?php echo next_posts( $wp_query->max_num_pages, false ); ?>" rel="nofollow noopener" class="btn wd-load-more wd-products-load-more load-on-<?php echo 'more-btn' === $pagination ? 'click' : 'scroll'; ?>"><span class="load-more-label"><?php esc_html_e( 'Load more products', 'woodmart' ); ?></span></a>
+				<a href="<?php echo next_posts( $wp_query->max_num_pages, false ); // phpcs:ignore ?>" rel="nofollow noopener" class="btn wd-load-more wd-products-load-more load-on-<?php echo 'more-btn' === $pagination ? 'click' : 'scroll'; ?>"><span class="load-more-label"><?php esc_html_e( 'Load more products', 'woodmart' ); ?></span></a>
 				<div class="btn wd-load-more wd-load-more-loader"><span class="load-more-loading"><?php esc_html_e( 'Loading...', 'woodmart' ); ?></span></div>
 			<?php endif; ?>
 		<?php else : ?>
 			<nav class="woocommerce-pagination wd-pagination" aria-label="<?php esc_attr_e( 'Product Pagination', 'woocommerce' ); ?>">
 				<?php
-					echo paginate_links(
+					echo paginate_links( // phpcs:ignore
 						apply_filters(
 							'woocommerce_pagination_args',
 							array(

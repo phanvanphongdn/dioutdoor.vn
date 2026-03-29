@@ -2,7 +2,7 @@
 /**
  * Elementor section custom controls
  *
- * @package xts
+ * @package woodmart
  */
 
 use Elementor\Controls_Stack;

@@ -2,7 +2,7 @@
 /**
  * Manager class file.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Modules\Free_Gifts;
@@ -101,7 +101,7 @@ class Manager extends Singleton {
 		$current_meta_boxes = array();
 
 		foreach ( $meta_boxes_keys as $meta_box_id ) {
-			$meta_box_value = maybe_unserialize( get_post_meta( $id, $meta_box_id, true ) );
+			$meta_box_value = get_post_meta( $id, $meta_box_id, true );
 
 			if ( 'free_gifts' === $meta_box_id && ! empty( $meta_box_value ) ) {
 				$meta_box_value = array_map( 'intval', $meta_box_value );
@@ -175,7 +175,7 @@ class Manager extends Singleton {
 	/**
 	 * Get list of meta box arguments for all free gifts posts from database.
 	 *
-	 * @param string $type The type of product added - 'all', 'manual' or 'automatic'
+	 * @param string $type The type of product added - 'all', 'manual' or 'automatic'.
 	 *
 	 * @return array List of meta box arguments.
 	 */

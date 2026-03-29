@@ -2,7 +2,7 @@
 /**
  * Wishlist settings page on admin panel.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\WC_Wishlist;
@@ -36,7 +36,7 @@ class Backend extends Singleton {
 	 * @since 1.0.0
 	 */
 	public function init() {
-		if ( isset( $_GET['page'] ) && 'xts-wishlist-settings-page' === $_GET['page'] ) {
+		if ( isset( $_GET['page'] ) && 'xts-wishlist-settings-page' === $_GET['page'] ) { // phpcs:ignore WordPress.Security
 			add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 		}
 
@@ -50,11 +50,16 @@ class Backend extends Singleton {
 
 		add_action( 'wp_ajax_woodmart_json_search_users', array( $this, 'woodmart_json_search_users' ) );
 
-		add_filter( 'set-screen-option', array( $this, 'set_screen_option' ), 10, 3);
+		add_filter( 'set-screen-option', array( $this, 'set_screen_option' ), 10, 3 );
 	}
 
+	/**
+	 * Show notice if wishlist promotional email is disabled.
+	 *
+	 * @return void
+	 */
 	public function show_notice() {
-		if ( ! isset( $_GET['page'] ) || 'xts-wishlist-settings-page' !== $_GET['page'] || ! isset( $_GET['tab'] ) || ! in_array( $_GET['tab'], array( 'xts-popular-products-in-wishlist', 'xts-users-popular-products' ), true ) || woodmart_check_this_email_notification_is_enabled( 'woocommerce_woodmart_promotional_email_settings', 'yes' ) ) {
+		if ( ! isset( $_GET['page'] ) || 'xts-wishlist-settings-page' !== $_GET['page'] || ! isset( $_GET['tab'] ) || ! in_array( $_GET['tab'], array( 'xts-popular-products-in-wishlist', 'xts-users-popular-products' ), true ) || woodmart_check_this_email_notification_is_enabled( 'woocommerce_woodmart_promotional_email_settings', 'yes' ) ) { // phpcs:ignore WordPress.Security
 			return;
 		}
 
@@ -74,13 +79,18 @@ class Backend extends Singleton {
 		<?php
 	}
 
+	/**
+	 * Create promotion for users that added product to wishlist.
+	 *
+	 * @return void
+	 */
 	public function create_promotion() {
-		if ( ! isset( $_REQUEST['_wpnonce'] ) || ! isset( $_REQUEST['product_id'] ) || ! wp_verify_nonce( $_REQUEST['_wpnonce'], 'woodmart_send_promotion_email' ) || ! woodmart_check_this_email_notification_is_enabled( 'woocommerce_woodmart_promotional_email_settings', 'yes' ) ) {
+		if ( ! isset( $_REQUEST['_wpnonce'] ) || ! isset( $_REQUEST['product_id'] ) || ! wp_verify_nonce( $_REQUEST['_wpnonce'], 'woodmart_send_promotion_email' ) || ! woodmart_check_this_email_notification_is_enabled( 'woocommerce_woodmart_promotional_email_settings', 'yes' ) ) { // phpcs:ignore WordPress.Security
 			return;
 		}
 
-		$product_id     = $_REQUEST['product_id'];
-		$user_ids       = isset( $_REQUEST['user_id'] ) ? $_REQUEST['user_id'] : array_unique( Popular_Products::get_user_ids_by_product_id( $product_id ) );
+		$product_id     = $_REQUEST['product_id']; // phpcs:ignore WordPress.Security
+		$user_ids       = isset( $_REQUEST['user_id'] ) ? $_REQUEST['user_id'] : array_unique( Popular_Products::get_user_ids_by_product_id( $product_id ) ); // phpcs:ignore WordPress.Security
 		$users_products = ! is_array( $user_ids ) ? array( $user_ids => $product_id ) : array_combine( $user_ids, array_fill( 0, count( $user_ids ), $product_id ) );
 
 		Sends_Promotional::update_promotion_data( $users_products );
@@ -120,6 +130,12 @@ class Backend extends Singleton {
 		);
 	}
 
+	/**
+	 * AJAX handler for user search.
+	 *
+	 * @param string $term Search term.
+	 * @return void
+	 */
 	public function woodmart_json_search_users( $term = '' ) {
 		check_ajax_referer( 'search-users', 'security' );
 
@@ -169,7 +185,7 @@ class Backend extends Singleton {
 		);
 
 		foreach ( $files as $file ) {
-			$file_path = XTS_WISHLIST_DIR . 'backend/list-tables/' . $file . '.php';
+			$file_path = WOODMART_WISHLIST_DIR . 'backend/list-tables/' . $file . '.php';
 
 			if ( file_exists( $file_path ) ) {
 				require_once $file_path;
@@ -220,6 +236,14 @@ class Backend extends Singleton {
 		);
 	}
 
+	/**
+	 * Set screen options value.
+	 *
+	 * @param string $status Current status.
+	 * @param string $option Option name.
+	 * @param string $value Option value.
+	 * @return string
+	 */
 	public function set_screen_option( $status, $option, $value ) {
 		if ( 'wishlists_per_page' === $option ) {
 			return $value;
@@ -301,7 +325,7 @@ class Backend extends Singleton {
 		);
 		$title       = '';
 
-		$is_users_popular_products = isset( $_GET['tab'] ) && 'xts-users-popular-products' === $_GET['tab'];
+		$is_users_popular_products = isset( $_GET['tab'] ) && 'xts-users-popular-products' === $_GET['tab']; // phpcs:ignore WordPress.Security
 
 		if ( $is_users_popular_products ) {
 			$title = esc_html__( 'Customers that added product to wishlist', 'woodmart' );
@@ -334,12 +358,12 @@ class Backend extends Singleton {
 						<?php foreach ( $tabs as $key => $label ) : ?>
 							<?php
 							$classes = '';
-	
+
 							if ( $current_tab === $key ) {
 								$classes .= ' nav-tab-active';
 							}
 							?>
-	
+
 							<a class="nav-tab<?php echo esc_attr( $classes ); ?>" href="<?php echo esc_attr( add_query_arg( 'tab', $key, $base_url ) ); ?>">
 								<?php echo esc_html( $label ); ?>
 							</a>

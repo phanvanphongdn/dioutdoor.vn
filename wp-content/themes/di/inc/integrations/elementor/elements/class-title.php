@@ -2,7 +2,7 @@
 /**
  * Title map.
  *
- * @package xts
+ * @package woodmart
  */
 
 namespace XTS\Elementor;
@@ -561,7 +561,7 @@ class Title extends Widget_Base {
 					$custom_image_size = 'custom' !== $settings['image_size'] && 'full' !== $settings['image_size'] ? $settings['image_size'] : $custom_image_size;
 					$image_output      = '<span class="img-wrapper">' . woodmart_get_svg_html( $settings['image']['id'], $custom_image_size ) . '</span>';
 				} else {
-					$image_output = '<span class="img-wrapper"><span class="svg-icon" style="width:' . esc_attr( $custom_image_size['width'] ) . 'px; height:' . esc_attr( $custom_image_size['height'] ) . 'px;">' . woodmart_get_any_svg( $settings['image']['url'], rand( 999, 9999 ) ) . '</span></span>';
+					$image_output = '<span class="img-wrapper"><span class="svg-icon" style="width:' . esc_attr( $custom_image_size['width'] ) . 'px; height:' . esc_attr( $custom_image_size['height'] ) . 'px;">' . woodmart_get_any_svg( $settings['image']['url'], wp_rand( 999, 9999 ) ) . '</span></span>';
 				}
 			}
 		}
@@ -579,17 +579,17 @@ class Title extends Widget_Base {
 		}
 
 		?>
-		<div <?php echo $this->get_render_attribute_string( 'wrapper' ); ?>>
+		<div <?php echo $this->get_render_attribute_string( 'wrapper' ); //phpcs:ignore?>>
 
 			<?php if ( $settings['subtitle'] ) : ?>
 				<?php woodmart_enqueue_inline_style( 'el-subtitle-style' ); ?>
-				<div <?php echo $this->get_render_attribute_string( 'subtitle' ); ?>>
+				<div <?php echo $this->get_render_attribute_string( 'subtitle' ); //phpcs:ignore?>>
 					<?php echo nl2br( wp_kses( $settings['subtitle'], woodmart_get_allowed_html() ) ); ?>
 				</div>
 			<?php endif; ?>
 
 			<div class="liner-continer">
-				<<?php echo esc_attr( $title_tag ); ?> <?php echo $this->get_render_attribute_string( 'title' ); ?>><?php echo nl2br( wp_kses( $settings['title'], woodmart_get_allowed_html() ) ); ?></<?php echo esc_attr( $title_tag ); ?>> <?php // Must be in one line Yoast SEO fix bug. ?>
+				<<?php echo esc_attr( $title_tag ); ?> <?php echo $this->get_render_attribute_string( 'title' ); //phpcs:ignore?>><?php echo nl2br( wp_kses( $settings['title'], woodmart_get_allowed_html() ) ); ?></<?php echo esc_attr( $title_tag ); ?>> <?php // Must be in one line Yoast SEO fix bug. ?>
 
 				<?php if ( $image_output ) : ?>
 					<?php echo $image_output; // phpcs:ignore ?>
@@ -597,7 +597,7 @@ class Title extends Widget_Base {
 			</div>
 
 			<?php if ( $settings['after_title'] ) : ?>
-				<div <?php echo $this->get_render_attribute_string( 'after_title' ); ?>>
+				<div <?php echo $this->get_render_attribute_string( 'after_title' ); //phpcs:ignore ?>>
 					<?php echo nl2br( wp_kses( $settings['after_title'], woodmart_get_allowed_html() ) ); ?>
 				</div>
 			<?php endif; ?>

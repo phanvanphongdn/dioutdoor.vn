@@ -1,10 +1,22 @@
-<?php if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
-	exit( 'No direct script access allowed' );}
-
+<?php
 /**
- * Woodmart dropdown param
+ * Dropdown param field for WPBakery Page Builder.
+ *
+ * @package woodmart
  */
+
+if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
+	exit( 'No direct script access allowed' );
+}
+
 if ( ! function_exists( 'woodmart_get_dropdown_param' ) ) {
+	/**
+	 * Get dropdown param HTML.
+	 *
+	 * @param array  $settings Settings.
+	 * @param string $value Value.
+	 * @return string
+	 */
 	function woodmart_get_dropdown_param( $settings, $value ) {
 		if ( isset( $settings['callback'] ) && function_exists( $settings['callback'] ) ) {
 			$settings['value'] = $settings['callback']();
@@ -20,15 +32,15 @@ if ( ! function_exists( 'woodmart_get_dropdown_param' ) ) {
 					$style = $settings['style'][ $data ] ? 'background-color:' . $settings['style'][ $data ] . ';color:' . $color . ';' : '';
 				}
 
-				$selected = ( $value && $value == $data ) ? ' selected="selected"' : '';
+				$selected = ( $value && (string) $value === (string) $data ) ? ' selected="selected"' : '';
 
 				$output .= '<option style="' . esc_attr( $style ) . '" class="' . esc_attr( $data ) . '" value="' . esc_attr( $data ) . '"' . $selected . '>' . esc_html( $label ) . '</option>';
 			}
 		}
 		$output .= '</select>';
 
-		if ( isset( $settings['callback'] ) && strpos( $settings['callback'], 'html_block' ) && function_exists( 'woodmart_get_html_block_links' ) ) {
-			$output .= woodmart_get_html_block_links();
+		if ( ! empty( $settings['extra_content'] ) ) {
+			$output .= $settings['extra_content'];
 		}
 
 		return $output;

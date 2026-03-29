@@ -14,7 +14,7 @@ $block_css->add_css_rules(
 );
 
 $block_css->add_css_rules(
-	$block_selector . '.wd-products-element .wd-products-with-bg, ' . $block_selector . '.wd-products-element .wd-products-with-bg .wd-product',
+	$block_selector . ' .wd-products-with-bg, ' . $block_selector . ' .wd-products-with-bg .wd-product, ' . $block_selector . '.wd-products-with-bg, ' . $block_selector . '.wd-products-with-bg .wd-product',
 	array(
 		array(
 			'attr_name' => 'productsBackgroundCode',
@@ -28,7 +28,7 @@ $block_css->add_css_rules(
 );
 
 $block_css->add_css_rules(
-	$block_selector . '.wd-products-element [class*="products-bordered-grid"], ' . $block_selector . '.wd-products-element [class*="products-bordered-grid"] .wd-product',
+	$block_selector . ' [class*="products-bordered-grid"], ' . $block_selector . ' [class*="products-bordered-grid"] .wd-product,' . $block_selector . '[class*="products-bordered-grid"], ' . $block_selector . '[class*="products-bordered-grid"] .wd-product',
 	array(
 		array(
 			'attr_name' => 'productsBorderColorCode',

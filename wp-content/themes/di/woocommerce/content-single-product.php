@@ -43,7 +43,7 @@ $tabs_location        = woodmart_get_opt( 'product_tabs_location' );
 $reviews_location     = woodmart_get_opt( 'reviews_location' );
 $product_background   = woodmart_get_opt( 'product-background' );
 $single_full_width    = woodmart_get_opt( 'single_full_width' );
-$page_layout_specific = get_post_meta( get_the_ID(), '_woodmart_main_layout', true );
+$page_layout_specific = woodmart_get_post_meta_value( get_the_ID(), '_woodmart_main_layout' );
 
 if ( $page_layout_specific && 'default' !== $page_layout_specific ) {
 	$page_layout = $page_layout_specific;

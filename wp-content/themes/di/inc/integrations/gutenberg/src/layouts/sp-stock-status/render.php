@@ -10,11 +10,13 @@ if ( ! function_exists( 'wd_gutenberg_single_product_stock_status' ) ) {
 
 		Main::setup_preview();
 
+		$el_id = wd_get_gutenberg_element_id( $block_attributes );
+
 		global $product;
 		?>
-			<div id="<?php echo esc_attr( wd_get_gutenberg_element_id( $block_attributes ) ); ?>" class="wd-single-stock-status<?php echo esc_attr( wd_get_gutenberg_element_classes( $block_attributes ) ); ?>">
+			<div <?php echo $el_id ? 'id="' . esc_attr( $el_id ) . '" ' : ''; ?>class="wd-single-stock-status<?php echo esc_attr( wd_get_gutenberg_element_classes( $block_attributes ) ); ?>">
 				<?php if ( ! $product->is_type( 'variable' ) ) : ?>
-					<?php echo wc_get_stock_html( $product ); ?>
+					<?php echo wc_get_stock_html( $product ); //phpcs:ignore ?>
 				<?php endif; ?>
 			</div>
 		<?php

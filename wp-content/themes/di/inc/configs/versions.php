@@ -25,6 +25,66 @@ return apply_filters(
 				],
 			],
 		],
+		'electronics-3'            => [
+			'title'      => 'Electronics 3',
+			'process'    => 'xml,home,options,widgets,headers,images',
+			'type'       => 'version',
+			'base'       => 'electronics-3_base',
+			'link'       => 'https://woodmart.xtemos.com/electronics-3/',
+			'categories' => [
+				[
+					'name' => 'Electronics',
+					'slug' => 'electronics',
+				],
+				[
+					'name' => 'Mega Store',
+					'slug' => 'mega_store',
+				],
+			],
+		],
+		'fashion-2'            => [
+			'title'      => 'Fashion 2',
+			'process'    => 'xml,home,options,widgets,headers,images',
+			'type'       => 'version',
+			'base'       => 'fashion-2_base',
+			'link'       => 'https://woodmart.xtemos.com/fashion-2/',
+			'categories' => [
+				[
+					'name' => 'Fashion',
+					'slug' => 'fashion',
+				],
+				[
+					'name' => 'Mega Store',
+					'slug' => 'mega_store',
+				],
+			],
+		],
+		'perfumes'            => [
+			'title'      => 'Perfumes',
+			'process'    => 'xml,home,options,widgets,headers,images',
+			'type'       => 'version',
+			'base'       => 'perfumes_base',
+			'link'       => 'https://woodmart.xtemos.com/perfumes/',
+			'categories' => [
+				[
+					'name' => 'Fashion',
+					'slug' => 'fashion',
+				],
+			],
+		],
+		'merchandise'            => [
+			'title'      => 'Merchandise',
+			'process'    => 'xml,home,options,widgets,headers,images',
+			'type'       => 'version',
+			'base'       => 'merchandise_base',
+			'link'       => 'https://woodmart.xtemos.com/merchandise/',
+			'categories' => [
+				[
+					'name' => 'Fashion',
+					'slug' => 'fashion',
+				],
+			],
+		],
 		'christmas-2'            => [
 			'title'      => 'Christmas 2',
 			'process'    => 'xml,home,options,widgets,headers,images',
@@ -62,10 +122,6 @@ return apply_filters(
 			'base'       => 'vinyls_base',
 			'link'       => 'https://woodmart.xtemos.com/vinyls/',
 			'categories' => [
-				[
-					'name' => 'Service',
-					'slug' => 'service',
-				],
 				[
 					'name' => 'Electronics',
 					'slug' => 'electronics',
@@ -1385,7 +1441,27 @@ return apply_filters(
 			'type'    => 'base',
 		],
 		'christmas-2_base' => [
-			'title'   => 'Base content pets (required)',
+			'title'   => 'Base content christmas-2 (required)',
+			'process' => 'xml,xml_images,widgets,options,headers',
+			'type'    => 'base',
+		],
+		'merchandise_base' => [
+			'title'   => 'Base content merchandise (required)',
+			'process' => 'xml,xml_images,widgets,options,headers',
+			'type'    => 'base',
+		],
+		'perfumes_base' => [
+			'title'   => 'Base content perfumes (required)',
+			'process' => 'xml,xml_images,widgets,options,headers',
+			'type'    => 'base',
+		],
+		'fashion-2_base' => [
+			'title'   => 'Base content fashion-2 (required)',
+			'process' => 'xml,xml_images,widgets,options,headers',
+			'type'    => 'base',
+		],
+		'electronics-3_base' => [
+			'title'   => 'Base content electronics-3 (required)',
 			'process' => 'xml,xml_images,widgets,options,headers',
 			'type'    => 'base',
 		],

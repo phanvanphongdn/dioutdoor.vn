@@ -2,7 +2,7 @@
 /**
  * Promo banner map.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Elementor;
@@ -219,22 +219,28 @@ class Banner extends Widget_Base {
 		$this->add_responsive_control(
 			'image_height',
 			array(
-				'label'     => esc_html__( 'Banner height', 'woodmart' ),
-				'type'      => Controls_Manager::SLIDER,
-				'default'   => array(
+				'label'      => esc_html__( 'Banner height', 'woodmart' ),
+				'type'       => Controls_Manager::SLIDER,
+				'size_units' => array( 'px', 'vh' ),
+				'default'    => array(
 					'size' => 340,
 				),
-				'range'     => array(
+				'range'      => array(
 					'px' => array(
 						'min'  => 100,
 						'max'  => 2000,
 						'step' => 1,
 					),
+					'vh' => array(
+						'min'  => 0,
+						'max'  => 100,
+						'step' => 1,
+					),
 				),
-				'selectors' => array(
+				'selectors'  => array(
 					'{{WRAPPER}}' => '--wd-img-height: {{SIZE}}{{UNIT}};',
 				),
-				'condition' => array(
+				'condition'  => array(
 					'custom_height' => array( 'Yes' ),
 				),
 			)
@@ -340,7 +346,7 @@ class Banner extends Widget_Base {
 			array(
 				'label'     => esc_html__( 'Date', 'woodmart' ),
 				'type'      => Controls_Manager::DATE_TIME,
-				'default'   => date( 'Y-m-d', strtotime( ' +2 months' ) ),
+				'default'   => gmdate( 'Y-m-d', strtotime( ' +2 months' ) ),
 				'condition' => array(
 					'show_countdown' => array( 'yes' ),
 				),
@@ -726,11 +732,11 @@ class Banner extends Widget_Base {
 			array(
 				'label'   => esc_html__( 'Background', 'woodmart' ),
 				'type'    => Controls_Manager::SELECT,
-				'options' => [
+				'options' => array(
 					'simple' => esc_html__( 'Default', 'woodmart' ),
 					'active' => esc_html__( 'Primary color', 'woodmart' ),
 					'custom' => esc_html__( 'Custom', 'woodmart' ),
-				],
+				),
 				'default' => 'simple',
 			)
 		);

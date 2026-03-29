@@ -2,7 +2,7 @@
 /**
  * Gutenberg block class.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Gutenberg;
@@ -62,11 +62,17 @@ class Block {
 	 * @return mixed
 	 */
 	public function generate_frontend_css() {
-		$attrs                = $this->get_attributes();
-		$id                   = $this->get_id();
-		$selector             = '.wd-block-' . $this->get_id();
-		$block_selector       = '#wd-' . $id;
-		$block_selector_hover = $block_selector . ':hover';
+		$attrs                       = $this->get_attributes();
+		$id                          = $this->get_id();
+		$block_selector              = '.wd.wd .wd-' . $id;
+		$block_selector_hover        = $block_selector . ':hover';
+		$block_selector_parent_hover = '.wd.wd .wd-hover-parent:hover .wd-' . $id;
+
+		if ( ! isset( $attrs['blockVersion'] ) || ! $attrs['blockVersion'] || '1' === $attrs['blockVersion'] ) {
+			$block_selector              = '#wd-' . $id;
+			$block_selector_hover        = $block_selector . ':hover';
+			$block_selector_parent_hover = '.wd-hover-parent:hover ' . $block_selector;
+		}
 
 		return include $this->get_css_file_path();
 	}

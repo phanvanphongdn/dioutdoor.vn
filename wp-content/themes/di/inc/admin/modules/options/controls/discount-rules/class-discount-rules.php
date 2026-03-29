@@ -25,10 +25,10 @@ class Discount_Rules extends Field {
 	 * @param array  $args Field args array.
 	 * @param array  $options Options from the database.
 	 * @param string $type Field type.
-	 * @param string $object $object Object for post or term.
+	 * @param string $meta_type Meta type.
 	 */
-	public function __construct( $args, $options, $type = 'options', $object = 'post' ) {
-		parent::__construct( $args, $options, $type, $object );
+	public function __construct( $args, $options, $type = 'options', $meta_type = 'post' ) {
+		parent::__construct( $args, $options, $type, $meta_type );
 
 		if ( empty( $this->args['inner_fields'] ) ) {
 			$this->set_default_inner_fields();
@@ -79,9 +79,9 @@ class Discount_Rules extends Field {
 	 */
 	public function render_control() {
 		$option_id      = $this->args['id'];
-		$discount_rules = maybe_unserialize( $this->get_field_value() );
+		$discount_rules = $this->get_field_value();
 
-		if ( empty( $discount_rules ) ) {
+		if ( empty( $discount_rules ) || ! is_array( $discount_rules ) ) {
 			$discount_rules = array(
 				array(
 					'_woodmart_discount_rules_from'       => '',
@@ -159,7 +159,7 @@ class Discount_Rules extends Field {
 								<?php endforeach; ?>
 							</select>
 						</div>
-						<div class="xts-discount-amount-value <?php echo isset( $discount_rules[ $id ] ) && isset( $discount_rules[ $id ]['_woodmart_discount_type'] ) && 'amount' === $discount_rules[ $id ]['_woodmart_discount_type'] || ! isset( $discount_rules[ $id ] ) ? '' : 'xts-hidden'; ?>">
+						<div class="xts-discount-amount-value <?php echo ( isset( $discount_rules[ $id ] ) && isset( $discount_rules[ $id ]['_woodmart_discount_type'] ) && 'amount' === $discount_rules[ $id ]['_woodmart_discount_type'] ) || ! isset( $discount_rules[ $id ] ) ? '' : 'xts-hidden'; ?>">
 							<div class="xts-option-control">
 								<input type="number" name="<?php echo esc_attr( $option_id . '[' . $id . '][_woodmart_discount_amount_value]' ); ?>" id="_woodmart_discount_amount_value_<?php echo esc_attr( $id ); ?>" class="xts-col-6" min="0" placeholder="0.00" step="0.01" aria-label="<?php esc_attr_e( 'Discount amount value', 'woodmart' ); ?>" value="<?php echo isset( $discount_rules[ $id ]['_woodmart_discount_amount_value'] ) ? esc_attr( $discount_rules[ $id ]['_woodmart_discount_amount_value'] ) : ''; ?>">
 							</div>

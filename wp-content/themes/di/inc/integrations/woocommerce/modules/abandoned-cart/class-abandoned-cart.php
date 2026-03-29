@@ -118,7 +118,7 @@ class Abandoned_Cart extends Singleton {
 	 */
 	public function update_order_origin( $order_id ) {
 		if ( isset( $_COOKIE['woodmart_recovered_cart'] ) ) {
-			$recovered_cart = sanitize_text_field( $_COOKIE['woodmart_recovered_cart'] );
+			$recovered_cart = sanitize_text_field( $_COOKIE['woodmart_recovered_cart'] ); // phpcs:ignore WordPress.Security
 
 			update_post_meta( $order_id, '_wd_is_recovered_cart', $recovered_cart );
 		}
@@ -291,7 +291,7 @@ class Abandoned_Cart extends Singleton {
 	 * When the user update the cart update the entry on db of the current cart.
 	 */
 	public function cart_updated() {
-		if ( isset( $_GET['wd_rec_cart'] ) && isset( $_COOKIE['woodmart_recovered_cart'] ) ) {
+		if ( isset( $_GET['wd_rec_cart'] ) && isset( $_COOKIE['woodmart_recovered_cart'] ) ) { // phpcs:ignore WordPress.Security
 			setcookie( 'woodmart_recovered_cart', '', time() - 1, '/' );
 
 			return;
@@ -385,7 +385,7 @@ class Abandoned_Cart extends Singleton {
 		check_ajax_referer( 'wd_recover_guest_cart', 'security' );
 
 		if ( is_user_logged_in() || empty( $_POST['email'] ) || ! is_email( $_POST['email'] ) || ( isset( $_COOKIE['woodmart_guest_cart'] ) && isset( $_COOKIE['woodmart_recovered_cart'] ) && $_COOKIE['woodmart_guest_cart'] === $_COOKIE['woodmart_recovered_cart'] ) ) { //phpcs:ignore
-			return;
+			wp_send_json_error();
 		}
 
 		$email = sanitize_email( wp_unslash( $_POST['email'] ) );
@@ -536,12 +536,11 @@ class Abandoned_Cart extends Singleton {
 				update_post_meta( $cart_id, '_' . $meta_key, $meta_value );
 			}
 
-			update_post_meta( $cart_id, '_cart', maybe_serialize( WC()->cart ) );
+			update_post_meta( $cart_id, '_cart', array( 'cart' => WC()->cart ) );
 
 			$order_totals_snapshot = $this->build_order_totals_snapshot();
 
-			update_post_meta( $cart_id, '_order_totals', maybe_serialize( $order_totals_snapshot['order_totals'] ) );
-			update_post_meta( $cart_id, '_subtotal', maybe_serialize( $order_totals_snapshot['order_totals'] ) );
+			update_post_meta( $cart_id, '_order_totals', $order_totals_snapshot );
 		}
 
 		return $cart_id;
@@ -583,12 +582,11 @@ class Abandoned_Cart extends Singleton {
 				update_post_meta( $cart_id, '_' . $meta_key, $meta_value );
 			}
 
-			update_post_meta( $cart_id, '_cart', maybe_serialize( $cart ) );
+			update_post_meta( $cart_id, '_cart', array( 'cart' => $cart ) );
 
 			$order_totals_snapshot = $this->build_order_totals_snapshot();
 
-			update_post_meta( $cart_id, '_order_totals', maybe_serialize( $order_totals_snapshot['order_totals'] ) );
-			update_post_meta( $cart_id, '_subtotal', maybe_serialize( $order_totals_snapshot['order_totals'] ) );
+			update_post_meta( $cart_id, '_order_totals', $order_totals_snapshot );
 		}
 
 		return $updated;
@@ -602,12 +600,12 @@ class Abandoned_Cart extends Singleton {
 	 * @return void
 	 */
 	public function recovery_cart() {
-		if ( ! isset( $_GET['wd_rec_cart'] ) ) {
+		if ( ! isset( $_GET['wd_rec_cart'] ) ) { // phpcs:ignore WordPress.Security
 			return;
 		}
 
-		$cart_id     = intval( wp_unslash( $_GET['wd_rec_cart'] ) );
-		$coupon_code = isset( $_GET['coupon_code'] ) ? sanitize_text_field( wp_unslash( $_GET['coupon_code'] ) ) : '';
+		$cart_id     = intval( wp_unslash( $_GET['wd_rec_cart'] ) ); // phpcs:ignore WordPress.Security
+		$coupon_code = isset( $_GET['coupon_code'] ) ? sanitize_text_field( wp_unslash( $_GET['coupon_code'] ) ) : ''; // phpcs:ignore WordPress.Security
 		$cart        = get_post( $cart_id );
 
 		if ( empty( $cart ) || $this->post_type_name !== $cart->post_type ) {
@@ -627,7 +625,7 @@ class Abandoned_Cart extends Singleton {
 		}
 
 		// Add abandoned cart into the session.
-		$stored_cart = maybe_unserialize( get_post_meta( $cart_id, '_cart', true ) );
+		$stored_cart = woodmart_get_abandoned_cart_object_from_db( $cart_id );
 
 		// We check the content of meta-data.
 		if ( ! $stored_cart instanceof WC_Cart ) {
@@ -787,12 +785,9 @@ class Abandoned_Cart extends Singleton {
 	 *
 	 * This method creates a temporary WC_Order object, adds cart items and shipping rates,
 	 * copies main financial indicators from the cart, and returns an array containing
-	 * the order totals and subtotal.
+	 * the order totals.
 	 *
-	 * @return array {
-	 *     @type array $order_totals Array of order total lines (label and value).
-	 *     @type float $subtotal     The subtotal amount of the order.
-	 * }
+	 * @return array $order_totals Array of order total lines (label and value).
 	 */
 	public function build_order_totals_snapshot() {
 		$cart = WC()->cart;
@@ -858,10 +853,7 @@ class Abandoned_Cart extends Singleton {
 		$order->set_total( $cart->get_total( 'edit' ) );
 
 		// Returning the final results.
-		return array(
-			'order_totals' => $order->get_order_item_totals(),
-			'subtotal'     => $order->get_subtotal(),
-		);
+		return $order->get_order_item_totals();
 	}
 }
 

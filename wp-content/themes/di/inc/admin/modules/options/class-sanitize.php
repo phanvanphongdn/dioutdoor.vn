@@ -2,7 +2,7 @@
 /**
  * Sanitize fields values before save
  *
- * @package xts
+ * @package woodmart
  */
 
 namespace XTS\Admin\Modules\Options;
@@ -20,14 +20,14 @@ class Sanitize {
 	 *
 	 * @var Field
 	 */
-	private $_field;
+	private $field;
 
 	/**
 	 * Initial field value
 	 *
 	 * @var Field
 	 */
-	private $_value;
+	private $value;
 
 	/**
 	 * Class contructor
@@ -38,8 +38,8 @@ class Sanitize {
 	 * @param string $value field value.
 	 */
 	public function __construct( $field, $value ) {
-		$this->_field = $field;
-		$this->_value = $value;
+		$this->field = $field;
+		$this->value = $value;
 	}
 
 	/**
@@ -51,9 +51,9 @@ class Sanitize {
 	 */
 	public function sanitize() {
 
-		$val = $this->_value;
+		$val = $this->value;
 
-		switch ( $this->_field->args['type'] ) {
+		switch ( $this->field->args['type'] ) {
 			case 'typography':
 				if ( is_array( $val ) ) {
 					$first = reset( $val );
@@ -118,7 +118,7 @@ class Sanitize {
 				break;
 
 			case 'color':
-				if ( ! is_array( $val ) && strlen( $val ) == 7 && ( ! isset( $this->_field->args['data_type'] ) || $this->_field->args['data_type'] != 'hex' ) ) {
+				if ( ! is_array( $val ) && 7 === strlen( $val ) && ( ! isset( $this->field->args['data_type'] ) || 'hex' !== $this->field->args['data_type'] ) ) {
 					$val = array( 'idle' => $val );
 				}
 				break;
@@ -139,9 +139,11 @@ class Sanitize {
 				break;
 
 			case 'text_input':
-				if ( ! empty( $this->_field->args['sanitize'] ) && 'slug' === $this->_field->args['sanitize'] ) {
+				if ( ! empty( $this->field->args['sanitize'] ) && 'slug' === $this->field->args['sanitize'] ) {
 					$val = strtolower( trim( preg_replace( '/[^A-Za-z0-9-]+/', '_', $val ) ) );
-				} elseif ( ! empty( $this->_field->args['attributes']['type'] ) && 'url' === $this->_field->args['attributes']['type'] ) {
+				} elseif ( ! empty( $this->field->args['sanitize'] ) && 'social_links' === $this->field->args['sanitize'] ) {
+					$val = '#' === $val ? $val : $this->sanitize_social_link( $val );
+				} elseif ( ! empty( $this->field->args['attributes']['type'] ) && 'url' === $this->field->args['attributes']['type'] ) {
 					$val = esc_url( $val );
 				} else {
 					$val = sanitize_text_field( $val );
@@ -182,5 +184,58 @@ class Sanitize {
 		}
 
 		return $val;
+	}
+
+	/**
+	 * Sanitize social media links allowing custom protocols.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param string $url URL to sanitize.
+	 * @return string Sanitized URL.
+	 */
+	private function sanitize_social_link( $url ) {
+		// List of allowed protocols for social links.
+		$allowed_protocols = array(
+			'http',
+			'https',
+			'mailto',
+			'tel',
+			'fb',
+			'twitter',
+			'bluesky',
+			'instagram',
+			'threads',
+			'pinterest',
+			'youtube',
+			'tumblr',
+			'linkedin',
+			'vimeo',
+			'flickr',
+			'github',
+			'dribbble',
+			'behance',
+			'soundcloud',
+			'spotify',
+			'whatsapp',
+			'snapchat',
+			'tg',
+			'viber',
+			'tiktok',
+			'discord',
+			'yelp',
+			'vk',
+			'ok',
+		);
+
+		$url_parts = wp_parse_url( $url );
+
+		// If URL has a scheme, check if it's allowed.
+		if ( isset( $url_parts['scheme'] ) && in_array( strtolower( $url_parts['scheme'] ), $allowed_protocols, true ) ) {
+			return esc_attr( $url );
+		}
+
+		// Default to esc_url for standard HTTP(S) links.
+		return esc_url( $url );
 	}
 }

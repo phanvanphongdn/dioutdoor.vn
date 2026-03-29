@@ -791,4 +791,195 @@ add_action('init', function () {
     }
 }, 20);
 
+function dioutdoor_get_current_product_object() {
+    if ( ! function_exists( 'wc_get_product' ) ) {
+        return false;
+    }
 
+    global $product;
+
+    if ( $product instanceof WC_Product ) {
+        return $product;
+    }
+
+    $product_id = get_queried_object_id();
+
+    if ( ! $product_id && is_singular( 'product' ) ) {
+        $product_id = get_the_ID();
+    }
+
+    if ( ! $product_id ) {
+        return false;
+    }
+
+    $current_product = wc_get_product( $product_id );
+
+    return $current_product instanceof WC_Product ? $current_product : false;
+}
+
+function dioutdoor_is_mobile_sticky_product_context() {
+    if ( ! function_exists( 'woodmart_get_opt' ) || ! function_exists( 'woodmart_woocommerce_installed' ) ) {
+        return false;
+    }
+
+    if ( ! woodmart_woocommerce_installed() || ! is_product() ) {
+        return false;
+    }
+
+    if ( ! woodmart_get_opt( 'single_sticky_add_to_cart' ) || ! woodmart_get_opt( 'mobile_single_sticky_add_to_cart' ) || woodmart_get_opt( 'catalog_mode' ) ) {
+        return false;
+    }
+
+    if ( ! is_user_logged_in() && woodmart_get_opt( 'login_prices' ) ) {
+        return false;
+    }
+
+    $product = dioutdoor_get_current_product_object();
+
+    return $product && in_array( $product->get_type(), array( 'simple', 'variable' ), true );
+}
+
+function dioutdoor_is_mobile_sticky_variable_product_context() {
+    if ( ! dioutdoor_is_mobile_sticky_product_context() ) {
+        return false;
+    }
+
+    $product = dioutdoor_get_current_product_object();
+
+    return $product && $product->is_type( 'variable' );
+}
+
+function dioutdoor_enqueue_mobile_sticky_variable_assets() {
+    if ( ! dioutdoor_is_mobile_sticky_product_context() ) {
+        return;
+    }
+
+    $version = woodmart_get_theme_info( 'Version' );
+
+    woodmart_enqueue_js_library( 'magnific' );
+    woodmart_enqueue_js_script( 'mfp-popup' );
+    woodmart_enqueue_inline_style( 'mfp-popup' );
+
+    wp_enqueue_style(
+        'dioutdoor-mobile-sticky-variable',
+        get_stylesheet_directory_uri() . '/sticky-mobile-variable.css',
+        array( 'child-style' ),
+        $version
+    );
+
+    wp_enqueue_script(
+        'dioutdoor-mobile-sticky-variable',
+        get_stylesheet_directory_uri() . '/sticky-mobile-variable.js',
+        array( 'jquery' ),
+        $version,
+        true
+    );
+}
+add_action( 'wp_enqueue_scripts', 'dioutdoor_enqueue_mobile_sticky_variable_assets', 10020 );
+
+function dioutdoor_render_mobile_sticky_actions() {
+    if ( ! dioutdoor_is_mobile_sticky_product_context() ) {
+        return;
+    }
+
+    $product = dioutdoor_get_current_product_object();
+
+    if ( ! $product ) {
+        return;
+    }
+
+    if ( ! $product->is_in_stock() ) {
+        ?>
+        <div class="di-sticky-out-of-stock">
+            <button type="button" class="di-sticky-out-of-stock-btn single_add_to_cart_button button alt" disabled>
+                <?php esc_html_e( 'Hết hàng', 'di' ); ?>
+            </button>
+        </div>
+        <?php
+        return;
+    }
+
+    if ( ! $product->is_type( 'simple' ) && ! $product->is_type( 'variable' ) ) {
+        return;
+    }
+    ?>
+    <div class="di-mobile-sticky-actions" aria-label="<?php esc_attr_e( 'Sticky mobile product actions', 'di' ); ?>">
+        <button type="button" class="di-mobile-sticky-action single_add_to_cart_button button alt" data-action="add-to-cart" data-product-type="<?php echo esc_attr( $product->get_type() ); ?>">
+            <?php echo esc_html( $product->single_add_to_cart_text() ); ?>
+        </button>
+        <?php if ( woodmart_get_opt( 'buy_now_enabled' ) ) : ?>
+            <button type="button" class="di-mobile-sticky-action di-mobile-sticky-action-buy-now wd-buy-now-btn button alt" data-action="buy-now" data-product-type="<?php echo esc_attr( $product->get_type() ); ?>">
+                <?php esc_html_e( 'Buy now', 'woodmart' ); ?>
+            </button>
+        <?php endif; ?>
+    </div>
+    <?php
+}
+    add_action( 'woodmart_sticky_atc_actions', 'dioutdoor_render_mobile_sticky_actions', 20 );
+
+    function dioutdoor_render_mobile_sticky_variable_modal() {
+        if ( ! dioutdoor_is_mobile_sticky_variable_product_context() ) {
+            return;
+        }
+
+        $product = dioutdoor_get_current_product_object();
+
+        if ( ! $product ) {
+            return;
+        }
+
+        $image_id       = $product->get_image_id();
+        $image_html     = $image_id ? wp_get_attachment_image( $image_id, 'thumbnail' ) : wc_placeholder_img( 'thumbnail' );
+        $image_full_url = $image_id ? wp_get_attachment_image_url( $image_id, 'full' ) : wc_placeholder_img_src( 'full' );
+        $stock_html     = wc_get_stock_html( $product );
+        ?>
+        <div class="di-mobile-variation-modal" hidden>
+            <div class="di-mobile-variation-modal__backdrop" data-di-mobile-variation-close></div>
+            <div class="di-mobile-variation-modal__dialog" role="dialog" aria-modal="true" aria-label="<?php esc_attr_e( 'Chọn biến thể sản phẩm', 'di' ); ?>">
+                <div class="di-mobile-variation-modal__body">
+                    <div class="di-mobile-variation-modal__summary">
+                        <div class="di-mobile-variation-modal__image" data-base-image-full="<?php echo esc_url( $image_full_url ); ?>" data-image-full="<?php echo esc_url( $image_full_url ); ?>">
+                            <?php echo $image_html; // phpcs:ignore ?>
+                            
+                            <button type="button" class="di-mobile-variation-modal__image-fullscreen wd-icon-scale-arrows" aria-label="<?php esc_attr_e( 'Xem toàn màn hình', 'di' ); ?>">
+                            
+                            </button>
+                        </div>
+                        <div class="di-mobile-variation-modal__meta">
+                            <button type="button" class="di-mobile-variation-modal__close" data-di-mobile-variation-close aria-label="<?php esc_attr_e( 'Close', 'di' ); ?>">
+                            </button>
+                            <div class="di-mobile-variation-modal__price" data-default-price="<?php echo esc_attr( $product->get_price_html() ); ?>">
+                                <?php echo wp_kses_post( $product->get_price_html() ); ?>
+                            </div>
+                            <div class="di-mobile-variation-modal__availability" data-default-availability="<?php echo esc_attr( $stock_html ); ?>">
+                                <?php echo wp_kses_post( $stock_html ); ?>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="di-mobile-variation-modal__form-slot"></div>
+                </div>
+            </div>
+        </div>
+        <?php
+    }
+add_action( 'wp_footer', 'dioutdoor_render_mobile_sticky_variable_modal', 999 );
+
+function dioutdoor_render_single_out_of_stock_button() {
+    if ( ! function_exists( 'woodmart_woocommerce_installed' ) || ! woodmart_woocommerce_installed() || ! is_product() ) {
+        return;
+    }
+
+    $product = dioutdoor_get_current_product_object();
+
+    if ( ! $product || ! in_array( $product->get_type(), array( 'simple', 'variable' ), true ) || $product->is_in_stock() ) {
+        return;
+    }
+    ?>
+    <div class="di-single-out-of-stock">
+        <button type="button" class="di-single-out-of-stock-btn single_add_to_cart_button button alt" disabled>
+            <?php esc_html_e( 'Hết hàng', 'di' ); ?>
+        </button>
+    </div>
+    <?php
+}
+add_action( 'woocommerce_after_add_to_cart_form', 'dioutdoor_render_single_out_of_stock_button', 30 );

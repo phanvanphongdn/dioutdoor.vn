@@ -2,7 +2,7 @@
 /**
  * Cart totals map.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -10,17 +10,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! function_exists( 'woodmart_get_vc_map_cart_totals' ) ) {
+	/**
+	 * Cart totals map.
+	 *
+	 * @return array
+	 */
 	function woodmart_get_vc_map_cart_totals() {
 		$title_typography = woodmart_get_typography_map(
 			array(
-				'key'      => 'title_typography',
-				'group'    => esc_html__( 'Style', 'woodmart' ),
-				'selector' => '{{WRAPPER}} .cart-totals-inner > h2',
+				'key'        => 'title_typography',
+				'group'      => esc_html__( 'Style', 'woodmart' ),
+				'selector'   => '{{WRAPPER}} .cart-totals-inner > h2',
 				'dependency' => array(
 					'element' => 'show_title',
-					'value' => 'yes',
+					'value'   => 'yes',
 				),
-				'edit_field_class' => 'vc_col-sm-6 vc_column',
 			)
 		);
 
@@ -115,9 +119,9 @@ if ( ! function_exists( 'woodmart_get_vc_map_cart_totals' ) ) {
 						),
 					),
 					'value'      => array(
-						esc_html__( 'Left', 'woodmart' )       => 'left',
-						esc_html__( 'Center', 'woodmart' )     => 'center',
-						esc_html__( 'Right', 'woodmart' )      => 'right',
+						esc_html__( 'Left', 'woodmart' )   => 'left',
+						esc_html__( 'Center', 'woodmart' ) => 'center',
+						esc_html__( 'Right', 'woodmart' )  => 'right',
 						esc_html__( 'Full width', 'woodmart' ) => 'full-width',
 					),
 				),

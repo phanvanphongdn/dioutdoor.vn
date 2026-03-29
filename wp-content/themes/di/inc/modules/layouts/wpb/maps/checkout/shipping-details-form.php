@@ -2,7 +2,7 @@
 /**
  * Shipping details map.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -16,14 +16,13 @@ if ( ! function_exists( 'woodmart_get_vc_map_checkout_shipping_details_form' ) )
 	function woodmart_get_vc_map_checkout_shipping_details_form() {
 		$title_typography = woodmart_get_typography_map(
 			array(
-				'key'              => 'title_typography',
-				'group'            => esc_html__( 'Style', 'woodmart' ),
-				'selector'         => '{{WRAPPER}} .woocommerce-additional-fields > h3, {{WRAPPER}} .woocommerce-shipping-fields > h3',
-				'dependency'       => array(
+				'key'        => 'title_typography',
+				'group'      => esc_html__( 'Style', 'woodmart' ),
+				'selector'   => '{{WRAPPER}} .woocommerce-additional-fields > h3, {{WRAPPER}} .woocommerce-shipping-fields > h3',
+				'dependency' => array(
 					'element' => 'show_title',
 					'value'   => 'yes',
 				),
-				'edit_field_class' => 'vc_col-sm-6 vc_column',
 			)
 		);
 

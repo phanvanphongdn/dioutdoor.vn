@@ -2,13 +2,14 @@
 /**
  * Page metaboxes
  *
- * @package xts
+ * @package woodmart
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Direct access not allowed.
 }
 
+use Elementor\Plugin;
 use XTS\Admin\Modules\Options\Metaboxes;
 
 if ( ! function_exists( 'woodmart_register_page_metaboxes' ) ) {
@@ -29,6 +30,34 @@ if ( ! function_exists( 'woodmart_register_page_metaboxes' ) ) {
 				'post_types' => array( 'page', 'post', 'portfolio' ),
 			)
 		);
+
+		if ( woodmart_is_elementor_installed() && is_admin() && ! empty( $_GET['post'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			$doc = Plugin::$instance->documents->get( absint( $_GET['post'] ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+
+			if ( $doc && $doc->is_built_with_elementor() ) {
+				$page_metabox->add_section(
+					array(
+						'id'       => 'warning',
+						'name'     => '',
+						'priority' => 10,
+					)
+				);
+
+				$page_metabox->add_field(
+					array(
+						'id'       => 'elementor_warning',
+						'section'  => 'warning',
+						'type'     => 'notice',
+						'style'    => 'info',
+						'name'     => '',
+						'content'  => esc_html__( 'Post metaboxes moved to Elementor Post Settings', 'woodmart' ) . woodmart_get_admin_tooltip( 'elementor-post-settings.jpg' ),
+						'priority' => 10,
+					)
+				);
+
+				return;
+			}
+		}
 
 		$page_metabox->add_section(
 			array(
@@ -92,7 +121,7 @@ if ( ! function_exists( 'woodmart_register_page_metaboxes' ) ) {
 			array(
 				'id'           => $woodmart_prefix . 'mobile_content',
 				'name'         => esc_html__( 'Mobile version HTML block (experimental)', 'woodmart' ),
-				'description'  => esc_html__( 'You can create a separate content that will be displayed on mobile devices to optimize the performance.', 'woodmart' ),
+				'description'  => ( function_exists( 'woodmart_get_html_block_links' ) ? woodmart_get_html_block_links() : '' ) . esc_html__( 'You can create a separate content that will be displayed on mobile devices to optimize the performance.', 'woodmart' ),
 				'type'         => 'select',
 				'section'      => 'mobile',
 				'select2'      => true,
@@ -486,11 +515,11 @@ if ( ! function_exists( 'woodmart_register_page_metaboxes' ) ) {
 
 			$page_metabox->add_field(
 				array(
-					'id'       => $woodmart_prefix . 'preload_image_type',
-					'name'     => esc_html__( 'Image type', 'woodmart' ),
-					'type'     => 'buttons',
-					'section'  => 'preload',
-					'options'  => array(
+					'id'          => $woodmart_prefix . 'preload_image_type',
+					'name'        => esc_html__( 'Image type', 'woodmart' ),
+					'type'        => 'buttons',
+					'section'     => 'preload',
+					'options'     => array(
 						'image'      => array(
 							'name'  => esc_html__( 'Image tag (<img>)', 'woodmart' ),
 							'value' => 'image',
@@ -500,14 +529,14 @@ if ( ! function_exists( 'woodmart_register_page_metaboxes' ) ) {
 							'value' => 'background',
 						),
 					),
-					't_tab'    => array(
+					't_tab'       => array(
 						'id'   => 'preload_image_tabs',
 						'icon' => 'xts-i-desktop',
 						'tab'  => esc_html__( 'Desktop', 'woodmart' ),
 					),
-					'description'  => esc_html__( 'Choose whether your image is added to the page using an "img" tag or as a background via CSS. Selecting the correct placement type will help determine whether srcsets are used for the image, ensuring each of them is considered in the LCP option. If you set the image using "Find" function, this value will be selected automatically.', 'woodmart' ),
-					'default'  => 'image',
-					'priority' => 30,
+					'description' => esc_html__( 'Choose whether your image is added to the page using an "img" tag or as a background via CSS. Selecting the correct placement type will help determine whether srcsets are used for the image, ensuring each of them is considered in the LCP option. If you set the image using "Find" function, this value will be selected automatically.', 'woodmart' ),
+					'default'     => 'image',
+					'priority'    => 30,
 				)
 			);
 
@@ -571,11 +600,11 @@ if ( ! function_exists( 'woodmart_register_page_metaboxes' ) ) {
 
 			$page_metabox->add_field(
 				array(
-					'id'       => $woodmart_prefix . 'preload_image_mobile_type',
-					'name'     => esc_html__( 'Image type', 'woodmart' ),
-					'type'     => 'buttons',
-					'section'  => 'preload',
-					'options'  => array(
+					'id'          => $woodmart_prefix . 'preload_image_mobile_type',
+					'name'        => esc_html__( 'Image type', 'woodmart' ),
+					'type'        => 'buttons',
+					'section'     => 'preload',
+					'options'     => array(
 						'image'      => array(
 							'name'  => esc_html__( 'Image tag (<img>)', 'woodmart' ),
 							'value' => 'image',
@@ -585,14 +614,14 @@ if ( ! function_exists( 'woodmart_register_page_metaboxes' ) ) {
 							'value' => 'background',
 						),
 					),
-					'default'  => 'image',
-					't_tab'    => array(
+					'default'     => 'image',
+					't_tab'       => array(
 						'id'   => 'preload_image_tabs',
 						'icon' => 'xts-i-phone',
 						'tab'  => esc_html__( 'Mobile', 'woodmart' ),
 					),
-					'description'  => esc_html__( 'Choose whether your image is added to the page using an "img" tag or as a background via CSS. Selecting the correct placement type will help determine whether srcsets are used for the image, ensuring each of them is considered in the LCP option. If you set the image using "Find" function, this value will be selected automatically.', 'woodmart' ),
-					'priority' => 60,
+					'description' => esc_html__( 'Choose whether your image is added to the page using an "img" tag or as a background via CSS. Selecting the correct placement type will help determine whether srcsets are used for the image, ensuring each of them is considered in the LCP option. If you set the image using "Find" function, this value will be selected automatically.', 'woodmart' ),
+					'priority'    => 60,
 				)
 			);
 		}

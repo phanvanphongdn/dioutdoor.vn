@@ -1,6 +1,6 @@
 <?php
 /**
- * Toggle shortcode.
+ * Shortcode for Toggle element.
  *
  * @package WoodMart
  */
@@ -10,6 +10,14 @@ if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
 }
 
 if ( ! function_exists( 'woodmart_shortcode_toggle' ) ) {
+	/**
+	 * Toggle shortcode.
+	 *
+	 * @param array  $settings Shortcode settings.
+	 * @param string $content  Shortcode content.
+	 *
+	 * @return false|string
+	 */
 	function woodmart_shortcode_toggle( $settings, $content = '' ) {
 		$settings = wp_parse_args(
 			$settings,

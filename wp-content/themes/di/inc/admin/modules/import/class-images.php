@@ -2,7 +2,7 @@
 /**
  * Import images.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Admin\Modules\Import;

@@ -19,16 +19,16 @@ use WP_Query;
  */
 class Admin extends Singleton {
 	/**
-	 * Metabox class instanse.
+	 * Metabox class instance.
 	 *
-	 * @var Metabox instanse.
+	 * @var Metabox instance.
 	 */
 	public $metabox;
 
 	/**
 	 * Manager instance.
 	 *
-	 * @var Manager instanse.
+	 * @var Manager instance.
 	 */
 	public $manager;
 
@@ -97,11 +97,11 @@ class Admin extends Singleton {
 	 * @return void
 	 */
 	public function clear_transients_on_ajax() {
-		if ( ! wp_doing_ajax() || empty( $_POST['action'] ) || empty( $_POST['id'] ) || 'wd_change_post_status' !== $_POST['action'] ) {
+		if ( ! wp_doing_ajax() || empty( $_POST['action'] ) || empty( $_POST['id'] ) || 'wd_change_post_status' !== $_POST['action'] ) { // phpcs:ignore WordPress.Security.NonceVerification
 			return;
 		}
 
-		$post = get_post( $_POST['id'] );
+		$post = get_post( $_POST['id'] ); // phpcs:ignore WordPress.Security
 
 		if ( ! $post || 'wd_woo_est_del' !== $post->post_type ) {
 			return;
@@ -385,7 +385,7 @@ class Admin extends Singleton {
 				$method->get_title()
 			);
 
-			if ( $method ) {
+			if ( $method_id ) {
 				$output[ $method_id ] = array(
 					'name'  => $method_name,
 					'value' => $method_id,
@@ -547,7 +547,7 @@ class Admin extends Singleton {
 	 *
 	 * @param mixed            $check Whether to go ahead with deletion.
 	 * @param WC_Shipping_Zone $zone Shipping zone object.
-	 * @param  bool            $force_delete Should the date be deleted permanently.
+	 * @param  bool             $force_delete Should the date be deleted permanently.
 	 *
 	 * @return mixed
 	 */
@@ -563,7 +563,7 @@ class Admin extends Singleton {
 
 				foreach ( $posts as $post ) {
 					$post_id    = $post->ID;
-					$meta_value = maybe_unserialize( get_post_meta( $post_id, 'est_del_shipping_method', true ) );
+					$meta_value = get_post_meta( $post_id, 'est_del_shipping_method', true );
 
 					if ( is_array( $meta_value ) && in_array( $method_id, $meta_value, true ) ) {
 						$new_meta_value = array_diff( $meta_value, array( $method_id ) );
@@ -602,7 +602,7 @@ class Admin extends Singleton {
 
 		foreach ( $posts as $post ) {
 			$post_id    = $post->ID;
-			$meta_value = maybe_unserialize( get_post_meta( $post_id, 'est_del_shipping_method', true ) );
+			$meta_value = get_post_meta( $post_id, 'est_del_shipping_method', true );
 
 			if ( is_array( $meta_value ) && in_array( $method_id, $meta_value, true ) ) {
 				$new_meta_value = array_diff( $meta_value, array( $method_id ) );

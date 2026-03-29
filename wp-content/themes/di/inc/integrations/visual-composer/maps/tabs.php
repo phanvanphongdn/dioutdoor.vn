@@ -1,4 +1,4 @@
-<?php
+<?php // phpcs:ignore WordPress.Files.FileName.InvalidClassFileName
 /**
  * Maps for tabs element.
  *
@@ -1353,6 +1353,11 @@ if ( ! function_exists( 'woodmart_get_vc_map_tabs' ) ) {
 }
 
 if ( ! function_exists( 'woodmart_get_vc_map_tab' ) ) {
+	/**
+	 * Tab shortcode map.
+	 *
+	 * @return array
+	 */
 	function woodmart_get_vc_map_tab() {
 		return array(
 			'base'            => 'woodmart_tab',
@@ -1400,11 +1405,12 @@ if ( ! function_exists( 'woodmart_get_vc_map_tab' ) ) {
 					),
 				),
 				array(
-					'param_name' => 'html_block_id',
-					'type'       => 'woodmart_dropdown',
-					'heading'    => esc_html__( 'Select block', 'woodmart' ),
-					'callback'   => 'woodmart_get_html_blocks_array_with_empty',
-					'dependency' => array(
+					'param_name'    => 'html_block_id',
+					'type'          => 'woodmart_dropdown',
+					'heading'       => esc_html__( 'Select block', 'woodmart' ),
+					'callback'      => 'woodmart_get_html_blocks_array_with_empty',
+					'extra_content' => function_exists( 'woodmart_get_html_block_links' ) ? woodmart_get_html_block_links() : '',
+					'dependency'    => array(
 						'element' => 'content_type',
 						'value'   => array( 'html_block' ),
 					),
@@ -1584,5 +1590,5 @@ if ( class_exists( 'WPBakeryShortCodesContainer' ) ) {
 	/**
 	 * Create woodmart tabs wrapper.
 	 */
-	class WPBakeryShortCode_woodmart_tabs extends WPBakeryShortCodesContainer {}
+	class WPBakeryShortCode_woodmart_tabs extends WPBakeryShortCodesContainer {} // phpcs:ignore
 }

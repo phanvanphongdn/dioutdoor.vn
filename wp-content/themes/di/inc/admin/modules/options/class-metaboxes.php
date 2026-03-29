@@ -2,7 +2,7 @@
 /**
  * Create metaboxex object. Container for metabox objects.
  *
- * @package xts
+ * @package woodmart
  */
 
 namespace XTS\Admin\Modules\Options;

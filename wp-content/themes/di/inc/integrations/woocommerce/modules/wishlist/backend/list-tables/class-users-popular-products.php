@@ -2,7 +2,7 @@
 /**
  * This file describes class for render view popular products in wishlist list in WordPress admin panel.
  *
- * @package Woodmart.
+ * @package woodmart.
  */
 
 namespace XTS\WC_Wishlist\Backend\List_Table;

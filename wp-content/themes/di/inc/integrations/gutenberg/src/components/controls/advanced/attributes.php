@@ -86,6 +86,9 @@ if ( ! function_exists( 'wd_get_advanced_tab_attrs' ) ) {
 				'overflowY'                 => array(
 					'type' => 'string',
 				),
+				'pointerEvents'             => array(
+					'type' => 'string',
+				),
 
 				'alignSelf'                 => array(
 					'type'       => 'string',

@@ -1,12 +1,22 @@
-<?php if ( ! defined( 'WOODMART_THEME_DIR' ) ) exit( 'No direct script access allowed' );
-
+<?php
 /**
-* ------------------------------------------------------------------------------------------------
-* AJAX search shortcode
-* ------------------------------------------------------------------------------------------------
-*/
+ * Shortcode for Ajax Search element.
+ *
+ * @package woodmart
+ */
 
-if( ! function_exists( 'woodmart_ajax_search' ) ) {
+if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
+	exit( 'No direct script access allowed' );
+}
+
+if ( ! function_exists( 'woodmart_ajax_search' ) ) {
+	/**
+	 * Ajax search shortcode
+	 *
+	 * @param array $atts Shortcode attributes.
+	 *
+	 * @return string
+	 */
 	function woodmart_ajax_search( $atts ) {
 		$class = apply_filters( 'vc_shortcodes_css_class', '', '', $atts );
 
@@ -30,9 +40,9 @@ if( ! function_exists( 'woodmart_ajax_search' ) ) {
 
 		$class .= ' wd-color-' . $atts['woodmart_color_scheme'];
 		$class .= ' ' . $atts['el_class'];
-		if( function_exists( 'vc_shortcode_custom_css_class' ) ) $class .= ' ' . vc_shortcode_custom_css_class( $atts['css'] );
-
-		$class .= woodmart_get_old_classes( ' woodmart-vc-ajax-search' );
+		if ( function_exists( 'vc_shortcode_custom_css_class' ) ) {
+			$class .= ' ' . vc_shortcode_custom_css_class( $atts['css'] );
+		}
 
 		ob_start();
 		?>

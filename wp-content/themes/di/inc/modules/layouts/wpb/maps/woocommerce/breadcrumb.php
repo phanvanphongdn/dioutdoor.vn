@@ -2,7 +2,7 @@
 /**
  * WooCommerce breadcrumb map.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -17,7 +17,7 @@ if ( ! function_exists( 'woodmart_get_vc_map_woocommerce_breadcrumb' ) ) {
 		$typography = woodmart_get_typography_map(
 			array(
 				'key'      => 'title',
-				'selector' => '{{WRAPPER}} :is(.wd-breadcrumbs,.yoast-breadcrumb)',
+				'selector' => '{{WRAPPER}} :is(.wd-breadcrumbs,.yoast-breadcrumb,.rank-math-breadcrumb,.aioseo-breadcrumbs,.breadcrumb)',
 				'group'    => esc_html__( 'Style', 'woodmart' ),
 			)
 		);
@@ -90,7 +90,7 @@ if ( ! function_exists( 'woodmart_get_vc_map_woocommerce_breadcrumb' ) ) {
 					'type'             => 'wd_colorpicker',
 					'param_name'       => 'text_color',
 					'selectors'        => array(
-						'{{WRAPPER}} :is(.wd-breadcrumbs,.yoast-breadcrumb)' => array(
+						'{{WRAPPER}} :is(.wd-breadcrumbs,.yoast-breadcrumb,.rank-math-breadcrumb,.aioseo-breadcrumbs,.breadcrumb)' => array(
 							'--wd-link-color: {{VALUE}};',
 						),
 					),
@@ -103,7 +103,7 @@ if ( ! function_exists( 'woodmart_get_vc_map_woocommerce_breadcrumb' ) ) {
 					'type'             => 'wd_colorpicker',
 					'param_name'       => 'text_color_hover',
 					'selectors'        => array(
-						'{{WRAPPER}} :is(.wd-breadcrumbs,.yoast-breadcrumb)' => array(
+						'{{WRAPPER}} :is(.wd-breadcrumbs,.yoast-breadcrumb,.rank-math-breadcrumb,.aioseo-breadcrumbs,.breadcrumb)' => array(
 							'--wd-link-color-hover: {{VALUE}};',
 						),
 					),
@@ -116,7 +116,7 @@ if ( ! function_exists( 'woodmart_get_vc_map_woocommerce_breadcrumb' ) ) {
 					'type'             => 'wd_colorpicker',
 					'param_name'       => 'text_color_active',
 					'selectors'        => array(
-						'{{WRAPPER}} :is(.wd-breadcrumbs,.yoast-breadcrumb)' => array(
+						'{{WRAPPER}} :is(.wd-breadcrumbs,.yoast-breadcrumb,.rank-math-breadcrumb,.aioseo-breadcrumbs,.breadcrumb)' => array(
 							'--wd-bcrumb-color-active: {{VALUE}};',
 						),
 					),
@@ -129,7 +129,7 @@ if ( ! function_exists( 'woodmart_get_vc_map_woocommerce_breadcrumb' ) ) {
 					'type'             => 'wd_colorpicker',
 					'param_name'       => 'delimiter_color',
 					'selectors'        => array(
-						'{{WRAPPER}} :is(.wd-breadcrumbs,.yoast-breadcrumb)' => array(
+						'{{WRAPPER}} :is(.wd-breadcrumbs,.yoast-breadcrumb,.rank-math-breadcrumb,.aioseo-breadcrumbs,.breadcrumb)' => array(
 							'--wd-bcrumb-delim-color: {{VALUE}};',
 						),
 					),

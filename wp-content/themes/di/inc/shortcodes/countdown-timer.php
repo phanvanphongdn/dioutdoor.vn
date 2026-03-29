@@ -1,16 +1,29 @@
-<?php if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
-	exit( 'No direct script access allowed' );}
-
+<?php
 /**
-* ------------------------------------------------------------------------------------------------
-* Countdown timer
-* ------------------------------------------------------------------------------------------------
-*/
+ * Shortcode for Countdown Timer element.
+ *
+ * @package woodmart
+ */
+
+if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
+	exit( 'No direct script access allowed' );
+}
 
 if ( ! function_exists( 'woodmart_shortcode_countdown_timer' ) ) {
-	function woodmart_shortcode_countdown_timer( $atts, $content ) {
-		$click = $output = $class = $timer_classes = '';
-		extract(
+	/**
+	 * Countdown timer shortcode
+	 *
+	 * @param array $atts Shortcode attributes.
+	 *
+	 * @return string
+	 */
+	function woodmart_shortcode_countdown_timer( $atts ) {
+		$click         = '';
+		$output        = '';
+		$class         = '';
+		$timer_classes = '';
+
+		extract( // phpcs:ignore WordPress.PHP.DontExtract.extract_extract
 			shortcode_atts(
 				array(
 					'date'                  => '2020/12/12',
@@ -54,8 +67,6 @@ if ( ! function_exists( 'woodmart_shortcode_countdown_timer' ) ) {
 		$timer_classes .= 'no' === $labels ? ' wd-labels-hide' : '';
 		$timer_classes .= 'inline' === $layout ? ' wd-layout-inline' : '';
 
-		$timer_classes .= woodmart_get_old_classes( ' woodmart-timer' );
-
 		$timezone = 'GMT';
 
 		$date = str_replace( '/', '-', apply_filters( 'wd_countdown_timer_end_date', $date ) );
@@ -81,9 +92,7 @@ if ( ! function_exists( 'woodmart_shortcode_countdown_timer' ) ) {
 						</span>
 					</span>
 					<?php if ( 'yes' === $separator && $separator_text ) : ?>
-						<div class="wd-sep">
-							<?php echo esc_html( $separator_text ); ?>
-						</div>
+						<div class="wd-sep"><?php echo esc_html( $separator_text ); ?></div>
 					<?php endif; ?>
 					<span class="wd-item wd-timer-hours">
 						<span class="wd-timer-value">
@@ -94,9 +103,7 @@ if ( ! function_exists( 'woodmart_shortcode_countdown_timer' ) ) {
 						</span>
 					</span>
 					<?php if ( 'yes' === $separator && $separator_text ) : ?>
-						<div class="wd-sep">
-							<?php echo esc_html( $separator_text ); ?>
-						</div>
+						<div class="wd-sep"><?php echo esc_html( $separator_text ); ?></div>
 					<?php endif; ?>
 					<span class="wd-item wd-timer-min">
 						<span class="wd-timer-value">
@@ -107,9 +114,7 @@ if ( ! function_exists( 'woodmart_shortcode_countdown_timer' ) ) {
 						</span>
 					</span>
 					<?php if ( 'yes' === $separator && $separator_text ) : ?>
-						<div class="wd-sep">
-							<?php echo esc_html( $separator_text ); ?>
-						</div>
+						<div class="wd-sep"><?php echo esc_html( $separator_text ); ?></div>
 					<?php endif; ?>
 					<span class="wd-item wd-timer-sec">
 						<span class="wd-timer-value">

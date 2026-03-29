@@ -16,7 +16,7 @@
 	<!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 	<!--    contained in this file into your site. -->
 
-	<!-- generator="WordPress/6.7.2" created="2025-05-20 14:05" -->
+	<!-- generator="WordPress/6.7.4" created="2025-12-12 15:50" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -29,7 +29,7 @@
 	<title>Gutenberg base</title>
 	<link>https://dummy.xtemos.com/woodmart2/gutenberg</link>
 	<description></description>
-	<pubDate>Tue, 20 May 2025 14:05:37 +0000</pubDate>
+	<pubDate>Fri, 12 Dec 2025 15:50:43 +0000</pubDate>
 	<language>en-US</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
 	<wp:base_site_url>https://dummy.xtemos.com/woodmart2/</wp:base_site_url>
@@ -45,6 +45,10 @@
 			<wp:meta_key><![CDATA[xts-term-16-status]]></wp:meta_key>
 			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
 		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[wd_page_css_files]]></wp:meta_key>
+			<wp:meta_value><![CDATA[a:83:{i:0;s:10:"style-base";i:1;s:17:"revolution-slider";i:2;s:13:"int-wordfence";i:3;s:16:"woocommerce-base";i:4;s:15:"mod-star-rating";i:5;s:25:"woocommerce-block-notices";i:6;s:15:"block-paragraph";i:7;s:11:"block-title";i:8;s:17:"block-title-style";i:9;s:11:"block-image";i:10;s:15:"block-container";i:11;s:3:"map";i:12;s:13:"el-google-map";i:13;s:24:"mod-animations-transform";i:14;s:13:"mod-transform";i:15;s:29:"mod-animations-transform-snap";i:16;s:18:"opt-floating-block";i:17;s:7:"marquee";i:18;s:6:"button";i:19;s:12:"block-button";i:20;s:11:"header-base";i:21;s:9:"mod-tools";i:22;s:20:"header-elements-base";i:23;s:12:"social-icons";i:24;s:13:"header-search";i:25;s:18:"header-search-form";i:26;s:14:"wd-search-form";i:27;s:17:"wd-search-results";i:28;s:18:"wd-search-dropdown";i:29;s:13:"wd-search-cat";i:30;s:18:"woo-mod-login-form";i:31;s:17:"header-my-account";i:32;s:16:"header-cart-side";i:33;s:11:"header-cart";i:34;s:20:"widget-shopping-cart";i:35;s:19:"widget-product-list";i:36;s:26:"header-mobile-nav-dropdown";i:37;s:21:"header-categories-nav";i:38;s:16:"mod-nav-vertical";i:39;s:31:"mod-nav-vertical-design-default";i:40;s:18:"mod-nav-menu-label";i:41;s:15:"block-menu-list";i:42;s:12:"block-layout";i:43;s:6:"brands";i:44;s:19:"woo-prod-loop-small";i:45;s:16:"products-divider";i:46;s:12:"product-loop";i:47;s:21:"woo-mod-swatches-base";i:48;s:12:"block-banner";i:49;s:17:"product-loop-base";i:50;s:23:"woo-mod-add-btn-replace";i:51;s:20:"mod-more-description";i:52;s:6:"swiper";i:53;s:9:"mfp-popup";i:54;s:13:"swiper-arrows";i:55;s:12:"swiper-pagin";i:56;s:14:"dropdown-aside";i:57;s:24:"el-off-canvas-column-btn";i:58;s:25:"mod-sticky-sidebar-opener";i:59;s:23:"block-off-canvas-layout";i:60;s:21:"el-page-title-builder";i:61;s:10:"page-title";i:62;s:14:"blog-loop-base";i:63;s:25:"post-types-mod-predefined";i:64;s:24:"blog-loop-design-masonry";i:65;s:34:"post-types-mod-categories-style-bg";i:66;s:28:"post-types-mod-date-style-bg";i:67;s:15:"blog-mod-author";i:68;s:10:"widget-nav";i:69;s:22:"widget-wd-recent-posts";i:70;s:27:"widget-recent-post-comments";i:71;s:9:"instagram";i:72;s:15:"widget-collapse";i:73;s:11:"footer-base";i:74;s:16:"block-fw-section";i:75;s:4:"list";i:76;s:10:"block-icon";i:77;s:12:"block-toggle";i:78;s:22:"blog-loop-design-small";i:79;s:10:"scroll-top";i:80;s:5:"mc4wp";i:81;s:25:"header-my-account-sidebar";i:82;s:14:"bottom-toolbar";}]]></wp:meta_value>
+		</wp:termmeta>
 		</wp:category>
 			<wp:category>
 			<wp:term_id>17</wp:term_id>
@@ -55,6 +59,10 @@
 			<wp:meta_key><![CDATA[xts-term-17-status]]></wp:meta_key>
 			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
 		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[wd_page_css_files]]></wp:meta_key>
+			<wp:meta_value><![CDATA[a:80:{i:0;s:10:"style-base";i:1;s:17:"revolution-slider";i:2;s:13:"int-wordfence";i:3;s:16:"woocommerce-base";i:4;s:15:"mod-star-rating";i:5;s:25:"woocommerce-block-notices";i:6;s:15:"block-paragraph";i:7;s:11:"block-image";i:8;s:11:"block-title";i:9;s:12:"block-layout";i:10;s:6:"button";i:11;s:12:"block-button";i:12;s:15:"block-container";i:13;s:24:"mod-animations-transform";i:14;s:13:"mod-transform";i:15;s:29:"mod-animations-transform-snap";i:16;s:18:"opt-floating-block";i:17;s:7:"marquee";i:18;s:11:"header-base";i:19;s:9:"mod-tools";i:20;s:20:"header-elements-base";i:21;s:12:"social-icons";i:22;s:13:"header-search";i:23;s:18:"header-search-form";i:24;s:14:"wd-search-form";i:25;s:17:"wd-search-results";i:26;s:18:"wd-search-dropdown";i:27;s:13:"wd-search-cat";i:28;s:18:"woo-mod-login-form";i:29;s:17:"header-my-account";i:30;s:16:"header-cart-side";i:31;s:11:"header-cart";i:32;s:20:"widget-shopping-cart";i:33;s:19:"widget-product-list";i:34;s:26:"header-mobile-nav-dropdown";i:35;s:21:"header-categories-nav";i:36;s:16:"mod-nav-vertical";i:37;s:31:"mod-nav-vertical-design-default";i:38;s:18:"mod-nav-menu-label";i:39;s:15:"block-menu-list";i:40;s:6:"brands";i:41;s:19:"woo-prod-loop-small";i:42;s:16:"products-divider";i:43;s:12:"product-loop";i:44;s:21:"woo-mod-swatches-base";i:45;s:12:"block-banner";i:46;s:17:"product-loop-base";i:47;s:23:"woo-mod-add-btn-replace";i:48;s:20:"mod-more-description";i:49;s:6:"swiper";i:50;s:9:"mfp-popup";i:51;s:13:"swiper-arrows";i:52;s:12:"swiper-pagin";i:53;s:14:"dropdown-aside";i:54;s:24:"el-off-canvas-column-btn";i:55;s:25:"mod-sticky-sidebar-opener";i:56;s:23:"block-off-canvas-layout";i:57;s:21:"el-page-title-builder";i:58;s:10:"page-title";i:59;s:14:"blog-loop-base";i:60;s:25:"post-types-mod-predefined";i:61;s:24:"blog-loop-design-masonry";i:62;s:34:"post-types-mod-categories-style-bg";i:63;s:28:"post-types-mod-date-style-bg";i:64;s:15:"blog-mod-author";i:65;s:10:"widget-nav";i:66;s:22:"widget-wd-recent-posts";i:67;s:27:"widget-recent-post-comments";i:68;s:9:"instagram";i:69;s:15:"widget-collapse";i:70;s:11:"footer-base";i:71;s:16:"block-fw-section";i:72;s:4:"list";i:73;s:10:"block-icon";i:74;s:12:"block-toggle";i:75;s:22:"blog-loop-design-small";i:76;s:10:"scroll-top";i:77;s:5:"mc4wp";i:78;s:25:"header-my-account-sidebar";i:79;s:14:"bottom-toolbar";}]]></wp:meta_value>
+		</wp:termmeta>
 		</wp:category>
 			<wp:category>
 			<wp:term_id>18</wp:term_id>
@@ -64,6 +72,10 @@
 		<wp:termmeta>
 			<wp:meta_key><![CDATA[xts-term-18-status]]></wp:meta_key>
 			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
+		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[wd_page_css_files]]></wp:meta_key>
+			<wp:meta_value><![CDATA[a:80:{i:0;s:10:"style-base";i:1;s:17:"revolution-slider";i:2;s:13:"int-wordfence";i:3;s:16:"woocommerce-base";i:4;s:15:"mod-star-rating";i:5;s:25:"woocommerce-block-notices";i:6;s:15:"block-paragraph";i:7;s:11:"block-image";i:8;s:11:"block-title";i:9;s:12:"block-layout";i:10;s:24:"mod-animations-transform";i:11;s:13:"mod-transform";i:12;s:29:"mod-animations-transform-snap";i:13;s:18:"opt-floating-block";i:14;s:7:"marquee";i:15;s:6:"button";i:16;s:12:"block-button";i:17;s:15:"block-container";i:18;s:11:"header-base";i:19;s:9:"mod-tools";i:20;s:20:"header-elements-base";i:21;s:12:"social-icons";i:22;s:13:"header-search";i:23;s:18:"header-search-form";i:24;s:14:"wd-search-form";i:25;s:17:"wd-search-results";i:26;s:18:"wd-search-dropdown";i:27;s:13:"wd-search-cat";i:28;s:18:"woo-mod-login-form";i:29;s:17:"header-my-account";i:30;s:16:"header-cart-side";i:31;s:11:"header-cart";i:32;s:20:"widget-shopping-cart";i:33;s:19:"widget-product-list";i:34;s:26:"header-mobile-nav-dropdown";i:35;s:21:"header-categories-nav";i:36;s:16:"mod-nav-vertical";i:37;s:31:"mod-nav-vertical-design-default";i:38;s:18:"mod-nav-menu-label";i:39;s:15:"block-menu-list";i:40;s:6:"brands";i:41;s:19:"woo-prod-loop-small";i:42;s:16:"products-divider";i:43;s:12:"product-loop";i:44;s:21:"woo-mod-swatches-base";i:45;s:12:"block-banner";i:46;s:17:"product-loop-base";i:47;s:23:"woo-mod-add-btn-replace";i:48;s:20:"mod-more-description";i:49;s:6:"swiper";i:50;s:9:"mfp-popup";i:51;s:13:"swiper-arrows";i:52;s:12:"swiper-pagin";i:53;s:14:"dropdown-aside";i:54;s:24:"el-off-canvas-column-btn";i:55;s:25:"mod-sticky-sidebar-opener";i:56;s:23:"block-off-canvas-layout";i:57;s:21:"el-page-title-builder";i:58;s:10:"page-title";i:59;s:14:"blog-loop-base";i:60;s:25:"post-types-mod-predefined";i:61;s:24:"blog-loop-design-masonry";i:62;s:34:"post-types-mod-categories-style-bg";i:63;s:28:"post-types-mod-date-style-bg";i:64;s:15:"blog-mod-author";i:65;s:10:"widget-nav";i:66;s:22:"widget-wd-recent-posts";i:67;s:27:"widget-recent-post-comments";i:68;s:9:"instagram";i:69;s:15:"widget-collapse";i:70;s:11:"footer-base";i:71;s:16:"block-fw-section";i:72;s:4:"list";i:73;s:10:"block-icon";i:74;s:12:"block-toggle";i:75;s:22:"blog-loop-design-small";i:76;s:10:"scroll-top";i:77;s:5:"mc4wp";i:78;s:25:"header-my-account-sidebar";i:79;s:14:"bottom-toolbar";}]]></wp:meta_value>
 		</wp:termmeta>
 		</wp:category>
 			<wp:category>
@@ -78,6 +90,10 @@
 		<wp:termmeta>
 			<wp:meta_key><![CDATA[_woodmart_blog_design]]></wp:meta_key>
 			<wp:meta_value><![CDATA[inherit]]></wp:meta_value>
+		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[wd_page_css_files]]></wp:meta_key>
+			<wp:meta_value><![CDATA[a:82:{i:0;s:10:"style-base";i:1;s:17:"revolution-slider";i:2;s:13:"int-wordfence";i:3;s:16:"woocommerce-base";i:4;s:15:"mod-star-rating";i:5;s:25:"woocommerce-block-notices";i:6;s:15:"block-paragraph";i:7;s:11:"block-title";i:8;s:15:"block-container";i:9;s:11:"block-image";i:10;s:12:"block-layout";i:11;s:10:"photoswipe";i:12;s:13:"block-gallery";i:13;s:24:"mod-animations-transform";i:14;s:13:"mod-transform";i:15;s:29:"mod-animations-transform-snap";i:16;s:18:"opt-floating-block";i:17;s:7:"marquee";i:18;s:6:"button";i:19;s:12:"block-button";i:20;s:11:"header-base";i:21;s:9:"mod-tools";i:22;s:20:"header-elements-base";i:23;s:12:"social-icons";i:24;s:13:"header-search";i:25;s:18:"header-search-form";i:26;s:14:"wd-search-form";i:27;s:17:"wd-search-results";i:28;s:18:"wd-search-dropdown";i:29;s:13:"wd-search-cat";i:30;s:18:"woo-mod-login-form";i:31;s:17:"header-my-account";i:32;s:16:"header-cart-side";i:33;s:11:"header-cart";i:34;s:20:"widget-shopping-cart";i:35;s:19:"widget-product-list";i:36;s:26:"header-mobile-nav-dropdown";i:37;s:21:"header-categories-nav";i:38;s:16:"mod-nav-vertical";i:39;s:31:"mod-nav-vertical-design-default";i:40;s:18:"mod-nav-menu-label";i:41;s:15:"block-menu-list";i:42;s:6:"brands";i:43;s:19:"woo-prod-loop-small";i:44;s:16:"products-divider";i:45;s:12:"product-loop";i:46;s:21:"woo-mod-swatches-base";i:47;s:12:"block-banner";i:48;s:17:"product-loop-base";i:49;s:23:"woo-mod-add-btn-replace";i:50;s:20:"mod-more-description";i:51;s:6:"swiper";i:52;s:9:"mfp-popup";i:53;s:13:"swiper-arrows";i:54;s:12:"swiper-pagin";i:55;s:14:"dropdown-aside";i:56;s:24:"el-off-canvas-column-btn";i:57;s:25:"mod-sticky-sidebar-opener";i:58;s:23:"block-off-canvas-layout";i:59;s:21:"el-page-title-builder";i:60;s:10:"page-title";i:61;s:14:"blog-loop-base";i:62;s:25:"post-types-mod-predefined";i:63;s:24:"blog-loop-design-masonry";i:64;s:34:"post-types-mod-categories-style-bg";i:65;s:28:"post-types-mod-date-style-bg";i:66;s:15:"blog-mod-author";i:67;s:10:"widget-nav";i:68;s:22:"widget-wd-recent-posts";i:69;s:27:"widget-recent-post-comments";i:70;s:9:"instagram";i:71;s:15:"widget-collapse";i:72;s:11:"footer-base";i:73;s:16:"block-fw-section";i:74;s:4:"list";i:75;s:10:"block-icon";i:76;s:12:"block-toggle";i:77;s:22:"blog-loop-design-small";i:78;s:10:"scroll-top";i:79;s:5:"mc4wp";i:80;s:25:"header-my-account-sidebar";i:81;s:14:"bottom-toolbar";}]]></wp:meta_value>
 		</wp:termmeta>
 		</wp:category>
 					<wp:term>
@@ -120,6 +136,10 @@
 		<wp:termmeta>
 			<wp:meta_key><![CDATA[title_image]]></wp:meta_key>
 			<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
+		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[wd_page_css_files]]></wp:meta_key>
+			<wp:meta_value><![CDATA[a:92:{i:0;s:10:"style-base";i:1;s:17:"revolution-slider";i:2;s:13:"int-wordfence";i:3;s:16:"woocommerce-base";i:4;s:15:"mod-star-rating";i:5;s:25:"woocommerce-block-notices";i:6;s:21:"widget-active-filters";i:7;s:19:"woo-shop-predefined";i:8;s:21:"shop-title-categories";i:9;s:40:"woo-categories-loop-nav-mobile-accordion";i:10;s:29:"woo-shop-el-products-per-page";i:11;s:19:"woo-shop-page-title";i:12;s:22:"woo-mod-shop-loop-head";i:13;s:20:"woo-shop-el-order-by";i:14;s:25:"woo-shop-el-products-view";i:15;s:11:"block-title";i:16;s:11:"block-image";i:17;s:15:"block-paragraph";i:18;s:4:"list";i:19;s:12:"block-layout";i:20;s:11:"header-base";i:21;s:9:"mod-tools";i:22;s:20:"header-elements-base";i:23;s:12:"social-icons";i:24;s:13:"header-search";i:25;s:18:"header-search-form";i:26;s:14:"wd-search-form";i:27;s:17:"wd-search-results";i:28;s:18:"wd-search-dropdown";i:29;s:13:"wd-search-cat";i:30;s:18:"woo-mod-login-form";i:31;s:17:"header-my-account";i:32;s:16:"header-cart-side";i:33;s:11:"header-cart";i:34;s:20:"widget-shopping-cart";i:35;s:19:"widget-product-list";i:36;s:26:"header-mobile-nav-dropdown";i:37;s:21:"header-categories-nav";i:38;s:16:"mod-nav-vertical";i:39;s:31:"mod-nav-vertical-design-default";i:40;s:18:"mod-nav-menu-label";i:41;s:15:"block-menu-list";i:42;s:15:"block-container";i:43;s:6:"brands";i:44;s:19:"woo-prod-loop-small";i:45;s:16:"products-divider";i:46;s:12:"product-loop";i:47;s:21:"woo-mod-swatches-base";i:48;s:6:"button";i:49;s:12:"block-button";i:50;s:12:"block-banner";i:51;s:17:"product-loop-base";i:52;s:23:"woo-mod-add-btn-replace";i:53;s:20:"mod-more-description";i:54;s:6:"swiper";i:55;s:9:"mfp-popup";i:56;s:24:"mod-animations-transform";i:57;s:13:"mod-transform";i:58;s:13:"swiper-arrows";i:59;s:12:"swiper-pagin";i:60;s:14:"dropdown-aside";i:61;s:10:"page-title";i:62;s:18:"off-canvas-sidebar";i:63;s:26:"widget-slider-price-filter";i:64;s:21:"widget-wd-layered-nav";i:65;s:23:"woo-mod-swatches-filter";i:66;s:31:"widget-layered-nav-stock-status";i:67;s:24:"woo-mod-swatches-style-1";i:68;s:24:"woo-mod-swatches-style-4";i:69;s:13:"filter-search";i:70;s:25:"woo-mod-widget-checkboxes";i:71;s:16:"shop-filter-area";i:72;s:23:"categories-loop-default";i:73;s:19:"woo-categories-loop";i:74;s:15:"categories-loop";i:75;s:13:"sticky-loader";i:76;s:22:"woo-mod-swatches-dis-1";i:77;s:15:"widget-collapse";i:78;s:11:"footer-base";i:79;s:16:"block-fw-section";i:80;s:10:"block-icon";i:81;s:12:"block-toggle";i:82;s:14:"blog-loop-base";i:83;s:25:"post-types-mod-predefined";i:84;s:22:"blog-loop-design-small";i:85;s:10:"scroll-top";i:86;s:5:"mc4wp";i:87;s:17:"opt-popup-builder";i:88;s:25:"header-my-account-sidebar";i:89;s:14:"bottom-toolbar";i:90;s:23:"shop-off-canvas-sidebar";i:91;s:25:"mod-sticky-sidebar-opener";}]]></wp:meta_value>
 		</wp:termmeta>
 		</wp:term>
 			<wp:term>
@@ -196,6 +216,10 @@
 			<wp:meta_key><![CDATA[xts-term-27-status]]></wp:meta_key>
 			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
 		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[wd_page_css_files]]></wp:meta_key>
+			<wp:meta_value><![CDATA[a:80:{i:0;s:10:"style-base";i:1;s:17:"revolution-slider";i:2;s:13:"int-wordfence";i:3;s:16:"woocommerce-base";i:4;s:15:"mod-star-rating";i:5;s:25:"woocommerce-block-notices";i:6;s:15:"block-paragraph";i:7;s:11:"block-image";i:8;s:11:"block-title";i:9;s:12:"block-layout";i:10;s:24:"mod-animations-transform";i:11;s:13:"mod-transform";i:12;s:29:"mod-animations-transform-snap";i:13;s:18:"opt-floating-block";i:14;s:7:"marquee";i:15;s:6:"button";i:16;s:12:"block-button";i:17;s:15:"block-container";i:18;s:11:"header-base";i:19;s:9:"mod-tools";i:20;s:20:"header-elements-base";i:21;s:12:"social-icons";i:22;s:13:"header-search";i:23;s:18:"header-search-form";i:24;s:14:"wd-search-form";i:25;s:17:"wd-search-results";i:26;s:18:"wd-search-dropdown";i:27;s:13:"wd-search-cat";i:28;s:18:"woo-mod-login-form";i:29;s:17:"header-my-account";i:30;s:16:"header-cart-side";i:31;s:11:"header-cart";i:32;s:20:"widget-shopping-cart";i:33;s:19:"widget-product-list";i:34;s:26:"header-mobile-nav-dropdown";i:35;s:21:"header-categories-nav";i:36;s:16:"mod-nav-vertical";i:37;s:31:"mod-nav-vertical-design-default";i:38;s:18:"mod-nav-menu-label";i:39;s:15:"block-menu-list";i:40;s:6:"brands";i:41;s:19:"woo-prod-loop-small";i:42;s:16:"products-divider";i:43;s:12:"product-loop";i:44;s:21:"woo-mod-swatches-base";i:45;s:12:"block-banner";i:46;s:17:"product-loop-base";i:47;s:23:"woo-mod-add-btn-replace";i:48;s:20:"mod-more-description";i:49;s:6:"swiper";i:50;s:9:"mfp-popup";i:51;s:13:"swiper-arrows";i:52;s:12:"swiper-pagin";i:53;s:14:"dropdown-aside";i:54;s:24:"el-off-canvas-column-btn";i:55;s:25:"mod-sticky-sidebar-opener";i:56;s:23:"block-off-canvas-layout";i:57;s:21:"el-page-title-builder";i:58;s:10:"page-title";i:59;s:14:"blog-loop-base";i:60;s:25:"post-types-mod-predefined";i:61;s:24:"blog-loop-design-masonry";i:62;s:34:"post-types-mod-categories-style-bg";i:63;s:28:"post-types-mod-date-style-bg";i:64;s:15:"blog-mod-author";i:65;s:10:"widget-nav";i:66;s:22:"widget-wd-recent-posts";i:67;s:27:"widget-recent-post-comments";i:68;s:9:"instagram";i:69;s:15:"widget-collapse";i:70;s:11:"footer-base";i:71;s:16:"block-fw-section";i:72;s:4:"list";i:73;s:10:"block-icon";i:74;s:12:"block-toggle";i:75;s:22:"blog-loop-design-small";i:76;s:10:"scroll-top";i:77;s:5:"mc4wp";i:78;s:25:"header-my-account-sidebar";i:79;s:14:"bottom-toolbar";}]]></wp:meta_value>
+		</wp:termmeta>
 		</wp:term>
 			<wp:term>
 			<wp:term_id>28</wp:term_id>
@@ -227,6 +251,10 @@
 			<wp:meta_key><![CDATA[title_image]]></wp:meta_key>
 			<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
 		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[wd_page_css_files]]></wp:meta_key>
+			<wp:meta_value><![CDATA[a:95:{i:0;s:10:"style-base";i:1;s:17:"revolution-slider";i:2;s:13:"int-wordfence";i:3;s:16:"woocommerce-base";i:4;s:15:"mod-star-rating";i:5;s:25:"woocommerce-block-notices";i:6;s:21:"widget-active-filters";i:7;s:19:"woo-shop-predefined";i:8;s:21:"shop-title-categories";i:9;s:40:"woo-categories-loop-nav-mobile-accordion";i:10;s:29:"woo-shop-el-products-per-page";i:11;s:19:"woo-shop-page-title";i:12;s:22:"woo-mod-shop-loop-head";i:13;s:20:"woo-shop-el-order-by";i:14;s:25:"woo-shop-el-products-view";i:15;s:15:"block-paragraph";i:16;s:10:"block-icon";i:17;s:11:"block-title";i:18;s:15:"block-container";i:19;s:13:"block-infobox";i:20;s:12:"block-layout";i:21;s:24:"mod-animations-transform";i:22;s:13:"mod-transform";i:23;s:29:"mod-animations-transform-snap";i:24;s:18:"opt-floating-block";i:25;s:11:"block-image";i:26;s:7:"marquee";i:27;s:6:"button";i:28;s:12:"block-button";i:29;s:11:"header-base";i:30;s:9:"mod-tools";i:31;s:20:"header-elements-base";i:32;s:12:"social-icons";i:33;s:13:"header-search";i:34;s:18:"header-search-form";i:35;s:14:"wd-search-form";i:36;s:17:"wd-search-results";i:37;s:18:"wd-search-dropdown";i:38;s:13:"wd-search-cat";i:39;s:18:"woo-mod-login-form";i:40;s:17:"header-my-account";i:41;s:16:"header-cart-side";i:42;s:11:"header-cart";i:43;s:20:"widget-shopping-cart";i:44;s:19:"widget-product-list";i:45;s:26:"header-mobile-nav-dropdown";i:46;s:21:"header-categories-nav";i:47;s:16:"mod-nav-vertical";i:48;s:31:"mod-nav-vertical-design-default";i:49;s:18:"mod-nav-menu-label";i:50;s:15:"block-menu-list";i:51;s:6:"brands";i:52;s:19:"woo-prod-loop-small";i:53;s:16:"products-divider";i:54;s:12:"product-loop";i:55;s:21:"woo-mod-swatches-base";i:56;s:12:"block-banner";i:57;s:17:"product-loop-base";i:58;s:23:"woo-mod-add-btn-replace";i:59;s:20:"mod-more-description";i:60;s:6:"swiper";i:61;s:9:"mfp-popup";i:62;s:13:"swiper-arrows";i:63;s:12:"swiper-pagin";i:64;s:14:"dropdown-aside";i:65;s:10:"page-title";i:66;s:18:"off-canvas-sidebar";i:67;s:26:"widget-slider-price-filter";i:68;s:21:"widget-wd-layered-nav";i:69;s:23:"woo-mod-swatches-filter";i:70;s:31:"widget-layered-nav-stock-status";i:71;s:24:"woo-mod-swatches-style-1";i:72;s:24:"woo-mod-swatches-style-4";i:73;s:13:"filter-search";i:74;s:25:"woo-mod-widget-checkboxes";i:75;s:16:"shop-filter-area";i:76;s:23:"categories-loop-default";i:77;s:19:"woo-categories-loop";i:78;s:15:"categories-loop";i:79;s:13:"sticky-loader";i:80;s:22:"woo-mod-swatches-dis-1";i:81;s:15:"widget-collapse";i:82;s:11:"footer-base";i:83;s:16:"block-fw-section";i:84;s:4:"list";i:85;s:12:"block-toggle";i:86;s:14:"blog-loop-base";i:87;s:25:"post-types-mod-predefined";i:88;s:22:"blog-loop-design-small";i:89;s:10:"scroll-top";i:90;s:5:"mc4wp";i:91;s:25:"header-my-account-sidebar";i:92;s:14:"bottom-toolbar";i:93;s:23:"shop-off-canvas-sidebar";i:94;s:25:"mod-sticky-sidebar-opener";}]]></wp:meta_value>
+		</wp:termmeta>
 		</wp:term>
 			<wp:term>
 			<wp:term_id>29</wp:term_id>
@@ -257,6 +285,10 @@
 		<wp:termmeta>
 			<wp:meta_key><![CDATA[title_image]]></wp:meta_key>
 			<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
+		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[wd_page_css_files]]></wp:meta_key>
+			<wp:meta_value><![CDATA[a:94:{i:0;s:10:"style-base";i:1;s:17:"revolution-slider";i:2;s:13:"int-wordfence";i:3;s:16:"woocommerce-base";i:4;s:15:"mod-star-rating";i:5;s:25:"woocommerce-block-notices";i:6;s:21:"widget-active-filters";i:7;s:19:"woo-shop-predefined";i:8;s:21:"shop-title-categories";i:9;s:40:"woo-categories-loop-nav-mobile-accordion";i:10;s:29:"woo-shop-el-products-per-page";i:11;s:19:"woo-shop-page-title";i:12;s:22:"woo-mod-shop-loop-head";i:13;s:20:"woo-shop-el-order-by";i:14;s:25:"woo-shop-el-products-view";i:15;s:11:"block-title";i:16;s:4:"list";i:17;s:15:"block-paragraph";i:18;s:11:"block-image";i:19;s:13:"block-gallery";i:20;s:12:"block-layout";i:21;s:24:"mod-animations-transform";i:22;s:13:"mod-transform";i:23;s:29:"mod-animations-transform-snap";i:24;s:18:"opt-floating-block";i:25;s:7:"marquee";i:26;s:6:"button";i:27;s:12:"block-button";i:28;s:15:"block-container";i:29;s:11:"header-base";i:30;s:9:"mod-tools";i:31;s:20:"header-elements-base";i:32;s:12:"social-icons";i:33;s:13:"header-search";i:34;s:18:"header-search-form";i:35;s:14:"wd-search-form";i:36;s:17:"wd-search-results";i:37;s:18:"wd-search-dropdown";i:38;s:13:"wd-search-cat";i:39;s:18:"woo-mod-login-form";i:40;s:17:"header-my-account";i:41;s:16:"header-cart-side";i:42;s:11:"header-cart";i:43;s:20:"widget-shopping-cart";i:44;s:19:"widget-product-list";i:45;s:26:"header-mobile-nav-dropdown";i:46;s:21:"header-categories-nav";i:47;s:16:"mod-nav-vertical";i:48;s:31:"mod-nav-vertical-design-default";i:49;s:18:"mod-nav-menu-label";i:50;s:15:"block-menu-list";i:51;s:6:"brands";i:52;s:19:"woo-prod-loop-small";i:53;s:16:"products-divider";i:54;s:12:"product-loop";i:55;s:21:"woo-mod-swatches-base";i:56;s:12:"block-banner";i:57;s:17:"product-loop-base";i:58;s:23:"woo-mod-add-btn-replace";i:59;s:20:"mod-more-description";i:60;s:6:"swiper";i:61;s:9:"mfp-popup";i:62;s:13:"swiper-arrows";i:63;s:12:"swiper-pagin";i:64;s:14:"dropdown-aside";i:65;s:10:"page-title";i:66;s:18:"off-canvas-sidebar";i:67;s:26:"widget-slider-price-filter";i:68;s:21:"widget-wd-layered-nav";i:69;s:23:"woo-mod-swatches-filter";i:70;s:31:"widget-layered-nav-stock-status";i:71;s:24:"woo-mod-swatches-style-1";i:72;s:24:"woo-mod-swatches-style-4";i:73;s:13:"filter-search";i:74;s:25:"woo-mod-widget-checkboxes";i:75;s:16:"shop-filter-area";i:76;s:23:"categories-loop-default";i:77;s:19:"woo-categories-loop";i:78;s:15:"categories-loop";i:79;s:13:"sticky-loader";i:80;s:15:"widget-collapse";i:81;s:11:"footer-base";i:82;s:16:"block-fw-section";i:83;s:10:"block-icon";i:84;s:12:"block-toggle";i:85;s:14:"blog-loop-base";i:86;s:25:"post-types-mod-predefined";i:87;s:22:"blog-loop-design-small";i:88;s:10:"scroll-top";i:89;s:5:"mc4wp";i:90;s:25:"header-my-account-sidebar";i:91;s:14:"bottom-toolbar";i:92;s:23:"shop-off-canvas-sidebar";i:93;s:25:"mod-sticky-sidebar-opener";}]]></wp:meta_value>
 		</wp:termmeta>
 		</wp:term>
 			<wp:term>
@@ -316,6 +348,10 @@
 			<wp:meta_key><![CDATA[title_image]]></wp:meta_key>
 			<wp:meta_value><![CDATA[a:2:{s:3:"url";s:108:"http://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2021/07/furniture-title-bg-opt-1.jpg";s:2:"id";i:746;}]]></wp:meta_value>
 		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[wd_page_css_files]]></wp:meta_key>
+			<wp:meta_value><![CDATA[a:97:{i:0;s:10:"style-base";i:1;s:17:"revolution-slider";i:2;s:13:"int-wordfence";i:3;s:16:"woocommerce-base";i:4;s:15:"mod-star-rating";i:5;s:25:"woocommerce-block-notices";i:6;s:21:"widget-active-filters";i:7;s:19:"woo-shop-predefined";i:8;s:21:"shop-title-categories";i:9;s:40:"woo-categories-loop-nav-mobile-accordion";i:10;s:29:"woo-shop-el-products-per-page";i:11;s:19:"woo-shop-page-title";i:12;s:22:"woo-mod-shop-loop-head";i:13;s:20:"woo-shop-el-order-by";i:14;s:25:"woo-shop-el-products-view";i:15;s:11:"block-title";i:16;s:4:"list";i:17;s:15:"block-paragraph";i:18;s:11:"block-image";i:19;s:13:"block-gallery";i:20;s:12:"block-layout";i:21;s:24:"mod-animations-transform";i:22;s:13:"mod-transform";i:23;s:29:"mod-animations-transform-snap";i:24;s:18:"opt-floating-block";i:25;s:7:"marquee";i:26;s:6:"button";i:27;s:12:"block-button";i:28;s:15:"block-container";i:29;s:11:"header-base";i:30;s:9:"mod-tools";i:31;s:20:"header-elements-base";i:32;s:12:"social-icons";i:33;s:13:"header-search";i:34;s:18:"header-search-form";i:35;s:14:"wd-search-form";i:36;s:17:"wd-search-results";i:37;s:18:"wd-search-dropdown";i:38;s:13:"wd-search-cat";i:39;s:18:"woo-mod-login-form";i:40;s:17:"header-my-account";i:41;s:16:"header-cart-side";i:42;s:11:"header-cart";i:43;s:20:"widget-shopping-cart";i:44;s:19:"widget-product-list";i:45;s:26:"header-mobile-nav-dropdown";i:46;s:21:"header-categories-nav";i:47;s:16:"mod-nav-vertical";i:48;s:31:"mod-nav-vertical-design-default";i:49;s:18:"mod-nav-menu-label";i:50;s:15:"block-menu-list";i:51;s:6:"brands";i:52;s:19:"woo-prod-loop-small";i:53;s:16:"products-divider";i:54;s:12:"product-loop";i:55;s:21:"woo-mod-swatches-base";i:56;s:12:"block-banner";i:57;s:17:"product-loop-base";i:58;s:23:"woo-mod-add-btn-replace";i:59;s:20:"mod-more-description";i:60;s:6:"swiper";i:61;s:9:"mfp-popup";i:62;s:13:"swiper-arrows";i:63;s:12:"swiper-pagin";i:64;s:14:"dropdown-aside";i:65;s:10:"page-title";i:66;s:18:"off-canvas-sidebar";i:67;s:26:"widget-slider-price-filter";i:68;s:21:"widget-wd-layered-nav";i:69;s:23:"woo-mod-swatches-filter";i:70;s:31:"widget-layered-nav-stock-status";i:71;s:24:"woo-mod-swatches-style-1";i:72;s:24:"woo-mod-swatches-style-4";i:73;s:13:"filter-search";i:74;s:25:"woo-mod-widget-checkboxes";i:75;s:16:"shop-filter-area";i:76;s:23:"categories-loop-default";i:77;s:19:"woo-categories-loop";i:78;s:15:"categories-loop";i:79;s:13:"sticky-loader";i:80;s:22:"woo-mod-product-labels";i:81;s:28:"woo-mod-product-labels-round";i:82;s:22:"woo-mod-swatches-dis-1";i:83;s:15:"widget-collapse";i:84;s:11:"footer-base";i:85;s:16:"block-fw-section";i:86;s:10:"block-icon";i:87;s:12:"block-toggle";i:88;s:14:"blog-loop-base";i:89;s:25:"post-types-mod-predefined";i:90;s:22:"blog-loop-design-small";i:91;s:10:"scroll-top";i:92;s:5:"mc4wp";i:93;s:25:"header-my-account-sidebar";i:94;s:14:"bottom-toolbar";i:95;s:23:"shop-off-canvas-sidebar";i:96;s:25:"mod-sticky-sidebar-opener";}]]></wp:meta_value>
+		</wp:termmeta>
 		</wp:term>
 			<wp:term>
 			<wp:term_id>34</wp:term_id>
@@ -326,6 +362,10 @@
 		<wp:termmeta>
 			<wp:meta_key><![CDATA[xts-term-34-status]]></wp:meta_key>
 			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
+		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[wd_page_css_files]]></wp:meta_key>
+			<wp:meta_value><![CDATA[a:80:{i:0;s:10:"style-base";i:1;s:17:"revolution-slider";i:2;s:13:"int-wordfence";i:3;s:16:"woocommerce-base";i:4;s:15:"mod-star-rating";i:5;s:25:"woocommerce-block-notices";i:6;s:15:"block-paragraph";i:7;s:11:"block-image";i:8;s:11:"block-title";i:9;s:12:"block-layout";i:10;s:24:"mod-animations-transform";i:11;s:13:"mod-transform";i:12;s:29:"mod-animations-transform-snap";i:13;s:18:"opt-floating-block";i:14;s:7:"marquee";i:15;s:6:"button";i:16;s:12:"block-button";i:17;s:15:"block-container";i:18;s:11:"header-base";i:19;s:9:"mod-tools";i:20;s:20:"header-elements-base";i:21;s:12:"social-icons";i:22;s:13:"header-search";i:23;s:18:"header-search-form";i:24;s:14:"wd-search-form";i:25;s:17:"wd-search-results";i:26;s:18:"wd-search-dropdown";i:27;s:13:"wd-search-cat";i:28;s:18:"woo-mod-login-form";i:29;s:17:"header-my-account";i:30;s:16:"header-cart-side";i:31;s:11:"header-cart";i:32;s:20:"widget-shopping-cart";i:33;s:19:"widget-product-list";i:34;s:26:"header-mobile-nav-dropdown";i:35;s:21:"header-categories-nav";i:36;s:16:"mod-nav-vertical";i:37;s:31:"mod-nav-vertical-design-default";i:38;s:18:"mod-nav-menu-label";i:39;s:15:"block-menu-list";i:40;s:6:"brands";i:41;s:19:"woo-prod-loop-small";i:42;s:16:"products-divider";i:43;s:12:"product-loop";i:44;s:21:"woo-mod-swatches-base";i:45;s:12:"block-banner";i:46;s:17:"product-loop-base";i:47;s:23:"woo-mod-add-btn-replace";i:48;s:20:"mod-more-description";i:49;s:6:"swiper";i:50;s:9:"mfp-popup";i:51;s:13:"swiper-arrows";i:52;s:12:"swiper-pagin";i:53;s:14:"dropdown-aside";i:54;s:24:"el-off-canvas-column-btn";i:55;s:25:"mod-sticky-sidebar-opener";i:56;s:23:"block-off-canvas-layout";i:57;s:21:"el-page-title-builder";i:58;s:10:"page-title";i:59;s:14:"blog-loop-base";i:60;s:25:"post-types-mod-predefined";i:61;s:24:"blog-loop-design-masonry";i:62;s:34:"post-types-mod-categories-style-bg";i:63;s:28:"post-types-mod-date-style-bg";i:64;s:15:"blog-mod-author";i:65;s:10:"widget-nav";i:66;s:22:"widget-wd-recent-posts";i:67;s:27:"widget-recent-post-comments";i:68;s:9:"instagram";i:69;s:15:"widget-collapse";i:70;s:11:"footer-base";i:71;s:16:"block-fw-section";i:72;s:4:"list";i:73;s:10:"block-icon";i:74;s:12:"block-toggle";i:75;s:22:"blog-loop-design-small";i:76;s:10:"scroll-top";i:77;s:5:"mc4wp";i:78;s:25:"header-my-account-sidebar";i:79;s:14:"bottom-toolbar";}]]></wp:meta_value>
 		</wp:termmeta>
 		</wp:term>
 			<wp:term>
@@ -338,6 +378,10 @@
 			<wp:meta_key><![CDATA[xts-term-35-status]]></wp:meta_key>
 			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
 		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[wd_page_css_files]]></wp:meta_key>
+			<wp:meta_value><![CDATA[a:83:{i:0;s:10:"style-base";i:1;s:17:"revolution-slider";i:2;s:13:"int-wordfence";i:3;s:16:"woocommerce-base";i:4;s:15:"mod-star-rating";i:5;s:25:"woocommerce-block-notices";i:6;s:15:"block-paragraph";i:7;s:11:"block-title";i:8;s:17:"block-title-style";i:9;s:11:"block-image";i:10;s:15:"block-container";i:11;s:3:"map";i:12;s:13:"el-google-map";i:13;s:24:"mod-animations-transform";i:14;s:13:"mod-transform";i:15;s:29:"mod-animations-transform-snap";i:16;s:18:"opt-floating-block";i:17;s:7:"marquee";i:18;s:6:"button";i:19;s:12:"block-button";i:20;s:11:"header-base";i:21;s:9:"mod-tools";i:22;s:20:"header-elements-base";i:23;s:12:"social-icons";i:24;s:13:"header-search";i:25;s:18:"header-search-form";i:26;s:14:"wd-search-form";i:27;s:17:"wd-search-results";i:28;s:18:"wd-search-dropdown";i:29;s:13:"wd-search-cat";i:30;s:18:"woo-mod-login-form";i:31;s:17:"header-my-account";i:32;s:16:"header-cart-side";i:33;s:11:"header-cart";i:34;s:20:"widget-shopping-cart";i:35;s:19:"widget-product-list";i:36;s:26:"header-mobile-nav-dropdown";i:37;s:21:"header-categories-nav";i:38;s:16:"mod-nav-vertical";i:39;s:31:"mod-nav-vertical-design-default";i:40;s:18:"mod-nav-menu-label";i:41;s:15:"block-menu-list";i:42;s:12:"block-layout";i:43;s:6:"brands";i:44;s:19:"woo-prod-loop-small";i:45;s:16:"products-divider";i:46;s:12:"product-loop";i:47;s:21:"woo-mod-swatches-base";i:48;s:12:"block-banner";i:49;s:17:"product-loop-base";i:50;s:23:"woo-mod-add-btn-replace";i:51;s:20:"mod-more-description";i:52;s:6:"swiper";i:53;s:9:"mfp-popup";i:54;s:13:"swiper-arrows";i:55;s:12:"swiper-pagin";i:56;s:14:"dropdown-aside";i:57;s:24:"el-off-canvas-column-btn";i:58;s:25:"mod-sticky-sidebar-opener";i:59;s:23:"block-off-canvas-layout";i:60;s:21:"el-page-title-builder";i:61;s:10:"page-title";i:62;s:14:"blog-loop-base";i:63;s:25:"post-types-mod-predefined";i:64;s:24:"blog-loop-design-masonry";i:65;s:34:"post-types-mod-categories-style-bg";i:66;s:28:"post-types-mod-date-style-bg";i:67;s:15:"blog-mod-author";i:68;s:10:"widget-nav";i:69;s:22:"widget-wd-recent-posts";i:70;s:27:"widget-recent-post-comments";i:71;s:9:"instagram";i:72;s:15:"widget-collapse";i:73;s:11:"footer-base";i:74;s:16:"block-fw-section";i:75;s:4:"list";i:76;s:10:"block-icon";i:77;s:12:"block-toggle";i:78;s:22:"blog-loop-design-small";i:79;s:10:"scroll-top";i:80;s:5:"mc4wp";i:81;s:25:"header-my-account-sidebar";i:82;s:14:"bottom-toolbar";}]]></wp:meta_value>
+		</wp:termmeta>
 		</wp:term>
 			<wp:term>
 			<wp:term_id>37</wp:term_id>
@@ -348,6 +392,10 @@
 		<wp:termmeta>
 			<wp:meta_key><![CDATA[xts-term-37-status]]></wp:meta_key>
 			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
+		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[wd_page_css_files]]></wp:meta_key>
+			<wp:meta_value><![CDATA[a:80:{i:0;s:10:"style-base";i:1;s:17:"revolution-slider";i:2;s:13:"int-wordfence";i:3;s:16:"woocommerce-base";i:4;s:15:"mod-star-rating";i:5;s:25:"woocommerce-block-notices";i:6;s:15:"block-paragraph";i:7;s:11:"block-title";i:8;s:15:"block-container";i:9;s:11:"block-image";i:10;s:12:"block-layout";i:11;s:10:"photoswipe";i:12;s:13:"block-gallery";i:13;s:11:"header-base";i:14;s:9:"mod-tools";i:15;s:20:"header-elements-base";i:16;s:12:"social-icons";i:17;s:13:"header-search";i:18;s:18:"header-search-form";i:19;s:14:"wd-search-form";i:20;s:17:"wd-search-results";i:21;s:18:"wd-search-dropdown";i:22;s:13:"wd-search-cat";i:23;s:18:"woo-mod-login-form";i:24;s:17:"header-my-account";i:25;s:16:"header-cart-side";i:26;s:11:"header-cart";i:27;s:20:"widget-shopping-cart";i:28;s:19:"widget-product-list";i:29;s:26:"header-mobile-nav-dropdown";i:30;s:21:"header-categories-nav";i:31;s:16:"mod-nav-vertical";i:32;s:31:"mod-nav-vertical-design-default";i:33;s:18:"mod-nav-menu-label";i:34;s:15:"block-menu-list";i:35;s:6:"brands";i:36;s:19:"woo-prod-loop-small";i:37;s:16:"products-divider";i:38;s:12:"product-loop";i:39;s:21:"woo-mod-swatches-base";i:40;s:6:"button";i:41;s:12:"block-button";i:42;s:12:"block-banner";i:43;s:17:"product-loop-base";i:44;s:23:"woo-mod-add-btn-replace";i:45;s:20:"mod-more-description";i:46;s:6:"swiper";i:47;s:9:"mfp-popup";i:48;s:24:"mod-animations-transform";i:49;s:13:"mod-transform";i:50;s:13:"swiper-arrows";i:51;s:12:"swiper-pagin";i:52;s:14:"dropdown-aside";i:53;s:24:"el-off-canvas-column-btn";i:54;s:25:"mod-sticky-sidebar-opener";i:55;s:23:"block-off-canvas-layout";i:56;s:21:"el-page-title-builder";i:57;s:10:"page-title";i:58;s:14:"blog-loop-base";i:59;s:25:"post-types-mod-predefined";i:60;s:24:"blog-loop-design-masonry";i:61;s:34:"post-types-mod-categories-style-bg";i:62;s:28:"post-types-mod-date-style-bg";i:63;s:15:"blog-mod-author";i:64;s:10:"widget-nav";i:65;s:22:"widget-wd-recent-posts";i:66;s:27:"widget-recent-post-comments";i:67;s:9:"instagram";i:68;s:15:"widget-collapse";i:69;s:11:"footer-base";i:70;s:16:"block-fw-section";i:71;s:4:"list";i:72;s:10:"block-icon";i:73;s:12:"block-toggle";i:74;s:22:"blog-loop-design-small";i:75;s:10:"scroll-top";i:76;s:5:"mc4wp";i:77;s:17:"opt-popup-builder";i:78;s:25:"header-my-account-sidebar";i:79;s:14:"bottom-toolbar";}]]></wp:meta_value>
 		</wp:termmeta>
 		</wp:term>
 			<wp:term>
@@ -402,6 +450,10 @@
 			<wp:meta_key><![CDATA[title_image]]></wp:meta_key>
 			<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
 		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[wd_page_css_files]]></wp:meta_key>
+			<wp:meta_value><![CDATA[a:93:{i:0;s:10:"style-base";i:1;s:17:"revolution-slider";i:2;s:13:"int-wordfence";i:3;s:16:"woocommerce-base";i:4;s:15:"mod-star-rating";i:5;s:25:"woocommerce-block-notices";i:6;s:21:"widget-active-filters";i:7;s:19:"woo-shop-predefined";i:8;s:21:"shop-title-categories";i:9;s:40:"woo-categories-loop-nav-mobile-accordion";i:10;s:29:"woo-shop-el-products-per-page";i:11;s:19:"woo-shop-page-title";i:12;s:22:"woo-mod-shop-loop-head";i:13;s:20:"woo-shop-el-order-by";i:14;s:25:"woo-shop-el-products-view";i:15;s:15:"block-paragraph";i:16;s:10:"block-icon";i:17;s:11:"block-title";i:18;s:15:"block-container";i:19;s:13:"block-infobox";i:20;s:12:"block-layout";i:21;s:11:"header-base";i:22;s:9:"mod-tools";i:23;s:20:"header-elements-base";i:24;s:12:"social-icons";i:25;s:13:"header-search";i:26;s:18:"header-search-form";i:27;s:14:"wd-search-form";i:28;s:17:"wd-search-results";i:29;s:18:"wd-search-dropdown";i:30;s:13:"wd-search-cat";i:31;s:18:"woo-mod-login-form";i:32;s:17:"header-my-account";i:33;s:16:"header-cart-side";i:34;s:11:"header-cart";i:35;s:20:"widget-shopping-cart";i:36;s:19:"widget-product-list";i:37;s:26:"header-mobile-nav-dropdown";i:38;s:21:"header-categories-nav";i:39;s:16:"mod-nav-vertical";i:40;s:31:"mod-nav-vertical-design-default";i:41;s:11:"block-image";i:42;s:18:"mod-nav-menu-label";i:43;s:15:"block-menu-list";i:44;s:6:"brands";i:45;s:19:"woo-prod-loop-small";i:46;s:16:"products-divider";i:47;s:12:"product-loop";i:48;s:21:"woo-mod-swatches-base";i:49;s:6:"button";i:50;s:12:"block-button";i:51;s:12:"block-banner";i:52;s:17:"product-loop-base";i:53;s:23:"woo-mod-add-btn-replace";i:54;s:20:"mod-more-description";i:55;s:6:"swiper";i:56;s:9:"mfp-popup";i:57;s:24:"mod-animations-transform";i:58;s:13:"mod-transform";i:59;s:13:"swiper-arrows";i:60;s:12:"swiper-pagin";i:61;s:14:"dropdown-aside";i:62;s:10:"page-title";i:63;s:18:"off-canvas-sidebar";i:64;s:26:"widget-slider-price-filter";i:65;s:21:"widget-wd-layered-nav";i:66;s:23:"woo-mod-swatches-filter";i:67;s:31:"widget-layered-nav-stock-status";i:68;s:24:"woo-mod-swatches-style-1";i:69;s:24:"woo-mod-swatches-style-4";i:70;s:13:"filter-search";i:71;s:25:"woo-mod-widget-checkboxes";i:72;s:16:"shop-filter-area";i:73;s:23:"categories-loop-default";i:74;s:19:"woo-categories-loop";i:75;s:15:"categories-loop";i:76;s:13:"sticky-loader";i:77;s:22:"woo-mod-swatches-dis-1";i:78;s:15:"widget-collapse";i:79;s:11:"footer-base";i:80;s:16:"block-fw-section";i:81;s:4:"list";i:82;s:12:"block-toggle";i:83;s:14:"blog-loop-base";i:84;s:25:"post-types-mod-predefined";i:85;s:22:"blog-loop-design-small";i:86;s:10:"scroll-top";i:87;s:5:"mc4wp";i:88;s:17:"opt-popup-builder";i:89;s:25:"header-my-account-sidebar";i:90;s:14:"bottom-toolbar";i:91;s:23:"shop-off-canvas-sidebar";i:92;s:25:"mod-sticky-sidebar-opener";}]]></wp:meta_value>
+		</wp:termmeta>
 		</wp:term>
 			<wp:term>
 			<wp:term_id>45</wp:term_id>
@@ -412,6 +464,10 @@
 		<wp:termmeta>
 			<wp:meta_key><![CDATA[xts-term-45-status]]></wp:meta_key>
 			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
+		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[wd_page_css_files]]></wp:meta_key>
+			<wp:meta_value><![CDATA[a:81:{i:0;s:10:"style-base";i:1;s:17:"revolution-slider";i:2;s:13:"int-wordfence";i:3;s:16:"woocommerce-base";i:4;s:15:"mod-star-rating";i:5;s:25:"woocommerce-block-notices";i:6;s:15:"block-paragraph";i:7;s:11:"block-title";i:8;s:17:"block-title-style";i:9;s:11:"block-image";i:10;s:15:"block-container";i:11;s:3:"map";i:12;s:13:"el-google-map";i:13;s:11:"header-base";i:14;s:9:"mod-tools";i:15;s:20:"header-elements-base";i:16;s:12:"social-icons";i:17;s:13:"header-search";i:18;s:18:"header-search-form";i:19;s:14:"wd-search-form";i:20;s:17:"wd-search-results";i:21;s:18:"wd-search-dropdown";i:22;s:13:"wd-search-cat";i:23;s:18:"woo-mod-login-form";i:24;s:17:"header-my-account";i:25;s:16:"header-cart-side";i:26;s:11:"header-cart";i:27;s:20:"widget-shopping-cart";i:28;s:19:"widget-product-list";i:29;s:26:"header-mobile-nav-dropdown";i:30;s:21:"header-categories-nav";i:31;s:16:"mod-nav-vertical";i:32;s:31:"mod-nav-vertical-design-default";i:33;s:18:"mod-nav-menu-label";i:34;s:15:"block-menu-list";i:35;s:12:"block-layout";i:36;s:6:"brands";i:37;s:19:"woo-prod-loop-small";i:38;s:16:"products-divider";i:39;s:12:"product-loop";i:40;s:21:"woo-mod-swatches-base";i:41;s:6:"button";i:42;s:12:"block-button";i:43;s:12:"block-banner";i:44;s:17:"product-loop-base";i:45;s:23:"woo-mod-add-btn-replace";i:46;s:20:"mod-more-description";i:47;s:6:"swiper";i:48;s:9:"mfp-popup";i:49;s:24:"mod-animations-transform";i:50;s:13:"mod-transform";i:51;s:13:"swiper-arrows";i:52;s:12:"swiper-pagin";i:53;s:14:"dropdown-aside";i:54;s:24:"el-off-canvas-column-btn";i:55;s:25:"mod-sticky-sidebar-opener";i:56;s:23:"block-off-canvas-layout";i:57;s:21:"el-page-title-builder";i:58;s:10:"page-title";i:59;s:14:"blog-loop-base";i:60;s:25:"post-types-mod-predefined";i:61;s:24:"blog-loop-design-masonry";i:62;s:34:"post-types-mod-categories-style-bg";i:63;s:28:"post-types-mod-date-style-bg";i:64;s:15:"blog-mod-author";i:65;s:10:"widget-nav";i:66;s:22:"widget-wd-recent-posts";i:67;s:27:"widget-recent-post-comments";i:68;s:9:"instagram";i:69;s:15:"widget-collapse";i:70;s:11:"footer-base";i:71;s:16:"block-fw-section";i:72;s:4:"list";i:73;s:10:"block-icon";i:74;s:12:"block-toggle";i:75;s:22:"blog-loop-design-small";i:76;s:10:"scroll-top";i:77;s:5:"mc4wp";i:78;s:17:"opt-popup-builder";i:79;s:25:"header-my-account-sidebar";i:80;s:14:"bottom-toolbar";}]]></wp:meta_value>
 		</wp:termmeta>
 		</wp:term>
 			<wp:term>
@@ -424,6 +480,10 @@
 			<wp:meta_key><![CDATA[xts-term-46-status]]></wp:meta_key>
 			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
 		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[wd_page_css_files]]></wp:meta_key>
+			<wp:meta_value><![CDATA[a:83:{i:0;s:10:"style-base";i:1;s:17:"revolution-slider";i:2;s:13:"int-wordfence";i:3;s:16:"woocommerce-base";i:4;s:15:"mod-star-rating";i:5;s:25:"woocommerce-block-notices";i:6;s:15:"block-paragraph";i:7;s:11:"block-title";i:8;s:17:"block-title-style";i:9;s:11:"block-image";i:10;s:15:"block-container";i:11;s:3:"map";i:12;s:13:"el-google-map";i:13;s:24:"mod-animations-transform";i:14;s:13:"mod-transform";i:15;s:29:"mod-animations-transform-snap";i:16;s:18:"opt-floating-block";i:17;s:7:"marquee";i:18;s:6:"button";i:19;s:12:"block-button";i:20;s:11:"header-base";i:21;s:9:"mod-tools";i:22;s:20:"header-elements-base";i:23;s:12:"social-icons";i:24;s:13:"header-search";i:25;s:18:"header-search-form";i:26;s:14:"wd-search-form";i:27;s:17:"wd-search-results";i:28;s:18:"wd-search-dropdown";i:29;s:13:"wd-search-cat";i:30;s:18:"woo-mod-login-form";i:31;s:17:"header-my-account";i:32;s:16:"header-cart-side";i:33;s:11:"header-cart";i:34;s:20:"widget-shopping-cart";i:35;s:19:"widget-product-list";i:36;s:26:"header-mobile-nav-dropdown";i:37;s:21:"header-categories-nav";i:38;s:16:"mod-nav-vertical";i:39;s:31:"mod-nav-vertical-design-default";i:40;s:18:"mod-nav-menu-label";i:41;s:15:"block-menu-list";i:42;s:12:"block-layout";i:43;s:6:"brands";i:44;s:19:"woo-prod-loop-small";i:45;s:16:"products-divider";i:46;s:12:"product-loop";i:47;s:21:"woo-mod-swatches-base";i:48;s:12:"block-banner";i:49;s:17:"product-loop-base";i:50;s:23:"woo-mod-add-btn-replace";i:51;s:20:"mod-more-description";i:52;s:6:"swiper";i:53;s:9:"mfp-popup";i:54;s:13:"swiper-arrows";i:55;s:12:"swiper-pagin";i:56;s:14:"dropdown-aside";i:57;s:24:"el-off-canvas-column-btn";i:58;s:25:"mod-sticky-sidebar-opener";i:59;s:23:"block-off-canvas-layout";i:60;s:21:"el-page-title-builder";i:61;s:10:"page-title";i:62;s:14:"blog-loop-base";i:63;s:25:"post-types-mod-predefined";i:64;s:24:"blog-loop-design-masonry";i:65;s:34:"post-types-mod-categories-style-bg";i:66;s:28:"post-types-mod-date-style-bg";i:67;s:15:"blog-mod-author";i:68;s:10:"widget-nav";i:69;s:22:"widget-wd-recent-posts";i:70;s:27:"widget-recent-post-comments";i:71;s:9:"instagram";i:72;s:15:"widget-collapse";i:73;s:11:"footer-base";i:74;s:16:"block-fw-section";i:75;s:4:"list";i:76;s:10:"block-icon";i:77;s:12:"block-toggle";i:78;s:22:"blog-loop-design-small";i:79;s:10:"scroll-top";i:80;s:5:"mc4wp";i:81;s:25:"header-my-account-sidebar";i:82;s:14:"bottom-toolbar";}]]></wp:meta_value>
+		</wp:termmeta>
 		</wp:term>
 			<wp:term>
 			<wp:term_id>47</wp:term_id>
@@ -435,6 +495,10 @@
 			<wp:meta_key><![CDATA[xts-term-47-status]]></wp:meta_key>
 			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
 		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[wd_page_css_files]]></wp:meta_key>
+			<wp:meta_value><![CDATA[a:82:{i:0;s:10:"style-base";i:1;s:17:"revolution-slider";i:2;s:13:"int-wordfence";i:3;s:16:"woocommerce-base";i:4;s:15:"mod-star-rating";i:5;s:25:"woocommerce-block-notices";i:6;s:15:"block-paragraph";i:7;s:11:"block-title";i:8;s:15:"block-container";i:9;s:11:"block-image";i:10;s:12:"block-layout";i:11;s:10:"photoswipe";i:12;s:13:"block-gallery";i:13;s:24:"mod-animations-transform";i:14;s:13:"mod-transform";i:15;s:29:"mod-animations-transform-snap";i:16;s:18:"opt-floating-block";i:17;s:7:"marquee";i:18;s:6:"button";i:19;s:12:"block-button";i:20;s:11:"header-base";i:21;s:9:"mod-tools";i:22;s:20:"header-elements-base";i:23;s:12:"social-icons";i:24;s:13:"header-search";i:25;s:18:"header-search-form";i:26;s:14:"wd-search-form";i:27;s:17:"wd-search-results";i:28;s:18:"wd-search-dropdown";i:29;s:13:"wd-search-cat";i:30;s:18:"woo-mod-login-form";i:31;s:17:"header-my-account";i:32;s:16:"header-cart-side";i:33;s:11:"header-cart";i:34;s:20:"widget-shopping-cart";i:35;s:19:"widget-product-list";i:36;s:26:"header-mobile-nav-dropdown";i:37;s:21:"header-categories-nav";i:38;s:16:"mod-nav-vertical";i:39;s:31:"mod-nav-vertical-design-default";i:40;s:18:"mod-nav-menu-label";i:41;s:15:"block-menu-list";i:42;s:6:"brands";i:43;s:19:"woo-prod-loop-small";i:44;s:16:"products-divider";i:45;s:12:"product-loop";i:46;s:21:"woo-mod-swatches-base";i:47;s:12:"block-banner";i:48;s:17:"product-loop-base";i:49;s:23:"woo-mod-add-btn-replace";i:50;s:20:"mod-more-description";i:51;s:6:"swiper";i:52;s:9:"mfp-popup";i:53;s:13:"swiper-arrows";i:54;s:12:"swiper-pagin";i:55;s:14:"dropdown-aside";i:56;s:24:"el-off-canvas-column-btn";i:57;s:25:"mod-sticky-sidebar-opener";i:58;s:23:"block-off-canvas-layout";i:59;s:21:"el-page-title-builder";i:60;s:10:"page-title";i:61;s:14:"blog-loop-base";i:62;s:25:"post-types-mod-predefined";i:63;s:24:"blog-loop-design-masonry";i:64;s:34:"post-types-mod-categories-style-bg";i:65;s:28:"post-types-mod-date-style-bg";i:66;s:15:"blog-mod-author";i:67;s:10:"widget-nav";i:68;s:22:"widget-wd-recent-posts";i:69;s:27:"widget-recent-post-comments";i:70;s:9:"instagram";i:71;s:15:"widget-collapse";i:72;s:11:"footer-base";i:73;s:16:"block-fw-section";i:74;s:4:"list";i:75;s:10:"block-icon";i:76;s:12:"block-toggle";i:77;s:22:"blog-loop-design-small";i:78;s:10:"scroll-top";i:79;s:5:"mc4wp";i:80;s:25:"header-my-account-sidebar";i:81;s:14:"bottom-toolbar";}]]></wp:meta_value>
+		</wp:termmeta>
 		</wp:term>
 			<wp:term>
 			<wp:term_id>48</wp:term_id>
@@ -445,6 +509,10 @@
 		<wp:termmeta>
 			<wp:meta_key><![CDATA[xts-term-48-status]]></wp:meta_key>
 			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
+		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[wd_page_css_files]]></wp:meta_key>
+			<wp:meta_value><![CDATA[a:80:{i:0;s:10:"style-base";i:1;s:17:"revolution-slider";i:2;s:13:"int-wordfence";i:3;s:16:"woocommerce-base";i:4;s:15:"mod-star-rating";i:5;s:25:"woocommerce-block-notices";i:6;s:15:"block-paragraph";i:7;s:11:"block-image";i:8;s:11:"block-title";i:9;s:12:"block-layout";i:10;s:6:"button";i:11;s:12:"block-button";i:12;s:15:"block-container";i:13;s:24:"mod-animations-transform";i:14;s:13:"mod-transform";i:15;s:29:"mod-animations-transform-snap";i:16;s:18:"opt-floating-block";i:17;s:7:"marquee";i:18;s:11:"header-base";i:19;s:9:"mod-tools";i:20;s:20:"header-elements-base";i:21;s:12:"social-icons";i:22;s:13:"header-search";i:23;s:18:"header-search-form";i:24;s:14:"wd-search-form";i:25;s:17:"wd-search-results";i:26;s:18:"wd-search-dropdown";i:27;s:13:"wd-search-cat";i:28;s:18:"woo-mod-login-form";i:29;s:17:"header-my-account";i:30;s:16:"header-cart-side";i:31;s:11:"header-cart";i:32;s:20:"widget-shopping-cart";i:33;s:19:"widget-product-list";i:34;s:26:"header-mobile-nav-dropdown";i:35;s:21:"header-categories-nav";i:36;s:16:"mod-nav-vertical";i:37;s:31:"mod-nav-vertical-design-default";i:38;s:18:"mod-nav-menu-label";i:39;s:15:"block-menu-list";i:40;s:6:"brands";i:41;s:19:"woo-prod-loop-small";i:42;s:16:"products-divider";i:43;s:12:"product-loop";i:44;s:21:"woo-mod-swatches-base";i:45;s:12:"block-banner";i:46;s:17:"product-loop-base";i:47;s:23:"woo-mod-add-btn-replace";i:48;s:20:"mod-more-description";i:49;s:6:"swiper";i:50;s:9:"mfp-popup";i:51;s:13:"swiper-arrows";i:52;s:12:"swiper-pagin";i:53;s:14:"dropdown-aside";i:54;s:24:"el-off-canvas-column-btn";i:55;s:25:"mod-sticky-sidebar-opener";i:56;s:23:"block-off-canvas-layout";i:57;s:21:"el-page-title-builder";i:58;s:10:"page-title";i:59;s:14:"blog-loop-base";i:60;s:25:"post-types-mod-predefined";i:61;s:24:"blog-loop-design-masonry";i:62;s:34:"post-types-mod-categories-style-bg";i:63;s:28:"post-types-mod-date-style-bg";i:64;s:15:"blog-mod-author";i:65;s:10:"widget-nav";i:66;s:22:"widget-wd-recent-posts";i:67;s:27:"widget-recent-post-comments";i:68;s:9:"instagram";i:69;s:15:"widget-collapse";i:70;s:11:"footer-base";i:71;s:16:"block-fw-section";i:72;s:4:"list";i:73;s:10:"block-icon";i:74;s:12:"block-toggle";i:75;s:22:"blog-loop-design-small";i:76;s:10:"scroll-top";i:77;s:5:"mc4wp";i:78;s:25:"header-my-account-sidebar";i:79;s:14:"bottom-toolbar";}]]></wp:meta_value>
 		</wp:termmeta>
 		</wp:term>
 			<wp:term>
@@ -477,6 +545,10 @@
 			<wp:meta_key><![CDATA[title_image]]></wp:meta_key>
 			<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
 		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[wd_page_css_files]]></wp:meta_key>
+			<wp:meta_value><![CDATA[a:94:{i:0;s:10:"style-base";i:1;s:17:"revolution-slider";i:2;s:13:"int-wordfence";i:3;s:16:"woocommerce-base";i:4;s:15:"mod-star-rating";i:5;s:25:"woocommerce-block-notices";i:6;s:21:"widget-active-filters";i:7;s:19:"woo-shop-predefined";i:8;s:21:"shop-title-categories";i:9;s:40:"woo-categories-loop-nav-mobile-accordion";i:10;s:29:"woo-shop-el-products-per-page";i:11;s:19:"woo-shop-page-title";i:12;s:22:"woo-mod-shop-loop-head";i:13;s:20:"woo-shop-el-order-by";i:14;s:25:"woo-shop-el-products-view";i:15;s:11:"block-title";i:16;s:4:"list";i:17;s:15:"block-paragraph";i:18;s:11:"block-image";i:19;s:13:"block-gallery";i:20;s:12:"block-layout";i:21;s:24:"mod-animations-transform";i:22;s:13:"mod-transform";i:23;s:29:"mod-animations-transform-snap";i:24;s:18:"opt-floating-block";i:25;s:7:"marquee";i:26;s:6:"button";i:27;s:12:"block-button";i:28;s:15:"block-container";i:29;s:11:"header-base";i:30;s:9:"mod-tools";i:31;s:20:"header-elements-base";i:32;s:12:"social-icons";i:33;s:13:"header-search";i:34;s:18:"header-search-form";i:35;s:14:"wd-search-form";i:36;s:17:"wd-search-results";i:37;s:18:"wd-search-dropdown";i:38;s:13:"wd-search-cat";i:39;s:18:"woo-mod-login-form";i:40;s:17:"header-my-account";i:41;s:16:"header-cart-side";i:42;s:11:"header-cart";i:43;s:20:"widget-shopping-cart";i:44;s:19:"widget-product-list";i:45;s:26:"header-mobile-nav-dropdown";i:46;s:21:"header-categories-nav";i:47;s:16:"mod-nav-vertical";i:48;s:31:"mod-nav-vertical-design-default";i:49;s:18:"mod-nav-menu-label";i:50;s:15:"block-menu-list";i:51;s:6:"brands";i:52;s:19:"woo-prod-loop-small";i:53;s:16:"products-divider";i:54;s:12:"product-loop";i:55;s:21:"woo-mod-swatches-base";i:56;s:12:"block-banner";i:57;s:17:"product-loop-base";i:58;s:23:"woo-mod-add-btn-replace";i:59;s:20:"mod-more-description";i:60;s:6:"swiper";i:61;s:9:"mfp-popup";i:62;s:13:"swiper-arrows";i:63;s:12:"swiper-pagin";i:64;s:14:"dropdown-aside";i:65;s:10:"page-title";i:66;s:18:"off-canvas-sidebar";i:67;s:26:"widget-slider-price-filter";i:68;s:21:"widget-wd-layered-nav";i:69;s:23:"woo-mod-swatches-filter";i:70;s:31:"widget-layered-nav-stock-status";i:71;s:24:"woo-mod-swatches-style-1";i:72;s:24:"woo-mod-swatches-style-4";i:73;s:13:"filter-search";i:74;s:25:"woo-mod-widget-checkboxes";i:75;s:16:"shop-filter-area";i:76;s:23:"categories-loop-default";i:77;s:19:"woo-categories-loop";i:78;s:15:"categories-loop";i:79;s:13:"sticky-loader";i:80;s:15:"widget-collapse";i:81;s:11:"footer-base";i:82;s:16:"block-fw-section";i:83;s:10:"block-icon";i:84;s:12:"block-toggle";i:85;s:14:"blog-loop-base";i:86;s:25:"post-types-mod-predefined";i:87;s:22:"blog-loop-design-small";i:88;s:10:"scroll-top";i:89;s:5:"mc4wp";i:90;s:25:"header-my-account-sidebar";i:91;s:14:"bottom-toolbar";i:92;s:23:"shop-off-canvas-sidebar";i:93;s:25:"mod-sticky-sidebar-opener";}]]></wp:meta_value>
+		</wp:termmeta>
 		</wp:term>
 			<wp:term>
 			<wp:term_id>50</wp:term_id>
@@ -487,6 +559,10 @@
 		<wp:termmeta>
 			<wp:meta_key><![CDATA[xts-term-50-status]]></wp:meta_key>
 			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
+		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[wd_page_css_files]]></wp:meta_key>
+			<wp:meta_value><![CDATA[a:80:{i:0;s:10:"style-base";i:1;s:17:"revolution-slider";i:2;s:13:"int-wordfence";i:3;s:16:"woocommerce-base";i:4;s:15:"mod-star-rating";i:5;s:25:"woocommerce-block-notices";i:6;s:15:"block-paragraph";i:7;s:11:"block-image";i:8;s:11:"block-title";i:9;s:12:"block-layout";i:10;s:6:"button";i:11;s:12:"block-button";i:12;s:15:"block-container";i:13;s:24:"mod-animations-transform";i:14;s:13:"mod-transform";i:15;s:29:"mod-animations-transform-snap";i:16;s:18:"opt-floating-block";i:17;s:7:"marquee";i:18;s:11:"header-base";i:19;s:9:"mod-tools";i:20;s:20:"header-elements-base";i:21;s:12:"social-icons";i:22;s:13:"header-search";i:23;s:18:"header-search-form";i:24;s:14:"wd-search-form";i:25;s:17:"wd-search-results";i:26;s:18:"wd-search-dropdown";i:27;s:13:"wd-search-cat";i:28;s:18:"woo-mod-login-form";i:29;s:17:"header-my-account";i:30;s:16:"header-cart-side";i:31;s:11:"header-cart";i:32;s:20:"widget-shopping-cart";i:33;s:19:"widget-product-list";i:34;s:26:"header-mobile-nav-dropdown";i:35;s:21:"header-categories-nav";i:36;s:16:"mod-nav-vertical";i:37;s:31:"mod-nav-vertical-design-default";i:38;s:18:"mod-nav-menu-label";i:39;s:15:"block-menu-list";i:40;s:6:"brands";i:41;s:19:"woo-prod-loop-small";i:42;s:16:"products-divider";i:43;s:12:"product-loop";i:44;s:21:"woo-mod-swatches-base";i:45;s:12:"block-banner";i:46;s:17:"product-loop-base";i:47;s:23:"woo-mod-add-btn-replace";i:48;s:20:"mod-more-description";i:49;s:6:"swiper";i:50;s:9:"mfp-popup";i:51;s:13:"swiper-arrows";i:52;s:12:"swiper-pagin";i:53;s:14:"dropdown-aside";i:54;s:24:"el-off-canvas-column-btn";i:55;s:25:"mod-sticky-sidebar-opener";i:56;s:23:"block-off-canvas-layout";i:57;s:21:"el-page-title-builder";i:58;s:10:"page-title";i:59;s:14:"blog-loop-base";i:60;s:25:"post-types-mod-predefined";i:61;s:24:"blog-loop-design-masonry";i:62;s:34:"post-types-mod-categories-style-bg";i:63;s:28:"post-types-mod-date-style-bg";i:64;s:15:"blog-mod-author";i:65;s:10:"widget-nav";i:66;s:22:"widget-wd-recent-posts";i:67;s:27:"widget-recent-post-comments";i:68;s:9:"instagram";i:69;s:15:"widget-collapse";i:70;s:11:"footer-base";i:71;s:16:"block-fw-section";i:72;s:4:"list";i:73;s:10:"block-icon";i:74;s:12:"block-toggle";i:75;s:22:"blog-loop-design-small";i:76;s:10:"scroll-top";i:77;s:5:"mc4wp";i:78;s:25:"header-my-account-sidebar";i:79;s:14:"bottom-toolbar";}]]></wp:meta_value>
 		</wp:termmeta>
 		</wp:term>
 			<wp:term>
@@ -599,6 +675,10 @@
 			<wp:meta_key><![CDATA[xts-term-98-status]]></wp:meta_key>
 			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
 		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[wd_page_css_files]]></wp:meta_key>
+			<wp:meta_value><![CDATA[a:97:{i:0;s:10:"style-base";i:1;s:17:"revolution-slider";i:2;s:13:"int-wordfence";i:3;s:16:"woocommerce-base";i:4;s:15:"mod-star-rating";i:5;s:25:"woocommerce-block-notices";i:6;s:21:"widget-active-filters";i:7;s:19:"woo-shop-predefined";i:8;s:21:"shop-title-categories";i:9;s:40:"woo-categories-loop-nav-mobile-accordion";i:10;s:29:"woo-shop-el-products-per-page";i:11;s:19:"woo-shop-page-title";i:12;s:22:"woo-mod-shop-loop-head";i:13;s:20:"woo-shop-el-order-by";i:14;s:25:"woo-shop-el-products-view";i:15;s:11:"block-title";i:16;s:15:"block-paragraph";i:17;s:11:"block-image";i:18;s:12:"block-layout";i:19;s:24:"mod-animations-transform";i:20;s:13:"mod-transform";i:21;s:29:"mod-animations-transform-snap";i:22;s:18:"opt-floating-block";i:23;s:7:"marquee";i:24;s:6:"button";i:25;s:12:"block-button";i:26;s:15:"block-container";i:27;s:11:"header-base";i:28;s:9:"mod-tools";i:29;s:20:"header-elements-base";i:30;s:12:"social-icons";i:31;s:13:"header-search";i:32;s:18:"header-search-form";i:33;s:14:"wd-search-form";i:34;s:17:"wd-search-results";i:35;s:18:"wd-search-dropdown";i:36;s:13:"wd-search-cat";i:37;s:18:"woo-mod-login-form";i:38;s:17:"header-my-account";i:39;s:16:"header-cart-side";i:40;s:11:"header-cart";i:41;s:20:"widget-shopping-cart";i:42;s:19:"widget-product-list";i:43;s:26:"header-mobile-nav-dropdown";i:44;s:21:"header-categories-nav";i:45;s:16:"mod-nav-vertical";i:46;s:31:"mod-nav-vertical-design-default";i:47;s:18:"mod-nav-menu-label";i:48;s:15:"block-menu-list";i:49;s:6:"brands";i:50;s:19:"woo-prod-loop-small";i:51;s:16:"products-divider";i:52;s:12:"product-loop";i:53;s:21:"woo-mod-swatches-base";i:54;s:12:"block-banner";i:55;s:17:"product-loop-base";i:56;s:23:"woo-mod-add-btn-replace";i:57;s:20:"mod-more-description";i:58;s:6:"swiper";i:59;s:9:"mfp-popup";i:60;s:13:"swiper-arrows";i:61;s:12:"swiper-pagin";i:62;s:14:"dropdown-aside";i:63;s:10:"page-title";i:64;s:18:"off-canvas-sidebar";i:65;s:26:"widget-slider-price-filter";i:66;s:21:"widget-wd-layered-nav";i:67;s:23:"woo-mod-swatches-filter";i:68;s:31:"widget-layered-nav-stock-status";i:69;s:24:"woo-mod-swatches-style-1";i:70;s:24:"woo-mod-swatches-style-4";i:71;s:13:"filter-search";i:72;s:25:"woo-mod-widget-checkboxes";i:73;s:28:"product-loop-button-info-alt";i:74;s:22:"woo-mod-product-labels";i:75;s:28:"woo-mod-product-labels-round";i:76;s:22:"woo-mod-swatches-dis-1";i:77;s:16:"shop-filter-area";i:78;s:23:"categories-loop-default";i:79;s:19:"woo-categories-loop";i:80;s:15:"categories-loop";i:81;s:13:"sticky-loader";i:82;s:15:"widget-collapse";i:83;s:11:"footer-base";i:84;s:16:"block-fw-section";i:85;s:4:"list";i:86;s:10:"block-icon";i:87;s:12:"block-toggle";i:88;s:14:"blog-loop-base";i:89;s:25:"post-types-mod-predefined";i:90;s:22:"blog-loop-design-small";i:91;s:10:"scroll-top";i:92;s:5:"mc4wp";i:93;s:25:"header-my-account-sidebar";i:94;s:14:"bottom-toolbar";i:95;s:23:"shop-off-canvas-sidebar";i:96;s:25:"mod-sticky-sidebar-opener";}]]></wp:meta_value>
+		</wp:termmeta>
 		</wp:term>
 			<wp:term>
 			<wp:term_id>99</wp:term_id>
@@ -614,6 +694,10 @@
 		<wp:termmeta>
 			<wp:meta_key><![CDATA[xts-term-99-status]]></wp:meta_key>
 			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
+		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[wd_page_css_files]]></wp:meta_key>
+			<wp:meta_value><![CDATA[a:102:{i:0;s:10:"style-base";i:1;s:17:"revolution-slider";i:2;s:13:"int-wordfence";i:3;s:16:"woocommerce-base";i:4;s:15:"mod-star-rating";i:5;s:25:"woocommerce-block-notices";i:6;s:21:"widget-active-filters";i:7;s:19:"woo-shop-predefined";i:8;s:21:"shop-title-categories";i:9;s:40:"woo-categories-loop-nav-mobile-accordion";i:10;s:29:"woo-shop-el-products-per-page";i:11;s:19:"woo-shop-page-title";i:12;s:22:"woo-mod-shop-loop-head";i:13;s:20:"woo-shop-el-order-by";i:14;s:25:"woo-shop-el-products-view";i:15;s:11:"block-title";i:16;s:11:"block-image";i:17;s:15:"block-paragraph";i:18;s:4:"list";i:19;s:12:"block-layout";i:20;s:24:"mod-animations-transform";i:21;s:13:"mod-transform";i:22;s:29:"mod-animations-transform-base";i:23;s:18:"opt-floating-block";i:24;s:13:"block-gallery";i:25;s:6:"swiper";i:26;s:13:"swiper-arrows";i:27;s:12:"swiper-pagin";i:28;s:6:"button";i:29;s:12:"block-button";i:30;s:15:"block-container";i:31;s:10:"block-icon";i:32;s:13:"block-infobox";i:33;s:5:"mc4wp";i:34;s:7:"marquee";i:35;s:11:"header-base";i:36;s:9:"mod-tools";i:37;s:20:"header-elements-base";i:38;s:12:"social-icons";i:39;s:13:"header-search";i:40;s:18:"header-search-form";i:41;s:14:"wd-search-form";i:42;s:17:"wd-search-results";i:43;s:18:"wd-search-dropdown";i:44;s:13:"wd-search-cat";i:45;s:18:"woo-mod-login-form";i:46;s:17:"header-my-account";i:47;s:16:"header-cart-side";i:48;s:11:"header-cart";i:49;s:20:"widget-shopping-cart";i:50;s:19:"widget-product-list";i:51;s:26:"header-mobile-nav-dropdown";i:52;s:21:"header-categories-nav";i:53;s:16:"mod-nav-vertical";i:54;s:31:"mod-nav-vertical-design-default";i:55;s:18:"mod-nav-menu-label";i:56;s:15:"block-menu-list";i:57;s:6:"brands";i:58;s:19:"woo-prod-loop-small";i:59;s:16:"products-divider";i:60;s:12:"product-loop";i:61;s:21:"woo-mod-swatches-base";i:62;s:12:"block-banner";i:63;s:17:"product-loop-base";i:64;s:23:"woo-mod-add-btn-replace";i:65;s:20:"mod-more-description";i:66;s:9:"mfp-popup";i:67;s:14:"dropdown-aside";i:68;s:10:"page-title";i:69;s:18:"off-canvas-sidebar";i:70;s:26:"widget-slider-price-filter";i:71;s:21:"widget-wd-layered-nav";i:72;s:23:"woo-mod-swatches-filter";i:73;s:31:"widget-layered-nav-stock-status";i:74;s:24:"woo-mod-swatches-style-1";i:75;s:24:"woo-mod-swatches-style-4";i:76;s:13:"filter-search";i:77;s:25:"woo-mod-widget-checkboxes";i:78;s:28:"product-loop-button-info-alt";i:79;s:22:"woo-mod-product-labels";i:80;s:28:"woo-mod-product-labels-round";i:81;s:22:"woo-mod-swatches-dis-1";i:82;s:16:"shop-filter-area";i:83;s:23:"categories-loop-default";i:84;s:19:"woo-categories-loop";i:85;s:15:"categories-loop";i:86;s:13:"sticky-loader";i:87;s:15:"widget-collapse";i:88;s:11:"footer-base";i:89;s:16:"block-fw-section";i:90;s:12:"block-toggle";i:91;s:14:"blog-loop-base";i:92;s:25:"post-types-mod-predefined";i:93;s:22:"blog-loop-design-small";i:94;s:10:"scroll-top";i:95;s:17:"opt-popup-builder";i:96;s:5:"wpcf7";i:97;s:9:"countdown";i:98;s:25:"header-my-account-sidebar";i:99;s:14:"bottom-toolbar";i:100;s:23:"shop-off-canvas-sidebar";i:101;s:25:"mod-sticky-sidebar-opener";}]]></wp:meta_value>
 		</wp:termmeta>
 		</wp:term>
 			<wp:term>
@@ -631,6 +715,10 @@
 			<wp:meta_key><![CDATA[xts-term-100-status]]></wp:meta_key>
 			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
 		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[wd_page_css_files]]></wp:meta_key>
+			<wp:meta_value><![CDATA[a:91:{i:0;s:10:"style-base";i:1;s:17:"revolution-slider";i:2;s:13:"int-wordfence";i:3;s:16:"woocommerce-base";i:4;s:15:"mod-star-rating";i:5;s:25:"woocommerce-block-notices";i:6;s:21:"widget-active-filters";i:7;s:19:"woo-shop-predefined";i:8;s:21:"shop-title-categories";i:9;s:40:"woo-categories-loop-nav-mobile-accordion";i:10;s:29:"woo-shop-el-products-per-page";i:11;s:19:"woo-shop-page-title";i:12;s:22:"woo-mod-shop-loop-head";i:13;s:20:"woo-shop-el-order-by";i:14;s:25:"woo-shop-el-products-view";i:15;s:11:"header-base";i:16;s:9:"mod-tools";i:17;s:20:"header-elements-base";i:18;s:12:"social-icons";i:19;s:13:"header-search";i:20;s:18:"header-search-form";i:21;s:14:"wd-search-form";i:22;s:17:"wd-search-results";i:23;s:18:"wd-search-dropdown";i:24;s:13:"wd-search-cat";i:25;s:18:"woo-mod-login-form";i:26;s:17:"header-my-account";i:27;s:16:"header-cart-side";i:28;s:11:"header-cart";i:29;s:20:"widget-shopping-cart";i:30;s:19:"widget-product-list";i:31;s:26:"header-mobile-nav-dropdown";i:32;s:21:"header-categories-nav";i:33;s:16:"mod-nav-vertical";i:34;s:31:"mod-nav-vertical-design-default";i:35;s:11:"block-image";i:36;s:18:"mod-nav-menu-label";i:37;s:15:"block-menu-list";i:38;s:12:"block-layout";i:39;s:15:"block-container";i:40;s:6:"brands";i:41;s:11:"block-title";i:42;s:19:"woo-prod-loop-small";i:43;s:16:"products-divider";i:44;s:12:"product-loop";i:45;s:21:"woo-mod-swatches-base";i:46;s:6:"button";i:47;s:12:"block-button";i:48;s:12:"block-banner";i:49;s:15:"block-paragraph";i:50;s:17:"product-loop-base";i:51;s:23:"woo-mod-add-btn-replace";i:52;s:20:"mod-more-description";i:53;s:6:"swiper";i:54;s:9:"mfp-popup";i:55;s:24:"mod-animations-transform";i:56;s:13:"mod-transform";i:57;s:13:"swiper-arrows";i:58;s:12:"swiper-pagin";i:59;s:14:"dropdown-aside";i:60;s:10:"page-title";i:61;s:18:"off-canvas-sidebar";i:62;s:26:"widget-slider-price-filter";i:63;s:21:"widget-wd-layered-nav";i:64;s:23:"woo-mod-swatches-filter";i:65;s:31:"widget-layered-nav-stock-status";i:66;s:24:"woo-mod-swatches-style-1";i:67;s:24:"woo-mod-swatches-style-4";i:68;s:13:"filter-search";i:69;s:25:"woo-mod-widget-checkboxes";i:70;s:28:"product-loop-button-info-alt";i:71;s:22:"woo-mod-product-labels";i:72;s:28:"woo-mod-product-labels-round";i:73;s:22:"woo-mod-swatches-dis-1";i:74;s:16:"shop-filter-area";i:75;s:15:"widget-collapse";i:76;s:11:"footer-base";i:77;s:16:"block-fw-section";i:78;s:4:"list";i:79;s:10:"block-icon";i:80;s:12:"block-toggle";i:81;s:14:"blog-loop-base";i:82;s:25:"post-types-mod-predefined";i:83;s:22:"blog-loop-design-small";i:84;s:10:"scroll-top";i:85;s:5:"mc4wp";i:86;s:17:"opt-popup-builder";i:87;s:25:"header-my-account-sidebar";i:88;s:14:"bottom-toolbar";i:89;s:23:"shop-off-canvas-sidebar";i:90;s:25:"mod-sticky-sidebar-opener";}]]></wp:meta_value>
+		</wp:termmeta>
 		</wp:term>
 			<wp:term>
 			<wp:term_id>101</wp:term_id>
@@ -646,6 +734,10 @@
 		<wp:termmeta>
 			<wp:meta_key><![CDATA[xts-term-101-status]]></wp:meta_key>
 			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
+		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[wd_page_css_files]]></wp:meta_key>
+			<wp:meta_value><![CDATA[a:98:{i:0;s:10:"style-base";i:1;s:17:"revolution-slider";i:2;s:13:"int-wordfence";i:3;s:16:"woocommerce-base";i:4;s:15:"mod-star-rating";i:5;s:25:"woocommerce-block-notices";i:6;s:21:"widget-active-filters";i:7;s:19:"woo-shop-predefined";i:8;s:21:"shop-title-categories";i:9;s:40:"woo-categories-loop-nav-mobile-accordion";i:10;s:29:"woo-shop-el-products-per-page";i:11;s:19:"woo-shop-page-title";i:12;s:22:"woo-mod-shop-loop-head";i:13;s:20:"woo-shop-el-order-by";i:14;s:25:"woo-shop-el-products-view";i:15;s:11:"block-title";i:16;s:4:"list";i:17;s:15:"block-paragraph";i:18;s:11:"block-image";i:19;s:13:"block-gallery";i:20;s:12:"block-layout";i:21;s:24:"mod-animations-transform";i:22;s:13:"mod-transform";i:23;s:29:"mod-animations-transform-snap";i:24;s:18:"opt-floating-block";i:25;s:7:"marquee";i:26;s:6:"button";i:27;s:12:"block-button";i:28;s:15:"block-container";i:29;s:11:"header-base";i:30;s:9:"mod-tools";i:31;s:20:"header-elements-base";i:32;s:12:"social-icons";i:33;s:13:"header-search";i:34;s:18:"header-search-form";i:35;s:14:"wd-search-form";i:36;s:17:"wd-search-results";i:37;s:18:"wd-search-dropdown";i:38;s:13:"wd-search-cat";i:39;s:18:"woo-mod-login-form";i:40;s:17:"header-my-account";i:41;s:16:"header-cart-side";i:42;s:11:"header-cart";i:43;s:20:"widget-shopping-cart";i:44;s:19:"widget-product-list";i:45;s:26:"header-mobile-nav-dropdown";i:46;s:21:"header-categories-nav";i:47;s:16:"mod-nav-vertical";i:48;s:31:"mod-nav-vertical-design-default";i:49;s:18:"mod-nav-menu-label";i:50;s:15:"block-menu-list";i:51;s:6:"brands";i:52;s:19:"woo-prod-loop-small";i:53;s:16:"products-divider";i:54;s:12:"product-loop";i:55;s:21:"woo-mod-swatches-base";i:56;s:12:"block-banner";i:57;s:17:"product-loop-base";i:58;s:23:"woo-mod-add-btn-replace";i:59;s:20:"mod-more-description";i:60;s:6:"swiper";i:61;s:9:"mfp-popup";i:62;s:13:"swiper-arrows";i:63;s:12:"swiper-pagin";i:64;s:14:"dropdown-aside";i:65;s:10:"page-title";i:66;s:18:"off-canvas-sidebar";i:67;s:26:"widget-slider-price-filter";i:68;s:21:"widget-wd-layered-nav";i:69;s:23:"woo-mod-swatches-filter";i:70;s:31:"widget-layered-nav-stock-status";i:71;s:24:"woo-mod-swatches-style-1";i:72;s:24:"woo-mod-swatches-style-4";i:73;s:13:"filter-search";i:74;s:25:"woo-mod-widget-checkboxes";i:75;s:28:"product-loop-button-info-alt";i:76;s:22:"woo-mod-product-labels";i:77;s:28:"woo-mod-product-labels-round";i:78;s:22:"woo-mod-swatches-dis-1";i:79;s:16:"shop-filter-area";i:80;s:23:"categories-loop-default";i:81;s:19:"woo-categories-loop";i:82;s:15:"categories-loop";i:83;s:13:"sticky-loader";i:84;s:15:"widget-collapse";i:85;s:11:"footer-base";i:86;s:16:"block-fw-section";i:87;s:10:"block-icon";i:88;s:12:"block-toggle";i:89;s:14:"blog-loop-base";i:90;s:25:"post-types-mod-predefined";i:91;s:22:"blog-loop-design-small";i:92;s:10:"scroll-top";i:93;s:5:"mc4wp";i:94;s:25:"header-my-account-sidebar";i:95;s:14:"bottom-toolbar";i:96;s:23:"shop-off-canvas-sidebar";i:97;s:25:"mod-sticky-sidebar-opener";}]]></wp:meta_value>
 		</wp:termmeta>
 		</wp:term>
 			<wp:term>
@@ -663,6 +755,10 @@
 			<wp:meta_key><![CDATA[xts-term-102-status]]></wp:meta_key>
 			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
 		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[wd_page_css_files]]></wp:meta_key>
+			<wp:meta_value><![CDATA[a:98:{i:0;s:10:"style-base";i:1;s:17:"revolution-slider";i:2;s:13:"int-wordfence";i:3;s:16:"woocommerce-base";i:4;s:15:"mod-star-rating";i:5;s:25:"woocommerce-block-notices";i:6;s:21:"widget-active-filters";i:7;s:19:"woo-shop-predefined";i:8;s:21:"shop-title-categories";i:9;s:40:"woo-categories-loop-nav-mobile-accordion";i:10;s:29:"woo-shop-el-products-per-page";i:11;s:19:"woo-shop-page-title";i:12;s:22:"woo-mod-shop-loop-head";i:13;s:20:"woo-shop-el-order-by";i:14;s:25:"woo-shop-el-products-view";i:15;s:15:"block-paragraph";i:16;s:10:"block-icon";i:17;s:11:"block-title";i:18;s:15:"block-container";i:19;s:13:"block-infobox";i:20;s:12:"block-layout";i:21;s:24:"mod-animations-transform";i:22;s:13:"mod-transform";i:23;s:29:"mod-animations-transform-snap";i:24;s:18:"opt-floating-block";i:25;s:11:"block-image";i:26;s:7:"marquee";i:27;s:6:"button";i:28;s:12:"block-button";i:29;s:11:"header-base";i:30;s:9:"mod-tools";i:31;s:20:"header-elements-base";i:32;s:12:"social-icons";i:33;s:13:"header-search";i:34;s:18:"header-search-form";i:35;s:14:"wd-search-form";i:36;s:17:"wd-search-results";i:37;s:18:"wd-search-dropdown";i:38;s:13:"wd-search-cat";i:39;s:18:"woo-mod-login-form";i:40;s:17:"header-my-account";i:41;s:16:"header-cart-side";i:42;s:11:"header-cart";i:43;s:20:"widget-shopping-cart";i:44;s:19:"widget-product-list";i:45;s:26:"header-mobile-nav-dropdown";i:46;s:21:"header-categories-nav";i:47;s:16:"mod-nav-vertical";i:48;s:31:"mod-nav-vertical-design-default";i:49;s:18:"mod-nav-menu-label";i:50;s:15:"block-menu-list";i:51;s:6:"brands";i:52;s:19:"woo-prod-loop-small";i:53;s:16:"products-divider";i:54;s:12:"product-loop";i:55;s:21:"woo-mod-swatches-base";i:56;s:12:"block-banner";i:57;s:17:"product-loop-base";i:58;s:23:"woo-mod-add-btn-replace";i:59;s:20:"mod-more-description";i:60;s:6:"swiper";i:61;s:9:"mfp-popup";i:62;s:13:"swiper-arrows";i:63;s:12:"swiper-pagin";i:64;s:14:"dropdown-aside";i:65;s:10:"page-title";i:66;s:18:"off-canvas-sidebar";i:67;s:26:"widget-slider-price-filter";i:68;s:21:"widget-wd-layered-nav";i:69;s:23:"woo-mod-swatches-filter";i:70;s:31:"widget-layered-nav-stock-status";i:71;s:24:"woo-mod-swatches-style-1";i:72;s:24:"woo-mod-swatches-style-4";i:73;s:13:"filter-search";i:74;s:25:"woo-mod-widget-checkboxes";i:75;s:28:"product-loop-button-info-alt";i:76;s:22:"woo-mod-product-labels";i:77;s:28:"woo-mod-product-labels-round";i:78;s:22:"woo-mod-swatches-dis-1";i:79;s:16:"shop-filter-area";i:80;s:23:"categories-loop-default";i:81;s:19:"woo-categories-loop";i:82;s:15:"categories-loop";i:83;s:13:"sticky-loader";i:84;s:15:"widget-collapse";i:85;s:11:"footer-base";i:86;s:16:"block-fw-section";i:87;s:4:"list";i:88;s:12:"block-toggle";i:89;s:14:"blog-loop-base";i:90;s:25:"post-types-mod-predefined";i:91;s:22:"blog-loop-design-small";i:92;s:10:"scroll-top";i:93;s:5:"mc4wp";i:94;s:25:"header-my-account-sidebar";i:95;s:14:"bottom-toolbar";i:96;s:23:"shop-off-canvas-sidebar";i:97;s:25:"mod-sticky-sidebar-opener";}]]></wp:meta_value>
+		</wp:termmeta>
 		</wp:term>
 			<wp:term>
 			<wp:term_id>103</wp:term_id>
@@ -678,6 +774,10 @@
 		<wp:termmeta>
 			<wp:meta_key><![CDATA[xts-term-103-status]]></wp:meta_key>
 			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
+		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[wd_page_css_files]]></wp:meta_key>
+			<wp:meta_value><![CDATA[a:99:{i:0;s:10:"style-base";i:1;s:17:"revolution-slider";i:2;s:13:"int-wordfence";i:3;s:16:"woocommerce-base";i:4;s:15:"mod-star-rating";i:5;s:25:"woocommerce-block-notices";i:6;s:21:"widget-active-filters";i:7;s:19:"woo-shop-predefined";i:8;s:21:"shop-title-categories";i:9;s:40:"woo-categories-loop-nav-mobile-accordion";i:10;s:29:"woo-shop-el-products-per-page";i:11;s:19:"woo-shop-page-title";i:12;s:22:"woo-mod-shop-loop-head";i:13;s:20:"woo-shop-el-order-by";i:14;s:25:"woo-shop-el-products-view";i:15;s:15:"block-paragraph";i:16;s:11:"block-title";i:17;s:6:"button";i:18;s:12:"block-button";i:19;s:15:"block-container";i:20;s:16:"block-fw-section";i:21;s:16:"block-background";i:22;s:11:"block-image";i:23;s:12:"block-layout";i:24;s:13:"block-gallery";i:25;s:6:"swiper";i:26;s:13:"swiper-arrows";i:27;s:12:"swiper-pagin";i:28;s:24:"mod-animations-transform";i:29;s:13:"mod-transform";i:30;s:29:"mod-animations-transform-snap";i:31;s:18:"opt-floating-block";i:32;s:7:"marquee";i:33;s:11:"header-base";i:34;s:9:"mod-tools";i:35;s:20:"header-elements-base";i:36;s:12:"social-icons";i:37;s:13:"header-search";i:38;s:18:"header-search-form";i:39;s:14:"wd-search-form";i:40;s:17:"wd-search-results";i:41;s:18:"wd-search-dropdown";i:42;s:13:"wd-search-cat";i:43;s:18:"woo-mod-login-form";i:44;s:17:"header-my-account";i:45;s:16:"header-cart-side";i:46;s:11:"header-cart";i:47;s:20:"widget-shopping-cart";i:48;s:19:"widget-product-list";i:49;s:26:"header-mobile-nav-dropdown";i:50;s:21:"header-categories-nav";i:51;s:16:"mod-nav-vertical";i:52;s:31:"mod-nav-vertical-design-default";i:53;s:18:"mod-nav-menu-label";i:54;s:15:"block-menu-list";i:55;s:6:"brands";i:56;s:19:"woo-prod-loop-small";i:57;s:16:"products-divider";i:58;s:12:"product-loop";i:59;s:21:"woo-mod-swatches-base";i:60;s:12:"block-banner";i:61;s:17:"product-loop-base";i:62;s:23:"woo-mod-add-btn-replace";i:63;s:20:"mod-more-description";i:64;s:9:"mfp-popup";i:65;s:14:"dropdown-aside";i:66;s:10:"page-title";i:67;s:18:"off-canvas-sidebar";i:68;s:26:"widget-slider-price-filter";i:69;s:21:"widget-wd-layered-nav";i:70;s:23:"woo-mod-swatches-filter";i:71;s:31:"widget-layered-nav-stock-status";i:72;s:24:"woo-mod-swatches-style-1";i:73;s:24:"woo-mod-swatches-style-4";i:74;s:13:"filter-search";i:75;s:25:"woo-mod-widget-checkboxes";i:76;s:28:"product-loop-button-info-alt";i:77;s:22:"woo-mod-product-labels";i:78;s:28:"woo-mod-product-labels-round";i:79;s:22:"woo-mod-swatches-dis-1";i:80;s:16:"shop-filter-area";i:81;s:23:"categories-loop-default";i:82;s:19:"woo-categories-loop";i:83;s:15:"categories-loop";i:84;s:13:"sticky-loader";i:85;s:15:"widget-collapse";i:86;s:11:"footer-base";i:87;s:4:"list";i:88;s:10:"block-icon";i:89;s:12:"block-toggle";i:90;s:14:"blog-loop-base";i:91;s:25:"post-types-mod-predefined";i:92;s:22:"blog-loop-design-small";i:93;s:10:"scroll-top";i:94;s:5:"mc4wp";i:95;s:25:"header-my-account-sidebar";i:96;s:14:"bottom-toolbar";i:97;s:23:"shop-off-canvas-sidebar";i:98;s:25:"mod-sticky-sidebar-opener";}]]></wp:meta_value>
 		</wp:termmeta>
 		</wp:term>
 			<wp:term>
@@ -695,6 +795,10 @@
 			<wp:meta_key><![CDATA[xts-term-104-status]]></wp:meta_key>
 			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
 		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[wd_page_css_files]]></wp:meta_key>
+			<wp:meta_value><![CDATA[a:96:{i:0;s:10:"style-base";i:1;s:17:"revolution-slider";i:2;s:13:"int-wordfence";i:3;s:16:"woocommerce-base";i:4;s:15:"mod-star-rating";i:5;s:25:"woocommerce-block-notices";i:6;s:21:"widget-active-filters";i:7;s:19:"woo-shop-predefined";i:8;s:21:"shop-title-categories";i:9;s:40:"woo-categories-loop-nav-mobile-accordion";i:10;s:29:"woo-shop-el-products-per-page";i:11;s:19:"woo-shop-page-title";i:12;s:22:"woo-mod-shop-loop-head";i:13;s:20:"woo-shop-el-order-by";i:14;s:25:"woo-shop-el-products-view";i:15;s:11:"block-title";i:16;s:4:"list";i:17;s:15:"block-paragraph";i:18;s:11:"block-image";i:19;s:13:"block-gallery";i:20;s:12:"block-layout";i:21;s:11:"header-base";i:22;s:9:"mod-tools";i:23;s:20:"header-elements-base";i:24;s:12:"social-icons";i:25;s:13:"header-search";i:26;s:18:"header-search-form";i:27;s:14:"wd-search-form";i:28;s:17:"wd-search-results";i:29;s:18:"wd-search-dropdown";i:30;s:13:"wd-search-cat";i:31;s:18:"woo-mod-login-form";i:32;s:17:"header-my-account";i:33;s:16:"header-cart-side";i:34;s:11:"header-cart";i:35;s:20:"widget-shopping-cart";i:36;s:19:"widget-product-list";i:37;s:26:"header-mobile-nav-dropdown";i:38;s:21:"header-categories-nav";i:39;s:16:"mod-nav-vertical";i:40;s:31:"mod-nav-vertical-design-default";i:41;s:18:"mod-nav-menu-label";i:42;s:15:"block-menu-list";i:43;s:15:"block-container";i:44;s:6:"brands";i:45;s:19:"woo-prod-loop-small";i:46;s:16:"products-divider";i:47;s:12:"product-loop";i:48;s:21:"woo-mod-swatches-base";i:49;s:6:"button";i:50;s:12:"block-button";i:51;s:12:"block-banner";i:52;s:17:"product-loop-base";i:53;s:23:"woo-mod-add-btn-replace";i:54;s:20:"mod-more-description";i:55;s:6:"swiper";i:56;s:9:"mfp-popup";i:57;s:24:"mod-animations-transform";i:58;s:13:"mod-transform";i:59;s:13:"swiper-arrows";i:60;s:12:"swiper-pagin";i:61;s:14:"dropdown-aside";i:62;s:10:"page-title";i:63;s:18:"off-canvas-sidebar";i:64;s:26:"widget-slider-price-filter";i:65;s:21:"widget-wd-layered-nav";i:66;s:23:"woo-mod-swatches-filter";i:67;s:31:"widget-layered-nav-stock-status";i:68;s:24:"woo-mod-swatches-style-1";i:69;s:24:"woo-mod-swatches-style-4";i:70;s:13:"filter-search";i:71;s:25:"woo-mod-widget-checkboxes";i:72;s:28:"product-loop-button-info-alt";i:73;s:22:"woo-mod-product-labels";i:74;s:28:"woo-mod-product-labels-round";i:75;s:22:"woo-mod-swatches-dis-1";i:76;s:16:"shop-filter-area";i:77;s:23:"categories-loop-default";i:78;s:19:"woo-categories-loop";i:79;s:15:"categories-loop";i:80;s:13:"sticky-loader";i:81;s:15:"widget-collapse";i:82;s:11:"footer-base";i:83;s:16:"block-fw-section";i:84;s:10:"block-icon";i:85;s:12:"block-toggle";i:86;s:14:"blog-loop-base";i:87;s:25:"post-types-mod-predefined";i:88;s:22:"blog-loop-design-small";i:89;s:10:"scroll-top";i:90;s:5:"mc4wp";i:91;s:17:"opt-popup-builder";i:92;s:25:"header-my-account-sidebar";i:93;s:14:"bottom-toolbar";i:94;s:23:"shop-off-canvas-sidebar";i:95;s:25:"mod-sticky-sidebar-opener";}]]></wp:meta_value>
+		</wp:termmeta>
 		</wp:term>
 			<wp:term>
 			<wp:term_id>105</wp:term_id>
@@ -711,6 +815,10 @@
 			<wp:meta_key><![CDATA[xts-term-105-status]]></wp:meta_key>
 			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
 		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[wd_page_css_files]]></wp:meta_key>
+			<wp:meta_value><![CDATA[a:98:{i:0;s:10:"style-base";i:1;s:17:"revolution-slider";i:2;s:13:"int-wordfence";i:3;s:16:"woocommerce-base";i:4;s:15:"mod-star-rating";i:5;s:25:"woocommerce-block-notices";i:6;s:21:"widget-active-filters";i:7;s:19:"woo-shop-predefined";i:8;s:21:"shop-title-categories";i:9;s:40:"woo-categories-loop-nav-mobile-accordion";i:10;s:29:"woo-shop-el-products-per-page";i:11;s:19:"woo-shop-page-title";i:12;s:22:"woo-mod-shop-loop-head";i:13;s:20:"woo-shop-el-order-by";i:14;s:25:"woo-shop-el-products-view";i:15;s:11:"block-title";i:16;s:4:"list";i:17;s:15:"block-paragraph";i:18;s:11:"block-image";i:19;s:13:"block-gallery";i:20;s:12:"block-layout";i:21;s:24:"mod-animations-transform";i:22;s:13:"mod-transform";i:23;s:29:"mod-animations-transform-snap";i:24;s:18:"opt-floating-block";i:25;s:7:"marquee";i:26;s:6:"button";i:27;s:12:"block-button";i:28;s:15:"block-container";i:29;s:11:"header-base";i:30;s:9:"mod-tools";i:31;s:20:"header-elements-base";i:32;s:12:"social-icons";i:33;s:13:"header-search";i:34;s:18:"header-search-form";i:35;s:14:"wd-search-form";i:36;s:17:"wd-search-results";i:37;s:18:"wd-search-dropdown";i:38;s:13:"wd-search-cat";i:39;s:18:"woo-mod-login-form";i:40;s:17:"header-my-account";i:41;s:16:"header-cart-side";i:42;s:11:"header-cart";i:43;s:20:"widget-shopping-cart";i:44;s:19:"widget-product-list";i:45;s:26:"header-mobile-nav-dropdown";i:46;s:21:"header-categories-nav";i:47;s:16:"mod-nav-vertical";i:48;s:31:"mod-nav-vertical-design-default";i:49;s:18:"mod-nav-menu-label";i:50;s:15:"block-menu-list";i:51;s:6:"brands";i:52;s:19:"woo-prod-loop-small";i:53;s:16:"products-divider";i:54;s:12:"product-loop";i:55;s:21:"woo-mod-swatches-base";i:56;s:12:"block-banner";i:57;s:17:"product-loop-base";i:58;s:23:"woo-mod-add-btn-replace";i:59;s:20:"mod-more-description";i:60;s:6:"swiper";i:61;s:9:"mfp-popup";i:62;s:13:"swiper-arrows";i:63;s:12:"swiper-pagin";i:64;s:14:"dropdown-aside";i:65;s:10:"page-title";i:66;s:18:"off-canvas-sidebar";i:67;s:26:"widget-slider-price-filter";i:68;s:21:"widget-wd-layered-nav";i:69;s:23:"woo-mod-swatches-filter";i:70;s:31:"widget-layered-nav-stock-status";i:71;s:24:"woo-mod-swatches-style-1";i:72;s:24:"woo-mod-swatches-style-4";i:73;s:13:"filter-search";i:74;s:25:"woo-mod-widget-checkboxes";i:75;s:28:"product-loop-button-info-alt";i:76;s:22:"woo-mod-product-labels";i:77;s:28:"woo-mod-product-labels-round";i:78;s:22:"woo-mod-swatches-dis-1";i:79;s:16:"shop-filter-area";i:80;s:23:"categories-loop-default";i:81;s:19:"woo-categories-loop";i:82;s:15:"categories-loop";i:83;s:13:"sticky-loader";i:84;s:15:"widget-collapse";i:85;s:11:"footer-base";i:86;s:16:"block-fw-section";i:87;s:10:"block-icon";i:88;s:12:"block-toggle";i:89;s:14:"blog-loop-base";i:90;s:25:"post-types-mod-predefined";i:91;s:22:"blog-loop-design-small";i:92;s:10:"scroll-top";i:93;s:5:"mc4wp";i:94;s:25:"header-my-account-sidebar";i:95;s:14:"bottom-toolbar";i:96;s:23:"shop-off-canvas-sidebar";i:97;s:25:"mod-sticky-sidebar-opener";}]]></wp:meta_value>
+		</wp:termmeta>
 		</wp:term>
 			<wp:term>
 			<wp:term_id>106</wp:term_id>
@@ -726,6 +834,10 @@
 		<wp:termmeta>
 			<wp:meta_key><![CDATA[xts-term-106-status]]></wp:meta_key>
 			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
+		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[wd_page_css_files]]></wp:meta_key>
+			<wp:meta_value><![CDATA[a:95:{i:0;s:10:"style-base";i:1;s:17:"revolution-slider";i:2;s:13:"int-wordfence";i:3;s:16:"woocommerce-base";i:4;s:15:"mod-star-rating";i:5;s:25:"woocommerce-block-notices";i:6;s:21:"widget-active-filters";i:7;s:19:"woo-shop-predefined";i:8;s:21:"shop-title-categories";i:9;s:40:"woo-categories-loop-nav-mobile-accordion";i:10;s:29:"woo-shop-el-products-per-page";i:11;s:19:"woo-shop-page-title";i:12;s:22:"woo-mod-shop-loop-head";i:13;s:20:"woo-shop-el-order-by";i:14;s:25:"woo-shop-el-products-view";i:15;s:11:"block-title";i:16;s:15:"block-paragraph";i:17;s:11:"block-image";i:18;s:12:"block-layout";i:19;s:11:"header-base";i:20;s:9:"mod-tools";i:21;s:20:"header-elements-base";i:22;s:12:"social-icons";i:23;s:13:"header-search";i:24;s:18:"header-search-form";i:25;s:14:"wd-search-form";i:26;s:17:"wd-search-results";i:27;s:18:"wd-search-dropdown";i:28;s:13:"wd-search-cat";i:29;s:18:"woo-mod-login-form";i:30;s:17:"header-my-account";i:31;s:16:"header-cart-side";i:32;s:11:"header-cart";i:33;s:20:"widget-shopping-cart";i:34;s:19:"widget-product-list";i:35;s:26:"header-mobile-nav-dropdown";i:36;s:21:"header-categories-nav";i:37;s:16:"mod-nav-vertical";i:38;s:31:"mod-nav-vertical-design-default";i:39;s:18:"mod-nav-menu-label";i:40;s:15:"block-menu-list";i:41;s:15:"block-container";i:42;s:6:"brands";i:43;s:19:"woo-prod-loop-small";i:44;s:16:"products-divider";i:45;s:12:"product-loop";i:46;s:21:"woo-mod-swatches-base";i:47;s:6:"button";i:48;s:12:"block-button";i:49;s:12:"block-banner";i:50;s:17:"product-loop-base";i:51;s:23:"woo-mod-add-btn-replace";i:52;s:20:"mod-more-description";i:53;s:6:"swiper";i:54;s:9:"mfp-popup";i:55;s:24:"mod-animations-transform";i:56;s:13:"mod-transform";i:57;s:13:"swiper-arrows";i:58;s:12:"swiper-pagin";i:59;s:14:"dropdown-aside";i:60;s:10:"page-title";i:61;s:18:"off-canvas-sidebar";i:62;s:26:"widget-slider-price-filter";i:63;s:21:"widget-wd-layered-nav";i:64;s:23:"woo-mod-swatches-filter";i:65;s:31:"widget-layered-nav-stock-status";i:66;s:24:"woo-mod-swatches-style-1";i:67;s:24:"woo-mod-swatches-style-4";i:68;s:13:"filter-search";i:69;s:25:"woo-mod-widget-checkboxes";i:70;s:28:"product-loop-button-info-alt";i:71;s:22:"woo-mod-product-labels";i:72;s:28:"woo-mod-product-labels-round";i:73;s:22:"woo-mod-swatches-dis-1";i:74;s:16:"shop-filter-area";i:75;s:23:"categories-loop-default";i:76;s:19:"woo-categories-loop";i:77;s:15:"categories-loop";i:78;s:13:"sticky-loader";i:79;s:15:"widget-collapse";i:80;s:11:"footer-base";i:81;s:16:"block-fw-section";i:82;s:4:"list";i:83;s:10:"block-icon";i:84;s:12:"block-toggle";i:85;s:14:"blog-loop-base";i:86;s:25:"post-types-mod-predefined";i:87;s:22:"blog-loop-design-small";i:88;s:10:"scroll-top";i:89;s:5:"mc4wp";i:90;s:17:"opt-popup-builder";i:91;s:25:"header-my-account-sidebar";i:92;s:14:"bottom-toolbar";i:93;s:23:"shop-off-canvas-sidebar";i:94;s:25:"mod-sticky-sidebar-opener";}]]></wp:meta_value>
 		</wp:termmeta>
 		</wp:term>
 			<wp:term>
@@ -751,7 +863,7 @@
 	<wp:term><wp:term_id>61</wp:term_id><wp:term_taxonomy>nav_menu</wp:term_taxonomy><wp:term_slug><![CDATA[top-bar-right]]></wp:term_slug><wp:term_name><![CDATA[Top Bar Right]]></wp:term_name>
 </wp:term>
 
-	<generator>https://wordpress.org/?v=6.7.2</generator>
+	<generator>https://wordpress.org/?v=6.7.4</generator>
 
 					<item>
 					<title><![CDATA[Newsletter form]]></title>
@@ -1818,8 +1930,8 @@
 					<wp:menu_order>0</wp:menu_order>
 					<wp:post_type><![CDATA[post]]></wp:post_type>
 												<category domain="post_tag" nicename="chair"><![CDATA[chair]]></category>
-		<category domain="post_tag" nicename="furniture"><![CDATA[Furniture]]></category>
 		<category domain="category" nicename="furniture"><![CDATA[Furniture]]></category>
+		<category domain="post_tag" nicename="furniture"><![CDATA[Furniture]]></category>
 		<category domain="post_tag" nicename="news"><![CDATA[News]]></category>
 											<wp:postmeta>
 							<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
@@ -5959,8 +6071,8 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 					<wp:post_parent>0</wp:post_parent>
 					<wp:menu_order>0</wp:menu_order>
 					<wp:post_type><![CDATA[post]]></wp:post_type>
-												<category domain="post_tag" nicename="furniture"><![CDATA[Furniture]]></category>
-		<category domain="category" nicename="furniture"><![CDATA[Furniture]]></category>
+												<category domain="category" nicename="furniture"><![CDATA[Furniture]]></category>
+		<category domain="post_tag" nicename="furniture"><![CDATA[Furniture]]></category>
 		<category domain="post_tag" nicename="sofa"><![CDATA[Sofa]]></category>
 		<category domain="post_tag" nicename="style"><![CDATA[Style]]></category>
 											<wp:postmeta>
@@ -10917,7 +11029,7 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 										</item>
 								<item>
 					<title><![CDATA[Shipping &amp; Delivery]]></title>
-					<link>https://dummy.xtemos.com/woodmart2/gutenberg/wd_product_tabs/shipping-delivery/</link>
+					<link>https://dummy.xtemos.com/woodmart2/gutenberg/?wd_product_tabs=shipping-delivery</link>
 					<pubDate>Tue, 20 May 2025 13:49:27 +0000</pubDate>
 					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/gutenberg/?post_type=wd_product_tabs&#038;p=36836</guid>
@@ -11134,6 +11246,10 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 							<wp:meta_value><![CDATA[2024-04-16]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_image-type]]></wp:meta_key>
 							<wp:meta_value><![CDATA[image]]></wp:meta_value>
 						</wp:postmeta>
@@ -11215,6 +11331,10 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2024-04-16]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_image-type]]></wp:meta_key>
@@ -11300,6 +11420,10 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 							<wp:meta_value><![CDATA[2024-04-16]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_image-type]]></wp:meta_key>
 							<wp:meta_value><![CDATA[image]]></wp:meta_value>
 						</wp:postmeta>
@@ -11338,16 +11462,16 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 										</item>
 								<item>
 					<title><![CDATA[]]></title>
-					<link>https://dummy.xtemos.com/woodmart2/gutenberg/2024/08/27/9379/</link>
+					<link>https://dummy.xtemos.com/woodmart2/gutenberg/2025/12/12/9379/</link>
 					<pubDate>Tue, 16 Apr 2024 13:18:26 +0000</pubDate>
 					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/gutenberg/2024/04/16/</guid>
 											<content:encoded><![CDATA[ ]]></content:encoded>
 															<wp:post_id>9379</wp:post_id>
-					<wp:post_date><![CDATA[2024-08-27 09:28:28]]></wp:post_date>
+					<wp:post_date><![CDATA[2025-12-12 15:50:27]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-04-16 13:18:26]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-08-27 09:28:28]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-08-27 09:28:28]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-12-12 15:50:27]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-12-12 15:50:27]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[9379]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -11408,6 +11532,10 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 							<wp:meta_value><![CDATA[2024-04-16]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2024-04-26]]></wp:meta_value>
 						</wp:postmeta>
@@ -11434,6 +11562,10 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2024-08-26]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
+							<wp:meta_value><![CDATA[2024-08-27]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -11485,6 +11617,10 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2024-04-16]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_image-type]]></wp:meta_key>
@@ -11548,6 +11684,10 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2024-04-16]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_image-type]]></wp:meta_key>
@@ -11637,6 +11777,10 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 							<wp:meta_value><![CDATA[2024-04-16]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_image-type]]></wp:meta_key>
 							<wp:meta_value><![CDATA[image]]></wp:meta_value>
 						</wp:postmeta>
@@ -11723,6 +11867,10 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2024-04-16]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
@@ -11975,6 +12123,10 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 							<wp:meta_value><![CDATA[2024-04-16]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2024-05-02]]></wp:meta_value>
 						</wp:postmeta>
@@ -12052,6 +12204,10 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2024-04-16]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
@@ -12133,6 +12289,10 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 							<wp:meta_value><![CDATA[2024-04-16]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2024-05-02]]></wp:meta_value>
 						</wp:postmeta>
@@ -12147,15 +12307,15 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 										</item>
 								<item>
 					<title><![CDATA[Shop Pages]]></title>
-					<link>https://dummy.xtemos.com/woodmart2/gutenberg/2024/08/27/shop-pages-2/</link>
+					<link>https://dummy.xtemos.com/woodmart2/gutenberg/2025/12/12/shop-pages-2/</link>
 					<pubDate>Tue, 16 Apr 2024 13:18:26 +0000</pubDate>
 					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/gutenberg/2024/04/16/shop-pages-2/</guid>
 															<wp:post_id>9393</wp:post_id>
-					<wp:post_date><![CDATA[2024-08-27 09:28:28]]></wp:post_date>
+					<wp:post_date><![CDATA[2025-12-12 15:50:27]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-04-16 13:18:26]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-08-27 09:28:28]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-08-27 09:28:28]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-12-12 15:50:27]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-12-12 15:50:27]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[shop-pages-2]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -12255,6 +12415,10 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2024-08-26]]></wp:meta_value>
 						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
+							<wp:meta_value><![CDATA[2024-08-27]]></wp:meta_value>
+						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[Pages]]></title>
@@ -12301,6 +12465,10 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2024-04-16]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_image-type]]></wp:meta_key>
@@ -12359,6 +12527,10 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 							<wp:meta_value><![CDATA[2024-04-16]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_image-type]]></wp:meta_key>
 							<wp:meta_value><![CDATA[image]]></wp:meta_value>
 						</wp:postmeta>
@@ -12415,6 +12587,10 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 							<wp:meta_value><![CDATA[2024-04-16]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_image-type]]></wp:meta_key>
 							<wp:meta_value><![CDATA[image]]></wp:meta_value>
 						</wp:postmeta>
@@ -12429,15 +12605,15 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 										</item>
 								<item>
 					<title><![CDATA[Home]]></title>
-					<link>https://dummy.xtemos.com/woodmart2/gutenberg/2024/08/27/home/</link>
+					<link>https://dummy.xtemos.com/woodmart2/gutenberg/2025/12/12/home/</link>
 					<pubDate>Tue, 16 Apr 2024 13:18:53 +0000</pubDate>
 					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/gutenberg/2024/04/16/home/</guid>
 															<wp:post_id>9422</wp:post_id>
-					<wp:post_date><![CDATA[2024-08-27 09:28:28]]></wp:post_date>
+					<wp:post_date><![CDATA[2025-12-12 15:50:27]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-04-16 13:18:53]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-08-27 09:28:28]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-08-27 09:28:28]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-12-12 15:50:27]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-12-12 15:50:27]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[home]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -12472,6 +12648,10 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2024-04-16]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_dropdown-ajax]]></wp:meta_key>
@@ -12516,6 +12696,10 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2024-08-26]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
+							<wp:meta_value><![CDATA[2024-08-27]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -12563,6 +12747,10 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2024-04-16]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_image-type]]></wp:meta_key>
@@ -12636,6 +12824,10 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 							<wp:meta_value><![CDATA[2024-04-16]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_image-type]]></wp:meta_key>
 							<wp:meta_value><![CDATA[image]]></wp:meta_value>
 						</wp:postmeta>
@@ -12697,6 +12889,10 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2024-04-16]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_image-type]]></wp:meta_key>
@@ -12762,6 +12958,10 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 							<wp:meta_value><![CDATA[2024-04-16]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_image-type]]></wp:meta_key>
 							<wp:meta_value><![CDATA[image]]></wp:meta_value>
 						</wp:postmeta>
@@ -12823,6 +13023,10 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2024-04-16]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_image-type]]></wp:meta_key>
@@ -12896,6 +13100,10 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2024-04-16]]></wp:meta_value>
 						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
+						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[]]></title>
@@ -12955,6 +13163,10 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2024-04-16]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -13016,6 +13228,10 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2024-04-16]]></wp:meta_value>
 						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
+						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[Country]]></title>
@@ -13062,6 +13278,10 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2024-04-16]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_image-type]]></wp:meta_key>
@@ -13127,6 +13347,10 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 							<wp:meta_value><![CDATA[2024-04-16]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_image-type]]></wp:meta_key>
 							<wp:meta_value><![CDATA[image]]></wp:meta_value>
 						</wp:postmeta>
@@ -13188,6 +13412,10 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2024-04-16]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_image-type]]></wp:meta_key>
@@ -13261,6 +13489,10 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2024-04-16]]></wp:meta_value>
 						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
+						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[]]></title>
@@ -13321,19 +13553,23 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2024-04-16]]></wp:meta_value>
 						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
+						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[]]></title>
-					<link>https://dummy.xtemos.com/woodmart2/gutenberg/2024/08/27/9380/</link>
+					<link>https://dummy.xtemos.com/woodmart2/gutenberg/2025/12/12/9380/</link>
 					<pubDate>Tue, 16 Apr 2024 13:18:26 +0000</pubDate>
 					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/gutenberg/2024/04/16/</guid>
 											<content:encoded><![CDATA[ ]]></content:encoded>
 															<wp:post_id>9380</wp:post_id>
-					<wp:post_date><![CDATA[2024-08-27 09:28:28]]></wp:post_date>
+					<wp:post_date><![CDATA[2025-12-12 15:50:27]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-04-16 13:18:26]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-08-27 09:28:28]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-08-27 09:28:28]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-12-12 15:50:27]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-12-12 15:50:27]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[9380]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -13375,7 +13611,7 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_dropdown-ajax]]></wp:meta_key>
-							<wp:meta_value><![CDATA[yes]]></wp:meta_value>
+							<wp:meta_value><![CDATA[no]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
@@ -13429,19 +13665,23 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2024-08-26]]></wp:meta_value>
 						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
+							<wp:meta_value><![CDATA[2024-08-27]]></wp:meta_value>
+						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[]]></title>
-					<link>https://dummy.xtemos.com/woodmart2/gutenberg/2024/08/27/9381/</link>
+					<link>https://dummy.xtemos.com/woodmart2/gutenberg/2025/12/12/9381/</link>
 					<pubDate>Tue, 16 Apr 2024 13:18:26 +0000</pubDate>
 					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/gutenberg/2024/04/16/</guid>
 											<content:encoded><![CDATA[ ]]></content:encoded>
 															<wp:post_id>9381</wp:post_id>
-					<wp:post_date><![CDATA[2024-08-27 09:28:28]]></wp:post_date>
+					<wp:post_date><![CDATA[2025-12-12 15:50:27]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-04-16 13:18:26]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-08-27 09:28:28]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-08-27 09:28:28]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-12-12 15:50:27]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-12-12 15:50:27]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[9381]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -13490,6 +13730,10 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 							<wp:meta_value><![CDATA[2024-04-16]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2024-04-26]]></wp:meta_value>
 						</wp:postmeta>
@@ -13517,19 +13761,23 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2024-08-26]]></wp:meta_value>
 						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
+							<wp:meta_value><![CDATA[2024-08-27]]></wp:meta_value>
+						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[]]></title>
-					<link>https://dummy.xtemos.com/woodmart2/gutenberg/2024/08/27/9387/</link>
+					<link>https://dummy.xtemos.com/woodmart2/gutenberg/2025/12/12/9387/</link>
 					<pubDate>Tue, 16 Apr 2024 13:18:26 +0000</pubDate>
 					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/gutenberg/2024/04/16/</guid>
 											<content:encoded><![CDATA[ ]]></content:encoded>
 															<wp:post_id>9387</wp:post_id>
-					<wp:post_date><![CDATA[2024-08-27 09:28:28]]></wp:post_date>
+					<wp:post_date><![CDATA[2025-12-12 15:50:27]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-04-16 13:18:26]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-08-27 09:28:28]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-08-27 09:28:28]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-12-12 15:50:27]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-12-12 15:50:27]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[9387]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -13578,6 +13826,10 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 							<wp:meta_value><![CDATA[2024-04-16]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2024-04-26]]></wp:meta_value>
 						</wp:postmeta>
@@ -13605,19 +13857,23 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2024-08-26]]></wp:meta_value>
 						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
+							<wp:meta_value><![CDATA[2024-08-27]]></wp:meta_value>
+						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[]]></title>
-					<link>https://dummy.xtemos.com/woodmart2/gutenberg/2024/08/27/9388/</link>
+					<link>https://dummy.xtemos.com/woodmart2/gutenberg/2025/12/12/9388/</link>
 					<pubDate>Tue, 16 Apr 2024 13:18:26 +0000</pubDate>
 					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/gutenberg/2024/04/16/</guid>
 											<content:encoded><![CDATA[ ]]></content:encoded>
 															<wp:post_id>9388</wp:post_id>
-					<wp:post_date><![CDATA[2024-08-27 09:28:28]]></wp:post_date>
+					<wp:post_date><![CDATA[2025-12-12 15:50:27]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-04-16 13:18:26]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-08-27 09:28:28]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-08-27 09:28:28]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-12-12 15:50:27]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-12-12 15:50:27]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[9388]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -13666,6 +13922,10 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 							<wp:meta_value><![CDATA[2024-04-16]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2024-04-26]]></wp:meta_value>
 						</wp:postmeta>
@@ -13693,18 +13953,22 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2024-08-26]]></wp:meta_value>
 						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
+							<wp:meta_value><![CDATA[2024-08-27]]></wp:meta_value>
+						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[Product Loop]]></title>
-					<link>https://dummy.xtemos.com/woodmart2/gutenberg/2024/08/27/product-loop-2/</link>
+					<link>https://dummy.xtemos.com/woodmart2/gutenberg/2025/12/12/product-loop-2/</link>
 					<pubDate>Tue, 16 Apr 2024 13:18:26 +0000</pubDate>
 					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/gutenberg/2024/04/16/product-loop-2/</guid>
 															<wp:post_id>9394</wp:post_id>
-					<wp:post_date><![CDATA[2024-08-27 09:28:28]]></wp:post_date>
+					<wp:post_date><![CDATA[2025-12-12 15:50:27]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-04-16 13:18:26]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-08-27 09:28:28]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-08-27 09:28:28]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-12-12 15:50:27]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-12-12 15:50:27]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[product-loop-2]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -13769,6 +14033,10 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 							<wp:meta_value><![CDATA[2024-04-16]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_dropdown-ajax]]></wp:meta_key>
 							<wp:meta_value><![CDATA[yes]]></wp:meta_value>
 						</wp:postmeta>
@@ -13800,18 +14068,22 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2024-08-26]]></wp:meta_value>
 						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
+							<wp:meta_value><![CDATA[2024-08-27]]></wp:meta_value>
+						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[Single Product]]></title>
-					<link>https://dummy.xtemos.com/woodmart2/gutenberg/2024/08/27/single-product-2/</link>
+					<link>https://dummy.xtemos.com/woodmart2/gutenberg/2025/12/12/single-product-2/</link>
 					<pubDate>Tue, 16 Apr 2024 13:18:26 +0000</pubDate>
 					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/gutenberg/2024/04/16/single-product-2/</guid>
 															<wp:post_id>9395</wp:post_id>
-					<wp:post_date><![CDATA[2024-08-27 09:28:28]]></wp:post_date>
+					<wp:post_date><![CDATA[2025-12-12 15:50:27]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-04-16 13:18:26]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-08-27 09:28:28]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-08-27 09:28:28]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-12-12 15:50:27]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-12-12 15:50:27]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[single-product-2]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -13876,6 +14148,10 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 							<wp:meta_value><![CDATA[2024-04-16]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_dropdown-ajax]]></wp:meta_key>
 							<wp:meta_value><![CDATA[yes]]></wp:meta_value>
 						</wp:postmeta>
@@ -13907,18 +14183,22 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2024-08-26]]></wp:meta_value>
 						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
+							<wp:meta_value><![CDATA[2024-08-27]]></wp:meta_value>
+						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[Features]]></title>
-					<link>https://dummy.xtemos.com/woodmart2/gutenberg/2024/08/27/features-2/</link>
+					<link>https://dummy.xtemos.com/woodmart2/gutenberg/2025/12/12/features-2/</link>
 					<pubDate>Tue, 16 Apr 2024 13:18:26 +0000</pubDate>
 					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/gutenberg/2024/04/16/features-2/</guid>
 															<wp:post_id>9396</wp:post_id>
-					<wp:post_date><![CDATA[2024-08-27 09:28:28]]></wp:post_date>
+					<wp:post_date><![CDATA[2025-12-12 15:50:27]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-04-16 13:18:26]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-08-27 09:28:28]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-08-27 09:28:28]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-12-12 15:50:27]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-12-12 15:50:27]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[features-2]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -13983,6 +14263,10 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 							<wp:meta_value><![CDATA[2024-04-16]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_dropdown-ajax]]></wp:meta_key>
 							<wp:meta_value><![CDATA[yes]]></wp:meta_value>
 						</wp:postmeta>
@@ -14013,6 +14297,10 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2024-08-26]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
+							<wp:meta_value><![CDATA[2024-08-27]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -14060,6 +14348,10 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2024-04-16]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_image-type]]></wp:meta_key>
@@ -14125,6 +14417,10 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 							<wp:meta_value><![CDATA[2024-04-16]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_image-type]]></wp:meta_key>
 							<wp:meta_value><![CDATA[image]]></wp:meta_value>
 						</wp:postmeta>
@@ -14186,6 +14482,10 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2024-04-16]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_image-type]]></wp:meta_key>
@@ -14251,6 +14551,10 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 							<wp:meta_value><![CDATA[2024-04-16]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_image-type]]></wp:meta_key>
 							<wp:meta_value><![CDATA[image]]></wp:meta_value>
 						</wp:postmeta>
@@ -14312,6 +14616,10 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2024-04-16]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_image-type]]></wp:meta_key>

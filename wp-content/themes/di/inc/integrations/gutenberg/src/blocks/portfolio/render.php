@@ -1,7 +1,20 @@
 <?php
+/**
+ * Gutenberg Portfolio Block Render.
+ *
+ * @package woodmart
+ */
+
 if ( ! function_exists( 'wd_gutenberg_portfolio' ) ) {
+	/**
+	 * Gutenberg Portfolio Block Render.
+	 *
+	 * @param array  $block_attributes Block attributes.
+	 * @param string $content Inner content.
+	 * @return false|string|string[]|null
+	 */
 	function wd_gutenberg_portfolio( $block_attributes, $content ) {
-		wd_replace_boolean_to_yes_no( array( 'hide_pagination_control', 'hide_prev_next_buttons', 'scroll_per_page', 'center_mode', 'wrap', 'autoplay', 'hide_scrollbar', 'autoheight', 'disable_overflow_carousel', 'dynamic_pagination_control', 'scroll_carousel_init' ), $block_attributes );
+		woodmart_replace_boolean_to_yes_no( array( 'hide_pagination_control', 'hide_prev_next_buttons', 'scroll_per_page', 'center_mode', 'wrap', 'autoplay', 'hide_scrollbar', 'autoheight', 'disable_overflow_carousel', 'dynamic_pagination_control', 'scroll_carousel_init' ), $block_attributes );
 
 		$block_attributes['wrapper_classes'] = wd_get_gutenberg_element_classes( $block_attributes );
 		$block_attributes['el_id']           = wd_get_gutenberg_element_id( $block_attributes );

@@ -3,7 +3,7 @@
  * JS libraries.
  *
  * @version 1.0
- * @package xts
+ * @package woodmart
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

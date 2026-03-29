@@ -247,6 +247,16 @@
                                         "value": "m",
                                         "type": "selector"
                                     },
+                                    "icon_width": {
+                                        "id": "icon_width",
+                                        "value": "",
+                                        "type": "slider"
+                                    },
+                                    "icon_height": {
+                                        "id": "icon_height",
+                                        "value": "",
+                                        "type": "slider"
+                                    },
                                     "bg_overlay": {
                                         "id": "bg_overlay",
                                         "value": false,
@@ -434,6 +444,11 @@
                                         "id": "form_shape",
                                         "value": "",
                                         "type": "options"
+                                    },
+                                    "form_width": {
+                                        "id": "form_width",
+                                        "value": "",
+                                        "type": "slider"
                                     },
                                     "form_height": {
                                         "id": "form_height",
@@ -639,12 +654,12 @@
                                     },
                                     "style": {
                                         "id": "style",
-                                        "value": "8",
+                                        "value": "7",
                                         "type": "selector"
                                     },
                                     "wrap_type": {
                                         "id": "wrap_type",
-                                        "value": "icon_only",
+                                        "value": "icon_and_text",
                                         "type": "selector"
                                     },
                                     "color": {
@@ -948,6 +963,16 @@
                                         "id": "custom_icon_width",
                                         "value": 0,
                                         "type": "slider"
+                                    },
+                                    "icon_width": {
+                                        "id": "icon_width",
+                                        "value": "",
+                                        "type": "slider"
+                                    },
+                                    "icon_height": {
+                                        "id": "icon_height",
+                                        "value": "",
+                                        "type": "slider"
                                     }
                                 }
                             }
@@ -1025,7 +1050,7 @@
                                     },
                                     "style": {
                                         "id": "style",
-                                        "value": "8",
+                                        "value": "7",
                                         "type": "selector"
                                     },
                                     "wrap_type": {

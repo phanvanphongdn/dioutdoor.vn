@@ -2,7 +2,7 @@
 /**
  * API integration.
  *
- * @package xts
+ * @package woodmart
  */
 
 namespace XTS;

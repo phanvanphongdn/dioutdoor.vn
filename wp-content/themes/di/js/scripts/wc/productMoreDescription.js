@@ -42,7 +42,7 @@
 
 			$this.parent().addClass('wd-more-desc-full');
 
-			woodmartThemeModule.$document.trigger('wdProductMoreDescriptionOpen', [$this.parents('.wd-hover-with-fade')]);
+			woodmartThemeModule.$document.trigger('wdProductHoverContentRecalc', [$this.parents('.wd-hover-with-fade')]);
 		});
 	};
 

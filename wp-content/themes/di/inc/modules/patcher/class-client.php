@@ -2,7 +2,7 @@
 /**
  * The client class for patch.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Modules\Patcher;

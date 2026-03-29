@@ -2,7 +2,7 @@
 /**
  * Customer "back in stock" email
  *
- * @package XTS
+ * @package woodmart
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

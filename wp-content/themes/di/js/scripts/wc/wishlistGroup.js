@@ -325,7 +325,7 @@
 			sessionStorage.setItem( woodmart_settings.wishlist_hash_name, hash );
 
 			Cookies.set(cookiesHashName, hash, {
-				expires: 7,
+				expires: parseInt(woodmart_settings.wishlist_cookie_expires),
 				path   : woodmart_settings.cookie_path,
 				secure : woodmart_settings.cookie_secure_param
 			});

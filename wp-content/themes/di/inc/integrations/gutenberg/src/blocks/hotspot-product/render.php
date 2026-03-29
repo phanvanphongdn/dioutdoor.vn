@@ -34,7 +34,9 @@ if ( ! function_exists( 'wd_gutenberg_hotspot_product_block' ) ) {
 				' ',
 				array_filter(
 					array(
+						'btn',
 						'button',
+						'btn-accent',
 						'product_type_' . $product->get_type(),
 						$product->is_purchasable() && $product->is_in_stock() ? 'add_to_cart_button' : '',
 						$product->supports( 'ajax_add_to_cart' ) ? 'ajax_add_to_cart' : '',

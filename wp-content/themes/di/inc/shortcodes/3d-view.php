@@ -1,31 +1,48 @@
-<?php if ( ! defined( 'WOODMART_THEME_DIR' ) ) exit( 'No direct script access allowed' );
-
+<?php
 /**
-* ------------------------------------------------------------------------------------------------
-* 3D view - images in 360 slider
-* ------------------------------------------------------------------------------------------------
-*/
+ * Shortcode for 3D view element.
+ *
+ * @package woodmart
+ */
 
-if( ! function_exists( 'woodmart_shortcode_3d_view' ) ) {
-	function woodmart_shortcode_3d_view( $atts, $content ) {
-		$click = $output = $class = '';
-		extract( shortcode_atts( array(
-			'images' => '',
-			'img_size' => 'full',
-			'title' => '',
-			'style' => '',
-			'el_class' => '',
-		), $atts ) );
+if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
+	exit( 'No direct script access allowed' );
+}
 
-		$id = rand( 100, 999 );
+if ( ! function_exists( 'woodmart_shortcode_3d_view' ) ) {
+	/**
+	 * 3D view shortcode.
+	 *
+	 * @param array $atts Shortcode attributes.
+	 *
+	 * @return string
+	 */
+	function woodmart_shortcode_3d_view( $atts ) {
+		$click  = '';
+		$output = '';
+		$class  = '';
 
-		$images = explode( ',', $images );
+		extract( // phpcs:ignore WordPress.PHP.DontExtract.extract_extract
+			shortcode_atts(
+				array(
+					'images'   => '',
+					'img_size' => 'full',
+					'title'    => '',
+					'style'    => '',
+					'el_class' => '',
+				),
+				$atts
+			)
+		);
 
-		$class .= ' ' . $el_class;
-
+		$id           = wp_rand( 100, 999 );
+		$images       = explode( ',', $images );
+		$class       .= ' ' . $el_class;
 		$frames_count = count( $images );
 
-		if ( $frames_count < 2 ) return;
+		if ( $frames_count < 2 ) {
+			return;
+		}
 
 		ob_start();
 
@@ -50,13 +67,13 @@ if( ! function_exists( 'woodmart_shortcode_3d_view' ) ) {
 
 		?>
 			<div class="wd-threed-view<?php echo esc_attr( $class ); ?> threed-id-<?php echo esc_attr( $id ); ?>" data-args='<?php echo wp_json_encode( $args ); ?>'>
-				<?php if ( ! empty( $title ) ): ?>
+				<?php if ( ! empty( $title ) ) : ?>
 					<h3 class="threed-title"><span><?php echo wp_kses( $title, woodmart_get_allowed_html() ); ?></span></h3>
 				<?php endif ?>
 				<ul class="threed-view-images"></ul>
-			    <div class="spinner">
-			        <span>0%</span>
-			    </div>
+				<div class="spinner">
+					<span>0%</span>
+				</div>
 			</div>
 		<?php
 

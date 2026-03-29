@@ -1,30 +1,41 @@
 <?php
+/**
+ * Header builder manager class file.
+ *
+ * @package woodmart
+ */
 
 namespace XTS\Modules\Header_Builder;
 
 use WPBMap;
 
 /**
- * ------------------------------------------------------------------------------------------------
  * Handle backend AJAX actions. Creat, load, remove headers from the backend interface with AJAX.
- * ------------------------------------------------------------------------------------------------
  */
 class Manager {
-	private $_factory;
+	/**
+	 * Header factory.
+	 *
+	 * @var Header_Factory
+	 */
+	private $factory;
 
 	/**
 	 * Headers list.
 	 *
-	 * @var
+	 * @var Headers_List
 	 */
-	private $_list;
+	private $list;
 
 	/**
 	 * Constructor.
+	 *
+	 * @param Header_Factory $factory Header factory.
+	 * @param Headers_List   $headers_list Headers list.
 	 */
-	public function __construct( $factory, $list ) {
-		$this->_factory = $factory;
-		$this->_list    = $list;
+	public function __construct( $factory, $headers_list ) {
+		$this->factory = $factory;
+		$this->list    = $headers_list;
 
 		add_action( 'wp_ajax_woodmart_save_header', array( $this, 'save_header' ) );
 		add_action( 'wp_ajax_woodmart_duplicate_header', array( $this, 'duplicate_header' ) );
@@ -44,7 +55,7 @@ class Manager {
 		check_ajax_referer( 'woodmart-builder-save-header-nonce', 'security' );
 
 		$id        = isset( $_GET['id'] ) ? sanitize_text_field( wp_unslash( $_GET['id'] ) ) : '';
-		$header    = $this->_factory->get_header( $id );
+		$header    = $this->factory->get_header( $id );
 		$structure = $header->get_structure();
 		$settings  = $header->get_settings();
 		$name      = $header->get_name();
@@ -52,9 +63,9 @@ class Manager {
 		$new_id   = $this->generate_id();
 		$new_name = $name . ' ' . esc_html__( '(Copy)', 'woodmart' );
 
-		$header = $this->_factory->create_new( $new_id, $new_name, $structure, $settings );
+		$header = $this->factory->create_new( $new_id, $new_name, $structure, $settings );
 
-		$this->_list->add_header( $new_id, $new_name );
+		$this->list->add_header( $new_id, $new_name );
 
 		$this->send_header_data( $header );
 	}
@@ -67,16 +78,16 @@ class Manager {
 	public function save_header() {
 		check_ajax_referer( 'woodmart-builder-save-header-nonce', 'security' );
 
-		$structure = stripslashes( $_POST['structure'] ); //phpcs:ignore
-		$settings  = stripslashes( $_POST['settings'] ); //phpcs:ignore
+		$structure = stripslashes( $_POST['structure'] ); // phpcs:ignore WordPress.Security
+		$settings  = stripslashes( $_POST['settings'] ); // phpcs:ignore WordPress.Security
 
 		// If we import a new header we don't have an ID.
-		$id   = ( isset( $_POST['id'] ) ) ? sanitize_text_field( stripslashes( $_POST['id'] ) ) : $this->generate_id(); //phpcs:ignore
-		$name = sanitize_text_field( stripslashes( $_POST['name'] ) ); //phpcs:ignore
+		$id   = ( isset( $_POST['id'] ) ) ? sanitize_text_field( stripslashes( $_POST['id'] ) ) : $this->generate_id(); // phpcs:ignore WordPress.Security
+		$name = sanitize_text_field( stripslashes( $_POST['name'] ) ); // phpcs:ignore WordPress.Security
 
-		$header = $this->_factory->update_header( $id, $name, json_decode( $structure, true ), json_decode( $settings, true ) );
+		$header = $this->factory->update_header( $id, $name, json_decode( $structure, true ), json_decode( $settings, true ) );
 
-		$this->_list->add_header( $id, $name );
+		$this->list->add_header( $id, $name );
 
 		$this->send_header_data( $header );
 	}
@@ -89,13 +100,13 @@ class Manager {
 	public function load_header() {
 		check_ajax_referer( 'woodmart-builder-load-header-nonce', 'security' );
 
-		$id   = sanitize_text_field( $_GET['id'] ); //phpcs:ignore
-		$base = ( isset( $_GET['base'] ) ) ? sanitize_text_field( $_GET['base'] ) : false; //phpcs:ignore
+		$id   = ( isset( $_GET['id'] ) ) ? sanitize_text_field( $_GET['id'] ) : ''; // phpcs:ignore WordPress.Security
+		$base = ( isset( $_GET['base'] ) ) ? sanitize_text_field( $_GET['base'] ) : false; // phpcs:ignore WordPress.Security
 
-		if ( isset( $_GET['initial'] ) && $_GET['initial'] || $base ) { //phpcs:ignore
+		if ( ( isset( $_GET['initial'] ) && $_GET['initial'] ) || $base ) { // phpcs:ignore WordPress.Security
 			$header = $this->new_header( $base );
 		} else {
-			$header = $this->_factory->get_header( $id );
+			$header = $this->factory->get_header( $id );
 		}
 
 		$this->send_header_data( $header );
@@ -111,7 +122,7 @@ class Manager {
 	private function send_header_data( $header ) {
 		$data = $header->get_data();
 
-		$data['list'] = $this->_list->get_all();
+		$data['list'] = $this->list->get_all();
 
 		echo wp_json_encode( $data );
 
@@ -126,12 +137,12 @@ class Manager {
 	 * @return mixed
 	 */
 	private function new_header( $base = false ) {
-		$list = $this->_list->get_all();
+		$list = $this->list->get_all();
 		$id   = $this->generate_id();
 		$name = esc_html__( 'Header layout', 'woodmart' ) . ' (' . ( count( $list ) + 1 ) . ')';
 
 		if ( $base ) {
-			$examples = $this->_list->get_examples();
+			$examples = $this->list->get_examples();
 
 			if ( isset( $examples[ $base ] ) ) {
 				$data      = json_decode( $this->get_example_json( $base ), true );
@@ -139,17 +150,17 @@ class Manager {
 				$settings  = $data['settings'];
 				$name      = $data['name'];
 			} elseif ( isset( $list[ $base ] ) ) {
-				$data      = $this->_factory->get_header( $base );
+				$data      = $this->factory->get_header( $base );
 				$structure = $data->get_structure();
 				$settings  = $data->get_settings();
 			}
 
-			$header = $this->_factory->create_new( $id, $name, $structure, $settings );
+			$header = $this->factory->create_new( $id, $name, $structure, $settings );
 		} else {
-			$header = $this->_factory->create_new( $id, $name );
+			$header = $this->factory->create_new( $id, $name );
 		}
 
-		$this->_list->add_header( $id, $name );
+		$this->list->add_header( $id, $name );
 
 		return $header;
 	}
@@ -186,7 +197,7 @@ class Manager {
 	public function remove_header() {
 		check_ajax_referer( 'woodmart-builder-remove-header-nonce', 'security' );
 
-		$id = sanitize_text_field( stripslashes( $_GET['id'] ) ); //phpcs:ignore
+		$id = sanitize_text_field( stripslashes( $_GET['id'] ) ); // phpcs:ignore WordPress.Security
 
 		delete_option( 'whb_' . $id );
 		delete_option( 'xts-' . $id . '-file-data' );
@@ -197,12 +208,11 @@ class Manager {
 
 		echo wp_json_encode(
 			array(
-				'list' => $this->_list->remove( $id ),
+				'list' => $this->list->remove( $id ),
 			)
 		);
 
 		wp_die();
-
 	}
 
 	/**
@@ -213,7 +223,7 @@ class Manager {
 	public function set_default_header() {
 		check_ajax_referer( 'woodmart-builder-set-default-header-nonce', 'security' );
 
-		$id = sanitize_text_field( stripslashes( $_GET['id'] ) ); //phpcs:ignore
+		$id = sanitize_text_field( stripslashes( $_GET['id'] ) ); // phpcs:ignore WordPress.Security
 
 		update_option( 'whb_main_header', $id );
 
@@ -255,13 +265,13 @@ class Manager {
 	public function get_header_html() {
 		check_ajax_referer( 'woodmart-builder-header-html-nonce', 'security' );
 
-		$structure = stripslashes( $_POST['structure'] );
-		$settings  = stripslashes( $_POST['settings'] );
+		$structure = stripslashes( $_POST['structure'] ); // phpcs:ignore WordPress.Security
+		$settings  = stripslashes( $_POST['settings'] ); // phpcs:ignore WordPress.Security
 
-		$id = ( isset( $_POST['id'] ) ) ? sanitize_text_field( stripslashes( $_POST['id'] ) ) : $this->_generate_id();
+		$id = ( isset( $_POST['id'] ) ) ? sanitize_text_field( stripslashes( $_POST['id'] ) ) : $this->generate_id(); // phpcs:ignore WordPress.Security
 
-		$name   = sanitize_text_field( stripslashes( $_POST['name'] ) ); //phpcs:ignore
-		$header = $this->_factory->draft_header( $id, $name, json_decode( $structure, true ), json_decode( $settings, true ) );
+		$name   = sanitize_text_field( stripslashes( $_POST['name'] ) ); // phpcs:ignore WordPress.Security
+		$header = $this->factory->draft_header( $id, $name, json_decode( $structure, true ), json_decode( $settings, true ) );
 		$data   = $header->get_data();
 
 		$header_settings = $header->get_settings();
@@ -270,7 +280,7 @@ class Manager {
 		$frontend_instance->header       = $header;
 		$GLOBALS['woodmart_hb_frontend'] = $frontend_instance;
 
-		$data['list'] = $this->_list->get_all();
+		$data['list'] = $this->list->get_all();
 
 		ob_start();
 
@@ -281,9 +291,9 @@ class Manager {
 		$hb_frontend = Frontend::get_instance();
 
 		$styles = new Styles();
-		echo '<header ' . woodmart_get_header_classes( false, $header->get_options(), $id ) . '>';
+		echo '<header ' . woodmart_get_header_classes( false, $header->get_options(), $id ) . '>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
-		echo '<style>' . $styles->get_all_css( $header->get_structure(), $header->get_options() ) . '</style>';
+		echo '<style>' . $styles->get_all_css( $header->get_structure(), $header->get_options() ) . '</style>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 		if ( ! empty( $header_settings['overlap'] ) && ! empty( $header_settings['boxed'] ) ) {
 			woodmart_enqueue_inline_style( 'header-boxed' );
@@ -297,7 +307,7 @@ class Manager {
 
 		$data['header_html'] = ob_get_clean();
 
-		echo json_encode( $data );
+		echo wp_json_encode( $data );
 		wp_die();
 	}
 
@@ -309,7 +319,7 @@ class Manager {
 	public function get_pages_url_action() {
 		check_ajax_referer( 'woodmart-builder-header-search-page-nonce', 'security' );
 
-		$name = isset( $_GET['name'] ) ? sanitize_text_field( $_GET['name'] ) : ''; // phpcs:ignore
+		$name = isset( $_GET['name'] ) ? sanitize_text_field( $_GET['name'] ) : ''; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
 
 		$args = array(
 			's'              => $name,

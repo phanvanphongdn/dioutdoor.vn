@@ -16,7 +16,7 @@
 	<!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 	<!--    contained in this file into your site. -->
 
-	<!-- generator="WordPress/6.7.4" created="2025-10-13 11:45" -->
+	<!-- generator="WordPress/6.7.4" created="2026-02-25 15:14" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -29,14 +29,14 @@
 	<title>Elementor 2.0 WoodMart dummy</title>
 	<link>https://dummy.xtemos.com/woodmart2/elementor</link>
 	<description>Just another WoodMart Dummy 2.0 Sites site</description>
-	<pubDate>Mon, 13 Oct 2025 11:45:26 +0000</pubDate>
+	<pubDate>Wed, 25 Feb 2026 15:14:46 +0000</pubDate>
 	<language>en-US</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
 	<wp:base_site_url>https://dummy.xtemos.com/woodmart2/</wp:base_site_url>
 	<wp:base_blog_url>https://dummy.xtemos.com/woodmart2/elementor</wp:base_blog_url>
 
 	
-					<wp:term>
+							<wp:term>
 			<wp:term_id>151</wp:term_id>
 			<wp:term_taxonomy><![CDATA[woodmart_slider]]></wp:term_taxonomy>
 			<wp:term_slug><![CDATA[black-friday-slider]]></wp:term_slug>
@@ -202,47 +202,8 @@
 			<wp:meta_key><![CDATA[autoplay_speed]]></wp:meta_key>
 			<wp:meta_value><![CDATA[25000]]></wp:meta_value>
 		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-151-css-data]]></wp:meta_key>
-			<wp:meta_value><![CDATA[#slider-151 .wd-slide {
-	min-height: 465px;
-}
-
-@media (max-width: 1024px) {
-	#slider-151 .wd-slide {
-		min-height: 465px;
-	}
-}
-
-@media (max-width: 767px) {
-	#slider-151 .wd-slide {
-		min-height: 465px;
-	}
-}
-]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-151-version]]></wp:meta_key>
-			<wp:meta_value><![CDATA[8.2.0]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-151-site-url]]></wp:meta_key>
-			<wp:meta_value><![CDATA[573d753390f46baa14c4ee4b10cec742]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-151-credentials]]></wp:meta_key>
-			<wp:meta_value><![CDATA[requested]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-151-file-data]]></wp:meta_key>
-			<wp:meta_value><![CDATA[a:3:{s:4:"path";s:36:"/2025/08/xts-term-151-1755728213.css";s:13:"theme_version";s:5:"8.2.0";s:8:"site_url";s:32:"573d753390f46baa14c4ee4b10cec742";}]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-151-status]]></wp:meta_key>
-			<wp:meta_value><![CDATA[valid]]></wp:meta_value>
-		</wp:termmeta>
 		</wp:term>
-		
+				
 	<generator>https://wordpress.org/?v=6.7.4</generator>
 
 					<item>
@@ -267,10 +228,6 @@
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/black-friday-call-icon.svg]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[black-friday-top-banner]]></title>
@@ -293,10 +250,6 @@
 																					<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/black-friday-top-banner.jpg]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -321,10 +274,6 @@
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/black-friday-popup.jpg]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[black-friday-page-title]]></title>
@@ -347,10 +296,6 @@
 																					<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/black-friday-page-title.jpg]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -375,10 +320,6 @@
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/black-friday-hotspots-banner.jpg]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[black-friday-category-1]]></title>
@@ -401,10 +342,6 @@
 																					<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/black-friday-category-1.jpg]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -429,10 +366,6 @@
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/black-friday-category-2.jpg]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[black-friday-category-3]]></title>
@@ -455,10 +388,6 @@
 																					<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/black-friday-category-3.jpg]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -483,10 +412,6 @@
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/black-friday-category-4.jpg]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[black-friday-category-5]]></title>
@@ -509,10 +434,6 @@
 																					<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/black-friday-category-5.jpg]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -537,10 +458,6 @@
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/black-friday-category-6.jpg]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[black-friday-product-1]]></title>
@@ -563,10 +480,6 @@
 																					<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/black-friday-product-1.jpg]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -591,10 +504,6 @@
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/black-friday-product-2.jpg]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[black-friday-product-3]]></title>
@@ -617,10 +526,6 @@
 																					<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/black-friday-product-3.jpg]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -645,10 +550,6 @@
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/black-friday-product-4.jpg]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[black-friday-product-5]]></title>
@@ -671,10 +572,6 @@
 																					<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/black-friday-product-5.jpg]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -699,10 +596,6 @@
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/black-friday-product-6.jpg]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[black-friday-slide-1]]></title>
@@ -725,10 +618,6 @@
 																					<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2024/02/black-friday-slide-1.jpg]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -753,10 +642,6 @@
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2024/02/retail-black-friday-slider-two-bg.jpg]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[black-friday-slide-3]]></title>
@@ -779,10 +664,6 @@
 																					<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2024/02/black-friday-slide-3.jpg]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -1905,10 +1786,6 @@ And Accessories							</h4>
 							<wp:meta_key><![CDATA[_elementor_controls_usage]]></wp:meta_key>
 							<wp:meta_value><![CDATA[a:13:{s:17:"slider_revolution";a:3:{s:5:"count";i:1;s:15:"control_percent";i:2;s:8:"controls";a:2:{s:7:"content";a:1:{s:15:"content_section";a:2:{s:14:"revslidertitle";i:1;s:9:"shortcode";i:1;}}s:8:"advanced";a:1:{s:8:"wd_extra";a:1:{s:8:"scroll_y";i:1;}}}}s:6:"column";a:3:{s:5:"count";i:20;s:15:"control_percent";i:1;s:8:"controls";a:3:{s:6:"layout";a:1:{s:6:"layout";a:2:{s:12:"_inline_size";i:2;s:5:"align";i:1;}}s:8:"advanced";a:3:{s:16:"section_advanced";a:1:{s:6:"margin";i:3;}s:8:"wd_extra";a:2:{s:20:"column_sticky_offset";i:20;s:8:"scroll_y";i:20;}s:19:"_section_responsive";a:2:{s:11:"hide_mobile";i:4;s:11:"hide_tablet";i:4;}}s:5:"style";a:1:{s:14:"wd_extra_style";a:1:{s:15:"wd_color_scheme";i:1;}}}}s:11:"wd_products";a:3:{s:5:"count";i:6;s:15:"control_percent";i:9;s:8:"controls";a:3:{s:5:"style";a:3:{s:20:"layout_style_section";a:3:{s:6:"layout";i:3;s:14:"items_per_page";i:6;s:7:"columns";i:3;}s:29:"products_design_style_section";a:7:{s:13:"product_hover";i:6;s:20:"highlighted_products";i:3;s:8:"img_size";i:6;s:18:"stock_progress_bar";i:2;s:13:"element_title";i:3;s:22:"products_bordered_grid";i:2;s:14:"sale_countdown";i:2;}s:22:"carousel_style_section";a:6:{s:15:"slides_per_view";i:3;s:23:"hide_pagination_control";i:3;s:20:"scroll_carousel_init";i:2;s:5:"speed";i:1;s:8:"autoplay";i:1;s:4:"wrap";i:1;}}s:8:"advanced";a:1:{s:8:"wd_extra";a:1:{s:8:"scroll_y";i:6;}}s:7:"content";a:1:{s:23:"general_content_section";a:1:{s:7:"orderby";i:2;}}}}s:7:"section";a:3:{s:5:"count";i:11;s:15:"control_percent";i:0;s:8:"controls";a:3:{s:6:"layout";a:3:{s:14:"section_layout";a:2:{s:16:"content_position";i:2;s:3:"gap";i:6;}s:17:"section_structure";a:1:{s:9:"structure";i:7;}s:15:"wd_extra_layout";a:1:{s:18:"wd_section_stretch";i:3;}}s:8:"advanced";a:2:{s:16:"section_advanced";a:2:{s:6:"margin";i:8;s:7:"padding";i:2;}s:19:"_section_responsive";a:2:{s:20:"reverse_order_tablet";i:1;s:20:"reverse_order_mobile";i:1;}}s:5:"style";a:1:{s:18:"section_background";a:2:{s:21:"background_background";i:2;s:16:"background_color";i:2;}}}}s:8:"wd_title";a:3:{s:5:"count";i:6;s:15:"control_percent";i:4;s:8:"controls";a:3:{s:7:"content";a:1:{s:23:"general_content_section";a:3:{s:8:"subtitle";i:6;s:11:"after_title";i:6;s:5:"title";i:6;}}s:5:"style";a:2:{s:19:"title_style_section";a:4:{s:10:"image_size";i:6;s:27:"title_typography_typography";i:1;s:28:"title_typography_font_weight";i:1;s:26:"title_typography_font_size";i:1;}s:21:"general_style_section";a:4:{s:5:"color";i:5;s:5:"align";i:6;s:5:"style";i:5;s:5:"width";i:6;}}s:8:"advanced";a:3:{s:8:"wd_extra";a:1:{s:8:"scroll_y";i:6;}s:14:"_section_style";a:1:{s:7:"_margin";i:1;}s:17:"_section_position";a:1:{s:14:"_element_width";i:1;}}}}s:9:"wd_banner";a:3:{s:5:"count";i:5;s:15:"control_percent";i:9;s:8:"controls";a:3:{s:7:"content";a:2:{s:21:"image_content_section";a:3:{s:10:"image_size";i:5;s:22:"image_custom_dimension";i:5;s:5:"image";i:5;}s:15:"content_section";a:4:{s:5:"title";i:5;s:8:"subtitle";i:5;s:7:"content";i:5;s:8:"btn_text";i:5;}}s:5:"style";a:4:{s:21:"general_style_section";a:4:{s:5:"hover";i:5;s:21:"woodmart_color_scheme";i:5;s:5:"style";i:5;s:23:"custom_content_bg_color";i:5;}s:20:"button_style_section";a:4:{s:9:"btn_color";i:5;s:8:"btn_size";i:4;s:9:"btn_style";i:5;s:15:"hide_btn_mobile";i:5;}s:20:"layout_style_section";a:2:{s:18:"vertical_alignment";i:5;s:5:"width";i:5;}s:19:"title_style_section";a:2:{s:27:"title_typography_typography";i:5;s:26:"title_typography_font_size";i:5;}}s:8:"advanced";a:1:{s:8:"wd_extra";a:1:{s:8:"scroll_y";i:5;}}}}s:21:"wd_product_categories";a:3:{s:5:"count";i:1;s:15:"control_percent";i:4;s:8:"controls";a:2:{s:5:"style";a:3:{s:20:"design_style_section";a:2:{s:17:"categories_design";i:1;s:22:"categories_with_shadow";i:1;}s:20:"layout_style_section";a:1:{s:5:"style";i:1;}s:22:"carousel_style_section";a:2:{s:15:"slides_per_view";i:1;s:23:"hide_pagination_control";i:1;}}s:8:"advanced";a:1:{s:8:"wd_extra";a:1:{s:8:"scroll_y";i:1;}}}}s:18:"wd_banner_carousel";a:3:{s:5:"count";i:2;s:15:"control_percent";i:5;s:8:"controls";a:3:{s:7:"content";a:1:{s:23:"general_content_section";a:1:{s:16:"content_repeater";i:2;}}s:5:"style";a:3:{s:21:"general_style_section";a:2:{s:5:"hover";i:2;s:21:"woodmart_color_scheme";i:2;}s:20:"button_style_section";a:3:{s:12:"btn_position";i:2;s:9:"btn_color";i:2;s:9:"btn_style";i:2;}s:22:"carousel_style_section";a:4:{s:15:"slides_per_view";i:2;s:14:"slider_spacing";i:2;s:23:"hide_pagination_control";i:2;s:20:"scroll_carousel_init";i:1;}}s:8:"advanced";a:1:{s:8:"wd_extra";a:1:{s:8:"scroll_y";i:2;}}}}s:10:"wd_infobox";a:3:{s:5:"count";i:1;s:15:"control_percent";i:6;s:8:"controls";a:3:{s:7:"content";a:2:{s:20:"icon_content_section";a:4:{s:9:"icon_type";i:1;s:10:"image_size";i:1;s:5:"image";i:1;s:22:"image_custom_dimension";i:1;}s:15:"content_section";a:4:{s:8:"btn_text";i:1;s:8:"subtitle";i:1;s:5:"title";i:1;s:7:"content";i:1;}}s:5:"style";a:4:{s:21:"general_style_section";a:3:{s:9:"alignment";i:1;s:21:"woodmart_color_scheme";i:1;s:15:"image_alignment";i:1;}s:22:"button_content_section";a:1:{s:12:"btn_position";i:1;}s:19:"title_style_section";a:3:{s:27:"title_typography_typography";i:1;s:28:"title_typography_font_weight";i:1;s:26:"title_typography_font_size";i:1;}s:21:"content_style_section";a:2:{s:29:"content_typography_typography";i:1;s:28:"content_typography_font_size";i:1;}}s:8:"advanced";a:1:{s:8:"wd_extra";a:1:{s:8:"scroll_y";i:1;}}}}s:17:"wd_social_buttons";a:3:{s:5:"count";i:1;s:15:"control_percent";i:3;s:8:"controls";a:2:{s:5:"style";a:1:{s:21:"general_style_section";a:4:{s:4:"size";i:1;s:5:"color";i:1;s:5:"align";i:1;s:5:"style";i:1;}}s:8:"advanced";a:1:{s:8:"wd_extra";a:1:{s:8:"scroll_y";i:1;}}}}s:16:"wd_products_tabs";a:3:{s:5:"count";i:1;s:15:"control_percent";i:6;s:8:"controls";a:3:{s:7:"content";a:2:{s:23:"general_content_section";a:1:{s:5:"title";i:1;}s:20:"tabs_content_section";a:1:{s:10:"tabs_items";i:1;}}s:5:"style";a:4:{s:21:"heading_style_section";a:2:{s:6:"design";i:1;s:5:"color";i:1;}s:29:"products_layout_style_section";a:4:{s:6:"layout";i:1;s:7:"columns";i:1;s:14:"items_per_page";i:1;s:10:"pagination";i:1;}s:22:"carousel_style_section";a:2:{s:15:"slides_per_view";i:1;s:23:"hide_pagination_control";i:1;}s:29:"products_design_style_section";a:1:{s:22:"products_bordered_grid";i:1;}}s:8:"advanced";a:1:{s:8:"wd_extra";a:1:{s:8:"scroll_y";i:1;}}}}s:18:"wd_products_widget";a:3:{s:5:"count";i:1;s:15:"control_percent";i:3;s:8:"controls";a:2:{s:7:"content";a:1:{s:23:"general_content_section";a:3:{s:11:"images_size";i:1;s:6:"number";i:1;s:7:"orderby";i:1;}}s:8:"advanced";a:1:{s:8:"wd_extra";a:1:{s:8:"scroll_y";i:1;}}}}s:16:"wd_image_hotspot";a:3:{s:5:"count";i:1;s:15:"control_percent";i:3;s:8:"controls";a:2:{s:7:"content";a:2:{s:23:"general_content_section";a:3:{s:5:"image";i:1;s:10:"image_size";i:1;s:22:"image_custom_dimension";i:1;}s:21:"items_content_section";a:1:{s:5:"items";i:1;}}s:8:"advanced";a:1:{s:8:"wd_extra";a:1:{s:8:"scroll_y";i:1;}}}}}]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[black-friday-large-banner-1]]></title>
@@ -1931,10 +1808,6 @@ And Accessories							</h4>
 																					<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/black-friday-large-banner-1.jpg]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -1959,10 +1832,6 @@ And Accessories							</h4>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/black-friday-small-banner-1.jpg]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[black-friday-small-banner-2]]></title>
@@ -1985,10 +1854,6 @@ And Accessories							</h4>
 																					<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/black-friday-small-banner-2.jpg]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -2013,10 +1878,6 @@ And Accessories							</h4>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/black-friday-small-banner-3.jpg]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[black-friday-small-banner-4]]></title>
@@ -2039,10 +1900,6 @@ And Accessories							</h4>
 																					<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/black-friday-small-banner-4.jpg]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -2067,10 +1924,6 @@ And Accessories							</h4>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/black-friday-large-banner-2.jpg]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[black-friday-discount]]></title>
@@ -2093,10 +1946,6 @@ And Accessories							</h4>
 																					<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/black-friday-discount.svg]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -2121,10 +1970,6 @@ And Accessories							</h4>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/black-friday-hotspots-banner.jpg]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[black-friday-medium-banner-1]]></title>
@@ -2147,10 +1992,6 @@ And Accessories							</h4>
 																					<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/black-friday-medium-banner-1.jpg]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -2175,10 +2016,6 @@ And Accessories							</h4>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/black-friday-medium-banner-2.jpg]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[black-friday-medium-banner-3]]></title>
@@ -2201,10 +2038,6 @@ And Accessories							</h4>
 																					<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/black-friday-medium-banner-3.jpg]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -2229,10 +2062,6 @@ And Accessories							</h4>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/black-friday-small-banner-5.jpg]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[black-friday-small-banner-6]]></title>
@@ -2255,10 +2084,6 @@ And Accessories							</h4>
 																					<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/black-friday-small-banner-6.jpg]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -2283,10 +2108,6 @@ And Accessories							</h4>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/black-friday-product-7.jpg]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[black-friday-product-8]]></title>
@@ -2309,10 +2130,6 @@ And Accessories							</h4>
 																					<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/black-friday-product-8.jpg]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -2337,10 +2154,6 @@ And Accessories							</h4>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/black-friday-product-9.jpg]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[black-friday-product-10]]></title>
@@ -2363,10 +2176,6 @@ And Accessories							</h4>
 																					<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/black-friday-product-10.jpg]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -2391,10 +2200,6 @@ And Accessories							</h4>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/black-friday-product-11.jpg]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[black-friday-product-12]]></title>
@@ -2418,10 +2223,6 @@ And Accessories							</h4>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/black-friday-product-12.jpg]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[digitals-app-store-button]]></title>
@@ -2444,10 +2245,6 @@ And Accessories							</h4>
 																					<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/09/digitals-app-store-button.png]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -2504,10 +2301,6 @@ And Accessories							</h4>
 							<wp:meta_key><![CDATA[_elementor_controls_usage]]></wp:meta_key>
 							<wp:meta_value><![CDATA[a:5:{s:8:"wd_title";a:3:{s:5:"count";i:1;s:15:"control_percent";i:7;s:8:"controls";a:3:{s:7:"content";a:1:{s:23:"general_content_section";a:3:{s:8:"subtitle";i:1;s:11:"after_title";i:1;s:5:"title";i:1;}}s:5:"style";a:4:{s:19:"title_style_section";a:3:{s:10:"image_size";i:1;s:27:"title_typography_typography";i:1;s:26:"title_typography_font_size";i:1;}s:21:"general_style_section";a:3:{s:5:"width";i:1;s:4:"size";i:1;s:5:"align";i:1;}s:18:"text_style_section";a:2:{s:26:"text_typography_typography";i:1;s:25:"text_typography_font_size";i:1;}s:22:"subtitle_style_section";a:2:{s:30:"subtitle_typography_typography";i:1;s:29:"subtitle_typography_font_size";i:1;}}s:8:"advanced";a:2:{s:8:"wd_extra";a:1:{s:8:"scroll_y";i:1;}s:14:"_section_style";a:1:{s:7:"_margin";i:1;}}}}s:12:"wd_mailchimp";a:3:{s:5:"count";i:1;s:15:"control_percent";i:3;s:8:"controls";a:3:{s:7:"content";a:1:{s:23:"general_content_section";a:1:{s:7:"form_id";i:1;}}s:5:"style";a:1:{s:21:"general_style_section";a:2:{s:13:"content_width";i:1;s:9:"alignment";i:1;}}s:8:"advanced";a:2:{s:8:"wd_extra";a:1:{s:8:"scroll_y";i:1;}s:14:"_section_style";a:1:{s:7:"_margin";i:1;}}}}s:13:"wd_text_block";a:3:{s:5:"count";i:1;s:15:"control_percent";i:1;s:8:"controls";a:1:{s:7:"content";a:1:{s:23:"general_content_section";a:1:{s:4:"text";i:1;}}}}s:6:"column";a:3:{s:5:"count";i:1;s:15:"control_percent";i:1;s:8:"controls";a:1:{s:8:"advanced";a:1:{s:8:"wd_extra";a:2:{s:20:"column_sticky_offset";i:1;s:8:"scroll_y";i:1;}}}}s:7:"section";a:3:{s:5:"count";i:1;s:15:"control_percent";i:2;s:8:"controls";a:2:{s:5:"style";a:2:{s:14:"section_border";a:2:{s:12:"border_width";i:1;s:12:"border_color";i:1;}s:18:"section_background";a:3:{s:15:"background_size";i:1;s:17:"background_repeat";i:1;s:21:"background_background";i:1;}}s:8:"advanced";a:1:{s:16:"section_advanced";a:1:{s:7:"padding";i:1;}}}}}]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[google-play-button]]></title>
@@ -2530,10 +2323,6 @@ And Accessories							</h4>
 																					<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/09/google-play-button.png]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -2558,10 +2347,6 @@ And Accessories							</h4>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/09/payment.png]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[shipping]]></title>
@@ -2584,10 +2369,6 @@ And Accessories							</h4>
 																					<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/09/shipping.png]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -3001,10 +2782,6 @@ And Accessories							</h4>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/black-friday-online-payment.svg]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[black-friday-return]]></title>
@@ -3027,10 +2804,6 @@ And Accessories							</h4>
 																					<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/black-friday-return.svg]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -3055,10 +2828,6 @@ And Accessories							</h4>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/black-friday-safe.svg]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[black-friday-shipping]]></title>
@@ -3081,10 +2850,6 @@ And Accessories							</h4>
 																					<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/black-friday-shipping.svg]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -3109,10 +2874,6 @@ And Accessories							</h4>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/black-friday-support.svg]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[black-friday-small-banner-7]]></title>
@@ -3135,10 +2896,6 @@ And Accessories							</h4>
 																					<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/10/black-friday-small-banner-7.jpg]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -3210,19 +2967,20 @@ And Accessories							</h4>
 					<pubDate>Thu, 15 Feb 2024 15:23:08 +0000</pubDate>
 					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/elementor/?post_type=woodmart_slide&#038;p=27671</guid>
-											<content:encoded><![CDATA[<link rel="stylesheet" id="wd-text-block-css" href="https://dummy.xtemos.com/woodmart2/elementor/wp-content/themes/woodmart/css/parts/el-text-block.min.css?ver=7.4.0" type="text/css" media="all" /> 					
+											<content:encoded><![CDATA[<link rel="stylesheet" id="wd-text-block-css" href="https://dummy.xtemos.com/woodmart2/elementor/wp-content/themes/woodmart8/css/parts/el-text-block.min.css?ver=8.4.0" type="text/css" media="all" /> 					
 			<p>UP TO 70% OFF</p>
-						<link rel="stylesheet" id="wd-section-title-css" href="https://dummy.xtemos.com/woodmart2/elementor/wp-content/themes/woodmart/css/parts/el-section-title.min.css?ver=7.4.0" type="text/css" media="all" /> 					
+								<link rel="stylesheet" id="wd-section-title-css" href="https://dummy.xtemos.com/woodmart2/elementor/wp-content/themes/woodmart8/css/parts/el-section-title.min.css?ver=8.4.0" type="text/css" media="all" /> 					
 				<h4>Black Friday</h4> 
 			<p>Promo: <strong>BFRIDAY70</strong></p>
-			<a  href="#">
+								<link rel="stylesheet" id="wd-button-css" href="https://dummy.xtemos.com/woodmart2/elementor/wp-content/themes/woodmart8/css/parts/el-button.min.css?ver=8.4.0" type="text/css" media="all" /> 					
+			<a  href="#" style="--btn-color:#fff;">
 					Start Shopping				
 							</a>]]></content:encoded>
 															<wp:post_id>27671</wp:post_id>
 					<wp:post_date><![CDATA[2024-02-15 15:23:08]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-02-15 15:23:08]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-02-15 15:30:45]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-02-15 15:30:45]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2026-02-25 13:29:59]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2026-02-25 13:29:59]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[black-friday-slide-1]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -3292,15 +3050,15 @@ And Accessories							</h4>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_elementor_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[3.18.3]]></wp:meta_value>
+							<wp:meta_value><![CDATA[3.33.6]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_elementor_data]]></wp:meta_key>
 							<wp:meta_value><![CDATA[[{"id":"ead1e71","elType":"container","settings":{"flex_direction":"column","flex_align_items":"center","flex_gap":{"column":"0","row":"0","isLinked":true,"unit":"px","size":0},"wd_color_scheme":"light","container_sticky_offset":50,"scroll_y":-80},"elements":[{"id":"2b855f1","elType":"widget","settings":{"text":"<p>UP TO <span style=\"color: #f84243;\">70% <\/span>OFF<\/p>","text_color_scheme":"light","text_alignment":"center","typography_typography":"custom","typography_font_size":{"unit":"px","size":18,"sizes":[]},"typography_font_weight":"600","typography_line_height":{"unit":"em","size":1,"sizes":[]},"text_color":"title","_margin":{"unit":"px","top":"0","right":"0","bottom":"10","left":"0","isLinked":false},"_padding":{"unit":"px","top":"7","right":"12","bottom":"7","left":"12","isLinked":false},"_element_width":"initial","_element_custom_width":{"unit":"px","size":156,"sizes":[]},"scroll_y":-80,"wd_animation":"slide-from-top","wd_animation_delay":150,"_border_border":"solid","_border_width":{"unit":"px","top":"1","right":"1","bottom":"1","left":"1","isLinked":true},"_border_color":"#F84243","_border_radius":{"unit":"px","top":"20","right":"20","bottom":"20","left":"20","isLinked":true}},"elements":[],"widgetType":"wd_text_block"},{"id":"9510bf8","elType":"widget","settings":{"subtitle":"","title":"Black Friday","after_title":"","width":{"unit":"px","size":360,"sizes":[]},"width_tablet":{"unit":"px","size":"","sizes":[]},"width_mobile":{"unit":"px","size":"","sizes":[]},"title_typography_typography":"custom","title_typography_font_size":{"unit":"px","size":80,"sizes":[]},"title_typography_font_size_tablet":{"unit":"px","size":60,"sizes":[]},"title_typography_font_size_mobile":{"unit":"px","size":48,"sizes":[]},"title_typography_font_weight":"700","title_typography_line_height":{"unit":"em","size":1,"sizes":[]},"_margin":{"unit":"px","top":"0","right":"0","bottom":"10","left":"0","isLinked":false},"scroll_y":-80,"wd_animation":"slide-from-bottom","wd_animation_delay":200},"elements":[],"widgetType":"wd_title"},{"id":"fa25c7e","elType":"widget","settings":{"text":"<p>Promo: <strong>BFRIDAY70<\/strong><\/p>","text_color_scheme":"light","text_alignment":"center","typography_typography":"custom","typography_font_size":{"unit":"px","size":18,"sizes":[]},"text_color":"title","_margin":{"unit":"px","top":"0","right":"0","bottom":"20","left":"0","isLinked":false},"scroll_y":-80,"wd_animation":"slide-from-bottom","wd_animation_delay":300},"elements":[],"widgetType":"wd_text_block"},{"id":"7b65600","elType":"widget","settings":{"text":"Start Shopping","color":"custom","bg_color":"#F84243","color_scheme":"light","bg_color_hover":"#F72C2C","scroll_y":-80,"wd_animation":"slide-from-bottom","wd_animation_delay":400},"elements":[],"widgetType":"wd_button"}],"isInner":false}]]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
+							<wp:meta_key><![CDATA[_elementor_page_settings]]></wp:meta_key>
+							<wp:meta_value><![CDATA[a:6:{s:10:"hide_title";s:0:"";s:8:"wd_image";a:5:{s:3:"url";s:103:"http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/black-friday-slide-1.jpg";s:2:"id";i:27672;s:4:"size";s:0:"";s:3:"alt";s:0:"";s:6:"source";s:7:"library";}s:11:"wd_bg_image";a:3:{s:3:"url";s:0:"";s:2:"id";s:0:"";s:4:"size";s:0:"";}s:6:"margin";a:6:{s:4:"unit";s:2:"px";s:3:"top";s:0:"";s:5:"right";s:0:"";s:6:"bottom";s:0:"";s:4:"left";s:0:"";s:8:"isLinked";b:1;}s:7:"padding";a:6:{s:4:"unit";s:2:"px";s:3:"top";s:0:"";s:5:"right";s:0:"";s:6:"bottom";s:0:"";s:4:"left";s:0:"";s:8:"isLinked";b:1;}s:21:"background_background";s:0:"";}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -3309,19 +3067,20 @@ And Accessories							</h4>
 					<pubDate>Thu, 15 Feb 2024 15:32:05 +0000</pubDate>
 					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/elementor/?post_type=woodmart_slide&#038;p=27689</guid>
-											<content:encoded><![CDATA[<link rel="stylesheet" id="wd-text-block-css" href="https://dummy.xtemos.com/woodmart2/elementor/wp-content/themes/woodmart/css/parts/el-text-block.min.css?ver=7.4.0" type="text/css" media="all" /> 					
+											<content:encoded><![CDATA[<link rel="stylesheet" id="wd-text-block-css" href="https://dummy.xtemos.com/woodmart2/elementor/wp-content/themes/woodmart8/css/parts/el-text-block.min.css?ver=8.4.0" type="text/css" media="all" /> 					
 			<p>DON'T MISS</p>
-						<link rel="stylesheet" id="wd-section-title-css" href="https://dummy.xtemos.com/woodmart2/elementor/wp-content/themes/woodmart/css/parts/el-section-title.min.css?ver=7.4.0" type="text/css" media="all" /> 					
+								<link rel="stylesheet" id="wd-section-title-css" href="https://dummy.xtemos.com/woodmart2/elementor/wp-content/themes/woodmart8/css/parts/el-section-title.min.css?ver=8.4.0" type="text/css" media="all" /> 					
 				<h4>SAVE UP 30%</h4> 
 			<p>On Woman's Sweatshirts</p>
+								<link rel="stylesheet" id="wd-button-css" href="https://dummy.xtemos.com/woodmart2/elementor/wp-content/themes/woodmart8/css/parts/el-button.min.css?ver=8.4.0" type="text/css" media="all" /> 					
 			<a  href="#">
 					Shop now				
 							</a>]]></content:encoded>
 															<wp:post_id>27689</wp:post_id>
 					<wp:post_date><![CDATA[2024-02-15 15:32:05]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-02-15 15:32:05]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-02-15 15:33:45]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-02-15 15:33:45]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2026-02-25 13:30:54]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2026-02-25 13:30:54]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[black-friday-slide-1-2]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -3391,19 +3150,15 @@ And Accessories							</h4>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_elementor_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[3.18.3]]></wp:meta_value>
+							<wp:meta_value><![CDATA[3.33.6]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_elementor_data]]></wp:meta_key>
 							<wp:meta_value><![CDATA[[{"id":"ead1e71","elType":"container","settings":{"flex_direction":"column","flex_align_items":"center","flex_gap":{"column":"0","row":"0","isLinked":true,"unit":"px","size":0},"wd_color_scheme":"light","container_sticky_offset":50,"scroll_y":-80},"elements":[{"id":"2b855f1","elType":"widget","settings":{"text":"<p>DON'T MISS<\/p>","text_color_scheme":"light","text_alignment":"center","typography_typography":"custom","typography_font_size":{"unit":"px","size":18,"sizes":[]},"typography_font_weight":"600","typography_line_height":{"unit":"em","size":1,"sizes":[]},"text_color":"title","_margin":{"unit":"px","top":"0","right":"0","bottom":"10","left":"0","isLinked":false},"_element_custom_width":{"unit":"px","size":156,"sizes":[]},"scroll_y":-80,"wd_animation":"slide-from-top","wd_animation_delay":150},"elements":[],"widgetType":"wd_text_block"},{"id":"9510bf8","elType":"widget","settings":{"subtitle":"","title":"SAVE UP 30%","after_title":"","width":{"unit":"px","size":360,"sizes":[]},"width_tablet":{"unit":"px","size":"","sizes":[]},"width_mobile":{"unit":"px","size":"","sizes":[]},"title_typography_typography":"custom","title_typography_font_size":{"unit":"px","size":80,"sizes":[]},"title_typography_font_size_tablet":{"unit":"px","size":60,"sizes":[]},"title_typography_font_size_mobile":{"unit":"px","size":48,"sizes":[]},"title_typography_font_weight":"700","title_typography_line_height":{"unit":"em","size":1,"sizes":[]},"_margin":{"unit":"px","top":"0","right":"0","bottom":"10","left":"0","isLinked":false},"scroll_y":-80,"wd_animation":"slide-from-bottom","wd_animation_delay":200},"elements":[],"widgetType":"wd_title"},{"id":"fa25c7e","elType":"widget","settings":{"text":"<p>On Woman's Sweatshirts<\/p>","text_color_scheme":"light","text_alignment":"center","typography_typography":"custom","typography_font_size":{"unit":"px","size":18,"sizes":[]},"text_color":"title","_margin":{"unit":"px","top":"0","right":"0","bottom":"20","left":"0","isLinked":false},"scroll_y":-80,"wd_animation":"slide-from-bottom","wd_animation_delay":300},"elements":[],"widgetType":"wd_text_block"},{"id":"7b65600","elType":"widget","settings":{"text":"Shop now","color":"white","bg_color":"#F84243","color_scheme":"light","bg_color_hover":"#F72C2C","scroll_y":-80,"wd_animation":"slide-from-bottom","wd_animation_delay":400,"style":"bordered"},"elements":[],"widgetType":"wd_button"}],"isInner":false}]]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[black-friday-slide-1]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
+							<wp:meta_key><![CDATA[_elementor_page_settings]]></wp:meta_key>
+							<wp:meta_value><![CDATA[a:6:{s:10:"hide_title";s:0:"";s:8:"wd_image";a:5:{s:3:"url";s:116:"http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/retail-black-friday-slider-two-bg.jpg";s:2:"id";i:27690;s:4:"size";s:0:"";s:3:"alt";s:0:"";s:6:"source";s:7:"library";}s:11:"wd_bg_image";a:3:{s:3:"url";s:0:"";s:2:"id";s:0:"";s:4:"size";s:0:"";}s:6:"margin";a:6:{s:4:"unit";s:2:"px";s:3:"top";s:0:"";s:5:"right";s:0:"";s:6:"bottom";s:0:"";s:4:"left";s:0:"";s:8:"isLinked";b:1;}s:7:"padding";a:6:{s:4:"unit";s:2:"px";s:3:"top";s:0:"";s:5:"right";s:0:"";s:6:"bottom";s:0:"";s:4:"left";s:0:"";s:8:"isLinked";b:1;}s:21:"background_background";s:0:"";}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -3412,10 +3167,11 @@ And Accessories							</h4>
 					<pubDate>Thu, 15 Feb 2024 15:34:07 +0000</pubDate>
 					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/elementor/?post_type=woodmart_slide&#038;p=27698</guid>
-											<content:encoded><![CDATA[<link rel="stylesheet" id="wd-text-block-css" href="https://dummy.xtemos.com/woodmart2/elementor/wp-content/themes/woodmart/css/parts/el-text-block.min.css?ver=7.4.0" type="text/css" media="all" /> 					
+											<content:encoded><![CDATA[<link rel="stylesheet" id="wd-text-block-css" href="https://dummy.xtemos.com/woodmart2/elementor/wp-content/themes/woodmart8/css/parts/el-text-block.min.css?ver=8.4.0" type="text/css" media="all" /> 					
 			<p>SAVE UP 30%</p>
-						<link rel="stylesheet" id="wd-section-title-css" href="https://dummy.xtemos.com/woodmart2/elementor/wp-content/themes/woodmart/css/parts/el-section-title.min.css?ver=7.4.0" type="text/css" media="all" /> 					
+								<link rel="stylesheet" id="wd-section-title-css" href="https://dummy.xtemos.com/woodmart2/elementor/wp-content/themes/woodmart8/css/parts/el-section-title.min.css?ver=8.4.0" type="text/css" media="all" /> 					
 				<h4>BIG SALE</h4> 
+								<link rel="stylesheet" id="wd-button-css" href="https://dummy.xtemos.com/woodmart2/elementor/wp-content/themes/woodmart8/css/parts/el-button.min.css?ver=8.4.0" type="text/css" media="all" /> 					
 			<a  href="#">
 					Shop now				
 							</a>
@@ -3425,8 +3181,8 @@ And Accessories							</h4>
 															<wp:post_id>27698</wp:post_id>
 					<wp:post_date><![CDATA[2024-02-15 15:34:07]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-02-15 15:34:07]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-02-15 15:36:15]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-02-15 15:36:15]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2026-02-25 13:31:51]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2026-02-25 13:31:51]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[black-friday-slide-1-2-2]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -3496,19 +3252,15 @@ And Accessories							</h4>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_elementor_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[3.18.3]]></wp:meta_value>
+							<wp:meta_value><![CDATA[3.33.6]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_elementor_data]]></wp:meta_key>
 							<wp:meta_value><![CDATA[[{"id":"ead1e71","elType":"container","settings":{"flex_direction":"column","flex_gap":{"column":"0","row":"0","isLinked":true,"unit":"px","size":0},"wd_color_scheme":"light","container_sticky_offset":50,"scroll_y":-80},"elements":[{"id":"2b855f1","elType":"widget","settings":{"text":"<p>SAVE UP 30%<\/p>","text_color_scheme":"light","typography_typography":"custom","typography_font_size":{"unit":"px","size":18,"sizes":[]},"typography_font_weight":"600","typography_line_height":{"unit":"em","size":1,"sizes":[]},"text_color":"title","_margin":{"unit":"px","top":"0","right":"0","bottom":"10","left":"0","isLinked":false},"_element_custom_width":{"unit":"px","size":156,"sizes":[]},"scroll_y":-80,"wd_animation":"slide-from-top","wd_animation_delay":150},"elements":[],"widgetType":"wd_text_block"},{"id":"9510bf8","elType":"widget","settings":{"subtitle":"","title":"BIG SALE","after_title":"","width":{"unit":"px","size":360,"sizes":[]},"width_tablet":{"unit":"px","size":"","sizes":[]},"width_mobile":{"unit":"px","size":"","sizes":[]},"title_typography_typography":"custom","title_typography_font_size":{"unit":"px","size":80,"sizes":[]},"title_typography_font_size_tablet":{"unit":"px","size":60,"sizes":[]},"title_typography_font_size_mobile":{"unit":"px","size":48,"sizes":[]},"title_typography_font_weight":"700","title_typography_line_height":{"unit":"em","size":1,"sizes":[]},"_margin":{"unit":"px","top":"0","right":"0","bottom":"20","left":"0","isLinked":false},"scroll_y":-80,"wd_animation":"slide-from-bottom","wd_animation_delay":200,"align":"left"},"elements":[],"widgetType":"wd_title"},{"id":"f4e335e","elType":"container","settings":{"flex_direction":"row","flex_align_items":"center","container_sticky_offset":50,"scroll_y":-80},"elements":[{"id":"7b65600","elType":"widget","settings":{"text":"Shop now","color":"white","bg_color":"#F84243","color_scheme":"light","bg_color_hover":"#F72C2C","scroll_y":-80,"wd_animation":"slide-from-bottom","wd_animation_delay":400,"style":"bordered"},"elements":[],"widgetType":"wd_button"},{"id":"ed30445","elType":"widget","settings":{"text":"View more","color":"white","bg_color":"#F84243","color_scheme":"light","bg_color_hover":"#F72C2C","scroll_y":-80,"wd_animation":"slide-from-bottom","wd_animation_delay":400,"style":"link"},"elements":[],"widgetType":"wd_button"}],"isInner":true}],"isInner":false}]]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[black-friday-slide-1-2]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
+							<wp:meta_key><![CDATA[_elementor_page_settings]]></wp:meta_key>
+							<wp:meta_value><![CDATA[a:6:{s:10:"hide_title";s:0:"";s:8:"wd_image";a:5:{s:3:"url";s:103:"http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/black-friday-slide-3.jpg";s:2:"id";i:27699;s:4:"size";s:0:"";s:3:"alt";s:0:"";s:6:"source";s:7:"library";}s:11:"wd_bg_image";a:3:{s:3:"url";s:0:"";s:2:"id";s:0:"";s:4:"size";s:0:"";}s:6:"margin";a:6:{s:4:"unit";s:2:"px";s:3:"top";s:0:"";s:5:"right";s:0:"";s:6:"bottom";s:0:"";s:4:"left";s:0:"";s:8:"isLinked";b:1;}s:7:"padding";a:6:{s:4:"unit";s:2:"px";s:3:"top";s:0:"";s:5:"right";s:0:"";s:6:"bottom";s:0:"";s:4:"left";s:0:"";s:8:"isLinked";b:1;}s:21:"background_background";s:0:"";}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 				</channel>

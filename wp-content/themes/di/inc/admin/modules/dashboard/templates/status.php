@@ -1,3 +1,14 @@
+<?php
+/**
+ * Dashboard Status Template.
+ *
+ * @package woodmart
+ */
+
+use XTS\Admin\Modules\Options\Google_Fonts\Local_Data;
+use XTS\Admin\Modules\Options\Google_Fonts\Utils;
+?>
+
 <div class="xts-box xts-status xts-theme-style">
 	<div class="xts-box-header">
 		<h3>
@@ -65,7 +76,7 @@
 					<?php esc_html_e( 'Installed languages', 'woodmart' ); ?>:
 				</div>
 				<div>
-					<?php echo implode( ', ', get_option( 'woodmart_installed_languages', array() ) ); ?>
+					<?php echo implode( ', ', get_option( 'woodmart_installed_languages', array() ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 				</div>
 			</div>
 			<?php endif; ?>
@@ -76,6 +87,57 @@
 				</div>
 				<div>
 					<?php echo esc_html( get_option( 'woodmart_translations_version', '' ) ? get_option( 'woodmart_translations_version', '' ) : esc_html__( 'Not installed', 'woodmart' ) ); ?>
+				</div>
+			</div>
+
+			<div class="xts-table-row">
+				<div>
+					<?php esc_html_e( 'Local Google Fonts', 'woodmart' ); ?>:
+				</div>
+				<div>
+					<?php
+					if ( woodmart_get_opt( 'local_google_fonts' ) ) {
+						$last_font_update     = Utils::get_human_last_updated();
+						$local_fonts_data     = Local_Data::get_instance();
+						$local_google_fonts   = array_keys( $local_fonts_data->get_raw_fonts_data() );
+						$failed_loading_fonts = $local_fonts_data->get_failed_fonts();
+
+						if ( ! empty( $local_google_fonts ) ) {
+							echo esc_html( implode( ', ', $local_google_fonts ) );
+							echo '<br>';
+							if ( ! empty( $failed_loading_fonts ) ) {
+								echo wp_kses_post(
+									sprintf(
+										'Some fonts failed to load: %s',
+										esc_html( implode( ', ', $failed_loading_fonts ) )
+									)
+								);
+								echo '<br>';
+							}
+							echo wp_kses_post(
+								sprintf(
+									'<a href="%1$s" rel="noopener">%2$s</a><span> (Updated %3$s)</span>',
+									wp_nonce_url(
+										add_query_arg(
+											array(
+												'page'   => 'xts_status',
+												'action' => 'reload_local_google_fonts',
+											),
+											admin_url( 'admin.php' )
+										),
+										'xts_reload_local_google_fonts_nonce'
+									),
+									esc_html__( 'Redownload Local Google Fonts', 'woodmart' ),
+									$last_font_update
+								)
+							);
+						} else {
+							echo esc_html__( 'No Google fonts loaded', 'woodmart' );
+						}
+					} else {
+						echo esc_html__( 'Disabled', 'woodmart' );
+					}
+					?>
 				</div>
 			</div>
 		</div>

@@ -1,10 +1,11 @@
-<?php
+<?php // phpcs:ignore WordPress.Files.FileName.NotHyphenatedLowercase
 /**
  * The template for displaying all xts templates.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
+use XTS\Modules\Layouts\Loop_Item;
 use XTS\Modules\Layouts\Main as Builder;
 use XTS\Modules\Layouts\Single_Product;
 
@@ -56,19 +57,19 @@ if ( 'checkout_form' === $layout_type && $checkout_form_post && has_blocks( $che
 
 				$content .= apply_filters( 'the_content', $checkout_form_post->post_content );
 
-				echo $content;
+				echo $content; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				?>
 			<?php endif; ?>
 		</form>
 	<?php endif; ?>
 </div>
 <?php elseif ( 'checkout_form' === $layout_type ) : ?>
-<div class="woocommerce-checkout">
+	<div class="woocommerce-checkout">
 		<?php if ( $checkout_content_id ) : ?>
 			<?php if ( woodmart_is_elementor_installed() && Elementor\Plugin::$instance->documents->get( $checkout_content_post->ID )->is_built_with_elementor() ) : ?>
 			<?php echo woodmart_elementor_get_content( $checkout_content_post->ID ); // phpcs:ignore ?>
 		<?php elseif ( has_blocks( $checkout_content_post->post_content ) ) : ?>
-			<?php echo apply_filters( 'the_content', $checkout_content_post->post_content ); ?>
+			<?php echo apply_filters( 'the_content', $checkout_content_post->post_content ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 		<?php else : ?>
 			<?php
 			$shortcodes_custom_css          = get_post_meta( $checkout_content_post->ID, '_wpb_shortcodes_custom_css', true );
@@ -86,7 +87,7 @@ if ( 'checkout_form' === $layout_type && $checkout_form_post && has_blocks( $che
 
 			$content .= apply_filters( 'the_content', $checkout_content_post->post_content );
 
-			echo $content;
+			echo $content; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			?>
 		<?php endif; ?>
 	<?php endif; ?>
@@ -114,6 +115,95 @@ if ( 'checkout_form' === $layout_type && $checkout_form_post && has_blocks( $che
 		<?php endif; ?>
 	<?php endwhile; ?>
 </div>
+<?php elseif ( 'product_loop_item' === $layout_type ) : ?>
+	<?php
+	$loop_id              = get_the_ID();
+	$classes              = ' wd-loop-item-wrap-' . $loop_id;
+	$inner_classes        = '';
+	$preview_width        = get_post_meta( $loop_id, 'wd_preview_width', true );
+	$preview_width_tablet = get_post_meta( $loop_id, 'wd_preview_widthTablet', true );
+	$preview_width_mobile = get_post_meta( $loop_id, 'wd_preview_widthMobile', true );
+
+	if ( get_post_meta( $loop_id, 'wd_bordered_grid', true ) ) {
+		woodmart_enqueue_inline_style( 'bordered-product' );
+
+		$classes .= ' products-bordered-grid';
+	}
+
+	if ( get_post_meta( $loop_id, 'wd_stretch_product', true ) ) {
+		woodmart_enqueue_inline_style( 'woo-opt-stretch-cont' );
+
+		$classes .= ' wd-stretch-cont-lg';
+	}
+	if ( get_post_meta( $loop_id, 'wd_stretch_productTablet', true ) ) {
+		woodmart_enqueue_inline_style( 'woo-opt-stretch-cont' );
+
+		$classes .= ' wd-stretch-cont-md';
+	}
+	if ( get_post_meta( $loop_id, 'wd_stretch_productMobile', true ) ) {
+		woodmart_enqueue_inline_style( 'woo-opt-stretch-cont' );
+
+		$classes .= ' wd-stretch-cont-sm';
+	}
+
+	if ( get_post_meta( $loop_id, 'wd_transform', true ) ) {
+		$inner_classes .= ' wd-transform';
+	}
+
+	$products = wc_get_products(
+		array(
+			'status' => 'publish',
+			'limit'  => 4,
+		)
+	);
+
+	if ( empty( $products ) ) {
+		return;
+	}
+
+	$product_ids = array_map(
+		function ( $product ) {
+			return $product->get_id();
+		},
+		$products
+	);
+
+	?>
+	<style>
+		.wd-products .wd-product {
+			max-width: <?php echo esc_html( $preview_width ? $preview_width . 'px' : '320px' ); ?>;
+		}
+
+		<?php if ( $preview_width_tablet ) : ?>
+		@media (max-width: 1024px) {
+			.wd-products .wd-product {
+				max-width: <?php echo esc_html( $preview_width_tablet . 'px' ); ?>;
+			}
+		}
+		<?php endif; ?>
+		<?php if ( $preview_width_mobile ) : ?>
+		@media (max-width: 767px) {
+			.wd-products .wd-product {
+				max-width: <?php echo esc_html( $preview_width_mobile . 'px' ); ?>;
+			}
+		}
+		<?php endif; ?>
+	</style>
+	<div class="entry-content">
+		<div class="wd-products wd-grid-g elements-grid wd-loop-builder-on<?php echo esc_attr( $classes ); ?>" style="--wd-col-lg:4;--wd-col-md:3;--wd-col-sm:2;--wd-gap-lg:20px;--wd-gap-sm:10px;">
+			<?php while ( have_posts() ) : ?>
+				<?php the_post(); ?>
+				<?php foreach ( $product_ids as $product_id ) : ?>
+					<?php Loop_Item::set_preview_product( $product_id ); ?>
+					<div class="wd-product wd-col wd-hover-parent wd-loop-item-<?php echo esc_attr( $loop_id ); ?>">
+						<div class="wd-product-wrapper wd-entry-content<?php echo esc_attr( $inner_classes ); ?>">
+							<?php the_content(); ?>
+						</div>
+					</div>
+				<?php endforeach; ?>
+			<?php endwhile; ?>
+		</div>
+	</div>
 <?php else : ?>
 	<div class="entry-content">
 		<?php while ( have_posts() ) : ?>

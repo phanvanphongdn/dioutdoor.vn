@@ -17,8 +17,10 @@ if ( ! function_exists( 'wd_gutenberg_shop_archive_per_page' ) ) {
 
 		woodmart_enqueue_inline_style( 'woo-shop-el-products-per-page' );
 
+		$el_id = wd_get_gutenberg_element_id( $block_attributes );
+
 		?>
-			<div id="<?php echo esc_attr( wd_get_gutenberg_element_id( $block_attributes ) ); ?>" class="wd-shop-prod-per-page<?php echo esc_attr( wd_get_gutenberg_element_classes( $block_attributes ) ); ?>">
+			<div <?php echo $el_id ? 'id="' . esc_attr( $el_id ) . '" ' : ''; ?>class="wd-shop-prod-per-page<?php echo esc_attr( wd_get_gutenberg_element_classes( $block_attributes ) ); ?>">
 				<?php woodmart_products_per_page_select( false, $block_attributes ); ?>
 			</div>
 		<?php

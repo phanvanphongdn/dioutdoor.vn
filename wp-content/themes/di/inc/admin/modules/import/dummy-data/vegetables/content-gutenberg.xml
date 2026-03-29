@@ -16,7 +16,7 @@
 	<!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 	<!--    contained in this file into your site. -->
 
-	<!-- generator="WordPress/6.5.5" created="2025-01-20 15:51" -->
+	<!-- generator="WordPress/6.7.4" created="2026-02-23 10:02" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -29,29 +29,21 @@
 	<title>Vegetables gutenberg</title>
 	<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg</link>
 	<description></description>
-	<pubDate>Mon, 20 Jan 2025 15:51:11 +0000</pubDate>
+	<pubDate>Mon, 23 Feb 2026 10:02:38 +0000</pubDate>
 	<language>en-US</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
 	<wp:base_site_url>https://dummy.xtemos.com/woodmart2/</wp:base_site_url>
 	<wp:base_blog_url>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg</wp:base_blog_url>
 
-		<wp:author><wp:author_id>2</wp:author_id><wp:author_login><![CDATA[zakhar]]></wp:author_login><wp:author_email><![CDATA[zak@asda.as]]></wp:author_email><wp:author_display_name><![CDATA[Mr. Mackay]]></wp:author_display_name><wp:author_first_name><![CDATA[sds]]></wp:author_first_name><wp:author_last_name><![CDATA[scssc]]></wp:author_last_name></wp:author>
-	<wp:author><wp:author_id>491</wp:author_id><wp:author_login><![CDATA[Ethan Smith]]></wp:author_login><wp:author_email><![CDATA[ethan_smith@asda.as]]></wp:author_email><wp:author_display_name><![CDATA[Ethan Smith]]></wp:author_display_name><wp:author_first_name><![CDATA[Ethan]]></wp:author_first_name><wp:author_last_name><![CDATA[Smith]]></wp:author_last_name></wp:author>
-
-					<wp:term>
-			<wp:term_id>0</wp:term_id>
-			<wp:term_taxonomy><![CDATA[]]></wp:term_taxonomy>
-			<wp:term_slug><![CDATA[]]></wp:term_slug>
-			<wp:term_parent><![CDATA[]]></wp:term_parent>
-					</wp:term>
-		
-	<generator>https://wordpress.org/?v=6.5.5</generator>
+	
+							
+	<generator>https://wordpress.org/?v=6.7.4</generator>
 
 					<item>
 					<title><![CDATA[chevron-down-black]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/home-vegetables/chevron-down-black/</link>
 					<pubDate>Wed, 07 Aug 2024 14:46:30 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/08/chevron-down-black.svg</guid>
 															<wp:post_id>351</wp:post_id>
 					<wp:post_date><![CDATA[2024-08-07 14:46:30]]></wp:post_date>
@@ -74,7 +66,7 @@
 					<title><![CDATA[Single product layout Vegetables]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/woodmart_layout/single-product-layout-vegetables/</link>
 					<pubDate>Thu, 08 Aug 2024 11:59:55 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?post_type=woodmart_layout&#038;p=539</guid>
 											<content:encoded><![CDATA[<!-- wp:wd/row {"blockId":"84abfcca-f144-4a41-9e37-bb0aa2121cee","marginTop":"-20","marginBottom":"40"} -->
 <div id="wd-84abfcca" class="wp-block-wd-row"><!-- wp:wd/column {"blockId":"855cdc34-45dd-4101-a279-3cc6997d17c0","adjacentCount":2,"colWidth":58,"adjacentCountTablet":2,"colWidthTablet":50} -->
@@ -233,100 +225,100 @@
 					<title><![CDATA[Shop archive layout Vegetables Shop]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/woodmart_layout/shop-archive-layout-vegetables-shop/</link>
 					<pubDate>Thu, 08 Aug 2024 13:16:43 +0000</pubDate>
-					<dc:creator><![CDATA[Ethan Smith]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?post_type=woodmart_layout&#038;p=546</guid>
-											<content:encoded><![CDATA[<!-- wp:wd/sa-archive-title {"blockId":"1f22a4a8-56a9-486e-822d-6f6cc942adc6","marginTop":"-15","marginBottom":"5","tpFontSize":"32","tpFontSizeTablet":"28"} /-->
+											<content:encoded><![CDATA[<!-- wp:wd/sa-archive-title {"blockId":"1f22a4a8-56a9-486e-822d-6f6cc942adc6","blockVersion":"2","marginTop":"-15","marginBottom":"5","tpFontSize":"32","tpFontSizeTablet":"28"} /-->
 
-<!-- wp:wd/woo-breadcrumbs {"blockId":"fc64995a-52eb-4479-a2d9-93f48dbc616a"} /-->
+<!-- wp:wd/woo-breadcrumbs {"blockId":"fc64995a-52eb-4479-a2d9-93f48dbc616a","blockVersion":"2"} /-->
 
-<!-- wp:wd/product-categories {"blockId":"a4088f67-8038-4a3d-91e5-fc9f402d608d","data_source":"wc_query","hide_empty":false,"categories_design":"side","image_container_width":"136","style":"carousel","img_size":"full","categories_with_background":true,"marginBottom":"30","slides_per_view":"4","hide_pagination_control":true,"hide_scrollbarTablet":false,"hide_scrollbarMobile":false,"sync_parent_id":"wd_5f998917","categoriesBackgroundCode":"#ffffff","titleFontSize":"14","titleTextTransform":"capitalize","marginBottomMobile":"20","slides_per_viewTablet":"2","slides_per_viewMobile":"1","hide_pagination_controlTablet":true,"hide_pagination_controlMobile":true} /-->
+<!-- wp:wd/product-categories {"blockId":"a4088f67-8038-4a3d-91e5-fc9f402d608d","blockVersion":"2","data_source":"wc_query","hide_empty":false,"categories_design":"side","image_container_width":"136","style":"carousel","img_size":"full","categories_with_background":true,"marginBottom":"30","slides_per_view":"4","hide_pagination_control":true,"hide_scrollbarTablet":false,"hide_scrollbarMobile":false,"sync_parent_id":"wd_5f998917","categoriesBackgroundCode":"#ffffff","titleFontSize":"14","titleTextTransform":"capitalize","marginBottomMobile":"20","slides_per_viewTablet":"2","slides_per_viewMobile":"1","hide_pagination_controlTablet":true,"hide_pagination_controlMobile":true} /-->
 
-<!-- wp:wd/off-canvas {"blockId":"5a6ee7e3-b5c0-4864-8753-ee1d352af412","marginBottom":"40","columnsGapTablet":20} -->
-<div id="wd-5a6ee7e3" class="wp-block-wd-off-canvas"><!-- wp:wd/off-sidebar {"blockId":"df75b118-13f9-43b1-b3b9-b2b54a07c02b","sidebarWidth":24} -->
-<div id="wd-df75b118" class="wp-block-wd-off-sidebar wd-left wd-hide-md-sm wd-hide-sm"><div class="wd-heading"><div class="close-side-widget wd-action-btn wd-style-text wd-cross-icon"><a href="#" rel="nofollow noopener">Close</a></div></div><div class="wd-content"><!-- wp:wd/sidebar {"blockId":"5e3843da-ba48-436d-8914-24d6ca955db8","sidebar_id":"sidebar-shop","bgColorCode":"#ffffff","paddingTop":"30","paddingRight":"30","paddingBottom":"30","paddingLeft":"30","paddingLock":true,"borderRadius":"10","borderRadiusTop":"10","borderRadiusRight":"10","borderRadiusBottom":"10","borderRadiusLeft":"10","paddingTopTablet":"0","paddingRightTablet":"0","paddingBottomTablet":"0","paddingLeftTablet":"0","paddingLockTablet":true} /--></div></div>
+<!-- wp:wd/off-canvas {"blockId":"ba090cbe-dc48-4cda-b185-c86ed4b20dca","blockVersion":"2","marginBottom":"40","columnsGapTablet":20} -->
+<div class="wp-block-wd-off-canvas wd-ba090cbe"><!-- wp:wd/off-sidebar {"blockId":"6e6f9de2-7897-4b84-b876-930b8a1de51f","blockVersion":"2","sidebarWidth":24} -->
+<div class="wp-block-wd-off-sidebar wd-left wd-hide-md-sm wd-hide-sm wd-6e6f9de2"><div class="wd-heading"><div class="close-side-widget wd-action-btn wd-style-text wd-cross-icon"><a href="#" rel="nofollow noopener"><span class="wd-action-icon"></span><span class="wd-action-text">Close</span></a></div></div><div class="wd-content"><!-- wp:wd/sidebar {"blockId":"5e3843da-ba48-436d-8914-24d6ca955db8","blockVersion":"2","sidebar_id":"sidebar-shop","bgColorCode":"#ffffff","paddingTop":"30","paddingRight":"30","paddingBottom":"30","paddingLeft":"30","paddingLock":true,"borderRadius":"10","borderRadiusTop":"10","borderRadiusRight":"10","borderRadiusBottom":"10","borderRadiusLeft":"10","paddingTopTablet":"0","paddingRightTablet":"0","paddingBottomTablet":"0","paddingLeftTablet":"0","paddingLockTablet":true} /--></div></div>
 <!-- /wp:wd/off-sidebar -->
 
-<!-- wp:wd/off-content {"blockId":"64c3162d-bf99-452f-8f5e-95246968ad80"} -->
-<div id="wd-64c3162d" class="wp-block-wd-off-content"><!-- wp:wd/container {"blockId":"2ae77e31-8a63-4cfb-b026-f33623a5a535","direction":"row","justify":"space-between","align":"center","wrap":"wrap","colGap":"30"} -->
-<div id="wd-2ae77e31" class="wp-block-wd-container wd-dir-row wd-align-is-lg-center"><!-- wp:wd/sa-result-count {"blockId":"d0e1d931-9475-49a7-934f-512e35002bba","marginRight":"auto","marginLeft":"0","marginUnits":"custom","hideOnTablet":true,"hideOnMobile":true,"flexSize":"grow"} /-->
+<!-- wp:wd/off-content {"blockId":"0c184de3-9f96-48f2-a097-5d982f381bc0","blockVersion":"2"} -->
+<div class="wp-block-wd-off-content wd-0c184de3"><!-- wp:wd/container {"blockId":"c7927de6-56fc-46da-b7b2-d13e86403a76","blockVersion":"2","direction":"row","justify":"space-between","align":"center","wrap":"wrap","colGap":"30"} -->
+<div class="wp-block-wd-container wd-dir-row wd-align-is-lg-center wd-c7927de6"><!-- wp:wd/sa-result-count {"blockId":"68df80b2-03e6-477f-af5f-8766ea2486af","blockVersion":"2","marginRight":"auto","marginLeft":"0","marginUnits":"custom","hideOnTablet":true,"hideOnMobile":true,"flexSize":"grow"} /-->
 
-<!-- wp:wd/off-canvas-button {"blockId":"f9702c7b-b00f-45b4-a0dc-bb13858d7b07","hideOnDesktop":true} -->
-<div id="wd-f9702c7b" class="wp-block-wd-off-canvas-button wd-off-canvas-btn wd-action-btn wd-style-text wd-burger-icon wd-hide-lg"><a href="#" rel="nofollow">Show sidebar</a></div>
+<!-- wp:wd/off-canvas-button {"blockId":"34f0dd7e-9bd7-4cd7-93a2-d292c7c6bc1b","blockVersion":"2","hideOnDesktop":true} -->
+<div class="wp-block-wd-off-canvas-button wd-off-canvas-btn wd-action-btn wd-style-text wd-burger-icon wd-hide-lg wd-34f0dd7e"><a href="#" rel="nofollow"><span class="wd-action-icon"></span><span class="wd-action-text">Show sidebar</span></a></div>
 <!-- /wp:wd/off-canvas-button -->
 
-<!-- wp:wd/sa-per-page {"blockId":"953507b2-faaf-45ae-ba26-b4c60175f444","hideOnTablet":true,"hideOnMobile":true} /-->
+<!-- wp:wd/sa-per-page {"blockId":"7dfccc6a-3f00-40d5-97a7-253bed37d366","blockVersion":"2","hideOnTablet":true,"hideOnMobile":true} /-->
 
-<!-- wp:wd/sa-view {"blockId":"ae3c3abd-d2d5-49db-bff2-8882b256722b","products_columns_variations":"3,4,list","hideOnTablet":true,"hideOnMobile":true} /-->
+<!-- wp:wd/sa-view {"blockId":"32bde6f5-f2bd-4008-b5ce-378c8a2c412b","blockVersion":"2","products_columns_variations":"3,4,list","hideOnTablet":true,"hideOnMobile":true} /-->
 
-<!-- wp:wd/sa-orderby {"blockId":"c172424e-4e0e-4487-a4bc-fe44a709be24","mobileIcon":true} /--></div>
+<!-- wp:wd/sa-orderby {"blockId":"ad24d4a9-8383-4e99-9c9c-4a3145fdd696","blockVersion":"2","mobileIcon":true} /--></div>
 <!-- /wp:wd/container -->
 
-<!-- wp:wd/sa-active-filters {"blockId":"959250a8-c083-487c-a813-a73e5c531e24"} /-->
+<!-- wp:wd/sa-active-filters {"blockId":"78c0c9c1-cccf-4dea-9ed5-1bccdec0ead9","blockVersion":"2"} /-->
 
-<!-- wp:wd/woo-notices {"blockId":"aed771ed-a4f0-4e57-842e-f00c53367d59"} /-->
+<!-- wp:wd/woo-notices {"blockId":"07c0824b-5de6-422c-bfae-24091b7f764e","blockVersion":"2"} /-->
 
-<!-- wp:wd/sa-archive-products {"blockId":"439eb359-fa7e-4f02-916c-166d05e75b48","imgSize":"medium","imgSizeCustomHeight":"457","imgSizeCustomWidth":"400"} /--></div>
+<!-- wp:wd/sa-archive-products {"blockId":"23f34275-4bbf-4e10-bc24-3bb83b90866a","blockVersion":"2","imgSize":"medium","imgSizeCustomHeight":"457","imgSizeCustomWidth":"400"} /--></div>
 <!-- /wp:wd/off-content --></div>
 <!-- /wp:wd/off-canvas -->
 
-<!-- wp:wd/section {"blockId":"e7bdb61c-22a7-4fa8-b768-fdb9c9228453","bgColorCode":"#ffffff","paddingTop":"50","paddingBottom":"50","marginBottom":"-40"} -->
-<div id="wd-e7bdb61c" class="wp-block-wd-section"><!-- wp:wd/container {"blockId":"bc45ca9d-7f3a-4ce7-8999-d6a66388c524"} -->
-<div id="wd-bc45ca9d" class="wp-block-wd-container wd-dir-col"><!-- wp:wd/collapsible-content {"blockId":"dad2128b-8e76-434e-8f49-86f74ca3b70e","contentHeight":"340"} -->
-<div id="wd-dad2128b" class="wp-block-wd-collapsible-content wd-effect-fade"><!-- wp:wd/container {"blockId":"e5f61853-d4b7-4bd7-9986-f8110d6d4fa7","metadata":{"name":"Content"}} -->
-<div id="wd-e5f61853" class="wp-block-wd-container wd-dir-col"><!-- wp:wd/title {"blockId":"b59225cd-2a4e-4da6-ba6b-2a1ed13718e5","content":"Online Sports Nutrition and Natural Dietetics.","tpFontSize":"22","colorVariable":"\u002d\u002dwd-primary-color","tpFontSizeMobile":"20"} -->
-<h2 id="wd-b59225cd" class="wp-block-wd-title title">Online Sports Nutrition and Natural Dietetics.</h2>
+<!-- wp:wd/section {"blockId":"9a01ed46-94f9-4cac-9b02-9f9b35861169","blockVersion":"2","bgColorCode":"#ffffff","paddingTop":"50","paddingBottom":"50","marginBottom":"-40"} -->
+<div class="wp-block-wd-section wd-9a01ed46"><!-- wp:wd/container {"blockId":"6e19d70e-4612-44d6-aae8-e78ab3fc7df1","blockVersion":"2"} -->
+<div class="wp-block-wd-container wd-dir-col wd-6e19d70e"><!-- wp:wd/collapsible-content {"blockId":"1cc3c9cb-0b66-4a6e-bb26-2ef13f3ffc80","blockVersion":"2","contentHeight":"340"} -->
+<div class="wp-block-wd-collapsible-content wd-effect-fade wd-1cc3c9cb"><!-- wp:wd/container {"blockId":"2016327a-7467-41c5-8d07-c2c60ded3675","blockVersion":"2","metadata":{"name":"Content"}} -->
+<div class="wp-block-wd-container wd-dir-col wd-2016327a"><!-- wp:wd/title {"blockId":"be443794-1e0a-483f-8329-3504690caaac","blockVersion":"2","content":"Online Sports Nutrition and Natural Dietetics.","tpFontSize":"22","colorVariable":"\u002d\u002dwd-primary-color","tpFontSizeMobile":"20"} -->
+<h2 class="wp-block-wd-title title wd-be443794">Online Sports Nutrition and Natural Dietetics.</h2>
 <!-- /wp:wd/title -->
 
-<!-- wp:wd/paragraph {"blockId":"b1699a85-6b85-4543-9e3a-2c19b1eb4e93"} -->
-<p id="wd-b1699a85" class="wp-block-wd-paragraph">Chances are there wasn't collaboration, communication, and checkpoints, there wasn't a process agreed upon or specified with the granularity required. It's content strategy gone awry right from the start. Forswearing the use of Lorem Ipsum wouldn't have helped, won't help now. It's like saying you're a bad designer, use less bold text, don't use italics in every other paragraph. True enough, but that's not all that it takes to get things back on track.</p>
+<!-- wp:wd/paragraph {"blockId":"b5838c12-3276-4435-8b14-1b682428b57f","blockVersion":"2"} -->
+<p class="wp-block-wd-paragraph wd-b5838c12">Chances are there wasn't collaboration, communication, and checkpoints, there wasn't a process agreed upon or specified with the granularity required. It's content strategy gone awry right from the start. Forswearing the use of Lorem Ipsum wouldn't have helped, won't help now. It's like saying you're a bad designer, use less bold text, don't use italics in every other paragraph. True enough, but that's not all that it takes to get things back on track.</p>
 <!-- /wp:wd/paragraph -->
 
-<!-- wp:wd/title {"blockId":"e88313ac-399a-4a8e-890e-26f8700f9292","content":"The villagers are out there with a vengeance to get that Frankenstein","tpFontSize":"18","tpFontSizeMobile":"16"} -->
-<h2 id="wd-e88313ac" class="wp-block-wd-title title">The villagers are out there with a vengeance to get that Frankenstein</h2>
+<!-- wp:wd/title {"blockId":"1de81c50-e88a-433d-a364-d717a38e6dd4","blockVersion":"2","content":"The villagers are out there with a vengeance to get that Frankenstein","tpFontSize":"18","tpFontSizeMobile":"16"} -->
+<h2 class="wp-block-wd-title title wd-1de81c50">The villagers are out there with a vengeance to get that Frankenstein</h2>
 <!-- /wp:wd/title -->
 
-<!-- wp:wd/paragraph {"blockId":"e3b4e346-3d40-4dce-855d-7f5bfa1d03a1"} -->
-<p id="wd-e3b4e346" class="wp-block-wd-paragraph">You made all the required mock ups for commissioned layout, got all the approvals, built a tested code base or had them built, you decided on a content management system, got a license for it or adapted:</p>
+<!-- wp:wd/paragraph {"blockId":"3d440fb0-c589-494b-85b3-4737cabfd83d","blockVersion":"2"} -->
+<p class="wp-block-wd-paragraph wd-3d440fb0">You made all the required mock ups for commissioned layout, got all the approvals, built a tested code base or had them built, you decided on a content management system, got a license for it or adapted:</p>
 <!-- /wp:wd/paragraph -->
 
-<!-- wp:wd/list {"blockId":"b5b4775c-8a15-4d02-b928-34b92825f645"} -->
-<ul id="wd-b5b4775c" class="wp-block-wd-list wd-list wd-type-unordered wd-style-default"><!-- wp:wd/list-item {"blockId":"3361002c-e1c0-4fba-a517-329c8faa3f89","iconType":"unordered","svg":"","image":""} -->
-<li id="wd-3361002c" class="wp-block-wd-list-item"><div class="wd-icon"></div><span class="wd-list-content">The toppings you may chose for that TV dinner pizza slice when you forgot to shop for foods, the paint you may slap on your face to impress the new boss is your business.</span></li>
+<!-- wp:wd/list {"blockId":"264a1974-ac8d-42d8-9a65-2b28dd9288ed","blockVersion":"2"} -->
+<ul class="wp-block-wd-list wd-list wd-type-unordered wd-style-default wd-264a1974"><!-- wp:wd/list-item {"blockId":"15678b88-1299-461f-b81c-570e5d025839","blockVersion":"2","iconType":"unordered","svg":"","image":""} -->
+<li class="wp-block-wd-list-item wd-15678b88"><div class="wd-icon"></div><span class="wd-list-content">The toppings you may chose for that TV dinner pizza slice when you forgot to shop for foods, the paint you may slap on your face to impress the new boss is your business.</span></li>
 <!-- /wp:wd/list-item -->
 
-<!-- wp:wd/list-item {"blockId":"9bd4ccc4-422b-4711-91f2-87a3441ff8db","iconType":"unordered","svg":"","image":""} -->
-<li id="wd-9bd4ccc4" class="wp-block-wd-list-item"><div class="wd-icon"></div><span class="wd-list-content">But what about your daily bread? Design comps, layouts, wireframes—will your clients accept that you go about things the facile way?</span></li>
+<!-- wp:wd/list-item {"blockId":"856a7e42-a708-481f-bad3-5bd7fb19364b","blockVersion":"2","iconType":"unordered","svg":"","image":""} -->
+<li class="wp-block-wd-list-item wd-856a7e42"><div class="wd-icon"></div><span class="wd-list-content">But what about your daily bread? Design comps, layouts, wireframes—will your clients accept that you go about things the facile way?</span></li>
 <!-- /wp:wd/list-item -->
 
-<!-- wp:wd/list-item {"blockId":"95e4a374-5397-40bf-9b34-255e5b68e8a1","iconType":"unordered","svg":"","image":""} -->
-<li id="wd-95e4a374" class="wp-block-wd-list-item"><div class="wd-icon"></div><span class="wd-list-content">Authorities in our business will tell in no uncertain terms that Lorem Ipsum is that huge, huge no no to forswear forever.</span></li>
+<!-- wp:wd/list-item {"blockId":"0f7d176f-9125-4e64-b2bb-d2188fd58f8a","blockVersion":"2","iconType":"unordered","svg":"","image":""} -->
+<li class="wp-block-wd-list-item wd-0f7d176f"><div class="wd-icon"></div><span class="wd-list-content">Authorities in our business will tell in no uncertain terms that Lorem Ipsum is that huge, huge no no to forswear forever.</span></li>
 <!-- /wp:wd/list-item -->
 
-<!-- wp:wd/list-item {"blockId":"1121e306-c714-4d50-b241-2e8d76cfd82c","iconType":"unordered","svg":"","image":""} -->
-<li id="wd-1121e306" class="wp-block-wd-list-item"><div class="wd-icon"></div><span class="wd-list-content">Not so fast, I'd say, there are some redeeming factors in favor of greeking text, as its use is merely the symptom of a worse problem to take into consideration.</span></li>
+<!-- wp:wd/list-item {"blockId":"48da40c2-4ea2-4d80-b96c-99f0d81783e0","blockVersion":"2","iconType":"unordered","svg":"","image":""} -->
+<li class="wp-block-wd-list-item wd-48da40c2"><div class="wd-icon"></div><span class="wd-list-content">Not so fast, I'd say, there are some redeeming factors in favor of greeking text, as its use is merely the symptom of a worse problem to take into consideration.</span></li>
 <!-- /wp:wd/list-item -->
 
-<!-- wp:wd/list-item {"blockId":"732c95a3-d06b-478e-9351-66bc356b9d59","iconType":"unordered","svg":"","image":""} -->
-<li id="wd-732c95a3" class="wp-block-wd-list-item"><div class="wd-icon"></div><span class="wd-list-content">Websites in professional use templating systems.</span></li>
+<!-- wp:wd/list-item {"blockId":"5e819574-228a-43f4-a21d-c3c29387bfbd","blockVersion":"2","iconType":"unordered","svg":"","image":""} -->
+<li class="wp-block-wd-list-item wd-5e819574"><div class="wd-icon"></div><span class="wd-list-content">Websites in professional use templating systems.</span></li>
 <!-- /wp:wd/list-item -->
 
-<!-- wp:wd/list-item {"blockId":"2bf5690f-1037-408b-9e52-efab7b6ee1b7","iconType":"unordered","svg":"","image":""} -->
-<li id="wd-2bf5690f" class="wp-block-wd-list-item"><div class="wd-icon"></div><span class="wd-list-content">Commercial publishing platforms and content management systems ensure that you can show different text, different data using the same template.</span></li>
+<!-- wp:wd/list-item {"blockId":"79af50dc-c73c-492c-a81f-99d79eb556c6","blockVersion":"2","iconType":"unordered","svg":"","image":""} -->
+<li class="wp-block-wd-list-item wd-79af50dc"><div class="wd-icon"></div><span class="wd-list-content">Commercial publishing platforms and content management systems ensure that you can show different text, different data using the same template.</span></li>
 <!-- /wp:wd/list-item -->
 
-<!-- wp:wd/list-item {"blockId":"7f7932fc-b488-46bc-92a9-971c7c1a97d5","iconType":"unordered","svg":"","image":""} -->
-<li id="wd-7f7932fc" class="wp-block-wd-list-item"><div class="wd-icon"></div><span class="wd-list-content">When it's about controlling hundreds of articles, product pages for web shops, or user profiles in social networks, all of them potentially with different sizes, formats, rules for differing elements things can break, designs agreed upon can have unintended consequences and look much different than expected.</span></li>
+<!-- wp:wd/list-item {"blockId":"b3699516-df16-41d5-a1c6-50a6eb30f640","blockVersion":"2","iconType":"unordered","svg":"","image":""} -->
+<li class="wp-block-wd-list-item wd-b3699516"><div class="wd-icon"></div><span class="wd-list-content">When it's about controlling hundreds of articles, product pages for web shops, or user profiles in social networks, all of them potentially with different sizes, formats, rules for differing elements things can break, designs agreed upon can have unintended consequences and look much different than expected.</span></li>
 <!-- /wp:wd/list-item --></ul>
 <!-- /wp:wd/list -->
 
-<!-- wp:wd/paragraph {"blockId":"71f557c3-1e57-41f8-a93e-65e2c10f5e04"} -->
-<p id="wd-71f557c3" class="wp-block-wd-paragraph">This is quite a problem to solve, but just doing without greeking text won't fix it. Using test items of real content and data in designs will help, but there's no guarantee that every oddity will be found and corrected. Do you want to be sure? Then a prototype or beta site with real content published from the real CMS is needed—but you’re not going that far until you go through an initial design cycle.</p>
+<!-- wp:wd/paragraph {"blockId":"662f78f1-e17a-4a41-9f3d-54b5a535f7bf","blockVersion":"2"} -->
+<p class="wp-block-wd-paragraph wd-662f78f1">This is quite a problem to solve, but just doing without greeking text won't fix it. Using test items of real content and data in designs will help, but there's no guarantee that every oddity will be found and corrected. Do you want to be sure? Then a prototype or beta site with real content published from the real CMS is needed—but you’re not going that far until you go through an initial design cycle.</p>
 <!-- /wp:wd/paragraph --></div>
 <!-- /wp:wd/container -->
 
-<!-- wp:wd/button {"blockId":"97197262-21e5-4602-963d-626acb422e75","shape":"semi-round","icon":"right"} -->
-<a id="wd-97197262" class="wp-block-wd-button btn btn-style-default btn-size-default btn-shape-semi-round btn-icon-pos-right" href="#"><span>Read more</span><!-- wp:wd/icon {"blockId":"248ee9ef-e992-4237-9499-9877a250dfbc","image":{"id":351,"url":"http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/08/chevron-down-black.svg"},"width":"16"} -->
-<div id="wd-248ee9ef" class="wp-block-wd-icon"><img class="wp-image-351" src="http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/08/chevron-down-black.svg" alt="" /></div>
+<!-- wp:wd/button {"blockId":"c5710efb-9fb1-42c0-a6a4-33ba1f39d2e3","blockVersion":"2","shape":"semi-round","icon":"right"} -->
+<a class="wp-block-wd-button btn btn-style-default btn-size-default btn-shape-semi-round btn-icon-pos-right wd-c5710efb" href="#"><span>Read more</span><!-- wp:wd/icon {"blockId":"6b75c5a1-ea22-4707-9381-bf5f66ade256","blockVersion":"2","image":{"id":351,"url":"http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/08/chevron-down-black.svg"},"width":"16"} -->
+<div class="wp-block-wd-icon wd-6b75c5a1"><img class="wp-image-351" src="http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/08/chevron-down-black.svg" alt=""/></div>
 <!-- /wp:wd/icon --></a>
 <!-- /wp:wd/button --></div>
 <!-- /wp:wd/collapsible-content --></div>
@@ -335,8 +327,8 @@
 															<wp:post_id>546</wp:post_id>
 					<wp:post_date><![CDATA[2024-08-08 13:16:43]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-08-08 13:16:43]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-10-25 07:27:14]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-10-25 07:27:14]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2026-02-23 10:02:21]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2026-02-23 10:02:21]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[shop-archive-layout-vegetables-shop]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -356,100 +348,100 @@
 					<title><![CDATA[Shop archive layout Vegetables]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/woodmart_layout/shop-archive-layout-vegetables/</link>
 					<pubDate>Thu, 08 Aug 2024 13:40:02 +0000</pubDate>
-					<dc:creator><![CDATA[Ethan Smith]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?post_type=woodmart_layout&#038;p=550</guid>
-											<content:encoded><![CDATA[<!-- wp:wd/sa-archive-title {"blockId":"1f22a4a8-56a9-486e-822d-6f6cc942adc6","marginTop":"-15","marginBottom":"5","tpFontSize":"32","tpFontSizeTablet":"28"} /-->
+											<content:encoded><![CDATA[<!-- wp:wd/sa-archive-title {"blockId":"1f22a4a8-56a9-486e-822d-6f6cc942adc6","blockVersion":"2","marginTop":"-15","marginBottom":"5","tpFontSize":"32","tpFontSizeTablet":"28"} /-->
 
-<!-- wp:wd/woo-breadcrumbs {"blockId":"fc64995a-52eb-4479-a2d9-93f48dbc616a"} /-->
+<!-- wp:wd/woo-breadcrumbs {"blockId":"fc64995a-52eb-4479-a2d9-93f48dbc616a","blockVersion":"2"} /-->
 
-<!-- wp:wd/product-categories {"blockId":"a4088f67-8038-4a3d-91e5-fc9f402d608d","data_source":"wc_query","hide_empty":false,"categories_design":"side","image_container_width":"60","style":"carousel","img_size":"custom","categories_with_background":true,"subcategories":"disable","marginBottom":"30","slides_per_view":"5","hide_pagination_control":true,"hide_scrollbarTablet":false,"hide_scrollbarMobile":false,"sync_parent_id":"wd_73aea27b","categoriesBackgroundCode":"#ffffff","titleFontSize":"14","titleTextTransform":"capitalize","marginBottomMobile":"20","slides_per_viewTablet":"3.5","slides_per_viewMobile":"1.5","hide_pagination_controlTablet":true,"hide_pagination_controlMobile":true} /-->
+<!-- wp:wd/product-categories {"blockId":"a4088f67-8038-4a3d-91e5-fc9f402d608d","blockVersion":"2","data_source":"wc_query","hide_empty":false,"categories_design":"side","image_container_width":"60","style":"carousel","img_size":"custom","categories_with_background":true,"subcategories":"disable","marginBottom":"30","slides_per_view":"5","hide_pagination_control":true,"hide_scrollbarTablet":false,"hide_scrollbarMobile":false,"sync_parent_id":"wd_73aea27b","categoriesBackgroundCode":"#ffffff","titleFontSize":"14","titleTextTransform":"capitalize","marginBottomMobile":"20","slides_per_viewTablet":"3.5","slides_per_viewMobile":"1.5","hide_pagination_controlTablet":true,"hide_pagination_controlMobile":true} /-->
 
-<!-- wp:wd/off-canvas {"blockId":"5a6ee7e3-b5c0-4864-8753-ee1d352af412","marginBottom":"40","columnsGapTablet":20} -->
-<div id="wd-5a6ee7e3" class="wp-block-wd-off-canvas"><!-- wp:wd/off-sidebar {"blockId":"df75b118-13f9-43b1-b3b9-b2b54a07c02b","sidebarWidth":24} -->
-<div id="wd-df75b118" class="wp-block-wd-off-sidebar wd-left wd-hide-md-sm wd-hide-sm"><div class="wd-heading"><div class="close-side-widget wd-action-btn wd-style-text wd-cross-icon"><a href="#" rel="nofollow noopener">Close</a></div></div><div class="wd-content"><!-- wp:wd/sidebar {"blockId":"5e3843da-ba48-436d-8914-24d6ca955db8","sidebar_id":"sidebar-shop","bgColorCode":"#ffffff","paddingTop":"30","paddingRight":"30","paddingBottom":"30","paddingLeft":"30","paddingLock":true,"borderRadius":"10","borderRadiusTop":"10","borderRadiusRight":"10","borderRadiusBottom":"10","borderRadiusLeft":"10","paddingTopTablet":"0","paddingRightTablet":"0","paddingBottomTablet":"0","paddingLeftTablet":"0","paddingLockTablet":true} /--></div></div>
+<!-- wp:wd/off-canvas {"blockId":"09c01ef6-e496-419a-86aa-22eab4cd382c","blockVersion":"2","marginBottom":"40","columnsGapTablet":20} -->
+<div class="wp-block-wd-off-canvas wd-09c01ef6"><!-- wp:wd/off-sidebar {"blockId":"639d2af2-240f-4f0d-befe-fbf1dc950b45","blockVersion":"2","sidebarWidth":24} -->
+<div class="wp-block-wd-off-sidebar wd-left wd-hide-md-sm wd-hide-sm wd-639d2af2"><div class="wd-heading"><div class="close-side-widget wd-action-btn wd-style-text wd-cross-icon"><a href="#" rel="nofollow noopener"><span class="wd-action-icon"></span><span class="wd-action-text">Close</span></a></div></div><div class="wd-content"><!-- wp:wd/sidebar {"blockId":"5e3843da-ba48-436d-8914-24d6ca955db8","blockVersion":"2","sidebar_id":"sidebar-shop","bgColorCode":"#ffffff","paddingTop":"30","paddingRight":"30","paddingBottom":"30","paddingLeft":"30","paddingLock":true,"borderRadius":"10","borderRadiusTop":"10","borderRadiusRight":"10","borderRadiusBottom":"10","borderRadiusLeft":"10","paddingTopTablet":"0","paddingRightTablet":"0","paddingBottomTablet":"0","paddingLeftTablet":"0","paddingLockTablet":true} /--></div></div>
 <!-- /wp:wd/off-sidebar -->
 
-<!-- wp:wd/off-content {"blockId":"64c3162d-bf99-452f-8f5e-95246968ad80"} -->
-<div id="wd-64c3162d" class="wp-block-wd-off-content"><!-- wp:wd/container {"blockId":"2ae77e31-8a63-4cfb-b026-f33623a5a535","direction":"row","justify":"space-between","align":"center","wrap":"wrap","colGap":"30"} -->
-<div id="wd-2ae77e31" class="wp-block-wd-container wd-dir-row wd-align-is-lg-center"><!-- wp:wd/sa-result-count {"blockId":"d0e1d931-9475-49a7-934f-512e35002bba","marginRight":"auto","marginLeft":"0","marginUnits":"custom","hideOnTablet":true,"hideOnMobile":true,"flexSize":"grow"} /-->
+<!-- wp:wd/off-content {"blockId":"a73c8d60-94db-40ad-ba12-d2b7768a4d04","blockVersion":"2"} -->
+<div class="wp-block-wd-off-content wd-a73c8d60"><!-- wp:wd/container {"blockId":"9cd4bdfd-98f2-4ee0-8362-4dd38ed0db05","blockVersion":"2","direction":"row","justify":"space-between","align":"center","wrap":"wrap","colGap":"30"} -->
+<div class="wp-block-wd-container wd-dir-row wd-align-is-lg-center wd-9cd4bdfd"><!-- wp:wd/sa-result-count {"blockId":"8aef0704-79d4-482d-909b-bf1d51fa5729","blockVersion":"2","marginRight":"auto","marginLeft":"0","marginUnits":"custom","hideOnTablet":true,"hideOnMobile":true,"flexSize":"grow"} /-->
 
-<!-- wp:wd/off-canvas-button {"blockId":"f9702c7b-b00f-45b4-a0dc-bb13858d7b07","hideOnDesktop":true} -->
-<div id="wd-f9702c7b" class="wp-block-wd-off-canvas-button wd-off-canvas-btn wd-action-btn wd-style-text wd-burger-icon wd-hide-lg"><a href="#" rel="nofollow">Show sidebar</a></div>
+<!-- wp:wd/off-canvas-button {"blockId":"3f0783f3-8093-4588-abf2-e627fc6fdd4f","blockVersion":"2","hideOnDesktop":true} -->
+<div class="wp-block-wd-off-canvas-button wd-off-canvas-btn wd-action-btn wd-style-text wd-burger-icon wd-hide-lg wd-3f0783f3"><a href="#" rel="nofollow"><span class="wd-action-icon"></span><span class="wd-action-text">Show sidebar</span></a></div>
 <!-- /wp:wd/off-canvas-button -->
 
-<!-- wp:wd/sa-per-page {"blockId":"953507b2-faaf-45ae-ba26-b4c60175f444","hideOnTablet":true,"hideOnMobile":true} /-->
+<!-- wp:wd/sa-per-page {"blockId":"a5f571f3-2047-464f-bd1f-8abc1d32a3c5","blockVersion":"2","hideOnTablet":true,"hideOnMobile":true} /-->
 
-<!-- wp:wd/sa-view {"blockId":"ae3c3abd-d2d5-49db-bff2-8882b256722b","products_columns_variations":"3,4,list","hideOnTablet":true,"hideOnMobile":true} /-->
+<!-- wp:wd/sa-view {"blockId":"999f5456-13f6-43ad-aebe-f9a2f53d6608","blockVersion":"2","products_columns_variations":"3,4,list","hideOnTablet":true,"hideOnMobile":true} /-->
 
-<!-- wp:wd/sa-orderby {"blockId":"c172424e-4e0e-4487-a4bc-fe44a709be24","mobileIcon":true} /--></div>
+<!-- wp:wd/sa-orderby {"blockId":"5bbb023b-3adc-406e-a82d-bda5fd3b22f7","blockVersion":"2","mobileIcon":true} /--></div>
 <!-- /wp:wd/container -->
 
-<!-- wp:wd/sa-active-filters {"blockId":"959250a8-c083-487c-a813-a73e5c531e24"} /-->
+<!-- wp:wd/sa-active-filters {"blockId":"3b134b72-67b0-4c9f-a6f1-7d7fad840b0c","blockVersion":"2"} /-->
 
-<!-- wp:wd/woo-notices {"blockId":"aed771ed-a4f0-4e57-842e-f00c53367d59"} /-->
+<!-- wp:wd/woo-notices {"blockId":"8695139b-d26c-4247-b441-aefdba951e24","blockVersion":"2"} /-->
 
-<!-- wp:wd/sa-archive-products {"blockId":"439eb359-fa7e-4f02-916c-166d05e75b48","imgSize":"medium","imgSizeCustomHeight":"457","imgSizeCustomWidth":"400"} /--></div>
+<!-- wp:wd/sa-archive-products {"blockId":"1f7d3e0c-fedc-47e0-b8da-5a25158f0568","blockVersion":"2","imgSize":"medium","imgSizeCustomHeight":"457","imgSizeCustomWidth":"400"} /--></div>
 <!-- /wp:wd/off-content --></div>
 <!-- /wp:wd/off-canvas -->
 
-<!-- wp:wd/section {"blockId":"e7bdb61c-22a7-4fa8-b768-fdb9c9228453","bgColorCode":"#ffffff","paddingTop":"50","paddingBottom":"50","marginBottom":"-40"} -->
-<div id="wd-e7bdb61c" class="wp-block-wd-section"><!-- wp:wd/container {"blockId":"bc45ca9d-7f3a-4ce7-8999-d6a66388c524"} -->
-<div id="wd-bc45ca9d" class="wp-block-wd-container wd-dir-col"><!-- wp:wd/collapsible-content {"blockId":"dad2128b-8e76-434e-8f49-86f74ca3b70e","contentHeight":"340"} -->
-<div id="wd-dad2128b" class="wp-block-wd-collapsible-content wd-effect-fade"><!-- wp:wd/container {"blockId":"e5f61853-d4b7-4bd7-9986-f8110d6d4fa7","metadata":{"name":"Content"}} -->
-<div id="wd-e5f61853" class="wp-block-wd-container wd-dir-col"><!-- wp:wd/title {"blockId":"b59225cd-2a4e-4da6-ba6b-2a1ed13718e5","content":"Online Sports Nutrition and Natural Dietetics.","tpFontSize":"22","colorVariable":"\u002d\u002dwd-primary-color","tpFontSizeMobile":"20"} -->
-<h2 id="wd-b59225cd" class="wp-block-wd-title title">Online Sports Nutrition and Natural Dietetics.</h2>
+<!-- wp:wd/section {"blockId":"68dcf004-52d5-4c37-b736-8ae0123e0bab","blockVersion":"2","bgColorCode":"#ffffff","paddingTop":"50","paddingBottom":"50","marginBottom":"-40"} -->
+<div class="wp-block-wd-section wd-68dcf004"><!-- wp:wd/container {"blockId":"8f2ec8d3-5584-403a-9f47-b5ab5c5554f5","blockVersion":"2"} -->
+<div class="wp-block-wd-container wd-dir-col wd-8f2ec8d3"><!-- wp:wd/collapsible-content {"blockId":"02f6a19e-1a85-4284-b119-b2857ddf152d","blockVersion":"2","contentHeight":"340"} -->
+<div class="wp-block-wd-collapsible-content wd-effect-fade wd-02f6a19e"><!-- wp:wd/container {"blockId":"12407a29-6570-4919-a05b-e0d266ab85e6","blockVersion":"2","metadata":{"name":"Content"}} -->
+<div class="wp-block-wd-container wd-dir-col wd-12407a29"><!-- wp:wd/title {"blockId":"a0e06035-d8bd-4aca-8153-e86e1f4a8036","blockVersion":"2","content":"Online Sports Nutrition and Natural Dietetics.","tpFontSize":"22","colorVariable":"\u002d\u002dwd-primary-color","tpFontSizeMobile":"20"} -->
+<h2 class="wp-block-wd-title title wd-a0e06035">Online Sports Nutrition and Natural Dietetics.</h2>
 <!-- /wp:wd/title -->
 
-<!-- wp:wd/paragraph {"blockId":"b1699a85-6b85-4543-9e3a-2c19b1eb4e93"} -->
-<p id="wd-b1699a85" class="wp-block-wd-paragraph">Chances are there wasn't collaboration, communication, and checkpoints, there wasn't a process agreed upon or specified with the granularity required. It's content strategy gone awry right from the start. Forswearing the use of Lorem Ipsum wouldn't have helped, won't help now. It's like saying you're a bad designer, use less bold text, don't use italics in every other paragraph. True enough, but that's not all that it takes to get things back on track.</p>
+<!-- wp:wd/paragraph {"blockId":"c5d33efe-f71a-4910-b51b-698a4810d546","blockVersion":"2"} -->
+<p class="wp-block-wd-paragraph wd-c5d33efe">Chances are there wasn't collaboration, communication, and checkpoints, there wasn't a process agreed upon or specified with the granularity required. It's content strategy gone awry right from the start. Forswearing the use of Lorem Ipsum wouldn't have helped, won't help now. It's like saying you're a bad designer, use less bold text, don't use italics in every other paragraph. True enough, but that's not all that it takes to get things back on track.</p>
 <!-- /wp:wd/paragraph -->
 
-<!-- wp:wd/title {"blockId":"e88313ac-399a-4a8e-890e-26f8700f9292","content":"The villagers are out there with a vengeance to get that Frankenstein","tpFontSize":"18","tpFontSizeMobile":"16"} -->
-<h2 id="wd-e88313ac" class="wp-block-wd-title title">The villagers are out there with a vengeance to get that Frankenstein</h2>
+<!-- wp:wd/title {"blockId":"7c4f9335-5790-488d-9563-053898fccdae","blockVersion":"2","content":"The villagers are out there with a vengeance to get that Frankenstein","tpFontSize":"18","tpFontSizeMobile":"16"} -->
+<h2 class="wp-block-wd-title title wd-7c4f9335">The villagers are out there with a vengeance to get that Frankenstein</h2>
 <!-- /wp:wd/title -->
 
-<!-- wp:wd/paragraph {"blockId":"e3b4e346-3d40-4dce-855d-7f5bfa1d03a1"} -->
-<p id="wd-e3b4e346" class="wp-block-wd-paragraph">You made all the required mock ups for commissioned layout, got all the approvals, built a tested code base or had them built, you decided on a content management system, got a license for it or adapted:</p>
+<!-- wp:wd/paragraph {"blockId":"ee7a8439-985f-4414-9063-8a7747c9de88","blockVersion":"2"} -->
+<p class="wp-block-wd-paragraph wd-ee7a8439">You made all the required mock ups for commissioned layout, got all the approvals, built a tested code base or had them built, you decided on a content management system, got a license for it or adapted:</p>
 <!-- /wp:wd/paragraph -->
 
-<!-- wp:wd/list {"blockId":"b5b4775c-8a15-4d02-b928-34b92825f645"} -->
-<ul id="wd-b5b4775c" class="wp-block-wd-list wd-list wd-type-unordered wd-style-default"><!-- wp:wd/list-item {"blockId":"3361002c-e1c0-4fba-a517-329c8faa3f89","iconType":"unordered","svg":"","image":""} -->
-<li id="wd-3361002c" class="wp-block-wd-list-item"><div class="wd-icon"></div><span class="wd-list-content">The toppings you may chose for that TV dinner pizza slice when you forgot to shop for foods, the paint you may slap on your face to impress the new boss is your business.</span></li>
+<!-- wp:wd/list {"blockId":"da9b5b54-e49a-46bd-b7bd-9fb65aa9529b","blockVersion":"2"} -->
+<ul class="wp-block-wd-list wd-list wd-type-unordered wd-style-default wd-da9b5b54"><!-- wp:wd/list-item {"blockId":"cb3b2271-e679-41cd-9908-bd5b9b19dcf2","blockVersion":"2","iconType":"unordered","svg":"","image":""} -->
+<li class="wp-block-wd-list-item wd-cb3b2271"><div class="wd-icon"></div><span class="wd-list-content">The toppings you may chose for that TV dinner pizza slice when you forgot to shop for foods, the paint you may slap on your face to impress the new boss is your business.</span></li>
 <!-- /wp:wd/list-item -->
 
-<!-- wp:wd/list-item {"blockId":"9bd4ccc4-422b-4711-91f2-87a3441ff8db","iconType":"unordered","svg":"","image":""} -->
-<li id="wd-9bd4ccc4" class="wp-block-wd-list-item"><div class="wd-icon"></div><span class="wd-list-content">But what about your daily bread? Design comps, layouts, wireframes—will your clients accept that you go about things the facile way?</span></li>
+<!-- wp:wd/list-item {"blockId":"331fd67f-8617-4177-908b-0a7dcd46c1f0","blockVersion":"2","iconType":"unordered","svg":"","image":""} -->
+<li class="wp-block-wd-list-item wd-331fd67f"><div class="wd-icon"></div><span class="wd-list-content">But what about your daily bread? Design comps, layouts, wireframes—will your clients accept that you go about things the facile way?</span></li>
 <!-- /wp:wd/list-item -->
 
-<!-- wp:wd/list-item {"blockId":"95e4a374-5397-40bf-9b34-255e5b68e8a1","iconType":"unordered","svg":"","image":""} -->
-<li id="wd-95e4a374" class="wp-block-wd-list-item"><div class="wd-icon"></div><span class="wd-list-content">Authorities in our business will tell in no uncertain terms that Lorem Ipsum is that huge, huge no no to forswear forever.</span></li>
+<!-- wp:wd/list-item {"blockId":"03064e59-eae0-42d1-b752-cffab09ab9d4","blockVersion":"2","iconType":"unordered","svg":"","image":""} -->
+<li class="wp-block-wd-list-item wd-03064e59"><div class="wd-icon"></div><span class="wd-list-content">Authorities in our business will tell in no uncertain terms that Lorem Ipsum is that huge, huge no no to forswear forever.</span></li>
 <!-- /wp:wd/list-item -->
 
-<!-- wp:wd/list-item {"blockId":"1121e306-c714-4d50-b241-2e8d76cfd82c","iconType":"unordered","svg":"","image":""} -->
-<li id="wd-1121e306" class="wp-block-wd-list-item"><div class="wd-icon"></div><span class="wd-list-content">Not so fast, I'd say, there are some redeeming factors in favor of greeking text, as its use is merely the symptom of a worse problem to take into consideration.</span></li>
+<!-- wp:wd/list-item {"blockId":"371bc287-45de-4a83-b849-24fd9f19d8ec","blockVersion":"2","iconType":"unordered","svg":"","image":""} -->
+<li class="wp-block-wd-list-item wd-371bc287"><div class="wd-icon"></div><span class="wd-list-content">Not so fast, I'd say, there are some redeeming factors in favor of greeking text, as its use is merely the symptom of a worse problem to take into consideration.</span></li>
 <!-- /wp:wd/list-item -->
 
-<!-- wp:wd/list-item {"blockId":"732c95a3-d06b-478e-9351-66bc356b9d59","iconType":"unordered","svg":"","image":""} -->
-<li id="wd-732c95a3" class="wp-block-wd-list-item"><div class="wd-icon"></div><span class="wd-list-content">Websites in professional use templating systems.</span></li>
+<!-- wp:wd/list-item {"blockId":"de44151a-8c08-43e7-b353-7d82165af9c8","blockVersion":"2","iconType":"unordered","svg":"","image":""} -->
+<li class="wp-block-wd-list-item wd-de44151a"><div class="wd-icon"></div><span class="wd-list-content">Websites in professional use templating systems.</span></li>
 <!-- /wp:wd/list-item -->
 
-<!-- wp:wd/list-item {"blockId":"2bf5690f-1037-408b-9e52-efab7b6ee1b7","iconType":"unordered","svg":"","image":""} -->
-<li id="wd-2bf5690f" class="wp-block-wd-list-item"><div class="wd-icon"></div><span class="wd-list-content">Commercial publishing platforms and content management systems ensure that you can show different text, different data using the same template.</span></li>
+<!-- wp:wd/list-item {"blockId":"415308f8-5937-45b4-ac76-4d37284201a8","blockVersion":"2","iconType":"unordered","svg":"","image":""} -->
+<li class="wp-block-wd-list-item wd-415308f8"><div class="wd-icon"></div><span class="wd-list-content">Commercial publishing platforms and content management systems ensure that you can show different text, different data using the same template.</span></li>
 <!-- /wp:wd/list-item -->
 
-<!-- wp:wd/list-item {"blockId":"7f7932fc-b488-46bc-92a9-971c7c1a97d5","iconType":"unordered","svg":"","image":""} -->
-<li id="wd-7f7932fc" class="wp-block-wd-list-item"><div class="wd-icon"></div><span class="wd-list-content">When it's about controlling hundreds of articles, product pages for web shops, or user profiles in social networks, all of them potentially with different sizes, formats, rules for differing elements things can break, designs agreed upon can have unintended consequences and look much different than expected.</span></li>
+<!-- wp:wd/list-item {"blockId":"3fd23e9a-34f9-4d6a-82a7-8fe063808029","blockVersion":"2","iconType":"unordered","svg":"","image":""} -->
+<li class="wp-block-wd-list-item wd-3fd23e9a"><div class="wd-icon"></div><span class="wd-list-content">When it's about controlling hundreds of articles, product pages for web shops, or user profiles in social networks, all of them potentially with different sizes, formats, rules for differing elements things can break, designs agreed upon can have unintended consequences and look much different than expected.</span></li>
 <!-- /wp:wd/list-item --></ul>
 <!-- /wp:wd/list -->
 
-<!-- wp:wd/paragraph {"blockId":"71f557c3-1e57-41f8-a93e-65e2c10f5e04"} -->
-<p id="wd-71f557c3" class="wp-block-wd-paragraph">This is quite a problem to solve, but just doing without greeking text won't fix it. Using test items of real content and data in designs will help, but there's no guarantee that every oddity will be found and corrected. Do you want to be sure? Then a prototype or beta site with real content published from the real CMS is needed—but you’re not going that far until you go through an initial design cycle.</p>
+<!-- wp:wd/paragraph {"blockId":"65ea3297-17c3-4f1f-a4cd-177cbfb8d975","blockVersion":"2"} -->
+<p class="wp-block-wd-paragraph wd-65ea3297">This is quite a problem to solve, but just doing without greeking text won't fix it. Using test items of real content and data in designs will help, but there's no guarantee that every oddity will be found and corrected. Do you want to be sure? Then a prototype or beta site with real content published from the real CMS is needed—but you’re not going that far until you go through an initial design cycle.</p>
 <!-- /wp:wd/paragraph --></div>
 <!-- /wp:wd/container -->
 
-<!-- wp:wd/button {"blockId":"97197262-21e5-4602-963d-626acb422e75","shape":"semi-round","icon":"right"} -->
-<a id="wd-97197262" class="wp-block-wd-button btn btn-style-default btn-size-default btn-shape-semi-round btn-icon-pos-right"><span>Read more</span><!-- wp:wd/icon {"blockId":"248ee9ef-e992-4237-9499-9877a250dfbc","image":{"id":351,"url":"http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/08/chevron-down-black.svg"},"width":"16"} -->
-<div id="wd-248ee9ef" class="wp-block-wd-icon"><img class="wp-image-351" src="http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/08/chevron-down-black.svg" /></div>
+<!-- wp:wd/button {"blockId":"79278dd4-770b-4f2f-a97b-c233cccdc5ee","blockVersion":"2","shape":"semi-round","icon":"right"} -->
+<a class="wp-block-wd-button btn btn-style-default btn-size-default btn-shape-semi-round btn-icon-pos-right wd-79278dd4"><span>Read more</span><!-- wp:wd/icon {"blockId":"58902047-0f75-4622-b366-24031e932f78","blockVersion":"2","image":{"id":351,"url":"http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/08/chevron-down-black.svg"},"width":"16"} -->
+<div class="wp-block-wd-icon wd-58902047"><img class="wp-image-351" src="http://dummy.xtemos.com/woodmart2/vegetables-gutenberg/wp-content/uploads/sites/37/2024/08/chevron-down-black.svg" alt=""/></div>
 <!-- /wp:wd/icon --></a>
 <!-- /wp:wd/button --></div>
 <!-- /wp:wd/collapsible-content --></div>
@@ -458,8 +450,8 @@
 															<wp:post_id>550</wp:post_id>
 					<wp:post_date><![CDATA[2024-08-08 13:40:02]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-08-08 13:40:02]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-10-23 14:29:27]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-10-23 14:29:27]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2026-02-23 10:01:24]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2026-02-23 10:01:24]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[shop-archive-layout-vegetables]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -479,7 +471,7 @@
 					<title><![CDATA[Cart layout Vegetables]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/woodmart_layout/cart-layout-vegetables/</link>
 					<pubDate>Thu, 08 Aug 2024 13:45:14 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?post_type=woodmart_layout&#038;p=552</guid>
 											<content:encoded><![CDATA[<!-- wp:wd/woo-checkout-steps {"blockId":"f214c84c-b6af-4af1-a00e-e1ba3ec14bed","textAlign":"center","marginBottom":"40","marginTopTablet":"-20"} /-->
 
@@ -536,7 +528,7 @@
 					<title><![CDATA[Checkout layout Vegetables]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/woodmart_layout/checkout-layout-vegetables/</link>
 					<pubDate>Thu, 08 Aug 2024 13:57:13 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/vegetables-gutenberg/?post_type=woodmart_layout&#038;p=554</guid>
 											<content:encoded><![CDATA[<!-- wp:wd/woo-checkout-steps {"blockId":"40978b0e-cfb5-4a63-805b-4752fe57735a","textAlign":"center","marginBottom":"40","marginTopTablet":"-20"} /-->
 

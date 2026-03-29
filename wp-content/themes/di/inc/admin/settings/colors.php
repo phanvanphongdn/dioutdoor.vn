@@ -1,7 +1,14 @@
 <?php
+/**
+ * Colors settings.
+ *
+ * @package Woodmart
+ */
+
 if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
 	exit( 'No direct script access allowed' );
 }
+
 use XTS\Admin\Modules\Options;
 
 Options::add_field(
@@ -271,7 +278,7 @@ Options::add_field(
 		'type'     => 'background',
 		'default'  => array(),
 		'section'  => 'pages_bg_section',
-		'selector' => '.page .wd-page-content',
+		'selector' => '.page :is(.wd-page-content, .whb-header)',
 		'priority' => 20,
 		'class'    => 'xts-tab-field xts-last-tab-field',
 	)
@@ -285,7 +292,7 @@ Options::add_field(
 		'type'     => 'background',
 		'default'  => array(),
 		'section'  => 'pages_bg_section',
-		'selector' => '.woodmart-archive-shop:not(.single-product) .wd-page-content',
+		'selector' => '.woodmart-archive-shop:not(.single-product) :is(.wd-page-content, .whb-header)',
 		'priority' => 30,
 		'class'    => 'xts-tab-field',
 	)
@@ -300,7 +307,7 @@ Options::add_field(
 		'type'        => 'background',
 		'default'     => array(),
 		'section'     => 'pages_bg_section',
-		'selector'    => '.single-product .wd-page-content',
+		'selector'    => '.single-product :is(.wd-page-content, .whb-header)',
 		'priority'    => 40,
 		'class'       => 'xts-tab-field xts-last-tab-field',
 	)
@@ -314,7 +321,7 @@ Options::add_field(
 		'type'     => 'background',
 		'default'  => array(),
 		'section'  => 'pages_bg_section',
-		'selector' => '.woodmart-archive-blog .wd-page-content',
+		'selector' => '.woodmart-archive-blog :is(.wd-page-content, .whb-header)',
 		'priority' => 50,
 		'class'    => 'xts-tab-field',
 	)
@@ -328,7 +335,7 @@ Options::add_field(
 		'type'     => 'background',
 		'default'  => array(),
 		'section'  => 'pages_bg_section',
-		'selector' => '.single-post .wd-page-content',
+		'selector' => '.single-post :is(.wd-page-content, .whb-header)',
 		'priority' => 60,
 		'class'    => 'xts-tab-field xts-last-tab-field',
 	)
@@ -342,7 +349,7 @@ Options::add_field(
 		'type'     => 'background',
 		'default'  => array(),
 		'section'  => 'pages_bg_section',
-		'selector' => '.woodmart-archive-portfolio .wd-page-content',
+		'selector' => '.woodmart-archive-portfolio :is(.wd-page-content, .whb-header)',
 		'priority' => 70,
 		'class'    => 'xts-tab-field',
 	)
@@ -356,7 +363,7 @@ Options::add_field(
 		'type'     => 'background',
 		'default'  => array(),
 		'section'  => 'pages_bg_section',
-		'selector' => '.single-portfolio .wd-page-content',
+		'selector' => '.single-portfolio :is(.wd-page-content, .whb-header)',
 		'priority' => 80,
 		'class'    => 'xts-tab-field xts-last-tab-field',
 	)

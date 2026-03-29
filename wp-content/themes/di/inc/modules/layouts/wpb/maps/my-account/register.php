@@ -2,7 +2,7 @@
 /**
  * My account register map.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -16,14 +16,13 @@ if ( ! function_exists( 'woodmart_get_vc_map_my_account_register' ) ) {
 	function woodmart_get_vc_map_my_account_register() {
 		$title_typography = woodmart_get_typography_map(
 			array(
-				'key'              => 'title_typography',
-				'group'            => esc_html__( 'Style', 'woodmart' ),
-				'selector'         => '{{WRAPPER}} .wd-login-title',
-				'dependency'       => array(
+				'key'        => 'title_typography',
+				'group'      => esc_html__( 'Style', 'woodmart' ),
+				'selector'   => '{{WRAPPER}} .wd-login-title',
+				'dependency' => array(
 					'element' => 'show_title',
 					'value'   => 'yes',
 				),
-				'edit_field_class' => 'vc_col-sm-6 vc_column',
 			)
 		);
 

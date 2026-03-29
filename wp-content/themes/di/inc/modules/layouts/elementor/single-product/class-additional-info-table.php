@@ -2,12 +2,13 @@
 /**
  * Additional information table map.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Modules\Layouts;
 
 use Elementor\Controls_Manager;
+use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Image_Size;
 use Elementor\Group_Control_Typography;
 use Elementor\Plugin;
@@ -37,7 +38,7 @@ class Additional_Info_Table extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return esc_html__( 'Product additional information table', 'woodmart' );
+		return esc_html__( 'Product additional information', 'woodmart' );
 	}
 
 	/**
@@ -195,7 +196,7 @@ class Additional_Info_Table extends Widget_Base {
 				'default'     => array(),
 				'options'     => woodmart_get_products_attributes(),
 				'label_block' => true,
-				'condition' => array(
+				'condition'   => array(
 					'data_source_type' => array( 'exclude' ),
 				),
 			)
@@ -228,8 +229,8 @@ class Additional_Info_Table extends Widget_Base {
 				'label'        => esc_html__( 'Layout', 'woodmart' ),
 				'type'         => Controls_Manager::SELECT,
 				'options'      => array(
-					'list'   => esc_html__( 'List', 'woodmart' ),
-					'grid'   => esc_html__( 'Grid', 'woodmart' ),
+					'grid'   => esc_html__( 'Default', 'woodmart' ),
+					'list'   => esc_html__( 'Justify', 'woodmart' ),
 					'inline' => esc_html__( 'Inline', 'woodmart' ),
 				),
 				'prefix_class' => 'wd-layout-',
@@ -250,6 +251,62 @@ class Additional_Info_Table extends Widget_Base {
 				'default'      => 'bordered',
 			)
 		);
+
+		$this->add_control(
+			'items_border_popover',
+			array(
+				'label'     => esc_html__( 'Border', 'woodmart' ),
+				'type'      => Controls_Manager::POPOVER_TOGGLE,
+				'condition' => array(
+					'style' => 'bordered',
+				),
+			)
+		);
+
+		$this->start_popover();
+
+		$this->add_group_control(
+			Group_Control_Border::get_type(),
+			array(
+				'name'           => 'items_border',
+				'fields_options' => array(
+					'border' => array(
+						'label'     => esc_html__( 'Type', 'woodmart' ),
+						'selectors' => array(
+							'{{WRAPPER}}.wd-style-bordered .shop_attributes' => '--wd-attr-brd-style: {{VALUE}}',
+						),
+					),
+					'color'  => array(
+						'label'     => esc_html__( 'Color', 'woodmart' ),
+						'selectors' => array(
+							'{{WRAPPER}}.wd-style-bordered .shop_attributes' => '--wd-attr-brd-color: {{VALUE}}',
+						),
+						'condition' => array(),
+					),
+					'width'  => array(
+						'label'      => esc_html__( 'Width', 'woodmart' ),
+						'type'       => Controls_Manager::SLIDER,
+						'size_units' => array( 'px' ),
+						'range'      => array(
+							'px' => array(
+								'min'  => 1,
+								'max'  => 20,
+								'step' => 1,
+							),
+						),
+						'selectors'  => array(
+							'{{WRAPPER}}.wd-style-bordered .shop_attributes' => '--wd-attr-brd-width: {{SIZE}}{{UNIT}};',
+						),
+						'condition'  => array(),
+					),
+				),
+				'condition'      => array(
+					'style' => 'bordered',
+				),
+			)
+		);
+
+		$this->end_popover();
 
 		$this->add_responsive_control(
 			'columns',
@@ -313,52 +370,8 @@ class Additional_Info_Table extends Widget_Base {
 		$this->start_controls_section(
 			'attributes_style_section',
 			array(
-				'label' => esc_html__( 'Attributes', 'woodmart' ),
+				'label' => esc_html__( 'Attribute names', 'woodmart' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
-			)
-		);
-
-		$this->add_control(
-			'attr_hide_image',
-			array(
-				'label'        => esc_html__( 'Hide image', 'woodmart' ),
-				'type'         => Controls_Manager::SWITCHER,
-				'default'      => '',
-				'label_on'     => esc_html__( 'Yes', 'woodmart' ),
-				'label_off'    => esc_html__( 'No', 'woodmart' ),
-				'return_value' => 'image',
-				'prefix_class' => 'wd-hide-',
-			)
-		);
-
-		$this->add_responsive_control(
-			'image_width',
-			array(
-				'label'       => esc_html__( 'Image width', 'woodmart' ),
-				'description' => esc_html__( 'Limit the attribute image container width', 'woodmart' ),
-				'type'        => Controls_Manager::SLIDER,
-				'range'       => array(
-					'px' => array(
-						'min'  => 0,
-						'max'  => 300,
-						'step' => 1,
-					),
-				),
-				'selectors'   => array(
-					'{{WRAPPER}} .shop_attributes' => '--wd-attr-img-width: {{SIZE}}{{UNIT}};',
-				),
-				'condition'   => array(
-					'attr_hide_image!' => 'image',
-				),
-			)
-		);
-
-		$this->start_controls_tabs( 'attr_settings_tabs' );
-
-		$this->start_controls_tab(
-			'attr_name_tab',
-			array(
-				'label' => esc_html__( 'Name', 'woodmart' ),
 			)
 		);
 
@@ -367,44 +380,17 @@ class Additional_Info_Table extends Widget_Base {
 			array(
 				'label'        => esc_html__( 'Hide name', 'woodmart' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'default'      => '',
+				'default'      => 'no',
 				'label_on'     => esc_html__( 'Yes', 'woodmart' ),
 				'label_off'    => esc_html__( 'No', 'woodmart' ),
-				'return_value' => 'name',
-				'prefix_class' => 'wd-hide-',
-			)
-		);
-
-		$this->add_group_control(
-			Group_Control_Typography::get_type(),
-			array(
-				'name'      => 'attr_name_typography',
-				'label'     => esc_html__( 'Name typography', 'woodmart' ),
-				'selector'  => '{{WRAPPER}} .woocommerce-product-attributes-item__label',
-				'condition' => array(
-					'attr_hide_name!' => 'name',
-				),
-			)
-		);
-
-		$this->add_control(
-			'attr_name_color',
-			array(
-				'label'     => esc_html__( 'Name color', 'woodmart' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => array(
-					'{{WRAPPER}} .woocommerce-product-attributes-item__label' => 'color: {{VALUE}}',
-				),
-				'condition' => array(
-					'attr_hide_name!' => 'name',
-				),
+				'return_value' => 'yes',
 			)
 		);
 
 		$this->add_responsive_control(
 			'attr_name_column_width',
 			array(
-				'label'      => esc_html__( 'Name column width', 'woodmart' ),
+				'label'      => esc_html__( 'Width', 'woodmart' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( '%', 'px' ),
 				'range'      => array(
@@ -420,10 +406,159 @@ class Additional_Info_Table extends Widget_Base {
 					),
 				),
 				'selectors'  => array(
-					'{{WRAPPER}} .woocommerce-product-attributes-item__label' => 'width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .shop_attributes th' => 'width: {{SIZE}}{{UNIT}};',
 				),
 				'condition'  => array(
-					'layout' => 'inline',
+					'attr_hide_name!' => 'yes',
+					'layout'          => 'inline',
+				),
+			)
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			array(
+				'name'      => 'attr_name_typography',
+				'label'     => esc_html__( 'Typography', 'woodmart' ),
+				'selector'  => '{{WRAPPER}} .shop_attributes th',
+				'condition' => array(
+					'attr_hide_name!' => 'yes',
+				),
+			)
+		);
+
+		$this->add_control(
+			'attr_name_color',
+			array(
+				'label'     => esc_html__( 'Color', 'woodmart' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'{{WRAPPER}} .shop_attributes th' => 'color: {{VALUE}}',
+				),
+				'condition' => array(
+					'attr_hide_name!' => 'yes',
+				),
+			)
+		);
+
+		$this->add_control(
+			'attr_divider',
+			array(
+				'type'  => Controls_Manager::DIVIDER,
+				'style' => 'solid',
+			)
+		);
+
+		$this->add_control(
+			'attr_hide_image',
+			array(
+				'label'        => esc_html__( 'Hide image', 'woodmart' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'default'      => 'no',
+				'label_on'     => esc_html__( 'Yes', 'woodmart' ),
+				'label_off'    => esc_html__( 'No', 'woodmart' ),
+				'return_value' => 'yes',
+			)
+		);
+
+		$this->add_responsive_control(
+			'image_width',
+			array(
+				'label'     => esc_html__( 'Image width', 'woodmart' ),
+				'type'      => Controls_Manager::SLIDER,
+				'range'     => array(
+					'px' => array(
+						'min'  => 0,
+						'max'  => 300,
+						'step' => 1,
+					),
+				),
+				'selectors' => array(
+					'{{WRAPPER}} .shop_attributes' => '--wd-attr-img-width: {{SIZE}}{{UNIT}};',
+				),
+				'condition' => array(
+					'attr_hide_image!' => 'yes',
+				),
+			)
+		);
+
+		$this->end_controls_section();
+
+		/**
+		 * Terms settings.
+		 */
+		$this->start_controls_section(
+			'terms_style_section',
+			array(
+				'label' => esc_html__( 'Attribute terms', 'woodmart' ),
+				'tab'   => Controls_Manager::TAB_STYLE,
+			)
+		);
+
+		$this->add_control(
+			'hide_term_label',
+			array(
+				'label'        => esc_html__( 'Hide name', 'woodmart' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'default'      => 'no',
+				'label_on'     => esc_html__( 'Yes', 'woodmart' ),
+				'label_off'    => esc_html__( 'No', 'woodmart' ),
+				'return_value' => 'yes',
+			)
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			array(
+				'name'      => 'attr_term_typography',
+				'label'     => esc_html__( 'Typography', 'woodmart' ),
+				'selector'  => '{{WRAPPER}} .shop_attributes td',
+				'condition' => array(
+					'hide_term_label!' => 'yes',
+				),
+			)
+		);
+
+		$this->add_control(
+			'attr_term_color',
+			array(
+				'label'     => esc_html__( 'Color', 'woodmart' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'{{WRAPPER}} .shop_attributes td' => 'color: {{VALUE}}',
+				),
+				'condition' => array(
+					'hide_term_label!' => 'yes',
+				),
+			)
+		);
+
+		$this->start_controls_tabs(
+			'term_link_color_tabs',
+			array(
+				'condition' => array(
+					'hide_term_label!' => 'yes',
+				),
+			)
+		);
+
+		$this->start_controls_tab(
+			'term_link_color_tab',
+			array(
+				'label' => esc_html__( 'Idle', 'woodmart' ),
+			)
+		);
+
+		$this->add_control(
+			'term_link_color',
+			array(
+				'label'     => esc_html__( 'Link color', 'woodmart' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'{{WRAPPER}} .shop_attributes td' => '--wd-link-color: {{VALUE}}',
+				),
+				'condition' => array(
+					'hide_term_label!' => 'yes',
 				),
 			)
 		);
@@ -431,28 +566,22 @@ class Additional_Info_Table extends Widget_Base {
 		$this->end_controls_tab();
 
 		$this->start_controls_tab(
-			'attr_term_tab',
+			'term_link_color_hover_tab',
 			array(
-				'label' => esc_html__( 'Term', 'woodmart' ),
-			)
-		);
-
-		$this->add_group_control(
-			Group_Control_Typography::get_type(),
-			array(
-				'name'     => 'attr_term_typography',
-				'label'    => esc_html__( 'Term typography', 'woodmart' ),
-				'selector' => '{{WRAPPER}} .woocommerce-product-attributes-item__value',
+				'label' => esc_html__( 'Hover', 'woodmart' ),
 			)
 		);
 
 		$this->add_control(
-			'attr_term_color',
+			'term_link_color_hover',
 			array(
-				'label'     => esc_html__( 'Term color', 'woodmart' ),
+				'label'     => esc_html__( 'Link color', 'woodmart' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
-					'{{WRAPPER}} .woocommerce-product-attributes-item__value' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .shop_attributes td' => '--wd-link-color-hover: {{VALUE}}',
+				),
+				'condition' => array(
+					'hide_term_label!' => 'yes',
 				),
 			)
 		);
@@ -460,6 +589,47 @@ class Additional_Info_Table extends Widget_Base {
 		$this->end_controls_tab();
 
 		$this->end_controls_tabs();
+
+		$this->add_control(
+			'term_divider',
+			array(
+				'type'  => Controls_Manager::DIVIDER,
+				'style' => 'solid',
+			)
+		);
+
+		$this->add_control(
+			'term_hide_image',
+			array(
+				'label'        => esc_html__( 'Hide image', 'woodmart' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'default'      => 'no',
+				'label_on'     => esc_html__( 'Yes', 'woodmart' ),
+				'label_off'    => esc_html__( 'No', 'woodmart' ),
+				'return_value' => 'yes',
+			)
+		);
+
+		$this->add_responsive_control(
+			'term_image_width',
+			array(
+				'label'     => esc_html__( 'Image width', 'woodmart' ),
+				'type'      => Controls_Manager::SLIDER,
+				'range'     => array(
+					'px' => array(
+						'min'  => 0,
+						'max'  => 300,
+						'step' => 1,
+					),
+				),
+				'selectors' => array(
+					'{{WRAPPER}} .shop_attributes' => '--wd-term-img-width: {{SIZE}}{{UNIT}};',
+				),
+				'condition' => array(
+					'term_hide_image!' => 'yes',
+				),
+			)
+		);
 
 		$this->end_controls_section();
 
@@ -474,7 +644,7 @@ class Additional_Info_Table extends Widget_Base {
 		$this->add_control(
 			'title_color',
 			array(
-				'label'     => esc_html__( 'Title color', 'woodmart' ),
+				'label'     => esc_html__( 'Color', 'woodmart' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .title-text' => 'color: {{VALUE}}',
@@ -486,7 +656,7 @@ class Additional_Info_Table extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			array(
 				'name'     => 'title_typography',
-				'label'    => esc_html__( 'Title typography', 'woodmart' ),
+				'label'    => esc_html__( 'Typography', 'woodmart' ),
 				'selector' => '{{WRAPPER}} .title-text',
 			)
 		);
@@ -548,7 +718,6 @@ class Additional_Info_Table extends Widget_Base {
 			}
 		} elseif ( 'icon' === $settings['icon_type'] && $settings['icon'] ) {
 			$icon_output = woodmart_elementor_get_render_icon( $settings['icon'] );
-
 		}
 
 		Main::setup_preview();
@@ -600,7 +769,23 @@ class Additional_Info_Table extends Widget_Base {
 			<?php
 		}
 
+		Global_Data::get_instance()->set_data(
+			'wd_additional_info_table_args',
+			array(
+				// Attributes.
+				'attr_image' => isset( $settings['attr_hide_image'] ) && 'yes' !== $settings['attr_hide_image'],
+				'attr_name'  => isset( $settings['attr_hide_name'] ) && 'yes' !== $settings['attr_hide_name'],
+				// Terms.
+				'term_label' => isset( $settings['hide_term_label'] ) && 'yes' !== $settings['hide_term_label'],
+				'term_image' => isset( $settings['term_hide_image'] ) && 'yes' !== $settings['term_hide_image'],
+			)
+		);
+
+		woodmart_enqueue_inline_style( 'woo-mod-shop-attributes-builder' );
+
 		do_action( 'woocommerce_product_additional_information', $product );
+
+		Global_Data::get_instance()->set_data( 'wd_additional_info_table_args', array() );
 
 		Builder::get_instance()->set_data( 'wd_product_attributes_include', array() );
 		Builder::get_instance()->set_data( 'wd_product_attributes_exclude', array() );

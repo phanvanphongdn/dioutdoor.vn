@@ -1,19 +1,40 @@
 <?php
+/**
+ * Typography control CSS generation.
+ *
+ * @package woodmart
+ */
 
 use XTS\Gutenberg\Google_Fonts;
 use XTS\Gutenberg\Block_CSS;
 
 if ( ! function_exists( 'wd_get_block_typography_css' ) ) {
+	/**
+	 * Get typography control CSS.
+	 *
+	 * @param string $selector   CSS selector.
+	 * @param array  $attributes Block attributes.
+	 * @param string $attr_prefix Attribute prefix.
+	 *
+	 * @return array
+	 */
 	function wd_get_block_typography_css( $selector, $attributes, $attr_prefix ) {
+		$has_google_font = ! empty( $attributes[ $attr_prefix . 'FontFamily' ] ) && ! empty( $attributes[ $attr_prefix . 'Google' ] );
+
+		if ( $has_google_font ) {
+			$google_family = $attributes[ $attr_prefix . 'FontFamily' ];
+
+			$attributes[ $attr_prefix . 'FontFamily' ] = '\'' . $google_family . '\'';
+		}
+
 		$block_css = new Block_CSS( $attributes );
 
-		if ( ! empty( $attributes[ $attr_prefix . 'FontFamily' ] ) && ! empty( $attributes[ $attr_prefix . 'Google' ] ) ) {
+		if ( $has_google_font ) {
 			Google_Fonts::get_instance()->add_google_font(
 				array(
-					'font-family' => $attributes[ $attr_prefix . 'FontFamily' ],
+					'font-family' => $google_family,
 					'font-weight' => ! empty( $attributes[ $attr_prefix . 'FontWeight' ] ) ? $attributes[ $attr_prefix . 'FontWeight' ] : '',
 					'font-style'  => ! empty( $attributes[ $attr_prefix . 'FontStyle' ] ) ? $attributes[ $attr_prefix . 'FontStyle' ] : '',
-					'font-subset' => ! empty( $attributes[ $attr_prefix . 'FontSubset' ] ) ? $attributes[ $attr_prefix . 'FontSubset' ] : '',
 				)
 			);
 		}

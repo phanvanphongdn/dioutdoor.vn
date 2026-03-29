@@ -1,7 +1,15 @@
 <?php
+/**
+ * My account layout.
+ *
+ * @package woodmart
+ */
 
 namespace XTS\Modules\Layouts;
 
+/**
+ * My account class.
+ */
 class My_Account extends Layout_Type {
 
 	/**
@@ -119,8 +127,7 @@ class My_Account extends Layout_Type {
 	 * Reset post data.
 	 */
 	public static function reset_postdata() {
-		global $post;
-		if ( isset( $post ) ) {
+		if ( is_singular( 'woodmart_layout' ) ) {
 			wp_reset_postdata();
 		}
 	}

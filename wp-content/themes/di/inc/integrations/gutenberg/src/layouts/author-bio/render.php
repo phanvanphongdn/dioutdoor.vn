@@ -18,7 +18,7 @@ if ( ! function_exists( 'wd_gutenberg_author_bio' ) ) {
 		Main::setup_preview();
 
 		?>
-		<div id="<?php echo esc_attr( $el_id ); ?>" class="wd-single-post-author-bio<?php echo esc_attr( $wrapper_classes ); ?>">
+		<div <?php echo $el_id ? 'id="' . esc_attr( $el_id ) . '" ' : ''; ?>class="wd-single-post-author-bio<?php echo esc_attr( $wrapper_classes ); ?>">
 			<?php get_template_part( 'author-bio' ); ?>
 		</div>
 		<?php

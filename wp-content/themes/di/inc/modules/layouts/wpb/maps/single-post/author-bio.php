@@ -2,7 +2,7 @@
 /**
  * Author biography map.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -16,19 +16,17 @@ if ( ! function_exists( 'woodmart_get_vc_map_post_author_bio' ) ) {
 	function woodmart_get_vc_map_post_author_bio() {
 		$title_typography = woodmart_get_typography_map(
 			array(
-				'key'              => 'title_typography',
-				'group'            => esc_html__( 'Style', 'woodmart' ),
-				'selector'         => '{{WRAPPER}} .wd-author-title',
-				'edit_field_class' => 'vc_col-sm-6 vc_column',
+				'key'      => 'title_typography',
+				'group'    => esc_html__( 'Style', 'woodmart' ),
+				'selector' => '{{WRAPPER}} .wd-author-title',
 			)
 		);
 
 		$text_typography = woodmart_get_typography_map(
 			array(
-				'key'              => 'text_typography',
-				'group'            => esc_html__( 'Style', 'woodmart' ),
-				'selector'         => '{{WRAPPER}} .wd-author-area-info',
-				'edit_field_class' => 'vc_col-sm-6 vc_column',
+				'key'      => 'text_typography',
+				'group'    => esc_html__( 'Style', 'woodmart' ),
+				'selector' => '{{WRAPPER}} .wd-author-area-info',
 			)
 		);
 

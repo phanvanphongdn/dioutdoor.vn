@@ -2,7 +2,7 @@
 /**
  * Post content map.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

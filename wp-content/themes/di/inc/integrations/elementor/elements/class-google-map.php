@@ -331,7 +331,7 @@ class Google_Map extends Widget_Base {
 			array(
 				'label'       => esc_html__( 'Content', 'woodmart' ),
 				'type'        => Controls_Manager::SELECT,
-				'options'     => woodmart_get_elementor_html_blocks_array(),
+				'options'     => woodmart_get_elementor_blocks_array( 'cms_block' ),
 				'description' => function_exists( 'woodmart_get_html_block_links' ) ? woodmart_get_html_block_links() : '',
 				'default'     => '0',
 				'condition'   => array(
@@ -524,6 +524,7 @@ class Google_Map extends Widget_Base {
 				'label'       => esc_html__( 'Styles (JSON)', 'woodmart' ),
 				'type'        => 'wd_google_json',
 				'description' => sprintf(
+					// translators: 1: opening a tag 2: closing a tag 3: line break.
 					__( 'Styled maps allow you to customize the presentation of the standard Google base maps, changing the visual display of such elements as roads, parks, and built-up areas.%3$s You can find more Google maps styles on the website: %1$s Snazzy Maps %2$s %3$s Just copy JSON code and paste it here.', 'woodmart' ),
 					'<a target="_blank" href="https://snazzymaps.com/">',
 					'</a>',
@@ -782,7 +783,7 @@ class Google_Map extends Widget_Base {
 		woodmart_enqueue_inline_style( 'el-google-map' );
 
 		?>
-		<div <?php echo $this->get_render_attribute_string( 'wrapper' ); ?> data-map-args='<?php echo esc_attr( wp_json_encode( $map_args ) ); ?>'>
+		<div <?php echo $this->get_render_attribute_string( 'wrapper' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> data-map-args='<?php echo esc_attr( wp_json_encode( $map_args ) ); ?>'>
 
 			<?php if ( 'page_load' !== $settings['init_type'] && $placeholder ) : ?>
 				<div class="wd-map-placeholder wd-fill">
@@ -803,12 +804,12 @@ class Google_Map extends Widget_Base {
 			</div>
 
 			<?php if ( $settings['content'] || $settings['text'] ) : ?>
-				<div <?php echo $this->get_render_attribute_string( 'content_wrapper' ); ?>>
+				<div <?php echo $this->get_render_attribute_string( 'content_wrapper' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 					<div class="wd-google-map-content wd-map-content wd-entry-content">
 						<?php if ( 'html_block' === $settings['content_type'] ) : ?>
 							<?php echo woodmart_get_html_block( $settings['content'] ); // phpcs:ignore ?>
 						<?php else : ?>
-							<?php echo wpautop( do_shortcode( $settings['text'] ) ); ?>
+							<?php echo wpautop( do_shortcode( $settings['text'] ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 						<?php endif; ?>
 					</div>
 				</div>

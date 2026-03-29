@@ -1,22 +1,33 @@
 <?php
+/**
+ * Categories element class file.
+ *
+ * @package woodmart
+ */
 
 namespace XTS\Modules\Header_Builder\Elements;
 
 use XTS\Modules\Header_Builder\Element;
 
 /**
- * ------------------------------------------------------------------------------------------------
- *  Get categories dropdown vertical menu
- * ------------------------------------------------------------------------------------------------
+ * Categories dropdown menu element.
  */
 class Categories extends Element {
 
+	/**
+	 * Constructor.
+	 */
 	public function __construct() {
 		parent::__construct();
 
 		$this->template_name = 'categories';
 	}
 
+	/**
+	 * Map element.
+	 *
+	 * @return void
+	 */
 	public function map() {
 		$this->args = array(
 			'type'            => 'categories',
@@ -72,7 +83,7 @@ class Categories extends Element {
 					'to'          => 100,
 					'value'       => 5,
 					'units'       => '',
-					'requires'    => array(
+					'condition'   => array(
 						'more_cat_button' => array(
 							'comparison' => 'equal',
 							'value'      => true,
@@ -161,6 +172,7 @@ class Categories extends Element {
 					'type'        => 'bg',
 					'tab'         => esc_html__( 'Style', 'woodmart' ),
 					'group'       => esc_html__( 'Menu title', 'woodmart' ),
+					'selector'    => '{{WRAPPER}} .menu-opener',
 					'value'       => '',
 					'description' => '',
 				),
@@ -203,7 +215,7 @@ class Categories extends Element {
 					'group'       => esc_html__( 'Menu title', 'woodmart' ),
 					'value'       => '',
 					'description' => '',
-					'requires'    => array(
+					'condition'   => array(
 						'icon_type' => array(
 							'comparison' => 'equal',
 							'value'      => 'custom',
@@ -226,7 +238,7 @@ class Categories extends Element {
 							'--wd-tools-icon-width: {{VALUE}}px;',
 						),
 					),
-					'requires'    => array(
+					'condition'   => array(
 						'icon_type' => array(
 							'comparison' => 'equal',
 							'value'      => 'custom',

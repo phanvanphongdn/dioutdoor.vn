@@ -2,7 +2,7 @@
 /**
  * Product metaboxes
  *
- * @package xts
+ * @package woodmart
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -278,7 +278,7 @@ if ( ! function_exists( 'woodmart_register_product_metaboxes' ) ) {
 			array(
 				'id'           => $woodmart_prefix . 'extra_content',
 				'name'         => esc_html__( 'Extra content block', 'woodmart' ),
-				'description'  => esc_html__( 'You can create some extra content with page builder (in Admin panel / HTML Blocks / Add new) and add it to this product', 'woodmart' ),
+				'description'  => ( function_exists( 'woodmart_get_html_block_links' ) ? woodmart_get_html_block_links() : '' ) . esc_html__( 'You can create some extra content with page builder (in Admin panel / HTML Blocks / Add new) and add it to this product', 'woodmart' ),
 				'type'         => 'select',
 				'section'      => 'layout_options_section',
 				'select2'      => true,
@@ -538,6 +538,7 @@ if ( ! function_exists( 'woodmart_register_product_metaboxes' ) ) {
 				'type'         => 'select',
 				'section'      => 'tab_options_section',
 				'name'         => esc_html__( 'HTML Block', 'woodmart' ),
+				'description'  => function_exists( 'woodmart_get_html_block_links' ) ? woodmart_get_html_block_links() : '',
 				'select2'      => true,
 				'empty_option' => true,
 				'autocomplete' => array(
@@ -651,6 +652,7 @@ if ( ! function_exists( 'woodmart_register_product_metaboxes' ) ) {
 				'type'         => 'select',
 				'section'      => 'tab_options_section',
 				'name'         => esc_html__( 'HTML Block', 'woodmart' ),
+				'description'  => function_exists( 'woodmart_get_html_block_links' ) ? woodmart_get_html_block_links() : '',
 				'select2'      => true,
 				'empty_option' => true,
 				'autocomplete' => array(
@@ -764,6 +766,7 @@ if ( ! function_exists( 'woodmart_register_product_metaboxes' ) ) {
 				'type'         => 'select',
 				'section'      => 'tab_options_section',
 				'name'         => esc_html__( 'HTML Block', 'woodmart' ),
+				'description'  => function_exists( 'woodmart_get_html_block_links' ) ? woodmart_get_html_block_links() : '',
 				'select2'      => true,
 				'empty_option' => true,
 				'autocomplete' => array(
@@ -877,6 +880,7 @@ if ( ! function_exists( 'woodmart_register_product_metaboxes' ) ) {
 				'type'         => 'select',
 				'section'      => 'tab_options_section',
 				'name'         => esc_html__( 'HTML Block', 'woodmart' ),
+				'description'  => function_exists( 'woodmart_get_html_block_links' ) ? woodmart_get_html_block_links() : '',
 				'select2'      => true,
 				'empty_option' => true,
 				'autocomplete' => array(
@@ -990,6 +994,7 @@ if ( ! function_exists( 'woodmart_register_product_metaboxes' ) ) {
 				'type'         => 'select',
 				'section'      => 'tab_options_section',
 				'name'         => esc_html__( 'HTML Block', 'woodmart' ),
+				'description'  => function_exists( 'woodmart_get_html_block_links' ) ? woodmart_get_html_block_links() : '',
 				'select2'      => true,
 				'empty_option' => true,
 				'autocomplete' => array(
@@ -1021,6 +1026,10 @@ if ( ! function_exists( 'woodmart_register_product_metaboxes' ) ) {
 			'main_layout',
 			'sidebar_width',
 		);
+
+		if ( ! is_array( $woodmart_transfer_options ) ) {
+			$woodmart_transfer_options = array();
+		}
 
 		$woodmart_transfer_options = array_merge( $woodmart_transfer_options, $woodmart_local_transfer_options );
 	}
@@ -1111,7 +1120,7 @@ $product_attribute_metabox->add_field(
 		'type'         => 'select',
 		'section'      => 'general',
 		'name'         => esc_html__( 'HTML Block', 'woodmart' ),
-		'description'  => esc_html__( 'Additional category description that will be displayed after product loop on this category page.', 'woodmart' ),
+		'description'  => ( function_exists( 'woodmart_get_html_block_links' ) ? woodmart_get_html_block_links() : '' ) . esc_html__( 'Additional category description that will be displayed after product loop on this category page.', 'woodmart' ),
 		'select2'      => true,
 		'empty_option' => true,
 		'autocomplete' => array(

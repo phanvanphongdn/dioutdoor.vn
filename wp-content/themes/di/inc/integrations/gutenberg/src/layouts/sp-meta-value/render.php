@@ -13,6 +13,7 @@ if ( ! function_exists( 'wd_gutenberg_single_product_meta_value' ) ) {
 		Main::setup_preview();
 
 		$value = get_post_meta( get_the_ID(), $block_attributes['metaKey'], true );
+		$el_id = wd_get_gutenberg_element_id( $block_attributes );
 
 		if ( '' === $value ) {
 			Main::restore_preview();
@@ -21,7 +22,7 @@ if ( ! function_exists( 'wd_gutenberg_single_product_meta_value' ) ) {
 		}
 
 		?>
-			<div id="<?php echo esc_attr( wd_get_gutenberg_element_id( $block_attributes ) ); ?>" class="wd-single-meta-value<?php echo esc_attr( wd_get_gutenberg_element_classes( $block_attributes ) ); ?>">
+			<div <?php echo $el_id ? 'id="' . esc_attr( $el_id ) . '" ' : ''; ?>class="wd-single-meta-value<?php echo esc_attr( wd_get_gutenberg_element_classes( $block_attributes ) ); ?>">
 				<?php
 					echo wp_kses( $value, true );
 				?>

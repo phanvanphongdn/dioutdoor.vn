@@ -16,7 +16,7 @@
 	<!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 	<!--    contained in this file into your site. -->
 
-	<!-- generator="WordPress/6.7.2" created="2025-06-09 11:16" -->
+	<!-- generator="WordPress/6.7.4" created="2026-02-25 15:30" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -29,14 +29,14 @@
 	<title>Megamarket</title>
 	<link>https://dummy.xtemos.com/woodmart2/megamarket</link>
 	<description>Just another WoodMart Dummy 2.0 Sites site</description>
-	<pubDate>Mon, 09 Jun 2025 11:16:05 +0000</pubDate>
+	<pubDate>Wed, 25 Feb 2026 15:30:58 +0000</pubDate>
 	<language>en-US</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
 	<wp:base_site_url>https://dummy.xtemos.com/woodmart2/</wp:base_site_url>
 	<wp:base_blog_url>https://dummy.xtemos.com/woodmart2/megamarket</wp:base_blog_url>
 
 	
-					<wp:term>
+							<wp:term>
 			<wp:term_id>75</wp:term_id>
 			<wp:term_taxonomy><![CDATA[woodmart_slider]]></wp:term_taxonomy>
 			<wp:term_slug><![CDATA[megamarket-slider]]></wp:term_slug>
@@ -74,54 +74,15 @@
 			<wp:meta_key><![CDATA[autoplay_speed]]></wp:meta_key>
 			<wp:meta_value><![CDATA[20000]]></wp:meta_value>
 		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-75-css-data]]></wp:meta_key>
-			<wp:meta_value><![CDATA[#slider-75 .wd-slide {
-	min-height: 520px;
-}
-
-@media (max-width: 1024px) {
-	#slider-75 .wd-slide {
-		min-height: 520px;
-	}
-}
-
-@media (max-width: 767px) {
-	#slider-75 .wd-slide {
-		min-height: 720px;
-	}
-}
-]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-75-version]]></wp:meta_key>
-			<wp:meta_value><![CDATA[8.2.0]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-75-site-url]]></wp:meta_key>
-			<wp:meta_value><![CDATA[32583fee170f35d6cd2e57b8dc4e1fd2]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-75-credentials]]></wp:meta_key>
-			<wp:meta_value><![CDATA[requested]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-75-file-data]]></wp:meta_key>
-			<wp:meta_value><![CDATA[a:3:{s:4:"path";s:35:"/2025/06/xts-term-75-1749467520.css";s:13:"theme_version";s:5:"8.2.0";s:8:"site_url";s:32:"32583fee170f35d6cd2e57b8dc4e1fd2";}]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-75-status]]></wp:meta_key>
-			<wp:meta_value><![CDATA[valid]]></wp:meta_value>
-		</wp:termmeta>
 		</wp:term>
-			<wp:term><wp:term_id>310</wp:term_id><wp:term_taxonomy>nav_menu</wp:term_taxonomy><wp:term_slug><![CDATA[header-current-address-megamarket]]></wp:term_slug><wp:term_name><![CDATA[Header current address Megamarket]]></wp:term_name>
+					<wp:term><wp:term_id>310</wp:term_id><wp:term_taxonomy>nav_menu</wp:term_taxonomy><wp:term_slug><![CDATA[header-current-address-megamarket]]></wp:term_slug><wp:term_name><![CDATA[Header current address Megamarket]]></wp:term_name>
 </wp:term>
 	<wp:term><wp:term_id>312</wp:term_id><wp:term_taxonomy>nav_menu</wp:term_taxonomy><wp:term_slug><![CDATA[main-header-menu-megamarket]]></wp:term_slug><wp:term_name><![CDATA[Main header menu Megamarket]]></wp:term_name>
 </wp:term>
 	<wp:term><wp:term_id>313</wp:term_id><wp:term_taxonomy>nav_menu</wp:term_taxonomy><wp:term_slug><![CDATA[mobile-menu-megamarket]]></wp:term_slug><wp:term_name><![CDATA[Mobile menu Megamarket]]></wp:term_name>
 </wp:term>
 
-	<generator>https://wordpress.org/?v=6.7.2</generator>
+	<generator>https://wordpress.org/?v=6.7.4</generator>
 
 					<item>
 					<title><![CDATA[All Categories 1]]></title>
@@ -4188,8 +4149,8 @@ United States[/woodmart_info_box][woodmart_info_box image="1816" rounding_size="
 															<wp:post_id>1177</wp:post_id>
 					<wp:post_date><![CDATA[2022-06-02 09:38:59]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2022-06-02 09:38:59]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2022-06-07 08:36:52]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2022-06-07 08:36:52]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2026-02-25 14:31:33]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2026-02-25 14:31:33]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[megamarket-slide-1]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -4202,28 +4163,12 @@ United States[/woodmart_info_box][woodmart_info_box image="1816" rounding_size="
 							<wp:meta_value><![CDATA[#wd-628f771cb33bd.wd-text-block{line-height:28px;font-size:18px;}#wd-6295b1c5cb576{--wd-max-width:300px;}#wd-6295b1c5cb576 .woodmart-title-container{line-height:56px;font-size:46px;}@media (max-width: 1199px) {#wd-628f771cb33bd.wd-text-block{line-height:26px;font-size:16px;}#wd-6295b1c5cb576{--wd-max-width:240px;}#wd-6295b1c5cb576 .woodmart-title-container{line-height:46px;font-size:36px;}}@media (max-width: 767px) {#wd-628f771cb33bd.wd-text-block{line-height:24px;font-size:14px;}#wd-6295b1c5cb576{--wd-max-width:220px;}#wd-6295b1c5cb576 .woodmart-title-container{line-height:42px;font-size:32px;}}]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:92:"http://dummy.xtemos.com/woodmart2/megamarket/wp-content/uploads/sites/3/2022/06/slider-1.jpg";s:2:"id";s:4:"1178";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_size_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[contain]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_position_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[custom]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[bg_image_position_x_desktop]]></wp:meta_key>
 							<wp:meta_value><![CDATA[420px]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[bg_image_position_y_desktop]]></wp:meta_key>
 							<wp:meta_value><![CDATA[0px]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_tablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[bg_image_position_tablet]]></wp:meta_key>
@@ -4236,10 +4181,6 @@ United States[/woodmart_info_box][woodmart_info_box image="1816" rounding_size="
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[bg_image_position_y_tablet]]></wp:meta_key>
 							<wp:meta_value><![CDATA[0px]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_mobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[bg_image_position_mobile]]></wp:meta_key>
@@ -4256,14 +4197,6 @@ United States[/woodmart_info_box][woodmart_info_box image="1816" rounding_size="
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[bg_color]]></wp:meta_key>
 							<wp:meta_value><![CDATA[rgb(208,190,163)]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[vertical_align]]></wp:meta_key>
-							<wp:meta_value><![CDATA[middle]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[horizontal_align]]></wp:meta_key>
-							<wp:meta_value><![CDATA[left]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[vertical_align_tablet]]></wp:meta_key>
@@ -4290,24 +4223,44 @@ United States[/woodmart_info_box][woodmart_info_box image="1816" rounding_size="
 							<wp:meta_value><![CDATA[on]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[content_width]]></wp:meta_key>
-							<wp:meta_value><![CDATA[1200]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[content_width_tablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[1200]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[content_width_mobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[500]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[slide_animation]]></wp:meta_key>
 							<wp:meta_value><![CDATA[none]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wpb_shortcodes_custom_css]]></wp:meta_key>
 							<wp:meta_value><![CDATA[.vc_custom_1651571909539{padding-top: 60px !important;padding-right: 60px !important;padding-bottom: 60px !important;padding-left: 60px !important;}.vc_custom_1653569312851{margin-bottom: 20px !important;}]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[image_object_fit]]></wp:meta_key>
+							<wp:meta_value><![CDATA[contain]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[image_object_position]]></wp:meta_key>
+							<wp:meta_value><![CDATA[custom]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[image_object_position_x]]></wp:meta_key>
+							<wp:meta_value><![CDATA[420px]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[image_object_position_y]]></wp:meta_key>
+							<wp:meta_value><![CDATA[0px]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_wpb_vc_editor_type]]></wp:meta_key>
+							<wp:meta_value><![CDATA[backend]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_wpb_post_custom_layout]]></wp:meta_key>
+							<wp:meta_value><![CDATA[default]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_wpb_shortcodes_custom_css_updated]]></wp:meta_key>
+							<wp:meta_value><![CDATA[1]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[image]]></wp:meta_key>
+							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:92:"http://dummy.xtemos.com/woodmart2/megamarket/wp-content/uploads/sites/3/2022/06/slider-1.jpg";s:2:"id";s:4:"1178";}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -4320,8 +4273,8 @@ United States[/woodmart_info_box][woodmart_info_box image="1816" rounding_size="
 															<wp:post_id>1181</wp:post_id>
 					<wp:post_date><![CDATA[2022-06-02 09:40:24]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2022-06-02 09:40:24]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2022-06-07 08:36:37]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2022-06-07 08:36:37]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2026-02-25 14:31:56]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2026-02-25 14:31:56]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[megamarket-slide-1-2]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -4342,28 +4295,12 @@ United States[/woodmart_info_box][woodmart_info_box image="1816" rounding_size="
 							<wp:meta_value><![CDATA[#wd-628f76fa7ada0.wd-text-block{line-height:28px;font-size:18px;}#wd-6295b1d00fee5{--wd-max-width:300px;}#wd-6295b1d00fee5 .woodmart-title-container{line-height:56px;font-size:46px;}@media (max-width: 1199px) {#wd-628f76fa7ada0.wd-text-block{line-height:26px;font-size:16px;}#wd-6295b1d00fee5{--wd-max-width:240px;}#wd-6295b1d00fee5 .woodmart-title-container{line-height:46px;font-size:36px;}}@media (max-width: 767px) {#wd-628f76fa7ada0.wd-text-block{line-height:24px;font-size:14px;}#wd-6295b1d00fee5{--wd-max-width:220px;}#wd-6295b1d00fee5 .woodmart-title-container{line-height:42px;font-size:32px;}}]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:92:"http://dummy.xtemos.com/woodmart2/megamarket/wp-content/uploads/sites/3/2022/06/slider-2.jpg";s:2:"id";s:4:"1179";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_size_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[contain]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_position_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[custom]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[bg_image_position_x_desktop]]></wp:meta_key>
 							<wp:meta_value><![CDATA[420px]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[bg_image_position_y_desktop]]></wp:meta_key>
 							<wp:meta_value><![CDATA[0px]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_tablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[bg_image_position_tablet]]></wp:meta_key>
@@ -4376,10 +4313,6 @@ United States[/woodmart_info_box][woodmart_info_box image="1816" rounding_size="
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[bg_image_position_y_tablet]]></wp:meta_key>
 							<wp:meta_value><![CDATA[0px]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_mobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[bg_image_position_mobile]]></wp:meta_key>
@@ -4396,14 +4329,6 @@ United States[/woodmart_info_box][woodmart_info_box image="1816" rounding_size="
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[bg_color]]></wp:meta_key>
 							<wp:meta_value><![CDATA[rgb(173,184,154)]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[vertical_align]]></wp:meta_key>
-							<wp:meta_value><![CDATA[middle]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[horizontal_align]]></wp:meta_key>
-							<wp:meta_value><![CDATA[left]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[vertical_align_tablet]]></wp:meta_key>
@@ -4430,18 +4355,6 @@ United States[/woodmart_info_box][woodmart_info_box image="1816" rounding_size="
 							<wp:meta_value><![CDATA[on]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[content_width]]></wp:meta_key>
-							<wp:meta_value><![CDATA[1200]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[content_width_tablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[1200]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[content_width_mobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[500]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[slide_animation]]></wp:meta_key>
 							<wp:meta_value><![CDATA[none]]></wp:meta_value>
 						</wp:postmeta>
@@ -4450,8 +4363,36 @@ United States[/woodmart_info_box][woodmart_info_box image="1816" rounding_size="
 							<wp:meta_value><![CDATA[.vc_custom_1651571983923{padding-top: 60px !important;padding-right: 60px !important;padding-bottom: 60px !important;padding-left: 60px !important;}.vc_custom_1653569278301{margin-bottom: 20px !important;}]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[megamarket-slide-1]]></wp:meta_value>
+							<wp:meta_key><![CDATA[image]]></wp:meta_key>
+							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:92:"http://dummy.xtemos.com/woodmart2/megamarket/wp-content/uploads/sites/3/2022/06/slider-2.jpg";s:2:"id";s:4:"1179";}]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[image_object_fit]]></wp:meta_key>
+							<wp:meta_value><![CDATA[contain]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[image_object_position]]></wp:meta_key>
+							<wp:meta_value><![CDATA[custom]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[image_object_position_x]]></wp:meta_key>
+							<wp:meta_value><![CDATA[420px]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[image_object_position_y]]></wp:meta_key>
+							<wp:meta_value><![CDATA[0px]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_wpb_vc_editor_type]]></wp:meta_key>
+							<wp:meta_value><![CDATA[backend]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_wpb_post_custom_layout]]></wp:meta_key>
+							<wp:meta_value><![CDATA[default]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_wpb_shortcodes_custom_css_updated]]></wp:meta_key>
+							<wp:meta_value><![CDATA[1]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -4464,8 +4405,8 @@ United States[/woodmart_info_box][woodmart_info_box image="1816" rounding_size="
 															<wp:post_id>1182</wp:post_id>
 					<wp:post_date><![CDATA[2022-06-02 09:41:57]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2022-06-02 09:41:57]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2022-06-07 08:36:21]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2022-06-07 08:36:21]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2026-02-25 14:32:22]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2026-02-25 14:32:22]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[megamarket-slide-1-2-2]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -4494,28 +4435,12 @@ United States[/woodmart_info_box][woodmart_info_box image="1816" rounding_size="
 							<wp:meta_value><![CDATA[#wd-628f76d4169ff.wd-text-block{line-height:28px;font-size:18px;}#wd-6295b1db45918{--wd-max-width:300px;}#wd-6295b1db45918 .woodmart-title-container{line-height:56px;font-size:46px;}@media (max-width: 1199px) {#wd-628f76d4169ff.wd-text-block{line-height:26px;font-size:16px;}#wd-6295b1db45918{--wd-max-width:240px;}#wd-6295b1db45918 .woodmart-title-container{line-height:46px;font-size:36px;}}@media (max-width: 767px) {#wd-628f76d4169ff.wd-text-block{line-height:24px;font-size:14px;}#wd-6295b1db45918{--wd-max-width:220px;}#wd-6295b1db45918 .woodmart-title-container{line-height:42px;font-size:32px;}}]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:92:"http://dummy.xtemos.com/woodmart2/megamarket/wp-content/uploads/sites/3/2022/06/slider-3.jpg";s:2:"id";s:4:"1180";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_size_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[contain]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_position_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[custom]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[bg_image_position_x_desktop]]></wp:meta_key>
 							<wp:meta_value><![CDATA[420px]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[bg_image_position_y_desktop]]></wp:meta_key>
 							<wp:meta_value><![CDATA[0px]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_tablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[bg_image_position_tablet]]></wp:meta_key>
@@ -4528,10 +4453,6 @@ United States[/woodmart_info_box][woodmart_info_box image="1816" rounding_size="
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[bg_image_position_y_tablet]]></wp:meta_key>
 							<wp:meta_value><![CDATA[0px]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_mobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[bg_image_position_mobile]]></wp:meta_key>
@@ -4548,14 +4469,6 @@ United States[/woodmart_info_box][woodmart_info_box image="1816" rounding_size="
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[bg_color]]></wp:meta_key>
 							<wp:meta_value><![CDATA[rgb(169,170,154)]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[vertical_align]]></wp:meta_key>
-							<wp:meta_value><![CDATA[middle]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[horizontal_align]]></wp:meta_key>
-							<wp:meta_value><![CDATA[left]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[vertical_align_tablet]]></wp:meta_key>
@@ -4582,18 +4495,6 @@ United States[/woodmart_info_box][woodmart_info_box image="1816" rounding_size="
 							<wp:meta_value><![CDATA[on]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[content_width]]></wp:meta_key>
-							<wp:meta_value><![CDATA[1200]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[content_width_tablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[1200]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[content_width_mobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[500]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[slide_animation]]></wp:meta_key>
 							<wp:meta_value><![CDATA[none]]></wp:meta_value>
 						</wp:postmeta>
@@ -4602,8 +4503,36 @@ United States[/woodmart_info_box][woodmart_info_box image="1816" rounding_size="
 							<wp:meta_value><![CDATA[.vc_custom_1651575557718{padding-top: 60px !important;padding-right: 60px !important;padding-bottom: 60px !important;padding-left: 60px !important;}.vc_custom_1653569240714{margin-bottom: 20px !important;}]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[megamarket-slide-1-2]]></wp:meta_value>
+							<wp:meta_key><![CDATA[image]]></wp:meta_key>
+							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:92:"http://dummy.xtemos.com/woodmart2/megamarket/wp-content/uploads/sites/3/2022/06/slider-3.jpg";s:2:"id";s:4:"1180";}]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[image_object_fit]]></wp:meta_key>
+							<wp:meta_value><![CDATA[contain]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[image_object_position]]></wp:meta_key>
+							<wp:meta_value><![CDATA[custom]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[image_object_position_x]]></wp:meta_key>
+							<wp:meta_value><![CDATA[420px]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[image_object_position_y]]></wp:meta_key>
+							<wp:meta_value><![CDATA[0px]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_wpb_vc_editor_type]]></wp:meta_key>
+							<wp:meta_value><![CDATA[backend]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_wpb_post_custom_layout]]></wp:meta_key>
+							<wp:meta_value><![CDATA[default]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_wpb_shortcodes_custom_css_updated]]></wp:meta_key>
+							<wp:meta_value><![CDATA[1]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>

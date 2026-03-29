@@ -1,30 +1,36 @@
-<?php if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
-	exit( 'No direct script access allowed' );}
+<?php
 /**
-* ------------------------------------------------------------------------------------------------
-* Countdown timer element map
-* ------------------------------------------------------------------------------------------------
-*/
+ * Countdown timer element map.
+ *
+ * @package woodmart
+ */
+
+if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
+	exit( 'No direct script access allowed' );
+}
 
 if ( ! function_exists( 'woodmart_get_vc_map_countdown_timer' ) ) {
+	/**
+	 * Countdown timer element map.
+	 *
+	 * @return array
+	 */
 	function woodmart_get_vc_map_countdown_timer() {
 		$time_typography = woodmart_get_typography_map(
 			array(
-				'key'              => 'time',
-				'title'            => esc_html__( 'Numbers typography', 'woodmart' ),
-				'group'            => esc_html__( 'Style', 'woodmart' ),
-				'selector'         => '{{WRAPPER}} .wd-timer-value',
-				'edit_field_class' => 'vc_col-sm-6 vc_column',
+				'key'      => 'time',
+				'title'    => esc_html__( 'Numbers typography', 'woodmart' ),
+				'group'    => esc_html__( 'Style', 'woodmart' ),
+				'selector' => '{{WRAPPER}} .wd-timer-value',
 			)
 		);
 
 		$label_typography = woodmart_get_typography_map(
 			array(
-				'key'              => 'label',
-				'title'            => esc_html__( 'Labels typography', 'woodmart' ),
-				'group'            => esc_html__( 'Style', 'woodmart' ),
-				'selector'         => '{{WRAPPER}} .wd-timer-text',
-				'edit_field_class' => 'vc_col-sm-6 vc_column',
+				'key'      => 'label',
+				'title'    => esc_html__( 'Labels typography', 'woodmart' ),
+				'group'    => esc_html__( 'Style', 'woodmart' ),
+				'selector' => '{{WRAPPER}} .wd-timer-text',
 			)
 		);
 
@@ -226,12 +232,12 @@ if ( ! function_exists( 'woodmart_get_vc_map_countdown_timer' ) ) {
 					),
 					'value'            => array(
 						esc_html__( 'Inherit', 'woodmart' ) => '',
-						esc_html__( 'None', 'woodmart' )    => 'none',
-						esc_html__( 'Solid', 'woodmart' )   => 'solid',
-						esc_html__( 'Dotted', 'woodmart' )  => 'dotted',
-						esc_html__( 'Double', 'woodmart' )  => 'double',
-						esc_html__( 'Dashed', 'woodmart' )  => 'dashed',
-						esc_html__( 'Groove', 'woodmart' )  => 'groove',
+						esc_html__( 'None', 'woodmart' )   => 'none',
+						esc_html__( 'Solid', 'woodmart' )  => 'solid',
+						esc_html__( 'Dotted', 'woodmart' ) => 'dotted',
+						esc_html__( 'Double', 'woodmart' ) => 'double',
+						esc_html__( 'Dashed', 'woodmart' ) => 'dashed',
+						esc_html__( 'Groove', 'woodmart' ) => 'groove',
 					),
 					'dependency'       => array(
 						'element' => 'enable_border',
@@ -278,7 +284,7 @@ if ( ! function_exists( 'woodmart_get_vc_map_countdown_timer' ) ) {
 					'range'      => array(
 						'px' => array(),
 					),
-					'dependency'       => array(
+					'dependency' => array(
 						'element' => 'enable_border',
 						'value'   => array( 'yes' ),
 					),
@@ -341,7 +347,7 @@ if ( ! function_exists( 'woodmart_get_vc_map_countdown_timer' ) ) {
 						'vertical'   => '0',
 						'blur'       => '9',
 						'spread'     => '0',
-						'color'      => '',
+						'color'      => 'rgba(0, 0, 0, .15)',
 					),
 				),
 
@@ -392,25 +398,26 @@ if ( ! function_exists( 'woodmart_get_vc_map_countdown_timer' ) ) {
 					'param_name'       => 'items_gap',
 					'devices'          => array(
 						'desktop' => array(
-							'unit' => 'px',
+							'unit'  => 'px',
 							'value' => '',
 						),
 						'tablet'  => array(
-							'unit' => 'px',
+							'unit'  => 'px',
 							'value' => '',
 						),
 						'mobile'  => array(
-							'unit' => 'px',
+							'unit'  => 'px',
 							'value' => '',
 						),
 					),
 					'range'            => array(
 						'px' => array(
-							'min'  => 1,
+							'min'  => 0,
 							'max'  => 200,
 							'step' => 1,
 						),
 					),
+					'generate_zero'    => true,
 					'selectors'        => array(
 						'{{WRAPPER}} .wd-timer' => array(
 							'gap: {{VALUE}}{{UNIT}};',
@@ -425,15 +432,15 @@ if ( ! function_exists( 'woodmart_get_vc_map_countdown_timer' ) ) {
 					'param_name'       => 'items_min_height',
 					'devices'          => array(
 						'desktop' => array(
-							'unit' => 'px',
+							'unit'  => 'px',
 							'value' => '',
 						),
 						'tablet'  => array(
-							'unit' => 'px',
+							'unit'  => 'px',
 							'value' => '',
 						),
 						'mobile'  => array(
-							'unit' => 'px',
+							'unit'  => 'px',
 							'value' => '',
 						),
 					),
@@ -458,15 +465,15 @@ if ( ! function_exists( 'woodmart_get_vc_map_countdown_timer' ) ) {
 					'param_name'       => 'items_min_width',
 					'devices'          => array(
 						'desktop' => array(
-							'unit' => 'px',
+							'unit'  => 'px',
 							'value' => '',
 						),
 						'tablet'  => array(
-							'unit' => 'px',
+							'unit'  => 'px',
 							'value' => '',
 						),
 						'mobile'  => array(
-							'unit' => 'px',
+							'unit'  => 'px',
 							'value' => '',
 						),
 					),
@@ -595,7 +602,7 @@ if ( ! function_exists( 'woodmart_get_vc_map_countdown_timer' ) ) {
 						'vertical'   => '0',
 						'blur'       => '9',
 						'spread'     => '0',
-						'color'      => '',
+						'color'      => 'rgba(0, 0, 0, .15)',
 					),
 				),
 

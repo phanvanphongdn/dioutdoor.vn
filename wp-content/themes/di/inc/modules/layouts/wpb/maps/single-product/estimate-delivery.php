@@ -2,7 +2,7 @@
 /**
  * Estimate delivery map.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -148,7 +148,7 @@ if ( ! function_exists( 'woodmart_get_vc_map_single_product_estimate_delivery' )
 					'heading'          => esc_html__( 'Icon', 'woodmart' ),
 					'group'            => esc_html__( 'Style', 'woodmart' ),
 					'param_name'       => 'icon_fontawesome',
-					'value'            => 'far fa-bell',
+					'value'            => 'fa fa-regular fa-bell',
 					'settings'         => array(
 						'emptyIcon'    => false,
 						'iconsPerPage' => 50,

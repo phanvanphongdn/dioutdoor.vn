@@ -2,7 +2,7 @@
 /**
  * Lazy loading functions.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
@@ -21,7 +21,16 @@ if ( ! function_exists( 'woodmart_lazy_loading_init' ) ) {
 			add_filter( 'render_block', 'woodmart_add_lazy_load_background', 10, 3 );
 		}
 
-		if ( ( ! woodmart_get_opt( 'lazy_loading' ) || is_admin() ) && ! $force_init || ! apply_filters( 'woodmart_enable_lazy_loading', true ) ) {
+		if (
+			(
+				(
+					! woodmart_get_opt( 'lazy_loading' ) ||
+					is_admin()
+				) &&
+				! $force_init
+			) ||
+			! apply_filters( 'woodmart_enable_lazy_loading', true )
+		) {
 			return;
 		}
 
@@ -35,13 +44,13 @@ if ( ! function_exists( 'woodmart_lazy_loading_init' ) ) {
 		add_filter( 'vc_wpb_getimagesize', 'woodmart_lazy_image', 10, 3 );
 
 		// Products, blog, a lot of other standard WordPress images.
-		add_filter( 'wp_get_attachment_image_attributes', 'woodmart_lazy_attributes', 10, 3 );
+		add_filter( 'wp_get_attachment_image_attributes', 'woodmart_lazy_attributes', 10, 2 );
 
 		// Elementor.
 		add_filter( 'elementor/image_size/get_attachment_image_html', 'woodmart_filter_elementor_images', 10, 4 );
 
 		// Gutenberg.
-		add_action( 'wp_content_img_tag', 'woodmart_lazy_gutenberg_images', 20, 3 );
+		add_action( 'wp_content_img_tag', 'woodmart_lazy_gutenberg_images', 20 );
 
 		add_filter( 'render_block_wd/video', 'woodmart_video_poster_lazy_loading', 10, 2 );
 		add_filter( 'woodmart_video_html', 'woodmart_video_poster_lazy_loading', 10, 2 );
@@ -55,12 +64,10 @@ if ( ! function_exists( 'woodmart_lazy_gutenberg_images' ) ) {
 	 * Filters HTML <img> tag and adds lazy loading attributes. Used for gutenberg images.
 	 *
 	 * @param string $filtered_image Full img tag with attributes that will replace the source img tag.
-	 * @param string $context Additional context, like the current filter name or the function name from where this was called.
-	 * @param int    $attachment_id The image attachment ID. May be 0 in case the image is not an attachment.
 
 	 * @return string
 	 */
-	function woodmart_lazy_gutenberg_images( $filtered_image, $context, $attachment_id ) {
+	function woodmart_lazy_gutenberg_images( $filtered_image ) {
 		if ( str_contains( $filtered_image, woodmart_lazy_get_default_preview() ) || ! preg_match( '/class=["\'].*wp-image-.*["\']/is', $filtered_image ) ) {
 			return $filtered_image;
 		}
@@ -128,7 +135,7 @@ if ( ! function_exists( 'woodmart_lazy_loading_deinit' ) ) {
 	 */
 	function woodmart_lazy_loading_deinit( $force_deinit = false ) {
 		if ( ! woodmart_get_opt( 'lazy_loading_bg_images' ) || $force_deinit ) {
-			remove_filter( 'render_block', 'woodmart_add_lazy_load_background', 10, 3 );
+			remove_filter( 'render_block', 'woodmart_add_lazy_load_background', 10 );
 		}
 
 		if ( woodmart_get_opt( 'lazy_loading' ) && ! $force_deinit ) {
@@ -284,10 +291,9 @@ if ( ! function_exists( 'woodmart_lazy_attributes' ) ) {
 	 *
 	 * @param array  $attr Attributes image.
 	 * @param object $attachment Attachment.
-	 * @param string $size Size.
 	 * @return array
 	 */
-	function woodmart_lazy_attributes( $attr, $attachment, $size ) {
+	function woodmart_lazy_attributes( $attr, $attachment ) {
 		if ( wp_is_serving_rest_request() || woodmart_lazy_get_default_preview() === $attr['src'] || in_array( $attr['src'], apply_filters( 'woodmart_exclude_lazyload_urls', array() ), true ) || ! empty( $attr['fetchpriority'] ) ) {
 			return $attr;
 		}
@@ -326,8 +332,6 @@ if ( ! function_exists( 'woodmart_lazy_css_class' ) ) {
 			$class .= ' wd-lazy-' . $lazy_effect;
 		}
 
-		$class .= woodmart_get_old_classes( ' wd-lazy-load woodmart-lazy-load' );
-
 		return $class;
 	}
 }
@@ -351,13 +355,12 @@ if ( ! function_exists( 'woodmart_add_lazy_load_background' ) ) {
 	/**
 	 * Add lazy load background for block.
 	 *
-	 * @param string   $block_content The block content.
-	 * @param array    $block The full block, including name and attributes.
-	 * @param WP_Block $instance The block instance.
+	 * @param string $block_content The block content.
+	 * @param array  $block The full block, including name and attributes.
 	 *
 	 * @return string
 	 */
-	function woodmart_add_lazy_load_background( $block_content, $block, $instance ) {
+	function woodmart_add_lazy_load_background( $block_content, $block ) {
 		if ( ! woodmart_get_opt( 'lazy_loading_bg_images' ) ) {
 			return $block_content;
 		}
@@ -371,7 +374,7 @@ if ( ! function_exists( 'woodmart_add_lazy_load_background' ) ) {
 
 			$has_bg_image = array_filter(
 				$bg_attributes,
-				function( $key ) use ( $block ) {
+				function ( $key ) use ( $block ) {
 					return ! empty( $block['attrs'][ $key ] ) && is_array( $block['attrs'][ $key ] ) && ! empty( $block['attrs'][ $key ]['url'] ) && ! in_array( $block['attrs'][ $key ]['url'], apply_filters( 'woodmart_exclude_lazyload_urls', array() ), true );
 				}
 			);
@@ -382,7 +385,7 @@ if ( ! function_exists( 'woodmart_add_lazy_load_background' ) ) {
 
 			$has_overlay = array_filter(
 				$bg_overlay_attributes,
-				function( $key ) use ( $block ) {
+				function ( $key ) use ( $block ) {
 					return ! empty( $block['attrs'][ $key ] ) && is_array( $block['attrs'][ $key ] ) && ! empty( $block['attrs'][ $key ]['url'] ) && ! in_array( $block['attrs'][ $key ]['url'], apply_filters( 'woodmart_exclude_lazyload_urls', array() ), true );
 				}
 			);

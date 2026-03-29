@@ -48,6 +48,8 @@
 				data = atts ? { atts: atts } : {};
 			}
 
+			data.woo_ajax = 1;
+
 			$.ajax({
 				url     : ajaxurl,
 				data    : data,

@@ -2,7 +2,7 @@
 /**
  * Gutenberg border CSS.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 use XTS\Gutenberg\Block_CSS;
@@ -19,7 +19,7 @@ if ( ! function_exists( 'wd_get_block_border_css' ) ) {
 	 *
 	 * @return array
 	 */
-	function wd_get_block_border_css( $selector, $attributes, $attr_prefix, $border_rule = 'border', $radius_rule = 'border-radius' ) {
+	function wd_get_block_border_css( $selector, $attributes, $attr_prefix, $border_rule = 'border', $radius_rule = 'border-radius', $allow_force_shorthand = true ) {
 		$block_css = new Block_CSS( $attributes );
 
 		foreach ( array( 'global', 'tablet', 'mobile' ) as $device ) {
@@ -28,7 +28,8 @@ if ( ! function_exists( 'wd_get_block_border_css' ) ) {
 
 			if ( ! $device_name ) {
 				if (
-					isset( $attributes[ $attr_prefix . 'WidthTop' . $device_name ], $attributes[ $attr_prefix . 'WidthRight' . $device_name ], $attributes[ $attr_prefix . 'WidthBottom' . $device_name ], $attributes[ $attr_prefix . 'WidthLeft' . $device_name ] )
+					$allow_force_shorthand
+					&& isset( $attributes[ $attr_prefix . 'WidthTop' . $device_name ], $attributes[ $attr_prefix . 'WidthRight' . $device_name ], $attributes[ $attr_prefix . 'WidthBottom' . $device_name ], $attributes[ $attr_prefix . 'WidthLeft' . $device_name ] )
 					&& '' !== $attributes[ $attr_prefix . 'WidthTop' . $device_name ]
 					&& $attributes[ $attr_prefix . 'WidthTop' . $device_name ] === $attributes[ $attr_prefix . 'WidthRight' . $device_name ]
 					&& $attributes[ $attr_prefix . 'WidthTop' . $device_name ] === $attributes[ $attr_prefix . 'WidthBottom' . $device_name ]

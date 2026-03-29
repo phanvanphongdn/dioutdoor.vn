@@ -1,4 +1,9 @@
 <?php
+/**
+ * Color and Images swatches for WooCommerce products attributes.
+ *
+ * @package woodmart
+ */
 
 use XTS\Admin\Modules\Options\Metaboxes;
 
@@ -9,16 +14,18 @@ if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
 /**
  * Color and Images swatches for WooCommerce products attributes
  */
-
-if ( ! function_exists( 'woodmart_swatches_metaboxes' ) ) {
-	function woodmart_swatches_metaboxes() {
+if ( ! function_exists( 'woodmart_attribute_term_metaboxes' ) ) {
+	/**
+	 * Add metaboxes for attribute terms.
+	 */
+	function woodmart_attribute_term_metaboxes() {
 		if ( ! function_exists( 'wc_get_attribute_taxonomies' ) ) {
 			return;
 		}
+
 		$attribute_taxonomies = wc_get_attribute_taxonomies();
 
 		foreach ( $attribute_taxonomies as $key => $value ) {
-
 			$cmb_term = Metaboxes::add_metabox(
 				array(
 					'id'         => 'pa_fields_' . $value->attribute_name,
@@ -89,6 +96,19 @@ if ( ! function_exists( 'woodmart_swatches_metaboxes' ) ) {
 
 			$cmb_term->add_field(
 				array(
+					'id'          => 'pa_term_image',
+					'type'        => 'upload',
+					'name'        => esc_html__( 'Term image', 'woodmart' ),
+					'description' => esc_html__( 'The image will be displayed in the term list in the additional information table', 'woodmart' ),
+					'hint'        => '<video data-src="' . WOODMART_TOOLTIP_URL . 'pa-term-image.mp4" autoplay loop muted></video>',
+					'group'       => esc_html__( 'Attribute table', 'woodmart' ),
+					'section'     => 'general',
+					'priority'    => 40,
+				)
+			);
+
+			$cmb_term->add_field(
+				array(
 					'id'          => 'pa_term_hint',
 					'type'        => 'textarea',
 					'wysiwyg'     => false,
@@ -96,18 +116,21 @@ if ( ! function_exists( 'woodmart_swatches_metaboxes' ) ) {
 					'description' => esc_html__( 'Enter the text that will be displayed as a hint on the additional information table.', 'woodmart' ),
 					'hint'        => '<video data-src="' . WOODMART_TOOLTIP_URL . 'pa_term_hint.mp4" autoplay loop muted></video>', true , // phpcs:ignore.
 					'section'     => 'general',
-					'group'       => esc_html__( 'Extra', 'woodmart' ),
-					'priority'    => 40,
+					'group'       => esc_html__( 'Attribute table', 'woodmart' ),
+					'priority'    => 50,
 				)
 			);
 		}
 	}
 
-	add_action( 'init', 'woodmart_swatches_metaboxes', 10 );
+	add_action( 'init', 'woodmart_attribute_term_metaboxes', 10 );
 }
 
 if ( ! function_exists( 'woodmart_product_attributes_thumbnail' ) ) {
-	function woodmart_product_attributes_thumbnail( $columns ) {
+	/**
+	 * Add thumbnail column to product attributes admin page.
+	 */
+	function woodmart_product_attributes_thumbnail() {
 		if ( ! function_exists( 'wc_get_attribute_taxonomies' ) ) {
 			return;
 		}
@@ -122,14 +145,21 @@ if ( ! function_exists( 'woodmart_product_attributes_thumbnail' ) ) {
 }
 
 if ( ! function_exists( 'woodmart_product_attributes_add_thumbnail_column' ) ) {
+	/**
+	 * Add thumbnail column to product attributes admin page.
+	 *
+	 * @param array $columns Existing columns.
+	 *
+	 * @return array Modified columns.
+	 */
 	function woodmart_product_attributes_add_thumbnail_column( $columns ) {
 		unset( $columns['cb'] );
 		unset( $columns['name'] );
 
 		$new_columns = array(
-			'cb'          => '<input type="checkbox" />',
-			'name'        => esc_html__( 'Name', 'woodmart' ),
-			'thumbnail'   => esc_html__( 'Preview', 'woodmart' ),
+			'cb'        => '<input type="checkbox" />',
+			'name'      => esc_html__( 'Name', 'woodmart' ),
+			'thumbnail' => esc_html__( 'Preview', 'woodmart' ),
 		);
 
 		$columns = $new_columns + $columns;
@@ -138,12 +168,21 @@ if ( ! function_exists( 'woodmart_product_attributes_add_thumbnail_column' ) ) {
 }
 
 if ( ! function_exists( 'woodmart_product_attributes_thumbnail_column_content' ) ) {
+	/**
+	 * Add thumbnail column content to product attributes admin page.
+	 *
+	 * @param string $content     Existing content.
+	 * @param string $column_name Column name.
+	 * @param int    $term_id     Term ID.
+	 *
+	 * @return string Modified content.
+	 */
 	function woodmart_product_attributes_thumbnail_column_content( $content, $column_name, $term_id ) {
 		if ( 'thumbnail' === $column_name ) {
-			$color = get_term_meta( $term_id, 'color', true );
-			$image = get_term_meta( $term_id, 'image', true );
+			$color        = get_term_meta( $term_id, 'color', true );
+			$image        = get_term_meta( $term_id, 'image', true );
 			$not_dropdown = get_term_meta( $term_id, 'not_dropdown', true );
-			$term_name = get_term( $term_id )->name;
+			$term_name    = get_term( $term_id )->name;
 
 			if ( is_array( $image ) && isset( $image['id'] ) ) {
 				$image = wp_get_attachment_image_url( $image['id'], 'full' );
@@ -173,6 +212,17 @@ if ( ! function_exists( 'woodmart_product_attributes_thumbnail_column_content' )
 }
 
 if ( ! function_exists( 'woodmart_has_swatches' ) ) {
+	/**
+	 * Check if attribute has swatches.
+	 *
+	 * @param int    $id Product ID.
+	 * @param string $attr_name Attribute name.
+	 * @param array  $options Attribute options.
+	 * @param array  $available_variations Available variations data.
+	 * @param bool   $swatches_use_variation_images Use variation images for swatches.
+	 *
+	 * @return array
+	 */
 	function woodmart_has_swatches( $id, $attr_name, $options, $available_variations, $swatches_use_variation_images = false ) {
 		$swatches = array();
 
@@ -180,9 +230,7 @@ if ( ! function_exists( 'woodmart_has_swatches' ) ) {
 			$swatch = woodmart_has_swatch( $id, $attr_name, $value );
 
 			if ( ! empty( $swatch ) ) {
-
-				if ( $available_variations && $swatches_use_variation_images && woodmart_grid_swatches_attribute() == $attr_name ) {
-
+				if ( $available_variations && $swatches_use_variation_images && woodmart_grid_swatches_attribute() === $attr_name ) {
 					$variation = woodmart_get_option_variations( $attr_name, $available_variations, $value );
 
 					$swatch = array_merge( $swatch, $variation );
@@ -197,27 +245,39 @@ if ( ! function_exists( 'woodmart_has_swatches' ) ) {
 }
 
 if ( ! function_exists( 'woodmart_has_swatch' ) ) {
+	/**
+	 * Check if attribute has swatch.
+	 *
+	 * @param int    $id Product ID.
+	 * @param string $attr_name Attribute name.
+	 * @param string $value Attribute value.
+	 *
+	 * @return array
+	 */
 	function woodmart_has_swatch( $id, $attr_name, $value ) {
 		$swatches = array();
 
-		$color = $image = $not_dropdown = '';
+		$color        = '';
+		$image        = '';
+		$not_dropdown = '';
 
 		$term = get_term_by( 'slug', $value, $attr_name );
+
 		if ( is_object( $term ) ) {
 			$color        = get_term_meta( $term->term_id, 'color', true );
 			$image        = get_term_meta( $term->term_id, 'image', true );
 			$not_dropdown = get_term_meta( $term->term_id, 'not_dropdown', true );
 		}
 
-		if ( $color != '' ) {
+		if ( '' !== $color ) {
 			$swatches['color'] = $color;
 		}
 
-		if ( $image && ! is_array( $image ) || ! empty( $image['id'] ) ) {
+		if ( ( $image && ! is_array( $image ) ) || ! empty( $image['id'] ) ) {
 			$swatches['image'] = $image;
 		}
 
-		if ( $not_dropdown != '' ) {
+		if ( '' !== $not_dropdown ) {
 			$swatches['not_dropdown'] = $not_dropdown;
 		}
 
@@ -226,11 +286,21 @@ if ( ! function_exists( 'woodmart_has_swatch' ) ) {
 }
 
 if ( ! function_exists( 'woodmart_get_option_variations' ) ) {
+	/**
+	 * Get option variations data.
+	 *
+	 * @param string      $attribute_name Attribute name.
+	 * @param array       $available_variations Available variations data.
+	 * @param string|bool $option Attribute option value.
+	 * @param int|bool    $product_id Product ID.
+	 *
+	 * @return array
+	 */
 	function woodmart_get_option_variations( $attribute_name, $available_variations, $option = false, $product_id = false ) {
 		$swatches_to_show = array();
 
 		foreach ( $available_variations as $key => $variation ) {
-			$attr_key         = 'attribute_' . $attribute_name;
+			$attr_key = 'attribute_' . $attribute_name;
 
 			if ( ! isset( $variation['attributes'][ $attr_key ] ) ) {
 				return;
@@ -244,14 +314,14 @@ if ( ! function_exists( 'woodmart_get_option_variations' ) ) {
 			);
 
 			if ( ! empty( $variation['image']['src'] ) && $variation_product && $variation_product->get_image_id( 'edit' ) ) {
-				$option_variation['image_src'] = $variation['image']['src'];
+				$option_variation['image_src']    = $variation['image']['src'];
 				$option_variation['image_srcset'] = $variation['image']['srcset'];
-				$option_variation['image_sizes'] = $variation['image']['sizes'];
+				$option_variation['image_sizes']  = $variation['image']['sizes'];
 			}
 
 			// Get only one variation by attribute option value
 			if ( $option ) {
-				if ( $val != $option ) {
+				if ( $val !== $option ) {
 					continue;
 				} else {
 					return $option_variation;
@@ -260,12 +330,10 @@ if ( ! function_exists( 'woodmart_get_option_variations' ) ) {
 				// Or get all variations with swatches to show by attribute name
 				$swatch                   = woodmart_has_swatch( $product_id, $attribute_name, $val );
 				$swatches_to_show[ $val ] = array_merge( $swatch, $option_variation );
-
 			}
 		}
 
 		return $swatches_to_show;
-
 	}
 }
 
@@ -275,6 +343,12 @@ if ( ! function_exists( 'woodmart_get_option_variations' ) ) {
  * ------------------------------------------------------------------------------------------------
  */
 if ( ! function_exists( 'woodmart_swatches_list' ) ) {
+	/**
+	 * Show attribute swatches list.
+	 *
+	 * @param string|bool $attribute_name Attribute name.
+	 * @return false|string
+	 */
 	function woodmart_swatches_list( $attribute_name = false ) {
 		global $product;
 
@@ -332,6 +406,10 @@ if ( ! function_exists( 'woodmart_swatches_grid_template' ) ) {
 	function woodmart_swatches_grid_template( $attribute_name, $available_variations ) {
 		global $product;
 
+		if ( ! $attribute_name ) {
+			return false;
+		}
+
 		$cache          = apply_filters( 'woodmart_swatches_cache', true );
 		$transient_name = 'woodmart_swatches_cache_' . $attribute_name . '_' . $product->get_id();
 
@@ -382,7 +460,6 @@ if ( ! function_exists( 'woodmart_swatches_grid_template' ) ) {
 		$wrapper_class .= ' wd-dis-style-' . $swatch_dis_style;
 		$wrapper_class .= ' wd-size-' . $swatch_size;
 		$wrapper_class .= ' wd-shape-' . $swatch_shape;
-		$wrapper_class .= woodmart_get_old_classes( ' swatches-on-grid' );
 
 		$out .= '<div class="wd-swatches-grid wd-swatches-product wd-swatches-attr' . esc_attr( $wrapper_class ) . '">';
 
@@ -423,19 +500,17 @@ if ( ! function_exists( 'woodmart_swatches_grid_template' ) ) {
 				}
 			}
 
-			$index++;
+			++$index;
 
 			if ( ! empty( $swatch['color'] ) ) {
 				$style  = 'background-color:' . $swatch['color'];
 				$class .= ' wd-bg';
-				$class .= woodmart_get_old_classes( ' swatch-with-bg' );
 			} elseif ( woodmart_get_opt( 'swatches_use_variation_images' ) && isset( $swatch['image_src'] ) ) {
 				$image = wp_get_attachment_image( get_post_thumbnail_id( $swatch['variation_id'] ), 'woocommerce_thumbnail' );
 				if ( ! empty( $image ) ) {
 					$class .= ' wd-bg';
-					$class .= woodmart_get_old_classes( ' swatch-with-bg' );
 				}
-			} elseif ( ! empty( $swatch['image'] ) && ! is_array( $swatch['image'] ) || ! empty( $swatch['image']['id'] ) ) {
+			} elseif ( ( ! empty( $swatch['image'] ) && ! is_array( $swatch['image'] ) ) || ! empty( $swatch['image']['id'] ) ) {
 				if ( isset( $swatch['image']['id'] ) ) {
 					$image = wp_get_attachment_image( $swatch['image']['id'], 'full' );
 				} else {
@@ -443,10 +518,8 @@ if ( ! function_exists( 'woodmart_swatches_grid_template' ) ) {
 				}
 
 				$class .= ' wd-bg';
-				$class .= woodmart_get_old_classes( ' swatch-with-bg' );
 			} else {
 				$class .= ' wd-text';
-				$class .= woodmart_get_old_classes( ' text-only' );
 			}
 
 			$data = '';
@@ -461,12 +534,6 @@ if ( ! function_exists( 'woodmart_swatches_grid_template' ) ) {
 				$class .= ' variation-out-of-stock';
 			}
 
-			if ( in_array( $swatch_size, array( 'default', 'large', 'xlarge' ), true ) ) {
-				$class .= woodmart_get_old_classes( ' swatch-size-' . $swatch_size );
-			}
-
-			$class .= woodmart_get_old_classes( ' woodmart-swatch swatch-on-grid' );
-
 			$term = get_term_by( 'slug', $key, $attribute_name );
 
 			woodmart_enqueue_js_script( 'swatches-on-grid' );
@@ -477,7 +544,7 @@ if ( ! function_exists( 'woodmart_swatches_grid_template' ) ) {
 				<?php if ( $style || $image ) : ?>
 					<span class="wd-swatch-bg" style="<?php echo esc_attr( $style ); ?>">
 						<?php if ( $image ) : ?>
-							<?php echo $image; //phpcs:ignore ?>
+							<?php echo $image; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 						<?php endif; ?>
 					</span>
 				<?php endif; ?>
@@ -610,6 +677,11 @@ if ( ! function_exists( 'woodmart_have_product_swatches_template' ) ) {
 }
 
 if ( ! function_exists( 'woodmart_clear_swatches_cache_save_post' ) ) {
+	/**
+	 * Clear swatches cache on product save.
+	 *
+	 * @param int $post_id Post ID.
+	 */
 	function woodmart_clear_swatches_cache_save_post( $post_id ) {
 		if ( ! apply_filters( 'woodmart_swatches_cache', true ) ) {
 			return;
@@ -636,11 +708,16 @@ if ( ! function_exists( 'woodmart_clear_swatches_cache_save_post' ) ) {
 }
 
 if ( ! function_exists( 'woodmart_clear_swatches_cache_on_product_object_save' ) ) {
+	/**
+	 * Clear swatches cache on product object save.
+	 *
+	 * @param WC_Product $data Product object.
+	 */
 	function woodmart_clear_swatches_cache_on_product_object_save( $data ) {
 		if ( ! apply_filters( 'woodmart_swatches_cache', true ) ) {
 			return;
 		}
-		$post_id = $data->get_id();
+		$post_id        = $data->get_id();
 		$transient_name = 'woodmart_swatches_cache_' . $post_id;
 		delete_transient( $transient_name );
 
@@ -661,6 +738,14 @@ if ( ! function_exists( 'woodmart_clear_swatches_cache_on_product_object_save' )
 }
 
 if ( ! function_exists( 'woodmart_get_active_variations' ) ) {
+	/**
+	 * Get active variations for attribute.
+	 *
+	 * @param string $attribute_name Attribute name.
+	 * @param array  $available_variations Available variations data.
+	 *
+	 * @return array
+	 */
 	function woodmart_get_active_variations( $attribute_name, $available_variations ) {
 		$results = array();
 
@@ -680,6 +765,9 @@ if ( ! function_exists( 'woodmart_get_active_variations' ) ) {
 }
 
 if ( ! function_exists( 'woodmart_show_out_of_stock_variation_products' ) ) {
+	/**
+	 * Show out of stock variation products in swatches.
+	 */
 	function woodmart_show_out_of_stock_variation_products() {
 		if ( 'yes' === get_option( 'woocommerce_hide_out_of_stock_items' ) ) {
 			woodmart_set_loop_prop( 'hide_out_of_stock_products', 'yes' );
@@ -692,6 +780,9 @@ if ( ! function_exists( 'woodmart_show_out_of_stock_variation_products' ) ) {
 }
 
 if ( ! function_exists( 'woodmart_hide_out_of_stock_variation_products' ) ) {
+	/**
+	 * Hide out of stock variation products in swatches.
+	 */
 	function woodmart_hide_out_of_stock_variation_products() {
 		if ( 'yes' === woodmart_loop_prop( 'hide_out_of_stock_products' ) ) {
 			remove_filter( 'option_woocommerce_hide_out_of_stock_items', '__return_false' );

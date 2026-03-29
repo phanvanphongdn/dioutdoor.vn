@@ -383,4 +383,4 @@ HTML;
 	}
 }
 
-Registry::getInstance()->vctemplates;
+Registry::get_instance()->vctemplates;

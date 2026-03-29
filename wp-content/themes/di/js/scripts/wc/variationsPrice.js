@@ -19,23 +19,29 @@
 
 		$('.variations_form').each(function() {
 			var $form = $(this);
-			var $price = $form.parent().find('> .price, > div > .price, > .price > .price');
 			var isQuickView = $form.parents('.product-quick-view').length;
 
-			if ( $('.wd-content-layout').hasClass('wd-builder-on') && ! isQuickView ) {
-				$price = $form.parents('.single-product-page').find('.wd-single-price .price');
-			}
+			var getPrice = function() {
+				if ( $('.wd-content-layout').hasClass('wd-builder-on') && ! isQuickView ) {
+					return $form.parents('.single-product-page').find('.wd-single-price .price');
+				}
 
-			var priceOriginalHtml = $price.html();
+				return $form.parent().find('> .price, > div > .price');
+			};
 
-			$form.on('show_variation', function(e, variation) {
+			var $price = getPrice();
+			var $priceOriginal = $price.clone();
+
+			$form.on('found_variation', function(e, variation) {
 				if (variation.price_html.length > 1) {
-					$price.html(variation.price_html);
+					$price.replaceWith(variation.price_html);
+					$price = getPrice();
 				}
 			});
 
-			$form.on('click', '.reset_variations', function() {
-				$price.html(priceOriginalHtml);
+			$form.on('reset_data', function() {
+				$price.replaceWith($priceOriginal.clone());
+				$price = getPrice();
 			});
 		});
 	};

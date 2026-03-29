@@ -2,7 +2,7 @@
 /**
  * Import before.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Admin\Modules\Import;

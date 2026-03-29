@@ -2,7 +2,7 @@
 /**
  * Portfolio template function
  *
- * @package xts
+ * @package woodmart
  */
 
 use XTS\Modules\Layouts\Main;

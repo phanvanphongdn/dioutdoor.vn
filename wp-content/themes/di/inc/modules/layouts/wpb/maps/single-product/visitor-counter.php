@@ -2,7 +2,7 @@
 /**
  * Count product visits map.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -143,7 +143,7 @@ if ( ! function_exists( 'woodmart_get_vc_map_single_product_visitor_counter' ) )
 					'heading'          => esc_html__( 'Icon', 'woodmart' ),
 					'group'            => esc_html__( 'Style', 'woodmart' ),
 					'param_name'       => 'icon_fontawesome',
-					'value'            => 'far fa-bell',
+					'value'            => 'fa fa-regular fa-bell',
 					'settings'         => array(
 						'emptyIcon'    => false,
 						'iconsPerPage' => 50,
@@ -295,7 +295,7 @@ if ( ! function_exists( 'woodmart_get_vc_map_single_product_visitor_counter' ) )
 							'color: {{VALUE}};',
 						),
 					),
-					'dependency' => array(
+					'dependency'       => array(
 						'element'            => 'icon_type',
 						'value_not_equal_to' => 'image',
 					),

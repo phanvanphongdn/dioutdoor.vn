@@ -1,8 +1,8 @@
-<?php
+<?php // phpcs:ignore WordPress.Files.FileName.NotHyphenatedLowercase
 /**
  * The template for displaying slide.
  *
- * @package xts
+ * @package woodmart
  */
 
 get_header();
@@ -42,18 +42,20 @@ if ( $arrows_style ) {
 ?>
 <div class="container">
 	<?php woodmart_get_slider_css( $slider_id, $carousel_id, array( $post ) ); ?>
-	<div id="<?php echo esc_attr( $carousel_id ); ?>" class="wd-carousel-container<?php echo woodmart_get_slider_class( $slider_id ); ?>">
+	<div id="<?php echo esc_attr( $carousel_id ); ?>" class="wd-carousel-container<?php echo esc_attr( woodmart_get_slider_class( $slider_id ) ); ?>">
 		<div class="wd-carousel-inner">
-			<div class="wd-carousel wd-grid<?php echo woodmart_get_old_classes( ' woodmart-slider' ); ?>">
+			<div class="wd-carousel wd-grid">
 				<div class="wd-carousel-wrap">
 					<?php
 					$slide_id        = 'slide-' . $post->ID;
-					$slide_animation = get_post_meta( $post->ID, 'slide_animation', true );
+					$slide_animation = woodmart_get_post_meta_value( $post->ID, 'slide_animation' );
+					$slide_classes   = '';
+					$slide_image     = woodmart_get_post_meta_value( $post->ID, 'image' );
 					?>
 
-					<div id="<?php echo esc_attr( $slide_id ); ?>" class="wd-carousel-item wd-slide woodmart-loaded active<?php echo woodmart_get_old_classes( ' woodmart-slide' ); ?>">
-						<div class="container wd-slide-container<?php echo woodmart_get_old_classes( ' woodmart-slide-container' ); ?><?php echo woodmart_get_slide_class( $post->ID ); ?>">
-							<div class="wd-slide-inner<?php echo woodmart_get_old_classes( ' woodmart-slide-inner' ); ?> <?php echo ( ! empty( $slide_animation ) && $slide_animation != 'none' ) ? 'wd-animation-normal  wd-animation-' . esc_attr( $slide_animation ) : ''; ?>">
+					<div id="<?php echo esc_attr( $slide_id ); ?>" class="wd-carousel-item wd-slide woodmart-loaded active">
+						<div class="container wd-slide-container<?php echo esc_attr( woodmart_get_slide_class( $post->ID ) ); ?>">
+							<div class="wd-slide-inner<?php echo ( ! empty( $slide_animation ) && 'none' !== $slide_animation ) ? ' wd-animation wd-transform wd-animation-normal wd-animation-' . esc_attr( $slide_animation ) : ''; // phpcs:ignore ?>">
 								<?php while ( have_posts() ) : ?>
 									<?php the_post(); ?>
 									<?php the_content(); ?>
@@ -61,7 +63,28 @@ if ( $arrows_style ) {
 							</div>
 						</div>
 
-						<div class="wd-slide-bg wd-fill"></div>
+						<div class="wd-slide-bg wd-fill">
+							<?php if ( ! empty( $slide_image['id'] ) ) : ?>
+								<?php
+								$image_size = woodmart_get_post_meta_value( $post->ID, 'image_size' );
+
+								if ( 'custom' === $image_size ) {
+									$image_width  = get_post_meta( $post->ID, 'image_size_custom_width', true );
+									$image_height = get_post_meta( $post->ID, 'image_size_custom_height', true );
+
+									if ( $image_width || $image_height ) {
+										$image_size = array( (int) $image_width, (int) $image_height );
+									} else {
+										$image_size = 'full';
+									}
+								}
+
+								$image_size = $image_size ? $image_size : 'full';
+
+								echo woodmart_otf_get_image_html( $slide_image['id'], $image_size ); // phpcs:ignore
+								?>
+							<?php endif; ?>
+						</div>
 					</div>
 				</div>
 			</div>

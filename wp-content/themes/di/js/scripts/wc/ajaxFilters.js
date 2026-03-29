@@ -90,7 +90,7 @@
 
 			if (typeof woodmart_wpml_js_data !== 'undefined' && woodmart_wpml_js_data.languages) {
 				$.each(woodmart_wpml_js_data.languages, function(index, language) {
-					$('.wpml-ls-item-' + language.code + ' .wpml-ls-link').attr('href', language.url);
+					$('.wpml-ls-item-' + language.code + ' > :is(.woodmart-nav-link, .wpml-ls-link)').attr('href', language.url);
 				});
 			}
 		});

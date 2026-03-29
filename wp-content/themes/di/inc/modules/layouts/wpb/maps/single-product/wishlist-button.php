@@ -2,7 +2,7 @@
 /**
  * Wishlist button map.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -17,7 +17,7 @@ if ( ! function_exists( 'woodmart_get_vc_map_single_product_wishlist_button' ) )
 		$typography = woodmart_get_typography_map(
 			array(
 				'key'        => 'button',
-				'selector'   => '{{WRAPPER}} .wd-wishlist-btn > a span',
+				'selector'   => '{{WRAPPER}} .wd-action-text',
 				'dependency' => array(
 					'element' => 'style',
 					'value'   => 'text',
@@ -84,6 +84,31 @@ if ( ! function_exists( 'woodmart_get_vc_map_single_product_wishlist_button' ) )
 					'edit_field_class' => 'vc_col-sm-6 vc_column',
 				),
 
+				array(
+					'heading'    => esc_html__( 'Padding', 'woodmart' ),
+					'type'       => 'wd_dimensions',
+					'param_name' => 'link_padding',
+					'selectors'  => array(
+						'{{WRAPPER}} .wd-action-btn > a' => array(
+							'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+						),
+					),
+					'devices'    => array(
+						'desktop' => array(
+							'unit' => 'px',
+						),
+						'tablet'  => array(
+							'unit' => 'px',
+						),
+						'mobile'  => array(
+							'unit' => 'px',
+						),
+					),
+					'range'      => array(
+						'px' => array(),
+					),
+				),
+
 				// Text.
 				array(
 					'title'      => esc_html__( 'Text', 'woodmart' ),
@@ -100,8 +125,8 @@ if ( ! function_exists( 'woodmart_get_vc_map_single_product_wishlist_button' ) )
 					'type'             => 'wd_colorpicker',
 					'param_name'       => 'text_color',
 					'selectors'        => array(
-						'{{WRAPPER}} .wd-wishlist-btn > a span' => array(
-							'color: {{VALUE}};',
+						'{{WRAPPER}} .wd-wishlist-btn' => array(
+							'--wd-action-text-color: {{VALUE}};',
 						),
 					),
 					'dependency'       => array(
@@ -116,8 +141,8 @@ if ( ! function_exists( 'woodmart_get_vc_map_single_product_wishlist_button' ) )
 					'type'             => 'wd_colorpicker',
 					'param_name'       => 'text_color_hover',
 					'selectors'        => array(
-						'{{WRAPPER}} .wd-wishlist-btn > a:hover span' => array(
-							'color: {{VALUE}};',
+						'{{WRAPPER}} .wd-wishlist-btn' => array(
+							'--wd-action-text-color-hover: {{VALUE}};',
 						),
 					),
 					'dependency'       => array(
@@ -146,7 +171,7 @@ if ( ! function_exists( 'woodmart_get_vc_map_single_product_wishlist_button' ) )
 					'type'       => 'wd_slider',
 					'param_name' => 'icon_size',
 					'selectors'  => array(
-						'{{WRAPPER}} .wd-wishlist-btn[class*="wd-style-"]' => array(
+						'{{WRAPPER}} .wd-wishlist-btn' => array(
 							'--wd-action-icon-size: {{VALUE}}px;',
 						),
 					),
@@ -178,8 +203,8 @@ if ( ! function_exists( 'woodmart_get_vc_map_single_product_wishlist_button' ) )
 					'type'             => 'wd_colorpicker',
 					'param_name'       => 'icon_color',
 					'selectors'        => array(
-						'{{WRAPPER}} .wd-wishlist-btn > a:before' => array(
-							'color: {{VALUE}};',
+						'{{WRAPPER}} .wd-wishlist-btn' => array(
+							'--wd-action-icon-color: {{VALUE}};',
 						),
 					),
 					'edit_field_class' => 'vc_col-sm-6 vc_column',
@@ -190,8 +215,8 @@ if ( ! function_exists( 'woodmart_get_vc_map_single_product_wishlist_button' ) )
 					'type'             => 'wd_colorpicker',
 					'param_name'       => 'icon_color_hover',
 					'selectors'        => array(
-						'{{WRAPPER}} .wd-wishlist-btn > a:hover:before' => array(
-							'color: {{VALUE}};',
+						'{{WRAPPER}} .wd-wishlist-btn' => array(
+							'--wd-action-icon-color-hover: {{VALUE}};',
 						),
 					),
 					'edit_field_class' => 'vc_col-sm-6 vc_column',

@@ -2,7 +2,7 @@
 /**
  * Breadcrumbs schema.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Modules\Seo_Scheme;
@@ -12,7 +12,7 @@ use XTS\Singleton;
 /**
  * Faq schema.
  *
- * @package Woodmart
+ * @package woodmart
  */
 class Breadcrumbs extends Singleton {
 	/**

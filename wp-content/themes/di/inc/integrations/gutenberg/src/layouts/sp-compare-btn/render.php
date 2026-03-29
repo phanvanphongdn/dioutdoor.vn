@@ -9,6 +9,7 @@ if ( ! function_exists( 'wd_gutenberg_single_product_compare_btn' ) ) {
 			return '';
 		}
 
+		$el_id        = wd_get_gutenberg_element_id( $block_attributes );
 		$btn_classes  = 'wd-action-btn wd-compare-icon';
 		$btn_classes .= ' wd-style-' . $block_attributes['style'];
 
@@ -24,7 +25,7 @@ if ( ! function_exists( 'wd_gutenberg_single_product_compare_btn' ) ) {
 		}
 
 		?>
-		<div id="<?php echo esc_attr( wd_get_gutenberg_element_id( $block_attributes ) ); ?>" class="wd-single-action-btn wd-single-compare-btn<?php echo esc_attr( wd_get_gutenberg_element_classes( $block_attributes ) ); ?>">
+		<div <?php echo $el_id ? 'id="' . esc_attr( $el_id ) . '" ' : ''; ?>class="wd-single-action-btn wd-single-compare-btn<?php echo esc_attr( wd_get_gutenberg_element_classes( $block_attributes ) ); ?>">
 			<?php Compare::get_instance()->add_to_compare_btn( $btn_classes ); ?>
 		</div>
 		<?php

@@ -3,7 +3,7 @@
 /**
  * Gutenberg backdrop filter CSS.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 use XTS\Gutenberg\Block_CSS;

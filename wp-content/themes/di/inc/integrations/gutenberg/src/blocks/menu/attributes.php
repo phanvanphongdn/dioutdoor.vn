@@ -1,8 +1,18 @@
 <?php
+/**
+ * Menu block attributes.
+ *
+ * @package woodmart
+ */
 
 use XTS\Gutenberg\Block_Attributes;
 
 if ( ! function_exists( 'wd_get_block_menu_attrs' ) ) {
+	/**
+	 * Get block attributes.
+	 *
+	 * @return array
+	 */
 	function wd_get_block_menu_attrs() {
 		$attr = new Block_Attributes();
 

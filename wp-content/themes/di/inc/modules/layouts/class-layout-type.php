@@ -1,9 +1,17 @@
 <?php
+/**
+ * Layout type class.
+ *
+ * @package woodmart
+ */
 
 namespace XTS\Modules\Layouts;
 
 use XTS\Singleton;
 
+/**
+ * Layout type class.
+ */
 abstract class Layout_Type extends Singleton {
 	/**
 	 * Constructor.
@@ -28,6 +36,7 @@ abstract class Layout_Type extends Singleton {
 	 * @param string $template Template.
 	 */
 	public function override_template( $template ) {
+		return $template;
 	}
 
 	/**

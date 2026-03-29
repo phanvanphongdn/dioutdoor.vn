@@ -2,7 +2,7 @@
 /**
  * XTS template library file.
  *
- * @package xts
+ * @package woodmart
  */
 
 namespace XTS\Elementor;

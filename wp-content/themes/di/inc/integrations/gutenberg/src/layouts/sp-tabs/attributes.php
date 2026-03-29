@@ -8,167 +8,183 @@ if ( ! function_exists( 'wd_get_single_product_block_tabs_attrs' ) ) {
 
 		$attr->add_attr(
 			array(
-				'layout'                         => array(
+				'layout'                             => array(
 					'type'    => 'string',
 					'default' => 'tabs',
 				),
-				'accordionOnMobile'              => array(
+				'accordionOnMobile'                  => array(
 					'type' => 'boolean',
 				),
-				'enableDescription'              => array(
+				'enableDescription'                  => array(
 					'type'    => 'boolean',
 					'default' => true,
 				),
-				'enableAdditionalInfo'           => array(
+				'enableAdditionalInfo'               => array(
 					'type'    => 'boolean',
 					'default' => true,
 				),
-				'enableReviews'                  => array(
+				'enableReviews'                      => array(
 					'type'    => 'boolean',
 					'default' => true,
 				),
-				'tabsStyle'                      => array(
+				'tabsStyle'                          => array(
 					'type'    => 'string',
 					'default' => 'default',
 				),
-				'tabsTitleTextColorScheme'       => array(
+				'tabsTitleTextColorScheme'           => array(
 					'type' => 'string',
 				),
-				'tabsAlignment'                  => array(
+				'tabsAlignment'                      => array(
 					'type'       => 'string',
 					'responsive' => true,
 				),
-				'tabsSpaceBetweenTabsTitleH'     => array(
+				'tabsSpaceBetweenTabsTitleH'         => array(
 					'type'       => 'number',
 					'responsive' => true,
 				),
-				'tabsSpaceBetweenTabsTitleV'     => array(
+				'tabsSpaceBetweenTabsTitleV'         => array(
 					'type'       => 'number',
 					'responsive' => true,
 				),
-				'accordionState'                 => array(
+				'accordionState'                     => array(
 					'type'    => 'string',
 					'default' => 'first',
 				),
-				'accordionStyle'                 => array(
+				'accordionStyle'                     => array(
 					'type'    => 'string',
 					'default' => 'default',
 				),
-				'accordionHideTopBottomBorder'   => array(
+				'accordionHideTopBottomBorder'       => array(
 					'type' => 'boolean',
 				),
-				'accordionAlignment'             => array(
+				'accordionAlignment'                 => array(
 					'type' => 'string',
 				),
-				'accordionTitleTextColorScheme'  => array(
+				'accordionTitleTextColorScheme'      => array(
 					'type' => 'string',
 				),
-				'sideHiddenTitleTextColorScheme' => array(
+				'sideHiddenTitleTextColorScheme'     => array(
 					'type' => 'string',
 				),
-				'accordionOpenerStyle'           => array(
+				'accordionOpenerStyle'               => array(
 					'type'    => 'string',
 					'default' => 'arrow',
 				),
-				'accordionOpenerAlignment'       => array(
+				'accordionOpenerAlignment'           => array(
 					'type'    => 'string',
 					'default' => 'start',
 				),
-				'accordionOpenerSize'            => array(
+				'accordionOpenerSize'                => array(
 					'type'       => 'number',
 					'responsive' => true,
 				),
-				'tabsContentTextColorScheme'     => array(
+				'tabsContentTextColorScheme'         => array(
 					'type' => 'string',
 				),
-				'sideHiddenContentPosition'      => array(
+				'sideHiddenContentPosition'          => array(
 					'type'    => 'string',
 					'default' => 'right',
 				),
-				'sideHiddenContentWidth'         => array(
+				'sideHiddenContentWidth'             => array(
 					'type'       => 'string',
 					'responsive' => true,
 					'units'      => 'px',
 				),
-				'allOpenVerticalSpacing'         => array(
+				'allOpenVerticalSpacing'             => array(
 					'type'       => 'number',
 					'responsive' => true,
 				),
-				'allOpenStyle'                   => array(
+				'allOpenStyle'                       => array(
 					'type'    => 'string',
 					'default' => 'default',
 				),
-				'additionalInfoLayout'           => array(
+				'additionalInfoLayout'               => array(
 					'type'    => 'string',
 					'default' => 'list',
 				),
-				'additionalInfoStyle'            => array(
+				'additionalInfoStyle'                => array(
 					'type'    => 'string',
 					'default' => 'bordered',
 				),
-				'additionalInfoColumns'          => array(
+				'additionalInfoColumns'              => array(
 					'type'       => 'string',
 					'responsive' => true,
 					'units'      => 'px',
 				),
-				'additionalInfoColumnGap'        => array(
+				'additionalInfoColumnGap'            => array(
 					'type'       => 'number',
 					'responsive' => true,
 				),
-				'additionalInfoRowGap'           => array(
+				'additionalInfoRowGap'               => array(
 					'type'       => 'number',
 					'responsive' => true,
 				),
-				'additionalInfoMaxWidth'         => array(
+				'additionalInfoMaxWidth'             => array(
 					'type'  => 'string',
 					'units' => 'px',
 				),
-				'attrImage'                      => array(
+				'attrImage'                          => array(
 					'type'    => 'boolean',
 					'default' => true,
 				),
-				'additionalInfoImageWidth'       => array(
+				'additionalInfoImageWidth'           => array(
 					'type'       => 'number',
 					'responsive' => true,
 				),
-				'attrName'                       => array(
+				'attrName'                           => array(
 					'type'    => 'boolean',
 					'default' => true,
 				),
-				'attrNameColumnWidth'            => array(
+				'attrNameColumnWidth'                => array(
 					'type'       => 'string',
 					'responsive' => true,
 					'units'      => 'px',
 				),
-				'reviewsLayout'                  => array(
-					'type'    => 'string',
-					'default' => 'one-column',
+				'termLabel'                          => array(
+					'type'    => 'boolean',
+					'default' => true,
 				),
-				'reviewsColumns'                 => array(
-					'type'    => 'number',
-					'default' => 1,
+				'termImage'                          => array(
+					'type'    => 'boolean',
+					'default' => true,
 				),
-				'reviewsColumnsTablet'           => array(
-					'type'    => 'number',
-					'default' => 1,
-				),
-				'reviewsColumnsMobile'           => array(
-					'type'    => 'number',
-					'default' => 1,
-				),
-				'reviewsGap'                     => array(
+				'termImageWidth'                     => array(
 					'type'       => 'number',
 					'responsive' => true,
 				),
-				'tabsBorderWidthLock'            => array(
+				'reviewsLayout'                      => array(
+					'type'    => 'string',
+					'default' => 'one-column',
+				),
+				'reviewsColumns'                     => array(
+					'type'    => 'number',
+					'default' => 1,
+				),
+				'reviewsColumnsTablet'               => array(
+					'type'    => 'number',
+					'default' => 1,
+				),
+				'reviewsColumnsMobile'               => array(
+					'type'    => 'number',
+					'default' => 1,
+				),
+				'reviewsGap'                         => array(
+					'type'       => 'number',
+					'responsive' => true,
+				),
+				'tabsBorderWidthLock'                => array(
 					'type'    => 'boolean',
 					'default' => true,
 				),
-				'tabsBorderHoverWidthLock'       => array(
+				'tabsBorderHoverWidthLock'           => array(
 					'type'    => 'boolean',
 					'default' => true,
 				),
-				'tabsBorderActiveWidthLock'      => array(
+				'tabsBorderActiveWidthLock'          => array(
+					'type'    => 'boolean',
+					'default' => true,
+				),
+				'additionalInfoItemsBorderWidthLock' => array(
 					'type'    => 'boolean',
 					'default' => true,
 				),
@@ -210,6 +226,11 @@ if ( ! function_exists( 'wd_get_single_product_block_tabs_attrs' ) ) {
 
 		$attr->add_attr( wd_get_typography_control_attrs(), 'additionalInfoTermTp' );
 		$attr->add_attr( wd_get_color_control_attrs( 'additionalInfoTermColor' ) );
+
+		$attr->add_attr( wd_get_color_control_attrs( 'additionalInfoTermLinkColor' ) );
+		$attr->add_attr( wd_get_color_control_attrs( 'additionalInfoTermLinkColorHover' ) );
+
+		wd_get_border_control_attrs( $attr, 'additionalInfoItemsBorder' );
 
 		wd_get_advanced_tab_attrs( $attr );
 

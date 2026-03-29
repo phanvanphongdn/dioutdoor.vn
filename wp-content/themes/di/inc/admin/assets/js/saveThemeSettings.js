@@ -140,7 +140,7 @@
 					let $responseHtml = $(response);
 					let noticeContent = $responseHtml.find('.xts-notices-wrapper').html();
 
-					if ($responseHtml.find('.xts-header li > a').length !== $('.xts-header li > a').length || $responseHtml.find('#adminmenu li > a').length !== $('#adminmenu li > a').length) {
+					if ($responseHtml.find('.xts-header li > a').length !== $('.xts-header li > a').length || $responseHtml.find('#adminmenu > li > a, #adminmenu > li > .wp-submenu > li > a').length !== $('#adminmenu > li > a, #adminmenu > li > .wp-submenu > li > a').length) {
 						formChanged = false;
 						location.reload();
 					}

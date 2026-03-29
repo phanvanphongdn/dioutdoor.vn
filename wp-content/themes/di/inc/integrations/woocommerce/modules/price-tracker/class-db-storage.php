@@ -63,9 +63,8 @@ class DB_Storage extends Singleton {
 		}
 
 		// Sanitize data.
-		$data = $this->sanitize_subscription_data( $data );
-
-		$result = $wpdb->insert( $wpdb->wd_price_tracker, $data );
+		$data   = $this->sanitize_subscription_data( $data );
+		$result = $wpdb->insert( $wpdb->wd_price_tracker, $data ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery
 
 		$this->clear_cache();
 
@@ -192,6 +191,7 @@ class DB_Storage extends Singleton {
 			return $cached;
 		}
 
+		// phpcs:disable WordPress.DB.DirectDatabaseQuery.DirectQuery
 		$emails = $wpdb->get_col(
 			$wpdb->prepare(
 				"SELECT DISTINCT user_email
@@ -205,6 +205,7 @@ class DB_Storage extends Singleton {
 				$emails_limit
 			)
 		);
+		// phpcs:enable WordPress.DB.DirectDatabaseQuery.DirectQuery
 
 		if ( empty( $emails ) ) {
 			$this->clear_cache();
@@ -227,6 +228,7 @@ class DB_Storage extends Singleton {
 		$emails_in     = implode( ',', $safe_emails );
 		$subscriptions = array();
 
+		// phpcs:disable WordPress.DB
 		$all_subscriptions = $wpdb->get_results(
 			$wpdb->prepare(
 				"SELECT *
@@ -239,6 +241,7 @@ class DB_Storage extends Singleton {
 				'no'
 			)
 		);
+		// phpcs:enable WordPress.DB
 
 		foreach ( $all_subscriptions as $subscription ) {
 			if ( ! isset( $subscriptions[ $subscription->user_email ] ) ) {
@@ -340,30 +343,32 @@ class DB_Storage extends Singleton {
 			);
 		}
 
-		$query = $wpdb->prepare(
-			"UPDATE {$wpdb->wd_price_tracker}
-			SET
-				product_new_price = CASE
-					WHEN CAST(product_price AS DECIMAL(20,6)) > %s {$desired_price_condition}
-					THEN %s
-					ELSE NULL
-				END,
-				subscribe_status = CASE
-					WHEN CAST(product_price AS DECIMAL(20,6)) > %s {$desired_price_condition}
-					THEN %s
-					ELSE %s
-				END,
-				is_sent = %s
-			WHERE {$where_clause}
-				AND (product_new_price IS NULL OR product_new_price != %s)",
-			array_merge(
-				array( $new_price, $new_price, $new_price, self::STATUS_DISCOUNTED, self::STATUS_SIGNED, 'no' ),
-				$where_params,
-				array( $new_price )
+		// phpcs:disable WordPress.DB
+		$result = $wpdb->query(
+			$wpdb->prepare(
+				"UPDATE {$wpdb->wd_price_tracker}
+				SET
+					product_new_price = CASE
+						WHEN CAST(product_price AS DECIMAL(20,6)) > %s {$desired_price_condition}
+						THEN %s
+						ELSE NULL
+					END,
+					subscribe_status = CASE
+						WHEN CAST(product_price AS DECIMAL(20,6)) > %s {$desired_price_condition}
+						THEN %s
+						ELSE %s
+					END,
+					is_sent = %s
+				WHERE {$where_clause}
+					AND (product_new_price IS NULL OR product_new_price != %s)",
+				array_merge(
+					array( $new_price, $new_price, $new_price, self::STATUS_DISCOUNTED, self::STATUS_SIGNED, 'no' ),
+					$where_params,
+					array( $new_price )
+				)
 			)
 		);
-
-		$result = $wpdb->query( $query );
+		// phpcs:enable WordPress.DB
 
 		if ( $result ) {
 			$this->clear_cache();
@@ -395,6 +400,7 @@ class DB_Storage extends Singleton {
 
 		$placeholders = implode( ',', array_fill( 0, count( $list_ids ), '%d' ) );
 
+		// phpcs:disable WordPress.DB
 		$result = $wpdb->query(
 			$wpdb->prepare(
 				"UPDATE {$wpdb->wd_price_tracker}
@@ -404,6 +410,7 @@ class DB_Storage extends Singleton {
 				array_merge( array( self::STATUS_SENT, 'yes' ), $list_ids )
 			)
 		);
+		// phpcs:enable WordPress.DB
 
 		// Clear cache after updates.
 		$this->clear_cache();
@@ -436,7 +443,7 @@ class DB_Storage extends Singleton {
 
 		$desired_price = wc_format_decimal( $desired_price );
 
-		$result = $wpdb->update(
+		$result = $wpdb->update( // phpcs:ignore.
 			$wpdb->wd_price_tracker,
 			array( 'desired_price' => $desired_price ),
 			array(
@@ -476,6 +483,36 @@ class DB_Storage extends Singleton {
 	}
 
 	/**
+	 * Check if subscription token exists for the given email.
+	 *
+	 * @param string $email Email address.
+	 * @param string $token Unsubscribe token.
+	 *
+	 * @return bool True if token exists and matches email, false otherwise.
+	 */
+	public function check_subscription_token_exists( $email, $token ) {
+		global $wpdb;
+
+		if ( empty( $email ) || empty( $token ) ) {
+			return false;
+		}
+
+		$email = sanitize_email( $email );
+		$token = sanitize_text_field( $token );
+
+		$result = $wpdb->get_var( // phpcs:ignore.
+			$wpdb->prepare(
+				"SELECT COUNT(*) FROM {$wpdb->wd_price_tracker} 
+				WHERE user_email = %s AND unsubscribe_token = %s",
+				$email,
+				$token
+			)
+		);
+
+		return intval( $result ) > 0;
+	}
+
+	/**
 	 * Delete subscribe by unsubscribe token.
 	 *
 	 * @param string $token Unsubscribe token.
@@ -489,7 +526,7 @@ class DB_Storage extends Singleton {
 
 		$token = sanitize_text_field( $token );
 
-		return $wpdb->delete(
+		return $wpdb->delete( // phpcs:ignore.
 			$wpdb->wd_price_tracker,
 			array( 'unsubscribe_token' => $token ),
 			array( '%s' )
@@ -510,7 +547,7 @@ class DB_Storage extends Singleton {
 			return;
 		}
 
-		return $wpdb->query(
+		return $wpdb->query( // phpcs:ignore.
 			$wpdb->prepare(
 				"DELETE FROM {$wpdb->wd_price_tracker}
 				WHERE product_id = %d
@@ -534,7 +571,7 @@ class DB_Storage extends Singleton {
 			return false;
 		}
 
-		return $wpdb->delete(
+		return $wpdb->delete( // phpcs:ignore.
 			$wpdb->wd_price_tracker,
 			array( 'user_email' => $user_email ),
 			array( '%s' )
@@ -552,7 +589,7 @@ class DB_Storage extends Singleton {
 	public function unsubscribe_by_user_email_and_product_id( $id, $user_email ) {
 		global $wpdb;
 
-		return $wpdb->query(
+		return $wpdb->query( // phpcs:ignore.
 			$wpdb->prepare(
 				"DELETE FROM {$wpdb->wd_price_tracker}
 				WHERE
@@ -579,7 +616,7 @@ class DB_Storage extends Singleton {
 			return false;
 		}
 
-		$result = $wpdb->query(
+		$result = $wpdb->query( // phpcs:ignore.
 			$wpdb->prepare(
 				"DELETE FROM {$wpdb->wd_price_tracker}
 				WHERE user_id = %d
@@ -650,7 +687,8 @@ class DB_Storage extends Singleton {
 			);
 		}
 
-		$results = $wpdb->get_results( // phpcs:ignore.
+		// phpcs:disable WordPress.DB
+		$results = $wpdb->get_results(
 			$wpdb->prepare(
 				"SELECT list_id
 				FROM {$wpdb->wd_price_tracker}
@@ -660,6 +698,7 @@ class DB_Storage extends Singleton {
 				array( $product_id, $product_id, $user_email )
 			)
 		);
+		// phpcs:enable WordPress.DB
 
 		return ! empty( $results );
 	}
@@ -732,7 +771,7 @@ class DB_Storage extends Singleton {
 		global $wpdb;
 
 		// Only run on settings save or on dashboard page load.
-		if ( ! isset( $_GET['settings-updated'] ) && isset( $_GET['page'] ) && 'xts_dashboard' !== $_GET['page'] ) {
+		if ( ! isset( $_GET['settings-updated'] ) && isset( $_GET['page'] ) && 'xts_dashboard' !== $_GET['page'] ) { // phpcs:ignore.
 			return;
 		}
 

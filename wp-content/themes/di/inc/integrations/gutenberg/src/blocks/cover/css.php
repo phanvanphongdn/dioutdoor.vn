@@ -3,6 +3,21 @@ use XTS\Gutenberg\Block_CSS;
 
 $block_css = new Block_CSS( $attrs );
 
+$bg_image_position = function( $device ) use ( $attrs, $block_css ) {
+	$device_prefix = 'desktop' !== $device ? ucfirst( $device ) : '';
+
+	if ( 'custom' !== $attrs[ 'imagePosition' . $device_prefix ] ) {
+		return $attrs[ 'imagePosition' . $device_prefix ];
+	}
+
+	$rule  = $attrs[ 'imageCustomPositionX' . $device_prefix ] ? $attrs[ 'imageCustomPositionX' . $device_prefix ] : '0';
+	$rule .= $block_css->get_units_for_attribute( 'imageCustomPositionX', $device );
+	$rule .= ' ' . ( $attrs[ 'imageCustomPositionY' . $device_prefix ] ? $attrs[ 'imageCustomPositionY' . $device_prefix ] : '0' );
+	$rule .= $block_css->get_units_for_attribute( 'imageCustomPositionY', $device );
+
+	return $rule;
+};
+
 $block_css->add_css_rules(
 	$block_selector,
 	array(
@@ -20,6 +35,23 @@ $block_css->add_css_rules(
 		),
 	)
 );
+
+$block_css->add_css_rules(
+	$block_selector . ' .wd-block-cover-img img',
+	array(
+		array(
+			'attr_name' => 'imageObjectFit',
+			'template'  => 'object-fit: {{value}};',
+		),
+	)
+);
+
+if ( ! empty( $attrs['imagePosition'] ) || ! empty( $attrs['imageCustomPositionX'] ) || ! empty( $attrs['imageCustomPositionY'] ) ) {
+	$block_css->add_to_selector(
+		$block_selector . ' .wd-block-cover-img img',
+		'object-position:' . $bg_image_position( 'desktop' ) . ';',
+	);
+}
 
 $block_css->add_css_rules(
 	$block_selector,
@@ -41,6 +73,25 @@ $block_css->add_css_rules(
 );
 
 $block_css->add_css_rules(
+	$block_selector . ' .wd-block-cover-img img',
+	array(
+		array(
+			'attr_name' => 'imageObjectFitTablet',
+			'template'  => 'object-fit: {{value}};',
+		),
+	),
+	'tablet'
+);
+
+if ( ! empty( $attrs['imagePositionTablet'] ) || ! empty( $attrs['imageCustomPositionXTablet'] ) || ! empty( $attrs['imageCustomPositionYTablet'] ) ) {
+	$block_css->add_to_selector(
+		$block_selector . ' .wd-block-cover-img img',
+		'object-position:' . $bg_image_position( 'tablet' ) . ';',
+		'tablet'
+	);
+}
+
+$block_css->add_css_rules(
 	$block_selector,
 	array(
 		array(
@@ -58,6 +109,25 @@ $block_css->add_css_rules(
 	),
 	'mobile'
 );
+
+$block_css->add_css_rules(
+	$block_selector . ' .wd-block-cover-img img',
+	array(
+		array(
+			'attr_name' => 'imageObjectFitMobile',
+			'template'  => 'object-fit: {{value}};',
+		),
+	),
+	'mobile'
+);
+
+if ( ! empty( $attrs['imagePositionMobile'] ) || ! empty( $attrs['imageCustomPositionXMobile'] ) || ! empty( $attrs['imageCustomPositionYMobile'] ) ) {
+	$block_css->add_to_selector(
+		$block_selector . ' .wd-block-cover-img img',
+		'object-position:' . $bg_image_position( 'mobile' ) . ';',
+		'mobile'
+	);
+}
 
 if ( ! isset( $attrs['size'] ) || 'custom' === $attrs['size'] ) {
 	$block_css->add_css_rules(
@@ -206,9 +276,10 @@ $block_css->merge_with(
 		array(
 			'selector'                 => $block_selector,
 			'selector_hover'           => $block_selector_hover,
+			'selector_parent_hover'    => $block_selector_parent_hover,
 			'selector_bg'              => $block_selector . ' .wd-block-cover-img',
 			'selector_bg_hover'        => $block_selector_hover . ' .wd-block-cover-img',
-			'selector_bg_parent_hover' => '.wd-hover-parent:hover ' . $block_selector . ' .wd-block-cover-img',
+			'selector_bg_parent_hover' => $block_selector_parent_hover . ' .wd-block-cover-img',
 			'selector_transition'      => $block_selector . ' .wd-block-cover-img, ' . $block_selector,
 		),
 		$attrs

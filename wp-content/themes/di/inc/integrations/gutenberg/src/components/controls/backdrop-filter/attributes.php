@@ -2,7 +2,7 @@
 /**
  * Backdrop filter attributes.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 if ( ! function_exists( 'wd_get_backdrop_filter_control_attrs' ) ) {

@@ -2,20 +2,22 @@
 /**
  * Full screen search template.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 ?>
 <div class="wd-search-<?php echo esc_attr( $args['type'] ); ?> <?php echo esc_html( $wrapper_classes ); ?>"<?php echo wp_kses( $wrapper_atts, true ); ?> role="complementary" aria-label="<?php esc_attr_e( 'Search', 'woodmart' ); ?>">
-	<span class="wd-close-search wd-action-btn wd-style-icon wd-cross-icon<?php echo esc_attr( woodmart_get_old_classes( ' woodmart-close-search' ) ); ?>">
-		<a href="#" rel="nofollow" aria-label="<?php esc_attr_e( 'Close search form', 'woodmart' ); ?>"></a>
+	<span class="wd-close-search wd-action-btn wd-style-icon wd-cross-icon">
+		<a href="#" rel="nofollow" aria-label="<?php esc_attr_e( 'Close search form', 'woodmart' ); ?>">
+			<span class="wd-action-icon"></span>
+		</a>
 	</span>
 
 	<?php if ( 'full-screen-2' === $args['type'] ) : ?>
 		<div class="container">
 	<?php endif; ?>
 
-	<form role="search" method="get" class="searchform <?php echo esc_attr( $class ); ?>" action="<?php echo esc_url( home_url( '/' ) ); ?>" <?php echo ! empty( $data ) ? $data : ''; ?> autocomplete="off">
+	<form role="search" method="get" class="searchform <?php echo esc_attr( $class ); ?>" action="<?php echo esc_url( home_url( '/' ) ); ?>" <?php echo ! empty( $data ) ? $data : ''; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> autocomplete="off">
 		<input type="text" class="s" placeholder="<?php echo esc_attr( $placeholder ); ?>" value="<?php echo get_search_query(); ?>" name="s" aria-label="<?php esc_attr_e( 'Search', 'woodmart' ); ?>" title="<?php echo esc_attr( $placeholder ); ?>"<?php echo esc_attr( apply_filters( 'woodmart_show_required_in_search_form', true ) ? ' required' : '' ); ?>/>
 		<input type="hidden" name="post_type" value="<?php echo esc_attr( $args['post_type'] ); ?>">
 

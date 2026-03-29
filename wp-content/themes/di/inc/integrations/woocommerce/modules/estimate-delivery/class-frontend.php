@@ -11,7 +11,6 @@ use XTS\Singleton;
 use WC_Product;
 use WC_Order;
 use WC_Order_Item;
-use Automattic\WooCommerce\Utilities\FeaturesUtil;
 
 /**
  * Estimate delivery class.
@@ -22,7 +21,7 @@ class Frontend extends Singleton {
 	/**
 	 * Manager instance.
 	 *
-	 * @var Manager instanse.
+	 * @var Manager instance.
 	 */
 	public $manager;
 
@@ -50,7 +49,7 @@ class Frontend extends Singleton {
 		add_action( 'woocommerce_after_cart_item_name', array( $this, 'render_delivery_detail_on_cart' ) );
 		add_action( 'woocommerce_cart_totals_after_order_total', array( $this, 'render_overall' ) );
 
-		// Chekout.
+		// Checkout.
 		add_action( 'woocommerce_review_order_after_order_total', array( $this, 'render_overall' ) );
 
 		// Order details (order confirmation or emails).
@@ -59,7 +58,7 @@ class Frontend extends Singleton {
 
 		// Admin order.
 		add_action( 'woocommerce_before_order_itemmeta', array( $this, 'render_admin_order_item_meta' ), 10, 3 );
-		add_action( 'woocommerce_admin_order_totals_after_shipping', array( $this, 'render_admin_overal_order_item_meta' ) );
+		add_action( 'woocommerce_admin_order_totals_after_shipping', array( $this, 'render_admin_overall_order_item_meta' ) );
 	}
 
 	/**
@@ -68,11 +67,11 @@ class Frontend extends Singleton {
 	 * @return void
 	 */
 	public function update_delivery_dates() {
-		if ( empty( $_GET['product_id'] ) ) {
+		if ( empty( $_GET['product_id'] ) ) { // phpcs:ignore WordPress.Security
 			return;
 		}
 
-		$product_id = absint( $_GET['product_id'] );
+		$product_id = absint( $_GET['product_id'] ); // phpcs:ignore WordPress.Security
 		$product    = wc_get_product( $product_id );
 
 		if ( ! $product instanceof WC_Product ) {
@@ -124,7 +123,7 @@ class Frontend extends Singleton {
 			return;
 		}
 
-		if ( isset( $_GET['page'] ) && 'wc-orders' === $_GET['page'] ) {
+		if ( isset( $_GET['page'] ) && 'wc-orders' === $_GET['page'] ) {  // phpcs:ignore WordPress.Security
 			wp_enqueue_style(
 				'xts-int-woo-page-orders',
 				WOODMART_ASSETS . '/css/parts/int-woo-page-orders.min.css',
@@ -181,7 +180,7 @@ class Frontend extends Singleton {
 	 * Render delivery detail on cart and mini cart pages when options is enabled.
 	 *
 	 * @param object $cart_item Cart item.
-	 * @param bool   $hide_tooltip if this value is true, then the toltip will be hidden.
+	 * @param bool   $hide_tooltip if this value is true, then the tooltip will be hidden.
 	 *
 	 * @return void
 	 */
@@ -196,7 +195,7 @@ class Frontend extends Singleton {
 	/**
 	 * Render delivery detail on checkout page.
 	 *
-	 * @param object $product Product pbject.
+	 * @param object $product Product object.
 	 *
 	 * @return void
 	 */
@@ -297,7 +296,7 @@ class Frontend extends Singleton {
 	 *
 	 * @return void
 	 */
-	public function render_admin_overal_order_item_meta( $order_item_id ) {
+	public function render_admin_overall_order_item_meta( $order_item_id ) {
 		if ( ! woodmart_get_opt( 'estimate_delivery_show_overall' ) ) {
 			return;
 		}
@@ -312,10 +311,10 @@ class Frontend extends Singleton {
 			$shipping_method_id = $shipping_method->get_instance_id();
 		}
 
-		$products     = $this->get_product_by_order( $order );
-		$overal_dates = new Overal_Delivery_Date( $products, $shipping_method_id, $order_date );
-		$text         = $overal_dates->get_label();
-		$date         = $overal_dates->get_date();
+		$products      = $this->get_product_by_order( $order );
+		$overall_dates = new Overall_Delivery_Date( $products, $shipping_method_id, $order_date );
+		$text          = $overall_dates->get_label();
+		$date          = $overall_dates->get_date();
 
 		if ( empty( $text ) || empty( $date ) ) {
 			return;
@@ -336,9 +335,9 @@ class Frontend extends Singleton {
 	/**
 	 * Render delivery detail.
 	 *
-	 * @param object    $product Product pbject.
+	 * @param object    $product Product object.
 	 * @param int|false $date_created Order date created.
-	 * @param bool      $hide_tooltip if this value is true, then the toltip will be hidden.
+	 * @param bool      $hide_tooltip if this value is true, then the tooltip will be hidden.
 	 *
 	 * @return void
 	 */
@@ -431,8 +430,8 @@ class Frontend extends Singleton {
 		$date_created     = $order->get_date_created();
 		$order_date       = $date_created ? $date_created->date( 'Y-m-d H:i:s' ) : false;
 		$products         = $this->get_product_by_order( $order );
-		$overal_dates     = new Overal_Delivery_Date( $products, false, $order_date );
-		$est_del_row_data = $overal_dates->get_date_array();
+		$overall_dates    = new Overall_Delivery_Date( $products, false, $order_date );
+		$est_del_row_data = $overall_dates->get_date_array();
 
 		if ( empty( $est_del_row_data ) ) {
 			return $total_rows;
@@ -465,8 +464,8 @@ class Frontend extends Singleton {
 			$products[] = $cart_item['data'];
 		}
 
-		$overal_dates         = new Overal_Delivery_Date( $products );
-		$delivery_date_string = $overal_dates->get_date_string();
+		$overall_dates        = new Overall_Delivery_Date( $products );
+		$delivery_date_string = $overall_dates->get_date_string();
 
 		if ( empty( $delivery_date_string ) ) {
 			return;
@@ -489,7 +488,7 @@ class Frontend extends Singleton {
 	 *
 	 * @param WC_Order $order Order item.
 	 *
-	 * @return WC_Product
+	 * @return array
 	 */
 	public function get_product_by_order( $order ) {
 		$order_items = $order->get_items();

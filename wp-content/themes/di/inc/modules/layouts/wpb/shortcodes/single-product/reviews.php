@@ -2,7 +2,7 @@
 /**
  * Reviews shortcode.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 use XTS\Modules\Layouts\Global_Data;

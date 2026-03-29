@@ -1,4 +1,10 @@
 <?php
+/**
+ * Admin settings sections.
+ *
+ * @package woodmart
+ */
+
 if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
 	exit( 'No direct script access allowed' );
 }
@@ -581,7 +587,7 @@ Options::add_section(
 	array(
 		'id'       => 'products_styles_section',
 		'parent'   => 'general_product_archive_section',
-		'name'     => esc_html__( 'Products styles', 'woodmart' ),
+		'name'     => esc_html__( 'Products loop', 'woodmart' ),
 		'priority' => 30,
 		'icon'     => 'xts-i-archive',
 	)

@@ -2,7 +2,7 @@
 /**
  * This file describes class for render view waiting lists in WordPress admin panel.
  *
- * @package Woodmart.
+ * @package woodmart.
  */
 
 namespace XTS\Modules\Abandoned_Cart\List_Table;

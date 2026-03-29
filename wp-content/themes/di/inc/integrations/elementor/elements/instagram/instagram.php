@@ -2,7 +2,7 @@
 /**
  * Instagram template function.
  *
- * @package xts
+ * @package woodmart
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

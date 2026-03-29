@@ -65,10 +65,16 @@
 					success : function(response) {
 						if (response.status === 'success') {
 							renderResults(response.data);
+							
+							// Save to localStorage only if not already saved (avoid overwriting with stripped CSS).
 							if (woodmart_settings.ajax_dropdowns_save && woodmartThemeModule.supports_html5_storage) {
-								try {
-									localStorage.setItem(storageKey, JSON.stringify(response.data));
-								} catch (e) {}
+								var existingData = localStorage.getItem(storageKey);
+								
+								if (!existingData) {
+									try {
+										localStorage.setItem(storageKey, JSON.stringify(response.data));
+									} catch (e) {}
+								}
 							}
 						} else {
 							console.log('loading html dropdowns returns wrong data - ', response.message);

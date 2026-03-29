@@ -2,7 +2,7 @@
 /**
  * Manual free gifts table.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Modules\Layouts;

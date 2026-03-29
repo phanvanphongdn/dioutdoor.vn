@@ -170,10 +170,6 @@ class Select extends Field {
 			<?php endif; ?>
 		</select>
 
-		<?php if ( function_exists( 'woodmart_get_html_block_links' ) && ( ( isset( $this->args['callback'] ) && 'woodmart_get_theme_settings_html_blocks_array' === $this->args['callback'] ) || isset( $this->args['autocomplete']['value'] ) && 'cms_block' === $this->args['autocomplete']['value'] ) ) : ?>
-			<?php echo wp_kses( woodmart_get_html_block_links(), true ); ?>
-		<?php endif; ?>
-
 		<?php if ( $this->is_multiple() && ! $this->is_autocomplete() && empty( $this->args['buttons'] ) ) : ?>
 			<div class="xts-select2-all-wrap">
 				<a href="#" class="xts-btn xts-select2-all xts-i-check-all">

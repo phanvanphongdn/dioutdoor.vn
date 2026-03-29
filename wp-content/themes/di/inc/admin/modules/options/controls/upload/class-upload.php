@@ -2,7 +2,7 @@
 /**
  * Upload media library control.
  *
- * @package xts
+ * @package woodmart
  */
 
 namespace XTS\Admin\Modules\Options\Controls;

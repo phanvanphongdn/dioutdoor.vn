@@ -1,12 +1,21 @@
-<?php if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
-	exit( 'No direct script access allowed' );}
+<?php
 /**
-* ------------------------------------------------------------------------------------------------
-*  Page heading element map
-* ------------------------------------------------------------------------------------------------
-*/
+ * Page heading element map.
+ *
+ * @package woodmart
+ */
+
+if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
+	exit( 'No direct script access allowed' );
+}
+
 
 if ( ! function_exists( 'woodmart_get_vc_map_page_heading' ) ) {
+	/**
+	 * Get page heading element map.
+	 *
+	 * @return array
+	 */
 	function woodmart_get_vc_map_page_heading() {
 		return array(
 			'name'        => esc_html__( 'Page heading', 'woodmart' ),
@@ -20,12 +29,16 @@ if ( ! function_exists( 'woodmart_get_vc_map_page_heading' ) ) {
 }
 
 if ( ! function_exists( 'woodmart_get_page_heading_params' ) ) {
+	/**
+	 * Get page heading params.
+	 *
+	 * @return array
+	 */
 	function woodmart_get_page_heading_params() {
 		$typography = woodmart_get_typography_map(
 			array(
-				'key'              => 'typography',
-				'selector'         => '{{WRAPPER}} .title',
-				'edit_field_class' => 'vc_col-sm-6 vc_column',
+				'key'      => 'typography',
+				'selector' => '{{WRAPPER}} .title',
 			)
 		);
 

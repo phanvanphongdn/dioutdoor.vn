@@ -16,6 +16,8 @@
 							setTimeout(function(){
 								$e.internal('panel/state-ready');
 								$e.route('panel/page-settings/' + control.tab);
+
+								elementor.getPanelView().getCurrentPageView().activateSection(control.section)._renderChildren()
 							}, 1);
 						});
 					});

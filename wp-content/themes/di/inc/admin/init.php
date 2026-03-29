@@ -2,11 +2,11 @@
 /**
  * This file enqueue scripts and styles for admin.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 use XTS\Admin\Modules\Options;
-use XTS\Admin\Modules\Options\Google_Fonts;
+use XTS\Admin\Modules\Options\Google_Fonts\Google_Fonts;
 use XTS\Admin\Modules\Import\Helpers;
 use XTS\Modules\Styles_Storage;
 
@@ -239,6 +239,13 @@ if ( ! function_exists( 'woodmart_enqueue_admin_scripts' ) ) {
 			'animate_it_btn_text'                => esc_html__( 'Animate it', 'woodmart' ),
 			'remove_backup_text'                 => esc_html__( 'Are you sure you want to remove backup? This process cannot be undone. Continue?', 'woodmart' ),
 			'apply_backup_text'                  => esc_html__( 'Are you sure you want to apply backup? This process cannot be undone. Continue?', 'woodmart' ),
+			'post_type'                          => (
+				'post.php' === $pagenow && isset( $_GET['post'] ) // phpcs:ignore
+				) ? get_post_type( (int) $_GET['post'] ) : ( // phpcs:ignore
+				'post-new.php' === $pagenow && ! empty( $_GET['post_type'] ) // phpcs:ignore
+						? sanitize_key( $_GET['post_type'] ) // phpcs:ignore
+						: ''
+				),
 			'wd_layout_type'                     => 'post.php' === $pagenow && isset( $_GET['post'] ) ? get_post_meta( woodmart_clean( $_GET['post'] ),'wd_layout_type', true ) : '', // phpcs:ignore
 			'current_page_builder'               => woodmart_get_current_page_builder(),
 			'import_base_versions_name'          => implode( ',', Helpers::get_instance()->get_base_version() ),
@@ -250,23 +257,23 @@ if ( ! function_exists( 'woodmart_enqueue_admin_scripts' ) ) {
 			'get_hotspot_image_nonce'            => wp_create_nonce( 'woodmart-get-hotspot-image-nonce' ),
 		);
 
-		if ( current_user_can( 'administrator' ) ) {
+		if ( current_user_can( 'manage_options' ) ) {
 			$localize_data = array_merge(
 				$localize_data,
 				array(
-					'deactivate_plugin_nonce'          => wp_create_nonce( 'woodmart_deactivate_plugin_nonce' ),
-					'check_plugins_nonce'              => wp_create_nonce( 'woodmart_check_plugins_nonce' ),
-					'install_child_theme_nonce'        => wp_create_nonce( 'woodmart_install_child_theme_nonce' ),
+					'deactivate_plugin_nonce'         => wp_create_nonce( 'woodmart_deactivate_plugin_nonce' ),
+					'check_plugins_nonce'             => wp_create_nonce( 'woodmart_check_plugins_nonce' ),
+					'install_child_theme_nonce'       => wp_create_nonce( 'woodmart_install_child_theme_nonce' ),
 
-					'presets_nonce'                    => wp_create_nonce( 'xts_presets_nonce' ),
-					'import_nonce'                     => wp_create_nonce( 'woodmart-import-nonce' ),
-					'backup_nonce'                     => wp_create_nonce( 'xts_backup_nonce' ),
-					'import_remove_nonce'              => wp_create_nonce( 'woodmart-import-remove-nonce' ),
-					'mega_menu_added_thumbnail_nonce'  => wp_create_nonce( 'woodmart-mega-menu-added-thumbnail-nonce' ),
-					'get_theme_settings_data_nonce'    => wp_create_nonce( 'woodmart-get-theme-settings-data-nonce' ),
-					'patcher_nonce'                    => wp_create_nonce( 'patcher_nonce' ),
-					'bought_together_nonce'            => wp_create_nonce( 'bought_together_nonce' ),
-					'get_slides_nonce'                 => wp_create_nonce( 'woodmart-get-slides-nonce' ),
+					'presets_nonce'                   => wp_create_nonce( 'xts_presets_nonce' ),
+					'import_nonce'                    => wp_create_nonce( 'woodmart-import-nonce' ),
+					'backup_nonce'                    => wp_create_nonce( 'xts_backup_nonce' ),
+					'import_remove_nonce'             => wp_create_nonce( 'woodmart-import-remove-nonce' ),
+					'mega_menu_added_thumbnail_nonce' => wp_create_nonce( 'woodmart-mega-menu-added-thumbnail-nonce' ),
+					'get_theme_settings_data_nonce'   => wp_create_nonce( 'woodmart-get-theme-settings-data-nonce' ),
+					'patcher_nonce'                   => wp_create_nonce( 'patcher_nonce' ),
+					'bought_together_nonce'           => wp_create_nonce( 'bought_together_nonce' ),
+					'get_slides_nonce'                => wp_create_nonce( 'woodmart-get-slides-nonce' ),
 				)
 			);
 		}
@@ -384,21 +391,30 @@ if ( ! function_exists( 'woodmart_admin_custom_css_file' ) ) {
 
 if ( ! function_exists( 'woodmart_get_html_block_links' ) ) {
 	/**
-	 * Get html block links.
+	 * Get block links.
 	 *
+	 * @param string $create_post_url Url for create post.
+	 * @param string $label Post type label.
 	 * @return false|string
 	 */
-	function woodmart_get_html_block_links() {
+	function woodmart_get_html_block_links( $create_post_url = 'post-new.php?post_type=cms_block', $label = '' ) {
 		wp_enqueue_script( 'woodmart-admin-html-block-edit-link', WOODMART_ASSETS . '/js/htmlBlockEditLink.js', array(), WOODMART_VERSION, true );
+
+		if ( ! $label ) {
+			$label = esc_html__( 'block', 'woodmart' );
+		}
 
 		ob_start();
 		?>
 		<span class="xts-block-link-wrap">
 			<a href="<?php echo esc_url( admin_url( 'post.php?post=' ) ); ?>" class="xts-block-link xts-edit-block-link xts-i-edit-write" style="display:none;" target="_blank">
-				<?php esc_html_e( 'Edit this block with Page Builder', 'woodmart' ); ?>
+				<?php // translators: %s post type label. ?>
+				<?php echo esc_html( sprintf( __( 'Edit this %s', 'woodmart' ), $label ) ); ?>
 			</a>
-			<a href="<?php echo esc_url( admin_url( 'post-new.php?post_type=cms_block' ) ); ?>" class="xts-block-link xts-add-block-link xts-i-expand" target="_blank">
-				<?php esc_html_e( 'Create new HTML Block', 'woodmart' ); ?>
+
+			<a href="<?php echo esc_url( admin_url( $create_post_url ) ); ?>" class="xts-block-link xts-add-block-link xts-i-expand" target="_blank">
+				<?php // translators: %s post type label. ?>
+				<?php echo esc_html( sprintf( __( 'Create new %s', 'woodmart' ), $label ) ); ?>
 			</a>
 		</span>
 		<?php
@@ -410,10 +426,9 @@ if ( ! function_exists( 'woodmart_update_tgmpa_link' ) ) {
 	/**
 	 * Update tgmpa link actions.
 	 *
-	 * @param string $action_link Action link.
-	 * @return string|void
+	 * @return string
 	 */
-	function woodmart_update_tgmpa_link( $action_link ) {
+	function woodmart_update_tgmpa_link() {
 		return admin_url( 'admin.php?page=xts_plugins' );
 	}
 
@@ -513,8 +528,8 @@ if ( ! function_exists( 'woodmart_get_update_enqueue_icons_fonts' ) ) {
 		check_ajax_referer( 'woodmart-get-theme-settings-data-nonce', 'security' );
 
 		$enqueue = '';
-		$font    = sanitize_text_field( $_GET['font'] );
-		$weight  = sanitize_text_field( $_GET['weight'] );
+		$font    = sanitize_text_field( $_GET['font'] ); // phpcs:ignore
+		$weight  = sanitize_text_field( $_GET['weight'] ); // phpcs:ignore
 
 		if ( $font && $weight ) {
 			$icon_font_name = 'woodmart-font-' . $font . '-' . $weight;
@@ -539,7 +554,6 @@ if ( ! function_exists( 'woodmart_get_update_enqueue_icons_fonts' ) ) {
 				'enqueue' => $enqueue,
 			)
 		);
-
 	}
 
 	add_action( 'wp_ajax_woodmart_get_enqueue_custom_icon_fonts', 'woodmart_get_update_enqueue_icons_fonts' );

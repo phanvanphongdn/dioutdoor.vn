@@ -2,7 +2,7 @@
 /**
  * Patch apply.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Modules\Patcher;

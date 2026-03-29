@@ -1,12 +1,20 @@
-<?php if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
-	exit( 'No direct script access allowed' );}
+<?php // phpcs:ignore WordPress.Files.FileName.InvalidClassFileName
 /**
-* ------------------------------------------------------------------------------------------------
-* Promo Banner element map
-* ------------------------------------------------------------------------------------------------
-*/
+ * WoodMart Theme
+ *
+ * @package woodmart
+ */
+
+if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
+	exit( 'No direct script access allowed' );
+}
 
 if ( ! function_exists( 'woodmart_get_vc_map_promo_banner' ) ) {
+	/**
+	 * Get vc map for promo banner.
+	 *
+	 * @return array
+	 */
 	function woodmart_get_vc_map_promo_banner() {
 		return array(
 			'name'        => esc_html__( 'Promo Banner', 'woodmart' ),
@@ -22,6 +30,11 @@ if ( ! function_exists( 'woodmart_get_vc_map_promo_banner' ) ) {
 }
 
 if ( ! function_exists( 'woodmart_get_vc_map_banners_carousel' ) ) {
+	/**
+	 * Get vc map for banners carousel.
+	 *
+	 * @return array
+	 */
 	function woodmart_get_vc_map_banners_carousel() {
 		return array(
 			'name'                    => esc_html__( 'Banners carousel', 'woodmart' ),
@@ -76,6 +89,9 @@ if ( ! function_exists( 'woodmart_get_vc_map_banners_carousel' ) ) {
 }
 
 if ( ! function_exists( 'woodmart_get_banner_params' ) ) {
+	/**
+	 * Get banner params.
+	 */
 	function woodmart_get_banner_params() {
 		$secondary_font = woodmart_get_opt( 'secondary-font' );
 		$text_font      = woodmart_get_opt( 'text-font' );
@@ -170,23 +186,23 @@ if ( ! function_exists( 'woodmart_get_banner_params' ) ) {
 					),
 				),
 				array(
-					'type'             => 'woodmart_switch',
-					'heading'          => esc_html__( 'Fixed height', 'woodmart' ),
-					'param_name'       => 'custom_height',
-					'true_state'       => 'yes',
-					'false_state'      => 'no',
-					'default'          => 'no',
+					'type'        => 'woodmart_switch',
+					'heading'     => esc_html__( 'Fixed height', 'woodmart' ),
+					'param_name'  => 'custom_height',
+					'true_state'  => 'yes',
+					'false_state' => 'no',
+					'default'     => 'no',
 				),
 				array(
 					'type'             => 'wd_slider',
 					'heading'          => esc_html__( 'Banner Height', 'woodmart' ),
 					'param_name'       => 'new_height',
-					'selectors'  => array(
+					'selectors'        => array(
 						'{{WRAPPER}}' => array(
 							'--wd-img-height: {{VALUE}}{{UNIT}};',
 						),
 					),
-					'devices'    => array(
+					'devices'          => array(
 						'desktop' => array(
 							'value' => '',
 							'unit'  => 'px',
@@ -200,10 +216,15 @@ if ( ! function_exists( 'woodmart_get_banner_params' ) ) {
 							'unit'  => 'px',
 						),
 					),
-					'range'      => array(
+					'range'            => array(
 						'px' => array(
 							'min'  => 0,
 							'max'  => 2000,
+							'step' => 1,
+						),
+						'vh' => array(
+							'min'  => 0,
+							'max'  => 100,
 							'step' => 1,
 						),
 					),
@@ -867,7 +888,7 @@ if ( ! function_exists( 'woodmart_get_banner_params' ) ) {
 					'value'      => array(
 						esc_html__( 'Inherit', 'woodmart' ) => '',
 						esc_html__( 'Light', 'woodmart' ) => 'light',
-						esc_html__( 'Dark', 'woodmart' ) => 'dark',
+						esc_html__( 'Dark', 'woodmart' )  => 'dark',
 					),
 				),
 				array(
@@ -955,7 +976,7 @@ if ( ! function_exists( 'woodmart_get_banner_params' ) ) {
 						esc_html__( 'Flat', 'woodmart' ) => 'default',
 						esc_html__( 'Bordered', 'woodmart' ) => 'bordered',
 						esc_html__( 'Link button', 'woodmart' ) => 'link',
-						esc_html__( '3D', 'woodmart' ) => '3d',
+						esc_html__( '3D', 'woodmart' )   => '3d',
 					),
 					'images_value'     => array(
 						'default'  => WOODMART_ASSETS_IMAGES . '/settings/buttons/style/default.png',
@@ -1642,5 +1663,5 @@ if ( ! function_exists( 'woodmart_get_banner_params' ) ) {
 }
 
 if ( class_exists( 'WPBakeryShortCode' ) ) {
-	class WPBakeryShortCode_banners_carousel extends WPBakeryShortCodesContainer {}
+	class WPBakeryShortCode_banners_carousel extends WPBakeryShortCodesContainer {} // phpcs:ignore
 }

@@ -2,7 +2,7 @@
 /**
  * Elementor module file.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Elementor;
@@ -21,7 +21,7 @@ if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
 /**
  * Elementor module.
  *
- * @package Woodmart
+ * @package woodmart
  */
 class Elementor extends Singleton {
 	/**
@@ -44,7 +44,7 @@ class Elementor extends Singleton {
 	 *
 	 * @since 1.0.0
 	 */
-	function files_include() {
+	public function files_include() {
 		$files = array(
 			'integrations/elementor/template-library/class-xts-library-source',
 			'integrations/elementor/template-library/class-xts-library',
@@ -70,10 +70,18 @@ class Elementor extends Singleton {
 			'integrations/elementor/elements/portfolio/portfolio',
 		);
 
+		$doc_settings_files = array(
+			'integrations/elementor/doc-settings/pages',
+			'integrations/elementor/doc-settings/slides',
+			'integrations/elementor/doc-settings/custom-tabs',
+		);
+
 		$woo_files = array(
 			'integrations/elementor/elements/products/products',
 			'integrations/elementor/elements/products-tabs/products-tabs',
 		);
+
+		$files = array_merge( $files, $doc_settings_files );
 
 		if ( woodmart_woocommerce_installed() ) {
 			$files = array_merge( $files, $woo_files );
@@ -88,8 +96,12 @@ class Elementor extends Singleton {
 	 * Register new controls.
 	 *
 	 * @since 1.0.0
+	 *
+	 * @param Controls_Manager $controls_manager Controls manager instance.
+	 *
+	 * @return void
 	 */
-	function register_controls( Controls_Manager $controls_manager ) {
+	public function register_controls( Controls_Manager $controls_manager ) {
 		$files = array(
 			'integrations/elementor/controls/class-autocomplete',
 			'integrations/elementor/controls/class-buttons',
@@ -153,7 +165,7 @@ class Elementor extends Singleton {
 			'integrations/elementor/elements/class-twitter',
 			'integrations/elementor/elements/class-social',
 			'integrations/elementor/elements/class-team-member',
-			'integrations/elementor/elements/class-mega-menu',
+			'integrations/elementor/elements/class-wd-mega-menu',
 			'integrations/elementor/elements/class-menu-price',
 			'integrations/elementor/elements/class-menu-anchor',
 			'integrations/elementor/elements/class-popup',

@@ -2,7 +2,7 @@
 /**
  * Price map.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Modules\Layouts;
@@ -132,17 +132,17 @@ class Price extends Widget_Base {
 			array(
 				'label'    => esc_html__( 'Typography', 'woodmart' ),
 				'name'     => 'main_price_typography',
-				'selector' => '{{WRAPPER}} .price, {{WRAPPER}} .price del, {{WRAPPER}} .amount',
+				'selector' => '{{WRAPPER}} .price',
 			)
 		);
 
 		$this->add_control(
 			'main_price_text_color',
 			array(
-				'label'     => esc_html__( 'Text color', 'woodmart' ),
+				'label'     => esc_html__( 'Color', 'woodmart' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
-					'{{WRAPPER}} .price, {{WRAPPER}} .amount, {{WRAPPER}} del' => 'color: {{VALUE}}',
+					'{{WRAPPER}} :is(.price, del)' => 'color: {{VALUE}}',
 				),
 			)
 		);
@@ -160,17 +160,17 @@ class Price extends Widget_Base {
 			array(
 				'label'    => esc_html__( 'Typography', 'woodmart' ),
 				'name'     => 'old_price_typography',
-				'selector' => '{{WRAPPER}} .price del, {{WRAPPER}} del .amount',
+				'selector' => '{{WRAPPER}} .price del',
 			)
 		);
 
 		$this->add_control(
 			'old_price_text_color',
 			array(
-				'label'     => esc_html__( 'Text color', 'woodmart' ),
+				'label'     => esc_html__( 'Color', 'woodmart' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
-					'{{WRAPPER}} .price del, {{WRAPPER}} del .amount' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .price del' => 'color: {{VALUE}}',
 				),
 			)
 		);
@@ -197,7 +197,7 @@ class Price extends Widget_Base {
 		$this->add_control(
 			'suffix_text_color',
 			array(
-				'label'     => esc_html__( 'Text color', 'woodmart' ),
+				'label'     => esc_html__( 'Color', 'woodmart' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .woocommerce-price-suffix' => 'color: {{VALUE}}',

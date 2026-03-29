@@ -1,3 +1,4 @@
+/* global woodmartConfig, vc */
 var woodmartAdminModule, woodmart_media_init;
 
 (function($) {
@@ -266,7 +267,7 @@ var woodmartAdminModule, woodmart_media_init;
 					var _this = $(this);
 					var shortcode = _this.data('vc-shortcode');
 
-					if (shortcode != 'woodmart_image_hotspot' && shortcode != 'woodmart_hotspot') {
+					if (shortcode !== 'woodmart_image_hotspot' && shortcode !== 'woodmart_hotspot') {
 						return;
 					}
 
@@ -285,15 +286,15 @@ var woodmartAdminModule, woodmart_media_init;
 						success : function(response) {
 							$(preview).removeClass('loading');
 
-							if (response.status == 'success') {
+							if (response.status === 'success') {
 								_this.find('.xts-image-hotspot-image').append(response.html).fadeIn(500);
 								$(preview).css('min-width', _this.find('.woodmart-hotspot-img').outerWidth());
-							} else if (response.status == 'warning') {
+							} else if (response.status === 'warning') {
 								$('.xts-image-hotspot-preview').remove();
 								$('.xts-image-hotspot-position').after(response.html);
 							}
 						},
-						error   : function(response) {
+						error   : function() {
 							console.log('ajax error');
 						}
 					});
@@ -329,8 +330,7 @@ var woodmartAdminModule, woodmart_media_init;
 				});
 			},
 			mediaInit: function() {
-				var clicked_button = false;
-				$('.woodmart-image-upload').each(function(i, input) {
+				$('.woodmart-image-upload').each(function() {
 					var button = $(this).parent().find('.woodmart-image-upload-btn');
 
 					if (button.hasClass('wd-inited')) {
@@ -339,7 +339,6 @@ var woodmartAdminModule, woodmart_media_init;
 
 					button.click(function(event) {
 						event.preventDefault();
-						clicked_button = $(this);
 
 						// check for media manager instance
 						// if(wp.media.frames.gk_frame) {
@@ -371,7 +370,7 @@ var woodmartAdminModule, woodmart_media_init;
 							selection.each(function(attachment) {
 								var url = attachment.attributes.url;
 
-								button.parent().find('.woodmart-image-upload').val(attachment.attributes.id);
+								button.parent().find('.woodmart-image-upload').val(attachment.attributes.id).trigger('change');
 								button.parent().find('.woodmart-image-src').attr('src', url).show();
 							});
 						};
@@ -394,7 +393,7 @@ var woodmartAdminModule, woodmart_media_init;
 
 })(jQuery);
 
-woodmart_media_init = woodmartAdminModule.mediaInit;
+woodmart_media_init = woodmartAdminModule.mediaInit; // eslint-disable-line no-unused-vars
 
 jQuery(document).ready(function() {
 	woodmartAdminModule.init();

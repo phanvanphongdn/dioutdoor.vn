@@ -1,12 +1,21 @@
-<?php if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
-	exit( 'No direct script access allowed' );}
+<?php
 /**
-* ------------------------------------------------------------------------------------------------
-*  Breadcrumbs element map
-* ------------------------------------------------------------------------------------------------
-*/
+ * Breadcrumbs element map.
+ *
+ * @package woodmart
+ */
+
+if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
+	exit( 'No direct script access allowed' );
+}
+
 
 if ( ! function_exists( 'woodmart_get_vc_map_breadcrumbs' ) ) {
+	/**
+	 * Get breadcrumbs element map.
+	 *
+	 * @return array
+	 */
 	function woodmart_get_vc_map_breadcrumbs() {
 		return array(
 			'name'        => esc_html__( 'Breadcrumbs', 'woodmart' ),
@@ -20,13 +29,17 @@ if ( ! function_exists( 'woodmart_get_vc_map_breadcrumbs' ) ) {
 }
 
 if ( ! function_exists( 'woodmart_get_breadcrumbs_params' ) ) {
+	/**
+	 * Get breadcrumbs params.
+	 *
+	 * @return array
+	 */
 	function woodmart_get_breadcrumbs_params() {
 		$typography = woodmart_get_typography_map(
 			array(
-				'key'              => 'typography',
-				'selector'         => '{{WRAPPER}} :is(.wd-breadcrumbs,.yoast-breadcrumb)',
-				'group'            => esc_html__( 'Style', 'woodmart' ),
-				'edit_field_class' => 'vc_col-sm-6 vc_column',
+				'key'      => 'typography',
+				'selector' => '{{WRAPPER}} :is(.wd-breadcrumbs,.yoast-breadcrumb,.rank-math-breadcrumb,.aioseo-breadcrumbs,.breadcrumb)',
+				'group'    => esc_html__( 'Style', 'woodmart' ),
 			)
 		);
 
@@ -92,7 +105,7 @@ if ( ! function_exists( 'woodmart_get_breadcrumbs_params' ) ) {
 				'type'             => 'wd_colorpicker',
 				'param_name'       => 'text_color',
 				'selectors'        => array(
-					'{{WRAPPER}} :is(.wd-breadcrumbs,.yoast-breadcrumb)' => array(
+					'{{WRAPPER}} :is(.wd-breadcrumbs,.yoast-breadcrumb,.rank-math-breadcrumb,.aioseo-breadcrumbs,.breadcrumb)' => array(
 						'--wd-link-color: {{VALUE}};',
 					),
 				),
@@ -105,7 +118,7 @@ if ( ! function_exists( 'woodmart_get_breadcrumbs_params' ) ) {
 				'type'             => 'wd_colorpicker',
 				'param_name'       => 'text_color_hover',
 				'selectors'        => array(
-					'{{WRAPPER}} :is(.wd-breadcrumbs,.yoast-breadcrumb)' => array(
+					'{{WRAPPER}} :is(.wd-breadcrumbs,.yoast-breadcrumb,.rank-math-breadcrumb,.aioseo-breadcrumbs,.breadcrumb)' => array(
 						'--wd-link-color-hover: {{VALUE}};',
 					),
 				),
@@ -118,7 +131,7 @@ if ( ! function_exists( 'woodmart_get_breadcrumbs_params' ) ) {
 				'type'             => 'wd_colorpicker',
 				'param_name'       => 'text_color_active',
 				'selectors'        => array(
-					'{{WRAPPER}} :is(.wd-breadcrumbs,.yoast-breadcrumb)' => array(
+					'{{WRAPPER}} :is(.wd-breadcrumbs,.yoast-breadcrumb,.rank-math-breadcrumb,.aioseo-breadcrumbs,.breadcrumb)' => array(
 						'--wd-bcrumb-color-active: {{VALUE}};',
 					),
 				),
@@ -131,7 +144,7 @@ if ( ! function_exists( 'woodmart_get_breadcrumbs_params' ) ) {
 				'type'             => 'wd_colorpicker',
 				'param_name'       => 'delimiter_color',
 				'selectors'        => array(
-					'{{WRAPPER}} :is(.wd-breadcrumbs,.yoast-breadcrumb)' => array(
+					'{{WRAPPER}} :is(.wd-breadcrumbs,.yoast-breadcrumb,.rank-math-breadcrumb,.aioseo-breadcrumbs,.breadcrumb)' => array(
 						'--wd-bcrumb-delim-color: {{VALUE}};',
 					),
 				),

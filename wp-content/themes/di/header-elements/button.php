@@ -1,18 +1,14 @@
 <?php
+/**
+ * Shortcode for Button element in header builder.
+ *
+ * @package woodmart
+ */
+
 woodmart_enqueue_inline_style( 'header-elements-base' );
 
-if ( isset( $params['link'] ) ) {
-	$link_attrs = '';
-
-	if ( isset( $params['link']['url'] ) ) {
-		$link_attrs = 'url:' . rawurlencode( $params['link']['url'] );
-	}
-
-	if ( ! empty( $params['link']['blank'] ) ) {
-		$link_attrs .= '|target:_blank';
-	}
-
-	$params['link'] = $link_attrs;
+if ( ! empty( $params['link']['blank'] ) ) {
+	$params['link']['target'] = '_blank';
 }
 
 if ( ! empty( $params['button_smooth_scroll'] ) ) {
@@ -35,4 +31,4 @@ if ( isset( $id ) ) {
 
 $params['generate_css'] = false;
 
-echo woodmart_shortcode_button( $params );
+echo woodmart_shortcode_button( $params ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped

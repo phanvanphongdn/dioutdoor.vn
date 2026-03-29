@@ -1,15 +1,24 @@
-<?php if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
-	exit( 'No direct script access allowed' );}
+<?php
+/**
+ * Shortcode for Breadcrumbs element.
+ *
+ * @package woodmart
+ */
+
+if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
+	exit( 'No direct script access allowed' );
+}
 
 use XTS\Modules\Layouts\Main;
 
-/**
-* ------------------------------------------------------------------------------------------------
-* Breadcrumbs shortcode
-* ------------------------------------------------------------------------------------------------
-*/
-
 if ( ! function_exists( 'woodmart_shortcode_el_breadcrumbs' ) ) {
+	/**
+	 * Breadcrumbs shortcode.
+	 *
+	 * @param array $settings Shortcode attributes.
+	 *
+	 * @return string
+	 */
 	function woodmart_shortcode_el_breadcrumbs( $settings ) {
 		$default_settings = array(
 			'alignment'       => 'left',
@@ -40,11 +49,7 @@ if ( ! function_exists( 'woodmart_shortcode_el_breadcrumbs' ) ) {
 
 		ob_start();
 		?>
-			<div
-			<?php if ( ! empty( $settings['el_id'] ) ) : ?>
-			id="<?php echo esc_attr( $settings['el_id'] ); ?>"
-			<?php endif; ?>
-			class="wd-el-breadcrumbs<?php echo esc_attr( $wrapper_classes ); ?>">
+			<div <?php echo $settings['el_id'] ? 'id="' . esc_attr( $settings['el_id'] ) . '" ' : ''; ?>class="wd-el-breadcrumbs<?php echo esc_attr( $wrapper_classes ); ?>">
 				<?php
 				Main::setup_preview();
 				woodmart_current_breadcrumbs( 'pages' );

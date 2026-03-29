@@ -151,7 +151,7 @@ class WC_Wishlist {
 	public function add_to_wishlist_action() {
 		check_ajax_referer( 'woodmart-wishlist-add', 'key' );
 
-		if ( ! is_user_logged_in() && woodmart_get_opt( 'wishlist_logged' ) ) {
+		if ( ! is_user_logged_in() ) {
 			return false;
 		}
 
@@ -204,13 +204,9 @@ class WC_Wishlist {
 			return false;
 		}
 
-		$product_id   = woodmart_clean( $_GET['product_id'] ); //phpcs:ignore
-		$group_id     = '';
-		$product_atts = array();
-
-		if ( isset( $_GET['atts'] ) ) {
-			$product_atts = woodmart_clean( $_GET['atts'] ); //phpcs:ignore
-		}
+		$product_id = woodmart_clean( $_GET['product_id'] ); //phpcs:ignore
+		$group_id   = '';
+		$content    = '';
 
 		if ( isset( $_GET['group_id'] ) ) {
 			$group_id = woodmart_clean( $_GET['group_id'] ); //phpcs:ignore
@@ -223,43 +219,57 @@ class WC_Wishlist {
 				$this->remove_product_from_wishlist( $wishlist, $id, $group_id );
 			}
 		} else {
-			$this->remove_product_from_wishlist( $wishlist, $product_id, $group_id );
+			$this->remove_product_from_wishlist( $wishlist, (int) $product_id, $group_id );
+
+			if ( ! $group_id && woodmart_get_opt( 'wishlist_expanded' ) ) {
+				foreach ( $wishlist->get_all() as $product_data ) {
+					$wishlist_id = ! empty( $product_data['wishlist_id'] ) ? $product_data['wishlist_id'] : $wishlist->get_id();
+
+					if ( (int) $product_id === (int) $product_data['product_id'] ) {
+						$wishlist->remove( (int) $product_id, $wishlist_id );
+					}
+				}
+			}
 		}
 
 		$wishlist->update_count_cookie();
 
 		$products = $wishlist->get_product_ids_by_wishlist_id( $wishlist->get_id() );
 
-		if ( $products ) {
-			$products = array_map(
-				function( $item ) {
-					return $item['product_id'];
-				},
-				$products
-			);
+		if ( isset( $_GET['atts'] ) ) {
+			if ( $products ) {
+				$products = array_map(
+					function ( $item ) {
+						return $item['product_id'];
+					},
+					$products
+				);
 
-			if ( isset( $product_atts['items_per_page'] ) && count( $products ) <= $product_atts['items_per_page'] && '1' !== $product_atts['ajax_page'] ) {
-				--$product_atts['ajax_page'];
+				$product_atts = (array) woodmart_clean( $_GET['atts'] ); //phpcs:ignore
+
+				if ( isset( $product_atts['items_per_page'] ) && count( $products ) <= $product_atts['items_per_page'] && '1' !== $product_atts['ajax_page'] ) {
+					--$product_atts['ajax_page'];
+				}
+
+				$product_atts['post_type'] = 'ids';
+				$product_atts['include']   = implode( ',', $products );
+
+				woodmart_set_loop_prop( 'is_wishlist', true );
+
+				add_action( 'woocommerce_product_query_tax_query', array( Ui::get_instance(), 'out_out_stock_products_fix' ) );
+
+				$content = woodmart_shortcode_products( $product_atts );
+
+				remove_action( 'woocommerce_product_query_tax_query', array( Ui::get_instance(), 'out_out_stock_products_fix' ) );
+
+				woodmart_set_loop_prop( 'is_wishlist', false );
+			} else {
+				ob_start();
+
+				Ui::get_instance()->wishlist_empty_content( ! $group_id );
+
+				$content = ob_get_clean();
 			}
-
-			$product_atts['post_type'] = 'ids';
-			$product_atts['include']   = implode( ',', $products );
-
-			woodmart_set_loop_prop( 'is_wishlist', true );
-
-			add_action( 'woocommerce_product_query_tax_query', array( Ui::get_instance(), 'out_out_stock_products_fix' ) );
-
-			$content = woodmart_shortcode_products( $product_atts );
-
-			remove_action( 'woocommerce_product_query_tax_query', array( Ui::get_instance(), 'out_out_stock_products_fix' ) );
-
-			woodmart_set_loop_prop( 'is_wishlist', false );
-		} else {
-			ob_start();
-
-			Ui::get_instance()->wishlist_empty_content( ! $group_id );
-
-			$content = ob_get_clean();
 		}
 
 		$response = array(
@@ -308,8 +318,8 @@ class WC_Wishlist {
 	 * @since 1.0.0
 	 */
 	private function define_constants() {
-		if ( ! defined( 'XTS_WISHLIST_DIR' ) ) {
-			define( 'XTS_WISHLIST_DIR', WOODMART_THEMEROOT . '/inc/integrations/woocommerce/modules/wishlist/' );
+		if ( ! defined( 'WOODMART_WISHLIST_DIR' ) ) {
+			define( 'WOODMART_WISHLIST_DIR', WOODMART_THEMEROOT . '/inc/integrations/woocommerce/modules/wishlist/' );
 		}
 	}
 
@@ -331,11 +341,11 @@ class WC_Wishlist {
 		);
 
 		if ( woodmart_get_opt( 'wishlist_expanded' ) && is_user_logged_in() ) {
-			$files[] = 'class-wishlist-group';
+			$files[] = 'class-wishlists-group';
 		}
 
 		foreach ( $files as $file ) {
-			$path = XTS_WISHLIST_DIR . $file . '.php';
+			$path = WOODMART_WISHLIST_DIR . $file . '.php';
 			if ( file_exists( $path ) ) {
 				require_once $path;
 			}
@@ -348,7 +358,7 @@ class WC_Wishlist {
 	 * @since 1.0
 	 */
 	public function theme_settings_install() {
-		if ( ! isset( $_GET['settings-updated'] ) ) {
+		if ( ! isset( $_GET['settings-updated'] ) ) { // phpcs:ignore WordPress.Security
 			return;
 		}
 
@@ -427,14 +437,17 @@ class WC_Wishlist {
 	 * @return array
 	 */
 	public function update_localized_settings( $settings ) {
-		$settings['wishlist_expanded']          = ( woodmart_get_opt( 'wishlist_expanded' ) && is_user_logged_in() ) ? 'yes' : 'no';
-		$settings['wishlist_show_popup']        = woodmart_get_opt( 'wishlist_show_popup' );
-		$settings['wishlist_page_nonce']        = wp_create_nonce( 'wd-wishlist-page' );
-		$settings['wishlist_fragments_nonce']   = wp_create_nonce( 'wd-wishlist-fragments' );
-		$settings['wishlist_remove_notice']     = esc_html__( 'Do you really want to remove these products?', 'woodmart' );
-		$settings['wishlist_hash_name']         = apply_filters( 'woodmart_wishlist_hash_name', 'woodmart_wishlist_hash_' . md5( get_current_blog_id() . '_' . get_site_url( get_current_blog_id(), '/' ) ) );
-		$settings['wishlist_fragment_name']     = apply_filters( 'woodmart_wishlist_fragment_name', 'woodmart_wishlist_fragments_' . md5( get_current_blog_id() . '_' . get_site_url( get_current_blog_id(), '/' ) ) );
-		$settings['wishlist_save_button_state'] = woodmart_get_opt( 'wishlist_save_button_state', '0' ) ? 'yes' : 'no';
+		$settings['wishlist_expanded']           = ( woodmart_get_opt( 'wishlist_expanded' ) && is_user_logged_in() ) ? 'yes' : 'no';
+		$settings['wishlist_show_popup']         = woodmart_get_opt( 'wishlist_show_popup' );
+		$settings['wishlist_page_nonce']         = wp_create_nonce( 'wd-wishlist-page' );
+		$settings['wishlist_fragments_nonce']    = wp_create_nonce( 'wd-wishlist-fragments' );
+		$settings['wishlist_remove_notice']      = esc_html__( 'Do you really want to remove these products?', 'woodmart' );
+		$settings['wishlist_hash_name']          = apply_filters( 'woodmart_wishlist_hash_name', 'woodmart_wishlist_hash_' . md5( get_current_blog_id() . '_' . get_site_url( get_current_blog_id(), '/' ) ) );
+		$settings['wishlist_fragment_name']      = apply_filters( 'woodmart_wishlist_fragment_name', 'woodmart_wishlist_fragments_' . md5( get_current_blog_id() . '_' . get_site_url( get_current_blog_id(), '/' ) ) );
+		$settings['wishlist_save_button_state']  = woodmart_get_opt( 'wishlist_save_button_state', '0' ) ? 'yes' : 'no';
+		$settings['wishlist_cookie_expires']     = apply_filters( 'woodmart_wishlist_cookie_expires', 7 );
+		$settings['wishlist_add_button_text']    = esc_html__( 'Add to wishlist', 'woodmart' );
+		$settings['wishlist_remove_button_text'] = esc_html__( 'Remove from wishlist', 'woodmart' );
 
 		if ( woodmart_get_opt( 'wishlist_expanded' ) ) {
 			$settings['wishlist_current_default_group_text'] = esc_html__( 'Current default group', 'woodmart' );

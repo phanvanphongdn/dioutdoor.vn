@@ -16,7 +16,7 @@
 	<!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 	<!--    contained in this file into your site. -->
 
-	<!-- generator="WordPress/6.2.4" created="2024-02-08 14:45" -->
+	<!-- generator="WordPress/6.7.4" created="2026-02-25 15:03" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -29,24 +29,19 @@
 	<title>admin</title>
 	<link>https://dummy.xtemos.com/woodmart2</link>
 	<description>Just another WordPress site</description>
-	<pubDate>Thu, 08 Feb 2024 14:45:26 +0000</pubDate>
+	<pubDate>Wed, 25 Feb 2026 15:03:21 +0000</pubDate>
 	<language>en-US</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
 	<wp:base_site_url>https://dummy.xtemos.com/woodmart2/</wp:base_site_url>
 	<wp:base_blog_url>https://dummy.xtemos.com/woodmart2</wp:base_blog_url>
 
-		<wp:author><wp:author_id>2</wp:author_id><wp:author_login><![CDATA[Mr. Mackay]]></wp:author_login><wp:author_email><![CDATA[zak@asda.as]]></wp:author_email><wp:author_display_name><![CDATA[Mr. Mackay]]></wp:author_display_name><wp:author_first_name><![CDATA[sds]]></wp:author_first_name><wp:author_last_name><![CDATA[scssc]]></wp:author_last_name></wp:author>
-
-					<wp:term>
+	
+							<wp:term>
 			<wp:term_id>137</wp:term_id>
 			<wp:term_taxonomy><![CDATA[woodmart_slider]]></wp:term_taxonomy>
 			<wp:term_slug><![CDATA[fashion-flat-slider]]></wp:term_slug>
 			<wp:term_parent><![CDATA[]]></wp:term_parent>
 			<wp:term_name><![CDATA[Fashion flat slider]]></wp:term_name>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-137-status]]></wp:meta_key>
-			<wp:meta_value><![CDATA[valid]]></wp:meta_value>
-		</wp:termmeta>
 		<wp:termmeta>
 			<wp:meta_key><![CDATA[animation]]></wp:meta_key>
 			<wp:meta_value><![CDATA[fade]]></wp:meta_value>
@@ -211,44 +206,9 @@
 			<wp:meta_key><![CDATA[autoplay_speed]]></wp:meta_key>
 			<wp:meta_value><![CDATA[25000]]></wp:meta_value>
 		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-137-css-data]]></wp:meta_key>
-			<wp:meta_value><![CDATA[#slider-137 .wd-slide {
-	min-height: 850px;
-}
-
-@media (max-width: 1024px) {
-	#slider-137 .wd-slide {
-		min-height: 600px;
-	}
-}
-
-@media (max-width: 767px) {
-	#slider-137 .wd-slide {
-		min-height: 500px;
-	}
-}
-]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-137-version]]></wp:meta_key>
-			<wp:meta_value><![CDATA[7.4.0]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-137-site-url]]></wp:meta_key>
-			<wp:meta_value><![CDATA[65c5e7a3e87c59ae65d18b8d3b912a1e]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-137-credentials]]></wp:meta_key>
-			<wp:meta_value><![CDATA[requested]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-137-file-data]]></wp:meta_key>
-			<wp:meta_value><![CDATA[a:3:{s:4:"path";s:36:"/2024/02/xts-term-137-1707403373.css";s:13:"theme_version";s:5:"7.4.0";s:8:"site_url";s:32:"65c5e7a3e87c59ae65d18b8d3b912a1e";}]]></wp:meta_value>
-		</wp:termmeta>
 		</wp:term>
-		
-	<generator>https://wordpress.org/?v=6.2.4</generator>
+				
+	<generator>https://wordpress.org/?v=6.7.4</generator>
 
 					<item>
 					<title><![CDATA[fashion-flat-background-testimon]]></title>
@@ -1521,8 +1481,8 @@
 															<wp:post_id>9557</wp:post_id>
 					<wp:post_date><![CDATA[2024-01-18 12:37:21]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-01-18 12:37:21]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-02-08 14:44:15]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-02-08 14:44:15]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2026-02-25 12:38:46]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2026-02-25 12:38:46]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[fashion-flat-slide-1]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -1535,28 +1495,12 @@
 							<wp:meta_value><![CDATA[rgb(236,236,236)]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:89:"http://dummy.xtemos.com/woodmart2/wp-content/uploads/2024/01/fashion-flat-slide-1-opt.jpg";s:2:"id";s:5:"10043";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_size_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[cover]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_position_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[center center]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[bg_image_position_x_desktop]]></wp:meta_key>
 							<wp:meta_value><![CDATA[0px]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[bg_image_position_y_desktop]]></wp:meta_key>
 							<wp:meta_value><![CDATA[-100px]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_tablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[bg_image_size_tablet]]></wp:meta_key>
@@ -1573,10 +1517,6 @@
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[bg_image_position_y_tablet]]></wp:meta_key>
 							<wp:meta_value><![CDATA[0px]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_mobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[bg_image_size_mobile]]></wp:meta_key>
@@ -1603,18 +1543,6 @@
 							<wp:meta_value><![CDATA[460]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[content_width_mobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[500]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[vertical_align]]></wp:meta_key>
-							<wp:meta_value><![CDATA[middle]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[horizontal_align]]></wp:meta_key>
-							<wp:meta_value><![CDATA[left]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[slide_animation]]></wp:meta_key>
 							<wp:meta_value><![CDATA[none]]></wp:meta_value>
 						</wp:postmeta>
@@ -1634,6 +1562,14 @@
 							<wp:meta_key><![CDATA[_wpb_shortcodes_custom_css_updated]]></wp:meta_key>
 							<wp:meta_value><![CDATA[1]]></wp:meta_value>
 						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[image]]></wp:meta_key>
+							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:89:"http://dummy.xtemos.com/woodmart2/wp-content/uploads/2024/01/fashion-flat-slide-1-opt.jpg";s:2:"id";s:5:"10043";}]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_wpb_vc_editor_type]]></wp:meta_key>
+							<wp:meta_value><![CDATA[backend]]></wp:meta_value>
+						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[Fashion flat slide 2]]></title>
@@ -1645,8 +1581,8 @@
 															<wp:post_id>9562</wp:post_id>
 					<wp:post_date><![CDATA[2024-01-18 12:53:15]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-01-18 12:53:15]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-02-08 14:44:26]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-02-08 14:44:26]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2026-02-25 12:38:30]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2026-02-25 12:38:30]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[fashion-flat-slide-1-2]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -1669,26 +1605,6 @@
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[bg_color]]></wp:meta_key>
 							<wp:meta_value><![CDATA[rgb(236,236,236)]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:89:"http://dummy.xtemos.com/woodmart2/wp-content/uploads/2024/01/fashion-flat-slide-2-opt.jpg";s:2:"id";s:5:"10044";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_size_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[cover]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_position_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[center center]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_tablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_mobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[bg_image_size_mobile]]></wp:meta_key>
@@ -1715,14 +1631,6 @@
 							<wp:meta_value><![CDATA[550]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[content_width_mobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[500]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[vertical_align]]></wp:meta_key>
-							<wp:meta_value><![CDATA[middle]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[horizontal_align]]></wp:meta_key>
 							<wp:meta_value><![CDATA[center]]></wp:meta_value>
 						</wp:postmeta>
@@ -1747,8 +1655,12 @@
 							<wp:meta_value><![CDATA[1]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[fashion-flat-slide-1]]></wp:meta_value>
+							<wp:meta_key><![CDATA[image]]></wp:meta_key>
+							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:89:"http://dummy.xtemos.com/woodmart2/wp-content/uploads/2024/01/fashion-flat-slide-2-opt.jpg";s:2:"id";s:5:"10044";}]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_wpb_vc_editor_type]]></wp:meta_key>
+							<wp:meta_value><![CDATA[backend]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
@@ -1761,8 +1673,8 @@
 															<wp:post_id>9564</wp:post_id>
 					<wp:post_date><![CDATA[2024-01-18 12:56:08]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-01-18 12:56:08]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-02-08 14:44:37]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-02-08 14:44:37]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2026-02-25 12:38:13]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2026-02-25 12:38:13]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[fashion-flat-slide-1-3]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -1787,36 +1699,12 @@
 							<wp:meta_value><![CDATA[rgb(236,236,236)]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:89:"http://dummy.xtemos.com/woodmart2/wp-content/uploads/2024/01/fashion-flat-slide-3-opt.jpg";s:2:"id";s:5:"10045";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_size_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[cover]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_position_desktop]]></wp:meta_key>
-							<wp:meta_value><![CDATA[center center]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_tablet]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[bg_image_mobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[content_width]]></wp:meta_key>
 							<wp:meta_value><![CDATA[710]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[content_width_tablet]]></wp:meta_key>
 							<wp:meta_value><![CDATA[625]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[content_width_mobile]]></wp:meta_key>
-							<wp:meta_value><![CDATA[500]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[vertical_align]]></wp:meta_key>
@@ -1863,8 +1751,12 @@
 							<wp:meta_value><![CDATA[1]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[fashion-flat-slide-1]]></wp:meta_value>
+							<wp:meta_key><![CDATA[image]]></wp:meta_key>
+							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:89:"http://dummy.xtemos.com/woodmart2/wp-content/uploads/2024/01/fashion-flat-slide-3-opt.jpg";s:2:"id";s:5:"10045";}]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_wpb_vc_editor_type]]></wp:meta_key>
+							<wp:meta_value><![CDATA[backend]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 				</channel>

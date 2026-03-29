@@ -2,7 +2,7 @@
 /**
  * Quick buy.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Modules\Quick_Buy;
@@ -10,6 +10,7 @@ namespace XTS\Modules\Quick_Buy;
 use XTS\Singleton;
 use XTS\Admin\Modules\Options;
 use XTS\Modules\Layouts\Main as Builder;
+use XTS\Modules\Layouts\Global_Data;
 
 /**
  * Quick buy.
@@ -87,12 +88,22 @@ class Main extends Singleton {
 	 * @codeCoverageIgnore
 	 */
 	public function output_quick_buy_button() {
-		if ( ( ! is_singular( 'product' ) && ! woodmart_loop_prop( 'is_quick_view' ) ) || ! woodmart_get_opt( 'buy_now_enabled' ) ) {
+		$layout_builder = Builder::get_instance();
+
+		if (
+			! woodmart_get_opt( 'buy_now_enabled' ) ||
+			! is_singular( 'product' ) ||
+			woodmart_loop_prop( 'is_quick_view' ) ||
+			(
+				$layout_builder->is_custom_layout() &&
+				! $layout_builder->has_custom_layout( 'single_product' )
+			)
+		) {
 			return;
 		}
 
 		?>
-			<button id="wd-add-to-cart" type="submit" name="wd-add-to-cart" value="<?php echo get_the_ID(); ?>" class="wd-buy-now-btn button alt">
+			<button id="wd-add-to-cart" type="submit" name="wd-add-to-cart" value="<?php echo esc_attr( get_the_ID() ); ?>" class="wd-buy-now-btn btn button alt btn-accent">
 				<?php esc_html_e( 'Buy now', 'woodmart' ); ?>
 			</button>
 		<?php

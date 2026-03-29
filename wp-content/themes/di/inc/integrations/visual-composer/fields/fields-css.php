@@ -2,11 +2,10 @@
 /**
  * This file generates fields css.
  *
- * @package Woodmart.
+ * @package woodmart.
  */
 
-use XTS\Admin\Modules\Options\Google_Fonts;
-use XTS\Modules\Layouts\Main;
+use XTS\Admin\Modules\Options\Google_Fonts\Google_Fonts;
 
 if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
 	exit( 'No direct script access allowed' );
@@ -351,7 +350,7 @@ if ( ! function_exists( 'woodmart_fields_css_data_to_css' ) ) {
 	/**
 	 * This function prepares the css.
 	 *
-	 * @param array $css_data array with css data in base64.
+	 * @param array $data_array array with css data in base64.
 	 * @param int   $post_id  Post id.
 	 *
 	 * @return string $result finished css.
@@ -568,13 +567,7 @@ if ( ! function_exists( 'woodmart_load_fields_fonts' ) ) {
 	 * Load fields fonts.
 	 */
 	function woodmart_load_fields_fonts() {
-		$id = get_the_ID();
-
-		if ( Main::get_instance()->has_custom_layout( 'single_product' ) && ! is_singular( 'woodmart_layout' )
-		) {
-			$id = Main::get_instance()->get_layout_id( 'single_product' );
-		}
-
+		$id    = get_the_ID();
 		$fonts = get_post_meta( $id, 'woodmart_shortcodes_fonts', true );
 
 		if ( ! $fonts ) {

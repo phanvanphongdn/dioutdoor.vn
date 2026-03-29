@@ -2,7 +2,7 @@
 /**
  * This file describes class for render view price tracker subscriptions lists in WordPress admin panel.
  *
- * @package Woodmart.
+ * @package woodmart.
  */
 
 namespace XTS\Modules\Price_Tracker\List_Table;

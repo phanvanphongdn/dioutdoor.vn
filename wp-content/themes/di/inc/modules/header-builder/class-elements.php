@@ -1,11 +1,14 @@
 <?php
+/**
+ * Header builder elements class file.
+ *
+ * @package woodmart
+ */
 
 namespace XTS\Modules\Header_Builder;
 
 /**
- * ------------------------------------------------------------------------------------------------
  * Include all elements classes and create their objects. AJAX handlers.
- * ------------------------------------------------------------------------------------------------
  */
 class Elements {
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * CartFlows.
+ * CartFlows integration.
  *
  * @package woodmart
  */
@@ -9,114 +9,104 @@ if ( ! defined( 'CARTFLOWS_FILE' ) ) {
 	return;
 }
 
-if ( ! function_exists( 'woodmart_cartflows_is_override_checkout' ) ) {
+if ( ! function_exists( 'woodmart_cartflows_is_checkout_override_enabled' ) ) {
 	/**
-	 * Checks if the CartFlows plugin is set to override the global WooCommerce checkout.
+	 * Checks if CartFlows global checkout override is enabled.
 	 *
 	 * @return bool True if override is enabled, false otherwise.
 	 */
-	function woodmart_cartflows_is_override_checkout() {
+	function woodmart_cartflows_is_checkout_override_enabled() {
 		$common_settings = get_option( '_cartflows_common', false );
 
 		return ! empty( $common_settings ) && isset( $common_settings['override_global_checkout'] ) && 'enable' === $common_settings['override_global_checkout'];
 	}
 }
 
-if ( ! function_exists( 'woodmart_cartflows_checkout_template_condition' ) ) {
+if ( ! function_exists( 'woodmart_cartflows_disable_checkout_template_override' ) ) {
 	/**
-	 * Fixes the conflict of options that overwrite the checkout template.
+	 * Disables theme checkout template override when CartFlows is active.
 	 *
-	 * @param bool $condition Is the theme trying to rewrite the template.
+	 * @param bool $should_override Whether the theme should override the template.
 	 *
-	 * @return bool
+	 * @return bool False if CartFlows overrides checkout, original value otherwise.
 	 */
-	function woodmart_cartflows_checkout_template_condition( $condition ) {
-		if ( woodmart_cartflows_is_override_checkout() ) {
+	function woodmart_cartflows_disable_checkout_template_override( $should_override ) {
+		if ( woodmart_cartflows_is_checkout_override_enabled() ) {
 			return false;
 		}
 
-		return $condition;
+		return $should_override;
 	}
 
-	add_filter( 'woodmart_replace_checkout_template_condition', 'woodmart_cartflows_checkout_template_condition' );
+	add_filter( 'woodmart_replace_checkout_template_condition', 'woodmart_cartflows_disable_checkout_template_override' );
 }
 
-if ( ! function_exists( 'woodmart_cartflows_enqueue_styles' ) ) {
+if ( ! function_exists( 'woodmart_cartflows_enqueue_checkout_styles' ) ) {
 	/**
-	 * Enqueues the custom stylesheet for CartFlows checkout integration.
-	 *
-	 * This function loads the 'base-adminbar.min.css' stylesheet specifically for CartFlows checkout pages.
+	 * Enqueues styles for CartFlows checkout pages.
 	 *
 	 * @return void
 	 */
-	function woodmart_cartflows_enqueue_styles() {
+	function woodmart_cartflows_enqueue_checkout_styles() {
 		wp_enqueue_style( 'wd-int-woo-cartflows-checkout', WOODMART_THEME_DIR . '/css/parts/int-woo-cartflows-checkout.min.css', array(), WOODMART_VERSION );
 	}
 
-	add_action( 'wp_enqueue_scripts', 'woodmart_cartflows_enqueue_styles', 10001 );
+	add_action( 'wp_enqueue_scripts', 'woodmart_cartflows_enqueue_checkout_styles', 10001 );
 }
 
-if ( ! function_exists( 'woodmart_cartflows_lazy_loading_force_deinit' ) ) {
+if ( ! function_exists( 'woodmart_cartflows_disable_lazy_loading' ) ) {
 	/**
-	 * Forces the deinitialization of lazy loading on CartFlows checkout and order received pages.
-	 *
-	 * This function checks if the current page is the checkout or order received page,
-	 * or if an AJAX request related to updating the order review is being made.
-	 * If so, it deinitializes lazy loading to ensure compatibility with CartFlows.
+	 * Disables lazy loading on CartFlows checkout and order-received pages.
 	 *
 	 * @return void
 	 */
-	function woodmart_cartflows_lazy_loading_force_deinit() {
-		if ( ! is_checkout() && ! is_wc_endpoint_url( 'order-received' ) && ! ( is_ajax() && isset( $_GET['wc-ajax'] ) ) ) {
+	function woodmart_cartflows_disable_lazy_loading() {
+		if ( ! is_checkout() && ! is_wc_endpoint_url( 'order-received' ) && ! ( is_ajax() && isset( $_GET['wc-ajax'] ) ) ) { // phpcs:ignore WordPress.Security
 			return;
 		}
 
-		if ( woodmart_cartflows_is_override_checkout() || ( isset( $_GET['wc-ajax'] ) && 'update_order_review' === $_GET['wc-ajax'] ) ) {
+		if ( woodmart_cartflows_is_checkout_override_enabled() || ( isset( $_GET['wc-ajax'] ) && 'update_order_review' === $_GET['wc-ajax'] ) ) { // phpcs:ignore WordPress.Security
 			woodmart_lazy_loading_deinit( true );
 		}
 	}
 
-	add_action( 'wp', 'woodmart_cartflows_lazy_loading_force_deinit' );
+	add_action( 'wp', 'woodmart_cartflows_disable_lazy_loading' );
 }
 
-if ( ! function_exists( 'woodmart_cartflows_sticky_toolbar_deinit' ) ) {
+if ( ! function_exists( 'woodmart_cartflows_remove_sticky_toolbar' ) ) {
 	/**
-	 * Deinitializes the sticky toolbar on CartFlows checkout and order received pages.
-	 *
-	 * Removes the sticky toolbar template from the footer if the current page is a CartFlows override checkout.
+	 * Removes sticky toolbar on CartFlows checkout and order-received pages.
 	 *
 	 * @return void
 	 */
-	function woodmart_cartflows_sticky_toolbar_deinit() {
+	function woodmart_cartflows_remove_sticky_toolbar() {
 		if ( ! is_checkout() && ! is_wc_endpoint_url( 'order-received' ) ) {
 			return;
 		}
 
-		if ( woodmart_cartflows_is_override_checkout() ) {
+		if ( woodmart_cartflows_is_checkout_override_enabled() ) {
 			remove_action( 'wp_footer', 'woodmart_sticky_toolbar_template' );
 		}
 	}
 
-	add_action( 'wp', 'woodmart_cartflows_sticky_toolbar_deinit' );
+	add_action( 'wp', 'woodmart_cartflows_remove_sticky_toolbar' );
 }
 
-if ( ! function_exists( 'woodmart_cartflows_skip_main_content_button_deinit' ) ) {
+if ( ! function_exists( 'woodmart_cartflows_remove_skip_to_content_button' ) ) {
 	/**
-	 * Removes the "skip main content" button on CartFlows checkout and order received pages.
-	 *
-	 * Hooks into 'wp' to conditionally remove the button if CartFlows overrides the checkout.
+	 * Removes skip to content button on CartFlows checkout and order-received pages.
 	 *
 	 * @return void
 	 */
-	function woodmart_cartflows_skip_main_content_button_deinit() {
+	function woodmart_cartflows_remove_skip_to_content_button() {
 		if ( ! is_checkout() && ! is_wc_endpoint_url( 'order-received' ) ) {
 			return;
 		}
 
-		if ( woodmart_cartflows_is_override_checkout() ) {
+		if ( woodmart_cartflows_is_checkout_override_enabled() ) {
 			remove_action( 'wp_body_open', 'woodmart_get_skip_main_content_button' );
 		}
 	}
 
-	add_action( 'wp', 'woodmart_cartflows_skip_main_content_button_deinit' );
+	add_action( 'wp', 'woodmart_cartflows_remove_skip_to_content_button' );
 }

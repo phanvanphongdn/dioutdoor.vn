@@ -176,7 +176,7 @@ class Wishlist {
 
 		$wishlist_cleared_time = intval( $wishlist_cleared_time );
 
-		if ( $wishlist_cleared_time && time() < $wishlist_cleared_time + DAY_IN_SECONDS ) {
+		if ( $wishlist_cleared_time && time() < $wishlist_cleared_time + HOUR_IN_SECONDS ) {
 			return;
 		}
 

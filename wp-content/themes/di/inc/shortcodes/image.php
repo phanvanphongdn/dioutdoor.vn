@@ -1,10 +1,22 @@
 <?php
+/**
+ * Shortcode for Image element.
+ *
+ * @package woodmart
+ */
 
 if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
 	exit( 'No direct script access allowed' );
 }
 
 if ( ! function_exists( 'woodmart_shortcode_image' ) ) {
+	/**
+	 * Image shortcode
+	 *
+	 * @param array $atts Shortcode attributes.
+	 *
+	 * @return false|string
+	 */
 	function woodmart_shortcode_image( $atts ) {
 		$wrapper_classes = apply_filters( 'vc_shortcodes_css_class', '', '', $atts );
 

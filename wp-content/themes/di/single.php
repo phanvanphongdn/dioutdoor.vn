@@ -36,19 +36,19 @@ if ( 'sidebar-left' === woodmart_get_page_layout() ) {
 
 			<?php get_template_part( 'content', get_post_format() ); ?>
 
-			<?php if ( get_the_tag_list() || ( woodmart_get_opt( 'blog_share' ) && woodmart_is_social_link_enable( 'share' ) ) ) : ?>
+			<?php if ( get_the_tag_list() || ( woodmart_get_opt( 'blog_share' ) && woodmart_is_social_link_enabled( 'share' ) ) ) : ?>
 
 				<div class="wd-single-footer">
 					<?php if ( get_the_tag_list() ) : ?>
 						<?php woodmart_enqueue_inline_style( 'single-post-el-tags' ); ?>
 						<div class="wd-tags-list wd-style-1">
-							<?php echo get_the_tag_list(); ?>
+							<?php echo get_the_tag_list(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 						</div>
 					<?php endif; ?>
-					<?php if ( woodmart_get_opt( 'blog_share' ) && woodmart_is_social_link_enable( 'share' ) ) : ?>
+					<?php if ( woodmart_get_opt( 'blog_share' ) && woodmart_is_social_link_enabled( 'share' ) ) : ?>
 						<?php
 						if ( function_exists( 'woodmart_shortcode_social' ) ) {
-							echo woodmart_shortcode_social(
+							echo woodmart_shortcode_social( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 								array(
 									'type'    => 'share',
 									'tooltip' => 'no',

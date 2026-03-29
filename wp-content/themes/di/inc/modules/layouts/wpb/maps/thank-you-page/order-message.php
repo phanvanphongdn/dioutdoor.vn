@@ -2,7 +2,7 @@
 /**
  * Order message map.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
@@ -16,17 +16,15 @@ if ( ! function_exists( 'woodmart_get_vc_map_tp_order_message' ) ) {
 	function woodmart_get_vc_map_tp_order_message() {
 		$typography_success = woodmart_get_typography_map(
 			array(
-				'key'              => 'success_text_typography',
-				'selector'         => '{{WRAPPER}} .woocommerce-thankyou-order-received',
-				'edit_field_class' => 'vc_col-sm-6 vc_column',
+				'key'      => 'success_text_typography',
+				'selector' => '{{WRAPPER}} .woocommerce-thankyou-order-received',
 			)
 		);
 
 		$typography_failed = woodmart_get_typography_map(
 			array(
-				'key'              => 'failed_text_typography',
-				'selector'         => '{{WRAPPER}} .woocommerce-thankyou-order-failed',
-				'edit_field_class' => 'vc_col-sm-6 vc_column',
+				'key'      => 'failed_text_typography',
+				'selector' => '{{WRAPPER}} .woocommerce-thankyou-order-failed',
 			)
 		);
 

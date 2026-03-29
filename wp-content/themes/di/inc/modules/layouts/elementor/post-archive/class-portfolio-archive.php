@@ -2,7 +2,7 @@
 /**
  * Portfolio archive.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Modules\Layouts;

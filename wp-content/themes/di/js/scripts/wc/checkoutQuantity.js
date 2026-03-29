@@ -45,6 +45,11 @@
 							woodmartThemeModule.$body.trigger( 'wc_fragments_refreshed' );
 						}
 
+						if (!data.cart_hash) {
+							window.location.reload();
+							return;
+						}
+
 						$('form.checkout').trigger( 'update' );
 					},
 					dataType: 'json',

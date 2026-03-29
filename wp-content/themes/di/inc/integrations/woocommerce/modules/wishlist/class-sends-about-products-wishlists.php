@@ -2,7 +2,7 @@
 /**
  * Send about products wishlists.
  *
- * @package XTS
+ * @package woodmart
  */
 
 namespace XTS\WC_Wishlist;
@@ -48,39 +48,38 @@ class Sends_About_Products_Wishlists extends Singleton {
 	 */
 	public function include_files() {
 		if ( woodmart_check_this_email_notification_is_enabled( 'woocommerce_woodmart_back_in_stock_email_settings' ) ) {
-			require_once XTS_WISHLIST_DIR . 'sends-about-products-wishlist/class-send-back-in-stock.php';
+			require_once WOODMART_WISHLIST_DIR . 'sends-about-products-wishlist/class-send-back-in-stock.php';
 		}
 
 		if ( woodmart_check_this_email_notification_is_enabled( 'woocommerce_woodmart_on_sale_products_email_settings' ) ) {
-			require_once XTS_WISHLIST_DIR . 'sends-about-products-wishlist/class-send-on-sales-products.php';
+			require_once WOODMART_WISHLIST_DIR . 'sends-about-products-wishlist/class-send-on-sales-products.php';
 		}
 
 		if ( woodmart_check_this_email_notification_is_enabled( 'woocommerce_woodmart_promotional_email_settings', 'yes' ) ) {
-			require_once XTS_WISHLIST_DIR . 'sends-about-products-wishlist/class-send-promotional.php';
+			require_once WOODMART_WISHLIST_DIR . 'sends-about-products-wishlist/class-send-promotional.php';
 		}
-
 	}
 
 	/**
 	 * Add woocommerce emails.
 	 *
 	 * @codeCoverageIgnore
-	 * 
+	 *
 	 * @param array $emails Woocommerce emails.
 	 *
 	 * @return array
 	 */
 	public function add_woocommerce_emails( $emails ) {
-		$emails['XTS_Email_Wishlist_Back_In_Stock']    = include XTS_WISHLIST_DIR . '/emails/class-back-in-stock-email.php';
-		$emails['XTS_Email_Wishlist_On_Sale_Products'] = include XTS_WISHLIST_DIR . '/emails/class-on-sale-products-email.php';
-		$emails['XTS_Email_Wishlist_Promotional']      = include XTS_WISHLIST_DIR . '/emails/class-promotional-email.php';
+		$emails['XTS_Email_Wishlist_Back_In_Stock']    = include WOODMART_WISHLIST_DIR . '/emails/class-back-in-stock-email.php';
+		$emails['XTS_Email_Wishlist_On_Sale_Products'] = include WOODMART_WISHLIST_DIR . '/emails/class-on-sale-products-email.php';
+		$emails['XTS_Email_Wishlist_Promotional']      = include WOODMART_WISHLIST_DIR . '/emails/class-promotional-email.php';
 
 		return $emails;
 	}
 
 	/**
 	 * Unsubscribe from mailing lists for wishlist plugin
-	 * 
+	 *
 	 * @codeCoverageIgnore
 	 *
 	 * @return void
@@ -94,7 +93,7 @@ class Sends_About_Products_Wishlists extends Singleton {
 
 		if ( ! is_user_logged_in() ) {
 			wc_add_notice( esc_html__( 'Please, log in to continue with the unsubscribe process', 'woodmart' ), 'notice' );
-			wp_safe_redirect( add_query_arg( 'redirect_to', esc_url( add_query_arg( $_GET, get_home_url() ) ), wc_get_page_permalink( 'myaccount' ) ) );
+			wp_safe_redirect( add_query_arg( 'redirect_to', esc_url( add_query_arg( $_GET, get_home_url() ) ), wc_get_page_permalink( 'myaccount' ) ) ); // phpcs:ignore WordPress.Security
 			exit();
 		}
 

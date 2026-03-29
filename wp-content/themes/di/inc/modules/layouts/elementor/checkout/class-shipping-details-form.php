@@ -2,7 +2,7 @@
 /**
  * Shipping details map.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Modules\Layouts;

@@ -64,10 +64,10 @@ class Emails {
 
 		$redirect   = apply_filters( 'woodmart_price_tracker_after_unsubscribe_redirect', remove_query_arg( array( 'token', 'email', 'action' ) ) );
 		$token      = woodmart_clean( $_GET['token'] ); //phpcs:ignore.
-		$user_email = isset( $_GET['email'] ) ? sanitize_email( wp_unslash( $_GET['email'] ) ) : '';
+		$user_email = isset( $_GET['email'] ) ? sanitize_email( wp_unslash( $_GET['email'] ) ) : ''; //phpcs:ignore.
 		$result     = false;
 
-		if ( ! empty( $user_email ) && $this->validate_unsubscribe_token( $user_email, $token ) ) {
+		if ( ! empty( $user_email ) && ! empty( $token ) && $this->validate_unsubscribe_token( $user_email, $token ) ) {
 			$result = $this->db_storage->unsubscribe_by_email( $user_email );
 		}
 
@@ -83,6 +83,7 @@ class Emails {
 
 	/**
 	 * Validate the unsubscribe token for an email.
+	 * Finds the subscription record by token and email.
 	 *
 	 * @param string $email The email to validate.
 	 * @param string $token The token to validate.
@@ -90,9 +91,11 @@ class Emails {
 	 * @return bool True if the token is valid, false otherwise.
 	 */
 	public function validate_unsubscribe_token( $email, $token ) {
-		$expected_token = hash_hmac( 'sha256', $email, 'woodmart_price_tracker_unsubscribe_' . wp_salt() );
+		if ( empty( $token ) || empty( $email ) ) {
+			return false;
+		}
 
-		return hash_equals( $expected_token, $token );
+		return $this->db_storage->check_subscription_token_exists( $email, $token );
 	}
 
 	/**
@@ -103,8 +106,8 @@ class Emails {
 	 * @return array
 	 */
 	public function register_email( $emails ) {
-		$emails['XTS_Email_Price_Tracker']           = include WOODMART_THEMEROOT . '/inc/integrations/woocommerce/modules/price-tracker/emails/class-price-tracker-email.php';
-		$emails['XTS_Email_Price_Tracker_Subscribe'] = include WOODMART_THEMEROOT . '/inc/integrations/woocommerce/modules/price-tracker/emails/class-price-tracker-subscribe-email.php';
+		$emails['XTS_Email_Price_Tracker']           = include WOODMART_THEMEROOT . '/inc/integrations/woocommerce/modules/price-tracker/emails/class-xts-email-price-tracker.php';
+		$emails['XTS_Email_Price_Tracker_Subscribe'] = include WOODMART_THEMEROOT . '/inc/integrations/woocommerce/modules/price-tracker/emails/class-xts-email-price-tracker-subscribe.php';
 
 		return $emails;
 	}
@@ -174,9 +177,9 @@ class Emails {
 	 * When WPML is enabled, this method converts the product id to the desired language.
 	 * When Multicurrency is enabled, this method converts product prices to the required currency.
 	 *
-	 * @param $subscriptions_groped List of subscriptions grouped by user email.
+	 * @param array $subscriptions_groped List of subscriptions grouped by user email.
 	 *
-	 * @return array.
+	 * @return array
 	 */
 	public function group_subscriptions_by_language( $subscriptions_groped ) {
 		global $woocommerce_wpml;

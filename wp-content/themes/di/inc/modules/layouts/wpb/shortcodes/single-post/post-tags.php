@@ -2,7 +2,7 @@
 /**
  * Post tags shortcode.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 if ( ! defined( 'WOODMART_THEME_DIR' ) ) {

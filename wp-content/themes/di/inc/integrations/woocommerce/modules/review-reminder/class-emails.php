@@ -56,10 +56,11 @@ class Emails extends Singleton {
 
 		$redirect   = apply_filters( 'woodmart_review_reminder_after_unsubscribe_redirect', remove_query_arg( array( 'token', 'email', 'action' ) ) );
 		$token      = woodmart_clean( $_GET['token'] ); //phpcs:ignore.
-		$user_email = isset( $_GET['email'] ) ? sanitize_email( wp_unslash( $_GET['email'] ) ) : '';
+		$user_email = isset( $_GET['email'] ) ? sanitize_email( wp_unslash( $_GET['email'] ) ) : ''; // phpcs:ignore.
+		$order_id   = isset( $_GET['order_id'] ) ? absint( $_GET['order_id'] ) : 0; // phpcs:ignore.
 		$result     = false;
 
-		if ( ! empty( $user_email ) && $this->validate_unsubscribe_token( $user_email, $token ) ) {
+		if ( ! empty( $user_email ) && ! empty( $token ) && $this->validate_unsubscribe_token( $user_email, $token, $order_id ) ) {
 			$result = woodmart_unsubscribe_user_from_mailing( $user_email, 'XTS_Email_Review_Reminder' );
 		}
 
@@ -81,7 +82,7 @@ class Emails extends Singleton {
 	 * @return array
 	 */
 	public function register_email( $emails ) {
-		$emails['XTS_Email_Review_Reminder'] = include WOODMART_THEMEROOT . '/inc/integrations/woocommerce/modules/review-reminder/emails/class-review-reminder-email.php';
+		$emails['XTS_Email_Review_Reminder'] = include WOODMART_THEMEROOT . '/inc/integrations/woocommerce/modules/review-reminder/emails/class-xts-email-review-reminder.php';
 
 		return $emails;
 	}
@@ -148,22 +149,27 @@ class Emails extends Singleton {
 			return;
 		}
 
-		$scheduled_date = time() + intval( woodmart_get_opt( 'review_reminder_sending_timeframe', 7 ) ) * intval( woodmart_get_opt( 'review_reminder_sending_timeframe_period', DAY_IN_SECONDS ) );
+		$scheduled_date    = time() + intval( woodmart_get_opt( 'review_reminder_sending_timeframe', 7 ) ) * intval( woodmart_get_opt( 'review_reminder_sending_timeframe_period', DAY_IN_SECONDS ) );
+		$unsubscribe_token = wp_generate_password( 32, false );
 
 		$reminder_data[ $order_id ] = array(
-			'item_list'       => $list,
-			'email'           => $user_email,
-			'scheduled_date'  => $scheduled_date,
-			'language'        => $this->get_user_language(),
-			'user_first_name' => $order->get_billing_first_name(),
-			'user_last_name'  => $order->get_billing_last_name(),
-			'customer_id'     => $order->get_customer_id(),
+			'order_id'          => $order_id,
+			'item_list'         => $list,
+			'email'             => $user_email,
+			'scheduled_date'    => $scheduled_date,
+			'language'          => $this->get_user_language(),
+			'user_first_name'   => $order->get_billing_first_name(),
+			'user_last_name'    => $order->get_billing_last_name(),
+			'customer_id'       => $order->get_customer_id(),
+			'unsubscribe_token' => $unsubscribe_token,
 		);
 
 		$option_updated = update_option( 'woodmart_review_reminder_data', $reminder_data, false );
 
 		if ( $option_updated ) {
 			$order->update_meta_data( '_wd_review_reminder_scheduled_date', $scheduled_date );
+			// Store hashed token in order meta for validation after email is sent
+			$order->update_meta_data( '_wd_review_reminder_token', wp_hash_password( $unsubscribe_token ) );
 			$order->save();
 		}
 	}
@@ -237,7 +243,7 @@ class Emails extends Singleton {
 	 */
 	public function get_dummy_email_object() {
 		$data = array(
-			'item_list'       => array(
+			'item_list'         => array(
 				'123' => array(
 					'name'      => __( 'Dummy product', 'woodmart' ),
 					'id'        => '123',
@@ -245,10 +251,11 @@ class Emails extends Singleton {
 					'image_id'  => '0',
 				),
 			),
-			'email'           => 'user_preview@example.com',
-			'language'        => $this->get_user_language(),
-			'user_first_name' => 'User',
-			'user_last_name'  => 'Preview',
+			'email'             => 'user_preview@example.com',
+			'language'          => $this->get_user_language(),
+			'user_first_name'   => 'User',
+			'user_last_name'    => 'Preview',
+			'unsubscribe_token' => 'DUMMY_TOKEN',
 		);
 
 		return (object) $data;
@@ -308,13 +315,38 @@ class Emails extends Singleton {
 	 *
 	 * @param string $email The email to validate.
 	 * @param string $token The token to validate.
+	 * @param int    $order_id Optional. The order ID to validate against. Default is 0.
 	 *
 	 * @return bool True if the token is valid, false otherwise.
 	 */
-	public function validate_unsubscribe_token( $email, $token ) {
-		$expected_token = hash_hmac( 'sha256', $email, 'woodmart_review_reminder_unsubscribe' );
+	public function validate_unsubscribe_token( $email, $token, $order_id = 0 ) {
+		$email = sanitize_email( $email );
+		$token = sanitize_text_field( $token );
 
-		return hash_equals( $expected_token, $token );
+		if ( empty( $email ) || empty( $token ) || empty( $order_id ) ) {
+			return false;
+		}
+
+		$order = wc_get_order( $order_id );
+
+		if ( ! $order ) {
+			return false;
+		}
+
+		// Verify email matches.
+		if ( $order->get_billing_email() !== $email ) {
+			return false;
+		}
+
+		// Get stored hashed token from order meta.
+		$stored_token_hash = $order->get_meta( '_wd_review_reminder_token' );
+
+		if ( empty( $stored_token_hash ) ) {
+			return false;
+		}
+
+		// Use wp_check_password to verify the token.
+		return wp_check_password( $token, $stored_token_hash );
 	}
 }
 

@@ -197,19 +197,30 @@ woodmartThemeModule.swiperInit = function(carousel, thumbs = false) {
 			horizontalClass        : 'wd-horizontal',
 			verticalClass          : 'wd-vertical',
 			paginationDisabledClass: 'wd-disabled',
-			renderBullet           : function(index, className) {
-				var innerContent = '';
-				var label = woodmart_settings.swiper_pagination_bullet_msg.replace('{{index}}', index + 1);
+			renderBullet           : (index, className) => {
+				const label = woodmart_settings.swiper_pagination_bullet_msg.replace('{{index}}', index + 1);
+				const showTextPagination = pagination.classList.contains('wd-style-number-2') || pagination.classList.contains('wd-style-text-1');
 
-				if (pagination.classList.contains('wd-style-number-2')) {
-					innerContent = index + 1;
-
-					if ( 9 >= innerContent ) {
-						innerContent = '0' + innerContent;
-					}
+				if (!showTextPagination) {
+					return `<li class="${className}" tabindex="0" aria-label="${label}"><span></span></li>`;
 				}
 
-				return '<li class="' + className + '" tabindex="0" aria-label="' + label + '"><span>' + innerContent + '</span></li>';
+				const slideNumber = index + 1;
+				let formattedNumber = slideNumber <= 9 ? `0${slideNumber}` : slideNumber;
+
+				if (pagination.classList.contains('wd-style-text-1')) {
+					formattedNumber = `Slide ${slideNumber}`;
+				}
+
+				// Check for custom pagination text.
+				const slides = carouselWrapper.querySelectorAll('.wd-slide');
+				const customText = slides[index]?.getAttribute('data-pagination-text');
+
+				if (customText) {
+					formattedNumber = customText;
+				}
+
+				return `<li class="${className}" tabindex="0" aria-label="${label}"><span>${formattedNumber}</span></li>`;
 			}
 		};
 	}
@@ -255,9 +266,24 @@ woodmartThemeModule.swiperInit = function(carousel, thumbs = false) {
 
 	if ('undefined' !== typeof carousel.dataset.autoplay && 'yes' === carousel.dataset.autoplay) {
 		config.autoplay = {
-			delay: carousel.dataset.speed ? carousel.dataset.speed : 5000,
+			delay: carousel.dataset.speed ? parseInt(carousel.dataset.speed, 10) : 5000,
 			pauseOnMouseEnter: true
 		};
+
+		if (pagination && pagination.classList.contains('wd-style-text-1')) {
+			config.on.autoplayStart = () => {
+				pagination.classList.remove('wd-progress-stop');
+			}
+			config.on.autoplayStop = () => {
+				pagination.classList.add('wd-progress-stop');
+			}
+			config.on.autoplayPause = () => {
+				pagination.classList.add('wd-progress-stop');
+			}
+			config.on.autoplayResume = () => {
+				pagination.classList.remove('wd-progress-stop');
+			}
+		}
 	}
 
 	if ('undefined' !== typeof carousel.dataset.sync_parent_id) {

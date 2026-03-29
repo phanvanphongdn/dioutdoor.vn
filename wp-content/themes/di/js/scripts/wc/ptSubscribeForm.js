@@ -1,7 +1,6 @@
-/* global woodmart_settings, woodmartThemeModule, jQuery */
+/* global woodmart_settings */
 woodmartThemeModule.ptSubscribeForm = function() {
-	var signedProducts      = [];
-	var firstSignedProducts = [];
+	var signedProducts = [];
 
 	async function init() {
 		var notifierBtn = getNotifierBtn();
@@ -14,9 +13,8 @@ woodmartThemeModule.ptSubscribeForm = function() {
 
 			if (data) {
 				if (data.signed_variations && data.signed_variations.length > 0) {
-					firstSignedProducts = data.signed_variations;
+					signedProducts = data.signed_variations;
 				} else if (data.is_signed) {
-					firstSignedProducts.push(ids.productId);
 					signedProducts.push(ids.productId);
 				}
 
@@ -28,7 +26,7 @@ woodmartThemeModule.ptSubscribeForm = function() {
 			var variationsForm = getVariationsForm();
 
 			if (variationsForm) {
-				firstSignedProducts = JSON.parse(notifierBtn.dataset.signedVariations || '[]');
+				signedProducts = JSON.parse(notifierBtn.dataset.signedVariations || '[]');
 			}
 
 			renderNotifierUI(notifierBtn);
@@ -45,7 +43,7 @@ woodmartThemeModule.ptSubscribeForm = function() {
 	function renderNotifierUI(notifierBtn) {
 		const ids = getProductAndVariationId();
 
-		if (ids.variationId && firstSignedProducts.includes(ids.variationId)) {
+		if (ids.variationId && signedProducts.includes(ids.variationId)) {
 			notifierBtn.classList.remove('wd-hide');
 		}
 	}
@@ -93,7 +91,7 @@ woodmartThemeModule.ptSubscribeForm = function() {
 
 			if (desiredPriceCheckInput && desiredPriceInput) {
 				// Set desired price check input when desired price input is clicked.
-				desiredPriceInput.addEventListener('click', function(e) {
+				desiredPriceInput.addEventListener('click', function() {
 					desiredPriceCheckInput.checked = true;
 				});
 
@@ -160,7 +158,7 @@ woodmartThemeModule.ptSubscribeForm = function() {
 	 *
 	 * @param {Event} e
 	 */
-	function handleResetVariations(e) {
+	function handleResetVariations() {
 		var notifierBtn = getNotifierBtn();
 
 		notifierBtn.classList.add('wd-hide');
@@ -237,7 +235,7 @@ woodmartThemeModule.ptSubscribeForm = function() {
 		var notifierBtnLink = notifierBtn.querySelector('a');
 		var notifierBtnText = notifierBtnLink.querySelector('.wd-action-text');
 
-		if (firstSignedProducts.includes(variationId)) {
+		if (signedProducts.includes(variationId)) {
 			notifierBtnText.innerText = woodmart_settings.pt_button_text_stop_tracking;
 			notifierBtnLink.href      = '#';
 			notifierBtnLink.classList.remove('added');
@@ -246,17 +244,6 @@ woodmartThemeModule.ptSubscribeForm = function() {
 			notifierBtn.classList.remove('wd-pt-add');
 
 			notifierBtn.addEventListener('click', handleUnsubscribe);
-
-			notifierBtnLink.classList.remove('wd-open-popup');
-		} else if (signedProducts.includes(variationId)) {
-			notifierBtnText.innerText = woodmart_settings.pt_button_text_watch_tracking;
-			notifierBtnLink.href      = woodmart_settings.pt_endpoint_url;
-			notifierBtnLink.classList.add('added');
-
-			notifierBtn.classList.remove('wd-pt-remove');
-			notifierBtn.classList.remove('wd-pt-add');
-
-			notifierBtn.removeEventListener('click', handleSubscribe);
 
 			notifierBtnLink.classList.remove('wd-open-popup');
 		} else {
@@ -313,12 +300,6 @@ woodmartThemeModule.ptSubscribeForm = function() {
 					return id !== productId;
 				});
 			}
-
-			if (firstSignedProducts.includes(productId)) {
-				firstSignedProducts = firstSignedProducts.filter(function(id) {
-					return id !== productId;
-				});
-			}
 		}
 	}
 
@@ -345,7 +326,7 @@ woodmartThemeModule.ptSubscribeForm = function() {
 			return false;
 		}
 
-		if (desiredPriceCheckInput && desiredPriceInput && desiredPriceCheckInput.checked && ! parseInt( desiredPriceInput.value ) ) {
+		if (desiredPriceCheckInput && desiredPriceInput && desiredPriceCheckInput.checked && ! parseFloat( desiredPriceInput.value ) ) {
 			addNotice(noticesAria, woodmart_settings.pt_desired_price_check_msg, 'warning');
 
 			return false;

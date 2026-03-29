@@ -1,6 +1,8 @@
 <?php
 /**
  * Team member map.
+ *
+ * @package woodmart
  */
 
 namespace XTS\Elementor;
@@ -391,7 +393,6 @@ class Team_Member extends Widget_Base {
 						'wd-style-' . $settings['style'],
 						'wd-size-' . $settings['size'],
 						'wd-shape-' . $settings['form'],
-						woodmart_get_old_classes( ' woodmart-social-icons' ),
 					),
 				),
 			)
@@ -416,30 +417,30 @@ class Team_Member extends Widget_Base {
 		woodmart_enqueue_inline_style( 'team-member' );
 
 		?>
-		<div <?php echo $this->get_render_attribute_string( 'wrapper' ); ?>>
+		<div <?php echo $this->get_render_attribute_string( 'wrapper' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 			<?php if ( $image_output && ( ! empty( $settings['image']['id'] ) || ! empty( $settings['image']['url'] ) ) ) : ?>
 				<div class="member-image-wrapper">
 					<div class="member-image">
-						<?php echo $image_output; ?>
+						<?php echo $image_output; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 					</div>
 				</div>
 			<?php endif; ?>
 
 			<div class="member-details wd-set-mb reset-last-child">
 				<?php if ( $settings['name'] ) : ?>
-					<h4 <?php echo $this->get_render_attribute_string( 'name' ); ?>>
+					<h4 <?php echo $this->get_render_attribute_string( 'name' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 						<?php echo esc_attr( $settings['name'] ); ?>
 					</h4>
 				<?php endif; ?>
 
 				<?php if ( $settings['position'] ) : ?>
-					<div <?php echo $this->get_render_attribute_string( 'position' ); ?>>
+					<div <?php echo $this->get_render_attribute_string( 'position' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 						<?php echo esc_attr( $settings['position'] ); ?>
 					</div>
 				<?php endif; ?>
 
 				<?php if ( $settings['content'] ) : ?>
-					<div <?php echo $this->get_render_attribute_string( 'content' ); ?>>
+					<div <?php echo $this->get_render_attribute_string( 'content' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 						<?php echo do_shortcode( $settings['content'] ); ?>
 					</div>
 				<?php endif; ?>

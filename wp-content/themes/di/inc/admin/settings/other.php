@@ -1,4 +1,10 @@
 <?php
+/**
+ * Other settings.
+ *
+ * @package woodmart
+ */
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Direct access not allowed.
 }
@@ -7,13 +13,13 @@ use XTS\Admin\Modules\Options;
 
 Options::add_field(
 	array(
-		'id'       => 'current_builder',
-		'name'     => esc_html__( 'Current builder', 'woodmart' ),
-		'group'    => esc_html__( 'Page builder', 'woodmart' ),
+		'id'          => 'current_builder',
+		'name'        => esc_html__( 'Current builder', 'woodmart' ),
+		'group'       => esc_html__( 'Page builder', 'woodmart' ),
 		'description' => esc_html__( 'Select which page builder you consider the primary one for your site. This will affect the import of dummy content and layouts.', 'woodmart' ),
-		'type'     => 'buttons',
-		'section'  => 'other_section',
-		'options'  => array(
+		'type'        => 'buttons',
+		'section'     => 'other_section',
+		'options'     => array(
 			'external' => array(
 				'name'  => 'wpb' === woodmart_get_current_page_builder() ? esc_html__( 'WPBakery', 'woodmart' ) : esc_html__( 'Elementor', 'woodmart' ),
 				'value' => 'external',
@@ -23,22 +29,8 @@ Options::add_field(
 				'value' => 'native',
 			),
 		),
-		'default'  => 'external',
-		'priority' => 5,
-		'class'    => 'xts-preset-field-disabled',
-	)
-);
-
-Options::add_field(
-	array(
-		'id'          => 'gutenberg_blocks',
-		'name'        => esc_html__( 'Gutenberg blocks', 'woodmart' ),
-		'group'       => esc_html__( 'Page builder', 'woodmart' ),
-		'description' => esc_html__( 'Enable this option if you want to use the Gutenberg blocks provided by the theme.', 'woodmart' ),
-		'type'        => 'switcher',
-		'section'     => 'other_section',
-		'default'     => '0',
-		'priority'    => 6,
+		'default'     => 'external',
+		'priority'    => 5,
 		'class'       => 'xts-preset-field-disabled',
 	)
 );
@@ -49,6 +41,20 @@ Options::add_field(
 		'name'        => esc_html__( 'Gutenberg editor for products', 'woodmart' ),
 		'group'       => esc_html__( 'Page builder', 'woodmart' ),
 		'description' => esc_html__( 'Allows editing product content using the Gutenberg block editor.', 'woodmart' ),
+		'type'        => 'switcher',
+		'section'     => 'other_section',
+		'default'     => '0',
+		'priority'    => 7,
+		'class'       => 'xts-preset-field-disabled',
+	)
+);
+
+Options::add_field(
+	array(
+		'id'          => 'deferred_block_rendering',
+		'name'        => esc_html__( 'Deferred block rendering in Gutenberg', 'woodmart' ),
+		'group'       => esc_html__( 'Page builder', 'woodmart' ),
+		'description' => esc_html__( 'Products, Blog, Portfolio, and Product Categories blocks in the Gutenberg editor display a placeholder on page load. Full content is loaded only on click to reduce editor load.', 'woodmart' ),
 		'type'        => 'switcher',
 		'section'     => 'other_section',
 		'default'     => '0',

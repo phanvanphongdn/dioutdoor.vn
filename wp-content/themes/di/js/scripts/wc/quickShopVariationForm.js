@@ -1,5 +1,4 @@
-/* global woodmart_settings */
-/* global wc_add_to_cart_variation_params */
+/* global woodmartThemeModule, elementorFrontend, woodmart_settings, wc_add_to_cart_variation_params */
 (function($) {
 	$.each([
 		'frontend/element_ready/wd_products.default',
@@ -15,32 +14,32 @@
 			var $product          = $(this);
 			var $form             = $product.find('.variations_form');
 			var $button           = $product.find('.button.product_type_variable');
-			var $price            = $product.find('.price').first();
-			var $image            = $product.find('.product-image-link > img, .product-image-link > picture > img');
-			var $source           = $product.find('.product-image-link picture source');
+			var $price            = $product.find('.price');
+			var $image            = $product.find('.wd-product-img-link > img, .wd-product-img-link > picture > img');
+			var $source           = $product.find('.wd-product-img-link picture source');
 
 			var originalSrc       = $image.attr('src');
 			var originalSrcSet    = $image.attr('srcset') ? $image.attr('srcset') : null;
 			var originalSizes     = $image.attr('sizes') ? $image.attr('sizes') : null;
-			var originalBtnText   = $button.text();
+			var originalBtnText   = $button.first().text();
 			var addToCartText     = woodmart_settings.add_to_cart_text;
-			var priceOriginalHtml = $price.html();
+			var priceOriginalHtml = $price.first().clone();
 			var $stockStatus      = $product.find('.wd-product-stock');
 			var $sku              = $product.find('.wd-product-sku').find('span').not('.wd-label');
 			var $inputQty         = $button.siblings('.quantity').find('input[name=quantity]');
-			var originalQtyMax    = $inputQty.attr('max');
-			var originalQtyMin    = $inputQty.attr('min');
+			var originalQtyMax    = $inputQty.first().attr('max');
+			var originalQtyMin    = $inputQty.first().attr('min');
 
 			if ( ! $form.length || $form.hasClass('wd-variations-inited') || ('undefined' !== typeof elementorFrontend && elementorFrontend.isEditMode())) {
 				return;
 			}
 
 			if ( $stockStatus.length ) {
-				var stockStatusOriginalText = $stockStatus.text();
+				var stockStatusOriginalText = $stockStatus.first().text();
 				var stockStatusClasses = $stockStatus.attr('class');
 			}
 			if ( $sku.length ) {
-				var skuOriginalText = $sku.text();
+				var skuOriginalText = $sku.first().text();
 			}
 
 			$form.wc_variation_form();
@@ -51,8 +50,6 @@
 				var $this = $(this);
 				var $product = $this.parents('.wd-product');
 				var value = $this.data('value');
-				var id = $this.parent().data('id');
-				// var $select = $form.find('select#' + CSS.escape(id));
 				var $select = $this.parent().siblings('select');
 
 				if (! $form.hasClass('wd-form-inited')) {
@@ -111,7 +108,9 @@
 
 			$form.on('found_variation', function(event, variation) {
 				if (variation.price_html.length > 1) {
-					$price.html(variation.price_html);
+					$price.replaceWith(variation.price_html);
+
+					$price = $product.find('.price');
 				}
 
 				updateProductImage(variation);
@@ -149,7 +148,7 @@
 				}
 			});
 
-			$form.on('show_variation', function(event, variation, purchasable) {
+			$form.on('show_variation', function() {
 				// Firefox fix after reload page.
 				if ( $form.find('.wd-swatch').length && ! $form.find('.wd-swatch.wd-active').length ) {
 					$form.find('select').each(function () {
@@ -165,6 +164,8 @@
 				}
 
 				$form.addClass('variation-swatch-selected');
+
+				woodmartThemeModule.$document.trigger('wdProductHoverContentRecalc', [$product]);
 			});
 
 			$form.on('woocommerce_update_variation_values', function() {
@@ -172,8 +173,10 @@
 			});
 
 			$form.on('hide_variation', function() {
-				$price.html(priceOriginalHtml);
-				$button.find('span').text(originalBtnText);
+				$price.replaceWith(priceOriginalHtml);
+
+				$price = $product.find('.price');
+				$button.find('span.wd-action-text').text(originalBtnText);
 
 				if ( $image.attr('src') !== originalSrc ){
 					$image.attr('src', originalSrc);
@@ -303,7 +306,7 @@
 					return;
 				}
 
-				$button.find('span').text(originalBtnText);
+				$button.find('span.wd-action-text').text(originalBtnText);
 				$button.data('purchasable', false);
 				$product.removeClass('wd-variation-active');
 
@@ -314,7 +317,7 @@
 					options = $(options);
 
 					if ( select.val() ) {
-						$button.find('span').text(addToCartText);
+						$button.find('span.wd-action-text').text(addToCartText);
 						$button.data('purchasable', true);
 						$product.addClass('wd-variation-active');
 					}
@@ -330,6 +333,10 @@
 							swatch.find('div[data-value="' + value + '"]').addClass('wd-disabled').removeClass('wd-enabled');
 						}
 					});
+				});
+
+				setTimeout( function () {
+					woodmartThemeModule.$document.trigger('wdProductHoverContentRecalc', [$product]);
 				});
 			}
 

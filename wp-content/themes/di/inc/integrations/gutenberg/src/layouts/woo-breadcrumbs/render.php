@@ -5,6 +5,7 @@ use XTS\Modules\Layouts\Main;
 if ( ! function_exists( 'wd_gutenberg_woo_breadcrumbs' ) ) {
 	function wd_gutenberg_woo_breadcrumbs( $block_attributes ) {
 		$classes = wd_get_gutenberg_element_classes( $block_attributes );
+		$el_id   = wd_get_gutenberg_element_id( $block_attributes );
 
 		if ( ! empty( $block_attributes['textAlign'] ) || ! empty( $block_attributes['textAlignTablet'] ) || ! empty( $block_attributes['textAlignMobile'] ) ) {
 			$classes .= ' wd-align';
@@ -20,7 +21,7 @@ if ( ! function_exists( 'wd_gutenberg_woo_breadcrumbs' ) ) {
 		}
 
 		?>
-			<div id="<?php echo esc_attr( wd_get_gutenberg_element_id( $block_attributes ) ); ?>" class="wd-el-breadcrumbs<?php echo esc_attr( $classes ); ?>">
+			<div <?php echo $el_id ? 'id="' . esc_attr( $el_id ) . '" ' : ''; ?>class="wd-el-breadcrumbs<?php echo esc_attr( $classes ); ?>">
 				<?php woodmart_current_breadcrumbs( 'shop' ); ?>
 			</div>
 		<?php

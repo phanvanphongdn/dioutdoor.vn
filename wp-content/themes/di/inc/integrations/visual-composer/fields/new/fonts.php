@@ -2,10 +2,10 @@
 /**
  * This file has function for rendering dropdown field.
  *
- * @package Woodmart.
+ * @package woodmart.
  */
 
-use XTS\Admin\Modules\Options\Google_Fonts;
+use XTS\Admin\Modules\Options\Google_Fonts\Google_Fonts;
 
 if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
 	exit( 'No direct script access allowed' );

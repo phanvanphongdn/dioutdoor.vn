@@ -2,7 +2,7 @@
 /**
  * Set element background options and generate css.
  *
- * @package xts
+ * @package woodmart
  */
 
 namespace XTS\Admin\Modules\Options\Controls;

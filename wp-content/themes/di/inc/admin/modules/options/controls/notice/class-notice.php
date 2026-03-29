@@ -2,7 +2,7 @@
 /**
  * Notice control.
  *
- * @package xts
+ * @package woodmart
  */
 
 namespace XTS\Admin\Modules\Options\Controls;

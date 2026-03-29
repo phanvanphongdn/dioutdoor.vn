@@ -2,7 +2,7 @@
 /**
  * Typography settings for particular CSS selectors.
  *
- * @package xts
+ * @package woodmart
  */
 
 namespace XTS\Admin\Modules\Options\Controls;
@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 use XTS\Admin\Modules\Options\Field;
 use XTS\Admin\Modules\Options;
-use XTS\Admin\Modules\Options\Google_Fonts;
+use XTS\Admin\Modules\Options\Google_Fonts\Google_Fonts;
 use XTS\Admin\Modules\Options\Presets;
 
 /**
@@ -28,7 +28,7 @@ class Typography extends Field {
 	 *
 	 * @var array
 	 */
-	private $_default_value = array(
+	private $default_value = array(
 		'selector'        => array(),
 		'selector_var'    => array(),
 		'google'          => false,
@@ -46,16 +46,34 @@ class Typography extends Field {
 		'tablet'          => array(
 			'font-size'   => '',
 			'line-height' => '',
+			'padding'     => array(
+				'top'    => '',
+				'right'  => '',
+				'bottom' => '',
+				'left'   => '',
+			),
 		),
 		'mobile'          => array(
 			'font-size'   => '',
 			'line-height' => '',
+			'padding'     => array(
+				'top'    => '',
+				'right'  => '',
+				'bottom' => '',
+				'left'   => '',
+			),
 		),
 		'hover'           => array(
 			'color'      => '',
 			'background' => '',
 		),
 		'text-transform'  => '',
+		'padding'         => array(
+			'top'    => '',
+			'right'  => '',
+			'bottom' => '',
+			'left'   => '',
+		),
 	);
 
 	/**
@@ -72,13 +90,13 @@ class Typography extends Field {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param array  $args     Field args array.
-	 * @param array  $options  Options from the database.
-	 * @param string $type     Field type.
-	 * @param string $object   Object.
+	 * @param array  $args        Field args array.
+	 * @param array  $options     Options from the database.
+	 * @param string $type        Field type.
+	 * @param string $object_type Object type.
 	 */
-	public function __construct( $args, $options, $type = 'options', $object = 'post' ) {
-		parent::__construct( $args, $options, $type, $object );
+	public function __construct( $args, $options, $type = 'options', $object_type = 'post' ) {
+		parent::__construct( $args, $options, $type, $object_type );
 
 		add_action( 'wp_enqueue_scripts', array( $this, 'frontend_enqueue' ), 300 );
 
@@ -98,6 +116,7 @@ class Typography extends Field {
 				'selector-hover'   => false,
 				'background'       => false,
 				'background-hover' => false,
+				'padding'          => false,
 			)
 		);
 
@@ -120,11 +139,11 @@ class Typography extends Field {
 			$key = key( $value );
 		}
 
-		echo '<div id="' . esc_attr( $this->get_id() ) . '" class="xts-advanced-typography-field ' . ( ( $this->_is_multiple_field() ) ? 'xts-multiple-typography' : 'xts-single-typography' ) . '" data-id="' . esc_attr( $this->get_id() ) . '" data-key="' . esc_attr( $key ) . '">';
+		echo '<div id="' . esc_attr( $this->get_id() ) . '" class="xts-advanced-typography-field ' . ( ( $this->is_multiple_field() ) ? 'xts-multiple-typography' : 'xts-single-typography' ) . '" data-id="' . esc_attr( $this->get_id() ) . '" data-key="' . esc_attr( $key ) . '">';
 
 		echo '<div class="xts-typography-sections">';
 
-		if ( is_array( $value ) && count( $value ) > 0 && $this->_is_multiple_field() ) {
+		if ( is_array( $value ) && count( $value ) > 0 && $this->is_multiple_field() ) {
 			foreach ( $value as $index => $value ) {
 				$this->render_section( $index );
 			}
@@ -134,7 +153,7 @@ class Typography extends Field {
 
 		echo '</div>';
 
-		if ( $this->_is_multiple_field() ) {
+		if ( $this->is_multiple_field() ) {
 			$this->section_template( false );
 			echo '<div class="xts-typography-btn-add xts-font-section-add xts-inline-btn xts-color-primary xts-i-add">' . esc_html__( 'Add rule', 'woodmart' ) . '</div>';
 		}
@@ -149,7 +168,7 @@ class Typography extends Field {
 	 *
 	 * @return boolean.
 	 */
-	private function _is_multiple_field() {
+	private function is_multiple_field() {
 		return isset( $this->args['selectors'] );
 	}
 
@@ -163,7 +182,7 @@ class Typography extends Field {
 	 * @return void.
 	 */
 	public function render_section( $index ) {
-		$default_value = $this->_default_value;
+		$default_value = $this->default_value;
 		$value         = $this->get_field_value();
 		$section_value = array();
 
@@ -211,7 +230,7 @@ class Typography extends Field {
 				$data,
 				array(
 					'google' => '0',
-					'value'  => $this->_default_value,
+					'value'  => $this->default_value,
 				)
 			)
 		);
@@ -274,7 +293,7 @@ class Typography extends Field {
 		<div class="xts-font-section xts-group xts-typography-section <?php echo ( ( false === $i ) ? 'xts-typography-template hide' : '' ); ?>" data-id="<?php echo esc_attr( $this->get_id() ); ?>-<?php echo esc_attr( $index ); ?>">
 			<div class="xts-typography-font-container xts-row xts-sp-20">
 
-				<?php if ( $this->_is_multiple_field() ) : ?>
+				<?php if ( $this->is_multiple_field() ) : ?>
 					<div class="xts-col-12">
 						<input type="hidden" class="xts-typography-custom-input" name="<?php echo esc_attr( $this->get_input_name( $index, 'custom' ) ); ?>" value="<?php echo esc_attr( $value['custom'] ); ?>"  />
 						<select class="xts-typography-selector" name="<?php echo esc_attr( $this->get_input_name( $index, 'selector', '' ) ); ?>" multiple="multiple" data-placeholder="<?php esc_attr_e( 'Assigned to elements', 'woodmart' ); ?>">
@@ -299,7 +318,6 @@ class Typography extends Field {
 								echo '<option value="' . esc_attr( $id ) . '" ' . $attributes . '">'; // phpcs:ignore
 								echo esc_html( $selector['title'] );
 								echo '</option>';
-
 							}
 							if ( $group ) {
 								echo '</optgroup>';
@@ -336,13 +354,6 @@ class Typography extends Field {
 					<input type="hidden" class="xts-typography-style-input" name="<?php echo esc_attr( $this->get_input_name( $index, 'font-style' ) ); ?>" value="<?php echo esc_attr( $value['font-style'] ); ?>"/>
 
 					<select data-placeholder="<?php esc_attr_e( 'Style', 'woodmart' ); ?>" class="xts-typography-style" original-title="<?php esc_attr_e( 'Font style', 'woodmart' ); ?>" data-value="<?php echo esc_attr( $style ); ?>">
-					</select>
-				</div>
-
-				<div class="select_wrapper xts-typography-subsets-container xts-col-12 xts-col-lg-6" original-title="<?php esc_attr_e( 'Font subsets', 'woodmart' ); ?>">
-
-					<input type="hidden" class="xts-typography-subset-input" name="<?php echo esc_attr( $this->get_input_name( $index, 'font-subset' ) ); ?>" value="<?php echo esc_attr( $font_subset ); ?>"/>
-					<select data-placeholder="<?php esc_attr_e( 'Subset', 'woodmart' ); ?>" class="xts-typography-subset" original-title="<?php esc_attr_e( 'Font subset', 'woodmart' ); ?>"  data-value="<?php echo esc_attr( $font_subset ); ?>">
 					</select>
 				</div>
 
@@ -417,7 +428,7 @@ class Typography extends Field {
 				</div>
 			<?php endif; ?>
 
-			<?php if ( $this->args['color'] || $this->args['color-hover'] || $this->args['background'] || $this->args['background-hover'] ) : ?>
+			<?php if ( $this->args['color'] || $this->args['color-hover'] || $this->args['background'] || $this->args['background-hover'] || $this->args['padding'] ) : ?>
 				<div class="xts-typography-text-container xts-row xts-sp-20">
 					<?php if ( $this->args['color'] ) : ?>
 						<div class="xts-typography-color-container xts-col-12 xts-col-lg-6">
@@ -462,11 +473,167 @@ class Typography extends Field {
 							</div>
 						</div>
 					<?php endif; ?>
+
+					<?php if ( ! empty( $this->args['padding'] ) ) : ?>
+						<div class="xts-dimensions-control xts-col-6">
+							<label>
+								<?php esc_html_e( 'Padding', 'woodmart' ); ?>
+							</label>
+							<div class="xts-dimensions xts-field-type-input">
+								<div class="xts-control-tabs-nav">
+									<span class="xts-control-tab-nav-item xts-device wd-desktop xts-active" data-value="desktop"></span>
+									<span class="xts-control-tab-nav-item xts-device wd-tablet" data-value="tablet"></span>
+									<span class="xts-control-tab-nav-item xts-device wd-mobile" data-value="mobile"></span>
+								</div>
+
+								<div class="xts-control-tab-content xts-active" data-device="desktop" data-unit="px">
+									<div class="xts-dimensions-field">
+										<span class="xts-dimensions-field-value-input">
+											<input
+												type="number"
+												value="<?php echo isset( $value['padding']['top'] ) ? esc_attr( $value['padding']['top'] ) : ''; ?>"
+												min="0"
+												name="<?php echo esc_attr( $this->get_input_name( $index, 'padding', 'top' ) ); ?>"
+												placeholder="<?php esc_html_e( 'Top', 'woodmart' ); ?>"
+											>
+										</span>
+									</div>
+									<div class="xts-dimensions-field">
+										<span class="xts-dimensions-field-value-input">
+											<input
+												type="number"
+												value="<?php echo isset( $value['padding']['right'] ) ? esc_attr( $value['padding']['right'] ) : ''; ?>"
+												min="0"
+												name="<?php echo esc_attr( $this->get_input_name( $index, 'padding', 'right' ) ); ?>"
+												placeholder="<?php esc_html_e( 'Right', 'woodmart' ); ?>"
+											>
+										</span>
+									</div>
+									<div class="xts-dimensions-field">
+										<span class="xts-dimensions-field-value-input">
+											<input
+												type="number"
+												value="<?php echo isset( $value['padding']['bottom'] ) ? esc_attr( $value['padding']['bottom'] ) : ''; ?>"
+												min="0"
+												name="<?php echo esc_attr( $this->get_input_name( $index, 'padding', 'bottom' ) ); ?>"
+												placeholder="<?php esc_html_e( 'Bottom', 'woodmart' ); ?>"
+											>
+										</span>
+									</div>
+									<div class="xts-dimensions-field">
+										<span class="xts-dimensions-field-value-input">
+											<input
+												type="number"
+												value="<?php echo isset( $value['padding']['left'] ) ? esc_attr( $value['padding']['left'] ) : ''; ?>"
+												min="0"
+												name="<?php echo esc_attr( $this->get_input_name( $index, 'padding', 'left' ) ); ?>"
+												placeholder="<?php esc_html_e( 'Left', 'woodmart' ); ?>">
+										</span>
+									</div>
+									<div class="xts-lock-units xts-add-on"></div>
+								</div>
+								<div class="xts-control-tab-content" data-device="tablet" data-unit="px">
+									<div class="xts-dimensions-field">
+										<span class="xts-dimensions-field-value-input">
+											<input
+												type="number"
+												value="<?php echo isset( $value['tablet']['padding']['top'] ) ? esc_attr( $value['tablet']['padding']['top'] ) : ''; ?>"
+												min="0"
+												name="<?php echo esc_attr( $this->get_input_name( $index, 'tablet', 'padding', 'top' ) ); ?>"
+												placeholder="<?php esc_html_e( 'Top', 'woodmart' ); ?>"
+											>
+										</span>
+									</div>
+									<div class="xts-dimensions-field">
+										<span class="xts-dimensions-field-value-input">
+											<input
+												type="number"
+												value="<?php echo isset( $value['tablet']['padding']['right'] ) ? esc_attr( $value['tablet']['padding']['right'] ) : ''; ?>"
+												min="0"
+												name="<?php echo esc_attr( $this->get_input_name( $index, 'tablet', 'padding', 'right' ) ); ?>"
+												placeholder="<?php esc_html_e( 'Right', 'woodmart' ); ?>"
+											>
+										</span>
+									</div>
+									<div class="xts-dimensions-field">
+										<span class="xts-dimensions-field-value-input">
+											<input
+												type="number"
+												value="<?php echo isset( $value['tablet']['padding']['bottom'] ) ? esc_attr( $value['tablet']['padding']['bottom'] ) : ''; ?>"
+												min="0"
+												name="<?php echo esc_attr( $this->get_input_name( $index, 'tablet', 'padding', 'bottom' ) ); ?>"
+												placeholder="<?php esc_html_e( 'Bottom', 'woodmart' ); ?>"
+											>
+										</span>
+									</div>
+									<div class="xts-dimensions-field">
+										<span class="xts-dimensions-field-value-input">
+											<input
+												type="number"
+												value="<?php echo isset( $value['tablet']['padding']['left'] ) ? esc_attr( $value['tablet']['padding']['left'] ) : ''; ?>"
+												min="0"
+												name="<?php echo esc_attr( $this->get_input_name( $index, 'tablet', 'padding', 'left' ) ); ?>"
+												placeholder="<?php esc_html_e( 'Left', 'woodmart' ); ?>"
+											>
+										</span>
+									</div>
+									<div class="xts-lock-units xts-add-on"></div>
+								</div>
+								<div class="xts-control-tab-content" data-device="mobile" data-unit="px">
+									<div class="xts-dimensions-field">
+										<span class="xts-dimensions-field-value-input">
+											<input
+												type="number"
+												value="<?php echo isset( $value['mobile']['padding']['top'] ) ? esc_attr( $value['mobile']['padding']['top'] ) : ''; ?>"
+												min="0"
+												name="<?php echo esc_attr( $this->get_input_name( $index, 'mobile', 'padding', 'top' ) ); ?>"
+												placeholder="<?php esc_html_e( 'Top', 'woodmart' ); ?>"
+											>
+										</span>
+									</div>
+									<div class="xts-dimensions-field">
+										<span class="xts-dimensions-field-value-input">
+											<input
+												type="number"
+												value="<?php echo isset( $value['mobile']['padding']['right'] ) ? esc_attr( $value['mobile']['padding']['right'] ) : ''; ?>"
+												min="0"
+												name="<?php echo esc_attr( $this->get_input_name( $index, 'mobile', 'padding', 'right' ) ); ?>"
+												placeholder="<?php esc_html_e( 'Right', 'woodmart' ); ?>"
+											>
+										</span>
+									</div>
+									<div class="xts-dimensions-field">
+										<span class="xts-dimensions-field-value-input">
+											<input
+												type="number"
+												value="<?php echo isset( $value['mobile']['padding']['bottom'] ) ? esc_attr( $value['mobile']['padding']['bottom'] ) : ''; ?>"
+												min="0"
+												name="<?php echo esc_attr( $this->get_input_name( $index, 'mobile', 'padding', 'bottom' ) ); ?>"
+												placeholder="<?php esc_html_e( 'Bottom', 'woodmart' ); ?>"
+											>
+										</span>
+									</div>
+									<div class="xts-dimensions-field">
+										<span class="xts-dimensions-field-value-input">
+											<input
+												type="number"
+												value="<?php echo isset( $value['mobile']['padding']['left'] ) ? esc_attr( $value['mobile']['padding']['left'] ) : ''; ?>"
+												min="0"
+												name="<?php echo esc_attr( $this->get_input_name( $index, 'mobile', 'padding', 'left' ) ); ?>"
+												placeholder="<?php esc_html_e( 'Left', 'woodmart' ); ?>"
+											>
+										</span>
+									</div>
+									<div class="xts-lock-units xts-add-on"></div>
+								</div>
+							</div>
+						</div>
+					<?php endif; ?>
 				</div>
 			<?php endif; ?>
 
 			<p class="xts-typography-preview hide">1 2 3 4 5 6 7 8 9 0 A B C D E F G H I J K L M N O P Q R S T U V W X Y Z a b c d e f g h i j k l m n o p q r s t u v w x y z</p>
-			<?php if ( $this->_is_multiple_field() ) : ?>
+			<?php if ( $this->is_multiple_field() ) : ?>
 				<div class="xts-typography-btn-remove xts-font-section-remove xts-inline-btn xts-color-warning xts-i-trash">
 					<?php esc_html_e( 'Remove', 'woodmart' ); ?>
 				</div>
@@ -543,6 +710,7 @@ class Typography extends Field {
 		$suffix    = '';
 		$std_fonts = woodmart_get_config( 'standard-fonts' );
 		$value     = isset( $typography[ $key ] ) ? $typography[ $key ] : '';
+		$is_var    = false;
 
 		if ( 'color-hover' === $key ) {
 			$value = isset( $typography['hover']['color'] ) ? $typography['hover']['color'] : '';
@@ -555,16 +723,40 @@ class Typography extends Field {
 		}
 
 		if ( 'font-family' === $key ) {
+			$is_var = 0 === strpos( trim( $value ), 'var(' );
+
 			if ( in_array( $value, $std_fonts, true ) ) {
 				$value = array_search( $value, $std_fonts, true );
 			} else {
-				$value  = '"' . $value . '"';
+				$value  = $is_var ? $value : '"' . $value . '"';
 				$suffix = apply_filters( 'woodmart_backup_fonts', ', Arial, Helvetica, sans-serif' );
 			}
 		}
 
 		if ( 'line-height' === $key || 'font-size' === $key ) {
 			$suffix = 'px';
+		}
+
+		if ( 'padding' === $key && is_array( $value ) ) {
+			$top    = isset( $value['top'] ) ? $value['top'] : '';
+			$right  = isset( $value['right'] ) ? $value['right'] : '';
+			$bottom = isset( $value['bottom'] ) ? $value['bottom'] : '';
+			$left   = isset( $value['left'] ) ? $value['left'] : '';
+
+			if ( '' !== $top || '' !== $right || '' !== $bottom || '' !== $left ) {
+				$top    = '' !== $top ? $top . 'px' : '0';
+				$right  = '' !== $right ? $right . 'px' : '0';
+				$bottom = '' !== $bottom ? $bottom . 'px' : '0';
+				$left   = '' !== $left ? $left . 'px' : '0';
+
+				$value = $top . ' ' . $right . ' ' . $bottom . ' ' . $left;
+			} else {
+				return $output;
+			}
+		}
+
+		if ( $is_var ) {
+			$suffix = '';
 		}
 
 		if ( isset( $this->args['selector_var'][ $key ] ) ) {
@@ -656,7 +848,7 @@ class Typography extends Field {
 				$typography['hover']['color'] = $default['hover']['color'];
 			}
 
-			if ( ! empty( $typography['font-family'] ) || ! empty( $typography['font-weight'] ) || ! empty( $typography['text-transform'] ) || ! empty( $typography['color'] ) || ! empty( $typography['font-style'] ) || ! empty( $typography['font-size'] ) || ! empty( $typography['line-height'] ) || ! empty( $typography['background'] ) || ! empty( $typography['hover']['color'] ) || ! empty( $typography['hover']['background'] ) ) {
+			if ( ! empty( $typography['font-family'] ) || ! empty( $typography['font-weight'] ) || ! empty( $typography['text-transform'] ) || ! empty( $typography['color'] ) || ! empty( $typography['font-style'] ) || ! empty( $typography['font-size'] ) || ! empty( $typography['line-height'] ) || ! empty( $typography['background'] ) || ! empty( $typography['hover']['color'] ) || ! empty( $typography['hover']['background'] ) || ! empty( $typography['padding'] ) ) {
 				$output_css['desktop'][':root'][] = $this->generate_var_css_code( 'font-family', $typography );
 				$output_css['desktop'][':root'][] = $this->generate_var_css_code( 'font-weight', $typography );
 				$output_css['desktop'][':root'][] = $this->generate_var_css_code( 'text-transform', $typography );
@@ -665,6 +857,7 @@ class Typography extends Field {
 				$output_css['desktop'][':root'][] = $this->generate_var_css_code( 'font-size', $typography );
 				$output_css['desktop'][':root'][] = $this->generate_var_css_code( 'line-height', $typography );
 				$output_css['desktop'][':root'][] = $this->generate_var_css_code( 'background', $typography );
+				$output_css['desktop'][':root'][] = $this->generate_var_css_code( 'padding', $typography );
 
 				if ( isset( $typography['hover'] ) ) {
 					$output_css['desktop'][':root'][] = $this->generate_var_css_code( 'color-hover', $typography );
@@ -681,6 +874,7 @@ class Typography extends Field {
 
 				$output_css['tablet'][':root'][] = $this->generate_var_css_code( 'font-size', $typography['tablet'] );
 				$output_css['tablet'][':root'][] = $this->generate_var_css_code( 'line-height', $typography['tablet'] );
+				$output_css['tablet'][':root'][] = $this->generate_var_css_code( 'padding', $typography['tablet'] );
 			}
 
 			if ( isset( $typography['mobile'] ) && is_array( $typography['mobile'] ) ) {
@@ -690,44 +884,45 @@ class Typography extends Field {
 
 				$output_css['mobile'][':root'][] = $this->generate_var_css_code( 'font-size', $typography['mobile'] );
 				$output_css['mobile'][':root'][] = $this->generate_var_css_code( 'line-height', $typography['mobile'] );
+				$output_css['mobile'][':root'][] = $this->generate_var_css_code( 'padding', $typography['mobile'] );
 			}
 		}
 
 		foreach ( $value as $typography ) {
-			if ( empty( $typography['selector'] ) && $this->_is_multiple_field() || isset( $this->args['selector_var'] ) ) {
+			if ( ( empty( $typography['selector'] ) && $this->is_multiple_field() ) || isset( $this->args['selector_var'] ) ) {
 				continue;
 			}
 
-			if ( ! $this->_is_multiple_field() ) {
+			if ( ! $this->is_multiple_field() ) {
 				$selector       = $this->args['selector'];
 				$hover_selector = isset( $this->args['selector_hover'] ) ? $this->args['selector_hover'] : $this->args['selector'] . ':hover';
 			} else {
 				$custom_selector = isset( $typography['custom-selector'] ) ? $typography['custom-selector'] : false;
-				$selector        = $this->_combine_selectors( $typography['selector'], false, $custom_selector );
-				$hover_selector  = $this->_combine_selectors( $typography['selector'], 'hover', $custom_selector );
+				$selector        = $this->combine_selectors( $typography['selector'], false, $custom_selector );
+				$hover_selector  = $this->combine_selectors( $typography['selector'], 'hover', $custom_selector );
 			}
 
 			if ( isset( $this->args['selector-color-hover'] ) ) {
 				$hover_selector = $this->args['selector-color-hover'];
 			}
 
-			$output_css['desktop'][ $selector ][] = $this->_generate_css_code( $typography );
+			$output_css['desktop'][ $selector ][] = $this->generate_css_code( $typography );
 
 			if ( isset( $typography['tablet'] ) && is_array( $typography['tablet'] ) ) {
-				$output_css['tablet'][ $selector ][] = $this->_generate_css_code( $typography['tablet'] );
+				$output_css['tablet'][ $selector ][] = $this->generate_css_code( $typography['tablet'] );
 			}
 
 			if ( isset( $typography['mobile'] ) && is_array( $typography['mobile'] ) ) {
-				$output_css['mobile'][ $selector ][] = $this->_generate_css_code( $typography['mobile'] );
+				$output_css['mobile'][ $selector ][] = $this->generate_css_code( $typography['mobile'] );
 			}
 
 			if ( $hover_selector !== $selector && isset( $typography['hover'] ) && is_array( $typography['hover'] ) ) {
-				$output_css['desktop'][ $hover_selector ][] = $this->_generate_css_code( $typography['hover'] );
+				$output_css['desktop'][ $hover_selector ][] = $this->generate_css_code( $typography['hover'] );
 			}
 
 			// Special selector for font family.
 			if ( isset( $this->args['selector-font-family'] ) && isset( $typography['font-family'] ) ) {
-				$output_css['desktop'][ $this->args['selector-font-family'] ][] = $this->_generate_css_code(
+				$output_css['desktop'][ $this->args['selector-font-family'] ][] = $this->generate_css_code(
 					array(
 						'font-family' => $typography['font-family'],
 						'font-weight' => $typography['font-weight'],
@@ -738,7 +933,7 @@ class Typography extends Field {
 
 			// Special selector for font size.
 			if ( isset( $this->args['selector-font-size'] ) && isset( $typography['font-size'] ) ) {
-				$output_css['desktop'][ $this->args['selector-font-size'] ][] = $this->_generate_css_code(
+				$output_css['desktop'][ $this->args['selector-font-size'] ][] = $this->generate_css_code(
 					array(
 						'font-size'   => $typography['font-size'],
 						'line-height' => $typography['line-height'],
@@ -746,7 +941,7 @@ class Typography extends Field {
 				);
 
 				if ( isset( $typography['tablet'] ) && isset( $typography['tablet']['font-size'] ) ) {
-					$output_css['tablet'][ $this->args['selector-font-size'] ][] = $this->_generate_css_code(
+					$output_css['tablet'][ $this->args['selector-font-size'] ][] = $this->generate_css_code(
 						array(
 							'font-size'   => $typography['tablet']['font-size'],
 							'line-height' => $typography['tablet']['line-height'],
@@ -755,7 +950,7 @@ class Typography extends Field {
 				}
 
 				if ( isset( $typography['mobile'] ) && isset( $typography['mobile']['font-size'] ) ) {
-					$output_css['mobile'][ $this->args['selector-font-size'] ][] = $this->_generate_css_code(
+					$output_css['mobile'][ $this->args['selector-font-size'] ][] = $this->generate_css_code(
 						array(
 							'font-size'   => $typography['mobile']['font-size'],
 							'line-height' => $typography['mobile']['line-height'],
@@ -766,11 +961,36 @@ class Typography extends Field {
 
 			// Special selector for color.
 			if ( isset( $this->args['selector-color'] ) && isset( $typography['color'] ) ) {
-				$output_css['desktop'][ $this->args['selector-color'] ][] = $this->_generate_css_code(
+				$output_css['desktop'][ $this->args['selector-color'] ][] = $this->generate_css_code(
 					array(
 						'color' => $typography['color'],
 					)
 				);
+			}
+
+			// Special selector for padding.
+			if ( isset( $this->args['selector-padding'] ) && isset( $typography['padding'] ) ) {
+				$output_css['desktop'][ $this->args['selector-padding'] ][] = $this->generate_css_code(
+					array(
+						'padding' => $typography['padding'],
+					)
+				);
+
+				if ( isset( $typography['tablet'] ) && isset( $typography['tablet']['padding'] ) ) {
+					$output_css['tablet'][ $this->args['selector-padding'] ][] = $this->generate_css_code(
+						array(
+							'padding' => $typography['tablet']['padding'],
+						)
+					);
+				}
+
+				if ( isset( $typography['mobile'] ) && isset( $typography['mobile']['padding'] ) ) {
+					$output_css['mobile'][ $this->args['selector-padding'] ][] = $this->generate_css_code(
+						array(
+							'padding' => $typography['mobile']['padding'],
+						)
+					);
+				}
 			}
 
 			Google_Fonts::add_google_font( $typography );
@@ -780,52 +1000,24 @@ class Typography extends Field {
 	}
 
 	/**
-	 * Output CSS code inside the media query.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @param string $query  CSS query.
-	 * @param string $css  The code.
-	 *
-	 * @return  string $output Generated CSS code.
-	 */
-	private function _get_css_media_query( $query, $css, $root = false ) {
-		if ( empty( $css ) ) {
-			return '';
-		}
-
-		$code = $query . '{' . "\n";
-		if ( $root ) {
-			$code .= ':root{' . "\n";
-		}
-		$code .= $css;
-		if ( $root ) {
-			$code .= '}' . "\n";
-		}
-		$code .= '}' . "\n";
-		return $code;
-	}
-
-
-	/**
 	 * Generate CSS code based on rules array.
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param string $selector  CSS selector.
-	 * @param array  $rules  CSS rules array.
+	 * @param array $rules  CSS rules array.
 	 *
-	 * @return  string $output Generated CSS code.
+	 * @return string $output Generated CSS code.
 	 */
-	private function _generate_css_code( $rules ) {
-		$css_rules  = $this->_get_css_rule( 'font-family', $rules );
-		$css_rules .= $this->_get_css_rule( 'font-weight', $rules );
-		$css_rules .= $this->_get_css_rule( 'font-style', $rules );
-		$css_rules .= $this->_get_css_rule( 'font-size', $rules );
-		$css_rules .= $this->_get_css_rule( 'line-height', $rules );
-		$css_rules .= $this->_get_css_rule( 'text-transform', $rules );
-		$css_rules .= $this->_get_css_rule( 'color', $rules );
-		$css_rules .= $this->_get_css_rule( 'background', $rules );
+	private function generate_css_code( $rules ) {
+		$css_rules  = $this->get_css_rule( 'font-family', $rules );
+		$css_rules .= $this->get_css_rule( 'font-weight', $rules );
+		$css_rules .= $this->get_css_rule( 'font-style', $rules );
+		$css_rules .= $this->get_css_rule( 'font-size', $rules );
+		$css_rules .= $this->get_css_rule( 'line-height', $rules );
+		$css_rules .= $this->get_css_rule( 'text-transform', $rules );
+		$css_rules .= $this->get_css_rule( 'color', $rules );
+		$css_rules .= $this->get_css_rule( 'background', $rules );
+		$css_rules .= $this->get_css_rule( 'padding', $rules );
 
 		return substr( $css_rules, 1 );
 	}
@@ -840,7 +1032,7 @@ class Typography extends Field {
 	 *
 	 * @return  string $output Generated CSS code for this rule.
 	 */
-	private function _get_css_rule( $rule, $rules_array ) {
+	private function get_css_rule( $rule, $rules_array ) {
 		if ( ! isset( $rules_array[ $rule ] ) || empty( $rules_array[ $rule ] ) ) {
 			return '';
 		}
@@ -853,13 +1045,32 @@ class Typography extends Field {
 		}
 
 		if ( in_array( $rule, array( 'font-family' ), true ) ) {
-			if ( in_array( $rules_array[ $rule ], $std_fonts ) ) {
-				return "\t" . $rule . ': ' . array_search( $rules_array[ $rule ], $std_fonts ) . ';';
+			if ( in_array( $rules_array[ $rule ], $std_fonts, true ) ) {
+				return "\t" . $rule . ': ' . array_search( $rules_array[ $rule ], $std_fonts, true ) . ';';
 			}
 
 			$suffix = apply_filters( 'woodmart_backup_fonts', ', Arial, Helvetica, sans-serif' );
 
 			return "\t" . $rule . ': "' . $rules_array[ $rule ] . '"' . $suffix . ";\n";
+		}
+
+		if ( in_array( $rule, array( 'padding' ), true ) ) {
+			if ( is_array( $rules_array[ $rule ] ) ) {
+				$top    = isset( $rules_array[ $rule ]['top'] ) ? $rules_array[ $rule ]['top'] : '';
+				$right  = isset( $rules_array[ $rule ]['right'] ) ? $rules_array[ $rule ]['right'] : '';
+				$bottom = isset( $rules_array[ $rule ]['bottom'] ) ? $rules_array[ $rule ]['bottom'] : '';
+				$left   = isset( $rules_array[ $rule ]['left'] ) ? $rules_array[ $rule ]['left'] : '';
+
+				if ( '' !== $top || '' !== $right || '' !== $bottom || '' !== $left ) {
+					$top    = '' !== $top ? $top . 'px' : '0';
+					$right  = '' !== $right ? $right . 'px' : '0';
+					$bottom = '' !== $bottom ? $bottom . 'px' : '0';
+					$left   = '' !== $left ? $left . 'px' : '0';
+
+					return "\t" . $rule . ': ' . $top . ' ' . $right . ' ' . $bottom . ' ' . $left . ";\n";
+				}
+			}
+			return '';
 		}
 
 		return "\t" . $rule . ': ' . $rules_array[ $rule ] . $suffix . ";\n";
@@ -876,7 +1087,7 @@ class Typography extends Field {
 	 *
 	 * @return  string $string Generated CSS selector.
 	 */
-	private function _combine_selectors( $selector_ids, $state = false, $custom = false ) {
+	private function combine_selectors( $selector_ids, $state = false, $custom = false ) {
 		if ( ! is_array( $selector_ids ) ) {
 			return $selector_ids;
 		}

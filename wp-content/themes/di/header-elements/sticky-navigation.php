@@ -15,8 +15,12 @@ if ( ! empty( $params['title'] ) ) {
 	$title = esc_html__( 'Menu', 'woodmart' );
 }
 
-if ( ! empty( $params['icon_design'] ) ) {
+if ( 'text-only' !== $params['style'] && ! empty( $params['icon_design'] ) ) {
 	$extra_class .= ' wd-design-' . $params['icon_design'];
+}
+
+if ( 'text-only' === $params['style'] && ! empty( $params['text_design'] ) ) {
+	$extra_class .= ' wd-design-' . $params['text_design'] . '-text';
 }
 
 if ( '8' === $params['icon_design'] ) {
@@ -37,22 +41,52 @@ if ( isset( $id ) ) {
 	$extra_class .= ' whb-' . $id;
 }
 
+$show_tools_inner = false;
+
+if (
+	isset( $params['style'] ) &&
+	(
+		(
+			'text-only' === $params['style'] &&
+			isset( $params['text_design'] ) &&
+			in_array( $params['text_design'], array( '6', '7' ), true )
+		) ||
+		(
+			'text' === $params['style'] &&
+			isset( $params['icon_design'], $params['wrap_type'] ) &&
+			in_array( $params['icon_design'], array( '6', '7' ), true ) &&
+			'icon_and_text' === $params['wrap_type']
+		) ||
+		(
+			'text-only' !== $params['style'] &&
+			isset( $params['icon_design'] ) &&
+			'8' === $params['icon_design']
+		)
+	)
+) {
+	$show_tools_inner = true;
+}
+
 ?>
 <div class="wd-tools-element wd-header-sticky-nav<?php echo esc_attr( $extra_class ); ?>">
 	<a href="#" rel="nofollow" aria-label="<?php esc_attr_e( 'Open sticky navigation', 'woodmart' ); ?>">
-		<?php if ( '8' === $params['icon_design'] || ( isset( $params['wrap_type'], $params['style'], $params['icon_design'] ) && 'icon_and_text' === $params['wrap_type'] && 'text' === $params['style'] && in_array( $params['icon_design'], array( '6', '7' ), true ) ) ) : ?>
+		<?php if ( $show_tools_inner ) : ?>
 			<span class="wd-tools-inner">
 		<?php endif; ?>
 
-		<span class="wd-tools-icon">
-			<?php if ( 'custom' === $icon_type ) : ?>
-				<?php echo whb_get_custom_icon( $params['custom_icon'] ); ?>
-			<?php endif; ?>
-		</span>
+		<?php if ( 'text-only' !== $params['style'] ) : ?>
+			<span class="wd-tools-icon">
+				<?php if ( 'custom' === $icon_type ) : ?>
+					<?php echo whb_get_custom_icon( $params['custom_icon'] ); ?>
+				<?php endif; ?>
+			</span>
+		<?php endif; ?>
 
-		<span class="wd-tools-text"><?php echo esc_html( $title ); ?></span>
+		<?php if ( 'icon' !== $params['style'] ) : ?>
+			<span class="wd-tools-text"><?php echo esc_html( $title ); ?></span>
+		<?php endif; ?>
 
-		<?php if ( '8' === $params['icon_design'] || ( isset( $params['wrap_type'], $params['style'], $params['icon_design'] ) && 'icon_and_text' === $params['wrap_type'] && 'text' === $params['style'] && in_array( $params['icon_design'], array( '6', '7' ), true ) ) ) : ?>
+		<?php if ( $show_tools_inner ) : ?>
 			</span>
 		<?php endif; ?>
 	</a>

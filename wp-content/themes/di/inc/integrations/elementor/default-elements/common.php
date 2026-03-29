@@ -2,7 +2,7 @@
 /**
  * Elementor common custom controls
  *
- * @package xts
+ * @package woodmart
  */
 
 use Elementor\Controls_Manager;

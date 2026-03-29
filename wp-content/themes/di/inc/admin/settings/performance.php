@@ -1,4 +1,10 @@
 <?php
+/**
+ * Performance settings.
+ *
+ * @package WoodMart
+ */
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Direct access not allowed.
 }
@@ -158,7 +164,7 @@ Options::add_field(
 		'on-text'     => esc_html__( 'Yes', 'woodmart' ),
 		'off-text'    => esc_html__( 'No', 'woodmart' ),
 		'priority'    => 45,
-		'class'    => 'xts-col-6',
+		'class'       => 'xts-col-6',
 	)
 );
 
@@ -433,6 +439,23 @@ Options::add_field(
 /**
  * Fonts
  */
+
+Options::add_field(
+	array(
+		'id'          => 'local_google_fonts',
+		'name'        => esc_html__( 'Load Google Fonts locally', 'woodmart' ),
+		'description' => esc_html__( 'Store Google fonts on your server for improved performance and GDPR compliance. Only fonts selected in Theme Options are downloaded. Fonts chosen in individual elements will still load from the CDN. Note: Saving Theme Settings may take a few seconds while fonts are being downloaded.', 'woodmart' ),
+		'type'        => 'switcher',
+		'section'     => 'fonts_section',
+		'default'     => false,
+		'on-text'     => esc_html__( 'Yes', 'woodmart' ),
+		'off-text'    => esc_html__( 'No', 'woodmart' ),
+		'priority'    => 10,
+		'class'       => 'xts-preset-field-disabled',
+	)
+);
+
+
 Options::add_field(
 	array(
 		'id'          => 'google_font_display',
@@ -443,7 +466,7 @@ Options::add_field(
 		),
 		'type'        => 'select',
 		'section'     => 'fonts_section',
-		'default'     => 'disable',
+		'default'     => 'swap',
 		'options'     => array(
 			'disable'  => array(
 				'name'  => esc_html__( 'Disable', 'woodmart' ),
@@ -466,7 +489,7 @@ Options::add_field(
 				'value' => 'optional',
 			),
 		),
-		'priority'    => 10,
+		'priority'    => 30,
 	)
 );
 
@@ -499,18 +522,18 @@ Options::add_field(
 				'value' => 'fallback',
 			),
 		),
-		'priority'    => 20,
+		'priority'    => 40,
 	)
 );
 
 Options::add_field(
 	array(
-		'id'          => 'font_awesome_css',
-		'name'        => esc_html__( 'Font Awesome library', 'woodmart' ),
-		'description' => esc_html__( 'You can force Font Awesome library to be loaded on all pages. This option works only if Elementor or WPBakery is active.', 'woodmart' ),
-		'type'        => 'buttons',
-		'section'     => 'fonts_section',
-		'options'     => array(
+		'id'                 => 'font_awesome_css',
+		'name'               => esc_html__( 'Font Awesome library', 'woodmart' ),
+		'description'        => esc_html__( 'You can force Font Awesome library to be loaded on all pages. This option works only if Elementor or WPBakery is active.', 'woodmart' ),
+		'type'               => 'buttons',
+		'section'            => 'fonts_section',
+		'options'            => array(
 			'always'  => array(
 				'name'  => esc_html__( 'Always use', 'woodmart' ),
 				'value' => 'always',
@@ -520,9 +543,9 @@ Options::add_field(
 				'value' => 'not_use',
 			),
 		),
-		'default'     => 'not_use',
-		'priority'    => 30,
-		'status'      => 'deprecated',
+		'default'            => 'not_use',
+		'priority'           => 50,
+		'status'             => 'deprecated',
 		'status_description' => esc_html__( 'Since from Elementor version 3.18.0 "Inline Font Icons" feature is enabled by default, the Font Awesome icon font can’t be added to site pages using this option.', 'woodmart' ),
 	)
 );
@@ -537,7 +560,7 @@ Options::add_field(
 		'default'     => false,
 		'on-text'     => esc_html__( 'Yes', 'woodmart' ),
 		'off-text'    => esc_html__( 'No', 'woodmart' ),
-		'priority'    => 50,
+		'priority'    => 60,
 	)
 );
 

@@ -1,4 +1,10 @@
 <?php
+/**
+ * Frontend floating blocks class file.
+ *
+ * @package woodmart
+ */
+
 namespace XTS\Modules\Floating_Blocks;
 
 use XTS\Gutenberg\Blocks_Assets;
@@ -9,7 +15,7 @@ use XTS\Modules\Styles_Storage;
 /**
  * Frontend floating blocks class file.
  *
- * @package Woodmart
+ * @package woodmart
  */
 class Frontend extends Singleton {
 	/**
@@ -233,10 +239,6 @@ class Frontend extends Singleton {
 
 		$close_btn_classes .= ' wd-style-' . ( 'text' === $close_btn_display ? 'text' : 'icon' );
 
-		if ( ! $close_btn ) {
-			$close_btn_classes .= ' wd-hide';
-		}
-
 		$this->get_css_for_floating_block( $floating_id );
 		$options      = $this->get_options_json( $floating_id );
 		$display_type = $this->get_floating_option( $floating_id, 'display_type' );
@@ -262,11 +264,14 @@ class Frontend extends Singleton {
 		?>
 			<div id="<?php echo esc_attr( 'wd-fb-' . $floating_id ); ?>" class="wd-fb-holder wd-scroll<?php echo esc_attr( $wrapper_classes ); ?>"<?php echo wp_kses( $data_attrs, true ); ?> role="complementary" aria-label="<?php esc_attr_e( 'Floating block', 'woodmart' ); ?>">
 				<div class="wd-fb-wrap<?php echo esc_attr( $content_classes ); ?>">
-					<div class="wd-fb-close wd-action-btn wd-cross-icon<?php echo esc_attr( $close_btn_classes ); ?>">
-						<a title="<?php esc_html_e( 'Close', 'woodmart' ); ?>" href="#" rel="nofollow">
-							<span><?php esc_html_e( 'Close', 'woodmart' ); ?></span>
-						</a>
-					</div>
+					<?php if ( $close_btn ) : ?>
+						<div class="wd-fb-close wd-action-btn wd-cross-icon<?php echo esc_attr( $close_btn_classes ); ?>">
+							<a title="<?php esc_html_e( 'Close', 'woodmart' ); ?>" href="#" rel="nofollow">
+								<span class="wd-action-icon"></span>
+								<span class="wd-action-text"><?php esc_html_e( 'Close', 'woodmart' ); ?></span>
+							</a>
+						</div>
+					<?php endif; ?>
 					<div class="wd-fb">
 						<?php if ( ! empty( $bg_image['id'] ) || ! empty( $bg_image_guten['id'] ) ) : ?>
 							<div class="wd-fb-bg wd-fill">
@@ -282,7 +287,7 @@ class Frontend extends Singleton {
 
 									$image_size = isset( $bg_image['size'] ) ? $bg_image['size'] : 'full';
 
-									echo woodmart_otf_get_image_html(
+									echo woodmart_otf_get_image_html( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 										$bg_image['id'],
 										$image_size,
 										false
@@ -291,7 +296,7 @@ class Frontend extends Singleton {
 									$bg_image_size = $this->get_floating_option( $floating_id, 'backgroundImageSize' );
 									$image_size    = $bg_image_size ? $bg_image_size : 'full';
 
-									echo woodmart_otf_get_image_html(
+									echo woodmart_otf_get_image_html( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 										$bg_image_guten['id'],
 										$image_size,
 										false
@@ -358,7 +363,7 @@ class Frontend extends Singleton {
 
 			woodmart_enqueue_inline_style( 'promo-popup' );
 
-			$classes .= ' wd-promo-popup' . woodmart_get_old_classes( ' woodmart-promo-popup' );
+			$classes .= ' wd-promo-popup';
 
 			if ( 'dark' !== woodmart_get_opt( 'popup_color_scheme', 'dark' ) ) {
 				$classes .= ' color-scheme-' . woodmart_get_opt( 'popup_color_scheme' );
@@ -771,7 +776,7 @@ class Frontend extends Singleton {
 
 		$id = apply_filters( 'wpml_object_id', $id, $post->post_type, true );
 
-		if ( 'gutenberg' === $this->manager->get_active_editor( $id ) && ! $post->post_content && woodmart_get_opt( 'gutenberg_blocks' ) ) {
+		if ( 'gutenberg' === $this->manager->get_active_editor( $id ) && ! $post->post_content && woodmart_is_gutenberg_blocks_enabled() ) {
 			$content  = Blocks_Assets::get_instance()->get_inline_scripts( $id );
 			$content .= Post_CSS::get_instance()->get_inline_blocks_css( $id, $inline_css );
 

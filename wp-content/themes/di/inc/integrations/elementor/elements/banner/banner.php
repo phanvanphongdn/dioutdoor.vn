@@ -2,7 +2,7 @@
 /**
  * Banner template function.
  *
- * @package xts
+ * @package woodmart
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -10,6 +10,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! function_exists( 'woodmart_elementor_banner_template' ) ) {
+	/**
+	 * Banner template function.
+	 *
+	 * @param array                  $settings Elementor settings.
+	 * @param \Elementor\Widget_Base $element  Elementor element.
+	 */
 	function woodmart_elementor_banner_carousel_template( $settings, $element ) {
 		$default_settings = array(
 			'content_repeater'       => array(),
@@ -68,7 +74,7 @@ if ( ! function_exists( 'woodmart_elementor_banner_template' ) ) {
 		?>
 		<div class="wd-carousel-container banners-carousel-wrapper<?php echo esc_attr( $wrapper_classes ); ?>">
 			<div class="wd-carousel-inner">
-				<div class="wd-carousel wd-grid banners-carousel<?php echo esc_attr( $carousel_classes ); ?>" <?php echo woodmart_get_carousel_attributes( $settings ); ?>>
+				<div class="wd-carousel wd-grid banners-carousel<?php echo esc_attr( $carousel_classes ); ?>" <?php echo woodmart_get_carousel_attributes( $settings ); // phpcs:ignore. ?>>
 					<div class="wd-carousel-wrap">
 						<?php foreach ( $settings['content_repeater'] as $index => $banner ) : ?>
 							<?php
@@ -93,6 +99,12 @@ if ( ! function_exists( 'woodmart_elementor_banner_template' ) ) {
 }
 
 if ( ! function_exists( 'woodmart_elementor_banner_template' ) ) {
+	/**
+	 * Banner template function.
+	 *
+	 * @param array                  $settings Elementor settings.
+	 * @param \Elementor\Widget_Base $element  Elementor element.
+	 */
 	function woodmart_elementor_banner_template( $settings, $element ) {
 		$default_settings = array(
 			'source_type'                => 'image',
@@ -212,8 +224,6 @@ if ( ! function_exists( 'woodmart_elementor_banner_template' ) ) {
 		// Wrapper content classes.
 		$wrapper_content_classes .= ' wd-items-' . $settings['vertical_alignment'];
 		$wrapper_content_classes .= ' wd-justify-' . $settings['horizontal_alignment'];
-		$banner_classes          .= woodmart_get_old_classes( ' banner-vr-align-' . $settings['vertical_alignment'] );
-		$banner_classes          .= woodmart_get_old_classes( ' banner-hr-align-' . $settings['horizontal_alignment'] );
 
 		// Title classes.
 		if ( woodmart_elementor_is_edit_mode() && ! strstr( $settings['wrapper_classes'], 'elementor-repeater-item' ) ) {
@@ -307,9 +317,9 @@ if ( ! function_exists( 'woodmart_elementor_banner_template' ) ) {
 					<div class="banner-image<?php echo esc_attr( $banner_image_classes ); ?>">
 						<?php if ( 'image' === $settings['source_type'] ) : ?>
 							<?php if ( ! empty( $settings['image']['id'] ) ) : ?>
-								<?php echo woodmart_otf_get_image_html( $settings['image']['id'], $settings['image_size'], $settings['image_custom_dimension'] ); ?>
+								<?php echo woodmart_otf_get_image_html( $settings['image']['id'], $settings['image_size'], $settings['image_custom_dimension'] ); // phpcs:ignore. ?>
 							<?php elseif ( ! empty( $settings['image']['url'] ) ) : ?>
-								<?php echo apply_filters( 'woodmart_image', '<img src="' . esc_url( $settings['image']['url'] ) . '" class="promo-banner-image" alt="promo-banner-image">' ); ?>
+								<?php echo apply_filters( 'woodmart_image', '<img src="' . esc_url( $settings['image']['url'] ) . '" class="promo-banner-image" alt="promo-banner-image">' ); // phpcs:ignore. ?>
 							<?php endif; ?>
 						<?php elseif ( 'video' === $settings['source_type'] ) : ?>
 							<video src="<?php echo esc_url( wp_get_attachment_url( $settings['video']['id'] ) ); ?>" autoplay muted loop playsinline<?php echo wp_kses( $video_attrs, true ); ?>></video>
@@ -323,13 +333,13 @@ if ( ! function_exists( 'woodmart_elementor_banner_template' ) ) {
 							<?php woodmart_enqueue_inline_style( 'el-subtitle-style' ); ?>
 
 							<div class="banner-subtitle<?php echo esc_attr( $subtitle_classes ); ?>" data-elementor-setting-key="subtitle">
-								<?php echo nl2br( $settings['subtitle'] ); ?>
+								<?php echo nl2br( $settings['subtitle'] ); // phpcs:ignore. ?>
 							</div>
 						<?php endif; ?>
 
 						<?php if ( $settings['title'] ) : ?>
 							<<?php echo esc_attr( $title_tag ); ?> class="banner-title<?php echo esc_attr( $title_classes ); ?>" data-elementor-setting-key="title">
-								<?php echo nl2br( $settings['title'] ); ?>
+								<?php echo nl2br( $settings['title'] ); // phpcs:ignore. ?>
 							</<?php echo esc_attr( $title_tag ); ?>>
 						<?php endif; ?>
 
@@ -411,7 +421,7 @@ if ( ! function_exists( 'woodmart_elementor_banner_template' ) ) {
 				</div>
 
 				<?php if ( $settings['link'] && $settings['link']['url'] ) : ?>
-					<a <?php echo $element->get_render_attribute_string( 'link' ); ?>></a>
+					<a <?php echo $element->get_render_attribute_string( 'link' ); // phpcs:ignore. ?>></a>
 				<?php endif; ?>
 			</div>
 		</div>

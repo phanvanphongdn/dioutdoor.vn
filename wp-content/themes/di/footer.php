@@ -9,9 +9,9 @@ if ( woodmart_get_opt( 'collapse_footer_widgets' ) && ( ! woodmart_get_opt( 'mob
 }
 
 $page_id                 = woodmart_page_ID();
-$disable_prefooter       = get_post_meta( $page_id, '_woodmart_prefooter_off', true );
-$disable_footer_page     = get_post_meta( $page_id, '_woodmart_footer_off', true );
-$disable_copyrights_page = get_post_meta( $page_id, '_woodmart_copyrights_off', true );
+$disable_prefooter       = woodmart_get_post_meta_value( $page_id, '_woodmart_prefooter_off' );
+$disable_footer_page     = woodmart_get_post_meta_value( $page_id, '_woodmart_footer_off' );
+$disable_copyrights_page = woodmart_get_post_meta_value( $page_id, '_woodmart_copyrights_off' );
 $footer_classes          = '';
 
 if ( woodmart_get_opt( 'footer-style' ) ) {
@@ -24,14 +24,28 @@ if ( woodmart_get_opt( 'footer-style' ) ) {
 
 </div>
 <?php if ( woodmart_needs_footer() ) : ?>
-		<?php if ( ! $disable_prefooter && ( 'text' === woodmart_get_opt( 'prefooter_content_type', 'text' ) && woodmart_get_opt( 'prefooter_area' ) || 'html_block' === woodmart_get_opt( 'prefooter_content_type' ) && woodmart_get_opt( 'prefooter_html_block' ) ) ) : ?>
+		<?php
+		if (
+			! $disable_prefooter &&
+			(
+				(
+					'text' === woodmart_get_opt( 'prefooter_content_type', 'text' ) &&
+					woodmart_get_opt( 'prefooter_area' )
+				) ||
+				(
+					'html_block' === woodmart_get_opt( 'prefooter_content_type' ) &&
+					woodmart_get_opt( 'prefooter_html_block' )
+				)
+			)
+		) :
+			?>
 			<?php woodmart_enqueue_inline_style( 'footer-base' ); ?>
-			<div class="wd-prefooter<?php echo woodmart_get_old_classes( ' woodmart-prefooter' ); ?>">
+			<div class="wd-prefooter">
 				<div class="container wd-entry-content">
 					<?php if ( 'text' === woodmart_get_opt( 'prefooter_content_type', 'text' ) ) : ?>
 						<?php echo do_shortcode( woodmart_get_opt( 'prefooter_area' ) ); ?>
 					<?php else : ?>
-						<?php echo woodmart_get_html_block( woodmart_get_opt( 'prefooter_html_block' ) ); ?>
+						<?php echo woodmart_get_html_block( woodmart_get_opt( 'prefooter_html_block' ) );// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 					<?php endif; ?>
 				</div>
 			</div>
@@ -44,7 +58,7 @@ if ( woodmart_get_opt( 'footer-style' ) ) {
 						<?php get_sidebar( 'footer' ); ?>
 					<?php else : ?>
 						<div class="container main-footer wd-entry-content">
-							<?php echo woodmart_get_html_block( woodmart_get_opt( 'footer_html_block' ) ); ?>
+							<?php echo woodmart_get_html_block( woodmart_get_opt( 'footer_html_block' ) );// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 						</div>
 					<?php endif; ?>
 				<?php endif; ?>
@@ -53,13 +67,13 @@ if ( woodmart_get_opt( 'footer-style' ) ) {
 					<div class="wd-copyrights copyrights-wrapper wd-layout-<?php echo esc_attr( woodmart_get_opt( 'copyrights-layout' ) ); ?>">
 						<div class="container wd-grid-g">
 							<div class="wd-col-start reset-last-child">
-								<?php if ( woodmart_get_opt( 'copyrights' ) != '' ) : ?>
+								<?php if ( '' !== woodmart_get_opt( 'copyrights' ) ) : ?>
 									<?php echo do_shortcode( woodmart_get_opt( 'copyrights' ) ); ?>
 								<?php else : ?>
-									<p>&copy; <?php echo date( 'Y' ); ?> <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>. <?php esc_html_e( 'All rights reserved', 'woodmart' ); ?></p>
+									<p>&copy; <?php echo esc_html( gmdate( 'Y' ) ); ?> <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>. <?php esc_html_e( 'All rights reserved', 'woodmart' ); ?></p>
 								<?php endif ?>
 							</div>
-							<?php if ( woodmart_get_opt( 'copyrights2' ) != '' ) : ?>
+							<?php if ( '' !== woodmart_get_opt( 'copyrights2' ) ) : ?>
 								<div class="wd-col-end reset-last-child">
 									<?php echo do_shortcode( woodmart_get_opt( 'copyrights2' ) ); ?>
 								</div>
@@ -71,7 +85,7 @@ if ( woodmart_get_opt( 'footer-style' ) ) {
 		<?php endif ?>
 	</div>
 <?php endif ?>
-<div class="wd-close-side wd-fill<?php echo woodmart_get_old_classes( ' woodmart-close-side' ); ?>"></div>
+<div class="wd-close-side wd-fill"></div>
 <?php do_action( 'woodmart_before_wp_footer' ); ?>
 <?php wp_footer(); ?>
 </body>

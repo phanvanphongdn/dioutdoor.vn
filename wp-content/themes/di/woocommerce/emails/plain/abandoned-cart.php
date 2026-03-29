@@ -2,7 +2,7 @@
 /**
  * Abandoned cart email plain template.
  *
- * @package XTS
+ * @package woodmart
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

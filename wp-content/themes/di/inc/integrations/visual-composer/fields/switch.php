@@ -2,7 +2,7 @@
 /**
  * This file creates html for the woodmart_switch field in WPBakery.
  *
- * @package Woodmart.
+ * @package woodmart.
  */
 
 if ( ! defined( 'WOODMART_THEME_DIR' ) ) {

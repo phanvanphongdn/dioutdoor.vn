@@ -2,7 +2,7 @@
 /**
  * Notices helper class.
  *
- * @package xts
+ * @package woodmart
  */
 
 

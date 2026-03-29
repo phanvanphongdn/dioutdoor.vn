@@ -2,7 +2,7 @@
 /**
  * My account lost password map.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

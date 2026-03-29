@@ -316,7 +316,7 @@ Options::add_field(
 	array(
 		'id'           => 'single_product_builder_post_data',
 		'name'         => esc_html__( 'Select preview product for builder', 'woodmart' ),
-		'description'  => esc_html__( 'The information from this product will be used as an example while you are working with the product template and Elementor.', 'woodmart' ),
+		'description'  => esc_html__( 'The information from this product will be used as an example while you work with the product template in the page builder.', 'woodmart' ),
 		'group'        => esc_html__( 'Builder', 'woodmart' ),
 		'type'         => 'select',
 		'section'      => 'single_product_section',
@@ -888,7 +888,7 @@ Options::add_field(
                 'name'  => 8,
                 'value' => 8,
             ),
-		),
+            		),
 		'default'  => 3,
 		'priority' => 90,
 		'requires' => array(
@@ -955,8 +955,7 @@ Options::add_field(
             8     => array(
                 'name'  => 8,
                 'value' => 8,
-            ),
-		),
+            ),		),
 		'default'  => 4,
 		'priority' => 91,
 		'requires' => array(
@@ -1022,8 +1021,7 @@ Options::add_field(
             8     => array(
                 'name'  => 8,
                 'value' => 8,
-            ),
-		),
+            ),		),
 		'default'  => 4,
 		'priority' => 92,
 		'requires' => array(
@@ -1081,8 +1079,7 @@ Options::add_field(
             8     => array(
                 'name'  => 8,
                 'value' => 8,
-            ),
-		),
+            ),		),
 		'default'  => 3,
 		'priority' => 93,
 		'requires' => array(
@@ -1525,6 +1522,7 @@ Options::add_field(
 		'section'      => 'single_product_add_to_cart_section',
 		'name'         => esc_html__( 'HTML Block', 'woodmart' ),
 		'group'        => esc_html__( 'Content', 'woodmart' ),
+		'description'  => function_exists( 'woodmart_get_html_block_links' ) ? woodmart_get_html_block_links() : '',
 		'select2'      => true,
 		'empty_option' => true,
 		'autocomplete' => array(
@@ -1593,6 +1591,7 @@ Options::add_field(
 		'name'         => esc_html__( 'HTML Block', 'woodmart' ),
 		'group'        => esc_html__( 'Content', 'woodmart' ),
 		'section'      => 'single_product_add_to_cart_section',
+		'description'  => function_exists( 'woodmart_get_html_block_links' ) ? woodmart_get_html_block_links() : '',
 		'select2'      => true,
 		'empty_option' => true,
 		'autocomplete' => array(
@@ -1626,7 +1625,6 @@ Options::add_field(
 		'options'     => array(
 			'default'      => array(
 				'name'  => esc_html__( 'Default', 'woodmart' ),
-				'hint'  => wp_kses( '<img data-src="' . WOODMART_TOOLTIP_URL . 'breadcrumbs-product-page-position-default.jpg" alt="">', true ),
 				'value' => 'default',
 			),
 			'below_header' => array(
@@ -2290,17 +2288,17 @@ Options::add_field(
 
 Options::add_field(
 	array(
-		'id'       => 'legacy_product_tabs_enabled',
-		'name'     => esc_html__( 'Legacy tabs', 'woodmart' ),
-		'description' => esc_html__( 'Enables three optional product tabs on single product pages, which can be filled with plain text or HTML-blocks. Leave the field empty to disable the tab.', 'woodmart' ),
-		'type'     => 'switcher',
-		'section'  => 'product_tabs',
-		'default'  => '1',
-		'on-text'  => esc_html__( 'On', 'woodmart' ),
-		'off-text' => esc_html__( 'Off', 'woodmart' ),
-		'status'   => 'deprecated',
+		'id'                 => 'legacy_product_tabs_enabled',
+		'name'               => esc_html__( 'Legacy tabs', 'woodmart' ),
+		'description'        => esc_html__( 'Enables three optional product tabs on single product pages, which can be filled with plain text or HTML-blocks. Leave the field empty to disable the tab.', 'woodmart' ),
+		'type'               => 'switcher',
+		'section'            => 'product_tabs',
+		'default'            => '1',
+		'on-text'            => esc_html__( 'On', 'woodmart' ),
+		'off-text'           => esc_html__( 'Off', 'woodmart' ),
+		'status'             => 'deprecated',
 		'status_description' => esc_html__( 'This option is deprecated. You can now use "Custom tabs" to add an unlimited number of tabs with different display conditions.', 'woodmart' ),
-		'priority' => 107,
+		'priority'           => 107,
 	)
 );
 
@@ -2434,6 +2432,7 @@ Options::add_field(
 		'type'         => 'select',
 		'section'      => 'product_tabs',
 		'name'         => esc_html__( 'HTML Block', 'woodmart' ),
+		'description'  => function_exists( 'woodmart_get_html_block_links' ) ? woodmart_get_html_block_links() : '',
 		'select2'      => true,
 		'empty_option' => true,
 		'autocomplete' => array(
@@ -2581,6 +2580,7 @@ Options::add_field(
 		'type'         => 'select',
 		'section'      => 'product_tabs',
 		'name'         => esc_html__( 'HTML Block', 'woodmart' ),
+		'description'  => function_exists( 'woodmart_get_html_block_links' ) ? woodmart_get_html_block_links() : '',
 		'select2'      => true,
 		'empty_option' => true,
 		'autocomplete' => array(
@@ -2728,6 +2728,7 @@ Options::add_field(
 		'type'         => 'select',
 		'section'      => 'product_tabs',
 		'name'         => esc_html__( 'HTML Block', 'woodmart' ),
+		'description'  => function_exists( 'woodmart_get_html_block_links' ) ? woodmart_get_html_block_links() : '',
 		'select2'      => true,
 		'empty_option' => true,
 		'autocomplete' => array(

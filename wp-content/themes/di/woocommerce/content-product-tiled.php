@@ -1,13 +1,16 @@
-<?php 
-	global $product;
+<?php
+/**
+ * The template for displaying product content within loops in Tiled style
+ */
 
+global $product;
 
-	do_action( 'woocommerce_before_shop_loop_item' ); 
+do_action( 'woocommerce_before_shop_loop_item' );
 ?>
 
-<div class="product-wrapper">
-	<div class="product-element-top wd-quick-shop">
-		<a href="<?php echo esc_url( get_permalink() ); ?>" class="product-image-link" tabindex="-1" aria-label="<?php echo esc_attr( get_the_title() ); ?>">
+<div class="wd-product-wrapper product-wrapper">
+	<div class="wd-product-thumb product-element-top wd-quick-shop">
+		<a href="<?php echo esc_url( get_permalink() ); ?>" class="wd-product-img-link product-image-link" tabindex="-1" aria-label="<?php echo esc_attr( get_the_title() ); ?>">
 			<?php
 			/**
 			 * Hook woocommerce_before_shop_loop_item_title.
@@ -26,9 +29,9 @@
 		}
 		?>
 
-		<div class="wd-buttons wd-pos-r-t<?php echo woodmart_get_old_classes( ' woodmart-buttons' ); ?>">
+		<div class="wd-buttons wd-pos-r-t">
 			<?php woodmart_enqueue_js_script( 'btns-tooltip' ); ?>
-			<div class="wd-add-btn wd-action-btn wd-style-icon wd-add-cart-icon<?php echo woodmart_get_old_classes( ' wd-add-cart-btn woodmart-add-btn' ); ?>"><?php do_action( 'woodmart_add_loop_btn' ); ?></div>
+			<div class="wd-add-btn wd-action-btn wd-style-icon wd-add-cart-icon"><?php do_action( 'woodmart_add_loop_btn' ); ?></div>
 			<?php woodmart_quick_view_btn( get_the_ID() ); ?>
 			<?php woodmart_add_to_compare_loop_btn(); ?>
 			<?php do_action( 'woodmart_product_action_buttons' ); ?>
@@ -38,7 +41,7 @@
 	<div class="product-element-bottom">
 		<?php
 			/**
-			 * woocommerce_shop_loop_item_title hook
+			 * Trigger woocommerce_shop_loop_item_title hook.
 			 *
 			 * @hooked woocommerce_template_loop_product_title - 10
 			 */
@@ -49,8 +52,8 @@
 			woodmart_product_brands_links();
 			woodmart_product_sku();
 		?>
-		<?php 
-			echo woodmart_swatches_list();
+		<?php
+			echo woodmart_swatches_list(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		?>
 		<?php if ( 0 < $product->get_average_rating() || woodmart_get_opt( 'show_empty_star_rating' ) ) : ?>
 			<?php echo wp_kses_post( woodmart_get_product_rating() ); ?>
@@ -60,7 +63,7 @@
 		?>
 		<?php
 			/**
-			 * woocommerce_after_shop_loop_item_title hook
+			 * Trigger woocommerce_after_shop_loop_item_title hook.
 			 *
 			 * @hooked woocommerce_template_loop_rating - 5
 			 * @hooked woocommerce_template_loop_price - 10
@@ -70,11 +73,11 @@
 
 		<?php do_action( 'woocommerce_after_shop_loop_item' ); ?>
 
-		<?php if ( woodmart_loop_prop( 'progress_bar' ) ): ?>
+		<?php if ( woodmart_loop_prop( 'progress_bar' ) ) : ?>
 			<?php woodmart_stock_progress_bar(); ?>
 		<?php endif ?>
 		
-		<?php if ( woodmart_loop_prop( 'timer' ) ): ?>
+		<?php if ( woodmart_loop_prop( 'timer' ) ) : ?>
 			<?php woodmart_product_sale_countdown(); ?>
 		<?php endif ?>
 	</div>

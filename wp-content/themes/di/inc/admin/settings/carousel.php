@@ -1369,7 +1369,8 @@ Options::add_field(
 		),
 		'selectors'    => array(
 			'.wd-nav-pagin-wrap:not(.wd-custom-style)' => array(
-				'--wd-pagin-brd: {{CAROUSEL_PAGIN_BORDER_WIDTH}} {{CAROUSEL_PAGIN_BORDER_STYLE}};',
+				'--wd-pagin-brd-width: {{CAROUSEL_PAGIN_BORDER_WIDTH}};',
+				'--wd-pagin-brd-style: {{CAROUSEL_PAGIN_BORDER_STYLE}};',
 			),
 		),
 		'section'      => 'general_carousel',

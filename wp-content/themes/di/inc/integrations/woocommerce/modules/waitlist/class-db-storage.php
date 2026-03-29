@@ -43,6 +43,7 @@ class DB_Storage extends Singleton {
 	 *
 	 * @param string     $email User email.
 	 * @param WC_Product $product Product instance.
+	 * @param string     $email_language Email language.
 	 *
 	 * @return int ID recording.
 	 */
@@ -162,7 +163,7 @@ class DB_Storage extends Singleton {
 	 * @param WC_Product $product Product instance.
 	 * @param string     $email User email.
 	 *
-	 * @return stdClass[]|null Retrieve waiting lists.
+	 * @return stdClass|null Retrieve waiting lists.
 	 */
 	public function get_subscription( $product, $email ) {
 		$waitlists = $this->get_waitlists( $product, $email, '', false );
@@ -384,7 +385,7 @@ class DB_Storage extends Singleton {
 		global $wpdb;
 
 		// Only run on settings save or on dashboard page load.
-		if ( ! isset( $_GET['settings-updated'] ) && isset( $_GET['page'] ) && 'xts_dashboard' !== $_GET['page'] ) {
+		if ( ! isset( $_GET['settings-updated'] ) && isset( $_GET['page'] ) && 'xts_dashboard' !== $_GET['page'] ) { // phpcs:ignore.
 			return;
 		}
 
@@ -417,6 +418,9 @@ class DB_Storage extends Singleton {
 		update_option( 'woodmart_waitlist_added_email_language_column', true, false );
 	}
 
+	/**
+	 * Add email language column to waitlists table.
+	 */
 	public function add_email_language_column() {
 		global $wpdb;
 
@@ -426,7 +430,7 @@ class DB_Storage extends Singleton {
 
 		$table_name = $wpdb->prefix . self::WAITLISTS_TABLE;
 
-		$wpdb->query( "ALTER TABLE {$table_name} ADD COLUMN email_language VARCHAR(20) AFTER variation_id" );
+		$wpdb->query( "ALTER TABLE {$table_name} ADD COLUMN email_language VARCHAR(20) AFTER variation_id" ); // phpcs:ignore.
 
 		update_option( 'woodmart_waitlist_added_email_language_column', true, false );
 	}

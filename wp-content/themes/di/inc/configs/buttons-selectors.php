@@ -1,5 +1,13 @@
-<?php if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
-	exit( 'No direct script access allowed' );}
+<?php
+/**
+ * Buttons selectors for advanced button styles.
+ *
+ * @package Woodmart
+ */
+
+if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
+	exit( 'No direct script access allowed' );
+}
 
 /**
  * ------------------------------------------------------------------------------------------------
@@ -25,7 +33,7 @@ return apply_filters(
 				'padding'          => '--btn-padding',
 			),
 		),
-		'product_loop'                => array(
+		'product_loop'                  => array(
 			'title' => 'Product loop',
 		),
 		'quick_add_to_cart'             => array(
@@ -50,7 +58,7 @@ return apply_filters(
 			'selector-hover' => 'html .wd-product.wd-hover-fw-button .wd-add-btn>a:hover, html .wd-product.wd-hover-fw-button.wd-quantity-overlap div:hover > div.quantity input[type], 
 			html .wd-product.wd-hover-fw-button.wd-quantity-overlap div:hover > div.quantity+.button',
 		),
-		'buttons-on-hover_add_to_cart'              => array(
+		'buttons-on-hover_add_to_cart'  => array(
 			'title'          => 'Hover "Buttons on hover" add to cart',
 			'selector'       => 'html .wd-product.wd-hover-buttons-on-hover .wd-add-btn>a',
 			'selector-hover' => 'html .wd-product.wd-hover-buttons-on-hover .wd-add-btn>a:hover',
@@ -76,13 +84,13 @@ return apply_filters(
 		),
 		'single_buy_now'                => array(
 			'title'          => 'Single buy now',
-			'selector'       => 'html .wd-buy-now-btn',
-			'selector-hover' => 'html .wd-buy-now-btn:hover',
+			'selector'       => 'html .btn.wd-buy-now-btn',
+			'selector-hover' => 'html .btn.wd-buy-now-btn:hover',
 		),
 		'sticky_add_to_cart'            => array(
 			'title'          => 'Sticky add to cart',
-			'selector'       => 'html .wd-sticky-btn-cart .single_add_to_cart_button, html .wd-sticky-add-to-cart, html .wd-sticky-btn.wd-quantity-overlap div.quantity input[type]',
-			'selector-hover' => 'html .wd-sticky-btn-cart .single_add_to_cart_button:hover, html .wd-sticky-add-to-cart:hover, html .wd-sticky-btn.wd-quantity-overlap .cart:hover > div.quantity input[type], html .wd-sticky-btn.wd-quantity-overlap .cart:hover > div.quantity+.button',
+			'selector'       => 'html .wd-sticky-btn-cart .single_add_to_cart_button, html .wd-sticky-btn-cart .wd-sticky-add-to-cart, html .wd-sticky-btn.wd-quantity-overlap div.quantity input[type]',
+			'selector-hover' => 'html .wd-sticky-btn-cart .single_add_to_cart_button:hover, html .wd-sticky-btn-cart .wd-sticky-add-to-cart:hover, html .wd-sticky-btn.wd-quantity-overlap .cart:hover > div.quantity input[type], html .wd-sticky-btn.wd-quantity-overlap .cart:hover > div.quantity+.button',
 		),
 		'review_submit'                 => array(
 			'title'          => 'Review submit',
@@ -194,8 +202,8 @@ return apply_filters(
 		),
 		'login_register_tabs'           => array(
 			'title'          => 'Log in/Register tabs switch',
-			'selector'       => 'html .wd-switch-to-register',
-			'selector-hover' => 'html .wd-switch-to-register:hover',
+			'selector'       => 'html .btn.wd-switch-to-register',
+			'selector-hover' => 'html .btn.wd-switch-to-register:hover',
 		),
 		'reset_password'                => array(
 			'title'          => 'Reset password',
@@ -217,13 +225,13 @@ return apply_filters(
 		),
 		'wishlist_create_group'         => array(
 			'title'          => 'Create new wishlist',
-			'selector'       => 'html .wd-wishlist-create-group-btn',
-			'selector-hover' => 'html .wd-wishlist-create-group-btn:hover',
+			'selector'       => 'html .btn.wd-wishlist-create-group-btn',
+			'selector-hover' => 'html .btn.wd-wishlist-create-group-btn:hover',
 		),
 		'wishlist_rename_group'         => array(
 			'title'          => 'Rename wishlist',
-			'selector'       => 'html .wd-wishlist-rename-save',
-			'selector-hover' => 'html .wd-wishlist-rename-save:hover',
+			'selector'       => 'html .btn.wd-wishlist-rename-save',
+			'selector-hover' => 'html .btn.wd-wishlist-rename-save:hover',
 		),
 		'compare'                       => array(
 			'title' => 'Compare',
@@ -251,7 +259,7 @@ return apply_filters(
 			'selector'       => 'html .comment-form .submit',
 			'selector-hover' => 'html .comment-form .submit:hover',
 		),
-		'blog_continue_reading'             => array(
+		'blog_continue_reading'         => array(
 			'title'          => 'Blog "List" Continue Reading',
 			'selector'       => 'html .blog-design-list .wd-post-read-more.wd-style-btn a',
 			'selector-hover' => 'html .blog-design-list .wd-post-read-more.wd-style-btn a:hover',
@@ -266,8 +274,8 @@ return apply_filters(
 		),
 		'contact_form'                  => array(
 			'title'          => 'Contact form submit',
-			'selector'       => 'html .wpcf7 input[type="submit"]',
-			'selector-hover' => 'html .wpcf7 input[type="submit"]:hover',
+			'selector'       => 'html div.wpcf7 input[type="submit"]',
+			'selector-hover' => 'html div.wpcf7 input[type="submit"]:hover',
 		),
 		'widgets'                       => array(
 			'title' => 'Widgets',
@@ -280,7 +288,7 @@ return apply_filters(
 		'elements'                      => array(
 			'title' => 'Elements',
 		),
-		'button_element'             => array(
+		'button_element'                => array(
 			'title'          => 'Page builder button',
 			'selector'       => ':is(.wd-button-wrapper .btn, .wp-block-wd-button):not([class*="btn-color-"])',
 			'selector-hover' => ':is(.wd-button-wrapper .btn, .wp-block-wd-button):not([class*="btn-color-"]):hover',
@@ -297,13 +305,13 @@ return apply_filters(
 		),
 		'hotspot_read_more'             => array(
 			'title'          => 'Hotspot read more',
-			'selector'       => 'html .hotspot-content .btn',
-			'selector-hover' => 'html .hotspot-content .btn:hover',
+			'selector'       => 'html .hotspot-text .btn',
+			'selector-hover' => 'html .hotspot-text .btn:hover',
 		),
 		'product_filters_btn'           => array(
 			'title'          => 'Product filters',
-			'selector'       => 'html .wd-pf-btn button',
-			'selector-hover' => 'html .wd-pf-btn button:hover',
+			'selector'       => 'html .wd-pf-btn .btn',
+			'selector-hover' => 'html .wd-pf-btn .btn:hover',
 		),
 		'track_order_btn'               => array(
 			'title'          => 'Track order',
@@ -320,6 +328,11 @@ return apply_filters(
 		),
 		'empty_page_btn'                => array(
 			'title'          => 'Empty page button',
+			'selector'       => 'html .wd-page-wrapper .wd-empty-block-btn',
+			'selector-hover' => 'html .wd-page-wrapper .wd-empty-block-btn:hover',
+		),
+		'empty_cart_page_btn'           => array(
+			'title'          => 'Empty cart page button',
 			'selector'       => 'html .wd-page-wrapper .return-to-shop .button',
 			'selector-hover' => 'html .wd-page-wrapper .return-to-shop .button:hover',
 		),

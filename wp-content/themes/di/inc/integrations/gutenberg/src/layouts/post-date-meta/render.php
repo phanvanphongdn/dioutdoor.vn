@@ -14,7 +14,7 @@ if ( ! function_exists( 'wd_gutenberg_single_post_date_meta' ) ) {
 
 		Main::setup_preview();
 		?>
-		<div id="<?php echo esc_attr( $el_id ); ?>" class="wd-single-post-date<?php echo esc_attr( $wrapper_classes ); ?>">
+		<div <?php echo $el_id ? 'id="' . esc_attr( $el_id ) . '" ' : ''; ?>class="wd-single-post-date<?php echo esc_attr( $wrapper_classes ); ?>">
 			<span class="wd-modified-date">
 				<?php woodmart_post_modified_date(); ?>
 			</span>

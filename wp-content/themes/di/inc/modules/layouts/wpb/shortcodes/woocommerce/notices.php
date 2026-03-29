@@ -2,7 +2,7 @@
 /**
  * Woocommerce notices shortcode.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 use XTS\Modules\Layouts\Main;

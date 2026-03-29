@@ -8,12 +8,14 @@ if ( ! function_exists( 'wd_gutenberg_woo_notices' ) ) {
 			return '';
 		}
 
+		$el_id = wd_get_gutenberg_element_id( $block_attributes );
+
 		Main::setup_preview();
 
 		ob_start();
 
 		?>
-			<div id="<?php echo esc_attr( wd_get_gutenberg_element_id( $block_attributes ) ); ?>" class="wd-wc-notices<?php echo esc_attr( wd_get_gutenberg_element_classes( $block_attributes ) ); ?>">
+			<div <?php echo $el_id ? 'id="' . esc_attr( $el_id ) . '" ' : ''; ?>class="wd-wc-notices<?php echo esc_attr( wd_get_gutenberg_element_classes( $block_attributes ) ); ?>">
 				<?php woocommerce_output_all_notices(); ?>
 			</div>
 		<?php

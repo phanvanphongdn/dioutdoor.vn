@@ -2,7 +2,7 @@
 /**
  * Compare button shortcode.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 use XTS\Modules\Compare\Ui as Compare;

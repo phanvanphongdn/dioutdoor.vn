@@ -1,4 +1,7 @@
 <?php
+/**
+ * General settings fields.
+ */
 
 if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
 	exit( 'No direct script access allowed' );
@@ -471,6 +474,7 @@ Options::add_field(
 		'section'      => 'promo_popup_section',
 		'name'         => esc_html__( 'HTML Block', 'woodmart' ),
 		'group'        => esc_html__( 'Content', 'woodmart' ),
+		'description'  => function_exists( 'woodmart_get_html_block_links' ) ? woodmart_get_html_block_links() : '',
 		'select2'      => true,
 		'empty_option' => true,
 		'autocomplete' => array(
@@ -832,6 +836,7 @@ Options::add_field(
 		'group'        => esc_html__( 'Content', 'woodmart' ),
 		'type'         => 'select',
 		'section'      => 'header_banner_section',
+		'description'  => function_exists( 'woodmart_get_html_block_links' ) ? woodmart_get_html_block_links() : '',
 		'select2'      => true,
 		'empty_option' => true,
 		'autocomplete' => array(
@@ -878,7 +883,7 @@ Options::add_field(
 		'group'    => esc_html__( 'Style', 'woodmart' ),
 		'type'     => 'background',
 		'section'  => 'header_banner_section',
-		'selector' => '.header-banner',
+		'selector' => '.wd-hb',
 		'requires' => array(
 			array(
 				'key'     => 'header_banner',
@@ -898,7 +903,7 @@ Options::add_field(
 		'group'       => esc_html__( 'Style', 'woodmart' ),
 		'type'        => 'buttons',
 		'section'     => 'header_banner_section',
-		'default'     => 'light',
+		'default'     => 'dark',
 		'options'     => array(
 			'dark'  => array(
 				'name'  => esc_html__( 'Dark', 'woodmart' ),
@@ -927,7 +932,7 @@ Options::add_field(
 		'max'         => 200,
 		'selectors'   => array(
 			':root' => array(
-				'--wd-header-banner-h: {{VALUE}}px;',
+				'--wd-hb-opt-h: {{VALUE}}px;',
 			),
 		),
 		't_tab'       => array(
@@ -958,8 +963,8 @@ Options::add_field(
 Options::add_field(
 	array(
 		'id'          => 'header_banner_mobile_height',
-		'name'        => esc_html__( 'Banner height for mobile', 'woodmart' ),
-		'description' => esc_html__( 'The height for the banner area in pixels on mobile devices.', 'woodmart' ),
+		'name'        => esc_html__( 'Banner height for tablet', 'woodmart' ),
+		'description' => esc_html__( 'The height for the banner area in pixels on tablet devices.', 'woodmart' ),
 		'group'       => esc_html__( 'Style', 'woodmart' ),
 		'type'        => 'range',
 		'section'     => 'header_banner_section',
@@ -970,7 +975,49 @@ Options::add_field(
 		'css_device'  => 'tablet',
 		'selectors'   => array(
 			':root' => array(
-				'--wd-header-banner-h: {{VALUE}}px;',
+				'--wd-hb-opt-h: {{VALUE}}px;',
+			),
+		),
+		't_tab'       => array(
+			'id'       => 'header_banner_height_tabs',
+			'tab'      => esc_html__( 'Tablet', 'woodmart' ),
+			'icon'     => 'xts-i-tablet',
+			'requires' => array(
+				array(
+					'key'     => 'header_banner',
+					'compare' => 'equals',
+					'value'   => '1',
+				),
+			),
+		),
+		'requires'    => array(
+			array(
+				'key'     => 'header_banner',
+				'compare' => 'equals',
+				'value'   => '1',
+			),
+		),
+		'priority'    => 70,
+		'unit'        => 'px',
+	)
+);
+
+Options::add_field(
+	array(
+		'id'          => 'header_banner_real_mobile_height',
+		'name'        => esc_html__( 'Banner height for mobile', 'woodmart' ),
+		'description' => esc_html__( 'The height for the banner area in pixels on mobile devices.', 'woodmart' ),
+		'group'       => esc_html__( 'Style', 'woodmart' ),
+		'type'        => 'range',
+		'section'     => 'header_banner_section',
+		'default'     => '',
+		'min'         => 0,
+		'step'        => 1,
+		'max'         => 200,
+		'css_device'  => 'mobile',
+		'selectors'   => array(
+			':root' => array(
+				'--wd-hb-opt-h: {{VALUE}}px;',
 			),
 		),
 		't_tab'       => array(
@@ -1066,7 +1113,7 @@ Options::add_field(
 Options::add_field(
 	array(
 		'id'       => 'search_by_product_tag',
-		'name'     => esc_html__( 'Search by product product tag', 'woodmart' ),
+		'name'     => esc_html__( 'Search by product tag', 'woodmart' ),
 		'group'    => esc_html__( 'Results', 'woodmart' ),
 		'type'     => 'switcher',
 		'section'  => 'general_search',
@@ -1106,14 +1153,14 @@ Options::add_field(
 		'name'        => esc_html__( 'Display results from blog', 'woodmart' ),
 		'hint'        => '<video data-src="' . WOODMART_TOOLTIP_URL . 'display-results-from-blog.mp4" autoplay loop muted></video>',
 		'description' => esc_html__( 'Show search results from the blog below the product results.', 'woodmart' ),
-		'group'    => esc_html__( 'Results', 'woodmart' ),
+		'group'       => esc_html__( 'Results', 'woodmart' ),
 		'type'        => 'switcher',
 		'section'     => 'general_search',
 		'on-text'     => esc_html__( 'Yes', 'woodmart' ),
 		'off-text'    => esc_html__( 'No', 'woodmart' ),
 		'default'     => false,
 		'priority'    => 50,
-		'class'    => 'xts-col-6',
+		'class'       => 'xts-col-6',
 	)
 );
 
@@ -1223,7 +1270,7 @@ Options::add_field(
 	array(
 		'id'           => 'full_search_content_html_block',
 		'name'         => esc_html__( 'Search custom content', 'woodmart' ),
-		'description'  => esc_html__( 'You can display some products, posts, banners or other information in the header search area. To display extra content in the search, a special option needs to be enabled in the corresponding search element.', 'woodmart' ),
+		'description'  => ( function_exists( 'woodmart_get_html_block_links' ) ? woodmart_get_html_block_links() : '' ) . esc_html__( 'You can display some products, posts, banners or other information in the header search area. To display extra content in the search, a special option needs to be enabled in the corresponding search element.', 'woodmart' ),
 		'group'        => esc_html__( 'Options', 'woodmart' ),
 		'type'         => 'select',
 		'section'      => 'general_search',

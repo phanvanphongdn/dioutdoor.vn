@@ -744,7 +744,7 @@
             </conditions>
             <fields>
                 <field type="[Woodmart] Promo Banner - Link" editor_type="LINK" key_of="link">url</field>
-                <field label="[Woodmart] Promo Banner - Image ID" type="post-ids" sub-type="attachment">image>id</field>
+                <field type="post-ids" sub-type="attachment">image>id</field>
                 <field type="[Woodmart] Promo Banner - Subtitle" editor_type="LINE">subtitle</field>
                 <field type="[Woodmart] Promo Banner - Title" editor_type="LINE">title</field>
                 <field type="[Woodmart] Promo Banner - Content" editor_type="AREA">content</field>
@@ -949,7 +949,7 @@
                 <condition key="widgetType">wd_single_product_additional_info_table</condition>
             </conditions>
             <fields>
-                <field type="[Woodmart] Product additional information table - Element title" editor_type="LINE">title</field>
+                <field type="[Woodmart] Product additional information - Element title" editor_type="LINE">title</field>
             </fields>
         </widget>
 
@@ -992,7 +992,7 @@
 
     <gutenberg-blocks>
         <gutenberg-block type="wd/paragraph" translate="1" label="[Woodmart] Paragraph">
-            <xpath>//*[self::p or self::span or self::div]</xpath>
+            <xpath>/*[self::p or self::span or self::div]</xpath>
         </gutenberg-block>
 
         <gutenberg-block type="wd/title" translate="1" label="[Woodmart] Title">

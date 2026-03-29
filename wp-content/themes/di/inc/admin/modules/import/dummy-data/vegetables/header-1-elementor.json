@@ -47,6 +47,16 @@
                                         "value": "",
                                         "type": "slider"
                                     },
+                                    "bg_dropdown_color": {
+                                        "id": "bg_dropdown_color",
+                                        "value": "",
+                                        "type": "color"
+                                    },
+                                    "box_shadow_dropdown": {
+                                        "id": "box_shadow_dropdown",
+                                        "value": [],
+                                        "type": "group"
+                                    },
                                     "bg_overlay": {
                                         "id": "bg_overlay",
                                         "value": false,
@@ -103,6 +113,16 @@
                                         "id": "icon_height",
                                         "value": "",
                                         "type": "slider"
+                                    },
+                                    "bg_dropdown_color": {
+                                        "id": "bg_dropdown_color",
+                                        "value": "",
+                                        "type": "color"
+                                    },
+                                    "box_shadow_dropdown": {
+                                        "id": "box_shadow_dropdown",
+                                        "value": [],
+                                        "type": "group"
                                     },
                                     "bg_overlay": {
                                         "id": "bg_overlay",
@@ -182,6 +202,31 @@
                                         "id": "icon_design",
                                         "value": "2",
                                         "type": "selector"
+                                    },
+                                    "text_design": {
+                                        "id": "text_design",
+                                        "value": "4",
+                                        "type": "selector"
+                                    },
+                                    "text_color": {
+                                        "id": "text_color",
+                                        "value": "",
+                                        "type": "color"
+                                    },
+                                    "text_hover_color": {
+                                        "id": "text_hover_color",
+                                        "value": "",
+                                        "type": "color"
+                                    },
+                                    "text_bg_color": {
+                                        "id": "text_bg_color",
+                                        "value": "",
+                                        "type": "color"
+                                    },
+                                    "text_bg_hover_color": {
+                                        "id": "text_bg_hover_color",
+                                        "value": "",
+                                        "type": "color"
                                     },
                                     "wrap_type": {
                                         "id": "wrap_type",
@@ -307,11 +352,6 @@
                                 "id": "luvcpd3hcbpgub5xonma",
                                 "type": "account",
                                 "params": {
-                                    "with_username": {
-                                        "id": "with_username",
-                                        "value": true,
-                                        "type": "switcher"
-                                    },
                                     "login_dropdown": {
                                         "id": "login_dropdown",
                                         "value": true,
@@ -322,15 +362,50 @@
                                         "value": "side",
                                         "type": "selector"
                                     },
+                                    "bg_overlay": {
+                                        "id": "bg_overlay",
+                                        "value": false,
+                                        "type": "switcher"
+                                    },
                                     "display": {
                                         "id": "display",
-                                        "value": "icon",
+                                        "value": "icon_with_text",
                                         "type": "selector"
+                                    },
+                                    "with_username": {
+                                        "id": "with_username",
+                                        "value": true,
+                                        "type": "switcher"
                                     },
                                     "icon_design": {
                                         "id": "icon_design",
                                         "value": "1",
                                         "type": "selector"
+                                    },
+                                    "text_design": {
+                                        "id": "text_design",
+                                        "value": "1",
+                                        "type": "selector"
+                                    },
+                                    "text_color": {
+                                        "id": "text_color",
+                                        "value": "",
+                                        "type": "color"
+                                    },
+                                    "text_hover_color": {
+                                        "id": "text_hover_color",
+                                        "value": "",
+                                        "type": "color"
+                                    },
+                                    "text_bg_color": {
+                                        "id": "text_bg_color",
+                                        "value": "",
+                                        "type": "color"
+                                    },
+                                    "text_bg_hover_color": {
+                                        "id": "text_bg_hover_color",
+                                        "value": "",
+                                        "type": "color"
                                     },
                                     "wrap_type": {
                                         "id": "wrap_type",
@@ -391,11 +466,6 @@
                                         "id": "custom_icon_width",
                                         "value": 0,
                                         "type": "slider"
-                                    },
-                                    "bg_overlay": {
-                                        "id": "bg_overlay",
-                                        "value": false,
-                                        "type": "switcher"
                                     }
                                 }
                             }
@@ -625,6 +695,31 @@
                                         "value": "7",
                                         "type": "selector"
                                     },
+                                    "text_design": {
+                                        "id": "text_design",
+                                        "value": "1",
+                                        "type": "selector"
+                                    },
+                                    "text_color": {
+                                        "id": "text_color",
+                                        "value": "",
+                                        "type": "color"
+                                    },
+                                    "text_hover_color": {
+                                        "id": "text_hover_color",
+                                        "value": "",
+                                        "type": "color"
+                                    },
+                                    "text_bg_color": {
+                                        "id": "text_bg_color",
+                                        "value": "",
+                                        "type": "color"
+                                    },
+                                    "text_bg_hover_color": {
+                                        "id": "text_bg_hover_color",
+                                        "value": "",
+                                        "type": "color"
+                                    },
                                     "wrap_type": {
                                         "id": "wrap_type",
                                         "value": "icon_and_text",
@@ -706,6 +801,11 @@
                                         "value": "full-screen-2",
                                         "type": "selector"
                                     },
+                                    "full_screen_opener": {
+                                        "id": "full_screen_opener",
+                                        "value": "",
+                                        "type": "selector"
+                                    },
                                     "popular_requests": {
                                         "id": "popular_requests",
                                         "value": true,
@@ -771,6 +871,11 @@
                                         "value": "35",
                                         "type": "options"
                                     },
+                                    "form_width": {
+                                        "id": "form_width",
+                                        "value": "",
+                                        "type": "slider"
+                                    },
                                     "form_height": {
                                         "id": "form_height",
                                         "value": 42,
@@ -801,6 +906,21 @@
                                         "value": "",
                                         "type": "color"
                                     },
+                                    "form_icon_type": {
+                                        "id": "form_icon_type",
+                                        "value": "",
+                                        "type": "selector"
+                                    },
+                                    "form_custom_icon": {
+                                        "id": "form_custom_icon",
+                                        "value": "",
+                                        "type": "image"
+                                    },
+                                    "form_custom_icon_width": {
+                                        "id": "form_custom_icon_width",
+                                        "value": 0,
+                                        "type": "slider"
+                                    },
                                     "style": {
                                         "id": "style",
                                         "value": "icon",
@@ -810,6 +930,31 @@
                                         "id": "icon_design",
                                         "value": "1",
                                         "type": "selector"
+                                    },
+                                    "text_design": {
+                                        "id": "text_design",
+                                        "value": "1",
+                                        "type": "selector"
+                                    },
+                                    "text_color": {
+                                        "id": "text_color",
+                                        "value": "",
+                                        "type": "color"
+                                    },
+                                    "text_hover_color": {
+                                        "id": "text_hover_color",
+                                        "value": "",
+                                        "type": "color"
+                                    },
+                                    "text_bg_color": {
+                                        "id": "text_bg_color",
+                                        "value": "",
+                                        "type": "color"
+                                    },
+                                    "text_bg_hover_color": {
+                                        "id": "text_bg_hover_color",
+                                        "value": "",
+                                        "type": "color"
                                     },
                                     "wrap_type": {
                                         "id": "wrap_type",
@@ -907,6 +1052,16 @@
                                         "value": "",
                                         "type": "slider"
                                     },
+                                    "bg_dropdown_color": {
+                                        "id": "bg_dropdown_color",
+                                        "value": "",
+                                        "type": "color"
+                                    },
+                                    "box_shadow_dropdown": {
+                                        "id": "box_shadow_dropdown",
+                                        "value": [],
+                                        "type": "group"
+                                    },
                                     "bg_overlay": {
                                         "id": "bg_overlay",
                                         "value": false,
@@ -948,6 +1103,36 @@
                                         "id": "style",
                                         "value": "7",
                                         "type": "selector"
+                                    },
+                                    "text_design": {
+                                        "id": "text_design",
+                                        "value": "1",
+                                        "type": "selector"
+                                    },
+                                    "text_wrap_type": {
+                                        "id": "text_wrap_type",
+                                        "value": "icon_only",
+                                        "type": "selector"
+                                    },
+                                    "text_color": {
+                                        "id": "text_color",
+                                        "value": "",
+                                        "type": "color"
+                                    },
+                                    "text_hover_color": {
+                                        "id": "text_hover_color",
+                                        "value": "",
+                                        "type": "color"
+                                    },
+                                    "text_bg_color": {
+                                        "id": "text_bg_color",
+                                        "value": "",
+                                        "type": "color"
+                                    },
+                                    "text_bg_hover_color": {
+                                        "id": "text_bg_hover_color",
+                                        "value": "",
+                                        "type": "color"
                                     },
                                     "wrap_type": {
                                         "id": "wrap_type",
@@ -1292,6 +1477,31 @@
                                         "value": "1",
                                         "type": "selector"
                                     },
+                                    "text_design": {
+                                        "id": "text_design",
+                                        "value": "1",
+                                        "type": "selector"
+                                    },
+                                    "text_color": {
+                                        "id": "text_color",
+                                        "value": "",
+                                        "type": "color"
+                                    },
+                                    "text_hover_color": {
+                                        "id": "text_hover_color",
+                                        "value": "",
+                                        "type": "color"
+                                    },
+                                    "text_bg_color": {
+                                        "id": "text_bg_color",
+                                        "value": "",
+                                        "type": "color"
+                                    },
+                                    "text_bg_hover_color": {
+                                        "id": "text_bg_hover_color",
+                                        "value": "",
+                                        "type": "color"
+                                    },
                                     "wrap_type": {
                                         "id": "wrap_type",
                                         "value": "icon_only",
@@ -1373,6 +1583,11 @@
                                         "value": "full-screen-2",
                                         "type": "selector"
                                     },
+                                    "full_screen_opener": {
+                                        "id": "full_screen_opener",
+                                        "value": "",
+                                        "type": "selector"
+                                    },
                                     "popular_requests": {
                                         "id": "popular_requests",
                                         "value": false,
@@ -1423,6 +1638,11 @@
                                         "value": "35",
                                         "type": "options"
                                     },
+                                    "form_width": {
+                                        "id": "form_width",
+                                        "value": "",
+                                        "type": "slider"
+                                    },
                                     "form_height": {
                                         "id": "form_height",
                                         "value": 40,
@@ -1453,6 +1673,21 @@
                                         "value": "",
                                         "type": "color"
                                     },
+                                    "form_icon_type": {
+                                        "id": "form_icon_type",
+                                        "value": "",
+                                        "type": "selector"
+                                    },
+                                    "form_custom_icon": {
+                                        "id": "form_custom_icon",
+                                        "value": "",
+                                        "type": "image"
+                                    },
+                                    "form_custom_icon_width": {
+                                        "id": "form_custom_icon_width",
+                                        "value": 0,
+                                        "type": "slider"
+                                    },
                                     "style": {
                                         "id": "style",
                                         "value": "icon",
@@ -1462,6 +1697,31 @@
                                         "id": "icon_design",
                                         "value": "1",
                                         "type": "selector"
+                                    },
+                                    "text_design": {
+                                        "id": "text_design",
+                                        "value": "1",
+                                        "type": "selector"
+                                    },
+                                    "text_color": {
+                                        "id": "text_color",
+                                        "value": "",
+                                        "type": "color"
+                                    },
+                                    "text_hover_color": {
+                                        "id": "text_hover_color",
+                                        "value": "",
+                                        "type": "color"
+                                    },
+                                    "text_bg_color": {
+                                        "id": "text_bg_color",
+                                        "value": "",
+                                        "type": "color"
+                                    },
+                                    "text_bg_hover_color": {
+                                        "id": "text_bg_hover_color",
+                                        "value": "",
+                                        "type": "color"
                                     },
                                     "wrap_type": {
                                         "id": "wrap_type",
@@ -1529,11 +1789,6 @@
                                 "id": "a9q470ty2wzpynidxpxp",
                                 "type": "account",
                                 "params": {
-                                    "with_username": {
-                                        "id": "with_username",
-                                        "value": false,
-                                        "type": "switcher"
-                                    },
                                     "login_dropdown": {
                                         "id": "login_dropdown",
                                         "value": true,
@@ -1544,15 +1799,50 @@
                                         "value": "side",
                                         "type": "selector"
                                     },
+                                    "bg_overlay": {
+                                        "id": "bg_overlay",
+                                        "value": false,
+                                        "type": "switcher"
+                                    },
                                     "display": {
                                         "id": "display",
                                         "value": "icon",
                                         "type": "selector"
                                     },
+                                    "with_username": {
+                                        "id": "with_username",
+                                        "value": false,
+                                        "type": "switcher"
+                                    },
                                     "icon_design": {
                                         "id": "icon_design",
                                         "value": "1",
                                         "type": "selector"
+                                    },
+                                    "text_design": {
+                                        "id": "text_design",
+                                        "value": "1",
+                                        "type": "selector"
+                                    },
+                                    "text_color": {
+                                        "id": "text_color",
+                                        "value": "",
+                                        "type": "color"
+                                    },
+                                    "text_hover_color": {
+                                        "id": "text_hover_color",
+                                        "value": "",
+                                        "type": "color"
+                                    },
+                                    "text_bg_color": {
+                                        "id": "text_bg_color",
+                                        "value": "",
+                                        "type": "color"
+                                    },
+                                    "text_bg_hover_color": {
+                                        "id": "text_bg_hover_color",
+                                        "value": "",
+                                        "type": "color"
                                     },
                                     "wrap_type": {
                                         "id": "wrap_type",
@@ -1613,11 +1903,6 @@
                                         "id": "custom_icon_width",
                                         "value": 0,
                                         "type": "slider"
-                                    },
-                                    "bg_overlay": {
-                                        "id": "bg_overlay",
-                                        "value": false,
-                                        "type": "switcher"
                                     }
                                 }
                             }

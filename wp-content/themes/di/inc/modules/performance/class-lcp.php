@@ -2,7 +2,7 @@
 /**
  * The LCP (Largest Contentful Paint) module for Woodmart theme.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Modules\Performance;
@@ -21,16 +21,9 @@ class LCP extends Singleton {
 	/**
 	 * Desktop image src.
 	 *
-	 * @var null
+	 * @var array
 	 */
-	private $desktop_image_src = null;
-
-	/**
-	 * Mobile image src.
-	 *
-	 * @var null
-	 */
-	private $mobile_image_src = null;
+	private $preload_images_src = array();
 
 	/**
 	 * Register hooks.
@@ -84,19 +77,26 @@ class LCP extends Singleton {
 
 		$post_id = get_the_ID();
 
-		$desktop_image = get_post_meta( $post_id, '_woodmart_preload_image', true );
-		$mobile_image  = get_post_meta( $post_id, '_woodmart_preload_image_mobile', true );
+		$desktop_image = woodmart_get_post_meta_value( $post_id, '_woodmart_preload_image' );
+		$mobile_image  = woodmart_get_post_meta_value( $post_id, '_woodmart_preload_image_mobile' );
 
 		if ( empty( $desktop_image['id'] ) && empty( $mobile_image['id'] ) ) {
 			return;
 		}
 
-		$desktop_image_size = get_post_meta( $post_id, '_woodmart_preload_image_size', true );
+		$desktop_image_size = woodmart_get_post_meta_value( $post_id, '_woodmart_preload_image_size' );
 		$desktop_image_size = $desktop_image_size ? $desktop_image_size : 'full';
 
 		if ( 'custom' === $desktop_image_size ) {
-			$image_width  = (int) get_post_meta( $post_id, '_woodmart_preload_image_custom_width', true );
-			$image_height = (int) get_post_meta( $post_id, '_woodmart_preload_image_custom_height', true );
+			$image_custom_dimensions = woodmart_get_post_meta_value( $post_id, '_woodmart_preload_image_custom_dimension' );
+
+			if ( $image_custom_dimensions ) {
+				$image_width  = isset( $image_custom_dimensions['width'] ) ? $image_custom_dimensions['width'] : '';
+				$image_height = isset( $image_custom_dimensions['height'] ) ? $image_custom_dimensions['height'] : '';
+			} else {
+				$image_width  = (int) get_post_meta( $post_id, '_woodmart_preload_image_custom_width', true );
+				$image_height = (int) get_post_meta( $post_id, '_woodmart_preload_image_custom_height', true );
+			}
 
 			if ( $image_width || $image_height ) {
 				$desktop_image_size = $image_width . 'x' . $image_height;
@@ -105,17 +105,24 @@ class LCP extends Singleton {
 			}
 		}
 
-		$desktop_image_type = get_post_meta( $post_id, '_woodmart_preload_image_type', true );
+		$desktop_image_type = woodmart_get_post_meta_value( $post_id, '_woodmart_preload_image_type' );
 		$desktop_image_type = $desktop_image_type ? $desktop_image_type : 'image';
 
-		$mobile_image_size = get_post_meta( $post_id, '_woodmart_preload_image_mobile_size', true );
+		$mobile_image_size = woodmart_get_post_meta_value( $post_id, '_woodmart_preload_image_mobile_size' );
 		$mobile_image_size = $mobile_image_size ? $mobile_image_size : 'full';
-		$mobile_image_type = get_post_meta( $post_id, '_woodmart_preload_image_mobile_type', true );
+		$mobile_image_type = woodmart_get_post_meta_value( $post_id, '_woodmart_preload_image_mobile_type' );
 		$mobile_image_type = $mobile_image_type ? $mobile_image_type : 'image';
 
 		if ( 'custom' === $mobile_image_size ) {
-			$image_width  = (int) get_post_meta( $post_id, '_woodmart_preload_image_mobile_custom_width', true );
-			$image_height = (int) get_post_meta( $post_id, '_woodmart_preload_image_mobile_custom_height', true );
+			$image_custom_dimensions = woodmart_get_post_meta_value( $post_id, '_woodmart_preload_image_mobile_custom_dimension' );
+
+			if ( $image_custom_dimensions ) {
+				$image_width  = isset( $image_custom_dimensions['width'] ) ? $image_custom_dimensions['width'] : '';
+				$image_height = isset( $image_custom_dimensions['height'] ) ? $image_custom_dimensions['height'] : '';
+			} else {
+				$image_width  = (int) get_post_meta( $post_id, '_woodmart_preload_image_mobile_custom_width', true );
+				$image_height = (int) get_post_meta( $post_id, '_woodmart_preload_image_mobile_custom_height', true );
+			}
 
 			if ( $image_width || $image_height ) {
 				$mobile_image_size = $image_width . 'x' . $image_height;
@@ -133,7 +140,7 @@ class LCP extends Singleton {
 		);
 
 		if ( ! empty( $desktop_image['id'] ) ) {
-			$src = woodmart_otf_get_image_url( $desktop_image['id'], $desktop_image_size );
+			$src = apply_filters( 'woodmart_get_webp_image_src', woodmart_otf_get_image_url( $desktop_image['id'], $desktop_image_size ), $desktop_image['id'], $desktop_image_size );
 
 			if ( $src ) {
 				echo '<link rel="preload" as="image" href="' . esc_url( $src ) . '"';
@@ -198,6 +205,29 @@ class LCP extends Singleton {
 		$post_id = get_the_ID();
 		$device  = isset( $_GET['device'] ) && 'mobile' === $_GET['device'] ? 'mobile' : 'desktop';
 
+		if ( woodmart_is_elementor_installed() ) {
+			woodmart_update_elementor_page_settings(
+				$post_id,
+				'mobile' === $device ? '_woodmart_preload_image_mobile' : '_woodmart_preload_image',
+				null
+			);
+			woodmart_update_elementor_page_settings(
+				$post_id,
+				'mobile' === $device ? '_woodmart_preload_image_mobile_size' : '_woodmart_preload_image_size',
+				null
+			);
+			woodmart_update_elementor_page_settings(
+				$post_id,
+				'mobile' === $device ? '_woodmart_preload_image_mobile_custom_dimension' : '_woodmart_preload_image_custom_dimension',
+				null
+			);
+			woodmart_update_elementor_page_settings(
+				$post_id,
+				'mobile' === $device ? '_woodmart_preload_image_mobile_type' : '_woodmart_preload_image_type',
+				null
+			);
+		}
+
 		delete_post_meta( $post_id, 'mobile' === $device ? '_woodmart_preload_image_mobile' : '_woodmart_preload_image' );
 		delete_post_meta( $post_id, 'mobile' === $device ? '_woodmart_preload_image_mobile_size' : '_woodmart_preload_image_size' );
 		delete_post_meta( $post_id, 'mobile' === $device ? '_woodmart_preload_image_mobile_custom_width' : '_woodmart_preload_image_custom_width' );
@@ -260,6 +290,20 @@ class LCP extends Singleton {
 				)
 			);
 
+			if ( woodmart_is_elementor_installed() ) {
+				woodmart_update_elementor_page_settings(
+					$post_id,
+					'mobile' === $device ? '_woodmart_preload_image_mobile' : '_woodmart_preload_image',
+					array(
+						'id'     => $attachment_id,
+						'url'    => $image_url,
+						'size'   => '',
+						'alt'    => '',
+						'source' => 'library',
+					)
+				);
+			}
+
 			if ( $custom_size && $attachment_id ) {
 				$attachment_meta = wp_get_attachment_metadata( $attachment_id );
 
@@ -284,6 +328,22 @@ class LCP extends Singleton {
 				if ( $custom_size ) {
 					$dimensions = explode( 'x', $custom_size );
 
+					if ( woodmart_is_elementor_installed() ) {
+						woodmart_update_elementor_page_settings(
+							$post_id,
+							'mobile' === $device ? '_woodmart_preload_image_mobile_size' : '_woodmart_preload_image_size',
+							'custom'
+						);
+						woodmart_update_elementor_page_settings(
+							$post_id,
+							'mobile' === $device ? '_woodmart_preload_image_mobile_custom_dimension' : '_woodmart_preload_image_custom_dimension',
+							array(
+								'width'  => (int) $dimensions[0],
+								'height' => (int) $dimensions[1],
+							)
+						);
+					}
+
 					update_post_meta(
 						$post_id,
 						'mobile' === $device ? '_woodmart_preload_image_mobile_custom_width' : '_woodmart_preload_image_custom_width',
@@ -296,6 +356,19 @@ class LCP extends Singleton {
 					);
 				}
 			} else {
+				if ( woodmart_is_elementor_installed() ) {
+					woodmart_update_elementor_page_settings(
+						$post_id,
+						'mobile' === $device ? '_woodmart_preload_image_mobile_size' : '_woodmart_preload_image_size',
+						$size
+					);
+					woodmart_update_elementor_page_settings(
+						$post_id,
+						'mobile' === $device ? '_woodmart_preload_image_mobile_custom_dimension' : '_woodmart_preload_image_custom_dimension',
+						null
+					);
+				}
+
 				update_post_meta(
 					$post_id,
 					'mobile' === $device ? '_woodmart_preload_image_mobile_size' : '_woodmart_preload_image_size',
@@ -306,12 +379,38 @@ class LCP extends Singleton {
 				delete_post_meta( $post_id, 'mobile' === $device ? '_woodmart_preload_image_mobile_custom_height' : '_woodmart_preload_image_custom_height' );
 			}
 
+			if ( woodmart_is_elementor_installed() ) {
+				woodmart_update_elementor_page_settings(
+					$post_id,
+					'mobile' === $device ? '_woodmart_preload_image_mobile_type' : '_woodmart_preload_image_type',
+					$image_type
+				);
+			}
+
 			update_post_meta(
 				$post_id,
 				'mobile' === $device ? '_woodmart_preload_image_mobile_type' : '_woodmart_preload_image_type',
 				$image_type
 			);
 		} else {
+			if ( woodmart_is_elementor_installed() ) {
+				woodmart_update_elementor_page_settings(
+					$post_id,
+					'mobile' === $device ? '_woodmart_preload_image_mobile' : '_woodmart_preload_image',
+					null
+				);
+				woodmart_update_elementor_page_settings(
+					$post_id,
+					'mobile' === $device ? '_woodmart_preload_image_mobile_size' : '_woodmart_preload_image_size',
+					null
+				);
+				woodmart_update_elementor_page_settings(
+					$post_id,
+					'mobile' === $device ? '_woodmart_preload_image_mobile_custom_dimension' : '_woodmart_preload_image_custom_dimension',
+					null
+				);
+			}
+
 			delete_post_meta( $post_id, 'mobile' === $device ? '_woodmart_preload_image_mobile' : '_woodmart_preload_image' );
 			delete_post_meta( $post_id, 'mobile' === $device ? '_woodmart_preload_image_mobile_size' : '_woodmart_preload_image_size' );
 			delete_post_meta( $post_id, 'mobile' === $device ? '_woodmart_preload_image_mobile_custom_width' : '_woodmart_preload_image_custom_width' );
@@ -342,8 +441,8 @@ class LCP extends Singleton {
 
 			woodmart_force_enqueue_style( 'opt-lcp-image' );
 
-			$desktop_image = get_post_meta( $post->ID, '_woodmart_preload_image', true );
-			$mobile_image  = get_post_meta( $post->ID, '_woodmart_preload_image_mobile', true );
+			$desktop_image = woodmart_get_post_meta_value( $post->ID, '_woodmart_preload_image' );
+			$mobile_image  = woodmart_get_post_meta_value( $post->ID, '_woodmart_preload_image_mobile' );
 
 			$has_image = ( ! empty( $desktop_image['id'] ) || ! empty( $mobile_image['id'] ) );
 
@@ -543,11 +642,11 @@ class LCP extends Singleton {
 		if ( woodmart_get_opt( 'preload_lcp_image' ) ) {
 			$post_id = get_the_ID();
 
-			$desktop_image = get_post_meta( $post_id, '_woodmart_preload_image', true );
-			$mobile_image  = get_post_meta( $post_id, '_woodmart_preload_image_mobile', true );
+			$desktop_image = woodmart_get_post_meta_value( $post_id, '_woodmart_preload_image' );
+			$mobile_image  = woodmart_get_post_meta_value( $post_id, '_woodmart_preload_image_mobile' );
 
 			if ( ! empty( $desktop_image['id'] ) ) {
-				$image_size = get_post_meta( $post_id, '_woodmart_preload_image_size', true );
+				$image_size = woodmart_get_post_meta_value( $post_id, '_woodmart_preload_image_size' );
 				$image_size = $image_size ? $image_size : 'full';
 
 				if ( 'custom' === $image_size ) {
@@ -561,11 +660,14 @@ class LCP extends Singleton {
 					}
 				}
 
-				$urls[] = woodmart_otf_get_image_url( $desktop_image['id'], $image_size );
+				$image_url = woodmart_otf_get_image_url( $desktop_image['id'], $image_size );
+
+				$urls[] = $image_url;
+				$urls[] = apply_filters( 'woodmart_get_webp_image_src', $image_url, $desktop_image['id'], $image_size );
 			}
 
 			if ( ! empty( $mobile_image['id'] ) ) {
-				$image_size = get_post_meta( $post_id, '_woodmart_preload_image_mobile_size', true );
+				$image_size = woodmart_get_post_meta_value( $post_id, '_woodmart_preload_image_mobile_size' );
 				$image_size = $image_size ? $image_size : 'full';
 
 				if ( 'custom' === $image_size ) {
@@ -579,7 +681,10 @@ class LCP extends Singleton {
 					}
 				}
 
-				$urls[] = woodmart_otf_get_image_url( $mobile_image['id'], $image_size );
+				$image_url = woodmart_otf_get_image_url( $mobile_image['id'], $image_size );
+
+				$urls[] = $image_url;
+				$urls[] = apply_filters( 'woodmart_get_webp_image_src', $image_url, $mobile_image['id'], $image_size );
 			}
 		}
 
@@ -599,46 +704,54 @@ class LCP extends Singleton {
 		if ( woodmart_get_opt( 'preload_lcp_image' ) ) {
 			$post_id = get_the_ID();
 
-			$desktop_image = get_post_meta( $post_id, '_woodmart_preload_image', true );
-			$mobile_image  = get_post_meta( $post_id, '_woodmart_preload_image_mobile', true );
+			$desktop_image = woodmart_get_post_meta_value( $post_id, '_woodmart_preload_image' );
+			$mobile_image  = woodmart_get_post_meta_value( $post_id, '_woodmart_preload_image_mobile' );
 
-			if ( ! empty( $desktop_image['id'] ) && ! $this->desktop_image_src ) {
-				$image_size = get_post_meta( $post_id, '_woodmart_preload_image_size', true );
-				$image_size = $image_size ? $image_size : 'full';
+			if ( ! $this->preload_images_src && ( ! empty( $desktop_image['id'] ) || ! empty( $mobile_image['id'] ) ) ) {
+				if ( ! empty( $desktop_image['id'] ) ) {
+					$image_size = woodmart_get_post_meta_value( $post_id, '_woodmart_preload_image_size' );
+					$image_size = $image_size ? $image_size : 'full';
 
-				if ( 'custom' === $image_size ) {
-					$image_width  = (int) get_post_meta( $post_id, '_woodmart_preload_image_custom_width', true );
-					$image_height = (int) get_post_meta( $post_id, '_woodmart_preload_image_custom_height', true );
+					if ( 'custom' === $image_size ) {
+						$image_width  = (int) get_post_meta( $post_id, '_woodmart_preload_image_custom_width', true );
+						$image_height = (int) get_post_meta( $post_id, '_woodmart_preload_image_custom_height', true );
 
-					if ( $image_width || $image_height ) {
-						$image_size = $image_width . 'x' . $image_height;
-					} else {
-						$image_size = 'full';
+						if ( $image_width || $image_height ) {
+							$image_size = $image_width . 'x' . $image_height;
+						} else {
+							$image_size = 'full';
+						}
 					}
+
+					$image_url = woodmart_otf_get_image_url( $desktop_image['id'], $image_size );
+
+					$this->preload_images_src[] = $image_url;
+					$this->preload_images_src[] = apply_filters( 'woodmart_get_webp_image_src', $image_url, $desktop_image['id'], $image_size );
 				}
 
-				$this->desktop_image_src = woodmart_otf_get_image_url( $desktop_image['id'], $image_size );
-			}
+				if ( ! empty( $mobile_image['id'] ) ) {
+					$image_size = woodmart_get_post_meta_value( $post_id, '_woodmart_preload_image_mobile_size' );
+					$image_size = $image_size ? $image_size : 'full';
 
-			if ( ! empty( $mobile_image['id'] ) && ! $this->mobile_image_src ) {
-				$image_size = get_post_meta( $post_id, '_woodmart_preload_image_mobile_size', true );
-				$image_size = $image_size ? $image_size : 'full';
+					if ( 'custom' === $image_size ) {
+						$image_width  = (int) get_post_meta( $post_id, '_woodmart_preload_image_mobile_custom_width', true );
+						$image_height = (int) get_post_meta( $post_id, '_woodmart_preload_image_mobile_custom_height', true );
 
-				if ( 'custom' === $image_size ) {
-					$image_width  = (int) get_post_meta( $post_id, '_woodmart_preload_image_mobile_custom_width', true );
-					$image_height = (int) get_post_meta( $post_id, '_woodmart_preload_image_mobile_custom_height', true );
-
-					if ( $image_width || $image_height ) {
-						$image_size = $image_width . 'x' . $image_height;
-					} else {
-						$image_size = 'full';
+						if ( $image_width || $image_height ) {
+							$image_size = $image_width . 'x' . $image_height;
+						} else {
+							$image_size = 'full';
+						}
 					}
-				}
 
-				$this->mobile_image_src = woodmart_otf_get_image_url( $mobile_image['id'], $image_size );
+					$image_url = woodmart_otf_get_image_url( $mobile_image['id'], $image_size );
+
+					$this->preload_images_src[] = $image_url;
+					$this->preload_images_src[] = apply_filters( 'woodmart_get_webp_image_src', $image_url, $mobile_image['id'], $image_size );
+				}
 			}
 
-			if ( ! empty( $attr['src'] ) && in_array( $attr['src'], array( $this->desktop_image_src, $this->mobile_image_src ), true ) ) {
+			if ( ! empty( $attr['src'] ) && in_array( $attr['src'], $this->preload_images_src, true ) ) {
 				$loading_attrs['loading'] = false;
 			}
 		}
@@ -656,8 +769,8 @@ class LCP extends Singleton {
 		if ( $this->is_capture_mode() ) {
 			$post_id = get_the_ID();
 
-			$desktop_image = get_post_meta( $post_id, '_woodmart_preload_image', true );
-			$mobile_image  = get_post_meta( $post_id, '_woodmart_preload_image_mobile', true );
+			$desktop_image = woodmart_get_post_meta_value( $post_id, '_woodmart_preload_image' );
+			$mobile_image  = woodmart_get_post_meta_value( $post_id, '_woodmart_preload_image_mobile' );
 			$has_image     = ( ! empty( $desktop_image['id'] ) || ! empty( $mobile_image['id'] ) );
 
 			$localized_strings['lcp_image_confirmed']          = esc_html__( 'This is the LCP image detected on the page. Would you like to save it for preloading?', 'woodmart' );
@@ -698,8 +811,8 @@ class LCP extends Singleton {
 
 		$post_id = get_the_ID();
 
-		$desktop_image = get_post_meta( $post_id, '_woodmart_preload_image', true );
-		$mobile_image  = get_post_meta( $post_id, '_woodmart_preload_image_mobile', true );
+		$desktop_image = woodmart_get_post_meta_value( $post_id, '_woodmart_preload_image' );
+		$mobile_image  = woodmart_get_post_meta_value( $post_id, '_woodmart_preload_image_mobile' );
 
 		if ( ! empty( $desktop_image['id'] ) || ! empty( $mobile_image['id'] ) ) {
 			return PHP_INT_MAX;

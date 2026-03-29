@@ -2,7 +2,7 @@
 /**
  * Archive description element.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Modules\Layouts;

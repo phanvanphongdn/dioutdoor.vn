@@ -1,11 +1,23 @@
 <?php
+/**
+ * Single product block tabs render.
+ *
+ * @package woodmart
+ */
 
 use XTS\Modules\Layouts\Global_Data;
 use XTS\Modules\Layouts\Main;
 
 if ( ! function_exists( 'wd_gutenberg_single_product_tabs' ) ) {
+	/**
+	 * Render the single product block tabs.
+	 *
+	 * @param array $block_attributes The block attributes.
+	 * @return string The rendered content.
+	 */
 	function wd_gutenberg_single_product_tabs( $block_attributes ) {
 		$wrapper_classes = wd_get_gutenberg_element_classes( $block_attributes );
+		$el_id           = wd_get_gutenberg_element_id( $block_attributes );
 
 		$additional_info_classes  = ' wd-layout-' . $block_attributes['additionalInfoLayout'];
 		$additional_info_classes .= ' wd-style-' . $block_attributes['additionalInfoStyle'];
@@ -13,11 +25,6 @@ if ( ! function_exists( 'wd_gutenberg_single_product_tabs' ) ) {
 		$reviews_classes         .= ' wd-form-pos-' . woodmart_get_opt( 'reviews_form_location', 'after' );
 		$args                     = array();
 		$title_content_classes    = '';
-
-		if ( ! empty( $block_attributes['enableAdditionalInfo'] ) ) {
-			$additional_info_classes .= empty( $block_attributes['attrName'] ) ? ' wd-hide-name' : '';
-			$additional_info_classes .= empty( $block_attributes['attrImage'] ) ? ' wd-hide-image' : '';
-		}
 
 		if ( ! empty( $block_attributes['enableReviews'] ) ) {
 			woodmart_enqueue_inline_style( 'post-types-mod-comments' );
@@ -64,6 +71,8 @@ if ( ! function_exists( 'wd_gutenberg_single_product_tabs' ) ) {
 			if ( ! empty( $block_attributes['tabsTitleTextColorScheme'] ) ) {
 				$title_wrapper_classes .= ' color-scheme-' . $block_attributes['tabsTitleTextColorScheme'];
 			}
+
+			$title_wrapper_classes .= ' wd-mb-action-swipe';
 
 			$items_bg_activated = ! empty( $block_attributes['tabsBgColorCode'] ) ||
 				! empty( $block_attributes['tabsBgColorVariable'] ) ||
@@ -190,6 +199,10 @@ if ( ! function_exists( 'wd_gutenberg_single_product_tabs' ) ) {
 			add_filter( 'woocommerce_product_additional_information_heading', '__return_false', 20 );
 		}
 
+		if ( ! empty( $block_attributes['enableAdditionalInfo'] ) ) {
+			woodmart_enqueue_inline_style( 'woo-mod-shop-attributes-builder' );
+		}
+
 		if ( comments_open() ) {
 			if ( woodmart_get_opt( 'reviews_rating_summary' ) && function_exists( 'wc_review_ratings_enabled' ) && wc_review_ratings_enabled() ) {
 				woodmart_enqueue_inline_style( 'woo-single-prod-opt-rating-summary' );
@@ -202,11 +215,26 @@ if ( ! function_exists( 'wd_gutenberg_single_product_tabs' ) ) {
 			global $withcomments;
 
 			if ( wp_is_serving_rest_request() ) {
-				$withcomments = true;
+				$withcomments = true; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
 			}
 		}
+
+		if ( ! empty( $block_attributes['enableAdditionalInfo'] ) ) {
+			Global_Data::get_instance()->set_data(
+				'wd_additional_info_table_args',
+				array(
+					// Attributes.
+					'attr_image' => ! empty( $block_attributes['attrImage'] ),
+					'attr_name'  => ! empty( $block_attributes['attrName'] ),
+					// Terms.
+					'term_label' => ! empty( $block_attributes['termLabel'] ),
+					'term_image' => ! empty( $block_attributes['termImage'] ),
+				)
+			);
+		}
+
 		?>
-		<div id="<?php echo esc_attr( wd_get_gutenberg_element_id( $block_attributes ) ); ?>" class="wd-single-tabs<?php echo esc_attr( $wrapper_classes ); ?>">
+		<div <?php echo $el_id ? 'id="' . esc_attr( $el_id ) . '" ' : ''; ?>class="wd-single-tabs<?php echo esc_attr( $wrapper_classes ); ?>">
 			<?php
 				wc_get_template(
 					'single-product/tabs/tabs-' . sanitize_file_name( $block_attributes['layout'] ) . '.php',
@@ -215,6 +243,8 @@ if ( ! function_exists( 'wd_gutenberg_single_product_tabs' ) ) {
 			?>
 		</div>
 		<?php
+
+		Global_Data::get_instance()->set_data( 'wd_additional_info_table_args', array() );
 
 		Main::restore_preview();
 

@@ -5,6 +5,7 @@ use XTS\Modules\Layouts\Main;
 if ( ! function_exists( 'wd_gutenberg_single_product_meta' ) ) {
 	function wd_gutenberg_single_product_meta( $block_attributes ) {
 		$classes = '';
+		$el_id   = wd_get_gutenberg_element_id( $block_attributes );
 
 		if ( 'justify' !== $block_attributes['layout'] && ( ! empty( $block_attributes['textAlign'] ) || ! empty( $block_attributes['textAlignTablet'] ) || ! empty( $block_attributes['textAlignMobile'] ) ) ) {
 			$classes .= ' wd-align';
@@ -14,7 +15,7 @@ if ( ! function_exists( 'wd_gutenberg_single_product_meta' ) ) {
 
 		Main::setup_preview();
 		?>
-			<div id="<?php echo esc_attr( wd_get_gutenberg_element_id( $block_attributes ) ); ?>" class="wd-single-meta<?php echo esc_attr( wd_get_gutenberg_element_classes( $block_attributes, $classes ) ); ?>">
+			<div <?php echo $el_id ? 'id="' . esc_attr( $el_id ) . '" ' : ''; ?>class="wd-single-meta<?php echo esc_attr( wd_get_gutenberg_element_classes( $block_attributes, $classes ) ); ?>">
 				<?php
 					wc_get_template(
 						'single-product/meta.php',

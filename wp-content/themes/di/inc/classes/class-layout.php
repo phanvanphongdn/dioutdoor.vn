@@ -2,7 +2,7 @@
 /**
  * WOODMART_Layout Class.
  *
- * @package xts
+ * @package woodmart
  */
 
 namespace XTS;
@@ -139,7 +139,7 @@ class Layout {
 		}
 
 		if ( $page_id ) {
-			$specific = get_post_meta( $page_id, '_woodmart_custom_sidebar', true );
+			$specific = woodmart_get_post_meta_value( $page_id, '_woodmart_custom_sidebar' );
 		}
 
 		if ( $specific && 'none' !== $specific ) {
@@ -178,7 +178,7 @@ class Layout {
 		|| ( 12 === (int) $size && 12 === (int) $size_md );
 
 		if ( $page_id ) {
-			$specific = get_post_meta( $page_id, '_woodmart_main_layout', true );
+			$specific = woodmart_get_post_meta_value( $page_id, '_woodmart_main_layout' );
 
 			if ( $specific && 'default' !== $specific ) {
 				$this->has_sidebar_in_page = 'full-width' !== $specific;
@@ -269,7 +269,7 @@ class Layout {
 		$this->sidebar_col_width = woodmart_get_opt( 'sidebar_width' );
 
 		if ( $page_id ) {
-			$specific = get_post_meta( $page_id, '_woodmart_sidebar_width', true );
+			$specific = woodmart_get_post_meta_value( $page_id, '_woodmart_sidebar_width' );
 		}
 
 		// Get specific sidebar size for Shop Page.
@@ -349,7 +349,7 @@ class Layout {
 		}
 
 		if ( $page_id ) {
-			$specific = get_post_meta( $page_id, '_woodmart_main_layout', true );
+			$specific = woodmart_get_post_meta_value( $page_id, '_woodmart_main_layout' );
 		}
 
 		if ( woodmart_woocommerce_installed() && ( woodmart_is_shop_archive() || ( is_search() && isset( $_GET['post_type'] ) && 'product' === $_GET['post_type'] ) ) ) {

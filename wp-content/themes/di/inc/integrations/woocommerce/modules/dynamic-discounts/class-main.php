@@ -116,16 +116,15 @@ class Main {
 		}
 
 		foreach ( $cart->get_cart() as $cart_item ) {
-			$product       = $cart_item['data'];
-			$item_quantity = $cart_item['quantity'];
-			$product_price = apply_filters( 'woodmart_pricing_before_calculate_discounts', (float) $product->get_price(), $cart_item );
-			$discount      = Manager::get_instance()->get_discount_rules( $product );
+			$product        = $cart_item['data'];
+			$item_quantity  = $cart_item['quantity'];
+			$product_price  = apply_filters( 'woodmart_pricing_before_calculate_discounts', (float) $product->get_price( 'edit' ), $cart_item );
+			$original_price = $product_price;
+			$discount       = Manager::get_instance()->get_discount_rules( $product );
 
-			if ( empty( $product->get_price() ) || empty( $discount ) || ( ! empty( $this->applied ) && in_array( $product->get_id(), $this->applied, true ) ) || isset( $cart_item['wd_is_free_gift'] ) || isset( $cart_item['wd_fbt_bundle_id'] ) ) {
+			if ( empty( $product_price ) || empty( $discount ) || ( ! empty( $this->applied ) && in_array( $product->get_id(), $this->applied, true ) ) || isset( $cart_item['wd_is_free_gift'] ) || isset( $cart_item['wd_fbt_bundle_id'] ) ) {
 				continue;
 			}
-
-			$product->set_regular_price( $product_price );
 
 			if ( ! empty( $variations_quantity ) && 'individual_product' === $discount['discount_quantities'] && in_array( $product->get_parent_id(), array_keys( $variations_quantity ), true ) ) {
 				$item_quantity = $variations_quantity[ $product->get_parent_id() ];
@@ -140,8 +139,8 @@ class Main {
 
 							// @codeCoverageIgnoreStart
 							// WPML woocommerce-multilingual compatibility.
-							if ( function_exists( 'woodmart_wpml_shipping_progress_bar_amount' ) && 'amount' === $discount_type ) {
-								$discount_value = woodmart_wpml_shipping_progress_bar_amount( $discount_value );
+							if ( class_exists( 'woocommerce_wpml' ) && 'amount' === $discount_type ) {
+								$discount_value = apply_filters( 'woodmart_product_pricing_amount_discounts_value', $discount_value );
 							}
 							// @codeCoverageIgnoreEnd
 
@@ -163,6 +162,11 @@ class Main {
 				$product_price = 0;
 			}
 
+			if ( (float) $product_price === (float) $original_price ) {
+				continue;
+			}
+
+			$product->set_regular_price( $original_price );
 			$product->set_price( $product_price );
 			$product->set_sale_price( $product_price );
 

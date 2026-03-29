@@ -2,7 +2,7 @@
 /**
  * Import.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Admin\Modules;
@@ -58,7 +58,6 @@ class Import extends Singleton {
 			'class-helpers',
 			'class-process',
 			'class-widgets',
-			'class-sliders',
 			'class-xml',
 			'class-options',
 			'class-headers',
@@ -105,7 +104,7 @@ class Import extends Singleton {
 
 			foreach ( $ftp_constants as $key => $constant ) {
 				if ( ! empty( $_GET[ $key ] ) ) {
-					define( $constant, sanitize_text_field( wp_unslash( $_GET[ $key ] ) ) );
+					define( $constant, sanitize_text_field( wp_unslash( $_GET[ $key ] ) ) );  // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.VariableConstantNameFound
 				}
 			}
 
@@ -115,7 +114,7 @@ class Import extends Singleton {
 
 			if ( false === $credentials || ! WP_Filesystem( $credentials ) ) {
 				$status['errorCode']    = 'unable_to_connect_to_filesystem';
-				$status['errorMessage'] = __( 'Unable to connect to the filesystem. Please confirm your credentials.' );
+				$status['errorMessage'] = __( 'Unable to connect to the filesystem. Please confirm your credentials.', 'woodmart' );
 
 				// Pass through the error from WP_Filesystem if one was raised.
 				if ( $wp_filesystem instanceof WP_Filesystem_Base && is_wp_error( $wp_filesystem->errors ) && $wp_filesystem->errors->has_errors() ) {
@@ -295,7 +294,7 @@ class Import extends Singleton {
 							<div class="xts-note">
 								<?php
 									echo wp_kses(
-										'<span>Note:</span> you can import any of the prebuilt websites that will include a home page, a few products, posts, projects, images and menus. You will be able to switch to any website at any time or just skip this step for now.',
+										__( '<span>Note:</span> you can import any of the prebuilt websites that will include a home page, a few products, posts, projects, images and menus. You will be able to switch to any website at any time or just skip this step for now.', 'woodmart' ),
 										woodmart_get_allowed_html()
 									);
 								?>
@@ -322,9 +321,6 @@ class Import extends Singleton {
 								}
 								if ( $is_version_imported ) {
 									$item_classes = wd_add_cssclass( 'xts-imported', $item_classes );
-								}
-								if ( ! defined( 'RS_REVISION' ) && str_contains( $version_data['process'], 'sliders' ) ) {
-									$item_classes = wd_add_cssclass( 'xts-need-rs', $item_classes );
 								}
 
 								$categories_array = array();
@@ -408,6 +404,7 @@ class Import extends Singleton {
 		if ( $this->get_required_plugins() ) {
 			$notices[] = array(
 				'type'    => 'warning',
+				// translators: 1. Link to the plugins page, 2. List of required plugins.
 				'message' => sprintf( __( 'You need to install the following plugins to use our import function: <strong><a href="%1$s">%2$s</a></strong>', 'woodmart' ), esc_url( add_query_arg( 'page', rawurlencode( 'xts_plugins' ), admin_url( 'admin.php' ) ) ), implode( ', ', $this->get_required_plugins() ) ),
 			);
 		}
@@ -587,6 +584,11 @@ class Import extends Singleton {
 		}
 	}
 
+	/**
+	 * Get request filesystem credentials.
+	 *
+	 * @return void
+	 */
 	private function get_request_filesystem_credentials() {
 		ob_start();
 

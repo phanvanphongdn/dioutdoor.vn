@@ -1,9 +1,14 @@
 <?php
+/**
+ * Header text element.
+ *
+ * @package woodmart
+ */
 
 woodmart_enqueue_inline_style( 'header-elements-base' );
+
 $classes  = ' whb-' . $id;
 $classes .= $params['inline'] ? ' wd-inline' : '';
-$classes .= woodmart_get_old_classes( ' whb-text-element' );
 $classes .= $params['css_class'] ? ' ' . $params['css_class'] : '';
 
 ?>

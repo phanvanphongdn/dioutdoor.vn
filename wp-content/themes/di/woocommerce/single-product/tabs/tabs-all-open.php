@@ -34,7 +34,6 @@ woodmart_enqueue_inline_style( 'woo-single-prod-el-tabs-opt-layout-all-open' );
 <?php if ( ! empty( $product_tabs ) ) : ?>
 	<?php foreach ( $product_tabs as $key => $product_tab ) : ?>
 		<?php
-		$item_wrapper_classes  = woodmart_get_old_classes( ' woodmart-tab-wrapper' );
 		$content_classes       = ' woocommerce-Tabs-panel--' . $key;
 		$title_wrapper_classes = ' tab-title-' . $key;
 
@@ -49,7 +48,7 @@ woodmart_enqueue_inline_style( 'woo-single-prod-el-tabs-opt-layout-all-open' );
 			$content_classes .= $args['builder_reviews_classes'];
 		}
 		?>
-		<div class="wd-tab-wrapper<?php echo esc_attr( $item_wrapper_classes ); ?>">
+		<div class="wd-tab-wrapper">
 			<div class="wd-all-open-title title<?php echo esc_attr( $title_wrapper_classes ); ?>">
 				<?php if ( isset( $product_tab['title'] ) ) : ?>
 					<span>

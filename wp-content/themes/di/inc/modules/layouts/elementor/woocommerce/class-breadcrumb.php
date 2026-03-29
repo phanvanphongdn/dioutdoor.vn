@@ -2,7 +2,7 @@
 /**
  * Breadcrumb map.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Modules\Layouts;
@@ -134,7 +134,7 @@ class Breadcrumb extends Widget_Base {
 			array(
 				'name'     => 'title_typography',
 				'label'    => esc_html__( 'Typography', 'woodmart' ),
-				'selector' => '{{WRAPPER}} :is(.wd-breadcrumbs,.yoast-breadcrumb)',
+				'selector' => '{{WRAPPER}} :is(.wd-breadcrumbs,.yoast-breadcrumb,.rank-math-breadcrumb,.aioseo-breadcrumbs,.breadcrumb)',
 			)
 		);
 
@@ -153,7 +153,7 @@ class Breadcrumb extends Widget_Base {
 				'label'     => esc_html__( 'Color', 'woodmart' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
-					'{{WRAPPER}} :is(.wd-breadcrumbs,.yoast-breadcrumb)' => '--wd-link-color: {{VALUE}}',
+					'{{WRAPPER}} :is(.wd-breadcrumbs,.yoast-breadcrumb,.rank-math-breadcrumb,.aioseo-breadcrumbs,.breadcrumb)' => '--wd-link-color: {{VALUE}}',
 				),
 			)
 		);
@@ -164,7 +164,7 @@ class Breadcrumb extends Widget_Base {
 				'label'     => esc_html__( 'Delimiter color', 'woodmart' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
-					'{{WRAPPER}} :is(.wd-breadcrumbs,.yoast-breadcrumb)' => '--wd-bcrumb-delim-color: {{VALUE}}',
+					'{{WRAPPER}} :is(.wd-breadcrumbs,.yoast-breadcrumb,.rank-math-breadcrumb,.aioseo-breadcrumbs,.breadcrumb)' => '--wd-bcrumb-delim-color: {{VALUE}}',
 				),
 			)
 		);
@@ -184,7 +184,7 @@ class Breadcrumb extends Widget_Base {
 				'label'     => esc_html__( 'Color', 'woodmart' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
-					'{{WRAPPER}} :is(.wd-breadcrumbs,.yoast-breadcrumb)' => '--wd-link-color-hover: {{VALUE}}',
+					'{{WRAPPER}} :is(.wd-breadcrumbs,.yoast-breadcrumb,.rank-math-breadcrumb,.aioseo-breadcrumbs,.breadcrumb)' => '--wd-link-color-hover: {{VALUE}}',
 				),
 			)
 		);
@@ -204,7 +204,7 @@ class Breadcrumb extends Widget_Base {
 				'label'     => esc_html__( 'Color', 'woodmart' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
-					'{{WRAPPER}} :is(.wd-breadcrumbs,.yoast-breadcrumb)' => '--wd-bcrumb-color-active: {{VALUE}}',
+					'{{WRAPPER}} :is(.wd-breadcrumbs,.yoast-breadcrumb,.rank-math-breadcrumb,.aioseo-breadcrumbs,.breadcrumb)' => '--wd-bcrumb-color-active: {{VALUE}}',
 				),
 			)
 		);

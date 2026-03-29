@@ -2,7 +2,7 @@
 /**
  * This file describes class for render view all wishlists list in WordPress admin panel.
  *
- * @package Woodmart.
+ * @package woodmart.
  */
 
 namespace XTS\WC_Wishlist\Backend\List_Table;

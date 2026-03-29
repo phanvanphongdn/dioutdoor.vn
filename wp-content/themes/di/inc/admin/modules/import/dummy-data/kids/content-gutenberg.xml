@@ -16,7 +16,7 @@
 	<!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 	<!--    contained in this file into your site. -->
 
-	<!-- generator="WordPress/6.7.4" created="2025-10-03 11:26" -->
+	<!-- generator="WordPress/6.7.4" created="2026-02-25 15:16" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -29,20 +29,14 @@
 	<title>Kids gutenberg</title>
 	<link>https://dummy.xtemos.com/woodmart2/kids-gutenberg</link>
 	<description></description>
-	<pubDate>Fri, 03 Oct 2025 11:26:10 +0000</pubDate>
+	<pubDate>Wed, 25 Feb 2026 15:16:37 +0000</pubDate>
 	<language>en-US</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
 	<wp:base_site_url>https://dummy.xtemos.com/woodmart2/</wp:base_site_url>
 	<wp:base_blog_url>https://dummy.xtemos.com/woodmart2/kids-gutenberg</wp:base_blog_url>
 
 	
-					<wp:term>
-			<wp:term_id>0</wp:term_id>
-			<wp:term_taxonomy><![CDATA[]]></wp:term_taxonomy>
-			<wp:term_slug><![CDATA[]]></wp:term_slug>
-			<wp:term_parent><![CDATA[]]></wp:term_parent>
-					</wp:term>
-		
+							
 	<generator>https://wordpress.org/?v=6.7.4</generator>
 
 					<item>
@@ -403,46 +397,46 @@
 					<pubDate>Fri, 09 Aug 2024 09:39:17 +0000</pubDate>
 					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/kids-gutenberg/?post_type=woodmart_layout&#038;p=407</guid>
-											<content:encoded><![CDATA[<!-- wp:wd/product-categories {"blockId":"b811a2ca-3a81-490b-acf5-e78d464513ac","number":"6","ids":"16,20,21,22,32,33","hide_empty":false,"categories_design":"zoom-out","image_container_width":"","custom_rounding_size":"50","style":"carousel","columns":8,"marginBottom":"60","slides_per_view":"6","hide_pagination_control":true,"sync_parent_id":"wd_3663f0e4","custom_rounding_sizeUnits":"%","marginBottomTablet":"35","slides_per_viewTablet":"4","hide_pagination_controlTablet":true,"hide_pagination_controlMobile":true} /-->
+											<content:encoded><![CDATA[<!-- wp:wd/product-categories {"blockId":"b811a2ca-3a81-490b-acf5-e78d464513ac","blockVersion":"2","number":"6","ids":"16,20,21,22,32,33","hide_empty":false,"categories_design":"zoom-out","image_container_width":"","custom_rounding_size":"50","style":"carousel","columns":8,"marginBottom":"60","slides_per_view":"6","hide_pagination_control":true,"sync_parent_id":"wd_3663f0e4","custom_rounding_sizeUnits":"%","marginBottomTablet":"35","slides_per_viewTablet":"4","hide_pagination_controlTablet":true,"hide_pagination_controlMobile":true} /-->
 
-<!-- wp:wd/off-canvas {"blockId":"ad6b0dbf-c59c-412a-802b-cf18109c9781","columnsGap":30,"displayWidth":"","maxHeightUnits":"custom"} -->
-<div id="wd-ad6b0dbf" class="wp-block-wd-off-canvas"><!-- wp:wd/off-sidebar {"blockId":"05889e6d-1a6c-4be8-84f0-991785d8a8c8","sidebarWidth":22,"paddingLock":true,"paddingTopTablet":"10","paddingRightTablet":"10","paddingBottomTablet":"10","paddingLeftTablet":"10","paddingLockTablet":true,"maxHeightUnits":"%"} -->
-<div id="wd-05889e6d" class="wp-block-wd-off-sidebar wd-left wd-hide-md-sm wd-hide-sm"><div class="wd-heading"><div class="close-side-widget wd-action-btn wd-style-text wd-cross-icon"><a href="#" rel="nofollow noopener">Close</a></div></div><div class="wd-content"><!-- wp:wd/sidebar {"blockId":"a61e4936-eb0e-41c7-b68e-df02f439e43b","sidebar_id":"sidebar-shop","paddingLock":true,"paddingTopTablet":"0","paddingRightTablet":"0","paddingBottomTablet":"0","paddingLeftTablet":"0","paddingLockTablet":true} /--></div></div>
+<!-- wp:wd/off-canvas {"blockId":"17462688-5123-46b3-931d-375a36e34539","blockVersion":"2","columnsGap":30} -->
+<div class="wp-block-wd-off-canvas wd-17462688"><!-- wp:wd/off-sidebar {"blockId":"46aed4ed-8473-4abf-b6bb-ecfe3441f248","blockVersion":"2"} -->
+<div class="wp-block-wd-off-sidebar wd-left wd-hide-md-sm wd-hide-sm wd-46aed4ed"><div class="wd-heading"><div class="close-side-widget wd-action-btn wd-style-text wd-cross-icon"><a href="#" rel="nofollow noopener"><span class="wd-action-icon"></span><span class="wd-action-text">Close</span></a></div></div><div class="wd-content"><!-- wp:wd/sidebar {"blockId":"a61e4936-eb0e-41c7-b68e-df02f439e43b","blockVersion":"2","sidebar_id":"sidebar-shop","paddingLock":true,"paddingTopTablet":"0","paddingRightTablet":"0","paddingBottomTablet":"0","paddingLeftTablet":"0","paddingLockTablet":true} /--></div></div>
 <!-- /wp:wd/off-sidebar -->
 
-<!-- wp:wd/off-content {"blockId":"d3efd5af-a791-4bd1-bbe5-2124028bc5df"} -->
-<div id="wd-d3efd5af" class="wp-block-wd-off-content"><!-- wp:wd/container {"blockId":"6f183f20-a88a-4764-acd7-642d17e86257","direction":"row","justify":"space-between","align":"center","wrap":"wrap","directionTablet":"row"} -->
-<div id="wd-6f183f20" class="wp-block-wd-container wd-dir-row wd-dir-row-md wd-align-is-lg-center"><!-- wp:wd/woo-breadcrumbs {"blockId":"a522cbde-96e7-4bb3-9259-bf5bfd0d7484","marginRight":"auto","marginUnits":"custom","displayWidth":"","customWidth":"120"} /-->
+<!-- wp:wd/off-content {"blockId":"d15c2a49-d777-4fd9-8580-0d6cf7541b30","blockVersion":"2"} -->
+<div class="wp-block-wd-off-content wd-d15c2a49"><!-- wp:wd/container {"blockId":"6f183f20-a88a-4764-acd7-642d17e86257","blockVersion":"2","direction":"row","justify":"space-between","align":"center","wrap":"wrap","directionTablet":"row"} -->
+<div class="wp-block-wd-container wd-dir-row wd-dir-row-md wd-align-is-lg-center wd-6f183f20"><!-- wp:wd/woo-breadcrumbs {"blockId":"a522cbde-96e7-4bb3-9259-bf5bfd0d7484","blockVersion":"2","marginRight":"auto","marginUnits":"custom","displayWidth":"","customWidth":"120"} /-->
 
-<!-- wp:wd/sa-result-count {"blockId":"76ef6e2d-a297-49c9-b0ef-bed6ff32c32a","hideOnDesktop":true} /-->
+<!-- wp:wd/sa-result-count {"blockId":"76ef6e2d-a297-49c9-b0ef-bed6ff32c32a","blockVersion":"2","hideOnDesktop":true} /-->
 
-<!-- wp:wd/divider {"blockId":"5ad690e4-2683-47ce-8e76-9260d99dba4f","hideOnDesktop":true,"displayWidthTablet":"full-width"} -->
-<div id="wd-5ad690e4" class="wp-block-wd-divider wd-style-line wd-hide-lg wd-custom-width"></div>
+<!-- wp:wd/divider {"blockId":"5ad690e4-2683-47ce-8e76-9260d99dba4f","blockVersion":"2","hideOnDesktop":true,"displayWidthTablet":"full-width"} -->
+<div class="wp-block-wd-divider wd-style-line wd-hide-lg wd-5ad690e4 wd-custom-width"></div>
 <!-- /wp:wd/divider -->
 
-<!-- wp:wd/off-canvas-button {"blockId":"d0265eb4-fe33-4703-b3a3-7f26836e75c7","hideOnDesktop":true} -->
-<div id="wd-d0265eb4" class="wp-block-wd-off-canvas-button wd-off-canvas-btn wd-action-btn wd-style-text wd-burger-icon wd-hide-lg"><a href="#" rel="nofollow">Show sidebar</a></div>
+<!-- wp:wd/off-canvas-button {"blockId":"d0265eb4-fe33-4703-b3a3-7f26836e75c7","blockVersion":"2","stickyBtn":false,"hideOnDesktop":true} -->
+<div class="wp-block-wd-off-canvas-button wd-off-canvas-btn wd-action-btn wd-style-text wd-burger-icon wd-hide-lg wd-d0265eb4"><a href="#" rel="nofollow"><span class="wd-action-icon"></span><span class="wd-action-text">Show sidebar</span></a></div>
 <!-- /wp:wd/off-canvas-button -->
 
-<!-- wp:wd/sa-per-page {"blockId":"405030e1-08ff-4ef1-8b20-982532be8fde","hideOnTablet":true,"hideOnMobile":true} /-->
+<!-- wp:wd/sa-per-page {"blockId":"405030e1-08ff-4ef1-8b20-982532be8fde","blockVersion":"2","hideOnTablet":true,"hideOnMobile":true} /-->
 
-<!-- wp:wd/sa-view {"blockId":"1d70df35-ad08-4860-9343-f4f4d25cdcdb","products_columns_variations":"list,2,3,4","hideOnTablet":true,"hideOnMobile":true} /-->
+<!-- wp:wd/sa-view {"blockId":"1d70df35-ad08-4860-9343-f4f4d25cdcdb","blockVersion":"2","products_columns_variations":"list,2,3,4","hideOnTablet":true,"hideOnMobile":true} /-->
 
-<!-- wp:wd/sa-orderby {"blockId":"56cb093d-f608-40f5-a0ad-3f30ca3e4f6a","style":"underline","mobileIcon":true} /--></div>
+<!-- wp:wd/sa-orderby {"blockId":"56cb093d-f608-40f5-a0ad-3f30ca3e4f6a","blockVersion":"2","style":"underline","mobileIcon":true} /--></div>
 <!-- /wp:wd/container -->
 
-<!-- wp:wd/sa-active-filters {"blockId":"62b1c9a8-53ce-4208-8172-fab748d94409"} /-->
+<!-- wp:wd/sa-active-filters {"blockId":"62b1c9a8-53ce-4208-8172-fab748d94409","blockVersion":"2"} /-->
 
-<!-- wp:wd/woo-notices {"blockId":"9ac612ea-e93d-4c9e-a091-e3be982e3c22"} /-->
+<!-- wp:wd/woo-notices {"blockId":"9ac612ea-e93d-4c9e-a091-e3be982e3c22","blockVersion":"2"} /-->
 
-<!-- wp:wd/sa-archive-products {"blockId":"a3a0269d-10f9-49f3-a66a-0b25fb181268","layout":"grid","columns":"4","spacing":"","shopPagination":""} /--></div>
+<!-- wp:wd/sa-archive-products {"blockId":"a3a0269d-10f9-49f3-a66a-0b25fb181268","blockVersion":"2","layout":"grid","columns":"4","spacing":"","shopPagination":""} /--></div>
 <!-- /wp:wd/off-content --></div>
 <!-- /wp:wd/off-canvas -->]]></content:encoded>
 															<wp:post_id>407</wp:post_id>
 					<wp:post_date><![CDATA[2024-08-09 09:39:17]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-08-09 09:39:17]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-10-02 11:22:34]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-10-02 11:22:34]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2026-02-23 09:42:32]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2026-02-23 09:42:32]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[product-archive-layout]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>

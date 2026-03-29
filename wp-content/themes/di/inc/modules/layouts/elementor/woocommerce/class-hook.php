@@ -2,7 +2,7 @@
 /**
  * Hook map.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Modules\Layouts;
@@ -89,6 +89,15 @@ class Hook extends Widget_Base {
 			array(
 				'label' => esc_html__( 'General', 'woodmart' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
+			)
+		);
+
+		$this->add_control(
+			'css_classes',
+			array(
+				'type'         => 'wd_css_class',
+				'default'      => 'wd-el-hook',
+				'prefix_class' => '',
 			)
 		);
 

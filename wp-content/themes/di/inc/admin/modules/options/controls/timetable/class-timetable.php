@@ -25,10 +25,10 @@ class Timetable extends Field {
 	 * @param array  $args Field args array.
 	 * @param array  $options Options from the database.
 	 * @param string $type Field type.
-	 * @param string $object $object Object for post or term.
+	 * @param string $meta_type Meta type.
 	 */
-	public function __construct( $args, $options, $type = 'options', $object = 'post' ) {
-		parent::__construct( $args, $options, $type, $object );
+	public function __construct( $args, $options, $type = 'options', $meta_type = 'post' ) {
+		parent::__construct( $args, $options, $type, $meta_type );
 
 		if ( empty( $this->args['inner_fields'] ) ) {
 			$this->set_default_inner_fields();
@@ -92,11 +92,10 @@ class Timetable extends Field {
 	 * @return void.
 	 */
 	public function render_control() {
-		$option_id                = $this->args['id'];
-		$conditions               = maybe_unserialize( $this->get_field_value() );
-		$selected_condition_query = array();
+		$option_id  = $this->args['id'];
+		$conditions = $this->get_field_value();
 
-		if ( empty( $conditions ) ) {
+		if ( empty( $conditions ) || ! is_array( $conditions ) ) {
 			$conditions = array(
 				array(
 					'date_type'  => 'single',
@@ -166,21 +165,21 @@ class Timetable extends Field {
 							<?php endforeach; ?>
 						</select>
 					</div>
-					<div class="xts-condition-day-single <?php echo isset( $conditions[ $id ] ) && isset( $conditions[ $id ]['date_type'] ) && 'single' === $conditions[ $id ]['date_type'] || ! isset( $conditions[ $id ] ) ? '' : 'xts-hidden'; ?>">
+					<div class="xts-condition-day-single <?php echo ( isset( $conditions[ $id ] ) && isset( $conditions[ $id ]['date_type'] ) && 'single' === $conditions[ $id ]['date_type'] ) || ! isset( $conditions[ $id ] ) ? '' : 'xts-hidden'; ?>">
 						<label for="<?php echo esc_attr( $option_id . '[' . $id . '][single_day]' ); ?>">
 							<?php esc_html_e( 'Day :', 'woodmart' ); ?>
 						</label>
 						<input type="date" name="<?php echo esc_attr( $option_id . '[' . $id . '][single_day]' ); ?>" name="<?php echo esc_attr( $option_id . '[' . $id . '][single_day]' ); ?>" id="single_day_{{index}}" aria-label="<?php esc_attr_e( 'Day', 'woodmart' ); ?>" value="<?php echo isset( $conditions[ $id ]['single_day'] ) ? esc_attr( $conditions[ $id ]['single_day'] ) : ''; ?>">
 					</div>
-					<div class="xts-condition-empty <?php echo ( isset( $conditions[ $id ] ) && isset( $conditions[ $id ]['date_type'] ) && 'single' === $conditions[ $id ]['date_type'] || ! isset( $conditions[ $id ] ) ) && in_array( 'period', array_column( $conditions, 'date_type' ), true ) ? '' : 'xts-hidden'; ?>">
+					<div class="xts-condition-empty <?php echo ( ( isset( $conditions[ $id ] ) && isset( $conditions[ $id ]['date_type'] ) && 'single' === $conditions[ $id ]['date_type'] ) || ! isset( $conditions[ $id ] ) ) && in_array( 'period', array_column( $conditions, 'date_type' ), true ) ? '' : 'xts-hidden'; ?>">
 					</div>
-					<div class="xts-condition-day-first <?php echo isset( $conditions[ $id ] ) && isset( $conditions[ $id ]['date_type'] ) && 'period' === $conditions[ $id ]['date_type'] || ! isset( $conditions[ $id ] ) ? '' : 'xts-hidden'; ?>">
+					<div class="xts-condition-day-first <?php echo ( isset( $conditions[ $id ] ) && isset( $conditions[ $id ]['date_type'] ) && 'period' === $conditions[ $id ]['date_type'] ) || ! isset( $conditions[ $id ] ) ? '' : 'xts-hidden'; ?>">
 						<label for="<?php echo esc_attr( $option_id . '[' . $id . '][first_day]' ); ?>">
 							<?php esc_html_e( 'First day :', 'woodmart' ); ?>
 						</label>
 						<input type="date" name="<?php echo esc_attr( $option_id . '[' . $id . '][first_day]' ); ?>" name="<?php echo esc_attr( $option_id . '[' . $id . '][first_day]' ); ?>" id="first_day_{{index}}" aria-label="<?php esc_attr_e( 'First day', 'woodmart' ); ?>" value="<?php echo isset( $conditions[ $id ]['first_day'] ) ? esc_attr( $conditions[ $id ]['first_day'] ) : ''; ?>">
 					</div>
-					<div class="xts-condition-day-last <?php echo isset( $conditions[ $id ] ) && isset( $conditions[ $id ]['date_type'] ) && 'period' === $conditions[ $id ]['date_type'] || ! isset( $conditions[ $id ] ) ? '' : 'xts-hidden'; ?>">
+					<div class="xts-condition-day-last <?php echo ( isset( $conditions[ $id ] ) && isset( $conditions[ $id ]['date_type'] ) && 'period' === $conditions[ $id ]['date_type'] ) || ! isset( $conditions[ $id ] ) ? '' : 'xts-hidden'; ?>">
 						<label for="<?php echo esc_attr( $option_id . '[' . $id . '][last_day]' ); ?>">
 							<?php esc_html_e( 'Last day :', 'woodmart' ); ?>
 						</label>

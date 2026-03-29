@@ -3,7 +3,7 @@
  * JS scripts.
  *
  * @version 1.0
- * @package xts
+ * @package woodmart
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -26,6 +26,14 @@ return array(
 			'title'     => esc_html__( 'Helpers', 'woodmart' ),
 			'name'      => 'woodmart-theme',
 			'file'      => '/js/scripts/global/helpers',
+			'in_footer' => true,
+		),
+	),
+	'elementor-integration'           => array(
+		array(
+			'title'     => esc_html__( 'Elementor integration', 'woodmart' ),
+			'name'      => 'elementor-integration',
+			'file'      => '/js/scripts/global/elementor-integration',
 			'in_footer' => true,
 		),
 	),
@@ -179,7 +187,7 @@ return array(
 			'in_footer' => true,
 		),
 	),
-	'floating-blocks'                  => array(
+	'floating-blocks'                 => array(
 		array(
 			'title'     => esc_html__( 'Floating blocks', 'woodmart' ),
 			'name'      => 'floating-blocks',
@@ -256,6 +264,14 @@ return array(
 			'title'     => esc_html__( 'LCP image tracker', 'woodmart' ),
 			'name'      => 'lcp-tracker',
 			'file'      => '/js/scripts/global/lcpTracker',
+			'in_footer' => true,
+		),
+	),
+	'preloader'                       => array(
+		array(
+			'title'     => esc_html__( 'Preloader', 'woodmart' ),
+			'name'      => 'preloader',
+			'file'      => '/js/scripts/global/preloader',
 			'in_footer' => true,
 		),
 	),
@@ -1191,7 +1207,7 @@ return array(
 			'in_footer' => true,
 		),
 	),
-	'pt-subscribe-form'              => array(
+	'pt-subscribe-form'               => array(
 		array(
 			'title'     => esc_html__( 'Price tracker subscribe form', 'woodmart' ),
 			'name'      => 'pt-subscribe-form',
@@ -1199,7 +1215,7 @@ return array(
 			'in_footer' => true,
 		),
 	),
-	'pt-table'                       => array(
+	'pt-table'                        => array(
 		array(
 			'title'     => esc_html__( 'Price tracker table in my account page', 'woodmart' ),
 			'name'      => 'pt-table',

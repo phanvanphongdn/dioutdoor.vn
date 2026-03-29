@@ -3,6 +3,8 @@
  * The default template for displaying content
  *
  * Used for both single and index/archive/search.
+ *
+ * @package woodmart
  */
 
 $woodmart_loop         = woodmart_loop_prop( 'woodmart_loop' );
@@ -70,7 +72,7 @@ if ( 'quote' === $post_format ) {
 	<div class="wd-post-inner article-inner">
 		<?php if ( woodmart_loop_prop( 'parts_meta' ) && get_the_category_list( ', ' ) ) : ?>
 			<div class="wd-post-cat wd-style-with-bg meta-post-categories">
-				<?php echo get_the_category_list( ', ' ); ?>
+				<?php echo wp_kses_post( get_the_category_list( ', ' ) ); ?>
 			</div>
 		<?php endif ?>
 
@@ -117,14 +119,16 @@ if ( 'quote' === $post_format ) {
 								foreach ( $gallery['images_id'] as $image_id ) {
 									?>
 									<div class="wd-carousel-item">
-										<?php echo woodmart_otf_get_image_html(
+										<?php
+										echo woodmart_otf_get_image_html( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 											$image_id,
 											apply_filters( 'woodmart_gallery_post_format_size', woodmart_get_opt( 'blog_image_size', 'large' ) ),
 											array(
 												'width'  => woodmart_get_opt( 'blog_image_custom_width' ),
 												'height' => woodmart_get_opt( 'blog_image_custom_height' ),
 											)
-										); ?>
+										);
+										?>
 									</div>
 									<?php
 								}
@@ -135,12 +139,12 @@ if ( 'quote' === $post_format ) {
 					</div>
 				<?php else : ?>
 					<div class="wd-post-img post-img-wrapp">
-						<?php echo woodmart_get_post_thumbnail( woodmart_get_opt( 'blog_image_size', 'large' ) ); ?>
+						<?php echo woodmart_get_post_thumbnail( woodmart_get_opt( 'blog_image_size', 'large' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 					</div>
 					<?php /* translators: %s: Post title */ ?>
 					<a class="wd-fill" tabindex="-1" href="<?php echo esc_url( get_permalink() ); ?>" aria-label="<?php echo esc_attr( sprintf( __( 'Link on post %s', 'woodmart' ), esc_attr( get_the_title() ) ) ); ?>"></a>
 				<?php endif; ?>
-				<?php if ( woodmart_loop_prop( 'parts_published_date', true ) ): ?>
+				<?php if ( woodmart_loop_prop( 'parts_published_date', true ) ) : ?>
 					<?php woodmart_post_date(); ?>
 				<?php endif; ?>
 			</div>
@@ -153,7 +157,7 @@ if ( 'quote' === $post_format ) {
 				</div>
 			<?php else : ?>
 				<?php if ( $has_excerpt ) : ?>
-					<div class="wd-post-excerpt entry-content<?php echo woodmart_get_old_classes( ' woodmart-entry-content' ); //phpcs:ignore. ?>">
+					<div class="wd-post-excerpt entry-content">
 						<?php
 							echo $blog_excerpt; //phpcs:ignore.
 
@@ -177,9 +181,9 @@ if ( 'quote' === $post_format ) {
 			<?php if ( woodmart_loop_prop( 'parts_meta' ) ) : ?>
 				<div class="wd-share-with-lines">
 					<span></span>
-					<?php if ( woodmart_is_social_link_enable( 'share' ) && function_exists( 'woodmart_shortcode_social' ) ) : ?>
+					<?php if ( woodmart_is_social_link_enabled( 'share' ) && function_exists( 'woodmart_shortcode_social' ) ) : ?>
 						<?php
-							echo woodmart_shortcode_social(
+							echo woodmart_shortcode_social( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 								array(
 									'style' => 'bordered',
 									'size'  => 'small',

@@ -25,7 +25,7 @@ if ( ! function_exists( 'wd_gutenberg_single_post_meta_value' ) ) {
 		ob_start();
 
 		?>
-		<div id="<?php echo esc_attr( $el_id ); ?>" class="wd-single-post-meta-value<?php echo esc_attr( $wrapper_classes ); ?>">
+		<div <?php echo $el_id ? 'id="' . esc_attr( $el_id ) . '" ' : ''; ?>class="wd-single-post-meta-value<?php echo esc_attr( $wrapper_classes ); ?>">
 			<?php echo get_post_meta( get_the_ID(), $block_attributes['postMetaKey'], true ); // phpcs:ignore. ?>
 		</div>
 		<?php

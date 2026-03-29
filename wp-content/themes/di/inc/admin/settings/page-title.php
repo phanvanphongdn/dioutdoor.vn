@@ -1,4 +1,10 @@
 <?php
+/**
+ * Page title settings.
+ *
+ * @package woodmart
+ */
+
 if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
 	exit( 'No direct script access allowed' );
 }
@@ -208,26 +214,156 @@ Options::add_field(
 
 Options::add_field(
 	array(
-		'id'          => 'yoast_shop_breadcrumbs',
-		'section'     => 'page_title_section',
-		'name'        => esc_html__( 'Yoast breadcrumbs for shop', 'woodmart' ),
-		'description' => esc_html__( 'Requires Yoast SEO plugin to be installed. Replaces standard WooCommerce breadcrumbs with the custom one that comes with the plugin. You need to enable and configure it in Dashboard -> SEO -> Search Appearance -> Breadcrumbs.', 'woodmart' ),
-		'group'       => esc_html__( 'SEO', 'woodmart' ),
-		'type'        => 'switcher',
-		'default'     => false,
-		'priority'    => 70,
+		'id'       => 'yoast_breadcrumbs_notice',
+		'type'     => 'notice',
+		'style'    => 'info',
+		'name'     => '',
+		'content'  => __( 'Requires Yoast SEO plugin to be installed. Replaces the theme’s breadcrumbs with the custom one that comes with the plugin. You need to enable and configure it in Dashboard -> SEO -> Search Appearance -> Breadcrumbs.', 'woodmart' ),
+		'section'  => 'page_title_section',
+		'group'    => esc_html__( 'SEO', 'woodmart' ),
+		't_tab'    => array(
+			'id'    => 'page_title_tabs',
+			'tab'   => esc_html__( 'Yoast', 'woodmart' ),
+			'style' => 'default',
+		),
+		'priority' => 70,
 	)
 );
 
 Options::add_field(
 	array(
-		'id'          => 'yoast_pages_breadcrumbs',
-		'section'     => 'page_title_section',
-		'name'        => esc_html__( 'Yoast breadcrumbs for pages', 'woodmart' ),
-		'description' => esc_html__( 'Requires Yoast SEO plugin to be installed. Replaces standard breadcrumbs with the custom one that comes with the plugin. You need to enable and configure it in Dashboard -> SEO -> Search Appearance -> Breadcrumbs.', 'woodmart' ),
-		'group'       => esc_html__( 'SEO', 'woodmart' ),
-		'type'        => 'switcher',
-		'default'     => false,
-		'priority'    => 80,
+		'id'       => 'yoast_shop_breadcrumbs',
+		'section'  => 'page_title_section',
+		'name'     => esc_html__( 'Yoast breadcrumbs for shop', 'woodmart' ),
+		'group'    => esc_html__( 'SEO', 'woodmart' ),
+		'type'     => 'switcher',
+		'default'  => false,
+		't_tab'    => array(
+			'id'    => 'page_title_tabs',
+			'tab'   => esc_html__( 'Yoast', 'woodmart' ),
+			'style' => 'default',
+		),
+		'priority' => 80,
+	)
+);
+
+Options::add_field(
+	array(
+		'id'       => 'yoast_pages_breadcrumbs',
+		'section'  => 'page_title_section',
+		'name'     => esc_html__( 'Yoast breadcrumbs for pages', 'woodmart' ),
+		'group'    => esc_html__( 'SEO', 'woodmart' ),
+		'type'     => 'switcher',
+		'default'  => false,
+		't_tab'    => array(
+			'id'    => 'page_title_tabs',
+			'tab'   => esc_html__( 'Yoast', 'woodmart' ),
+			'style' => 'default',
+		),
+		'priority' => 90,
+	)
+);
+
+Options::add_field(
+	array(
+		'id'       => 'rankmath_breadcrumbs_notice',
+		'type'     => 'notice',
+		'style'    => 'info',
+		'name'     => '',
+		'content'  => __( 'Requires Rank Math SEO plugin to be installed. Replaces the theme’s breadcrumbs with the custom one that comes with the plugin. You need to enable and configure it in Rank Math SEO -> General Settings -> Breadcrumbs.', 'woodmart' ),
+		'section'  => 'page_title_section',
+		'group'    => esc_html__( 'SEO', 'woodmart' ),
+		't_tab'    => array(
+			'id'    => 'page_title_tabs',
+			'tab'   => esc_html__( 'Rank Math', 'woodmart' ),
+			'style' => 'default',
+		),
+		'priority' => 100,
+	)
+);
+
+Options::add_field(
+	array(
+		'id'       => 'rankmath_shop_breadcrumbs',
+		'section'  => 'page_title_section',
+		'name'     => esc_html__( 'Rank Math breadcrumbs for shop', 'woodmart' ),
+		'group'    => esc_html__( 'SEO', 'woodmart' ),
+		'type'     => 'switcher',
+		'default'  => false,
+		't_tab'    => array(
+			'id'    => 'page_title_tabs',
+			'tab'   => esc_html__( 'Rank Math', 'woodmart' ),
+			'style' => 'default',
+		),
+		'priority' => 110,
+	)
+);
+
+Options::add_field(
+	array(
+		'id'       => 'rankmath_pages_breadcrumbs',
+		'section'  => 'page_title_section',
+		'name'     => esc_html__( 'Rank Math breadcrumbs for pages', 'woodmart' ),
+		'group'    => esc_html__( 'SEO', 'woodmart' ),
+		'type'     => 'switcher',
+		'default'  => false,
+		't_tab'    => array(
+			'id'    => 'page_title_tabs',
+			'tab'   => esc_html__( 'Rank Math', 'woodmart' ),
+			'style' => 'default',
+		),
+		'priority' => 120,
+	)
+);
+
+Options::add_field(
+	array(
+		'id'       => 'aioseo_breadcrumbs_notice',
+		'type'     => 'notice',
+		'style'    => 'info',
+		'name'     => '',
+		'content'  => __( 'Requires All in One SEO plugin to be installed. Replaces the theme’s breadcrumbs with custom breadcrumbs that come with the plugin. You can configure breadcrumbs in All in One SEO -> General Settings -> Breadcrumbs.', 'woodmart' ),
+		'section'  => 'page_title_section',
+		'group'    => esc_html__( 'SEO', 'woodmart' ),
+		't_tab'    => array(
+			'id'    => 'page_title_tabs',
+			'tab'   => esc_html__( 'All in One SEO', 'woodmart' ),
+			'style' => 'default',
+		),
+		'priority' => 130,
+	)
+);
+
+Options::add_field(
+	array(
+		'id'       => 'aioseo_shop_breadcrumbs',
+		'section'  => 'page_title_section',
+		'name'     => esc_html__( 'All in One SEO breadcrumbs for shop', 'woodmart' ),
+		'group'    => esc_html__( 'SEO', 'woodmart' ),
+		'type'     => 'switcher',
+		'default'  => false,
+		't_tab'    => array(
+			'id'    => 'page_title_tabs',
+			'tab'   => esc_html__( 'All in One SEO', 'woodmart' ),
+			'style' => 'default',
+		),
+		'priority' => 140,
+	)
+);
+
+Options::add_field(
+	array(
+		'id'       => 'aioseo_pages_breadcrumbs',
+		'section'  => 'page_title_section',
+		'name'     => esc_html__( 'All in One SEO breadcrumbs for pages', 'woodmart' ),
+		'group'    => esc_html__( 'SEO', 'woodmart' ),
+		'type'     => 'switcher',
+		'default'  => false,
+		't_tab'    => array(
+			'id'    => 'page_title_tabs',
+			'tab'   => esc_html__( 'All in One SEO', 'woodmart' ),
+			'style' => 'default',
+		),
+		'priority' => 150,
 	)
 );

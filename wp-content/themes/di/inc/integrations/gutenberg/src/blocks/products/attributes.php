@@ -1,8 +1,18 @@
 <?php
+/**
+ * Gutenberg Products Block Attributes
+ *
+ * @package woodmart
+ */
 
 use XTS\Gutenberg\Block_Attributes;
 
 if ( ! function_exists( 'wd_get_block_products_attrs' ) ) {
+	/**
+	 * Get block attributes.
+	 *
+	 * @return array[]
+	 */
 	function wd_get_block_products_attrs() {
 		$attr = new Block_Attributes();
 
@@ -65,7 +75,7 @@ if ( ! function_exists( 'wd_get_block_products_attrs' ) ) {
 				'query_type'                   => array(
 					'type' => 'string',
 				),
-				'meta_key'                     => array(
+				'meta_key'                     => array( // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key
 					'type' => 'string',
 				),
 				'hide_out_of_stock'            => array(
@@ -104,6 +114,11 @@ if ( ! function_exists( 'wd_get_block_products_attrs' ) ) {
 					'default'    => '20',
 					'responsive' => true,
 				),
+				'listSpacing'                  => array(
+					'type'       => 'string',
+					'default'    => '30',
+					'responsive' => true,
+				),
 				'items_per_page'               => array(
 					'type'    => 'string',
 					'default' => '12',
@@ -114,6 +129,9 @@ if ( ! function_exists( 'wd_get_block_products_attrs' ) ) {
 				'product_hover'                => array(
 					'type'    => 'string',
 					'default' => 'inherit',
+				),
+				'product_custom_hover'         => array(
+					'type' => 'string',
 				),
 				'img_size'                     => array(
 					'type'    => 'string',

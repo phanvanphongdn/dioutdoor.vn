@@ -1,21 +1,32 @@
 <?php
+/**
+ * Infobox element class file.
+ *
+ * @package woodmart
+ */
 
 namespace XTS\Modules\Header_Builder\Elements;
 
 use XTS\Modules\Header_Builder\Element;
 
 /**
- * ------------------------------------------------------------------------------------------------
- *  Infobox element
- * ------------------------------------------------------------------------------------------------
+ *  Infobox element.
  */
 class Infobox extends Element {
 
+	/**
+	 * Constructor.
+	 */
 	public function __construct() {
 		parent::__construct();
 		$this->template_name = 'info-box';
 	}
 
+	/**
+	 * Map element.
+	 *
+	 * @return void
+	 */
 	public function map() {
 		$secondary_font = woodmart_get_opt( 'secondary-font' );
 		$text_font      = woodmart_get_opt( 'text-font' );
@@ -58,13 +69,13 @@ class Infobox extends Element {
 					),
 				),
 				'icon_text'                   => array(
-					'id'       => 'icon_text',
-					'title'    => esc_html__( 'Icon text', 'woodmart' ),
-					'type'     => 'text',
-					'tab'      => esc_html__( 'Content', 'woodmart' ),
-					'group'    => esc_html__( 'Icon', 'woodmart' ),
-					'value'    => '',
-					'requires' => array(
+					'id'        => 'icon_text',
+					'title'     => esc_html__( 'Icon text', 'woodmart' ),
+					'type'      => 'text',
+					'tab'       => esc_html__( 'Content', 'woodmart' ),
+					'group'     => esc_html__( 'Icon', 'woodmart' ),
+					'value'     => '',
+					'condition' => array(
 						'icon_type' => array(
 							'comparison' => 'equal',
 							'value'      => 'text',
@@ -78,7 +89,7 @@ class Infobox extends Element {
 					'tab'         => esc_html__( 'Content', 'woodmart' ),
 					'group'       => esc_html__( 'Icon', 'woodmart' ),
 					'value'       => '',
-					'requires'    => array(
+					'condition'   => array(
 						'icon_type' => array(
 							'comparison' => 'equal',
 							'value'      => 'icon',
@@ -94,7 +105,7 @@ class Infobox extends Element {
 					'group'       => esc_html__( 'Icon', 'woodmart' ),
 					'description' => esc_html__( 'Example: \'thumbnail\', \'medium\', \'large\', \'full\' or enter image size in pixels: \'200x100\'.', 'woodmart' ),
 					'value'       => '',
-					'requires'    => array(
+					'condition'   => array(
 						'icon_type' => array(
 							'comparison' => 'equal',
 							'value'      => 'icon',
@@ -219,7 +230,7 @@ class Infobox extends Element {
 							'value' => 'dark',
 						),
 					),
-					'requires'    => array(
+					'condition'   => array(
 						'style' => array(
 							'comparison' => 'equal',
 							'value'      => 'bg-hover',
@@ -331,7 +342,7 @@ class Infobox extends Element {
 						),
 					),
 					'extra_class' => 'xts-col-6',
-					'requires'    => array(
+					'condition'   => array(
 						'bg_image_box' => array(
 							'comparison' => 'not_equal',
 							'value'      => '',
@@ -367,7 +378,7 @@ class Infobox extends Element {
 							'value' => 'repeat-y',
 						),
 					),
-					'requires'    => array(
+					'condition'   => array(
 						'bg_image_box' => array(
 							'comparison' => 'not_equal',
 							'value'      => '',
@@ -396,7 +407,7 @@ class Infobox extends Element {
 							'value' => 'contain',
 						),
 					),
-					'requires'    => array(
+					'condition'   => array(
 						'bg_image_box' => array(
 							'comparison' => 'not_equal',
 							'value'      => '',
@@ -417,7 +428,7 @@ class Infobox extends Element {
 							'background-color: {{VALUE}};',
 						),
 					),
-					'requires'  => array(
+					'condition' => array(
 						'style' => array(
 							'comparison' => 'equal',
 							'value'      => 'bg-hover',
@@ -431,7 +442,7 @@ class Infobox extends Element {
 					'tab'         => esc_html__( 'Style', 'woodmart' ),
 					'group'       => esc_html__( 'Background', 'woodmart' ),
 					'value'       => '',
-					'requires'    => array(
+					'condition'   => array(
 						'style' => array(
 							'comparison' => 'equal',
 							'value'      => 'bg-hover',
@@ -447,7 +458,7 @@ class Infobox extends Element {
 					'group'       => esc_html__( 'Background', 'woodmart' ),
 					'description' => esc_html__( 'Example: \'thumbnail\', \'medium\', \'large\', \'full\' or enter image size in pixels: \'200x100\'.', 'woodmart' ),
 					'value'       => '',
-					'requires'    => array(
+					'condition'   => array(
 						'style' => array(
 							'comparison' => 'equal',
 							'value'      => 'bg-hover',
@@ -504,7 +515,7 @@ class Infobox extends Element {
 							'value' => 'bottom right',
 						),
 					),
-					'requires'    => array(
+					'condition'   => array(
 						'style' => array(
 							'comparison' => 'equal',
 							'value'      => 'bg-hover',
@@ -541,7 +552,7 @@ class Infobox extends Element {
 							'value' => 'repeat-y',
 						),
 					),
-					'requires'    => array(
+					'condition'   => array(
 						'style' => array(
 							'comparison' => 'equal',
 							'value'      => 'bg-hover',
@@ -570,7 +581,7 @@ class Infobox extends Element {
 							'value' => 'contain',
 						),
 					),
-					'requires'    => array(
+					'condition'   => array(
 						'style' => array(
 							'comparison' => 'equal',
 							'value'      => 'bg-hover',
@@ -628,7 +639,7 @@ class Infobox extends Element {
 							'image' => WOODMART_ASSETS_IMAGES . '/settings/infobox/vertical-position/bottom.png',
 						),
 					),
-					'requires'    => array(
+					'condition'   => array(
 						'image_alignment' => array(
 							'comparison' => 'equal',
 							'value'      => array( 'left', 'right' ),
@@ -673,7 +684,7 @@ class Infobox extends Element {
 							'background-color: {{VALUE}};',
 						),
 					),
-					'requires'    => array(
+					'condition'   => array(
 						'icon_style' => array(
 							'comparison' => 'equal',
 							'value'      => 'with-bg',
@@ -693,7 +704,7 @@ class Infobox extends Element {
 							'background-color: {{VALUE}};',
 						),
 					),
-					'requires'    => array(
+					'condition'   => array(
 						'icon_style' => array(
 							'comparison' => 'equal',
 							'value'      => 'with-bg',
@@ -713,7 +724,7 @@ class Infobox extends Element {
 							'border-color: {{VALUE}};',
 						),
 					),
-					'requires'    => array(
+					'condition'   => array(
 						'icon_style' => array(
 							'comparison' => 'equal',
 							'value'      => 'with-border',
@@ -733,7 +744,7 @@ class Infobox extends Element {
 							'border-color: {{VALUE}};',
 						),
 					),
-					'requires'    => array(
+					'condition'   => array(
 						'icon_style' => array(
 							'comparison' => 'equal',
 							'value'      => 'with-border',
@@ -762,7 +773,7 @@ class Infobox extends Element {
 							'value' => 'large',
 						),
 					),
-					'requires'    => array(
+					'condition'   => array(
 						'icon_type' => array(
 							'comparison' => 'equal',
 							'value'      => 'text',
@@ -782,7 +793,7 @@ class Infobox extends Element {
 							'color: {{VALUE}};',
 						),
 					),
-					'requires'    => array(
+					'condition'   => array(
 						'icon_type' => array(
 							'comparison' => 'equal',
 							'value'      => 'text',
@@ -840,7 +851,7 @@ class Infobox extends Element {
 							'background-color: {{VALUE}};',
 						),
 					),
-					'requires'    => array(
+					'condition'   => array(
 						'subtitle_style' => array(
 							'comparison' => 'equal',
 							'value'      => 'background',
@@ -1305,13 +1316,13 @@ class Infobox extends Element {
 				),
 
 				'btn_shape'                   => array(
-					'id'       => 'btn_shape',
-					'title'    => esc_html__( 'Shape', 'woodmart' ),
-					'tab'      => esc_html__( 'Style', 'woodmart' ),
-					'group'    => esc_html__( 'Button', 'woodmart' ),
-					'type'     => 'selector',
-					'value'    => 'rectangle',
-					'options'  => array(
+					'id'        => 'btn_shape',
+					'title'     => esc_html__( 'Shape', 'woodmart' ),
+					'tab'       => esc_html__( 'Style', 'woodmart' ),
+					'group'     => esc_html__( 'Button', 'woodmart' ),
+					'type'      => 'selector',
+					'value'     => 'rectangle',
+					'options'   => array(
 						'rectangle'  => array(
 							'label' => esc_html__( 'Rectangle', 'woodmart' ),
 							'value' => 'rectangle',
@@ -1328,7 +1339,7 @@ class Infobox extends Element {
 							'image' => WOODMART_ASSETS_IMAGES . '/settings/buttons/shape/round.jpeg',
 						),
 					),
-					'requires' => array(
+					'condition' => array(
 						'btn_style' => array(
 							'comparison' => 'not_equal',
 							'value'      => 'link',

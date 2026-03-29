@@ -50,16 +50,12 @@
 			woodmartThemeModule.$document.trigger('wood-images-loaded');
 		});
 
-		$('.wd-scroll-content').on('scroll', function() {
+		$('.wd-scroll-content, .wd-side-hidden, .wp-block-wd-off-sidebar.wd-side-hidden > .wd-content').on('scroll', function() {
 			woodmartThemeModule.$document.trigger('wood-images-loaded');
 		});
 
 		// WooCommerce tabs fix
 		$('.wc-tabs > li').on('click', function() {
-			woodmartThemeModule.$document.trigger('wood-images-loaded');
-		});
-
-		$('.wd-side-hidden').on('scroll', function () {
 			woodmartThemeModule.$document.trigger('wood-images-loaded');
 		});
 

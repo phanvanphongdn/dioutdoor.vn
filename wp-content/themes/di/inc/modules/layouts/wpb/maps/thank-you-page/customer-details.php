@@ -2,7 +2,7 @@
 /**
  * Customer details map.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
@@ -16,17 +16,15 @@ if ( ! function_exists( 'woodmart_get_vc_map_tp_customer_details' ) ) {
 	function woodmart_get_vc_map_tp_customer_details() {
 		$typography_title = woodmart_get_typography_map(
 			array(
-				'key'              => 'title_typography',
-				'selector'         => '{{WRAPPER}} .woocommerce-column__title',
-				'edit_field_class' => 'vc_col-sm-6 vc_column',
+				'key'      => 'title_typography',
+				'selector' => '{{WRAPPER}} .woocommerce-column__title',
 			)
 		);
 
 		$typography_content = woodmart_get_typography_map(
 			array(
-				'key'              => 'content_typography',
-				'selector'         => '{{WRAPPER}} address',
-				'edit_field_class' => 'vc_col-sm-6 vc_column',
+				'key'      => 'content_typography',
+				'selector' => '{{WRAPPER}} address',
 			)
 		);
 

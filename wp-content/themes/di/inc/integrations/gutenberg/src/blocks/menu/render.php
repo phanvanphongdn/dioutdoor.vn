@@ -1,5 +1,17 @@
 <?php
+/**
+ * Menu render.
+ *
+ * @package woodmart
+ */
+
 if ( ! function_exists( 'wd_gutenberg_menu' ) ) {
+	/**
+	 * Menu render.
+	 *
+	 * @param array $block_attributes Block attributes.
+	 * @return string
+	 */
 	function wd_gutenberg_menu( $block_attributes ) {
 		$block_attributes['el_class'] = wd_get_gutenberg_element_classes( $block_attributes );
 		$block_attributes['el_id']    = wd_get_gutenberg_element_id( $block_attributes );
@@ -70,13 +82,17 @@ if ( ! function_exists( 'wd_gutenberg_menu' ) ) {
 			! empty( $block_attributes['itemsBorderActiveWidthLeft'] )
 		);
 
+		$menu_classes = '';
+
 		if ( $items_bg_activated || $items_box_shadow_active || $items_border_active ) {
-			$block_attributes['menu_classes'] = ' wd-add-pd';
+			$menu_classes .= ' wd-add-pd';
 		}
 
 		if ( ! empty( $block_attributes['disable_active_style'] ) ) {
-			$block_attributes['menu_classes'] .= ' wd-dis-act';
+			$menu_classes .= ' wd-dis-act';
 		}
+
+		$block_attributes['menu_classes'] = $menu_classes;
 
 		return woodmart_shortcode_mega_menu( $block_attributes, '' );
 	}

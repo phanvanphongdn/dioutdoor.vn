@@ -2,7 +2,7 @@
 /**
  * Interface template.
  *
- * @package Woodmart
+ * @package woodmart
  *
  * @var Admin $admin        Admin instance.
  * @var string $block_key   Block key.

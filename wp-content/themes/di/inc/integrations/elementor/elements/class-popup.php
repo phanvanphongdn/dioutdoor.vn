@@ -1,6 +1,8 @@
 <?php
 /**
  * Popup map.
+ *
+ * @package woodmart
  */
 
 namespace XTS\Elementor;
@@ -102,7 +104,7 @@ class Popup extends Widget_Base {
 			array(
 				'label'       => esc_html__( 'Content', 'woodmart' ),
 				'type'        => Controls_Manager::SELECT,
-				'options'     => woodmart_get_elementor_html_blocks_array(),
+				'options'     => woodmart_get_elementor_blocks_array( 'cms_block' ),
 				'description' => function_exists( 'woodmart_get_html_block_links' ) ? woodmart_get_html_block_links() : '',
 				'default'     => '0',
 			)
@@ -254,7 +256,7 @@ class Popup extends Widget_Base {
 
 		woodmart_enqueue_js_library( 'magnific' );
 		woodmart_enqueue_js_script( 'popup-element' );
-		
+
 		woodmart_enqueue_inline_style( 'mfp-popup' );
 		woodmart_enqueue_inline_style( 'mod-animations-transform' );
 		woodmart_enqueue_inline_style( 'mod-transform' );
@@ -262,7 +264,7 @@ class Popup extends Widget_Base {
 		?>
 		<?php woodmart_elementor_button_template( $settings ); ?>
 		<?php if ( $settings['content'] ) : ?>
-			<div id="<?php echo esc_attr( $settings['popup_id'] ); ?>" class="mfp-hide wd-popup wd-popup-element wd-scroll-content wd-entry-content<?php echo woodmart_get_old_classes( ' woodmart-content-popup' ); ?>" style="<?php echo esc_attr( $inline_styles ); ?>">
+			<div id="<?php echo esc_attr( $settings['popup_id'] ); ?>" class="mfp-hide wd-popup wd-popup-element wd-scroll-content wd-entry-content" style="<?php echo esc_attr( $inline_styles ); ?>">
 				<?php echo woodmart_get_html_block( $settings['content'], true ); // phpcs:ignore ?>
 			</div>
 		<?php endif; ?>

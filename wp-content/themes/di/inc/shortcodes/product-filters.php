@@ -1,17 +1,25 @@
 <?php
+/**
+ * Shortcode for Product Filters element.
+ *
+ * @package woodmart
+ */
 
 use XTS\Modules\Layouts\Global_Data;
 
 if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
-	exit( 'No direct script access allowed' );}
-
-/**
-* ------------------------------------------------------------------------------------------------
-* Product filters
-* ------------------------------------------------------------------------------------------------
-*/
+	exit( 'No direct script access allowed' );
+}
 
 if ( ! function_exists( 'woodmart_product_filters_shortcode' ) ) {
+	/**
+	 * Product filters shortcode
+	 *
+	 * @param array  $atts Shortcode attributes.
+	 * @param string $content Shortcode content.
+	 *
+	 * @return string
+	 */
 	function woodmart_product_filters_shortcode( $atts, $content ) {
 		global $wp;
 
@@ -57,7 +65,7 @@ if ( ! function_exists( 'woodmart_product_filters_shortcode' ) ) {
 
 		Global_Data::get_instance()->set_data( 'woodmart_product_filters_attr', $atts );
 
-		extract( $atts );
+		extract( $atts ); // phpcs:ignore WordPress.PHP.DontExtract.extract_extract
 
 		if ( function_exists( 'vc_shortcode_custom_css_class' ) ) {
 			$wrapper_classes .= ' ' . vc_shortcode_custom_css_class( $css );
@@ -119,8 +127,6 @@ if ( ! function_exists( 'woodmart_product_filters_shortcode' ) ) {
 
 		$classes .= ' wd-style-' . $style;
 
-		$classes .= woodmart_get_old_classes( ' woodmart-product-filters' );
-
 		woodmart_enqueue_js_script( 'product-filters' );
 
 		ob_start();
@@ -142,7 +148,7 @@ if ( ! function_exists( 'woodmart_product_filters_shortcode' ) ) {
 
 			<?php if ( $is_wpb && 'click' === $submit_form_on ) : ?>
 				<div class="wd-pf-btn wd-col">
-					<button type="submit">
+					<button type="submit" class="btn btn-accent">
 						<?php echo esc_html__( 'Filter', 'woodmart' ); ?>
 					</button>
 				</div>
@@ -163,13 +169,15 @@ if ( ! function_exists( 'woodmart_product_filters_shortcode' ) ) {
 	}
 }
 
-/**
-* ------------------------------------------------------------------------------------------------
-* Categories widget
-* ------------------------------------------------------------------------------------------------
-*/
 if ( ! function_exists( 'woodmart_filters_categories_shortcode' ) ) {
-	function woodmart_filters_categories_shortcode( $atts, $content ) {
+	/**
+	 * Categories filter shortcode
+	 *
+	 * @param array $atts Shortcode attributes.
+	 *
+	 * @return string
+	 */
+	function woodmart_filters_categories_shortcode( $atts ) {
 		global $wp_query, $post;
 
 		$woodmart_product_filters_attr = (array) Global_Data::get_instance()->get_data( 'woodmart_product_filters_attr' );
@@ -179,7 +187,7 @@ if ( ! function_exists( 'woodmart_filters_categories_shortcode' ) ) {
 			$woodmart_product_filters_attr = array_merge( $woodmart_product_filters_attr, $atts );
 		}
 
-		extract(
+		extract( // phpcs:ignore WordPress.PHP.DontExtract.extract_extract
 			shortcode_atts(
 				array(
 					'title'                     => esc_html__( 'Categories', 'woodmart' ),
@@ -188,7 +196,7 @@ if ( ! function_exists( 'woodmart_filters_categories_shortcode' ) ) {
 					'hide_empty'                => '',
 					'show_categories_ancestors' => '',
 					'el_class'                  => '',
-					'el_id'                     => 'wd-' . uniqid(),
+					'el_id'                     => '',
 				),
 				$atts
 			)
@@ -209,7 +217,7 @@ if ( ! function_exists( 'woodmart_filters_categories_shortcode' ) ) {
 
 		if ( 'order' === $order_by ) {
 			$list_args['orderby']  = 'meta_value_num';
-			$list_args['meta_key'] = 'order';
+			$list_args['meta_key'] = 'order'; // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key
 		}
 
 		$cat_ancestors = array();
@@ -227,7 +235,7 @@ if ( ! function_exists( 'woodmart_filters_categories_shortcode' ) ) {
 			$is_cat_has_children = get_term_children( $current_cat->term_id, 'product_cat' );
 			if ( $is_cat_has_children ) {
 				$list_args['child_of'] = $current_cat->term_id;
-			} elseif ( $current_cat->parent != 0 ) {
+			} elseif ( 0 !== $current_cat->parent ) {
 				$list_args['child_of'] = $current_cat->parent;
 			}
 			$list_args['depth'] = 1;
@@ -272,11 +280,18 @@ if ( ! function_exists( 'woodmart_filters_categories_shortcode' ) ) {
 }
 
 if ( ! function_exists( 'woodmart_stock_status_shortcode' ) ) {
+	/**
+	 * Stock status filter shortcode
+	 *
+	 * @param array $atts Shortcode attributes.
+	 *
+	 * @return string
+	 */
 	function woodmart_stock_status_shortcode( $atts ) {
 		$woodmart_product_filters_attr = (array) Global_Data::get_instance()->get_data( 'woodmart_product_filters_attr' );
 		$filter_name                   = 'stock_status';
-		$current_filter                = isset( $_GET[ $filter_name ] ) ? explode( ',', $_GET[ $filter_name ] ) : array();
-		$result_value                  = isset( $_GET[ $filter_name ] ) ? $_GET[ $filter_name ]: '';
+		$current_filter                = isset( $_GET[ $filter_name ] ) ? explode( ',', $_GET[ $filter_name ] ) : array(); // phpcs:ignore WordPress.Security.NonceVerification.Recommended, WordPress.Security.ValidatedSanitizedInput.MissingUnslash, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+		$result_value                  = isset( $_GET[ $filter_name ] ) ? $_GET[ $filter_name ] : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended, WordPress.Security.ValidatedSanitizedInput.MissingUnslash, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 		$link                          = woodmart_filters_get_page_base_url();
 		$options                       = array(
 			'onsale'      => esc_html__( 'On sale', 'woodmart' ),
@@ -294,7 +309,7 @@ if ( ! function_exists( 'woodmart_stock_status_shortcode' ) ) {
 			$woodmart_product_filters_attr = array_merge( $woodmart_product_filters_attr, $atts );
 		}
 
-		extract(
+		extract( // phpcs:ignore WordPress.PHP.DontExtract.extract_extract
 			shortcode_atts(
 				array(
 					'title'       => esc_html__( 'Stock status', 'woodmart' ),
@@ -338,7 +353,7 @@ if ( ! function_exists( 'woodmart_stock_status_shortcode' ) ) {
 						<ul class="wd-scroll-content">
 						<?php foreach ( $options as $slug => $name ) : ?>
 							<?php
-							$current_filter   = ! empty( $_GET[ $filter_name ] ) ? explode( ',', $_GET[ $filter_name ] ) : array();
+							$current_filter   = ! empty( $_GET[ $filter_name ] ) ? explode( ',', $_GET[ $filter_name ] ) : array(); // phpcs:ignore WordPress.Security.NonceVerification.Recommended, WordPress.Security.ValidatedSanitizedInput.MissingUnslash, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 							$is_active_filter = in_array( $slug, $current_filter, true );
 							$link             = remove_query_arg( $filter_name, $link );
 
@@ -378,14 +393,21 @@ if ( ! function_exists( 'woodmart_stock_status_shortcode' ) ) {
 }
 
 if ( ! function_exists( 'woodmart_filters_attribute_shortcode' ) ) {
-	function woodmart_filters_attribute_shortcode( $atts, $content ) {
+	/**
+	 * Attribute filter shortcode
+	 *
+	 * @param array $atts Shortcode attributes.
+	 *
+	 * @return string
+	 */
+	function woodmart_filters_attribute_shortcode( $atts ) {
 		$woodmart_product_filters_attr = (array) Global_Data::get_instance()->get_data( 'woodmart_product_filters_attr' );
 
 		if ( isset( $atts['show_dropdown_on'] ) ) {
 			$woodmart_product_filters_attr = array_merge( $woodmart_product_filters_attr, $atts );
 		}
 
-		extract(
+		extract( // phpcs:ignore WordPress.PHP.DontExtract.extract_extract
 			shortcode_atts(
 				array(
 					'title'        => esc_html__( 'Filter by', 'woodmart' ),
@@ -438,17 +460,18 @@ if ( ! function_exists( 'woodmart_filters_attribute_shortcode' ) ) {
 		);
 
 		return ob_get_clean();
-
 	}
 }
 
-/**
-* ------------------------------------------------------------------------------------------------
-* Price slider widget
-* ------------------------------------------------------------------------------------------------
-*/
 if ( ! function_exists( 'woodmart_filters_price_slider_shortcode' ) ) {
-	function woodmart_filters_price_slider_shortcode( $atts, $content ) {
+	/**
+	 * Price slider filter shortcode
+	 *
+	 * @param array $atts Shortcode attributes.
+	 *
+	 * @return string
+	 */
+	function woodmart_filters_price_slider_shortcode( $atts ) {
 		global $wpdb;
 
 		$woodmart_product_filters_attr = (array) Global_Data::get_instance()->get_data( 'woodmart_product_filters_attr' );
@@ -458,12 +481,12 @@ if ( ! function_exists( 'woodmart_filters_price_slider_shortcode' ) ) {
 			$woodmart_product_filters_attr = array_merge( $woodmart_product_filters_attr, $atts );
 		}
 
-		extract(
+		extract( // phpcs:ignore WordPress.PHP.DontExtract.extract_extract
 			shortcode_atts(
 				array(
 					'title'    => esc_html__( 'Filter by price', 'woodmart' ),
 					'el_class' => '',
-					'el_id'    => 'wd-' . uniqid(),
+					'el_id'    => '',
 				),
 				$atts
 			)
@@ -520,8 +543,8 @@ if ( ! function_exists( 'woodmart_filters_price_slider_shortcode' ) ) {
 			return ob_get_clean();
 		}
 
-		$min_price = isset( $_GET['min_price'] ) ? wc_clean( wp_unslash( $_GET['min_price'] ) ) : $min;
-		$max_price = isset( $_GET['max_price'] ) ? wc_clean( wp_unslash( $_GET['max_price'] ) ) : $max;
+		$min_price = isset( $_GET['min_price'] ) ? wc_clean( wp_unslash( $_GET['min_price'] ) ) : $min; // phpcs:ignore WordPress.Security.NonceVerification.Recommended, WordPress.Security.ValidatedSanitizedInput.MissingUnslash, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+		$max_price = isset( $_GET['max_price'] ) ? wc_clean( wp_unslash( $_GET['max_price'] ) ) : $max; // phpcs:ignore WordPress.Security.NonceVerification.Recommended, WordPress.Security.ValidatedSanitizedInput.MissingUnslash, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 
 		?>
 		<div
@@ -560,13 +583,18 @@ if ( ! function_exists( 'woodmart_filters_price_slider_shortcode' ) ) {
 }
 
 if ( ! function_exists( 'woodmart_get_filtered_price' ) ) {
+	/**
+	 * Get filtered price for WC < 3.6.0
+	 *
+	 * @return object
+	 */
 	function woodmart_get_filtered_price() {
 		global $wpdb;
 
 		if ( ! is_shop() && ! is_product_taxonomy() ) {
 			$sql = "SELECT min( FLOOR( price_meta.meta_value ) ) as min_price, max( CEILING( price_meta.meta_value ) ) as max_price FROM {$wpdb->posts} LEFT JOIN {$wpdb->postmeta} as price_meta ON {$wpdb->posts}.ID = price_meta.post_id WHERE {$wpdb->posts}.post_type = 'product' AND {$wpdb->posts}.post_status = 'publish' AND price_meta.meta_key = '_price'";
 
-			return $wpdb->get_row( $sql );
+			return $wpdb->get_row( $sql ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery, WordPress.DB.PreparedSQL.NotPrepared
 		}
 
 		$args       = wc()->query->get_main_query()->query_vars;
@@ -606,14 +634,21 @@ if ( ! function_exists( 'woodmart_get_filtered_price' ) ) {
 			$sql .= ' AND ' . $search;
 		}
 
-		return $wpdb->get_row( $sql );
+		return $wpdb->get_row( $sql ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery, WordPress.DB.PreparedSQL.NotPrepared
 	}
 }
 
 if ( ! function_exists( 'woodmart_orderby_filter_template' ) ) {
+	/**
+	 * Orderby filter template
+	 *
+	 * @param array $atts Shortcode attributes.
+	 *
+	 * @return string
+	 */
 	function woodmart_orderby_filter_template( $atts ) {
 		$woodmart_product_filters_attr = (array) Global_Data::get_instance()->get_data( 'woodmart_product_filters_attr' );
-		$current_filter                = isset( $_GET['orderby'] ) ? $_GET['orderby'] : '';
+		$current_filter                = isset( $_GET['orderby'] ) ? $_GET['orderby'] : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended, WordPress.Security.ValidatedSanitizedInput.MissingUnslash, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 		$el_class                      = ! empty( $atts['el_class'] ) ? ' ' . $atts['el_class'] : '';
 		$el_id                         = ! empty( $atts['el_id'] ) ? $atts['el_id'] : '';
 		$title                         = ! empty( $atts['title'] ) ? $atts['title'] : esc_html__( 'Sort by', 'woodmart' );

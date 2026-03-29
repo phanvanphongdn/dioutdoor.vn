@@ -168,9 +168,10 @@ $block_css->merge_with(
 		array(
 			'selector'                 => $block_selector,
 			'selector_hover'           => $block_selector_hover,
+			'selector_parent_hover'    => $block_selector_parent_hover,
 			'selector_bg'              => $block_selector . ' .wd-slide-bg',
 			'selector_bg_hover'        => $block_selector_hover . ' .wd-slide-bg',
-			'selector_bg_parent_hover' => '.wd-hover-parent:hover ' . $block_selector . ' .wd-slide-bg',
+			'selector_bg_parent_hover' => $block_selector_parent_hover . ' .wd-slide-bg',
 		),
 		$attrs
 	)

@@ -2,7 +2,7 @@
 /**
  * Brand information map.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
