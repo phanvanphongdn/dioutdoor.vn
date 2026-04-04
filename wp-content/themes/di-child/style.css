@@ -919,6 +919,9 @@ body #ftwp-postcontent {
     opacity:0.8;
     color:#fff;
 }
+#products-info .wd-nav:where(:not(.wd-dis-act))>li:where(.current-menu-item, .wd-active, .active)>a, #products-info a:hover{
+border-radius: 20px;
+}
 
 @media(max-width:736px) {
     #hide-sp span, #show-sp span{
@@ -965,6 +968,14 @@ body #ftwp-postcontent {
 .wd-sticky-btn .woobt-wrap{
     display: none;
 }
+.wd-off-canvas-btn.wd-burger-icon, .wd-sidebar-opener.wd-burger-icon {
+    --wd-btn-icon: "\f118"!important;
+}
+.wd-action-btn.wd-style-icon>a{
+    width:40px;
+    height: 40px;
+}
+
 @media (max-width: 1024px) {
     #button-contact-vr {
         bottom: 42px;

@@ -449,6 +449,13 @@ function remove_add_to_cart_buttons() {
 function add_custom_css_to_single_product() {
     if (is_product()) {
         wp_enqueue_style('custom-single-product-css', get_stylesheet_directory_uri() . '/single-product.css');
+        wp_enqueue_script(
+            'dioutdoor-product-info-sticky-offset',
+            get_stylesheet_directory_uri() . '/product-info-sticky-offset.js',
+            array( 'jquery' ),
+            woodmart_get_theme_info( 'Version' ),
+            true
+        );
     }
 }
 add_action('wp_enqueue_scripts', 'add_custom_css_to_single_product');
@@ -983,3 +990,45 @@ function dioutdoor_render_single_out_of_stock_button() {
     <?php
 }
 add_action( 'woocommerce_after_add_to_cart_form', 'dioutdoor_render_single_out_of_stock_button', 30 );
+add_action('init', function () {
+    if (!current_user_can('administrator')) {
+        return;
+    }
+
+    if (!isset($_GET['remove_attrs'])) {
+        return;
+    }
+
+    $removeAttributes = ['pa_series'];
+
+    $products = wc_get_products([
+        'limit'  => -1,
+        'status' => ['publish', 'draft', 'private'],
+        'return' => 'ids',
+    ]);
+
+    foreach ($products as $product_id) {
+        $product = wc_get_product($product_id);
+        if (!$product) {
+            continue;
+        }
+
+        $attributes = $product->get_attributes();
+        $changed = false;
+
+        foreach ($removeAttributes as $attr) {
+            if (isset($attributes[$attr])) {
+                unset($attributes[$attr]);
+                $changed = true;
+            }
+        }
+
+        if ($changed) {
+            $product->set_attributes($attributes);
+            $product->save();
+        }
+    }
+
+    echo 'DONE';
+    exit;
+});

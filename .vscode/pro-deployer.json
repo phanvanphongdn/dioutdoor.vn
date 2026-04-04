@@ -29,13 +29,12 @@
 		{
 			"name": "di",
 			"type": "ftp",
-			"host": "localhost",
+			"host": "45.252.248.83",
 			"port": 21,
-			"user": "admin",
-			"password": "123456",
-			"dir": "/",
+			"user": "bfqaombi",
+			"password": "-14F6Ved0lFe;T",
+			"dir": "/public_html",
 			"baseDir": "/",
-			"transferDataType": "binary",
 			"secure": false
 		}
 	]

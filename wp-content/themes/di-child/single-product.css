@@ -8,10 +8,18 @@
     }
 }
 
-
-
+ 
+  
 .woocommerce-product-details__short-description {
     background: #fdfdfd;
     padding: 10px;
     border: 1px solid #eee;
+}
+
+.di-header-scroll-up {
+    z-index: 390;
+}
+#products-info.di-header-scroll-up.elementor-sticky--active {
+        transition: top .25s ease;
+    top: 60px !important;
 }

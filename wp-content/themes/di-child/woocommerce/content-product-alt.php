@@ -1,13 +1,18 @@
-<?php 
-	global $product;
+<?php
+/**
+ * The template for displaying product content within loops with alt style
+ *
+ * @package woodmart
+ */
 
+global $product;
 
-	do_action( 'woocommerce_before_shop_loop_item' ); 
+do_action( 'woocommerce_before_shop_loop_item' );
 ?>
 
-<div class="product-wrapper">
-	<div class="product-element-top wd-quick-shop">
-        <a href="<?php echo esc_url( get_permalink() ); ?>" class="product-image-link" aria-label="<?php echo esc_attr( get_the_title() ); ?>">
+<div class="wd-product-wrapper product-wrapper">
+	<div class="wd-product-thumb product-element-top wd-quick-shop">
+		<a href="<?php echo esc_url( get_permalink() ); ?>" class="wd-product-img-link product-image-link" tabindex="-1" aria-label="<?php echo esc_attr( get_the_title() ); ?>">
 			<?php
 			/**
 			 * Hook woocommerce_before_shop_loop_item_title.
@@ -25,21 +30,24 @@
 			woodmart_hover_image();
 		}
 		?>
-        
+
+
 	</div>
+
 
 	<?php if ( woodmart_loop_prop( 'stretch_product_desktop' ) || woodmart_loop_prop( 'stretch_product_tablet' ) || woodmart_loop_prop( 'stretch_product_mobile' ) ) : ?>
 	<div class="product-element-bottom">
 	<?php endif; ?>
+		<div class="wd-product-header">
 			<?php
-				/** vucamp
-				 * woocommerce_shop_loop_item_title hook
+				/**
+				 * Trigger woocommerce_shop_loop_item_title hook.
 				 *
 				 * @hooked woocommerce_template_loop_product_title - 10
 				 */
 				do_action( 'woocommerce_shop_loop_item_title' );
 			?>
-
+		</div>
 		<?php
 			woodmart_product_categories();
 			woodmart_product_brands_links();
@@ -56,7 +64,7 @@
 				<div>
 					<?php
 						/**
-						 * woocommerce_after_shop_loop_item_title hook
+						 * Trigger woocommerce_after_shop_loop_item_title hook.
 						 *
 						 * @hooked woocommerce_template_loop_rating - 5
 						 * @hooked woocommerce_template_loop_price - 10
@@ -65,18 +73,18 @@
 					?>
 				</div>
 			</div>
-			<?php 
-				echo woodmart_swatches_list();
+			<?php
+				echo woodmart_swatches_list(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			?>
 		</div>
 
 		<?php do_action( 'woocommerce_after_shop_loop_item' ); ?>
 
-		<?php if ( woodmart_loop_prop( 'progress_bar' ) ): ?>
+		<?php if ( woodmart_loop_prop( 'progress_bar' ) ) : ?>
 			<?php woodmart_stock_progress_bar(); ?>
 		<?php endif ?>
 
-		<?php if ( woodmart_loop_prop( 'timer' ) ): ?>
+		<?php if ( woodmart_loop_prop( 'timer' ) ) : ?>
 			<?php woodmart_product_sale_countdown( array( 'products_hover' => 'alt' ) ); ?>
 		<?php endif ?>
 	<?php if ( woodmart_loop_prop( 'stretch_product_desktop' ) || woodmart_loop_prop( 'stretch_product_tablet' ) || woodmart_loop_prop( 'stretch_product_mobile' ) ) : ?>

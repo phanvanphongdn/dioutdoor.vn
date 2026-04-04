@@ -110,6 +110,9 @@
     }
     .di-mobile-sticky-action.di-mobile-sticky-action-buy-now{
         border-radius: 0;
+        background-color: var(--wd-primary-color);
+                text-transform: capitalize;
+                    color: #fff;
     }
 
     body.wd-sticky-btn-on-mb .di-mobile-sticky-actions .button {
