@@ -2,7 +2,7 @@
 /**
  * The main patcher class.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Modules\Patcher;

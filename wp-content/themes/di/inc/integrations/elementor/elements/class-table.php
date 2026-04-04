@@ -1061,9 +1061,11 @@ class Table extends Widget_Base {
 				<tbody class="<?php echo esc_attr( $body_classes ); ?>">
 					<?php foreach ( $element_args['body_items'] as $key => $item ) : ?>
 						<?php if ( 'cell' === $item['body_content_type'] ) : ?>
-							<<?php echo esc_attr( $item['body_cell_type'] ); ?> class="wd-table-cell elementor-repeater-item-<?php echo esc_attr( $item['_id'] ); ?>" colspan="<?php echo esc_attr( $item['body_cell_span'] ); ?>" rowspan="<?php echo esc_attr( $item['body_cell_row_span'] ); ?>">
-							<?php echo wp_kses( $item['body_cell_text'], true ); ?>
-							</<?php echo esc_attr( $item['body_cell_type'] ); ?>>
+							<?php $tag = in_array( $item['body_cell_type'], array( 'td', 'th' ), true ) ? $item['body_cell_type'] : 'td'; ?>
+
+							<<?php echo esc_attr( $tag ); ?> class="wd-table-cell elementor-repeater-item-<?php echo esc_attr( $item['_id'] ); ?>" colspan="<?php echo esc_attr( $item['body_cell_span'] ); ?>" rowspan="<?php echo esc_attr( $item['body_cell_row_span'] ); ?>">
+								<?php echo wp_kses( $item['body_cell_text'], true ); ?>
+							</<?php echo esc_attr( $tag ); ?>>
 						<?php else : ?>
 							<?php if ( 0 === $key ) : ?>
 								<tr class="wd-table-row elementor-repeater-item-<?php echo esc_attr( $item['_id'] ); ?>">

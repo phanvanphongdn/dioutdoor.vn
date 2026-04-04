@@ -1,13 +1,19 @@
 <?php
+/**
+ * Single product block tabs CSS.
+ *
+ * @package woodmart
+ */
+
 use XTS\Gutenberg\Block_CSS;
 
 $block_css = new Block_CSS( $attrs );
 
 if ( ! isset( $attrs['layout'] ) || 'tabs' === $attrs['layout'] ) {
-	$block_css->merge_with( wd_get_block_typography_css( $block_selector . ' .woocommerce-tabs > .wd-nav-wrapper li > a', $attrs, 'tabsTitleTp' ) );
+	$block_css->merge_with( wd_get_block_typography_css( $block_selector . ' .woocommerce-tabs > .wd-nav-wrapper .wd-nav-tabs > li > a', $attrs, 'tabsTitleTp' ) );
 
 	$block_css->add_css_rules(
-		$block_selector . ' .wd-nav-tabs-wrapper',
+		$block_selector . ' .woocommerce-tabs > .wd-nav-tabs-wrapper',
 		array(
 			array(
 				'attr_name' => 'tabsAlignment',
@@ -17,59 +23,7 @@ if ( ! isset( $attrs['layout'] ) || 'tabs' === $attrs['layout'] ) {
 	);
 
 	$block_css->add_css_rules(
-		$block_selector . ' .woocommerce-tabs > .wd-nav-wrapper li > a',
-		array(
-			array(
-				'attr_name' => 'tabsTitleTextColorCode',
-				'template'  => 'color: {{value}};',
-			),
-			array(
-				'attr_name' => 'tabsTitleTextColorVariable',
-				'template'  => 'color: var({{value}});',
-			),
-		)
-	);
-
-	$block_css->add_css_rules(
-		$block_selector . ' .woocommerce-tabs > .wd-nav-wrapper li:hover > a',
-		array(
-			array(
-				'attr_name' => 'tabsTitleTextHoverColorCode',
-				'template'  => 'color: {{value}};',
-			),
-			array(
-				'attr_name' => 'tabsTitleTextHoverColorVariable',
-				'template'  => 'color: var({{value}});',
-			),
-		)
-	);
-
-	$block_css->add_css_rules(
-		$block_selector . ' .woocommerce-tabs > .wd-nav-wrapper li.active > a',
-		array(
-			array(
-				'attr_name' => 'tabsTitleTextActiveColorCode',
-				'template'  => 'color: {{value}};',
-			),
-			array(
-				'attr_name' => 'tabsTitleTextActiveColorVariable',
-				'template'  => 'color: var({{value}});',
-			),
-		)
-	);
-
-	$block_css->add_css_rules(
-		$block_selector . ' .wd-nav-tabs',
-		array(
-			array(
-				'attr_name' => 'tabsSpaceBetweenTabsTitleH',
-				'template'  => '--nav-gap: {{value}}px;',
-			),
-		)
-	);
-
-	$block_css->add_css_rules(
-		$block_selector . ' .wd-nav-tabs-wrapper',
+		$block_selector . ' .woocommerce-tabs > .wd-nav-tabs-wrapper',
 		array(
 			array(
 				'attr_name' => 'tabsSpaceBetweenTabsTitleV',
@@ -79,29 +33,111 @@ if ( ! isset( $attrs['layout'] ) || 'tabs' === $attrs['layout'] ) {
 	);
 
 	$block_css->add_css_rules(
-		$block_selector . ' .wd-nav-tabs',
+		$block_selector . ' .woocommerce-tabs > .wd-nav-tabs-wrapper .wd-nav-tabs',
 		array(
 			array(
-				'attr_name' => 'tabsSpaceBetweenTabsTitleHTablet',
+				'attr_name' => 'tabsTitleTextColorCode',
+				'template'  => '--nav-color: {{value}};',
+			),
+			array(
+				'attr_name' => 'tabsTitleTextColorVariable',
+				'template'  => '--nav-color: var({{value}});',
+			),
+		)
+	);
+
+	$block_css->add_css_rules(
+		$block_selector . ' .woocommerce-tabs > .wd-nav-tabs-wrapper .wd-nav-tabs',
+		array(
+			array(
+				'attr_name' => 'tabsTitleTextHoverColorCode',
+				'template'  => '--nav-color-hover: {{value}};',
+			),
+			array(
+				'attr_name' => 'tabsTitleTextHoverColorVariable',
+				'template'  => '--nav-color-hover: var({{value}});',
+			),
+		)
+	);
+
+	$block_css->add_css_rules(
+		$block_selector . ' .woocommerce-tabs > .wd-nav-tabs-wrapper .wd-nav-tabs',
+		array(
+			array(
+				'attr_name' => 'tabsTitleTextActiveColorCode',
+				'template'  => '--nav-color-active: {{value}};',
+			),
+			array(
+				'attr_name' => 'tabsTitleTextActiveColorVariable',
+				'template'  => '--nav-color-active: var({{value}});',
+			),
+		)
+	);
+
+	$block_css->add_css_rules(
+		$block_selector . ' .woocommerce-tabs > .wd-nav-tabs-wrapper .wd-nav-tabs',
+		array(
+			array(
+				'attr_name' => 'tabsBgColorCode',
+				'template'  => '--nav-bg: {{value}};',
+			),
+			array(
+				'attr_name' => 'tabsBgColorVariable',
+				'template'  => '--nav-bg: var({{value}});',
+			),
+		)
+	);
+
+	$block_css->add_css_rules(
+		$block_selector . ' .woocommerce-tabs > .wd-nav-tabs-wrapper .wd-nav-tabs',
+		array(
+			array(
+				'attr_name' => 'tabsBgHoverColorCode',
+				'template'  => '--nav-bg-hover: {{value}};',
+			),
+			array(
+				'attr_name' => 'tabsBgHoverColorVariable',
+				'template'  => '--nav-bg-hover: var({{value}});',
+			),
+		)
+	);
+
+	$block_css->add_css_rules(
+		$block_selector . ' .woocommerce-tabs > .wd-nav-tabs-wrapper .wd-nav-tabs',
+		array(
+			array(
+				'attr_name' => 'tabsBgActiveColorCode',
+				'template'  => '--nav-bg-active: {{value}};',
+			),
+			array(
+				'attr_name' => 'tabsBgActiveColorVariable',
+				'template'  => '--nav-bg-active: var({{value}});',
+			),
+		)
+	);
+
+	$block_css->add_css_rules(
+		$block_selector . ' .woocommerce-tabs > .wd-nav-tabs-wrapper .wd-nav-tabs',
+		array(
+			array(
+				'attr_name' => 'tabsSpaceBetweenTabsTitleH',
 				'template'  => '--nav-gap: {{value}}px;',
 			),
-		),
-		'tablet'
+		)
 	);
 
-	$block_css->add_css_rules(
-		$block_selector . ' .wd-nav-tabs-wrapper',
-		array(
-			array(
-				'attr_name' => 'tabsSpaceBetweenTabsTitleVTablet',
-				'template'  => 'margin-bottom: {{value}}px;',
-			),
-		),
-		'tablet'
-	);
+	$block_css->merge_with( wd_get_block_box_shadow_css( $block_selector . ' .woocommerce-tabs > .wd-nav-tabs-wrapper .wd-nav-tabs', $attrs, 'tabsBoxShadow', '--nav-shadow' ) );
+	$block_css->merge_with( wd_get_block_box_shadow_css( $block_selector . ' .woocommerce-tabs > .wd-nav-tabs-wrapper .wd-nav-tabs', $attrs, 'tabsBoxShadowHover', '--nav-shadow-hover' ) );
+	$block_css->merge_with( wd_get_block_box_shadow_css( $block_selector . ' .woocommerce-tabs > .wd-nav-tabs-wrapper .wd-nav-tabs', $attrs, 'tabsBoxShadowActive', '--nav-shadow-active' ) );
+
+	$block_css->merge_with( wd_get_block_border_css( $block_selector . ' .woocommerce-tabs > .wd-nav-tabs-wrapper .wd-nav-tabs', $attrs, 'tabsBorder', '--nav-border', '--nav-radius' ) );
+	$block_css->merge_with( wd_get_block_border_css( $block_selector . ' .woocommerce-tabs > .wd-nav-tabs-wrapper .wd-nav-tabs', $attrs, 'tabsBorderHover', '--nav-border-hover', '--nav-radius-hover' ) );
+	$block_css->merge_with( wd_get_block_border_css( $block_selector . ' .woocommerce-tabs > .wd-nav-tabs-wrapper .wd-nav-tabs', $attrs, 'tabsBorderActive', '--nav-border-active', '--nav-radius-active' ) );
+
+	$block_css->merge_with( wd_get_block_padding_css( $block_selector . ' .woocommerce-tabs > .wd-nav-tabs-wrapper .wd-nav-tabs', $attrs, 'tabsPadding', '--nav-pd', true ) );
 
 	$block_css->add_css_rules(
-		$block_selector,
+		$block_selector . ' .woocommerce-tabs > .wd-nav-tabs-wrapper',
 		array(
 			array(
 				'attr_name' => 'tabsAlignmentTablet',
@@ -112,18 +148,40 @@ if ( ! isset( $attrs['layout'] ) || 'tabs' === $attrs['layout'] ) {
 	);
 
 	$block_css->add_css_rules(
-		$block_selector . ' .wd-nav-tabs',
+		$block_selector . ' .woocommerce-tabs > .wd-nav-tabs-wrapper',
 		array(
 			array(
-				'attr_name' => 'tabsSpaceBetweenTabsTitleHMobile',
+				'attr_name' => 'tabsSpaceBetweenTabsTitleVTablet',
+				'template'  => 'margin-bottom: {{value}}px;',
+			),
+		),
+		'tablet'
+	);
+
+	$block_css->add_css_rules(
+		$block_selector . ' .woocommerce-tabs > .wd-nav-tabs-wrapper .wd-nav-tabs',
+		array(
+			array(
+				'attr_name' => 'tabsSpaceBetweenTabsTitleHTablet',
 				'template'  => '--nav-gap: {{value}}px;',
+			),
+		),
+		'tablet'
+	);
+
+	$block_css->add_css_rules(
+		$block_selector . ' .woocommerce-tabs > .wd-nav-tabs-wrapper',
+		array(
+			array(
+				'attr_name' => 'tabsAlignmentMobile',
+				'template'  => '--wd-align: var(--wd-{{value}});',
 			),
 		),
 		'mobile'
 	);
 
 	$block_css->add_css_rules(
-		$block_selector . ' .wd-nav-tabs-wrapper',
+		$block_selector . ' .woocommerce-tabs > .wd-nav-tabs-wrapper',
 		array(
 			array(
 				'attr_name' => 'tabsSpaceBetweenTabsTitleVMobile',
@@ -134,11 +192,11 @@ if ( ! isset( $attrs['layout'] ) || 'tabs' === $attrs['layout'] ) {
 	);
 
 	$block_css->add_css_rules(
-		$block_selector,
+		$block_selector . ' .woocommerce-tabs > .wd-nav-tabs-wrapper .wd-nav-tabs',
 		array(
 			array(
-				'attr_name' => 'tabsAlignmentMobile',
-				'template'  => '--wd-align: var(--wd-{{value}});',
+				'attr_name' => 'tabsSpaceBetweenTabsTitleHMobile',
+				'template'  => '--nav-gap: {{value}}px;',
 			),
 		),
 		'mobile'
@@ -365,14 +423,13 @@ if ( 'all-open' === $attrs['layout'] ) {
 		),
 		'mobile'
 	);
-
 }
 
 if ( ! isset( $attrs['enableAdditionalInfo'] ) || $attrs['enableAdditionalInfo'] ) {
-	$block_css->merge_with( wd_get_block_typography_css( $block_selector . ' .woocommerce-product-attributes-item__label, .wd-single-attrs.wd-side-hidden .woocommerce-product-attributes-item__label', $attrs, 'additionalInfoNameTp' ) );
+	$block_css->merge_with( wd_get_block_typography_css( $block_selector . ' .shop_attributes th, .wd-single-attrs.wd-side-hidden .shop_attributes th', $attrs, 'additionalInfoNameTp' ) );
 
 	$block_css->add_css_rules(
-		$block_selector . ' .woocommerce-product-attributes-item__label, .wd-single-attrs.wd-side-hidden .woocommerce-product-attributes-item__label',
+		$block_selector . ' .shop_attributes th, .wd-single-attrs.wd-side-hidden .shop_attributes th',
 		array(
 			array(
 				'attr_name' => 'additionalInfoNameColorCode',
@@ -385,10 +442,10 @@ if ( ! isset( $attrs['enableAdditionalInfo'] ) || $attrs['enableAdditionalInfo']
 		)
 	);
 
-	$block_css->merge_with( wd_get_block_typography_css( $block_selector . ' .woocommerce-product-attributes-item__value, .wd-single-attrs.wd-side-hidden .woocommerce-product-attributes-item__value', $attrs, 'additionalInfoTermTp' ) );
+	$block_css->merge_with( wd_get_block_typography_css( $block_selector . ' .shop_attributes td, .wd-single-attrs.wd-side-hidden .shop_attributes td', $attrs, 'additionalInfoTermTp' ) );
 
 	$block_css->add_css_rules(
-		$block_selector . ' .woocommerce-product-attributes-item__value, .wd-single-attrs.wd-side-hidden .woocommerce-product-attributes-item__value',
+		$block_selector . ' .shop_attributes td, .wd-single-attrs.wd-side-hidden .shop_attributes td',
 		array(
 			array(
 				'attr_name' => 'additionalInfoTermColorCode',
@@ -397,6 +454,28 @@ if ( ! isset( $attrs['enableAdditionalInfo'] ) || $attrs['enableAdditionalInfo']
 			array(
 				'attr_name' => 'additionalInfoTermColorVariable',
 				'template'  => 'color: var({{value}});',
+			),
+		)
+	);
+
+	$block_css->add_css_rules(
+		$block_selector . ' .shop_attributes td, .wd-single-attrs.wd-side-hidden .shop_attributes td',
+		array(
+			array(
+				'attr_name' => 'additionalInfoTermLinkColorCode',
+				'template'  => '--wd-link-color: {{value}};',
+			),
+			array(
+				'attr_name' => 'additionalInfoTermLinkColorVariable',
+				'template'  => '--wd-link-color: var({{value}});',
+			),
+			array(
+				'attr_name' => 'additionalInfoTermLinkColorHoverCode',
+				'template'  => '--wd-link-color-hover: {{value}};',
+			),
+			array(
+				'attr_name' => 'additionalInfoTermLinkColorHoverVariable',
+				'template'  => '--wd-link-color-hover: var({{value}});',
 			),
 		)
 	);
@@ -420,6 +499,10 @@ if ( ! isset( $attrs['enableAdditionalInfo'] ) || $attrs['enableAdditionalInfo']
 				'attr_name' => 'additionalInfoImageWidth',
 				'template'  => '--wd-attr-img-width: {{value}}px;',
 			),
+			array(
+				'attr_name' => 'termImageWidth',
+				'template'  => '--wd-term-img-width: {{value}}px;',
+			),
 		),
 	);
 
@@ -435,9 +518,13 @@ if ( ! isset( $attrs['enableAdditionalInfo'] ) || $attrs['enableAdditionalInfo']
 		);
 	}
 
+	if ( ! isset( $attrs['additionalInfoStyle'] ) || 'bordered' === $attrs['additionalInfoStyle'] ) {
+		$block_css->merge_with( wd_get_block_border_css( $block_selector . ' .shop_attributes', $attrs, 'additionalInfoItemsBorder', '--wd-attr-brd', '', false ) );
+	}
+
 	if ( isset( $attrs['additionalInfoLayout'] ) && 'inline' === $attrs['additionalInfoLayout'] ) {
 		$block_css->add_css_rules(
-			$block_selector . ' .woocommerce-product-attributes-item__label, .wd-single-attrs.wd-side-hidden .woocommerce-product-attributes-item__label',
+			$block_selector . ' .shop_attributes th, .wd-single-attrs.wd-side-hidden .shop_attributes th',
 			array(
 				array(
 					'attr_name' => 'attrNameColumnWidth',
@@ -447,7 +534,7 @@ if ( ! isset( $attrs['enableAdditionalInfo'] ) || $attrs['enableAdditionalInfo']
 		);
 
 		$block_css->add_css_rules(
-			$block_selector . ' .woocommerce-product-attributes-item__label, .wd-single-attrs.wd-side-hidden .woocommerce-product-attributes-item__label',
+			$block_selector . ' .shop_attributes th, .wd-single-attrs.wd-side-hidden .shop_attributes th',
 			array(
 				array(
 					'attr_name' => 'attrNameColumnWidthTablet',
@@ -458,7 +545,7 @@ if ( ! isset( $attrs['enableAdditionalInfo'] ) || $attrs['enableAdditionalInfo']
 		);
 
 		$block_css->add_css_rules(
-			$block_selector . ' .woocommerce-product-attributes-item__label, .wd-single-attrs.wd-side-hidden .woocommerce-product-attributes-item__label',
+			$block_selector . ' .shop_attributes th, .wd-single-attrs.wd-side-hidden .shop_attributes th',
 			array(
 				array(
 					'attr_name' => 'attrNameColumnWidthMobile',
@@ -488,6 +575,10 @@ if ( ! isset( $attrs['enableAdditionalInfo'] ) || $attrs['enableAdditionalInfo']
 				'attr_name' => 'additionalInfoImageWidthTablet',
 				'template'  => '--wd-attr-img-width: {{value}}px;',
 			),
+			array(
+				'attr_name' => 'termImageWidthTablet',
+				'template'  => '--wd-term-img-width: {{value}}px;',
+			),
 		),
 		'tablet'
 	);
@@ -510,6 +601,10 @@ if ( ! isset( $attrs['enableAdditionalInfo'] ) || $attrs['enableAdditionalInfo']
 			array(
 				'attr_name' => 'additionalInfoImageWidthMobile',
 				'template'  => '--wd-attr-img-width: {{value}}px;',
+			),
+			array(
+				'attr_name' => 'termImageWidthMobile',
+				'template'  => '--wd-term-img-width: {{value}}px;',
 			),
 		),
 		'mobile'
@@ -553,8 +648,9 @@ if ( ! isset( $attrs['enableReviews'] ) || $attrs['enableReviews'] ) {
 $block_css->merge_with(
 	wd_get_block_advanced_css(
 		array(
-			'selector'       => $block_selector,
-			'selector_hover' => $block_selector_hover,
+			'selector'              => $block_selector,
+			'selector_hover'        => $block_selector_hover,
+			'selector_parent_hover' => $block_selector_parent_hover,
 		),
 		$attrs
 	)

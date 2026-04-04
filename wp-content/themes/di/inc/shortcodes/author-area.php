@@ -1,29 +1,47 @@
-<?php if ( ! defined( 'WOODMART_THEME_DIR' ) ) exit( 'No direct script access allowed' );
-
+<?php
 /**
-* ------------------------------------------------------------------------------------------------
-* Widget with author info
-* ------------------------------------------------------------------------------------------------
-*/
+ * Shortcode for Author Area element.
+ *
+ * @package woodmart
+ */
 
-if( ! function_exists( 'woodmart_shortcode_author_area' ) ) {
-	function woodmart_shortcode_author_area($atts, $content) {
-		$output = $class = '';
-		extract( shortcode_atts( array(
-			'title' => '',
-			'author_name' => '',
-			'image' => '',
-			'img_size' => '800x600',
-			'link' => '',
-			'link_text' => '',
-			'alignment' => 'left',
-			'style' => '',
-			'woodmart_color_scheme' => 'dark',
-			'css_animation' => 'none',
-			'el_class' => '',
-			'woodmart_css_id' => '',
-			'css' => '',
-		), $atts ) );
+if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
+	exit( 'No direct script access allowed' );
+}
+
+if ( ! function_exists( 'woodmart_shortcode_author_area' ) ) {
+	/**
+	 * Author area shortcode.
+	 *
+	 * @param array  $atts Shortcode attributes.
+	 * @param string $content Inner shortcode.
+	 *
+	 * @return string
+	 */
+	function woodmart_shortcode_author_area( $atts, $content ) {
+		$output = '';
+		$class  = '';
+
+		extract( // phpcs:ignore WordPress.PHP.DontExtract.extract_extract
+			shortcode_atts(
+				array(
+					'title'                 => '',
+					'author_name'           => '',
+					'image'                 => '',
+					'img_size'              => '800x600',
+					'link'                  => '',
+					'link_text'             => '',
+					'alignment'             => 'left',
+					'style'                 => '',
+					'woodmart_color_scheme' => 'dark',
+					'css_animation'         => 'none',
+					'el_class'              => '',
+					'woodmart_css_id'       => '',
+					'css'                   => '',
+				),
+				$atts
+			)
+		);
 
 		$img_id = preg_replace( '/[^\d]/', '', $image );
 
@@ -78,7 +96,7 @@ if( ! function_exists( 'woodmart_shortcode_author_area' ) ) {
 				<?php endif ?>
 
 				<?php if ( ! empty( $link_text ) ) : ?>
-					<a <?php echo woodmart_get_link_attributes( $link ); ?> class="btn">
+					<a <?php echo woodmart_get_link_attributes( $link ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> class="btn">
 						<?php echo esc_html( $link_text ); ?>
 					</a>
 				<?php endif; ?>

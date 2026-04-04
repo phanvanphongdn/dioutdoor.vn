@@ -69,7 +69,7 @@
             }
 
             // moveTarget
-            if (jQuery.type(settings.moveTarget) === "string") {
+            if (typeof settings.moveTarget === "string") {
                 settings.moveTarget = $(this.element).parent(settings.moveTarget);
             }
 

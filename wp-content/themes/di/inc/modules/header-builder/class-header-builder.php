@@ -1,4 +1,9 @@
 <?php
+/**
+ * Header builder class file.
+ *
+ * @package woodmart
+ */
 
 namespace XTS\Modules;
 
@@ -13,9 +18,7 @@ if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
 }
 
 /**
- * ------------------------------------------------------------------------------------------------
  * Include all required files, define constants
- * ------------------------------------------------------------------------------------------------
  */
 class Header_Builder extends Singleton {
 
@@ -82,10 +85,9 @@ class Header_Builder extends Singleton {
 			'class-header',
 			'class-elements',
 			'class-styles',
-			'functions',
 		);
 
-		if ( is_admin() ) {
+		if ( ( current_user_can( 'manage_options' ) && woodmart_is_header_frontend_editor() ) || is_admin() ) {
 			$classes[] = 'class-backend';
 		}
 
@@ -102,7 +104,7 @@ class Header_Builder extends Singleton {
 	private function init_classes() {
 		$this->elements = new Elements();
 		$this->list     = new Headers_List();
-		$this->factory  = new Header_Factory( $this->elements, $this->list );
+		$this->factory  = new Header_Factory( $this->elements );
 		$this->manager  = new Manager( $this->factory, $this->list );
 	}
 }

@@ -1,4 +1,10 @@
 <?php
+/**
+ * SP Meta block CSS.
+ *
+ * @package woodmart
+ */
+
 use XTS\Gutenberg\Block_CSS;
 
 $block_css = new Block_CSS( $attrs );
@@ -28,15 +34,43 @@ $block_css->add_css_rules(
 );
 
 $block_css->add_css_rules(
-	$block_selector . ' .product_meta > span > *:not(.meta-label)',
+	$block_selector . ' .product_meta',
 	array(
 		array(
 			'attr_name' => 'valueColorCode',
-			'template'  => 'color: {{value}};',
+			'template'  => '--wd-text-color: {{value}};',
 		),
 		array(
 			'attr_name' => 'valueColorVariable',
-			'template'  => 'color: var({{value}});',
+			'template'  => '--wd-text-color: var({{value}});',
+		),
+	)
+);
+
+$block_css->add_css_rules(
+	$block_selector . ' .product_meta',
+	array(
+		array(
+			'attr_name' => 'linkColorCode',
+			'template'  => '--wd-link-color: {{value}};',
+		),
+		array(
+			'attr_name' => 'linkColorVariable',
+			'template'  => '--wd-link-color: var({{value}});',
+		),
+	)
+);
+
+$block_css->add_css_rules(
+	$block_selector . ' .product_meta',
+	array(
+		array(
+			'attr_name' => 'linkColorHoverCode',
+			'template'  => '--wd-link-color-hover: {{value}};',
+		),
+		array(
+			'attr_name' => 'linkColorHoverVariable',
+			'template'  => '--wd-link-color-hover: var({{value}});',
 		),
 	)
 );
@@ -69,8 +103,9 @@ $block_css->merge_with( wd_get_block_typography_css( $block_selector . ' .produc
 $block_css->merge_with(
 	wd_get_block_advanced_css(
 		array(
-			'selector'       => $block_selector,
-			'selector_hover' => $block_selector_hover,
+			'selector'              => $block_selector,
+			'selector_hover'        => $block_selector_hover,
+			'selector_parent_hover' => $block_selector_parent_hover,
 		),
 		$attrs
 	)

@@ -2,7 +2,7 @@
 /**
  * This file has function for rendering dropdown field.
  *
- * @package Woodmart.
+ * @package woodmart.
  */
 
 if ( ! defined( 'WOODMART_THEME_DIR' ) ) {

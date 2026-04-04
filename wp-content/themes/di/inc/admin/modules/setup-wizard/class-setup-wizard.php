@@ -29,6 +29,32 @@ class Setup_Wizard extends Singleton {
 	 * Constructor.
 	 */
 	public function init() {
+		if ( isset( $_GET['skip_setup'] ) ) { // phpcs:ignore WordPress.Security
+			update_option( 'woodmart_setup_status', 'done', false );
+		}
+
+		if ( 'done' !== get_option( 'woodmart_setup_status' ) ) { // phpcs:ignore
+			add_action( 'admin_init', array( $this, 'prevent_plugins_redirect' ), 1 );
+			do_action( 'woodmart_setup_wizard' );
+		}
+
+		if ( defined( 'DOING_AJAX' ) || ( isset( $_GET['page'] ) && ( 'xts_dashboard' === $_GET['page'] || 'tgmpa-install-plugins' === $_GET['page'] ) ) ) { // phpcs:ignore WordPress.Security
+			add_action( 'admin_init', array( $this, 'prevent_plugins_redirect' ), 1 );
+		}
+
+		add_action( 'admin_init', array( $this, 'theme_activation_redirect' ) );
+
+		add_action( 'admin_init', array( $this, 'set_page_builder' ) );
+
+		add_filter( 'leadin_impact_code', array( $this, 'get_hubspot_affiliate_code' ) );
+	}
+
+	/**
+	 * Setup available pages.
+	 *
+	 * @return void
+	 */
+	public function set_available_pages() {
 		$this->available_pages = array(
 			'welcome'           => esc_html__( 'Welcome', 'woodmart' ),
 			'activation'        => esc_html__( 'Activation', 'woodmart' ),
@@ -38,25 +64,6 @@ class Setup_Wizard extends Singleton {
 			'prebuilt-websites' => esc_html__( 'Prebuilt websites', 'woodmart' ),
 			'done'              => esc_html__( 'Done', 'woodmart' ),
 		);
-
-		if ( isset( $_GET['skip_setup'] ) ) {
-			update_option( 'woodmart_setup_status', 'done', false );
-		}
-
-		if ( 'done' !== get_option( 'woodmart_setup_status' ) ) { // phpcs:ignore
-			add_action( 'admin_init', array( $this, 'prevent_plugins_redirect' ), 1 );
-			do_action( 'woodmart_setup_wizard' );
-		}
-
-		if ( defined( 'DOING_AJAX' ) || isset( $_GET['page'] ) && ( 'xts_dashboard' === $_GET['page'] || 'tgmpa-install-plugins' === $_GET['page'] ) ) {
-			add_action( 'admin_init', array( $this, 'prevent_plugins_redirect' ), 1 );
-		}
-
-		add_action( 'admin_init', array( $this, 'theme_activation_redirect' ) );
-
-		add_action( 'admin_init', array( $this, 'set_page_builder' ) );
-
-		add_filter( 'leadin_impact_code', array( $this, 'get_hubspot_affiliate_code' ) );
 	}
 
 	/**
@@ -108,11 +115,13 @@ class Setup_Wizard extends Singleton {
 			return;
 		}
 
+		$this->set_available_pages();
+
 		wp_enqueue_script( 'wd-setup-wizard', WOODMART_ASSETS . '/js/wizard.js', array(), WOODMART_VERSION, true );
 
 		$page = 'welcome';
 
-		if ( isset( $_GET['step'] ) && ! empty( $_GET['step'] ) ) { // phpcs:ignore
+		if ( ! empty( $_GET['step'] ) && in_array( $_GET['step'], array( 'activation', 'child-theme',  'page-builder', 'plugins', 'prebuilt-websites', 'done'), true ) ) { // phpcs:ignore
 			$page = trim( wp_unslash( $_GET['step'] ) ); // phpcs:ignore
 		}
 
@@ -137,19 +146,6 @@ class Setup_Wizard extends Singleton {
 				</div>
 			</div>
 		</div>
-		<?php
-	}
-
-	/**
-	 * Get previous page button.
-	 *
-	 * @param string $page Page slug.
-	 */
-	public function get_prev_button( $page ) {
-		?>
-		<a class="xts-inline-btn xts-prev" href="<?php echo esc_url( $this->get_page_url( $page ) ); ?>">
-			<?php esc_html_e( 'Previous step', 'woodmart' ); ?>
-		</a>
 		<?php
 	}
 
@@ -183,7 +179,7 @@ class Setup_Wizard extends Singleton {
 
 		?>
 		<a class="xts-btn xts-color-primary xts-next<?php echo esc_attr( $classes ); ?>" href="<?php echo esc_url( $url ); ?>">
-			<?php esc_html_e( 'Next step', 'woodmart' ); ?>
+			<?php esc_html_e( 'Continue', 'woodmart' ); ?>
 		</a>
 		<?php
 	}
@@ -196,7 +192,7 @@ class Setup_Wizard extends Singleton {
 	public function get_skip_button( $page ) {
 		?>
 		<a class="xts-inline-btn xts-color-primary xts-skip" href="<?php echo esc_url( $this->get_page_url( $page ) ); ?>">
-			<?php esc_html_e( 'Skip', 'woodmart' ); ?>
+			<?php esc_html_e( 'Skip this step', 'woodmart' ); ?>
 		</a>
 		<?php
 	}
@@ -278,12 +274,7 @@ class Setup_Wizard extends Singleton {
 
 			if ( 'gutenberg' === $builder ) {
 				$xts_woodmart_options['current_builder']               = 'native';
-				$xts_woodmart_options['gutenberg_blocks']              = true;
 				$xts_woodmart_options['enable_gutenberg_for_products'] = true;
-			} else {
-				$xts_woodmart_options['current_builder']               = 'external';
-				$xts_woodmart_options['gutenberg_blocks']              = false;
-				$xts_woodmart_options['enable_gutenberg_for_products'] = false;
 			}
 
 			$options->update_options( $xts_woodmart_options );

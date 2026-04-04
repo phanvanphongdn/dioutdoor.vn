@@ -1,22 +1,33 @@
 <?php
+/**
+ * Account element class file.
+ *
+ * @package woodmart
+ */
 
 namespace XTS\Modules\Header_Builder\Elements;
 
 use XTS\Modules\Header_Builder\Element;
 
 /**
- * ------------------------------------------------------------------------------------------------
  * Account links in the header. Login / register, my account, logout.
- * ------------------------------------------------------------------------------------------------
  */
 class Account extends Element {
 
+	/**
+	 * Constructor.
+	 */
 	public function __construct() {
 		parent::__construct();
 
 		$this->template_name = 'account';
 	}
 
+	/**
+	 * Map element.
+	 *
+	 * @return void
+	 */
 	public function map() {
 		$this->args = array(
 			'type'            => 'account',
@@ -31,20 +42,12 @@ class Account extends Element {
 			'removable'       => true,
 			'addable'         => true,
 			'params'          => array(
-				'with_username'       => array(
-					'id'          => 'with_username',
-					'title'       => esc_html__( 'Show username', 'woodmart' ),
-					'hint'        => '<video src="' . WOODMART_TOOLTIP_URL . 'hb_account_with_username.mp4" autoplay loop muted></video>',
-					'type'        => 'switcher',
-					'tab'         => esc_html__( 'General', 'woodmart' ),
-					'value'       => false,
-					'description' => esc_html__( 'Display username when user is logged in.', 'woodmart' ),
-				),
 				'login_dropdown'      => array(
 					'id'          => 'login_dropdown',
 					'title'       => esc_html__( 'Show login form', 'woodmart' ),
 					'type'        => 'switcher',
-					'tab'         => esc_html__( 'General', 'woodmart' ),
+					'tab'         => esc_html__( 'Style', 'woodmart' ),
+					'group'       => esc_html__( 'General', 'woodmart' ),
 					'value'       => true,
 					'description' => esc_html__( 'Display login form dropdown on hover when user is not logged in.', 'woodmart' ),
 					'extra_class' => 'xts-col-6',
@@ -53,7 +56,8 @@ class Account extends Element {
 					'id'          => 'form_display',
 					'title'       => esc_html__( 'Form display', 'woodmart' ),
 					'type'        => 'selector',
-					'tab'         => esc_html__( 'General', 'woodmart' ),
+					'tab'         => esc_html__( 'Style', 'woodmart' ),
+					'group'       => esc_html__( 'General', 'woodmart' ),
 					'value'       => 'dropdown',
 					'options'     => array(
 						'side'     => array(
@@ -67,7 +71,7 @@ class Account extends Element {
 							'label' => esc_html__( 'Dropdown', 'woodmart' ),
 						),
 					),
-					'requires'    => array(
+					'condition'   => array(
 						'login_dropdown' => array(
 							'comparison' => 'equal',
 							'value'      => true,
@@ -76,31 +80,52 @@ class Account extends Element {
 					'extra_class' => 'xts-col-6',
 				),
 				'display'             => array(
-					'id'      => 'display',
-					'title'   => esc_html__( 'Display', 'woodmart' ),
-					'type'    => 'selector',
-					'tab'     => esc_html__( 'Style', 'woodmart' ),
-					'group'   => esc_html__( 'Icon', 'woodmart' ),
-					'value'   => 'text',
-					'options' => array(
-						'icon' => array(
+					'id'          => 'display',
+					'title'       => esc_html__( 'Display', 'woodmart' ),
+					'type'        => 'selector',
+					'tab'         => esc_html__( 'Style', 'woodmart' ),
+					'group'       => esc_html__( 'Button', 'woodmart' ),
+					'description' => esc_html__( 'Select whether to display only the icon, only the text, or both together.', 'woodmart' ),
+					'value'       => 'icon',
+					'options'     => array(
+						'text'           => array(
+							'value' => 'text',
+							'label' => esc_html__( 'Text', 'woodmart' ),
+						),
+						'icon'           => array(
 							'value' => 'icon',
 							'label' => esc_html__( 'Icon', 'woodmart' ),
 						),
-						'text' => array(
-							'value' => 'text',
-							'label' => esc_html__( 'Only text', 'woodmart' ),
+						'icon_with_text' => array(
+							'value' => 'icon_with_text',
+							'label' => esc_html__( 'Icon with text', 'woodmart' ),
+						),
+					),
+				),
+				'with_username'       => array(
+					'id'          => 'with_username',
+					'title'       => esc_html__( 'Show username', 'woodmart' ),
+					'hint'        => '<video src="' . WOODMART_TOOLTIP_URL . 'hb_account_with_username.mp4" autoplay loop muted></video>',
+					'type'        => 'switcher',
+					'tab'         => esc_html__( 'Style', 'woodmart' ),
+					'group'       => esc_html__( 'Button', 'woodmart' ),
+					'value'       => false,
+					'description' => esc_html__( 'Replace the default text with the username when the user is logged in.', 'woodmart' ),
+					'condition'   => array(
+						'display' => array(
+							'comparison' => 'not_equal',
+							'value'      => array( 'icon' ),
 						),
 					),
 				),
 				'icon_design'         => array(
-					'id'       => 'icon_design',
-					'title'    => esc_html__( 'Icon design', 'woodmart' ),
-					'type'     => 'selector',
-					'tab'      => esc_html__( 'Style', 'woodmart' ),
-					'group'    => esc_html__( 'Icon', 'woodmart' ),
-					'value'    => '1',
-					'options'  => array(
+					'id'        => 'icon_design',
+					'title'     => esc_html__( 'Design', 'woodmart' ),
+					'type'      => 'selector',
+					'tab'       => esc_html__( 'Style', 'woodmart' ),
+					'group'     => esc_html__( 'Button', 'woodmart' ),
+					'value'     => '1',
+					'options'   => array(
 						'1' => array(
 							'value' => '1',
 							'label' => esc_html__( 'First', 'woodmart' ),
@@ -122,21 +147,148 @@ class Account extends Element {
 							'image' => WOODMART_ASSETS_IMAGES . '/header-builder/account-icons/fourth.jpg',
 						),
 					),
-					'requires' => array(
+					'condition' => array(
 						'display' => array(
-							'comparison' => 'equal',
-							'value'      => 'icon',
+							'comparison' => 'not_equal',
+							'value'      => array( 'text' ),
 						),
 					),
 				),
+				'text_design'         => array(
+					'id'        => 'text_design',
+					'title'     => esc_html__( 'Design', 'woodmart' ),
+					'type'      => 'selector',
+					'tab'       => esc_html__( 'Style', 'woodmart' ),
+					'group'     => esc_html__( 'Button', 'woodmart' ),
+					'value'     => '1',
+					'options'   => array(
+						'1' => array(
+							'value' => '1',
+							'label' => esc_html__( 'First', 'woodmart' ),
+							'image' => WOODMART_ASSETS_IMAGES . '/header-builder/account-icons/text-first.jpg',
+						),
+						'6' => array(
+							'value' => '6',
+							'label' => esc_html__( 'Second', 'woodmart' ),
+							'image' => WOODMART_ASSETS_IMAGES . '/header-builder/account-icons/text-second.jpg',
+						),
+						'7' => array(
+							'value' => '7',
+							'label' => esc_html__( 'Third', 'woodmart' ),
+							'image' => WOODMART_ASSETS_IMAGES . '/header-builder/account-icons/text-third.jpg',
+						),
+					),
+					'condition' => array(
+						'display' => array(
+							'comparison' => 'equal',
+							'value'      => array( 'text' ),
+						),
+					),
+				),
+				'text_color'          => array(
+					'id'          => 'text_color',
+					'title'       => esc_html__( 'Color', 'woodmart' ),
+					'tab'         => esc_html__( 'Style', 'woodmart' ),
+					'group'       => esc_html__( 'Button', 'woodmart' ),
+					'type'        => 'color',
+					'value'       => '',
+					'selectors'   => array(
+						'whb-row .{{WRAPPER}}.wd-tools-element .wd-tools-inner' => array(
+							'color: {{VALUE}};',
+						),
+					),
+					'condition'   => array(
+						'display'     => array(
+							'comparison' => 'equal',
+							'value'      => array( 'text' ),
+						),
+						'text_design' => array(
+							'comparison' => 'equal',
+							'value'      => array( '7' ),
+						),
+					),
+					'extra_class' => 'xts-col-6',
+				),
+				'text_hover_color'    => array(
+					'id'          => 'text_hover_color',
+					'title'       => esc_html__( 'Hover color', 'woodmart' ),
+					'tab'         => esc_html__( 'Style', 'woodmart' ),
+					'group'       => esc_html__( 'Button', 'woodmart' ),
+					'type'        => 'color',
+					'value'       => '',
+					'selectors'   => array(
+						'whb-row .{{WRAPPER}}.wd-tools-element:hover .wd-tools-inner' => array(
+							'color: {{VALUE}};',
+						),
+					),
+					'condition'   => array(
+						'display'     => array(
+							'comparison' => 'equal',
+							'value'      => array( 'text' ),
+						),
+						'text_design' => array(
+							'comparison' => 'equal',
+							'value'      => array( '7' ),
+						),
+					),
+					'extra_class' => 'xts-col-6',
+				),
+				'text_bg_color'       => array(
+					'id'          => 'text_bg_color',
+					'title'       => esc_html__( 'Background color', 'woodmart' ),
+					'tab'         => esc_html__( 'Style', 'woodmart' ),
+					'group'       => esc_html__( 'Button', 'woodmart' ),
+					'type'        => 'color',
+					'value'       => '',
+					'selectors'   => array(
+						'whb-row .{{WRAPPER}}.wd-tools-element .wd-tools-inner' => array(
+							'background-color: {{VALUE}};',
+						),
+					),
+					'condition'   => array(
+						'display'     => array(
+							'comparison' => 'equal',
+							'value'      => array( 'text' ),
+						),
+						'text_design' => array(
+							'comparison' => 'equal',
+							'value'      => array( '7' ),
+						),
+					),
+					'extra_class' => 'xts-col-6',
+				),
+				'text_bg_hover_color' => array(
+					'id'          => 'text_bg_hover_color',
+					'title'       => esc_html__( 'Hover background color', 'woodmart' ),
+					'tab'         => esc_html__( 'Style', 'woodmart' ),
+					'group'       => esc_html__( 'Button', 'woodmart' ),
+					'type'        => 'color',
+					'value'       => '',
+					'selectors'   => array(
+						'whb-row .{{WRAPPER}}.wd-tools-element:hover .wd-tools-inner' => array(
+							'background-color: {{VALUE}};',
+						),
+					),
+					'condition'   => array(
+						'display'     => array(
+							'comparison' => 'equal',
+							'value'      => array( 'text' ),
+						),
+						'text_design' => array(
+							'comparison' => 'equal',
+							'value'      => array( '7' ),
+						),
+					),
+					'extra_class' => 'xts-col-6',
+				),
 				'wrap_type'           => array(
-					'id'       => 'wrap_type',
-					'title'    => esc_html__( 'Background wrap type', 'woodmart' ),
-					'type'     => 'selector',
-					'tab'      => esc_html__( 'Style', 'woodmart' ),
-					'group'    => esc_html__( 'Icon', 'woodmart' ),
-					'value'    => 'icon_only',
-					'options'  => array(
+					'id'        => 'wrap_type',
+					'title'     => esc_html__( 'Background wrap type', 'woodmart' ),
+					'type'      => 'selector',
+					'tab'       => esc_html__( 'Style', 'woodmart' ),
+					'group'     => esc_html__( 'Button', 'woodmart' ),
+					'value'     => 'icon_only',
+					'options'   => array(
 						'icon_only'     => array(
 							'value' => 'icon_only',
 							'label' => esc_html__( 'Icon only', 'woodmart' ),
@@ -148,16 +300,12 @@ class Account extends Element {
 							'image' => WOODMART_ASSETS_IMAGES . '/header-builder/bg-wrap-type/account-wrap-icon-and-text.jpg',
 						),
 					),
-					'requires' => array(
-						'display'       => array(
+					'condition' => array(
+						'display'     => array(
 							'comparison' => 'equal',
-							'value'      => 'icon',
+							'value'      => array( 'icon_with_text' ),
 						),
-						'with_username' => array(
-							'comparison' => 'equal',
-							'value'      => true,
-						),
-						'icon_design'   => array(
+						'icon_design' => array(
 							'comparison' => 'equal',
 							'value'      => array( '6', '7' ),
 						),
@@ -167,7 +315,7 @@ class Account extends Element {
 					'id'          => 'color',
 					'title'       => esc_html__( 'Color', 'woodmart' ),
 					'tab'         => esc_html__( 'Style', 'woodmart' ),
-					'group'       => esc_html__( 'Icon', 'woodmart' ),
+					'group'       => esc_html__( 'Button', 'woodmart' ),
 					'type'        => 'color',
 					'value'       => '',
 					'selectors'   => array(
@@ -175,14 +323,39 @@ class Account extends Element {
 							'color: {{VALUE}};',
 						),
 					),
-					'requires'    => array(
-						'display'     => array(
-							'comparison' => 'equal',
-							'value'      => 'icon',
-						),
-						'icon_design' => array(
-							'comparison' => 'equal',
-							'value'      => array( '7', '8' ),
+					'conditions'  => array(
+						'relation' => 'or',
+						'terms'    => array(
+							array(
+								'relation' => 'and',
+								'terms'    => array(
+									array(
+										'field'      => 'display',
+										'comparison' => 'not_equal',
+										'value'      => array( 'text' ),
+									),
+									array(
+										'field'      => 'icon_design',
+										'comparison' => 'equal',
+										'value'      => array( '7' ),
+									),
+								),
+							),
+							array(
+								'relation' => 'and',
+								'terms'    => array(
+									array(
+										'field'      => 'display',
+										'comparison' => 'equal',
+										'value'      => array( 'icon_with_text' ),
+									),
+									array(
+										'field'      => 'icon_design',
+										'comparison' => 'equal',
+										'value'      => array( '8' ),
+									),
+								),
+							),
 						),
 					),
 					'extra_class' => 'xts-col-6',
@@ -191,7 +364,7 @@ class Account extends Element {
 					'id'          => 'hover_color',
 					'title'       => esc_html__( 'Hover color', 'woodmart' ),
 					'tab'         => esc_html__( 'Style', 'woodmart' ),
-					'group'       => esc_html__( 'Icon', 'woodmart' ),
+					'group'       => esc_html__( 'Button', 'woodmart' ),
 					'type'        => 'color',
 					'value'       => '',
 					'selectors'   => array(
@@ -199,14 +372,39 @@ class Account extends Element {
 							'color: {{VALUE}};',
 						),
 					),
-					'requires'    => array(
-						'display'     => array(
-							'comparison' => 'equal',
-							'value'      => 'icon',
-						),
-						'icon_design' => array(
-							'comparison' => 'equal',
-							'value'      => array( '7', '8' ),
+					'conditions'  => array(
+						'relation' => 'or',
+						'terms'    => array(
+							array(
+								'relation' => 'and',
+								'terms'    => array(
+									array(
+										'field'      => 'display',
+										'comparison' => 'not_equal',
+										'value'      => array( 'text' ),
+									),
+									array(
+										'field'      => 'icon_design',
+										'comparison' => 'equal',
+										'value'      => array( '7' ),
+									),
+								),
+							),
+							array(
+								'relation' => 'and',
+								'terms'    => array(
+									array(
+										'field'      => 'display',
+										'comparison' => 'equal',
+										'value'      => array( 'icon_with_text' ),
+									),
+									array(
+										'field'      => 'icon_design',
+										'comparison' => 'equal',
+										'value'      => array( '8' ),
+									),
+								),
+							),
 						),
 					),
 					'extra_class' => 'xts-col-6',
@@ -215,7 +413,7 @@ class Account extends Element {
 					'id'          => 'bg_color',
 					'title'       => esc_html__( 'Background color', 'woodmart' ),
 					'tab'         => esc_html__( 'Style', 'woodmart' ),
-					'group'       => esc_html__( 'Icon', 'woodmart' ),
+					'group'       => esc_html__( 'Button', 'woodmart' ),
 					'type'        => 'color',
 					'value'       => '',
 					'selectors'   => array(
@@ -223,10 +421,10 @@ class Account extends Element {
 							'background-color: {{VALUE}};',
 						),
 					),
-					'requires'    => array(
+					'condition'   => array(
 						'display'     => array(
-							'comparison' => 'equal',
-							'value'      => 'icon',
+							'comparison' => 'not_equal',
+							'value'      => array( 'text' ),
 						),
 						'icon_design' => array(
 							'comparison' => 'equal',
@@ -239,7 +437,7 @@ class Account extends Element {
 					'id'          => 'bg_hover_color',
 					'title'       => esc_html__( 'Hover background color', 'woodmart' ),
 					'tab'         => esc_html__( 'Style', 'woodmart' ),
-					'group'       => esc_html__( 'Icon', 'woodmart' ),
+					'group'       => esc_html__( 'Button', 'woodmart' ),
 					'type'        => 'color',
 					'value'       => '',
 					'selectors'   => array(
@@ -247,10 +445,10 @@ class Account extends Element {
 							'background-color: {{VALUE}};',
 						),
 					),
-					'requires'    => array(
+					'condition'   => array(
 						'display'     => array(
-							'comparison' => 'equal',
-							'value'      => 'icon',
+							'comparison' => 'not_equal',
+							'value'      => array( 'text' ),
 						),
 						'icon_design' => array(
 							'comparison' => 'equal',
@@ -263,7 +461,7 @@ class Account extends Element {
 					'id'          => 'icon_color',
 					'title'       => esc_html__( 'Icon color', 'woodmart' ),
 					'tab'         => esc_html__( 'Style', 'woodmart' ),
-					'group'       => esc_html__( 'Icon', 'woodmart' ),
+					'group'       => esc_html__( 'Button', 'woodmart' ),
 					'type'        => 'color',
 					'value'       => '',
 					'selectors'   => array(
@@ -271,10 +469,10 @@ class Account extends Element {
 							'color: {{VALUE}};',
 						),
 					),
-					'requires'    => array(
+					'condition'   => array(
 						'display'     => array(
-							'comparison' => 'equal',
-							'value'      => 'icon',
+							'comparison' => 'not_equal',
+							'value'      => array( 'text' ),
 						),
 						'icon_design' => array(
 							'comparison' => 'equal',
@@ -287,7 +485,7 @@ class Account extends Element {
 					'id'          => 'icon_hover_color',
 					'title'       => esc_html__( 'Hover icon color', 'woodmart' ),
 					'tab'         => esc_html__( 'Style', 'woodmart' ),
-					'group'       => esc_html__( 'Icon', 'woodmart' ),
+					'group'       => esc_html__( 'Button', 'woodmart' ),
 					'type'        => 'color',
 					'value'       => '',
 					'selectors'   => array(
@@ -295,10 +493,10 @@ class Account extends Element {
 							'color: {{VALUE}};',
 						),
 					),
-					'requires'    => array(
+					'condition'   => array(
 						'display'     => array(
-							'comparison' => 'equal',
-							'value'      => 'icon',
+							'comparison' => 'not_equal',
+							'value'      => array( 'text' ),
 						),
 						'icon_design' => array(
 							'comparison' => 'equal',
@@ -311,7 +509,7 @@ class Account extends Element {
 					'id'          => 'icon_bg_color',
 					'title'       => esc_html__( 'Icon background color', 'woodmart' ),
 					'tab'         => esc_html__( 'Style', 'woodmart' ),
-					'group'       => esc_html__( 'Icon', 'woodmart' ),
+					'group'       => esc_html__( 'Button', 'woodmart' ),
 					'type'        => 'color',
 					'value'       => '',
 					'selectors'   => array(
@@ -319,10 +517,10 @@ class Account extends Element {
 							'background-color: {{VALUE}};',
 						),
 					),
-					'requires'    => array(
+					'condition'   => array(
 						'display'     => array(
-							'comparison' => 'equal',
-							'value'      => 'icon',
+							'comparison' => 'not_equal',
+							'value'      => array( 'text' ),
 						),
 						'icon_design' => array(
 							'comparison' => 'equal',
@@ -335,7 +533,7 @@ class Account extends Element {
 					'id'          => 'icon_bg_hover_color',
 					'title'       => esc_html__( 'Hover icon background color', 'woodmart' ),
 					'tab'         => esc_html__( 'Style', 'woodmart' ),
-					'group'       => esc_html__( 'Icon', 'woodmart' ),
+					'group'       => esc_html__( 'Button', 'woodmart' ),
 					'type'        => 'color',
 					'value'       => '',
 					'selectors'   => array(
@@ -343,10 +541,10 @@ class Account extends Element {
 							'background-color: {{VALUE}};',
 						),
 					),
-					'requires'    => array(
+					'condition'   => array(
 						'display'     => array(
-							'comparison' => 'equal',
-							'value'      => 'icon',
+							'comparison' => 'not_equal',
+							'value'      => array( 'text' ),
 						),
 						'icon_design' => array(
 							'comparison' => 'equal',
@@ -356,13 +554,13 @@ class Account extends Element {
 					'extra_class' => 'xts-col-6',
 				),
 				'icon_type'           => array(
-					'id'          => 'icon_type',
-					'title'       => esc_html__( 'Icon type', 'woodmart' ),
-					'type'        => 'selector',
-					'tab'         => esc_html__( 'Style', 'woodmart' ),
-					'group'       => esc_html__( 'Icon', 'woodmart' ),
-					'value'       => 'default',
-					'options'     => array(
+					'id'        => 'icon_type',
+					'title'     => esc_html__( 'Icon type', 'woodmart' ),
+					'type'      => 'selector',
+					'tab'       => esc_html__( 'Style', 'woodmart' ),
+					'group'     => esc_html__( 'Button', 'woodmart' ),
+					'value'     => 'default',
+					'options'   => array(
 						'default' => array(
 							'value' => 'default',
 							'label' => esc_html__( 'Default', 'woodmart' ),
@@ -374,29 +572,157 @@ class Account extends Element {
 							'image' => WOODMART_ASSETS_IMAGES . '/header-builder/upload.jpg',
 						),
 					),
-					'requires'    => array(
+					'condition' => array(
 						'display' => array(
-							'comparison' => 'equal',
-							'value'      => 'icon',
+							'comparison' => 'not_equal',
+							'value'      => array( 'text' ),
 						),
 					),
-					'extra_class' => 'xts-col-6',
 				),
 				'custom_icon'         => array(
 					'id'          => 'custom_icon',
 					'title'       => esc_html__( 'Upload an image', 'woodmart' ),
 					'type'        => 'image',
 					'tab'         => esc_html__( 'Style', 'woodmart' ),
-					'group'       => esc_html__( 'Icon', 'woodmart' ),
+					'group'       => esc_html__( 'Button', 'woodmart' ),
 					'value'       => '',
 					'description' => '',
-					'requires'    => array(
+					'condition'   => array(
+						'display'   => array(
+							'comparison' => 'not_equal',
+							'value'      => array( 'text' ),
+						),
 						'icon_type' => array(
 							'comparison' => 'equal',
 							'value'      => 'custom',
 						),
 					),
 					'extra_class' => 'xts-col-6',
+				),
+				'custom_icon_width'   => array(
+					'id'          => 'custom_icon_width',
+					'title'       => esc_html__( 'Icon width', 'woodmart' ),
+					'type'        => 'slider',
+					'tab'         => esc_html__( 'Style', 'woodmart' ),
+					'group'       => esc_html__( 'Button', 'woodmart' ),
+					'from'        => 0,
+					'to'          => 60,
+					'value'       => 0,
+					'units'       => 'px',
+					'selectors'   => array(
+						'{{WRAPPER}}' => array(
+							'--wd-tools-icon-width: {{VALUE}}px;',
+						),
+					),
+					'condition'   => array(
+						'display'   => array(
+							'comparison' => 'not_equal',
+							'value'      => array( 'text' ),
+						),
+						'icon_type' => array(
+							'comparison' => 'equal',
+							'value'      => 'custom',
+						),
+					),
+					'extra_class' => 'xts-col-6',
+				),
+				'bg_dropdown_color'   => array(
+					'id'        => 'bg_dropdown_color',
+					'title'     => esc_html__( 'Background color', 'woodmart' ),
+					'type'      => 'color',
+					'tab'       => esc_html__( 'Style', 'woodmart' ),
+					'group'     => esc_html__( 'Dropdown', 'woodmart' ),
+					'value'     => '',
+					'selectors' => array(
+						'{{WRAPPER}} .wd-dropdown' => array(
+							'--wd-dropdown-bg-color: {{VALUE}};',
+						),
+					),
+				),
+				'box_shadow_dropdown' => array(
+					'id'        => 'box_shadow_dropdown',
+					'title'     => esc_html__( 'Box shadow', 'woodmart' ),
+					'tab'       => esc_html__( 'Style', 'woodmart' ),
+					'group'     => esc_html__( 'Dropdown', 'woodmart' ),
+					'type'      => 'group',
+					'style'     => 'dropdown',
+					'selectors' => array(
+						'{{WRAPPER}} .wd-dropdown' => array(
+							'--wd-dropdown-shadow: {{HORIZONTAL}}px {{VERTICAL}}px {{BLUR}}px {{SPREAD}}px {{COLOR}} {{BORDER_TYPE}};',
+						),
+					),
+					'value'     => array(),
+					'fields'    => array(
+						'color'       => array(
+							'id'          => 'color',
+							'title'       => esc_html__( 'Color', 'woodmart' ),
+							'type'        => 'color',
+							'value'       => '',
+							'extra_class' => 'xts-col-6',
+						),
+						'border_type' => array(
+							'id'                 => 'border_type',
+							'title'              => esc_html__( 'Border type', 'woodmart' ),
+							'type'               => 'selector',
+							'value'              => 'outline',
+							'options'            => array(
+								'outline' => array(
+									'value' => 'outline',
+									'label' => esc_html__( 'Outline', 'woodmart' ),
+								),
+								'inset'   => array(
+									'value' => 'inset',
+									'label' => esc_html__( 'Inset', 'woodmart' ),
+								),
+							),
+							'allowed_css_values' => array( 'inset' ),
+							'extra_class'        => 'xts-col-6',
+						),
+						'horizontal'  => array(
+							'id'            => 'horizontal',
+							'title'         => esc_html__( 'Horizontal offset', 'woodmart' ),
+							'type'          => 'slider',
+							'from'          => -100,
+							'to'            => 100,
+							'value'         => '0',
+							'generate_zero' => true,
+							'units'         => 'px',
+							'extra_class'   => 'xts-col-6',
+						),
+						'vertical'    => array(
+							'id'            => 'vertical',
+							'title'         => esc_html__( 'Vertical offset', 'woodmart' ),
+							'type'          => 'slider',
+							'from'          => -100,
+							'to'            => 100,
+							'value'         => '0',
+							'generate_zero' => true,
+							'units'         => 'px',
+							'extra_class'   => 'xts-col-6',
+						),
+						'blur'        => array(
+							'id'            => 'blur',
+							'title'         => esc_html__( 'Blur', 'woodmart' ),
+							'type'          => 'slider',
+							'from'          => 0,
+							'to'            => 100,
+							'value'         => 10,
+							'generate_zero' => true,
+							'units'         => 'px',
+							'extra_class'   => 'xts-col-6',
+						),
+						'spread'      => array(
+							'id'            => 'spread',
+							'title'         => esc_html__( 'Spread', 'woodmart' ),
+							'type'          => 'slider',
+							'from'          => -100,
+							'to'            => 100,
+							'value'         => '0',
+							'generate_zero' => true,
+							'units'         => 'px',
+							'extra_class'   => 'xts-col-6',
+						),
+					),
 				),
 				'bg_overlay'          => array(
 					'id'          => 'bg_overlay',
@@ -405,7 +731,7 @@ class Account extends Element {
 					'description' => esc_html__( 'Highlight dropdowns by darkening the background behind.', 'woodmart' ),
 					'type'        => 'switcher',
 					'tab'         => esc_html__( 'Style', 'woodmart' ),
-					'group'       => esc_html__( 'Extra', 'woodmart' ),
+					'group'       => esc_html__( 'Dropdown', 'woodmart' ),
 					'value'       => false,
 				),
 			),

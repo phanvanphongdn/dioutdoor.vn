@@ -1,4 +1,9 @@
 <?php
+/**
+ * Presets class.
+ *
+ * @package Woodmart
+ */
 
 namespace XTS\Admin\Modules\Options;
 
@@ -10,6 +15,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+/**
+ * Class Presets.
+ */
 class Presets extends Singleton {
 	/**
 	 * All presets.
@@ -83,7 +91,7 @@ class Presets extends Singleton {
 					'preset_id' => $id,
 					'action'    => 'add_new',
 				),
-				remove_query_arg( [ 'preset_id', 'action', 'preset_page', 'search_preset' ], sanitize_text_field( wp_unslash( $_POST['_wp_http_referer'] ) ) )
+				remove_query_arg( array( 'preset_id', 'action', 'preset_page', 'search_preset' ), sanitize_text_field( wp_unslash( $_POST['_wp_http_referer'] ) ) )
 			)
 		);
 	}
@@ -117,7 +125,7 @@ class Presets extends Singleton {
 					'action'      => 'removed',
 					'preset_page' => $preset_page,
 				),
-				remove_query_arg( [ 'preset_id', 'action' ], sanitize_text_field( wp_unslash( $_POST['_wp_http_referer'] ) ) )
+				remove_query_arg( array( 'preset_id', 'action' ), sanitize_text_field( wp_unslash( $_POST['_wp_http_referer'] ) ) )
 			)
 		);
 	}
@@ -307,9 +315,13 @@ class Presets extends Singleton {
 				}
 				break;
 			case 'post_id':
+				$all_post_types       = get_post_types( array( 'public' => true ) );
+				$exlude_post_types    = apply_filters( 'woodmart_presets_exclude_post_types_from_search', array( 'reply' ) );
+				$available_post_types = array_diff( $all_post_types, $exlude_post_types );
+
 				$args = array(
 					's'              => $name,
-					'post_type'      => get_post_types( array( 'public' => true ) ),
+					'post_type'      => $available_post_types,
 					'posts_per_page' => 100,
 				);
 
@@ -399,13 +411,13 @@ class Presets extends Singleton {
 				</div>
 
 				<div class="xts-notices-wrapper xts-notices-sticky">
-					<?php if ( ! isset( $presets_pages[ $current_page ] ) && isset( $_GET['search_preset'] ) ) : ?>
+					<?php if ( ! isset( $presets_pages[ $current_page ] ) && isset( $_GET['search_preset'] ) ) : // phpcs:ignore WordPress.Security.NonceVerification.Recommended ?>
 						<div class="xts-notice xts-info">
 							<?php esc_html_e( 'Apologies, but no results were found.', 'woodmart' ); ?>
 						</div>
 					<?php endif; ?>
 
-					<?php if ( ! isset( $presets_pages[ $current_page ] ) && ! isset( $_GET['search_preset'] ) ) : ?>
+					<?php if ( ! isset( $presets_pages[ $current_page ] ) && ! isset( $_GET['search_preset'] ) ) : // phpcs:ignore WordPress.Security.NonceVerification.Recommended ?>
 						<div class="xts-notice xts-info">
 							<?php esc_html_e( 'There are currently no existing presets.', 'woodmart' ); ?>
 						</div>
@@ -602,24 +614,7 @@ class Presets extends Singleton {
 			)
 		);
 
-		$custom_conditions = apply_filters(
-			'xts_get_custom_conditions_for_preset',
-			array(
-				'search'         => 'Search results',
-				'blog'           => 'Default "Your Latest Posts" screen',
-				'front'          => 'Front page',
-				'archives'       => 'All archives',
-				'author'         => 'Author archives',
-				'error404'       => '404 error screens',
-				'shop'           => 'Shop page',
-				'single_product' => 'Single product',
-				'cart'           => 'Cart page',
-				'checkout'       => 'Checkout page',
-				'account'        => 'Account pages',
-				'is_mobile'      => 'Is mobile device',
-				'is_rtl'         => 'Is RTL',
-			)
-		);
+		$custom_conditions = apply_filters( 'xts_get_custom_conditions_for_preset', woodmart_get_custom_conditions_list() );
 
 		if ( ! woodmart_woocommerce_installed() ) {
 			unset( $custom_conditions['shop'] );
@@ -666,7 +661,7 @@ class Presets extends Singleton {
 					<option value="post_type" <?php selected( 'post_type', $rule['type'] ); ?>>
 						<?php esc_html_e( 'Post type', 'woodmart' ); ?>
 					</option>
-					<option value="single_post_type" <?php selected( 'post_type', $rule['type'] ); ?>>
+					<option value="single_post_type" <?php selected( 'single_post_type', $rule['type'] ); ?>>
 						<?php esc_html_e( 'Post type single page', 'woodmart' ); ?>
 					</option>
 					<option value="post_id" <?php selected( 'post_id', $rule['type'] ); ?>>
@@ -933,6 +928,9 @@ class Presets extends Singleton {
 							case 'error404':
 								$is_active = 'equals' === $rule['comparison'] ? is_404() : ! is_404();
 								break;
+							case 'logged_in':
+								$is_active = 'equals' === $rule['comparison'] ? is_user_logged_in() : ! is_user_logged_in();
+								break;
 							case 'shop':
 								if ( woodmart_woocommerce_installed() ) {
 									$is_active = 'equals' === $rule['comparison'] ? is_shop() : ! is_shop();
@@ -978,8 +976,8 @@ class Presets extends Singleton {
 						break;
 					case 'filtered_product_by_term':
 					case 'filtered_product_term_any':
-						if ( ! empty( $_GET ) ) {
-							foreach ( $_GET as $key => $value ) {
+						if ( ! empty( $_GET ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+							foreach ( $_GET as $key => $value ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 								if ( 0 === strpos( $key, 'filter_' ) ) {
 									$attribute    = wc_sanitize_taxonomy_name( str_replace( 'filter_', '', $key ) );
 									$taxonomy     = wc_attribute_taxonomy_name( $attribute );

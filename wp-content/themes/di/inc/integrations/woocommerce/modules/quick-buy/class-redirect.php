@@ -2,7 +2,7 @@
 /**
  * Quick buy.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Modules\Quick_Buy;

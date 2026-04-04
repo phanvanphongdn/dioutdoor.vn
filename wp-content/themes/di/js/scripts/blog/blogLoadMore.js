@@ -45,8 +45,10 @@
 			if (source === 'main_loop') {
 				ajaxurl = $this.attr('href');
 				method = 'GET';
-				data = {};
+				data = atts ? { atts: atts } : {};
 			}
+
+			data.woo_ajax = 1;
 
 			$.ajax({
 				url     : ajaxurl,
@@ -79,14 +81,14 @@
 							if (source === 'main_loop') {
 								$this.attr('href', data.nextPage);
 								if (data.status === 'no-more-posts') {
-									$this.hide().remove();
+									$this.parent().hide().remove();
 								}
 							}
 						}
 
 						if (data.status === 'no-more-posts') {
 							$this.addClass('no-more-posts');
-							$this.hide();
+							$this.parent().hide();
 						}
 					});
 				},

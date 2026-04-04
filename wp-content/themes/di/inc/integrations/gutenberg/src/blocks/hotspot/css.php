@@ -1,4 +1,10 @@
 <?php
+/**
+ * Hotspot block CSS.
+ *
+ * @package woodmart
+ */
+
 use XTS\Gutenberg\Block_CSS;
 
 $block_css     = new Block_CSS( $attrs );
@@ -65,8 +71,9 @@ $block_css->add_css_rules(
 $block_css->merge_with(
 	wd_get_block_advanced_css(
 		array(
-			'selector'       => $block_selector . ' .wd-spot-dropdown',
-			'selector_hover' => $block_selector_hover . ' .wd-spot-dropdown:hover',
+			'selector'              => $block_selector . ' .wd-spot-dropdown',
+			'selector_hover'        => $block_selector_hover . ' .wd-spot-dropdown',
+			'selector_parent_hover' => $block_selector_parent_hover,
 		),
 		$attrs
 	)

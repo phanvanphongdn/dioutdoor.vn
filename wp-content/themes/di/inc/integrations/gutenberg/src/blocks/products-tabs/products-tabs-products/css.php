@@ -14,7 +14,7 @@ $block_css->add_css_rules(
 );
 
 $block_css->add_css_rules(
-	$block_selector . ' .wd-products-with-bg, ' . $block_selector . ' .wd-products-with-bg .wd-product',
+	$block_selector . ' .wd-products-with-bg, ' . $block_selector . ' .wd-products-with-bg .wd-product, ' . $block_selector . '.wd-products-with-bg, ' . $block_selector . '.wd-products-with-bg .wd-product',
 	array(
 		array(
 			'attr_name' => 'productsBackgroundCode',
@@ -28,7 +28,7 @@ $block_css->add_css_rules(
 );
 
 $block_css->add_css_rules(
-	$block_selector . ' [class*="products-bordered-grid"], ' . $block_selector . ' [class*="products-bordered-grid"] .wd-product',
+	$block_selector . ' [class*="products-bordered-grid"], ' . $block_selector . ' [class*="products-bordered-grid"] .wd-product,' . $block_selector . '[class*="products-bordered-grid"], ' . $block_selector . '[class*="products-bordered-grid"] .wd-product',
 	array(
 		array(
 			'attr_name' => 'productsBorderColorCode',
@@ -86,17 +86,11 @@ $block_css->add_css_rules(
 );
 
 $block_css->merge_with(
-	wd_get_block_carousel_css(
-		$block_selector,
-		$attrs
-	)
-);
-
-$block_css->merge_with(
 	wd_get_block_advanced_css(
 		array(
-			'selector'       => $block_selector . '.wd-tabs-content-wrapper',
-			'selector_hover' => $block_selector . '.wd-tabs-content-wrapper:hover',
+			'selector'              => $block_selector . '.wd-tabs-content-wrapper',
+			'selector_hover'        => $block_selector . '.wd-tabs-content-wrapper:hover',
+			'selector_parent_hover' => $block_selector_parent_hover . '.wd-tabs-content-wrapper',
 		),
 		$attrs
 	)

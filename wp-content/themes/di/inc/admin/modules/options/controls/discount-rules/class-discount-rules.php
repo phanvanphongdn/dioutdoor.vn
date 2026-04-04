@@ -25,14 +25,16 @@ class Discount_Rules extends Field {
 	 * @param array  $args Field args array.
 	 * @param array  $options Options from the database.
 	 * @param string $type Field type.
-	 * @param string $object $object Object for post or term.
+	 * @param string $meta_type Meta type.
 	 */
-	public function __construct( $args, $options, $type = 'options', $object = 'post' ) {
-		parent::__construct( $args, $options, $type, $object );
+	public function __construct( $args, $options, $type = 'options', $meta_type = 'post' ) {
+		parent::__construct( $args, $options, $type, $meta_type );
 
 		if ( empty( $this->args['inner_fields'] ) ) {
 			$this->set_default_inner_fields();
 		}
+
+		add_filter( 'woodmart_admin_localized_string_array', array( $this, 'add_localized_settings' ) );
 	}
 
 	/**
@@ -77,9 +79,9 @@ class Discount_Rules extends Field {
 	 */
 	public function render_control() {
 		$option_id      = $this->args['id'];
-		$discount_rules = maybe_unserialize( $this->get_field_value() );
+		$discount_rules = $this->get_field_value();
 
-		if ( empty( $discount_rules ) ) {
+		if ( empty( $discount_rules ) || ! is_array( $discount_rules ) ) {
 			$discount_rules = array(
 				array(
 					'_woodmart_discount_rules_from'       => '',
@@ -119,7 +121,7 @@ class Discount_Rules extends Field {
 							<input type="number" name="<?php echo esc_attr( $option_id . '[{{index}}][_woodmart_discount_percentage_value]' ); ?>" id="_woodmart_discount_percentage_value_{{index}}" class="xts-col-6" min="0" max="100" placeholder="0.00" step="0.01" aria-label="<?php esc_attr_e( 'Discount percentage value', 'woodmart' ); ?>" disabled>
 						</div>
 					</div>
-					<div class="xts-discount-close">
+					<div class="xts-close">
 						<a href="#" class="xts-remove-item xts-bordered-btn xts-color-warning xts-style-icon xts-i-close"></a>
 					</div>
 				</div>
@@ -138,7 +140,7 @@ class Discount_Rules extends Field {
 					<div class="xts-discount-value">
 						<label><?php echo esc_html__( 'Value', 'woodmart' ); ?></label>
 					</div>
-					<div class="xts-discount-remove"></div>
+					<div class="xts-close"></div>
 				</div>
 				<?php foreach ( $discount_rules as $id => $rule_args ) : //phpcs:ignore. ?>
 					<div class="xts-table-controls">
@@ -157,7 +159,7 @@ class Discount_Rules extends Field {
 								<?php endforeach; ?>
 							</select>
 						</div>
-						<div class="xts-discount-amount-value <?php echo isset( $discount_rules[ $id ] ) && isset( $discount_rules[ $id ]['_woodmart_discount_type'] ) && 'amount' === $discount_rules[ $id ]['_woodmart_discount_type'] || ! isset( $discount_rules[ $id ] ) ? '' : 'xts-hidden'; ?>">
+						<div class="xts-discount-amount-value <?php echo ( isset( $discount_rules[ $id ] ) && isset( $discount_rules[ $id ]['_woodmart_discount_type'] ) && 'amount' === $discount_rules[ $id ]['_woodmart_discount_type'] ) || ! isset( $discount_rules[ $id ] ) ? '' : 'xts-hidden'; ?>">
 							<div class="xts-option-control">
 								<input type="number" name="<?php echo esc_attr( $option_id . '[' . $id . '][_woodmart_discount_amount_value]' ); ?>" id="_woodmart_discount_amount_value_<?php echo esc_attr( $id ); ?>" class="xts-col-6" min="0" placeholder="0.00" step="0.01" aria-label="<?php esc_attr_e( 'Discount amount value', 'woodmart' ); ?>" value="<?php echo isset( $discount_rules[ $id ]['_woodmart_discount_amount_value'] ) ? esc_attr( $discount_rules[ $id ]['_woodmart_discount_amount_value'] ) : ''; ?>">
 							</div>
@@ -167,7 +169,7 @@ class Discount_Rules extends Field {
 								<input type="number" name="<?php echo esc_attr( $option_id . '[' . $id . '][_woodmart_discount_percentage_value]' ); ?>" id="_woodmart_discount_percentage_value_<?php echo esc_attr( $id ); ?>" class="xts-col-6" min="0" max="100" placeholder="0.00" step="0.01" aria-label="<?php esc_attr_e( 'Discount percentage value', 'woodmart' ); ?>" value="<?php echo isset( $discount_rules[ $id ]['_woodmart_discount_percentage_value'] ) ? esc_attr( $discount_rules[ $id ]['_woodmart_discount_percentage_value'] ) : ''; ?>">
 							</div>
 						</div>
-						<div class="xts-discount-close">
+						<div class="xts-close">
 							<a href="#" class="xts-remove-item xts-bordered-btn xts-color-warning xts-style-icon xts-i-close"></a>
 						</div>
 					</div>
@@ -188,21 +190,24 @@ class Discount_Rules extends Field {
 	public function enqueue() {
 		wp_enqueue_script( 'woodmart-admin-options', WOODMART_ASSETS . '/js/options.js', array(), WOODMART_VERSION, true );
 		wp_enqueue_script( 'wd-discount-rules', WOODMART_ASSETS . '/js/discountRules.js', array( 'jquery' ), WOODMART_VERSION, true );
-
-		wp_localize_script( 'wd-discount-rules', 'wd_discount_rules_notice', $this->add_localized_settings() );
 	}
 
 	/**
 	 * Add localized settings.
 	 *
+	 * @param array $localize_data List of localized dates.
+	 *
 	 * @return array
 	 */
-	public function add_localized_settings() {
-		return array(
-			'quantity_range_start' => esc_html__( 'Quantity range must start with a higher value than previous quantity range.', 'woodmart' ),
-			'closing_quantity'     => esc_html__( 'Closing quantity must not be lower than opening quantity.', 'woodmart' ),
-			'no_quantity_range'    => esc_html__( 'At least one quantity range is required for this pricing rule.', 'woodmart' ),
-			'max_value'            => esc_html__( 'Discount cannot exceed 100%.', 'woodmart' ),
+	public function add_localized_settings( $localize_data ) {
+		return array_merge(
+			$localize_data,
+			array(
+				'quantity_range_start' => esc_html__( 'Quantity range must start with a higher value than previous quantity range.', 'woodmart' ),
+				'closing_quantity'     => esc_html__( 'Closing quantity must not be lower than opening quantity.', 'woodmart' ),
+				'no_quantity_range'    => esc_html__( 'At least one quantity range is required for this pricing rule.', 'woodmart' ),
+				'max_value'            => esc_html__( 'Discount cannot exceed 100%.', 'woodmart' ),
+			)
 		);
 	}
 }

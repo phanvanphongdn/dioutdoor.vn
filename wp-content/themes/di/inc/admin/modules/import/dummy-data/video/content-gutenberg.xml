@@ -16,7 +16,7 @@
 	<!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 	<!--    contained in this file into your site. -->
 
-	<!-- generator="WordPress/6.5.5" created="2024-10-28 15:00" -->
+	<!-- generator="WordPress/6.7.4" created="2026-02-25 14:48" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -29,29 +29,21 @@
 	<title>Gutenberg base</title>
 	<link>https://dummy.xtemos.com/woodmart2/gutenberg</link>
 	<description></description>
-	<pubDate>Mon, 28 Oct 2024 15:00:43 +0000</pubDate>
+	<pubDate>Wed, 25 Feb 2026 14:48:49 +0000</pubDate>
 	<language>en-US</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
 	<wp:base_site_url>https://dummy.xtemos.com/woodmart2/</wp:base_site_url>
 	<wp:base_blog_url>https://dummy.xtemos.com/woodmart2/gutenberg</wp:base_blog_url>
 
-		<wp:author><wp:author_id>2</wp:author_id><wp:author_login><![CDATA[zakhar]]></wp:author_login><wp:author_email><![CDATA[zak@asda.as]]></wp:author_email><wp:author_display_name><![CDATA[Mr. Mackay]]></wp:author_display_name><wp:author_first_name><![CDATA[sds]]></wp:author_first_name><wp:author_last_name><![CDATA[scssc]]></wp:author_last_name></wp:author>
-	<wp:author><wp:author_id>491</wp:author_id><wp:author_login><![CDATA[maksimkliakhin]]></wp:author_login><wp:author_email><![CDATA[m.kliakhin@gmail.com]]></wp:author_email><wp:author_display_name><![CDATA[Ethan Smith]]></wp:author_display_name><wp:author_first_name><![CDATA[Ethan]]></wp:author_first_name><wp:author_last_name><![CDATA[Smith]]></wp:author_last_name></wp:author>
-
-					<wp:term>
-			<wp:term_id>0</wp:term_id>
-			<wp:term_taxonomy><![CDATA[]]></wp:term_taxonomy>
-			<wp:term_slug><![CDATA[]]></wp:term_slug>
-			<wp:term_parent><![CDATA[]]></wp:term_parent>
-					</wp:term>
-		
-	<generator>https://wordpress.org/?v=6.5.5</generator>
+	
+							
+	<generator>https://wordpress.org/?v=6.7.4</generator>
 
 					<item>
 					<title><![CDATA[wood-logo-white-reserve]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/gutenberg/wood-logo-white-reserve/</link>
 					<pubDate>Wed, 21 Jun 2017 08:17:11 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2017/06/wood-logo-white-reserve.svg</guid>
 															<wp:post_id>302</wp:post_id>
 					<wp:post_date><![CDATA[2017-06-21 08:17:11]]></wp:post_date>
@@ -74,7 +66,7 @@
 					<title><![CDATA[page-title-shop]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/gutenberg/page-title-shop/</link>
 					<pubDate>Fri, 23 Jul 2021 06:08:22 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2021/07/page-title-shop.jpg</guid>
 															<wp:post_id>1177</wp:post_id>
 					<wp:post_date><![CDATA[2021-07-23 06:08:22]]></wp:post_date>
@@ -97,7 +89,7 @@
 					<title><![CDATA[wd-mobile-light]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/gutenberg/home-shoes/wd-mobile-light/</link>
 					<pubDate>Wed, 15 May 2024 10:01:32 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/05/wd-mobile-light.svg</guid>
 															<wp:post_id>11506</wp:post_id>
 					<wp:post_date><![CDATA[2024-05-15 10:01:32]]></wp:post_date>
@@ -120,7 +112,7 @@
 					<title><![CDATA[wd-paper-plane-light]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/gutenberg/home-shoes/wd-paper-plane-light/</link>
 					<pubDate>Wed, 15 May 2024 10:01:33 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/05/wd-paper-plane-light.svg</guid>
 															<wp:post_id>11507</wp:post_id>
 					<wp:post_date><![CDATA[2024-05-15 10:01:33]]></wp:post_date>
@@ -143,7 +135,7 @@
 					<title><![CDATA[wd-pointer-light]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/gutenberg/home-shoes/wd-pointer-light/</link>
 					<pubDate>Wed, 15 May 2024 10:01:34 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/05/wd-pointer-light.svg</guid>
 															<wp:post_id>11508</wp:post_id>
 					<wp:post_date><![CDATA[2024-05-15 10:01:34]]></wp:post_date>
@@ -166,7 +158,7 @@
 					<title><![CDATA[Footer 1 column Light]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/gutenberg/?cms_block=footer-1-column-light</link>
 					<pubDate>Fri, 24 May 2024 13:40:27 +0000</pubDate>
-					<dc:creator><![CDATA[maksimkliakhin]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/gutenberg/?post_type=cms_block&#038;p=12962</guid>
 											<content:encoded><![CDATA[<!-- wp:wd/row {"blockId":"44ed7d08-e070-4837-b8c5-83401769c4d1","paddingTop":"40","paddingBottom":"40"} -->
 <div id="wd-44ed7d08" class="wp-block-wd-row"><!-- wp:wd/column {"blockId":"d5a06582-d2b6-4d73-83f9-ccc08f331d22","adjacentCount":5,"colWidth":25,"adjacentCountTablet":2,"adjacentCountMobile":1,"colWidthTablet":50,"colWidthMobile":100} -->
@@ -353,69 +345,69 @@
 					<title><![CDATA[Home Video]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/gutenberg/home-video/</link>
 					<pubDate>Wed, 19 Jun 2024 07:56:26 +0000</pubDate>
-					<dc:creator><![CDATA[maksimkliakhin]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/gutenberg/?page_id=17610</guid>
-											<content:encoded><![CDATA[<!-- wp:wd/slider {"blockId":"b6a11f49-7f55-4dcf-b2bc-f47837b72b4d","effect":"distortion","arrowsColorScheme":"light","paginationStyle":"3","paginationColorScheme":"light","autoplay":true,"autoplaySpeed":"25000","stretch":true,"height":"100","marginBottom":"4","displayWidth":"","heightTablet":"770","heightMobile":"790","heightUnits":"vh"} -->
-<div id="wd-b6a11f49" class="wp-block-wd-slider wd-slider wd-carousel-container wd-anim-distortion wd-stretched"><div class="wd-carousel-inner"><div class="wd-carousel wd-grid" data-effect="distortion" data-wrap="yes" data-autoheight="yes" data-sliding_speed="700" style="--wd-col-lg:1;--wd-col-md:1;--wd-col-sm:1" data-autoplay="yes" data-speed="25000"><div class="wd-carousel-wrap"><!-- wp:wd/slider-item {"blockId":"4cc31b88-a31e-4aaf-a783-3dbfbba7bb24","blockGap":0,"effect":"distortion","colorScheme":"light","bgImage":{"id":17641,"url":"http://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/wd-video-slide-2-opt.jpg"},"bgColorCode":"#b4b1ab","paddingRightMobile":"0","paddingLeftMobile":"0"} -->
-<div id="wd-4cc31b88" class="wp-block-wd-slider-item wd-slide wd-carousel-item color-scheme-light" data-image-url="http://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/wd-video-slide-2-opt.jpg"><div class="wd-slide-container"><!-- wp:wd/title {"blockId":"ceaafc93-9eca-417a-808b-ff0d9ebb6b75","content":"NEW TRENDS​","tpFontSize":"124","tpLineHeight":"1.3","animation":"slide-from-bottom","animationDelay":"200","tpFontSizeTablet":"90","tpFontSizeMobile":"46","tpLineHeightUnits":"em"} -->
-<h2 id="wd-ceaafc93" class="wp-block-wd-title title wd-animation wd-transform wd-animation-slide-from-bottom wd_delay_200">NEW TRENDS​</h2>
+											<content:encoded><![CDATA[<!-- wp:wd/slider {"blockId":"b6a11f49-7f55-4dcf-b2bc-f47837b72b4d","blockVersion":"2","effect":"distortion","arrowsColorScheme":"light","paginationStyle":"3","paginationColorScheme":"light","autoplay":true,"autoplaySpeed":"25000","stretch":true,"height":"100","marginBottom":"4","displayWidth":"","heightTablet":"770","heightMobile":"790","heightUnits":"vh"} -->
+<div class="wp-block-wd-slider wd-slider wd-carousel-container wd-anim-distortion wd-stretched wd-autoplay-on wd-b6a11f49"><div class="wd-carousel-inner"><div class="wd-carousel wd-grid" data-effect="distortion" data-wrap="yes" data-autoheight="yes" data-sliding_speed="700" style="--wd-col-lg:1;--wd-col-md:1;--wd-col-sm:1;" data-autoplay="yes" data-speed="25000"><div class="wd-carousel-wrap"><!-- wp:wd/slider-item {"blockId":"4cc31b88-a31e-4aaf-a783-3dbfbba7bb24","blockVersion":"2","blockGap":0,"effect":"distortion","colorScheme":"light","aspectRatio":"","image":{"id":17641,"url":"https://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/wd-video-slide-2-opt.jpg","width":2000,"height":1505},"bgImage":{"id":"","url":""},"bgColorCode":"#b4b1ab","paddingRightMobile":"0","paddingLeftMobile":"0"} -->
+<div class="wp-block-wd-slider-item wd-slide wd-carousel-item color-scheme-light wd-4cc31b88" data-image-url="https://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/wd-video-slide-2-opt.jpg"><div class="wd-slide-container"><!-- wp:wd/title {"blockId":"ceaafc93-9eca-417a-808b-ff0d9ebb6b75","blockVersion":"2","textAlign":"center","content":"NEW TRENDS​","tpFontSize":"124","tpLineHeight":"1.3","animation":"slide-from-bottom","animationDelay":"200","tpFontSizeTablet":"90","tpFontSizeMobile":"46","tpLineHeightUnits":"em"} -->
+<h2 class="wp-block-wd-title title wd-align wd-animation wd-transform wd-animation-slide-from-bottom wd_delay_200 wd-ceaafc93">NEW TRENDS​</h2>
 <!-- /wp:wd/title -->
 
-<!-- wp:wd/paragraph {"blockId":"bc1ce0c6-0d14-483e-b8cf-65faff41201e","tpFontSize":"84","tpLineHeight":"1.3","tpFontVariant":"300","tpFontWeight":"300","animation":"slide-from-bottom","animationDelay":"350","tpFontSizeTablet":"60","tpFontSizeMobile":"34","tpLineHeightUnits":"em"} -->
-<p id="wd-bc1ce0c6" class="wp-block-wd-paragraph wd-animation wd-transform wd-animation-slide-from-bottom wd_delay_350">INTERIOR DESIGN</p>
-<!-- /wp:wd/paragraph --></div><div class="wd-slide-bg wd-fill"></div></div>
+<!-- wp:wd/paragraph {"blockId":"bc1ce0c6-0d14-483e-b8cf-65faff41201e","blockVersion":"2","textAlign":"center","tpFontSize":"84","tpLineHeight":"1.3","tpFontVariant":"300","tpFontWeight":"300","animation":"slide-from-bottom","animationDelay":"350","tpFontSizeTablet":"60","tpFontSizeMobile":"34","tpLineHeightUnits":"em"} -->
+<p class="wp-block-wd-paragraph wd-align wd-animation wd-transform wd-animation-slide-from-bottom wd_delay_350 wd-bc1ce0c6">INTERIOR DESIGN</p>
+<!-- /wp:wd/paragraph --></div><div class="wd-slide-bg wd-fill"><img src="https://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/wd-video-slide-2-opt.jpg" class="wp-image-17641" alt=""/></div></div>
 <!-- /wp:wd/slider-item -->
 
-<!-- wp:wd/slider-item {"blockId":"a0aff741-3026-42bf-99b8-9a22b832d073","blockGap":0,"justify":"center","effect":"distortion","colorScheme":"light","bgImage":{"id":17642,"url":"http://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/wd-video-slide-3-opt.jpg"},"bgColorCode":"#b4b1ab","paddingRightMobile":"0","paddingLeftMobile":"0"} -->
-<div id="wd-a0aff741" class="wp-block-wd-slider-item wd-slide wd-carousel-item color-scheme-light" data-image-url="http://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/wd-video-slide-3-opt.jpg"><div class="wd-slide-container"><!-- wp:wd/title {"blockId":"198e6a88-4864-4ce0-8773-c18dc8884357","content":"BESTSELLERS​","tpFontSize":"124","tpLineHeight":"1.3","animation":"slide-from-bottom","animationDelay":"200","tpFontSizeTablet":"90","tpFontSizeMobile":"52","tpLineHeightUnits":"em"} -->
-<h2 id="wd-198e6a88" class="wp-block-wd-title title wd-animation wd-transform wd-animation-slide-from-bottom wd_delay_200">BESTSELLERS​</h2>
+<!-- wp:wd/slider-item {"blockId":"a0aff741-3026-42bf-99b8-9a22b832d073","blockVersion":"2","blockGap":0,"justify":"center","effect":"distortion","colorScheme":"light","aspectRatio":"","image":{"id":17642,"url":"https://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/wd-video-slide-3-opt.jpg","width":2000,"height":1505},"bgImage":{"id":"","url":""},"bgColorCode":"#b4b1ab","paddingRightMobile":"0","paddingLeftMobile":"0"} -->
+<div class="wp-block-wd-slider-item wd-slide wd-carousel-item color-scheme-light wd-a0aff741" data-image-url="https://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/wd-video-slide-3-opt.jpg"><div class="wd-slide-container"><!-- wp:wd/title {"blockId":"198e6a88-4864-4ce0-8773-c18dc8884357","blockVersion":"2","textAlign":"center","content":"BESTSELLERS​","tpFontSize":"124","tpLineHeight":"1.3","animation":"slide-from-bottom","animationDelay":"200","tpFontSizeTablet":"90","tpFontSizeMobile":"52","tpLineHeightUnits":"em"} -->
+<h2 class="wp-block-wd-title title wd-align wd-animation wd-transform wd-animation-slide-from-bottom wd_delay_200 wd-198e6a88">BESTSELLERS​</h2>
 <!-- /wp:wd/title -->
 
-<!-- wp:wd/paragraph {"blockId":"ba6d4832-e5d2-488e-a177-edc03607e478","tpFontSize":"84","tpLineHeight":"1.3","tpFontVariant":"300","tpFontWeight":"300","animation":"slide-from-bottom","animationDelay":"350","tpFontSizeTablet":"60","tpFontSizeMobile":"34","tpLineHeightUnits":"em"} -->
-<p id="wd-ba6d4832" class="wp-block-wd-paragraph wd-animation wd-transform wd-animation-slide-from-bottom wd_delay_350">MODERN CHAIRS</p>
-<!-- /wp:wd/paragraph --></div><div class="wd-slide-bg wd-fill"></div></div>
+<!-- wp:wd/paragraph {"blockId":"ba6d4832-e5d2-488e-a177-edc03607e478","blockVersion":"2","textAlign":"center","tpFontSize":"84","tpLineHeight":"1.3","tpFontVariant":"300","tpFontWeight":"300","animation":"slide-from-bottom","animationDelay":"350","tpFontSizeTablet":"60","tpFontSizeMobile":"34","tpLineHeightUnits":"em"} -->
+<p class="wp-block-wd-paragraph wd-align wd-animation wd-transform wd-animation-slide-from-bottom wd_delay_350 wd-ba6d4832">MODERN CHAIRS</p>
+<!-- /wp:wd/paragraph --></div><div class="wd-slide-bg wd-fill"><img src="https://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/wd-video-slide-3-opt.jpg" class="wp-image-17642" alt=""/></div></div>
 <!-- /wp:wd/slider-item --></div></div><div class="wd-nav-arrows wd-slider-arrows wd-custom-style wd-pos-sep wd-style-1 color-scheme-light"><div class="wd-btn-arrow wd-prev"><div class="wd-arrow-inner"></div></div><div class="wd-btn-arrow wd-next"><div class="wd-arrow-inner"></div></div></div></div><div class="wd-nav-pagin-wrap wd-slider-pagin wd-custom-style wd-style-shape-3 color-scheme-light"><ul class="wd-nav-pagin"></ul></div></div>
 <!-- /wp:wd/slider -->
 
-<!-- wp:wd/section {"blockId":"33585f0b-451b-4b41-b15a-7fd849be29ac","paddingRight":"4","paddingLeft":"4","marginBottom":"80","marginBottomTablet":"60","marginBottomMobile":"40"} -->
-<div id="wd-33585f0b" class="wp-block-wd-section"><!-- wp:wd/row {"blockId":"72e2f615-d3c9-44c0-b948-e7b47df3869d","columnsGap":4,"displayWidth":"full-width"} -->
-<div id="wd-72e2f615" class="wp-block-wd-row wd-custom-width"><!-- wp:wd/column {"blockId":"acad9f1b-cdb1-452e-a74a-3ca49d642b03","adjacentCount":3} -->
-<div id="wd-acad9f1b" class="wp-block-wd-column"><!-- wp:wd/cover {"blockId":"28ef7899-5ecb-4c66-93db-de18ff561507","hover":"zoom-in","align":"end","contentAlignHorizontal":"end","contentAlignVertical":"center","colorScheme":"light","size":"aspectRatio","aspectRatio":"asImage","imageAspectRatio":"780/520","bgImage":{"id":17637,"url":"http://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/video-banner-1.jpg"},"overlayColorCode":"#000000","overlayHoverColorCode":"#000000","overlay":true,"overlayOpacity":0.3,"overlayHoverOpacity":0.6,"overlayTransition":0.5,"alignMobile":"center","contentAlignHorizontalMobile":"center"} -->
-<div id="wd-28ef7899" class="wp-block-wd-cover wd-hover-parent wd-align wd-hover-zoom-in color-scheme-light wd-bg-parent"><div class="wd-bg-overlay"></div><div class="wd-block-cover-img"></div><a class="wd-block-cover-link wd-fill" href="#" aria-label="Cover link"></a><!-- wp:wd/container {"blockId":"22649e53-dcb7-40ff-94bc-70560216912d","displayWidth":"custom","customWidth":"271","rowGapTablet":"5","displayWidthTablet":"custom","displayWidthMobile":"custom","customWidthTablet":"250","customWidthMobile":"260","metadata":{"name":"Banner content"}} -->
-<div id="wd-22649e53" class="wp-block-wd-container wd-dir-col wd-custom-width"><!-- wp:wd/paragraph {"blockId":"c74ee384-4291-45a4-8c46-091de5a7557a","tpFontSize":"24","tpFontVariant":"600","tpFontWeight":"600","tpFontSizeTablet":"18"} -->
-<p id="wd-c74ee384" class="wp-block-wd-paragraph">DESIGN 2024</p>
+<!-- wp:wd/section {"blockId":"33585f0b-451b-4b41-b15a-7fd849be29ac","blockVersion":"2","paddingRight":"4","paddingLeft":"4","marginBottom":"80","marginBottomTablet":"60","marginBottomMobile":"40"} -->
+<div class="wp-block-wd-section wd-33585f0b"><!-- wp:wd/row {"blockId":"72e2f615-d3c9-44c0-b948-e7b47df3869d","blockVersion":"2","columnsGap":4,"displayWidth":"full-width"} -->
+<div class="wp-block-wd-row wd-72e2f615 wd-custom-width"><!-- wp:wd/column {"blockId":"acad9f1b-cdb1-452e-a74a-3ca49d642b03","blockVersion":"2","adjacentCount":3} -->
+<div class="wp-block-wd-column wd-acad9f1b"><!-- wp:wd/cover {"blockId":"28ef7899-5ecb-4c66-93db-de18ff561507","blockVersion":"2","hover":"zoom-in","align":"end","contentAlignHorizontal":"end","contentAlignVertical":"center","colorScheme":"light","size":"aspectRatio","aspectRatio":"asImage","imageAspectRatio":"780/520","bgImage":{"id":17637,"url":"http://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/video-banner-1.jpg"},"overlayColorCode":"#000000","overlayHoverColorCode":"#000000","overlay":true,"overlayOpacity":0.3,"overlayHoverOpacity":0.6,"overlayTransition":0.5,"alignMobile":"center","contentAlignHorizontalMobile":"center"} -->
+<div class="wp-block-wd-cover wd-hover-parent wd-align wd-hover-zoom-in color-scheme-light wd-28ef7899 wd-bg-parent"><div class="wd-bg-overlay"></div><div class="wd-block-cover-img"></div><a class="wd-block-cover-link wd-fill" href="#" aria-label="Cover link"></a><!-- wp:wd/container {"blockId":"22649e53-dcb7-40ff-94bc-70560216912d","blockVersion":"2","displayWidth":"custom","customWidth":"271","rowGapTablet":"5","displayWidthTablet":"custom","displayWidthMobile":"custom","customWidthTablet":"250","customWidthMobile":"260","metadata":{"name":"Banner content"}} -->
+<div class="wp-block-wd-container wd-dir-col wd-22649e53 wd-custom-width"><!-- wp:wd/paragraph {"blockId":"c74ee384-4291-45a4-8c46-091de5a7557a","blockVersion":"2","tpFontSize":"24","tpFontVariant":"600","tpFontWeight":"600","tpFontSizeTablet":"18"} -->
+<p class="wp-block-wd-paragraph wd-c74ee384">DESIGN 2024</p>
 <!-- /wp:wd/paragraph -->
 
-<!-- wp:wd/title {"blockId":"7ed15426-11ce-4585-881d-99d409575061","content":"TRUE LIGHTS TRENDS","tpFontSize":"38","textAlignMobile":"center","tpFontSizeTablet":"26"} -->
-<h2 id="wd-7ed15426" class="wp-block-wd-title title wd-align">TRUE LIGHTS TRENDS</h2>
+<!-- wp:wd/title {"blockId":"7ed15426-11ce-4585-881d-99d409575061","blockVersion":"2","content":"TRUE LIGHTS TRENDS","tpFontSize":"38","textAlignMobile":"center","tpFontSizeTablet":"26"} -->
+<h2 class="wp-block-wd-title title wd-align wd-7ed15426">TRUE LIGHTS TRENDS</h2>
 <!-- /wp:wd/title --></div>
 <!-- /wp:wd/container --></div>
 <!-- /wp:wd/cover --></div>
 <!-- /wp:wd/column -->
 
-<!-- wp:wd/column {"blockId":"6bd57764-b273-4980-9b3d-1aceb5dd4798","adjacentCount":3} -->
-<div id="wd-6bd57764" class="wp-block-wd-column"><!-- wp:wd/cover {"blockId":"7a6ce8d5-1fd6-42d0-a8b0-7ed13e721d06","hover":"zoom-in","align":"center","contentAlignHorizontal":"center","contentAlignVertical":"center","colorScheme":"light","size":"aspectRatio","aspectRatio":"asImage","imageAspectRatio":"780/520","bgImage":{"id":17638,"url":"http://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/video-banner-2.jpg"},"overlayColorCode":"#000000","overlayHoverColorCode":"#000000","overlay":true,"overlayOpacity":0.3,"overlayHoverOpacity":0.6,"overlayTransition":0.5} -->
-<div id="wd-7a6ce8d5" class="wp-block-wd-cover wd-hover-parent wd-align wd-hover-zoom-in color-scheme-light wd-bg-parent"><div class="wd-bg-overlay"></div><div class="wd-block-cover-img"></div><a class="wd-block-cover-link wd-fill" href="#" aria-label="Cover link"></a><!-- wp:wd/container {"blockId":"abe63da0-164c-4437-9c88-d837abc5c20f","displayWidth":"custom","customWidth":"299","rowGapTablet":"5","displayWidthTablet":"custom","displayWidthMobile":"custom","customWidthTablet":"250","customWidthMobile":"260","metadata":{"name":"Banner content"}} -->
-<div id="wd-abe63da0" class="wp-block-wd-container wd-dir-col wd-custom-width"><!-- wp:wd/paragraph {"blockId":"f058682e-5de0-4203-9da3-5e4458bd0016","tpFontSize":"24","tpFontVariant":"600","tpFontWeight":"600","tpFontSizeTablet":"18"} -->
-<p id="wd-f058682e" class="wp-block-wd-paragraph">COLLECTION</p>
+<!-- wp:wd/column {"blockId":"6bd57764-b273-4980-9b3d-1aceb5dd4798","blockVersion":"2","adjacentCount":3} -->
+<div class="wp-block-wd-column wd-6bd57764"><!-- wp:wd/cover {"blockId":"7a6ce8d5-1fd6-42d0-a8b0-7ed13e721d06","blockVersion":"2","hover":"zoom-in","align":"center","contentAlignHorizontal":"center","contentAlignVertical":"center","colorScheme":"light","size":"aspectRatio","aspectRatio":"asImage","imageAspectRatio":"780/520","bgImage":{"id":17638,"url":"http://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/video-banner-2.jpg"},"overlayColorCode":"#000000","overlayHoverColorCode":"#000000","overlay":true,"overlayOpacity":0.3,"overlayHoverOpacity":0.6,"overlayTransition":0.5} -->
+<div class="wp-block-wd-cover wd-hover-parent wd-align wd-hover-zoom-in color-scheme-light wd-7a6ce8d5 wd-bg-parent"><div class="wd-bg-overlay"></div><div class="wd-block-cover-img"></div><a class="wd-block-cover-link wd-fill" href="#" aria-label="Cover link"></a><!-- wp:wd/container {"blockId":"abe63da0-164c-4437-9c88-d837abc5c20f","blockVersion":"2","displayWidth":"custom","customWidth":"299","rowGapTablet":"5","displayWidthTablet":"custom","displayWidthMobile":"custom","customWidthTablet":"250","customWidthMobile":"260","metadata":{"name":"Banner content"}} -->
+<div class="wp-block-wd-container wd-dir-col wd-abe63da0 wd-custom-width"><!-- wp:wd/paragraph {"blockId":"f058682e-5de0-4203-9da3-5e4458bd0016","blockVersion":"2","tpFontSize":"24","tpFontVariant":"600","tpFontWeight":"600","tpFontSizeTablet":"18"} -->
+<p class="wp-block-wd-paragraph wd-f058682e">COLLECTION</p>
 <!-- /wp:wd/paragraph -->
 
-<!-- wp:wd/title {"blockId":"02798662-1c68-4d1f-a9d5-0813e844acc4","content":"NEW CHAIRS DESIGN","tpFontSize":"38","textAlignMobile":"center","tpFontSizeTablet":"26"} -->
-<h2 id="wd-02798662" class="wp-block-wd-title title wd-align">NEW CHAIRS DESIGN</h2>
+<!-- wp:wd/title {"blockId":"02798662-1c68-4d1f-a9d5-0813e844acc4","blockVersion":"2","content":"NEW CHAIRS DESIGN","tpFontSize":"38","textAlignMobile":"center","tpFontSizeTablet":"26"} -->
+<h2 class="wp-block-wd-title title wd-align wd-02798662">NEW CHAIRS DESIGN</h2>
 <!-- /wp:wd/title --></div>
 <!-- /wp:wd/container --></div>
 <!-- /wp:wd/cover --></div>
 <!-- /wp:wd/column -->
 
-<!-- wp:wd/column {"blockId":"df613097-391c-4aec-b58d-94707bd99513","adjacentCount":3} -->
-<div id="wd-df613097" class="wp-block-wd-column"><!-- wp:wd/cover {"blockId":"edd7664b-804a-40ea-814d-92b950403c8f","hover":"zoom-in","contentAlignVertical":"center","colorScheme":"light","size":"aspectRatio","aspectRatio":"asImage","imageAspectRatio":"780/520","bgImage":{"id":17639,"url":"http://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/video-banner-3.jpg"},"overlayColorCode":"#000000","overlayHoverColorCode":"#000000","overlay":true,"overlayOpacity":0.3,"overlayHoverOpacity":0.6,"overlayTransition":0.5,"alignMobile":"center","contentAlignHorizontalMobile":"center"} -->
-<div id="wd-edd7664b" class="wp-block-wd-cover wd-hover-parent wd-align wd-hover-zoom-in color-scheme-light wd-bg-parent"><div class="wd-bg-overlay"></div><div class="wd-block-cover-img"></div><a class="wd-block-cover-link wd-fill" href="#" aria-label="Cover link"></a><!-- wp:wd/container {"blockId":"7971a4ae-b557-467e-8f3b-f3051616c727","displayWidth":"custom","customWidth":"209","rowGapTablet":"5","displayWidthTablet":"custom","displayWidthMobile":"custom","customWidthTablet":"250","customWidthMobile":"300","metadata":{"name":"Banner content"}} -->
-<div id="wd-7971a4ae" class="wp-block-wd-container wd-dir-col wd-custom-width"><!-- wp:wd/paragraph {"blockId":"7b399c1c-8d52-4df6-a7d2-add343b2bc3e","tpFontSize":"24","tpFontVariant":"600","tpFontWeight":"600","tpFontSizeTablet":"18"} -->
-<p id="wd-7b399c1c" class="wp-block-wd-paragraph">PRODUCTS</p>
+<!-- wp:wd/column {"blockId":"df613097-391c-4aec-b58d-94707bd99513","blockVersion":"2","adjacentCount":3} -->
+<div class="wp-block-wd-column wd-df613097"><!-- wp:wd/cover {"blockId":"edd7664b-804a-40ea-814d-92b950403c8f","blockVersion":"2","hover":"zoom-in","contentAlignVertical":"center","colorScheme":"light","size":"aspectRatio","aspectRatio":"asImage","imageAspectRatio":"780/520","bgImage":{"id":17639,"url":"http://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/video-banner-3.jpg"},"overlayColorCode":"#000000","overlayHoverColorCode":"#000000","overlay":true,"overlayOpacity":0.3,"overlayHoverOpacity":0.6,"overlayTransition":0.5,"alignMobile":"center","contentAlignHorizontalMobile":"center"} -->
+<div class="wp-block-wd-cover wd-hover-parent wd-align wd-hover-zoom-in color-scheme-light wd-edd7664b wd-bg-parent"><div class="wd-bg-overlay"></div><div class="wd-block-cover-img"></div><a class="wd-block-cover-link wd-fill" href="#" aria-label="Cover link"></a><!-- wp:wd/container {"blockId":"7971a4ae-b557-467e-8f3b-f3051616c727","blockVersion":"2","displayWidth":"custom","customWidth":"209","rowGapTablet":"5","displayWidthTablet":"custom","displayWidthMobile":"custom","customWidthTablet":"250","customWidthMobile":"300","metadata":{"name":"Banner content"}} -->
+<div class="wp-block-wd-container wd-dir-col wd-7971a4ae wd-custom-width"><!-- wp:wd/paragraph {"blockId":"7b399c1c-8d52-4df6-a7d2-add343b2bc3e","blockVersion":"2","tpFontSize":"24","tpFontVariant":"600","tpFontWeight":"600","tpFontSizeTablet":"18"} -->
+<p class="wp-block-wd-paragraph wd-7b399c1c">PRODUCTS</p>
 <!-- /wp:wd/paragraph -->
 
-<!-- wp:wd/title {"blockId":"735d60b0-f78e-40dd-a935-d0bd292c0f3e","content":"ACCESSORIES COOKING","tpFontSize":"38","textAlignMobile":"center","tpFontSizeTablet":"26"} -->
-<h2 id="wd-735d60b0" class="wp-block-wd-title title wd-align">ACCESSORIES COOKING</h2>
+<!-- wp:wd/title {"blockId":"735d60b0-f78e-40dd-a935-d0bd292c0f3e","blockVersion":"2","content":"ACCESSORIES COOKING","tpFontSize":"38","textAlignMobile":"center","tpFontSizeTablet":"26"} -->
+<h2 class="wp-block-wd-title title wd-align wd-735d60b0">ACCESSORIES COOKING</h2>
 <!-- /wp:wd/title --></div>
 <!-- /wp:wd/container --></div>
 <!-- /wp:wd/cover --></div>
@@ -423,158 +415,158 @@
 <!-- /wp:wd/row --></div>
 <!-- /wp:wd/section -->
 
-<!-- wp:wd/container {"blockId":"83a7a56e-1c59-475d-b8e5-ad17226d6a5b","textAlign":"center","rowGap":"0","marginBottom":"100","marginBottomTablet":"60","marginBottomMobile":"40"} -->
-<div id="wd-83a7a56e" class="wp-block-wd-container wd-dir-col wd-align"><!-- wp:wd/title {"blockId":"b7675b89-82ab-44db-a26d-e089bd5723ec","design":"","content":"INSPIRATION PRODUCTS​","tpFontSize":"36","activeBorderColorVariable":"\u002d\u002dwd-primary-color","marginBottom":"10","tpFontSizeTablet":"22","tpFontSizeMobile":"20"} -->
-<h2 id="wd-b7675b89" class="wp-block-wd-title title">INSPIRATION PRODUCTS​</h2>
+<!-- wp:wd/container {"blockId":"83a7a56e-1c59-475d-b8e5-ad17226d6a5b","blockVersion":"2","textAlign":"center","rowGap":"0","marginBottom":"100","marginBottomTablet":"60","marginBottomMobile":"40"} -->
+<div class="wp-block-wd-container wd-dir-col wd-align wd-83a7a56e"><!-- wp:wd/title {"blockId":"b7675b89-82ab-44db-a26d-e089bd5723ec","blockVersion":"2","design":"","content":"INSPIRATION PRODUCTS​","tpFontSize":"36","activeBorderColorVariable":"\u002d\u002dwd-primary-color","marginBottom":"10","tpFontSizeTablet":"22","tpFontSizeMobile":"20"} -->
+<h2 class="wp-block-wd-title title wd-b7675b89">INSPIRATION PRODUCTS​</h2>
 <!-- /wp:wd/title -->
 
-<!-- wp:wd/paragraph {"blockId":"5c0901c7-5ff7-458f-9d84-ddeae416392a","marginBottom":"25","displayWidth":"","customWidth":"497"} -->
-<p id="wd-5c0901c7" class="wp-block-wd-paragraph">WoodMart is a powerful eCommerce theme.​</p>
+<!-- wp:wd/paragraph {"blockId":"5c0901c7-5ff7-458f-9d84-ddeae416392a","blockVersion":"2","marginBottom":"25","displayWidth":"","customWidth":"497"} -->
+<p class="wp-block-wd-paragraph wd-5c0901c7">WoodMart is a powerful eCommerce theme.​</p>
 <!-- /wp:wd/paragraph -->
 
-<!-- wp:wd/products {"blockId":"48ec555b-7fc4-47d3-90bf-0ba043213edb","columns":3,"items_per_page":"6","pagination":"more-btn","paddingUnits":"%","displayWidth":"custom","customWidth":"988","displayWidthTablet":"custom","displayWidthMobile":"full-width","customWidthTablet":"720"} /--></div>
+<!-- wp:wd/products {"blockId":"48ec555b-7fc4-47d3-90bf-0ba043213edb","blockVersion":"2","columns":3,"items_per_page":"6","pagination":"more-btn","paddingUnits":"%","displayWidth":"custom","customWidth":"988","displayWidthTablet":"custom","displayWidthMobile":"full-width","customWidthTablet":"720"} /--></div>
 <!-- /wp:wd/container -->
 
-<!-- wp:wd/title {"blockId":"37dc05f8-7450-4c90-972f-ba7c1151ad7f","textAlign":"center","design":"","content":"STORE CATEGORIES","tpFontSize":"36","activeBorderColorVariable":"\u002d\u002dwd-primary-color","marginBottom":"10","tpFontSizeTablet":"22","tpFontSizeMobile":"20"} -->
-<h2 id="wd-37dc05f8" class="wp-block-wd-title title wd-align">STORE CATEGORIES</h2>
+<!-- wp:wd/title {"blockId":"37dc05f8-7450-4c90-972f-ba7c1151ad7f","blockVersion":"2","textAlign":"center","design":"","content":"STORE CATEGORIES","tpFontSize":"36","activeBorderColorVariable":"\u002d\u002dwd-primary-color","marginBottom":"10","tpFontSizeTablet":"22","tpFontSizeMobile":"20"} -->
+<h2 class="wp-block-wd-title title wd-align wd-37dc05f8">STORE CATEGORIES</h2>
 <!-- /wp:wd/title -->
 
-<!-- wp:wd/paragraph {"blockId":"325366de-d092-4f54-ba9e-7571d10e4b67","textAlign":"center","marginBottom":"25","alignSelf":"center","displayWidth":"","customWidth":"497"} -->
-<p id="wd-325366de" class="wp-block-wd-paragraph wd-align wd-align-s-center">WoodMart is a powerful eCommerce theme.​</p>
+<!-- wp:wd/paragraph {"blockId":"325366de-d092-4f54-ba9e-7571d10e4b67","blockVersion":"2","textAlign":"center","marginBottom":"25","alignSelf":"center","displayWidth":"","customWidth":"497"} -->
+<p class="wp-block-wd-paragraph wd-align wd-325366de wd-align-s-center">WoodMart is a powerful eCommerce theme.​</p>
 <!-- /wp:wd/paragraph -->
 
-<!-- wp:wd/product-categories {"blockId":"5fd4ca6b-a1ce-4ee7-820e-54f2432f07c5","number":"5","masonry_grid":true,"grid_different_sizes":"1","marginBottom":"80","columnsMobile":2,"marginBottomTablet":"60","marginBottomMobile":"40"} /-->
+<!-- wp:wd/product-categories {"blockId":"5fd4ca6b-a1ce-4ee7-820e-54f2432f07c5","blockVersion":"2","number":"5","masonry_grid":true,"grid_different_sizes":"1","marginBottom":"80","columnsMobile":2,"marginBottomTablet":"60","marginBottomMobile":"40"} /-->
 
-<!-- wp:wd/row {"blockId":"d8709399-a1a4-4ca4-81a0-611bfbdd7587","columnsGap":0,"marginBottom":"80","marginBottomTablet":"60","marginBottomMobile":"40"} -->
-<div id="wd-d8709399" class="wp-block-wd-row"><!-- wp:wd/column {"blockId":"7adeba14-70ed-488c-9067-b866e63321bc","adjacentCount":2,"blocksGap":0,"textAlign":"center","paddingTop":"30","paddingRight":"15","paddingBottom":"30","paddingLeft":"15","borderType":"solid","borderColorCode":"#e8e8e8","borderWidthRight":"1","borderWidthLock":false,"borderWidthRightMobile":"0","borderWidthBottomMobile":"1","borderWidthLockMobile":false} -->
-<div id="wd-7adeba14" class="wp-block-wd-column wd-align"><!-- wp:wd/paragraph {"blockId":"0f59045d-ba8e-48d2-850c-eae1401c5bb9","tpFontFamily":"var(\u002d\u002dwd-title-font)","tpFontSize":"18","tpFontVariant":"600","tpFontWeight":"600","marginBottom":"10"} -->
-<p id="wd-0f59045d" class="wp-block-wd-paragraph">HABITANT A ERAT​</p>
+<!-- wp:wd/row {"blockId":"d8709399-a1a4-4ca4-81a0-611bfbdd7587","blockVersion":"2","columnsGap":0,"marginBottom":"80","marginBottomTablet":"60","marginBottomMobile":"40"} -->
+<div class="wp-block-wd-row wd-d8709399"><!-- wp:wd/column {"blockId":"7adeba14-70ed-488c-9067-b866e63321bc","blockVersion":"2","adjacentCount":2,"blocksGap":0,"textAlign":"center","paddingTop":"30","paddingRight":"15","paddingBottom":"30","paddingLeft":"15","borderType":"solid","borderColorCode":"#e8e8e8","borderWidthRight":"1","borderWidthLock":false,"borderWidthRightMobile":"0","borderWidthBottomMobile":"1","borderWidthLockMobile":false} -->
+<div class="wp-block-wd-column wd-align wd-7adeba14"><!-- wp:wd/paragraph {"blockId":"0f59045d-ba8e-48d2-850c-eae1401c5bb9","blockVersion":"2","tpFontFamily":"var(\u002d\u002dwd-title-font)","tpFontSize":"18","tpFontVariant":"600","tpFontWeight":"600","marginBottom":"10"} -->
+<p class="wp-block-wd-paragraph wd-0f59045d">HABITANT A ERAT​</p>
 <!-- /wp:wd/paragraph -->
 
-<!-- wp:wd/title {"blockId":"3d089701-b8c8-4ef3-8a9a-a50004cad605","content":"REACH US FOR ANY QUESTIONS","tpFontSize":"36","marginBottom":"10","displayWidth":"custom","customWidth":"460","tpFontSizeTablet":"22","tpFontSizeMobile":"20"} -->
-<h2 id="wd-3d089701" class="wp-block-wd-title title wd-custom-width">REACH US FOR ANY QUESTIONS</h2>
+<!-- wp:wd/title {"blockId":"3d089701-b8c8-4ef3-8a9a-a50004cad605","blockVersion":"2","content":"REACH US FOR ANY QUESTIONS","tpFontSize":"36","marginBottom":"10","displayWidth":"custom","customWidth":"460","tpFontSizeTablet":"22","tpFontSizeMobile":"20"} -->
+<h2 class="wp-block-wd-title title wd-3d089701 wd-custom-width">REACH US FOR ANY QUESTIONS</h2>
 <!-- /wp:wd/title -->
 
-<!-- wp:wd/paragraph {"blockId":"08a271a1-6e07-4736-8b02-f8d4449f9ab3","marginBottom":"30","displayWidth":"custom","customWidth":"460"} -->
-<p id="wd-08a271a1" class="wp-block-wd-paragraph wd-custom-width">Ornare suspendisse a eros ac erat velit parturient varius est augue viverra sociis dis urna laoreet metus pretium.​</p>
+<!-- wp:wd/paragraph {"blockId":"08a271a1-6e07-4736-8b02-f8d4449f9ab3","blockVersion":"2","marginBottom":"30","displayWidth":"custom","customWidth":"460"} -->
+<p class="wp-block-wd-paragraph wd-08a271a1 wd-custom-width">Ornare suspendisse a eros ac erat velit parturient varius est augue viverra sociis dis urna laoreet metus pretium.​</p>
 <!-- /wp:wd/paragraph -->
 
-<!-- wp:wd/container {"blockId":"770edb68-4f5e-40a5-9d5c-60445d0a4a96","direction":"row","colGap":"","rowGap":""} -->
-<div id="wd-770edb68" class="wp-block-wd-container wd-dir-row"><!-- wp:wd/popup {"blockId":"80f37de9-f904-4b14-83d5-dc143806e5c8","alignSelf":"center"} -->
-<div id="wd-80f37de9" class="wp-block-wd-popup wd-align-s-center"><!-- wp:wd/button {"blockId":"6ae2a84f-5ca3-44f8-acd0-a505726ac652","predefinedColor":"primary"} -->
-<a id="wd-6ae2a84f" class="wp-block-wd-button btn btn-style-default btn-color-primary btn-size-default btn-shape-rectangle" href="#"><span>contact us</span></a>
+<!-- wp:wd/container {"blockId":"770edb68-4f5e-40a5-9d5c-60445d0a4a96","blockVersion":"2","direction":"row","colGap":"","rowGap":""} -->
+<div class="wp-block-wd-container wd-dir-row wd-770edb68"><!-- wp:wd/popup {"blockId":"80f37de9-f904-4b14-83d5-dc143806e5c8","blockVersion":"2","alignSelf":"center"} -->
+<div class="wp-block-wd-popup wd-80f37de9 wd-align-s-center"><!-- wp:wd/button {"blockId":"6ae2a84f-5ca3-44f8-acd0-a505726ac652","blockVersion":"2","predefinedColor":"primary"} -->
+<a class="wp-block-wd-button btn btn-style-default btn-color-primary btn-size-default btn-shape-rectangle wd-6ae2a84f" href="#"><span>contact us</span></a>
 <!-- /wp:wd/button -->
 
-<!-- wp:wd/popup-content {"blockId":"1bef2f49-4583-48e1-8546-1b61e79a52e5","width":"900","paddingTop":"0","paddingRight":"0","paddingBottom":"0","paddingLeft":"0","paddingLock":true} -->
-<div id="wd-1bef2f49" class="wp-block-wd-popup-content wd-popup wd-popup-element mfp-hide"><div class="wd-popup-inner"><!-- wp:wd/row {"blockId":"5dd6df80-fbb5-4d76-8387-7a4cb04cc25e","columnsGap":0,"columnsGapMobile":0} -->
-<div id="wd-5dd6df80" class="wp-block-wd-row"><!-- wp:wd/column {"blockId":"85ef227a-81ec-4d75-bc60-96c1af0f5786","adjacentCount":2,"colWidth":67,"blocksGap":30,"paddingTop":"30","paddingRight":"30","paddingBottom":"30","paddingLeft":"30","paddingLock":true} -->
-<div id="wd-85ef227a" class="wp-block-wd-column"><!-- wp:wd/title {"blockId":"2d97e8f8-e7d3-46f6-9f21-37bd87a26f19","content":"SEND US A MESSAGE","tpFontSize":"18","tpFontSizeMobile":"20"} -->
-<h2 id="wd-2d97e8f8" class="wp-block-wd-title title">SEND US A MESSAGE</h2>
+<!-- wp:wd/popup-content {"blockId":"1bef2f49-4583-48e1-8546-1b61e79a52e5","blockVersion":"2","width":"900","paddingTop":"0","paddingRight":"0","paddingBottom":"0","paddingLeft":"0","paddingLock":true} -->
+<div class="wp-block-wd-popup-content wd-popup wd-popup-element wd-scroll-content wd-1bef2f49"><div class="wd-popup-inner"><!-- wp:wd/row {"blockId":"5dd6df80-fbb5-4d76-8387-7a4cb04cc25e","blockVersion":"2","columnsGap":0,"columnsGapMobile":0} -->
+<div class="wp-block-wd-row wd-5dd6df80"><!-- wp:wd/column {"blockId":"85ef227a-81ec-4d75-bc60-96c1af0f5786","blockVersion":"2","adjacentCount":2,"colWidth":67,"blocksGap":30,"paddingTop":"30","paddingRight":"30","paddingBottom":"30","paddingLeft":"30","paddingLock":true} -->
+<div class="wp-block-wd-column wd-85ef227a"><!-- wp:wd/title {"blockId":"2d97e8f8-e7d3-46f6-9f21-37bd87a26f19","blockVersion":"2","content":"SEND US A MESSAGE","tpFontSize":"18","tpFontSizeMobile":"20"} -->
+<h2 class="wp-block-wd-title title wd-2d97e8f8">SEND US A MESSAGE</h2>
 <!-- /wp:wd/title -->
 
-<!-- wp:wd/contact-form-7 {"blockId":"dc5babca-5cb4-49f9-9fe6-fd384e000495","form_id":"1938"} /--></div>
+<!-- wp:wd/contact-form-7 {"blockId":"dc5babca-5cb4-49f9-9fe6-fd384e000495","blockVersion":"2","form_id":"1938"} /--></div>
 <!-- /wp:wd/column -->
 
-<!-- wp:wd/column {"blockId":"59fe1ff8-eb9a-4a4c-9a84-610a97634f32","adjacentCount":2,"colWidth":33,"blocksGap":30,"colorScheme":"light","bgColorCode":"#333333","paddingTop":"30","paddingRight":"30","paddingBottom":"30","paddingLeft":"30","paddingLock":true} -->
-<div id="wd-59fe1ff8" class="wp-block-wd-column color-scheme-light"><!-- wp:wd/title {"blockId":"3ffc0058-d8ef-49de-8349-76d95fcb27f6","content":"CONTACT INFORMATION","tpFontSize":"18","marginBottom":"10","tpFontSizeMobile":"20"} -->
-<h2 id="wd-3ffc0058" class="wp-block-wd-title title">CONTACT INFORMATION</h2>
+<!-- wp:wd/column {"blockId":"59fe1ff8-eb9a-4a4c-9a84-610a97634f32","blockVersion":"2","adjacentCount":2,"colWidth":33,"blocksGap":30,"colorScheme":"light","bgColorCode":"#333333","paddingTop":"30","paddingRight":"30","paddingBottom":"30","paddingLeft":"30","paddingLock":true} -->
+<div class="wp-block-wd-column color-scheme-light wd-59fe1ff8"><!-- wp:wd/title {"blockId":"3ffc0058-d8ef-49de-8349-76d95fcb27f6","blockVersion":"2","content":"CONTACT INFORMATION","tpFontSize":"18","marginBottom":"10","tpFontSizeMobile":"20"} -->
+<h2 class="wp-block-wd-title title wd-3ffc0058">CONTACT INFORMATION</h2>
 <!-- /wp:wd/title -->
 
-<!-- wp:wd/infobox {"blockId":"9f4b0ce2-ad85-4bd8-93e9-6bd83225cb5e","iconPositionHorizontal":"start","marginBottom":"10"} -->
-<div id="wd-9f4b0ce2" class="wp-block-wd-infobox wd-hover-parent wd-icon-start"><!-- wp:wd/icon {"blockId":"0005316b-41d9-4ff9-908c-cfcb5ceecd22","image":{"id":11508,"url":"https://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/05/wd-pointer-light.svg"},"width":"30","height":"30"} -->
-<div id="wd-0005316b" class="wp-block-wd-icon"><img class="wp-image-11508" src="https://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/05/wd-pointer-light.svg" /></div>
+<!-- wp:wd/infobox {"blockId":"9f4b0ce2-ad85-4bd8-93e9-6bd83225cb5e","blockVersion":"2","iconPositionHorizontal":"start","marginBottom":"10"} -->
+<div class="wp-block-wd-infobox wd-hover-parent wd-icon-start wd-9f4b0ce2"><!-- wp:wd/icon {"blockId":"0005316b-41d9-4ff9-908c-cfcb5ceecd22","blockVersion":"2","image":{"id":11508,"url":"https://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/05/wd-pointer-light.svg"},"width":"30","height":"30"} -->
+<div class="wp-block-wd-icon wd-0005316b"><img class="wp-image-11508" src="https://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/05/wd-pointer-light.svg" alt=""/></div>
 <!-- /wp:wd/icon -->
 
-<!-- wp:wd/container {"blockId":"5c729d56-36a0-486f-b41f-530b477cb0ab","rowGap":"","metadata":{"name":"Infobox content"}} -->
-<div id="wd-5c729d56" class="wp-block-wd-container wd-dir-col"><!-- wp:wd/paragraph {"blockId":"b9309848-8324-425b-8ced-60287a78a51e"} -->
-<p id="wd-b9309848" class="wp-block-wd-paragraph">50 East 52nd Street<br>Brooklyn, NY 10022<br>United States</p>
+<!-- wp:wd/container {"blockId":"5c729d56-36a0-486f-b41f-530b477cb0ab","blockVersion":"2","rowGap":"","metadata":{"name":"Infobox content"}} -->
+<div class="wp-block-wd-container wd-dir-col wd-5c729d56"><!-- wp:wd/paragraph {"blockId":"b9309848-8324-425b-8ced-60287a78a51e","blockVersion":"2"} -->
+<p class="wp-block-wd-paragraph wd-b9309848">50 East 52nd Street<br>Brooklyn, NY 10022<br>United States</p>
 <!-- /wp:wd/paragraph --></div>
 <!-- /wp:wd/container --></div>
 <!-- /wp:wd/infobox -->
 
-<!-- wp:wd/infobox {"blockId":"7950a2dd-76fa-49d8-9bf0-7bb96f92fd8d","iconPositionHorizontal":"start","marginBottom":"10"} -->
-<div id="wd-7950a2dd" class="wp-block-wd-infobox wd-hover-parent wd-icon-start"><!-- wp:wd/icon {"blockId":"e3187bc8-7bab-4346-a871-ef051caf2f0b","image":{"id":11506,"url":"https://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/05/wd-mobile-light.svg"},"width":"30","height":"30"} -->
-<div id="wd-e3187bc8" class="wp-block-wd-icon"><img class="wp-image-11506" src="https://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/05/wd-mobile-light.svg" /></div>
+<!-- wp:wd/infobox {"blockId":"7950a2dd-76fa-49d8-9bf0-7bb96f92fd8d","blockVersion":"2","iconPositionHorizontal":"start","marginBottom":"10"} -->
+<div class="wp-block-wd-infobox wd-hover-parent wd-icon-start wd-7950a2dd"><!-- wp:wd/icon {"blockId":"e3187bc8-7bab-4346-a871-ef051caf2f0b","blockVersion":"2","image":{"id":11506,"url":"https://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/05/wd-mobile-light.svg"},"width":"30","height":"30"} -->
+<div class="wp-block-wd-icon wd-e3187bc8"><img class="wp-image-11506" src="https://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/05/wd-mobile-light.svg" alt=""/></div>
 <!-- /wp:wd/icon -->
 
-<!-- wp:wd/container {"blockId":"772a9e6b-e89d-4be0-b738-d0c58e9695ba","rowGap":"","metadata":{"name":"Infobox content"}} -->
-<div id="wd-772a9e6b" class="wp-block-wd-container wd-dir-col"><!-- wp:wd/paragraph {"blockId":"aa918205-d689-4f69-813e-a316aee32f97"} -->
-<p id="wd-aa918205" class="wp-block-wd-paragraph">+1322224332<br>+154623278</p>
+<!-- wp:wd/container {"blockId":"772a9e6b-e89d-4be0-b738-d0c58e9695ba","blockVersion":"2","rowGap":"","metadata":{"name":"Infobox content"}} -->
+<div class="wp-block-wd-container wd-dir-col wd-772a9e6b"><!-- wp:wd/paragraph {"blockId":"aa918205-d689-4f69-813e-a316aee32f97","blockVersion":"2"} -->
+<p class="wp-block-wd-paragraph wd-aa918205">+1322224332<br>+154623278</p>
 <!-- /wp:wd/paragraph --></div>
 <!-- /wp:wd/container --></div>
 <!-- /wp:wd/infobox -->
 
-<!-- wp:wd/infobox {"blockId":"b549d62f-cac7-470a-b087-c1a1543d4bd9","iconPositionHorizontal":"start","marginBottom":"10"} -->
-<div id="wd-b549d62f" class="wp-block-wd-infobox wd-hover-parent wd-icon-start"><!-- wp:wd/icon {"blockId":"d444826c-9aeb-4103-947a-e373da04895b","image":{"id":11507,"url":"https://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/05/wd-paper-plane-light.svg"},"width":"30","height":"30"} -->
-<div id="wd-d444826c" class="wp-block-wd-icon"><img class="wp-image-11507" src="https://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/05/wd-paper-plane-light.svg" /></div>
+<!-- wp:wd/infobox {"blockId":"b549d62f-cac7-470a-b087-c1a1543d4bd9","blockVersion":"2","iconPositionHorizontal":"start","marginBottom":"10"} -->
+<div class="wp-block-wd-infobox wd-hover-parent wd-icon-start wd-b549d62f"><!-- wp:wd/icon {"blockId":"d444826c-9aeb-4103-947a-e373da04895b","blockVersion":"2","image":{"id":11507,"url":"https://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/05/wd-paper-plane-light.svg"},"width":"30","height":"30"} -->
+<div class="wp-block-wd-icon wd-d444826c"><img class="wp-image-11507" src="https://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/05/wd-paper-plane-light.svg" alt=""/></div>
 <!-- /wp:wd/icon -->
 
-<!-- wp:wd/container {"blockId":"2290b57b-e8b4-4bc8-8dee-d15115bd8c4c","rowGap":"","metadata":{"name":"Infobox content"}} -->
-<div id="wd-2290b57b" class="wp-block-wd-container wd-dir-col"><!-- wp:wd/paragraph {"blockId":"1ebee10a-420c-453c-926e-25ebc7b298b7"} -->
-<p id="wd-1ebee10a" class="wp-block-wd-paragraph">info@google.com<br>support@google.com</p>
+<!-- wp:wd/container {"blockId":"2290b57b-e8b4-4bc8-8dee-d15115bd8c4c","blockVersion":"2","rowGap":"","metadata":{"name":"Infobox content"}} -->
+<div class="wp-block-wd-container wd-dir-col wd-2290b57b"><!-- wp:wd/paragraph {"blockId":"1ebee10a-420c-453c-926e-25ebc7b298b7","blockVersion":"2"} -->
+<p class="wp-block-wd-paragraph wd-1ebee10a">info@google.com<br>support@google.com</p>
 <!-- /wp:wd/paragraph --></div>
 <!-- /wp:wd/container --></div>
 <!-- /wp:wd/infobox -->
 
-<!-- wp:wd/divider {"blockId":"3897da20-3261-40ea-b7ac-ec5bbc2a30b6","marginBottom":"10"} -->
-<div id="wd-3897da20" class="wp-block-wd-divider wd-style-line"></div>
+<!-- wp:wd/divider {"blockId":"3897da20-3261-40ea-b7ac-ec5bbc2a30b6","blockVersion":"2","marginBottom":"10"} -->
+<div class="wp-block-wd-divider wd-style-line wd-3897da20"></div>
 <!-- /wp:wd/divider -->
 
-<!-- wp:wd/paragraph {"blockId":"3bfd80bc-7dd5-4ede-9abd-243913dd26c0"} -->
-<p id="wd-3bfd80bc" class="wp-block-wd-paragraph">Do you have questions about how we can help your company? Send us an email and we’ll get in touch shortly.</p>
+<!-- wp:wd/paragraph {"blockId":"3bfd80bc-7dd5-4ede-9abd-243913dd26c0","blockVersion":"2"} -->
+<p class="wp-block-wd-paragraph wd-3bfd80bc">Do you have questions about how we can help your company? Send us an email and we’ll get in touch shortly.</p>
 <!-- /wp:wd/paragraph -->
 
-<!-- wp:wd/social-buttons {"blockId":"03a0c39d-b331-4f50-a45d-c0af3cbab125","style":"colored","size":"small"} /--></div>
+<!-- wp:wd/social-buttons {"blockId":"03a0c39d-b331-4f50-a45d-c0af3cbab125","blockVersion":"2","style":"colored","size":"small"} /--></div>
 <!-- /wp:wd/column --></div>
 <!-- /wp:wd/row --></div></div>
 <!-- /wp:wd/popup-content --></div>
 <!-- /wp:wd/popup -->
 
-<!-- wp:wd/button {"blockId":"37c62ea9-aee1-4dfa-b50e-d4b3d7544cdb","design":"bordered","predefinedColor":"","bgHoverColorCode":"#e9e9e9"} -->
-<a id="wd-37c62ea9" class="wp-block-wd-button btn btn-style-bordered btn-size-default btn-shape-rectangle" href="#"><span>our location</span></a>
+<!-- wp:wd/button {"blockId":"37c62ea9-aee1-4dfa-b50e-d4b3d7544cdb","blockVersion":"2","design":"bordered","predefinedColor":"","bgHoverColorCode":"#e9e9e9"} -->
+<a class="wp-block-wd-button btn btn-style-bordered btn-size-default btn-shape-rectangle wd-37c62ea9" href="#"><span>our location</span></a>
 <!-- /wp:wd/button --></div>
 <!-- /wp:wd/container --></div>
 <!-- /wp:wd/column -->
 
-<!-- wp:wd/column {"blockId":"f570804e-b240-42be-a8e9-8ad84909e7cd","adjacentCount":2,"blocksGap":0,"textAlign":"center","paddingTop":"30","paddingRight":"15","paddingBottom":"30","paddingLeft":"15"} -->
-<div id="wd-f570804e" class="wp-block-wd-column wd-align"><!-- wp:wd/paragraph {"blockId":"b11207c5-3aa9-4775-bd1e-1143f78deb3b","tpFontFamily":"var(\u002d\u002dwd-title-font)","tpFontSize":"18","tpFontVariant":"600","tpFontWeight":"600","marginBottom":"10"} -->
-<p id="wd-b11207c5" class="wp-block-wd-paragraph">VELIT SEM LACINIA​</p>
+<!-- wp:wd/column {"blockId":"f570804e-b240-42be-a8e9-8ad84909e7cd","blockVersion":"2","adjacentCount":2,"blocksGap":0,"textAlign":"center","paddingTop":"30","paddingRight":"15","paddingBottom":"30","paddingLeft":"15"} -->
+<div class="wp-block-wd-column wd-align wd-f570804e"><!-- wp:wd/paragraph {"blockId":"b11207c5-3aa9-4775-bd1e-1143f78deb3b","blockVersion":"2","tpFontFamily":"var(\u002d\u002dwd-title-font)","tpFontSize":"18","tpFontVariant":"600","tpFontWeight":"600","marginBottom":"10"} -->
+<p class="wp-block-wd-paragraph wd-b11207c5">VELIT SEM LACINIA​</p>
 <!-- /wp:wd/paragraph -->
 
-<!-- wp:wd/title {"blockId":"886c0180-da1f-4940-bbdd-d8e10de7a06b","content":"OUR PARTNERS AROUND THE WORLD​","tpFontSize":"36","marginBottom":"10","displayWidth":"custom","customWidth":"460","tpFontSizeTablet":"22","tpFontSizeMobile":"20"} -->
-<h2 id="wd-886c0180" class="wp-block-wd-title title wd-custom-width">OUR PARTNERS AROUND THE WORLD​</h2>
+<!-- wp:wd/title {"blockId":"886c0180-da1f-4940-bbdd-d8e10de7a06b","blockVersion":"2","content":"OUR PARTNERS AROUND THE WORLD​","tpFontSize":"36","marginBottom":"10","displayWidth":"custom","customWidth":"460","tpFontSizeTablet":"22","tpFontSizeMobile":"20"} -->
+<h2 class="wp-block-wd-title title wd-886c0180 wd-custom-width">OUR PARTNERS AROUND THE WORLD​</h2>
 <!-- /wp:wd/title -->
 
-<!-- wp:wd/paragraph {"blockId":"df12cd72-539a-41ce-b925-c3e74a8b01df","displayWidth":"custom","customWidth":"460"} -->
-<p id="wd-df12cd72" class="wp-block-wd-paragraph wd-custom-width">Fusce ullamcorper justo quam proin scelerisque ultricies etiam orci suspendisse a elit netus molestie nam montes dapibus.​</p>
+<!-- wp:wd/paragraph {"blockId":"df12cd72-539a-41ce-b925-c3e74a8b01df","blockVersion":"2","displayWidth":"custom","customWidth":"460"} -->
+<p class="wp-block-wd-paragraph wd-df12cd72 wd-custom-width">Fusce ullamcorper justo quam proin scelerisque ultricies etiam orci suspendisse a elit netus molestie nam montes dapibus.​</p>
 <!-- /wp:wd/paragraph -->
 
-<!-- wp:wd/brands {"blockId":"3939e556-60ec-407c-8ce2-49d59e8cbc68","hover":"alt","paddingRight":"7","paddingLeft":"7","paddingUnits":"%","hide_pagination_control":true,"sync_parent_id":"wd_fb5cfbb3","slides_per_viewMobile":"2","hide_pagination_controlTablet":true,"hide_pagination_controlMobile":true} /--></div>
+<!-- wp:wd/brands {"blockId":"3939e556-60ec-407c-8ce2-49d59e8cbc68","blockVersion":"2","hover":"alt","paddingRight":"7","paddingLeft":"7","paddingUnits":"%","hide_pagination_control":true,"sync_parent_id":"wd_fb5cfbb3","slides_per_viewMobile":"2","hide_pagination_controlTablet":true,"hide_pagination_controlMobile":true} /--></div>
 <!-- /wp:wd/column --></div>
 <!-- /wp:wd/row -->
 
-<!-- wp:wd/section {"blockId":"52a18020-2cee-4548-abc3-239a5d195e1c","blockGap":0,"colorScheme":"light","bgImage":{"id":17640,"url":"http://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/video-bg.jpg"},"bgPosition":"center center","bgDisplaySize":"cover","paddingTop":"140","paddingBottom":"140","marginBottom":"-40","paddingTopTablet":"80","paddingTopMobile":"60","paddingBottomTablet":"80","paddingBottomMobile":"60"} -->
-<div id="wd-52a18020" class="wp-block-wd-section color-scheme-light"><!-- wp:wd/paragraph {"blockId":"0a209167-95d8-4200-8279-1b80e06525a9","textAlign":"center","tpFontSize":"18","tpLineHeight":"1","tpFontVariant":"600","tpFontWeight":"600","marginBottom":"15","hideOnMobile":true,"tpLineHeightUnits":"em"} -->
-<p id="wd-0a209167" class="wp-block-wd-paragraph wd-align wd-hide-sm">LAOREET IN VITAE AMET​</p>
+<!-- wp:wd/section {"blockId":"52a18020-2cee-4548-abc3-239a5d195e1c","blockVersion":"2","blockGap":0,"colorScheme":"light","bgImage":{"id":17640,"url":"http://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/video-bg.jpg"},"bgPosition":"center center","bgDisplaySize":"cover","paddingTop":"140","paddingBottom":"140","marginBottom":"-40","paddingTopTablet":"80","paddingTopMobile":"60","paddingBottomTablet":"80","paddingBottomMobile":"60"} -->
+<div class="wp-block-wd-section color-scheme-light wd-52a18020"><!-- wp:wd/paragraph {"blockId":"0a209167-95d8-4200-8279-1b80e06525a9","blockVersion":"2","textAlign":"center","tpFontSize":"18","tpLineHeight":"1","tpFontVariant":"600","tpFontWeight":"600","marginBottom":"15","hideOnMobile":true,"tpLineHeightUnits":"em"} -->
+<p class="wp-block-wd-paragraph wd-align wd-hide-sm wd-0a209167">LAOREET IN VITAE AMET​</p>
 <!-- /wp:wd/paragraph -->
 
-<!-- wp:wd/title {"blockId":"7531b41b-6fd0-497d-9c79-4089c640bfd2","textAlign":"center","content":"HEY YOU, SIGN UP AND CONNECT TO WOODMART!​","tpFontSize":"36","marginBottom":"30","alignSelf":"center","displayWidth":"custom","customWidth":"552","tpFontSizeTablet":"22","tpFontSizeMobile":"20","displayWidthTablet":"custom","customWidthTablet":"295"} -->
-<h2 id="wd-7531b41b" class="wp-block-wd-title title wd-align wd-custom-width wd-align-s-center">HEY YOU, SIGN UP AND CONNECT TO WOODMART!​</h2>
+<!-- wp:wd/title {"blockId":"7531b41b-6fd0-497d-9c79-4089c640bfd2","blockVersion":"2","textAlign":"center","content":"HEY YOU, SIGN UP AND CONNECT TO WOODMART!​","tpFontSize":"36","marginBottom":"30","alignSelf":"center","displayWidth":"custom","customWidth":"552","tpFontSizeTablet":"22","tpFontSizeMobile":"20","displayWidthTablet":"custom","customWidthTablet":"295"} -->
+<h2 class="wp-block-wd-title title wd-align wd-7531b41b wd-custom-width wd-align-s-center">HEY YOU, SIGN UP AND CONNECT TO WOODMART!​</h2>
 <!-- /wp:wd/title -->
 
-<!-- wp:wd/mailchimp {"blockId":"670562c6-6153-4643-9ff7-10645479ea86","form_id":"74","marginBottom":"20","alignSelf":"center","displayWidth":"custom","customWidth":"400"} /-->
+<!-- wp:wd/mailchimp {"blockId":"670562c6-6153-4643-9ff7-10645479ea86","blockVersion":"2","form_id":"74","marginBottom":"20","alignSelf":"center","displayWidth":"custom","customWidth":"400"} /-->
 
-<!-- wp:wd/paragraph {"blockId":"792b6d9c-a88e-417d-95db-1cda9306416d","textAlign":"center","marginBottom":"20"} -->
-<p id="wd-792b6d9c" class="wp-block-wd-paragraph wd-align">Will be used in accordance with our<span class="wd-highlight"> </span><a href="#"><strong>Privacy Policy</strong></a></p>
+<!-- wp:wd/paragraph {"blockId":"792b6d9c-a88e-417d-95db-1cda9306416d","blockVersion":"2","textAlign":"center","marginBottom":"20"} -->
+<p class="wp-block-wd-paragraph wd-align wd-792b6d9c">Will be used in accordance with our<span class="wd-highlight"> </span><a href="#"><strong>Privacy Policy</strong></a></p>
 <!-- /wp:wd/paragraph -->
 
-<!-- wp:wd/social-buttons {"blockId":"363d9195-9460-4da7-a3fc-090556e03bcc","alignment":"center","style":"bordered","size":"small","color":"light"} /--></div>
+<!-- wp:wd/social-buttons {"blockId":"363d9195-9460-4da7-a3fc-090556e03bcc","blockVersion":"2","alignment":"center","style":"bordered","size":"small","color":"light"} /--></div>
 <!-- /wp:wd/section -->]]></content:encoded>
 															<wp:post_id>17610</wp:post_id>
 					<wp:post_date><![CDATA[2024-06-19 07:56:26]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-06-19 07:56:26]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-10-22 14:21:57]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-10-22 14:21:57]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2026-02-25 10:33:08]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2026-02-25 10:33:08]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[home-video]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -590,14 +582,6 @@
 							<wp:meta_value><![CDATA[on]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_woodmart_page-title-size]]></wp:meta_key>
-							<wp:meta_value><![CDATA[inherit]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_woodmart_title_image]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[_woodmart_main_layout]]></wp:meta_key>
 							<wp:meta_value><![CDATA[full-width]]></wp:meta_value>
 						</wp:postmeta>
@@ -610,7 +594,7 @@
 					<title><![CDATA[video-banner-1]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/gutenberg/video-banner-1/</link>
 					<pubDate>Wed, 19 Jun 2024 09:15:12 +0000</pubDate>
-					<dc:creator><![CDATA[maksimkliakhin]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/video-banner-1.jpg</guid>
 															<wp:post_id>17637</wp:post_id>
 					<wp:post_date><![CDATA[2024-06-19 09:15:12]]></wp:post_date>
@@ -633,7 +617,7 @@
 					<title><![CDATA[video-banner-2]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/gutenberg/video-banner-2/</link>
 					<pubDate>Wed, 19 Jun 2024 09:15:12 +0000</pubDate>
-					<dc:creator><![CDATA[maksimkliakhin]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/video-banner-2.jpg</guid>
 															<wp:post_id>17638</wp:post_id>
 					<wp:post_date><![CDATA[2024-06-19 09:15:12]]></wp:post_date>
@@ -656,7 +640,7 @@
 					<title><![CDATA[video-banner-3]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/gutenberg/video-banner-3/</link>
 					<pubDate>Wed, 19 Jun 2024 09:15:13 +0000</pubDate>
-					<dc:creator><![CDATA[maksimkliakhin]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/video-banner-3.jpg</guid>
 															<wp:post_id>17639</wp:post_id>
 					<wp:post_date><![CDATA[2024-06-19 09:15:13]]></wp:post_date>
@@ -679,7 +663,7 @@
 					<title><![CDATA[video-bg]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/gutenberg/video-bg/</link>
 					<pubDate>Wed, 19 Jun 2024 09:15:13 +0000</pubDate>
-					<dc:creator><![CDATA[maksimkliakhin]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/video-bg.jpg</guid>
 															<wp:post_id>17640</wp:post_id>
 					<wp:post_date><![CDATA[2024-06-19 09:15:13]]></wp:post_date>
@@ -702,7 +686,7 @@
 					<title><![CDATA[wd-video-slide-2-opt]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/gutenberg/wd-video-slide-2-opt/</link>
 					<pubDate>Wed, 19 Jun 2024 09:15:14 +0000</pubDate>
-					<dc:creator><![CDATA[maksimkliakhin]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/wd-video-slide-2-opt.jpg</guid>
 															<wp:post_id>17641</wp:post_id>
 					<wp:post_date><![CDATA[2024-06-19 09:15:14]]></wp:post_date>
@@ -725,7 +709,7 @@
 					<title><![CDATA[wd-video-slide-3-opt]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/gutenberg/wd-video-slide-3-opt/</link>
 					<pubDate>Wed, 19 Jun 2024 09:15:15 +0000</pubDate>
-					<dc:creator><![CDATA[maksimkliakhin]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/06/wd-video-slide-3-opt.jpg</guid>
 															<wp:post_id>17642</wp:post_id>
 					<wp:post_date><![CDATA[2024-06-19 09:15:15]]></wp:post_date>
@@ -748,7 +732,7 @@
 					<title><![CDATA[wd-cursor-light]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/gutenberg/?attachment_id=34179</link>
 					<pubDate>Mon, 28 Oct 2024 10:31:47 +0000</pubDate>
-					<dc:creator><![CDATA[maksimkliakhin]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/05/wd-cursor-light.svg</guid>
 															<wp:post_id>34179</wp:post_id>
 					<wp:post_date><![CDATA[2024-10-28 10:31:47]]></wp:post_date>
@@ -771,7 +755,7 @@
 					<title><![CDATA[wd-envelope-light]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/gutenberg/?attachment_id=34180</link>
 					<pubDate>Mon, 28 Oct 2024 10:31:47 +0000</pubDate>
-					<dc:creator><![CDATA[maksimkliakhin]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/05/wd-envelope-light.svg</guid>
 															<wp:post_id>34180</wp:post_id>
 					<wp:post_date><![CDATA[2024-10-28 10:31:47]]></wp:post_date>
@@ -794,7 +778,7 @@
 					<title><![CDATA[wd-phone-light]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/gutenberg/?attachment_id=34181</link>
 					<pubDate>Mon, 28 Oct 2024 10:31:48 +0000</pubDate>
-					<dc:creator><![CDATA[maksimkliakhin]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/2024/05/wd-phone-light.svg</guid>
 															<wp:post_id>34181</wp:post_id>
 					<wp:post_date><![CDATA[2024-10-28 10:31:48]]></wp:post_date>

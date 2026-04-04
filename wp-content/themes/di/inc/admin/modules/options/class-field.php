@@ -2,7 +2,7 @@
 /**
  * Basic field abstract class.
  *
- * @package xts
+ * @package woodmart
  */
 
 namespace XTS\Admin\Modules\Options;
@@ -342,9 +342,13 @@ abstract class Field {
 	 *
 	 * @since 1.0.0
 	 */
-	private function dependency_class() {
-		if ( ! isset( $this->args['requires'] ) ) {
-			return;
+	public function dependency_class( $requires = array() ) {
+		if ( ! $requires && isset( $this->args['requires'] ) ) {
+			$requires = $this->args['requires'];
+		}
+
+		if ( ! $requires ) {
+			return '';
 		}
 
 		$shown = true;
@@ -354,22 +358,24 @@ abstract class Field {
 				continue;
 			}
 
+			$parent_value = isset( $this->options[ $dependency['key'] ] ) ? $this->options[ $dependency['key'] ] : null;
+
 			switch ( $dependency['compare'] ) {
 				case 'equals':
-					if ( isset( $this->options[ $dependency['key'] ] ) ) {
+					if ( ! is_null( $parent_value ) ) {
 						if ( is_array( $dependency['value'] ) ) {
-							$shown = in_array( $this->options[ $dependency['key'] ], $dependency['value'] );
+							$shown = in_array( $parent_value, $dependency['value'] );
 						} else {
-							$shown = $this->options[ $dependency['key'] ] == $dependency['value'];
+							$shown = $parent_value == $dependency['value'];
 						}
 					}
 					break;
 				case 'not_equals':
-					if ( isset( $this->options[ $dependency['key'] ] ) ) {
+					if ( ! is_null( $parent_value ) ) {
 						if ( is_array( $dependency['value'] ) ) {
-							$shown = ! in_array( $this->options[ $dependency['key'] ], $dependency['value'] );
+							$shown = ! in_array( $parent_value, $dependency['value'] );
 						} else {
-							$shown = $this->options[ $dependency['key'] ] != $dependency['value'];
+							$shown = $parent_value != $dependency['value'];
 						}
 					}
 					break;
@@ -404,7 +410,7 @@ abstract class Field {
 	 *
 	 * @return string input field name.
 	 */
-	public function get_input_name( $subkey = false, $subkey2 = false, $subkey3 = false ) {
+	public function get_input_name( $subkey = false, $subkey2 = false, $subkey3 = false, $subkey4 = false ) {
 		$name = 'xts-' . $this->opt_name . '-options';
 
 		$name .= '[' . $this->args['id'] . ']';
@@ -423,6 +429,10 @@ abstract class Field {
 
 		if ( false !== $subkey3 ) {
 			$name .= '[' . $subkey3 . ']';
+		}
+
+		if ( false !== $subkey4 ) {
+			$name .= '[' . $subkey4 . ']';
 		}
 
 		return $name;

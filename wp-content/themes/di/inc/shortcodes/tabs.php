@@ -1,8 +1,8 @@
 <?php
-/***
- * Tabs & tab shortcodes file.
+/**
+ * Shortcode for Tabs element.
  *
- * @package Shortcode.
+ * @package woodmart
  */
 
 if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
@@ -10,7 +10,7 @@ if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
 }
 
 if ( ! function_exists( 'woodmart_shortcode_tabs' ) ) {
-	/***
+	/**
 	 * Render tabs shortcode.
 	 *
 	 * @param array  $attr Shortcode attributes.
@@ -23,34 +23,43 @@ if ( ! function_exists( 'woodmart_shortcode_tabs' ) ) {
 
 		$attr = shortcode_atts(
 			array(
-				'woodmart_css_id'           => '',
-				'css'                       => '',
-				'tabs_style'                => 'default',
-				'design'                    => 'default',
-				'title'                     => '',
-				'description'               => '',
-				'image'                     => '',
-				'img_size'                  => '30x30',
-				'enable_heading_bg'         => 'no',
+				'woodmart_css_id'               => '',
+				'css'                           => '',
+				'tabs_style'                    => 'default',
+				'design'                        => 'default',
+				'title'                         => '',
+				'description'                   => '',
+				'image'                         => '',
+				'img_size'                      => '30x30',
+				'enable_heading_bg'             => 'no',
 
 				/**
 				 * Tabs Titles.
 				 */
-				'icon_position'             => 'left',
-				'tabs_title_font_family'    => 'primary',
-				'tabs_title_font_size'      => 's',
-				'tabs_title_font_weight'    => 600,
-				'tabs_title_color_scheme'   => 'inherit',
-				'tabs_title_alignment'      => 'center',
+				'icon_position'                 => 'left',
+				'tabs_title_font_family'        => 'primary',
+				'tabs_title_font_size'          => 's',
+				'tabs_title_font_weight'        => 600,
+				'tabs_title_color_scheme'       => 'inherit',
+				'tabs_title_alignment'          => 'center',
 
 				/**
 				 * Content Settings.
 				 */
-				'content_font_family'       => '',
-				'content_font_size'         => '',
-				'content_font_weight'       => '',
-				'content_text_color_scheme' => 'inherit',
+				'content_font_family'           => '',
+				'content_font_size'             => '',
+				'content_font_weight'           => '',
+				'content_text_color_scheme'     => 'inherit',
 
+				'tabs_bg_color_enable'          => 'no',
+				'tabs_bg_hover_color_enable'    => 'no',
+				'tabs_bg_active_color_enable'   => 'no',
+				'tabs_border_enable'            => 'no',
+				'tabs_border_hover_enable'      => 'no',
+				'tabs_border_active_enable'     => 'no',
+				'tabs_box_shadow_enable'        => 'no',
+				'tabs_box_shadow_hover_enable'  => 'no',
+				'tabs_box_shadow_active_enable' => 'no',
 			),
 			$attr
 		);
@@ -75,6 +84,8 @@ if ( ! function_exists( 'woodmart_shortcode_tabs' ) ) {
 		if ( 'inherit' !== $attr['tabs_title_color_scheme'] && 'custom' !== $attr['tabs_title_color_scheme'] ) {
 			$nav_tabs_wrapper_classes .= ' color-scheme-' . $attr['tabs_title_color_scheme'];
 		}
+
+		$nav_tabs_wrapper_classes .= ' wd-mb-action-swipe';
 
 		$nav_tabs_classes  = ' wd-icon-pos-' . $attr['icon_position'];
 		$nav_tabs_classes .= ' wd-style-' . $attr['tabs_style'];
@@ -102,13 +113,27 @@ if ( ! function_exists( 'woodmart_shortcode_tabs' ) ) {
 			$content_classes .= ' color-scheme-' . $attr['content_text_color_scheme'];
 		}
 
+		$tabs_bg_activated      = 'yes' === $attr['tabs_bg_color_enable'] || 'yes' === $attr['tabs_bg_hover_color_enable'] || 'yes' === $attr['tabs_bg_active_color_enable'];
+		$tabs_border_active     = 'yes' === $attr['tabs_border_enable'] || 'yes' === $attr['tabs_border_hover_enable'] || 'yes' === $attr['tabs_border_active_enable'];
+		$tabs_box_shadow_active = 'yes' === $attr['tabs_box_shadow_enable'] || 'yes' === $attr['tabs_box_shadow_hover_enable'] || 'yes' === $attr['tabs_box_shadow_active_enable'];
+
+		if ( $tabs_bg_activated || $tabs_box_shadow_active || $tabs_border_active ) {
+			$nav_tabs_classes .= ' wd-add-pd';
+		}
+
+		$header_classes = '';
+
+		if ( 'default' === $attr['design'] ) {
+			$header_classes .= ' text-' . $attr['tabs_title_alignment'];
+		}
+
 		ob_start();
 
 		woodmart_enqueue_inline_style( 'tabs' );
 		?>
 
 		<div id="<?php echo esc_attr( $title_id ); ?>" class="wd-tabs wd-wpb<?php echo esc_attr( $wrapper_classes ); ?>">
-			<div class="wd-tabs-header text-<?php echo esc_attr( $attr['tabs_title_alignment'] ); ?>">
+			<div class="wd-tabs-header<?php echo esc_attr( $header_classes ); ?>">
 				<?php if ( $attr['title'] ) : ?>
 					<div class="tabs-name title">
 						<?php
@@ -126,7 +151,7 @@ if ( ! function_exists( 'woodmart_shortcode_tabs' ) ) {
 
 				<div class="wd-nav-wrapper wd-nav-tabs-wrapper<?php echo esc_attr( $nav_tabs_wrapper_classes ); ?>">
 					<ul class="wd-nav wd-nav-tabs<?php echo esc_attr( $nav_tabs_classes ); ?>">
-						<?php foreach ( $tabs_data as $data ) : ?>
+						<?php foreach ( $tabs_data as $id => $data ) : ?>
 							<?php
 							$data = shortcode_atts(
 								array(
@@ -142,7 +167,7 @@ if ( ! function_exists( 'woodmart_shortcode_tabs' ) ) {
 									'content'             => '',
 									'html_block_id'       => '',
 
-									/***
+									/**
 									 * Tab Icon.
 									 */
 									'tabs_icon_libraries' => 'fontawesome',
@@ -150,7 +175,7 @@ if ( ! function_exists( 'woodmart_shortcode_tabs' ) ) {
 									'tabs_image'          => '',
 									'tabs_image_size'     => '30x30',
 
-									/***
+									/**
 									 * Icon libraries.
 									 */
 									'icon_fontawesome'    => '',

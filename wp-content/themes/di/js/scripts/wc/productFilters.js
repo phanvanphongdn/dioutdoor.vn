@@ -220,8 +220,12 @@
 				var $this       = $(this);
 				var $btn        = $this.find('.wd-pf-title');
 				var multiSelect = $this.hasClass('multi_select');
-	
-				$btn.on('click', function(e) {
+
+				$btn.on('click keyup', function(e) {
+					if (e.type === 'keyup' && e.keyCode !== 13) {
+						return;
+					}
+
 					var target = e.target;
 	
 					if ($(target).is($btn.find('.selected-value'))) {
@@ -263,10 +267,19 @@
 						var $link        = $priceButton.attr('href');
 						var url          = new URL($link);
 
-						if ( $minInput.val() || $maxInput.val() ) {
-							url.searchParams.set($minInput.attr('name'), $minInput.val());
-							url.searchParams.set($maxInput.attr('name'), $maxInput.val());
-		
+						if ($minInput.length && $maxInput.length) {
+							if ($minInput.val()) {
+								url.searchParams.set($minInput.attr('name'), $minInput.val());
+							} else {
+								url.searchParams.delete($minInput.attr('name'));
+							}
+
+							if ($maxInput.val()) {
+								url.searchParams.set($maxInput.attr('name'), $maxInput.val());
+							} else {
+								url.searchParams.delete($maxInput.attr('name'));
+							}
+
 							$priceButton.attr('href', url.href);
 						}
 

@@ -1,5 +1,18 @@
 <?php
+/**
+ * Gutenberg Products Block Render
+ *
+ * @package woodmart
+ */
+
 if ( ! function_exists( 'wd_gutenberg_products' ) ) {
+	/**
+	 * Gutenberg Products Block Render
+	 *
+	 * @param array  $block_attributes Block attributes.
+	 * @param string $content Block content.
+	 * @return array|string
+	 */
 	function wd_gutenberg_products( $block_attributes, $content ) {
 		if ( ! woodmart_woocommerce_installed() ) {
 			return '';
@@ -15,6 +28,14 @@ if ( ! function_exists( 'wd_gutenberg_products' ) ) {
 		if ( ! empty( $block_attributes['tagsIds'] ) ) {
 			$block_attributes['taxonomies'] .= $block_attributes['taxonomies'] ? ',' : '';
 			$block_attributes['taxonomies'] .= $block_attributes['tagsIds'];
+		}
+		if ( ! empty( $block_attributes['productAttrs'] ) ) {
+			$block_attributes['taxonomies'] .= $block_attributes['taxonomies'] ? ',' : '';
+			$block_attributes['taxonomies'] .= $block_attributes['productAttrs'];
+		}
+		if ( ! empty( $block_attributes['productBrandIds'] ) ) {
+			$block_attributes['taxonomies'] .= $block_attributes['taxonomies'] ? ',' : '';
+			$block_attributes['taxonomies'] .= $block_attributes['productBrandIds'];
 		}
 
 		$block_attributes['columns_tablet'] = ! empty( $block_attributes['columnsTablet'] ) ? $block_attributes['columnsTablet'] : 'auto';
@@ -39,7 +60,11 @@ if ( ! function_exists( 'wd_gutenberg_products' ) ) {
 		$block_attributes['spacing_tablet'] = isset( $block_attributes['spacingTablet'] ) ? $block_attributes['spacingTablet'] : '';
 		$block_attributes['spacing_mobile'] = isset( $block_attributes['spacingMobile'] ) ? $block_attributes['spacingMobile'] : '';
 
-		wd_replace_boolean_to_yes_no( array( 'ajax_recently_viewed', 'shop_tools', 'hide_out_of_stock', 'center_mode', 'scroll_per_page', 'hide_pagination_control', 'hide_prev_next_buttons', 'hide_scrollbar', 'wrap', 'autoplay', 'autoheight', 'disable_overflow_carousel', 'dynamic_pagination_control', 'scroll_carousel_init' ), $block_attributes );
+		$block_attributes['list_spacing']        = isset( $block_attributes['listSpacing'] ) ? $block_attributes['listSpacing'] : '30';
+		$block_attributes['list_spacing_tablet'] = isset( $block_attributes['listSpacingTablet'] ) ? $block_attributes['listSpacingTablet'] : '';
+		$block_attributes['list_spacing_mobile'] = isset( $block_attributes['listSpacingMobile'] ) ? $block_attributes['listSpacingMobile'] : '';
+
+		woodmart_replace_boolean_to_yes_no( array( 'ajax_recently_viewed', 'shop_tools', 'hide_out_of_stock', 'center_mode', 'scroll_per_page', 'hide_pagination_control', 'hide_prev_next_buttons', 'hide_scrollbar', 'wrap', 'autoplay', 'autoheight', 'disable_overflow_carousel', 'dynamic_pagination_control', 'scroll_carousel_init' ), $block_attributes );
 
 		if ( ! empty( $block_attributes['img_size'] ) && 'custom' === $block_attributes['img_size'] && ( ! empty( $block_attributes['imgSizeCustomHeight'] ) || ! empty( $block_attributes['imgSizeCustomWidth'] ) ) ) {
 			$block_attributes['img_size_custom'] = array(
@@ -47,8 +72,6 @@ if ( ! function_exists( 'wd_gutenberg_products' ) ) {
 				'height' => $block_attributes['imgSizeCustomHeight'],
 			);
 		}
-
-		$block_attributes['inner_content'] = trim( $content );
 
 		return woodmart_shortcode_products( $block_attributes, $content );
 	}

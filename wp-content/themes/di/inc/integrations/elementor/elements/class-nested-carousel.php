@@ -2,7 +2,7 @@
 /**
  * Nested carousel element.
  *
- * @package xts
+ * @package woodmart
  */
 
 namespace XTS\Elementor;
@@ -215,6 +215,9 @@ class Nested_Carousel extends Widget_Nested_Base {
 			'disable_overflow_carousel' => $settings['disable_overflow_carousel'],
 			'spacing_tablet'            => isset( $settings['slider_spacing_tablet'] ) ? $settings['slider_spacing_tablet'] : '',
 			'spacing_mobile'            => isset( $settings['slider_spacing_mobile'] ) ? $settings['slider_spacing_mobile'] : '',
+			'carousel_sync'             => ! empty( $settings['carousel_sync'] ) ? $settings['carousel_sync'] : '',
+			'sync_parent_id'            => isset( $settings['sync_parent_id'] ) ? $settings['sync_parent_id'] : '',
+			'sync_child_id'             => isset( $settings['sync_child_id'] ) ? $settings['sync_child_id'] : '',
 		);
 
 		if ( ! empty( $settings['slides_per_view_tablet']['size'] ) || ! empty( $settings['slides_per_view_mobile']['size'] ) ) {
@@ -252,7 +255,6 @@ class Nested_Carousel extends Widget_Nested_Base {
 		}
 
 		if ( 'yes' === $settings['scroll_carousel_init'] ) {
-			woodmart_enqueue_js_library( 'waypoints' );
 			$carousel_classes .= ' scroll-init';
 		}
 

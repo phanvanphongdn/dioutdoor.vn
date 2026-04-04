@@ -2,7 +2,7 @@
 /**
  * Product price table map.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

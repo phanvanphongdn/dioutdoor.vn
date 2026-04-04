@@ -2,7 +2,7 @@
 /**
  * Responsive Range slider.
  *
- * @package xts
+ * @package woodmart
  */
 
 namespace XTS\Admin\Modules\Options\Controls;
@@ -62,11 +62,12 @@ class Responsive_Range extends Field {
 						<?php
 						$device_value = isset( $device_settings['value'] ) ? $device_settings['value'] : '';
 						$device_unit  = isset( $device_settings['unit'] ) ? $device_settings['unit'] : '-';
+						$step         = isset( $this->args['range'][ $device_unit ]['step'] ) ? $this->args['range'][ $device_unit ]['step'] : 1;
 						?>
 						<div class="xts-control-tab-content xts-responsive-range xts-range-slider-wrap <?php echo array_key_first( $data['devices'] ) === $device ? esc_attr( ' xts-active' ) : ''; ?>"  data-device="<?php echo esc_attr( $device ); ?>" data-value="<?php echo esc_attr( $device_value ); ?>" data-unit="<?php echo esc_attr( $device_unit ); ?>">
 							<div class="xts-responsive-range-slider xts-range-slider"></div>
 							<span class="xts-range-field-value-input">
-								<input type="number" class="xts-range-field-value" value="<?php echo esc_attr( $device_value ); ?>">
+								<input type="number" class="xts-range-field-value" value="<?php echo esc_attr( $device_value ); ?>" step="<?php echo esc_attr( $step ); ?>">
 							</span>
 
 							<?php if ( ! empty( $this->args['range'] ) ) : ?>
@@ -87,7 +88,7 @@ class Responsive_Range extends Field {
 				<?php endif; ?>
 			</div>
 
-			<input type="hidden" class="xts-responsive-range-value" name="<?php echo esc_attr( $this->get_input_name() ); ?>" value="<?php echo function_exists( 'woodmart_compress' ) ? woodmart_compress( wp_json_encode( $data ) ) : ''; ?>" data-settings="<?php echo esc_attr( wp_json_encode( $this->args ) ); ?>">
+			<input type="hidden" class="xts-responsive-range-value" name="<?php echo esc_attr( $this->get_input_name() ); ?>" value="<?php echo function_exists( 'woodmart_compress' ) ? esc_attr( woodmart_compress( wp_json_encode( $data ) ) ) : ''; ?>" data-settings="<?php echo esc_attr( wp_json_encode( $this->args ) ); ?>">
 
 		<?php
 	}
@@ -100,7 +101,14 @@ class Responsive_Range extends Field {
 	 * @return array $output Generated CSS code.
 	 */
 	public function css_output() {
-		if ( empty( $this->args['selectors'] ) || empty( $this->get_field_value() ) || ! function_exists( 'woodmart_decompress' ) ) {
+		$output_css = array();
+		$value      = $this->get_field_value();
+
+		if ( empty( $this->args['selectors'] ) || ! function_exists( 'woodmart_decompress' ) ) {
+			return array();
+		}
+
+		if ( empty( $value ) && empty( $this->args['devices']['desktop']['value'] ) ) {
 			return array();
 		}
 
@@ -116,13 +124,34 @@ class Responsive_Range extends Field {
 			}
 		}
 
-		$value      = json_decode( woodmart_decompress( $this->get_field_value() ), true );
-		$output_css = array();
+		if ( function_exists( 'woodmart_decompress' ) && woodmart_is_compressed_data( $value ) ) {
+			$value = wp_parse_args(
+				json_decode(
+					woodmart_decompress(
+						$this->get_field_value()
+					),
+					true
+				),
+				array(
+					'devices' => $this->args['devices'],
+				)
+			);
+		} elseif ( $value && ! is_array( $value ) ) {
+			$value = array(
+				'devices' => array_replace_recursive(
+					$this->args['devices'],
+					array(
+						'desktop' => array(
+							'value' => $value,
+						),
+					)
+				),
+			);
+		}
 
 		if ( empty( $value['devices'] ) ) {
 			return array();
 		}
-
 		foreach ( $value['devices'] as $device => $device_value ) {
 			if ( ! $device_value || ( ! empty( $this->args['generate_zero'] ) && '' === $device_value['value'] ) || ( empty( $this->args['generate_zero'] ) && ! $device_value['value'] ) ) {
 				continue;
@@ -130,6 +159,10 @@ class Responsive_Range extends Field {
 
 			if ( ! $device ) {
 				$device = 'desktop';
+			}
+
+			if ( 'desktop' === $device && isset( $this->args['css_device'] ) ) {
+				$device = $this->args['css_device'];
 			}
 
 			foreach ( $this->args['selectors'] as $selector => $css_data ) {

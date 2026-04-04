@@ -2,7 +2,7 @@
 /**
  * The main class for sold counter module.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Modules\Sold_Counter;
@@ -25,7 +25,7 @@ class Main extends Singleton {
 	public function init() {
 		add_action( 'init', array( $this, 'add_options' ), 10 );
 
-		if ( ! woodmart_get_opt( 'sold_counter_enabled' ) ) {
+		if ( ! woodmart_get_opt( 'sold_counter_enabled' ) || ! woodmart_woocommerce_installed() ) {
 			return;
 		}
 
@@ -58,8 +58,8 @@ class Main extends Singleton {
 				'type'        => 'switcher',
 				'section'     => 'sold_counter',
 				'default'     => false,
-				'on-text'     => esc_html__( 'Yes', 'woodmart' ),
-				'off-text'    => esc_html__( 'No', 'woodmart' ),
+				'on-text'     => esc_html__( 'On', 'woodmart' ),
+				'off-text'    => esc_html__( 'Off', 'woodmart' ),
 				'priority'    => 10,
 			)
 		);
@@ -169,52 +169,53 @@ class Main extends Singleton {
 
 		Options::add_field(
 			array(
-				'id'          => 'sold_counter_timeframe_period',
-				'name'        => esc_html__( 'Time period', 'woodmart' ),
-				'description' => esc_html__( 'Select custom time period', 'woodmart' ),
-				'type'        => 'select',
-				'section'     => 'sold_counter',
-				'options'     => array(
-					'minutes' => array(
-						'name'  => esc_html__( 'Minutes', 'woodmart' ),
-						'value' => 'minutes',
+				'id'           => 'sold_counter_time',
+				'name'         => esc_html__( 'Time period', 'woodmart' ),
+				'description'  => esc_html__( 'Displays sales count for a product over a specified time frame, e.g., "3 minutes".', 'woodmart' ),
+				'type'         => 'group',
+				'section'      => 'sold_counter',
+				'inner_fields' => array(
+					array(
+						'id'         => 'sold_counter_timeframe',
+						'type'       => 'text_input',
+						'attributes' => array(
+							'type' => 'number',
+							'min'  => 1,
+							'max'  => 59,
+						),
+						'priority'   => 10,
+						'default'    => 3,
 					),
-					'hours'   => array(
-						'name'  => esc_html__( 'Hours', 'woodmart' ),
-						'value' => 'hours',
-					),
-					'days'    => array(
-						'name'  => esc_html__( 'Days', 'woodmart' ),
-						'value' => 'days',
-					),
-					'weeks'   => array(
-						'name'  => esc_html__( 'Weeks', 'woodmart' ),
-						'value' => 'weeks',
-					),
-					'months'  => array(
-						'name'  => esc_html__( 'Months', 'woodmart' ),
-						'value' => 'months',
+					array(
+						'id'       => 'sold_counter_timeframe_period',
+						'type'     => 'select',
+						'options'  => array(
+							'minutes' => array(
+								'name'  => esc_html__( 'Minutes', 'woodmart' ),
+								'value' => 'minutes',
+							),
+							'hours'   => array(
+								'name'  => esc_html__( 'Hours', 'woodmart' ),
+								'value' => 'hours',
+							),
+							'days'    => array(
+								'name'  => esc_html__( 'Days', 'woodmart' ),
+								'value' => 'days',
+							),
+							'weeks'   => array(
+								'name'  => esc_html__( 'Weeks', 'woodmart' ),
+								'value' => 'weeks',
+							),
+							'months'  => array(
+								'name'  => esc_html__( 'Months', 'woodmart' ),
+								'value' => 'months',
+							),
+						),
+						'default'  => 'minutes',
+						'priority' => 20,
 					),
 				),
-				'default'     => 'minutes',
-				'priority'    => 70,
-				'class'       => 'xts-col-6',
-			)
-		);
-
-		Options::add_field(
-			array(
-				'id'          => 'sold_counter_timeframe',
-				'name'        => esc_html__( 'Time frame', 'woodmart' ),
-				'description' => esc_html__( 'Specify custom timeframe value.', 'woodmart' ),
-				'type'        => 'range',
-				'section'     => 'sold_counter',
-				'default'     => 3,
-				'min'         => 1,
-				'max'         => 59,
-				'step'        => 1,
-				'priority'    => 80,
-				'class'       => 'xts-col-6',
+				'priority'     => 70,
 			)
 		);
 
@@ -229,9 +230,83 @@ class Main extends Singleton {
 				'min'         => 1,
 				'max'         => 72,
 				'step'        => 1,
-				'priority'    => 90,
+				'priority'    => 80,
 			)
 		);
+	}
+
+	/**
+	 * Get timeframe period string.
+	 *
+	 * @return string
+	 */
+	public function get_timeframe_period_string() {
+		$timeframe_period        = woodmart_get_opt( 'sold_counter_timeframe_period', 'minutes' );
+		$sold_counter_timeframe  = woodmart_get_opt( 'sold_counter_timeframe' ) ? intval( woodmart_get_opt( 'sold_counter_timeframe' ) ) : 0;
+		$timeframe_period_string = '';
+
+		if ( empty( $timeframe_period ) || empty( $sold_counter_timeframe ) ) {
+			return '';
+		}
+
+		switch ( $timeframe_period ) {
+			case 'minutes':
+				$timeframe_period_string = ( $sold_counter_timeframe > 1 ? $sold_counter_timeframe . ' ' : '' ) . _n( 'minute', 'minutes', (int) $sold_counter_timeframe, 'woodmart' );
+				break;
+			case 'hours':
+				$timeframe_period_string = ( $sold_counter_timeframe > 1 ? $sold_counter_timeframe . ' ' : '' ) . _n( 'hour', 'hours', (int) $sold_counter_timeframe, 'woodmart' );
+				break;
+			case 'days':
+				$timeframe_period_string = ( $sold_counter_timeframe > 1 ? $sold_counter_timeframe . ' ' : '' ) . _n( 'day', 'days', (int) $sold_counter_timeframe, 'woodmart' );
+				break;
+			case 'weeks':
+				$timeframe_period_string = ( $sold_counter_timeframe > 1 ? $sold_counter_timeframe . ' ' : '' ) . _n( 'week', 'weeks', (int) $sold_counter_timeframe, 'woodmart' );
+				break;
+			case 'months':
+				$timeframe_period_string = ( $sold_counter_timeframe > 1 ? $sold_counter_timeframe . ' ' : '' ) . _n( 'month', 'months', (int) $sold_counter_timeframe, 'woodmart' );
+				break;
+			default:
+				$timeframe_period_string = $sold_counter_timeframe . ' ' . esc_html__( 'hours', 'woodmart' );
+				break;
+		}
+
+		return $timeframe_period_string;
+	}
+
+	/**
+	 * Get date after timestamp in seconds.
+	 *
+	 * @return false|int
+	 */
+	public function get_date_after_timestamp() {
+		$timeframe_period       = woodmart_get_opt( 'sold_counter_timeframe_period', 'minutes' );
+		$sold_counter_timeframe = woodmart_get_opt( 'sold_counter_timeframe' ) ? intval( woodmart_get_opt( 'sold_counter_timeframe' ) ) : 0;
+
+		if ( empty( $timeframe_period ) || empty( $sold_counter_timeframe ) ) {
+			return false;
+		}
+
+		$timeframe_period = intval(
+			str_replace(
+				array(
+					'minutes',
+					'hours',
+					'days',
+					'weeks',
+					'months',
+				),
+				array(
+					MINUTE_IN_SECONDS,
+					HOUR_IN_SECONDS,
+					DAY_IN_SECONDS,
+					WEEK_IN_SECONDS,
+					MONTH_IN_SECONDS,
+				),
+				$timeframe_period
+			)
+		);
+
+		return $sold_counter_timeframe * $timeframe_period;
 	}
 
 	/**
@@ -252,29 +327,6 @@ class Main extends Singleton {
 
 		$average_count = get_transient( 'woodmart_product_sales_' . $id );
 
-		$sold_counter_timeframe = woodmart_get_opt( 'sold_counter_timeframe' );
-
-		switch ( woodmart_get_opt( 'sold_counter_timeframe_period' ) ) {
-			case 'minutes':
-				$timeframe_period = ( $sold_counter_timeframe > 1 ? $sold_counter_timeframe . ' ' : '' ) . _n( 'minute', 'minutes', (int) $sold_counter_timeframe, 'woodmart' );
-				break;
-			case 'hours':
-				$timeframe_period = ( $sold_counter_timeframe > 1 ? $sold_counter_timeframe . ' ' : '' ) . _n( 'hour', 'hours', (int) $sold_counter_timeframe, 'woodmart' );
-				break;
-			case 'days':
-				$timeframe_period = ( $sold_counter_timeframe > 1 ? $sold_counter_timeframe . ' ' : '' ) . _n( 'day', 'days', (int) $sold_counter_timeframe, 'woodmart' );
-				break;
-			case 'weeks':
-				$timeframe_period = ( $sold_counter_timeframe > 1 ? $sold_counter_timeframe . ' ' : '' ) . _n( 'week', 'weeks', (int) $sold_counter_timeframe, 'woodmart' );
-				break;
-			case 'months':
-				$timeframe_period = ( $sold_counter_timeframe > 1 ? $sold_counter_timeframe . ' ' : '' ) . _n( 'month', 'months', (int) $sold_counter_timeframe, 'woodmart' );
-				break;
-			default:
-				$timeframe_period = $sold_counter_timeframe . ' ' . esc_html__( 'hours', 'woodmart' );
-				break;
-		}
-
 		if ( ! $average_count ) {
 			if ( 'fake_data' === woodmart_get_opt( 'sold_counter_sales_type' ) ) {
 				$min = abs( intval( woodmart_get_opt( 'sold_counter_min_count' ) ) );
@@ -282,38 +334,23 @@ class Main extends Singleton {
 
 				$average_count = wp_rand( $min, $max );
 			} else {
-				$date_before = strtotime(
-					'-' . $sold_counter_timeframe *
-					str_replace(
-						array(
-							'minutes',
-							'hours',
-							'days',
-							'weeks',
-							'months',
-						),
-						array(
-							MINUTE_IN_SECONDS,
-							HOUR_IN_SECONDS,
-							DAY_IN_SECONDS,
-							WEEK_IN_SECONDS,
-							MONTH_IN_SECONDS,
-						),
-						woodmart_get_opt( 'sold_counter_timeframe_period' )
-					) . ' seconds'
-				);
+				$date_after_timestamp = $this->get_date_after_timestamp();
 
-				$orders = wc_get_orders(
+				if ( false === $date_after_timestamp ) {
+					return false;
+				}
+
+				$date_after    = strtotime( '-' . $date_after_timestamp . ' seconds' );
+				$average_count = 0;
+				$orders        = wc_get_orders(
 					array(
 						'status'      => array( 'completed', 'wc-processing' ),
 						'limit'       => -1,
 						'type'        => 'shop_order',
-						'date_after'  => gmdate( 'Y-m-d H:i:s', $date_before ),
 						'date_before' => gmdate( 'Y-m-d H:i:s', strtotime( 'now' ) ),
+						'date_after'  => gmdate( 'Y-m-d H:i:s', $date_after ),
 					)
 				);
-
-				$average_count = 0;
 
 				foreach ( $orders as $order ) {
 					foreach ( $order->get_items() as $item_id => $item_values ) {
@@ -349,7 +386,7 @@ class Main extends Singleton {
 					'%s %s %s',
 					_n( 'Item', 'Items', $average_count, 'woodmart' ),
 					esc_html__( 'sold in last', 'woodmart' ),
-					esc_html( $timeframe_period )
+					esc_html( $this->get_timeframe_period_string() )
 				),
 			);
 		}

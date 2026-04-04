@@ -1,21 +1,33 @@
 <?php
+/**
+ * HTML block element class file.
+ *
+ * @package woodmart
+ */
+
 namespace XTS\Modules\Header_Builder\Elements;
 
 use XTS\Modules\Header_Builder\Element;
 
 /**
- * ------------------------------------------------------------------------------------------------
  *  HTML Block element
- * ------------------------------------------------------------------------------------------------
  */
 class HTMLBlock extends Element {
 
+	/**
+	 * Constructor.
+	 */
 	public function __construct() {
 		parent::__construct();
 
 		$this->template_name = 'html-block';
 	}
 
+	/**
+	 * Map element.
+	 *
+	 * @return void
+	 */
 	public function map() {
 		$description = esc_html__( 'Choose which HTML block to display in the header', 'woodmart' );
 

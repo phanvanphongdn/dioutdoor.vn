@@ -2,7 +2,7 @@
 /**
  * Empty cart template.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

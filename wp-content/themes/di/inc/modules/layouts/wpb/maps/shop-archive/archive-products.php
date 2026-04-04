@@ -2,7 +2,7 @@
 /**
  * Archive products map.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -66,16 +66,12 @@ if ( ! function_exists( 'woodmart_get_vc_map_shop_archive_products' ) ) {
 						esc_html__( '5', 'woodmart' ) => '5',
 						esc_html__( '6', 'woodmart' ) => '6',
 					),
-					'dependency'       => array(
-						'element'            => 'products_view',
-						'value_not_equal_to' => 'list',
-					),
 					'edit_field_class' => 'vc_col-sm-6 vc_column',
 				),
 
 				array(
-					'heading'          => esc_html__( 'Space between products', 'woodmart' ),
-					'hint'             => esc_html__( 'You can set different spacing between blocks on shop page.', 'woodmart' ),
+					'heading'          => esc_html__( 'Grid space between', 'woodmart' ),
+					'hint'             => esc_html__( 'You can set different spacing between grid products on shop page.', 'woodmart' ),
 					'type'             => 'wd_select',
 					'param_name'       => 'products_spacing',
 					'style'            => 'select',
@@ -100,11 +96,44 @@ if ( ! function_exists( 'woodmart_get_vc_map_shop_archive_products' ) ) {
 						esc_html__( '20', 'woodmart' ) => '20',
 						esc_html__( '30', 'woodmart' ) => '30',
 					),
-					'dependency'       => array(
-						'element'            => 'products_view',
-						'value_not_equal_to' => 'list',
+					'edit_field_class' => 'vc_col-sm-6 vc_column',
+				),
+
+				array(
+					'heading'          => esc_html__( 'List space between', 'woodmart' ),
+					'hint'             => esc_html__( 'You can set different spacing between list products on shop page.', 'woodmart' ),
+					'type'             => 'wd_select',
+					'param_name'       => 'products_list_spacing',
+					'style'            => 'select',
+					'selectors'        => array(),
+					'devices'          => array(
+						'desktop' => array(
+							'value' => 'inherit',
+						),
+						'tablet'  => array(
+							'value' => 'inherit',
+						),
+						'mobile'  => array(
+							'value' => 'inherit',
+						),
+					),
+					'value'            => array(
+						esc_html__( 'Inherit from Theme Settings', 'woodmart' ) => 'inherit',
+						esc_html__( '0', 'woodmart' )  => '0',
+						esc_html__( '2', 'woodmart' )  => '2',
+						esc_html__( '6', 'woodmart' )  => '6',
+						esc_html__( '10', 'woodmart' ) => '10',
+						esc_html__( '20', 'woodmart' ) => '20',
+						esc_html__( '30', 'woodmart' ) => '30',
 					),
 					'edit_field_class' => 'vc_col-sm-6 vc_column',
+				),
+
+				array(
+					'type'       => 'woodmart_title_divider',
+					'holder'     => 'div',
+					'title'      => esc_html__( 'Pagination', 'woodmart' ),
+					'param_name' => 'shop_pagination_section',
 				),
 
 				array(
@@ -123,13 +152,60 @@ if ( ! function_exists( 'woodmart_get_vc_map_shop_archive_products' ) ) {
 				),
 
 				array(
-					'heading'      => esc_html__( 'Hover on product', 'woodmart' ),
+					'heading'          => esc_html__( 'Margin', 'woodmart' ),
+					'type'             => 'wd_dimensions',
+					'param_name'       => 'shop_pagination_margin',
+					'selectors'        => array(
+						'{{WRAPPER}} .wd-loop-footer' => array(
+							'margin-top: {{TOP}}{{UNIT}};',
+							'margin-right: {{RIGHT}}{{UNIT}};',
+							'margin-bottom: {{BOTTOM}}{{UNIT}};',
+							'margin-left: {{LEFT}}{{UNIT}};',
+						),
+					),
+					'devices'          => array(
+						'desktop' => array(
+							'unit' => 'px',
+						),
+						'tablet'  => array(
+							'unit' => 'px',
+						),
+						'mobile'  => array(
+							'unit' => 'px',
+						),
+					),
+					'range'            => array(
+						'px' => array(),
+					),
+					'edit_field_class' => 'vc_col-sm-6 vc_column',
+				),
+
+				array(
+					'param_name'    => 'product_custom_hover',
+					'type'          => 'woodmart_dropdown',
+					'heading'       => esc_html__( 'Custom product layout', 'woodmart' ),
+					'group'         => esc_html__( 'Design', 'woodmart' ),
+					'callback'      => 'woodmart_get_loop_items_array_with_empty',
+					'extra_content' => woodmart_get_html_block_links( 'edit.php?post_type=woodmart_layout&wd_layout_type_tab=loop_item&create_template', __( 'layout', 'woodmart' ) ),
+					'dependency'    => array(
+						'element' => 'product_hover',
+						'value'   => 'custom',
+					),
+					'wd_dependency' => array(
+						'element'            => 'products_view',
+						'value_not_equal_to' => 'list',
+					),
+				),
+
+				array(
+					'heading'      => esc_html__( 'Product layout', 'woodmart' ),
 					'group'        => esc_html__( 'Design', 'woodmart' ),
-					'hint'         => esc_html__( 'Choose one of those hover effects for products', 'woodmart' ),
+					'hint'         => esc_html__( 'Choose one of those predefined product layouts for products', 'woodmart' ),
 					'type'         => 'woodmart_image_select',
 					'param_name'   => 'product_hover',
 					'value'        => array(
 						esc_html__( 'Inherit from Theme Settings', 'woodmart' ) => 'inherit',
+						esc_html__( 'Custom product layout', 'woodmart' ) => 'custom',
 						esc_html__( 'Full info on hover', 'woodmart' ) => 'info-alt',
 						esc_html__( 'Full info on image', 'woodmart' ) => 'info',
 						esc_html__( 'Icons and "add to cart" on hover', 'woodmart' ) => 'alt',
@@ -144,6 +220,7 @@ if ( ! function_exists( 'woodmart_get_vc_map_shop_archive_products' ) ) {
 					),
 					'images_value' => array(
 						'inherit'          => WOODMART_ASSETS_IMAGES . '/settings/empty.jpg',
+						'custom'           => WOODMART_ASSETS_IMAGES . '/settings/empty.jpg',
 						'info-alt'         => WOODMART_ASSETS_IMAGES . '/settings/hover/info-alt.jpg',
 						'info'             => WOODMART_ASSETS_IMAGES . '/settings/hover/info.jpg',
 						'alt'              => WOODMART_ASSETS_IMAGES . '/settings/hover/alt.jpg',
@@ -183,6 +260,10 @@ if ( ! function_exists( 'woodmart_get_vc_map_shop_archive_products' ) ) {
 						esc_html__( 'Dark', 'woodmart' )  => 'dark',
 						esc_html__( 'Light', 'woodmart' ) => 'light',
 					),
+					'dependency' => array(
+						'element'            => 'product_hover',
+						'value_not_equal_to' => array( 'custom' ),
+					),
 				),
 
 				array(
@@ -196,6 +277,10 @@ if ( ! function_exists( 'woodmart_get_vc_map_shop_archive_products' ) ) {
 						esc_html__( 'Disable', 'woodmart' ) => 'disable',
 					),
 					'std'              => 'inherit',
+					'dependency'       => array(
+						'element'            => 'product_hover',
+						'value_not_equal_to' => array( 'custom' ),
+					),
 					'edit_field_class' => 'vc_col-sm-12 vc_column',
 				),
 
@@ -213,6 +298,10 @@ if ( ! function_exists( 'woodmart_get_vc_map_shop_archive_products' ) ) {
 					'dependency'       => array(
 						'element' => 'products_bordered_grid',
 						'value'   => 'enable',
+					),
+					'wd_dependency'    => array(
+						'element'            => 'product_hover',
+						'value_not_equal_to' => array( 'custom' ),
 					),
 					'edit_field_class' => 'vc_col-sm-6 vc_column',
 				),
@@ -232,6 +321,10 @@ if ( ! function_exists( 'woodmart_get_vc_map_shop_archive_products' ) ) {
 						'element' => 'products_bordered_grid',
 						'value'   => 'enable',
 					),
+					'wd_dependency'    => array(
+						'element'            => 'product_hover',
+						'value_not_equal_to' => array( 'custom' ),
+					),
 					'edit_field_class' => 'vc_col-sm-6 vc_column',
 				),
 
@@ -247,22 +340,30 @@ if ( ! function_exists( 'woodmart_get_vc_map_shop_archive_products' ) ) {
 						esc_html__( 'Yes', 'woodmart' ) => 'yes',
 						esc_html__( 'No', 'woodmart' )  => 'no',
 					),
+					'dependency' => array(
+						'element'            => 'product_hover',
+						'value_not_equal_to' => array( 'custom' ),
+					),
 				),
 
 				array(
-					'heading'    => esc_html__( 'Custom products background color', 'woodmart' ),
-					'hint'       => esc_html__( 'Set custom background color for products.', 'woodmart' ),
-					'group'      => esc_html__( 'Design', 'woodmart' ),
-					'type'       => 'wd_colorpicker',
-					'param_name' => 'products_background',
-					'selectors'  => array(
+					'heading'       => esc_html__( 'Custom products background color', 'woodmart' ),
+					'hint'          => esc_html__( 'Set custom background color for products.', 'woodmart' ),
+					'group'         => esc_html__( 'Design', 'woodmart' ),
+					'type'          => 'wd_colorpicker',
+					'param_name'    => 'products_background',
+					'selectors'     => array(
 						'{{WRAPPER}} .products.wd-products-with-bg, {{WRAPPER}} .products.wd-products-with-bg :is(.wd-product,.wd-cat)' => array(
 							'--wd-prod-bg:{{VALUE}}; --wd-bordered-bg:{{VALUE}};',
 						),
 					),
-					'dependency' => array(
+					'dependency'    => array(
 						'element' => 'products_with_background',
 						'value'   => array( 'yes' ),
+					),
+					'wd_dependency' => array(
+						'element'            => 'product_hover',
+						'value_not_equal_to' => array( 'custom' ),
 					),
 				),
 
@@ -277,6 +378,10 @@ if ( ! function_exists( 'woodmart_get_vc_map_shop_archive_products' ) ) {
 						esc_html__( 'Inherit from Theme Settings', 'woodmart' ) => 'inherit',
 						esc_html__( 'Yes', 'woodmart' ) => 'yes',
 						esc_html__( 'No', 'woodmart' )  => 'no',
+					),
+					'dependency' => array(
+						'element'            => 'product_hover',
+						'value_not_equal_to' => array( 'custom' ),
 					),
 				),
 

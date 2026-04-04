@@ -7,7 +7,7 @@
  * @var array $options Options list.
  * @var string $current Selected option id.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 if ( empty( $options ) ) {

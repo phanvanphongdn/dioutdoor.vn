@@ -1,24 +1,51 @@
 <?php
+/**
+ * Slider admin module.
+ *
+ * @package woodmart
+ */
 
 namespace XTS\Admin\Modules\Dashboard;
 
 use XTS\Singleton;
 
+/**
+ * Slider class.
+ */
 class Slider extends Singleton {
 	/**
 	 * Constructor.
 	 */
 	public function init() {
-		$this->hooks();
+		add_action( 'woodmart_slider_term_edit_form_top', array( $this, 'add_slides_to_slider_page' ), 9 );
+		add_action( 'wp_ajax_woodmart_get_slides_data', array( $this, 'get_slides_data' ) );
+		add_action( 'post_edit_form_tag', array( $this, 'enqueue_script' ) );
+
+		add_action( 'manage_woodmart_slide_posts_custom_column', array( $this, 'manage_woodmart_slide_columns' ), 11, 2 );
+
+		add_filter( 'hidden_meta_boxes', array( $this, 'hide_custom_fields' ), 10, 3 );
 	}
 
 	/**
-	 * Hooks.
+	 * Hide Custom Fields meta box by default for this post type.
+	 *
+	 * @param array     $hidden Hidden meta boxes.
+	 * @param WP_Screen $screen Current screen.
+	 * @param bool      $use_defaults Whether to use default meta boxes.
+	 *
+	 * @return array
 	 */
-	public function hooks() {
-		add_action( 'woodmart_slider_term_edit_form_top', [ $this, 'add_slides_to_slider_page' ], 9 );
-		add_action( 'wp_ajax_woodmart_get_slides_data', [ $this, 'get_slides_data' ] );
-		add_action( 'post_edit_form_tag', [ $this, 'enqueue_script' ] );
+	public function hide_custom_fields( $hidden, $screen, $use_defaults ) {
+		if ( isset( $screen->id ) && 'woodmart_slide' === $screen->id ) {
+			if ( ! is_array( $hidden ) ) {
+				$hidden = array();
+			}
+			if ( ! in_array( 'postcustom', $hidden, true ) ) {
+				$hidden[] = 'postcustom';
+			}
+		}
+
+		return $hidden;
 	}
 
 	/**
@@ -27,9 +54,10 @@ class Slider extends Singleton {
 	 * @param object $post Post.
 	 */
 	public function enqueue_script( $post ) {
-		if ( ! $post || $post->post_type !== 'woodmart_slide' ) {
+		if ( ! $post || 'woodmart_slide' !== $post->post_type ) {
 			return;
 		}
+
 		wp_enqueue_script( 'wd-sliders-ui', WOODMART_ASSETS . '/js/sliders-ui.js', array(), WOODMART_VERSION, true );
 	}
 
@@ -39,7 +67,12 @@ class Slider extends Singleton {
 	public function get_slides_data() {
 		check_ajax_referer( 'woodmart-get-slides-nonce', 'security' );
 		$output     = array();
-		$taxonomies = get_terms( 'woodmart_slider', array( 'hide_empty' => false ) );
+		$taxonomies = get_terms(
+			array(
+				'taxonomy'   => 'woodmart_slider',
+				'hide_empty' => false,
+			)
+		);
 
 		if ( ! $taxonomies ) {
 			wp_send_json_error();
@@ -59,7 +92,7 @@ class Slider extends Singleton {
 		$args = array(
 			'posts_per_page' => -1,
 			'post_type'      => 'woodmart_slide',
-			'tax_query'      => array(
+			'tax_query'      => array( // phpcs:ignore  WordPress.DB.SlowDBQuery
 				'relation' => 'OR',
 			),
 		);
@@ -78,8 +111,9 @@ class Slider extends Singleton {
 
 		if ( $slides->posts ) {
 			foreach ( $slides->posts as $slide ) {
+				$slide_image           = woodmart_get_post_meta_value( $slide->ID, 'image' );
 				$bg_image_desktop      = has_post_thumbnail( $slide->ID ) ? wp_get_attachment_url( get_post_thumbnail_id( $slide->ID ) ) : '';
-				$meta_bg_image_desktop = get_post_meta( $slide->ID, 'bg_image_desktop', true );
+				$meta_bg_image_desktop = woodmart_get_post_meta_value( $slide->ID, 'bg_image_desktop' );
 
 				if ( is_array( $meta_bg_image_desktop ) ) {
 					$meta_bg_image_desktop = $meta_bg_image_desktop['url'];
@@ -87,6 +121,10 @@ class Slider extends Singleton {
 
 				if ( $meta_bg_image_desktop ) {
 					$bg_image_desktop = $meta_bg_image_desktop;
+				}
+
+				if ( ! empty( $slide_image['url'] ) ) {
+					$bg_image_desktop = $slide_image['url'];
 				}
 
 				$slider_term = wp_get_post_terms( $slide->ID, 'woodmart_slider' );
@@ -103,7 +141,7 @@ class Slider extends Singleton {
 						'title'    => $slide->post_title,
 						'link'     => get_edit_post_link( $slide->ID, 'url' ),
 						'img_url'  => $bg_image_desktop,
-						'bg_color' => get_post_meta( $slide->ID, 'bg_color', true ),
+						'bg_color' => woodmart_get_post_meta_value( $slide->ID, 'bg_color' ),
 					);
 				}
 			}
@@ -156,9 +194,10 @@ class Slider extends Singleton {
 						</div>
 						<?php foreach ( $slides->posts as $slide ) : ?>
 							<?php
+							$slide_image           = woodmart_get_post_meta_value( $slide->ID, 'image' );
 							$bg_image_desktop      = has_post_thumbnail( $slide->ID ) ? wp_get_attachment_url( get_post_thumbnail_id( $slide->ID ) ) : '';
-							$meta_bg_image_desktop = get_post_meta( $slide->ID, 'bg_image_desktop', true );
-							$bg_slide_color        = get_post_meta( $slide->ID, 'bg_color', true );
+							$meta_bg_image_desktop = woodmart_get_post_meta_value( $slide->ID, 'bg_image_desktop' );
+							$bg_slide_color        = woodmart_get_post_meta_value( $slide->ID, 'bg_color' );
 
 							if ( is_array( $meta_bg_image_desktop ) ) {
 								$meta_bg_image_desktop = $meta_bg_image_desktop['url'];
@@ -183,7 +222,9 @@ class Slider extends Singleton {
 							?>
 							<div class="xts-wp-row">
 								<div class="xts-wp-table-img">
-									<?php if ( $bg_image_desktop ) : ?>
+									<?php if ( ! empty( $slide_image['url'] ) ) : ?>
+										<img src="<?php echo esc_url( $slide_image['url'] ); ?>" alt="slide image">
+									<?php elseif ( $bg_image_desktop ) : ?>
 										<img src="<?php echo esc_url( $bg_image_desktop ); ?>" alt="slide image">
 									<?php elseif ( $bg_slide_color ) : ?>
 										<div class="xts-slider-bg-color" style="background-color: <?php echo esc_attr( $bg_slide_color ); ?>"></div>
@@ -236,6 +277,68 @@ class Slider extends Singleton {
 			</div>
 		</div>
 		<?php
+	}
+
+	/**
+	 * Edit slide columns.
+	 *
+	 * @param string $column Column.
+	 * @param int    $post_id Post ID.
+	 * @return void
+	 */
+	public function manage_woodmart_slide_columns( $column, $post_id ) {
+		switch ( $column ) {
+			case 'thumb':
+				$slide_image           = woodmart_get_post_meta_value( $post_id, 'image' );
+				$meta_bg_image_desktop = woodmart_get_post_meta_value( $post_id, 'bg_image_desktop' );
+				$meta_bg_slide_color   = woodmart_get_post_meta_value( $post_id, 'bg_color' );
+
+				if ( ! empty( $slide_image['url'] ) ) {
+					?>
+					<img src="<?php echo esc_url( $slide_image['url'] ); ?>" alt="<?php echo esc_attr__( 'Slide thumbnail', 'woodmart' ); ?>">
+					<?php
+				} elseif ( ( $meta_bg_image_desktop && ! is_array( $meta_bg_image_desktop ) ) || ! empty( $meta_bg_image_desktop['url'] ) ) {
+					if ( is_array( $meta_bg_image_desktop ) && isset( $meta_bg_image_desktop['url'] ) ) {
+						$meta_bg_image_desktop = $meta_bg_image_desktop['url'];
+					}
+					?>
+					<img src="<?php echo esc_url( $meta_bg_image_desktop ); ?>" alt="<?php echo esc_attr__( 'Slide thumbnail', 'woodmart' ); ?>">
+					<?php
+				} elseif ( has_post_thumbnail( $post_id ) ) {
+					the_post_thumbnail( array( 60, 60 ) );
+				} elseif ( $meta_bg_slide_color ) {
+					?>
+					<div class="xts-slider-bg-color" style="background-color: <?php echo esc_attr( $meta_bg_slide_color ); ?>"></div>
+					<?php
+				}
+
+				break;
+			case 'slide-slider':
+				$terms    = wp_get_post_terms( $post_id, 'woodmart_slider' );
+				$keys     = array_keys( $terms );
+				$last_key = end( $keys );
+
+				if ( ! $terms ) {
+					echo '—';
+
+					return;
+				}
+
+				foreach ( $terms as $key => $term ) {
+					$name = $term->name;
+
+					if ( $key !== $last_key ) {
+						$name .= ',';
+					}
+					?>
+					<a href="<?php echo esc_url( get_edit_term_link( $term->term_id, 'woodmart_slider' ) ); ?>">
+						<?php echo esc_html( $name ); ?>
+					</a>
+					<?php
+				}
+
+				break;
+		}
 	}
 }
 

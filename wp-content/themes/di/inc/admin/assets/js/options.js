@@ -1,6 +1,6 @@
 var woodmartOptions;
 
-/* global jQuery, wp, xtsTypography, WebFont, woodmartConfig */
+/* global _, WebFont, woodmartConfig, woodmart_media_init */
 
 (function($) {
 	'use strict';
@@ -37,6 +37,10 @@ var woodmartOptions;
 
 					$lastTab.val(id);
 
+					var url = new URL(window.location);
+					url.searchParams.set('tab', id);
+					window.history.pushState({}, '', url);
+
 					woodmartOptionsAdmin.editorControl();
 
 					$(document).trigger('xts_section_changed');
@@ -45,7 +49,7 @@ var woodmartOptions;
 
 				woodmartOptionsAdmin.editorControl();
 
-				$options.on('click', '.xts-reset-options-btn', function(e) {
+				$options.on('click', '.xts-reset-options-btn', function() {
 					return confirm(
 						'Are you sure you want to reset ALL settings (not only this section) to default values? This process cannot be undone. Continue?');
 				});
@@ -68,7 +72,7 @@ var woodmartOptions;
 
 					var $sectionLink = $('.xts-nav-vertical [data-id="' + section + '"]');
 
-					if ($sectionLink.length == 0) {
+					if ($sectionLink.length === 0) {
 						return true;
 					}
 
@@ -129,6 +133,10 @@ var woodmartOptions;
 
 					$set.addClass('xts-field-inited');
 
+					if ($set.find('.xts-btns-set').hasClass('xts-presets')) {
+						return;
+					}
+
 					$set.on('click', '.xts-set-item', function() {
 						var $btn = $(this);
 
@@ -163,7 +171,7 @@ var woodmartOptions;
 					var $color = $(this),
 					    $input = $color.find('input[type="text"]');
 
-					if ($color.hasClass('xts-field-inited')) {
+					if ($color.hasClass('xts-field-inited') || $color.closest('.xts-item-template').length) {
 						return;
 					}
 
@@ -208,7 +216,7 @@ var woodmartOptions;
 							// to true
 						}).on('select', function() { // it also has "open" and "close" events
 							var attachment = custom_uploader.state().get('selection').first().toJSON();
-							$inputID.val(attachment.id);
+							$inputID.val(attachment.id).trigger('change');
 							$inputURL.val(attachment.url).trigger('change');
 							$preview.find('img').remove();
 							$previewInput.val(attachment.url);
@@ -221,13 +229,13 @@ var woodmartOptions;
 					$removeBtn.on('click', function(e) {
 						e.preventDefault();
 
-						if ($preview.find('img').length == 1) {
+						if ($preview.find('img').length === 1) {
 							$preview.find('img').remove();
 						}
 
 						$previewInput.val('');
-						$inputID.val('');
-						$inputURL.val('');
+						$inputID.val('').trigger('change');
+						$inputURL.val('').trigger('change');
 						$removeBtn.removeClass('xts-active');
 					});
 
@@ -346,7 +354,7 @@ var woodmartOptions;
 					$select.each(function() {
 						var $select2 = $(this);
 
-						if ($select2.hasClass('xts-field-inited')) {
+						if ($select2.hasClass('xts-field-inited') || $select2.closest('.xts-item-template').length) {
 							return;
 						}
 
@@ -391,7 +399,8 @@ var woodmartOptions;
 										}
 									})
 									.end()
-									.select2(select2Defaults);
+									.select2(select2Defaults)
+									.trigger('change');
 							});
 
 							$select2.parent().find('.xts-unselect2-all').on('click', function(e) {
@@ -410,7 +419,8 @@ var woodmartOptions;
 										}
 									})
 									.end()
-									.select2(select2Defaults);
+									.select2(select2Defaults)
+									.trigger('change');
 							});
 						}
 
@@ -430,7 +440,7 @@ var woodmartOptions;
 					var value = $field.data('value');
 					var search = $field.data('search');
 
-					if ($field.hasClass('xts-field-inited') || $field.parents('.xts-item-template').length) {
+					if ($field.hasClass('xts-field-inited') || $field.closest('.xts-item-template').length) {
 						return;
 					}
 
@@ -466,10 +476,17 @@ var woodmartOptions;
 							},
 							cache         : true
 						}
-					}).on('select2:select select2:unselect', function(e) {
-						// $(e.currentTarget).find('option').each(function(e) {
-						// 	$(this).removeAttr('selected');
-						// });
+					}).on('select2:unselect', function(e) {
+						var $this = $(this);
+						var $elm  = $(e.params.data.element);
+
+						$elm.removeAttr('selected');
+						$this.trigger('change.select2');
+
+						if ( 0 === $this.find('option[selected="selected"]').length ) {
+							$this.find('option[value=""]')
+								.attr('selected', 'selected');
+						}
 					});
 
 					$field.addClass('xts-field-inited');
@@ -487,10 +504,10 @@ var woodmartOptions;
 					var $wrapper = $select.parent();
 
 					if ( ! $wrapper.find('.xts-animation-preview-wrap').length ) {
-						var classes = '';
+						var classes = ' wd-animation wd-transform wd-animation-ready wd-animated wd-in';
 
-						if ( value && 'none' !== value ) {
-							classes = ' wd-animated wd-animation-ready wd-animation-' + value;
+						if ( value && ('none' !== value || 'default' !== value) ) {
+							classes += ' wd-animation-' + value;
 						}
 
 						$wrapper.append(`
@@ -504,26 +521,32 @@ var woodmartOptions;
 						var $this = $(this);
 						var $preview = $this.siblings('.xts-animation-preview-wrap').find('.xts-btn');
 
+						$preview.removeClass('wd-in');
+						$preview.removeClass('wd-animated');
 						$preview.removeClass(function (index, css) {
-							return (css.match(/(^|\s)wd-animat\S+/g) || []).join(' ');
+							return (css.match(/(^|\s)wd-animation-\S+/g) || []).join(' ');
 						});
 
-						$preview.addClass('wd-animation-ready wd-animation-' + $this.val() );
+						$preview.addClass(' wd-animation-ready');
+						$preview.addClass(' wd-animation-' + $this.val() );
 
 						setTimeout( function () {
+							$preview.addClass('wd-in');
 							$preview.addClass('wd-animated');
-						}, 100);
+						}, 200);
 					});
 
 					$wrapper.find('.xts-animation-preview-wrap .xts-btn').on('click', function (e) {
 						e.preventDefault();
 						var $this = $(this);
 
+						$this.removeClass('wd-in');
 						$this.removeClass('wd-animated');
 
 						setTimeout( function () {
+							$this.addClass('wd-in');
 							$this.addClass('wd-animated');
-						}, 100);
+						}, 200);
 					});
 				});
 			},
@@ -533,13 +556,23 @@ var woodmartOptions;
 					return;
 				}
 
-				$('.xts-active-section .xts-select_with_table-control, .xts-active-section .xts-conditions-control, .xts-active-section .xts-discount_rules-control').each( function () {
-					var $control = $(this);
+				$('.xts-active-section .xts-select_with_table-control, .xts-active-section .xts-discount_rules-control, .xts-active-section .xts-timetable-control, .xts-conditions-control').each( function () {
+					var $control = $(this); 
 
 					$control.on('click', '.xts-remove-item', function (e) {
 						e.preventDefault();
 
 						$(this).parent().parent().remove();
+
+						if (0 === $control.find('.xts-controls-wrapper .xts-table-controls:not(.xts-table-heading)').length) {
+							let addRowBtn = $control.find('.xts-add-row');
+
+							if (addRowBtn) {
+								addRowBtn.click();
+							}
+						}
+
+						$(document).trigger('xts_select_with_table_control_row_removed', [$control]);
 					});
 
 					$control.find('.xts-add-row').on('click', function (e) {
@@ -574,7 +607,6 @@ var woodmartOptions;
 
 				$bgs.each(function() {
 					var $bg               = $(this),
-					    $uploadBtn        = $bg.find('.xts-upload-btn'),
 					    $removeBtn        = $bg.find('.xts-remove-upload-btn'),
 					    $inputURL         = $bg.find('input.xts-upload-input-url'),
 					    $inputID          = $bg.find('input.xts-upload-input-id'),
@@ -587,6 +619,8 @@ var woodmartOptions;
 					    $imageOptions     = $bg.find('.xts-bg-image-options'),
 					    $attachmentSelect = $bg.find('.xts-bg-attachment'),
 					    $positionSelect   = $bg.find('.xts-bg-position'),
+					    $imageSizeSelect   = $bg.find('.xts-image-size'),
+					    $imageCustomSizeSelect = $bg.find('.xts-image-size-custom'),
 					    data              = {};
 
 					if ($bg.hasClass('xts-field-inited')) {
@@ -594,7 +628,7 @@ var woodmartOptions;
 					}
 
 					$colorInput.wpColorPicker({
-						change: function(e) {
+						change: function() {
 							updatePreview();
 						},
 						clear: function() {
@@ -606,6 +640,19 @@ var woodmartOptions;
 						allowClear: true,
 						theme     : 'xts'
 					});
+
+					if ($imageSizeSelect.length) {
+						$imageSizeSelect.on('change', function() {
+							var $this = $(this);
+							var value = $this.val();
+
+							if (value === 'custom') {
+								$imageCustomSizeSelect.parent().removeClass('xts-hidden');
+							} else {
+								$imageCustomSizeSelect.parent().addClass('xts-hidden');
+							}
+						})
+					}
 
 					$bg.on('click', '.xts-upload-btn, img', function(e) {
 						e.preventDefault();
@@ -625,8 +672,8 @@ var woodmartOptions;
 							// to true
 						}).on('select', function() { // it also has "open" and "close" events
 							var attachment = custom_uploader.state().get('selection').first().toJSON();
-							$inputID.val(attachment.id);
-							$inputURL.val(attachment.url);
+							$inputID.val(attachment.id).trigger('change');
+							$inputURL.val(attachment.url).trigger('change');
 							$preview.find('img').remove();
 							$preview.prepend(
 								'<img src="' + attachment.url + '" />');
@@ -639,8 +686,8 @@ var woodmartOptions;
 					$removeBtn.on('click', function(e) {
 						e.preventDefault();
 						$preview.find('img').remove();
-						$inputID.val('');
-						$inputURL.val('');
+						$inputID.val('').trigger('change');
+						$inputURL.val('').trigger('change');
 						$removeBtn.removeClass('xts-active');
 						$imageOptions.addClass('xts-hidden');
 						updatePreview();
@@ -659,7 +706,6 @@ var woodmartOptions;
 						data.backgroundPosition = $positionSelect.val();
 						data.height = 100;
 
-						console.log($colorInput);
 						if (data.backgroundColor || $inputURL.val()) {
 							$bgPreview.css(data).show();
 						} else {
@@ -758,6 +804,12 @@ var woodmartOptions;
 					    '800italic': 'Extra Bold 800 Italic',
 					    '900italic': 'Black 900 Italic'
 				    };
+				
+				var select2DefaultWithoutClear = {
+					width     : '100%',
+					allowClear: false,
+					theme     : 'xts'
+				};
 
 				$typography.each(function() {
 					var $parent = $(this);
@@ -787,14 +839,20 @@ var woodmartOptions;
 
 						$parent.data('key', key);
 
+						$parent.find('[name^="xts-woodmart-options"]:first').trigger('change');
+
 						initTypographySection($parent, $template.attr('data-id'));
+						$(document).trigger('xts_section_changed');
 					});
 
 					$parent.on('click', '.xts-typography-btn-remove',
 						function(e) {
 							e.preventDefault();
+							let $wrapper = $(this).parents('.xts-typography-sections');
 
 							$(this).parent().remove();
+
+							$wrapper.find('[name^="xts-woodmart-options"]:first').trigger('change');
 						});
 
 					$parent.addClass('xts-field-inited');
@@ -830,9 +888,11 @@ var woodmartOptions;
 
 					//init when value is changed
 					$section.find(
-						'.xts-typography-family, .xts-typography-style, .xts-typography-subset').on(
+						'.xts-typography-family, .xts-typography-style').on(
 						'change',
 						function() {
+							$(this).siblings('input[type="hidden"]').trigger('change');
+
 							syncronizeFontVariants($section, false, false);
 						}
 					);
@@ -860,7 +920,7 @@ var woodmartOptions;
 						stdFonts.children.push({
 							id      : i,
 							text    : val,
-							selected: (i == $family.data('value'))
+							selected: (i === $family.data('value'))
 						});
 					});
 
@@ -869,7 +929,7 @@ var woodmartOptions;
 							id      : i,
 							text    : i,
 							google  : true,
-							selected: (i == $family.data('value'))
+							selected: (i === $family.data('value'))
 						});
 					});
 
@@ -877,7 +937,7 @@ var woodmartOptions;
 						customFonts.children.push({
 							id      : i,
 							text    : i,
-							selected: (i == $family.data('value'))
+							selected: (i === $family.data('value'))
 						});
 					});
 
@@ -905,7 +965,7 @@ var woodmartOptions;
 								var data = e.params.args.data;
 								var fontName = data.text;
 
-								$familyInput.attr('value', fontName);
+								$familyInput.val(fontName).trigger('change');
 
 								// option values
 								selVals = data;
@@ -915,17 +975,17 @@ var woodmartOptions;
 							}
 						).on(
 							'select2:unselecting',
-							function(e) {
+							function() {
 								$(this).one('select2:opening', function(ev) {
 									ev.preventDefault();
 								});
 							}
 						).on(
 							'select2:unselect',
-							function(e) {
-								$familyInput.val('');
+							function() {
+								$familyInput.val('').trigger('change');
 
-								$googleInput.val('false');
+								$googleInput.val('false').trigger('change');
 
 								$family.val(null).trigger('change');
 
@@ -952,10 +1012,10 @@ var woodmartOptions;
 						'select2:select',
 						function(e) {
 							var val = e.params.data.id;
-							if (val != 'custom') {
+							if (val !== 'custom') {
 								return;
 							}
-							$customInput.val(true);
+							$customInput.val(true).trigger('change');
 							$customSelector.removeClass('hide');
 
 						}
@@ -963,10 +1023,10 @@ var woodmartOptions;
 						'select2:unselect',
 						function(e) {
 							var val = e.params.data.id;
-							if (val != 'custom') {
+							if (val !== 'custom') {
 								return;
 							}
-							$customInput.val('');
+							$customInput.val('').trigger('change');
 							$customSelector.val('').addClass('hide');
 						}
 					);
@@ -975,7 +1035,7 @@ var woodmartOptions;
 
 					// Color picker fields
 					$color.wpColorPicker({
-						change: function(event, ui) {
+						change: function() {
 							// needed for palette click
 							setTimeout(function() {
 								updatePreview($section);
@@ -985,7 +1045,7 @@ var woodmartOptions;
 					$colorHover.wpColorPicker();
 
 					$background.wpColorPicker({
-						change: function(event, ui) {
+						change: function() {
 							// needed for palette click
 							setTimeout(function() {
 								updatePreview($section);
@@ -1003,6 +1063,8 @@ var woodmartOptions;
 						}).on('change', 'input', function() {
 						updatePreview($section);
 					});
+
+					$(document).trigger('wdTabsInit');
 				}
 
 				function updatePreview($section) {
@@ -1074,9 +1136,9 @@ var woodmartOptions;
 					sectionFields.preview.slideDown();
 				}
 
-				function loadGoogleFont(family, style, script) {
+				function loadGoogleFont(family, style) {
 
-					if (family == null || family == 'inherit') {
+					if (family === null || family === 'inherit') {
 						return;
 					}
 
@@ -1086,10 +1148,6 @@ var woodmartOptions;
 
 					if (style && style !== '') {
 						link += ':' + style.replace(/\-/g, ' ');
-					}
-
-					if (script && script !== '') {
-						link += '&subset=' + script;
 					}
 
 					if (typeof (WebFont) !== 'undefined' && WebFont) {
@@ -1112,9 +1170,6 @@ var woodmartOptions;
 							'.xts-typography-style-input'),
 						weightInput: $section.find(
 							'.xts-typography-weight-input'),
-						subsetInput: $section.find(
-							'.xts-typography-subset-input'),
-						subset     : $section.find('select.xts-typography-subset'),
 						googleInput: $section.find(
 							'.xts-typography-google-input'),
 						preview    : $section.find('.xts-typography-preview'),
@@ -1133,7 +1188,6 @@ var woodmartOptions;
 					}
 
 					var style = sectionFields.style.val();
-					var script = sectionFields.subset.val();
 
 					// Is selected font a google font?
 					var google;
@@ -1150,14 +1204,9 @@ var woodmartOptions;
 					// client
 					if (init) {
 						style = sectionFields.style.data('value');
-						script = sectionFields.subset.data('value');
 
 						if (style !== '') {
 							style = String(style);
-						}
-
-						if (typeof (script) !== undefined) {
-							script = String(script);
 						}
 					}
 
@@ -1175,8 +1224,6 @@ var woodmartOptions;
 					} else {
 						details = defaultVariants;
 					}
-
-					sectionFields.subsetInput.val(script);
 
 					// If we changed the font. Selecting variable is set to
 					// true only when family field is opened
@@ -1208,58 +1255,11 @@ var woodmartOptions;
 								}
 							);
 
-							// destroy select2
-							if (sectionFields.subset.data('select2')) {
-								sectionFields.style.select2('destroy');
-							}
-
 							// Instert new HTML
 							sectionFields.style.html(html);
 
 							// Init select2
-							sectionFields.style.select2(select2Defaults);
-
-							// SUBSETS
-							selected = '';
-							html = '<option value=""></option>';
-
-							$.each(
-								details.subsets,
-								function(index, subset) {
-									if (subset.id === script ||
-										woodmartOptionsAdmin.size(
-											details.subsets) === 1) {
-										selected = ' selected="selected"';
-										script = subset.id;
-										sectionFields.subset.val(script);
-									} else {
-										selected = '';
-									}
-
-									if ( subset.hasOwnProperty('name') && null !== subset.name ) {
-										html += '<option value="' + subset.id +
-											'"' + selected + '>' +
-											subset.name.replace(
-												/\+/g, ' '
-											) + '</option>';
-									}
-								}
-							);
-
-							// Destroy select2
-							if (sectionFields.subset.data('select2')) {
-								sectionFields.subset.select2('destroy');
-							}
-
-							// Inset new HTML
-							sectionFields.subset.html(html);
-
-							// Init select2
-							sectionFields.subset.select2(select2Defaults);
-
-							sectionFields.subset.parent().fadeIn('fast');
-							// $( '#' + mainID + ' .typography-family-backup'
-							// ).fadeIn( 'fast' );
+							sectionFields.style.select2(select2DefaultWithoutClear);
 						} else {
 							if (details) {
 								$.each(
@@ -1282,29 +1282,21 @@ var woodmartOptions;
 									}
 								);
 
-								// Destory select2
-								if (sectionFields.subset.data('select2')) {
-									sectionFields.style.select2('destroy');
-								}
-
 								// Insert new HTML
 								sectionFields.style.html(html);
 
 								// Init select2
-								sectionFields.style.select2(select2Defaults);
-
-								// Prettify things
-								sectionFields.subset.parent().fadeOut('fast');
+								sectionFields.style.select2(select2DefaultWithoutClear);
 							}
 						}
 
-						sectionFields.familyInput.val(family);
+						sectionFields.familyInput.val(family)
 					}
 
 					// Check if the selected value exists. If not, empty it.
 					// Else, apply it.
 					if (sectionFields.style.find(
-						'option[value=\'' + style + '\']').length === 0) {
+						'option[value=\'' + style + '\']').length === 0){
 						style = '';
 						sectionFields.style.val('');
 					} else if (style === '400') {
@@ -1323,16 +1315,8 @@ var woodmartOptions;
 
 					sectionFields.weightInput.val(style);
 
-					// Handle empty subset select
-					if (sectionFields.subset.find(
-						'option[value=\'' + script + '\']').length === 0) {
-						script = '';
-						sectionFields.subset.val('');
-						sectionFields.subsetInput.val(script);
-					}
-
 					if (google) {
-						loadGoogleFont(family, style, script);
+						loadGoogleFont(family, style);
 					}
 
 					if (!init) {
@@ -1365,7 +1349,7 @@ var woodmartOptions;
 								orders[wrapperKey] = currentOrder;
 							})
 
-							$this.find('input[type=hidden]').val(JSON.stringify(orders));
+							$this.find('input[type=hidden]').val(JSON.stringify(orders)).trigger('change');
 						}
 					}).disableSelection();
 				})
@@ -1403,11 +1387,10 @@ var woodmartOptions;
 			},
 
 			makeBool: function(val) {
-				if (val == 'false' || val == '0' || val === false || val ===
+				if (val === 'false' || val === '0' || val === false || val ===
 					0) {
 					return false;
-				} else if (val == 'true' || val == '1' || val === true || val ==
-					1) {
+				} else if (val === 'true' || val === '1' || val === true || val === 1) {
 					return true;
 				}
 			},
@@ -1452,7 +1435,7 @@ var woodmartOptions;
 					});
 
 					// Initiate the display
-					$input.val($slider.slider('value')).trigger('change');
+					$input.val($slider.slider('value'));
 					$text.text($slider.slider('value'));
 
 					$range.addClass('xts-field-inited');
@@ -1461,269 +1444,274 @@ var woodmartOptions;
 			},
 
 			responsiveRangeControl: function() {
-				var $ranges = $('.xts-active-section .xts-responsive_range-control');
+				const $ranges = $('.xts-active-section .xts-responsive_range-control');
 
-				if ($ranges.length <= 0) {
-					return;
-				}
+				if (!$ranges.length) return;
 
 				$ranges.each(function() {
-					$(this).find('.xts-responsive-range').each(function () {
-						initSlider($(this));
-					});
-				});
+					const $control = $(this);
 
-				$ranges.find('.xts-device').on('click', function () {
-					var $this = $(this);
-					var $wrapper = $this.parents('.xts-responsive-range-wrapper');
-
-					$this.siblings('.xts-active').removeClass('xts-active');
-					$this.addClass('xts-active');
-
-					$wrapper.find('.xts-responsive-range').removeClass('xts-active').siblings('[data-device=' + $this.data('value') + ']').addClass('xts-active');
-				});
-
-				$ranges.find('.wd-slider-unit-control').on('click', function () {
-					var $this = $(this);
-					var $wrapper = $this.parents('.xts-responsive-range');
-
-					if( !$this.siblings().length ) {
+					if ($control.closest('.xts-typography-template').length) {
 						return;
 					}
 
-					$this.siblings('.xts-active').removeClass('xts-active');
-					$this.addClass('xts-active');
+					$control.find('.xts-responsive-range').each(function () {
+						initSlider($(this));
+					});
 
-					$wrapper.attr('data-unit', $this.data('unit') );
-					initSlider($wrapper);
+					$control.on('click', '.xts-device', function () {
+						const $btn = $(this);
+						const $wrapper = $btn.closest('.xts-responsive-range-wrapper');
+
+						$btn.addClass('xts-active').siblings().removeClass('xts-active');
+						$wrapper.find('.xts-responsive-range')
+							.removeClass('xts-active')
+							.filter('[data-device="' + $btn.data('value') + '"]')
+							.addClass('xts-active');
+					});
+
+					$control.on('click', '.wd-slider-unit-control', function () {
+						const $btn = $(this);
+						const $range = $btn.closest('.xts-responsive-range');
+
+						if (!$btn.siblings().length) return;
+
+						$btn.addClass('xts-active').siblings().removeClass('xts-active');
+						$range.attr('data-unit', $btn.data('unit'));
+
+						// Update step attribute on input number.
+						const $mainInput = $range.closest('.xts-responsive-range-wrapper').siblings('.xts-responsive-range-value');
+						const settings = $mainInput.data('settings');
+						const rangeSettings = settings.range[$btn.data('unit')];
+						$range.find('.xts-range-field-value').attr('step', rangeSettings.step);
+
+						updateSlider($range);
+						setMainValue($range.closest('.xts-responsive-range-wrapper').siblings('.xts-responsive-range-value'));
+					});
+
+					$control.on('change', '.xts-range-field-value', function () {
+						const $input = $(this);
+						const $range = $input.closest('.xts-responsive-range');
+						const $mainInput = $range.closest('.xts-responsive-range-wrapper').siblings('.xts-responsive-range-value');
+						const settings = $mainInput.data('settings');
+						const rangeSettings = settings.range[$range.attr('data-unit')];
+						let valueNew = $input.val();
+
+						if (valueNew || 0 === parseFloat(valueNew)) {
+							valueNew = Math.min(Math.max(valueNew, rangeSettings.min), rangeSettings.max);
+						}
+
+						$input.val(valueNew);
+						$range.data('value', valueNew);
+
+						setMainValue($mainInput);
+						updateSlider($range, valueNew);
+					});
 				});
 
-				$ranges.find('.xts-range-field-value').on('change', function () {
-					var $this = $(this);
-					var $wrapper = $this.parents('.xts-responsive-range');
-					var $mainInput = $wrapper.parent().siblings('.xts-responsive-range-value');
-					var $deviceRangeSettings = $mainInput.data('settings');
-					var rangeSettings = $deviceRangeSettings.range[$wrapper.data('unit')];
-					var valueNew = $this.val();
-
-					if ( valueNew.length ) {
-						if ( valueNew >= rangeSettings.max ) {
-							valueNew = rangeSettings.max;
-							$this.val(valueNew);
-						}
-						if ( valueNew <= rangeSettings.min ) {
-							valueNew = rangeSettings.min;
-							$this.val(valueNew);
-						}
-					}
-
-					$wrapper.attr('data-value', valueNew );
-					setMainValue( $mainInput );
-					initSlider($wrapper);
-				});
-
-				function setMainValue( $input ) {
-					let $results = {
-						devices: {}
-					};
-
-					var changeValue = false;
+				function setMainValue($input) {
+					const result = { devices: {} };
+					let changed = false;
 
 					$input.siblings('.xts-responsive-range-wrapper').find('.xts-responsive-range').each(function() {
-						let $this = $(this);
-
-						if ($this.attr('data-value')) {
-							changeValue = true;
-						}
-
-						$results.devices[$this.attr('data-device')] = {
-							unit : $this.attr('data-unit'),
-							value: $this.attr('data-value')
+						const $r = $(this);
+						const val = $r.data('value');
+						if (val !== undefined) changed = true;
+						result.devices[$r.attr('data-device')] = {
+							unit: $r.attr('data-unit'),
+							value: val
 						};
 					});
 
-					if (changeValue) {
-						$input.attr('value', window.btoa(JSON.stringify($results)));
-					} else {
-						$input.attr('value', '');
-					}
+					$input.val(changed ? window.btoa(JSON.stringify(result)) : '').trigger('change');
 				}
 
-				function initSlider( $deviceRange ) {
-					var $slider              = $deviceRange.find('.xts-range-slider');
-					var $wrapper             = $deviceRange.parents('.xts-responsive-range-wrapper');
-					var $input               = $wrapper.siblings('.xts-responsive-range-value');
-					var $deviceRangeSettings = $input.data('settings');
-					var device               = $deviceRange.data('device');
-					var unit                 = $deviceRange.attr('data-unit');
-					var data                 = $deviceRangeSettings['range'][unit];
-					var $inputNumber         = $deviceRange.find('.xts-range-field-value');
+				function initSlider($range) {
+					const $slider = $range.find('.xts-range-slider');
+					const $mainInput = $range.closest('.xts-responsive-range-wrapper').siblings('.xts-responsive-range-value');
+					const settings = $mainInput.data('settings');
+					const device = $range.data('device');
+					const unit = $range.attr('data-unit');
+					const inputNumber = $range.find('.xts-range-field-value');
+					let data = settings.range[unit];
 
-					if ($deviceRange.attr('data-value')) {
-						data.start = $deviceRange.attr('data-value');
-					} else {
-						data.start = $deviceRangeSettings.devices[device].value;
-					}
+					let start = $range.attr('data-value') || settings.devices[device].value;
+					start = Math.min(Math.max(start, data.min), data.max);
 
-					if ('undefined' !== typeof $slider.slider()) {
-						$slider.slider('destroy');
+					if ($slider.data('ui-slider')) {
+						$slider.slider('option', { value: start, min: data.min, max: data.max, step: data.step });
+						return;
 					}
 
 					$slider.slider({
 						range: 'min',
-						value: data.start,
-						min  : data.min,
-						max  : data.max,
-						step : data.step,
+						value: start,
+						min: data.min,
+						max: data.max,
+						step: data.step,
 						slide: function(event, ui) {
-							$slider.parent().attr('data-value', ui.value)
-							$inputNumber.val(ui.value);
-							setMainValue($input);
+							$range.data('value', ui.value);
+							inputNumber.val(ui.value);
+							setMainValue($mainInput);
 						}
+					});
+				}
+
+				function updateSlider($range, newVal = null) {
+					const $slider = $range.find('.xts-range-slider');
+					const $mainInput = $range.closest('.xts-responsive-range-wrapper').siblings('.xts-responsive-range-value');
+					const settings = $mainInput.data('settings');
+					const device = $range.data('device');
+					const unit = $range.attr('data-unit');
+					const inputNumber = $range.find('.xts-range-field-value');
+					const data = settings.range[unit];
+
+					let value = newVal !== null
+						? newVal
+						: ($range.attr('data-value') || settings.devices[device].value);
+
+					value = Math.min(Math.max(value, data.min), data.max);
+
+					$range.attr('data-value', value);
+
+					if (newVal) {
+						inputNumber.val(value);
+					}
+
+					if (!$slider.data('ui-slider')) {
+						initSlider($range);
+						return;
+					}
+
+					$slider.slider('option', {
+						min: data.min,
+						max: data.max,
+						step: data.step,
+						value: value
 					});
 				}
 			},
 
 			dimensionControl: function() {
-				var $dimensions = $('.xts-active-section .xts-dimensions-control');
-
-				if ($dimensions.length <= 0) {
-					return;
-				}
-
-				$dimensions.find('.xts-control-tab-content.xts-active .xts-dimensions-field.xts-range-slider-wrap').each(function(){
-					initSlider($(this));
-				});
+				const $dimensions = $('.xts-active-section .xts-dimensions-control');
+				if (!$dimensions.length) return;
 
 				$dimensions.find('.xts-device').on('click', function () {
-					var $this = $(this);
-					var $wrapper = $this.parents('.xts-option-control');
+					const $this = $(this);
+					const $wrapper = $this.closest('.xts-dimensions-control');
 
-					$this.siblings('.xts-active').removeClass('xts-active');
-					$this.addClass('xts-active');
+					$this.addClass('xts-active').siblings().removeClass('xts-active');
+					$wrapper.find('.xts-control-tab-content')
+						.removeClass('xts-active')
+						.filter(`[data-device="${$this.data('value')}"]`)
+						.addClass('xts-active');
+				});
 
-					$wrapper.find('.xts-control-tab-content').removeClass('xts-active').siblings('[data-device=' + $this.data('value') + ']').addClass('xts-active');
+				$dimensions.find('.xts-lock-units').off('click').on('click', function () {
+					const $this = $(this);
+					const $wrapper = $this.parent();
+					const $control = $this.parents('.xts-option-control')
+
+					$control.find('.xts-lock-units').toggleClass('xts-active');
+
+					if ( $this.hasClass('xts-active') ) {
+						$wrapper.find('input').filter((_, el) => $(el).val()).first().trigger('change');
+						setMainValue($wrapper.closest('.xts-option-control').find('.xts-dimensions-value'));
+					}
 				});
 
 				$dimensions.find('.wd-slider-unit-control').on('click', function () {
-					var $this = $(this);
-					var $wrapper = $this.parents('.xts-option-control');
+					const $this = $(this);
+					if (!$this.siblings().length) return;
 
-					if( !$this.siblings().length ) {
-						return;
-					}
-
-					$this.siblings('.xts-active').removeClass('xts-active');
-					$this.addClass('xts-active');
-
-					$wrapper.attr('data-unit', $this.data('unit') );
+					$this.addClass('xts-active').siblings().removeClass('xts-active');
+					const $wrapper = $this.closest('.xts-control-tab-content').attr('data-unit', $this.data('unit'));
+					setMainValue($wrapper.closest('.xts-option-control').find('.xts-dimensions-value'), true);
 				});
 
-				$dimensions.find('.xts-dimensions-field input').on('change', function () {
-					var $this = $(this);
-					var $wrapper = $this.parents('.xts-option-control');
-					var $mainInput = $wrapper.find('.xts-dimensions-value');
-					var settings = $mainInput.data('settings');
+				$dimensions.find('.xts-dimensions-field input').on('change keyup', function (e) {
+					const $this = $(this);
+					const $wrapper = $this.closest('.xts-control-tab-content');
+					const $mainInput = $this.closest('.xts-option-control').find('.xts-dimensions-value');
+					const settings = $mainInput.data('settings');
+					const isLocked = $wrapper.find('.xts-lock-units').hasClass('xts-active');
+					let valueNew = $this.val();
 
-					var valueNew = $this.val();
+					if (valueNew && settings?.range) {
+						const unit = $this.closest('.xts-control-tab-content').data('unit');
+						let rangeSettings = settings.range[unit]?.[$this.data('key')] ?? settings.range[unit]?.['-'];
 
-					if ( valueNew.length && 'undefined' !== typeof settings.range ) {
-						var unit = $this.parents('.xts-control-tab-content').data('unit');
-						var rangeSettings = settings.range[unit];
-
-						if ( 'undefined' !== typeof rangeSettings[ $this.data('key') ] ) {
-							rangeSettings = rangeSettings[ $this.data('key') ];
-						} else if ( 'undefined' !== typeof rangeSettings['-'] ) {
-							rangeSettings = rangeSettings['-'];
-						}
-
-						if ( 'undefined' !== typeof rangeSettings.max && valueNew >= rangeSettings.max ) {
-							valueNew = rangeSettings.max;
-							$this.val(valueNew);
-						}
-						if ( 'undefined' !== typeof rangeSettings.max && valueNew <= rangeSettings.min ) {
-							valueNew = rangeSettings.min;
+						if (rangeSettings) {
+							valueNew = Math.min(Math.max(valueNew, rangeSettings.min ?? valueNew), rangeSettings.max ?? valueNew);
 							$this.val(valueNew);
 						}
 					}
-					setMainValue( $mainInput );
-					initSlider( $this.parents('.xts-dimensions-field') );
+
+					if (isLocked) {
+						$wrapper.find('input').not($this).val(valueNew);
+					}
+
+					if (e.type !== 'keyup') {
+						setMainValue($mainInput);
+					}
 				});
 
-				function initSlider( $field ) {
-					var $slider       = $field.find('.xts-dimensions-slider');
-					var $wrapper      = $field.parents('.xts-dimensions.xts-field-type-slider');
-					var $input        = $wrapper.siblings('.xts-dimensions-value');
-					var fieldSettings = $input.data('settings');
-					var $deviceFields = $field.parents('.xts-control-tab-content');
-					var device        = $deviceFields.data('device');
-					var unit          = $deviceFields.attr('data-unit');
-					var data          = fieldSettings['range'][unit];
-					var $inputNumber  = $field.find('.xts-dimensions-field-value-input input');
-
-					if ( 'undefined' !== typeof data[ $inputNumber.data('key') ] ) {
-						data = data[ $inputNumber.data('key') ];
-					} else if ( 'undefined' !== typeof data['-'] ) {
-						data = data['-'];
+				function setMainValue($input, updateAttr = false) {
+					if (! $input) {
+						return
 					}
 
-					if ($inputNumber.val()) {
-						data.start = $inputNumber.val();
-					} else {
-						if ( 'undefined' !== typeof fieldSettings['devices'][device][$inputNumber.data('key')] ) {
-							data.start = fieldSettings['devices'][device][$inputNumber.data('key')];
-						} else {
-							data.start = 0;
-						}
-					}
+					const settings = $input.data('settings');
+					const $tabs = $input.siblings('.xts-dimensions').find('.xts-control-tab-content');
+					const results = { devices: {}, is_lock: $input.closest('.xts-option-control').find('.xts-lock-units').hasClass('xts-active') };
+					let hasValue = false;
 
-					if ('undefined' !== typeof $slider.slider()) {
-						$slider.slider('destroy');
-					}
+					$tabs.each(function () {
+						const $tab = $(this);
+						const unit = $tab.attr('data-unit');
+						const range = settings.range?.[unit] || {};
+						const device = $tab.attr('data-device');
 
-					$slider.slider({
-						range: 'min',
-						value: data.start,
-						min  : data.min,
-						max  : data.max,
-						step : data.step,
-						slide: function(event, ui) {
-							$inputNumber.val(ui.value);
-							setMainValue($input);
-						}
-					});
-				}
+						results.devices[device] = { unit };
 
-				function setMainValue( $input ) {
-					var $results = {
-						devices: {}
-					};
+						$tab.find('.xts-dimensions-field input').each(function () {
+							const $el = $(this);
+							let value = $el.val();
 
-					var hasValue = false;
+							if (updateAttr) {
+								if (range.min !== undefined) {
+									$el.attr('min', range.min);
+								} else {
+									$el.removeAttr('min');
+								}
 
-					$input.siblings('.xts-dimensions').find('.xts-control-tab-content').each(function() {
-						let $wrapper = $(this);
+								if (range.max !== undefined) {
+									$el.attr('max', range.max);
+								} else {
+									$el.removeAttr('max');
+								}
 
-						$results.devices[$wrapper.attr('data-device')] = {
-							unit : $wrapper.attr('data-unit'),
-						};
-
-						$wrapper.find('.xts-dimensions-field input').each(function() {
-							var $this = $(this);
-
-							if ($this.val()) {
-								hasValue = true;
+								if (range.step !== undefined) {
+									$el.attr('step', range.step);
+								} else {
+									$el.removeAttr('step');
+								}
 							}
 
-							$results.devices[$wrapper.attr('data-device')][$this.data('key')] = $this.val();
+							if (value) {
+								hasValue = true;
+								if (range.min !== undefined && value < range.min) value = range.min;
+								if (range.max !== undefined && value > range.max) value = range.max;
+								$el.val(value);
+							}
+
+							if (value !== '') {
+								results.devices[device][$el.data('key')] = value;
+							}
 						});
 					});
 
-					if (hasValue) {
-						$input.attr('value', window.btoa(JSON.stringify($results)));
-					} else {
-						$input.attr('value', '');
-					}
+					$input.attr('value', hasValue ? window.btoa(JSON.stringify(results)) : '');
 				}
 			},
 
@@ -1799,7 +1787,13 @@ var woodmartOptions;
 
 								inputsName.forEach( function (inputName) {
 									if ( document.querySelector('[name="' + inputName + '"]') ) {
-										document.querySelector('[name="' + inputName + '"]').disabled = true;
+										var input = document.querySelector('[name="' + inputName + '"]');
+
+										if (input) {
+											input.disabled = true;
+
+											input.dispatchEvent(new Event('change', { bubbles: true }));
+										}
 									}
 								});
 							});
@@ -1860,8 +1854,10 @@ var woodmartOptions;
 					if (!event.target.closest('.xts-dropdown-options') && !event.target.classList.contains('xts-dropdown-options') && 'BODY' !== event.target.tagName ) {
 						var dropdown = document.querySelector('.xts-field.xts-group-control .xts-dropdown-options.xts-show');
 
-						dropdown.classList.remove('xts-show');
-						dropdown.classList.add('xts-hidden');
+						if ( dropdown ) {
+							dropdown.classList.remove('xts-show');
+							dropdown.classList.add('xts-hidden');
+						}
 
 						document.removeEventListener('click', outsideClickListener);
 					}
@@ -1912,6 +1908,11 @@ var woodmartOptions;
 
 					var editor = wp.codeEditor.initialize($field, editorSettings);
 
+					editor.codemirror.on('keyup', function() {
+						editor.codemirror.save();
+						$field.trigger( 'change' );
+					});
+
 					$editor.addClass('xts-editor-initiated');
 				}
 
@@ -1919,24 +1920,27 @@ var woodmartOptions;
 
 			fieldsDependencies: function() {
 				var $fields = $('.xts-field[data-dependency], .xts-tabs[data-dependency]');
+				var $isMetaboxes = $fields.parents('.xts-metaboxes').length;
 
 				$fields.each(function() {
 					var $field       = $(this),
 					    dependencies = $field.data('dependency').split(';');
 
 					dependencies.forEach(function(dependency) {
-						if (dependency.length == 0) {
+						if (dependency.length === 0) {
 							return;
 						}
 						var data = dependency.split(':');
 
 						var $parentField = $('.xts-' + data[0] + '-field');
 
-						$parentField.on('change', 'input, select', function(e) {
+						$parentField.on('change', 'input, select', function() {
 							testFieldDependency($field, dependencies);
 						});
 
-						$parentField.find('input, select').trigger('change');
+						if ($isMetaboxes) {
+							$parentField.find('input, select').trigger('change');
+						}
 					});
 
 				});
@@ -1944,36 +1948,36 @@ var woodmartOptions;
 				function testFieldDependency($field, dependencies) {
 					var show = true;
 					dependencies.forEach(function(dependency) {
-						if (dependency.length == 0 || show == false) {
+						if (dependency.length === 0 || show === false) {
 							return;
 						}
-						var data         = dependency.split(':'),
-						    $parentField = $('.xts-' + data[0] + '-field'),
-						    value        = $parentField.find('.xts-option-control input, .xts-option-control select').val();
+						var data         = dependency.split(':');
+						var $parentField = $('.xts-' + data[0] + '-field');
+						var value        = $parentField.find('.xts-option-control input, .xts-option-control select').val();
+						var values       = [];
 
 						switch (data[1]) {
 							case 'equals':
-								var values = data[2].split(',');
+								values = data[2].split(',');
 								show = false;
 								for (let i = 0; i < values.length; i++) {
 									const element = values[i];
-									if (value == element) {
+									if (value === element) {
 										show = true;
 									}
 								}
 								break;
 							case 'not_equals':
-								var values = data[2].split(',');
+								values = data[2].split(',');
 								show = true;
 								for (let i = 0; i < values.length; i++) {
 									const element = values[i];
-									if (value == element) {
+									if (value === element) {
 										show = false;
 									}
 								}
 								break;
 						}
-
 					});
 
 					if (show) {
@@ -1982,7 +1986,6 @@ var woodmartOptions;
 						$field.addClass('xts-hidden').removeClass('xts-shown');
 					}
 				}
-
 			},
 
 			settingsSearch: function() {
@@ -2040,11 +2043,11 @@ var woodmartOptions;
 						}, 300);
 					},
 
-					open: function( event, ui ) {
+					open: function() {
 						$searchForm.addClass('xts-searched');
 					},
 
-					close: function( event, ui ) {
+						close: function() {
 						$searchForm.removeClass('xts-searched');
 					}
 
@@ -2188,6 +2191,8 @@ var woodmartOptions;
 
 					if (checked) {
 						$parent.addClass('xts-not-inherit');
+
+						$this.parents('.xts-field').find('[name^="xts-woodmart-options[' + $this.data('name') + ']"]').trigger('change');
 					} else {
 						$parent.removeClass('xts-not-inherit');
 					}
@@ -2207,6 +2212,7 @@ var woodmartOptions;
 					var $field = $checkbox.closest('.xts-field');
 					var checked = $checkbox.prop('checked');
 					var name = $checkbox.data('name');
+					var innerInputID = '';
 
 					var addField = function(name) {
 						var current     = $fieldsToSave.val();
@@ -2223,7 +2229,7 @@ var woodmartOptions;
 							fieldsArray.push(name);
 						}
 
-						$fieldsToSave.val(fieldsArray.join(','));
+						$fieldsToSave.val(fieldsArray.join(',')).trigger('change');
 					}
 
 					var removeField = function(name) {
@@ -2233,7 +2239,7 @@ var woodmartOptions;
 
 						if (index > -1) {
 							fieldsArray.splice(index, 1);
-							$fieldsToSave.val(fieldsArray.join(','));
+							$fieldsToSave.val(fieldsArray.join(',')).trigger('change');
 						}
 					}
 
@@ -2241,7 +2247,7 @@ var woodmartOptions;
 						$field.removeClass('xts-field-disabled');
 
 						if ( $field.hasClass('xts-group-control') ) {
-							var innerInputID = $field.find('.xts-group-settings').data('inputs-id')
+							innerInputID = $field.find('.xts-group-settings').data('inputs-id')
 
 							if ( innerInputID ) {
 								$.each(innerInputID, function(index, value) {
@@ -2254,7 +2260,7 @@ var woodmartOptions;
 						if ( $field.hasClass('xts-group-control') ) {
 
 							if ( $field.hasClass('xts-group-control') ) {
-								var innerInputID = $field.find('.xts-group-settings').data('inputs-id')
+								innerInputID = $field.find('.xts-group-settings').data('inputs-id')
 
 								if ( innerInputID ) {
 									$.each(innerInputID, function(index, value) {
@@ -2293,7 +2299,7 @@ var woodmartOptions;
 					woodmartOptionsAdmin.uploadListControl(true);
 				});
 
-				$(document).on('widget-updated widget-added', function(e, widget) {
+				$(document).on('widget-updated widget-added', function() {
 					woodmart_media_init();
 					woodmartOptionsAdmin.selectControl(true);
 					woodmartOptionsAdmin.uploadControl(true);

@@ -10,6 +10,7 @@ if ( ! function_exists( 'wd_gutenberg_cart_free_gifts' ) ) {
 		}
 
 		$classes = wd_get_gutenberg_element_classes( $block_attributes );
+		$el_id   = wd_get_gutenberg_element_id( $block_attributes );
 
 		Main::setup_preview();
 
@@ -19,15 +20,15 @@ if ( ! function_exists( 'wd_gutenberg_cart_free_gifts' ) ) {
 			return '';
 		}
 
+		$settings = array(
+			'show_title' => $block_attributes['showTitle'] ? 'yes' : 'no',
+		);
+
 		$free_gifts_frontend = Free_Gifts_Frontend::get_instance();
 
 		ob_start();
 
-		$free_gifts_frontend->render_free_gifts_table(
-			array(
-				'show_title' => $block_attributes['showTitle'] ? 'yes' : 'no',
-			)
-		);
+		$free_gifts_frontend->render_free_gifts_table( $settings );
 
 		$gifts_table = ob_get_clean();
 
@@ -40,7 +41,7 @@ if ( ! function_exists( 'wd_gutenberg_cart_free_gifts' ) ) {
 		woodmart_enqueue_js_script( 'free-gifts-table' );
 
 		?>
-			<div id="<?php echo esc_attr( wd_get_gutenberg_element_id( $block_attributes ) ); ?>" class="wd-fg<?php echo esc_attr( $classes ); ?>">
+			<div <?php echo $el_id ? 'id="' . esc_attr( $el_id ) . '" ' : ''; ?>class="wd-fg<?php echo esc_attr( $classes ); ?>" data-settings="<?php echo esc_attr( wp_json_encode( $settings ) ); ?>">
 				<?php echo $gifts_table; // phpcs:ignore. ?>
 			</div>
 		<?php

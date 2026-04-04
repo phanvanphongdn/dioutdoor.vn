@@ -1,13 +1,23 @@
-<?php if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
-	exit( 'No direct script access allowed' );}
-
+<?php
 /**
- * ------------------------------------------------------------------------------------------------
- * Section table shortcode
- * ------------------------------------------------------------------------------------------------
+ * Shortcode for Table element.
+ *
+ * @package woodmart
  */
 
+if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
+	exit( 'No direct script access allowed' );
+}
+
 if ( ! function_exists( 'woodmart_shortcode_table' ) ) {
+	/**
+	 * Table shortcode
+	 *
+	 * @param array  $settings Shortcode settings.
+	 * @param string $content  Shortcode content.
+	 *
+	 * @return string
+	 */
 	function woodmart_shortcode_table( $settings, $content ) {
 		$default_settings = array(
 			'alignment' => '',
@@ -48,7 +58,14 @@ if ( ! function_exists( 'woodmart_shortcode_table' ) ) {
 }
 
 if ( ! function_exists( 'woodmart_shortcode_table_row' ) ) {
-	function woodmart_shortcode_table_row( $settings, $content ) {
+	/**
+	 * Table row shortcode
+	 *
+	 * @param array $settings Shortcode settings.
+	 *
+	 * @return string
+	 */
+	function woodmart_shortcode_table_row( $settings ) {
 		$default_settings = array(
 			'css'          => '',
 			'table_column' => '',
@@ -65,7 +82,7 @@ if ( ! function_exists( 'woodmart_shortcode_table_row' ) ) {
 			return '';
 		}
 
-		$wrapper_classes  = apply_filters( 'vc_shortcodes_css_class', '', '', $settings );
+		$wrapper_classes = apply_filters( 'vc_shortcodes_css_class', '', '', $settings );
 
 		if ( $settings['css'] ) {
 			$wrapper_classes .= ' ' . vc_shortcode_custom_css_class( $settings['css'] );
@@ -76,7 +93,7 @@ if ( ! function_exists( 'woodmart_shortcode_table_row' ) ) {
 			<tr class="<?php echo esc_attr( $wrapper_classes ); ?>">
 				<?php foreach ( $row_items as $item ) : ?>
 					<?php $tag = ! empty( $item['column_cell_type'] ) && 'heading' === $item['column_cell_type'] ? 'th' : 'td'; ?>
-					<<?php echo esc_attr( $tag ) . woodmart_get_table_attribute( $item ); ?>>
+					<<?php echo esc_attr( $tag ) . woodmart_get_table_attribute( $item ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 						<?php if ( ! empty( $item['column_content'] ) ) : ?>
 							<?php echo wp_kses_post( $item['column_content'] ); ?>
 						<?php endif; ?>

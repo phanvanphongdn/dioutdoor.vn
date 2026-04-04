@@ -2,7 +2,7 @@
 /**
  * Upload media library control.
  *
- * @package xts
+ * @package woodmart
  */
 
 namespace XTS\Admin\Modules\Options\Controls;
@@ -70,6 +70,19 @@ class Upload extends Field {
 		}
 
 		return $value;
+	}
+
+	/**
+	 * Get default value for the field.
+	 *
+	 * @param string $value Value to check.
+	 * @return string[]
+	 */
+	public function get_default_value( $value = '' ) {
+		return array(
+			'url' => '',
+			'id'  => '',
+		);
 	}
 
 	/**

@@ -7,14 +7,13 @@
 
 namespace XTS\Modules\Dynamic_Discounts;
 
-use WC_Cart;
 use XTS\Admin\Modules\Options;
-use XTS\Singleton;
+use WC_Cart;
 
 /**
  * Dynamic discounts class.
  */
-class Main extends Singleton {
+class Main {
 	/**
 	 * Make sure that the same discount is not applied twice for the same product.
 	 *
@@ -23,18 +22,23 @@ class Main extends Singleton {
 	public $applied = array();
 
 	/**
-	 * Init.
+	 * Constructor.
 	 */
-	public function init() {
-		$this->add_options();
+	public function __construct() {
+		add_action( 'init', array( $this, 'add_options' ) );
 
-		if ( ! woodmart_woocommerce_installed() || ! woodmart_get_opt( 'discounts_enabled', 0 ) ) {
-			return;
+		if ( woodmart_get_opt( 'discounts_enabled' ) ) {
+			add_action( 'woocommerce_before_calculate_totals', array( $this, 'calculate_discounts' ), 10, 1 );
 		}
 
-		$this->include_files();
-
-		add_action( 'woocommerce_before_calculate_totals', array( $this, 'calculate_discounts' ), 10, 1 );
+		woodmart_include_files(
+			__DIR__,
+			array(
+				'./class-manager',
+				'./class-admin',
+				'./class-frontend',
+			)
+		);
 	}
 
 	/**
@@ -71,25 +75,15 @@ class Main extends Singleton {
 				'off-text'    => esc_html__( 'No', 'woodmart' ),
 				'priority'    => 130,
 				'class'       => 'xts-preset-field-disabled',
+				'requires'    => array(
+					array(
+						'key'     => 'discounts_enabled',
+						'compare' => 'equals',
+						'value'   => '1',
+					),
+				),
 			)
 		);
-	}
-
-	/**
-	 * Include files.
-	 *
-	 * @return void
-	 */
-	public function include_files() {
-		$files = array(
-			'class-manager',
-			'class-admin',
-			'class-frontend',
-		);
-
-		foreach ( $files as $file ) {
-			require_once get_parent_theme_file_path( WOODMART_FRAMEWORK . '/integrations/woocommerce/modules/dynamic-discounts/' . $file . '.php' );
-		}
 	}
 
 	/**
@@ -102,7 +96,7 @@ class Main extends Singleton {
 	public function calculate_discounts( $cart ) {
 		// @codeCoverageIgnoreStart
 		// Woocommerce wpml compatibility. Make sure that the discount is calculated only once.
-		if ( class_exists( 'woocommerce_wpml' ) && doing_action( 'woocommerce_cart_loaded_from_session' ) ) {
+		if ( class_exists( 'woocommerce_wpml' ) && ! defined( 'PAYPAL_API_URL' ) && doing_action( 'woocommerce_cart_loaded_from_session' ) ) {
 			return;
 		}
 		// @codeCoverageIgnoreEnd
@@ -122,16 +116,15 @@ class Main extends Singleton {
 		}
 
 		foreach ( $cart->get_cart() as $cart_item ) {
-			$product       = $cart_item['data'];
-			$item_quantity = $cart_item['quantity'];
-			$product_price = apply_filters( 'woodmart_pricing_before_calculate_discounts', (float) $product->get_price(), $cart_item );
-			$discount      = Manager::get_instance()->get_discount_rules( $product );
+			$product        = $cart_item['data'];
+			$item_quantity  = $cart_item['quantity'];
+			$product_price  = apply_filters( 'woodmart_pricing_before_calculate_discounts', (float) $product->get_price( 'edit' ), $cart_item );
+			$original_price = $product_price;
+			$discount       = Manager::get_instance()->get_discount_rules( $product );
 
-			if ( empty( $product->get_price() ) || empty( $discount ) || ( ! empty( $this->applied ) && in_array( $product->get_id(), $this->applied, true ) ) || isset( $cart_item['wd_is_free_gift'] ) || isset( $cart_item['wd_fbt_bundle_id'] ) ) {
+			if ( empty( $product_price ) || empty( $discount ) || ( ! empty( $this->applied ) && in_array( $product->get_id(), $this->applied, true ) ) || isset( $cart_item['wd_is_free_gift'] ) || isset( $cart_item['wd_fbt_bundle_id'] ) ) {
 				continue;
 			}
-
-			$product->set_regular_price( $product_price );
 
 			if ( ! empty( $variations_quantity ) && 'individual_product' === $discount['discount_quantities'] && in_array( $product->get_parent_id(), array_keys( $variations_quantity ), true ) ) {
 				$item_quantity = $variations_quantity[ $product->get_parent_id() ];
@@ -146,12 +139,12 @@ class Main extends Singleton {
 
 							// @codeCoverageIgnoreStart
 							// WPML woocommerce-multilingual compatibility.
-							if ( function_exists( 'woodmart_wpml_shipping_progress_bar_amount' ) && 'amount' === $discount_type ) {
-								$discount_value = woodmart_wpml_shipping_progress_bar_amount( $discount_value );
+							if ( class_exists( 'woocommerce_wpml' ) && 'amount' === $discount_type ) {
+								$discount_value = apply_filters( 'woodmart_product_pricing_amount_discounts_value', $discount_value );
 							}
 							// @codeCoverageIgnoreEnd
 
-							$product_price = $this->get_product_price(
+							$product_price = Manager::get_instance()->get_product_price(
 								$product_price,
 								array(
 									'type'  => $discount_type,
@@ -169,39 +162,17 @@ class Main extends Singleton {
 				$product_price = 0;
 			}
 
+			if ( (float) $product_price === (float) $original_price ) {
+				continue;
+			}
+
+			$product->set_regular_price( $original_price );
 			$product->set_price( $product_price );
 			$product->set_sale_price( $product_price );
 
 			$this->applied[] = $product->get_id();
 		}
 	}
-
-	/**
-	 * Get product price after applying discount.
-	 *
-	 * @param float $product_price Price before applying discount.
-	 * @param array $discount Array with 2 args('type', 'value') for calculate new price.
-	 *
-	 * @return float
-	 */
-	public function get_product_price( $product_price, $discount ) {
-		if ( empty( $discount['type'] ) || empty( $discount['value'] ) || empty( $product_price ) ) {
-			return $product_price;
-		}
-
-		switch ( $discount['type'] ) {
-			case 'amount':
-				$product_price -= $discount['value'];
-				break;
-			case 'percentage':
-				$product_price -= $product_price * ( $discount['value'] / 100 );
-				break;
-			default:
-				break;
-		}
-
-		return (float) $product_price;
-	}
 }
 
-Main::get_instance();
+new Main();

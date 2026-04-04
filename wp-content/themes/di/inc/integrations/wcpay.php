@@ -1,6 +1,6 @@
 <?php
 /**
- * WooPayments
+ * WooPayments integration.
  *
  * @package woodmart
  */
@@ -11,14 +11,14 @@ if ( ! defined( 'WCPAY_VERSION_NUMBER' ) ) {
 	return;
 }
 
-if ( ! function_exists( 'woodmart_wcpay_convert_price_limit' ) ) {
+if ( ! function_exists( 'woodmart_wcpay_convert_shipping_progress_bar_limit' ) ) {
 	/**
-	 * Converse shipping progress bar limit.
+	 * Converts shipping progress bar limit to selected currency rate.
 	 *
-	 * @param float $limit
-	 * @return float
+	 * @param float $limit Original price limit.
+	 * @return float Converted price limit based on selected currency rate.
 	 */
-	function woodmart_wcpay_convert_price_limit( $limit ) {
+	function woodmart_wcpay_convert_shipping_progress_bar_limit( $limit ) {
 		if ( 'wc' === woodmart_get_opt( 'shipping_progress_bar_calculation', 'custom' ) ) {
 			return $limit;
 		}
@@ -28,5 +28,5 @@ if ( ! function_exists( 'woodmart_wcpay_convert_price_limit' ) ) {
 		return $limit;
 	}
 
-	add_action( 'woodmart_shipping_progress_bar_amount', 'woodmart_wcpay_convert_price_limit' );
+	add_action( 'woodmart_shipping_progress_bar_amount', 'woodmart_wcpay_convert_shipping_progress_bar_limit' );
 }

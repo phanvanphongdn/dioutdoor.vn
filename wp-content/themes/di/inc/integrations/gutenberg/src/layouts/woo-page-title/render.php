@@ -6,10 +6,13 @@ use XTS\Modules\Layouts\Main;
 if ( ! function_exists( 'wd_gutenberg_woo_page_title' ) ) {
 	function wd_gutenberg_woo_page_title( $block_attributes ) {
 		$classes = wd_get_gutenberg_element_classes( $block_attributes );
+		$el_id   = wd_get_gutenberg_element_id( $block_attributes );
 
 		if ( ! empty( $block_attributes['stretch'] ) ) {
 			$classes .= ' wd-stretched';
 		}
+
+		Builder_Data::get_instance()->set_data( 'is_post_layout', Main::get_instance()->has_custom_layout( 'single_post' ) );
 
 		Main::setup_preview();
 
@@ -20,7 +23,7 @@ if ( ! function_exists( 'wd_gutenberg_woo_page_title' ) ) {
 
 		woodmart_enqueue_inline_style( 'el-page-title-builder' );
 
-		if ( is_product_taxonomy() || is_shop() || is_product_category() || is_product_tag() || woodmart_is_product_attribute_archive() ) {
+		if ( is_product_taxonomy() || woodmart_is_shop_archive() ) {
 			woodmart_enqueue_inline_style( 'woo-shop-page-title' );
 
 			if ( ! woodmart_get_opt( 'shop_title' ) ) {
@@ -34,7 +37,7 @@ if ( ! function_exists( 'wd_gutenberg_woo_page_title' ) ) {
 		}
 
 		?>
-		<div id="<?php echo esc_attr( wd_get_gutenberg_element_id( $block_attributes ) ); ?>" class="wd-page-title-el<?php echo esc_attr( $classes ); ?>">
+		<div <?php echo $el_id ? 'id="' . esc_attr( $el_id ) . '" ' : ''; ?>class="wd-page-title-el<?php echo esc_attr( $classes ); ?>">
 			<?php woodmart_page_title(); ?>
 		</div>
 		<?php

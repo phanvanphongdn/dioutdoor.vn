@@ -1,4 +1,10 @@
 <?php
+/**
+ * Social settings
+ *
+ * @package woodmart
+ */
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Direct access not allowed.
 }
@@ -95,6 +101,7 @@ Options::add_field(
 		'name'     => esc_html__( 'Facebook link', 'woodmart' ),
 		'type'     => 'text_input',
 		'section'  => 'social_links',
+		'sanitize' => 'social_links',
 		'default'  => '#',
 		'priority' => 10,
 		'class'    => 'xts-col-6',
@@ -107,8 +114,22 @@ Options::add_field(
 		'name'     => esc_html__( 'X link', 'woodmart' ),
 		'type'     => 'text_input',
 		'section'  => 'social_links',
+		'sanitize' => 'social_links',
 		'default'  => '#',
 		'priority' => 20,
+		'class'    => 'xts-col-6',
+	)
+);
+
+Options::add_field(
+	array(
+		'id'       => 'bluesky_link',
+		'name'     => esc_html__( 'Bluesky link', 'woodmart' ),
+		'type'     => 'text_input',
+		'section'  => 'social_links',
+		'sanitize' => 'social_links',
+		'default'  => '',
+		'priority' => 30,
 		'class'    => 'xts-col-6',
 	)
 );
@@ -119,8 +140,22 @@ Options::add_field(
 		'name'     => esc_html__( 'Instagram', 'woodmart' ),
 		'type'     => 'text_input',
 		'section'  => 'social_links',
+		'sanitize' => 'social_links',
 		'default'  => '#',
-		'priority' => 20,
+		'priority' => 40,
+		'class'    => 'xts-col-6',
+	)
+);
+
+Options::add_field(
+	array(
+		'id'       => 'threads_link',
+		'name'     => esc_html__( 'Threads link', 'woodmart' ),
+		'type'     => 'text_input',
+		'section'  => 'social_links',
+		'sanitize' => 'social_links',
+		'default'  => '',
+		'priority' => 50,
 		'class'    => 'xts-col-6',
 	)
 );
@@ -131,8 +166,9 @@ Options::add_field(
 		'name'     => esc_html__( 'Pinterest link', 'woodmart' ),
 		'type'     => 'text_input',
 		'section'  => 'social_links',
+		'sanitize' => 'social_links',
 		'default'  => '#',
-		'priority' => 30,
+		'priority' => 60,
 		'class'    => 'xts-col-6',
 	)
 );
@@ -143,8 +179,9 @@ Options::add_field(
 		'name'     => esc_html__( 'YouTube link', 'woodmart' ),
 		'type'     => 'text_input',
 		'section'  => 'social_links',
+		'sanitize' => 'social_links',
 		'default'  => '#',
-		'priority' => 40,
+		'priority' => 70,
 		'class'    => 'xts-col-6',
 	)
 );
@@ -155,8 +192,9 @@ Options::add_field(
 		'name'     => esc_html__( 'Tumblr link', 'woodmart' ),
 		'type'     => 'text_input',
 		'section'  => 'social_links',
+		'sanitize' => 'social_links',
 		'default'  => '',
-		'priority' => 50,
+		'priority' => 80,
 		'class'    => 'xts-col-6',
 	)
 );
@@ -167,8 +205,9 @@ Options::add_field(
 		'name'     => esc_html__( 'LinkedIn link', 'woodmart' ),
 		'type'     => 'text_input',
 		'section'  => 'social_links',
+		'sanitize' => 'social_links',
 		'default'  => '',
-		'priority' => 60,
+		'priority' => 90,
 		'class'    => 'xts-col-6',
 	)
 );
@@ -179,8 +218,9 @@ Options::add_field(
 		'name'     => esc_html__( 'Vimeo link', 'woodmart' ),
 		'type'     => 'text_input',
 		'section'  => 'social_links',
+		'sanitize' => 'social_links',
 		'default'  => '',
-		'priority' => 70,
+		'priority' => 100,
 		'class'    => 'xts-col-6',
 	)
 );
@@ -191,8 +231,9 @@ Options::add_field(
 		'name'     => esc_html__( 'Flickr link', 'woodmart' ),
 		'type'     => 'text_input',
 		'section'  => 'social_links',
+		'sanitize' => 'social_links',
 		'default'  => '',
-		'priority' => 80,
+		'priority' => 110,
 		'class'    => 'xts-col-6',
 	)
 );
@@ -203,8 +244,9 @@ Options::add_field(
 		'name'     => esc_html__( 'Github link', 'woodmart' ),
 		'type'     => 'text_input',
 		'section'  => 'social_links',
+		'sanitize' => 'social_links',
 		'default'  => '',
-		'priority' => 90,
+		'priority' => 120,
 		'class'    => 'xts-col-6',
 	)
 );
@@ -215,8 +257,9 @@ Options::add_field(
 		'name'     => esc_html__( 'Dribbble link', 'woodmart' ),
 		'type'     => 'text_input',
 		'section'  => 'social_links',
+		'sanitize' => 'social_links',
 		'default'  => '',
-		'priority' => 100,
+		'priority' => 130,
 		'class'    => 'xts-col-6',
 	)
 );
@@ -227,8 +270,9 @@ Options::add_field(
 		'name'     => esc_html__( 'Behance link', 'woodmart' ),
 		'type'     => 'text_input',
 		'section'  => 'social_links',
+		'sanitize' => 'social_links',
 		'default'  => '',
-		'priority' => 110,
+		'priority' => 140,
 		'class'    => 'xts-col-6',
 	)
 );
@@ -239,8 +283,9 @@ Options::add_field(
 		'name'     => esc_html__( 'SoundCloud link', 'woodmart' ),
 		'type'     => 'text_input',
 		'section'  => 'social_links',
+		'sanitize' => 'social_links',
 		'default'  => '',
-		'priority' => 120,
+		'priority' => 150,
 		'class'    => 'xts-col-6',
 	)
 );
@@ -251,20 +296,9 @@ Options::add_field(
 		'name'     => esc_html__( 'Spotify link', 'woodmart' ),
 		'type'     => 'text_input',
 		'section'  => 'social_links',
+		'sanitize' => 'social_links',
 		'default'  => '',
-		'priority' => 130,
-		'class'    => 'xts-col-6',
-	)
-);
-
-Options::add_field(
-	array(
-		'id'       => 'skype_link',
-		'name'     => esc_html__( 'Skype link', 'woodmart' ),
-		'type'     => 'text_input',
-		'section'  => 'social_links',
-		'default'  => '',
-		'priority' => 135,
+		'priority' => 160,
 		'class'    => 'xts-col-6',
 	)
 );
@@ -275,8 +309,9 @@ Options::add_field(
 		'name'     => esc_html__( 'WhatsApp link', 'woodmart' ),
 		'type'     => 'text_input',
 		'section'  => 'social_links',
+		'sanitize' => 'social_links',
 		'default'  => '',
-		'priority' => 140,
+		'priority' => 180,
 		'class'    => 'xts-col-6',
 	)
 );
@@ -287,8 +322,9 @@ Options::add_field(
 		'name'     => esc_html__( 'Snapchat link', 'woodmart' ),
 		'type'     => 'text_input',
 		'section'  => 'social_links',
+		'sanitize' => 'social_links',
 		'default'  => '',
-		'priority' => 150,
+		'priority' => 190,
 		'class'    => 'xts-col-6',
 	)
 );
@@ -299,8 +335,9 @@ Options::add_field(
 		'name'     => esc_html__( 'Telegram link', 'woodmart' ),
 		'type'     => 'text_input',
 		'section'  => 'social_links',
+		'sanitize' => 'social_links',
 		'default'  => '',
-		'priority' => 160,
+		'priority' => 200,
 		'class'    => 'xts-col-6',
 	)
 );
@@ -311,8 +348,9 @@ Options::add_field(
 		'name'     => esc_html__( 'Viber link', 'woodmart' ),
 		'type'     => 'text_input',
 		'section'  => 'social_links',
+		'sanitize' => 'social_links',
 		'default'  => '',
-		'priority' => 170,
+		'priority' => 210,
 		'class'    => 'xts-col-6',
 	)
 );
@@ -323,8 +361,9 @@ Options::add_field(
 		'name'     => esc_html__( 'TikTok link', 'woodmart' ),
 		'type'     => 'text_input',
 		'section'  => 'social_links',
+		'sanitize' => 'social_links',
 		'default'  => '',
-		'priority' => 180,
+		'priority' => 220,
 		'class'    => 'xts-col-6',
 	)
 );
@@ -335,8 +374,9 @@ Options::add_field(
 		'name'     => esc_html__( 'Discord link', 'woodmart' ),
 		'type'     => 'text_input',
 		'section'  => 'social_links',
+		'sanitize' => 'social_links',
 		'default'  => '',
-		'priority' => 190,
+		'priority' => 230,
 		'class'    => 'xts-col-6',
 	)
 );
@@ -347,8 +387,9 @@ Options::add_field(
 		'name'     => esc_html__( 'Yelp link', 'woodmart' ),
 		'type'     => 'text_input',
 		'section'  => 'social_links',
+		'sanitize' => 'social_links',
 		'default'  => '',
-		'priority' => 200,
+		'priority' => 240,
 		'class'    => 'xts-col-6',
 	)
 );
@@ -359,8 +400,9 @@ Options::add_field(
 		'name'     => esc_html__( 'VK link', 'woodmart' ),
 		'type'     => 'text_input',
 		'section'  => 'social_links',
+		'sanitize' => 'social_links',
 		'default'  => '',
-		'priority' => 210,
+		'priority' => 250,
 		'class'    => 'xts-col-6',
 	)
 );
@@ -371,8 +413,9 @@ Options::add_field(
 		'name'     => esc_html__( 'OK link', 'woodmart' ),
 		'type'     => 'text_input',
 		'section'  => 'social_links',
+		'sanitize' => 'social_links',
 		'default'  => '',
-		'priority' => 220,
+		'priority' => 260,
 		'class'    => 'xts-col-6',
 	)
 );
@@ -384,7 +427,7 @@ Options::add_field(
 		'type'     => 'switcher',
 		'section'  => 'social_links',
 		'default'  => false,
-		'priority' => 230,
+		'priority' => 270,
 		'status'   => 'deprecated',
 	)
 );

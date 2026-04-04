@@ -9,16 +9,16 @@
 
 use XTS\Registry;
 
-$sidebar_col = Registry::getInstance()->layout->get_sidebar_col_width();
+$sidebar_col = Registry::get_instance()->layout->get_sidebar_col_width();
 
 if ( 0 === $sidebar_col ) {
 	return;
 }
 
-$sidebar_class      = Registry::getInstance()->layout->get_sidebar_class();
-$sidebar_name       = Registry::getInstance()->layout->get_sidebar_name();
-$sidebar_style      = Registry::getInstance()->layout->get_sidebar_inline_style();
-$off_canvas_classes = Registry::getInstance()->layout->get_offcanvas_sidebar_classes();
+$sidebar_class      = Registry::get_instance()->layout->get_sidebar_class();
+$sidebar_name       = Registry::get_instance()->layout->get_sidebar_name();
+$sidebar_style      = Registry::get_instance()->layout->get_sidebar_inline_style();
+$off_canvas_classes = Registry::get_instance()->layout->get_offcanvas_sidebar_classes();
 
 ?>
 <?php if ( $off_canvas_classes ) : ?>
@@ -29,7 +29,12 @@ $off_canvas_classes = Registry::getInstance()->layout->get_offcanvas_sidebar_cla
 	<?php if ( $off_canvas_classes ) : ?>
 		<div class="wd-heading">
 			<div class="close-side-widget wd-action-btn wd-style-text wd-cross-icon">
-				<a href="#" rel="nofollow noopener"><?php esc_html_e( 'Close', 'woodmart' ); ?></a>
+				<a href="#" rel="nofollow noopener">
+					<span class="wd-action-icon"></span>
+					<span class="wd-action-text">
+						<?php esc_html_e( 'Close', 'woodmart' ); ?>
+					</span>
+				</a>
 			</div>
 		</div>
 	<?php endif; ?>

@@ -2,7 +2,7 @@
 /**
  * Banner template function.
  *
- * @package xts
+ * @package woodmart
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -10,6 +10,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! function_exists( 'woodmart_elementor_infobox_carousel_template' ) ) {
+	/**
+	 * Infobox carousel template.
+	 *
+	 * @param array                  $settings Element settings.
+	 * @param \Elementor\Widget_Base $element  Element instance.
+	 *
+	 * @return void
+	 */
 	function woodmart_elementor_infobox_carousel_template( $settings, $element ) {
 		$default_settings = array(
 			'content_repeater'       => array(),
@@ -50,7 +58,6 @@ if ( ! function_exists( 'woodmart_elementor_infobox_carousel_template' ) ) {
 		}
 
 		if ( 'yes' === $settings['scroll_carousel_init'] ) {
-			woodmart_enqueue_js_library( 'waypoints' );
 			$wrapper_classes .= ' scroll-init';
 		}
 
@@ -69,7 +76,7 @@ if ( ! function_exists( 'woodmart_elementor_infobox_carousel_template' ) ) {
 		?>
 		<div class="wd-carousel-container info-box-carousel-wrapper<?php echo esc_attr( $extra_classes ); ?>">
 			<div class="wd-carousel-inner">
-				<div class="wd-carousel wd-grid info-box-carousel<?php echo esc_attr( $wrapper_classes ); ?>" <?php echo woodmart_get_carousel_attributes( $settings ); ?>>
+				<div class="wd-carousel wd-grid info-box-carousel<?php echo esc_attr( $wrapper_classes ); ?>" <?php echo woodmart_get_carousel_attributes( $settings ); // phpcs:ignore. ?>>
 					<div class="wd-carousel-wrap">
 						<?php foreach ( $settings['content_repeater'] as $index => $infobox ) : ?>
 							<?php
@@ -95,6 +102,14 @@ if ( ! function_exists( 'woodmart_elementor_infobox_carousel_template' ) ) {
 }
 
 if ( ! function_exists( 'woodmart_elementor_infobox_template' ) ) {
+	/**
+	 * Infobox template.
+	 *
+	 * @param array                  $settings Element settings.
+	 * @param \Elementor\Widget_Base $element  Element instance.
+	 *
+	 * @return void
+	 */
 	function woodmart_elementor_infobox_template( $settings, $element ) {
 		$default_settings = array(
 			'link'                        => '',
@@ -167,6 +182,7 @@ if ( ! function_exists( 'woodmart_elementor_infobox_template' ) ) {
 		$content_classes  = '';
 		$icon_classes     = '';
 		$image_output     = '';
+		$title_tag        = ! in_array( $settings['title_tag'], array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'div', 'span' ), true ) ? 'h4' : $settings['title_tag'];
 
 		// Wrapper classes.
 		$wrapper_classes .= ' text-' . $settings['alignment'];
@@ -201,9 +217,7 @@ if ( ! function_exists( 'woodmart_elementor_infobox_template' ) ) {
 		if ( woodmart_elementor_is_edit_mode() && ! strstr( $settings['wrapper_classes'], 'elementor-repeater-item' ) ) {
 			$title_classes .= ' elementor-inline-editing';
 		}
-		$title_classes   .= ' ' . woodmart_get_new_size_classes( 'infobox', $settings['title_size'], 'title' );
-		$wrapper_classes .= woodmart_get_old_classes( ' box-title-' . $settings['title_size'] );
-		$wrapper_classes .= woodmart_get_old_classes( ' woodmart-info-box' );
+		$title_classes .= ' ' . woodmart_get_new_size_classes( 'infobox', $settings['title_size'], 'title' );
 
 		// Subtitle classes.
 		if ( ! $settings['subtitle_custom_color'] && ! $settings['subtitle_custom_bg_color'] ) {
@@ -238,7 +252,7 @@ if ( ! function_exists( 'woodmart_elementor_infobox_template' ) ) {
 		}
 
 		// Image settings.
-		$rand              = 'svg-' . rand( 999, 9999 );
+		$rand              = 'svg-' . wp_rand( 999, 9999 );
 		$custom_image_size = isset( $settings['image_custom_dimension']['width'] ) && $settings['image_custom_dimension']['width'] ? $settings['image_custom_dimension'] : array(
 			'width'  => 128,
 			'height' => 128,
@@ -284,7 +298,7 @@ if ( ! function_exists( 'woodmart_elementor_infobox_template' ) ) {
 					<div class="box-icon-wrapper <?php echo esc_attr( $icon_classes ); ?>">
 						<div class="info-box-icon">
 							<?php if ( 'icon' === $settings['icon_type'] ) : ?>
-								<?php echo $image_output; ?>
+								<?php echo $image_output; // phpcs:ignore. ?>
 							<?php else : ?>
 								<?php echo esc_attr( $settings['icon_text'] ); ?>
 							<?php endif; ?>
@@ -296,17 +310,16 @@ if ( ! function_exists( 'woodmart_elementor_infobox_template' ) ) {
 					<?php if ( $settings['subtitle'] ) : ?>
 						<?php woodmart_enqueue_inline_style( 'el-subtitle-style' ); ?>
 
-						<div class="info-box-subtitle<?php echo esc_attr( $subtitle_classes ); ?>"
-							  data-elementor-setting-key="subtitle">
-							<?php echo nl2br( $settings['subtitle'] ); ?>
+						<div class="info-box-subtitle<?php echo esc_attr( $subtitle_classes ); ?>" data-elementor-setting-key="subtitle">
+							<?php echo nl2br( $settings['subtitle'] ); // phpcs:ignore. ?>
 						</div>
 					<?php endif; ?>
 
 					<?php if ( $settings['title'] ) : ?>
-						<<?php echo esc_attr( $settings['title_tag'] ); ?>
+						<<?php echo esc_attr( $title_tag ); ?>
 						class="info-box-title title<?php echo esc_attr( $title_classes ); ?>" data-elementor-setting-key="title">
-								<?php echo nl2br( $settings['title'] ); ?>
-						</<?php echo esc_attr( $settings['title_tag'] ); ?>>
+								<?php echo nl2br( $settings['title'] ); // phpcs:ignore. ?>
+						</<?php echo esc_attr( $title_tag ); ?>>
 					<?php endif; ?>
 
 					<div class="info-box-inner reset-last-child<?php echo esc_attr( $content_classes ); ?>"data-elementor-setting-key="content"><?php echo do_shortcode( wpautop( $settings['content'] ) ); ?></div>
@@ -338,7 +351,7 @@ if ( ! function_exists( 'woodmart_elementor_infobox_template' ) ) {
 				</div>
 
 				<?php if ( $settings['link'] && $settings['link']['url'] && ! $settings['btn_text'] ) : ?>
-					<a <?php echo $element->get_render_attribute_string( 'link' )?>></a>
+					<a <?php echo $element->get_render_attribute_string( 'link' ); // phpcs:ignore ?>></a>
 				<?php endif; ?>
 			</div>
 		</div>

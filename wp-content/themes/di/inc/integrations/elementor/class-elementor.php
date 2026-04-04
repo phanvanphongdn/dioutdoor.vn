@@ -2,7 +2,7 @@
 /**
  * Elementor module file.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Elementor;
@@ -21,7 +21,7 @@ if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
 /**
  * Elementor module.
  *
- * @package Woodmart
+ * @package woodmart
  */
 class Elementor extends Singleton {
 	/**
@@ -34,6 +34,9 @@ class Elementor extends Singleton {
 		add_action( 'elementor/controls/register', array( $this, 'register_controls' ) );
 		add_action( 'elementor/elements/categories_registered', array( $this, 'add_widget_categories' ) );
 		add_action( 'elementor/init', array( $this, 'files_include' ), 20 );
+
+		// Fix image loading optimization feature that breaks some theme features.
+		add_action( 'pre_option_elementor_optimized_image_loading', '__return_zero' );
 	}
 
 	/**
@@ -41,7 +44,7 @@ class Elementor extends Singleton {
 	 *
 	 * @since 1.0.0
 	 */
-	function files_include() {
+	public function files_include() {
 		$files = array(
 			'integrations/elementor/template-library/class-xts-library-source',
 			'integrations/elementor/template-library/class-xts-library',
@@ -67,10 +70,18 @@ class Elementor extends Singleton {
 			'integrations/elementor/elements/portfolio/portfolio',
 		);
 
+		$doc_settings_files = array(
+			'integrations/elementor/doc-settings/pages',
+			'integrations/elementor/doc-settings/slides',
+			'integrations/elementor/doc-settings/custom-tabs',
+		);
+
 		$woo_files = array(
 			'integrations/elementor/elements/products/products',
 			'integrations/elementor/elements/products-tabs/products-tabs',
 		);
+
+		$files = array_merge( $files, $doc_settings_files );
 
 		if ( woodmart_woocommerce_installed() ) {
 			$files = array_merge( $files, $woo_files );
@@ -85,8 +96,12 @@ class Elementor extends Singleton {
 	 * Register new controls.
 	 *
 	 * @since 1.0.0
+	 *
+	 * @param Controls_Manager $controls_manager Controls manager instance.
+	 *
+	 * @return void
 	 */
-	function register_controls( Controls_Manager $controls_manager ) {
+	public function register_controls( Controls_Manager $controls_manager ) {
 		$files = array(
 			'integrations/elementor/controls/class-autocomplete',
 			'integrations/elementor/controls/class-buttons',
@@ -134,6 +149,8 @@ class Elementor extends Singleton {
 			'integrations/elementor/elements/class-text-block',
 			'integrations/elementor/elements/class-image',
 			'integrations/elementor/elements/class-title',
+			'integrations/elementor/elements/class-page-heading',
+			'integrations/elementor/elements/class-page-title',
 			'integrations/elementor/elements/class-images-gallery',
 			'integrations/elementor/elements/class-slider',
 			'integrations/elementor/elements/class-extra-menu-list',
@@ -142,12 +159,13 @@ class Elementor extends Singleton {
 			'integrations/elementor/elements/class-sidebar',
 			'integrations/elementor/elements/class-counter',
 			'integrations/elementor/elements/class-author-area',
+			'integrations/elementor/elements/class-breadcrumbs',
 			'integrations/elementor/elements/class-countdown',
 			'integrations/elementor/elements/class-list',
 			'integrations/elementor/elements/class-twitter',
 			'integrations/elementor/elements/class-social',
 			'integrations/elementor/elements/class-team-member',
-			'integrations/elementor/elements/class-mega-menu',
+			'integrations/elementor/elements/class-wd-mega-menu',
 			'integrations/elementor/elements/class-menu-price',
 			'integrations/elementor/elements/class-menu-anchor',
 			'integrations/elementor/elements/class-popup',
@@ -175,6 +193,7 @@ class Elementor extends Singleton {
 			'integrations/elementor/elements/class-marquee',
 			'integrations/elementor/elements/class-nested-carousel',
 			'integrations/elementor/elements/class-compare-images',
+			'integrations/elementor/elements/class-toggle',
 		);
 
 		$woo_files = array(

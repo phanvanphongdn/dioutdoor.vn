@@ -1,4 +1,10 @@
 <?php
+/**
+ * Off Sidebar Block CSS.
+ *
+ * @package woodmart
+ */
+
 use XTS\Gutenberg\Block_CSS;
 
 $block_css = new Block_CSS( $attrs );
@@ -9,6 +15,10 @@ $block_css->add_css_rules(
 		array(
 			'attr_name' => 'sidebarWidth',
 			'template'  => '--wd-offcanvas-sidebar-w: {{value}}%;',
+		),
+		array(
+			'attr_name' => 'offCanvasSidebarWidth',
+			'template'  => '--wd-side-hidden-w: {{value}}' . $block_css->get_units_for_attribute( 'offCanvasSidebarWidth' ) . ';',
 		),
 	)
 );
@@ -41,6 +51,10 @@ $block_css->add_css_rules(
 		array(
 			'attr_name' => 'sidebarWidthTablet',
 			'template'  => '--wd-offcanvas-sidebar-w: {{value}}%;',
+		),
+		array(
+			'attr_name' => 'offCanvasSidebarWidthTablet',
+			'template'  => '--wd-side-hidden-w: {{value}}' . $block_css->get_units_for_attribute( 'offCanvasSidebarWidth', 'tablet' ) . ';',
 		),
 	),
 	'tablet'
@@ -76,6 +90,10 @@ $block_css->add_css_rules(
 			'attr_name' => 'sidebarWidthMobile',
 			'template'  => '--wd-offcanvas-sidebar-w: {{value}}%;',
 		),
+		array(
+			'attr_name' => 'offCanvasSidebarWidthMobile',
+			'template'  => '--wd-side-hidden-w: {{value}}' . $block_css->get_units_for_attribute( 'offCanvasSidebarWidth', 'mobile' ) . ';',
+		),
 	),
 	'mobile'
 );
@@ -106,10 +124,11 @@ $block_css->add_css_rules(
 $block_css->merge_with(
 	wd_get_block_advanced_css(
 		array(
-			'selector'         => $block_selector,
-			'selector_hover'   => $block_selector_hover,
-			'selector_padding' => $block_selector . ':not(.wd-side-hidden),' . $block_selector . '.wd-side-hidden .wd-content',
-			'selector_margin'  => $block_selector . ':not(.wd-side-hidden),' . $block_selector . '.wd-side-hidden .wd-content',
+			'selector'              => $block_selector,
+			'selector_hover'        => $block_selector_hover,
+			'selector_parent_hover' => $block_selector_parent_hover,
+			'selector_padding'      => $block_selector . ':not(.wd-side-hidden),' . $block_selector . '.wd-side-hidden .wd-content',
+			'selector_margin'       => $block_selector . ':not(.wd-side-hidden),' . $block_selector . '.wd-side-hidden .wd-content',
 		),
 		$attrs
 	)

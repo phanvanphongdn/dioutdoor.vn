@@ -1,4 +1,10 @@
 <?php
+/**
+ * Shortcode for Info box element in header builder.
+ *
+ * @package woodmart
+ */
+
 woodmart_enqueue_inline_style( 'header-elements-base' );
 $params['source'] = 'header';
 
@@ -16,24 +22,8 @@ foreach ( array( 'image', 'bg_image_box', 'bg_hover_image' ) as $key ) {
 	}
 }
 
-if ( ! empty( $params['link']['url'] ) ) {
-	$link_attrs = 'url:' . rawurlencode( $params['link']['url'] );
-
-	if ( ! empty( $params['link']['blank'] ) ) {
-		$link_attrs .= '|target:_blank';
-	}
-
-	$params['link'] = $link_attrs;
-}
-
-if ( ! empty( $params['link']['url'] ) ) {
-	$link_attrs = 'url:' . rawurlencode( $params['link']['url'] );
-
-	if ( ! empty( $params['link']['blank'] ) ) {
-		$link_attrs .= '|target:_blank';
-	}
-
-	$params['link'] = $link_attrs;
+if ( ! empty( $params['link']['blank'] ) ) {
+	$params['link']['target'] = '_blank';
 }
 
 // Remove value for control with css generators.
@@ -51,4 +41,4 @@ $params['title_color']              = '';
 $params['title_font_weight']        = '';
 $params['custom_text_color']        = '';
 
-echo woodmart_shortcode_info_box( $params, $params['content'] );
+echo woodmart_shortcode_info_box( $params, $params['content'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped

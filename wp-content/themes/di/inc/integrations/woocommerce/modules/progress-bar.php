@@ -5,7 +5,7 @@ if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
 }
 
 if ( ! function_exists( 'woodmart_stock_progress_bar' ) ) {
-	function woodmart_stock_progress_bar() {
+	function woodmart_stock_progress_bar( $classes = '' ) {
 		$product_id  = get_the_ID();
 		$total_stock = (int) get_post_meta( $product_id, 'woodmart_total_stock_quantity', true );
 
@@ -21,7 +21,7 @@ if ( ! function_exists( 'woodmart_stock_progress_bar' ) ) {
 		if ( $current_stock > 0 ) {
 			woodmart_enqueue_inline_style( 'woo-mod-progress-bar' );
 
-			echo '<div class="wd-progress-bar wd-stock-progress-bar">';
+			echo '<div class="wd-progress-bar wd-stock-progress-bar' . esc_attr( $classes ) . '">';
 				echo '<div class="stock-info">';
 					echo '<div class="total-sold">' . esc_html__( 'Ordered:', 'woodmart' ) . '<span>' . esc_html( $total_sold ) . '</span></div>';
 					echo '<div class="current-stock">' . esc_html__( 'Items available:', 'woodmart' ) . '<span>' . esc_html( $current_stock ) . '</span></div>';
@@ -100,7 +100,11 @@ if ( ! function_exists( 'woodmart_save_total_stock_quantity' ) ) {
 	function woodmart_save_total_stock_quantity( $post_id ) { // phpcs:ignore
 		$stock_quantity = isset( $_POST['woodmart_total_stock_quantity'] ) && $_POST['woodmart_total_stock_quantity'] ? wc_clean( $_POST['woodmart_total_stock_quantity'] ) : ''; // phpcs:ignore
 
-		update_post_meta( $post_id, 'woodmart_total_stock_quantity', $stock_quantity );
+		if ( '' !== $stock_quantity ) {
+			update_post_meta( $post_id, 'woodmart_total_stock_quantity', $stock_quantity );
+		} else {
+			delete_post_meta( $post_id, 'woodmart_total_stock_quantity' );
+		}
 	}
 
 	add_action( 'woocommerce_process_product_meta_simple', 'woodmart_save_total_stock_quantity' );

@@ -2,7 +2,7 @@
 /**
  * Manager class file.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Modules\Dynamic_Discounts;
@@ -50,6 +50,10 @@ class Manager extends Singleton {
 	 */
 	public function get_discount_rules( $product ) {
 		$all_discount_rules = $this->get_all_rules();
+
+		if ( ! is_array( $all_discount_rules ) ) {
+			return array();
+		}
 
 		uasort( $all_discount_rules, array( $this, 'sort_by_priority' ) );
 
@@ -118,7 +122,7 @@ class Manager extends Singleton {
 		$current_meta_boxes = array();
 
 		foreach ( $default_meta_boxes as $meta_box_id ) {
-			$current_meta_boxes[ $meta_box_id ] = maybe_unserialize( get_post_meta( $id, $meta_box_id, true ) );
+			$current_meta_boxes[ $meta_box_id ] = get_post_meta( $id, $meta_box_id, true );
 		}
 
 		set_transient( $this->wd_transient_discounts_rule . '_' . $id, $current_meta_boxes );
@@ -181,6 +185,10 @@ class Manager extends Singleton {
 	 * @return bool
 	 */
 	public function check_discount_condition( $discount_rules, $product ) {
+		if ( empty( $discount_rules['discount_condition'] ) || ! is_array( $discount_rules['discount_condition'] ) ) {
+			return false;
+		}
+
 		$conditions = $discount_rules['discount_condition'];
 		$is_active  = false;
 		$is_exclude = false;
@@ -198,6 +206,10 @@ class Manager extends Singleton {
 		uasort( $conditions, array( $this, 'sort_by_priority' ) );
 
 		foreach ( $conditions as $condition ) {
+			if ( isset( $condition['query'] ) ) {
+				$condition['query'] = apply_filters( 'wpml_object_id', $condition['query'], $condition['type'], true, apply_filters( 'wpml_current_language', null ) );
+			}
+
 			switch ( $condition['type'] ) {
 				case 'all':
 					$is_active = 'include' === $condition['comparison'];
@@ -233,7 +245,9 @@ class Manager extends Singleton {
 					break;
 				case 'product_cat':
 				case 'product_tag':
+				case 'product_brand':
 				case 'product_attr_term':
+				case 'product_shipping_class':
 					$terms = wp_get_post_terms( $product->get_id(), get_taxonomies(), array( 'fields' => 'ids' ) );
 
 					if ( $terms ) {
@@ -296,7 +310,9 @@ class Manager extends Singleton {
 			case 'product_type':
 			case 'product_cat':
 			case 'product_tag':
+			case 'product_brand':
 			case 'product_attr_term':
+			case 'product_shipping_class':
 				$priority = 30;
 				break;
 			case 'product':
@@ -317,6 +333,33 @@ class Manager extends Singleton {
 	 */
 	public function sort_by_priority( $a, $b ) {
 		return $b['woodmart_discount_priority'] <=> $a['woodmart_discount_priority'];
+	}
+
+	/**
+	 * Get product price after applying discount.
+	 *
+	 * @param float $product_price Price before applying discount.
+	 * @param array $discount Array with 2 args('type', 'value') for calculate new price.
+	 *
+	 * @return float
+	 */
+	public function get_product_price( $product_price, $discount ) {
+		if ( empty( $discount['type'] ) || empty( $discount['value'] ) || empty( $product_price ) ) {
+			return $product_price;
+		}
+
+		switch ( $discount['type'] ) {
+			case 'amount':
+				$product_price -= $discount['value'];
+				break;
+			case 'percentage':
+				$product_price -= $product_price * ( $discount['value'] / 100 );
+				break;
+			default:
+				break;
+		}
+
+		return (float) $product_price;
 	}
 }
 

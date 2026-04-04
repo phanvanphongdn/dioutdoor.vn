@@ -55,8 +55,10 @@
 			if (source === 'main_loop') {
 				ajaxurl = $this.attr('href');
 				method = 'GET';
-				data = {};
+				data = atts ? { atts: atts } : {};
 			}
+
+			data.woo_ajax = 1;
 
 			$.ajax({
 				url     : ajaxurl,
@@ -95,10 +97,11 @@
 						}
 
 						woodmartThemeModule.$document.trigger('wdPortfolioLoadMoreLoaded');
+						woodmartThemeModule.$document.trigger('wood-images-loaded');
 
 						if (data.status === 'no-more-posts') {
 							$this.addClass('no-more-posts');
-							$this.hide();
+							$this.parent().hide();
 						}
 					});
 				},

@@ -1,17 +1,31 @@
-<?php if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
-	exit( 'No direct script access allowed' );}
-
+<?php
 /**
- * ------------------------------------------------------------------------------------------------
- * New gallery shortcode
- * ------------------------------------------------------------------------------------------------
+ * Shortcode for Images gallery element.
+ *
+ * @package woodmart
  */
+
+if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
+	exit( 'No direct script access allowed' );
+}
+
 if ( ! function_exists( 'woodmart_images_gallery_shortcode' ) ) {
+	/**
+	 * Images gallery shortcode
+	 *
+	 * @param array $atts Shortcode attributes.
+	 *
+	 * @return false|string
+	 */
 	function woodmart_images_gallery_shortcode( $atts ) {
-		$output = $class = $gallery_classes = $gallery_item_classes = $gallery_attrs = '';
-		$nav_classes   = '';
-		$pagin_classes = '';
-		$wrapper_attrs = '';
+		$output               = '';
+		$class                = '';
+		$gallery_classes      = '';
+		$gallery_item_classes = '';
+		$gallery_attrs        = '';
+		$nav_classes          = '';
+		$pagin_classes        = '';
+		$wrapper_attrs        = '';
 
 		$class .= apply_filters( 'vc_shortcodes_css_class', '', '', $atts );
 
@@ -50,9 +64,7 @@ if ( ! function_exists( 'woodmart_images_gallery_shortcode' ) ) {
 			$atts
 		);
 
-		extract( $parsed_atts );
-
-		// Override standard WordPress gallery shortcodes
+		extract( $parsed_atts ); // phpcs:ignore WordPress.PHP.DontExtract.extract_extract
 
 		if ( ! empty( $atts['ids'] ) ) {
 			$atts['images'] = $atts['ids'];
@@ -62,7 +74,7 @@ if ( ! function_exists( 'woodmart_images_gallery_shortcode' ) ) {
 			$atts['img_size'] = $atts['size'];
 		}
 
-		extract( $atts );
+		extract( $atts ); // phpcs:ignore WordPress.PHP.DontExtract.extract_extract
 
 		if ( $horizontal_align || $vertical_align ) {
 			$style = '';
@@ -88,7 +100,7 @@ if ( ! function_exists( 'woodmart_images_gallery_shortcode' ) ) {
 			}
 		}
 
-		$carousel_id = 'gallery_' . rand( 100, 999 );
+		$carousel_id = 'gallery_' . wp_rand( 100, 999 );
 
 		$images = explode( ',', $images );
 
@@ -146,8 +158,7 @@ if ( ! function_exists( 'woodmart_images_gallery_shortcode' ) ) {
 				$nav_classes .= ' wd-hover-' . $arrows_hover_style;
 			}
 
-			if ( $scroll_carousel_init == 'yes' ) {
-				woodmart_enqueue_js_library( 'waypoints' );
+			if ( 'yes' === $scroll_carousel_init ) {
 				$gallery_classes .= ' scroll-init';
 			}
 
@@ -180,7 +191,7 @@ if ( ! function_exists( 'woodmart_images_gallery_shortcode' ) ) {
 			$gallery_classes .= ' wd-justified';
 		}
 
-		if ( $lazy_loading == 'yes' ) {
+		if ( 'yes' === $lazy_loading ) {
 			woodmart_lazy_loading_init( true );
 			woodmart_enqueue_inline_style( 'lazy-loading' );
 		}
@@ -205,7 +216,7 @@ if ( ! function_exists( 'woodmart_images_gallery_shortcode' ) ) {
 							continue;
 						}
 
-						$i++;
+						++$i;
 						$attachment = get_post( $img_id );
 						$title      = '';
 
@@ -224,20 +235,21 @@ if ( ! function_exists( 'woodmart_images_gallery_shortcode' ) ) {
 						}
 						?>
 						<div class="wd-gallery-item<?php echo esc_attr( $gallery_item_classes ); ?>">
-							<?php if ( $on_click != 'none' ) : ?>
+							<?php if ( 'none' !== $on_click ) : ?>
 							<a href="<?php echo esc_url( $link ); ?>" data-elementor-open-lightbox="no" data-index="<?php echo esc_attr( $i ); ?>" data-width="<?php echo esc_attr( $width ); ?>" data-height="<?php echo esc_attr( $height ); ?>" 
 												<?php
 												if ( $target_blank ) :
 													?>
-								target="_blank"<?php endif; ?> <?php
+								target="_blank"<?php endif; ?>
+								<?php
 								if ( $caption ) :
 									?>
 								title="<?php echo esc_attr( $title ); ?>"<?php endif; ?>>
 								<?php endif ?>
 
-								<?php echo woodmart_otf_get_image_html( $img_id, $img_size, array(), array( 'class' => 'wd-gallery-image image-' . $i ) ); ?>
+								<?php echo woodmart_otf_get_image_html( $img_id, $img_size, array(), array( 'class' => 'wd-gallery-image image-' . $i ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 
-								<?php if ( $on_click != 'none' ) : ?>
+								<?php if ( 'none' !== $on_click ) : ?>
 							</a>
 						<?php endif ?>
 						</div>
@@ -264,11 +276,10 @@ if ( ! function_exists( 'woodmart_images_gallery_shortcode' ) ) {
 		$output = ob_get_contents();
 		ob_end_clean();
 
-		if ( $lazy_loading == 'yes' ) {
+		if ( 'yes' === $lazy_loading ) {
 			woodmart_lazy_loading_deinit();
 		}
 
 		return $output;
-
 	}
 }

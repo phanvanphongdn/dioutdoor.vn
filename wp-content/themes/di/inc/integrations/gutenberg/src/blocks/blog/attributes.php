@@ -8,6 +8,10 @@ if ( ! function_exists( 'wd_get_block_blog_attrs' ) ) {
 
 		$attr->add_attr(
 			array(
+				'show_title'           => array(
+					'type'    => 'boolean',
+					'default' => false,
+				),
 				'post_type'            => array(
 					'type'    => 'string',
 					'default' => 'post',
@@ -54,6 +58,9 @@ if ( ! function_exists( 'wd_get_block_blog_attrs' ) ) {
 					'default'    => '20',
 					'responsive' => true,
 				),
+				'blog_masonry'         => array(
+					'type' => 'boolean',
+				),
 				'parts_title'          => array(
 					'type'    => 'boolean',
 					'default' => true,
@@ -67,6 +74,10 @@ if ( ! function_exists( 'wd_get_block_blog_attrs' ) ) {
 					'default' => true,
 				),
 				'parts_btn'            => array(
+					'type'    => 'boolean',
+					'default' => true,
+				),
+				'parts_published_date' => array(
 					'type'    => 'boolean',
 					'default' => true,
 				),
@@ -98,8 +109,8 @@ if ( ! function_exists( 'wd_get_block_blog_attrs' ) ) {
 			)
 		);
 
-		$attr->add_attr( wd_get_advanced_tab_attrs() );
-		$attr->add_attr( wd_get_carousel_settings_attrs() );
+		wd_get_advanced_tab_attrs( $attr );
+		wd_get_carousel_settings_attrs( $attr );
 
 		return $attr->get_attr();
 	}

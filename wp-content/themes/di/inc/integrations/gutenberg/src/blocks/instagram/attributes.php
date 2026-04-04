@@ -85,11 +85,15 @@ if ( ! function_exists( 'wd_get_block_instagram_attrs' ) ) {
 					'type'    => 'boolean',
 					'default' => false,
 				),
+				'aspectRatio'          => array(
+					'type'    => 'string',
+					'default' => '1/1',
+				),
 			)
 		);
 
-		$attr->add_attr( wd_get_advanced_tab_attrs() );
-		$attr->add_attr( wd_get_carousel_settings_attrs() );
+		wd_get_advanced_tab_attrs( $attr );
+		wd_get_carousel_settings_attrs( $attr );
 
 		return $attr->get_attr();
 	}

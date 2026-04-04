@@ -1,15 +1,24 @@
-<?php if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
-	exit( 'No direct script access allowed' );}
-
+<?php
 /**
-* ------------------------------------------------------------------------------------------------
-* HTML block shortcode
-* ------------------------------------------------------------------------------------------------
-*/
+ * Shortcodes for HTML block element.
+ *
+ * @package woodmart.
+ */
+
+if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
+	exit( 'No direct script access allowed' );
+}
 
 if ( ! function_exists( 'woodmart_html_block_shortcode' ) ) {
+	/**
+	 * HTML block shortcode.
+	 *
+	 * @param array $atts Shortcode attributes.
+	 *
+	 * @return string
+	 */
 	function woodmart_html_block_shortcode( $atts ) {
-		extract(
+		extract( // phpcs:ignore WordPress.PHP.DontExtract.extract_extract
 			shortcode_atts(
 				array(
 					'id' => 0,

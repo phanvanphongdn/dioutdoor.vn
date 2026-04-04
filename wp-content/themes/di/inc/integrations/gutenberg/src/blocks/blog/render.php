@@ -1,7 +1,20 @@
 <?php
+/**
+ * Gutenberg Blog Block render.
+ *
+ * @package woodmart
+ */
+
 if ( ! function_exists( 'wd_gutenberg_blog' ) ) {
-	function wd_gutenberg_blog( $block_attributes ) {
-		wd_replace_boolean_to_yes_no( array( 'hide_pagination_control', 'hide_prev_next_buttons', 'scroll_per_page', 'center_mode', 'wrap', 'autoplay', 'hide_scrollbar', 'autoheight', 'disable_overflow_carousel', 'dynamic_pagination_control', 'scroll_carousel_init' ), $block_attributes );
+	/**
+	 * Render Blog block.
+	 *
+	 * @param array  $block_attributes Block attributes.
+	 * @param string $content Block inner content.
+	 * @return string|string[]
+	 */
+	function wd_gutenberg_blog( $block_attributes, $content ) {
+		woodmart_replace_boolean_to_yes_no( array( 'hide_pagination_control', 'hide_prev_next_buttons', 'scroll_per_page', 'center_mode', 'wrap', 'autoplay', 'hide_scrollbar', 'autoheight', 'disable_overflow_carousel', 'dynamic_pagination_control', 'scroll_carousel_init' ), $block_attributes );
 
 		$block_attributes['wrapper_classes'] = wd_get_gutenberg_element_classes( $block_attributes );
 		$block_attributes['el_id']           = wd_get_gutenberg_element_id( $block_attributes );
@@ -48,6 +61,8 @@ if ( ! function_exists( 'wd_gutenberg_blog' ) ) {
 				'height' => $block_attributes['imgSizeCustomHeight'],
 			);
 		}
+
+		$block_attributes['inner_content'] = trim( $content );
 
 		return woodmart_shortcode_blog( $block_attributes );
 	}

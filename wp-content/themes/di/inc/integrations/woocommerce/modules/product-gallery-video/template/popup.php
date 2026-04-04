@@ -2,7 +2,7 @@
 /**
  * Popup template.
  *
- * @package Woodmart
+ * @package woodmart
  */
 ?>
 

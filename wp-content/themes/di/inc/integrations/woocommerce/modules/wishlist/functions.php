@@ -21,6 +21,10 @@ if ( ! function_exists( 'woodmart_get_wishlist_page_url' ) ) {
 			$page_id = wpml_object_id_filter( $page_id, 'page', true );
 		}
 
+		if ( empty( $page_id ) && 'page' === get_post_type( $page_id ) ) {
+			return '';
+		}
+
 		return get_permalink( $page_id );
 	}
 }
@@ -64,7 +68,7 @@ if ( ! function_exists( 'woodmart_get_wishlist_groups' ) ) {
 		$cache = get_user_meta( $wishlist->get_user_id(), 'woodmart_wishlist_groups', true );
 
 		if ( ! $cache ) {
-			$wishlist_groups = $wpdb->get_results(
+			$wishlist_groups = $wpdb->get_results( // phpcs:ignore.
 				$wpdb->prepare(
 					"	SELECT ID, wishlist_group
 					FROM {$wpdb->prefix}woodmart_wishlists
@@ -118,15 +122,15 @@ if ( ! function_exists( 'woodmart_check_this_email_notification_is_enabled' ) ) 
 	/**
 	 * Check this email notification is enabled in woocommerce.
 	 *
-	 * @param string $option Name option.
-	 * @param string $default Default option value. If the $option is not saved in the database, then $default will be taken.
+	 * @param string $option        Name option.
+	 * @param string $default_value Default option value. If the $option is not saved in the database, then $default_value will be taken.
 	 *
 	 * @return bool
 	 */
-	function woodmart_check_this_email_notification_is_enabled( $option, $default = 'no' ) {
+	function woodmart_check_this_email_notification_is_enabled( $option, $default_value = 'no' ) {
 		$settings   = get_option( $option, array() );
-		$option_val = ! isset( $settings['enabled'] ) ? $default : $settings['enabled'];
+		$option_val = ! isset( $settings['enabled'] ) ? $default_value : $settings['enabled'];
 
-		return 'yes' === $option_val || isset( $_GET['page'] ) && 'digthis-woocommerce-preview-emails' === $_GET['page'];
+		return 'yes' === $option_val || ( isset( $_GET['page'] ) && 'digthis-woocommerce-preview-emails' === $_GET['page'] ); // phpcs:ignore. WordPress.Security.NonceVerification.Recommended
 	}
 }

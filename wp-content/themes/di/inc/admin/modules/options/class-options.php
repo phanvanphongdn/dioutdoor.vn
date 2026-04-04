@@ -2,7 +2,7 @@
 /**
  * Static singleton class for options functions.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Admin\Modules;
@@ -72,7 +72,7 @@ class Options extends Singleton {
 	 *
 	 * @var array
 	 */
-	public static $_controls_classes = array(
+	public static $controls_classes = array(
 		'select'            => 'XTS\Admin\Modules\Options\Controls\Select',
 		'text_input'        => 'XTS\Admin\Modules\Options\Controls\Text_Input',
 		'switcher'          => 'XTS\Admin\Modules\Options\Controls\Switcher',
@@ -100,6 +100,8 @@ class Options extends Singleton {
 		'group'             => 'XTS\Admin\Modules\Options\Controls\Group',
 		'conditions'        => 'XTS\Admin\Modules\Options\Controls\Conditions',
 		'discount_rules'    => 'XTS\Admin\Modules\Options\Controls\Discount_Rules',
+		'timetable'         => 'XTS\Admin\Modules\Options\Controls\Timetable',
+		'clear'             => 'XTS\Admin\Modules\Options\Controls\Clear',
 	);
 
 	/**
@@ -147,7 +149,10 @@ class Options extends Singleton {
 	 */
 	public function include_files() {
 		$classes_files = array(
-			'class-google-fonts',
+			'google-fonts/class-utils',
+			'google-fonts/class-local-data',
+			'google-fonts/class-local',
+			'google-fonts/class-google-fonts',
 			'class-metabox',
 			'class-metaboxes',
 			'class-field',
@@ -160,7 +165,7 @@ class Options extends Singleton {
 			require_once get_parent_theme_file_path( WOODMART_FRAMEWORK . '/admin/modules/options/' . $file . '.php' );
 		}
 
-		foreach ( self::$_controls_classes as $key => $class_name ) {
+		foreach ( self::$controls_classes as $key => $class_name ) {
 			$control_name = str_replace( '_', '-', $key );
 
 			require_once get_parent_theme_file_path( WOODMART_FRAMEWORK . '/admin/modules/options/controls/' . $control_name . '/class-' . $control_name . '.php' );
@@ -192,7 +197,7 @@ class Options extends Singleton {
 			foreach ( $woodmart_transfer_options as $field ) {
 				$meta = get_post_meta( woodmart_page_ID(), $woodmart_prefix . $field, true );
 				if ( isset( $xts_woodmart_options[ $field ] ) ) {
-					$xts_woodmart_options[ $field ] = ( isset( $meta ) && $meta != '' && $meta != 'inherit' && $meta != 'default' ) ? $meta : $xts_woodmart_options[ $field ];
+					$xts_woodmart_options[ $field ] = ( isset( $meta ) && '' !== $meta && 'inherit' !== $meta && 'default' !== $meta ) ? $meta : $xts_woodmart_options[ $field ];
 				}
 			}
 		}
@@ -209,7 +214,7 @@ class Options extends Singleton {
 		foreach ( $rules as $option => $rule ) {
 			if ( ! empty( $rule['will-be'] ) && ! isset( $rule['if'] ) ) {
 				$xts_woodmart_options[ $option ] = $rule['will-be'];
-			} elseif ( isset( $xts_woodmart_options[ $rule['if'] ] ) && in_array( $xts_woodmart_options[ $rule['if'] ], $rule['in_array'] ) ) {
+			} elseif ( isset( $xts_woodmart_options[ $rule['if'] ] ) && in_array( $xts_woodmart_options[ $rule['if'] ], $rule['in_array'], true ) ) {
 				$xts_woodmart_options[ $option ] = $rule['will-be'];
 			}
 		}
@@ -223,13 +228,12 @@ class Options extends Singleton {
 		global $xts_woodmart_options;
 
 		if ( is_category() ) {
-			$option_key       = 'blog_design';
-			$category         = get_query_var( 'cat' );
-			$current_category = get_category( $category );
-			// $current_category->term_id;
+			$option_key           = 'blog_design';
+			$category             = get_query_var( 'cat' );
+			$current_category     = get_category( $category );
 			$category_blog_design = get_term_meta( $current_category->term_id, '_woodmart_' . $option_key, true );
 
-			if ( ! empty( $category_blog_design ) && $category_blog_design != 'inherit' ) {
+			if ( ! empty( $category_blog_design ) && 'inherit' !== $category_blog_design ) {
 				$xts_woodmart_options[ $option_key ] = $category_blog_design;
 			}
 		}
@@ -283,6 +287,18 @@ class Options extends Singleton {
 	 */
 	public function load_defaults() {
 		foreach ( self::$_fields as $field ) {
+			if ( 'group' === $field->args['type'] && ! empty( $field->inner_fields ) ) {
+				foreach ( $field->inner_fields as $inner_field ) {
+					if ( ! isset( $inner_field->args['default'] ) ) {
+						continue;
+					}
+
+					if ( ! isset( self::$_options[ $inner_field->get_id() ] ) ) {
+						self::$_options[ $inner_field->get_id() ] = $inner_field->args['default'];
+					}
+				}
+			}
+
 			if ( ! isset( $field->args['default'] ) ) {
 				continue;
 			}
@@ -341,7 +357,7 @@ class Options extends Singleton {
 	 * @param array $args New field object arguments.
 	 */
 	public static function add_field( $args ) {
-		$control_classname = self::$_controls_classes[ $args['type'] ];
+		$control_classname = self::$controls_classes[ $args['type'] ];
 
 		if ( ! isset( self::$_options[ $args['id'] ] ) ) {
 			self::$_options[ $args['id'] ] = self::get_default( $args );
@@ -424,7 +440,6 @@ class Options extends Singleton {
 		);
 
 		return $fields;
-
 	}
 
 	/**
@@ -465,7 +480,9 @@ class Options extends Singleton {
 	/**
 	 * Get fields CSS code based on its controls and values.
 	 *
-	 * @since 1.0.0
+	 * @param bool $is_preset_active Is preset active.
+	 *
+	 * @return string CSS code.
 	 */
 	public function get_css_output( $is_preset_active ) {
 		$output_css = '';
@@ -484,7 +501,7 @@ class Options extends Singleton {
 		foreach ( self::$_fields as $key => $field ) {
 			$field->set_presets( $this->_presets );
 
-			if ( ! $is_preset_active || woodmart_is_opt_changed( $field->args['id'] ) || 'group' === $field->args['type'] ) {
+			if ( ! $is_preset_active || 'group' === $field->args['type'] || woodmart_is_opt_changed( $field->args['id'] ) ) {
 				$field_css = $field->css_output();
 
 				if ( $field_css && is_array( $field_css ) ) {
@@ -582,7 +599,7 @@ class Options extends Singleton {
 
 		$sanitized_options['last_message'] = 'save';
 
-		$default_options = get_option( 'xts-' . self::$opt_name . '-options' );
+		$default_options = get_option( 'xts-' . self::$opt_name . '-options', array() );
 
 		$presets = Presets::get_all();
 
@@ -602,11 +619,14 @@ class Options extends Singleton {
 			// Create a subarray with preset options. Everything else leave unchanged.
 			if ( strlen( $options['fields_to_save'] ) > 0 && is_array( $fields_to_save ) && count( $fields_to_save ) > 0 ) {
 				foreach ( $fields_to_save as $option ) {
-					$options_to_save[ $preset_id ][ $option ] = $options[ $option ];
+					$value = isset( $default_options[ $preset_id ][ $option ] ) ? $default_options[ $preset_id ][ $option ] : '';
+					$value = isset( $options[ $option ] ) ? $options[ $option ] : $value;
+
+					$options_to_save[ $preset_id ][ $option ] = $value;
 				}
 				$options_to_save[ $preset_id ]['fields_to_save'] = $options['fields_to_save'];
 			}
-			$options_to_save['last_tab'] = $options['last_tab'];
+			$options_to_save['last_tab'] = isset( $options['last_tab'] ) ? $options['last_tab'] : '';
 			$options                     = $options_to_save;
 		}
 
@@ -676,18 +696,20 @@ class Options extends Singleton {
 	 * @return array
 	 */
 	private function sanitized_options( $field, $sanitized_options, $imported_options, $options, $reset ) {
-		if ( isset( $imported_options[ $field->get_id() ] ) ) {
-			$sanitized_options[ $field->get_id() ] = $field->sanitize( $imported_options[ $field->get_id() ] );
+		$field_id = $field->get_id();
+
+		if ( isset( $imported_options[ $field_id ] ) ) {
+			$sanitized_options[ $field_id ] = $field->sanitize( $imported_options[ $field_id ] );
 		} elseif ( $reset ) {
-			$sanitized_options[ $field->get_id() ] = self::get_default( $field->args );
+			$sanitized_options[ $field_id ] = self::get_default( $field->args );
+		} elseif ( isset( $options[ $field_id ] ) ) {
+				$sanitized_options[ $field_id ] = $field->sanitize( $options[ $field_id ] );
+		} elseif ( isset( self::$_options[ $field_id ] ) ) {
+			$sanitized_options[ $field_id ] = self::$_options[ $field_id ];
+		} elseif ( 'select' !== $field->args['type'] ) {
+			$sanitized_options[ $field_id ] = self::get_default( $field->args );
 		} else {
-			if ( isset( $options[ $field->get_id() ] ) ) {
-				$sanitized_options[ $field->get_id() ] = $field->sanitize( $options[ $field->get_id() ] );
-			} elseif ( 'select' !== $field->args['type'] ) {
-				$sanitized_options[ $field->get_id() ] = self::get_default( $field->args );
-			} else {
-				$sanitized_options[ $field->get_id() ] = '';
-			}
+			$sanitized_options[ $field_id ] = '';
 		}
 
 		return $sanitized_options;

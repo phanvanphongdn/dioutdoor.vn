@@ -2,7 +2,7 @@
 /**
  * Gutenberg blocks class.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Gutenberg;
@@ -12,7 +12,7 @@ use XTS\Singleton;
 /**
  * Blocks modules.
  *
- * @package Woodmart
+ * @package woodmart
  */
 class Blocks extends Singleton {
 
@@ -22,6 +22,12 @@ class Blocks extends Singleton {
 	 * @var array
 	 */
 	public $blocks = array();
+
+	/**
+	 * Layout config.
+	 *
+	 * @var array
+	 */
 	public $layouts = array();
 
 	/**
@@ -107,6 +113,7 @@ class Blocks extends Singleton {
 	 * Get folder path for block.
 	 *
 	 * @param string $name Block name.
+	 * @param string $type Block type.
 	 * @return string
 	 */
 	private function get_block_folder_path( $name, $type = 'blocks' ) {

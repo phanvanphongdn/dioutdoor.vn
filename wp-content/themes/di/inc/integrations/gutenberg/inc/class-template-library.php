@@ -2,7 +2,7 @@
 /**
  * Gutenberg post CSS class.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Gutenberg;
@@ -13,7 +13,7 @@ use XTS\Singleton;
 /**
  * Post CSS module.
  *
- * @package Woodmart
+ * @package woodmart
  */
 class Template_Library extends Singleton {
 
@@ -115,33 +115,44 @@ class Template_Library extends Singleton {
 	 * @param string $url Image URL.
 	 * @return int|\WP_Error
 	 */
-	private function get_image($url ) {
-		preg_match( '/\/([^\/]+)\.[a-zA-Z0-9]+$/', $url, $url_matches );
-		$img_name = wp_basename( $url_matches[0] );
-
+	private function get_image( $url ) {
 		$get_attachment = new WP_Query(
 			array(
 				'posts_per_page' => 1,
 				'post_type'      => 'attachment',
-				'name'           => trim( $img_name ),
+				'post_status'    => 'inherit',
+				'meta_query'     => array(
+					array(
+						'key'     => '_wp_attached_file',
+						'value'   => pathinfo( wp_basename( $url ), PATHINFO_FILENAME ),
+						'compare' => 'LIKE',
+					),
+				),
 			)
 		);
 
-		if ( ! isset( $get_attachment->posts, $get_attachment->posts[0] ) ) {
-			add_filter( 'image_sideload_extensions', array( $this, 'allowed_image_sideload_extensions' ) );
-			$image_url = media_sideload_image( $url, 0, '', 'src' );
-			remove_filter( 'image_sideload_extensions', array( $this, 'allowed_image_sideload_extensions' ) );
-
-			$id = wp_insert_attachment(
-				array(
-					'post_title' => $img_name,
-					'post_type'  => 'attachment',
-					'guid'       => $image_url,
-				),
-				$image_url
-			);
-		} else {
+		if ( isset( $get_attachment->posts, $get_attachment->posts[0] ) ) {
 			$id = $get_attachment->posts[0]->ID;
+		} else {
+			add_filter( 'image_sideload_extensions', array( $this, 'allowed_image_sideload_extensions' ) );
+
+			$id = media_sideload_image( $url, 0, '', 'id' );
+
+			if ( ! is_wp_error( $id ) ) {
+				$metadata = wp_get_attachment_metadata( $id );
+
+				if ( empty( $metadata ) ) {
+					require_once ABSPATH . 'wp-admin/includes/image.php';
+
+					$metadata = wp_generate_attachment_metadata( $id, get_attached_file( $id ) );
+
+					if ( ! empty( $metadata ) ) {
+						wp_update_attachment_metadata( $id, $metadata );
+					}
+				}
+			}
+
+			remove_filter( 'image_sideload_extensions', array( $this, 'allowed_image_sideload_extensions' ) );
 		}
 
 		return $id;

@@ -1,6 +1,8 @@
 <?php
 /**
  * Wishlist UI.
+ *
+ * @package woodmart
  */
 
 namespace XTS\WC_Wishlist;
@@ -129,6 +131,7 @@ class Ui extends Singleton {
 
 		if ( woodmart_is_woo_ajax() && $this->is_editable() && ( ( isset( $_POST['atts'] ) && ! empty( $_POST['atts']['is_wishlist'] ) ) || ( isset( $_GET['action'] ) && in_array( $_GET['action'], $this->wishlist_action ) ) ) ) { //phpcs:ignore
 			add_action( 'woocommerce_before_shop_loop_item', array( $this, 'output_settings_btn' ) );
+			add_action( 'woodmart_loop_item_content', array( $this, 'output_settings_btn' ), 5 );
 		}
 	}
 
@@ -139,9 +142,8 @@ class Ui extends Singleton {
 	 * @since 1.0.0
 	 */
 	public function wishlist_page() {
-		if ( $this->is_editable() ) {
-			add_action( 'woocommerce_before_shop_loop_item', array( $this, 'output_settings_btn' ) );
-		}
+		add_action( 'woocommerce_before_shop_loop_item', array( $this, 'output_settings_btn' ) );
+		add_action( 'woodmart_loop_item_content', array( $this, 'output_settings_btn' ), 5 );
 
 		ob_start();
 		?>
@@ -161,13 +163,16 @@ class Ui extends Singleton {
 			<?php do_action( 'woocommerce_account_navigation' ); ?>
 		<?php endif; ?>
 
-		<div class="<?php echo ( is_user_logged_in() && $this->is_editable() && apply_filters( 'woodmart_my_account_wishlist', true ) ) ? 'woocommerce-MyAccount-content' : ''; ?>">
+
+		<?php $is_account_page = is_user_logged_in() && $this->is_editable() && apply_filters( 'woodmart_my_account_wishlist', true ); ?>
+		<div class="<?php echo $is_account_page ? 'woocommerce-MyAccount-content wd-grid-col' : ''; ?>" <?php echo $is_account_page ? 'style="--wd-col-lg:9;--wd-col-md:8;--wd-col-sm:12;"' : ''; ?>>
 			<?php echo $this->wishlist_page_content(); //phpcs:ignore ?>
 		</div>
 		<?php
 
 		if ( $this->is_editable() ) {
 			remove_action( 'woocommerce_before_shop_loop_item', array( $this, 'output_settings_btn' ) );
+			remove_action( 'woodmart_loop_item_content', array( $this, 'output_settings_btn' ), 5 );
 		}
 
 		return ob_get_clean();
@@ -197,7 +202,7 @@ class Ui extends Singleton {
 		}
 
 		$products = array_map(
-			function( $item ) {
+			function ( $item ) {
 				return $item['product_id'];
 			},
 			$products
@@ -318,12 +323,15 @@ class Ui extends Singleton {
 					</h4>
 					<div class="wd-wishlist-title-edit">
 						<input type="text" class="wd-wishlist-input-rename" value="<?php echo esc_html( $args['title'] ); ?>" data-title="<?php echo esc_html( $args['title'] ); ?>">
-						<a href="#" class="btn wd-wishlist-rename-save">
+						<a href="#" class="btn btn-accent wd-wishlist-rename-save">
 							<?php esc_html_e( 'Save', 'woodmart' ); ?>
 						</a>
 						<div class="wd-wishlist-rename-cancel wd-action-btn wd-style-text wd-cross-icon">
 							<a href="#">
-								<?php esc_html_e( 'Cancel', 'woodmart' ); ?>
+								<span class="wd-action-icon"></span>
+								<span class="wd-action-text">
+									<?php esc_html_e( 'Cancel', 'woodmart' ); ?>
+								</span>
 							</a>
 						</div>
 					</div>
@@ -335,7 +343,7 @@ class Ui extends Singleton {
 					</h4>
 				<?php endif; ?>
 
-			<?php if ( is_user_logged_in() && $this->is_editable() && woodmart_is_social_link_enable( 'share' ) ) : ?>
+			<?php if ( is_user_logged_in() && $this->is_editable() && woodmart_is_social_link_enabled( 'share' ) ) : ?>
 				<?php echo woodmart_shortcode_social( //phpcs:ignore
 					array(
 						'size'          => 'small',
@@ -353,19 +361,26 @@ class Ui extends Singleton {
 				<?php if ( $args['wishlist_groups'] ) : ?>
 					<div class="wd-wishlist-move-action wd-action-btn wd-style-text">
 						<a href="#">
-							<?php esc_html_e( 'Move', 'woodmart' ); ?>
+							<span class="wd-action-icon"></span>
+							<span class="wd-action-text">
+								<?php esc_html_e( 'Move', 'woodmart' ); ?>
+							</span>
 						</a>
 					</div>
 				<?php endif; ?>
 				<div class="wd-wishlist-remove-action wd-action-btn wd-style-text wd-cross-icon">
 					<a href="#">
-						<?php esc_html_e( 'Remove', 'woodmart' ); ?>
+						<span class="wd-action-icon"></span>
+						<span class="wd-action-text">
+							<?php esc_html_e( 'Remove', 'woodmart' ); ?>
+						</span>
 					</a>
 				</div>
 				<div class="wd-wishlist-select-all wd-action-btn wd-style-text">
 					<a href="#">
-						<span class="wd-wishlist-text-select"><?php esc_html_e( 'Select all', 'woodmart' ); ?></span>
-						<span class="wd-wishlist-text-deselect"><?php esc_html_e( 'Deselect all', 'woodmart' ); ?></span>
+						<span class="wd-action-icon"></span>
+						<span class="wd-action-text wd-wishlist-text-select"><?php esc_html_e( 'Select all', 'woodmart' ); ?></span>
+						<span class="wd-action-text wd-wishlist-text-deselect"><?php esc_html_e( 'Deselect all', 'woodmart' ); ?></span>
 					</a>
 				</div>
 			</div>
@@ -381,22 +396,21 @@ class Ui extends Singleton {
 	 * @return void
 	 */
 	public function wishlist_empty_content( $show_wishlist_empty_text = true ) {
-		woodmart_enqueue_inline_style( 'woo-page-empty-page' );
+		woodmart_enqueue_inline_style( 'woo-mod-empty-block' );
 
 		$wishlist_empty_text = woodmart_get_opt( 'wishlist_empty_text' );
 		?>
-		<?php if ( ! $show_wishlist_empty_text ) : ?>
-			<div class="wd-wishlist-group-empty">
-		<?php endif; ?>
 
-		<p class="wd-empty-wishlist wd-empty-page">
+		<div class="wd-empty-block wd-empty-wishlist">
+
+		<h2 class="wd-empty-block-title">
 			<?php esc_html_e( 'This wishlist is empty.', 'woodmart' ); ?>
-		</p>
+		</h2>
 
 		<?php if ( $wishlist_empty_text ) : ?>
-			<div class="wd-empty-page-text">
+			<p class="wd-empty-block-text">
 				<?php echo wp_kses( $wishlist_empty_text, woodmart_get_allowed_html() ); ?>
-			</div>
+			</p>
 		<?php endif; ?>
 
 		<?php if ( ! $show_wishlist_empty_text ) : ?>
@@ -404,11 +418,13 @@ class Ui extends Singleton {
 		<?php endif; ?>
 
 		<?php if ( $show_wishlist_empty_text && $this->is_editable() ) : ?>
-			<p class="return-to-shop">
-				<a class="button" href="<?php echo esc_url( apply_filters( 'woodmart_wishlist_return_to_shop_url', wc_get_page_permalink( 'shop' ) ) ); ?>">
-					<?php esc_html_e( 'Return to shop', 'woodmart' ); ?>
-				</a>
-			</p>
+			<a class="button btn btn-accent wd-empty-block-btn" href="<?php echo esc_url( apply_filters( 'woodmart_wishlist_return_to_shop_url', wc_get_page_permalink( 'shop' ) ) ); ?>">
+				<?php esc_html_e( 'Return to shop', 'woodmart' ); ?>
+			</a>
+		<?php endif; ?>
+
+		<?php if ( $show_wishlist_empty_text ) : ?>
+			</div>
 		<?php endif; ?>
 		<?php
 	}
@@ -420,12 +436,19 @@ class Ui extends Singleton {
 	 * @since 1.0.0
 	 */
 	public function output_settings_btn() {
+		if ( ! $this->is_editable() ) {
+			return;
+		}
+
 		woodmart_enqueue_js_script( 'wishlist' );
 		?>
 			<div class="wd-wishlist-product-actions">
 				<div class="wd-wishlist-product-remove wd-action-btn wd-style-text wd-cross-icon">
 					<a href="#" class="wd-wishlist-remove" data-product-id="<?php echo esc_attr( get_the_ID() ); ?>">
-						<?php esc_html_e( 'Remove', 'woodmart' ); ?>
+						<span class="wd-action-icon"></span>
+						<span class="wd-action-text">
+							<?php esc_html_e( 'Remove', 'woodmart' ); ?>
+						</span>
 					</a>
 				</div>
 				<?php if ( woodmart_get_opt( 'wishlist_bulk_action' ) ) : ?>
@@ -471,21 +494,22 @@ class Ui extends Singleton {
 	 * Add to wishlist button.
 	 *
 	 * @codeCoverageIgnore
-	 * @since 1.0.0
 	 *
 	 * @param string $classes Extra classes.
+	 * @param string $link_classes Extra link classes.
+	 *
+	 * @return void
 	 */
-	public function add_to_wishlist_btn( $classes = '' ) {
+	public function add_to_wishlist_btn( $classes = '', $link_classes = '' ) {
 		woodmart_enqueue_js_script( 'wishlist' );
 
 		if ( woodmart_get_opt( 'wishlist_expanded' ) && 'disable' !== woodmart_get_opt( 'wishlist_show_popup', 'disable' ) && is_user_logged_in() ) {
 			woodmart_enqueue_js_script( 'wishlist-group' );
 		}
 
-		$added        = false;
-		$link_classes = '';
-		$text         = esc_html__( 'Add to wishlist', 'woodmart' );
-		$product_id   = apply_filters( 'wpml_object_id', get_the_ID(), 'product', true, apply_filters( 'wpml_default_language', null ) );
+		$added      = false;
+		$text       = esc_html__( 'Add to wishlist', 'woodmart' );
+		$product_id = apply_filters( 'wpml_object_id', get_the_ID(), 'product', true, apply_filters( 'wpml_default_language', null ) );
 
 		if ( $this->wishlist && $this->wishlist->get_all() && woodmart_get_opt( 'wishlist_save_button_state', '0' ) ) {
 			$products = $this->wishlist->get_all();
@@ -498,15 +522,16 @@ class Ui extends Singleton {
 
 		if ( $added ) {
 			$link_classes .= ' added';
-			$text          = esc_html__( 'Browse Wishlist', 'woodmart' );
+			$text          = esc_html__( 'Remove from wishlist', 'woodmart' );
 		}
-
-		$classes .= woodmart_get_old_classes( ' woodmart-wishlist-btn' );
 
 		?>
 			<div class="wd-wishlist-btn <?php echo esc_attr( $classes ); ?>">
-				<a class="<?php echo esc_attr( $link_classes ); ?>" href="<?php echo esc_url( woodmart_get_wishlist_page_url() ); ?>" data-key="<?php echo esc_attr( wp_create_nonce( 'woodmart-wishlist-add' ) ); ?>" data-product-id="<?php echo esc_attr( $product_id ); ?>" rel="nofollow" data-added-text="<?php esc_attr_e( 'Browse Wishlist', 'woodmart' ); ?>">
-					<span><?php echo esc_html( $text ); ?></span>
+				<a class="<?php echo esc_attr( $link_classes ); ?>" href="<?php echo esc_url( woodmart_get_wishlist_page_url() ); ?>" data-key="<?php echo esc_attr( wp_create_nonce( 'woodmart-wishlist-add' ) ); ?>" data-product-id="<?php echo esc_attr( $product_id ); ?>" rel="nofollow">
+					<span class="wd-action-icon">
+						<span class="wd-check-icon"></span>
+					</span>
+					<span class="wd-action-text"><?php echo esc_html( $text ); ?></span>
 				</a>
 			</div>
 		<?php
@@ -567,11 +592,13 @@ class Ui extends Singleton {
 		global $wp;
 
 		$wishlist_page = function_exists( 'wpml_object_id_filter' ) ? wpml_object_id_filter( woodmart_get_opt( 'wishlist_page' ), 'page', true ) : woodmart_get_opt( 'wishlist_page' );
+		$wishlist_page = absint( $wishlist_page );
 
-		if ( 'wishlist' === $endpoint && get_the_ID() == $wishlist_page ) {
+		if ( 'wishlist' === $endpoint && get_the_ID() === $wishlist_page ) {
 			$classes[] = 'is-active';
-		} elseif ( get_the_ID() == $wishlist_page ) {
-			$key = array_search( 'is-active', $classes );
+		} elseif ( get_the_ID() === $wishlist_page ) {
+			$key = array_search( 'is-active', $classes, true );
+
 			if ( false !== $key ) {
 				unset( $classes[ $key ] );
 			}

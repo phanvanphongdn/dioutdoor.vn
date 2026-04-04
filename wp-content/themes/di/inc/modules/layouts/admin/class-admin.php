@@ -2,7 +2,7 @@
 /**
  * Admin layouts class file.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Modules\Layouts;
@@ -46,6 +46,7 @@ class Admin extends Singleton {
 	public function init() {
 		add_action( 'init', array( $this, 'set_layout_types' ) );
 		add_filter( 'woodmart_admin_localized_string_array', array( $this, 'add_localized_settings' ) );
+		add_action( 'admin_menu', array( $this, 'add_pages_to_dashboard_menu' ), 100 );
 
 		$this->add_actions();
 	}
@@ -54,19 +55,39 @@ class Admin extends Singleton {
 	 * Set layout type.
 	 */
 	public function set_layout_types() {
-		$this->layout_types = array(
-			'single_product'   => esc_html__( 'Single product', 'woodmart' ),
-			'shop_archive'     => esc_html__( 'Products archive', 'woodmart' ),
-			'cart'             => esc_html__( 'Cart', 'woodmart' ),
-			'empty_cart'       => esc_html__( 'Empty cart', 'woodmart' ),
-			'checkout_form'    => esc_html__( 'Checkout form', 'woodmart' ),
-			'checkout_content' => esc_html__( 'Checkout top content', 'woodmart' ),
+		$woocommerce_types = array(
+			'single_product'           => esc_html__( 'Single product', 'woodmart' ),
+			'shop_archive'             => esc_html__( 'Products archive', 'woodmart' ),
+			'cart'                     => esc_html__( 'Cart', 'woodmart' ),
+			'empty_cart'               => esc_html__( 'Empty cart', 'woodmart' ),
+			'checkout_form'            => esc_html__( 'Checkout form', 'woodmart' ),
+			'checkout_content'         => esc_html__( 'Checkout top content', 'woodmart' ),
+			'thank_you_page'           => esc_html__( 'Thank you page', 'woodmart' ),
+			'my_account_page'          => esc_html__( 'My account', 'woodmart' ),
+			'my_account_auth'          => esc_html__( 'Login/Register', 'woodmart' ),
+			'my_account_lost_password' => esc_html__( 'Lost password', 'woodmart' ),
 		);
 
-		if ( 'native' === woodmart_get_opt( 'current_builder' ) ) {
-			$this->layout_types['checkout_form'] = esc_html__( 'Checkout', 'woodmart' );
+		if ( woodmart_woocommerce_installed() ) {
+			$this->layout_types += $woocommerce_types;
 
-			unset( $this->layout_types['checkout_content'] );
+			if ( 'native' === woodmart_get_opt( 'current_builder' ) ) {
+				$this->layout_types['checkout_form'] = esc_html__( 'Checkout', 'woodmart' );
+				unset( $this->layout_types['checkout_content'] );
+			}
+		}
+
+		$this->layout_types += array(
+			'single_post'       => esc_html__( 'Single post', 'woodmart' ),
+			'blog_archive'      => esc_html__( 'Blog', 'woodmart' ),
+			'single_portfolio'  => esc_html__( 'Single project', 'woodmart' ),
+			'portfolio_archive' => esc_html__( 'Portfolio', 'woodmart' ),
+		);
+
+		if ( woodmart_woocommerce_installed() ) {
+			$this->layout_types += array(
+				'product_loop_item' => esc_html__( 'Product loop item', 'woodmart' ),
+			);
 		}
 	}
 
@@ -101,6 +122,8 @@ class Admin extends Singleton {
 			2
 		);
 		add_action( 'add_meta_boxes', array( $this, 'add_conditions_box' ), 10, 2 );
+
+		add_filter( 'use_block_editor_for_post_type', array( $this, 'set_gutenberg_editor' ), 100, 2 );
 	}
 
 	/**
@@ -116,19 +139,17 @@ class Admin extends Singleton {
 
 		$type = get_post_meta( $post->ID, $this->type_meta_key, true );
 
-		if ( 'cart' === $type || 'empty_cart' === $type || 'checkout_content' === $type || 'checkout_form' === $type ) {
-			return;
+		if ( in_array( $type, array( 'single_product', 'shop_archive', 'my_account_page', 'single_post', 'blog_archive', 'single_portfolio', 'portfolio_archive', 'thank_you_page' ), true ) ) {
+			add_meta_box(
+				'xts-layout-conditions',
+				esc_html__( 'Layout conditions', 'woodmart' ),
+				array(
+					$this,
+					'conditions_box_callback',
+				),
+				'woodmart_layout',
+			);
 		}
-
-		add_meta_box(
-			'wd-layout-conditions',
-			esc_html__( 'Layout conditions', 'woodmart' ),
-			array(
-				$this,
-				'conditions_box_callback',
-			),
-			'woodmart_layout'
-		);
 	}
 
 	/**
@@ -182,11 +203,27 @@ class Admin extends Singleton {
 		$current_tab = sanitize_text_field( $_GET['wd_layout_type_tab'] ); // phpcs:ignore
 
 		if ( 'checkout' === $current_tab ) {
-			$current_tab = array( 'checkout_form', 'checkout_content' );
+			$current_tab = array( 'checkout_form', 'checkout_content', 'thank_you_page' );
+		}
+
+		if ( 'my_account' === $current_tab ) {
+			$current_tab = array( 'my_account_page', 'my_account_auth', 'my_account_lost_password' );
 		}
 
 		if ( 'cart' === $current_tab ) {
 			$current_tab = array( 'cart', 'empty_cart' );
+		}
+
+		if ( 'post' === $current_tab ) {
+			$current_tab = array( 'single_post', 'single_portfolio' );
+		}
+
+		if ( 'archive' === $current_tab ) {
+			$current_tab = array( 'blog_archive', 'portfolio_archive' );
+		}
+
+		if ( 'loop_item' === $current_tab ) {
+			$current_tab = array( 'product_loop_item' );
 		}
 
 		$query->query_vars['type_meta_key'] = $this->type_meta_key; // phpcs:ignore
@@ -243,11 +280,11 @@ class Admin extends Singleton {
 	public function admin_columns_titles( $posts_columns ) {
 		$offset = 2;
 
-		return array_slice( $posts_columns, 0, $offset, true ) + [
-			'wd_layout_type'       => esc_html__( 'Type', 'elementor' ),
-			'wd_layout_conditions' => esc_html__( 'Conditions', 'elementor' ),
-			'wd_layout_status'     => esc_html__( 'Active', 'elementor' ),
-		] + array_slice( $posts_columns, $offset, null, true );
+		return array_slice( $posts_columns, 0, $offset, true ) + array(
+			'wd_layout_type'       => esc_html__( 'Type', 'woodmart' ),
+			'wd_layout_conditions' => esc_html__( 'Conditions', 'woodmart' ),
+			'wd_layout_status'     => esc_html__( 'Active', 'woodmart' ),
+		) + array_slice( $posts_columns, $offset, null, true );
 	}
 
 	/**
@@ -258,6 +295,12 @@ class Admin extends Singleton {
 	 * @return string
 	 */
 	public function get_status_button_template( $post_id ) {
+		$type = get_post_meta( $post_id, $this->type_meta_key, true );
+
+		if ( str_contains( $type, 'loop_item' ) ) {
+			return '';
+		}
+
 		ob_start();
 
 		$this->get_template(
@@ -279,22 +322,25 @@ class Admin extends Singleton {
 	 * @return string
 	 */
 	public function get_edit_conditions_template( $post_id ) {
-		ob_start();
-
 		$conditions = get_post_meta( $post_id, $this->conditions_meta_key, true );
 		$type       = get_post_meta( $post_id, $this->type_meta_key, true );
 
-		if ( 'cart' === $type || 'empty_cart' === $type || 'checkout_content' === $type || 'checkout_form' === $type ) {
-			return ob_get_clean();
+		if ( ! in_array( $type, array( 'single_product', 'shop_archive', 'my_account_page', 'single_post', 'blog_archive', 'single_portfolio', 'portfolio_archive', 'thank_you_page' ), true ) ) {
+			return '';
 		}
 
 		if ( $conditions ) {
 			foreach ( $conditions as $key => $condition ) {
 				if ( ! empty( $condition['condition_query'] ) ) {
-					if ( 'product' === $condition['condition_type'] ) {
+					if ( in_array( $condition['condition_type'], array( 'product', 'post_id', 'project_id' ), true ) ) {
 						$post = get_post( $condition['condition_query'] );
 
 						$conditions[ $key ]['condition_query_text'] = $post->post_title . ' (ID: ' . $post->ID . ')';
+					} elseif ( 'post_format' === $condition['condition_type'] ) {
+						$post_formats = get_post_format_strings();
+						if ( isset( $post_formats[ $condition['condition_query'] ] ) ) {
+							$conditions[ $key ]['condition_query_text'] = $post_formats[ $condition['condition_query'] ];
+						}
 					} elseif ( 'product_attr' === $condition['condition_type'] || 'filtered_product_term' === $condition['condition_type'] ) {
 						$taxonomy = get_taxonomy( $condition['condition_query'] );
 
@@ -305,6 +351,51 @@ class Admin extends Singleton {
 						}
 					} elseif ( 'product_type' === $condition['condition_type'] ) {
 						$conditions[ $key ]['condition_query_text'] = wc_get_product_types()[ $condition['condition_query'] ];
+					} elseif ( 'order_payment_gateway' === $condition['condition_type'] ) {
+						if ( woodmart_woocommerce_installed() ) {
+							foreach ( WC()->payment_gateways()->payment_gateways() as $gateway ) {
+								if ( $gateway->id !== $condition['condition_query'] ) {
+									continue;
+								}
+
+								$conditions[ $key ]['condition_query_text'] = $gateway->get_title();
+								break;
+							}
+						}
+					} elseif ( 'order_shipping_method' === $condition['condition_type'] ) {
+						if ( woodmart_woocommerce_installed() ) {
+							foreach ( WC()->shipping()->get_shipping_methods() as $method_id => $method ) {
+								if ( $method_id !== $condition['condition_query'] ) {
+									continue;
+								}
+
+								$conditions[ $key ]['condition_query_text'] = $method->get_method_title();
+								break;
+							}
+						}
+					} elseif ( 'order_shipping_method' === $condition['condition_type'] ) {
+						if ( woodmart_woocommerce_installed() ) {
+							foreach ( WC()->shipping()->get_shipping_methods() as $method_id => $method ) {
+								if ( $method_id !== $condition['condition_query'] ) {
+									continue;
+								}
+
+								$conditions[ $key ]['condition_query_text'] = $method->get_method_title();
+								break;
+							}
+						}
+					} elseif ( 'order_shipping_country' === $condition['condition_type'] || 'order_billing_country' === $condition['condition_type'] ) {
+						if ( woodmart_woocommerce_installed() ) {
+							$countries = WC()->countries->get_allowed_countries();
+
+							foreach ( $countries as $code => $name ) {
+								if ( ! in_array( $code, $condition['condition_query'], true ) ) {
+									continue;
+								}
+
+								$conditions[ $key ]['condition_query_text'][] = $name;
+							}
+						}
 					} else {
 						$term = get_term( $condition['condition_query'] );
 
@@ -317,6 +408,8 @@ class Admin extends Singleton {
 				}
 			}
 		}
+
+		ob_start();
 
 		$this->get_template(
 			'edit-conditions',
@@ -351,7 +444,7 @@ class Admin extends Singleton {
 	 */
 	public function get_predefined_layouts() {
 		$layouts = array(
-			'shop_archive'     => array(
+			'shop_archive'             => array(
 				'layout-1'  => array(
 					'url' => WOODMART_DEMO_URL . 'shop/?opts=product_archive_layout_1',
 				),
@@ -398,7 +491,7 @@ class Admin extends Singleton {
 					'url' => WOODMART_DEMO_URL . 'mega-electronics/product-category/hardware-components/',
 				),
 			),
-			'single_product'   => array(
+			'single_product'           => array(
 				'layout-1'  => array(
 					'url' => WOODMART_DEMO_URL . 'shop/lighting/bolla-gervasoni/?opts=single_product_layout_5',
 				),
@@ -439,11 +532,11 @@ class Admin extends Singleton {
 					'url' => WOODMART_DEMO_URL . 'mega-electronics/product/apple-macbook-pro-16-m1-pro-2/',
 				),
 			),
-			'cart'             => array(
+			'cart'                     => array(
 				'layout-1' => array(),
 				'layout-3' => array(),
 			),
-			'checkout_form'    => array(
+			'checkout_form'            => array(
 				'layout-1' => array(),
 				'layout-2' => array(),
 				// Megamarket.
@@ -451,10 +544,62 @@ class Admin extends Singleton {
 				// Accessories.
 				'layout-4' => array(),
 			),
-			'checkout_content' => array(
+			'checkout_content'         => array(
 				'layout-2' => array(),
 				// Accessories.
 				'layout-3' => array(),
+			),
+			'thank_you_page'           => array(
+				'layout-1' => array(),
+			),
+			'blog_archive'             => array(
+				'layout-1' => array(),
+				'layout-2' => array(),
+			),
+			'portfolio_archive'        => array(
+				'layout-1' => array(),
+				'layout-2' => array(),
+			),
+			'single_post'              => array(
+				'layout-1' => array(),
+				'layout-2' => array(),
+			),
+			'single_portfolio'         => array(
+				'layout-1' => array(),
+			),
+			'my_account_page'          => array(
+				'layout-1' => array(),
+			),
+			'my_account_auth'          => array(
+				'layout-1' => array(),
+			),
+			'my_account_lost_password' => array(
+				'layout-1' => array(),
+			),
+			'product_loop_item'        => array(
+				'layout-1'  => array(),
+				'layout-2'  => array(),
+				'layout-3'  => array(),
+				'layout-4'  => array(),
+				'layout-5'  => array(),
+				'layout-6'  => array(),
+				'layout-7'  => array(),
+				'layout-8'  => array(),
+				'layout-9'  => array(),
+				'layout-10' => array(),
+				'layout-11' => array(),
+				'layout-12' => array(),
+				'layout-13' => array(),
+				'layout-14' => array(),
+				'layout-15' => array(),
+				'layout-16' => array(),
+				'layout-17' => array(),
+				'layout-18' => array(),
+				'layout-19' => array(),
+				'layout-20' => array(),
+				'layout-21' => array(),
+				'layout-22' => array(),
+				'layout-23' => array(),
 			),
 		);
 
@@ -496,13 +641,51 @@ class Admin extends Singleton {
 	public function print_tabs() {
 		$tabs = array(
 			'all' => esc_html__( 'All', 'woodmart' ),
-		) + $this->layout_types + array(
-			'checkout' => esc_html__( 'Checkout', 'woodmart' ),
-		);
+		) + $this->layout_types;
 
-		unset( $tabs['checkout_content'] );
-		unset( $tabs['checkout_form'] );
-		unset( $tabs['empty_cart'] );
+		if ( woodmart_woocommerce_installed() ) {
+			$tabs = array_slice( $tabs, 0, 4, true ) +
+				array( 'checkout' => esc_html__( 'Checkout', 'woodmart' ) ) +
+				array_slice( $tabs, 4, null, true );
+
+			$tabs = array_slice( $tabs, 0, 5, true ) +
+			array( 'my_account' => esc_html__( 'My account', 'woodmart' ) ) +
+			array_slice( $tabs, 5, null, true );
+
+			unset( $tabs['my_account_auth'] );
+			unset( $tabs['my_account_page'] );
+			unset( $tabs['my_account_lost_password'] );
+			unset( $tabs['checkout_content'] );
+			unset( $tabs['checkout_form'] );
+			unset( $tabs['thank_you_page'] );
+			unset( $tabs['empty_cart'] );
+		}
+
+		if ( isset( $tabs['single_post'] ) ) {
+			$keys  = array_keys( $tabs );
+			$index = array_search( 'single_post', $keys, true );
+
+			$tabs = array_slice( $tabs, 0, $index, true ) + array( 'post' => esc_html__( 'Single post', 'woodmart' ) ) + array_slice( $tabs, $index + 1, null, true );
+
+			unset( $tabs['single_post'] );
+			unset( $tabs['single_portfolio'] );
+		}
+
+		if ( isset( $tabs['blog_archive'] ) ) {
+			$keys  = array_keys( $tabs );
+			$index = array_search( 'blog_archive', $keys, true );
+
+			$tabs = array_slice( $tabs, 0, $index, true ) + array( 'archive' => esc_html__( 'Posts archive', 'woodmart' ) ) + array_slice( $tabs, $index + 1, null, true );
+
+			unset( $tabs['blog_archive'] );
+			unset( $tabs['portfolio_archive'] );
+		}
+
+		if ( isset( $tabs['product_loop_item'] ) ) {
+			unset( $tabs['product_loop_item'] );
+		}
+
+		$tabs['loop_item'] = esc_html__( 'Loop item', 'woodmart' );
 
 		$current_tab = 'all';
 
@@ -510,11 +693,11 @@ class Admin extends Singleton {
 			$current_tab = $_GET['wd_layout_type_tab']; // phpcs:ignore
 		}
 
-		if ( 'checkout_content' === $current_tab || 'checkout_form' === $current_tab ) {
+		if ( woodmart_woocommerce_installed() && ( 'checkout_content' === $current_tab || 'checkout_form' === $current_tab || 'thank_you_page' === $current_tab ) ) {
 			$current_tab = 'checkout';
 		}
 
-		if ( 'empty_cart' === $current_tab ) {
+		if ( woodmart_woocommerce_installed() && 'empty_cart' === $current_tab ) {
 			$current_tab = 'cart';
 		}
 
@@ -545,11 +728,51 @@ class Admin extends Singleton {
 		return array_merge(
 			$settings,
 			array(
+				'layout_text'    => esc_html__( 'layout', 'woodmart' ),
 				'creation_error' => esc_html__( 'Something went wrong with the creation of the layout!', 'woodmart' ),
+				'min_max_error'  => esc_html__( 'The minimum value must be less than the maximum value!', 'woodmart' ),
 				'editing_error'  => esc_html__( 'Something went wrong with editing the layout!', 'woodmart' ),
 				'success_save'   => esc_html__( 'Conditions has been successfully saved', 'woodmart' ),
 			)
 		);
+	}
+
+	/**
+	 * Add pages to dashboard menu.
+	 *
+	 * @return void
+	 */
+	public function add_pages_to_dashboard_menu() {
+		global $submenu;
+
+		if ( ! empty( $submenu['edit.php?post_type=woodmart_layout'] ) ) {
+			foreach ( $submenu['edit.php?post_type=woodmart_layout'] as $key => $value ) {
+				if ( 'post-new.php?post_type=woodmart_layout' === $value[2] ) {
+					$submenu['edit.php?post_type=woodmart_layout'][ $key ][2] = 'edit.php?post_type=woodmart_layout&create_template'; // phpcs:ignore
+				}
+			}
+		}
+	}
+
+	/**
+	 * Set gutenberg editor.
+	 *
+	 * @param boolean $is_enable Is gutenberg enabled.
+	 * @param string  $post_type Post type.
+	 * @return true
+	 */
+	public function set_gutenberg_editor( $is_enable, $post_type ) {
+		if ( $is_enable || 'woodmart_layout' !== $post_type || 'wpb' !== woodmart_get_current_page_builder() ) {
+			return $is_enable;
+		}
+
+		$post_id = isset( $_GET['post'] ) ? absint( $_GET['post'] ) : 0; // phpcs:ignore
+
+		if ( 'product_loop_item' === get_post_meta( $post_id, $this->type_meta_key, true ) ) {
+			return true;
+		}
+
+		return $is_enable;
 	}
 }
 

@@ -11,6 +11,10 @@
 		htmlBlockEditLink();
 	});
 
+	$(document).on('menu-item-added', function() {
+		htmlBlockEditLink();
+	});
+
 	jQuery(window).on('elementor:init', function() {
 		elementor.hooks.addAction('panel/open_editor/widget', function () {
 			htmlBlockEditLink();
@@ -29,7 +33,7 @@
 			var $select = $parent.find('select');
 
 			if (!$select.length) {
-				$select = $parent.parent().find('select');
+				$select = $parent.parent().parent().find('select');
 			}
 
 			if ( ! $select.length ) {

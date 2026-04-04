@@ -16,7 +16,7 @@
 	<!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 	<!--    contained in this file into your site. -->
 
-	<!-- generator="WordPress/6.2.4" created="2024-02-12 14:53" -->
+	<!-- generator="WordPress/6.7.4" created="2026-02-25 14:59" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -29,24 +29,19 @@
 	<title>Elementor 2.0 WoodMart dummy</title>
 	<link>https://dummy.xtemos.com/woodmart2/elementor</link>
 	<description>Just another WoodMart Dummy 2.0 Sites site</description>
-	<pubDate>Mon, 12 Feb 2024 14:53:31 +0000</pubDate>
+	<pubDate>Wed, 25 Feb 2026 14:59:03 +0000</pubDate>
 	<language>en-US</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
 	<wp:base_site_url>https://dummy.xtemos.com/woodmart2/</wp:base_site_url>
 	<wp:base_blog_url>https://dummy.xtemos.com/woodmart2/elementor</wp:base_blog_url>
 
-		<wp:author><wp:author_id>2</wp:author_id><wp:author_login><![CDATA[zakhar]]></wp:author_login><wp:author_email><![CDATA[zak@asda.as]]></wp:author_email><wp:author_display_name><![CDATA[Mr. Mackay]]></wp:author_display_name><wp:author_first_name><![CDATA[sds]]></wp:author_first_name><wp:author_last_name><![CDATA[scssc]]></wp:author_last_name></wp:author>
-
-					<wp:term>
+	
+							<wp:term>
 			<wp:term_id>139</wp:term_id>
 			<wp:term_taxonomy><![CDATA[woodmart_slider]]></wp:term_taxonomy>
 			<wp:term_slug><![CDATA[drinks-slider]]></wp:term_slug>
 			<wp:term_parent><![CDATA[]]></wp:term_parent>
 			<wp:term_name><![CDATA[Drinks slider]]></wp:term_name>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-139-status]]></wp:meta_key>
-			<wp:meta_value><![CDATA[valid]]></wp:meta_value>
-		</wp:termmeta>
 		<wp:termmeta>
 			<wp:meta_key><![CDATA[animation]]></wp:meta_key>
 			<wp:meta_value><![CDATA[fade]]></wp:meta_value>
@@ -211,50 +206,15 @@
 			<wp:meta_key><![CDATA[autoplay_speed]]></wp:meta_key>
 			<wp:meta_value><![CDATA[25000]]></wp:meta_value>
 		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-139-credentials]]></wp:meta_key>
-			<wp:meta_value><![CDATA[requested]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-139-file-data]]></wp:meta_key>
-			<wp:meta_value><![CDATA[a:3:{s:4:"path";s:36:"/2024/02/xts-term-139-1707748180.css";s:13:"theme_version";s:5:"7.4.0";s:8:"site_url";s:32:"4f146f679d9b7d2ba7fe3593044e8d2b";}]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-139-css-data]]></wp:meta_key>
-			<wp:meta_value><![CDATA[#slider-139 .wd-slide {
-	min-height: 870px;
-}
-
-@media (max-width: 1024px) {
-	#slider-139 .wd-slide {
-		min-height: 720px;
-	}
-}
-
-@media (max-width: 767px) {
-	#slider-139 .wd-slide {
-		min-height: 720px;
-	}
-}
-]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-139-version]]></wp:meta_key>
-			<wp:meta_value><![CDATA[7.4.0]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-139-site-url]]></wp:meta_key>
-			<wp:meta_value><![CDATA[4f146f679d9b7d2ba7fe3593044e8d2b]]></wp:meta_value>
-		</wp:termmeta>
 		</wp:term>
-		
-	<generator>https://wordpress.org/?v=6.2.4</generator>
+				
+	<generator>https://wordpress.org/?v=6.7.4</generator>
 
 					<item>
 					<title><![CDATA[drinks-email-icon]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/drinks-email-icon/</link>
 					<pubDate>Fri, 22 Oct 2021 15:50:15 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/drinks-email-icon.svg</guid>
 															<wp:post_id>6525</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-22 15:50:15]]></wp:post_date>
@@ -277,7 +237,7 @@
 					<title><![CDATA[drinks-map-pointer]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/drinks-map-pointer/</link>
 					<pubDate>Fri, 22 Oct 2021 15:50:17 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/drinks-map-pointer.svg</guid>
 															<wp:post_id>6527</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-22 15:50:17]]></wp:post_date>
@@ -300,7 +260,7 @@
 					<title><![CDATA[drinks-phone-icon]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/drinks-phone-icon/</link>
 					<pubDate>Fri, 22 Oct 2021 15:50:18 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/drinks-phone-icon.svg</guid>
 															<wp:post_id>6528</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-22 15:50:18]]></wp:post_date>
@@ -323,7 +283,7 @@
 					<title><![CDATA[drinks-18]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/drinks-18/</link>
 					<pubDate>Fri, 22 Oct 2021 15:53:06 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/drinks-18.jpg</guid>
 															<wp:post_id>6529</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-22 15:53:06]]></wp:post_date>
@@ -346,7 +306,7 @@
 					<title><![CDATA[drinks-page-title]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/drinks-page-title/</link>
 					<pubDate>Fri, 22 Oct 2021 15:53:55 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/drinks-page-title.jpg</guid>
 															<wp:post_id>6530</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-22 15:53:55]]></wp:post_date>
@@ -369,7 +329,7 @@
 					<title><![CDATA[drinks-footer-bg]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/drinks-footer-bg/</link>
 					<pubDate>Fri, 22 Oct 2021 15:54:08 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/drinks-footer-bg.jpg</guid>
 															<wp:post_id>6531</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-22 15:54:08]]></wp:post_date>
@@ -392,7 +352,7 @@
 					<title><![CDATA[Jost-400-Book]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/jost-400-book/</link>
 					<pubDate>Fri, 22 Oct 2021 15:54:35 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/Jost-400-Book.woff2</guid>
 															<wp:post_id>6532</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-22 15:54:35]]></wp:post_date>
@@ -415,7 +375,7 @@
 					<title><![CDATA[jost-600-semi]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/jost-600-semi/</link>
 					<pubDate>Fri, 22 Oct 2021 15:54:36 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/jost-600-semi.woff</guid>
 															<wp:post_id>6533</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-22 15:54:36]]></wp:post_date>
@@ -438,7 +398,7 @@
 					<title><![CDATA[jost-600-semi]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/jost-600-semi-2/</link>
 					<pubDate>Fri, 22 Oct 2021 15:54:36 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/jost-600-semi.woff2</guid>
 															<wp:post_id>6534</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-22 15:54:36]]></wp:post_date>
@@ -461,7 +421,7 @@
 					<title><![CDATA[Jost-Book]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/jost-book/</link>
 					<pubDate>Fri, 22 Oct 2021 15:54:37 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/Jost-Book.woff</guid>
 															<wp:post_id>6535</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-22 15:54:37]]></wp:post_date>
@@ -484,7 +444,7 @@
 					<title><![CDATA[drinks-whiskey-bg]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/home-drinks/drinks-whiskey-bg/</link>
 					<pubDate>Fri, 22 Oct 2021 15:57:36 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/drinks-whiskey-bg.png</guid>
 															<wp:post_id>6539</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-22 15:57:36]]></wp:post_date>
@@ -507,7 +467,7 @@
 					<title><![CDATA[drinks-bg-whisky-last]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/home-drinks/drinks-bg-whisky-last/</link>
 					<pubDate>Fri, 22 Oct 2021 16:00:22 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/drinks-bg-whisky-last.jpg</guid>
 															<wp:post_id>6547</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-22 16:00:22]]></wp:post_date>
@@ -530,7 +490,7 @@
 					<title><![CDATA[drinks-bg-whineyard-last]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/home-drinks/drinks-bg-whineyard-last/</link>
 					<pubDate>Fri, 22 Oct 2021 16:00:38 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/drinks-bg-whineyard-last.jpg</guid>
 															<wp:post_id>6548</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-22 16:00:38]]></wp:post_date>
@@ -553,7 +513,7 @@
 					<title><![CDATA[drink-product-9]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/drink-product-9/</link>
 					<pubDate>Fri, 22 Oct 2021 16:12:19 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/drink-product-9.jpg</guid>
 															<wp:post_id>6579</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-22 16:12:19]]></wp:post_date>
@@ -576,7 +536,7 @@
 					<title><![CDATA[drink-product-10]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/drink-product-10/</link>
 					<pubDate>Fri, 22 Oct 2021 16:12:23 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/drink-product-10.jpg</guid>
 															<wp:post_id>6580</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-22 16:12:23]]></wp:post_date>
@@ -599,7 +559,7 @@
 					<title><![CDATA[drink-product-11]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/drink-product-11/</link>
 					<pubDate>Fri, 22 Oct 2021 16:12:25 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/drink-product-11.jpg</guid>
 															<wp:post_id>6581</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-22 16:12:25]]></wp:post_date>
@@ -622,7 +582,7 @@
 					<title><![CDATA[vertical-bg-line]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/vertical-bg-line/</link>
 					<pubDate>Tue, 26 Oct 2021 15:30:46 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/vertical-bg-line.png</guid>
 															<wp:post_id>8061</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-26 15:30:46]]></wp:post_date>
@@ -645,7 +605,7 @@
 					<title><![CDATA[drink-bg-slider-1-opt]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/woodmart_slide/drinks-slide-1/drink-bg-slider-1-opt/</link>
 					<pubDate>Mon, 12 Feb 2024 14:29:19 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/drink-bg-slider-1-opt.png</guid>
 															<wp:post_id>27138</wp:post_id>
 					<wp:post_date><![CDATA[2024-02-12 14:29:19]]></wp:post_date>
@@ -668,7 +628,7 @@
 					<title><![CDATA[drink-slider-bg-2-opt]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/woodmart_slide/drinks-slide-1-2/drink-slider-bg-2-opt/</link>
 					<pubDate>Mon, 12 Feb 2024 14:39:06 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/drink-slider-bg-2-opt.png</guid>
 															<wp:post_id>27159</wp:post_id>
 					<wp:post_date><![CDATA[2024-02-12 14:39:06]]></wp:post_date>
@@ -691,7 +651,7 @@
 					<title><![CDATA[drink-slider-bg-3-opt]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/woodmart_slide/drinks-slide-1-2-2/drink-slider-bg-3-opt/</link>
 					<pubDate>Mon, 12 Feb 2024 14:41:46 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/drink-slider-bg-3-opt.png</guid>
 															<wp:post_id>27178</wp:post_id>
 					<wp:post_date><![CDATA[2024-02-12 14:41:46]]></wp:post_date>
@@ -714,7 +674,7 @@
 					<title><![CDATA[Home Drinks]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/home-drinks/</link>
 					<pubDate>Fri, 22 Oct 2021 15:48:17 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/?page_id=6509</guid>
 											<content:encoded><![CDATA[<link rel="stylesheet" id="wd-swiper-css" href="https://dummy.xtemos.com/woodmart2/elementor/wp-content/themes/woodmart/css/parts/lib-swiper.min.css?ver=7.4.0" type="text/css" media="all" /> 						<link rel="stylesheet" id="wd-slider-css" href="https://dummy.xtemos.com/woodmart2/elementor/wp-content/themes/woodmart/css/parts/el-slider.min.css?ver=7.4.0" type="text/css" media="all" /> 						<link rel="stylesheet" id="xts-style-term-139-css" href="https://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/xts-term-139-1707748180.css?ver=7.4.0" type="text/css" media="all">  			<style>							#slide-27136 .wd-slide-container {
 										--wd-align-items: flex-end;
@@ -1249,10 +1209,6 @@
 							<wp:meta_value><![CDATA[[{"id":"217aba3","elType":"container","settings":{"mobile_bg_img_hidden":"no","tablet_bg_img_hidden":"no","woodmart_parallax":"0","woodmart_gradient_switch":"no","row_reverse_mobile":"0","row_reverse_tablet":"0","woodmart_disable_overflow":"0","flex_gap":{"size":null,"column":"","row":"","unit":"px","isLinked":true},"margin":{"unit":"px","top":"0","right":"0","bottom":"80","left":"0","isLinked":""},"margin_mobile":{"unit":"px","top":"0","right":"0","bottom":"60","left":"0","isLinked":""},"padding":{"unit":"px","top":"0","right":"0","bottom":"0","left":"0","isLinked":false},"scroll_y":-80,"container_sticky_offset":50},"elements":[{"id":"a76be2f","elType":"widget","settings":{"slider":"drinks-slider","sync_parent_id":"wd_65ca2e9102f9f","scroll_y":-80},"elements":[],"widgetType":"wd_slider"}],"isInner":false},{"id":"e754d14","elType":"container","settings":{"mobile_bg_img_hidden":"no","tablet_bg_img_hidden":"no","woodmart_parallax":"0","woodmart_gradient_switch":"no","row_reverse_mobile":"0","row_reverse_tablet":"0","woodmart_disable_overflow":"0","margin":{"unit":"px","top":"0","right":"0","bottom":"70","left":"0","isLinked":""},"flex_direction":"column","flex_gap":{"size":null,"column":"","row":"","unit":"px","isLinked":true},"margin_mobile":{"unit":"px","top":"0","right":"0","bottom":"60","left":"0","isLinked":false},"scroll_y":-80,"container_sticky_offset":50},"elements":[{"id":"c215274","elType":"widget","settings":{"subtitle":"The Best Cocktails","after_title":"","image_size":"custom","subtitle_font":"alt","woodmart_css_id":"5d39b7be441ad","width":{"size":"","unit":"%"},"title":"Most Popular Cocktails","title_typography_typography":"custom","title_typography_font_size":{"size":"35","unit":"px"},"title_typography_font_size_tablet":{"size":"32","unit":"px"},"title_typography_font_size_mobile":{"size":"24","unit":"px"},"subtitle_typography_typography":"custom","subtitle_typography_font_size":{"size":"30","unit":"px"},"subtitle_typography_font_size_tablet":{"size":"26","unit":"px"},"subtitle_typography_font_size_mobile":{"size":"20","unit":"px"},"subtitle_typography_font_family":"Great Vibes","scroll_y":"-80","color":"primary"},"elements":[],"widgetType":"wd_title"},{"id":"27df8cc","elType":"widget","settings":{"text":"<p>Anyway, you still use Lorem Ipsum and rightly so, as it will always have a place in the web workers toolbox, as things happen, not always the way you like it, not always in the preferred.<\/p>","typography_typography":"custom","typography_font_size":{"size":"16","unit":"px"},"typography_font_size_mobile":{"size":"14","unit":"px"},"text_alignment":"center","width":{"unit":"px","size":688,"sizes":[]},"scroll_y":"-80"},"elements":[],"widgetType":"wd_text_block"}],"isInner":false},{"id":"5dbc968","elType":"container","settings":{"content_position":"middle","background_position":"center center","background_background":"classic","background_image":{"id":6539,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/10\/drinks-whiskey-bg.png","alt":"","source":"library"},"background_repeat":"no-repeat","mobile_bg_img_hidden":"no","tablet_bg_img_hidden":"no","woodmart_parallax":"0","woodmart_gradient_switch":"no","row_reverse_mobile":"0","row_reverse_tablet":"0","woodmart_disable_overflow":"1","structure":"30","wd_section_stretch":"stretch","flex_direction":"row","flex_align_items":"center","flex_gap":{"size":30,"column":"30","row":"40","unit":"px","isLinked":false},"scroll_y":-80,"container_sticky_offset":50},"elements":[{"id":"ac457a6","elType":"container","settings":{"_column_size":"33","mobile_bg_img_hidden":"no","tablet_bg_img_hidden":"no","woodmart_parallax":"0","parallax_scroll":"no","mobile_reset_margin":"no","tablet_reset_margin":"no","column_sticky_offset":"50","scroll_y":"-80","content_width":"full","width":{"unit":"%","size":33.3,"sizes":[]},"flex_gap":{"column":"20","row":"60","isLinked":false,"unit":"px","size":20},"flex_gap_mobile":{"column":"20","row":"40","isLinked":false,"unit":"px","size":20},"container_sticky_offset":50},"elements":[{"id":"5c04bf5","elType":"widget","settings":{"icon_type":"icon","alignment":"right","btn_text":"","image_size":"custom","subtitle":"","title":"Whiskey Sour","btn_position":"hover","image":{"id":6526,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/10\/drinks-ice-bucket.svg","alt":"","source":"library"},"image_alignment":"right","woodmart_css_id":"5d39b2359e636","image_custom_dimension":{"width":"80","height":"80"},"info_box_inline":"no","title_typography_typography":"custom","title_typography_font_size_tablet":{"size":18,"unit":"px"},"content":"Oh song well four only head","icon_text":"53","scroll_y":"-80","title_size":"large","image_vertical_alignment":"middle"},"elements":[],"widgetType":"wd_infobox"},{"id":"1a9155d","elType":"widget","settings":{"icon_type":"icon","alignment":"right","btn_text":"","image_size":"custom","subtitle":"","title":"Boulevard","btn_position":"hover","image":{"id":6524,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/10\/drinks-cuba-libre.svg","alt":"","source":"library"},"image_alignment":"right","woodmart_css_id":"5d39b24f15c7d","image_custom_dimension":{"width":"80","height":"80"},"info_box_inline":"no","title_typography_typography":"custom","title_typography_font_size_tablet":{"size":18,"unit":"px"},"content":"He into walk roof made tall","icon_text":"53","scroll_y":"-80","title_size":"large","image_vertical_alignment":"middle"},"elements":[],"widgetType":"wd_infobox"}],"isInner":true},{"id":"6195104","elType":"container","settings":{"_column_size":"33","mobile_bg_img_hidden":"no","tablet_bg_img_hidden":"no","woodmart_parallax":"0","parallax_scroll":"no","mobile_reset_margin":"no","tablet_reset_margin":"no","column_sticky_offset":"50","scroll_y":"-80","content_width":"full","width":{"unit":"%","size":33.3,"sizes":[]},"container_sticky_offset":50},"elements":[{"id":"e9e52b2","elType":"widget","settings":{"image":{"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/10\/drinks-whiskey.png","id":6540,"alt":"","source":"library"},"alignment":"center","scroll_y":"-80"},"elements":[],"widgetType":"wd_image_or_svg"}],"isInner":true},{"id":"ea434ac","elType":"container","settings":{"_column_size":"33","mobile_bg_img_hidden":"no","tablet_bg_img_hidden":"no","woodmart_parallax":"0","parallax_scroll":"no","mobile_reset_margin":"no","tablet_reset_margin":"no","column_sticky_offset":"50","scroll_y":"-80","content_width":"full","width":{"unit":"%","size":33.3,"sizes":[]},"flex_gap":{"column":"20","row":"60","isLinked":false,"unit":"px","size":20},"flex_gap_mobile":{"column":"20","row":"40","isLinked":false,"unit":"px","size":20},"container_sticky_offset":50},"elements":[{"id":"ef8d6dd","elType":"widget","settings":{"icon_type":"icon","alignment":"left","btn_text":"","image_size":"custom","subtitle":"","title":"Godfather","btn_position":"hover","image":{"id":6522,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/10\/drinks-b52.svg","alt":"","source":"library"},"image_alignment":"left","woodmart_css_id":"5d39b25b7c9ee","image_custom_dimension":{"width":"80","height":"80"},"info_box_inline":"no","title_typography_typography":"custom","title_typography_font_size_tablet":{"size":18,"unit":"px"},"content":"Quiet decay who round three","icon_text":"53","scroll_y":"-80","title_size":"large","image_vertical_alignment":"middle"},"elements":[],"widgetType":"wd_infobox"},{"id":"1eca003","elType":"widget","settings":{"icon_type":"icon","alignment":"left","btn_text":"","image_size":"custom","subtitle":"","title":"Manhattan","btn_position":"hover","image":{"id":6523,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/10\/drinks-cocktail.svg","alt":"","source":"library"},"image_alignment":"left","woodmart_css_id":"5d39b2660cc33","image_custom_dimension":{"width":"80","height":"80"},"info_box_inline":"no","title_typography_typography":"custom","title_typography_font_size_tablet":{"size":18,"unit":"px"},"content":"Domestic replying she resolved","icon_text":"53","scroll_y":"-80","title_size":"large","image_vertical_alignment":"middle"},"elements":[],"widgetType":"wd_infobox"}],"isInner":true}],"isInner":false},{"id":"ca9f9d1","elType":"container","settings":{"wd_section_stretch":"stretch-content","content_position":"middle","background_position":"left center","background_repeat":"no-repeat","mobile_bg_img_hidden":"no","tablet_bg_img_hidden":"no","woodmart_parallax":"0","woodmart_gradient_switch":"no","row_reverse_mobile":"1","row_reverse_tablet":"1","woodmart_disable_overflow":"1","structure":"20","padding":{"unit":"px","top":"40","right":"0","bottom":"0","left":"0","isLinked":""},"reverse_order_tablet":"reverse-tablet","reverse_order_mobile":"reverse-mobile","flex_direction":"row","flex_align_items":"center","flex_gap":{"size":0,"column":"0","row":"30","unit":"px","isLinked":false},"flex_direction_tablet":"row","margin":{"unit":"px","top":"0","right":"0","bottom":"40","left":"0","isLinked":false},"margin_mobile":{"unit":"px","top":"0","right":"0","bottom":"20","left":"0","isLinked":false},"padding_mobile":{"unit":"px","top":"40","right":"0","bottom":"0","left":"0","isLinked":false},"scroll_y":-80,"container_sticky_offset":50,"flex_direction_mobile":"column-reverse"},"elements":[{"id":"59160a6","elType":"container","settings":{"_column_size":"50","background_position":"left center","mobile_bg_img_hidden":"no","tablet_bg_img_hidden":"no","woodmart_parallax":"0","parallax_scroll":"no","mobile_reset_margin":"no","tablet_reset_margin":"no","background_background":"classic","background_image":{"id":6547,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/10\/drinks-bg-whisky-last.jpg","alt":"","source":"library"},"background_repeat":"no-repeat","width_tablet":{"size":"","unit":"%"},"column_sticky_offset":"50","scroll_y":"-80","content_width":"full","width":{"unit":"%","size":50,"sizes":[]},"container_sticky_offset":50},"elements":[{"id":"7011b9c","elType":"widget","settings":{"image":{"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/10\/drinks-whisky-buttle.png","id":6549,"alt":"","source":"library"},"alignment":"right","element_parallax":"parallax-on-scroll","scroll_x":"0","scroll_y":"-50","scroll_z":"0"},"elements":[],"widgetType":"wd_image_or_svg"}],"isInner":true},{"id":"6481ac9","elType":"container","settings":{"_column_size":"50","mobile_bg_img_hidden":"no","tablet_bg_img_hidden":"no","woodmart_parallax":"0","parallax_scroll":"no","mobile_reset_margin":"no","tablet_reset_margin":"no","width_tablet":{"size":"","unit":"%"},"padding_tablet":{"unit":"px","top":"40","right":"15","bottom":"40","left":"15","isLinked":""},"padding_mobile":{"unit":"px","top":"30","right":"15","bottom":"30","left":"15","isLinked":""},"column_sticky_offset":"50","scroll_y":"-80","content_width":"full","width":{"unit":"%","size":50,"sizes":[]},"padding":{"unit":"custom","top":"40px","right":"15px","bottom":"40px","left":"9%","isLinked":false},"container_sticky_offset":50},"elements":[{"id":"9ad1451","elType":"widget","settings":{"subtitle":"Effective Ways","after_title":"","image_size":"custom","align":"left","subtitle_font":"alt","woodmart_css_id":"5d39475aea4fe","width":{"size":423,"unit":"px"},"title":"We Make Our Whiskey Only With Real Ingredients","title_typography_typography":"custom","title_typography_font_size":{"size":"35","unit":"px"},"title_typography_font_size_tablet":{"size":"32","unit":"px"},"title_typography_font_size_mobile":{"size":"24","unit":"px"},"subtitle_typography_typography":"custom","subtitle_typography_font_size":{"size":"30","unit":"px"},"subtitle_typography_font_size_tablet":{"size":"26","unit":"px"},"subtitle_typography_font_size_mobile":{"size":"20","unit":"px"},"subtitle_typography_font_family":"Great Vibes","scroll_y":"-80","color":"primary","width_tablet":{"unit":"px","size":392,"sizes":[]}},"elements":[],"widgetType":"wd_title"},{"id":"1f2d8dc","elType":"widget","settings":{"text":"<p>That's not so bad, there's dummy copy to the rescue. But worse, what if the fish doesn't fit in the can, the foot's to big for the boot? Or to small? To short sentences, to many headings, images for the proposed.<\/p>","typography_typography":"custom","typography_font_size":{"size":"16","unit":"px"},"typography_font_size_mobile":{"size":"14","unit":"px"},"width":{"unit":"px","size":527,"sizes":[]},"_margin":{"unit":"px","top":"0","right":"0","bottom":"10","left":"0","isLinked":""},"scroll_y":"-80"},"elements":[],"widgetType":"wd_text_block"},{"id":"169e087","elType":"container","settings":{"flex_direction":"row","flex_gap":{"column":"","row":"","isLinked":true,"unit":"px","size":null},"scroll_y":-80,"container_sticky_offset":50},"elements":[{"id":"19fb333","elType":"widget","settings":{"color":"primary","woodmart_css_id":"5d35c20253023","text":"Read More","_element_width":"auto","scroll_y":"-80"},"elements":[],"widgetType":"wd_button"},{"id":"2e2d9c5","elType":"widget","settings":{"woodmart_css_id":"5d386527353bb","text":"About Us","_element_width":"auto","bg_color":"#33373F","bg_color_hover":"#333333","scroll_y":"-80","color_scheme":"light","color_scheme_hover":"light","color":"custom"},"elements":[],"widgetType":"wd_button"}],"isInner":true}],"isInner":true}],"isInner":false},{"id":"e047603","elType":"container","settings":{"wd_section_stretch":"stretch-content","content_position":"middle","background_position":"bottom left","background_repeat":"no-repeat","mobile_bg_img_hidden":"no","tablet_bg_img_hidden":"no","woodmart_parallax":"0","woodmart_gradient_switch":"no","row_reverse_mobile":"0","row_reverse_tablet":"0","woodmart_disable_overflow":"1","structure":"20","background_background":"classic","background_image":{"id":6539,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/10\/drinks-whiskey-bg.png","alt":"","source":"library"},"margin":{"unit":"px","top":"0","right":"0","bottom":"80","left":"0","isLinked":""},"margin_mobile":{"unit":"px","top":"0","right":"0","bottom":"40","left":"0","isLinked":""},"padding":{"unit":"px","top":"0","right":"0","bottom":"0","left":"0","isLinked":""},"flex_direction":"row","flex_gap":{"size":0,"column":"0","row":"30","unit":"px","isLinked":false},"flex_direction_tablet":"row","scroll_y":-80,"container_sticky_offset":50,"flex_direction_mobile":"column"},"elements":[{"id":"61f21eb","elType":"container","settings":{"_column_size":"50","mobile_bg_img_hidden":"no","tablet_bg_img_hidden":"no","woodmart_parallax":"0","parallax_scroll":"no","mobile_reset_margin":"no","tablet_reset_margin":"no","width_tablet":{"size":"","unit":"%"},"background_background":"classic","background_position":"bottom left","background_repeat":"no-repeat","margin_tablet":{"unit":"px","top":"","right":"","bottom":"","left":"","isLinked":"1"},"padding_tablet":{"unit":"px","top":"40","right":"15","bottom":"40","left":"15","isLinked":""},"padding_mobile":{"unit":"px","top":"30","right":"15","bottom":"30","left":"15","isLinked":""},"column_sticky_offset":"50","scroll_y":"-80","content_width":"full","width":{"unit":"%","size":50,"sizes":[]},"padding":{"unit":"custom","top":"40px","right":"15px","bottom":"40px","left":"9%","isLinked":false},"container_sticky_offset":50},"elements":[{"id":"49a7b39","elType":"widget","settings":{"subtitle":"Only Natural","after_title":"","image_size":"custom","align":"left","subtitle_font":"alt","woodmart_css_id":"5d39948c630fb","width":{"size":371,"unit":"px"},"title":"Irish Whiskies Will Decorate Your Evening","title_typography_typography":"custom","title_typography_font_size":{"size":"35","unit":"px"},"title_typography_font_size_tablet":{"size":"32","unit":"px"},"title_typography_font_size_mobile":{"size":"24","unit":"px"},"subtitle_typography_typography":"custom","subtitle_typography_font_size":{"size":"30","unit":"px"},"subtitle_typography_font_size_tablet":{"size":"26","unit":"px"},"subtitle_typography_font_size_mobile":{"size":"20","unit":"px"},"subtitle_typography_font_family":"Great Vibes","scroll_y":"-80","color":"primary"},"elements":[],"widgetType":"wd_title"},{"id":"d1c98ff","elType":"widget","settings":{"text":"<p>A client that's unhappy for a reason is a problem, a client that's unhappy though he or her can't quite put a finger on it is worse. Chances are there wasn't collaboration, communication, and checkpoints, wasn't.<\/p>","typography_typography":"custom","typography_font_size":{"size":"16","unit":"px"},"typography_font_size_mobile":{"size":"14","unit":"px"},"width":{"unit":"px","size":527,"sizes":[]},"_margin":{"unit":"px","top":"0","right":"0","bottom":"10","left":"0","isLinked":""},"scroll_y":"-80"},"elements":[],"widgetType":"wd_text_block"},{"id":"c639a2b","elType":"container","settings":{"structure":"20","flex_direction":"column","flex_gap":{"size":30,"column":"30","row":"30","unit":"px","isLinked":true},"content_width":"full","scroll_y":-80,"container_sticky_offset":50},"elements":[{"id":"a773176","elType":"container","settings":{"_column_size":"50","column_sticky_offset":"50","scroll_y":"-80","content_width":"full","flex_direction":"row","flex_gap":{"column":"30","row":"30","isLinked":true,"unit":"px","size":30},"container_sticky_offset":50},"elements":[{"id":"04ce50c","elType":"widget","settings":{"alignment":"left","btn_text":"","image_size":"custom","subtitle":"","title":"","btn_position":"hover","icon_text_size":"small","woodmart_css_id":"5d3949645749b","icon_text":"135+","info_box_inline":"no","icon_text_color":"#F2AD44","content":"Many desktop publishing pack.","scroll_y":"-80","_element_width":"initial","_element_custom_width":{"unit":"%","size":50,"sizes":[]},"_element_custom_width_mobile":{"unit":"%","size":100,"sizes":[]}},"elements":[],"widgetType":"wd_infobox"},{"id":"5011503","elType":"widget","settings":{"alignment":"left","btn_text":"","image_size":"custom","subtitle":"","title":"","btn_position":"hover","icon_text_size":"small","woodmart_css_id":"5d39498103fe1","icon_text":"1420","info_box_inline":"no","icon_text_color":"#F2AD44","content":"Contrary to popular belief.","scroll_y":"-80","_element_width":"initial","_element_custom_width":{"unit":"%","size":50,"sizes":[]},"_element_custom_width_mobile":{"unit":"%","size":100,"sizes":[]}},"elements":[],"widgetType":"wd_infobox"}],"isInner":true},{"id":"5030aa9","elType":"container","settings":{"_column_size":"50","column_sticky_offset":"50","scroll_y":"-80","content_width":"full","flex_direction":"row","flex_gap":{"column":"30","row":"30","isLinked":true,"unit":"px","size":30},"container_sticky_offset":50},"elements":[{"id":"1da3a57","elType":"widget","settings":{"alignment":"left","btn_text":"","image_size":"custom","subtitle":"","title":"","btn_position":"hover","icon_text_size":"small","woodmart_css_id":"5d39496de9622","icon_text":"645","info_box_inline":"no","icon_text_color":"#F2AD44","content":"Various versions have evolved.","scroll_y":"-80","_element_width":"initial","_element_custom_width":{"unit":"%","size":50,"sizes":[]},"_element_custom_width_mobile":{"unit":"%","size":100,"sizes":[]}},"elements":[],"widgetType":"wd_infobox"},{"id":"b3d8116","elType":"widget","settings":{"alignment":"left","btn_text":"","image_size":"custom","subtitle":"","title":"","btn_position":"hover","icon_text_size":"small","woodmart_css_id":"5d39498e23e38","icon_text":"342+","info_box_inline":"no","icon_text_color":"#F2AD44","content":"Combined with a handful model.","scroll_y":"-80","_element_width":"initial","_element_custom_width":{"unit":"%","size":50,"sizes":[]},"_element_custom_width_mobile":{"unit":"%","size":100,"sizes":[]}},"elements":[],"widgetType":"wd_infobox"}],"isInner":true}],"isInner":true}],"isInner":true},{"id":"4d80455","elType":"container","settings":{"_column_size":"50","background_position":"right center","mobile_bg_img_hidden":"no","tablet_bg_img_hidden":"no","woodmart_parallax":"0","parallax_scroll":"no","mobile_reset_margin":"no","tablet_reset_margin":"no","background_background":"classic","background_image":{"id":6548,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/10\/drinks-bg-whineyard-last.jpg","alt":"","source":"library"},"background_repeat":"no-repeat","width_tablet":{"size":"","unit":"%"},"column_sticky_offset":"50","scroll_y":"-80","content_width":"full","width":{"unit":"%","size":50,"sizes":[]},"container_sticky_offset":50},"elements":[{"id":"aa513ca","elType":"widget","settings":{"image":{"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/10\/drinks-wine-buttle-last.png","id":6550,"alt":"","source":"library"},"image_size":"custom","image_custom_dimension":{"width":"280","height":"620"},"element_parallax":"parallax-on-scroll","scroll_x":"0","scroll_y":"-50","scroll_z":"0"},"elements":[],"widgetType":"wd_image_or_svg"}],"isInner":true}],"isInner":false},{"id":"0fb51e8","elType":"container","settings":{"mobile_bg_img_hidden":"no","tablet_bg_img_hidden":"no","woodmart_parallax":"0","woodmart_gradient_switch":"no","row_reverse_mobile":"0","row_reverse_tablet":"0","woodmart_disable_overflow":"0","margin":{"unit":"px","top":"0","right":"0","bottom":"90","left":"0","isLinked":""},"margin_mobile":{"unit":"px","top":"0","right":"0","bottom":"50","left":"0","isLinked":""},"flex_direction":"column","flex_gap":{"size":null,"column":"","row":"","unit":"px","isLinked":true},"scroll_y":-80,"container_sticky_offset":50},"elements":[{"id":"8ee6e24","elType":"widget","settings":{"subtitle":"Choose Yourself","after_title":"","image_size":"custom","subtitle_font":"alt","woodmart_css_id":"5d386661547ee","width":{"size":"","unit":"%"},"title":"Featured Products","title_typography_typography":"custom","title_typography_font_size":{"size":"35","unit":"px"},"title_typography_font_size_tablet":{"size":"32","unit":"px"},"title_typography_font_size_mobile":{"size":"24","unit":"px"},"subtitle_typography_typography":"custom","subtitle_typography_font_size":{"size":"30","unit":"px"},"subtitle_typography_font_size_tablet":{"size":"26","unit":"px"},"subtitle_typography_font_size_mobile":{"size":"20","unit":"px"},"subtitle_typography_font_family":"Great Vibes","scroll_y":"-80","color":"primary"},"elements":[],"widgetType":"wd_title"},{"id":"885b5b4","elType":"widget","settings":{"text":"<p>When it's about controlling hundreds of articles, product pages for web shops, or user profiles in social networks, all of them potentially with different sizes.<\/p>","typography_typography":"custom","typography_font_size":{"size":"16","unit":"px"},"typography_font_size_mobile":{"size":"14","unit":"px"},"text_alignment":"center","width":{"unit":"px","size":579,"sizes":[]},"scroll_y":"-80"},"elements":[],"widgetType":"wd_text_block"},{"id":"582548b","elType":"widget","settings":{"title":"","layout":"carousel","items_per_page":"5","product_hover":"icons","slides_per_view":{"size":"4","unit":"px","sizes":[]},"hide_pagination_control":"yes","scroll_y":"-80","slides_per_view_tablet":{"unit":"px","size":3,"sizes":[]},"slides_per_view_mobile":{"unit":"px","size":2,"sizes":[]},"sync_parent_id":"wd_65770086385f2"},"elements":[],"widgetType":"wd_products"}],"isInner":false},{"id":"25fd4d0","elType":"container","settings":{"mobile_bg_img_hidden":"no","tablet_bg_img_hidden":"no","woodmart_parallax":"0","woodmart_gradient_switch":"no","row_reverse_mobile":"0","row_reverse_tablet":"0","woodmart_disable_overflow":"0","margin":{"unit":"px","top":"0","right":"0","bottom":"70","left":"0","isLinked":""},"margin_tablet":{"unit":"px","top":"0","right":"0","bottom":"50","left":"0","isLinked":""},"flex_direction":"column","flex_gap":{"size":null,"column":"","row":"","unit":"px","isLinked":true},"scroll_y":-80,"container_sticky_offset":50},"elements":[{"id":"31009c6","elType":"widget","settings":{"subtitle":"Share News","after_title":"","image_size":"custom","subtitle_font":"alt","woodmart_css_id":"5d39a10261753","width":{"size":"","unit":"%"},"title":"Our New Articles","title_typography_typography":"custom","title_typography_font_size":{"size":"35","unit":"px"},"title_typography_font_size_tablet":{"size":"32","unit":"px"},"title_typography_font_size_mobile":{"size":"24","unit":"px"},"subtitle_typography_typography":"custom","subtitle_typography_font_size":{"size":"30","unit":"px"},"subtitle_typography_font_size_tablet":{"size":"26","unit":"px"},"subtitle_typography_font_size_mobile":{"size":"20","unit":"px"},"subtitle_typography_font_family":"Great Vibes","scroll_y":"-80","color":"primary"},"elements":[],"widgetType":"wd_title"},{"id":"5bfd9a9","elType":"widget","settings":{"text":"<p>Elements things can break, designs agreed upon can have unintended consequences and look much different than expected is quite a problem to solve.<\/p>","typography_typography":"custom","typography_font_size":{"size":"16","unit":"px"},"typography_font_size_mobile":{"size":"14","unit":"px"},"text_alignment":"center","width":{"unit":"px","size":579,"sizes":[]},"scroll_y":"-80"},"elements":[],"widgetType":"wd_text_block"},{"id":"734f783","elType":"widget","settings":{"blog_spacing":"20","items_per_page":"4","blog_design":"carousel","blog_carousel_design":"mask","slides_per_view":{"size":"3","unit":"px","sizes":[]},"hide_pagination_control":"yes","scroll_y":"-80","img_size":"custom","img_size_custom":{"width":"700","height":"737"},"slides_per_view_tablet":{"unit":"px","size":2,"sizes":[]},"slides_per_view_mobile":{"unit":"px","size":1,"sizes":[]},"sync_parent_id":"wd_6577008635227"},"elements":[],"widgetType":"wd_blog"}],"isInner":false},{"id":"02a9fac","elType":"container","settings":{"flex_direction":"column","margin":{"unit":"px","top":"0","right":"0","bottom":"90","left":"0","isLinked":false},"margin_tablet":{"unit":"px","top":"0","right":"0","bottom":"70","left":"0","isLinked":false},"scroll_y":-80,"container_sticky_offset":50},"elements":[{"id":"77eb789","elType":"widget","settings":{"ids_size":"full","ids":[{"id":6554,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/10\/drinks-logo-1.png"},{"id":6555,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/10\/drinks-logo-2.png"},{"id":6556,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/10\/drinks-logo-3.png"},{"id":6557,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/10\/drinks-logo-4.png"},{"id":6558,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/10\/drinks-logo-5.png"},{"id":6559,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/10\/drinks-logo-6.png"},{"id":6560,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/10\/drinks-logo-7.png"}],"view":"carousel","on_click":"none","ids_custom_dimension":{"width":"130","height":"72"},"slides_per_view":{"size":6,"unit":"px","sizes":[]},"autoplay":"yes","hide_pagination_control":"yes","wrap":"yes","scroll_y":"-80","slides_per_view_tablet":{"unit":"px","size":3,"sizes":[]},"slides_per_view_mobile":{"unit":"px","size":2,"sizes":[]},"sync_parent_id":"wd_657700863332e"},"elements":[],"widgetType":"wd_images_gallery"}],"isInner":false},{"id":"cafb81b","elType":"container","settings":{"wd_section_stretch":"stretch","background_background":"classic","background_color":"#f9f9f9","mobile_bg_img_hidden":"no","tablet_bg_img_hidden":"no","woodmart_parallax":"0","woodmart_gradient_switch":"no","row_reverse_mobile":"1","row_reverse_tablet":"1","woodmart_disable_overflow":"1","structure":"20","flex_gap":{"size":30,"column":"30","row":"40","unit":"px"},"content_position":"middle","shape_divider_top":"tilt","shape_divider_top_color":"#FFFFFF","shape_divider_top_width":{"unit":"%","size":"111","sizes":[]},"shape_divider_top_height":{"unit":"px","size":"80","sizes":[]},"shape_divider_top_flip":"yes","reverse_order_tablet":"reverse-tablet","reverse_order_mobile":"reverse-mobile","margin":{"unit":"px","top":"0","right":"0","bottom":"-40","left":"0","isLinked":""},"flex_direction":"row","flex_align_items":"center","flex_direction_tablet":"column-reverse","padding":{"unit":"px","top":"0","right":"15","bottom":"40","left":"15","isLinked":false},"scroll_y":-80,"container_sticky_offset":50},"elements":[{"id":"0f1dd2e","elType":"container","settings":{"_column_size":"50","mobile_bg_img_hidden":"no","tablet_bg_img_hidden":"no","woodmart_parallax":"0","parallax_scroll":"no","mobile_reset_margin":"no","tablet_reset_margin":"no","width_tablet":{"size":"100","unit":"%"},"column_sticky_offset":"50","scroll_y":"-80","content_width":"full","width":{"unit":"%","size":50,"sizes":[]},"margin":{"unit":"px","top":"35","right":"0","bottom":"0","left":"0","isLinked":false},"container_sticky_offset":50},"elements":[{"id":"93db44a","elType":"widget","settings":{"subtitle":"Contact Us","after_title":"","image_size":"custom","align":"left","subtitle_font":"alt","woodmart_css_id":"5d385893829f1","width":{"size":"100","unit":"%"},"title":"How Find Us","title_typography_typography":"custom","title_typography_font_size":{"size":"35","unit":"px"},"title_typography_font_size_tablet":{"size":"32","unit":"px"},"title_typography_font_size_mobile":{"size":"24","unit":"px"},"subtitle_typography_typography":"custom","subtitle_typography_font_size":{"size":"30","unit":"px"},"subtitle_typography_font_size_tablet":{"size":"26","unit":"px"},"subtitle_typography_font_size_mobile":{"size":"20","unit":"px"},"subtitle_typography_font_family":"Great Vibes","scroll_y":"-80","color":"primary"},"elements":[],"widgetType":"wd_title"},{"id":"2ba0db6","elType":"widget","settings":{"form_id":"4380","scroll_y":"-80"},"elements":[],"widgetType":"wd_contact_form_7"}],"isInner":true},{"id":"7725139","elType":"container","settings":{"_column_size":"50","mobile_bg_img_hidden":"no","tablet_bg_img_hidden":"no","woodmart_parallax":"0","parallax_scroll":"no","mobile_reset_margin":"no","tablet_reset_margin":"no","width_tablet":{"size":"100","unit":"%"},"column_sticky_offset":"50","scroll_y":"-80","content_width":"full","width":{"unit":"%","size":50,"sizes":[]},"container_sticky_offset":50},"elements":[{"id":"5d697c0","elType":"widget","settings":{"content_horizontal":"center","content_vertical":"middle","content_width":"300","zoom":{"unit":"px","size":"12","sizes":[]},"height":{"unit":"px","size":"780","sizes":[]},"style_json":"WwogICAgewogICAgICAgICJmZWF0dXJlVHlwZSI6ICJhbGwiLAogICAgICAgICJlbGVtZW50VHlwZSI6ICJsYWJlbHMiLAogICAgICAgICJzdHlsZXJzIjogWwogICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAidmlzaWJpbGl0eSI6ICJvZmYiCiAgICAgICAgICAgIH0KICAgICAgICBdCiAgICB9LAogICAgewogICAgICAgICJmZWF0dXJlVHlwZSI6ICJhZG1pbmlzdHJhdGl2ZSIsCiAgICAgICAgImVsZW1lbnRUeXBlIjogImdlb21ldHJ5IiwKICAgICAgICAic3R5bGVycyI6IFsKICAgICAgICAgICAgewogICAgICAgICAgICAgICAgInZpc2liaWxpdHkiOiAib2ZmIgogICAgICAgICAgICB9CiAgICAgICAgXQogICAgfSwKICAgIHsKICAgICAgICAiZmVhdHVyZVR5cGUiOiAiYWRtaW5pc3RyYXRpdmUuY291bnRyeSIsCiAgICAgICAgImVsZW1lbnRUeXBlIjogImdlb21ldHJ5IiwKICAgICAgICAic3R5bGVycyI6IFsKICAgICAgICAgICAgewogICAgICAgICAgICAgICAgInZpc2liaWxpdHkiOiAib2ZmIgogICAgICAgICAgICB9CiAgICAgICAgXQogICAgfSwKICAgIHsKICAgICAgICAiZmVhdHVyZVR5cGUiOiAiYWRtaW5pc3RyYXRpdmUucHJvdmluY2UiLAogICAgICAgICJlbGVtZW50VHlwZSI6ICJnZW9tZXRyeSIsCiAgICAgICAgInN0eWxlcnMiOiBbCiAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICJ2aXNpYmlsaXR5IjogIm9mZiIKICAgICAgICAgICAgfQogICAgICAgIF0KICAgIH0sCiAgICB7CiAgICAgICAgImZlYXR1cmVUeXBlIjogImFkbWluaXN0cmF0aXZlLmxvY2FsaXR5IiwKICAgICAgICAiZWxlbWVudFR5cGUiOiAiZ2VvbWV0cnkiLAogICAgICAgICJzdHlsZXJzIjogWwogICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAidmlzaWJpbGl0eSI6ICJvZmYiCiAgICAgICAgICAgIH0KICAgICAgICBdCiAgICB9LAogICAgewogICAgICAgICJmZWF0dXJlVHlwZSI6ICJhZG1pbmlzdHJhdGl2ZS5uZWlnaGJvcmhvb2QiLAogICAgICAgICJlbGVtZW50VHlwZSI6ICJnZW9tZXRyeSIsCiAgICAgICAgInN0eWxlcnMiOiBbCiAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICJ2aXNpYmlsaXR5IjogIm9mZiIKICAgICAgICAgICAgfQogICAgICAgIF0KICAgIH0sCiAgICB7CiAgICAgICAgImZlYXR1cmVUeXBlIjogImFkbWluaXN0cmF0aXZlLmxhbmRfcGFyY2VsIiwKICAgICAgICAiZWxlbWVudFR5cGUiOiAiZ2VvbWV0cnkiLAogICAgICAgICJzdHlsZXJzIjogWwogICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAidmlzaWJpbGl0eSI6ICJvZmYiCiAgICAgICAgICAgIH0KICAgICAgICBdCiAgICB9LAogICAgewogICAgICAgICJmZWF0dXJlVHlwZSI6ICJsYW5kc2NhcGUiLAogICAgICAgICJlbGVtZW50VHlwZSI6ICJhbGwiLAogICAgICAgICJzdHlsZXJzIjogWwogICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAidmlzaWJpbGl0eSI6ICJvbiIKICAgICAgICAgICAgfQogICAgICAgIF0KICAgIH0sCiAgICB7CiAgICAgICAgImZlYXR1cmVUeXBlIjogImxhbmRzY2FwZSIsCiAgICAgICAgImVsZW1lbnRUeXBlIjogImdlb21ldHJ5IiwKICAgICAgICAic3R5bGVycyI6IFsKICAgICAgICAgICAgewogICAgICAgICAgICAgICAgInZpc2liaWxpdHkiOiAib2ZmIgogICAgICAgICAgICB9LAogICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAiaHVlIjogIiNmZjAwMDAiCiAgICAgICAgICAgIH0KICAgICAgICBdCiAgICB9LAogICAgewogICAgICAgICJmZWF0dXJlVHlwZSI6ICJsYW5kc2NhcGUiLAogICAgICAgICJlbGVtZW50VHlwZSI6ICJsYWJlbHMiLAogICAgICAgICJzdHlsZXJzIjogWwogICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAidmlzaWJpbGl0eSI6ICJvZmYiCiAgICAgICAgICAgIH0KICAgICAgICBdCiAgICB9LAogICAgewogICAgICAgICJmZWF0dXJlVHlwZSI6ICJsYW5kc2NhcGUubWFuX21hZGUiLAogICAgICAgICJlbGVtZW50VHlwZSI6ICJnZW9tZXRyeSIsCiAgICAgICAgInN0eWxlcnMiOiBbCiAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICJ2aXNpYmlsaXR5IjogIm9uIgogICAgICAgICAgICB9LAogICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAiY29sb3IiOiAiI2FhYmQ1YiIKICAgICAgICAgICAgfQogICAgICAgIF0KICAgIH0sCiAgICB7CiAgICAgICAgImZlYXR1cmVUeXBlIjogImxhbmRzY2FwZS5tYW5fbWFkZSIsCiAgICAgICAgImVsZW1lbnRUeXBlIjogImdlb21ldHJ5LmZpbGwiLAogICAgICAgICJzdHlsZXJzIjogWwogICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAiY29sb3IiOiAiI2ZmZmZmZiIKICAgICAgICAgICAgfQogICAgICAgIF0KICAgIH0sCiAgICB7CiAgICAgICAgImZlYXR1cmVUeXBlIjogImxhbmRzY2FwZS5uYXR1cmFsIiwKICAgICAgICAiZWxlbWVudFR5cGUiOiAiZ2VvbWV0cnkiLAogICAgICAgICJzdHlsZXJzIjogWwogICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAidmlzaWJpbGl0eSI6ICJvbiIKICAgICAgICAgICAgfSwKICAgICAgICAgICAgewogICAgICAgICAgICAgICAgImNvbG9yIjogIiNmZmZmZmYiCiAgICAgICAgICAgIH0KICAgICAgICBdCiAgICB9LAogICAgewogICAgICAgICJmZWF0dXJlVHlwZSI6ICJsYW5kc2NhcGUubmF0dXJhbC5sYW5kY292ZXIiLAogICAgICAgICJlbGVtZW50VHlwZSI6ICJnZW9tZXRyeSIsCiAgICAgICAgInN0eWxlcnMiOiBbCiAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICJ2aXNpYmlsaXR5IjogIm9mZiIKICAgICAgICAgICAgfQogICAgICAgIF0KICAgIH0sCiAgICB7CiAgICAgICAgImZlYXR1cmVUeXBlIjogImxhbmRzY2FwZS5uYXR1cmFsLnRlcnJhaW4iLAogICAgICAgICJlbGVtZW50VHlwZSI6ICJnZW9tZXRyeSIsCiAgICAgICAgInN0eWxlcnMiOiBbCiAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICJ2aXNpYmlsaXR5IjogIm9mZiIKICAgICAgICAgICAgfSwKICAgICAgICAgICAgewogICAgICAgICAgICAgICAgInNhdHVyYXRpb24iOiAiLTEiCiAgICAgICAgICAgIH0KICAgICAgICBdCiAgICB9LAogICAgewogICAgICAgICJmZWF0dXJlVHlwZSI6ICJwb2kiLAogICAgICAgICJlbGVtZW50VHlwZSI6ICJhbGwiLAogICAgICAgICJzdHlsZXJzIjogWwogICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAidmlzaWJpbGl0eSI6ICJvZmYiCiAgICAgICAgICAgIH0KICAgICAgICBdCiAgICB9LAogICAgewogICAgICAgICJmZWF0dXJlVHlwZSI6ICJwb2kiLAogICAgICAgICJlbGVtZW50VHlwZSI6ICJnZW9tZXRyeSIsCiAgICAgICAgInN0eWxlcnMiOiBbCiAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICJ2aXNpYmlsaXR5IjogIm9mZiIKICAgICAgICAgICAgfQogICAgICAgIF0KICAgIH0sCiAgICB7CiAgICAgICAgImZlYXR1cmVUeXBlIjogInBvaS5hdHRyYWN0aW9uIiwKICAgICAgICAiZWxlbWVudFR5cGUiOiAiZ2VvbWV0cnkiLAogICAgICAgICJzdHlsZXJzIjogWwogICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAidmlzaWJpbGl0eSI6ICJvZmYiCiAgICAgICAgICAgIH0KICAgICAgICBdCiAgICB9LAogICAgewogICAgICAgICJmZWF0dXJlVHlwZSI6ICJyb2FkIiwKICAgICAgICAiZWxlbWVudFR5cGUiOiAiZ2VvbWV0cnkuc3Ryb2tlIiwKICAgICAgICAic3R5bGVycyI6IFsKICAgICAgICAgICAgewogICAgICAgICAgICAgICAgInZpc2liaWxpdHkiOiAib2ZmIgogICAgICAgICAgICB9CiAgICAgICAgXQogICAgfSwKICAgIHsKICAgICAgICAiZmVhdHVyZVR5cGUiOiAicm9hZC5oaWdod2F5IiwKICAgICAgICAiZWxlbWVudFR5cGUiOiAiZ2VvbWV0cnkuZmlsbCIsCiAgICAgICAgInN0eWxlcnMiOiBbCiAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICJjb2xvciI6ICIjZjJhZDQ0IgogICAgICAgICAgICB9CiAgICAgICAgXQogICAgfSwKICAgIHsKICAgICAgICAiZmVhdHVyZVR5cGUiOiAicm9hZC5oaWdod2F5IiwKICAgICAgICAiZWxlbWVudFR5cGUiOiAiZ2VvbWV0cnkuc3Ryb2tlIiwKICAgICAgICAic3R5bGVycyI6IFsKICAgICAgICAgICAgewogICAgICAgICAgICAgICAgInZpc2liaWxpdHkiOiAib2ZmIgogICAgICAgICAgICB9LAogICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAiY29sb3IiOiAiI2YyYWQ0NCIKICAgICAgICAgICAgfSwKICAgICAgICAgICAgewogICAgICAgICAgICAgICAgInNhdHVyYXRpb24iOiAiLTg1IgogICAgICAgICAgICB9CiAgICAgICAgXQogICAgfSwKICAgIHsKICAgICAgICAiZmVhdHVyZVR5cGUiOiAicm9hZC5hcnRlcmlhbCIsCiAgICAgICAgImVsZW1lbnRUeXBlIjogImdlb21ldHJ5LmZpbGwiLAogICAgICAgICJzdHlsZXJzIjogWwogICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAiY29sb3IiOiAiIzMzMzczZiIKICAgICAgICAgICAgfSwKICAgICAgICAgICAgewogICAgICAgICAgICAgICAgInZpc2liaWxpdHkiOiAib24iCiAgICAgICAgICAgIH0KICAgICAgICBdCiAgICB9LAogICAgewogICAgICAgICJmZWF0dXJlVHlwZSI6ICJyb2FkLmxvY2FsIiwKICAgICAgICAiZWxlbWVudFR5cGUiOiAiZ2VvbWV0cnkiLAogICAgICAgICJzdHlsZXJzIjogWwogICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAidmlzaWJpbGl0eSI6ICJvZmYiCiAgICAgICAgICAgIH0KICAgICAgICBdCiAgICB9LAogICAgewogICAgICAgICJmZWF0dXJlVHlwZSI6ICJyb2FkLmxvY2FsIiwKICAgICAgICAiZWxlbWVudFR5cGUiOiAiZ2VvbWV0cnkuZmlsbCIsCiAgICAgICAgInN0eWxlcnMiOiBbCiAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICJjb2xvciI6ICIjN2Y3ZjdmIgogICAgICAgICAgICB9CiAgICAgICAgXQogICAgfSwKICAgIHsKICAgICAgICAiZmVhdHVyZVR5cGUiOiAidHJhbnNpdCIsCiAgICAgICAgImVsZW1lbnRUeXBlIjogImFsbCIsCiAgICAgICAgInN0eWxlcnMiOiBbCiAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICJ2aXNpYmlsaXR5IjogIm9mZiIKICAgICAgICAgICAgfQogICAgICAgIF0KICAgIH0sCiAgICB7CiAgICAgICAgImZlYXR1cmVUeXBlIjogInRyYW5zaXQiLAogICAgICAgICJlbGVtZW50VHlwZSI6ICJnZW9tZXRyeSIsCiAgICAgICAgInN0eWxlcnMiOiBbCiAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICJ2aXNpYmlsaXR5IjogIm9mZiIKICAgICAgICAgICAgfQogICAgICAgIF0KICAgIH0sCiAgICB7CiAgICAgICAgImZlYXR1cmVUeXBlIjogInRyYW5zaXQubGluZSIsCiAgICAgICAgImVsZW1lbnRUeXBlIjogImdlb21ldHJ5IiwKICAgICAgICAic3R5bGVycyI6IFsKICAgICAgICAgICAgewogICAgICAgICAgICAgICAgInZpc2liaWxpdHkiOiAib2ZmIgogICAgICAgICAgICB9CiAgICAgICAgXQogICAgfSwKICAgIHsKICAgICAgICAiZmVhdHVyZVR5cGUiOiAidHJhbnNpdC5zdGF0aW9uIiwKICAgICAgICAiZWxlbWVudFR5cGUiOiAiZ2VvbWV0cnkiLAogICAgICAgICJzdHlsZXJzIjogWwogICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAidmlzaWJpbGl0eSI6ICJvZmYiCiAgICAgICAgICAgIH0KICAgICAgICBdCiAgICB9LAogICAgewogICAgICAgICJmZWF0dXJlVHlwZSI6ICJ0cmFuc2l0LnN0YXRpb24uYWlycG9ydCIsCiAgICAgICAgImVsZW1lbnRUeXBlIjogImdlb21ldHJ5IiwKICAgICAgICAic3R5bGVycyI6IFsKICAgICAgICAgICAgewogICAgICAgICAgICAgICAgInZpc2liaWxpdHkiOiAib2ZmIgogICAgICAgICAgICB9CiAgICAgICAgXQogICAgfSwKICAgIHsKICAgICAgICAiZmVhdHVyZVR5cGUiOiAidHJhbnNpdC5zdGF0aW9uLmJ1cyIsCiAgICAgICAgImVsZW1lbnRUeXBlIjogImdlb21ldHJ5IiwKICAgICAgICAic3R5bGVycyI6IFsKICAgICAgICAgICAgewogICAgICAgICAgICAgICAgInZpc2liaWxpdHkiOiAib2ZmIgogICAgICAgICAgICB9CiAgICAgICAgXQogICAgfSwKICAgIHsKICAgICAgICAiZmVhdHVyZVR5cGUiOiAidHJhbnNpdC5zdGF0aW9uLnJhaWwiLAogICAgICAgICJlbGVtZW50VHlwZSI6ICJnZW9tZXRyeSIsCiAgICAgICAgInN0eWxlcnMiOiBbCiAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICJ2aXNpYmlsaXR5IjogIm9mZiIKICAgICAgICAgICAgfQogICAgICAgIF0KICAgIH0sCiAgICB7CiAgICAgICAgImZlYXR1cmVUeXBlIjogIndhdGVyIiwKICAgICAgICAiZWxlbWVudFR5cGUiOiAiZ2VvbWV0cnkiLAogICAgICAgICJzdHlsZXJzIjogWwogICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAiY29sb3IiOiAiI2RkZGRkZCIKICAgICAgICAgICAgfQogICAgICAgIF0KICAgIH0sCiAgICB7CiAgICAgICAgImZlYXR1cmVUeXBlIjogIndhdGVyIiwKICAgICAgICAiZWxlbWVudFR5cGUiOiAiZ2VvbWV0cnkuZmlsbCIsCiAgICAgICAgInN0eWxlcnMiOiBbCiAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICJjb2xvciI6ICIjZWVlZWVlIgogICAgICAgICAgICB9CiAgICAgICAgXQogICAgfSwKICAgIHsKICAgICAgICAiZmVhdHVyZVR5cGUiOiAid2F0ZXIiLAogICAgICAgICJlbGVtZW50VHlwZSI6ICJnZW9tZXRyeS5zdHJva2UiLAogICAgICAgICJzdHlsZXJzIjogWwogICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAidmlzaWJpbGl0eSI6ICJvZmYiCiAgICAgICAgICAgIH0KICAgICAgICBdCiAgICB9Cl0=","el_class":"box-shadow-style-1","lat":"44.891833","lon":"11.608438","scroll_y":"-80","marker_icon":{"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/10\/drinks-map-pointer.svg","id":6527,"alt":"","source":"library"},"marker_list":[{"_id":"d57c8eb","marker_lat":"51.50735","marker_lon":"-0.12776"}],"height_mobile":{"unit":"px","size":500,"sizes":[]}},"elements":[],"widgetType":"wd_google_map"}],"isInner":true}],"isInner":false}]]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[_elementor_controls_usage]]></wp:meta_key>
 							<wp:meta_value><![CDATA[a:13:{s:17:"slider_revolution";a:3:{s:5:"count";i:1;s:15:"control_percent";i:2;s:8:"controls";a:2:{s:7:"content";a:1:{s:15:"content_section";a:2:{s:9:"shortcode";i:1;s:14:"revslidertitle";i:1;}}s:8:"advanced";a:1:{s:8:"wd_extra";a:1:{s:8:"scroll_y";i:1;}}}}s:6:"column";a:3:{s:5:"count";i:16;s:15:"control_percent";i:1;s:8:"controls";a:2:{s:8:"advanced";a:2:{s:8:"wd_extra";a:2:{s:20:"column_sticky_offset";i:16;s:8:"scroll_y";i:16;}s:16:"section_advanced";a:1:{s:6:"margin";i:3;}}s:5:"style";a:1:{s:13:"section_style";a:4:{s:19:"background_position";i:3;s:21:"background_background";i:3;s:16:"background_image";i:2;s:17:"background_repeat";i:3;}}}}s:7:"section";a:3:{s:5:"count";i:10;s:15:"control_percent";i:6;s:8:"controls";a:3:{s:6:"layout";a:3:{s:14:"section_layout";a:2:{s:3:"gap";i:2;s:16:"content_position";i:4;}s:17:"section_structure";a:1:{s:9:"structure";i:5;}s:15:"wd_extra_layout";a:1:{s:18:"wd_section_stretch";i:4;}}s:8:"advanced";a:2:{s:16:"section_advanced";a:2:{s:6:"margin";i:7;s:7:"padding";i:2;}s:19:"_section_responsive";a:2:{s:20:"reverse_order_tablet";i:2;s:20:"reverse_order_mobile";i:2;}}s:5:"style";a:2:{s:18:"section_background";a:5:{s:19:"background_position";i:3;s:21:"background_background";i:3;s:16:"background_image";i:2;s:17:"background_repeat";i:3;s:16:"background_color";i:1;}s:21:"section_shape_divider";a:5:{s:17:"shape_divider_top";i:1;s:23:"shape_divider_top_color";i:1;s:23:"shape_divider_top_width";i:1;s:24:"shape_divider_top_height";i:1;s:22:"shape_divider_top_flip";i:1;}}}}s:8:"wd_title";a:3:{s:5:"count";i:6;s:15:"control_percent";i:6;s:8:"controls";a:3:{s:7:"content";a:1:{s:23:"general_content_section";a:3:{s:8:"subtitle";i:6;s:11:"after_title";i:6;s:5:"title";i:6;}}s:5:"style";a:3:{s:19:"title_style_section";a:3:{s:10:"image_size";i:6;s:27:"title_typography_typography";i:6;s:26:"title_typography_font_size";i:6;}s:21:"general_style_section";a:3:{s:5:"width";i:6;s:5:"color";i:6;s:5:"align";i:3;}s:22:"subtitle_style_section";a:3:{s:30:"subtitle_typography_typography";i:6;s:29:"subtitle_typography_font_size";i:6;s:31:"subtitle_typography_font_family";i:6;}}s:8:"advanced";a:1:{s:8:"wd_extra";a:1:{s:8:"scroll_y";i:6;}}}}s:13:"wd_text_block";a:3:{s:5:"count";i:5;s:15:"control_percent";i:4;s:8:"controls";a:2:{s:7:"content";a:1:{s:23:"general_content_section";a:5:{s:4:"text";i:5;s:21:"typography_typography";i:5;s:20:"typography_font_size";i:5;s:14:"text_alignment";i:3;s:5:"width";i:5;}}s:8:"advanced";a:2:{s:8:"wd_extra";a:1:{s:8:"scroll_y";i:5;}s:14:"_section_style";a:1:{s:7:"_margin";i:2;}}}}s:10:"wd_infobox";a:3:{s:5:"count";i:8;s:15:"control_percent";i:4;s:8:"controls";a:3:{s:7:"content";a:2:{s:20:"icon_content_section";a:5:{s:9:"icon_type";i:4;s:10:"image_size";i:8;s:5:"image";i:4;s:22:"image_custom_dimension";i:4;s:9:"icon_text";i:4;}s:15:"content_section";a:4:{s:8:"btn_text";i:8;s:8:"subtitle";i:8;s:5:"title";i:8;s:7:"content";i:8;}}s:5:"style";a:4:{s:21:"general_style_section";a:3:{s:9:"alignment";i:8;s:15:"image_alignment";i:4;s:10:"title_size";i:4;}s:22:"button_content_section";a:1:{s:12:"btn_position";i:8;}s:19:"title_style_section";a:1:{s:27:"title_typography_typography";i:4;}s:18:"icon_style_section";a:2:{s:14:"icon_text_size";i:4;s:15:"icon_text_color";i:4;}}s:8:"advanced";a:2:{s:14:"_section_style";a:1:{s:7:"_margin";i:4;}s:8:"wd_extra";a:1:{s:8:"scroll_y";i:8;}}}}s:15:"wd_image_or_svg";a:3:{s:5:"count";i:3;s:15:"control_percent";i:5;s:8:"controls";a:2:{s:7:"content";a:1:{s:23:"general_content_section";a:4:{s:5:"image";i:3;s:9:"alignment";i:2;s:10:"image_size";i:1;s:22:"image_custom_dimension";i:1;}}s:8:"advanced";a:1:{s:8:"wd_extra";a:4:{s:8:"scroll_y";i:3;s:16:"element_parallax";i:2;s:8:"scroll_x";i:2;s:8:"scroll_z";i:2;}}}}s:9:"wd_button";a:3:{s:5:"count";i:2;s:15:"control_percent";i:5;s:8:"controls";a:3:{s:5:"style";a:1:{s:21:"general_style_section";a:5:{s:5:"color";i:2;s:8:"bg_color";i:1;s:14:"bg_color_hover";i:1;s:12:"color_scheme";i:1;s:18:"color_scheme_hover";i:1;}}s:7:"content";a:1:{s:23:"general_content_section";a:1:{s:4:"text";i:2;}}s:8:"advanced";a:3:{s:17:"_section_position";a:1:{s:14:"_element_width";i:2;}s:14:"_section_style";a:1:{s:7:"_margin";i:1;}s:8:"wd_extra";a:1:{s:8:"scroll_y";i:2;}}}}s:11:"wd_products";a:3:{s:5:"count";i:1;s:15:"control_percent";i:3;s:8:"controls";a:2:{s:5:"style";a:3:{s:20:"layout_style_section";a:2:{s:6:"layout";i:1;s:14:"items_per_page";i:1;}s:29:"products_design_style_section";a:1:{s:13:"product_hover";i:1;}s:22:"carousel_style_section";a:2:{s:15:"slides_per_view";i:1;s:23:"hide_pagination_control";i:1;}}s:8:"advanced";a:1:{s:8:"wd_extra";a:1:{s:8:"scroll_y";i:1;}}}}s:7:"wd_blog";a:3:{s:5:"count";i:1;s:15:"control_percent";i:6;s:8:"controls";a:2:{s:5:"style";a:2:{s:21:"general_style_section";a:6:{s:12:"blog_spacing";i:1;s:14:"items_per_page";i:1;s:11:"blog_design";i:1;s:20:"blog_carousel_design";i:1;s:8:"img_size";i:1;s:15:"img_size_custom";i:1;}s:22:"carousel_style_section";a:2:{s:15:"slides_per_view";i:1;s:23:"hide_pagination_control";i:1;}}s:8:"advanced";a:2:{s:14:"_section_style";a:1:{s:7:"_margin";i:1;}s:8:"wd_extra";a:1:{s:8:"scroll_y";i:1;}}}}s:17:"wd_images_gallery";a:3:{s:5:"count";i:1;s:15:"control_percent";i:6;s:8:"controls";a:3:{s:7:"content";a:2:{s:23:"general_content_section";a:3:{s:8:"ids_size";i:1;s:3:"ids";i:1;s:20:"ids_custom_dimension";i:1;}s:20:"click_action_section";a:1:{s:8:"on_click";i:1;}}s:5:"style";a:2:{s:20:"layout_style_section";a:2:{s:4:"view";i:1;s:7:"spacing";i:1;}s:22:"carousel_style_section";a:4:{s:15:"slides_per_view";i:1;s:8:"autoplay";i:1;s:23:"hide_pagination_control";i:1;s:4:"wrap";i:1;}}s:8:"advanced";a:1:{s:8:"wd_extra";a:1:{s:8:"scroll_y";i:1;}}}}s:17:"wd_contact_form_7";a:3:{s:5:"count";i:1;s:15:"control_percent";i:1;s:8:"controls";a:2:{s:7:"content";a:1:{s:23:"general_content_section";a:1:{s:7:"form_id";i:1;}}s:8:"advanced";a:1:{s:8:"wd_extra";a:1:{s:8:"scroll_y";i:1;}}}}s:13:"wd_google_map";a:3:{s:5:"count";i:1;s:15:"control_percent";i:5;s:8:"controls";a:3:{s:5:"style";a:2:{s:21:"content_style_section";a:2:{s:18:"content_horizontal";i:1;s:16:"content_vertical";i:1;}s:21:"general_style_section";a:3:{s:4:"zoom";i:1;s:6:"height";i:1;s:10:"style_json";i:1;}}s:7:"content";a:2:{s:23:"general_content_section";a:2:{s:3:"lat";i:1;s:3:"lon";i:1;}s:22:"marker_content_section";a:1:{s:11:"marker_icon";i:1;}}s:8:"advanced";a:1:{s:8:"wd_extra";a:1:{s:8:"scroll_y";i:1;}}}}}]]></wp:meta_value>
 						</wp:postmeta>
@@ -1261,7 +1217,7 @@
 					<title><![CDATA[drinks-ice-bucket]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/drinks-ice-bucket/</link>
 					<pubDate>Fri, 22 Oct 2021 15:50:16 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/drinks-ice-bucket.svg</guid>
 															<wp:post_id>6526</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-22 15:50:16]]></wp:post_date>
@@ -1284,7 +1240,7 @@
 					<title><![CDATA[drinks-whiskey-bg]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/home-drinks/drinks-whiskey-bg/</link>
 					<pubDate>Fri, 22 Oct 2021 15:57:36 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/drinks-whiskey-bg.png</guid>
 															<wp:post_id>6539</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-22 15:57:36]]></wp:post_date>
@@ -1307,7 +1263,7 @@
 					<title><![CDATA[drink-product-1]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/drink-product-1/</link>
 					<pubDate>Fri, 22 Oct 2021 16:11:57 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/drink-product-1.jpg</guid>
 															<wp:post_id>6571</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-22 16:11:57]]></wp:post_date>
@@ -1330,7 +1286,7 @@
 					<title><![CDATA[drink-product-2]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/drink-product-2/</link>
 					<pubDate>Fri, 22 Oct 2021 16:12:01 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/drink-product-2.jpg</guid>
 															<wp:post_id>6572</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-22 16:12:01]]></wp:post_date>
@@ -1353,7 +1309,7 @@
 					<title><![CDATA[drink-product-3]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/drink-product-3/</link>
 					<pubDate>Fri, 22 Oct 2021 16:12:04 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/drink-product-3.jpg</guid>
 															<wp:post_id>6573</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-22 16:12:04]]></wp:post_date>
@@ -1376,7 +1332,7 @@
 					<title><![CDATA[drink-product-4]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/drink-product-4/</link>
 					<pubDate>Fri, 22 Oct 2021 16:12:06 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/drink-product-4.jpg</guid>
 															<wp:post_id>6574</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-22 16:12:06]]></wp:post_date>
@@ -1399,7 +1355,7 @@
 					<title><![CDATA[drink-product-5]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/drink-product-5/</link>
 					<pubDate>Fri, 22 Oct 2021 16:12:09 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/drink-product-5.jpg</guid>
 															<wp:post_id>6575</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-22 16:12:09]]></wp:post_date>
@@ -1422,7 +1378,7 @@
 					<title><![CDATA[drink-product-6]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/drink-product-6/</link>
 					<pubDate>Fri, 22 Oct 2021 16:12:11 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/drink-product-6.jpg</guid>
 															<wp:post_id>6576</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-22 16:12:11]]></wp:post_date>
@@ -1445,7 +1401,7 @@
 					<title><![CDATA[drink-product-7]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/drink-product-7/</link>
 					<pubDate>Fri, 22 Oct 2021 16:12:14 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/drink-product-7.jpg</guid>
 															<wp:post_id>6577</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-22 16:12:14]]></wp:post_date>
@@ -1468,7 +1424,7 @@
 					<title><![CDATA[drink-product-8]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/drink-product-8/</link>
 					<pubDate>Fri, 22 Oct 2021 16:12:17 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/drink-product-8.jpg</guid>
 															<wp:post_id>6578</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-22 16:12:17]]></wp:post_date>
@@ -1491,7 +1447,7 @@
 					<title><![CDATA[drink-product-12]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/drink-product-12/</link>
 					<pubDate>Fri, 22 Oct 2021 16:12:28 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/drink-product-12.jpg</guid>
 															<wp:post_id>6582</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-22 16:12:28]]></wp:post_date>
@@ -1514,7 +1470,7 @@
 					<title><![CDATA[drinks-blog-img-1]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/drinks-blog-img-1/</link>
 					<pubDate>Fri, 22 Oct 2021 16:13:30 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/drinks-blog-img-1.jpg</guid>
 															<wp:post_id>6583</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-22 16:13:30]]></wp:post_date>
@@ -1537,7 +1493,7 @@
 					<title><![CDATA[drinks-blog-img-2]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/drinks-blog-img-2/</link>
 					<pubDate>Fri, 22 Oct 2021 16:13:31 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/drinks-blog-img-2.jpg</guid>
 															<wp:post_id>6584</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-22 16:13:31]]></wp:post_date>
@@ -1560,7 +1516,7 @@
 					<title><![CDATA[drinks-blog-img-3]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/drinks-blog-img-3/</link>
 					<pubDate>Fri, 22 Oct 2021 16:13:32 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/drinks-blog-img-3.jpg</guid>
 															<wp:post_id>6585</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-22 16:13:32]]></wp:post_date>
@@ -1583,7 +1539,7 @@
 					<title><![CDATA[drinks-blog-img-4]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/drinks-blog-img-4/</link>
 					<pubDate>Fri, 22 Oct 2021 16:13:33 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/drinks-blog-img-4.jpg</guid>
 															<wp:post_id>6586</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-22 16:13:33]]></wp:post_date>
@@ -1606,7 +1562,7 @@
 					<title><![CDATA[drinks-blog-img-5]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/drinks-blog-img-5/</link>
 					<pubDate>Fri, 22 Oct 2021 16:13:35 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/drinks-blog-img-5.jpg</guid>
 															<wp:post_id>6587</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-22 16:13:35]]></wp:post_date>
@@ -1629,7 +1585,7 @@
 					<title><![CDATA[drinks-blog-img-6]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/drinks-blog-img-6/</link>
 					<pubDate>Fri, 22 Oct 2021 16:13:37 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/drinks-blog-img-6.jpg</guid>
 															<wp:post_id>6588</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-22 16:13:37]]></wp:post_date>
@@ -1652,7 +1608,7 @@
 					<title><![CDATA[drinks-blog-img-7]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/drinks-blog-img-7/</link>
 					<pubDate>Fri, 22 Oct 2021 16:13:38 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/drinks-blog-img-7.jpg</guid>
 															<wp:post_id>6589</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-22 16:13:38]]></wp:post_date>
@@ -1675,7 +1631,7 @@
 					<title><![CDATA[drinks-blog-img-9]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/drinks-blog-img-9/</link>
 					<pubDate>Fri, 22 Oct 2021 16:13:40 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/drinks-blog-img-9.jpg</guid>
 															<wp:post_id>6591</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-22 16:13:40]]></wp:post_date>
@@ -1698,7 +1654,7 @@
 					<title><![CDATA[wood-logo-white-reserve]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/wood-logo-white-reserve/</link>
 					<pubDate>Thu, 26 Aug 2021 12:45:06 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/08/wood-logo-white-reserve.svg</guid>
 															<wp:post_id>114</wp:post_id>
 					<wp:post_date><![CDATA[2021-08-26 12:45:06]]></wp:post_date>
@@ -1721,7 +1677,7 @@
 					<title><![CDATA[Footer 1 column Light]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/?cms_block=footer-1-column-light</link>
 					<pubDate>Wed, 01 Sep 2021 13:44:29 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/?post_type=cms_block&#038;p=1033</guid>
 											<content:encoded><![CDATA[<a  href="#">
 								<img  src="http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/08/wood-logo-white-reserve.svg" title="wood-logo-white-reserve" width="220" height="30">							</a>
@@ -1774,10 +1730,6 @@
 							<wp:meta_value><![CDATA[[{"id":"ef7a8d8","elType":"container","settings":{"flex_direction":"column","flex_gap":{"size":null,"column":"","row":"","unit":"px","isLinked":true},"scroll_y":-80,"container_sticky_offset":50},"elements":[{"id":"7341eac","elType":"widget","settings":{"image":{"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/08\/wood-logo-white-reserve.svg","id":114,"alt":"","source":"library"},"image_size":"custom","image_custom_dimension":{"width":"220","height":"30"},"on_click_action":"link","link":{"url":"#","is_external":false,"nofollow":false,"custom_attributes":""},"scroll_y":-80},"elements":[],"widgetType":"wd_image_or_svg"},{"id":"0259971","elType":"widget","settings":{"text":"Condimentum adipiscing vel neque dis nam parturient orci at scelerisque neque dis nam parturient.","scroll_y":-80},"elements":[],"widgetType":"wd_text_block"},{"id":"25adf6a","elType":"widget","settings":{"list_items":[{"list_content":"451 Wall Street, UK, London","_id":"80be36b","image":{"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/09\/wd-cursor-light.svg","id":2035,"alt":"","source":"library"},"item_type":"image","image_size":"custom","image_custom_dimension":{"width":"14","height":"14"}},{"list_content":"Phone: (064) 332-1233","link":{"url":"tel: (064) 332-1233","is_external":false,"nofollow":false,"custom_attributes":""},"_id":"c383cf6","image":{"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/09\/wd-phone-light.svg","id":2037,"alt":"","source":"library"},"item_type":"image","image_size":"custom","image_custom_dimension":{"width":"14","height":"14"}},{"list_content":"Fax: (099) 453-1357","_id":"a511145","image":{"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/09\/wd-envelope-light.svg","id":2036,"alt":"","source":"library"},"item_type":"image","image_size":"custom","image_custom_dimension":{"width":"14","height":"14"}}],"list_type":"image","scroll_y":-80,"image_size":"custom","image_custom_dimension":{"width":"14","height":"14"},"list_items_gap":{"unit":"px","size":7,"sizes":[]}},"elements":[],"widgetType":"wd_list"}],"isInner":false}]]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[_elementor_controls_usage]]></wp:meta_key>
 							<wp:meta_value><![CDATA[a:5:{s:15:"wd_image_or_svg";a:3:{s:5:"count";i:1;s:15:"control_percent";i:3;s:8:"controls";a:1:{s:7:"content";a:1:{s:23:"general_content_section";a:5:{s:5:"image";i:1;s:10:"image_size";i:1;s:22:"image_custom_dimension";i:1;s:15:"on_click_action";i:1;s:4:"link";i:1;}}}}s:13:"wd_text_block";a:3:{s:5:"count";i:1;s:15:"control_percent";i:1;s:8:"controls";a:1:{s:7:"content";a:1:{s:23:"general_content_section";a:1:{s:4:"text";i:1;}}}}s:7:"wd_list";a:3:{s:5:"count";i:1;s:15:"control_percent";i:3;s:8:"controls";a:2:{s:7:"content";a:2:{s:23:"general_content_section";a:1:{s:10:"list_items";i:1;}s:20:"icon_content_section";a:3:{s:9:"list_type";i:1;s:10:"image_size";i:1;s:22:"image_custom_dimension";i:1;}}s:5:"style";a:1:{s:21:"general_style_section";a:1:{s:14:"list_items_gap";i:1;}}}}s:6:"column";a:3:{s:5:"count";i:1;s:15:"control_percent";i:0;s:8:"controls";a:1:{s:6:"layout";a:1:{s:6:"layout";a:1:{s:12:"_inline_size";i:1;}}}}s:7:"section";a:3:{s:5:"count";i:1;s:15:"control_percent";i:0;s:8:"controls";a:0:{}}}]]></wp:meta_value>
 						</wp:postmeta>
@@ -1786,7 +1738,7 @@
 					<title><![CDATA[wd-cursor-light]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/wd-cursor-light/</link>
 					<pubDate>Mon, 06 Sep 2021 15:58:17 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/wd-cursor-light.svg</guid>
 															<wp:post_id>2035</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-06 15:58:17]]></wp:post_date>
@@ -1809,7 +1761,7 @@
 					<title><![CDATA[Contact form Drinks]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/?post_type=wpcf7_contact_form&#038;p=4380</link>
 					<pubDate>Wed, 29 Sep 2021 14:04:39 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/?post_type=wpcf7_contact_form&#038;p=4380</guid>
 											<content:encoded><![CDATA[<div class="row">
 <p class="col-md-6"><label>Your Name</label>[text* your-name]</p>
@@ -1823,9 +1775,9 @@
 <p>[submit class:btn class:btn-color-primary "Send Message"]</p>
 1
 [_site_title] "[your-subject]"
-[_site_title] <wordpress@dummy.xtemos.com>
+[_site_title]
 [_site_admin_email]
-From: [your-name] <[your-email]>
+From: [your-name] 
 Subject: [your-subject]
 
 Message Body:
@@ -1839,7 +1791,7 @@ Reply-To: [your-email]
 
 
 [_site_title] "[your-subject]"
-[_site_title] <wordpress@dummy.xtemos.com>
+[_site_title]
 [your-email]
 Message Body:
 [your-message]
@@ -1875,8 +1827,8 @@ The telephone number is invalid.]]></content:encoded>
 															<wp:post_id>4380</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-29 14:04:39]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2021-09-29 14:04:39]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2021-09-29 14:04:39]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2021-09-29 14:04:39]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-01-24 14:18:23]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-01-24 14:18:23]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[contact-form-drinks]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -1898,7 +1850,7 @@ The telephone number is invalid.]]></content:encoded>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_mail]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:9:{s:6:"active";b:1;s:7:"subject";s:30:"[_site_title] "[your-subject]"";s:6:"sender";s:42:"[_site_title] <wordpress@dummy.xtemos.com>";s:9:"recipient";s:19:"[_site_admin_email]";s:4:"body";s:163:"From: [your-name] <[your-email]>
+							<wp:meta_value><![CDATA[a:9:{s:6:"active";b:1;s:7:"subject";s:30:"[_site_title] "[your-subject]"";s:6:"sender";s:13:"[_site_title]";s:9:"recipient";s:19:"[_site_admin_email]";s:4:"body";s:149:"From: [your-name] 
 Subject: [your-subject]
 
 Message Body:
@@ -1909,7 +1861,7 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_mail_2]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:9:{s:6:"active";b:0;s:7:"subject";s:30:"[_site_title] "[your-subject]"";s:6:"sender";s:42:"[_site_title] <wordpress@dummy.xtemos.com>";s:9:"recipient";s:12:"[your-email]";s:4:"body";s:105:"Message Body:
+							<wp:meta_value><![CDATA[a:9:{s:6:"active";b:0;s:7:"subject";s:30:"[_site_title] "[your-subject]"";s:6:"sender";s:13:"[_site_title]";s:9:"recipient";s:12:"[your-email]";s:4:"body";s:105:"Message Body:
 [your-message]
 
 -- 
@@ -1927,12 +1879,16 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 							<wp:meta_key><![CDATA[_hash]]></wp:meta_key>
 							<wp:meta_value><![CDATA[9be557ad0bebed9b70572d6d7a9222e19e05dba9]]></wp:meta_value>
 						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_config_validation]]></wp:meta_key>
+							<wp:meta_value><![CDATA[a:1:{s:11:"mail.sender";a:1:{i:0;a:2:{s:4:"code";s:22:"invalid_mailbox_syntax";s:4:"args";a:3:{s:7:"message";s:31:"Invalid mailbox syntax is used.";s:6:"params";a:0:{}s:4:"link";s:68:"https://contactform7.com/configuration-errors/invalid-mailbox-syntax";}}}}]]></wp:meta_value>
+						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[drinks-b52]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/drinks-b52/</link>
 					<pubDate>Fri, 22 Oct 2021 15:50:13 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/drinks-b52.svg</guid>
 															<wp:post_id>6522</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-22 15:50:13]]></wp:post_date>
@@ -1955,7 +1911,7 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 					<title><![CDATA[drinks-cocktail]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/drinks-cocktail/</link>
 					<pubDate>Fri, 22 Oct 2021 15:50:14 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/drinks-cocktail.svg</guid>
 															<wp:post_id>6523</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-22 15:50:14]]></wp:post_date>
@@ -1978,7 +1934,7 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 					<title><![CDATA[drinks-cuba-libre]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/drinks-cuba-libre/</link>
 					<pubDate>Fri, 22 Oct 2021 15:50:15 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/drinks-cuba-libre.svg</guid>
 															<wp:post_id>6524</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-22 15:50:15]]></wp:post_date>
@@ -2001,7 +1957,7 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 					<title><![CDATA[drinks-map-pointer]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/drinks-map-pointer/</link>
 					<pubDate>Fri, 22 Oct 2021 15:50:17 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/drinks-map-pointer.svg</guid>
 															<wp:post_id>6527</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-22 15:50:17]]></wp:post_date>
@@ -2024,7 +1980,7 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 					<title><![CDATA[drinks-whiskey]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/home-drinks/drinks-whiskey/</link>
 					<pubDate>Fri, 22 Oct 2021 15:57:53 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/drinks-whiskey.png</guid>
 															<wp:post_id>6540</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-22 15:57:53]]></wp:post_date>
@@ -2047,7 +2003,7 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 					<title><![CDATA[drinks-bg-whisky-last]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/home-drinks/drinks-bg-whisky-last/</link>
 					<pubDate>Fri, 22 Oct 2021 16:00:22 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/drinks-bg-whisky-last.jpg</guid>
 															<wp:post_id>6547</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-22 16:00:22]]></wp:post_date>
@@ -2070,7 +2026,7 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 					<title><![CDATA[drinks-bg-whineyard-last]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/home-drinks/drinks-bg-whineyard-last/</link>
 					<pubDate>Fri, 22 Oct 2021 16:00:38 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/drinks-bg-whineyard-last.jpg</guid>
 															<wp:post_id>6548</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-22 16:00:38]]></wp:post_date>
@@ -2093,7 +2049,7 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 					<title><![CDATA[drinks-whisky-buttle]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/home-drinks/drinks-whisky-buttle/</link>
 					<pubDate>Fri, 22 Oct 2021 16:00:56 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/drinks-whisky-buttle.png</guid>
 															<wp:post_id>6549</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-22 16:00:56]]></wp:post_date>
@@ -2116,7 +2072,7 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 					<title><![CDATA[drinks-wine-buttle-last]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/home-drinks/drinks-wine-buttle-last/</link>
 					<pubDate>Fri, 22 Oct 2021 16:01:28 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/drinks-wine-buttle-last.png</guid>
 															<wp:post_id>6550</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-22 16:01:28]]></wp:post_date>
@@ -2139,7 +2095,7 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 					<title><![CDATA[drinks-logo-1]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/home-drinks/drinks-logo-1/</link>
 					<pubDate>Fri, 22 Oct 2021 16:06:17 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/drinks-logo-1.png</guid>
 															<wp:post_id>6554</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-22 16:06:17]]></wp:post_date>
@@ -2162,7 +2118,7 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 					<title><![CDATA[drinks-logo-2]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/home-drinks/drinks-logo-2/</link>
 					<pubDate>Fri, 22 Oct 2021 16:06:18 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/drinks-logo-2.png</guid>
 															<wp:post_id>6555</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-22 16:06:18]]></wp:post_date>
@@ -2185,7 +2141,7 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 					<title><![CDATA[drinks-logo-3]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/home-drinks/drinks-logo-3/</link>
 					<pubDate>Fri, 22 Oct 2021 16:06:19 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/drinks-logo-3.png</guid>
 															<wp:post_id>6556</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-22 16:06:19]]></wp:post_date>
@@ -2208,7 +2164,7 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 					<title><![CDATA[drinks-logo-4]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/home-drinks/drinks-logo-4/</link>
 					<pubDate>Fri, 22 Oct 2021 16:06:20 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/drinks-logo-4.png</guid>
 															<wp:post_id>6557</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-22 16:06:20]]></wp:post_date>
@@ -2231,7 +2187,7 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 					<title><![CDATA[drinks-logo-5]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/home-drinks/drinks-logo-5/</link>
 					<pubDate>Fri, 22 Oct 2021 16:06:21 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/drinks-logo-5.png</guid>
 															<wp:post_id>6558</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-22 16:06:21]]></wp:post_date>
@@ -2254,7 +2210,7 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 					<title><![CDATA[drinks-logo-6]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/home-drinks/drinks-logo-6/</link>
 					<pubDate>Fri, 22 Oct 2021 16:06:22 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/drinks-logo-6.png</guid>
 															<wp:post_id>6559</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-22 16:06:22]]></wp:post_date>
@@ -2277,7 +2233,7 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 					<title><![CDATA[drinks-logo-7]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/home-drinks/drinks-logo-7/</link>
 					<pubDate>Fri, 22 Oct 2021 16:06:23 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/drinks-logo-7.png</guid>
 															<wp:post_id>6560</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-22 16:06:23]]></wp:post_date>
@@ -2300,7 +2256,7 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 					<title><![CDATA[wd-envelope-light]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/wd-envelope-light/</link>
 					<pubDate>Mon, 06 Sep 2021 15:58:18 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/wd-envelope-light.svg</guid>
 															<wp:post_id>2036</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-06 15:58:18]]></wp:post_date>
@@ -2323,7 +2279,7 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 					<title><![CDATA[wd-phone-light]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/wd-phone-light/</link>
 					<pubDate>Mon, 06 Sep 2021 15:58:19 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/wd-phone-light.svg</guid>
 															<wp:post_id>2037</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-06 15:58:19]]></wp:post_date>
@@ -2346,23 +2302,23 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 					<title><![CDATA[Drinks slide 1]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/woodmart_slide/drinks-slide-1/</link>
 					<pubDate>Mon, 12 Feb 2024 14:27:39 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/elementor/?post_type=woodmart_slide&#038;p=27136</guid>
-											<content:encoded><![CDATA[New Era in Alcohol
-
-&nbsp;
-<h4>Hennessy Very Special VS Cognac</h4>
-Authorities in our business will tell in no uncertain terms that Lorem Ipsum is that huge, huge no no to forswear forever. Even if your less into design and more into content strategy you may find some.
-
-<a href="#">
-Read more
-</a>
-<img src="http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/drink-slider-1-opt.png" sizes="(max-width: 430px) 100vw, 430px" srcset="https://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/drink-slider-1-opt.png 430w, https://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/drink-slider-1-opt-186x300.png 186w, https://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/drink-slider-1-opt-130x210.png 130w" alt="" width="430" height="695" />]]></content:encoded>
+											<content:encoded><![CDATA[<link rel="stylesheet" id="wd-text-block-css" href="https://dummy.xtemos.com/woodmart2/elementor/wp-content/themes/woodmart8/css/parts/el-text-block.min.css?ver=8.4.0" type="text/css" media="all" /> 					
+			<p>New Era in Alcohol</p>
+								<link rel="stylesheet" id="wd-section-title-css" href="https://dummy.xtemos.com/woodmart2/elementor/wp-content/themes/woodmart8/css/parts/el-section-title.min.css?ver=8.4.0" type="text/css" media="all" /> 					
+				<h4>Hennessy Very Special VS Cognac</h4> 
+			<p>Authorities in our business will tell in no uncertain terms that Lorem Ipsum is that huge, huge no no to forswear forever. Even if your less into design and more into content strategy you may find some.</p>
+								<link rel="stylesheet" id="wd-button-css" href="https://dummy.xtemos.com/woodmart2/elementor/wp-content/themes/woodmart8/css/parts/el-button.min.css?ver=8.4.0" type="text/css" media="all" /> 					
+			<a  href="#">
+					Read more				
+							</a>
+								<img width="430" height="695" src="http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/drink-slider-1-opt.png" alt="" decoding="async" loading="lazy" srcset="https://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/drink-slider-1-opt.png 430w, https://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/drink-slider-1-opt-186x300.png 186w, https://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/drink-slider-1-opt-130x210.png 130w" sizes="auto, (max-width: 430px) 100vw, 430px" />]]></content:encoded>
 															<wp:post_id>27136</wp:post_id>
 					<wp:post_date><![CDATA[2024-02-12 14:27:39]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-02-12 14:27:39]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-02-12 14:52:58]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-02-12 14:52:58]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2026-02-25 12:18:11]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2026-02-25 12:18:11]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[drinks-slide-1]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -2440,22 +2396,22 @@ Read more
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_elementor_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[3.18.3]]></wp:meta_value>
+							<wp:meta_value><![CDATA[3.33.6]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_elementor_data]]></wp:meta_key>
 							<wp:meta_value><![CDATA[[{"id":"525fb4b","elType":"container","settings":{"flex_direction":"row","flex_gap":{"unit":"px","size":null,"column":"","row":"","isLinked":true},"flex_align_items":"center","container_sticky_offset":50,"scroll_y":-80,"flex_direction_mobile":"column","margin":{"unit":"px","top":"90","right":"0","bottom":"0","left":"0","isLinked":false},"margin_tablet":{"unit":"px","top":"60","right":"0","bottom":"0","left":"0","isLinked":false},"margin_mobile":{"unit":"px","top":"90","right":"0","bottom":"0","left":"0","isLinked":false},"padding":{"unit":"px","top":"0","right":"15","bottom":"0","left":"15","isLinked":false}},"elements":[{"id":"5cc1e5f","elType":"container","settings":{"flex_direction":"column","content_width":"full","width":{"unit":"%","size":"50"},"flex_gap":{"column":"0","row":"0","isLinked":true,"unit":"px","size":0},"wd_color_scheme":"light","margin":{"unit":"px","top":"0","right":"0","bottom":"90","left":"0","isLinked":false},"margin_mobile":{"unit":"px","top":"0","right":"0","bottom":"20","left":"0","isLinked":false},"container_sticky_offset":50,"scroll_y":-80,"width_mobile":{"unit":"%","size":100,"sizes":[]}},"elements":[{"id":"c057744","elType":"widget","settings":{"text":"<p>New Era in Alcohol<\/p>","typography_typography":"custom","typography_font_family":"Great Vibes","typography_font_size":{"unit":"px","size":34,"sizes":[]},"typography_font_size_tablet":{"unit":"px","size":24,"sizes":[]},"typography_font_size_mobile":{"unit":"px","size":22,"sizes":[]},"typography_font_weight":"400","text_color":"alt","scroll_y":-80,"wd_animation":"slide-from-bottom"},"elements":[],"widgetType":"wd_text_block"},{"id":"c5c8f34","elType":"widget","settings":{"subtitle":"","title":"Hennessy Very Special VS Cognac","after_title":"","align":"left","width":{"unit":"px","size":469,"sizes":[]},"width_tablet":{"unit":"px","size":380,"sizes":[]},"width_mobile":{"unit":"px","size":320,"sizes":[]},"title_typography_typography":"custom","title_typography_font_size":{"unit":"px","size":56,"sizes":[]},"title_typography_font_size_tablet":{"unit":"px","size":40,"sizes":[]},"title_typography_font_size_mobile":{"unit":"px","size":34,"sizes":[]},"_margin":{"unit":"px","top":"0","right":"0","bottom":"20","left":"0","isLinked":false},"_margin_mobile":{"unit":"px","top":"0","right":"0","bottom":"30","left":"0","isLinked":false},"scroll_y":-80,"wd_animation":"slide-from-bottom","wd_animation_delay":250},"elements":[],"widgetType":"wd_title"},{"id":"8c8d62b","elType":"widget","settings":{"text":"<p>Authorities in our business will tell in no uncertain terms that Lorem Ipsum is that huge, huge no no to forswear forever. Even if your less into design and more into content strategy you may find some.<\/p>","width":{"unit":"px","size":526,"sizes":[]},"width_tablet":{"unit":"px","size":433,"sizes":[]},"typography_typography":"custom","typography_font_size":{"unit":"px","size":16,"sizes":[]},"typography_font_size_tablet":{"unit":"px","size":14,"sizes":[]},"_margin":{"unit":"px","top":"0","right":"0","bottom":"30","left":"0","isLinked":false},"scroll_y":-80,"wd_animation":"slide-from-bottom","wd_animation_delay":400,"hide_mobile":"hidden-mobile"},"elements":[],"widgetType":"wd_text_block"},{"id":"cb18f9f","elType":"widget","settings":{"text":"Read more","color":"primary","align":"left","scroll_y":-80,"wd_animation":"slide-from-bottom","wd_animation_delay":500},"elements":[],"widgetType":"wd_button"}],"isInner":true},{"id":"67e994d","elType":"container","settings":{"flex_direction":"column","content_width":"full","width":{"unit":"%","size":"50"},"container_sticky_offset":50,"scroll_y":-80,"width_mobile":{"unit":"%","size":100,"sizes":[]},"padding_mobile":{"unit":"%","top":"0","right":"16","bottom":"0","left":"16","isLinked":false}},"elements":[{"id":"5cb3e79","elType":"widget","settings":{"image":{"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2024\/02\/drink-slider-1-opt.png","id":27139,"size":"","alt":"","source":"library"},"alignment":"center","scroll_y":-80,"wd_animation":"slide-from-right","wd_animation_delay":400},"elements":[],"widgetType":"wd_image_or_svg"}],"isInner":true}],"isInner":false}]]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
+							<wp:meta_key><![CDATA[_elementor_page_settings]]></wp:meta_key>
+							<wp:meta_value><![CDATA[a:7:{s:10:"hide_title";s:0:"";s:8:"wd_image";a:5:{s:3:"url";s:104:"http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/drink-bg-slider-1-opt.png";s:2:"id";i:27138;s:4:"size";s:0:"";s:3:"alt";s:0:"";s:6:"source";s:7:"library";}s:24:"wd_image_object_position";s:10:"center top";s:11:"wd_bg_image";a:3:{s:3:"url";s:0:"";s:2:"id";s:0:"";s:4:"size";s:0:"";}s:6:"margin";a:6:{s:4:"unit";s:2:"px";s:3:"top";s:0:"";s:5:"right";s:0:"";s:6:"bottom";s:0:"";s:4:"left";s:0:"";s:8:"isLinked";b:1;}s:7:"padding";a:6:{s:4:"unit";s:2:"px";s:3:"top";s:0:"";s:5:"right";s:0:"";s:6:"bottom";s:0:"";s:4:"left";s:0:"";s:8:"isLinked";b:1;}s:21:"background_background";s:0:"";}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[drink-slider-1-opt]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/woodmart_slide/drinks-slide-1/drink-slider-1-opt/</link>
 					<pubDate>Mon, 12 Feb 2024 14:30:05 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/drink-slider-1-opt.png</guid>
 															<wp:post_id>27139</wp:post_id>
 					<wp:post_date><![CDATA[2024-02-12 14:30:05]]></wp:post_date>
@@ -2478,23 +2434,23 @@ Read more
 					<title><![CDATA[Drinks slide 2]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/woodmart_slide/drinks-slide-1-2/</link>
 					<pubDate>Mon, 12 Feb 2024 14:39:11 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/elementor/?post_type=woodmart_slide&#038;p=27158</guid>
-											<content:encoded><![CDATA[New Era in Alcohol
-
-&nbsp;
-<h4>The Original Vermouth Dry 1863</h4>
-Usually, we prefer the real thing, wine without sulfur based preservatives, real butter, not margarine, and so we'd like our layouts and designs to be filled with real words, with thoughts count.
-
-<a href="#">
-Read more
-</a>
-<img src="http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/drink-slider-2-opt.png" sizes="(max-width: 435px) 100vw, 435px" srcset="https://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/drink-slider-2-opt.png 435w, https://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/drink-slider-2-opt-193x300.png 193w, https://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/drink-slider-2-opt-130x202.png 130w" alt="" width="435" height="675" />]]></content:encoded>
+											<content:encoded><![CDATA[<link rel="stylesheet" id="wd-text-block-css" href="https://dummy.xtemos.com/woodmart2/elementor/wp-content/themes/woodmart8/css/parts/el-text-block.min.css?ver=8.4.0" type="text/css" media="all" /> 					
+			<p>New Era in Alcohol</p>
+								<link rel="stylesheet" id="wd-section-title-css" href="https://dummy.xtemos.com/woodmart2/elementor/wp-content/themes/woodmart8/css/parts/el-section-title.min.css?ver=8.4.0" type="text/css" media="all" /> 					
+				<h4>The Original Vermouth Dry 1863</h4> 
+			<p>Usually, we prefer the real thing, wine without sulfur based preservatives, real butter, not margarine, and so we'd like our layouts and designs to be filled with real words, with thoughts count.</p>
+								<link rel="stylesheet" id="wd-button-css" href="https://dummy.xtemos.com/woodmart2/elementor/wp-content/themes/woodmart8/css/parts/el-button.min.css?ver=8.4.0" type="text/css" media="all" /> 					
+			<a  href="#">
+					Read more				
+							</a>
+								<img width="435" height="675" src="http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/drink-slider-2-opt.png" alt="" decoding="async" loading="lazy" srcset="https://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/drink-slider-2-opt.png 435w, https://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/drink-slider-2-opt-193x300.png 193w, https://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/drink-slider-2-opt-130x202.png 130w" sizes="auto, (max-width: 435px) 100vw, 435px" />]]></content:encoded>
 															<wp:post_id>27158</wp:post_id>
 					<wp:post_date><![CDATA[2024-02-12 14:39:11]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-02-12 14:39:11]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-02-12 14:53:02]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-02-12 14:53:02]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2026-02-25 12:19:13]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2026-02-25 12:19:13]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[drinks-slide-1-2]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -2572,26 +2528,22 @@ Read more
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_elementor_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[3.18.3]]></wp:meta_value>
+							<wp:meta_value><![CDATA[3.33.6]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_elementor_data]]></wp:meta_key>
 							<wp:meta_value><![CDATA[[{"id":"525fb4b","elType":"container","settings":{"flex_direction":"row","flex_gap":{"unit":"px","size":null,"column":"","row":"","isLinked":true},"flex_align_items":"center","container_sticky_offset":50,"scroll_y":-80,"flex_direction_mobile":"column","margin":{"unit":"px","top":"90","right":"0","bottom":"0","left":"0","isLinked":false},"margin_tablet":{"unit":"px","top":"60","right":"0","bottom":"0","left":"0","isLinked":false},"margin_mobile":{"unit":"px","top":"90","right":"0","bottom":"0","left":"0","isLinked":false},"padding":{"unit":"px","top":"0","right":"15","bottom":"0","left":"15","isLinked":false}},"elements":[{"id":"5cc1e5f","elType":"container","settings":{"flex_direction":"column","content_width":"full","width":{"unit":"%","size":"50"},"flex_gap":{"column":"0","row":"0","isLinked":true,"unit":"px","size":0},"wd_color_scheme":"light","margin":{"unit":"px","top":"0","right":"0","bottom":"90","left":"0","isLinked":false},"margin_mobile":{"unit":"px","top":"0","right":"0","bottom":"20","left":"0","isLinked":false},"container_sticky_offset":50,"scroll_y":-80,"width_mobile":{"unit":"%","size":100,"sizes":[]}},"elements":[{"id":"c057744","elType":"widget","settings":{"text":"<p>New Era in Alcohol<\/p>","typography_typography":"custom","typography_font_family":"Great Vibes","typography_font_size":{"unit":"px","size":34,"sizes":[]},"typography_font_size_tablet":{"unit":"px","size":24,"sizes":[]},"typography_font_size_mobile":{"unit":"px","size":22,"sizes":[]},"typography_font_weight":"400","text_color":"alt","scroll_y":-80,"wd_animation":"slide-from-bottom"},"elements":[],"widgetType":"wd_text_block"},{"id":"c5c8f34","elType":"widget","settings":{"subtitle":"","title":"The Original Vermouth Dry 1863","after_title":"","align":"left","width":{"unit":"px","size":478,"sizes":[]},"width_tablet":{"unit":"px","size":400,"sizes":[]},"width_mobile":{"unit":"px","size":338,"sizes":[]},"title_typography_typography":"custom","title_typography_font_size":{"unit":"px","size":56,"sizes":[]},"title_typography_font_size_tablet":{"unit":"px","size":40,"sizes":[]},"title_typography_font_size_mobile":{"unit":"px","size":34,"sizes":[]},"_margin":{"unit":"px","top":"0","right":"0","bottom":"20","left":"0","isLinked":false},"_margin_mobile":{"unit":"px","top":"0","right":"0","bottom":"30","left":"0","isLinked":false},"scroll_y":-80,"wd_animation":"slide-from-bottom","wd_animation_delay":250},"elements":[],"widgetType":"wd_title"},{"id":"8c8d62b","elType":"widget","settings":{"text":"<p>Usually, we prefer the real thing, wine without sulfur based preservatives, real butter, not margarine, and so we'd like our layouts and designs to be filled with real words, with thoughts count.<\/p>","width":{"unit":"px","size":522,"sizes":[]},"width_tablet":{"unit":"px","size":432,"sizes":[]},"typography_typography":"custom","typography_font_size":{"unit":"px","size":16,"sizes":[]},"typography_font_size_tablet":{"unit":"px","size":14,"sizes":[]},"_margin":{"unit":"px","top":"0","right":"0","bottom":"30","left":"0","isLinked":false},"scroll_y":-80,"wd_animation":"slide-from-bottom","wd_animation_delay":400,"hide_mobile":"hidden-mobile"},"elements":[],"widgetType":"wd_text_block"},{"id":"cb18f9f","elType":"widget","settings":{"text":"Read more","color":"primary","align":"left","scroll_y":-80,"wd_animation":"slide-from-bottom","wd_animation_delay":500},"elements":[],"widgetType":"wd_button"}],"isInner":true},{"id":"67e994d","elType":"container","settings":{"flex_direction":"column","content_width":"full","width":{"unit":"%","size":"50"},"container_sticky_offset":50,"scroll_y":-80,"width_mobile":{"unit":"%","size":100,"sizes":[]},"padding_mobile":{"unit":"%","top":"0","right":"16","bottom":"0","left":"16","isLinked":false}},"elements":[{"id":"5cb3e79","elType":"widget","settings":{"image":{"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2024\/02\/drink-slider-2-opt.png","id":27161,"size":"","alt":"","source":"library"},"alignment":"center","scroll_y":-80,"wd_animation":"slide-from-right","wd_animation_delay":400},"elements":[],"widgetType":"wd_image_or_svg"}],"isInner":true}],"isInner":false}]]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[drinks-slide-1]]></wp:meta_value>
+							<wp:meta_key><![CDATA[_elementor_page_settings]]></wp:meta_key>
+							<wp:meta_value><![CDATA[a:7:{s:10:"hide_title";s:0:"";s:8:"wd_image";a:5:{s:3:"url";s:104:"http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/drink-slider-bg-2-opt.png";s:2:"id";i:27159;s:4:"size";s:0:"";s:3:"alt";s:0:"";s:6:"source";s:7:"library";}s:24:"wd_image_object_position";s:10:"center top";s:11:"wd_bg_image";a:3:{s:3:"url";s:0:"";s:2:"id";s:0:"";s:4:"size";s:0:"";}s:6:"margin";a:6:{s:4:"unit";s:2:"px";s:3:"top";s:0:"";s:5:"right";s:0:"";s:6:"bottom";s:0:"";s:4:"left";s:0:"";s:8:"isLinked";b:1;}s:7:"padding";a:6:{s:4:"unit";s:2:"px";s:3:"top";s:0:"";s:5:"right";s:0:"";s:6:"bottom";s:0:"";s:4:"left";s:0:"";s:8:"isLinked";b:1;}s:21:"background_background";s:0:"";}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[drink-slider-2-opt]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/woodmart_slide/drinks-slide-1-2/drink-slider-2-opt/</link>
 					<pubDate>Mon, 12 Feb 2024 14:39:26 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/drink-slider-2-opt.png</guid>
 															<wp:post_id>27161</wp:post_id>
 					<wp:post_date><![CDATA[2024-02-12 14:39:26]]></wp:post_date>
@@ -2614,23 +2566,23 @@ Read more
 					<title><![CDATA[Drinks slide 3]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/woodmart_slide/drinks-slide-1-2-2/</link>
 					<pubDate>Mon, 12 Feb 2024 14:41:56 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/elementor/?post_type=woodmart_slide&#038;p=27177</guid>
-											<content:encoded><![CDATA[New Era in Alcohol
-
-&nbsp;
-<h4>Introducing Ambleside Distillers</h4>
-Just fill up a page with draft copy about the client’s business and they will actually read it and comment on it. They will be drawn to it, fiercely. Do it the wrong way and draft copy can derail design.
-
-<a href="#">
-Read more
-</a>
-<img src="http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/drink-slider-3-opt.png" sizes="(max-width: 406px) 100vw, 406px" srcset="https://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/drink-slider-3-opt.png 406w, https://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/drink-slider-3-opt-172x300.png 172w, https://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/drink-slider-3-opt-130x227.png 130w" alt="" width="406" height="709" />]]></content:encoded>
+											<content:encoded><![CDATA[<link rel="stylesheet" id="wd-text-block-css" href="https://dummy.xtemos.com/woodmart2/elementor/wp-content/themes/woodmart8/css/parts/el-text-block.min.css?ver=8.4.0" type="text/css" media="all" /> 					
+			<p>New Era in Alcohol</p>
+								<link rel="stylesheet" id="wd-section-title-css" href="https://dummy.xtemos.com/woodmart2/elementor/wp-content/themes/woodmart8/css/parts/el-section-title.min.css?ver=8.4.0" type="text/css" media="all" /> 					
+				<h4>Introducing Ambleside Distillers</h4> 
+			<p>Just fill up a page with draft copy about the client’s business and they will actually read it and comment on it. They will be drawn to it, fiercely. Do it the wrong way and draft copy can derail design.</p>
+								<link rel="stylesheet" id="wd-button-css" href="https://dummy.xtemos.com/woodmart2/elementor/wp-content/themes/woodmart8/css/parts/el-button.min.css?ver=8.4.0" type="text/css" media="all" /> 					
+			<a  href="#">
+					Read more				
+							</a>
+								<img width="406" height="709" src="http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/drink-slider-3-opt.png" alt="" decoding="async" loading="lazy" srcset="https://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/drink-slider-3-opt.png 406w, https://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/drink-slider-3-opt-172x300.png 172w, https://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/drink-slider-3-opt-130x227.png 130w" sizes="auto, (max-width: 406px) 100vw, 406px" />]]></content:encoded>
 															<wp:post_id>27177</wp:post_id>
 					<wp:post_date><![CDATA[2024-02-12 14:41:56]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-02-12 14:41:56]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-02-12 14:53:05]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-02-12 14:53:05]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2026-02-25 12:19:35]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2026-02-25 12:19:35]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[drinks-slide-1-2-2]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -2708,26 +2660,22 @@ Read more
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_elementor_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[3.18.3]]></wp:meta_value>
+							<wp:meta_value><![CDATA[3.33.6]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_elementor_data]]></wp:meta_key>
 							<wp:meta_value><![CDATA[[{"id":"525fb4b","elType":"container","settings":{"flex_direction":"row","flex_gap":{"unit":"px","size":null,"column":"","row":"","isLinked":true},"flex_align_items":"center","container_sticky_offset":50,"scroll_y":-80,"flex_direction_mobile":"column","margin":{"unit":"px","top":"90","right":"0","bottom":"0","left":"0","isLinked":false},"margin_tablet":{"unit":"px","top":"60","right":"0","bottom":"0","left":"0","isLinked":false},"margin_mobile":{"unit":"px","top":"90","right":"0","bottom":"0","left":"0","isLinked":false},"padding":{"unit":"px","top":"0","right":"15","bottom":"0","left":"15","isLinked":false}},"elements":[{"id":"5cc1e5f","elType":"container","settings":{"flex_direction":"column","content_width":"full","width":{"unit":"%","size":"50"},"flex_gap":{"column":"0","row":"0","isLinked":true,"unit":"px","size":0},"wd_color_scheme":"light","margin":{"unit":"px","top":"0","right":"0","bottom":"90","left":"0","isLinked":false},"margin_mobile":{"unit":"px","top":"0","right":"0","bottom":"20","left":"0","isLinked":false},"container_sticky_offset":50,"scroll_y":-80,"width_mobile":{"unit":"%","size":100,"sizes":[]}},"elements":[{"id":"c057744","elType":"widget","settings":{"text":"<p>New Era in Alcohol<\/p>","typography_typography":"custom","typography_font_family":"Great Vibes","typography_font_size":{"unit":"px","size":34,"sizes":[]},"typography_font_size_tablet":{"unit":"px","size":24,"sizes":[]},"typography_font_size_mobile":{"unit":"px","size":22,"sizes":[]},"typography_font_weight":"400","text_color":"alt","scroll_y":-80,"wd_animation":"slide-from-bottom"},"elements":[],"widgetType":"wd_text_block"},{"id":"c5c8f34","elType":"widget","settings":{"subtitle":"","title":"Introducing Ambleside Distillers","after_title":"","align":"left","width":{"unit":"px","size":510,"sizes":[]},"width_tablet":{"unit":"px","size":390,"sizes":[]},"width_mobile":{"unit":"px","size":334,"sizes":[]},"title_typography_typography":"custom","title_typography_font_size":{"unit":"px","size":56,"sizes":[]},"title_typography_font_size_tablet":{"unit":"px","size":40,"sizes":[]},"title_typography_font_size_mobile":{"unit":"px","size":34,"sizes":[]},"_margin":{"unit":"px","top":"0","right":"0","bottom":"20","left":"0","isLinked":false},"_margin_mobile":{"unit":"px","top":"0","right":"0","bottom":"30","left":"0","isLinked":false},"scroll_y":-80,"wd_animation":"slide-from-bottom","wd_animation_delay":250},"elements":[],"widgetType":"wd_title"},{"id":"8c8d62b","elType":"widget","settings":{"text":"<p>Just fill up a page with draft copy about the client\u2019s business and they will actually read it and comment on it. They will be drawn to it, fiercely. Do it the wrong way and draft copy can derail design.<\/p>","width":{"unit":"px","size":522,"sizes":[]},"width_tablet":{"unit":"px","size":423,"sizes":[]},"typography_typography":"custom","typography_font_size":{"unit":"px","size":16,"sizes":[]},"typography_font_size_tablet":{"unit":"px","size":14,"sizes":[]},"_margin":{"unit":"px","top":"0","right":"0","bottom":"30","left":"0","isLinked":false},"scroll_y":-80,"wd_animation":"slide-from-bottom","wd_animation_delay":400,"hide_mobile":"hidden-mobile"},"elements":[],"widgetType":"wd_text_block"},{"id":"cb18f9f","elType":"widget","settings":{"text":"Read more","color":"primary","align":"left","scroll_y":-80,"wd_animation":"slide-from-bottom","wd_animation_delay":500},"elements":[],"widgetType":"wd_button"}],"isInner":true},{"id":"67e994d","elType":"container","settings":{"flex_direction":"column","content_width":"full","width":{"unit":"%","size":"50"},"container_sticky_offset":50,"scroll_y":-80,"padding_mobile":{"unit":"%","top":"0","right":"16","bottom":"0","left":"16","isLinked":false},"width_mobile":{"unit":"%","size":100,"sizes":[]}},"elements":[{"id":"5cb3e79","elType":"widget","settings":{"image":{"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2024\/02\/drink-slider-3-opt.png","id":27180,"size":"","alt":"","source":"library"},"alignment":"center","scroll_y":-80,"wd_animation":"slide-from-right","wd_animation_delay":400},"elements":[],"widgetType":"wd_image_or_svg"}],"isInner":true}],"isInner":false}]]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[drinks-slide-1-2]]></wp:meta_value>
+							<wp:meta_key><![CDATA[_elementor_page_settings]]></wp:meta_key>
+							<wp:meta_value><![CDATA[a:7:{s:10:"hide_title";s:0:"";s:8:"wd_image";a:5:{s:3:"url";s:104:"http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/drink-slider-bg-3-opt.png";s:2:"id";i:27178;s:4:"size";s:0:"";s:3:"alt";s:0:"";s:6:"source";s:7:"library";}s:24:"wd_image_object_position";s:10:"center top";s:11:"wd_bg_image";a:3:{s:3:"url";s:0:"";s:2:"id";s:0:"";s:4:"size";s:0:"";}s:6:"margin";a:6:{s:4:"unit";s:2:"px";s:3:"top";s:0:"";s:5:"right";s:0:"";s:6:"bottom";s:0:"";s:4:"left";s:0:"";s:8:"isLinked";b:1;}s:7:"padding";a:6:{s:4:"unit";s:2:"px";s:3:"top";s:0:"";s:5:"right";s:0:"";s:6:"bottom";s:0:"";s:4:"left";s:0:"";s:8:"isLinked";b:1;}s:21:"background_background";s:0:"";}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[drink-slider-3-opt]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/woodmart_slide/drinks-slide-1-2-2/drink-slider-3-opt/</link>
 					<pubDate>Mon, 12 Feb 2024 14:42:14 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/drink-slider-3-opt.png</guid>
 															<wp:post_id>27180</wp:post_id>
 					<wp:post_date><![CDATA[2024-02-12 14:42:14]]></wp:post_date>

@@ -18,6 +18,7 @@ if ( ! function_exists( 'wd_gutenberg_shop_archive_order_by' ) ) {
 		woodmart_enqueue_inline_style( 'woo-shop-el-order-by' );
 
 		$ordering_classes = ' wd-style-' . $block_attributes['style'];
+		$el_id            = wd_get_gutenberg_element_id( $block_attributes );
 
 		if ( ! empty( $block_attributes['mobileIcon'] ) ) {
 			$ordering_classes .= ' wd-ordering-mb-icon';
@@ -26,7 +27,7 @@ if ( ! function_exists( 'wd_gutenberg_shop_archive_order_by' ) ) {
 		Builder_Data::get_instance()->set_data( 'builder_ordering_classes', $ordering_classes );
 
 		?>
-			<div id="<?php echo esc_attr( wd_get_gutenberg_element_id( $block_attributes ) ); ?>" class="wd-shop-ordering<?php echo esc_attr( wd_get_gutenberg_element_classes( $block_attributes ) ); ?>">
+			<div <?php echo $el_id ? 'id="' . esc_attr( $el_id ) . '" ' : ''; ?>class="wd-shop-ordering<?php echo esc_attr( wd_get_gutenberg_element_classes( $block_attributes ) ); ?>">
 				<?php woocommerce_catalog_ordering(); ?>
 			</div>
 		<?php

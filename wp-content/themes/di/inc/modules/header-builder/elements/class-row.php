@@ -1,21 +1,33 @@
 <?php
+/**
+ * Row element class file.
+ *
+ * @package woodmart
+ */
+
 namespace XTS\Modules\Header_Builder\Elements;
 
 use XTS\Modules\Header_Builder\Element;
 
 /**
- * ------------------------------------------------------------------------------------------------
  *  Basic structure element - row
- * ------------------------------------------------------------------------------------------------
  */
 class Row extends Element {
 
+	/**
+	 * Constructor.
+	 */
 	public function __construct() {
 		parent::__construct();
 
 		$this->template_name = 'row';
 	}
 
+	/**
+	 * Map element.
+	 *
+	 * @return void
+	 */
 	public function map() {
 		$this->args = array(
 			'type'            => 'row',
@@ -70,7 +82,7 @@ class Row extends Element {
 						),
 					),
 					'description' => wp_kses( __( 'Determine the "flex layout" for this row. More information about both options read in our <a href="https://xtemos.com/docs/woodmart/header-builder/header-rows-flex-layouts/" target="_blank">documentation here</a>.', 'woodmart' ), 'default' ),
-					'requires'    => array(
+					'condition'   => array(
 						'row_columns' => array(
 							'comparison' => 'equal',
 							'value'      => '3',
@@ -142,7 +154,7 @@ class Row extends Element {
 					'value'       => 60,
 					'units'       => 'px',
 					'description' => esc_html__( 'Determine the header height for sticky header value in pixels.', 'woodmart' ),
-					'requires'    => array(
+					'condition'   => array(
 						'sticky' => array(
 							'comparison' => 'equal',
 							'value'      => true,

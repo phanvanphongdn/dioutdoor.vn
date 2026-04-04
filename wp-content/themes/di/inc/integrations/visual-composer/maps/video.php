@@ -2,7 +2,7 @@
 /**
  * Video map.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -360,7 +360,7 @@ if ( ! function_exists( 'woodmart_get_vc_map_video' ) ) {
 					'type'       => 'wd_select',
 					'style'      => 'select',
 					'selectors'  => array(
-						'{{WRAPPER}}.wd-el-video' => array(
+						'{{WRAPPER}}.wd-el-video.wd-with-aspect-ratio' => array(
 							'--wd-aspect-ratio: {{VALUE}};',
 						),
 					),

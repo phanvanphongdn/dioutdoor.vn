@@ -24,6 +24,10 @@ class Frontend extends Singleton {
 	 * Init.
 	 */
 	public function init() {
+		if ( ! woodmart_get_opt( 'checkout_fields_enabled' ) || ! woodmart_woocommerce_installed() ) {
+			return;
+		}
+
 		$this->helper = Helper::get_instance();
 
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
@@ -33,6 +37,7 @@ class Frontend extends Singleton {
 		add_filter( 'woocommerce_get_country_locale_default', array( $this, 'change_locale_fields' ) );
 		add_filter( 'woocommerce_get_country_locale_base', array( $this, 'change_locale_fields' ) );
 		add_filter( 'woocommerce_get_country_locale', array( $this, 'change_country_locale_country' ), 20, 1 );
+		add_filter( 'woocommerce_format_postcode', array( $this, 'normalize_postcode' ) );
 	}
 
 	/**
@@ -49,6 +54,19 @@ class Frontend extends Singleton {
 
 		wp_enqueue_script( 'checkout-fields', WOODMART_THEME_DIR . '/js/scripts/wc/checkoutFields' . $minified . '.js', array( 'jquery' ), WOODMART_VERSION, true );
 		wp_localize_script( 'checkout-fields', 'woodmart_checkout_fields', $this->add_localized_settings() );
+	}
+
+	/**
+	 * Normalize postcode.
+	 *
+	 * @param string $postcode Postcode.
+	 */
+	public function normalize_postcode( $postcode ) {
+		if ( '-' === $postcode ) {
+			return '';
+		}
+
+		return $postcode;
 	}
 
 	/**
@@ -105,6 +123,10 @@ class Frontend extends Singleton {
 					);
 
 					foreach ( $positions_classes as $positions_class ) {
+						if ( ! isset( $checkout_fields[ $group_key ] ) || ! isset( $checkout_fields[ $group_key ][ $field_key ] ) || ! is_array( $checkout_fields[ $group_key ][ $field_key ]['class'] ) ) {
+							continue;
+						}
+
 						$remove_classes[] = array_search( $positions_class, $checkout_fields[ $group_key ][ $field_key ]['class'], true );
 					}
 
@@ -164,7 +186,7 @@ class Frontend extends Singleton {
 	 * @return array
 	 */
 	public function change_country_locale_country( $fields ) {
-		if ( is_wc_endpoint_url( 'edit-address' ) || ! is_array( $fields ) ) {
+		if ( ! woodmart_get_opt( 'checkout_fields_enabled' ) || is_wc_endpoint_url( 'edit-address' ) || ! is_array( $fields ) ) {
 			return $fields;
 		}
 

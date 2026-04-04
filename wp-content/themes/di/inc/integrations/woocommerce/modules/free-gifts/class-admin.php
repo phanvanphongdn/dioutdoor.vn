@@ -35,6 +35,10 @@ class Admin extends Singleton {
 	 * Init.
 	 */
 	public function init() {
+		if ( ! woodmart_get_opt( 'free_gifts_enabled', 0 ) || woodmart_get_opt( 'free_gifts_limit', 5 ) < 1 || ! woodmart_woocommerce_installed() ) {
+			return;
+		}
+
 		$this->manager = Manager::get_instance();
 
 		add_action( 'new_to_publish', array( $this, 'clear_transients_on_publish' ) );
@@ -76,13 +80,22 @@ class Admin extends Singleton {
 	 * @return void
 	 */
 	public function clear_transients( $post_id, $post ) {
-		if ( ! $post || 'wd_woo_free_gifts' !== $post->post_type ) {
+		if ( ! $post || ! in_array( $post->post_type, array( 'wd_woo_free_gifts', 'product' ), true ) ) {
 			return;
 		}
 
-		delete_transient( $this->manager->wd_transient_free_gifts_all_rules );
+		if ( 'wd_woo_free_gifts' === $post->post_type ) {
+			delete_transient( $this->manager->wd_transient_free_gifts_rule . '_' . $post->ID );
+		} else {
+			$ids = $this->manager->get_all_rule_posts_ids();
+
+			foreach ( $ids as $id ) {
+				delete_transient( $this->manager->wd_transient_free_gifts_rule . '_' . $id );
+			}
+		}
+
 		delete_transient( $this->manager->wd_transient_free_gifts_ids );
-		delete_transient( $this->manager->wd_transient_free_gifts_rule . '_' . $post->ID );
+		delete_transient( $this->manager->wd_transient_free_gifts_all_rules );
 	}
 
 	/**
@@ -207,19 +220,63 @@ class Admin extends Singleton {
 
 		$metabox->add_field(
 			array(
+				'id'          => 'free_gifts_strict_exclude_mode',
+				'name'        => esc_html__( 'Strict exclude mode', 'woodmart' ),
+				'description' => esc_html__( 'If enabled, free gifts will not be added if there is at least one product in the cart that matches any exclude rule — even if some products match include rules.', 'woodmart' ),
+				'group'       => esc_html__( 'Products in cart condition', 'woodmart' ),
+				'type'        => 'switcher',
+				'section'     => 'general',
+				'default'     => false,
+				'priority'    => 35,
+				'class'       => 'xts-col-6',
+			)
+		);
+
+		$metabox->add_field(
+			array(
+				'id'          => 'free_gifts_cart_price_type',
+				'type'        => 'select',
+				'section'     => 'general',
+				'name'        => esc_html__( 'Base price', 'woodmart' ),
+				'description' => esc_html__( "Select whether the gift eligibility is based on the cart's total amount (including taxes and discounts), the subtotal amount (excluding taxes and discounts), or the subtotal after discount (discounts applied, excluding taxes and shipping).", 'woodmart' ),
+				'group'       => esc_html__( 'Cart price condition', 'woodmart' ),
+				'options'     => array(
+					'subtotal'                => array(
+						'name'  => esc_html__( 'Subtotal', 'woodmart' ),
+						'value' => 'subtotal',
+					),
+					'subtotal_after_discount' => array(
+						'name'  => esc_html__( 'Subtotal after discount', 'woodmart' ),
+						'value' => 'subtotal_after_discount',
+					),
+					'total'                   => array(
+						'name'  => esc_html__( 'Total', 'woodmart' ),
+						'value' => 'total',
+					),
+				),
+				'default'     => 'subtotal',
+				'class'       => 'xts-col-12',
+				'priority'    => 40,
+			)
+		);
+
+		$cart_amount_step = floatval( apply_filters( 'woodmart_free_gifts_cart_amount_step', '0.01' ) );
+
+		$metabox->add_field(
+			array(
 				'id'          => 'free_gifts_cart_total_min',
-				'name'        => esc_html__( 'Cart total min', 'woodmart' ),
-				'description' => esc_html__( 'Set the minimum cart total required for customers to qualify for a free gift, ensuring that the gift is only offered on purchases above a specified amount.', 'woodmart' ),
+				'name'        => esc_html__( 'Cart amount min', 'woodmart' ),
+				'description' => esc_html__( 'Set the minimum cart amount required for customers to qualify for a free gift, ensuring that the gift is only offered on purchases above a specified amount.', 'woodmart' ),
 				'group'       => esc_html__( 'Cart price condition', 'woodmart' ),
 				'type'        => 'text_input',
 				'attributes'  => array(
 					'type' => 'number',
 					'min'  => '0',
-					'step' => '1',
+					'step' => $cart_amount_step,
 				),
 				'default'     => 0,
 				'section'     => 'general',
-				'priority'    => 40,
+				'priority'    => 50,
 				'class'       => 'xts-col-6',
 			)
 		);
@@ -227,17 +284,17 @@ class Admin extends Singleton {
 		$metabox->add_field(
 			array(
 				'id'          => 'free_gifts_cart_total_max',
-				'name'        => esc_html__( 'Cart total max', 'woodmart' ),
-				'description' => esc_html__( 'Define the maximum cart total for which a free gift is available, ensuring the offer is valid only within a specified purchase range.', 'woodmart' ),
+				'name'        => esc_html__( 'Cart amount max', 'woodmart' ),
+				'description' => esc_html__( 'Define the maximum cart amount for which a free gift is available, ensuring the offer is valid only within a specified purchase range.', 'woodmart' ),
 				'group'       => esc_html__( 'Cart price condition', 'woodmart' ),
 				'type'        => 'text_input',
 				'attributes'  => array(
 					'type' => 'number',
 					'min'  => '0',
-					'step' => '1',
+					'step' => $cart_amount_step,
 				),
 				'section'     => 'general',
-				'priority'    => 50,
+				'priority'    => 60,
 				'class'       => 'xts-col-6',
 			)
 		);
@@ -247,6 +304,8 @@ class Admin extends Singleton {
 				'free_gifts_rule_type',
 				'free_gifts',
 				'free_gifts_condition',
+				'free_gifts_strict_exclude_mode',
+				'free_gifts_cart_price_type',
 				'free_gifts_cart_total_min',
 				'free_gifts_cart_total_max',
 			)
@@ -267,10 +326,11 @@ class Admin extends Singleton {
 
 		$posts = get_posts(
 			array(
-				's'              => $search,
-				'post_type'      => $post_type,
-				'post_status'    => 'publish',
-				'posts_per_page' => 20,
+				's'                => $search,
+				'post_type'        => $post_type,
+				'post_status'      => 'publish',
+				'posts_per_page'   => apply_filters( 'woodmart_get_numberposts_by_query_autocomplete', 20 ),
+				'suppress_filters' => false,
 			)
 		);
 

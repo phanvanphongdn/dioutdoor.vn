@@ -93,9 +93,12 @@ class Compare extends Singleton {
 	 * @return array
 	 */
 	public function add_localized_settings( $localized ) {
-		$localized['compare_by_category']       = woodmart_get_opt( 'compare_by_category' ) ? 'yes' : 'no';
-		$localized['compare_page_nonce']        = wp_create_nonce( 'wd-compare-page' );
-		$localized['compare_save_button_state'] = woodmart_get_opt( 'compare_save_button_state' ) ? 'yes' : 'no';
+		$localized['compare_by_category']         = woodmart_get_opt( 'compare_by_category' ) ? 'yes' : 'no';
+		$localized['compare_page_nonce']          = wp_create_nonce( 'wd-compare-page' );
+		$localized['compare_save_button_state']   = woodmart_get_opt( 'compare_save_button_state' ) ? 'yes' : 'no';
+		$localized['compare_origin_button_text']  = esc_html__( 'Compare', 'woodmart' );
+		$localized['compare_added_button_text']   = esc_html__( 'Compare products', 'woodmart' );
+		$localized['compare_removed_button_text'] = esc_html__( 'Remove from compare', 'woodmart' );
 
 		return $localized;
 	}
@@ -232,6 +235,10 @@ class Compare extends Singleton {
 			$_COOKIE[ $this->cookie_name ] = wp_json_encode( $product_ids );
 		}
 
+		if ( class_exists( 'WPBMap' ) ) {
+			WPBMap::addAllMappedShortcodes();
+		}
+
 		wp_send_json(
 			array(
 				'count'     => $this->get_compare_count(),
@@ -353,18 +360,18 @@ class Compare extends Singleton {
 	/**
 	 * All available fields for Theme Settings sorter option.
 	 *
-	 * @param bool $new New option.
+	 * @param bool $is_new_options New option.
 	 *
 	 * @return array
 	 */
-	public function compare_available_fields( $new = false ) {
+	public function compare_available_fields( $is_new_options = false ) {
 		$product_attributes = array();
 
 		if ( function_exists( 'wc_get_attribute_taxonomies' ) ) {
 			$product_attributes = wc_get_attribute_taxonomies();
 		}
 
-		if ( $new ) {
+		if ( $is_new_options ) {
 			$options = array(
 				'description'  => array(
 					'name'  => esc_html__( 'Description', 'woodmart' ),
@@ -387,6 +394,16 @@ class Compare extends Singleton {
 					'value' => 'sku',
 				),
 			);
+
+			if ( taxonomy_exists( 'product_brand' ) ) {
+				$taxonomy = get_taxonomy( 'product_brand' );
+				$label    = $taxonomy->labels->singular_name;
+
+				$options['product_brand'] = array(
+					'name'  => $label,
+					'value' => 'product_brand',
+				);
+			}
 
 			if ( count( $product_attributes ) > 0 ) {
 				foreach ( $product_attributes as $attribute ) {

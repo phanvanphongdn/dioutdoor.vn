@@ -154,24 +154,19 @@ class Install_Plugins extends Singleton {
 
 			if ( ! $tgmpa->is_plugin_installed( $slug ) ) {
 				$plugins[ $slug ]['status'] = 'install';
+			} elseif ( $tgmpa->does_plugin_have_update( $slug ) ) {
+				$plugins[ $slug ]['status'] = 'update';
+			} elseif ( $tgmpa->can_plugin_activate( $slug ) ) {
+				$plugins[ $slug ]['status'] = 'activate';
+			} elseif ( $tgmpa->does_plugin_require_update( $slug ) ) {
+				$plugins[ $slug ]['status'] = 'require_update';
 			} else {
-				if ( $tgmpa->does_plugin_have_update( $slug ) ) {
-					$plugins[ $slug ]['status'] = 'update';
-				} elseif ( $tgmpa->can_plugin_activate( $slug ) ) {
-					$plugins[ $slug ]['status'] = 'activate';
-				} elseif ( $tgmpa->does_plugin_require_update( $slug ) ) {
-					$plugins[ $slug ]['status'] = 'require_update';
-				} else {
-					$plugins[ $slug ]['status'] = 'deactivate';
-				}
+				$plugins[ $slug ]['status'] = 'deactivate';
 			}
 		}
 
-		$builder = 'elementor';
-
-		if ( woodmart_get_current_page_builder() ) {
-			$builder = woodmart_get_current_page_builder();
-		}
+		$external_builder = 'wpb' === woodmart_get_current_page_builder() ? 'wpb' : 'elementor';
+		$builder          = 'native' === woodmart_get_opt( 'current_builder' ) ? 'gutenberg' : $external_builder;
 
 		if ( isset( $_GET['wd_builder'] ) ) { // phpcs:ignore
 			$builder = wp_unslash( $_GET['wd_builder'] ); // phpcs:ignore
@@ -189,7 +184,7 @@ class Install_Plugins extends Singleton {
 			'contact-form-7',
 			'mailchimp-for-wp',
 			'safe-svg',
-			'revslider',
+			'woodmart-images-optimizer',
 		);
 
 		$plugins = array_replace( array_flip( $order ), $plugins );
@@ -204,7 +199,7 @@ class Install_Plugins extends Singleton {
 		}
 
 		if ( Setup_Wizard::get_instance()->is_setup() ) {
-			unset( $plugins['revslider'] );
+			unset( $plugins['woodmart-images-optimizer'] );
 		}
 
 		return $plugins;
@@ -238,6 +233,8 @@ class Install_Plugins extends Singleton {
 		$plugins = $this->get_plugins();
 		$tgmpa   = call_user_func( array( get_class( $GLOBALS['tgmpa'] ), 'get_instance' ) );
 		$output  = array();
+
+		unset( $plugins['woodmart-images-optimizer'] );
 
 		foreach ( $plugins as $slug => $plugin ) {
 			if ( ! $tgmpa->is_plugin_active( $slug ) && $tgmpa->can_plugin_activate( $slug ) ) {

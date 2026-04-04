@@ -2,7 +2,7 @@
 /**
  * Gallery map.
  *
- * @package xts
+ * @package woodmart
  */
 
 namespace XTS\Modules\Layouts;

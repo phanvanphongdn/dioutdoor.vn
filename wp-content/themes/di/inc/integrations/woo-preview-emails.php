@@ -1,6 +1,6 @@
 <?php
 /**
- * Preview E-mails for WooCommerce.
+ * Preview E-mails for WooCommerce integration.
  *
  * @package woodmart
  */
@@ -11,22 +11,20 @@ if ( ! defined( 'WOO_PREVIEW_EMAILS_DIR' ) ) {
 	return;
 }
 
-if ( ! function_exists( 'woodmart_woo_preview_update_order' ) ) {
+if ( ! function_exists( 'woodmart_woo_preview_skip_wishlist_emails' ) ) {
 	/**
-	 * Update order.
+	 * Skips custom wishlist emails from default order preview handling.
 	 *
-	 * @param mixed   $additional_data Additional data.
-	 * @param string  $index Email index.
-	 * @param integer $order_id Order ID.
-	 * @param object  $current_email Emails data.
+	 * @param mixed  $additional_data Additional data.
+	 * @param string $index Email index.
 	 *
-	 * @return bool|void
+	 * @return bool|mixed Returns true to skip order creation, otherwise returns original data.
 	 */
-	function woodmart_woo_preview_update_order( $additional_data, $index, $order_id, $current_email ) {
+	function woodmart_woo_preview_skip_wishlist_emails( $additional_data, $index ) {
 		$emails_list = array(
-			'woodmart_wishlist_back_in_stock',
-			'woodmart_wishlist_on_sale_products',
-			'woodmart_promotional_email',
+			'XTS_Email_Wishlist_Back_In_Stock',
+			'XTS_Email_Wishlist_On_Sale_Products',
+			'XTS_Email_Wishlist_Promotional',
 		);
 
 		if ( in_array( $index, $emails_list, true ) ) {
@@ -36,19 +34,17 @@ if ( ! function_exists( 'woodmart_woo_preview_update_order' ) ) {
 		return $additional_data;
 	}
 
-	add_filter( 'woo_preview_additional_orderID', 'woodmart_woo_preview_update_order', 10, 4 );
+	add_filter( 'woo_preview_additional_orderID', 'woodmart_woo_preview_skip_wishlist_emails', 10, 2 );
 }
 
-if ( ! function_exists( 'woodmart_woo_preview_order_trigger' ) ) {
+if ( ! function_exists( 'woodmart_woo_preview_trigger_wishlist_emails' ) ) {
 	/**
-	 * Trigger emails content.
+	 * Triggers custom wishlist email content for preview.
 	 *
-	 * @param object $current_email Emails data.
-	 * @param mixed  $additional_data Additional data.
-	 *
+	 * @param object $current_email Current email object.
 	 * @return void
 	 */
-	function woodmart_woo_preview_order_trigger( $current_email, $additional_data ) {
+	function woodmart_woo_preview_trigger_wishlist_emails( $current_email ) {
 		$user_id = get_current_user_id();
 
 		if ( 'woodmart_back_in_stock_email' === $current_email->id ) {
@@ -87,7 +83,7 @@ if ( ! function_exists( 'woodmart_woo_preview_order_trigger' ) ) {
 				}
 			}
 
-			if ( $products_on_sales ) {
+			if ( ! $products_on_sales ) {
 				$args  = array(
 					'posts_per_page' => 4,
 					'post_type'      => 'product',
@@ -126,5 +122,5 @@ if ( ! function_exists( 'woodmart_woo_preview_order_trigger' ) ) {
 		}
 	}
 
-	add_action( 'woo_preview_additional_order_trigger', 'woodmart_woo_preview_order_trigger', 10, 2 );
+	add_action( 'woo_preview_additional_order_trigger', 'woodmart_woo_preview_trigger_wishlist_emails', 10 );
 }

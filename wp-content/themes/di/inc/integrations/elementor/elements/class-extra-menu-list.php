@@ -6,6 +6,7 @@
 namespace XTS\Elementor;
 
 use Elementor\Group_Control_Image_Size;
+use Elementor\Group_Control_Typography;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Repeater;
@@ -66,7 +67,7 @@ class Extra_Menu_List extends Widget_Base {
 	 * @return array Widget categories.
 	 */
 	public function get_categories() {
-		return [ 'wd-elements' ];
+		return array( 'wd-elements' );
 	}
 
 	/**
@@ -85,65 +86,65 @@ class Extra_Menu_List extends Widget_Base {
 		 */
 		$this->start_controls_section(
 			'general_section',
-			[
+			array(
 				'label' => esc_html__( 'General', 'woodmart' ),
-			]
+			)
 		);
 
 		$this->start_controls_tabs( 'extra_menu_tabs' );
 
 		$this->start_controls_tab(
 			'link_tab',
-			[
+			array(
 				'label' => esc_html__( 'Link', 'woodmart' ),
-			]
+			)
 		);
 
 		$this->add_control(
 			'title',
-			[
+			array(
 				'label'   => esc_html__( 'Title', 'woodmart' ),
 				'type'    => Controls_Manager::TEXT,
 				'default' => 'Menu parent item',
-			]
+			)
 		);
 
 		$this->add_control(
 			'link',
-			[
+			array(
 				'label'   => esc_html__( 'Link', 'woodmart' ),
 				'type'    => Controls_Manager::URL,
-				'default' => [
+				'default' => array(
 					'url'         => '#',
 					'is_external' => false,
 					'nofollow'    => false,
-				],
-			]
+				),
+			)
 		);
 
 		$this->end_controls_tab();
 
 		$this->start_controls_tab(
 			'label_tab',
-			[
+			array(
 				'label' => esc_html__( 'Label', 'woodmart' ),
-			]
+			)
 		);
 
 		$this->add_control(
 			'label',
-			[
+			array(
 				'label' => esc_html__( 'Label text (optional)', 'woodmart' ),
 				'type'  => Controls_Manager::TEXT,
-			]
+			)
 		);
 
 		$this->add_control(
 			'label_color',
-			[
+			array(
 				'label'   => esc_html__( 'Label color', 'woodmart' ),
 				'type'    => Controls_Manager::SELECT,
-				'options' => [
+				'options' => array(
 					'primary'   => esc_html__( 'Primary Color', 'woodmart' ),
 					'secondary' => esc_html__( 'Secondary', 'woodmart' ),
 					'red'       => esc_html__( 'Red', 'woodmart' ),
@@ -153,35 +154,35 @@ class Extra_Menu_List extends Widget_Base {
 					'grey'      => esc_html__( 'Grey', 'woodmart' ),
 					'white'     => esc_html__( 'White', 'woodmart' ),
 					'black'     => esc_html__( 'Black', 'woodmart' ),
-				],
+				),
 				'default' => 'primary',
-			]
+			)
 		);
 
 		$this->end_controls_tab();
 
 		$this->start_controls_tab(
 			'image_tab',
-			[
+			array(
 				'label' => esc_html__( 'Image', 'woodmart' ),
-			]
+			)
 		);
 
 		$this->add_control(
 			'image',
-			[
+			array(
 				'label' => esc_html__( 'Choose image', 'woodmart' ),
 				'type'  => Controls_Manager::MEDIA,
-			]
+			)
 		);
 
 		$this->add_group_control(
 			Group_Control_Image_Size::get_type(),
-			[
+			array(
 				'name'      => 'image',
 				'default'   => 'thumbnail',
 				'separator' => 'none',
-			]
+			)
 		);
 
 		$this->end_controls_tab();
@@ -194,56 +195,56 @@ class Extra_Menu_List extends Widget_Base {
 
 		$repeater->start_controls_tab(
 			'link_tab',
-			[
+			array(
 				'label' => esc_html__( 'Link', 'woodmart' ),
-			]
+			)
 		);
 
 		$repeater->add_control(
 			'title',
-			[
+			array(
 				'label'   => esc_html__( 'Title', 'woodmart' ),
 				'type'    => Controls_Manager::TEXT,
 				'default' => 'Menu child item',
-			]
+			)
 		);
 
 		$repeater->add_control(
 			'link',
-			[
+			array(
 				'label'   => esc_html__( 'Link', 'woodmart' ),
 				'type'    => Controls_Manager::URL,
-				'default' => [
+				'default' => array(
 					'url'         => '#',
 					'is_external' => false,
 					'nofollow'    => false,
-				],
-			]
+				),
+			)
 		);
 
 		$repeater->end_controls_tab();
 
 		$repeater->start_controls_tab(
 			'label_tab',
-			[
+			array(
 				'label' => esc_html__( 'Label', 'woodmart' ),
-			]
+			)
 		);
 
 		$repeater->add_control(
 			'label',
-			[
+			array(
 				'label' => esc_html__( 'Label text (optional)', 'woodmart' ),
 				'type'  => Controls_Manager::TEXT,
-			]
+			)
 		);
 
 		$repeater->add_control(
 			'label_color',
-			[
+			array(
 				'label'   => esc_html__( 'Label color', 'woodmart' ),
 				'type'    => Controls_Manager::SELECT,
-				'options' => [
+				'options' => array(
 					'primary'   => esc_html__( 'Primary Color', 'woodmart' ),
 					'secondary' => esc_html__( 'Secondary', 'woodmart' ),
 					'red'       => esc_html__( 'Red', 'woodmart' ),
@@ -253,35 +254,35 @@ class Extra_Menu_List extends Widget_Base {
 					'grey'      => esc_html__( 'Grey', 'woodmart' ),
 					'white'     => esc_html__( 'White', 'woodmart' ),
 					'black'     => esc_html__( 'Black', 'woodmart' ),
-				],
+				),
 				'default' => 'primary',
-			]
+			)
 		);
 
 		$repeater->end_controls_tab();
 
 		$repeater->start_controls_tab(
 			'image_tab',
-			[
+			array(
 				'label' => esc_html__( 'Image', 'woodmart' ),
-			]
+			)
 		);
 
 		$repeater->add_control(
 			'image',
-			[
+			array(
 				'label' => esc_html__( 'Choose image', 'woodmart' ),
 				'type'  => Controls_Manager::MEDIA,
-			]
+			)
 		);
 
 		$repeater->add_group_control(
 			Group_Control_Image_Size::get_type(),
-			[
+			array(
 				'name'      => 'image',
 				'default'   => 'thumbnail',
 				'separator' => 'none',
-			]
+			)
 		);
 
 		$repeater->end_controls_tab();
@@ -290,76 +291,206 @@ class Extra_Menu_List extends Widget_Base {
 
 		$this->add_control(
 			'menu_items_repeater',
-			[
+			array(
 				'type'        => Controls_Manager::REPEATER,
 				'label'       => esc_html__( 'List items', 'woodmart' ),
 				'separator'   => 'before',
 				'title_field' => '{{{ title }}}',
 				'fields'      => $repeater->get_controls(),
-				'default'     => [
-					[
+				'default'     => array(
+					array(
 						'title'       => 'Menu child item 1',
 						'label'       => '',
 						'label_color' => 'primary',
-						'link'        => [
+						'link'        => array(
 							'url'         => '#',
 							'is_external' => false,
 							'nofollow'    => false,
-						],
-					],
-					[
+						),
+					),
+					array(
 						'title'       => 'Menu child item  2',
 						'label'       => 'New',
 						'label_color' => 'green',
-						'link'        => [
+						'link'        => array(
 							'url'         => '#',
 							'is_external' => false,
 							'nofollow'    => false,
-						],
-					],
-					[
+						),
+					),
+					array(
 						'title'       => 'Menu child item 3',
 						'label'       => '',
 						'label_color' => 'primary',
-						'link'        => [
+						'link'        => array(
 							'url'         => '#',
 							'is_external' => false,
 							'nofollow'    => false,
-						],
-					],
-					[
+						),
+					),
+					array(
 						'title'       => 'Menu child item 4',
 						'label'       => '',
 						'label_color' => 'primary',
-						'link'        => [
+						'link'        => array(
 							'url'         => '#',
 							'is_external' => false,
 							'nofollow'    => false,
-						],
-					],
-					[
+						),
+					),
+					array(
 						'title'       => 'Menu child item 5',
 						'label'       => 'Hot',
 						'label_color' => 'red',
-						'link'        => [
+						'link'        => array(
 							'url'         => '#',
 							'is_external' => false,
 							'nofollow'    => false,
-						],
-					],
-					[
+						),
+					),
+					array(
 						'title'       => 'Menu child item 6',
 						'label'       => '',
 						'label_color' => 'primary',
-						'link'        => [
+						'link'        => array(
 							'url'         => '#',
 							'is_external' => false,
 							'nofollow'    => false,
-						],
-					],
-				],
-			]
+						),
+					),
+				),
+			)
 		);
+
+		$this->end_controls_section();
+
+		$this->start_controls_section(
+			'title_style_section',
+			array(
+				'label' => esc_html__( 'Title', 'woodmart' ),
+				'tab'   => Controls_Manager::TAB_STYLE,
+			)
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			array(
+				'name'     => 'title_typography',
+				'label'    => esc_html__( 'Typography', 'woodmart' ),
+				'selector' => '{{WRAPPER}} .wd-sub-accented > li > a',
+			)
+		);
+
+		$this->start_controls_tabs(
+			'title_color_tabs',
+		);
+
+		$this->start_controls_tab(
+			'title_color_tab',
+			array(
+				'label' => esc_html__( 'Idle', 'woodmart' ),
+			)
+		);
+
+		$this->add_control(
+			'title_idle_color',
+			array(
+				'label'     => esc_html__( 'Color', 'woodmart' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'{{WRAPPER}} .wd-sub-accented > li > a' => 'color: {{VALUE}}',
+				),
+			)
+		);
+
+		$this->end_controls_tab();
+
+		$this->start_controls_tab(
+			'title_hover_color_tab',
+			array(
+				'label' => esc_html__( 'Hover', 'woodmart' ),
+			)
+		);
+
+		$this->add_control(
+			'title_hover_color',
+			array(
+				'label'     => esc_html__( 'Color', 'woodmart' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'{{WRAPPER}} .wd-sub-accented > li > a:hover' => 'color: {{VALUE}}',
+				),
+			)
+		);
+
+		$this->end_controls_tab();
+
+		$this->end_controls_tabs();
+
+		$this->end_controls_section();
+
+		$this->start_controls_section(
+			'items_style_section',
+			array(
+				'label' => esc_html__( 'Items', 'woodmart' ),
+				'tab'   => Controls_Manager::TAB_STYLE,
+			)
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			array(
+				'name'     => 'item_typography',
+				'label'    => esc_html__( 'Typography', 'woodmart' ),
+				'selector' => '{{WRAPPER}} .sub-sub-menu > li > a',
+			)
+		);
+
+		$this->start_controls_tabs(
+			'items_color_tabs',
+		);
+
+		$this->start_controls_tab(
+			'items_color_tab',
+			array(
+				'label' => esc_html__( 'Idle', 'woodmart' ),
+			)
+		);
+
+		$this->add_control(
+			'items_idle_color',
+			array(
+				'label'     => esc_html__( 'Color', 'woodmart' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'{{WRAPPER}} .sub-sub-menu > li > a' => 'color: {{VALUE}}',
+				),
+			)
+		);
+
+		$this->end_controls_tab();
+
+		$this->start_controls_tab(
+			'items_hover_color_tab',
+			array(
+				'label' => esc_html__( 'Hover', 'woodmart' ),
+			)
+		);
+
+		$this->add_control(
+			'items_hover_color',
+			array(
+				'label'     => esc_html__( 'Color', 'woodmart' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'{{WRAPPER}} .sub-sub-menu > li:hover > a' => 'color: {{VALUE}}',
+				),
+			)
+		);
+
+		$this->end_controls_tab();
+
+		$this->end_controls_tabs();
 
 		$this->end_controls_section();
 	}
@@ -374,45 +505,44 @@ class Extra_Menu_List extends Widget_Base {
 	 * @access protected
 	 */
 	protected function render() {
-		$default_settings = [
+		$default_settings = array(
 			'title'               => '',
 			'link'                => '',
 			'image'               => '',
 			'label'               => '',
 			'label_color'         => 'primary',
-			'menu_items_repeater' => [],
-		];
+			'menu_items_repeater' => array(),
+		);
 
 		$settings = wp_parse_args( $this->get_settings_for_display(), $default_settings );
 
 		$this->add_render_attribute(
-			[
-				'parent_ul'    => [
-					'class' => [
+			array(
+				'parent_ul'    => array(
+					'class' => array(
 						'wd-sub-menu',
 						'wd-sub-accented',
-						woodmart_get_old_classes( 'sub-menu' ),
 						'mega-menu-list',
-					],
-				],
-				'parent_li'    => [
-					'class' => [
+					),
+				),
+				'parent_li'    => array(
+					'class' => array(
 						'item-with-label',
 						'item-label-' . $settings['label_color'],
-					],
-				],
-				'parent_title' => [
-					'class' => [
+					),
+				),
+				'parent_title' => array(
+					'class' => array(
 						'nav-link-text',
-					],
-				],
-				'parent_label' => [
-					'class' => [
+					),
+				),
+				'parent_label' => array(
+					'class' => array(
 						'menu-label',
 						'menu-label-' . $settings['label_color'],
-					],
-				],
-			]
+					),
+				),
+			)
 		);
 
 		$this->add_inline_editing_attributes( 'parent_title' );
@@ -438,16 +568,16 @@ class Extra_Menu_List extends Widget_Base {
 
 		woodmart_enqueue_inline_style( 'mod-nav-menu-label' );
 		?>
-			<ul <?php echo $this->get_render_attribute_string( 'parent_ul' ); ?>>
-				<li <?php echo $this->get_render_attribute_string( 'parent_li' ); ?>>
+			<ul <?php echo $this->get_render_attribute_string( 'parent_ul' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+				<li <?php echo $this->get_render_attribute_string( 'parent_li' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 					<?php if ( $settings['title'] ) : ?>
-						<a <?php echo $link_attrs; ?>>
+						<a <?php echo $link_attrs; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 							<?php if ( $settings['image'] ) : ?>
 								<?php echo $image_output; // phpcs:ignore. ?>
 							<?php endif; ?>
 
 							<?php if ( woodmart_elementor_is_edit_mode() ) : ?>
-								<span <?php echo $this->get_render_attribute_string( 'parent_title' ); ?>>
+								<span <?php echo $this->get_render_attribute_string( 'parent_title' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 							<?php endif; ?>
 								<?php echo wp_kses( $settings['title'], woodmart_get_allowed_html() ); ?>
 							<?php if ( woodmart_elementor_is_edit_mode() ) : ?>
@@ -455,7 +585,7 @@ class Extra_Menu_List extends Widget_Base {
 							<?php endif; ?>
 
 							<?php if ( $settings['label'] ) : ?>
-								<span <?php echo $this->get_render_attribute_string( 'parent_label' ); ?>>
+								<span <?php echo $this->get_render_attribute_string( 'parent_label' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 									<?php echo wp_kses( $settings['label'], woodmart_get_allowed_html() ); ?>
 								</span>
 							<?php endif; ?>
@@ -470,20 +600,20 @@ class Extra_Menu_List extends Widget_Base {
 							$repeater_label_key = $this->get_repeater_setting_key( 'label', 'menu_items_repeater', $index );
 
 							$this->add_render_attribute(
-								[
-									$repeater_li_key    => [
-										'class' => [
+								array(
+									$repeater_li_key    => array(
+										'class' => array(
 											'item-with-label',
 											'item-label-' . $item['label_color'],
-										],
-									],
-									$repeater_label_key => [
-										'class' => [
+										),
+									),
+									$repeater_label_key => array(
+										'class' => array(
 											'menu-label',
 											'menu-label-' . $item['label_color'],
-										],
-									],
-								]
+										),
+									),
+								)
 							);
 
 							$this->add_inline_editing_attributes( $repeater_title_key );
@@ -492,15 +622,16 @@ class Extra_Menu_List extends Widget_Base {
 							$link_attrs = woodmart_get_link_attrs( $item['link'] );
 							?>
 
-							<li <?php echo $this->get_render_attribute_string( $repeater_li_key ); ?>>
-								<a <?php echo $link_attrs; ?>>
+							<li <?php echo $this->get_render_attribute_string( $repeater_li_key ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+								<a <?php echo $link_attrs; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 									<?php if ( $item['image'] ) : ?>
-										<?php echo woodmart_otf_get_image_html( $item['image']['id'], $item['image_size'], $item['image_custom_dimension'] );
+										<?php
+										echo woodmart_otf_get_image_html( $item['image']['id'], $item['image_size'], $item['image_custom_dimension'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped 
 										?>
 									<?php endif; ?>
 
 									<?php if ( woodmart_elementor_is_edit_mode() ) : ?>
-										<span <?php echo $this->get_render_attribute_string( $repeater_title_key ); ?>>
+										<span <?php echo $this->get_render_attribute_string( $repeater_title_key ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 									<?php endif; ?>
 										<?php echo wp_kses( $item['title'], woodmart_get_allowed_html() ); ?>
 									<?php if ( woodmart_elementor_is_edit_mode() ) : ?>
@@ -508,7 +639,7 @@ class Extra_Menu_List extends Widget_Base {
 									<?php endif; ?>
 
 									<?php if ( $item['label'] ) : ?>
-										<span <?php echo $this->get_render_attribute_string( $repeater_label_key ); ?>>
+										<span <?php echo $this->get_render_attribute_string( $repeater_label_key ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 											<?php echo wp_kses( $item['label'], woodmart_get_allowed_html() ); ?>
 										</span>
 									<?php endif; ?>

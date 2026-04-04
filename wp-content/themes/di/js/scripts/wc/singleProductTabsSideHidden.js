@@ -22,7 +22,7 @@ woodmartThemeModule.singleProductTabsDescHidden = function() {
 			removalDelay   : 600,
 			showCloseBtn   : false,
 			tLoading       : woodmart_settings.loading,
-			fixedContentPos: true,
+			fixedContentPos: false,
 			callbacks      : {
 				open: function() {
 					var mfpInstance     = this;
@@ -35,6 +35,7 @@ woodmartThemeModule.singleProductTabsDescHidden = function() {
 							tabsTitle.classList.add('wd-active');
 
 							window.dispatchEvent(new Event('wdOpenDescHiddenTab'));
+							woodmartThemeModule.$document.trigger('wood-images-loaded');
 						}, 10);
 					}
 

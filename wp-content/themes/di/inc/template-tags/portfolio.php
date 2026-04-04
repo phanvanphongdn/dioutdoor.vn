@@ -2,7 +2,7 @@
 /**
  * Portfolio templates functions
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -36,17 +36,34 @@ if ( ! function_exists( 'woodmart_get_portfolio_main_loop' ) ) {
 	/**
 	 * Main portfolio loop
 	 *
-	 * @since 1.0.0
-	 *
 	 * @param boolean $fragments Fragments.
+	 * @param array   $settings  Settings.
+	 *
+	 * @return void
 	 */
-	function woodmart_get_portfolio_main_loop( $fragments = false ) {
+	function woodmart_get_portfolio_main_loop( $fragments = false, $settings = array() ) {
 		global $paged, $wp_query;
 
-		$output     = '';
-		$max_page   = $wp_query->max_num_pages;
-		$style      = woodmart_get_opt( 'portoflio_style' );
-		$pagination = woodmart_get_opt( 'portfolio_pagination' );
+		$output           = '';
+		$max_page         = $wp_query->max_num_pages;
+		$encoded_settings = $settings ? wp_json_encode( $settings ) : '';
+		$attributes       = 'data-source="main_loop" data-source="shortcode" data-paged="1"';
+
+		if ( $encoded_settings ) {
+			$attributes .= ' data-atts="' . esc_attr( $encoded_settings ) . '"';
+		}
+
+		if ( $fragments && ! empty( $_GET['atts'] ) ) { //phpcs:ignore.
+			$atts = woodmart_clean( $_GET['atts'] ); //phpcs:ignore.
+			foreach ( $atts as $key => $value ) {
+				if ( 'inherit' !== $value ) {
+					woodmart_set_loop_prop( $key, $value );
+				}
+			}
+		}
+
+		$style      = woodmart_loop_prop( 'portfolio_style' );
+		$pagination = woodmart_loop_prop( 'portfolio_pagination' );
 
 		wp_enqueue_script( 'imagesloaded' );
 		woodmart_enqueue_js_library( 'isotope-bundle' );
@@ -70,9 +87,9 @@ if ( ! function_exists( 'woodmart_get_portfolio_main_loop' ) ) {
 				'columns'        => woodmart_loop_prop( 'portfolio_column' ),
 				'columns_tablet' => woodmart_loop_prop( 'portfolio_columns_tablet' ),
 				'columns_mobile' => woodmart_loop_prop( 'portfolio_columns_mobile' ),
-				'spacing'        => woodmart_get_opt( 'portfolio_spacing' ),
-				'spacing_tablet' => woodmart_get_opt( 'portfolio_spacing_tablet', '' ),
-				'spacing_mobile' => woodmart_get_opt( 'portfolio_spacing_mobile', '' ),
+				'spacing'        => woodmart_loop_prop( 'portfolio_spacing' ),
+				'spacing_tablet' => woodmart_loop_prop( 'portfolio_spacing_tablet', '' ),
+				'spacing_mobile' => woodmart_loop_prop( 'portfolio_spacing_mobile', '' ),
 			)
 		);
 
@@ -85,15 +102,16 @@ if ( ! function_exists( 'woodmart_get_portfolio_main_loop' ) ) {
 		woodmart_enqueue_js_script( 'portfolio-photoswipe' );
 
 		woodmart_enqueue_portfolio_loop_styles( $style );
+		$attributes .= ' style="' . esc_attr( $style_attrs ) . '"';
 
 		?>
 
-		<?php if ( woodmart_get_opt( 'ajax_portfolio' ) && ! $fragments ) : ?>
+		<?php if ( woodmart_loop_prop( 'ajax_portfolio' ) && ! $fragments ) : ?>
 			<?php woodmart_sticky_loader( ' wd-content-loader' ); ?>
 		<?php endif; ?>
 
 		<?php if ( ! $fragments ) : ?>
-			<div class="wd-projects wd-masonry wd-grid-f-col" data-source="main_loop" data-source="shortcode" data-paged="1" style="<?php echo esc_attr( $style_attrs ); ?>">
+			<div class="wd-projects wd-masonry wd-grid-f-col" <?php echo wp_kses( $attributes, true ); ?>>
 		<?php endif ?>
 
 		<?php while ( have_posts() ) : ?>
@@ -112,7 +130,7 @@ if ( ! function_exists( 'woodmart_get_portfolio_main_loop' ) ) {
 			<div class="wd-loop-footer portfolio-footer">
 				<?php if ( get_next_posts_link() && ( 'infinit' === $pagination || 'load_more' === $pagination ) ) : ?>
 					<?php woodmart_enqueue_inline_style( 'load-more-button' ); ?>
-					<a href="<?php echo esc_url( add_query_arg( 'woo_ajax', '1', next_posts( $max_page, false ) ) ); ?>" rel="nofollow noopener" class="btn wd-load-more wd-portfolio-load-more load-on-<?php echo 'load_more' === $pagination ? 'click' : 'scroll'; ?>">
+					<a href="<?php echo esc_url( remove_query_arg( 'woo_ajax', next_posts( $max_page, false ) ) ); ?>" rel="nofollow noopener" class="btn wd-load-more wd-portfolio-load-more load-on-<?php echo 'load_more' === $pagination ? 'click' : 'scroll'; ?>">
 						<?php esc_html_e( 'Load more projects', 'woodmart' ); ?>
 					</a>
 					<div class="btn wd-load-more wd-load-more-loader">
@@ -131,13 +149,12 @@ if ( ! function_exists( 'woodmart_get_portfolio_main_loop' ) ) {
 		<?php endif; ?>
 
 		<?php
-
 		if ( $fragments ) {
 			wp_send_json(
 				array(
 					'items'       => $output,
 					'status'      => ( $max_page > $paged ) ? 'have-posts' : 'no-more-posts',
-					'nextPage'    => add_query_arg( 'woo_ajax', '1', next_posts( $max_page, false ) ),
+					'nextPage'    => remove_query_arg( 'woo_ajax', next_posts( $max_page, false ) ),
 					'currentPage' => strtok( woodmart_get_current_url(), '?' ),
 				)
 			);
@@ -153,26 +170,36 @@ if ( ! function_exists( 'woodmart_portfolio_filters' ) ) {
 	 *
 	 * @param string $category Parent category.
 	 * @param string $type     Filters type.
+	 * @param string $wrapper_classes  Wrapper classes.
+	 * @param string $el_id  ID attribute.
 	 */
-	function woodmart_portfolio_filters( $category, $type ) {
-		$args = array( 'parent' => $category );
+	function woodmart_portfolio_filters( $category, $type, $wrapper_classes = '', $el_id = '' ) {
+		if ( woodmart_loop_prop( 'ajax_portfolio' ) && woodmart_is_portfolio_archive() ) {
+			woodmart_enqueue_js_library( 'pjax' );
+			woodmart_enqueue_js_script( 'ajax-portfolio' );
+		}
+
+		$args = array(
+			'taxonomy' => 'project-cat',
+			'parent'   => $category,
+		);
 
 		if ( is_array( $category ) ) {
 			$args = array( 'include' => $category );
 		}
 
-		$categories = get_terms( 'project-cat', $args );
+		$categories = get_terms( $args );
 
 		if ( is_wp_error( $categories ) || ! $categories ) {
 			return;
 		}
 
-		$wrapper_classes  = '';
 		$all_link_classes = '';
 		$wrapper_classes .= ' wd-type-' . $type;
 
 		if ( 'masonry' === $type ) {
 			woodmart_enqueue_js_script( 'portfolio-wd-nav-portfolios' );
+
 			$all_link_url      = '#';
 			$all_link_classes .= ' wd-active';
 		} else {
@@ -184,8 +211,12 @@ if ( ! function_exists( 'woodmart_portfolio_filters' ) ) {
 		}
 
 		?>
-		<div class="portfolio-filter wd-nav-wrapper wd-mb-action-swipe text-center<?php echo esc_attr( $wrapper_classes ); ?>">
-			<ul class="wd-nav-portfolio wd-nav wd-gap-m wd-style-underline<?php echo woodmart_get_old_classes( ' masonry-filter' ); ?>">
+		<div 
+			<?php if ( $el_id ) : ?>
+			id="<?php echo esc_attr( $el_id ); ?>"
+			<?php endif; ?> 
+			class="portfolio-filter wd-nav-wrapper wd-mb-action-swipe<?php echo esc_attr( $wrapper_classes ); ?>">
+			<ul class="wd-nav-portfolio wd-nav wd-gap-m wd-style-underline">
 				<li data-filter="*" class="<?php echo esc_attr( $all_link_classes ); ?>">
 					<a href="<?php echo esc_url( $all_link_url ); ?>">
 						<span class="nav-link-text"><?php esc_html_e( 'All', 'woodmart' ); ?></span>

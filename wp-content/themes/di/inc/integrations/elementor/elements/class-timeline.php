@@ -470,7 +470,7 @@ class Timeline extends Widget_Base {
 					if ( isset( $settings['image_secondary']['id'] ) && $settings['image_secondary']['id'] ) {
 						$image_secondary = woodmart_otf_get_image_html( $settings['image_secondary']['id'], $settings['image_secondary_size'], $settings['image_secondary_custom_dimension'] );
 					} elseif ( isset( $settings['image_secondary']['url'] ) && $settings['image_secondary']['url'] ) {
-						$image_secondary = '<img src="' . esc_url( $settings['image_secondary']['url'] ) . '">';
+						$image_secondary = apply_filters( 'woodmart_image', '<img src="' . esc_url( $settings['image_secondary']['url'] ) . '">' );
 					}
 
 					?>

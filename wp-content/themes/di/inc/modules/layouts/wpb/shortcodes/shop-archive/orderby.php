@@ -2,7 +2,7 @@
 /**
  * Order by shortcode.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 use XTS\Modules\Layouts\Global_Data as Builder_Data;

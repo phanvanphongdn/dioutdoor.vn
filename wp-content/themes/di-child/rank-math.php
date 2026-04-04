@@ -6,7 +6,7 @@ add_filter( 'rank_math/json_ld/disable_search', '__return_false' );
 
 
 
-add_filter( 'rank_math/json_ld', function( $data, $jsonld ) {
+/*add_filter( 'rank_math/json_ld', function( $data, $jsonld ) {
     if ( is_product_category() || is_tax('pa_brands')) {
         $category = get_queried_object();
         // Kiểm tra xem đang ở trang lưu trữ brand hay không
@@ -92,12 +92,188 @@ add_filter( 'rank_math/json_ld', function( $data, $jsonld ) {
             ],
         ];
         // Thêm thông tin về thuộc tính sản phẩm "brand"
-        if (is_tax('pa_brands')) {
+        if (is_tax('product_brand')) {
             $data['product']['brand'] = get_queried_object()->name;
         }
     }
     return $data;
-}, 20, 2 );
+}, 20, 2 );*/
+add_filter('rank_math/json_ld', function ($data, $jsonld) {
+
+    if (!is_product_category() && !is_tax('product_brand')) {
+        return $data;
+    }
+
+    $term = get_queried_object();
+    if (!($term instanceof WP_Term)) {
+        return $data;
+    }
+
+    global $wp_query;
+
+    $term_id  = $term->term_id;
+    $page_url = get_term_link($term);
+
+    // Title/Description: ưu tiên Rank Math term meta
+    $rm_title = get_term_meta($term_id, 'rank_math_title', true);
+    $name     = (!empty($rm_title) && class_exists('\RankMath\Helper'))
+        ? \RankMath\Helper::replace_vars($rm_title)
+        : single_term_title('', false);
+
+    $rm_desc = get_term_meta($term_id, 'rank_math_description', true);
+    $desc    = (!empty($rm_desc) && class_exists('\RankMath\Helper'))
+        ? \RankMath\Helper::replace_vars($rm_desc)
+        : wp_strip_all_tags(term_description('', false));
+
+ // Lấy tối đa 10 sản phẩm đang hiển thị trên trang hiện tại để đưa vào schema
+$schema_limit = 10;
+$product_ids  = [];
+
+if (!empty($wp_query->posts)) {
+    foreach ($wp_query->posts as $p) {
+        if (isset($p->ID) && get_post_type($p->ID) === 'product') {
+            $product_ids[] = (int) $p->ID;
+
+            if (count($product_ids) >= $schema_limit) {
+                break;
+            }
+        }
+    }
+}
+
+
+    // Tổng số sản phẩm (phản ánh toàn bộ term, không phải chỉ page hiện tại)
+    $total_products = isset($wp_query->found_posts) ? (int) $wp_query->found_posts : (int) ($term->count ?? 0);
+
+    // Nếu là brand page: tạo Brand entity
+    if (is_tax('product_brand')) {
+        $data['brand'] = [
+            '@type' => 'Brand',
+            '@id'   => esc_url($page_url) . '#brand',
+            'name'  => $term->name,
+            'url'   => esc_url($page_url),
+        ];
+    }
+
+    // Build ItemList: mỗi ListItem chứa Product có offers + aggregateRating (nếu có)
+    $item_list = [
+        '@type'           => 'ItemList',
+        'name'            => $name,
+        'itemListOrder'   => 'https://schema.org/ItemListOrderAscending',
+        'numberOfItems'   => $total_products,
+        'itemListElement' => [],
+    ];
+
+    $pos = 1;
+    foreach ($product_ids as $pid) {
+        $product = wc_get_product($pid);
+        if (!$product) continue;
+
+        $p_url  = get_permalink($pid);
+        $p_name = $product->get_name();
+
+        // Image (1 ảnh đại diện)
+        $img = '';
+        $img_id = $product->get_image_id();
+        if ($img_id) {
+            $img = wp_get_attachment_url($img_id);
+        }
+
+        // Offers
+        // - Simple: Offer (price)
+        // - Variable: AggregateOffer (low/high)
+        $offers = null;
+
+        if ($product->is_type('variable')) {
+            $min_price = $product->get_variation_price('min', true);
+            $max_price = $product->get_variation_price('max', true);
+
+            $offers = [
+                '@type'         => 'AggregateOffer',
+                'priceCurrency' => get_woocommerce_currency(),
+                'lowPrice'      => (float) $min_price,
+                'highPrice'     => (float) $max_price,
+                'offerCount'    => (int) $product->get_children() ? count($product->get_children()) : 0,
+                'availability'  => $product->is_in_stock() ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock',
+                'url'           => $p_url,
+            ];
+        } else {
+            $price = $product->get_price();
+            $offers = [
+                '@type'         => 'Offer',
+                'priceCurrency' => get_woocommerce_currency(),
+                'price'         => is_numeric($price) ? (float) $price : 0,
+                'availability'  => $product->is_in_stock() ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock',
+                'url'           => $p_url,
+            ];
+        }
+
+        // AggregateRating (chỉ khi có ratingCount > 0)
+        $rating_count = (int) rmp_get_vote_count( $product->get_id() );
+        $avg_rating   = rmp_get_avg_rating( $product->get_id()  ); // string "4.7"...
+
+        $product_node = [
+            '@type'  => 'Product',
+            '@id'    => esc_url($p_url) . '#product',
+            'name'   => $p_name,
+            'url'    => $p_url,
+            'offers' => $offers,
+        ];
+
+        if (!empty($img)) {
+            $product_node['image'] = $img;
+        }
+
+        if ($rating_count > 0 && is_numeric($avg_rating)) {
+            $product_node['aggregateRating'] = [
+                '@type'       => 'AggregateRating',
+                'ratingValue' => (float) $avg_rating,
+                'bestRating'  => 5,
+                'ratingCount' => $rating_count,
+            ];
+        }
+
+        // Nếu đang ở trang brand: gắn brand cho Product
+        if (is_tax('product_brand')) {
+            $product_node['brand'] = [
+                '@type' => 'Brand',
+                'name'  => $term->name,
+            ];
+        }
+
+        $item_list['itemListElement'][] = [
+            '@type'    => 'ListItem',
+            'position' => $pos++,
+            'url'      => $p_url,
+            'item'     => $product_node,
+        ];
+    }
+
+    // CollectionPage
+    $collection_page = [
+        '@type'            => 'CollectionPage',
+        '@id'              => esc_url($page_url) . '#collectionpage',
+        'url'              => esc_url($page_url),
+        'name'             => $name,
+        'description'      => $desc,
+        'mainEntity'       => $item_list,
+        'isPartOf'         => ['@id' => home_url('/') . '#website'],
+        'mainEntityOfPage' => ['@id' => esc_url($page_url) . '#webpage'],
+    ];
+
+    // Nếu là brand page: liên kết about -> Brand
+    if (is_tax('product_brand')) {
+        $collection_page['about'] = ['@id' => esc_url($page_url) . '#brand'];
+    }
+
+    // Gắn vào graph của Rank Math
+    $data['collection_page'] = $collection_page;
+
+    return $data;
+
+}, 20, 2);
+
+
 
 
 //edit .htaccess 
@@ -137,18 +313,19 @@ REMOVE NOTE COMMENT RANKMATH
 add_filter( 'rank_math/frontend/remove_credit_notice', '__return_true' );
 // add "thương hiệu breadcrumb"
 add_filter( 'rank_math/frontend/breadcrumb/items', function( $crumbs, $class ) {
-    if ( is_tax('pa_brands') ) {
+    if ( is_tax('product_brand') ) {
         $last_item = $crumbs[1];
         $crumbs[1] = ['Thương Hiệu',
             'https://dioutdoor.vn/brands',];
         $crumbs[2] = $last_item;}
+        /*
     if ( is_tax('pa_series') ) {
         $last_item = $crumbs[1];
         $crumbs[1] = ['Thương Hiệu',
             'https://dioutdoor.vn/brands',];
         $crumbs[2] = ['Leatherman',
             'https://dioutdoor.vn/brands/leatherman',];
-        $crumbs[3] = $last_item;}
+        $crumbs[3] = $last_item;}*/
     return $crumbs;
 }, 10, 2 );
 // Xóa Local Business ra all
@@ -175,31 +352,75 @@ add_filter( 'register_post_type_args', 'custom_post_type_args', 999, 2 );
 
 // remove index
 add_filter( 'rank_math/frontend/robots', function( $robots ) {
-    $url = home_url( $_SERVER['REQUEST_URI'] );
-    if (strpos($url,'?attribute_') !== false || strpos($url,'?v=') || strpos($url,'?add_to_cart=') || strpos($url,'?filter_')|| strpos($url,'?feed_')|| strpos($url,'?gclid')|| strpos($url,'?orderby')|| strpos($url,'?PageSpeed')|| strpos($url,'?fbclid')) {
-        $robots['index'] = 'noindex';
-        $robots['follow'] = 'nofollow';
+
+    $query = $_SERVER['QUERY_STRING'] ?? '';
+    if ( empty($query) ) {
         return $robots;
     }
-    return $robots;
-});
-add_action( 'wp_head', function() {
-    if ( is_product_category() || is_shop() ) {
-        global $wp;
-        $current_url = home_url( add_query_arg( array(), $wp->request ) );
 
-        // Kiểm tra nếu URL có query filter, orderby, attribute, page...
-        $blacklist = ['filter_', 'orderby', 'v=', 'remove', 'PageSpeed', 'p=', 'attribute_pa_'];
-        $url_string = $_SERVER['QUERY_STRING'] ?? '';
+    $blocked = [
+        'attribute_',
+        'filter_',
+        'add_to_cart',
+        'orderby',
+        'gclid',
+        'fbclid',
+        'PageSpeed',
+        'feed',
+        'v=',
+        'min_price',
+        'max_price',
+    ];
 
-        foreach ( $blacklist as $param ) {
-            if ( strpos( $url_string, $param ) !== false ) {
-                echo '<link rel="canonical" href="' . esc_url( $current_url ) . "\" />\n";
-                return;
-            }
+    foreach ( $blocked as $key ) {
+        if ( strpos( $query, $key ) !== false ) {
+            $robots['index']  = 'noindex';
+            $robots['follow'] = 'follow';
+            break;
         }
     }
-}, 999 );
+
+    return $robots;
+});
+add_action('wp_head', function () {
+
+    // chỉ trên category / brand
+    if ( ! is_product_category() && ! is_tax('product_brand') ) {
+        return;
+    }
+
+    $query = $_SERVER['QUERY_STRING'] ?? '';
+    if ( empty($query) ) {
+        return;
+    }
+
+    $blocked = [
+        'attribute_',
+        'filter_',
+        'min_price',
+        'max_price',
+        'orderby',
+        'gclid',
+        'fbclid',
+        'PageSpeed',
+        'add_to_cart',
+        'feed',
+        'v=',
+    ];
+
+    foreach ($blocked as $key) {
+        if (strpos($query, $key) !== false) {
+
+            $term = get_queried_object();
+            if ($term instanceof WP_Term) {
+                $canonical = get_term_link($term);
+                echo '<link rel="canonical" href="' . esc_url($canonical) . "\" />\n";
+            }
+
+            break;
+        }
+    }
+}, 1);
 /* thêm chính sách vận chuyển vào rankmath
 add_filter( 'rank_math/json_ld', function( $data, $jsonld ) {
     if ( is_product() ) {

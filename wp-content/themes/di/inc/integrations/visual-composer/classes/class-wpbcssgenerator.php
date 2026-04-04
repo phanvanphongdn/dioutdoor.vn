@@ -2,7 +2,7 @@
 /**
  * Generate css file for wpbakery.
  *
- * @package xts
+ * @package woodmart
  */
 
 namespace XTS;
@@ -40,7 +40,7 @@ class Wpbcssgenerator {
 	 * Construct.
 	 */
 	public function __construct() {
-		$this->_notices = Registry::getInstance()->notices;
+		$this->_notices = Registry::get_instance()->notices;
 		$this->_options = woodmart_get_config( 'wpbcss-parts' );
 	}
 
@@ -362,6 +362,7 @@ class Wpbcssgenerator {
 			}
 
 			update_option( 'woodmart-generated-wpbcss-file', $upload );
+			update_option( 'woodmart-generated-wpbcss-css', wp_slash( addslashes( trim( $css ) ) ), false );
 			update_option( 'woodmart-wpbcss-data', $css_data );
 
 			$this->_notices->add_success( 'New CSS file is generated and saved.' );
@@ -383,4 +384,4 @@ class Wpbcssgenerator {
 	}
 }
 
-Registry::getInstance()->wpbcssgenerator;
+Registry::get_instance()->wpbcssgenerator;

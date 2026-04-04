@@ -2,7 +2,7 @@
 /**
  * Helpers.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
@@ -48,7 +48,7 @@ if ( ! function_exists( 'woodmart_has_sidebar_in_page' ) ) {
 	 * @return mixed
 	 */
 	function woodmart_has_sidebar_in_page() {
-		return Registry::getInstance()->layout->has_sidebar_in_page();
+		return Registry::get_instance()->layout->has_sidebar_in_page();
 	}
 }
 
@@ -121,10 +121,15 @@ if ( ! function_exists( 'wd_add_cssclass' ) ) {
 
 if ( ! function_exists( 'str_contains' ) ) {
 	/**
-	 * str_contains php8 fix.
+	 * String contains php8 fix.
+	 *
+	 * @param string $haystack Haystack.
+	 * @param string $needle Needle.
+	 *
+	 * @return bool
 	 */
 	function str_contains( $haystack, $needle ) {
-		return $needle !== '' && mb_strpos( $haystack, $needle ) !== false;
+		return '' !== $needle && mb_strpos( $haystack, $needle ) !== false;
 	}
 }
 
@@ -166,17 +171,6 @@ if ( ! function_exists( 'woodmart_cookie_secure_param' ) ) {
 	 */
 	function woodmart_cookie_secure_param() {
 		return apply_filters( 'woodmart_cookie_secure_param', is_ssl() );
-	}
-}
-
-if ( ! function_exists( 'woodmart_get_theme_settings_selectors_array' ) ) {
-	/**
-	 * Get selectors array.
-	 *
-	 * @return array
-	 */
-	function woodmart_get_theme_settings_selectors_array() {
-		return woodmart_get_config( 'typography-selectors' );
 	}
 }
 
@@ -276,47 +270,45 @@ if ( ! function_exists( 'woodmart_get_current_page_builder' ) ) {
 	}
 }
 
-if ( ! function_exists( 'woodmart_is_blog_design_new' ) ) {
+if ( ! function_exists( 'woodmart_get_blog_design_name' ) ) {
 	/**
 	 * Is blog design new.
 	 *
-	 * @since 6.1.0
-	 *
 	 * @param string $design Design.
+	 * @param string $default_val Default design.
+	 * @return string
+	 * @since 6.1.0
 	 */
-	function woodmart_is_blog_design_new( $design ) {
+	function woodmart_get_blog_design_name( $design, $default_val = 'default' ) {
 		$old = array(
+			'default',
+			'small-images',
+			'chess',
+			'masonry',
+			'mask',
+		);
+
+		$allowed = array(
 			'default',
 			'default-alt',
 			'small-images',
 			'chess',
 			'masonry',
 			'mask',
+			'meta-image',
+			'list',
+			'small',
 		);
 
-		return ! in_array( $design, $old, true );
-	}
-}
+		if ( in_array( $design, $old, true ) ) {
+			return $default_val;
+		}
 
-if ( ! function_exists( 'woodmart_get_blog_design_name' ) ) {
-	/**
-	 * Is blog design new.
-	 *
-	 * @param string $design Design.
-	 * @param string $default Default design.
-	 * @return string
-	 * @since 6.1.0
-	 */
-	function woodmart_get_blog_design_name( $design, $default = 'default' ) {
-		$old = array(
-			'default',
-			'small-images',
-			'chess',
-			'masonry',
-			'mask',
-		);
+		if ( in_array( $design, $allowed, true ) ) {
+			return $design;
+		}
 
-		return ! in_array( $design, $old, true ) ? $design : $default;
+		return $default_val;
 	}
 }
 
@@ -336,25 +328,6 @@ if ( ! function_exists( 'woodmart_get_element_template' ) ) {
 		}
 
 		include WOODMART_THEMEROOT . '/inc/template-tags/elements/' . $element_name . '/' . $template_name;
-	}
-}
-
-if ( ! function_exists( 'woodmart_get_old_classes' ) ) {
-	/**
-	 * Get old classes.
-	 *
-	 * @since 6.0.0
-	 *
-	 * @param string $classes Classes.
-	 *
-	 * @return string
-	 */
-	function woodmart_get_old_classes( $classes ) {
-		if ( ! apply_filters( 'woodmart_show_deprecated_css_classes', false ) ) {
-			$classes = '';
-		}
-
-		return esc_html( $classes );
 	}
 }
 
@@ -392,33 +365,6 @@ if ( ! function_exists( 'woodmart_get_current_url' ) ) {
 		global $wp;
 
 		return home_url( $wp->request );
-	}
-}
-
-if ( ! function_exists( 'woodmart_get_document_title' ) ) {
-	/**
-	 * Returns document title for the current page.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @return string
-	 */
-	function woodmart_get_document_title() {
-		$title = wp_get_document_title();
-
-		$post_meta = get_post_meta( woodmart_get_the_ID(), '_yoast_wpseo_title', true );
-		if ( is_object( get_queried_object() ) && property_exists( get_queried_object(), 'term_id' ) && function_exists( 'YoastSEO' ) ) {
-			$taxonomy_helper = YoastSEO()->helpers->taxonomy;
-			$meta            = $taxonomy_helper->get_term_meta( get_queried_object() );
-
-			if ( isset( $meta['wpseo_title'] ) && $meta['wpseo_title'] ) {
-				$title = wpseo_replace_vars( $meta['wpseo_title'], get_queried_object() );
-			}
-		} elseif ( $post_meta && function_exists( 'wpseo_replace_vars' ) ) {
-			$title = wpseo_replace_vars( $post_meta, get_post( woodmart_get_the_ID() ) );
-		}
-
-		return $title;
 	}
 }
 
@@ -550,34 +496,6 @@ if ( ! function_exists( 'woodmart_get_new_size_classes' ) ) {
 	}
 }
 
-if ( ! function_exists( 'woodmart_vc_parse_multi_attribute' ) ) {
-	function woodmart_vc_parse_multi_attribute( $value ) {
-		$result = array(
-			'url'    => '',
-			'title'  => '',
-			'target' => '',
-			'rel'    => '',
-		);
-
-		if ( is_array( $value ) ) {
-			$params_pairs = $value;
-		} else {
-			$params_pairs = explode( '|', $value );
-		}
-
-		if ( ! empty( $params_pairs ) ) {
-			foreach ( $params_pairs as $pair ) {
-				$param = preg_split( '/\:/', $pair );
-				if ( ! empty( $param[0] ) && isset( $param[1] ) ) {
-					$result[ $param[0] ] = rawurldecode( $param[1] );
-				}
-			}
-		}
-
-		return $result;
-	}
-}
-
 if ( ! function_exists( 'woodmart_get_size_guides_array' ) ) {
 	/**
 	 * Get size guides array.
@@ -636,7 +554,7 @@ if ( ! function_exists( 'woodmart_needs_header' ) ) {
 	 * @return bool
 	 */
 	function woodmart_needs_header() {
-		return ( ! isset( $GLOBALS['wd_maintenance'] ) && ! is_singular( 'woodmart_slide' ) && ! is_singular( 'cms_block' ) );
+		return ( ! isset( $GLOBALS['wd_maintenance'] ) && ! is_singular( array( 'woodmart_slide', 'cms_block', 'wd_product_tabs', 'wd_floating_block', 'wd_popup' ) ) );
 	}
 }
 
@@ -647,7 +565,7 @@ if ( ! function_exists( 'woodmart_needs_footer' ) ) {
 	 * @return bool
 	 */
 	function woodmart_needs_footer() {
-		return ( ! isset( $GLOBALS['wd_maintenance'] ) && ! is_singular( 'woodmart_slide' ) && ! is_singular( 'cms_block' ) );
+		return ( ! isset( $GLOBALS['wd_maintenance'] ) && ! is_singular( array( 'woodmart_slide', 'cms_block', 'wd_product_tabs', 'wd_floating_block', 'wd_popup' ) ) );
 	}
 }
 
@@ -658,7 +576,7 @@ if ( ! function_exists( 'woodmart_is_blog_archive' ) ) {
 	 * @return bool
 	 */
 	function woodmart_is_blog_archive() {
-		return ( is_home() || is_search() || is_tag() || is_category() || is_date() || is_author() );
+		return ( is_home() || ( is_search() && ( ! isset( $_GET['post_type'] ) || 'product' !== $_GET['post_type'] ) ) || is_tag() || is_category() || is_date() || is_author() ); // phpcs:ignore
 	}
 }
 
@@ -670,6 +588,17 @@ if ( ! function_exists( 'woodmart_is_portfolio_archive' ) ) {
 	 */
 	function woodmart_is_portfolio_archive() {
 		return ( is_post_type_archive( 'portfolio' ) || is_tax( 'project-cat' ) );
+	}
+}
+
+if ( ! function_exists( 'woodmart_is_thank_you_page' ) ) {
+	/**
+	 * Check if current page is order received.
+	 *
+	 * @return bool
+	 */
+	function woodmart_is_thank_you_page() {
+		return is_order_received_page() || get_query_var( 'order-received' ) || is_wc_endpoint_url( 'order-received' );
 	}
 }
 
@@ -685,32 +614,16 @@ if ( ! function_exists( 'woodmart_get_config' ) ) {
 	}
 }
 
-if ( ! function_exists( 'woodmart_tpl2id' ) ) {
-	/**
-	 * Get page ID by it's template name.
-	 *
-	 * @param string $tpl Template name.
-	 * @return int|void
-	 */
-	function woodmart_tpl2id( $tpl = '' ) {
-		$pages = get_pages(
-			array(
-				'meta_key'   => '_wp_page_template',
-				'meta_value' => $tpl,
-			)
-		);
-		foreach ( $pages as $page ) {
-			return $page->ID;
-		}
-	}
-}
-
 if ( ! function_exists( 'woodmart_get_portfolio_page_id' ) ) {
 	/**
 	 * Get portfolio page id.
 	 */
 	function woodmart_get_portfolio_page_id() {
-		return woodmart_get_opt( 'portfolio_page' ) ? woodmart_get_opt( 'portfolio_page' ) : woodmart_tpl2id( 'portfolio.php' );
+		if ( ! woodmart_get_opt( 'portfolio', '1' ) || ! woodmart_get_opt( 'portfolio_page' ) ) {
+			return 0;
+		}
+
+		return woodmart_get_opt( 'portfolio_page' );
 	}
 }
 
@@ -718,28 +631,13 @@ if ( ! function_exists( 'ar' ) ) {
 	/**
 	 * Function print array within a pre tags.
 	 *
-	 * @param mixed $array Value.
+	 * @param mixed $data Value.
 	 * @return void
 	 */
-	function ar( $array ) {
+	function ar( $data ) { // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedFunctionFound
 		echo '<pre>';
-			print_r( $array ); // phpcs:ignore
+			print_r( $data ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_print_r
 		echo '</pre>';
-	}
-}
-
-if ( ! function_exists( 'woodmart_http' ) ) {
-	/**
-	 * Get protocol (http or https).
-	 *
-	 * @return string
-	 */
-	function woodmart_http() {
-		if ( ! is_ssl() ) {
-			return 'http';
-		} else {
-			return 'https';
-		}
 	}
 }
 
@@ -759,20 +657,20 @@ if ( ! function_exists( 'woodmart_get_theme_info' ) ) {
 	}
 }
 
-if ( ! function_exists( 'woodmart_is_social_link_enable' ) ) {
+if ( ! function_exists( 'woodmart_is_social_link_enabled' ) ) {
 	/**
 	 * Check if social link is enabled.
 	 *
 	 * @param string $type Social type.
 	 * @return bool
 	 */
-	function woodmart_is_social_link_enable( $type ) {
+	function woodmart_is_social_link_enabled( $type ) {
 		$result = false;
 		if ( 'share' === $type && ( woodmart_get_opt( 'share_fb' ) || woodmart_get_opt( 'share_twitter' ) || woodmart_get_opt( 'share_linkedin' ) || woodmart_get_opt( 'share_pinterest' ) || woodmart_get_opt( 'share_ok' ) || woodmart_get_opt( 'share_whatsapp' ) || woodmart_get_opt( 'share_email' ) || woodmart_get_opt( 'share_vk' ) || woodmart_get_opt( 'share_tg' ) || woodmart_get_opt( 'share_viber' ) ) ) {
 			$result = true;
 		}
 
-		if ( 'follow' === $type && ( woodmart_get_opt( 'fb_link' ) || woodmart_get_opt( 'twitter_link' ) || woodmart_get_opt( 'google_link' ) || woodmart_get_opt( 'isntagram_link' ) || woodmart_get_opt( 'pinterest_link' ) || woodmart_get_opt( 'youtube_link' ) || woodmart_get_opt( 'tumblr_link' ) || woodmart_get_opt( 'linkedin_link' ) || woodmart_get_opt( 'vimeo_link' ) || woodmart_get_opt( 'flickr_link' ) || woodmart_get_opt( 'github_link' ) || woodmart_get_opt( 'dribbble_link' ) || woodmart_get_opt( 'behance_link' ) || woodmart_get_opt( 'soundcloud_link' ) || woodmart_get_opt( 'spotify_link' ) || woodmart_get_opt( 'ok_link' ) || woodmart_get_opt( 'whatsapp_link' ) || woodmart_get_opt( 'vk_link' ) || woodmart_get_opt( 'snapchat_link' ) || woodmart_get_opt( 'tg_link' ) || woodmart_get_opt( 'tiktok_link' ) || woodmart_get_opt( 'discord_link' ) || woodmart_get_opt( 'yelp_link' ) || woodmart_get_opt( 'social_email_links' ) ) ) {
+		if ( 'follow' === $type && ( woodmart_get_opt( 'fb_link' ) || woodmart_get_opt( 'twitter_link' ) || woodmart_get_opt( 'bluesky_link' ) || woodmart_get_opt( 'google_link' ) || woodmart_get_opt( 'isntagram_link' ) || woodmart_get_opt( 'threads_link' ) || woodmart_get_opt( 'pinterest_link' ) || woodmart_get_opt( 'youtube_link' ) || woodmart_get_opt( 'tumblr_link' ) || woodmart_get_opt( 'linkedin_link' ) || woodmart_get_opt( 'vimeo_link' ) || woodmart_get_opt( 'flickr_link' ) || woodmart_get_opt( 'github_link' ) || woodmart_get_opt( 'dribbble_link' ) || woodmart_get_opt( 'behance_link' ) || woodmart_get_opt( 'soundcloud_link' ) || woodmart_get_opt( 'spotify_link' ) || woodmart_get_opt( 'ok_link' ) || woodmart_get_opt( 'whatsapp_link' ) || woodmart_get_opt( 'vk_link' ) || woodmart_get_opt( 'snapchat_link' ) || woodmart_get_opt( 'tg_link' ) || woodmart_get_opt( 'tiktok_link' ) || woodmart_get_opt( 'discord_link' ) || woodmart_get_opt( 'yelp_link' ) || woodmart_get_opt( 'social_email_links' ) ) ) {
 			$result = true;
 		}
 
@@ -872,14 +770,14 @@ if ( ! function_exists( 'woodmart_clean' ) ) {
 	 * Clean variables using sanitize_text_field. Arrays are cleaned recursively.
 	 * Non-scalar values are ignored.
 	 *
-	 * @param string|array $var Data to sanitize.
+	 * @param string|array $data Data to sanitize.
 	 * @return string|array
 	 */
-	function woodmart_clean( $var ) {
-		if ( is_array( $var ) ) {
-			return array_map( 'woodmart_clean', $var );
+	function woodmart_clean( $data ) {
+		if ( is_array( $data ) ) {
+			return array_map( 'woodmart_clean', $data );
 		} else {
-			return is_scalar( $var ) ? sanitize_text_field( $var ) : $var;
+			return is_scalar( $data ) ? sanitize_text_field( $data ) : $data;
 		}
 	}
 }
@@ -963,5 +861,71 @@ if ( ! function_exists( 'woodmart_get_center_coords' ) ) {
 		$lat   = atan2( $zsin, $sqrt );
 
 		return array( $lat * 180 / pi(), $lon * 180 / pi() );
+	}
+}
+
+if ( ! function_exists( 'woodmart_get_options_depend_builder' ) ) {
+	/**
+	 * This function checks on which layout this element is displayed, and depending on these displays the necessary additional options.
+	 *
+	 * @param array $default_array An array of options that should be independent of the builder.
+	 * @param array $additional_array Options that should appear only on the specific layout.
+	 * This array must have a key equal to the name of the builder layout on which you want to see additional options.
+	 * Example: array( 'single_product' => array( 'related' => esc_html__( 'Related (Single product)', 'woodmart' ) ) );.
+	 * @return array
+	 */
+	function woodmart_get_options_depend_builder( $default_array, $additional_array ) {
+		$result_array = $default_array;
+
+		foreach ( $additional_array as $needed_builder => $additional_options ) {
+			if ( Builder::is_layout_type( $needed_builder ) ) {
+				$result_array = array_merge( $result_array, $additional_options );
+			}
+		}
+
+		return $result_array;
+	}
+}
+
+if ( ! function_exists( 'woodmart_is_import_demo_content' ) ) {
+	/**
+	 * Check if current action is import demo content.
+	 *
+	 * @return bool
+	 */
+	function woodmart_is_import_demo_content() {
+		return isset( $_GET['action'] ) && 'woodmart_import_action' === $_GET['action']; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+	}
+}
+
+if ( ! function_exists( 'woodmart_get_admin_tooltip' ) ) {
+	/**
+	 * Get admin tooltip html.
+	 *
+	 * @param string $name Name of the image (e.g. 'attribute-icon.jpg').
+	 * @param string $type Type of tooltip (image or video).
+	 *
+	 * @return string
+	 */
+	function woodmart_get_admin_tooltip( $name, $type = 'image' ) {
+		$url = WOODMART_TOOLTIP_URL . $name;
+
+		$content = '';
+		$classes = 'xts-hint';
+
+		if ( 'image' === $type ) {
+			$content = '<img data-src="' . esc_url( $url ) . '" src="' . esc_url( $url ) . '" alt="">';
+		} else {
+			$classes .= ' xts-loaded';
+			$content  = '<div class="xts-tooltip-inner"><video data-src="' . esc_url( $url ) . '" src="' . esc_url( $url ) . '" autoplay loop muted></video></div>';
+		}
+
+		ob_start();
+		?>
+		<div class="<?php echo esc_attr( $classes ); ?>">
+			<div class="xts-tooltip xts-top"><?php echo wp_kses_post( $content ); ?></div>
+		</div>
+		<?php
+		return ob_get_clean();
 	}
 }

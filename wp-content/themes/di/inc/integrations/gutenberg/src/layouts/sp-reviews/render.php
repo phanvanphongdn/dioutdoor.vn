@@ -9,6 +9,7 @@ if ( ! function_exists( 'wd_gutenberg_single_product_reviews' ) ) {
 		Global_Data::get_instance()->set_data( 'reviews_columns_tablet', $block_attributes['reviewsColumnsTablet'] );
 		Global_Data::get_instance()->set_data( 'reviews_columns_mobile', $block_attributes['reviewsColumnsMobile'] );
 
+		$el_id    = wd_get_gutenberg_element_id( $block_attributes );
 		$classes  = wd_get_gutenberg_element_classes( $block_attributes );
 		$classes .= ' wd-layout-' . $block_attributes['layout'];
 		$classes .= ' wd-form-pos-' . woodmart_get_opt( 'reviews_form_location', 'after' );
@@ -23,7 +24,7 @@ if ( ! function_exists( 'wd_gutenberg_single_product_reviews' ) ) {
 
 		woodmart_enqueue_inline_style( 'woo-single-prod-el-reviews' );
 		woodmart_enqueue_inline_style( 'woo-single-prod-el-reviews-' . woodmart_get_opt( 'reviews_style', 'style-1' ) );
-		woodmart_enqueue_inline_style( 'mod-comments' );
+		woodmart_enqueue_inline_style( 'post-types-mod-comments' );
 
 		global $withcomments;
 
@@ -32,7 +33,7 @@ if ( ! function_exists( 'wd_gutenberg_single_product_reviews' ) ) {
 		}
 
 		?>
-			<div id="<?php echo esc_attr( wd_get_gutenberg_element_id( $block_attributes ) ); ?>" class="wd-single-reviews<?php echo esc_attr( $classes ); ?>">
+			<div <?php echo $el_id ? 'id="' . esc_attr( $el_id ) . '" ' : ''; ?>class="wd-single-reviews<?php echo esc_attr( $classes ); ?>">
 				<?php comments_template(); ?>
 			</div>
 		<?php

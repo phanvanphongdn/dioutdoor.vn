@@ -2,7 +2,7 @@
 /**
  * Stock progress bar map.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

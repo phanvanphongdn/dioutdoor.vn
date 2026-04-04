@@ -7,101 +7,19 @@
         position: unset;
     }
 }
-@media (max-width: 768.98px) {
-    .wd-sticky-btn .wd-sticky-btn-cart :is(.price) {
-        display: block;
-        line-height: 1.1
-    }
-    .wd-sticky-btn .wd-sticky-btn-cart .price{
-        font-size:0px;
-        display: flex;
-        flex-direction: column;
-    }
-    .wd-sticky-btn .price del{
-        font-size: 14px;
-    }
-    .wd-sticky-btn-cart .price .amount{
-        font-size: 16px;
-    }
-    .wd-sticky-btn form.cart{
-        width: unset;
-    }
-    .wd-sticky-btn.wd-quantity-overlap{
-        overflow: unset;
-        transform: translate3d(0, 130%, 0);
-    }
-    .wd-sticky-btn .price{
-        margin-inline-end: unset;
-    }
-    .wd-sticky-btn-on-mb .wd-sticky-btn{
-        background: #fff;
-        border-top: 1px solid var(--bgcolor-gray-300);
-    }
-    .wd-sticky-btn .container{
-        width: auto;
-    }
-    .wd-sticky-btn.wd-quantity-overlap div.quantity{
-        position: unset;
-        order: 2;
-    }
-    .wd-sticky-btn form .single_add_to_cart_button{
-        border-radius: 50%!important;
-        width: 50px;
-        height: 50px;
-        bottom: 10px;
 
-        white-space: nowrap;
-        overflow: hidden;
-        font-size: 0;
-        padding: unset;
-    }
-    .wd-sticky-btn .single_add_to_cart_button::before{
-        all:unset;
-    }
-    .wd-sticky-btn.wd-quantity-overlap div.quantity:not(.hidden)+.single_add_to_cart_button, .wd-sticky-btn.wd-quantity-overlap div.quantity:not(.hidden)+.button{
-        padding-inline-start: unset;
-    }
-    .wd-sticky-btn.wd-quantity-overlap div.quantity:not(.hidden)+.button:after{
-        inset-inline-start:unset;
-    }
-    .wd-sticky-btn .single_add_to_cart_button::before{
-        content: '';
-        display: inline-block;
-        background-image: url('https://dioutdoor.vn/media/2024/12/ico-add-to-basket.svg');
-        background-size: contain;
-        background-repeat: no-repeat;
-        margin: 4px 0 0 4px;
-        width: 25px;
-        height: 25px;
-        opacity: 1;
-        transition: opacity 0.3s ease;
-}
-    .wd-sticky-btn .single_add_to_cart_button.loading::before {
-        opacity: 0;
-    }
-    .wd-sticky-btn.wd-quantity-overlap .wd-sticky-btn-cart  {
-        display: flex;
-        gap:10px;
-        align-items: center;
-    }
-    .wd-sticky-btn .cart button>i:before {
-        content: "\f147a";
-        position: relative;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 36px;
-        height: 36px;
-        font-family: 'woodmart-font' !important;
-    }
-    .wd-sticky-btn.wd-quantity-overlap  div.quantity input[type],.wd-sticky-btn.wd-quantity-overlap :is(div,.cart):hover>div.quantity input[type]{
-    background-color:unset;
-        color:var(--color-gray-800);
-}
-
-}
+ 
+  
 .woocommerce-product-details__short-description {
     background: #fdfdfd;
     padding: 10px;
     border: 1px solid #eee;
+}
+
+.di-header-scroll-up {
+    z-index: 390;
+}
+#products-info.di-header-scroll-up.elementor-sticky--active {
+        transition: top .25s ease;
+    top: 60px !important;
 }

@@ -9,6 +9,7 @@ if ( ! function_exists( 'wd_gutenberg_woo_checkout_step' ) ) {
 		}
 
 		$classes = '';
+		$el_id   = wd_get_gutenberg_element_id( $block_attributes );
 
 		if ( ! empty( $block_attributes['textAlign'] ) || ! empty( $block_attributes['textAlignTablet'] ) || ! empty( $block_attributes['textAlignMobile'] ) ) {
 			$classes .= ' wd-align';
@@ -23,7 +24,7 @@ if ( ! function_exists( 'wd_gutenberg_woo_checkout_step' ) ) {
 		ob_start();
 
 		?>
-			<div id="<?php echo esc_attr( wd_get_gutenberg_element_id( $block_attributes ) ); ?>" class="wd-checkout-steps-wrapp<?php echo esc_attr( wd_get_gutenberg_element_classes( $block_attributes, $classes ) ); ?>">
+			<div <?php echo $el_id ? 'id="' . esc_attr( $el_id ) . '" ' : ''; ?>class="wd-checkout-steps-wrapp<?php echo esc_attr( wd_get_gutenberg_element_classes( $block_attributes, $classes ) ); ?>">
 				<?php woodmart_checkout_steps(); ?>
 			</div>
 		<?php

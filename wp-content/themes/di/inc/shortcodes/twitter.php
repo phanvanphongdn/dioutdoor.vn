@@ -1,14 +1,24 @@
-<?php if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
-	exit( 'No direct script access allowed' );}
-
+<?php
 /**
-* ------------------------------------------------------------------------------------------------
-* Twitter element
-* ------------------------------------------------------------------------------------------------
-*/
+ * Shortcode for Twitter element.
+ *
+ * @package woodmart
+ */
+
+if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
+	exit( 'No direct script access allowed' );
+}
+
 if ( ! function_exists( 'woodmart_twitter' ) ) {
+	/**
+	 * Twitter shortcode
+	 *
+	 * @param array $atts Shortcode attributes.
+	 *
+	 * @return false|string
+	 */
 	function woodmart_twitter( $atts ) {
-		extract(
+		extract( // phpcs:ignore WordPress.PHP.DontExtract.extract_extract
 			shortcode_atts(
 				array(
 					'name'               => 'Twitter',

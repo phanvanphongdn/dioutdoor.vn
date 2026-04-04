@@ -2,7 +2,7 @@
 /**
  * Custom JS options
  *
- * @package xts
+ * @package woodmart
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

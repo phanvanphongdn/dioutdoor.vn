@@ -1,21 +1,32 @@
 <?php
+/**
+ * Wishlist element class file.
+ *
+ * @package woodmart
+ */
 
 namespace XTS\Modules\Header_Builder\Elements;
 
 use XTS\Modules\Header_Builder\Element;
 
 /**
- * ------------------------------------------------------------------------------------------------
- *  Wishlist icon in the header elements
- * ------------------------------------------------------------------------------------------------
+ *  Wishlist icon in the header elements.
  */
 class Wishlist extends Element {
 
+	/**
+	 * Constructor.
+	 */
 	public function __construct() {
 		parent::__construct();
 		$this->template_name = 'wishlist';
 	}
 
+	/**
+	 * Map element.
+	 *
+	 * @return void
+	 */
 	public function map() {
 		$this->args = array(
 			'type'            => 'wishlist',
@@ -35,28 +46,32 @@ class Wishlist extends Element {
 					'title'       => esc_html__( 'Display', 'woodmart' ),
 					'type'        => 'selector',
 					'tab'         => esc_html__( 'Style', 'woodmart' ),
-					'group'       => esc_html__( 'Icon', 'woodmart' ),
+					'group'       => esc_html__( 'Button', 'woodmart' ),
 					'value'       => 'icon',
 					'options'     => array(
-						'icon' => array(
+						'text-only' => array(
+							'value' => 'text-only',
+							'label' => esc_html__( 'Text', 'woodmart' ),
+						),
+						'icon'      => array(
 							'value' => 'icon',
 							'label' => esc_html__( 'Icon', 'woodmart' ),
 						),
-						'text' => array(
+						'text'      => array(
 							'value' => 'text',
 							'label' => esc_html__( 'Icon with text', 'woodmart' ),
 						),
 					),
-					'description' => esc_html__( 'You can show the icon only or display "Wishlist" text too.', 'woodmart' ),
+					'description' => esc_html__( 'Select whether to display only the icon, only the text, or both together.', 'woodmart' ),
 				),
 				'icon_design'         => array(
-					'id'      => 'icon_design',
-					'title'   => esc_html__( 'Icon design', 'woodmart' ),
-					'type'    => 'selector',
-					'tab'     => esc_html__( 'Style', 'woodmart' ),
-					'group'   => esc_html__( 'Icon', 'woodmart' ),
-					'value'   => '2',
-					'options' => array(
+					'id'        => 'icon_design',
+					'title'     => esc_html__( 'Design', 'woodmart' ),
+					'type'      => 'selector',
+					'tab'       => esc_html__( 'Style', 'woodmart' ),
+					'group'     => esc_html__( 'Button', 'woodmart' ),
+					'value'     => '2',
+					'options'   => array(
 						'1' => array(
 							'value' => '1',
 							'label' => esc_html__( 'First', 'woodmart' ),
@@ -88,15 +103,153 @@ class Wishlist extends Element {
 							'image' => WOODMART_ASSETS_IMAGES . '/header-builder/wishlist-icons/sixth.jpg',
 						),
 					),
+					'condition' => array(
+						'design' => array(
+							'comparison' => 'not_equal',
+							'value'      => array( 'text-only' ),
+						),
+					),
+				),
+				'text_design'         => array(
+					'id'        => 'text_design',
+					'title'     => esc_html__( 'Design', 'woodmart' ),
+					'type'      => 'selector',
+					'tab'       => esc_html__( 'Style', 'woodmart' ),
+					'group'     => esc_html__( 'Button', 'woodmart' ),
+					'value'     => '4',
+					'options'   => array(
+						'1' => array(
+							'value' => '1',
+							'label' => esc_html__( 'First', 'woodmart' ),
+							'image' => WOODMART_ASSETS_IMAGES . '/header-builder/wishlist-icons/text-first.jpg',
+						),
+						'4' => array(
+							'value' => '4',
+							'label' => esc_html__( 'Second', 'woodmart' ),
+							'image' => WOODMART_ASSETS_IMAGES . '/header-builder/wishlist-icons/text-second.jpg',
+						),
+						'6' => array(
+							'value' => '6',
+							'label' => esc_html__( 'Third', 'woodmart' ),
+							'image' => WOODMART_ASSETS_IMAGES . '/header-builder/wishlist-icons/text-third.jpg',
+						),
+						'7' => array(
+							'value' => '7',
+							'label' => esc_html__( 'Fourth', 'woodmart' ),
+							'image' => WOODMART_ASSETS_IMAGES . '/header-builder/wishlist-icons/text-fourth.jpg',
+						),
+					),
+					'condition' => array(
+						'design' => array(
+							'comparison' => 'equal',
+							'value'      => array( 'text-only' ),
+						),
+					),
+				),
+				'text_color'          => array(
+					'id'          => 'text_color',
+					'title'       => esc_html__( 'Color', 'woodmart' ),
+					'tab'         => esc_html__( 'Style', 'woodmart' ),
+					'group'       => esc_html__( 'Button', 'woodmart' ),
+					'type'        => 'color',
+					'value'       => '',
+					'selectors'   => array(
+						'whb-row .{{WRAPPER}}.wd-tools-element .wd-tools-inner' => array(
+							'color: {{VALUE}};',
+						),
+					),
+					'condition'   => array(
+						'design'      => array(
+							'comparison' => 'equal',
+							'value'      => array( 'text-only' ),
+						),
+						'text_design' => array(
+							'comparison' => 'equal',
+							'value'      => array( '7' ),
+						),
+					),
+					'extra_class' => 'xts-col-6',
+				),
+				'text_hover_color'    => array(
+					'id'          => 'text_hover_color',
+					'title'       => esc_html__( 'Hover color', 'woodmart' ),
+					'tab'         => esc_html__( 'Style', 'woodmart' ),
+					'group'       => esc_html__( 'Button', 'woodmart' ),
+					'type'        => 'color',
+					'value'       => '',
+					'selectors'   => array(
+						'whb-row .{{WRAPPER}}.wd-tools-element:hover .wd-tools-inner' => array(
+							'color: {{VALUE}};',
+						),
+					),
+					'condition'   => array(
+						'design'      => array(
+							'comparison' => 'equal',
+							'value'      => array( 'text-only' ),
+						),
+						'text_design' => array(
+							'comparison' => 'equal',
+							'value'      => array( '7' ),
+						),
+					),
+					'extra_class' => 'xts-col-6',
+				),
+				'text_bg_color'       => array(
+					'id'          => 'text_bg_color',
+					'title'       => esc_html__( 'Background color', 'woodmart' ),
+					'tab'         => esc_html__( 'Style', 'woodmart' ),
+					'group'       => esc_html__( 'Button', 'woodmart' ),
+					'type'        => 'color',
+					'value'       => '',
+					'selectors'   => array(
+						'whb-row .{{WRAPPER}}.wd-tools-element .wd-tools-inner' => array(
+							'background-color: {{VALUE}};',
+						),
+					),
+					'condition'   => array(
+						'design'      => array(
+							'comparison' => 'equal',
+							'value'      => array( 'text-only' ),
+						),
+						'text_design' => array(
+							'comparison' => 'equal',
+							'value'      => array( '7' ),
+						),
+					),
+					'extra_class' => 'xts-col-6',
+				),
+				'text_bg_hover_color' => array(
+					'id'          => 'text_bg_hover_color',
+					'title'       => esc_html__( 'Hover background color', 'woodmart' ),
+					'tab'         => esc_html__( 'Style', 'woodmart' ),
+					'group'       => esc_html__( 'Button', 'woodmart' ),
+					'type'        => 'color',
+					'value'       => '',
+					'selectors'   => array(
+						'whb-row .{{WRAPPER}}.wd-tools-element:hover .wd-tools-inner' => array(
+							'background-color: {{VALUE}};',
+						),
+					),
+					'condition'   => array(
+						'design'      => array(
+							'comparison' => 'equal',
+							'value'      => array( 'text-only' ),
+						),
+						'text_design' => array(
+							'comparison' => 'equal',
+							'value'      => array( '7' ),
+						),
+					),
+					'extra_class' => 'xts-col-6',
 				),
 				'wrap_type'           => array(
-					'id'       => 'wrap_type',
-					'title'    => esc_html__( 'Background wrap type', 'woodmart' ),
-					'type'     => 'selector',
-					'tab'      => esc_html__( 'Style', 'woodmart' ),
-					'group'    => esc_html__( 'Icon', 'woodmart' ),
-					'value'    => 'icon_only',
-					'options'  => array(
+					'id'        => 'wrap_type',
+					'title'     => esc_html__( 'Background wrap type', 'woodmart' ),
+					'type'      => 'selector',
+					'tab'       => esc_html__( 'Style', 'woodmart' ),
+					'group'     => esc_html__( 'Button', 'woodmart' ),
+					'value'     => 'icon_only',
+					'options'   => array(
 						'icon_only'     => array(
 							'value' => 'icon_only',
 							'label' => esc_html__( 'Icon only', 'woodmart' ),
@@ -108,7 +261,7 @@ class Wishlist extends Element {
 							'image' => WOODMART_ASSETS_IMAGES . '/header-builder/bg-wrap-type/wishlist-wrap-icon-and-text.jpg',
 						),
 					),
-					'requires' => array(
+					'condition' => array(
 						'design'      => array(
 							'comparison' => 'equal',
 							'value'      => 'text',
@@ -123,7 +276,7 @@ class Wishlist extends Element {
 					'id'          => 'color',
 					'title'       => esc_html__( 'Color', 'woodmart' ),
 					'tab'         => esc_html__( 'Style', 'woodmart' ),
-					'group'       => esc_html__( 'Icon', 'woodmart' ),
+					'group'       => esc_html__( 'Button', 'woodmart' ),
 					'type'        => 'color',
 					'value'       => '',
 					'selectors'   => array(
@@ -131,10 +284,39 @@ class Wishlist extends Element {
 							'color: {{VALUE}};',
 						),
 					),
-					'requires'    => array(
-						'icon_design' => array(
-							'comparison' => 'equal',
-							'value'      => array( '7', '8' ),
+					'conditions'  => array(
+						'relation' => 'or',
+						'terms'    => array(
+							array(
+								'relation' => 'and',
+								'terms'    => array(
+									array(
+										'field'      => 'design',
+										'comparison' => 'not_equal',
+										'value'      => array( 'text-only' ),
+									),
+									array(
+										'field'      => 'icon_design',
+										'comparison' => 'equal',
+										'value'      => array( '7' ),
+									),
+								),
+							),
+							array(
+								'relation' => 'and',
+								'terms'    => array(
+									array(
+										'field'      => 'design',
+										'comparison' => 'equal',
+										'value'      => array( 'text' ),
+									),
+									array(
+										'field'      => 'icon_design',
+										'comparison' => 'equal',
+										'value'      => array( '8' ),
+									),
+								),
+							),
 						),
 					),
 					'extra_class' => 'xts-col-6',
@@ -143,7 +325,7 @@ class Wishlist extends Element {
 					'id'          => 'hover_color',
 					'title'       => esc_html__( 'Hover color', 'woodmart' ),
 					'tab'         => esc_html__( 'Style', 'woodmart' ),
-					'group'       => esc_html__( 'Icon', 'woodmart' ),
+					'group'       => esc_html__( 'Button', 'woodmart' ),
 					'type'        => 'color',
 					'value'       => '',
 					'selectors'   => array(
@@ -151,10 +333,39 @@ class Wishlist extends Element {
 							'color: {{VALUE}};',
 						),
 					),
-					'requires'    => array(
-						'icon_design' => array(
-							'comparison' => 'equal',
-							'value'      => array( '7', '8' ),
+					'conditions'  => array(
+						'relation' => 'or',
+						'terms'    => array(
+							array(
+								'relation' => 'and',
+								'terms'    => array(
+									array(
+										'field'      => 'design',
+										'comparison' => 'not_equal',
+										'value'      => array( 'text-only' ),
+									),
+									array(
+										'field'      => 'icon_design',
+										'comparison' => 'equal',
+										'value'      => array( '7' ),
+									),
+								),
+							),
+							array(
+								'relation' => 'and',
+								'terms'    => array(
+									array(
+										'field'      => 'design',
+										'comparison' => 'equal',
+										'value'      => array( 'text' ),
+									),
+									array(
+										'field'      => 'icon_design',
+										'comparison' => 'equal',
+										'value'      => array( '8' ),
+									),
+								),
+							),
 						),
 					),
 					'extra_class' => 'xts-col-6',
@@ -163,7 +374,7 @@ class Wishlist extends Element {
 					'id'          => 'bg_color',
 					'title'       => esc_html__( 'Background color', 'woodmart' ),
 					'tab'         => esc_html__( 'Style', 'woodmart' ),
-					'group'       => esc_html__( 'Icon', 'woodmart' ),
+					'group'       => esc_html__( 'Button', 'woodmart' ),
 					'type'        => 'color',
 					'value'       => '',
 					'selectors'   => array(
@@ -171,7 +382,11 @@ class Wishlist extends Element {
 							'background-color: {{VALUE}};',
 						),
 					),
-					'requires'    => array(
+					'condition'   => array(
+						'design'      => array(
+							'comparison' => 'not_equal',
+							'value'      => array( 'text-only' ),
+						),
 						'icon_design' => array(
 							'comparison' => 'equal',
 							'value'      => array( '7', '8' ),
@@ -183,7 +398,7 @@ class Wishlist extends Element {
 					'id'          => 'bg_hover_color',
 					'title'       => esc_html__( 'Hover background color', 'woodmart' ),
 					'tab'         => esc_html__( 'Style', 'woodmart' ),
-					'group'       => esc_html__( 'Icon', 'woodmart' ),
+					'group'       => esc_html__( 'Button', 'woodmart' ),
 					'type'        => 'color',
 					'value'       => '',
 					'selectors'   => array(
@@ -191,7 +406,11 @@ class Wishlist extends Element {
 							'background-color: {{VALUE}};',
 						),
 					),
-					'requires'    => array(
+					'condition'   => array(
+						'design'      => array(
+							'comparison' => 'not_equal',
+							'value'      => array( 'text-only' ),
+						),
 						'icon_design' => array(
 							'comparison' => 'equal',
 							'value'      => array( '7', '8' ),
@@ -203,7 +422,7 @@ class Wishlist extends Element {
 					'id'          => 'icon_color',
 					'title'       => esc_html__( 'Icon color', 'woodmart' ),
 					'tab'         => esc_html__( 'Style', 'woodmart' ),
-					'group'       => esc_html__( 'Icon', 'woodmart' ),
+					'group'       => esc_html__( 'Button', 'woodmart' ),
 					'type'        => 'color',
 					'value'       => '',
 					'selectors'   => array(
@@ -211,7 +430,11 @@ class Wishlist extends Element {
 							'color: {{VALUE}};',
 						),
 					),
-					'requires'    => array(
+					'condition'   => array(
+						'design'      => array(
+							'comparison' => 'not_equal',
+							'value'      => array( 'text-only' ),
+						),
 						'icon_design' => array(
 							'comparison' => 'equal',
 							'value'      => '8',
@@ -223,7 +446,7 @@ class Wishlist extends Element {
 					'id'          => 'icon_hover_color',
 					'title'       => esc_html__( 'Hover icon color', 'woodmart' ),
 					'tab'         => esc_html__( 'Style', 'woodmart' ),
-					'group'       => esc_html__( 'Icon', 'woodmart' ),
+					'group'       => esc_html__( 'Button', 'woodmart' ),
 					'type'        => 'color',
 					'value'       => '',
 					'selectors'   => array(
@@ -231,7 +454,11 @@ class Wishlist extends Element {
 							'color: {{VALUE}};',
 						),
 					),
-					'requires'    => array(
+					'condition'   => array(
+						'design'      => array(
+							'comparison' => 'not_equal',
+							'value'      => array( 'text-only' ),
+						),
 						'icon_design' => array(
 							'comparison' => 'equal',
 							'value'      => '8',
@@ -243,7 +470,7 @@ class Wishlist extends Element {
 					'id'          => 'icon_bg_color',
 					'title'       => esc_html__( 'Icon background color', 'woodmart' ),
 					'tab'         => esc_html__( 'Style', 'woodmart' ),
-					'group'       => esc_html__( 'Icon', 'woodmart' ),
+					'group'       => esc_html__( 'Button', 'woodmart' ),
 					'type'        => 'color',
 					'value'       => '',
 					'selectors'   => array(
@@ -251,7 +478,11 @@ class Wishlist extends Element {
 							'background-color: {{VALUE}};',
 						),
 					),
-					'requires'    => array(
+					'condition'   => array(
+						'design'      => array(
+							'comparison' => 'not_equal',
+							'value'      => array( 'text-only' ),
+						),
 						'icon_design' => array(
 							'comparison' => 'equal',
 							'value'      => '8',
@@ -263,7 +494,7 @@ class Wishlist extends Element {
 					'id'          => 'icon_bg_hover_color',
 					'title'       => esc_html__( 'Hover icon background color', 'woodmart' ),
 					'tab'         => esc_html__( 'Style', 'woodmart' ),
-					'group'       => esc_html__( 'Icon', 'woodmart' ),
+					'group'       => esc_html__( 'Button', 'woodmart' ),
 					'type'        => 'color',
 					'value'       => '',
 					'selectors'   => array(
@@ -271,7 +502,11 @@ class Wishlist extends Element {
 							'background-color: {{VALUE}};',
 						),
 					),
-					'requires'    => array(
+					'condition'   => array(
+						'design'      => array(
+							'comparison' => 'not_equal',
+							'value'      => array( 'text-only' ),
+						),
 						'icon_design' => array(
 							'comparison' => 'equal',
 							'value'      => '8',
@@ -280,13 +515,13 @@ class Wishlist extends Element {
 					'extra_class' => 'xts-col-6',
 				),
 				'icon_type'           => array(
-					'id'          => 'icon_type',
-					'title'       => esc_html__( 'Icon type', 'woodmart' ),
-					'type'        => 'selector',
-					'tab'         => esc_html__( 'Style', 'woodmart' ),
-					'group'       => esc_html__( 'Icon', 'woodmart' ),
-					'value'       => 'default',
-					'options'     => array(
+					'id'        => 'icon_type',
+					'title'     => esc_html__( 'Icon type', 'woodmart' ),
+					'type'      => 'selector',
+					'tab'       => esc_html__( 'Style', 'woodmart' ),
+					'group'     => esc_html__( 'Button', 'woodmart' ),
+					'value'     => 'default',
+					'options'   => array(
 						'default' => array(
 							'value' => 'default',
 							'label' => esc_html__( 'Default', 'woodmart' ),
@@ -298,17 +533,53 @@ class Wishlist extends Element {
 							'image' => WOODMART_ASSETS_IMAGES . '/header-builder/upload.jpg',
 						),
 					),
-					'extra_class' => 'xts-col-6',
+					'condition' => array(
+						'design' => array(
+							'comparison' => 'not_equal',
+							'value'      => array( 'text-only' ),
+						),
+					),
 				),
 				'custom_icon'         => array(
 					'id'          => 'custom_icon',
 					'title'       => esc_html__( 'Upload an image', 'woodmart' ),
 					'type'        => 'image',
 					'tab'         => esc_html__( 'Style', 'woodmart' ),
-					'group'       => esc_html__( 'Icon', 'woodmart' ),
+					'group'       => esc_html__( 'Button', 'woodmart' ),
 					'value'       => '',
 					'description' => '',
-					'requires'    => array(
+					'condition'   => array(
+						'design'    => array(
+							'comparison' => 'not_equal',
+							'value'      => array( 'text-only' ),
+						),
+						'icon_type' => array(
+							'comparison' => 'equal',
+							'value'      => 'custom',
+						),
+					),
+					'extra_class' => 'xts-col-6',
+				),
+				'custom_icon_width'   => array(
+					'id'          => 'custom_icon_width',
+					'title'       => esc_html__( 'Icon width', 'woodmart' ),
+					'type'        => 'slider',
+					'tab'         => esc_html__( 'Style', 'woodmart' ),
+					'group'       => esc_html__( 'Button', 'woodmart' ),
+					'from'        => 0,
+					'to'          => 60,
+					'value'       => 0,
+					'units'       => 'px',
+					'selectors'   => array(
+						'{{WRAPPER}}' => array(
+							'--wd-tools-icon-width: {{VALUE}}px;',
+						),
+					),
+					'condition'   => array(
+						'design'    => array(
+							'comparison' => 'not_equal',
+							'value'      => array( 'text-only' ),
+						),
 						'icon_type' => array(
 							'comparison' => 'equal',
 							'value'      => 'custom',

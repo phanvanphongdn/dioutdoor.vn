@@ -2,7 +2,7 @@
 /**
  * Singleton pattern class.
  *
- * @package xts
+ * @package woodmart
  */
 
 namespace XTS;

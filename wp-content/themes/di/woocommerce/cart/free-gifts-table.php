@@ -5,7 +5,7 @@
  * @var string $wrapper_classes String with wrapper classes.
  * @var array  $data Data for render table.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 // Exit if accessed directly.
@@ -34,25 +34,26 @@ if ( woodmart_get_opt( 'free_gifts_allow_multiple_identical_gifts' ) && Manager:
 	<tbody>
 	<?php foreach ( $data as $free_gift_id ) : ?>
 		<?php
-			$free_gift_product = wc_get_product( $free_gift_id );
-			$product_permalink = apply_filters( 'woodmart_free_gift_item_permalink', $free_gift_product->is_visible() ? $free_gift_product->get_permalink() : '', $free_gift_id );
-			$product_name      = apply_filters( 'woodmart_free_gift_item_name', $free_gift_product->get_name(), $free_gift_id );
+		$free_gift_id      = apply_filters( 'wpml_object_id', $free_gift_id, 'product', true, apply_filters( 'wpml_current_language', null ) );
+		$free_gift_product = wc_get_product( $free_gift_id );
+		$product_permalink = apply_filters( 'woodmart_free_gift_item_permalink', $free_gift_product->is_visible() ? $free_gift_product->get_permalink() : '', $free_gift_id );
+		$product_name      = apply_filters( 'woodmart_free_gift_item_name', $free_gift_product->get_name(), $free_gift_id );
 
-			if ( ! woodmart_get_opt( 'free_gifts_allow_multiple_identical_gifts' ) ) {
-				$add_gift_btn_disabled = false;
+		if ( ! woodmart_get_opt( 'free_gifts_allow_multiple_identical_gifts' ) ) {
+			$add_gift_btn_disabled = false;
 
-				if ( Manager::get_instance()->check_is_gift_in_cart( $free_gift_id ) ) {
-					$add_gift_btn_disabled = true;
-				}
+			if ( Manager::get_instance()->check_is_gift_in_cart( $free_gift_id ) ) {
+				$add_gift_btn_disabled = true;
 			}
+		}
 		?>
 		<tr>
 			<td class="product-thumbnail">
 				<?php
 				if ( ! $product_permalink ) {
-					echo apply_filters( 'woodmart_free_gift_item_thumbnail', $free_gift_product->get_image(), $free_gift_id );
+					echo apply_filters( 'woodmart_free_gift_item_thumbnail', $free_gift_product->get_image(), $free_gift_id ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				} else {
-					printf( '<a href="%s">%s</a>', esc_url( $product_permalink ), apply_filters( 'woodmart_free_gift_item_thumbnail', $free_gift_product->get_image(), $free_gift_id ) );
+					printf( '<a href="%s">%s</a>', esc_url( $product_permalink ), apply_filters( 'woodmart_free_gift_item_thumbnail', $free_gift_product->get_image(), $free_gift_id ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				}
 				?>
 			</td>
@@ -76,7 +77,7 @@ if ( woodmart_get_opt( 'free_gifts_allow_multiple_identical_gifts' ) && Manager:
 						<span class="wd-label">
 							<?php esc_html_e( 'SKU:', 'woodmart' ); ?>
 						</span>
-						<span>
+						<span class="wd-sku">
 							<?php if ( $free_gift_product->get_sku() ) : ?>
 								<?php echo esc_html( $free_gift_product->get_sku() ); ?>
 							<?php else : ?>

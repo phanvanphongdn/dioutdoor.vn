@@ -2,7 +2,7 @@
 /**
  * Gutenberg block advanced CSS.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 use XTS\Gutenberg\Block_CSS;
@@ -23,7 +23,7 @@ if ( ! function_exists( 'wd_get_block_advanced_css' ) ) {
 		$block_css             = new Block_CSS( $attributes );
 		$selector              = $selectors['selector'];
 		$selector_hover        = ! empty( $selectors['selector_hover'] ) ? $selectors['selector_hover'] : $selector . ':hover';
-		$parent_hover_selector = '.wd-hover-parent:hover ' . $selector;
+		$parent_hover_selector = ! empty( $selectors['selector_parent_hover'] ) ? $selectors['selector_parent_hover'] : '.wd-hover-parent:hover ' . $selector;
 
 		$selector_padding = ! empty( $selectors['selector_padding'] ) ? $selectors['selector_padding'] : $selector;
 		$selector_margin  = ! empty( $selectors['selector_margin'] ) ? $selectors['selector_margin'] : $selector;
@@ -197,6 +197,10 @@ if ( ! function_exists( 'wd_get_block_advanced_css' ) ) {
 				array(
 					'attr_name' => 'overflowY',
 					'template'  => 'overflow-y: {{value}};',
+				),
+				array(
+					'attr_name' => 'pointerEvents',
+					'template'  => 'pointer-events: {{value}};',
 				),
 				array(
 					'attr_name' => 'visibility',

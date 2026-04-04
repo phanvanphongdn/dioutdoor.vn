@@ -1,4 +1,9 @@
 <?php
+/**
+ * Shortcode for Size Guide element.
+ *
+ * @package woodmart
+ */
 
 use XTS\Gutenberg\Blocks_Assets;
 use XTS\Gutenberg\Post_CSS;
@@ -7,12 +12,13 @@ if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
 	exit( 'No direct script access allowed' );
 }
 
-/**
- * ------------------------------------------------------------------------------------------------
- * Size guide shortcode
- * ------------------------------------------------------------------------------------------------
- */
 if ( ! function_exists( 'woodmart_size_guide_shortcode' ) ) {
+	/**
+	 * Size guide shortcode.
+	 *
+	 * @param array $element_args Shortcode attributes.
+	 * @return string
+	 */
 	function woodmart_size_guide_shortcode( $element_args ) {
 		$wrapper_classes = apply_filters( 'vc_shortcodes_css_class', '', '', $element_args );
 
@@ -47,9 +53,10 @@ if ( ! function_exists( 'woodmart_size_guide_shortcode' ) ) {
 		if ( 'inherit' === $id ) {
 			global $post;
 
-			$sguide_post_id = get_post_meta( $post->ID, 'woodmart_sguide_select' );
-			if ( ! empty( $sguide_post_id[0] ) && 'none' !== $sguide_post_id[0] ) {
-				$id = $sguide_post_id[0];
+			$sguide_post_id = get_post_meta( $post->ID, 'woodmart_sguide_select', true );
+
+			if ( $sguide_post_id && 'none' !== $sguide_post_id ) {
+				$id = $sguide_post_id;
 			} else {
 				$terms = wp_get_post_terms( $post->ID, 'product_cat' );
 				if ( $terms ) {
@@ -76,9 +83,9 @@ if ( ! function_exists( 'woodmart_size_guide_shortcode' ) ) {
 
 		ob_start();
 
-		if ( woodmart_get_opt( 'gutenberg_blocks' ) && $sguide_post->post_content && $element_args['description'] && has_blocks( $sguide_post->post_content ) ) {
-			echo Blocks_Assets::get_instance()->get_inline_scripts( $sguide_post->ID );
-			echo Post_CSS::get_instance()->get_inline_blocks_css( $sguide_post->ID );
+		if ( woodmart_is_gutenberg_blocks_enabled() && $sguide_post->post_content && $element_args['description'] && has_blocks( $sguide_post->post_content ) ) {
+			echo Blocks_Assets::get_instance()->get_inline_scripts( $sguide_post->ID ); // phpcs:ignore WordPress.Security
+			echo Post_CSS::get_instance()->get_inline_blocks_css( $sguide_post->ID ); // phpcs:ignore WordPress.Security
 		}
 
 		woodmart_enqueue_inline_style( 'size-guide' );

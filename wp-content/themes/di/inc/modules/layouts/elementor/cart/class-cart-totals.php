@@ -2,7 +2,7 @@
 /**
  * Cart totals map.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Modules\Layouts;
@@ -217,6 +217,8 @@ class Cart_Totals extends Widget_Base {
 			$shortcode_cart = new WC_Shortcode_Cart();
 			$shortcode_cart->calculate_shipping();
 		}
+
+		do_action( 'woocommerce_check_cart_items' );
 
 		wc()->cart->calculate_fees();
 		wc()->cart->calculate_shipping();

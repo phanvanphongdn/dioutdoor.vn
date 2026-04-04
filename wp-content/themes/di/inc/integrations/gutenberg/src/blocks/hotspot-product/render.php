@@ -22,8 +22,11 @@ if ( ! function_exists( 'wd_gutenberg_hotspot_product_block' ) ) {
 
 		if ( 'popup' === woodmart_get_opt( 'add_to_cart_action' ) ) {
 			woodmart_enqueue_js_library( 'magnific' );
+			
 			woodmart_enqueue_inline_style( 'add-to-cart-popup' );
 			woodmart_enqueue_inline_style( 'mfp-popup' );
+			woodmart_enqueue_inline_style( 'mod-animations-transform' );
+			woodmart_enqueue_inline_style( 'mod-transform' );
 		}
 
 		$add_to_cart_args = array(
@@ -31,7 +34,9 @@ if ( ! function_exists( 'wd_gutenberg_hotspot_product_block' ) ) {
 				' ',
 				array_filter(
 					array(
+						'btn',
 						'button',
+						'btn-accent',
 						'product_type_' . $product->get_type(),
 						$product->is_purchasable() && $product->is_in_stock() ? 'add_to_cart_button' : '',
 						$product->supports( 'ajax_add_to_cart' ) ? 'ajax_add_to_cart' : '',

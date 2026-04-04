@@ -2,7 +2,7 @@
 /**
  * Import widgets.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Admin\Modules\Import;

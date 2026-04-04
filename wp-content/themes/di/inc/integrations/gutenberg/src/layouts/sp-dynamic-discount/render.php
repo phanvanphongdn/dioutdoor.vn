@@ -25,10 +25,12 @@ if ( ! function_exists( 'wd_gutenberg_single_product_dynamic_discount' ) ) {
 			return '';
 		}
 
+		$el_id = wd_get_gutenberg_element_id( $block_attributes );
+
 		ob_start();
 
 		?>
-		<div id="<?php echo esc_attr( wd_get_gutenberg_element_id( $block_attributes ) ); ?>" class="wd-single-discounts<?php echo esc_attr( wd_get_gutenberg_element_classes( $block_attributes ) ); ?>">
+		<div <?php echo $el_id ? 'id="' . esc_attr( $el_id ) . '" ' : ''; ?>class="wd-single-discounts<?php echo esc_attr( wd_get_gutenberg_element_classes( $block_attributes ) ); ?>">
 			<?php echo $content; //phpcs:ignore ?>
 		</div>
 		<?php

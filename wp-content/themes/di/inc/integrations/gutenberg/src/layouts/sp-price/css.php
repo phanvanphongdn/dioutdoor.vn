@@ -1,4 +1,10 @@
 <?php
+/**
+ * Single Product Price block CSS.
+ *
+ * @package woodmart
+ */
+
 use XTS\Gutenberg\Block_CSS;
 
 $block_css = new Block_CSS( $attrs );
@@ -36,7 +42,7 @@ $block_css->add_css_rules(
 );
 
 $block_css->add_css_rules(
-	$block_selector . ' .price, ' . $block_selector . ' .amount, ' . $block_selector . ' del',
+	$block_selector . ' :is(.price, del)',
 	array(
 		array(
 			'attr_name' => 'mainPriceTextColorCode',
@@ -50,7 +56,7 @@ $block_css->add_css_rules(
 );
 
 $block_css->add_css_rules(
-	$block_selector . ' .price del, ' . $block_selector . ' del .amount',
+	$block_selector . ' .price del',
 	array(
 		array(
 			'attr_name' => 'oldPriceTextColorCode',
@@ -78,14 +84,15 @@ $block_css->add_css_rules(
 );
 
 $block_css->merge_with( wd_get_block_typography_css( $block_selector . ' .price', $attrs, 'mainPriceTp' ) );
-$block_css->merge_with( wd_get_block_typography_css( $block_selector . ' .price del, ' . $block_selector . ' del .amount', $attrs, 'oldPriceTp' ) );
+$block_css->merge_with( wd_get_block_typography_css( $block_selector . ' .price del', $attrs, 'oldPriceTp' ) );
 $block_css->merge_with( wd_get_block_typography_css( $block_selector . ' .woocommerce-price-suffix', $attrs, 'suffixTp' ) );
 
 $block_css->merge_with(
 	wd_get_block_advanced_css(
 		array(
-			'selector'       => $block_selector,
-			'selector_hover' => $block_selector_hover,
+			'selector'              => $block_selector,
+			'selector_hover'        => $block_selector_hover,
+			'selector_parent_hover' => $block_selector_parent_hover,
 		),
 		$attrs
 	)

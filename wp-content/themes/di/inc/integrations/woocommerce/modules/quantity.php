@@ -1,12 +1,30 @@
 <?php
+/**
+ * Product quantity input.
+ *
+ * @package woodmart
+ */
+
 if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
 	exit( 'No direct script access allowed' );
 }
 
 if ( ! function_exists( 'woodmart_product_quantity' ) ) {
-	function woodmart_product_quantity( $product ) {
-		if ( ! $product->is_sold_individually() && ( 'variable' !== $product->get_type() || 'variation_form' === woodmart_get_opt( 'quick_shop_variable_type' ) ) && $product->is_purchasable() && $product->is_in_stock() && ! woodmart_get_opt( 'catalog_mode' ) ) {
+	/**
+	 * Show quantity input on product page and quick shop.
+	 *
+	 * @param object  $product WooCommerce product object.
+	 * @param boolean $is_element Is elementor product.
+	 * @return void
+	 */
+	function woodmart_product_quantity( $product, $is_element = false ) {
+		if ( ! $product->is_sold_individually() && ( 'variable' !== $product->get_type() || ( 'variation_form' === woodmart_get_opt( 'quick_shop_variable_type' ) || $is_element ) ) && $product->is_purchasable() && $product->is_in_stock() && ! woodmart_get_opt( 'catalog_mode' ) ) {
+			woodmart_enqueue_inline_style( 'woo-mod-quantity' );
+			woodmart_enqueue_js_script( 'woocommerce-quantity' );
 			woodmart_enqueue_js_script( 'grid-quantity' );
+		}
+
+		if ( ! $product->is_sold_individually() && ( 'variable' !== $product->get_type() || ( 'variation_form' === woodmart_get_opt( 'quick_shop_variable_type' ) || $is_element ) ) && $product->is_purchasable() && $product->is_in_stock() && ! woodmart_get_opt( 'catalog_mode' ) ) {
 			woocommerce_quantity_input(
 				array(
 					'min_value' => 1,
@@ -18,14 +36,20 @@ if ( ! function_exists( 'woodmart_product_quantity' ) ) {
 }
 
 if ( ! function_exists( 'woodmart_update_cart_item' ) ) {
+	/**
+	 * Update cart item quantity via AJAX.
+	 *
+	 * @return void
+	 */
 	function woodmart_update_cart_item() {
 		$cart = WC()->cart->get_cart();
 
-		if ( ! empty( $cart ) && ( isset( $_GET['item_id'] ) && $_GET['item_id'] ) && ( isset( $_GET['qty'] ) ) ) {
+		if ( ! empty( $cart ) && ( isset( $_GET['item_id'] ) && $_GET['item_id'] ) && ( isset( $_GET['qty'] ) ) ) { // phpcs:ignore WordPress.Security
 			wc_clear_notices();
 
-			$cart_item_key = $_GET['item_id'];
-			$quantity      = $_GET['qty'];
+			$cart_item_key = sanitize_key( $_GET['item_id'] ); // phpcs:ignore WordPress.Security
+			$quantity      = sanitize_key( $_GET['qty'] ); // phpcs:ignore WordPress.Security
+			$min_qty       = 0;
 			$values        = array();
 			$_product      = array();
 			$cart_updated  = false;
@@ -45,8 +69,16 @@ if ( ! function_exists( 'woodmart_update_cart_item' ) ) {
 			}
 
 			if ( $passed_validation && $quantity ) {
-				WC()->cart->set_quantity( $cart_item_key, $quantity, false );
-				$cart_updated = true;
+				if ( $_product ) {
+					$min_qty = apply_filters( 'woocommerce_quantity_input_min', $_product->get_min_purchase_quantity(), $_product );
+				}
+
+				if ( $quantity < $min_qty ) {
+					WC()->cart->remove_cart_item( $cart_item_key );
+				} else {
+					WC()->cart->set_quantity( $cart_item_key, $quantity, false );
+					$cart_updated = true;
+				}
 			} elseif ( ! $quantity ) {
 				WC()->cart->remove_cart_item( $cart_item_key );
 			}

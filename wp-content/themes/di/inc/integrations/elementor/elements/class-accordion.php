@@ -2,7 +2,7 @@
 /**
  * Accordion map.
  *
- * @package Woodmart.
+ * @package woodmart.
  */
 
 namespace XTS\Elementor;
@@ -126,7 +126,7 @@ class Accordion extends Widget_Base {
 			array(
 				'label'       => esc_html__( 'HTML Block', 'woodmart' ),
 				'type'        => Controls_Manager::SELECT,
-				'options'     => woodmart_get_elementor_html_blocks_array(),
+				'options'     => woodmart_get_elementor_blocks_array( 'cms_block' ),
 				'default'     => '0',
 				'description' => function_exists( 'woodmart_get_html_block_links' ) ? woodmart_get_html_block_links() : '',
 				'condition'   => array(
@@ -685,7 +685,7 @@ class Accordion extends Widget_Base {
 				?>
 
 				<div class="wd-accordion-item">
-					<div class="wd-accordion-title<?php echo esc_attr( $loop_title_classes_wrapper ); ?>" data-accordion-index="<?php echo esc_attr( $index ); ?>">
+					<div class="wd-accordion-title wd-role-btn<?php echo esc_attr( $loop_title_classes_wrapper ); ?>" data-accordion-index="<?php echo esc_attr( $index ); ?>" tabindex="0">
 						<div class="wd-accordion-title-text<?php echo esc_attr( $title_classes ); ?>">
 							<?php if ( ! empty( $icon_output ) ) : ?>
 								<span class="img-wrapper">
@@ -704,7 +704,7 @@ class Accordion extends Widget_Base {
 							<?php echo woodmart_get_html_block( $item['html_block_id'] ); // phpcs:ignore ?>
 						<?php elseif ( 'text' === $item['content_type'] ) : ?>
 							<?php if ( woodmart_elementor_is_edit_mode() ) : ?>
-								<div <?php echo $this->get_render_attribute_string( $content_setting_key ); ?>>
+								<div <?php echo $this->get_render_attribute_string( $content_setting_key ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 							<?php endif; ?>
 
 							<?php echo do_shortcode( $item['item_content'] ); ?>

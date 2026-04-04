@@ -1,8 +1,8 @@
 <?php
-/***
- * Off canvas button shortcodes file.
+/**
+ * Shortcode for Off Canvas Column Button element.
  *
- * @package Shortcode.
+ * @package woodmart.
  */
 
 use XTS\Modules\Layouts\Global_Data as Builder;
@@ -12,26 +12,26 @@ if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
 }
 
 if ( ! function_exists( 'woodmart_shortcode_off_canvas_btn' ) ) {
-	/***
+	/**
 	 * Render off canvas button shortcode.
 	 *
-	 * @param array  $attr Shortcode attributes.
-	 * @param string $content Inner shortcode.
+	 * @param array $attr Shortcode attributes.
 	 *
 	 * @return false|string
 	 */
-	function woodmart_shortcode_off_canvas_btn( $attr, $content ) {
+	function woodmart_shortcode_off_canvas_btn( $attr ) {
 		$wrapper_classes = apply_filters( 'vc_shortcodes_css_class', '', 'woodmart_off_canvas_btn', $attr );
 
 		$settings = shortcode_atts(
 			array(
-				'woodmart_css_id' => '',
-				'css'             => '',
-				'button_text'     => 'Show column',
-				'icon_type'       => 'default',
-				'img_id'          => '',
-				'img_size'        => '20x20',
-				'sticky'          => '',
+				'woodmart_css_id'    => '',
+				'css'                => '',
+				'button_text'        => 'Show column',
+				'icon_type'          => 'default',
+				'img_id'             => '',
+				'img_size'           => '20x20',
+				'sticky'             => '',
+				'only_sticky_button' => '',
 			),
 			$attr
 		);
@@ -41,7 +41,7 @@ if ( ! function_exists( 'woodmart_shortcode_off_canvas_btn' ) ) {
 
 		Builder::get_instance()->set_data( 'wd_show_sticky_sidebar_button', true );
 
-		if ( function_exists( 'vc_shortcode_custom_css_class' ) ) {
+		if ( function_exists( 'vc_shortcode_custom_css_class' ) && ! empty( $settings['css'] ) ) {
 			$wrapper_classes .= ' ' . vc_shortcode_custom_css_class( $settings['css'] );
 		}
 		// Icon settings.
@@ -63,6 +63,10 @@ if ( ! function_exists( 'woodmart_shortcode_off_canvas_btn' ) ) {
 			$icon_output = woodmart_otf_get_image_html( $settings['img_id'], $settings['img_size'] );
 		}
 
+		if ( 'yes' === $settings['sticky'] && 'yes' === $settings['only_sticky_button'] ) {
+			$wrapper_classes .= ' wd-action-hide-btn';
+		}
+
 		ob_start();
 
 		woodmart_enqueue_js_script( 'off-canvas-colum-btn' );
@@ -73,12 +77,10 @@ if ( ! function_exists( 'woodmart_shortcode_off_canvas_btn' ) ) {
 		<div class="wd-wpb<?php echo esc_attr( $wrapper_classes ); ?>">
 			<div class="wd-off-canvas-btn wd-action-btn wd-style-text<?php echo esc_html( $off_canvas_classes ); ?>">
 				<a href="#" rel="nofollow">
-					<?php if ( ! empty( $icon_output ) ) : ?>
-						<span class="wd-action-icon">
-							<?php echo $icon_output; //phpcs:ignore; ?>
-						</span>
-					<?php endif; ?>
-					<?php echo esc_html( $settings['button_text'] ); ?>
+					<span class="wd-action-icon">
+						<?php echo $icon_output; //phpcs:ignore; ?>
+					</span>
+					<span class="wd-action-text"><?php echo esc_html( $settings['button_text'] ); ?></span>
 				</a>
 			</div>
 			<?php if ( 'yes' === $settings['sticky'] ) : ?>
@@ -86,11 +88,9 @@ if ( ! function_exists( 'woodmart_shortcode_off_canvas_btn' ) ) {
 				<?php woodmart_enqueue_js_script( 'sticky-sidebar-btn' ); ?>
 				<div class="wd-sidebar-opener wd-show-on-scroll wd-action-btn wd-style-icon<?php echo esc_html( $sticky_off_canvas_classes ); ?>">
 					<a href="#" rel="nofollow">
-						<?php if ( ! empty( $icon_output ) ) : ?>
-							<span class="wd-action-icon">
-								<?php echo $icon_output; //phpcs:ignore; ?>
-							</span>
-						<?php endif; ?>
+						<span class="wd-action-icon">
+							<?php echo $icon_output; //phpcs:ignore; ?>
+						</span>
 					</a>
 				</div>
 			<?php endif; ?>

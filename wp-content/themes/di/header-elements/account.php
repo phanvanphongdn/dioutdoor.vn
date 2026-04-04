@@ -1,26 +1,42 @@
 <?php
+/**
+ * Header account element.
+ *
+ * @package woodmart
+ */
 
 if ( ! woodmart_woocommerce_installed() ) {
 	return '';
 }
 
-$links = woodmart_get_header_links( $params );
+$links            = woodmart_get_header_links( $params );
 $my_account_style = $params['display'];
-$login_side = $params['form_display'] == 'side';
-$icon_type = $params['icon_type'];
-$extra_class = '';
+$login_side       = 'side' === $params['form_display'];
+$icon_type        = $params['icon_type'];
+$extra_class      = '';
 
-$classes = '';
+$classes  = '';
 $classes .= ( ! empty( $link['dropdown'] ) ) ? ' menu-item-has-children' : '';
-$classes .= ( $params['with_username'] ) ? ' wd-with-username' : '';
 
-if ( ! empty( $params['icon_design'] ) ) {
+if ( 'text' !== $params['display'] && ! empty( $params['icon_design'] ) ) {
 	$classes .= ' wd-design-' . $params['icon_design'];
 }
 
-if ( $my_account_style ) {
-	$classes .= ' wd-account-style-' . $my_account_style;
-	$classes .= woodmart_get_old_classes( ' my-account-with-' . $my_account_style );
+if ( 'text' === $params['display'] && ! empty( $params['text_design'] ) ) {
+	$classes .= ' wd-design-' . $params['text_design'] . '-text';
+}
+
+
+switch ( $my_account_style ) {
+	case 'text':
+		$classes .= ' wd-style-text-only';
+		break;
+	case 'icon':
+		$classes .= ' wd-style-icon';
+		break;
+	case 'icon_with_text':
+		$classes .= ' wd-style-text';
+		break;
 }
 
 if ( ! is_user_logged_in() && $params['login_dropdown'] && $login_side ) {
@@ -36,18 +52,22 @@ if ( '8' === $params['icon_design'] ) {
 	woodmart_enqueue_inline_style( 'mod-tools-design-8' );
 }
 
-if ( $icon_type == 'custom' && $my_account_style == 'icon' ) {
+if ( 'custom' === $icon_type && 'text' !== $my_account_style ) {
 	$classes .= ' wd-tools-custom-icon';
 }
 
-
-if ( ! empty( $params['bg_overlay'] && ( $params['login_dropdown'] && 'dropdown' === $params['form_display'] && ! is_account_page() || is_user_logged_in() ) ) ) {
+if ( ! empty( $params['bg_overlay'] && ( ( $params['login_dropdown'] && 'dropdown' === $params['form_display'] && ! is_account_page() ) || is_user_logged_in() ) ) ) {
 	woodmart_enqueue_js_script( 'menu-overlay' );
 
 	$classes .= ' wd-with-overlay';
 }
 
-if (  isset( $params['wrap_type'], $params['with_username'], $params['icon_design'], $params['display'] ) && 'icon_and_text' === $params['wrap_type'] && $params['with_username'] && in_array( $params['icon_design'], array( '6', '7' ), true ) && 'icon' === $params['display'] ) {
+if (
+	isset( $params['wrap_type'], $params['display'], $params['icon_design'] ) &&
+	'icon_and_text' === $params['wrap_type'] &&
+	'icon_with_text' === $params['display'] &&
+	in_array( $params['icon_design'], array( '6', '7' ), true )
+) {
 	$classes .= ' wd-with-wrap';
 }
 
@@ -55,65 +75,69 @@ if ( isset( $id ) ) {
 	$classes .= ' whb-' . $id;
 }
 
-if( empty( $links ) ) return '';
+if ( empty( $links ) ) {
+	return '';
+}
 
-$classes .= woodmart_get_old_classes( ' woodmart-header-links woodmart-navigation item-event-hover menu-simple-dropdown' );
+$show_tools_inner = false;
+
+if (
+	isset( $params['display'] ) &&
+	(
+		(
+			'text' === $params['display'] &&
+			isset( $params['text_design'] ) &&
+			in_array( $params['text_design'], array( '6', '7' ), true )
+		) ||
+		(
+			'icon_with_text' === $params['display'] &&
+			isset( $params['icon_design'], $params['wrap_type'] ) &&
+			in_array( $params['icon_design'], array( '6', '7' ), true ) &&
+			'icon_and_text' === $params['wrap_type']
+		) ||
+		(
+			'text' !== $params['display'] &&
+			isset( $params['icon_design'] ) &&
+			'8' === $params['icon_design']
+		)
+	)
+) {
+	$show_tools_inner = true;
+}
+
 woodmart_enqueue_inline_style( 'header-my-account' );
 ?>
 <div class="wd-header-my-account wd-tools-element wd-event-hover<?php echo esc_attr( $classes ); ?>">
-	<?php foreach ($links as $key => $link): ?>
+	<?php foreach ( $links as $key => $link ) : // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited ?>
 		<a href="<?php echo esc_url( $link['url'] ); ?>" title="<?php echo esc_attr__( 'My account', 'woodmart' ); ?>">
-			<?php if ( '8' === $params['icon_design'] || (  isset( $params['wrap_type'], $params['with_username'], $params['icon_design'] ) && 'icon_and_text' === $params['wrap_type'] && $params['with_username'] && in_array( $params['icon_design'], array( '6', '7' ), true ) && 'icon' === $params['display'] ) ) : ?>
+			<?php if ( $show_tools_inner ) : ?>
 				<span class="wd-tools-inner">
 			<?php endif; ?>
 
-				<span class="wd-tools-icon">
-					<?php
-						if ( $icon_type == 'custom' && $my_account_style == 'icon' ) {
-							echo whb_get_custom_icon( $params['custom_icon'] );
+				<?php if ( 'text' !== $my_account_style ) : ?>
+					<span class="wd-tools-icon">
+						<?php
+						if ( 'custom' === $icon_type && 'text' !== $my_account_style ) {
+							echo whb_get_custom_icon( $params['custom_icon'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 						}
-					?>
-				</span>
-				<span class="wd-tools-text">
-                <?php
-                echo wp_kses($link['label'], 'default');//vucamp
-                $current_user = wp_get_current_user();
-                if (!$current_user->ID) {
-                } else {
-                    $user_roles = $current_user->roles;
-                    $user_role  = array_shift($user_roles);
+						?>
+					</span>
+				<?php endif; ?>
 
-                    switch ($user_role) {
-                        case 'administrator':
-                            echo ' <img decoding="async" width="30" height="30" src="https://dioutdoor.vn/media/2023/12/member-customer-65x65.png" alt="Thành viên CUSTOMER">';
-                            break;
-                        case 'customer':
-                            echo ' <img decoding="async" width="30" height="30" src="https://dioutdoor.vn/media/2023/12/member-customer-65x65.png" alt="Thành viên CUSTOMER">';
-                            break;
-                        case 'iron':
-                            echo ' <img decoding="async" width="30" height="30" src="https://dioutdoor.vn/media/2023/12/member-iron-65x65.png" alt="Thành viên IRON">';
-                            break;
-                        case 'stainless':
-                            echo ' <img decoding="async" width="30" height="30" src="https://dioutdoor.vn/media/2023/12/member-stainless-65x65.png" alt="Thành viên STAINLESS">';
-                            break;
-                        case 'aluminum':
-                            echo ' <img decoding="async" width="30" height="30" src="https://dioutdoor.vn/media/2023/12/member-aluminum-65x65.png" alt="Thành viên ALUMINUM">';
-                            break;
-                        case 'titanium':
-                            echo ' <img decoding="async" width="30" height="30" src="https://dioutdoor.vn/media/2023/12/member-titanium-65x65.png" alt="Thành viên TITANIUM">';
-                            break;
-                        default:
-                            break;
-                    }
-                }
-                ?>
-			</span>
+				<?php if ( 'icon' !== $my_account_style ) : ?>
+					<span class="wd-tools-text">
+						<?php echo wp_kses( $link['label'], 'default' ); ?>
+					</span>
+				<?php endif; ?>
 
-			<?php if ( '8' === $params['icon_design'] || ( isset( $params['wrap_type'], $params['with_username'], $params['icon_design'] ) && 'icon_and_text' === $params['wrap_type'] && $params['with_username'] && in_array( $params['icon_design'], array( '6', '7' ), true ) && 'icon' === $params['display'] ) ) : ?>
+			<?php if ( $show_tools_inner ) : ?>
 				</span>
 			<?php endif; ?>
 		</a>
 
-		<?php if( ! empty( $link['dropdown'] ) ) echo apply_filters( 'woodmart_account_element_dropdown', $link['dropdown'] ); ?>
+		<?php
+		if ( ! empty( $link['dropdown'] ) ) {
+			echo apply_filters( 'woodmart_account_element_dropdown', $link['dropdown'] );} // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		?>
 	<?php endforeach; ?>
 </div>

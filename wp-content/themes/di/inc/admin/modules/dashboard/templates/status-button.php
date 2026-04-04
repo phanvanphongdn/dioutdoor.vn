@@ -5,7 +5,7 @@
  * @var string $nonce security nonce.
  * @var string $status status of publication.
  * @var int $post_id publication id.
- * @package Woodmart
+ * @package woodmart
  */
 
 $classes = '';

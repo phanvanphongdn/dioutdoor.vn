@@ -2,24 +2,26 @@
 /**
  * Gutenberg helpers.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
-if ( ! function_exists( 'xts_parse_blocks_from_content' ) ) {
+use XTS\Gutenberg\Block_Attributes;
+
+if ( ! function_exists( 'woodmart_parse_blocks_from_content' ) ) {
 	/**
 	 * Parse blocks from content.
 	 *
 	 * @param string $content Post content.
 	 * @return array[]
 	 */
-	function xts_parse_blocks_from_content( $content ) {
+	function woodmart_parse_blocks_from_content( $content ) {
 		global $wp_version;
 
 		return ( version_compare( $wp_version, '5', '>=' ) ) ? parse_blocks( $content ) : gutenberg_parse_blocks( $content );
 	}
 }
 
-if ( ! function_exists( 'wd_replace_boolean_to_yes_no' ) ) {
+if ( ! function_exists( 'woodmart_replace_boolean_to_yes_no' ) ) {
 	/**
 	 * Transfer variable value.
 	 *
@@ -27,7 +29,7 @@ if ( ! function_exists( 'wd_replace_boolean_to_yes_no' ) ) {
 	 * @param array $attributes Element attributes.
 	 * @return void
 	 */
-	function wd_replace_boolean_to_yes_no( $variable_keys, &$attributes ) {
+	function woodmart_replace_boolean_to_yes_no( $variable_keys, &$attributes ) {
 		foreach ( $variable_keys as $key ) {
 			$attributes[ $key ] = ! empty( $attributes[ $key ] ) ? 'yes' : 'no';
 		}
@@ -43,14 +45,23 @@ if ( ! function_exists( 'wd_get_gutenberg_element_classes' ) ) {
 	 * @return string
 	 */
 	function wd_get_gutenberg_element_classes( $attributes, $classes = '' ) {
-		if ( wp_is_serving_rest_request() ) {
-			return '';
+		if ( ! empty( $attributes['blockId'] ) ) {
+			$classes .= ' wd-' . substr( $attributes['blockId'], 0, 8 );
 		}
 
-		$transform_attrs = array_merge( wd_get_transform_control_attrs( 'transform' ), wd_get_transform_control_attrs( 'transformHover' ), wd_get_transform_control_attrs( 'transformParentHover' ) );
+		$transform_attrs_raw = new Block_Attributes();
+
+		$transform_attrs_raw->add_attr( wd_get_transform_control_attrs( $transform_attrs_raw, 'transform' ) );
+		$transform_attrs_raw->add_attr( wd_get_transform_control_attrs( $transform_attrs_raw, 'transformHover' ) );
+		$transform_attrs_raw->add_attr( wd_get_transform_control_attrs( $transform_attrs_raw, 'transformParentHover' ) );
+
+		$transform_attrs = $transform_attrs_raw->get_attr();
 
 		if ( isset( $transform_attrs['blockId'] ) ) {
 			unset( $transform_attrs['blockId'] );
+		}
+		if ( isset( $transform_attrs['blockVersion'] ) ) {
+			unset( $transform_attrs['blockVersion'] );
 		}
 
 		$transform_attrs_keys = array_keys( $transform_attrs );
@@ -110,6 +121,10 @@ if ( ! function_exists( 'wd_get_gutenberg_element_classes' ) ) {
 			$classes .= ' wd_scroll_smoothness_' . $attributes['parallaxSmoothness'];
 		}
 
+		if ( ! empty( $attributes['className'] ) ) {
+			$classes .= ' ' . $attributes['className'];
+		}
+
 		return $classes;
 	}
 }
@@ -122,7 +137,7 @@ if ( ! function_exists( 'wd_get_gutenberg_element_id' ) ) {
 	 * @return string
 	 */
 	function wd_get_gutenberg_element_id( $attributes ) {
-		if ( ! empty( $attributes['blockId'] ) ) {
+		if ( ! empty( $attributes['blockId'] ) && ( ! isset( $attributes['blockVersion'] ) || ! $attributes['blockVersion'] || '1' === $attributes['blockVersion'] ) ) {
 			return 'wd-' . substr( $attributes['blockId'], 0, 8 );
 		}
 
@@ -163,6 +178,6 @@ if ( ! function_exists( 'wd_gutenberg_is_rest_api' ) ) {
 	 * @return bool
 	 */
 	function wd_gutenberg_is_rest_api() {
-		return ! empty( $_SERVER['REQUEST_URI'] ) && false !== strpos( $_SERVER['REQUEST_URI'], trailingslashit( rest_get_url_prefix() ) ); //phpcs:ignore
+		return ( isset( $_GET['rest_route'] ) && false !== strpos( $_GET['rest_route'], '/' ) ) || ( ! empty( $_SERVER['REQUEST_URI'] ) && false !== strpos( $_SERVER['REQUEST_URI'], trailingslashit( rest_get_url_prefix() ) ) ); // phpcs:ignore
 	}
 }

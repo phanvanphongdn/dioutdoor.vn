@@ -2,7 +2,7 @@
 /**
  * Wishlist map
  *
- * @package xts
+ * @package woodmart
  */
 
 namespace XTS\Elementor;

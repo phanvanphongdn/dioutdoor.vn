@@ -1,20 +1,34 @@
-<?php if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
-	exit( 'No direct script access allowed' );}
+<?php
 /**
-* ------------------------------------------------------------------------------------------------
-*  Brands element map
-* ------------------------------------------------------------------------------------------------
-*/
+ * Brands element map
+ *
+ * @package woodmart
+ */
+
+if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
+	exit( 'No direct script access allowed' );
+}
 
 if ( ! function_exists( 'woodmart_get_vc_map_brands' ) ) {
+	/**
+	 * Get Visual Composer map configuration for Brands element.
+	 *
+	 * Returns an array of Visual Composer element configuration including
+	 * element name, base shortcode, category, description, icon, and all
+	 * available parameters/controls for customizing the brands display.
+	 *
+	 * @since 1.0.0
+	 * @return array
+	 */
 	function woodmart_get_vc_map_brands() {
 		$order_by_values = array(
 			'',
-			esc_html__( 'Name', 'woodmart' )    => 'name',
-			esc_html__( 'Slug', 'woodmart' )    => 'slug',
-			esc_html__( 'Term ID', 'woodmart' ) => 'term_id',
-			esc_html__( 'ID', 'woodmart' )      => 'id',
-			esc_html__( 'Random', 'woodmart' )  => 'random',
+			esc_html__( 'Name', 'woodmart' )       => 'name',
+			esc_html__( 'Slug', 'woodmart' )       => 'slug',
+			esc_html__( 'Term ID', 'woodmart' )    => 'term_id',
+			esc_html__( 'ID', 'woodmart' )         => 'id',
+			esc_html__( 'Menu order', 'woodmart' ) => 'menu_order',
+			esc_html__( 'Random', 'woodmart' )     => 'random',
 			esc_html__( 'As IDs or slugs provided order', 'woodmart' ) => 'include',
 		);
 
@@ -70,7 +84,7 @@ if ( ! function_exists( 'woodmart_get_vc_map_brands' ) ) {
 					'save_always'      => true,
 					'hint'             => sprintf(
 						wp_kses(
-							__( 'Select how to sort retrieved brands. More at %s.', 'woodmart' ),
+							__( 'Select how to sort retrieved brands. More at %s.', 'woodmart' ), // phpcs:ignore.
 							array(
 								'a' => array(
 									'href'   => array(),
@@ -90,7 +104,7 @@ if ( ! function_exists( 'woodmart_get_vc_map_brands' ) ) {
 					'save_always'      => true,
 					'hint'             => sprintf(
 						wp_kses(
-							__( 'Designates the ascending or descending order. More at %s.', 'woodmart' ),
+							__( 'Designates the ascending or descending order. More at %s.', 'woodmart' ), // phpcs:ignore.
 							array(
 								'a' => array(
 									'href'   => array(),
@@ -421,16 +435,16 @@ if ( ! function_exists( 'woodmart_get_vc_map_brands' ) ) {
 					'edit_field_class' => 'wd-res-item vc_col-sm-12 vc_column',
 				),
 				array(
-					'type'       => 'wd_slider',
-					'heading'    => esc_html__( 'Padding', 'woodmart' ),
-					'param_name' => 'padding',
-					'selectors'  => array(
+					'type'          => 'wd_slider',
+					'heading'       => esc_html__( 'Padding', 'woodmart' ),
+					'param_name'    => 'padding',
+					'selectors'     => array(
 						'{{WRAPPER}}.wd-brands' => array(
 							'--wd-brand-pd: {{VALUE}}{{UNIT}};',
 						),
 					),
 					'generate_zero' => true,
-					'devices'    => array(
+					'devices'       => array(
 						'desktop' => array(
 							'value' => '',
 							'unit'  => 'px',
@@ -444,7 +458,7 @@ if ( ! function_exists( 'woodmart_get_vc_map_brands' ) ) {
 							'unit'  => 'px',
 						),
 					),
-					'range'      => array(
+					'range'         => array(
 						'px' => array(
 							'min'  => 0,
 							'max'  => 100,
@@ -483,15 +497,11 @@ if ( ! function_exists( 'woodmart_get_vc_map_brands' ) ) {
 				),
 				array(
 					'type'             => 'woodmart_switch',
-					'heading'          => esc_html__( 'With background', 'woodmart' ),
+					'heading'          => esc_html__( 'Background', 'woodmart' ),
 					'param_name'       => 'with_bg_color',
 					'true_state'       => 'yes',
 					'false_state'      => 'no',
 					'default'          => 'no',
-					'dependency'       => array(
-						'element' => 'brand_style',
-						'value'   => array( 'default' ),
-					),
 					'edit_field_class' => 'vc_col-sm-6 vc_column',
 				),
 				array(
@@ -508,6 +518,84 @@ if ( ! function_exists( 'woodmart_get_vc_map_brands' ) ) {
 						'value'   => array( 'yes' ),
 					),
 					'edit_field_class' => 'vc_col-sm-6 vc_column',
+				),
+				array(
+					'type'        => 'woodmart_switch',
+					'heading'     => esc_html__( 'Border', 'woodmart' ),
+					'param_name'  => 'with_border',
+					'true_state'  => 'yes',
+					'false_state' => 'no',
+					'default'     => 'no',
+				),
+				array(
+					'heading'          => esc_html__( 'Border type', 'woodmart' ),
+					'type'             => 'wd_select',
+					'param_name'       => 'border_type',
+					'style'            => 'select',
+					'selectors'        => array(
+						'body {{WRAPPER}}.wd-with-brd .wd-brand-item' => array(
+							'border-style: {{VALUE}};',
+						),
+					),
+					'devices'          => array(
+						'desktop' => array(
+							'value' => '',
+						),
+					),
+					'value'            => array(
+						esc_html__( 'Default', 'woodmart' ) => '',
+						esc_html__( 'None', 'woodmart' )   => 'none',
+						esc_html__( 'Solid', 'woodmart' )  => 'solid',
+						esc_html__( 'Dotted', 'woodmart' ) => 'dotted',
+						esc_html__( 'Double', 'woodmart' ) => 'double',
+						esc_html__( 'Dashed', 'woodmart' ) => 'dashed',
+						esc_html__( 'Groove', 'woodmart' ) => 'groove',
+					),
+					'dependency'       => array(
+						'element' => 'with_border',
+						'value'   => array( 'yes' ),
+					),
+					'edit_field_class' => 'vc_col-sm-6 vc_column',
+				),
+				array(
+					'heading'          => esc_html__( 'Border color', 'woodmart' ),
+					'type'             => 'wd_colorpicker',
+					'param_name'       => 'border_color',
+					'selectors'        => array(
+						'body {{WRAPPER}}.wd-with-brd .wd-brand-item' => array(
+							'border-color: {{VALUE}};',
+						),
+					),
+					'dependency'       => array(
+						'element' => 'with_border',
+						'value'   => array( 'yes' ),
+					),
+					'edit_field_class' => 'vc_col-sm-6 vc_column',
+				),
+				array(
+					'heading'    => esc_html__( 'Border width', 'woodmart' ),
+					'type'       => 'wd_dimensions',
+					'param_name' => 'border_width',
+					'selectors'  => array(
+						'body {{WRAPPER}}.wd-with-brd .wd-brand-item' => array(
+							'border-top-width: {{TOP}}px;',
+							'border-right-width: {{RIGHT}}px;',
+							'border-bottom-width: {{BOTTOM}}px;',
+							'border-left-width: {{LEFT}}px;',
+						),
+					),
+					'devices'    => array(
+						'desktop' => array(
+							'unit' => 'px',
+						),
+					),
+					'range'      => array(
+						'px' => array(),
+					),
+					'dependency' => array(
+						'element' => 'with_border',
+						'value'   => array( 'yes' ),
+					),
 				),
 				/**
 				 * Images
@@ -597,7 +685,7 @@ if ( ! function_exists( 'woodmart_get_vc_map_brands' ) ) {
 					'type'       => 'css_editor',
 					'heading'    => esc_html__( 'CSS box', 'woodmart' ),
 					'param_name' => 'css',
-					'group'      => esc_html__( 'Design Options', 'js_composer' ),
+					'group'      => esc_html__( 'Design Options', 'js_composer' ), // phpcs:ignore.
 				),
 				function_exists( 'woodmart_get_vc_responsive_spacing_map' ) ? woodmart_get_vc_responsive_spacing_map() : '',
 			),
@@ -611,19 +699,27 @@ add_filter( 'vc_autocomplete_woodmart_brands_ids_callback', 'woodmart_productBra
 add_filter( 'vc_autocomplete_woodmart_brands_ids_render', 'woodmart_productBrandsRenderByIdExact', 10, 1 );
 
 if ( ! function_exists( 'woodmart_productBrandsAutocompleteSuggester' ) ) {
-	function woodmart_productBrandsAutocompleteSuggester( $query, $slug = false ) {
+	/**
+	 * Get brand suggestions for Visual Composer autocomplete field.
+	 *
+	 * @since 1.0.0
+	 * @param string $query Search query (term ID, name, or slug).
+	 * @param bool   $slug  Return slug instead of ID. Default: false.
+	 * @return array Array of brand suggestions with 'value' and 'label' keys.
+	 */
+	function woodmart_productBrandsAutocompleteSuggester( $query, $slug = false ) { //phpcs:ignore.
 		global $wpdb;
 		$cat_id = (int) $query;
 		$query  = trim( $query );
 
-		$attribute = woodmart_get_opt( 'brands_attribute' );
+		$attribute = woodmart_get_opt( 'brands_attribute' ) ? woodmart_get_opt( 'brands_attribute' ) : 'product_brand';
 
-		$post_meta_infos = $wpdb->get_results(
+		$post_meta_infos = $wpdb->get_results( // phpcs:ignore.
 			$wpdb->prepare(
 				"SELECT a.term_id AS id, b.name as name, b.slug AS slug
 						FROM {$wpdb->term_taxonomy} AS a
 						INNER JOIN {$wpdb->terms} AS b ON b.term_id = a.term_id
-						WHERE a.taxonomy = '%s' AND (a.term_id = '%d' OR b.slug LIKE '%%%s%%' OR b.name LIKE '%%%s%%' )",
+						WHERE a.taxonomy = '%s' AND (a.term_id = '%d' OR b.slug LIKE '%%%s%%' OR b.name LIKE '%%%s%%' )", // phpcs:ignore.
 				$attribute,
 				$cat_id > 0 ? $cat_id : - 1,
 				stripslashes( $query ),
@@ -638,11 +734,11 @@ if ( ! function_exists( 'woodmart_productBrandsAutocompleteSuggester' ) ) {
 				$data          = array();
 				$data['value'] = $slug ? $value['slug'] : $value['id'];
 				$data['label'] = esc_html__( 'Id', 'woodmart' ) . ': ' .
-								 $value['id'] .
-								 ( ( strlen( $value['name'] ) > 0 ) ? ' - ' . esc_html__( 'Name', 'woodmart' ) . ': ' .
-																	  $value['name'] : '' ) .
-								 ( ( strlen( $value['slug'] ) > 0 ) ? ' - ' . esc_html__( 'Slug', 'woodmart' ) . ': ' .
-																	  $value['slug'] : '' );
+								$value['id'] .
+								( ( strlen( $value['name'] ) > 0 ) ? ' - ' . esc_html__( 'Name', 'woodmart' ) . ': ' .
+																		$value['name'] : '' ) .
+								( ( strlen( $value['slug'] ) > 0 ) ? ' - ' . esc_html__( 'Slug', 'woodmart' ) . ': ' .
+																		$value['slug'] : '' );
 				$result[]      = $data;
 			}
 		}
@@ -652,11 +748,17 @@ if ( ! function_exists( 'woodmart_productBrandsAutocompleteSuggester' ) ) {
 }
 
 if ( ! function_exists( 'woodmart_productBrandsRenderByIdExact' ) ) {
-	function woodmart_productBrandsRenderByIdExact( $query ) {
+	/**
+	 * Render a product brand by its term ID.
+	 *
+	 * @param array $query Array containing the 'value' key with the term ID.
+	 * @return string HTML output of the brand term.
+	 */
+	function woodmart_productBrandsRenderByIdExact( $query ) { // phpcs:ignore.
 		global $wpdb;
 		$query     = $query['value'];
 		$cat_id    = (int) $query;
-		$attribute = woodmart_get_opt( 'brands_attribute' );
+		$attribute = woodmart_get_opt( 'brands_attribute' ) ? woodmart_get_opt( 'brands_attribute' ) : 'product_brand';
 		$term      = get_term( $cat_id, $attribute );
 
 		return woodmart_productCategoryTermOutput( $term );

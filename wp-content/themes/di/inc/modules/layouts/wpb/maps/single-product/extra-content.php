@@ -2,7 +2,7 @@
 /**
  * Product extra content map.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

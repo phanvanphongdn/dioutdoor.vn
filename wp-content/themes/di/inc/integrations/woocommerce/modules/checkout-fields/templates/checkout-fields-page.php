@@ -7,7 +7,7 @@
  * @var string $current_tab Current tab id.
  * @var object|null $list_table An instance of a class that extends WP_List_Table.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 ?>

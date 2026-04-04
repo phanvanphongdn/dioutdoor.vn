@@ -46,7 +46,7 @@ class Likes {
 	 * @return void
 	 */
 	public function save_comment( $comment_id ) {
-		if ( 'product' !== get_post_type( absint( $_POST['comment_post_ID'] ) ) ) {
+		if ( 'product' !== get_post_type( absint( $_POST['comment_post_ID'] ) ) ) { // phpcs:ignore WordPress.Security
 			return;
 		}
 
@@ -62,25 +62,25 @@ class Likes {
 	 * @return int|void
 	 */
 	public function ajax_comments_likes() {
-		if ( ! isset( $_POST['comment_id'], $_POST['vote'] ) ) {
+		if ( ! isset( $_POST['comment_id'], $_POST['vote'] ) ) { // phpcs:ignore WordPress.Security
 			return 0;
 		}
 
-		$comment_id       = $_POST['comment_id'];
-		$vote             = $_POST['vote'];
-		$current_user_id  = get_current_user_id();
+		$comment_id      = sanitize_key( $_POST['comment_id'] ); // phpcs:ignore WordPress.Security
+		$vote            = sanitize_text_field( $_POST['vote'] ); // phpcs:ignore WordPress.Security
+		$current_user_id = get_current_user_id();
 
 		if ( metadata_exists( 'comment', $comment_id, 'wd_vote' ) ) {
 			$meta_votes = get_comment_meta( $comment_id, 'wd_vote', true );
 		} else {
-			$meta_votes[$current_user_id] = $vote;
+			$meta_votes[ $current_user_id ] = $vote;
 		}
 
 		foreach ( $meta_votes as $user_id => $meta_vote ) {
 			if ( $user_id !== $current_user_id ) {
-				$meta_votes[$current_user_id] = $vote;
+				$meta_votes[ $current_user_id ] = $vote;
 			} else {
-				$meta_votes[$user_id] = $vote;
+				$meta_votes[ $user_id ] = $vote;
 			}
 		}
 
@@ -151,12 +151,18 @@ class Likes {
 		<div class="wd-review-likes">
 			<div class="wd-action-btn wd-style-text wd-like wd-like-icon">
 				<a href="#">
-					<span><?php echo esc_html( $likes ); ?></span>
+					<span class="wd-action-icon"></span>
+					<span class="wd-action-text">
+						<?php echo esc_html( $likes ); ?>
+					</span>
 				</a>
 			</div>
 			<div class="wd-action-btn wd-style-text wd-dislike wd-dislike-icon">
 				<a href="#">
-					<span><?php echo esc_html( $dislikes ); ?></span>
+					<span class="wd-action-icon"></span>
+					<span class="wd-action-text">
+						<?php echo esc_html( $dislikes ); ?>
+					</span>
 				</a>
 			</div>
 		</div>

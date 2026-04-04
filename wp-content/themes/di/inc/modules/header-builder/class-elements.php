@@ -1,11 +1,14 @@
 <?php
+/**
+ * Header builder elements class file.
+ *
+ * @package woodmart
+ */
 
 namespace XTS\Modules\Header_Builder;
 
 /**
- * ------------------------------------------------------------------------------------------------
  * Include all elements classes and create their objects. AJAX handlers.
- * ------------------------------------------------------------------------------------------------
  */
 class Elements {
 
@@ -50,7 +53,7 @@ class Elements {
 	 * Construct.
 	 */
 	public function __construct() {
-		$this->include_files();
+		add_action( 'init', array( $this, 'include_files' ), 8 );
 		add_action( 'wp_ajax_woodmart_get_builder_elements', array( $this, 'get_elements_ajax' ) );
 	}
 

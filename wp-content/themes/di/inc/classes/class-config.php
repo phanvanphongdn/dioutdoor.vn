@@ -2,7 +2,7 @@
 /**
  * Config class.
  *
- * @package xts
+ * @package woodmart
  */
 
 namespace XTS;

@@ -2,7 +2,7 @@
 /**
  * Import options.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Admin\Modules\Import;
@@ -41,6 +41,7 @@ class Options {
 	 * Constructor.
 	 *
 	 * @param string $version Version name.
+	 * @param string $type Version type.
 	 */
 	public function __construct( $version, $type ) {
 		$this->helpers = Helpers::get_instance();
@@ -118,12 +119,12 @@ class Options {
 	private function import_options() {
 		global $xts_woodmart_options;
 
-		$file = $this->helpers->get_file_path( 'options.json', $this->version );
+		$file         = $this->helpers->get_file_path( 'options.json', $this->version );
 		$page_builder = $this->helpers->get_page_builder();
 
-		if ( 'elementor' === $this->helpers->get_page_builder() && file_exists( $this->helpers->get_version_folder_path( $this->version ) . 'options-elementor.json' ) ) {
+		if ( 'elementor' === $page_builder && file_exists( $this->helpers->get_version_folder_path( $this->version ) . 'options-elementor.json' ) ) {
 			$file = $this->helpers->get_file_path( 'options-elementor.json', $this->version );
-		} elseif ( 'gutenberg' === $this->helpers->get_page_builder() && file_exists( $this->helpers->get_version_folder_path( $this->version ) . 'options-gutenberg.json' ) ) {
+		} elseif ( 'gutenberg' === $page_builder && file_exists( $this->helpers->get_version_folder_path( $this->version ) . 'options-gutenberg.json' ) ) {
 			$file = $this->helpers->get_file_path( 'options-gutenberg.json', $this->version );
 		}
 
@@ -139,10 +140,8 @@ class Options {
 		$new_options = json_decode( $new_options_json, true ) + $this->get_reset_options();
 
 		// Set builder to WPB or Elementor.
-		$xts_woodmart_options['variation_gallery_storage_method'] = 'new';
-		$xts_woodmart_options['current_builder']                  = woodmart_get_opt( 'current_builder' );
-		$xts_woodmart_options['gutenberg_blocks']                 = woodmart_get_opt( 'gutenberg_blocks' );
-		$xts_woodmart_options['enable_gutenberg_for_products']    = woodmart_get_opt( 'enable_gutenberg_for_products' );
+		$xts_woodmart_options['current_builder']               = woodmart_get_opt( 'current_builder' );
+		$xts_woodmart_options['enable_gutenberg_for_products'] = woodmart_get_opt( 'enable_gutenberg_for_products' );
 
 		if ( 'native' === woodmart_get_opt( 'current_builder' ) ) {
 			$xts_woodmart_options['woodmart_slider'] = 0;
@@ -261,7 +260,6 @@ class Options {
 			'link_3_icon',
 			'link_4_icon',
 			'link_5_icon',
-			'lazy_custom_placeholder',
 			'preloader_image',
 		);
 
@@ -306,6 +304,8 @@ class Options {
 			'compare_page',
 			'wishlist_page',
 			'full_search_content_html_block',
+			'product_custom_hover',
+			'product_custom_list',
 		);
 
 		foreach ( $options_with_post_id as $option_name ) {

@@ -39,38 +39,24 @@
 
 		woodmartThemeModule.$window.on('scroll', stickyAddToCartToggle);
 
-		$('.wd-sticky-add-to-cart, .wd-sticky-btn .wd-buy-now-btn').on('click', function(e) {
+		$('.wd-sticky-add-to-cart, .wd-sticky-btn-cart > .wd-buy-now-btn').on('click', function(e) {
 			e.preventDefault();
 
+			var headerHeight = $('.whb-header .whb-row.whb-sticky-row').length > 0 ? $('.whb-header .whb-main-header').outerHeight() : 0;
+
+			var $stickyHeader = $('.whb-sticky-header');
+			var stickyHeaderHeight = $stickyHeader.length ? $stickyHeader.outerHeight() : headerHeight;
+			var scrollElement = $('.summary-inner .variations_form, .wd-single-add-cart .variations_form, .cart.grouped_form');
+
+			if (scrollElement.length === 0) {
+				return;
+			}
+
+			var scrollTo = scrollElement.offset().top - stickyHeaderHeight - woodmart_settings.sticky_add_to_cart_offset;
+
 			$('html, body').animate({
-				scrollTop: $('.elementor-widget-woocommerce-product-title,.summary-inner .product_title,.elementor-widget-wd_single_product_title, .wd-single-title').offset().top
+				scrollTop: scrollTo
 			}, 800);
-		});
-
-		// Wishlist.
-		$('.wd-sticky-btn .wd-wishlist-btn a').on('click', function(e) {
-			if (!$(this).hasClass('added')) {
-				e.preventDefault();
-			}
-
-			$('.summary-inner > .wd-wishlist-btn a').trigger('click');
-		});
-
-		woodmartThemeModule.$document.on('added_to_wishlist', function() {
-			$('.wd-sticky-btn .wd-wishlist-btn a').addClass('added');
-		});
-
-		// Compare.
-		$('.wd-sticky-btn .wd-compare-btn a').on('click', function(e) {
-			if (!$(this).hasClass('added')) {
-				e.preventDefault();
-			}
-
-			$('.summary-inner > .wd-compare-btn a').trigger('click');
-		});
-
-		woodmartThemeModule.$document.on('added_to_compare', function() {
-			$('.wd-sticky-btn .wd-compare-btn a').addClass('added');
 		});
 
 		// Quantity.

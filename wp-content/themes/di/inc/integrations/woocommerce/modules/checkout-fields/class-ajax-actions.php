@@ -29,6 +29,10 @@ class Ajax_Actions extends Singleton {
 	 * @see Ajax_Actions::save_fields_position() Handler for the 'save_fields_position' ajax event.
 	 */
 	public function init() {
+		if ( ! woodmart_get_opt( 'checkout_fields_enabled' ) || ! woodmart_woocommerce_installed() ) {
+			return;
+		}
+
 		$this->helper = Helper::get_instance();
 
 		$actions = array(
@@ -68,6 +72,12 @@ class Ajax_Actions extends Singleton {
 		}
 
 		update_option( 'xts_checkout_fields_manager_options', $change_options, false );
+
+		wp_send_json(
+			array(
+				'show_reset_btn' => ! empty( $change_options ),
+			)
+		);
 	}
 
 	/**
@@ -133,7 +143,8 @@ class Ajax_Actions extends Singleton {
 
 		wp_send_json(
 			array(
-				'new_html' => $new_html,
+				'new_html'       => $new_html,
+				'show_reset_btn' => ! empty( $change_options ),
 			)
 		);
 	}
@@ -178,7 +189,8 @@ class Ajax_Actions extends Singleton {
 
 		wp_send_json(
 			array(
-				'new_html' => $new_html,
+				'new_html'       => $new_html,
+				'show_reset_btn' => ! empty( $change_options ),
 			)
 		);
 	}
@@ -250,7 +262,8 @@ class Ajax_Actions extends Singleton {
 
 		wp_send_json(
 			array(
-				'new_html' => $new_html,
+				'new_html'       => $new_html,
+				'show_reset_btn' => ! empty( $change_options ),
 			)
 		);
 	}

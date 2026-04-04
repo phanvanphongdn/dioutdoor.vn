@@ -27,6 +27,10 @@
 					$buttonText.text($this.data('alt-text'));
 					$this.data('alt-text', text);
 				}
+
+				if ($this.parents('.wd-hover-with-fade').length) {
+					woodmartThemeModule.$document.trigger('wdProductHoverContentRecalc', [$this.parents('.wd-hover-with-fade')]);
+				}
 			});
 		});
 	}

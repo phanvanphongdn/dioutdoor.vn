@@ -2,7 +2,7 @@
 /**
  * Elementor CSS_Class controls
  *
- * @package xts
+ * @package woodmart
  */
 
 namespace XTS\Elementor\Controls;

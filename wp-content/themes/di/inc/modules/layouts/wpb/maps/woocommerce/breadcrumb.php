@@ -2,7 +2,7 @@
 /**
  * WooCommerce breadcrumb map.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -17,7 +17,7 @@ if ( ! function_exists( 'woodmart_get_vc_map_woocommerce_breadcrumb' ) ) {
 		$typography = woodmart_get_typography_map(
 			array(
 				'key'      => 'title',
-				'selector' => '{{WRAPPER}} .woocommerce-breadcrumb',
+				'selector' => '{{WRAPPER}} :is(.wd-breadcrumbs,.yoast-breadcrumb,.rank-math-breadcrumb,.aioseo-breadcrumbs,.breadcrumb)',
 				'group'    => esc_html__( 'Style', 'woodmart' ),
 			)
 		);
@@ -25,7 +25,7 @@ if ( ! function_exists( 'woodmart_get_vc_map_woocommerce_breadcrumb' ) ) {
 		return array(
 			'base'        => 'woodmart_woocommerce_breadcrumb',
 			'name'        => esc_html__( 'WooCommerce breadcrumbs', 'woodmart' ),
-			'category'    => woodmart_get_tab_title_category_for_wpb( esc_html__( 'WooCommerce', 'woodmart' ) ),
+			'category'    => woodmart_get_tab_title_category_for_wpb( esc_html__( 'Site', 'woodmart' ) ),
 			'description' => esc_html__( 'WooCommerce current page breadcrumb', 'woodmart' ),
 			'icon'        => WOODMART_ASSETS . '/images/vc-icon/sp-icons/sp-breadcrumb.svg',
 			'params'      => array(
@@ -77,6 +77,64 @@ if ( ! function_exists( 'woodmart_get_vc_map_woocommerce_breadcrumb' ) ) {
 				$typography['text_transform'],
 				$typography['font_style'],
 				$typography['line_height'],
+
+				array(
+					'type'       => 'woodmart_empty_space',
+					'param_name' => 'woodmart_empty_space',
+					'group'      => esc_html__( 'Style', 'woodmart' ),
+				),
+
+				array(
+					'heading'          => esc_html__( 'Idle color', 'woodmart' ),
+					'group'            => esc_html__( 'Style', 'woodmart' ),
+					'type'             => 'wd_colorpicker',
+					'param_name'       => 'text_color',
+					'selectors'        => array(
+						'{{WRAPPER}} :is(.wd-breadcrumbs,.yoast-breadcrumb,.rank-math-breadcrumb,.aioseo-breadcrumbs,.breadcrumb)' => array(
+							'--wd-link-color: {{VALUE}};',
+						),
+					),
+					'edit_field_class' => 'vc_col-sm-6 vc_column',
+				),
+
+				array(
+					'heading'          => esc_html__( 'Hover color', 'woodmart' ),
+					'group'            => esc_html__( 'Style', 'woodmart' ),
+					'type'             => 'wd_colorpicker',
+					'param_name'       => 'text_color_hover',
+					'selectors'        => array(
+						'{{WRAPPER}} :is(.wd-breadcrumbs,.yoast-breadcrumb,.rank-math-breadcrumb,.aioseo-breadcrumbs,.breadcrumb)' => array(
+							'--wd-link-color-hover: {{VALUE}};',
+						),
+					),
+					'edit_field_class' => 'vc_col-sm-6 vc_column',
+				),
+
+				array(
+					'heading'          => esc_html__( 'Active color', 'woodmart' ),
+					'group'            => esc_html__( 'Style', 'woodmart' ),
+					'type'             => 'wd_colorpicker',
+					'param_name'       => 'text_color_active',
+					'selectors'        => array(
+						'{{WRAPPER}} :is(.wd-breadcrumbs,.yoast-breadcrumb,.rank-math-breadcrumb,.aioseo-breadcrumbs,.breadcrumb)' => array(
+							'--wd-bcrumb-color-active: {{VALUE}};',
+						),
+					),
+					'edit_field_class' => 'vc_col-sm-6 vc_column',
+				),
+
+				array(
+					'heading'          => esc_html__( 'Delimiter color', 'woodmart' ),
+					'group'            => esc_html__( 'Style', 'woodmart' ),
+					'type'             => 'wd_colorpicker',
+					'param_name'       => 'delimiter_color',
+					'selectors'        => array(
+						'{{WRAPPER}} :is(.wd-breadcrumbs,.yoast-breadcrumb,.rank-math-breadcrumb,.aioseo-breadcrumbs,.breadcrumb)' => array(
+							'--wd-bcrumb-delim-color: {{VALUE}};',
+						),
+					),
+					'edit_field_class' => 'vc_col-sm-6 vc_column',
+				),
 
 				array(
 					'heading'    => esc_html__( 'CSS box', 'woodmart' ),

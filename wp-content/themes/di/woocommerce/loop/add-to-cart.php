@@ -24,10 +24,10 @@ global $product;
 
 $aria_describedby = isset( $args['aria-describedby_text'] ) ? sprintf( 'aria-describedby="woocommerce_loop_add_to_cart_link_describedby_%s"', esc_attr( $product->get_id() ) ) : '';
 
-echo apply_filters(
+echo apply_filters( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	'woocommerce_loop_add_to_cart_link',
 	sprintf(
-		'<a href="%s" %s data-quantity="%s" class="%s add-to-cart-loop" %s><span>%s</span></a>',
+		'<a href="%s" %s data-quantity="%s" class="%s add-to-cart-loop" %s><span class="wd-action-icon"><span class="wd-check-icon"></span></span><span class="wd-action-text">%s</span></a>',
 		esc_url( $product->add_to_cart_url() ),
 		$aria_describedby,
 		esc_attr( isset( $args['quantity'] ) ? $args['quantity'] : 1 ),

@@ -16,7 +16,7 @@
 	<!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 	<!--    contained in this file into your site. -->
 
-	<!-- generator="WordPress/6.2.4" created="2024-02-13 13:40" -->
+	<!-- generator="WordPress/6.7.4" created="2026-02-25 15:08" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -29,30 +29,19 @@
 	<title>Elementor 2.0 WoodMart dummy</title>
 	<link>https://dummy.xtemos.com/woodmart2/elementor</link>
 	<description>Just another WoodMart Dummy 2.0 Sites site</description>
-	<pubDate>Tue, 13 Feb 2024 13:40:58 +0000</pubDate>
+	<pubDate>Wed, 25 Feb 2026 15:08:28 +0000</pubDate>
 	<language>en-US</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
 	<wp:base_site_url>https://dummy.xtemos.com/woodmart2/</wp:base_site_url>
 	<wp:base_blog_url>https://dummy.xtemos.com/woodmart2/elementor</wp:base_blog_url>
 
-		<wp:author><wp:author_id>2</wp:author_id><wp:author_login><![CDATA[zakhar]]></wp:author_login><wp:author_email><![CDATA[zak@asda.as]]></wp:author_email><wp:author_display_name><![CDATA[Mr. Mackay]]></wp:author_display_name><wp:author_first_name><![CDATA[sds]]></wp:author_first_name><wp:author_last_name><![CDATA[scssc]]></wp:author_last_name></wp:author>
-
-					<wp:term>
-			<wp:term_id>0</wp:term_id>
-			<wp:term_taxonomy><![CDATA[]]></wp:term_taxonomy>
-			<wp:term_slug><![CDATA[]]></wp:term_slug>
-			<wp:term_parent><![CDATA[]]></wp:term_parent>
-					</wp:term>
-			<wp:term>
+	
+										<wp:term>
 			<wp:term_id>146</wp:term_id>
 			<wp:term_taxonomy><![CDATA[woodmart_slider]]></wp:term_taxonomy>
 			<wp:term_slug><![CDATA[shoes-slider]]></wp:term_slug>
 			<wp:term_parent><![CDATA[]]></wp:term_parent>
 			<wp:term_name><![CDATA[Shoes slider]]></wp:term_name>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-146-status]]></wp:meta_key>
-			<wp:meta_value><![CDATA[valid]]></wp:meta_value>
-		</wp:termmeta>
 		<wp:termmeta>
 			<wp:meta_key><![CDATA[animation]]></wp:meta_key>
 			<wp:meta_value><![CDATA[slide]]></wp:meta_value>
@@ -217,50 +206,15 @@
 			<wp:meta_key><![CDATA[autoplay_speed]]></wp:meta_key>
 			<wp:meta_value><![CDATA[25000]]></wp:meta_value>
 		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-146-credentials]]></wp:meta_key>
-			<wp:meta_value><![CDATA[requested]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-146-file-data]]></wp:meta_key>
-			<wp:meta_value><![CDATA[a:3:{s:4:"path";s:36:"/2024/02/xts-term-146-1707830839.css";s:13:"theme_version";s:5:"7.4.0";s:8:"site_url";s:32:"4f146f679d9b7d2ba7fe3593044e8d2b";}]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-146-css-data]]></wp:meta_key>
-			<wp:meta_value><![CDATA[#slider-146 .wd-slide {
-	min-height: 750px;
-}
-
-@media (max-width: 1024px) {
-	#slider-146 .wd-slide {
-		min-height: 600px;
-	}
-}
-
-@media (max-width: 767px) {
-	#slider-146 .wd-slide {
-		min-height: 680px;
-	}
-}
-]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-146-version]]></wp:meta_key>
-			<wp:meta_value><![CDATA[7.4.0]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-146-site-url]]></wp:meta_key>
-			<wp:meta_value><![CDATA[4f146f679d9b7d2ba7fe3593044e8d2b]]></wp:meta_value>
-		</wp:termmeta>
 		</wp:term>
-		
-	<generator>https://wordpress.org/?v=6.2.4</generator>
+				
+	<generator>https://wordpress.org/?v=6.7.4</generator>
 
 					<item>
 					<title><![CDATA[shoes-promo-popup]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/shoes-promo-popup/</link>
 					<pubDate>Fri, 10 Sep 2021 12:19:01 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/shoes-promo-popup.jpg</guid>
 															<wp:post_id>3437</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-10 12:19:01]]></wp:post_date>
@@ -283,7 +237,7 @@
 					<title><![CDATA[shoes-page-title]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/shoes-page-title/</link>
 					<pubDate>Fri, 10 Sep 2021 12:19:16 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/shoes-page-title.jpg</guid>
 															<wp:post_id>3438</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-10 12:19:16]]></wp:post_date>
@@ -306,7 +260,7 @@
 					<title><![CDATA[shoes-left-img]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/home-shoes/shoes-left-img/</link>
 					<pubDate>Fri, 10 Sep 2021 12:31:08 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/shoes-left-img.png</guid>
 															<wp:post_id>3448</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-10 12:31:08]]></wp:post_date>
@@ -329,7 +283,7 @@
 					<title><![CDATA[shoes-video-img-bg]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/home-shoes/shoes-video-img-bg/</link>
 					<pubDate>Fri, 10 Sep 2021 12:33:13 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/shoes-video-img-bg.jpg</guid>
 															<wp:post_id>3449</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-10 12:33:13]]></wp:post_date>
@@ -352,7 +306,7 @@
 					<title><![CDATA[shoes-banner-1]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/home-shoes/shoes-banner-1/</link>
 					<pubDate>Fri, 10 Sep 2021 12:35:21 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/shoes-banner-1.jpg</guid>
 															<wp:post_id>3450</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-10 12:35:21]]></wp:post_date>
@@ -375,7 +329,7 @@
 					<title><![CDATA[shoes-banner-2]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/home-shoes/shoes-banner-2/</link>
 					<pubDate>Fri, 10 Sep 2021 12:35:57 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/shoes-banner-2.jpg</guid>
 															<wp:post_id>3451</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-10 12:35:57]]></wp:post_date>
@@ -398,7 +352,7 @@
 					<title><![CDATA[shoes-right-img]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/home-shoes/shoes-right-img/</link>
 					<pubDate>Fri, 10 Sep 2021 12:36:24 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/shoes-right-img.png</guid>
 															<wp:post_id>3452</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-10 12:36:24]]></wp:post_date>
@@ -421,7 +375,7 @@
 					<title><![CDATA[shoes-accessories-img]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/home-shoes/shoes-accessories-img/</link>
 					<pubDate>Fri, 10 Sep 2021 12:36:41 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/shoes-accessories-img.png</guid>
 															<wp:post_id>3453</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-10 12:36:41]]></wp:post_date>
@@ -444,7 +398,7 @@
 					<title><![CDATA[shoes-inst-1]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/home-shoes/shoes-inst-1/</link>
 					<pubDate>Fri, 10 Sep 2021 12:38:26 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/shoes-inst-1.jpg</guid>
 															<wp:post_id>3454</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-10 12:38:26]]></wp:post_date>
@@ -467,7 +421,7 @@
 					<title><![CDATA[shoes-inst-2]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/home-shoes/shoes-inst-2/</link>
 					<pubDate>Fri, 10 Sep 2021 12:38:28 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/shoes-inst-2.jpg</guid>
 															<wp:post_id>3455</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-10 12:38:28]]></wp:post_date>
@@ -490,7 +444,7 @@
 					<title><![CDATA[shoes-inst-3]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/home-shoes/shoes-inst-3/</link>
 					<pubDate>Fri, 10 Sep 2021 12:38:29 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/shoes-inst-3.jpg</guid>
 															<wp:post_id>3456</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-10 12:38:29]]></wp:post_date>
@@ -513,7 +467,7 @@
 					<title><![CDATA[shoes-inst-4]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/home-shoes/shoes-inst-4/</link>
 					<pubDate>Fri, 10 Sep 2021 12:38:31 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/shoes-inst-4.jpg</guid>
 															<wp:post_id>3457</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-10 12:38:31]]></wp:post_date>
@@ -536,7 +490,7 @@
 					<title><![CDATA[shoes-inst-5]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/home-shoes/shoes-inst-5/</link>
 					<pubDate>Fri, 10 Sep 2021 12:38:32 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/shoes-inst-5.jpg</guid>
 															<wp:post_id>3458</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-10 12:38:32]]></wp:post_date>
@@ -559,7 +513,7 @@
 					<title><![CDATA[shoes-category-1]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/shoes-category-1/</link>
 					<pubDate>Tue, 19 Oct 2021 15:18:53 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/shoes-category-1.jpg</guid>
 															<wp:post_id>5235</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-19 15:18:53]]></wp:post_date>
@@ -582,7 +536,7 @@
 					<title><![CDATA[shoes-category-2]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/shoes-category-2/</link>
 					<pubDate>Tue, 19 Oct 2021 15:18:54 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/shoes-category-2.jpg</guid>
 															<wp:post_id>5236</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-19 15:18:54]]></wp:post_date>
@@ -605,7 +559,7 @@
 					<title><![CDATA[shoes-category-3]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/shoes-category-3/</link>
 					<pubDate>Tue, 19 Oct 2021 15:18:55 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/shoes-category-3.jpg</guid>
 															<wp:post_id>5237</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-19 15:18:55]]></wp:post_date>
@@ -628,7 +582,7 @@
 					<title><![CDATA[shoes-category-4]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/shoes-category-4/</link>
 					<pubDate>Tue, 19 Oct 2021 15:18:56 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/shoes-category-4.jpg</guid>
 															<wp:post_id>5238</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-19 15:18:56]]></wp:post_date>
@@ -651,7 +605,7 @@
 					<title><![CDATA[shoes-category-5]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/shoes-category-5/</link>
 					<pubDate>Tue, 19 Oct 2021 15:18:57 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/shoes-category-5.jpg</guid>
 															<wp:post_id>5239</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-19 15:18:57]]></wp:post_date>
@@ -674,7 +628,7 @@
 					<title><![CDATA[shoes-category-6]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/shoes-category-6/</link>
 					<pubDate>Tue, 19 Oct 2021 15:18:58 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/shoes-category-6.jpg</guid>
 															<wp:post_id>5240</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-19 15:18:58]]></wp:post_date>
@@ -697,7 +651,7 @@
 					<title><![CDATA[shoes-bg-slide-full-opt]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/woodmart_slide/shoes-slide-1/shoes-bg-slide-full-opt/</link>
 					<pubDate>Tue, 13 Feb 2024 13:27:10 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/shoes-bg-slide-full-opt.jpg</guid>
 															<wp:post_id>27439</wp:post_id>
 					<wp:post_date><![CDATA[2024-02-13 13:27:10]]></wp:post_date>
@@ -720,7 +674,7 @@
 					<title><![CDATA[shoes-product-1]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/shoes-product-1/</link>
 					<pubDate>Tue, 19 Oct 2021 15:19:38 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/shoes-product-1.jpg</guid>
 															<wp:post_id>5241</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-19 15:19:38]]></wp:post_date>
@@ -743,7 +697,7 @@
 					<title><![CDATA[shoes-product-2]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/shoes-product-2/</link>
 					<pubDate>Tue, 19 Oct 2021 15:19:40 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/shoes-product-2.jpg</guid>
 															<wp:post_id>5242</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-19 15:19:40]]></wp:post_date>
@@ -766,7 +720,7 @@
 					<title><![CDATA[shoes-product-3]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/shoes-product-3/</link>
 					<pubDate>Tue, 19 Oct 2021 15:19:42 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/shoes-product-3.jpg</guid>
 															<wp:post_id>5243</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-19 15:19:42]]></wp:post_date>
@@ -789,7 +743,7 @@
 					<title><![CDATA[shoes-product-4]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/shoes-product-4/</link>
 					<pubDate>Tue, 19 Oct 2021 15:19:43 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/shoes-product-4.jpg</guid>
 															<wp:post_id>5244</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-19 15:19:43]]></wp:post_date>
@@ -812,7 +766,7 @@
 					<title><![CDATA[shoes-product-5]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/shoes-product-5/</link>
 					<pubDate>Tue, 19 Oct 2021 15:19:44 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/shoes-product-5.jpg</guid>
 															<wp:post_id>5245</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-19 15:19:44]]></wp:post_date>
@@ -835,7 +789,7 @@
 					<title><![CDATA[shoes-product-6]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/shoes-product-6/</link>
 					<pubDate>Tue, 19 Oct 2021 15:19:45 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/shoes-product-6.jpg</guid>
 															<wp:post_id>5246</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-19 15:19:45]]></wp:post_date>
@@ -858,7 +812,7 @@
 					<title><![CDATA[shoes-product-7]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/shoes-product-7/</link>
 					<pubDate>Tue, 19 Oct 2021 15:19:46 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/shoes-product-7.jpg</guid>
 															<wp:post_id>5247</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-19 15:19:46]]></wp:post_date>
@@ -881,7 +835,7 @@
 					<title><![CDATA[shoes-product-8]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/shoes-product-8/</link>
 					<pubDate>Tue, 19 Oct 2021 15:19:47 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/shoes-product-8.jpg</guid>
 															<wp:post_id>5248</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-19 15:19:47]]></wp:post_date>
@@ -904,7 +858,7 @@
 					<title><![CDATA[shoes-product-9]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/shoes-product-9/</link>
 					<pubDate>Tue, 19 Oct 2021 15:19:49 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/shoes-product-9.jpg</guid>
 															<wp:post_id>5249</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-19 15:19:49]]></wp:post_date>
@@ -927,7 +881,7 @@
 					<title><![CDATA[shoes-product-10]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/shoes-product-10/</link>
 					<pubDate>Tue, 19 Oct 2021 15:19:51 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/shoes-product-10.jpg</guid>
 															<wp:post_id>5250</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-19 15:19:51]]></wp:post_date>
@@ -950,7 +904,7 @@
 					<title><![CDATA[shoes-product-11]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/shoes-product-11/</link>
 					<pubDate>Tue, 19 Oct 2021 15:19:52 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/shoes-product-11.jpg</guid>
 															<wp:post_id>5251</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-19 15:19:52]]></wp:post_date>
@@ -973,7 +927,7 @@
 					<title><![CDATA[shoes-product-12]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/shoes-product-12/</link>
 					<pubDate>Tue, 19 Oct 2021 15:19:53 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/shoes-product-12.jpg</guid>
 															<wp:post_id>5252</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-19 15:19:53]]></wp:post_date>
@@ -996,7 +950,7 @@
 					<title><![CDATA[shoes-blog-1]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/shoes-blog-1/</link>
 					<pubDate>Tue, 19 Oct 2021 15:21:09 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/shoes-blog-1.jpg</guid>
 															<wp:post_id>5253</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-19 15:21:09]]></wp:post_date>
@@ -1019,7 +973,7 @@
 					<title><![CDATA[shoes-blog-2]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/shoes-blog-2/</link>
 					<pubDate>Tue, 19 Oct 2021 15:21:10 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/shoes-blog-2.jpg</guid>
 															<wp:post_id>5254</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-19 15:21:10]]></wp:post_date>
@@ -1042,7 +996,7 @@
 					<title><![CDATA[shoes-blog-3]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/shoes-blog-3/</link>
 					<pubDate>Tue, 19 Oct 2021 15:21:13 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/shoes-blog-3.jpg</guid>
 															<wp:post_id>5255</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-19 15:21:13]]></wp:post_date>
@@ -1065,7 +1019,7 @@
 					<title><![CDATA[shoes-blog-4]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/shoes-blog-4/</link>
 					<pubDate>Tue, 19 Oct 2021 15:21:14 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/shoes-blog-4.jpg</guid>
 															<wp:post_id>5256</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-19 15:21:14]]></wp:post_date>
@@ -1088,7 +1042,7 @@
 					<title><![CDATA[shoes-blog-5]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/shoes-blog-5/</link>
 					<pubDate>Tue, 19 Oct 2021 15:21:15 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/shoes-blog-5.jpg</guid>
 															<wp:post_id>5257</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-19 15:21:15]]></wp:post_date>
@@ -1111,7 +1065,7 @@
 					<title><![CDATA[shoes-blog-6]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/shoes-blog-6/</link>
 					<pubDate>Tue, 19 Oct 2021 15:21:17 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/shoes-blog-6.jpg</guid>
 															<wp:post_id>5258</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-19 15:21:17]]></wp:post_date>
@@ -1134,7 +1088,7 @@
 					<title><![CDATA[shoes-blog-7]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/shoes-blog-7/</link>
 					<pubDate>Tue, 19 Oct 2021 15:21:18 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/shoes-blog-7.jpg</guid>
 															<wp:post_id>5259</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-19 15:21:18]]></wp:post_date>
@@ -1157,7 +1111,7 @@
 					<title><![CDATA[shoes-blog-9]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/shoes-blog-9/</link>
 					<pubDate>Tue, 19 Oct 2021 15:21:21 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/10/shoes-blog-9.jpg</guid>
 															<wp:post_id>5261</wp:post_id>
 					<wp:post_date><![CDATA[2021-10-19 15:21:21]]></wp:post_date>
@@ -1180,7 +1134,7 @@
 					<title><![CDATA[Home Shoes]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/home-shoes/</link>
 					<pubDate>Fri, 10 Sep 2021 12:04:32 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/?page_id=3411</guid>
 											<content:encoded><![CDATA[<link rel="stylesheet" id="wd-swiper-css" href="https://dummy.xtemos.com/woodmart2/elementor/wp-content/themes/woodmart/css/parts/lib-swiper.min.css?ver=7.4.0" type="text/css" media="all" /> 						<link rel="stylesheet" id="wd-slider-css" href="https://dummy.xtemos.com/woodmart2/elementor/wp-content/themes/woodmart/css/parts/el-slider.min.css?ver=7.4.0" type="text/css" media="all" /> 						<link rel="stylesheet" id="wd-slider-dots-style-2-css" href="https://dummy.xtemos.com/woodmart2/elementor/wp-content/themes/woodmart/css/parts/el-slider-dots-style-2.min.css?ver=7.4.0" type="text/css" media="all" /> 						<link rel="stylesheet" id="xts-style-term-146-css" href="https://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/xts-term-146-1707830839.css?ver=7.4.0" type="text/css" media="all">  			<style>							#slide-27438 .wd-slide-container {
 										--wd-align-items: center;
@@ -2131,10 +2085,6 @@ Materials						</h4>
 							<wp:meta_value><![CDATA[[{"id":"fa37859","elType":"container","settings":{"flex_gap":{"size":null,"column":"","row":"","unit":"px","isLinked":true},"margin":{"unit":"px","top":"-40","right":"0","bottom":"0","left":"0","isLinked":""},"scroll_y":-80,"container_sticky_offset":50},"elements":[{"id":"6af413c","elType":"widget","settings":{"slider":"shoes-slider","sync_parent_id":"wd_65cb7117e9a10","scroll_y":-80},"elements":[],"widgetType":"wd_slider"}],"isInner":false},{"id":"759ab04","elType":"container","settings":{"wd_section_stretch":"stretch-content","flex_gap":{"size":null,"column":"","row":"","unit":"px","isLinked":true},"margin":{"unit":"px","top":"0","right":"0","bottom":"80","left":"0","isLinked":""},"margin_mobile":{"unit":"px","top":"0","right":"0","bottom":"60","left":"0","isLinked":""},"padding":{"unit":"px","top":"0","right":"0","bottom":"0","left":"0","isLinked":""},"scroll_y":-80,"container_sticky_offset":50},"elements":[{"id":"9fe4f98","elType":"widget","settings":{"hover":"alt","brand_style":"bordered","slides_per_view":{"size":7,"unit":"px","sizes":[]},"hide_pagination_control":"yes","hide_prev_next_buttons":"yes","wrap":"yes","scroll_y":"-80","slides_per_view_tablet":{"unit":"px","size":3,"sizes":[]},"slides_per_view_mobile":{"unit":"px","size":2,"sizes":[]},"sync_parent_id":"wd_6571dfa297173"},"elements":[],"widgetType":"wd_products_brands"}],"isInner":false},{"id":"47c44f7","elType":"container","settings":{"wd_section_stretch":"stretch","border_width":{"top":"0","left":"0","right":"0","bottom":"1","unit":"px","isLinked":""},"border_border":"solid","border_color":"rgba(129,129,129,0.2)","margin":{"unit":"px","top":"0","right":"0","bottom":"70","left":"0","isLinked":""},"margin_mobile":{"unit":"px","top":"0","right":"0","bottom":"60","left":"0","isLinked":""},"flex_direction":"column","flex_gap":{"size":30,"column":"30","row":"30","unit":"px","isLinked":true},"padding":{"unit":"px","top":"0","right":"15","bottom":"40","left":"15","isLinked":false},"padding_mobile":{"unit":"px","top":"0","right":"15","bottom":"30","left":"15","isLinked":false},"scroll_y":-80,"container_sticky_offset":50},"elements":[{"id":"4c90773","elType":"container","settings":{"margin":{"unit":"px","top":"0","right":"0","bottom":"-120","left":"0","isLinked":false},"scroll_y":-80,"hide_tablet":"hidden-tablet","hide_mobile":"hidden-mobile","container_sticky_offset":50},"elements":[{"id":"cc82a1e","elType":"widget","settings":{"text":"<p>New Arrivals<\/p>","typography_typography":"custom","typography_font_family":"Playfair Display","typography_font_size":{"unit":"px","size":"100"},"typography_font_size_tablet":{"unit":"px","size":"64"},"typography_font_size_mobile":{"unit":"px","size":"64"},"typography_font_weight":"400","typography_line_height":{"unit":"em","size":"1","sizes":[]},"typography_line_height_tablet":{"unit":"px","size":"","sizes":[]},"text_color":"custom","custom_text_color":"#0A0A0A0A","text_alignment":"center","scroll_y":"-80","_offset_x":{"size":40,"unit":"vw"},"_offset_y":{"size":-5,"unit":"px"},"hide_tablet":"hidden-tablet","_padding":{"unit":"%","top":"","right":"","bottom":"","left":"","isLinked":true},"_padding_tablet":{"unit":"%","top":"","right":"","bottom":"","left":"","isLinked":true},"_padding_mobile":{"unit":"%","top":"","right":"","bottom":"","left":"","isLinked":true},"_offset_x_tablet":{"unit":"%","size":"","sizes":[]},"_offset_x_mobile":{"unit":"%","size":"","sizes":[]}},"elements":[],"widgetType":"wd_text_block"}],"isInner":true},{"id":"8b5f327","elType":"widget","settings":{"subtitle":"HANDCRAFTED WITH INTEGRITY","after_title":"<p>In a professional context it often happens that private or corporate clients corder a publication to be made and presented.<\/p>","image_size":"custom","size":"large","tag":"h3","width":{"size":487,"unit":"px"},"title":"Featured Categories","desktop_text_size":"36","tablet_text_size":"30","mobile_text_size":"28","width_tablet":{"unit":"px","size":"","sizes":[]},"width_mobile":{"unit":"%","size":"100","sizes":[]},"title_typography_typography":"custom","title_typography_font_size_tablet":{"unit":"px","size":"30","sizes":[]},"title_typography_font_size_mobile":{"unit":"px","size":"28","sizes":[]},"_z_index":"2","scroll_y":"-80"},"elements":[],"widgetType":"wd_title"},{"id":"ad2abbd","elType":"widget","settings":{"orderby":"include","style":"carousel","spacing":"10","categories_design":"alt","categories_with_shadow":"disable","slides_per_view":{"size":"3","unit":"px","sizes":[]},"hide_pagination_control":"yes","number":"3","ids":[""],"scroll_y":"-80","sync_parent_id":"wd_6571dfa296fff"},"elements":[],"widgetType":"wd_product_categories"}],"isInner":false},{"id":"cafaf52","elType":"container","settings":{"margin":{"unit":"px","top":"0","right":"0","bottom":"60","left":"0","isLinked":""},"margin_mobile":{"unit":"px","top":"0","right":"0","bottom":"50","left":"0","isLinked":""},"flex_direction":"column","flex_gap":{"size":30,"column":"30","row":"30","unit":"px","isLinked":true},"scroll_y":-80,"container_sticky_offset":50},"elements":[{"id":"b4eb213","elType":"container","settings":{"_column_size":"100","column_sticky_offset":"50","scroll_y":"-80","content_width":"full","margin":{"unit":"px","top":"0","right":"0","bottom":"-120","left":"0","isLinked":false},"hide_tablet":"hidden-tablet","hide_mobile":"hidden-mobile","container_sticky_offset":50},"elements":[{"id":"47a67e7","elType":"widget","settings":{"text":"<p>Top Tranding<\/p>","typography_typography":"custom","typography_font_family":"Playfair Display","typography_font_size":{"unit":"px","size":"100"},"typography_font_size_tablet":{"unit":"px","size":"64"},"typography_font_size_mobile":{"unit":"px","size":"64"},"typography_font_weight":"400","typography_line_height":{"unit":"em","size":"1","sizes":[]},"typography_line_height_tablet":{"unit":"px","size":"","sizes":[]},"text_color":"custom","custom_text_color":"#0A0A0A0A","text_alignment":"center","scroll_y":"-80","_offset_x":{"size":"0","unit":"px"},"_offset_y":{"size":"-5","unit":"px"},"hide_tablet":"hidden-tablet"},"elements":[],"widgetType":"wd_text_block"}],"isInner":true},{"id":"c87eb07","elType":"widget","settings":{"subtitle":"HANDCRAFTED WITH INTEGRITY","after_title":"<p>In a professional context it often happens that private or corporate clients corder a publication to be made and presented.<\/p>","image_size":"custom","size":"large","tag":"h3","width":{"size":486,"unit":"px"},"title":"Best Seller Product","desktop_text_size":"36","tablet_text_size":"30","mobile_text_size":"28","width_tablet":{"unit":"px","size":419,"sizes":[]},"width_mobile":{"unit":"%","size":"100","sizes":[]},"title_typography_typography":"custom","title_typography_font_size_tablet":{"unit":"px","size":"30","sizes":[]},"title_typography_font_size_mobile":{"unit":"px","size":"28","sizes":[]},"_z_index":"2","scroll_y":"-80"},"elements":[],"widgetType":"wd_title"},{"id":"ef5ceac","elType":"widget","settings":{"title":"","items_per_page":"8","columns":{"size":"4","unit":"px","sizes":[]},"scroll_y":"-80","sync_parent_id":"wd_6571dfa296591"},"elements":[],"widgetType":"wd_products"}],"isInner":false},{"id":"b050859","elType":"container","settings":{"wd_section_stretch":"stretch","equal_height":"yes","content_position":"middle","background_position":"right center","woodmart_gradient_switch":"yes","background_size":"contain","background_repeat":"no-repeat","woodmart_color_gradient":"rgb(248, 245, 240)-74\/rgb(255, 255, 255)-74\/|linear-gradient(left , rgb(248, 245, 240) 74% , rgb(255, 255, 255) 74%)|linear|left","structure":"21","background_background":"gradient","background_color":"rgba(2, 1, 1, 0)","background_color_stop":{"unit":"%","size":26,"sizes":[]},"background_color_b":"#F8F5F0","background_color_b_stop":{"unit":"%","size":26,"sizes":[]},"background_gradient_angle":{"unit":"deg","size":"270","sizes":[]},"margin":{"unit":"px","top":"0","right":"0","bottom":"90","left":"0","isLinked":""},"margin_mobile":{"unit":"px","top":"0","right":"0","bottom":"70","left":"0","isLinked":""},"flex_direction":"row","flex_align_items":"center","flex_gap":{"size":30,"column":"30","row":"30","unit":"px","isLinked":true},"flex_direction_tablet":"column","scroll_y":-80,"container_sticky_offset":50},"elements":[{"id":"9803084","elType":"container","settings":{"_column_size":"33","width_tablet":{"size":"100","unit":"%"},"padding":{"unit":"px","top":"80","right":"0","bottom":"80","left":"0","isLinked":""},"column_sticky_offset":"50","scroll_y":"-80","width":{"size":42,"unit":"%"},"content_width":"full","flex_gap":{"column":"30","row":"30","isLinked":true,"unit":"px","size":30},"padding_mobile":{"unit":"px","top":"60","right":"0","bottom":"60","left":"0","isLinked":false},"container_sticky_offset":50},"elements":[{"id":"9d364d6","elType":"widget","settings":{"subtitle":"VERSIONS HAVE EVOLVED OVER THE YEARS","after_title":"","image_size":"custom","size":"large","title_typography_typography":"custom","title_typography_font_weight":"400","align":"left","title":"See the top leather shoe trands, discover something new or fall for an old fave.","desktop_text_size":"36","tablet_text_size":"30","mobile_text_size":"26","width":{"unit":"%","size":"95","sizes":[]},"width_tablet":{"unit":"%","size":"100","sizes":[]},"title_typography_font_size_tablet":{"unit":"px","size":"30","sizes":[]},"title_typography_font_size_mobile":{"unit":"px","size":"26","sizes":[]},"scroll_y":"-80","_margin":{"unit":"px","top":"0","right":"0","bottom":"-10","left":"0","isLinked":false}},"elements":[],"widgetType":"wd_title"},{"id":"23b0544","elType":"widget","settings":{"text":"<p>Richard McClintock, a latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure latin words, consectetur, from a lorem ipsum passage, and going through.<\/p>","typography_typography":"custom","typography_font_size":{"unit":"px","size":"16"},"typography_font_size_tablet":{"unit":"px","size":"14"},"typography_font_size_mobile":{"unit":"px","size":"14"},"scroll_y":"-80"},"elements":[],"widgetType":"wd_text_block"},{"id":"f8c2d08","elType":"container","settings":{"content_position":"top","row_reverse_mobile":"0","row_reverse_tablet":"0","structure":"20","flex_direction":"row","flex_gap":{"size":30,"column":"30","row":"30","unit":"px","isLinked":true},"content_width":"full","scroll_y":-80,"container_sticky_offset":50},"elements":[{"id":"72069b7","elType":"widget","settings":{"icon_type":"icon","alignment":"left","btn_text":"","image_size":"custom","subtitle":"","title":"Designer:","btn_position":"hover","image":{"id":3430,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/09\/shoes-shape-1.svg","alt":"","source":"library"},"image_alignment":"left","title_size":"small","image_custom_dimension":{"width":"45","height":"45"},"woodmart_css_id":"5d4bf20736c0f","info_box_inline":"no","woodmart_empty_space":"","content":"Ray Emes, James Wood","icon_text":"53","scroll_y":"-80","link":{"url":"","is_external":false,"nofollow":false,"custom_attributes":""},"_element_width":"initial","_element_custom_width":{"unit":"%","size":50,"sizes":[]},"_element_custom_width_mobile":{"unit":"%","size":100,"sizes":[]}},"elements":[],"widgetType":"wd_infobox"},{"id":"635f028","elType":"widget","settings":{"icon_type":"icon","alignment":"left","btn_text":"","image_size":"custom","subtitle":"","title":"Leather:","btn_position":"hover","image":{"id":3431,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/09\/shoes-shape-2.svg","alt":"","source":"library"},"image_alignment":"left","title_size":"small","image_custom_dimension":{"width":"45","height":"45"},"woodmart_css_id":"5d4bf1f9b788c","woodmart_empty_space":"","info_box_inline":"no","content":"Longwing Brogue","icon_text":"53","scroll_y":"-80","link":{"url":"","is_external":false,"nofollow":false,"custom_attributes":""},"_element_width":"initial","_element_custom_width":{"unit":"%","size":50,"sizes":[]},"_element_custom_width_mobile":{"unit":"%","size":100,"sizes":[]}},"elements":[],"widgetType":"wd_infobox"}],"isInner":true},{"id":"2614de2","elType":"container","settings":{"content_position":"top","row_reverse_mobile":"0","row_reverse_tablet":"0","structure":"20","flex_direction":"row","flex_gap":{"size":30,"column":"30","row":"30","unit":"px","isLinked":true},"content_width":"full","scroll_y":-80,"container_sticky_offset":50},"elements":[{"id":"8605cae","elType":"widget","settings":{"icon_type":"icon","alignment":"left","btn_text":"","image_size":"custom","subtitle":"","title":"Production type:","btn_position":"hover","image":{"id":3432,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/09\/shoes-shape-3.svg","alt":"","source":"library"},"image_alignment":"left","title_size":"small","image_custom_dimension":{"width":"45","height":"45"},"woodmart_css_id":"5d4bf20736c0f","info_box_inline":"no","woodmart_empty_space":"","content":"<p>Hend Sewing<\/p>","icon_text":"53","scroll_y":"-80","link":{"url":"","is_external":false,"nofollow":false,"custom_attributes":""},"_element_width":"initial","_element_custom_width":{"unit":"%","size":50,"sizes":[]},"_element_custom_width_mobile":{"unit":"%","size":100,"sizes":[]}},"elements":[],"widgetType":"wd_infobox"},{"id":"4f25734","elType":"widget","settings":{"icon_type":"icon","alignment":"left","btn_text":"","image_size":"custom","subtitle":"","title":"Materials:","btn_position":"hover","image":{"id":3433,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/09\/shoes-shape-4.svg","alt":"","source":"library"},"image_alignment":"left","title_size":"small","image_custom_dimension":{"width":"45","height":"45"},"woodmart_css_id":"5d4bf1f9b788c","woodmart_empty_space":"","info_box_inline":"no","content":"<p>Leather, Rubber, Thread<\/p>","icon_text":"53","scroll_y":"-80","link":{"url":"","is_external":false,"nofollow":false,"custom_attributes":""},"_element_width":"initial","_element_custom_width":{"unit":"%","size":50,"sizes":[]},"_element_custom_width_mobile":{"unit":"%","size":100,"sizes":[]}},"elements":[],"widgetType":"wd_infobox"}],"isInner":true}],"isInner":true},{"id":"f8ea0bb","elType":"container","settings":{"_column_size":"66","background_position":"right center","hide_mobile":"hidden-phone","hide_tablet":"hidden-tablet","flex_justify_content":"flex-start","column_sticky_offset":"50","scroll_y":"-80","width":{"size":58,"unit":"%"},"content_width":"full","container_sticky_offset":50},"elements":[{"id":"f03f8e8","elType":"widget","settings":{"image":{"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/09\/shoes-left-img.png","id":3448,"alt":"","source":"library"},"alignment":"right","_margin":{"unit":"px","top":"0","right":"0","bottom":"30","left":"0","isLinked":""},"scroll_y":"-80"},"elements":[],"widgetType":"wd_image_or_svg"}],"isInner":true}],"isInner":false},{"id":"4083976","elType":"container","settings":{"content_position":"middle","structure":"20","margin":{"unit":"px","top":"0","right":"0","bottom":"90","left":"0","isLinked":""},"margin_mobile":{"unit":"px","top":"0","right":"0","bottom":"60","left":"0","isLinked":""},"flex_gap":{"size":30,"column":"30","row":"50","unit":"px"},"flex_direction":"row","flex_align_items":"center","scroll_y":-80,"container_sticky_offset":50,"flex_direction_mobile":"column"},"elements":[{"id":"979da68","elType":"container","settings":{"_column_size":"50","column_sticky_offset":"50","scroll_y":"-80","content_width":"full","width":{"unit":"%","size":50,"sizes":[]},"container_sticky_offset":50},"elements":[{"id":"22651de","elType":"widget","settings":{"video_type":"youtube","video_youtube_url":"https:\/\/www.youtube.com\/watch?v=XHOmBV4js_E","video_vimeo_url":"https:\/\/vimeo.com\/235215203","video_action_button":"overlay","video_overlay_lightbox":"yes","video_image_overlay":{"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/09\/shoes-video-img-bg.jpg","id":3449,"size":"","alt":"","source":"library"},"text":"Play video","video_size":"aspect_ratio","scroll_y":-80},"elements":[],"widgetType":"wd_video"}],"isInner":true},{"id":"16cac74","elType":"container","settings":{"_column_size":"50","el_class":"text-center","align":"center","column_sticky_offset":"50","scroll_y":"-80","content_width":"full","width":{"unit":"%","size":50,"sizes":[]},"container_sticky_offset":50},"elements":[{"id":"5b1d06d","elType":"widget","settings":{"subtitle":"HANDCRAFTED WITH INTEGRITY","after_title":"","image_size":"custom","size":"large","width":{"size":"90","unit":"%"},"title":"Discover fashion and style on our online worldwide store.","desktop_text_size":"36","tablet_text_size":"30","mobile_text_size":"26","width_tablet":{"unit":"%","size":"100","sizes":[]},"title_typography_typography":"custom","title_typography_font_size_tablet":{"unit":"px","size":"30","sizes":[]},"title_typography_font_size_mobile":{"unit":"px","size":"28","sizes":[]},"scroll_y":"-80"},"elements":[],"widgetType":"wd_title"},{"id":"6f9d3e4","elType":"widget","settings":{"text":"<p>In a professional context it often happens that private or corporate clients corder a publication to be made and presented with the actual content still not being ready. Think of a news blog that\u2019s filled with content.<\/p>","typography_typography":"custom","typography_font_size":{"unit":"px","size":"16","sizes":[]},"typography_font_size_tablet":{"unit":"px","size":"14","sizes":[]},"text_alignment":"center","width":{"unit":"px","size":538,"sizes":[]},"scroll_y":"-80"},"elements":[],"widgetType":"wd_text_block"},{"id":"5194e92","elType":"container","settings":{"flex_direction":"row","flex_justify_content":"center","scroll_y":-80,"container_sticky_offset":50},"elements":[{"id":"308aea0","elType":"widget","settings":{"color":"primary","_element_width":"auto","text":"SHOP NOW","scroll_y":"-80"},"elements":[],"widgetType":"wd_button"},{"id":"858f05b","elType":"widget","settings":{"style":"bordered","_element_width":"auto","text":"VIEW MORE","scroll_y":"-80"},"elements":[],"widgetType":"wd_button"}],"isInner":true}],"isInner":true}],"isInner":false},{"id":"4d19adb","elType":"container","settings":{"wd_section_stretch":"stretch","background_background":"gradient","background_color":"rgba(247, 247, 247, 0)","background_color_stop":{"unit":"%","size":17,"sizes":[]},"background_color_b":"#F7F7F7","background_color_b_stop":{"unit":"%","size":17,"sizes":[]},"background_gradient_angle":{"unit":"deg","size":"360","sizes":[]},"padding":{"unit":"px","top":"80","right":"15","bottom":"0","left":"15","isLinked":""},"flex_direction":"column","flex_gap":{"size":30,"column":"30","row":"30","unit":"px","isLinked":true},"margin":{"unit":"px","top":"0","right":"0","bottom":"90","left":"0","isLinked":false},"margin_mobile":{"unit":"px","top":"0","right":"0","bottom":"60","left":"0","isLinked":false},"padding_mobile":{"unit":"px","top":"60","right":"15","bottom":"0","left":"15","isLinked":false},"scroll_y":-80,"container_sticky_offset":50},"elements":[{"id":"c484a1f","elType":"container","settings":{"_column_size":"100","column_sticky_offset":"50","scroll_y":"-80","content_width":"full","margin":{"unit":"px","top":"0","right":"0","bottom":"-120","left":"0","isLinked":false},"hide_tablet":"hidden-tablet","hide_mobile":"hidden-mobile","container_sticky_offset":50},"elements":[{"id":"01e2611","elType":"widget","settings":{"text":"<p>Best Sellers<\/p>","typography_typography":"custom","typography_font_family":"Playfair Display","typography_font_size":{"unit":"px","size":"100"},"typography_font_size_tablet":{"unit":"px","size":"64"},"typography_font_size_mobile":{"unit":"px","size":"64"},"typography_font_weight":"400","typography_line_height":{"unit":"em","size":"1","sizes":[]},"typography_line_height_tablet":{"unit":"px","size":"","sizes":[]},"text_color":"custom","custom_text_color":"#0A0A0A0A","text_alignment":"center","_margin":{"unit":"px","top":"0","right":"0","bottom":"10","left":"0","isLinked":""},"scroll_y":"-80","_offset_x":{"size":"0","unit":"px"},"_offset_y":{"size":"-5","unit":"px"},"hide_tablet":"hidden-tablet"},"elements":[],"widgetType":"wd_text_block"}],"isInner":true},{"id":"d4fa4c2","elType":"widget","settings":{"subtitle":"HANDCRAFTED WITH INTEGRITY","after_title":"<p>In a professional context it often happens that private or corporate clients corder a publication to be made and presented.<\/p>","image_size":"custom","size":"large","tag":"h3","width":{"size":476,"unit":"px"},"title":"Top Rated Product","desktop_text_size":"36","tablet_text_size":"30","mobile_text_size":"28","width_tablet":{"unit":"px","size":419,"sizes":[]},"width_mobile":{"unit":"%","size":"100","sizes":[]},"title_typography_typography":"custom","title_typography_font_size_tablet":{"unit":"px","size":"30","sizes":[]},"title_typography_font_size_mobile":{"unit":"px","size":"28","sizes":[]},"_z_index":"2","scroll_y":"-80"},"elements":[],"widgetType":"wd_title"},{"id":"6143ab6","elType":"widget","settings":{"title":"","layout":"carousel","items_per_page":"5","order":"DESC","slides_per_view":{"size":"4","unit":"px","sizes":[]},"hide_pagination_control":"yes","_margin":{"unit":"px","top":"0","right":"0","bottom":"30","left":"0","isLinked":""},"scroll_y":"-80","_margin_tablet":{"unit":"px","top":"0","right":"0","bottom":"20","left":"0","isLinked":false},"sync_parent_id":"wd_6571dfa296591"},"elements":[],"widgetType":"wd_products"},{"id":"6964a9b","elType":"container","settings":{"overflow":"hidden","structure":"30","reverse_order_tablet":"reverse-tablet","reverse_order_mobile":"reverse-mobile","flex_direction":"row","flex_gap":{"size":20,"column":"20","row":"30","unit":"px","isLinked":false},"content_width":"full","flex_direction_tablet":"column-reverse","scroll_y":-80,"_title":"Container","container_sticky_offset":50},"elements":[{"id":"8f4a1d0","elType":"container","settings":{"_column_size":"33","width_tablet":{"size":"100","unit":"%"},"background_background":"classic","background_image":{"id":3450,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/09\/shoes-banner-1.jpg","alt":"","source":"library"},"background_bg_width":{"unit":"%","size":"89","sizes":[]},"margin":{"unit":"px","top":"","right":"","bottom":"","left":"","isLinked":"1"},"padding":{"unit":"px","top":"30","right":"30","bottom":"30","left":"30","isLinked":true},"column_sticky_offset":"50","scroll_y":"-80","flex_justify_content":"center","content_width":"full","container_sticky_offset":50},"elements":[{"id":"7d5b2b3","elType":"widget","settings":{"icon_type":"icon","btn_text":"View more","image_size":"custom","subtitle":"","title":"Custom Leather\nTailoring","image":{"id":3428,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/09\/shoes-banner-1-ico.svg","alt":"","source":"library"},"title_size":"large","btn_style":"link","image_custom_dimension":{"width":"50","height":"50"},"_background_background":"classic","_background_color":"rgba(255,255,255,0.9)","_background_size":"cover","_background_repeat":"no-repeat","content":"In a professional context it often happens that private or corporate clients corder a publication to be made and presented.","icon_text":"53","_padding":{"unit":"px","top":"90","right":"15","bottom":"90","left":"15","isLinked":""},"scroll_y":"-80"},"elements":[],"widgetType":"wd_infobox"}],"isInner":true},{"id":"9f1256d","elType":"container","settings":{"_column_size":"33","width_tablet":{"size":"100","unit":"%"},"background_background":"classic","background_image":{"id":3451,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/09\/shoes-banner-2.jpg","alt":"","source":"library"},"margin":{"unit":"px","top":"","right":"","bottom":"","left":"","isLinked":"1"},"padding":{"unit":"px","top":"20","right":"20","bottom":"20","left":"20","isLinked":"1"},"column_sticky_offset":"50","scroll_y":"-80","flex_justify_content":"center","content_width":"full","container_sticky_offset":50},"elements":[{"id":"ada1c89","elType":"widget","settings":{"icon_type":"icon","btn_text":"View more","image_size":"custom","subtitle":"","title":"Hight Quality\nMaterials","image":{"id":3429,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/09\/shoes-banner-2-ico.svg","alt":"","source":"library"},"woodmart_color_scheme":"light","title_size":"large","btn_color":"white","btn_style":"link","image_custom_dimension":{"width":"50","height":"50"},"_border_width":{"top":"10","left":"10","right":"10","bottom":"10","unit":"px","isLinked":""},"_border_border":"solid","_border_color":"rgba(255,255,255,0.8)","_background_size":"cover","_background_repeat":"no-repeat","content":"In a professional context it often happens that private or corporate clients corder a publication to be made and presented.","icon_text":"53","_padding":{"unit":"px","top":"90","right":"15","bottom":"90","left":"15","isLinked":""},"scroll_y":"-80"},"elements":[],"widgetType":"wd_infobox"}],"isInner":true},{"id":"0da6ee7","elType":"container","settings":{"_column_size":"33","width_tablet":{"size":"100","unit":"%"},"flex_justify_content":"center","background_background":"classic","background_position":"initial","background_xpos":{"unit":"em","size":"-2.8","sizes":[]},"background_ypos":{"unit":"px","size":"267","sizes":[]},"background_repeat":"no-repeat","background_size":"contain","column_sticky_offset":"50","scroll_y":"-80","content_width":"full","margin_tablet":{"unit":"px","top":"0","right":"0","bottom":"21","left":"0","isLinked":false},"container_sticky_offset":50},"elements":[{"id":"8ed73e5","elType":"widget","settings":{"subtitle":"CARE OF LEATHER THINGS","after_title":"<p>In a professional context it often happens that private.<\/p>","image_size":"custom","size":"large","align":"right","subtitle_font":"alt","width":{"size":"70","unit":"%"},"title":"Interesting to Know","desktop_text_size":"46","title_typography_typography":"custom","title_typography_font_size":{"unit":"px","size":"46","sizes":[]},"title_typography_font_size_tablet":{"unit":"px","size":"46","sizes":[]},"scroll_y":"-80"},"elements":[],"widgetType":"wd_title"},{"id":"5ed5f9b","elType":"widget","settings":{"style":"link","align":"right","text":"View more","scroll_y":"-80"},"elements":[],"widgetType":"wd_button"},{"id":"ed70cc7","elType":"widget","settings":{"image":{"id":3452,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/09\/shoes-right-img.png","alt":"","source":"library"},"image_size":"full","align":"left","scroll_y":"-80","_element_width":"initial","_element_custom_width":{"unit":"px","size":"176","sizes":[]},"_position":"absolute","_offset_x":{"size":-21,"unit":"px"},"_offset_x_tablet":{"unit":"vw","size":"-200","sizes":[]},"hide_tablet":"hidden-tablet","hide_mobile":"hidden-phone","_offset_y":{"size":-1,"unit":"px"}},"elements":[],"widgetType":"image"}],"isInner":true}],"isInner":true}],"isInner":false},{"id":"ef25799","elType":"container","settings":{"equal_height":"yes","content_position":"middle","structure":"30","wd_section_stretch":"stretch","background_background":"gradient","background_color":"#F8F5F0","background_color_stop":{"unit":"%","size":"30","sizes":[]},"background_color_b":"#FFFFFF","background_color_b_stop":{"unit":"%","size":"20","sizes":[]},"background_gradient_angle":{"unit":"deg","size":"90","sizes":[]},"margin":{"unit":"px","top":"0","right":"0","bottom":"80","left":"0","isLinked":""},"margin_mobile":{"unit":"px","top":"0","right":"0","bottom":"60","left":"0","isLinked":""},"flex_direction":"row","flex_gap":{"size":15,"column":"15","row":"0","unit":"px","isLinked":false},"boxed_width_tablet":{"unit":"%","size":"","sizes":[]},"boxed_width_mobile":{"unit":"%","size":"","sizes":[]},"padding_mobile":{"unit":"px","top":"0","right":"0","bottom":"0","left":"0","isLinked":false},"scroll_y":-80,"container_sticky_offset":50},"elements":[{"id":"07f19d4","elType":"container","settings":{"_column_size":"33","width":{"size":"42","unit":"%"},"background_position":"right bottom","background_background":"classic","background_color":"#F8F5F0","background_size":"contain","background_repeat":"no-repeat","width_tablet":{"size":"50","unit":"%"},"width_mobile":{"size":"100","unit":"%"},"el_class":"mobile-bg-img-hidden","padding_mobile":{"unit":"px","top":"60","right":"15","bottom":"60","left":"15","isLinked":""},"column_sticky_offset":"50","scroll_y":"-80","background_image":{"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/09\/shoes-accessories-img.png","id":3453,"alt":"","source":"library"},"content_width":"full","background_size_tablet":"initial","background_bg_width_tablet":{"unit":"px","size":0,"sizes":[]},"padding":{"unit":"px","top":"90","right":"0","bottom":"90","left":"0","isLinked":false},"container_sticky_offset":50},"elements":[{"id":"2e1e718","elType":"widget","settings":{"subtitle":"SEASON\u2019S SELECTION","after_title":"<p>In a professional context it often happens that private or corporate.<\/p>","image_size":"custom","size":"large","align":"left","subtitle_font":"alt","width":{"size":"59","unit":"%"},"title":"Leather Accessories","desktop_text_size":"46","width_tablet":{"unit":"%","size":"80","sizes":[]},"width_mobile":{"unit":"%","size":"100","sizes":[]},"title_typography_typography":"custom","title_typography_font_size":{"unit":"px","size":"46","sizes":[]},"scroll_y":"-80"},"elements":[],"widgetType":"wd_title"},{"id":"49d2c6c","elType":"widget","settings":{"style":"link","align":"left","text":"View more","scroll_y":"-80"},"elements":[],"widgetType":"wd_button"}],"isInner":true},{"id":"5f15f93","elType":"container","settings":{"_column_size":"33","width":{"size":58,"unit":"%"},"background_background":"classic","background_color":"#FFFFFF","width_tablet":{"size":"50","unit":"%"},"width_mobile":{"size":"100","unit":"%"},"margin":{"unit":"%","top":"","right":"","bottom":"","left":"","isLinked":"1"},"padding_mobile":{"unit":"px","top":"70","right":"15","bottom":"0","left":"15","isLinked":false},"column_sticky_offset":"50","scroll_y":"-80","content_width":"full","padding":{"unit":"%","top":"0","right":"0","bottom":"0","left":"8","isLinked":false},"padding_tablet":{"unit":"%","top":"0","right":"0","bottom":"0","left":"0","isLinked":true},"container_sticky_offset":50},"elements":[{"id":"0578e1a","elType":"widget","settings":{"title":"","layout":"carousel","items_per_page":"3","slides_per_view":{"size":"2","unit":"px","sizes":[]},"hide_pagination_control":"yes","scroll_y":"-80","sync_parent_id":"wd_6571dfa296591"},"elements":[],"widgetType":"wd_products"}],"isInner":true}],"isInner":false},{"id":"10f1361","elType":"container","settings":{"wd_section_stretch":"stretch","border_width":{"top":"0","left":"0","right":"0","bottom":"1","unit":"px","isLinked":""},"border_border":"solid","border_color":"rgba(129,129,129,0.2)","margin":{"unit":"px","top":"0","right":"0","bottom":"70","left":"0","isLinked":""},"margin_mobile":{"unit":"px","top":"0","right":"0","bottom":"60","left":"0","isLinked":""},"padding":{"unit":"px","top":"0","right":"15","bottom":"40","left":"15","isLinked":""},"flex_direction":"column","flex_gap":{"size":30,"column":"30","row":"30","unit":"px","isLinked":true},"padding_mobile":{"unit":"px","top":"0","right":"15","bottom":"30","left":"15","isLinked":false},"scroll_y":-80,"container_sticky_offset":50},"elements":[{"id":"027bb85","elType":"container","settings":{"_column_size":"100","column_sticky_offset":"50","scroll_y":"-80","content_width":"full","margin":{"unit":"px","top":"0","right":"0","bottom":"-120","left":"0","isLinked":false},"hide_tablet":"hidden-tablet","hide_mobile":"hidden-mobile","container_sticky_offset":50},"elements":[{"id":"284a9a7","elType":"widget","settings":{"text":"<p>Shoes Trends<\/p>","typography_typography":"custom","typography_font_family":"Playfair Display","typography_font_size":{"unit":"px","size":"100"},"typography_font_size_tablet":{"unit":"px","size":"64"},"typography_font_size_mobile":{"unit":"px","size":"64"},"typography_font_weight":"400","typography_line_height":{"unit":"em","size":"1","sizes":[]},"typography_line_height_tablet":{"unit":"px","size":"","sizes":[]},"text_color":"custom","custom_text_color":"#0A0A0A0A","text_alignment":"center","scroll_y":"-80","_offset_x":{"size":"0","unit":"px"},"_offset_y":{"size":"-5","unit":"px"},"hide_tablet":"hidden-tablet"},"elements":[],"widgetType":"wd_text_block"}],"isInner":true},{"id":"2816c60","elType":"widget","settings":{"subtitle":"HANDCRAFTED WITH INTEGRITY","after_title":"<p>In a professional context it often happens that private or corporate clients corder a publication to be made and presented.<\/p>","image_size":"custom","size":"large","tag":"h3","width":{"size":"40","unit":"%"},"title":"Featured Articles","desktop_text_size":"36","tablet_text_size":"30","mobile_text_size":"28","width_tablet":{"unit":"%","size":"65","sizes":[]},"width_mobile":{"unit":"%","size":"100","sizes":[]},"title_typography_typography":"custom","title_typography_font_size_tablet":{"unit":"px","size":"30","sizes":[]},"title_typography_font_size_mobile":{"unit":"px","size":"28","sizes":[]},"_z_index":"2","scroll_y":"-80"},"elements":[],"widgetType":"wd_title"},{"id":"d32abda","elType":"widget","settings":{"blog_spacing":"20","items_per_page":"5","blog_design":"carousel","slides_per_view":{"size":"4","unit":"px","sizes":[]},"img_size":"custom","scroll_y":"-80","img_size_custom":{"width":"400","height":"281"},"sync_parent_id":"wd_6571dfa2932c5","slides_per_view_tablet":{"unit":"px","size":3,"sizes":[]}},"elements":[],"widgetType":"wd_blog"}],"isInner":false},{"id":"7567966","elType":"container","settings":{"margin":{"unit":"px","top":"0","right":"0","bottom":"80","left":"0","isLinked":""},"margin_mobile":{"unit":"px","top":"0","right":"0","bottom":"70","left":"0","isLinked":""},"flex_direction":"column","flex_gap":{"size":30,"column":"30","row":"30","unit":"px","isLinked":true},"scroll_y":-80,"container_sticky_offset":50},"elements":[{"id":"a13656c","elType":"container","settings":{"_column_size":"100","column_sticky_offset":"50","scroll_y":"-80","content_width":"full","margin":{"unit":"px","top":"0","right":"0","bottom":"-120","left":"0","isLinked":false},"hide_tablet":"hidden-tablet","hide_mobile":"hidden-mobile","container_sticky_offset":50},"elements":[{"id":"a32080e","elType":"widget","settings":{"text":"<p>Latest Images<\/p>","typography_typography":"custom","typography_font_family":"Playfair Display","typography_font_size":{"unit":"px","size":"100"},"typography_font_size_tablet":{"unit":"px","size":"64"},"typography_font_size_mobile":{"unit":"px","size":"64"},"typography_font_weight":"400","typography_line_height":{"unit":"em","size":"1","sizes":[]},"typography_line_height_tablet":{"unit":"px","size":"","sizes":[]},"text_color":"custom","custom_text_color":"#0A0A0A0A","text_alignment":"center","scroll_y":"-80","_offset_x":{"size":"0","unit":"px"},"_offset_y":{"size":"-5","unit":"px"},"hide_tablet":"hidden-tablet"},"elements":[],"widgetType":"wd_text_block"}],"isInner":true},{"id":"ee0bd7d","elType":"widget","settings":{"subtitle":"IN THE SPOTLIGHT","after_title":"<p>In a professional context it often happens that private or corporate clients corder a publication to be made and presented.<\/p>","image_size":"custom","size":"large","tag":"h3","width":{"size":"40","unit":"%"},"title":"Our Instagram","desktop_text_size":"36","tablet_text_size":"30","mobile_text_size":"28","width_tablet":{"unit":"%","size":"65","sizes":[]},"width_mobile":{"unit":"%","size":"100","sizes":[]},"title_typography_typography":"custom","title_typography_font_size_tablet":{"unit":"px","size":"30","sizes":[]},"title_typography_font_size_mobile":{"unit":"px","size":"28","sizes":[]},"_z_index":"2","scroll_y":"-80"},"elements":[],"widgetType":"wd_title"},{"id":"aabc87c","elType":"widget","settings":{"data_source":"images","number":{"size":"5","unit":"px","sizes":[]},"size":"large","design":"slider","per_row":{"size":"4","unit":"px","sizes":[]},"spacing":"1","username":"thursdayboots","hide_pagination_control":"yes","scroll_y":"-80","images":[{"id":3454,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/09\/shoes-inst-1.jpg"},{"id":3457,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/09\/shoes-inst-4.jpg"},{"id":3456,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/09\/shoes-inst-3.jpg"},{"id":3455,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/09\/shoes-inst-2.jpg"},{"id":3458,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/09\/shoes-inst-5.jpg"}],"images_size":"full","images_likes":"1000-10000","images_comments":"0-1000","sync_parent_id":"wd_6571dfa294977"},"elements":[],"widgetType":"wd_instagram"},{"id":"8d8b4d9","elType":"widget","settings":{"size":"large","style":"bordered","text":"CHECK OUR INSTARGAM","scroll_y":"-80"},"elements":[],"widgetType":"wd_button"}],"isInner":false},{"id":"c4b2aab","elType":"container","settings":{"wd_section_stretch":"stretch","background_background":"classic","background_color":"#f9f9f9","structure":"20","margin":{"unit":"px","top":"0","right":"0","bottom":"-40","left":"0","isLinked":""},"padding":{"unit":"px","top":"60","right":"0","bottom":"60","left":"0","isLinked":""},"flex_direction":"row","flex_gap":{"size":0,"column":"0","row":"40","unit":"px"},"scroll_y":-80,"container_sticky_offset":50,"flex_direction_mobile":"column"},"elements":[{"id":"36286c8","elType":"container","settings":{"_column_size":"50","column_sticky_offset":"50","scroll_y":"-80","content_width":"full","width":{"unit":"%","size":50,"sizes":[]},"padding":{"unit":"px","top":"0","right":"15","bottom":"0","left":"15","isLinked":false},"container_sticky_offset":50},"elements":[{"id":"6e3e993","elType":"widget","settings":{"subtitle":"HANDCRAFTED WITH INTEGRITY","after_title":"<p>In a professional context it often happens that private or corporate.<\/p>","image_size":"custom","size":"large","tag":"h3","title":"Join Our Newsletter","desktop_text_size":"36","tablet_text_size":"30","mobile_text_size":"28","title_typography_typography":"custom","title_typography_font_size_tablet":{"unit":"px","size":"30","sizes":[]},"title_typography_font_size_mobile":{"unit":"px","size":"28","sizes":[]},"scroll_y":"-80"},"elements":[],"widgetType":"wd_title"},{"id":"4baa6e2","elType":"widget","settings":{"form_id":"594","content_width":{"unit":"px","size":"380","sizes":[]},"scroll_y":"-80","_element_width_mobile":"inherit"},"elements":[],"widgetType":"wd_mailchimp"}],"isInner":true},{"id":"1767086","elType":"container","settings":{"_column_size":"50","border_width":{"top":"0","left":"1","right":"0","bottom":"0","unit":"px","isLinked":""},"border_border":"solid","border_color":"rgba(129,129,129,0.2)","column_sticky_offset":"50","scroll_y":"-80","content_width":"full","width":{"unit":"%","size":50,"sizes":[]},"padding":{"unit":"px","top":"0","right":"15","bottom":"0","left":"15","isLinked":false},"container_sticky_offset":50},"elements":[{"id":"e7537b7","elType":"widget","settings":{"subtitle":"HANDCRAFTED WITH INTEGRITY","after_title":"<p>In a professional context it often happens that private or corporate.<\/p>","image_size":"custom","size":"large","tag":"h3","title":"Have a Question?","desktop_text_size":"36","tablet_text_size":"30","mobile_text_size":"28","title_typography_typography":"custom","title_typography_font_size_tablet":{"unit":"px","size":"30","sizes":[]},"title_typography_font_size_mobile":{"unit":"px","size":"28","sizes":[]},"scroll_y":"-80"},"elements":[],"widgetType":"wd_title"},{"id":"845536e","elType":"widget","settings":{"style":"bordered","text":"WRITE A MESSAGE","popup_id":"popup-5eec9f61afa34","scroll_y":"-80","content":"1570","width":{"unit":"px","size":"900","sizes":[]},"padding":{"unit":"px","size":0,"sizes":[]}},"elements":[],"widgetType":"wd_popup"}],"isInner":true}],"isInner":false}]]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[_elementor_controls_usage]]></wp:meta_key>
 							<wp:meta_value><![CDATA[a:21:{s:17:"slider_revolution";a:3:{s:5:"count";i:1;s:15:"control_percent";i:2;s:8:"controls";a:2:{s:7:"content";a:1:{s:15:"content_section";a:2:{s:14:"revslidertitle";i:1;s:9:"shortcode";i:1;}}s:8:"advanced";a:1:{s:8:"wd_extra";a:1:{s:8:"scroll_y";i:1;}}}}s:6:"column";a:3:{s:5:"count";i:25;s:15:"control_percent";i:2;s:8:"controls";a:3:{s:8:"advanced";a:3:{s:8:"wd_extra";a:2:{s:20:"column_sticky_offset";i:25;s:8:"scroll_y";i:25;}s:16:"section_advanced";a:2:{s:6:"margin";i:5;s:7:"padding";i:3;}s:19:"_section_responsive";a:2:{s:11:"hide_mobile";i:2;s:11:"hide_tablet";i:2;}}s:6:"layout";a:1:{s:6:"layout";a:3:{s:12:"_inline_size";i:5;s:16:"content_position";i:4;s:5:"align";i:1;}}s:5:"style";a:2:{s:13:"section_style";a:9:{s:19:"background_position";i:3;s:21:"background_background";i:6;s:16:"background_image";i:3;s:19:"background_bg_width";i:1;s:15:"background_xpos";i:1;s:15:"background_ypos";i:1;s:17:"background_repeat";i:2;s:15:"background_size";i:2;s:16:"background_color";i:3;}s:14:"section_border";a:3:{s:12:"border_width";i:1;s:13:"border_border";i:1;s:12:"border_color";i:1;}}}}s:7:"section";a:3:{s:5:"count";i:15;s:15:"control_percent";i:2;s:8:"controls";a:3:{s:6:"layout";a:3:{s:15:"wd_extra_layout";a:1:{s:18:"wd_section_stretch";i:8;}s:14:"section_layout";a:3:{s:3:"gap";i:3;s:16:"content_position";i:5;s:8:"overflow";i:1;}s:17:"section_structure";a:1:{s:9:"structure";i:8;}}s:8:"advanced";a:2:{s:16:"section_advanced";a:2:{s:6:"margin";i:12;s:7:"padding";i:5;}s:19:"_section_responsive";a:2:{s:20:"reverse_order_tablet";i:1;s:20:"reverse_order_mobile";i:1;}}s:5:"style";a:2:{s:14:"section_border";a:3:{s:12:"border_width";i:2;s:13:"border_border";i:2;s:12:"border_color";i:2;}s:18:"section_background";a:9:{s:19:"background_position";i:1;s:15:"background_size";i:1;s:17:"background_repeat";i:1;s:21:"background_background";i:4;s:16:"background_color";i:4;s:21:"background_color_stop";i:3;s:18:"background_color_b";i:3;s:23:"background_color_b_stop";i:3;s:25:"background_gradient_angle";i:3;}}}}s:18:"wd_products_brands";a:3:{s:5:"count";i:1;s:15:"control_percent";i:4;s:8:"controls";a:2:{s:5:"style";a:2:{s:21:"general_style_section";a:2:{s:5:"hover";i:1;s:11:"brand_style";i:1;}s:22:"carousel_style_section";a:4:{s:15:"slides_per_view";i:1;s:23:"hide_pagination_control";i:1;s:22:"hide_prev_next_buttons";i:1;s:4:"wrap";i:1;}}s:8:"advanced";a:1:{s:8:"wd_extra";a:1:{s:8:"scroll_y";i:1;}}}}s:13:"wd_text_block";a:3:{s:5:"count";i:7;s:15:"control_percent";i:9;s:8:"controls";a:2:{s:7:"content";a:1:{s:23:"general_content_section";a:10:{s:4:"text";i:7;s:21:"typography_typography";i:7;s:22:"typography_font_family";i:5;s:20:"typography_font_size";i:7;s:22:"typography_font_weight";i:5;s:22:"typography_line_height";i:5;s:10:"text_color";i:5;s:17:"custom_text_color";i:5;s:14:"text_alignment";i:6;s:5:"width";i:1;}}s:8:"advanced";a:4:{s:14:"_section_style";a:1:{s:7:"_margin";i:6;}s:8:"wd_extra";a:1:{s:8:"scroll_y";i:7;}s:17:"_section_position";a:3:{s:9:"_position";i:5;s:9:"_offset_x";i:5;s:9:"_offset_y";i:5;}s:19:"_section_responsive";a:1:{s:11:"hide_tablet";i:5;}}}}s:8:"wd_title";a:3:{s:5:"count";i:13;s:15:"control_percent";i:3;s:8:"controls";a:3:{s:7:"content";a:1:{s:23:"general_content_section";a:3:{s:8:"subtitle";i:13;s:11:"after_title";i:13;s:5:"title";i:13;}}s:5:"style";a:2:{s:19:"title_style_section";a:5:{s:10:"image_size";i:13;s:3:"tag";i:7;s:27:"title_typography_typography";i:11;s:28:"title_typography_font_weight";i:1;s:26:"title_typography_font_size";i:2;}s:21:"general_style_section";a:4:{s:4:"size";i:13;s:5:"width";i:9;s:5:"align";i:5;s:5:"color";i:1;}}s:8:"advanced";a:2:{s:14:"_section_style";a:2:{s:7:"_margin";i:4;s:8:"_z_index";i:5;}s:8:"wd_extra";a:1:{s:8:"scroll_y";i:13;}}}}s:21:"wd_product_categories";a:3:{s:5:"count";i:1;s:15:"control_percent";i:6;s:8:"controls";a:3:{s:7:"content";a:1:{s:23:"general_content_section";a:3:{s:7:"orderby";i:1;s:6:"number";i:1;s:3:"ids";i:1;}}s:5:"style";a:3:{s:20:"layout_style_section";a:2:{s:5:"style";i:1;s:7:"spacing";i:1;}s:20:"design_style_section";a:2:{s:17:"categories_design";i:1;s:22:"categories_with_shadow";i:1;}s:22:"carousel_style_section";a:2:{s:15:"slides_per_view";i:1;s:23:"hide_pagination_control";i:1;}}s:8:"advanced";a:2:{s:14:"_section_style";a:1:{s:7:"_margin";i:1;}s:8:"wd_extra";a:1:{s:8:"scroll_y";i:1;}}}}s:11:"wd_products";a:3:{s:5:"count";i:3;s:15:"control_percent";i:3;s:8:"controls";a:3:{s:5:"style";a:2:{s:20:"layout_style_section";a:3:{s:14:"items_per_page";i:3;s:7:"columns";i:1;s:6:"layout";i:2;}s:22:"carousel_style_section";a:2:{s:15:"slides_per_view";i:2;s:23:"hide_pagination_control";i:2;}}s:8:"advanced";a:2:{s:8:"wd_extra";a:1:{s:8:"scroll_y";i:3;}s:14:"_section_style";a:1:{s:7:"_margin";i:1;}}s:7:"content";a:1:{s:23:"general_content_section";a:1:{s:5:"order";i:1;}}}}s:10:"wd_infobox";a:3:{s:5:"count";i:9;s:15:"control_percent";i:4;s:8:"controls";a:3:{s:7:"content";a:2:{s:20:"icon_content_section";a:4:{s:9:"icon_type";i:9;s:10:"image_size";i:9;s:5:"image";i:9;s:22:"image_custom_dimension";i:9;}s:15:"content_section";a:5:{s:8:"btn_text";i:9;s:8:"subtitle";i:9;s:5:"title";i:9;s:7:"content";i:9;s:4:"link";i:4;}}s:5:"style";a:2:{s:21:"general_style_section";a:4:{s:9:"alignment";i:7;s:15:"image_alignment";i:7;s:10:"title_size";i:6;s:21:"woodmart_color_scheme";i:4;}s:22:"button_content_section";a:3:{s:12:"btn_position";i:7;s:9:"btn_style";i:2;s:9:"btn_color";i:1;}}s:8:"advanced";a:4:{s:8:"wd_extra";a:1:{s:8:"scroll_y";i:9;}s:19:"_section_background";a:4:{s:22:"_background_background";i:1;s:17:"_background_color";i:1;s:16:"_background_size";i:2;s:18:"_background_repeat";i:2;}s:14:"_section_style";a:1:{s:8:"_padding";i:2;}s:15:"_section_border";a:3:{s:13:"_border_width";i:1;s:14:"_border_border";i:1;s:13:"_border_color";i:1;}}}}s:15:"wd_image_or_svg";a:3:{s:5:"count";i:1;s:15:"control_percent";i:3;s:8:"controls";a:2:{s:7:"content";a:1:{s:23:"general_content_section";a:2:{s:5:"image";i:1;s:9:"alignment";i:1;}}s:8:"advanced";a:2:{s:14:"_section_style";a:1:{s:7:"_margin";i:1;}s:8:"wd_extra";a:1:{s:8:"scroll_y";i:1;}}}}s:5:"video";a:3:{s:5:"count";i:1;s:15:"control_percent";i:2;s:8:"controls";a:3:{s:7:"content";a:2:{s:13:"section_video";a:1:{s:10:"video_type";i:1;}s:21:"section_image_overlay";a:2:{s:13:"image_overlay";i:1;s:18:"show_image_overlay";i:1;}}s:8:"advanced";a:1:{s:8:"wd_extra";a:1:{s:8:"scroll_y";i:1;}}s:5:"style";a:1:{s:19:"section_video_style";a:1:{s:14:"wd_theme_style";i:1;}}}}s:9:"wd_button";a:3:{s:5:"count";i:5;s:15:"control_percent";i:2;s:8:"controls";a:3:{s:5:"style";a:1:{s:21:"general_style_section";a:4:{s:5:"color";i:1;s:5:"style";i:4;s:5:"align";i:2;s:4:"size";i:1;}}s:8:"advanced";a:3:{s:17:"_section_position";a:1:{s:14:"_element_width";i:2;}s:14:"_section_style";a:1:{s:7:"_margin";i:1;}s:8:"wd_extra";a:1:{s:8:"scroll_y";i:5;}}s:7:"content";a:1:{s:23:"general_content_section";a:1:{s:4:"text";i:5;}}}}s:5:"image";a:3:{s:5:"count";i:1;s:15:"control_percent";i:5;s:8:"controls";a:2:{s:7:"content";a:1:{s:13:"section_image";a:3:{s:5:"image";i:1;s:10:"image_size";i:1;s:5:"align";i:1;}}s:8:"advanced";a:3:{s:8:"wd_extra";a:1:{s:8:"scroll_y";i:1;}s:17:"_section_position";a:5:{s:14:"_element_width";i:1;s:21:"_element_custom_width";i:1;s:9:"_position";i:1;s:9:"_offset_x";i:1;s:9:"_offset_y";i:1;}s:19:"_section_responsive";a:2:{s:11:"hide_tablet";i:1;s:11:"hide_mobile";i:1;}}}}s:7:"wd_blog";a:3:{s:5:"count";i:1;s:15:"control_percent";i:4;s:8:"controls";a:2:{s:5:"style";a:2:{s:21:"general_style_section";a:5:{s:12:"blog_spacing";i:1;s:14:"items_per_page";i:1;s:11:"blog_design";i:1;s:8:"img_size";i:1;s:15:"img_size_custom";i:1;}s:22:"carousel_style_section";a:1:{s:15:"slides_per_view";i:1;}}s:8:"advanced";a:1:{s:8:"wd_extra";a:1:{s:8:"scroll_y";i:1;}}}}s:12:"wd_instagram";a:3:{s:5:"count";i:1;s:15:"control_percent";i:7;s:8:"controls";a:3:{s:7:"content";a:2:{s:23:"general_content_section";a:3:{s:11:"data_source";i:1;s:4:"size";i:1;s:8:"username";i:1;}s:14:"images_section";a:2:{s:6:"images";i:1;s:11:"images_size";i:1;}}s:5:"style";a:1:{s:22:"layout_content_section";a:5:{s:6:"number";i:1;s:6:"design";i:1;s:7:"per_row";i:1;s:7:"spacing";i:1;s:23:"hide_pagination_control";i:1;}}s:8:"advanced";a:2:{s:8:"wd_extra";a:1:{s:8:"scroll_y";i:1;}s:14:"_section_style";a:1:{s:7:"_margin";i:1;}}}}s:12:"wd_mailchimp";a:3:{s:5:"count";i:1;s:15:"control_percent";i:2;s:8:"controls";a:3:{s:7:"content";a:1:{s:23:"general_content_section";a:1:{s:7:"form_id";i:1;}}s:5:"style";a:1:{s:21:"general_style_section";a:1:{s:13:"content_width";i:1;}}s:8:"advanced";a:1:{s:8:"wd_extra";a:1:{s:8:"scroll_y";i:1;}}}}s:17:"wd_contact_form_7";a:3:{s:5:"count";i:1;s:15:"control_percent";i:1;s:8:"controls";a:2:{s:7:"content";a:1:{s:23:"general_content_section";a:1:{s:7:"form_id";i:1;}}s:8:"advanced";a:1:{s:8:"wd_extra";a:1:{s:8:"scroll_y";i:1;}}}}s:7:"divider";a:3:{s:5:"count";i:1;s:15:"control_percent";i:1;s:8:"controls";a:2:{s:5:"style";a:1:{s:21:"section_divider_style";a:1:{s:5:"color";i:1;}}s:8:"advanced";a:1:{s:8:"wd_extra";a:1:{s:8:"scroll_y";i:1;}}}}s:11:"text-editor";a:3:{s:5:"count";i:1;s:15:"control_percent";i:2;s:8:"controls";a:3:{s:5:"style";a:1:{s:13:"section_style";a:2:{s:21:"typography_typography";i:1;s:5:"align";i:1;}}s:7:"content";a:1:{s:14:"section_editor";a:1:{s:6:"editor";i:1;}}s:8:"advanced";a:1:{s:8:"wd_extra";a:1:{s:8:"scroll_y";i:1;}}}}s:17:"wd_social_buttons";a:3:{s:5:"count";i:1;s:15:"control_percent";i:3;s:8:"controls";a:2:{s:5:"style";a:1:{s:21:"general_style_section";a:3:{s:4:"size";i:1;s:5:"align";i:1;s:5:"style";i:1;}}s:8:"advanced";a:1:{s:8:"wd_extra";a:1:{s:8:"scroll_y";i:1;}}}}s:8:"wd_popup";a:3:{s:5:"count";i:1;s:15:"control_percent";i:4;s:8:"controls";a:3:{s:5:"style";a:2:{s:20:"button_style_section";a:1:{s:5:"style";i:1;}s:21:"general_style_section";a:1:{s:5:"width";i:1;}}s:7:"content";a:2:{s:22:"button_content_section";a:1:{s:4:"text";i:1;}s:23:"general_content_section";a:2:{s:8:"popup_id";i:1;s:7:"content";i:1;}}s:8:"advanced";a:1:{s:8:"wd_extra";a:1:{s:8:"scroll_y";i:1;}}}}}]]></wp:meta_value>
 						</wp:postmeta>
@@ -2143,7 +2093,7 @@ Materials						</h4>
 					<title><![CDATA[shoes-banner-1-ico]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/shoes-banner-1-ico/</link>
 					<pubDate>Fri, 10 Sep 2021 12:07:25 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/shoes-banner-1-ico.svg</guid>
 															<wp:post_id>3428</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-10 12:07:25]]></wp:post_date>
@@ -2166,7 +2116,7 @@ Materials						</h4>
 					<title><![CDATA[shoes-banner-2-ico]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/shoes-banner-2-ico/</link>
 					<pubDate>Fri, 10 Sep 2021 12:07:26 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/shoes-banner-2-ico.svg</guid>
 															<wp:post_id>3429</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-10 12:07:26]]></wp:post_date>
@@ -2189,7 +2139,7 @@ Materials						</h4>
 					<title><![CDATA[shoes-shape-1]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/shoes-shape-1/</link>
 					<pubDate>Fri, 10 Sep 2021 12:07:27 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/shoes-shape-1.svg</guid>
 															<wp:post_id>3430</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-10 12:07:27]]></wp:post_date>
@@ -2212,7 +2162,7 @@ Materials						</h4>
 					<title><![CDATA[shoes-shape-2]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/shoes-shape-2/</link>
 					<pubDate>Fri, 10 Sep 2021 12:07:28 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/shoes-shape-2.svg</guid>
 															<wp:post_id>3431</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-10 12:07:28]]></wp:post_date>
@@ -2235,7 +2185,7 @@ Materials						</h4>
 					<title><![CDATA[shoes-shape-3]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/shoes-shape-3/</link>
 					<pubDate>Fri, 10 Sep 2021 12:07:29 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/shoes-shape-3.svg</guid>
 															<wp:post_id>3432</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-10 12:07:29]]></wp:post_date>
@@ -2258,7 +2208,7 @@ Materials						</h4>
 					<title><![CDATA[shoes-shape-4]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/shoes-shape-4/</link>
 					<pubDate>Fri, 10 Sep 2021 12:07:30 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/shoes-shape-4.svg</guid>
 															<wp:post_id>3433</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-10 12:07:30]]></wp:post_date>
@@ -2281,7 +2231,7 @@ Materials						</h4>
 					<title><![CDATA[Header banner Shoes]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/?cms_block=header-banner-shoes</link>
 					<pubDate>Fri, 10 Sep 2021 12:12:49 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/?post_type=cms_block&#038;p=3434</guid>
 											<content:encoded><![CDATA[<link rel="stylesheet" id="wd-info-box-css" href="https://dummy.xtemos.com/woodmart2/elementor/wp-content/themes/woodmart/css/parts/el-info-box.min.css?ver=7.3.4" type="text/css" media="all" /> 					
 															<svg id="svg-6606" xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="none"><path d="M118.504 181.544L329.24 68.864L256 32L38.712 141.376L118.504 181.544ZM393.24 101.08L182.504 213.76L256 250.76L473.288 141.376L393.24 101.08ZM250 261.24L176 223.992V305.832L144 273.616H112V191.776L32 151.512V370.264L250 480V261.24ZM262 261.24V480L480 370.264V151.512L262 261.24Z" fill="#FFF"></path></svg>													
@@ -2328,10 +2278,6 @@ Materials						</h4>
 							<wp:meta_value><![CDATA[[{"id":"20594cd","elType":"container","settings":{"structure":"40","wd_section_stretch":"stretch-content","flex_direction":"row","flex_gap":{"size":0,"column":"0","row":"0","unit":"px","isLinked":true},"scroll_y":-80,"flex_direction_mobile":"column","flex_gap_mobile":{"column":"15","row":"15","isLinked":true,"unit":"px","size":15},"container_sticky_offset":50},"elements":[{"id":"218b9c2","elType":"container","settings":{"_column_size":25,"width":{"size":null,"unit":"%"},"border_width":{"unit":"px","top":"0","right":"1","bottom":"0","left":"0","isLinked":false},"border_color":"#FFFFFF26","column_sticky_offset":50,"scroll_y":-80,"content_width":"full","flex_align_items":"center","border_border":"solid","container_sticky_offset":50},"elements":[{"id":"72676a9","elType":"widget","settings":{"icon_type":"icon","icon_text":"53","image":{"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/09\/shoose-free-shipping-1.svg","id":22418,"size":"","alt":"","source":"library"},"image_size":"custom","image_custom_dimension":{"width":"18","height":"18"},"subtitle":"","title":"Free Worldwide Shipping","content":"","btn_text":"","link":{"url":"","is_external":false,"nofollow":false,"custom_attributes":""},"woodmart_color_scheme":"light","alignment":"left","image_alignment":"left","image_vertical_alignment":"middle","title_typography_typography":"custom","title_typography_font_size":{"unit":"px","size":14,"sizes":[]},"title_typography_font_size_tablet":{"unit":"px","size":12,"sizes":[]},"scroll_y":-80,"title_typography_font_weight":"600","icon_spacing":{"unit":"px","size":5,"sizes":[]}},"elements":[],"widgetType":"wd_infobox"}],"isInner":true},{"id":"83f1c3d","elType":"container","settings":{"_column_size":25,"width":{"size":null,"unit":"%"},"border_width":{"unit":"px","top":"0","right":"1","bottom":"0","left":"0","isLinked":false},"border_color":"#FFFFFF26","column_sticky_offset":50,"scroll_y":-80,"content_width":"full","flex_align_items":"center","border_border":"solid","container_sticky_offset":50,"hide_mobile":"hidden-mobile"},"elements":[{"id":"815d2ad","elType":"widget","settings":{"icon_type":"icon","icon_text":"53","image":{"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2023\/11\/w-shoose-discount.svg","id":22423,"size":"","alt":"","source":"library"},"image_size":"custom","image_custom_dimension":{"width":"18","height":"18"},"subtitle":"","title":"30% Discount for you","content":"","btn_text":"","link":{"url":"","is_external":false,"nofollow":false,"custom_attributes":""},"woodmart_color_scheme":"light","alignment":"left","image_alignment":"left","image_vertical_alignment":"middle","title_typography_typography":"custom","title_typography_font_size":{"unit":"px","size":14,"sizes":[]},"title_typography_font_size_tablet":{"unit":"px","size":12,"sizes":[]},"scroll_y":-80,"title_typography_font_weight":"600","icon_spacing":{"unit":"px","size":5,"sizes":[]}},"elements":[],"widgetType":"wd_infobox"}],"isInner":true},{"id":"ead7260","elType":"container","settings":{"_column_size":25,"width":{"size":null,"unit":"%"},"border_width":{"unit":"px","top":"0","right":"1","bottom":"0","left":"0","isLinked":false},"border_color":"#FFFFFF26","column_sticky_offset":50,"scroll_y":-80,"content_width":"full","flex_align_items":"center","border_border":"solid","container_sticky_offset":50,"hide_mobile":"hidden-mobile"},"elements":[{"id":"0be4136","elType":"widget","settings":{"icon_type":"icon","icon_text":"53","image":{"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/09\/wd-money-bill-alt-regular.svg","id":22425,"size":"","alt":"","source":"library"},"image_size":"custom","image_custom_dimension":{"width":"18","height":"18"},"subtitle":"","title":"Tax Free Shopping","content":"","btn_text":"","link":{"url":"","is_external":false,"nofollow":false,"custom_attributes":""},"woodmart_color_scheme":"light","alignment":"left","image_alignment":"left","image_vertical_alignment":"middle","title_typography_typography":"custom","title_typography_font_size":{"unit":"px","size":14,"sizes":[]},"title_typography_font_size_tablet":{"unit":"px","size":12,"sizes":[]},"scroll_y":-80,"title_typography_font_weight":"600","icon_spacing":{"unit":"px","size":5,"sizes":[]}},"elements":[],"widgetType":"wd_infobox"}],"isInner":true},{"id":"aeeeaee","elType":"container","settings":{"_column_size":25,"width":{"size":null,"unit":"%"},"column_sticky_offset":50,"scroll_y":-80,"content_width":"full","flex_align_items":"center","container_sticky_offset":50,"hide_mobile":"hidden-mobile"},"elements":[{"id":"7de4c5f","elType":"widget","settings":{"icon_type":"icon","icon_text":"53","image":{"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/09\/w-shoose-satisfied-customers.svg","id":22421,"size":"","alt":"","source":"library"},"image_size":"custom","image_custom_dimension":{"width":"18","height":"18"},"subtitle":"","title":"20,000+ Satisfied Customers","content":"","btn_text":"","link":{"url":"","is_external":false,"nofollow":false,"custom_attributes":""},"woodmart_color_scheme":"light","alignment":"left","image_alignment":"left","image_vertical_alignment":"middle","title_typography_typography":"custom","title_typography_font_size":{"unit":"px","size":14,"sizes":[]},"title_typography_font_size_tablet":{"unit":"px","size":12,"sizes":[]},"scroll_y":-80,"title_typography_font_weight":"600","icon_spacing":{"unit":"px","size":5,"sizes":[]}},"elements":[],"widgetType":"wd_infobox"}],"isInner":true}],"isInner":false}]]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[_elementor_controls_usage]]></wp:meta_key>
 							<wp:meta_value><![CDATA[a:3:{s:7:"wd_list";a:3:{s:5:"count";i:4;s:15:"control_percent";i:3;s:8:"controls";a:3:{s:7:"content";a:2:{s:23:"general_content_section";a:1:{s:10:"list_items";i:4;}s:20:"icon_content_section";a:1:{s:4:"icon";i:3;}}s:5:"style";a:2:{s:21:"general_style_section";a:2:{s:12:"color_scheme";i:4;s:5:"align";i:4;}s:18:"icon_style_section";a:1:{s:11:"icons_color";i:4;}}s:8:"advanced";a:1:{s:15:"_section_border";a:3:{s:14:"_border_border";i:3;s:13:"_border_width";i:3;s:13:"_border_color";i:3;}}}}s:6:"column";a:3:{s:5:"count";i:4;s:15:"control_percent";i:0;s:8:"controls";a:2:{s:6:"layout";a:1:{s:6:"layout";a:1:{s:12:"_inline_size";i:4;}}s:5:"style";a:1:{s:14:"section_border";a:2:{s:12:"border_width";i:3;s:12:"border_color";i:3;}}}}s:7:"section";a:3:{s:5:"count";i:1;s:15:"control_percent";i:1;s:8:"controls";a:2:{s:6:"layout";a:2:{s:17:"section_structure";a:1:{s:9:"structure";i:1;}s:15:"wd_extra_layout";a:1:{s:18:"wd_section_stretch";i:1;}}s:5:"style";a:1:{s:18:"section_background";a:1:{s:21:"background_background";i:1;}}}}}]]></wp:meta_value>
 						</wp:postmeta>
@@ -2340,7 +2286,7 @@ Materials						</h4>
 					<title><![CDATA[shoes-left-img]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/home-shoes/shoes-left-img/</link>
 					<pubDate>Fri, 10 Sep 2021 12:31:08 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/shoes-left-img.png</guid>
 															<wp:post_id>3448</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-10 12:31:08]]></wp:post_date>
@@ -2363,7 +2309,7 @@ Materials						</h4>
 					<title><![CDATA[shoes-video-img-bg]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/home-shoes/shoes-video-img-bg/</link>
 					<pubDate>Fri, 10 Sep 2021 12:33:13 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/shoes-video-img-bg.jpg</guid>
 															<wp:post_id>3449</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-10 12:33:13]]></wp:post_date>
@@ -2386,7 +2332,7 @@ Materials						</h4>
 					<title><![CDATA[shoes-banner-1]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/home-shoes/shoes-banner-1/</link>
 					<pubDate>Fri, 10 Sep 2021 12:35:21 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/shoes-banner-1.jpg</guid>
 															<wp:post_id>3450</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-10 12:35:21]]></wp:post_date>
@@ -2409,7 +2355,7 @@ Materials						</h4>
 					<title><![CDATA[shoes-banner-2]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/home-shoes/shoes-banner-2/</link>
 					<pubDate>Fri, 10 Sep 2021 12:35:57 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/shoes-banner-2.jpg</guid>
 															<wp:post_id>3451</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-10 12:35:57]]></wp:post_date>
@@ -2432,7 +2378,7 @@ Materials						</h4>
 					<title><![CDATA[shoes-right-img]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/home-shoes/shoes-right-img/</link>
 					<pubDate>Fri, 10 Sep 2021 12:36:24 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/shoes-right-img.png</guid>
 															<wp:post_id>3452</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-10 12:36:24]]></wp:post_date>
@@ -2455,7 +2401,7 @@ Materials						</h4>
 					<title><![CDATA[shoes-accessories-img]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/home-shoes/shoes-accessories-img/</link>
 					<pubDate>Fri, 10 Sep 2021 12:36:41 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/shoes-accessories-img.png</guid>
 															<wp:post_id>3453</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-10 12:36:41]]></wp:post_date>
@@ -2478,7 +2424,7 @@ Materials						</h4>
 					<title><![CDATA[shoes-inst-1]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/home-shoes/shoes-inst-1/</link>
 					<pubDate>Fri, 10 Sep 2021 12:38:26 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/shoes-inst-1.jpg</guid>
 															<wp:post_id>3454</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-10 12:38:26]]></wp:post_date>
@@ -2501,7 +2447,7 @@ Materials						</h4>
 					<title><![CDATA[shoes-inst-2]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/home-shoes/shoes-inst-2/</link>
 					<pubDate>Fri, 10 Sep 2021 12:38:28 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/shoes-inst-2.jpg</guid>
 															<wp:post_id>3455</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-10 12:38:28]]></wp:post_date>
@@ -2524,7 +2470,7 @@ Materials						</h4>
 					<title><![CDATA[shoes-inst-3]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/home-shoes/shoes-inst-3/</link>
 					<pubDate>Fri, 10 Sep 2021 12:38:29 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/shoes-inst-3.jpg</guid>
 															<wp:post_id>3456</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-10 12:38:29]]></wp:post_date>
@@ -2547,7 +2493,7 @@ Materials						</h4>
 					<title><![CDATA[shoes-inst-4]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/home-shoes/shoes-inst-4/</link>
 					<pubDate>Fri, 10 Sep 2021 12:38:31 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/shoes-inst-4.jpg</guid>
 															<wp:post_id>3457</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-10 12:38:31]]></wp:post_date>
@@ -2570,7 +2516,7 @@ Materials						</h4>
 					<title><![CDATA[shoes-inst-5]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/home-shoes/shoes-inst-5/</link>
 					<pubDate>Fri, 10 Sep 2021 12:38:32 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/shoes-inst-5.jpg</guid>
 															<wp:post_id>3458</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-10 12:38:32]]></wp:post_date>
@@ -2593,7 +2539,7 @@ Materials						</h4>
 					<title><![CDATA[shoose-free-shipping-1]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/?attachment_id=22418</link>
 					<pubDate>Tue, 14 Nov 2023 12:04:14 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/shoose-free-shipping-1.svg</guid>
 															<wp:post_id>22418</wp:post_id>
 					<wp:post_date><![CDATA[2023-11-14 12:04:14]]></wp:post_date>
@@ -2620,7 +2566,7 @@ Materials						</h4>
 					<title><![CDATA[wood-logo-dark]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/wood-logo-dark/</link>
 					<pubDate>Thu, 26 Aug 2021 12:45:05 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/08/wood-logo-dark.svg</guid>
 															<wp:post_id>113</wp:post_id>
 					<wp:post_date><![CDATA[2021-08-26 12:45:05]]></wp:post_date>
@@ -2643,7 +2589,7 @@ Materials						</h4>
 					<title><![CDATA[Footer 1 column Dark]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/?cms_block=footer-1-column-darck</link>
 					<pubDate>Tue, 31 Aug 2021 13:41:48 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/?post_type=cms_block&#038;p=818</guid>
 											<content:encoded><![CDATA[<a  href="#">
 								<img  src="http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/08/wood-logo-dark.svg" title="wood-logo-dark" width="220" height="30">							</a>
@@ -2696,10 +2642,6 @@ Materials						</h4>
 							<wp:meta_value><![CDATA[[{"id":"45452fa","elType":"container","settings":{"flex_direction":"column","flex_gap":{"size":null,"column":"","row":"","unit":"px","isLinked":true},"scroll_y":-80,"container_sticky_offset":50},"elements":[{"id":"43a3ae5","elType":"widget","settings":{"image":{"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/08\/wood-logo-dark.svg","id":113,"alt":"","source":"library"},"image_size":"custom","image_custom_dimension":{"width":"220","height":"30"},"on_click_action":"link","link":{"url":"#","is_external":false,"nofollow":false,"custom_attributes":""},"scroll_y":-80},"elements":[],"widgetType":"wd_image_or_svg"},{"id":"aec6db8","elType":"widget","settings":{"text":"<p>Condimentum adipiscing vel neque dis nam parturient orci at scelerisque neque dis nam parturient.<\/p>","scroll_y":-80},"elements":[],"widgetType":"wd_text_block"},{"id":"93c43cf","elType":"widget","settings":{"list_items":[{"list_content":"451 Wall Street, UK, London","_id":"80be36b","image":{"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/08\/wd-cursor-dark.svg","id":824,"alt":"","source":"library"},"item_type":"image","image_size":"custom","image_custom_dimension":{"width":"14","height":"14"}},{"list_content":"Phone: (064) 332-1233","link":{"url":"tel: (064) 332-1233","is_external":false,"nofollow":false,"custom_attributes":""},"_id":"c383cf6","image":{"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/08\/wd-phone-dark.svg","id":823,"alt":"","source":"library"},"item_type":"image","image_size":"custom","image_custom_dimension":{"width":"14","height":"14"}},{"list_content":"Fax: (099) 453-1357","_id":"a511145","image":{"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/08\/wd-envelope-dark.svg","id":825,"alt":"","source":"library"},"item_type":"image","image_size":"custom","image_custom_dimension":{"width":"14","height":"14"}}],"list_type":"image","scroll_y":-80,"image_size":"custom","image_custom_dimension":{"width":"14","height":"14"},"list_items_gap":{"unit":"px","size":7,"sizes":[]}},"elements":[],"widgetType":"wd_list"}],"isInner":false}]]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[_elementor_controls_usage]]></wp:meta_key>
 							<wp:meta_value><![CDATA[a:5:{s:15:"wd_image_or_svg";a:3:{s:5:"count";i:1;s:15:"control_percent";i:3;s:8:"controls";a:1:{s:7:"content";a:1:{s:23:"general_content_section";a:5:{s:5:"image";i:1;s:10:"image_size";i:1;s:22:"image_custom_dimension";i:1;s:15:"on_click_action";i:1;s:4:"link";i:1;}}}}s:13:"wd_text_block";a:3:{s:5:"count";i:1;s:15:"control_percent";i:1;s:8:"controls";a:1:{s:7:"content";a:1:{s:23:"general_content_section";a:1:{s:4:"text";i:1;}}}}s:7:"wd_list";a:3:{s:5:"count";i:1;s:15:"control_percent";i:3;s:8:"controls";a:2:{s:7:"content";a:2:{s:23:"general_content_section";a:1:{s:10:"list_items";i:1;}s:20:"icon_content_section";a:3:{s:9:"list_type";i:1;s:10:"image_size";i:1;s:22:"image_custom_dimension";i:1;}}s:5:"style";a:1:{s:21:"general_style_section";a:1:{s:14:"list_items_gap";i:1;}}}}s:6:"column";a:3:{s:5:"count";i:1;s:15:"control_percent";i:0;s:8:"controls";a:1:{s:6:"layout";a:1:{s:6:"layout";a:1:{s:12:"_inline_size";i:1;}}}}s:7:"section";a:3:{s:5:"count";i:1;s:15:"control_percent";i:0;s:8:"controls";a:0:{}}}]]></wp:meta_value>
 						</wp:postmeta>
@@ -2724,10 +2666,6 @@ Materials						</h4>
 							<wp:meta_value><![CDATA[[{"id":"45452fa","elType":"container","settings":{"flex_direction":"column","flex_gap":{"size":null,"column":"","row":"","unit":"px","isLinked":true},"scroll_y":-80,"container_sticky_offset":50},"elements":[{"id":"43a3ae5","elType":"widget","settings":{"image":{"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/08\/wood-logo-dark.svg","id":113,"alt":"","source":"library"},"image_size":"custom","image_custom_dimension":{"width":"220","height":"30"},"on_click_action":"link","link":{"url":"#","is_external":false,"nofollow":false,"custom_attributes":""},"scroll_y":-80},"elements":[],"widgetType":"wd_image_or_svg"},{"id":"aec6db8","elType":"widget","settings":{"text":"<p>Condimentum adipiscing vel neque dis nam parturient orci at scelerisque neque dis nam parturient.<\/p>","scroll_y":-80},"elements":[],"widgetType":"wd_text_block"},{"id":"93c43cf","elType":"widget","settings":{"list_items":[{"list_content":"451 Wall Street, UK, London","_id":"80be36b","image":{"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/08\/wd-cursor-dark.svg","id":824,"alt":"","source":"library"},"item_type":"image","image_size":"custom","image_custom_dimension":{"width":"14","height":"14"}},{"list_content":"Phone: (064) 332-1233","link":{"url":"tel: (064) 332-1233","is_external":false,"nofollow":false,"custom_attributes":""},"_id":"c383cf6","image":{"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/08\/wd-phone-dark.svg","id":823,"alt":"","source":"library"},"item_type":"image","image_size":"custom","image_custom_dimension":{"width":"14","height":"14"}},{"list_content":"Fax: (099) 453-1357","_id":"a511145","image":{"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/08\/wd-envelope-dark.svg","id":825,"alt":"","source":"library"},"item_type":"image","image_size":"custom","image_custom_dimension":{"width":"14","height":"14"}}],"list_type":"image","scroll_y":-80,"image_size":"custom","image_custom_dimension":{"width":"14","height":"14"},"list_items_gap":{"unit":"px","size":7,"sizes":[]}},"elements":[],"widgetType":"wd_list"}],"isInner":false}]]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[_elementor_controls_usage]]></wp:meta_key>
 							<wp:meta_value><![CDATA[a:5:{s:15:"wd_image_or_svg";a:3:{s:5:"count";i:1;s:15:"control_percent";i:3;s:8:"controls";a:1:{s:7:"content";a:1:{s:23:"general_content_section";a:5:{s:5:"image";i:1;s:10:"image_size";i:1;s:22:"image_custom_dimension";i:1;s:15:"on_click_action";i:1;s:4:"link";i:1;}}}}s:13:"wd_text_block";a:3:{s:5:"count";i:1;s:15:"control_percent";i:1;s:8:"controls";a:1:{s:7:"content";a:1:{s:23:"general_content_section";a:1:{s:4:"text";i:1;}}}}s:7:"wd_list";a:3:{s:5:"count";i:1;s:15:"control_percent";i:3;s:8:"controls";a:2:{s:7:"content";a:2:{s:23:"general_content_section";a:1:{s:10:"list_items";i:1;}s:20:"icon_content_section";a:3:{s:9:"list_type";i:1;s:10:"image_size";i:1;s:22:"image_custom_dimension";i:1;}}s:5:"style";a:1:{s:21:"general_style_section";a:1:{s:14:"list_items_gap";i:1;}}}}s:6:"column";a:3:{s:5:"count";i:1;s:15:"control_percent";i:0;s:8:"controls";a:1:{s:6:"layout";a:1:{s:6:"layout";a:1:{s:12:"_inline_size";i:1;}}}}s:7:"section";a:3:{s:5:"count";i:1;s:15:"control_percent";i:0;s:8:"controls";a:0:{}}}]]></wp:meta_value>
 						</wp:postmeta>
@@ -2736,7 +2674,7 @@ Materials						</h4>
 					<title><![CDATA[wd-phone-dark]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/wd-phone-dark/</link>
 					<pubDate>Tue, 31 Aug 2021 13:45:43 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/08/wd-phone-dark.svg</guid>
 															<wp:post_id>823</wp:post_id>
 					<wp:post_date><![CDATA[2021-08-31 13:45:43]]></wp:post_date>
@@ -2759,7 +2697,7 @@ Materials						</h4>
 					<title><![CDATA[wd-cursor-dark]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/wd-cursor-dark/</link>
 					<pubDate>Tue, 31 Aug 2021 13:45:44 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/08/wd-cursor-dark.svg</guid>
 															<wp:post_id>824</wp:post_id>
 					<wp:post_date><![CDATA[2021-08-31 13:45:44]]></wp:post_date>
@@ -2782,7 +2720,7 @@ Materials						</h4>
 					<title><![CDATA[wd-envelope-dark]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/wd-envelope-dark/</link>
 					<pubDate>Tue, 31 Aug 2021 13:45:45 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/08/wd-envelope-dark.svg</guid>
 															<wp:post_id>825</wp:post_id>
 					<wp:post_date><![CDATA[2021-08-31 13:45:45]]></wp:post_date>
@@ -2805,7 +2743,7 @@ Materials						</h4>
 					<title><![CDATA[Popup with contact form]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/?cms_block=popup-with-contact-form</link>
 					<pubDate>Thu, 02 Sep 2021 16:29:47 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/?post_type=cms_block&#038;p=1570</guid>
 											<content:encoded><![CDATA[<link rel="stylesheet" id="wd-section-title-css" href="https://dummy.xtemos.com/woodmart2/elementor/wp-content/themes/woodmart/css/parts/el-section-title.min.css?ver=7.3.0" type="text/css" media="all" /> 					
 				<h4>SEND US A MESSAGE</h4> 
@@ -2882,10 +2820,6 @@ Materials						</h4>
 							<wp:meta_value><![CDATA[[{"id":"f25d21b","elType":"container","settings":{"structure":"20","margin":{"unit":"px","top":"","right":"","bottom":"","left":"","isLinked":"1"},"flex_direction":"row","flex_gap":{"size":0,"column":"0","row":"0","unit":"px","isLinked":true},"container_sticky_offset":50,"scroll_y":-80},"elements":[{"id":"4438063","elType":"container","settings":{"_column_size":"50","width":{"size":66,"unit":"%"},"column_sticky_offset":"50","scroll_y":"-80","padding":{"unit":"px","top":"30","right":"30","bottom":"15","left":"30","isLinked":""},"width_tablet":{"size":"100","unit":"%"},"padding_tablet":{"unit":"px","top":"30","right":"30","bottom":"15","left":"30","isLinked":""},"content_width":"full","container_sticky_offset":50},"elements":[{"id":"1d71615","elType":"widget","settings":{"subtitle":"","title":"SEND US A MESSAGE","after_title":"","align":"left","scroll_y":"-80","size":"small","title_typography_typography":"custom"},"elements":[],"widgetType":"wd_title"},{"id":"cdccc72","elType":"widget","settings":{"form_id":"1572","scroll_y":"-80"},"elements":[],"widgetType":"wd_contact_form_7"}],"isInner":true},{"id":"702dc34","elType":"container","settings":{"_column_size":"50","width":{"size":34,"unit":"%"},"column_sticky_offset":"50","scroll_y":"-80","background_background":"classic","background_color":"#333333","padding":{"unit":"px","top":"30","right":"30","bottom":"30","left":"30","isLinked":"1"},"width_tablet":{"size":"100","unit":"%"},"wd_color_scheme":"light","content_width":"full","container_sticky_offset":50},"elements":[{"id":"8346027","elType":"widget","settings":{"subtitle":"","title":"CONTACT INFORMATION","after_title":"","color":"white","align":"left","scroll_y":"-80","size":"small"},"elements":[],"widgetType":"wd_title"},{"id":"794b471","elType":"widget","settings":{"subtitle":"","title":"","content":"<p>50 East 52nd Street<br \/>Brooklyn, NY 10022<br \/>United States<\/p>","btn_text":"","icon_type":"icon","icon_text":"53","image":{"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/09\/wd-pointer.svg","id":1576,"alt":"","source":"library"},"image_size":"custom","image_custom_dimension":{"width":"30","height":"30"},"alignment":"left","image_alignment":"left","custom_text_color":"rgba(255, 255, 255, 0.8)","scroll_y":"-80"},"elements":[],"widgetType":"wd_infobox"},{"id":"29edaba","elType":"widget","settings":{"subtitle":"","title":"","content":"<p>+1322224332<br \/>+4643758533<\/p>","btn_text":"","icon_type":"icon","icon_text":"53","image":{"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/09\/wd-mobile.svg","id":1574,"alt":"","source":"library"},"image_size":"custom","image_custom_dimension":{"width":"30","height":"30"},"alignment":"left","image_alignment":"left","custom_text_color":"rgba(255, 255, 255, 0.8)","scroll_y":"-80"},"elements":[],"widgetType":"wd_infobox"},{"id":"f93fe75","elType":"widget","settings":{"subtitle":"","title":"","content":"<p>info@google.com<br \/>support@google.com<\/p>","btn_text":"","icon_type":"icon","icon_text":"53","image":{"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2021\/09\/wd-paper-plane.svg","id":1575,"alt":"","source":"library"},"image_size":"custom","image_custom_dimension":{"width":"30","height":"30"},"alignment":"left","image_alignment":"left","custom_text_color":"rgba(255, 255, 255, 0.8)","scroll_y":"-80","_padding":{"unit":"px","top":"0","right":"0","bottom":"20","left":"0","isLinked":false},"_border_border":"solid","_border_width":{"unit":"px","top":"0","right":"0","bottom":"1","left":"0","isLinked":false},"_border_color":"#FFFFFF26"},"elements":[],"widgetType":"wd_infobox"},{"id":"b63ac0c","elType":"widget","settings":{"editor":"<p>Do you have questions about how we can help your company? Send us an email and we\u2019ll get in touch shortly.<\/p>","wd_color_scheme":"light","scroll_y":"-80"},"elements":[],"widgetType":"text-editor"},{"id":"8d60138","elType":"widget","settings":{"size":"small","align":"left","style":"colored","scroll_y":"-80","label_text":"Share: ","fb_link":"#","twitter_link":"#","isntagram_link":"#","pinterest_link":"#","youtube_link":"#"},"elements":[],"widgetType":"wd_social_buttons"}],"isInner":true}],"isInner":false}]]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[_elementor_controls_usage]]></wp:meta_key>
 							<wp:meta_value><![CDATA[a:7:{s:8:"wd_title";a:3:{s:5:"count";i:2;s:15:"control_percent";i:4;s:8:"controls";a:3:{s:7:"content";a:1:{s:23:"general_content_section";a:3:{s:8:"subtitle";i:2;s:5:"title";i:2;s:11:"after_title";i:2;}}s:5:"style";a:4:{s:21:"general_style_section";a:3:{s:5:"align";i:2;s:4:"size";i:2;s:5:"color";i:1;}s:19:"title_style_section";a:2:{s:27:"title_typography_typography";i:1;s:28:"title_typography_line_height";i:2;}s:22:"subtitle_style_section";a:1:{s:31:"subtitle_typography_line_height";i:2;}s:18:"text_style_section";a:1:{s:27:"text_typography_line_height";i:2;}}s:8:"advanced";a:1:{s:8:"wd_extra";a:1:{s:8:"scroll_y";i:2;}}}}s:17:"wd_contact_form_7";a:3:{s:5:"count";i:1;s:15:"control_percent";i:1;s:8:"controls";a:2:{s:7:"content";a:1:{s:23:"general_content_section";a:1:{s:7:"form_id";i:1;}}s:8:"advanced";a:1:{s:8:"wd_extra";a:1:{s:8:"scroll_y";i:1;}}}}s:6:"column";a:3:{s:5:"count";i:2;s:15:"control_percent";i:3;s:8:"controls";a:3:{s:6:"layout";a:1:{s:6:"layout";a:1:{s:12:"_inline_size";i:2;}}s:8:"advanced";a:2:{s:8:"wd_extra";a:2:{s:20:"column_sticky_offset";i:2;s:8:"scroll_y";i:2;}s:16:"section_advanced";a:1:{s:7:"padding";i:2;}}s:5:"style";a:2:{s:13:"section_style";a:2:{s:21:"background_background";i:1;s:16:"background_color";i:1;}s:14:"wd_extra_style";a:1:{s:15:"wd_color_scheme";i:1;}}}}s:10:"wd_infobox";a:3:{s:5:"count";i:3;s:15:"control_percent";i:7;s:8:"controls";a:3:{s:7:"content";a:2:{s:15:"content_section";a:4:{s:8:"subtitle";i:3;s:5:"title";i:3;s:7:"content";i:3;s:8:"btn_text";i:3;}s:20:"icon_content_section";a:4:{s:9:"icon_type";i:3;s:5:"image";i:3;s:10:"image_size";i:3;s:22:"image_custom_dimension";i:3;}}s:5:"style";a:4:{s:21:"general_style_section";a:2:{s:9:"alignment";i:3;s:15:"image_alignment";i:3;}s:21:"content_style_section";a:2:{s:17:"custom_text_color";i:3;s:30:"content_typography_line_height";i:3;}s:22:"subtitle_style_section";a:1:{s:31:"subtitle_typography_line_height";i:3;}s:19:"title_style_section";a:1:{s:28:"title_typography_line_height";i:3;}}s:8:"advanced";a:3:{s:8:"wd_extra";a:1:{s:8:"scroll_y";i:3;}s:14:"_section_style";a:2:{s:7:"_margin";i:1;s:8:"_padding";i:1;}s:15:"_section_border";a:3:{s:14:"_border_border";i:1;s:13:"_border_width";i:1;s:13:"_border_color";i:1;}}}}s:11:"text-editor";a:3:{s:5:"count";i:1;s:15:"control_percent";i:3;s:8:"controls";a:3:{s:7:"content";a:1:{s:14:"section_editor";a:1:{s:6:"editor";i:1;}}s:5:"style";a:2:{s:13:"section_style";a:2:{s:15:"wd_color_scheme";i:1;s:22:"typography_line_height";i:1;}s:16:"section_drop_cap";a:1:{s:31:"drop_cap_typography_line_height";i:1;}}s:8:"advanced";a:1:{s:8:"wd_extra";a:1:{s:8:"scroll_y";i:1;}}}}s:17:"wd_social_buttons";a:3:{s:5:"count";i:1;s:15:"control_percent";i:3;s:8:"controls";a:2:{s:5:"style";a:1:{s:21:"general_style_section";a:3:{s:4:"size";i:1;s:5:"align";i:1;s:5:"style";i:1;}}s:8:"advanced";a:1:{s:8:"wd_extra";a:1:{s:8:"scroll_y";i:1;}}}}s:7:"section";a:3:{s:5:"count";i:1;s:15:"control_percent";i:1;s:8:"controls";a:2:{s:6:"layout";a:1:{s:17:"section_structure";a:1:{s:9:"structure";i:1;}}s:8:"advanced";a:1:{s:16:"section_advanced";a:1:{s:6:"margin";i:1;}}}}}]]></wp:meta_value>
 						</wp:postmeta>
@@ -2894,23 +2828,25 @@ Materials						</h4>
 					<title><![CDATA[Contact form alternative]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/?post_type=wpcf7_contact_form&#038;p=1572</link>
 					<pubDate>Thu, 02 Sep 2021 16:32:01 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/?post_type=wpcf7_contact_form&#038;p=1572</guid>
-											<content:encoded><![CDATA[<div class="row">
-<p class="col-md-6"><label>Your Name</label>[text* your-name]</p>
-<p class="col-md-6"><label>Your Email</label>[email* your-email]</p>
+											<content:encoded><![CDATA[<div class="wd-grid-g">
+<div class="wd-grid-f-stretch">
+<div class="wd-col"><label>Your Name</label>[text* your-name]</div>
+<div class="wd-col"><label>Your Email</label>[email* your-email]</div>
 </div>
-<div class="row">
-<p class="col-md-6"><label>Phone Number</label>[tel tel-767]</p>
-<p class="col-md-6"><label>Company</label>[text text-1]</p>
+<div class="wd-grid-f-stretch">
+<div class="wd-col"><label>Phone Number</label>[tel tel-767]</div>
+<div class="wd-col"><label>Company</label>[text text-1]</div>
 </div>
-<p><label>Your Message</label>[textarea your-message]</p>
-<p>[submit class:btn-color-black "ASK A QUESTION"]</p>
+<div><label>Your Message</label>[textarea your-message]</div>
+<div>[submit class:btn-color-black "ASK A QUESTION"]</div>
+</div>
 1
 [_site_title] "[your-subject]"
-[_site_title] <wordpress@dummy.xtemos.com>
+[_site_title]
 [_site_admin_email]
-From: [your-name] <[your-email]>
+From: [your-name] 
 Subject: [your-subject]
 
 Message Body:
@@ -2924,7 +2860,7 @@ Reply-To: [your-email]
 
 
 [_site_title] "[your-subject]"
-[_site_title] <wordpress@dummy.xtemos.com>
+[_site_title]
 [your-email]
 Message Body:
 [your-message]
@@ -2960,8 +2896,8 @@ The telephone number is invalid.]]></content:encoded>
 															<wp:post_id>1572</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-02 16:32:01]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2021-09-02 16:32:01]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2022-06-20 13:59:05]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2022-06-20 13:59:05]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-01-24 14:19:07]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-01-24 14:19:07]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[contact-form-alternative]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -2970,20 +2906,22 @@ The telephone number is invalid.]]></content:encoded>
 					<wp:post_type><![CDATA[wpcf7_contact_form]]></wp:post_type>
 																					<wp:postmeta>
 							<wp:meta_key><![CDATA[_form]]></wp:meta_key>
-							<wp:meta_value><![CDATA[<div class="row">
-<p class="col-md-6"><label>Your Name</label>[text* your-name]</p>
-<p class="col-md-6"><label>Your Email</label>[email* your-email]</p>
+							<wp:meta_value><![CDATA[<div class="wd-grid-g">
+<div class="wd-grid-f-stretch">
+<div class="wd-col"><label>Your Name</label>[text* your-name]</div>
+<div class="wd-col"><label>Your Email</label>[email* your-email]</div>
 </div>
-<div class="row">
-<p class="col-md-6"><label>Phone Number</label>[tel tel-767]</p>
-<p class="col-md-6"><label>Company</label>[text text-1]</p>
+<div class="wd-grid-f-stretch">
+<div class="wd-col"><label>Phone Number</label>[tel tel-767]</div>
+<div class="wd-col"><label>Company</label>[text text-1]</div>
 </div>
-<p><label>Your Message</label>[textarea your-message]</p>
-<p>[submit class:btn-color-black "ASK A QUESTION"]</p>]]></wp:meta_value>
+<div><label>Your Message</label>[textarea your-message]</div>
+<div>[submit class:btn-color-black "ASK A QUESTION"]</div>
+</div>]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_mail]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:9:{s:6:"active";b:1;s:7:"subject";s:30:"[_site_title] "[your-subject]"";s:6:"sender";s:42:"[_site_title] <wordpress@dummy.xtemos.com>";s:9:"recipient";s:19:"[_site_admin_email]";s:4:"body";s:163:"From: [your-name] <[your-email]>
+							<wp:meta_value><![CDATA[a:9:{s:6:"active";b:1;s:7:"subject";s:30:"[_site_title] "[your-subject]"";s:6:"sender";s:13:"[_site_title]";s:9:"recipient";s:19:"[_site_admin_email]";s:4:"body";s:149:"From: [your-name] 
 Subject: [your-subject]
 
 Message Body:
@@ -2994,7 +2932,7 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_mail_2]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:9:{s:6:"active";b:0;s:7:"subject";s:30:"[_site_title] "[your-subject]"";s:6:"sender";s:42:"[_site_title] <wordpress@dummy.xtemos.com>";s:9:"recipient";s:12:"[your-email]";s:4:"body";s:105:"Message Body:
+							<wp:meta_value><![CDATA[a:9:{s:6:"active";b:0;s:7:"subject";s:30:"[_site_title] "[your-subject]"";s:6:"sender";s:13:"[_site_title]";s:9:"recipient";s:12:"[your-email]";s:4:"body";s:105:"Message Body:
 [your-message]
 
 -- 
@@ -3010,16 +2948,37 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_form]]></wp:meta_key>
-							<wp:meta_value><![CDATA[<div class="row">
-<p class="col-md-6"><label>Your Name</label>[text* your-name]</p>
-<p class="col-md-6"><label>Your Email</label>[email* your-email]</p>
+							<wp:meta_value><![CDATA[<div class="wd-grid-g">
+<div class="wd-grid-f-stretch">
+<div class="wd-col"><label>Your Name</label>[text* your-name]</div>
+<div class="wd-col"><label>Your Email</label>[email* your-email]</div>
 </div>
-<div class="row">
-<p class="col-md-6"><label>Phone Number</label>[tel tel-767]</p>
-<p class="col-md-6"><label>Company</label>[text text-1]</p>
+<div class="wd-grid-f-stretch">
+<div class="wd-col"><label>Phone Number</label>[tel tel-767]</div>
+<div class="wd-col"><label>Company</label>[text text-1]</div>
 </div>
-<p><label>Your Message</label>[textarea your-message]</p>
-<p>[submit class:btn-color-black "ASK A QUESTION"]</p>]]></wp:meta_value>
+<div><label>Your Message</label>[textarea your-message]</div>
+<div>[submit class:btn-color-black "ASK A QUESTION"]</div>
+</div>]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_mail]]></wp:meta_key>
+							<wp:meta_value><![CDATA[a:9:{s:6:"active";b:1;s:7:"subject";s:30:"[_site_title] "[your-subject]"";s:6:"sender";s:13:"[_site_title]";s:9:"recipient";s:19:"[_site_admin_email]";s:4:"body";s:149:"From: [your-name] 
+Subject: [your-subject]
+
+Message Body:
+[your-message]
+
+-- 
+This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"additional_headers";s:22:"Reply-To: [your-email]";s:11:"attachments";s:0:"";s:8:"use_html";b:0;s:13:"exclude_blank";b:0;}]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_mail_2]]></wp:meta_key>
+							<wp:meta_value><![CDATA[a:9:{s:6:"active";b:0;s:7:"subject";s:30:"[_site_title] "[your-subject]"";s:6:"sender";s:13:"[_site_title]";s:9:"recipient";s:12:"[your-email]";s:4:"body";s:105:"Message Body:
+[your-message]
+
+-- 
+This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"additional_headers";s:29:"Reply-To: [_site_admin_email]";s:11:"attachments";s:0:"";s:8:"use_html";b:0;s:13:"exclude_blank";b:0;}]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_messages]]></wp:meta_key>
@@ -3033,12 +2992,16 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 							<wp:meta_key><![CDATA[_hash]]></wp:meta_key>
 							<wp:meta_value><![CDATA[8fc84039148ef05b5416e03626501598233468f7]]></wp:meta_value>
 						</wp:postmeta>
+												<wp:postmeta>
+							<wp:meta_key><![CDATA[_config_validation]]></wp:meta_key>
+							<wp:meta_value><![CDATA[a:1:{s:11:"mail.sender";a:1:{i:0;a:2:{s:4:"code";s:22:"invalid_mailbox_syntax";s:4:"args";a:3:{s:7:"message";s:31:"Invalid mailbox syntax is used.";s:6:"params";a:0:{}s:4:"link";s:68:"https://contactform7.com/configuration-errors/invalid-mailbox-syntax";}}}}]]></wp:meta_value>
+						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[wd-mobile]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/wd-mobile/</link>
 					<pubDate>Thu, 02 Sep 2021 16:32:11 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/wd-mobile.svg</guid>
 															<wp:post_id>1574</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-02 16:32:11]]></wp:post_date>
@@ -3061,7 +3024,7 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 					<title><![CDATA[wd-paper-plane]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/wd-paper-plane/</link>
 					<pubDate>Thu, 02 Sep 2021 16:32:12 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/wd-paper-plane.svg</guid>
 															<wp:post_id>1575</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-02 16:32:12]]></wp:post_date>
@@ -3084,7 +3047,7 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 					<title><![CDATA[wd-pointer]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/wd-pointer/</link>
 					<pubDate>Thu, 02 Sep 2021 16:32:13 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/wd-pointer.svg</guid>
 															<wp:post_id>1576</wp:post_id>
 					<wp:post_date><![CDATA[2021-09-02 16:32:13]]></wp:post_date>
@@ -3107,7 +3070,7 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 					<title><![CDATA[w-shoose-satisfied-customers]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/?attachment_id=22421</link>
 					<pubDate>Tue, 14 Nov 2023 12:04:15 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/w-shoose-satisfied-customers.svg</guid>
 															<wp:post_id>22421</wp:post_id>
 					<wp:post_date><![CDATA[2023-11-14 12:04:15]]></wp:post_date>
@@ -3134,7 +3097,7 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 					<title><![CDATA[w-shoose-discount]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/w-shoose-discount/</link>
 					<pubDate>Tue, 14 Nov 2023 12:09:56 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2023/11/w-shoose-discount.svg</guid>
 															<wp:post_id>22423</wp:post_id>
 					<wp:post_date><![CDATA[2023-11-14 12:09:56]]></wp:post_date>
@@ -3161,7 +3124,7 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 					<title><![CDATA[wd-money-bill-alt-regular]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/?attachment_id=22425</link>
 					<pubDate>Tue, 14 Nov 2023 12:11:41 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2021/09/wd-money-bill-alt-regular.svg</guid>
 															<wp:post_id>22425</wp:post_id>
 					<wp:post_date><![CDATA[2023-11-14 12:11:41]]></wp:post_date>
@@ -3179,30 +3142,27 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
 							<wp:meta_value><![CDATA[2021/09/wd-money-bill-alt-regular.svg]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_inline_svg]]></wp:meta_key>
-							<wp:meta_value><![CDATA[<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" fill="#fff"><path d="M320 144c-53.02 0-96 50.14-96 112 0 61.85 42.98 112 96 112 53 0 96-50.13 96-112 0-61.86-42.98-112-96-112zm40 168c0 4.42-3.58 8-8 8h-64c-4.42 0-8-3.58-8-8v-16c0-4.42 3.58-8 8-8h16v-55.44l-.47.31a7.992 7.992 0 0 1-11.09-2.22l-8.88-13.31a7.992 7.992 0 0 1 2.22-11.09l15.33-10.22a23.99 23.99 0 0 1 13.31-4.03H328c4.42 0 8 3.58 8 8v88h16c4.42 0 8 3.58 8 8v16zM608 64H32C14.33 64 0 78.33 0 96v320c0 17.67 14.33 32 32 32h576c17.67 0 32-14.33 32-32V96c0-17.67-14.33-32-32-32zm-16 272c-35.35 0-64 28.65-64 64H112c0-35.35-28.65-64-64-64V176c35.35 0 64-28.65 64-64h416c0 35.35 28.65 64 64 64v160z"></path></svg>]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[Shoes slide 1]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/woodmart_slide/shoes-slide-1/</link>
 					<pubDate>Tue, 13 Feb 2024 13:27:16 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/elementor/?post_type=woodmart_slide&#038;p=27438</guid>
-											<content:encoded><![CDATA[<link rel="stylesheet" id="wd-text-block-css" href="https://dummy.xtemos.com/woodmart2/elementor/wp-content/themes/woodmart/css/parts/el-text-block.min.css?ver=7.4.0" type="text/css" media="all" /> 					
+											<content:encoded><![CDATA[<link rel="stylesheet" id="wd-text-block-css" href="https://dummy.xtemos.com/woodmart2/elementor/wp-content/themes/woodmart8/css/parts/el-text-block.min.css?ver=8.4.0" type="text/css" media="all" /> 					
 			<p>Upgrade</p>
 			<p>Your Shoes</p>
 			<p><em>Extra 50% Off</em></p>
+								<link rel="stylesheet" id="wd-button-css" href="https://dummy.xtemos.com/woodmart2/elementor/wp-content/themes/woodmart8/css/parts/el-button.min.css?ver=8.4.0" type="text/css" media="all" /> 					
 			<a  href="#">
 					SEE SALE PRODUCT				
 							</a>
-								<img width="781" height="640" src="http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/shoes-img-slide-1-opt.png" alt="" decoding="async" srcset="https://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/shoes-img-slide-1-opt.png 781w, https://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/shoes-img-slide-1-opt-366x300.png 366w, https://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/shoes-img-slide-1-opt-768x629.png 768w, https://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/shoes-img-slide-1-opt-600x492.png 600w, https://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/shoes-img-slide-1-opt-130x107.png 130w" sizes="(max-width: 781px) 100vw, 781px" />]]></content:encoded>
+								<img width="781" height="640" src="http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/shoes-img-slide-1-opt.png" alt="" decoding="async" loading="lazy" srcset="https://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/shoes-img-slide-1-opt.png 781w, https://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/shoes-img-slide-1-opt-366x300.png 366w, https://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/shoes-img-slide-1-opt-768x629.png 768w, https://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/shoes-img-slide-1-opt-600x492.png 600w, https://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/shoes-img-slide-1-opt-130x107.png 130w" sizes="auto, (max-width: 781px) 100vw, 781px" />]]></content:encoded>
 															<wp:post_id>27438</wp:post_id>
 					<wp:post_date><![CDATA[2024-02-13 13:27:16]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-02-13 13:27:16]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-02-13 13:39:29]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-02-13 13:39:29]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2026-02-25 12:57:05]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2026-02-25 12:57:05]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[shoes-slide-1]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -3272,22 +3232,22 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_elementor_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[3.18.3]]></wp:meta_value>
+							<wp:meta_value><![CDATA[3.33.6]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_elementor_data]]></wp:meta_key>
 							<wp:meta_value><![CDATA[[{"id":"c4beabb","elType":"container","settings":{"flex_direction":"row","flex_gap":{"unit":"px","size":20,"column":"20","row":"30"},"flex_direction_mobile":"column","flex_align_items":"center","container_sticky_offset":50,"scroll_y":-80},"elements":[{"id":"4c6e8e0","elType":"container","settings":{"flex_direction":"column","content_width":"full","width":{"unit":"%","size":42},"flex_gap":{"column":"0","row":"0","isLinked":true,"unit":"px","size":0},"flex_gap_tablet":{"column":"0","row":"0","isLinked":true,"unit":"px","size":0},"container_sticky_offset":50,"scroll_y":-80},"elements":[{"id":"b3a3f05","elType":"widget","settings":{"text":"<p>Upgrade<\/p>","typography_typography":"custom","typography_font_family":"Playfair Display","typography_font_size":{"unit":"px","size":72,"sizes":[]},"typography_font_size_tablet":{"unit":"px","size":40,"sizes":[]},"typography_line_height":{"unit":"em","size":1.2,"sizes":[]},"typography_line_height_tablet":{"unit":"em","size":1.2,"sizes":[]},"text_color":"title","_margin":{"unit":"px","top":"0","right":"0","bottom":"10","left":"0","isLinked":false},"_margin_tablet":{"unit":"px","top":"0","right":"0","bottom":"10","left":"0","isLinked":false},"scroll_y":-80,"wd_animation":"slide-from-bottom"},"elements":[],"widgetType":"wd_text_block"},{"id":"57d2baf","elType":"widget","settings":{"text":"<p>Your Shoes<\/p>","typography_typography":"custom","typography_font_family":"Playfair Display","typography_font_size":{"unit":"px","size":72,"sizes":[]},"typography_font_size_tablet":{"unit":"px","size":40,"sizes":[]},"typography_line_height":{"unit":"em","size":1.2,"sizes":[]},"typography_line_height_tablet":{"unit":"em","size":1.2,"sizes":[]},"text_color":"title","_margin":{"unit":"px","top":"0","right":"0","bottom":"10","left":"0","isLinked":false},"_margin_tablet":{"unit":"px","top":"0","right":"0","bottom":"10","left":"0","isLinked":false},"scroll_y":-80,"wd_animation":"slide-from-bottom","wd_animation_delay":250},"elements":[],"widgetType":"wd_text_block"},{"id":"67f82ff","elType":"widget","settings":{"text":"<p><em>Extra 50% Off<\/em><\/p>","typography_typography":"custom","typography_font_family":"Playfair Display","typography_font_size":{"unit":"px","size":72,"sizes":[]},"typography_font_size_tablet":{"unit":"px","size":40,"sizes":[]},"typography_line_height":{"unit":"em","size":1.2,"sizes":[]},"typography_line_height_tablet":{"unit":"em","size":1.2,"sizes":[]},"text_color":"title","_margin":{"unit":"px","top":"0","right":"0","bottom":"40","left":"0","isLinked":false},"_margin_tablet":{"unit":"px","top":"0","right":"0","bottom":"10","left":"0","isLinked":false},"scroll_y":-80,"wd_animation":"slide-from-bottom","wd_animation_delay":400},"elements":[],"widgetType":"wd_text_block"},{"id":"c044030","elType":"widget","settings":{"text":"SEE SALE PRODUCT","color":"primary","size":"large","align":"left","scroll_y":-80,"wd_animation":"slide-from-bottom","wd_animation_delay":550},"elements":[],"widgetType":"wd_button"}],"isInner":true},{"id":"881e960","elType":"container","settings":{"flex_direction":"column","content_width":"full","width":{"unit":"%","size":58},"container_sticky_offset":50,"scroll_y":-80},"elements":[{"id":"9ff8784","elType":"widget","settings":{"image":{"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2024\/02\/shoes-img-slide-1-opt.png","id":27441,"size":"","alt":"","source":"library"},"scroll_y":-80},"elements":[],"widgetType":"wd_image_or_svg"}],"isInner":true}],"isInner":false}]]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
+							<wp:meta_key><![CDATA[_elementor_page_settings]]></wp:meta_key>
+							<wp:meta_value><![CDATA[a:6:{s:10:"hide_title";s:0:"";s:8:"wd_image";a:5:{s:3:"url";s:106:"http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/shoes-bg-slide-full-opt.jpg";s:2:"id";i:27439;s:4:"size";s:0:"";s:3:"alt";s:0:"";s:6:"source";s:7:"library";}s:11:"wd_bg_image";a:3:{s:3:"url";s:0:"";s:2:"id";s:0:"";s:4:"size";s:0:"";}s:6:"margin";a:6:{s:4:"unit";s:2:"px";s:3:"top";s:0:"";s:5:"right";s:0:"";s:6:"bottom";s:0:"";s:4:"left";s:0:"";s:8:"isLinked";b:1;}s:7:"padding";a:6:{s:4:"unit";s:2:"px";s:3:"top";s:0:"";s:5:"right";s:0:"";s:6:"bottom";s:0:"";s:4:"left";s:0:"";s:8:"isLinked";b:1;}s:21:"background_background";s:0:"";}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[shoes-img-slide-1-opt]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/woodmart_slide/shoes-slide-1/shoes-img-slide-1-opt/</link>
 					<pubDate>Tue, 13 Feb 2024 13:27:38 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/shoes-img-slide-1-opt.png</guid>
 															<wp:post_id>27441</wp:post_id>
 					<wp:post_date><![CDATA[2024-02-13 13:27:38]]></wp:post_date>
@@ -3310,21 +3270,22 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 					<title><![CDATA[Shoes slide 2]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/woodmart_slide/shoes-slide-1-2/</link>
 					<pubDate>Tue, 13 Feb 2024 13:35:01 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/elementor/?post_type=woodmart_slide&#038;p=27457</guid>
-											<content:encoded><![CDATA[<img width="804" height="604" src="http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/shoes-img-slide-2-opt.png" alt="" decoding="async" srcset="https://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/shoes-img-slide-2-opt.png 804w, https://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/shoes-img-slide-2-opt-400x300.png 400w, https://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/shoes-img-slide-2-opt-768x577.png 768w, https://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/shoes-img-slide-2-opt-600x451.png 600w, https://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/shoes-img-slide-2-opt-130x98.png 130w" sizes="(max-width: 804px) 100vw, 804px" />					
-						<link rel="stylesheet" id="wd-text-block-css" href="https://dummy.xtemos.com/woodmart2/elementor/wp-content/themes/woodmart/css/parts/el-text-block.min.css?ver=7.4.0" type="text/css" media="all" /> 					
+											<content:encoded><![CDATA[<img width="804" height="604" src="http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/shoes-img-slide-2-opt.png" alt="" decoding="async" loading="lazy" srcset="https://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/shoes-img-slide-2-opt.png 804w, https://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/shoes-img-slide-2-opt-400x300.png 400w, https://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/shoes-img-slide-2-opt-768x577.png 768w, https://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/shoes-img-slide-2-opt-600x451.png 600w, https://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/shoes-img-slide-2-opt-130x98.png 130w" sizes="auto, (max-width: 804px) 100vw, 804px" />					
+								<link rel="stylesheet" id="wd-text-block-css" href="https://dummy.xtemos.com/woodmart2/elementor/wp-content/themes/woodmart8/css/parts/el-text-block.min.css?ver=8.4.0" type="text/css" media="all" /> 					
 			<p>Indulge</p>
 			<p>In The Lasting</p>
 			<p><em>Look Of Luxury</em></p>
+								<link rel="stylesheet" id="wd-button-css" href="https://dummy.xtemos.com/woodmart2/elementor/wp-content/themes/woodmart8/css/parts/el-button.min.css?ver=8.4.0" type="text/css" media="all" /> 					
 			<a  href="#">
 					SEE SALE PRODUCT				
 							</a>]]></content:encoded>
 															<wp:post_id>27457</wp:post_id>
 					<wp:post_date><![CDATA[2024-02-13 13:35:01]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-02-13 13:35:01]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-02-13 13:39:03]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-02-13 13:39:03]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2026-02-25 12:56:50]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2026-02-25 12:56:50]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[shoes-slide-1-2]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -3394,26 +3355,22 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_elementor_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[3.18.3]]></wp:meta_value>
+							<wp:meta_value><![CDATA[3.33.6]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_elementor_data]]></wp:meta_key>
 							<wp:meta_value><![CDATA[[{"id":"c4beabb","elType":"container","settings":{"flex_direction":"row","flex_gap":{"unit":"px","size":20,"column":"20","row":"30"},"flex_direction_mobile":"column-reverse","flex_align_items":"center","container_sticky_offset":50,"scroll_y":-80},"elements":[{"id":"4c6e8e0","elType":"container","settings":{"flex_direction":"column","content_width":"full","width":{"unit":"%","size":58},"flex_gap_tablet":{"column":"0","row":"0","isLinked":true,"unit":"px","size":0},"container_sticky_offset":50,"scroll_y":-80},"elements":[{"id":"9ff8784","elType":"widget","settings":{"image":{"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2024\/02\/shoes-img-slide-2-opt.png","id":27459,"size":"","alt":"","source":"library"},"scroll_y":-80},"elements":[],"widgetType":"wd_image_or_svg"}],"isInner":true},{"id":"881e960","elType":"container","settings":{"flex_direction":"column","content_width":"full","width":{"unit":"%","size":42},"container_sticky_offset":50,"scroll_y":-80,"flex_gap":{"column":"0","row":"0","isLinked":true,"unit":"px","size":0}},"elements":[{"id":"b3a3f05","elType":"widget","settings":{"text":"<p>Indulge<\/p>","typography_typography":"custom","typography_font_family":"Playfair Display","typography_font_size":{"unit":"px","size":72,"sizes":[]},"typography_font_size_tablet":{"unit":"px","size":40,"sizes":[]},"typography_line_height":{"unit":"em","size":1.2,"sizes":[]},"typography_line_height_tablet":{"unit":"em","size":1.2,"sizes":[]},"text_color":"title","_margin_tablet":{"unit":"px","top":"0","right":"0","bottom":"10","left":"0","isLinked":false},"scroll_y":-80,"wd_animation":"slide-from-bottom","_margin":{"unit":"px","top":"0","right":"0","bottom":"10","left":"0","isLinked":false}},"elements":[],"widgetType":"wd_text_block"},{"id":"57d2baf","elType":"widget","settings":{"text":"<p>In The Lasting<\/p>","typography_typography":"custom","typography_font_family":"Playfair Display","typography_font_size":{"unit":"px","size":72,"sizes":[]},"typography_font_size_tablet":{"unit":"px","size":40,"sizes":[]},"typography_line_height":{"unit":"em","size":1.2,"sizes":[]},"typography_line_height_tablet":{"unit":"em","size":1.2,"sizes":[]},"text_color":"title","_margin_tablet":{"unit":"px","top":"0","right":"0","bottom":"10","left":"0","isLinked":false},"scroll_y":-80,"wd_animation":"slide-from-bottom","wd_animation_delay":250,"_margin":{"unit":"px","top":"0","right":"0","bottom":"10","left":"0","isLinked":false}},"elements":[],"widgetType":"wd_text_block"},{"id":"67f82ff","elType":"widget","settings":{"text":"<p><em>Look Of Luxury<\/em><\/p>","typography_typography":"custom","typography_font_family":"Playfair Display","typography_font_size":{"unit":"px","size":68,"sizes":[]},"typography_font_size_tablet":{"unit":"px","size":40,"sizes":[]},"typography_line_height":{"unit":"em","size":1.2,"sizes":[]},"typography_line_height_tablet":{"unit":"em","size":1.2,"sizes":[]},"text_color":"title","_margin":{"unit":"px","top":"0","right":"0","bottom":"40","left":"0","isLinked":false},"_margin_tablet":{"unit":"px","top":"0","right":"0","bottom":"10","left":"0","isLinked":false},"scroll_y":-80,"wd_animation":"slide-from-bottom","wd_animation_delay":400},"elements":[],"widgetType":"wd_text_block"},{"id":"c044030","elType":"widget","settings":{"text":"SEE SALE PRODUCT","color":"primary","size":"large","align":"left","scroll_y":-80,"wd_animation":"slide-from-bottom","wd_animation_delay":550},"elements":[],"widgetType":"wd_button"}],"isInner":true}],"isInner":false}]]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[shoes-slide-1]]></wp:meta_value>
+							<wp:meta_key><![CDATA[_elementor_page_settings]]></wp:meta_key>
+							<wp:meta_value><![CDATA[a:6:{s:10:"hide_title";s:0:"";s:8:"wd_image";a:5:{s:3:"url";s:106:"http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/shoes-bg-slide-full-opt.jpg";s:2:"id";i:27439;s:4:"size";s:0:"";s:3:"alt";s:0:"";s:6:"source";s:7:"library";}s:11:"wd_bg_image";a:3:{s:3:"url";s:0:"";s:2:"id";s:0:"";s:4:"size";s:0:"";}s:6:"margin";a:6:{s:4:"unit";s:2:"px";s:3:"top";s:0:"";s:5:"right";s:0:"";s:6:"bottom";s:0:"";s:4:"left";s:0:"";s:8:"isLinked";b:1;}s:7:"padding";a:6:{s:4:"unit";s:2:"px";s:3:"top";s:0:"";s:5:"right";s:0:"";s:6:"bottom";s:0:"";s:4:"left";s:0:"";s:8:"isLinked";b:1;}s:21:"background_background";s:0:"";}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[shoes-img-slide-2-opt]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/woodmart_slide/shoes-slide-1-2/shoes-img-slide-2-opt/</link>
 					<pubDate>Tue, 13 Feb 2024 13:35:45 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/shoes-img-slide-2-opt.png</guid>
 															<wp:post_id>27459</wp:post_id>
 					<wp:post_date><![CDATA[2024-02-13 13:35:45]]></wp:post_date>
@@ -3436,21 +3393,22 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 					<title><![CDATA[Shoes slide 3]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/woodmart_slide/shoes-slide-1-2-2/</link>
 					<pubDate>Tue, 13 Feb 2024 13:37:01 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/elementor/?post_type=woodmart_slide&#038;p=27463</guid>
-											<content:encoded><![CDATA[<img width="734" height="640" src="http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/shoes-img-slide-3-opt.png" alt="" decoding="async" srcset="https://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/shoes-img-slide-3-opt.png 734w, https://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/shoes-img-slide-3-opt-344x300.png 344w, https://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/shoes-img-slide-3-opt-600x523.png 600w, https://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/shoes-img-slide-3-opt-130x113.png 130w" sizes="(max-width: 734px) 100vw, 734px" />					
-						<link rel="stylesheet" id="wd-text-block-css" href="https://dummy.xtemos.com/woodmart2/elementor/wp-content/themes/woodmart/css/parts/el-text-block.min.css?ver=7.4.0" type="text/css" media="all" /> 					
+											<content:encoded><![CDATA[<img width="734" height="640" src="http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/shoes-img-slide-3-opt.png" alt="" decoding="async" loading="lazy" srcset="https://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/shoes-img-slide-3-opt.png 734w, https://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/shoes-img-slide-3-opt-344x300.png 344w, https://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/shoes-img-slide-3-opt-600x523.png 600w, https://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/shoes-img-slide-3-opt-130x113.png 130w" sizes="auto, (max-width: 734px) 100vw, 734px" />					
+								<link rel="stylesheet" id="wd-text-block-css" href="https://dummy.xtemos.com/woodmart2/elementor/wp-content/themes/woodmart8/css/parts/el-text-block.min.css?ver=8.4.0" type="text/css" media="all" /> 					
 			<p>Lace-Up</p>
 			<p>Casual Italian</p>
 			<p><em>Shoes For Men</em></p>
+								<link rel="stylesheet" id="wd-button-css" href="https://dummy.xtemos.com/woodmart2/elementor/wp-content/themes/woodmart8/css/parts/el-button.min.css?ver=8.4.0" type="text/css" media="all" /> 					
 			<a  href="#">
 					SEE SALE PRODUCT				
 							</a>]]></content:encoded>
 															<wp:post_id>27463</wp:post_id>
 					<wp:post_date><![CDATA[2024-02-13 13:37:01]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-02-13 13:37:01]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-02-13 13:38:29]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-02-13 13:38:29]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2026-02-25 12:56:35]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2026-02-25 12:56:35]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[shoes-slide-1-2-2]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -3520,26 +3478,22 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_elementor_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[3.18.3]]></wp:meta_value>
+							<wp:meta_value><![CDATA[3.33.6]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_elementor_data]]></wp:meta_key>
 							<wp:meta_value><![CDATA[[{"id":"c4beabb","elType":"container","settings":{"flex_direction":"row","flex_gap":{"unit":"px","size":20,"column":"20","row":"30"},"flex_direction_mobile":"column-reverse","flex_align_items":"center","container_sticky_offset":50,"scroll_y":-80},"elements":[{"id":"4c6e8e0","elType":"container","settings":{"flex_direction":"column","content_width":"full","width":{"unit":"%","size":58},"flex_gap_tablet":{"column":"0","row":"0","isLinked":true,"unit":"px","size":0},"container_sticky_offset":50,"scroll_y":-80},"elements":[{"id":"9ff8784","elType":"widget","settings":{"image":{"url":"http:\/\/dummy.xtemos.com\/woodmart2\/elementor\/wp-content\/uploads\/sites\/2\/2024\/02\/shoes-img-slide-3-opt.png","id":27465,"size":"","alt":"","source":"library"},"scroll_y":-80},"elements":[],"widgetType":"wd_image_or_svg"}],"isInner":true},{"id":"881e960","elType":"container","settings":{"flex_direction":"column","content_width":"full","width":{"unit":"%","size":42},"container_sticky_offset":50,"scroll_y":-80,"flex_gap":{"column":"0","row":"0","isLinked":true,"unit":"px","size":0}},"elements":[{"id":"b3a3f05","elType":"widget","settings":{"text":"<p>Lace-Up<\/p>","typography_typography":"custom","typography_font_family":"Playfair Display","typography_font_size":{"unit":"px","size":72,"sizes":[]},"typography_font_size_tablet":{"unit":"px","size":40,"sizes":[]},"typography_line_height":{"unit":"em","size":1.2,"sizes":[]},"typography_line_height_tablet":{"unit":"em","size":1.2,"sizes":[]},"text_color":"title","_margin_tablet":{"unit":"px","top":"0","right":"0","bottom":"10","left":"0","isLinked":false},"scroll_y":-80,"wd_animation":"slide-from-bottom","_margin":{"unit":"px","top":"0","right":"0","bottom":"10","left":"0","isLinked":false}},"elements":[],"widgetType":"wd_text_block"},{"id":"57d2baf","elType":"widget","settings":{"text":"<p>Casual Italian<\/p>","typography_typography":"custom","typography_font_family":"Playfair Display","typography_font_size":{"unit":"px","size":72,"sizes":[]},"typography_font_size_tablet":{"unit":"px","size":40,"sizes":[]},"typography_line_height":{"unit":"em","size":1.2,"sizes":[]},"typography_line_height_tablet":{"unit":"em","size":1.2,"sizes":[]},"text_color":"title","_margin_tablet":{"unit":"px","top":"0","right":"0","bottom":"10","left":"0","isLinked":false},"scroll_y":-80,"wd_animation":"slide-from-bottom","wd_animation_delay":250,"_margin":{"unit":"px","top":"0","right":"0","bottom":"10","left":"0","isLinked":false}},"elements":[],"widgetType":"wd_text_block"},{"id":"67f82ff","elType":"widget","settings":{"text":"<p><em>Shoes For Men<\/em><\/p>","typography_typography":"custom","typography_font_family":"Playfair Display","typography_font_size":{"unit":"px","size":72,"sizes":[]},"typography_font_size_tablet":{"unit":"px","size":40,"sizes":[]},"typography_line_height":{"unit":"em","size":1.2,"sizes":[]},"typography_line_height_tablet":{"unit":"em","size":1.2,"sizes":[]},"text_color":"title","_margin":{"unit":"px","top":"0","right":"0","bottom":"40","left":"0","isLinked":false},"_margin_tablet":{"unit":"px","top":"0","right":"0","bottom":"10","left":"0","isLinked":false},"scroll_y":-80,"wd_animation":"slide-from-bottom","wd_animation_delay":400},"elements":[],"widgetType":"wd_text_block"},{"id":"c044030","elType":"widget","settings":{"text":"SEE SALE PRODUCT","color":"primary","size":"large","align":"left","scroll_y":-80,"wd_animation":"slide-from-bottom","wd_animation_delay":550},"elements":[],"widgetType":"wd_button"}],"isInner":true}],"isInner":false}]]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[shoes-slide-1-2]]></wp:meta_value>
+							<wp:meta_key><![CDATA[_elementor_page_settings]]></wp:meta_key>
+							<wp:meta_value><![CDATA[a:6:{s:10:"hide_title";s:0:"";s:8:"wd_image";a:5:{s:3:"url";s:106:"http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/shoes-bg-slide-full-opt.jpg";s:2:"id";i:27439;s:4:"size";s:0:"";s:3:"alt";s:0:"";s:6:"source";s:7:"library";}s:11:"wd_bg_image";a:3:{s:3:"url";s:0:"";s:2:"id";s:0:"";s:4:"size";s:0:"";}s:6:"margin";a:6:{s:4:"unit";s:2:"px";s:3:"top";s:0:"";s:5:"right";s:0:"";s:6:"bottom";s:0:"";s:4:"left";s:0:"";s:8:"isLinked";b:1;}s:7:"padding";a:6:{s:4:"unit";s:2:"px";s:3:"top";s:0:"";s:5:"right";s:0:"";s:6:"bottom";s:0:"";s:4:"left";s:0:"";s:8:"isLinked";b:1;}s:21:"background_background";s:0:"";}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[shoes-img-slide-3-opt]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/elementor/woodmart_slide/shoes-slide-1-2-2/shoes-img-slide-3-opt/</link>
 					<pubDate>Tue, 13 Feb 2024 13:37:14 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/2024/02/shoes-img-slide-3-opt.png</guid>
 															<wp:post_id>27465</wp:post_id>
 					<wp:post_date><![CDATA[2024-02-13 13:37:14]]></wp:post_date>

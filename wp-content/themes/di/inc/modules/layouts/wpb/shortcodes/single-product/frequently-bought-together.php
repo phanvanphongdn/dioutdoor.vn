@@ -2,7 +2,7 @@
 /**
  * Frequently bought together shortcode.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 use XTS\Modules\Frequently_Bought_Together\Frontend;

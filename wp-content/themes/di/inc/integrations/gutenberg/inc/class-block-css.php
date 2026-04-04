@@ -2,7 +2,7 @@
 /**
  * Gutenberg block css module.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Gutenberg;

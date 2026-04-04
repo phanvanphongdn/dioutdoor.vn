@@ -1,4 +1,11 @@
-<?php if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
+<?php
+/**
+ * Shortcode for Team Member element.
+ *
+ * @package woodmart
+ */
+
+if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
 	exit( 'No direct script access allowed' );
 }
 
@@ -11,7 +18,7 @@ if ( ! function_exists( 'woodmart_shortcode_team_member_show_member_social' ) ) 
 	 * @return string|void
 	 */
 	function woodmart_shortcode_team_member_show_member_social( $settings ) {
-		if ( empty( $settings['linkedin'] ) && empty( $settings['twitter'] ) && empty( $settings['facebook'] ) && empty( $settings['skype'] ) && empty( $settings['instagram'] ) ) {
+		if ( empty( $settings['linkedin'] ) && empty( $settings['twitter'] ) && empty( $settings['facebook'] ) && empty( $settings['instagram'] ) ) {
 			return '';
 		}
 
@@ -19,7 +26,6 @@ if ( ! function_exists( 'woodmart_shortcode_team_member_show_member_social' ) ) 
 		$classes .= ' wd-style-' . $settings['style'];
 		$classes .= ' wd-size-' . $settings['size'];
 		$classes .= ' wd-shape-' . $settings['form'];
-		$classes .= woodmart_get_old_classes( ' woodmart-social-icons' );
 
 		if ( 'default' !== $settings['style'] ) {
 			woodmart_enqueue_inline_style( 'social-icons-styles' );
@@ -43,11 +49,6 @@ if ( ! function_exists( 'woodmart_shortcode_team_member_show_member_social' ) ) 
 						<span class="wd-icon"></span>
 					</a>
 				<?php endif; ?>
-				<?php if ( ! empty( $settings['skype'] ) ) : ?>
-					<a rel="noopener noreferrer nofollow" class="wd-social-icon social-skype" href="<?php echo esc_url( $settings['skype'] ); ?>" aria-label="<?php echo esc_attr( __( 'Social icon skype', 'woodmart' ) ); ?>">
-						<span class="wd-icon"></span>
-					</a>
-				<?php endif; ?>
 				<?php if ( ! empty( $settings['instagram'] ) ) : ?>
 					<a rel="noopener noreferrer nofollow" class="wd-social-icon social-instagram" href="<?php echo esc_url( $settings['instagram'] ); ?>" aria-label="<?php echo esc_attr( __( 'Social icon instagram', 'woodmart' ) ); ?>">
 						<span class="wd-icon"></span>
@@ -59,11 +60,6 @@ if ( ! function_exists( 'woodmart_shortcode_team_member_show_member_social' ) ) 
 	}
 }
 
-/**
-* ------------------------------------------------------------------------------------------------
-* Team member shortcode
-* ------------------------------------------------------------------------------------------------
-*/
 if ( ! function_exists( 'woodmart_shortcode_team_member' ) ) {
 	/**
 	 * Team member element shortcode.
@@ -82,7 +78,6 @@ if ( ! function_exists( 'woodmart_shortcode_team_member' ) ) {
 				'position'              => '',
 				'twitter'               => '',
 				'facebook'              => '',
-				'skype'                 => '',
 				'linkedin'              => '',
 				'instagram'             => '',
 				'image'                 => '',

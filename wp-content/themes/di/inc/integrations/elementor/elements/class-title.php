@@ -2,7 +2,7 @@
 /**
  * Title map.
  *
- * @package xts
+ * @package woodmart
  */
 
 namespace XTS\Elementor;
@@ -339,22 +339,6 @@ class Title extends Widget_Base {
 		);
 
 		$this->add_control(
-			'title_decoration_style',
-			array(
-				'label'       => esc_html__( 'Highlight text style', 'woodmart' ),
-				'description' => esc_html__( 'The text must be wrapped with the <u></u> tag to highlight it.', 'woodmart' ),
-				'type'        => Controls_Manager::SELECT,
-				'options'     => array(
-					'default'     => esc_html__( 'Default', 'woodmart' ),
-					'colored'     => esc_html__( 'Primary color', 'woodmart' ),
-					'colored-alt' => esc_html__( 'Primary color + secondary font', 'woodmart' ),
-					'bordered'    => esc_html__( 'Bordered', 'woodmart' ),
-				),
-				'default'     => 'default',
-			)
-		);
-
-		$this->add_control(
 			'image',
 			array(
 				'label'     => esc_html__( 'Choose image', 'woodmart' ),
@@ -414,6 +398,35 @@ class Title extends Widget_Base {
 				'name'     => 'title_typography',
 				'label'    => esc_html__( 'Typography', 'woodmart' ),
 				'selector' => '{{WRAPPER}} .title',
+			)
+		);
+
+		$this->add_control(
+			'title_decoration_style',
+			array(
+				'label'       => esc_html__( 'Highlight text style', 'woodmart' ),
+				'description' => esc_html__( 'The text must be wrapped with the <u></u> tag to highlight it.', 'woodmart' ),
+				'type'        => Controls_Manager::SELECT,
+				'options'     => array(
+					'default'     => esc_html__( 'Default', 'woodmart' ),
+					'colored'     => esc_html__( 'Primary color', 'woodmart' ),
+					'colored-alt' => esc_html__( 'Primary color + secondary font', 'woodmart' ),
+					'bordered'    => esc_html__( 'Bordered', 'woodmart' ),
+					'gradient'    => esc_html__( 'Gradient', 'woodmart' ),
+				),
+				'default'     => 'default',
+			)
+		);
+
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
+			array(
+				'name'      => 'title_decoration_gradient',
+				'types'     => array( 'gradient' ),
+				'selector'  => '{{WRAPPER}} .wd-underline-gradient u',
+				'condition' => array(
+					'title_decoration_style' => 'gradient',
+				),
 			)
 		);
 
@@ -488,6 +501,8 @@ class Title extends Widget_Base {
 		$settings     = wp_parse_args( $this->get_settings_for_display(), $default_settings );
 		$image_output = '';
 
+		$title_tag = ! in_array( $settings['tag'], array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'div', 'span' ), true ) ? 'h4' : $settings['tag'];
+
 		$this->add_render_attribute(
 			array(
 				'wrapper'     => array(
@@ -546,7 +561,7 @@ class Title extends Widget_Base {
 					$custom_image_size = 'custom' !== $settings['image_size'] && 'full' !== $settings['image_size'] ? $settings['image_size'] : $custom_image_size;
 					$image_output      = '<span class="img-wrapper">' . woodmart_get_svg_html( $settings['image']['id'], $custom_image_size ) . '</span>';
 				} else {
-					$image_output = '<span class="img-wrapper"><span class="svg-icon" style="width:' . esc_attr( $custom_image_size['width'] ) . 'px; height:' . esc_attr( $custom_image_size['height'] ) . 'px;">' . woodmart_get_any_svg( $settings['image']['url'], rand( 999, 9999 ) ) . '</span></span>';
+					$image_output = '<span class="img-wrapper"><span class="svg-icon" style="width:' . esc_attr( $custom_image_size['width'] ) . 'px; height:' . esc_attr( $custom_image_size['height'] ) . 'px;">' . woodmart_get_any_svg( $settings['image']['url'], wp_rand( 999, 9999 ) ) . '</span></span>';
 				}
 			}
 		}
@@ -564,17 +579,17 @@ class Title extends Widget_Base {
 		}
 
 		?>
-		<div <?php echo $this->get_render_attribute_string( 'wrapper' ); ?>>
+		<div <?php echo $this->get_render_attribute_string( 'wrapper' ); //phpcs:ignore?>>
 
 			<?php if ( $settings['subtitle'] ) : ?>
 				<?php woodmart_enqueue_inline_style( 'el-subtitle-style' ); ?>
-				<div <?php echo $this->get_render_attribute_string( 'subtitle' ); ?>>
+				<div <?php echo $this->get_render_attribute_string( 'subtitle' ); //phpcs:ignore?>>
 					<?php echo nl2br( wp_kses( $settings['subtitle'], woodmart_get_allowed_html() ) ); ?>
 				</div>
 			<?php endif; ?>
 
 			<div class="liner-continer">
-				<<?php echo esc_attr( $settings['tag'] ); ?> <?php echo $this->get_render_attribute_string( 'title' ); ?>><?php echo nl2br( wp_kses( $settings['title'], woodmart_get_allowed_html() ) ); ?></<?php echo esc_attr( $settings['tag'] ); ?>> <?php // Must be in one line Yoast SEO fix bug. ?>
+				<<?php echo esc_attr( $title_tag ); ?> <?php echo $this->get_render_attribute_string( 'title' ); //phpcs:ignore?>><?php echo nl2br( wp_kses( $settings['title'], woodmart_get_allowed_html() ) ); ?></<?php echo esc_attr( $title_tag ); ?>> <?php // Must be in one line Yoast SEO fix bug. ?>
 
 				<?php if ( $image_output ) : ?>
 					<?php echo $image_output; // phpcs:ignore ?>
@@ -582,7 +597,7 @@ class Title extends Widget_Base {
 			</div>
 
 			<?php if ( $settings['after_title'] ) : ?>
-				<div <?php echo $this->get_render_attribute_string( 'after_title' ); ?>>
+				<div <?php echo $this->get_render_attribute_string( 'after_title' ); //phpcs:ignore ?>>
 					<?php echo nl2br( wp_kses( $settings['after_title'], woodmart_get_allowed_html() ) ); ?>
 				</div>
 			<?php endif; ?>

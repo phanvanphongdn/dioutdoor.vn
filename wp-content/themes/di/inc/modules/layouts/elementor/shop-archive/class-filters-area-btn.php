@@ -2,7 +2,7 @@
 /**
  * Filters area button element.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Modules\Layouts;

@@ -14,10 +14,6 @@ $block_css->add_css_rules(
 			'attr_name' => 'colorVariable',
 			'template'  => 'color: var({{value}});',
 		),
-		array(
-			'attr_name' => 'width',
-			'template'  => '--btn-width: {{value}}' . $block_css->get_units_for_attribute( 'width' ) . ';',
-		),
 	)
 );
 
@@ -36,7 +32,7 @@ $block_css->add_css_rules(
 );
 
 $block_css->add_css_rules(
-	'.wd-hover-parent:hover ' . $block_selector,
+	$block_selector_parent_hover,
 	array(
 		array(
 			'attr_name' => 'colorParentHoverCode',
@@ -49,34 +45,13 @@ $block_css->add_css_rules(
 	)
 );
 
-$block_css->add_css_rules(
-	$block_selector,
-	array(
-		array(
-			'attr_name' => 'widthTablet',
-			'template'  => '--btn-width: {{value}}' . $block_css->get_units_for_attribute( 'width', 'tablet' ) . ';',
-		),
-	),
-	'tablet'
-);
-
-$block_css->add_css_rules(
-	$block_selector,
-	array(
-		array(
-			'attr_name' => 'widthMobile',
-			'template'  => '--btn-width: {{value}}' . $block_css->get_units_for_attribute( 'width', 'mobile' ) . ';',
-		),
-	),
-	'mobile'
-);
-
 $block_css->merge_with( wd_get_block_typography_css( $block_selector, $attrs, 'tp' ) );
 $block_css->merge_with(
 	wd_get_block_advanced_css(
 		array(
-			'selector'       => $block_selector,
-			'selector_hover' => $block_selector_hover,
+			'selector'              => $block_selector,
+			'selector_hover'        => $block_selector_hover,
+			'selector_parent_hover' => $block_selector_parent_hover,
 		),
 		$attrs
 	)

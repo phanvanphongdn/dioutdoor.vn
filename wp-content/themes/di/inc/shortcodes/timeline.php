@@ -1,15 +1,25 @@
-<?php if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
-	exit( 'No direct script access allowed' );}
-
+<?php
 /**
-* ------------------------------------------------------------------------------------------------
-* Timeline shortcode
-* ------------------------------------------------------------------------------------------------
-*/
+ * Shortcode for Timeline element.
+ *
+ * @package woodmart
+ */
+
+if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
+	exit( 'No direct script access allowed' );
+}
 
 if ( ! function_exists( 'woodmart_timeline_shortcode' ) ) {
+	/**
+	 * Timeline shortcode
+	 *
+	 * @param array  $atts    Shortcode attributes.
+	 * @param string $content Shortcode content.
+	 *
+	 * @return false|string
+	 */
 	function woodmart_timeline_shortcode( $atts, $content ) {
-		extract(
+		extract( // phpcs:ignore WordPress.PHP.DontExtract.extract_extract
 			shortcode_atts(
 				array(
 					'line_color'      => '#e1e1e1',
@@ -82,15 +92,17 @@ if ( ! function_exists( 'woodmart_timeline_shortcode' ) ) {
 	}
 }
 
-/**
-* ------------------------------------------------------------------------------------------------
-* Timeline item shortcode
-* ------------------------------------------------------------------------------------------------
-*/
-
 if ( ! function_exists( 'woodmart_timeline_item_shortcode' ) ) {
+	/**
+	 * Timeline item shortcode
+	 *
+	 * @param array  $atts    Shortcode attributes.
+	 * @param string $content Shortcode content.
+	 *
+	 * @return false|string
+	 */
 	function woodmart_timeline_item_shortcode( $atts, $content ) {
-		extract(
+		extract( // phpcs:ignore WordPress.PHP.DontExtract.extract_extract
 			shortcode_atts(
 				array(
 					'title_primary'      => '',
@@ -117,7 +129,7 @@ if ( ! function_exists( 'woodmart_timeline_item_shortcode' ) ) {
 		}
 		$id = 'wd-' . $woodmart_css_id;
 
-		( $el_class != '' ) ? $classes .= ' ' . $el_class : false;
+		( '' !== $el_class ) ? $classes .= ' ' . $el_class : false;
 		ob_start();
 		?>
 		<div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
@@ -128,7 +140,7 @@ if ( ! function_exists( 'woodmart_timeline_item_shortcode' ) ) {
 				<span class="timeline-arrow"></span>
 				<?php if ( $image_primary ) : ?>
 					<div class="wd-timeline-image" >
-						<?php echo woodmart_otf_get_image_html( $image_primary, $img_size_primary ); ?>
+						<?php echo woodmart_otf_get_image_html( $image_primary, $img_size_primary ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 					</div>
 				<?php endif ?>
 				<h4 class="wd-timeline-title"><?php echo esc_html( $title_primary ); ?></h4>
@@ -139,7 +151,7 @@ if ( ! function_exists( 'woodmart_timeline_item_shortcode' ) ) {
 				<span class="timeline-arrow"></span>
 				<?php if ( $image_secondary ) : ?>
 					<div class="wd-timeline-image" >
-						<?php echo woodmart_otf_get_image_html( $image_secondary, $img_size_secondary ); ?>
+						<?php echo woodmart_otf_get_image_html( $image_secondary, $img_size_secondary ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 					</div>
 				<?php endif ?>
 				<h4 class="wd-timeline-title"><?php echo esc_html( $title_secondary ); ?></h4>
@@ -147,10 +159,10 @@ if ( ! function_exists( 'woodmart_timeline_item_shortcode' ) ) {
 			</div>
 			<?php
 			if ( $color_bg && ! woodmart_is_css_encode( $color_bg ) ) {
-				$css = '#' . esc_attr( $id ) . ',';
+				$css  = '#' . esc_attr( $id ) . ',';
 				$css .= '#' . esc_attr( $id ) . ' .timeline-col-primary,';
 				$css .= '#' . esc_attr( $id ) . ' .timeline-col-secondary {';
-				$css .= 'background-color: ' . esc_attr( $color_bg  ) . ';';
+				$css .= 'background-color: ' . esc_attr( $color_bg ) . ';';
 				$css .= '}';
 
 				$css .= '#' . esc_attr( $id ) . ' .timeline-arrow {';
@@ -167,15 +179,16 @@ if ( ! function_exists( 'woodmart_timeline_item_shortcode' ) ) {
 	}
 }
 
-/**
-* ------------------------------------------------------------------------------------------------
-* Timeline breakpoint shortcode
-* ------------------------------------------------------------------------------------------------
-*/
-
 if ( ! function_exists( 'woodmart_timeline_breakpoint_shortcode' ) ) {
-	function woodmart_timeline_breakpoint_shortcode( $atts, $content ) {
-		extract(
+	/**
+	 * Timeline breakpoint shortcode
+	 *
+	 * @param array $atts Shortcode attributes.
+	 *
+	 * @return false|string
+	 */
+	function woodmart_timeline_breakpoint_shortcode( $atts ) {
+		extract( // phpcs:ignore WordPress.PHP.DontExtract.extract_extract
 			shortcode_atts(
 				array(
 					'title'           => '',
@@ -194,14 +207,14 @@ if ( ! function_exists( 'woodmart_timeline_breakpoint_shortcode' ) ) {
 		}
 		$id = 'wd-' . $woodmart_css_id;
 
-		( $el_class != '' ) ? $classes .= ' ' . $el_class : false;
+		( '' !== $el_class ) ? $classes .= ' ' . $el_class : false;
 		ob_start();
 		?>
 		<div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
 			<span class="woodmart-timeline-breakpoint-title"><?php echo esc_html( $title ); ?></span>
 			<?php
 			if ( $color_bg && ! woodmart_is_css_encode( $color_bg ) ) {
-				$css = '#' . esc_attr( $id ) . ' .woodmart-timeline-breakpoint-title {';
+				$css  = '#' . esc_attr( $id ) . ' .woodmart-timeline-breakpoint-title {';
 				$css .= 'background-color: ' . esc_attr( $color_bg ) . ';';
 				$css .= '}';
 

@@ -14,6 +14,14 @@ if ( ! function_exists( 'woodmart_get_vc_map_off_canvas_btn' ) ) {
 	 * Displays the shortcode settings fields in the admin.
 	 */
 	function woodmart_get_vc_map_off_canvas_btn() {
+		$typography = woodmart_get_typography_map(
+			array(
+				'key'      => 'button_typography',
+				'selector' => '{{WRAPPER}} .wd-action-text',
+				'group'    => esc_html__( 'Style', 'woodmart' ),
+			)
+		);
+
 		return array(
 			'base'        => 'woodmart_off_canvas_btn',
 			'name'        => esc_html__( 'Off canvas column button', 'woodmart' ),
@@ -38,12 +46,76 @@ if ( ! function_exists( 'woodmart_get_vc_map_off_canvas_btn' ) ) {
 					'param_name'       => 'sticky',
 					'type'             => 'woodmart_switch',
 					'heading'          => esc_html__( 'Sticky', 'woodmart' ),
-					'hint'             => esc_html__( 'Make the off canvas sidebar button sticky.', 'woodmart' ),
+					'hint'             => esc_html__( 'Add an additional sticky button.', 'woodmart' ),
 					'true_state'       => 'yes',
 					'false_state'      => 'no',
 					'std'              => 'no',
 					'edit_field_class' => 'vc_col-sm-12 vc_column',
 				),
+				array(
+					'param_name'       => 'only_sticky_button',
+					'type'             => 'woodmart_switch',
+					'heading'          => esc_html__( 'Only sticky button', 'woodmart' ),
+					'hint'             => esc_html__( 'Hide the static button and show only the sticky one.', 'woodmart' ),
+					'true_state'       => 'yes',
+					'false_state'      => 'no',
+					'std'              => 'no',
+					'dependency'       => array(
+						'element' => 'sticky',
+						'value'   => array( 'yes' ),
+					),
+					'edit_field_class' => 'vc_col-sm-12 vc_column',
+				),
+
+				/**
+				 * Text style settings
+				 */
+				array(
+					'param_name' => 'text_style_section',
+					'type'       => 'woodmart_title_divider',
+					'title'      => esc_html__( 'Text', 'woodmart' ),
+					'group'      => esc_html__( 'Style', 'woodmart' ),
+				),
+
+				$typography['font_family'],
+				$typography['font_size'],
+				$typography['font_weight'],
+				$typography['text_transform'],
+				$typography['font_style'],
+				$typography['line_height'],
+
+				array(
+					'type'       => 'woodmart_empty_space',
+					'param_name' => 'woodmart_empty_space',
+					'group'      => esc_html__( 'Style', 'woodmart' ),
+				),
+
+				array(
+					'heading'          => esc_html__( 'Idle color', 'woodmart' ),
+					'type'             => 'wd_colorpicker',
+					'group'            => esc_html__( 'Style', 'woodmart' ),
+					'param_name'       => 'btn_text_color',
+					'selectors'        => array(
+						'{{WRAPPER}} .wd-action-btn' => array(
+							'--wd-action-text-color: {{VALUE}};',
+						),
+					),
+					'edit_field_class' => 'vc_col-sm-6 vc_column',
+				),
+
+				array(
+					'heading'          => esc_html__( 'Hover color', 'woodmart' ),
+					'type'             => 'wd_colorpicker',
+					'group'            => esc_html__( 'Style', 'woodmart' ),
+					'param_name'       => 'btn_text_hover_color',
+					'selectors'        => array(
+						'{{WRAPPER}} .wd-action-btn' => array(
+							'--wd-action-text-color-hover: {{VALUE}};',
+						),
+					),
+					'edit_field_class' => 'vc_col-sm-6 vc_column',
+				),
+
 				/**
 				 * Icon settings.
 				 */
@@ -65,6 +137,74 @@ if ( ! function_exists( 'woodmart_get_vc_map_off_canvas_btn' ) ) {
 						esc_html__( 'Default', 'woodmart' ) => 'default',
 						esc_html__( 'Custom image', 'woodmart' ) => 'custom',
 					),
+				),
+				array(
+					'heading'    => esc_html__( 'Icon size', 'woodmart' ),
+					'group'      => esc_html__( 'Style', 'woodmart' ),
+					'type'       => 'wd_slider',
+					'param_name' => 'icon_size',
+					'selectors'  => array(
+						'{{WRAPPER}} .wd-action-btn' => array(
+							'--wd-action-icon-size: {{VALUE}}px;',
+						),
+					),
+					'devices'    => array(
+						'desktop' => array(
+							'value' => '',
+							'unit'  => 'px',
+						),
+						'tablet'  => array(
+							'value' => '',
+							'unit'  => 'px',
+						),
+						'mobile'  => array(
+							'value' => '',
+							'unit'  => 'px',
+						),
+					),
+					'range'      => array(
+						'px' => array(
+							'min'  => 0,
+							'max'  => 50,
+							'step' => 1,
+						),
+					),
+					'dependency' => array(
+						'element' => 'icon_type',
+						'value'   => array( 'default' ),
+					),
+				),
+				array(
+					'heading'          => esc_html__( 'Idle color', 'woodmart' ),
+					'group'            => esc_html__( 'Style', 'woodmart' ),
+					'type'             => 'wd_colorpicker',
+					'param_name'       => 'icon_color',
+					'selectors'        => array(
+						'{{WRAPPER}} .wd-action-btn' => array(
+							'--wd-action-icon-color: {{VALUE}};',
+						),
+					),
+					'dependency'       => array(
+						'element' => 'icon_type',
+						'value'   => array( 'default' ),
+					),
+					'edit_field_class' => 'vc_col-sm-6 vc_column',
+				),
+				array(
+					'heading'          => esc_html__( 'Hover color', 'woodmart' ),
+					'group'            => esc_html__( 'Style', 'woodmart' ),
+					'type'             => 'wd_colorpicker',
+					'param_name'       => 'icon_color_hover',
+					'selectors'        => array(
+						'{{WRAPPER}} .wd-action-btn' => array(
+							'--wd-action-icon-color-hover: {{VALUE}};',
+						),
+					),
+					'dependency'       => array(
+						'element' => 'icon_type',
+						'value'   => array( 'default' ),
+					),
+					'edit_field_class' => 'vc_col-sm-6 vc_column',
 				),
 				array(
 					'param_name'       => 'img_id',

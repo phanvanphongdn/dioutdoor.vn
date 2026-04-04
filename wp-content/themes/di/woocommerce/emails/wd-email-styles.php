@@ -2,15 +2,22 @@
 /**
  * Woodmart email styles.
  *
- * @package XTS
+ * @package woodmart
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-// Load colors.
-$base = get_option( 'woocommerce_email_base_color' );
+$base             = get_option( 'woocommerce_email_base_color' );
+$is_email_preview = apply_filters( 'woocommerce_is_email_preview', false );
+
+if ( $is_email_preview ) {
+	$base_transient = get_transient( 'woocommerce_email_base_color' );
+	$base           = $base_transient ? $base_transient : $base;
+}
+
+$btn_text_color = wc_light_or_dark( $base, '#333', '#ffffff' );
 
 ?>
 .xts-align-start {
@@ -55,7 +62,7 @@ $base = get_option( 'woocommerce_email_base_color' );
 .xts-add-to-cart {
 	display: inline-block;
 	background-color: <?php echo esc_attr( $base ); ?>;
-	color: #fff;
+	color: <?php echo esc_attr( $btn_text_color ); ?>;
 	white-space: nowrap;
 	padding: .618em 1em; 
 	border-radius: 3px;

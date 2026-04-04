@@ -2,7 +2,7 @@
 /**
  * Title map.
  *
- * @package xts
+ * @package woodmart
  */
 
 namespace XTS\Elementor;
@@ -506,7 +506,6 @@ class Images_Gallery extends Widget_Base {
 			$this->add_render_attribute( 'item', 'class', 'wd-carousel-item' );
 
 			if ( 'yes' === $settings['scroll_carousel_init'] ) {
-				woodmart_enqueue_js_library( 'waypoints' );
 				$this->add_render_attribute( 'gallery', 'class', 'scroll-init' );
 			}
 
@@ -549,11 +548,13 @@ class Images_Gallery extends Widget_Base {
 				<?php endif; ?>
 				<?php foreach ( $settings['ids'] as $index => $image ) : ?>
 					<?php
-					$image_url = woodmart_otf_get_image_url( $image['id'], $settings['ids_size'], $settings['ids_custom_dimension'] );
+					$image_data = wp_get_attachment_image_src( $image['id'], 'full' );
 
-					if ( ! $image_url ) {
+					if ( ! $image_data ) {
 						continue;
 					}
+
+					$link = $image_data[0];
 
 					if ( apply_filters( 'woodmart_image_gallery_caption', false ) ) {
 						$title = wp_get_attachment_caption( $image['id'] );
@@ -561,9 +562,6 @@ class Images_Gallery extends Widget_Base {
 						$attachment = get_post( $image['id'] );
 						$title      = trim( wp_strip_all_tags( $attachment->post_title ) );
 					}
-
-					$image_data = wp_get_attachment_image_src( $image['id'], 'full' );
-					$link       = $image_data[0];
 
 					if ( 'links' === $settings['on_click'] ) {
 						$custom_links = explode( "\n", $settings['custom_links'] );
@@ -595,7 +593,16 @@ class Images_Gallery extends Widget_Base {
 							<a <?php echo $link_attrs; ?>>
 						<?php endif ?>
 
-						<?php echo apply_filters( 'woodmart_image', '<img src="' . esc_url( $image_url ) . '" alt="' . esc_attr( Control_Media::get_image_alt( $image ) ) . '">' ); ?>
+						<?php
+							echo woodmart_otf_get_image_html(
+								$image['id'],
+								$settings['ids_size'],
+								$settings['ids_custom_dimension'],
+								array(
+									'alt' => Control_Media::get_image_alt( $image )
+								)
+							);
+						?>
 
 						<?php if ( 'none' !== $settings['on_click'] ) : ?>
 							</a>

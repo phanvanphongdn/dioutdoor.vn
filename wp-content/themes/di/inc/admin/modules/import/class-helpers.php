@@ -2,7 +2,7 @@
 /**
  * Import helpers.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Admin\Modules\Import;
@@ -108,16 +108,81 @@ class Helpers extends Singleton {
 			'http://dummy.xtemos.com/woodmart2/makeup-gutenberg/wp-content/uploads/sites/40/',
 			'https://dummy.xtemos.com/woodmart2/makeup-gutenberg/wp-content/uploads/sites/40/',
 
+			'http://dummy.xtemos.com/woodmart2/marketplace2-elementor/wp-content/uploads/sites/42/',
+			'https://dummy.xtemos.com/woodmart2/marketplace2-elementor/wp-content/uploads/sites/42/',
+			'http://dummy.xtemos.com/woodmart2/marketplace2/wp-content/uploads/sites/41/',
+			'https://dummy.xtemos.com/woodmart2/marketplace2/wp-content/uploads/sites/41/',
+			'http://dummy.xtemos.com/woodmart2/marketplace2-gutenberg/wp-content/uploads/sites/43/',
+			'https://dummy.xtemos.com/woodmart2/marketplace2-gutenberg/wp-content/uploads/sites/43/',
+
+			'http://dummy.xtemos.com/woodmart2/t-shirts-elementor/wp-content/uploads/sites/45/',
+			'https://dummy.xtemos.com/woodmart2/t-shirts-elementor/wp-content/uploads/sites/45/',
+			'http://dummy.xtemos.com/woodmart2/t-shirts/wp-content/uploads/sites/44/',
+			'https://dummy.xtemos.com/woodmart2/t-shirts/wp-content/uploads/sites/44/',
+			'http://dummy.xtemos.com/woodmart2/t-shirts-gutenberg/wp-content/uploads/sites/46/',
+			'https://dummy.xtemos.com/woodmart2/t-shirts-gutenberg/wp-content/uploads/sites/46/',
+
+			'http://dummy.xtemos.com/woodmart2/handmade-bags-elementor/wp-content/uploads/sites/48/',
+			'https://dummy.xtemos.com/woodmart2/handmade-bags-elementor/wp-content/uploads/sites/48/',
+			'http://dummy.xtemos.com/woodmart2/handmade-bags/wp-content/uploads/sites/47/',
+			'https://dummy.xtemos.com/woodmart2/handmade-bags/wp-content/uploads/sites/47/',
+			'http://dummy.xtemos.com/woodmart2/handmade-bags-gutenberg/wp-content/uploads/sites/49/',
+			'https://dummy.xtemos.com/woodmart2/handmade-bags-gutenberg/wp-content/uploads/sites/49/',
+
+			'http://dummy.xtemos.com/woodmart2/vinyls-elementor/wp-content/uploads/sites/51/',
+			'https://dummy.xtemos.com/woodmart2/vinyls-elementor/wp-content/uploads/sites/51/',
+			'http://dummy.xtemos.com/woodmart2/vinyls/wp-content/uploads/sites/50/',
+			'https://dummy.xtemos.com/woodmart2/vinyls/wp-content/uploads/sites/50/',
+			'http://dummy.xtemos.com/woodmart2/vinyls-gutenberg/wp-content/uploads/sites/52/',
+			'https://dummy.xtemos.com/woodmart2/vinyls-gutenberg/wp-content/uploads/sites/52/',
+
+			'http://dummy.xtemos.com/woodmart2/pets-elementor/wp-content/uploads/sites/54/',
+			'https://dummy.xtemos.com/woodmart2/pets-elementor/wp-content/uploads/sites/54/',
+			'http://dummy.xtemos.com/woodmart2/pets/wp-content/uploads/sites/53/',
+			'https://dummy.xtemos.com/woodmart2/pets/wp-content/uploads/sites/53/',
+			'http://dummy.xtemos.com/woodmart2/pets-gutenberg/wp-content/uploads/sites/55/',
+			'https://dummy.xtemos.com/woodmart2/pets-gutenberg/wp-content/uploads/sites/55/',
+
+			'http://dummy.xtemos.com/woodmart2/christmas-2-elementor/wp-content/uploads/sites/60/',
+			'https://dummy.xtemos.com/woodmart2/christmas-2-elementor/wp-content/uploads/sites/60/',
+			'http://dummy.xtemos.com/woodmart2/christmas-2/wp-content/uploads/sites/59/',
+			'https://dummy.xtemos.com/woodmart2/christmas-2/wp-content/uploads/sites/59/',
+			'http://dummy.xtemos.com/woodmart2/christmas-2-gutenberg/wp-content/uploads/sites/61/',
+			'https://dummy.xtemos.com/woodmart2/christmas-2-gutenberg/wp-content/uploads/sites/61/',
+
+			'http://dummy.xtemos.com/woodmart2/merchandise-elementor/wp-content/uploads/sites/64/',
+			'https://dummy.xtemos.com/woodmart2/merchandise-elementor/wp-content/uploads/sites/64/',
+			'http://dummy.xtemos.com/woodmart2/merchandise/wp-content/uploads/sites/62/',
+			'https://dummy.xtemos.com/woodmart2/merchandise/wp-content/uploads/sites/62/',
+			'http://dummy.xtemos.com/woodmart2/merchandise-gutenberg/wp-content/uploads/sites/63/',
+			'https://dummy.xtemos.com/woodmart2/merchandise-gutenberg/wp-content/uploads/sites/63/',
+
+			'http://dummy.xtemos.com/woodmart2/perfumes-elementor/wp-content/uploads/sites/66/',
+			'https://dummy.xtemos.com/woodmart2/perfumes-elementor/wp-content/uploads/sites/66/',
+			'http://dummy.xtemos.com/woodmart2/perfumes/wp-content/uploads/sites/65/',
+			'https://dummy.xtemos.com/woodmart2/perfumes/wp-content/uploads/sites/65/',
+			'http://dummy.xtemos.com/woodmart2/perfumes-gutenberg/wp-content/uploads/sites/67/',
+			'https://dummy.xtemos.com/woodmart2/perfumes-gutenberg/wp-content/uploads/sites/67/',
+
+			'http://dummy.xtemos.com/woodmart2/fashion-2-elementor/wp-content/uploads/sites/69/',
+			'https://dummy.xtemos.com/woodmart2/fashion-2-elementor/wp-content/uploads/sites/69/',
+			'http://dummy.xtemos.com/woodmart2/fashion-2/wp-content/uploads/sites/68/',
+			'https://dummy.xtemos.com/woodmart2/fashion-2/wp-content/uploads/sites/68/',
+			'http://dummy.xtemos.com/woodmart2/fashion-2-gutenberg/wp-content/uploads/sites/70/',
+			'https://dummy.xtemos.com/woodmart2/fashion-2-gutenberg/wp-content/uploads/sites/70/',
+
+			'http://dummy.xtemos.com/woodmart2/electronics-3-elementor/wp-content/uploads/sites/57/',
+			'https://dummy.xtemos.com/woodmart2/electronics-3-elementor/wp-content/uploads/sites/57/',
+			'http://dummy.xtemos.com/woodmart2/electronics-3/wp-content/uploads/sites/56/',
+			'https://dummy.xtemos.com/woodmart2/electronics-3/wp-content/uploads/sites/56/',
+			'http://dummy.xtemos.com/woodmart2/electronics-3-gutenberg/wp-content/uploads/sites/58/',
+			'https://dummy.xtemos.com/woodmart2/electronics-3-gutenberg/wp-content/uploads/sites/58/',
+
 			'http://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/',
 			'https://dummy.xtemos.com/woodmart2/gutenberg/wp-content/uploads/sites/24/',
 
 			'http://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/',
 			'https://dummy.xtemos.com/woodmart2/elementor/wp-content/uploads/sites/2/',
-
-			'http://dummy.xtemos.com/woodmart2/pottery-elementor/wp-content/uploads/sites/34/',
-			'https://dummy.xtemos.com/woodmart2/pottery-elementor/wp-content/uploads/sites/34/',
-			'http://dummy.xtemos.com/woodmart2/pottery/wp-content/uploads/sites/35/',
-			'https://dummy.xtemos.com/woodmart2/pottery/wp-content/uploads/sites/35/',
 
 			'http://dummy.xtemos.com/woodmart2/wp-content/uploads/',
 			'https://dummy.xtemos.com/woodmart2/wp-content/uploads/',
@@ -207,6 +272,76 @@ class Helpers extends Singleton {
 			'http://dummy.xtemos.com/woodmart2/makeup-gutenberg/',
 			'https://dummy.xtemos.com/woodmart2/makeup-gutenberg/',
 
+			'http://dummy.xtemos.com/woodmart2/marketplace2-elementor/',
+			'https://dummy.xtemos.com/woodmart2/marketplace2-elementor/',
+			'http://dummy.xtemos.com/woodmart2/marketplace2/',
+			'https://dummy.xtemos.com/woodmart2/marketplace2/',
+			'http://dummy.xtemos.com/woodmart2/marketplace2-gutenberg/',
+			'https://dummy.xtemos.com/woodmart2/marketplace2-gutenberg/',
+
+			'http://dummy.xtemos.com/woodmart2/t-shirts-elementor/',
+			'https://dummy.xtemos.com/woodmart2/t-shirts-elementor/',
+			'http://dummy.xtemos.com/woodmart2/t-shirts/',
+			'https://dummy.xtemos.com/woodmart2/t-shirts/',
+			'http://dummy.xtemos.com/woodmart2/t-shirts-gutenberg/',
+			'https://dummy.xtemos.com/woodmart2/t-shirts-gutenberg/',
+
+			'http://dummy.xtemos.com/woodmart2/handmade-bags-elementor/',
+			'https://dummy.xtemos.com/woodmart2/handmade-bags-elementor/',
+			'http://dummy.xtemos.com/woodmart2/handmade-bags/',
+			'https://dummy.xtemos.com/woodmart2/handmade-bags/',
+			'http://dummy.xtemos.com/woodmart2/handmade-bags-gutenberg/',
+			'https://dummy.xtemos.com/woodmart2/handmade-bags-gutenberg/',
+
+			'http://dummy.xtemos.com/woodmart2/vinyls-elementor/',
+			'https://dummy.xtemos.com/woodmart2/vinyls-elementor/',
+			'http://dummy.xtemos.com/woodmart2/vinyls/',
+			'https://dummy.xtemos.com/woodmart2/vinyls/',
+			'http://dummy.xtemos.com/woodmart2/vinyls-gutenberg/',
+			'https://dummy.xtemos.com/woodmart2/vinyls-gutenberg/',
+
+			'http://dummy.xtemos.com/woodmart2/pets-elementor/',
+			'https://dummy.xtemos.com/woodmart2/pets-elementor/',
+			'http://dummy.xtemos.com/woodmart2/pets/',
+			'https://dummy.xtemos.com/woodmart2/pets/',
+			'http://dummy.xtemos.com/woodmart2/pets-gutenberg/',
+			'https://dummy.xtemos.com/woodmart2/pets-gutenberg/',
+
+			'http://dummy.xtemos.com/woodmart2/christmas-2-elementor/',
+			'https://dummy.xtemos.com/woodmart2/christmas-2-elementor/',
+			'http://dummy.xtemos.com/woodmart2/christmas-2/',
+			'https://dummy.xtemos.com/woodmart2/christmas-2/',
+			'http://dummy.xtemos.com/woodmart2/christmas-2-gutenberg/',
+			'https://dummy.xtemos.com/woodmart2/christmas-2-gutenberg/',
+
+			'http://dummy.xtemos.com/woodmart2/merchandise-elementor/',
+			'https://dummy.xtemos.com/woodmart2/merchandise-elementor/',
+			'http://dummy.xtemos.com/woodmart2/merchandise/',
+			'https://dummy.xtemos.com/woodmart2/merchandise/',
+			'http://dummy.xtemos.com/woodmart2/merchandise-gutenberg/',
+			'https://dummy.xtemos.com/woodmart2/merchandise-gutenberg/',
+
+			'http://dummy.xtemos.com/woodmart2/perfumes-elementor/',
+			'https://dummy.xtemos.com/woodmart2/perfumes-elementor/',
+			'http://dummy.xtemos.com/woodmart2/perfumes/',
+			'https://dummy.xtemos.com/woodmart2/perfumes/',
+			'http://dummy.xtemos.com/woodmart2/perfumes-gutenberg/',
+			'https://dummy.xtemos.com/woodmart2/perfumes-gutenberg/',
+
+			'http://dummy.xtemos.com/woodmart2/fashion-2-elementor/',
+			'https://dummy.xtemos.com/woodmart2/fashion-2-elementor/',
+			'http://dummy.xtemos.com/woodmart2/fashion-2/',
+			'https://dummy.xtemos.com/woodmart2/fashion-2/',
+			'http://dummy.xtemos.com/woodmart2/fashion-2-gutenberg/',
+			'https://dummy.xtemos.com/woodmart2/fashion-2-gutenberg/',
+
+			'http://dummy.xtemos.com/woodmart2/electronics-3-elementor/',
+			'https://dummy.xtemos.com/woodmart2/electronics-3-elementor/',
+			'http://dummy.xtemos.com/woodmart2/electronics-3/',
+			'https://dummy.xtemos.com/woodmart2/electronics-3/',
+			'http://dummy.xtemos.com/woodmart2/electronics-3-gutenberg/',
+			'https://dummy.xtemos.com/woodmart2/electronics-3-gutenberg/',
+
 			'https://dummy.xtemos.com/woodmart2/gutenberg/',
 			'http://dummy.xtemos.com/woodmart2/gutenberg/',
 
@@ -218,6 +353,13 @@ class Helpers extends Singleton {
 			'http://woodmart.xtemos.com/',
 		),
 	);
+
+	/**
+	 * Current page builder.
+	 *
+	 * @var string
+	 */
+	public $page_builder;
 
 	/**
 	 * Init.
@@ -349,7 +491,7 @@ class Helpers extends Singleton {
 
 		$demo = get_option( 'wd_imported_data_' . $version );
 
-		if ( in_array( $version, $this->get_base_version(), true ) ) {
+		if ( in_array( $version, $this->get_base_version(), true ) || str_starts_with( $version, 'floating-block-' ) || str_starts_with( $version, 'popup-' ) || str_starts_with( $version, 'layout-' ) ) {
 			return $demo;
 		}
 
@@ -366,11 +508,21 @@ class Helpers extends Singleton {
 	 * @return string
 	 */
 	public function get_page_builder() {
-		if ( 'native' === woodmart_get_opt( 'current_builder' ) ) {
-			return 'gutenberg';
+		if ( ! $this->page_builder ) {
+			$this->set_page_builder( 'native' === woodmart_get_opt( 'current_builder' ) ? 'gutenberg' : woodmart_get_current_page_builder() );
 		}
 
-		return woodmart_get_current_page_builder();
+		return $this->page_builder;
+	}
+
+	/**
+	 * Set current builder.
+	 *
+	 * @param string $builder Builder.
+	 * @return void
+	 */
+	public function set_page_builder( $builder ) {
+		$this->page_builder = $builder;
 	}
 
 	/**
@@ -379,6 +531,6 @@ class Helpers extends Singleton {
 	 * @return array
 	 */
 	public function get_base_version() {
-		return array( 'base', 'megamarket_base', 'accessories_base', 'mega-electronics_base', 'furniture2_base', 'plants_base', 'kids_base', 'games_base-light', 'games_base-dark', 'organic-farm_base', 'pills_base', 'pottery_base', 'vegetables_base', 'makeup_base' );
+		return array( 'base', 'megamarket_base', 'accessories_base', 'mega-electronics_base', 'furniture2_base', 'plants_base', 'kids_base', 'games_base-light', 'games_base-dark', 'organic-farm_base', 'pills_base', 'pottery_base', 'vegetables_base', 'makeup_base', 'marketplace2_base', 't-shirts_base', 'handmade-bags_base', 'vinyls_base', 'pets_base', 'christmas-2_base', 'merchandise_base', 'perfumes_base', 'fashion-2_base', 'electronics-3_base' );
 	}
 }

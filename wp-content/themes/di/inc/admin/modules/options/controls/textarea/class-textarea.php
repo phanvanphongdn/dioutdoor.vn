@@ -2,7 +2,7 @@
 /**
  * Textarea with text or HTML control.
  *
- * @package xts
+ * @package woodmart
  */
 
 namespace XTS\Admin\Modules\Options\Controls;

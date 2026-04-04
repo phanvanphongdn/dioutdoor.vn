@@ -1,50 +1,7 @@
 /* global woodmart_settings */
 (function($) {
 	woodmartThemeModule.searchFullScreen = function() {
-		var $searchWrapper = $('[class*=wd-search-full-screen]');
-
-		if ( 'yes' === woodmart_settings.ajax_fullscreen_content ) {
-			woodmartThemeModule.$body.on('mouseover click touchstart', '.wd-header-search.wd-display-full-screen > a, .wd-search-form.wd-display-full-screen-2', function() {
-				var $this = $(this);
-
-				if ($this.hasClass('wd-inited')) {
-					return;
-				}
-
-				$this.addClass('wd-inited');
-
-				var $contentArea = $searchWrapper.find('.wd-search-area');
-
-				if ( ! $contentArea.length ) {
-					return;
-				}
-
-				$.ajax({
-					url     : woodmart_settings.ajaxurl,
-					data    : {
-						action: 'woodmart_load_full_search_html',
-					},
-					dataType: 'json',
-					method  : 'POST',
-					success : function(response) {
-						if (response.content) {
-							$contentArea.html(response.content);
-							setTimeout( function () {
-								$searchWrapper.addClass('wp-content-loaded');
-							}, 10);
-
-							woodmartThemeModule.$document.trigger('wdSearchFullScreenContentLoaded');
-							woodmartThemeModule.$document.trigger('wood-images-loaded');
-						}
-					},
-					error   : function() {
-						console.log('loading html full search ajax error');
-					}
-				});
-			});
-		}
-
-		woodmartThemeModule.$body.on('click', '.wd-header-search.wd-display-full-screen > a, .wd-search-form.wd-display-full-screen-2', function(e) {
+		woodmartThemeModule.$body.on('click', '.wd-header-search.wd-display-full-screen > a, .wd-header-search.wd-display-full-screen-2 > a, .wd-search-form.wd-display-full-screen, .wd-search-form.wd-display-full-screen-2', function(e) {
 			e.preventDefault();
 
 			var $this = $(this);
@@ -57,8 +14,8 @@
 			if (isOpened()) {
 				closeWidget();
 			} else {
-				if ( ! $this.hasClass('wd-display-full-screen-2') ) {
-					$wrapper = $('.wd-search-full-screen');
+				if ( ! $this.hasClass('wd-display-full-screen-2') && ! $this.parent().hasClass('wd-display-full-screen-2') ) {
+					$wrapper = $('.wd-search-full-screen');					
 					calculationOffset();
 				}
 
@@ -68,13 +25,15 @@
 			}
 		});
 
-		woodmartThemeModule.$body.on('click', '.wd-close-search a, .wd-page-wrapper, .header-banner', function(event) {
+		woodmartThemeModule.$body.on('click', '.wd-close-search a, .wd-page-wrapper, .wd-hb', function(event) {
+			var isCloseBtn   = $(event.target).closest('.wd-close-search a').length;
+			var isFullScreen = $(event.target).closest('.wd-search-full-screen').length;
 
-			if (!$(event.target).is('.wd-close-search a') && $(event.target).closest('.wd-search-full-screen').length) {
+			if (!isCloseBtn && isFullScreen) {
 				return;
 			}
 
-			if ( $(event.target).is('.wd-close-search a') ) {
+			if ( isCloseBtn ) {
 				event.preventDefault();
 			}
 
@@ -91,11 +50,12 @@
 		};
 
 		var closeWidget = function() {
+			var $searchWrapper = $('[class*=wd-search-full-screen]');
+
 			$('html').removeClass('wd-search-opened');
 			$searchWrapper.removeClass('wd-opened');
-			setTimeout( function () {
-				$searchWrapper.removeClass('wd-searched');
-			}, 500);
+			$searchWrapper.removeClass('wd-searched');
+			$searchWrapper.trigger('wdCloseSearch');
 		};
 
 		var calculationOffset = function () {
@@ -113,8 +73,11 @@
 				}
 			} else {
 				offset = $mainHeader.outerHeight() + barHeight;
-				if (woodmartThemeModule.$body.hasClass('header-banner-display')) {
-					offset += $('.header-banner').outerHeight();
+
+				$headerBanner = $('.wd-hb-wrapp');
+
+				if ($headerBanner.length > 0 && $headerBanner.hasClass('wd-display')) {
+					offset += $headerBanner.outerHeight();
 				}
 			}
 
@@ -127,6 +90,7 @@
 			$('html').addClass('wd-search-opened');
 
 			$wrapper.addClass('wd-opened');
+			$wrapper.trigger('wdOpenSearch');
 
 			setTimeout(function() {
 				var $input = $wrapper.find('input[type="text"]');
@@ -134,14 +98,6 @@
 
 				$input[0].setSelectionRange(length, length);
 				$input.trigger('focus');
-
-				if ( woodmartThemeModule.windowWidth > 1024 ) {
-					woodmartThemeModule.$window.one('scroll', function() {
-						if (isOpened()) {
-							closeWidget();
-						}
-					});
-				}
 			}, 500);
 		};
 

@@ -2,13 +2,14 @@
 /**
  * Object that handles theme options page.
  *
- * @package xts
+ * @package woodmart
  */
 
 namespace XTS\Admin\Modules\Options;
 
 use XTS\Admin\Modules\Options;
 use XTS\Admin\Modules\Options\Presets;
+use XTS\Admin\Modules\Options\Google_Fonts\Local_Data;
 use XTS\Singleton;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -88,6 +89,7 @@ class Page extends Singleton {
 	 */
 	public function page_content() {
 		wp_enqueue_script( 'woodmart-admin-options', WOODMART_ASSETS . '/js/options.js', array(), WOODMART_VERSION, true );
+		wp_enqueue_script( 'woodmart-admin-save-options', WOODMART_ASSETS . '/js/saveThemeSettings.js', array(), WOODMART_VERSION, true );
 		wp_enqueue_script( 'woodmart-theme', WOODMART_SCRIPTS . '/scripts/global/helpers.min.js', array(), WOODMART_VERSION, true );
 		wp_enqueue_script( 'xts-tabs', WOODMART_SCRIPTS . '/scripts/elements/tabs.js', array(), WOODMART_VERSION, true );
 
@@ -113,6 +115,8 @@ class Page extends Singleton {
 		if ( isset( $_GET['settings-updated'] ) ) { // phpcs:ignore
 			do_action( 'xts_theme_settings_save' );
 		}
+
+		$failed_loading_fonts = woodmart_get_opt( 'local_google_fonts' ) ? Local_Data::get_instance()->get_failed_fonts() : array();
 		?>
 		<script>
 			var woodmart_settings = {
@@ -153,7 +157,22 @@ class Page extends Singleton {
 						</div>
 						<div class="xts-col">
 							<div class="xts-sections">
-								<?php $this->display_message(); ?>
+								<div class="xts-notices-wrapper">
+									<div class="xts-notices">
+										<?php $this->display_message(); ?>
+										<?php if ( ! empty( $failed_loading_fonts ) ) : ?>
+											<div class="xts-notice xts-warning">
+												<?php
+													printf(
+														// translators: %s - list of failed loading fonts.
+														esc_html__( 'Some fonts failed to load: %s', 'woodmart' ),
+														esc_html( implode( ', ', $failed_loading_fonts ) )
+													);
+												?>
+											</div>
+										<?php endif; ?>
+									</div>
+								</div>
 								<?php $this->display_sections(); ?>
 								<div class="xts-options-actions">
 									<input type="hidden" class="xts-last-tab-input" name="xts-<?php echo esc_attr( $this->opt_name ); ?>-options[last_tab]" value="<?php echo esc_attr( $this->get_last_tab() ); ?>" />
@@ -202,7 +221,7 @@ class Page extends Singleton {
 			$current_tab = $_GET['tab'];
 		}
 
-		if ( ! isset( $this->_sections[ $current_tab ]['fields'] ) ) {
+		if ( ! isset( $this->_sections[ $current_tab ]['fields'] ) && isset( $this->_sections[ $current_tab ]['id'] ) ) {
 			$parent_id = $this->_sections[ $current_tab ]['id'];
 
 			foreach ( $this->_sections as $section ) {
@@ -227,11 +246,11 @@ class Page extends Singleton {
 		$text = false;
 
 		if ( 'save' === $message ) {
-			$text = esc_html__( 'Settings are successfully saved.', 'woodmart' );
+			$text = esc_html__( 'Settings have been saved successfully.', 'woodmart' );
 		} elseif ( 'import' === $message ) {
-			$text = esc_html__( 'New options are successfully imported.', 'woodmart' );
+			$text = esc_html__( 'New options have been successfully imported.', 'woodmart' );
 		} elseif ( 'reset' === $message ) {
-			$text = esc_html__( 'All options are set to default values.', 'woodmart' );
+			$text = esc_html__( 'All options have been set to default values.', 'woodmart' );
 		}
 
 		if ( $text ) {
@@ -399,9 +418,16 @@ class Page extends Singleton {
 							}
 
 							if ( isset( $field->args['t_tab'] ) && $printed_tabs !== $field->args['t_tab']['id'] ) {
-								$attrs = '';
+								$attrs        = '';
+								$tabs_classes = 'xts-field wd-tabs xts-tabs wd-style-' . $field->args['t_tab']['style'];
+
+								if ( isset( $field->args['t_tab']['class'] ) ) {
+									$tabs_classes .= ' ' . $field->args['t_tab']['class'];
+								}
 
 								if ( isset( $field->args['t_tab']['requires'] ) ) {
+									$tabs_classes .= ' ' . $field->dependency_class( $field->args['t_tab']['requires'] );
+
 									$data = '';
 									foreach ( $field->args['t_tab']['requires'] as $dependency ) {
 										if ( is_array( $dependency['value'] ) ) {
@@ -413,7 +439,7 @@ class Page extends Singleton {
 									$attrs .= 'data-dependency="' . esc_attr( $data ) . '"';
 								}
 
-								echo '<div class="wd-tabs xts-tabs wd-style-' . $field->args['t_tab']['style'] . '" ' . $attrs . '>';
+								echo '<div class="' . $tabs_classes . '" ' . $attrs . '>';
 
 								echo '<div class="xts-tabs-header wd-tabs-header">';
 								if ( isset( $field->args['t_tab']['title'] ) ) {
@@ -504,6 +530,48 @@ class Page extends Singleton {
 	 */
 	public function is_inherit_field( $id ) {
 		return false === strpos( $this->get_fields_to_save(), $id );
+	}
+
+	/**
+	 * Get dependency class.
+	 *
+	 * @since 1.0.0
+	 */
+	private function dependency_class() {
+		if ( ! isset( $this->args['requires'] ) ) {
+			return;
+		}
+
+		$shown = true;
+
+		foreach ( $this->args['requires'] as $dependency ) {
+			if ( $shown == false ) {
+				continue;
+			}
+
+			switch ( $dependency['compare'] ) {
+				case 'equals':
+					if ( isset( $this->options[ $dependency['key'] ] ) ) {
+						if ( is_array( $dependency['value'] ) ) {
+							$shown = in_array( $this->options[ $dependency['key'] ], $dependency['value'] );
+						} else {
+							$shown = $this->options[ $dependency['key'] ] == $dependency['value'];
+						}
+					}
+					break;
+				case 'not_equals':
+					if ( isset( $this->options[ $dependency['key'] ] ) ) {
+						if ( is_array( $dependency['value'] ) ) {
+							$shown = ! in_array( $this->options[ $dependency['key'] ], $dependency['value'] );
+						} else {
+							$shown = $this->options[ $dependency['key'] ] != $dependency['value'];
+						}
+					}
+					break;
+			}
+		}
+
+		return ( $shown ) ? 'xts-shown' : 'xts-hidden';
 	}
 }
 

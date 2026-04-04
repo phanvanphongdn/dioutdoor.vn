@@ -2,7 +2,7 @@
 /**
  * Woodmart colorpicker.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 if ( ! defined( 'WOODMART_THEME_DIR' ) ) {

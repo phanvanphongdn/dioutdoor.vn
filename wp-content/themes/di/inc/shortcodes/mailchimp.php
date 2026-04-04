@@ -1,8 +1,8 @@
 <?php
 /**
- * Mailchimp shortcode file.
+ * Shortcode for Mailchimp element.
  *
- * @package Shortcode.
+ * @package woodmart.
  */
 
 if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
@@ -10,6 +10,13 @@ if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
 }
 
 if ( ! function_exists( 'woodmart_shortcode_mailchimp' ) ) {
+	/**
+	 * Mailchimp shortcode
+	 *
+	 * @param array $atts Shortcode attributes.
+	 *
+	 * @return string
+	 */
 	function woodmart_shortcode_mailchimp( $atts ) {
 		$mc4wp_classes = apply_filters( 'vc_shortcodes_css_class', '', '', $atts );
 

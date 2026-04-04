@@ -2,7 +2,7 @@
 /**
  * Marquee element.
  *
- * @package xts
+ * @package woodmart
  */
 
 namespace XTS\Elementor;
@@ -421,7 +421,7 @@ class Marquee extends Widget_Base {
 		$this->add_render_attribute(
 			array(
 				'wrapper' => array(
-					'class'          => array(
+					'class' => array(
 						'wd-marquee',
 						'yes' === $settings['paused_on_hover'] ? 'wd-with-pause' : '',
 					),
@@ -442,7 +442,7 @@ class Marquee extends Widget_Base {
 				}
 			}
 		} elseif ( 'icon' === $settings['icon_type'] && ! empty( $settings['icon'] ) ) {
-			$icon_output = woodmart_elementor_get_render_icon( $settings['icon'], array( 'class' => 'wd-marquee-icon wd-icon' ) );
+			$icon_output = woodmart_elementor_get_render_icon( $settings['icon'], array( 'class' => 'wd-icon' ) );
 		}
 
 		$custom_image_size = ! empty( $settings['image_custom_dimension']['width'] ) ? $settings['image_custom_dimension'] : array(

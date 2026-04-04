@@ -1,7 +1,6 @@
 <?php
 
 use XTS\Modules\Layouts\Main;
-use XTS\Modules\Shipping_Progress_Bar\Main as Shipping_Progress_Bar_Module;
 
 if ( ! function_exists( 'wd_gutenberg_cart_total' ) ) {
 	function wd_gutenberg_cart_total( $block_attributes ) {
@@ -10,6 +9,7 @@ if ( ! function_exists( 'wd_gutenberg_cart_total' ) ) {
 		}
 
 		$classes = wd_get_gutenberg_element_classes( $block_attributes );
+		$el_id   = wd_get_gutenberg_element_id( $block_attributes );
 
 		Main::setup_preview();
 
@@ -27,6 +27,8 @@ if ( ! function_exists( 'wd_gutenberg_cart_total' ) ) {
 			$shortcode_cart->calculate_shipping();
 		}
 
+		do_action( 'woocommerce_check_cart_items' );
+
 		WC()->cart->calculate_fees();
 		WC()->cart->calculate_shipping();
 		WC()->cart->calculate_totals();
@@ -34,7 +36,7 @@ if ( ! function_exists( 'wd_gutenberg_cart_total' ) ) {
 		ob_start();
 
 		?>
-			<div id="<?php echo esc_attr( wd_get_gutenberg_element_id( $block_attributes ) ); ?>" class="wd-cart-totals<?php echo esc_attr( $classes ); ?>">
+			<div <?php echo $el_id ? 'id="' . esc_attr( $el_id ) . '" ' : ''; ?>class="wd-cart-totals<?php echo esc_attr( $classes ); ?>">
 				<?php woocommerce_cart_totals(); ?>
 			</div>
 		<?php

@@ -368,6 +368,7 @@
     "blog_columns": "3",
     "blog_spacing": "20",
     "blog_pagination": "pagination",
+    "blog_archive_layout": "full-width",
     "quick_shop_variable": "0",
     "variation_gallery": "0",
     "label_shape": "rounded-sm",
@@ -390,7 +391,7 @@
     "new_label_text_color": {
         "idle": "rgb(36,36,36)"
     },
-    "brands_attribute": "pa_brand",
+    "brands_attribute": "",
     "compare": "0",
     "wishlist": "1",
     "wishlist_page": "25",
@@ -464,5 +465,7 @@
     "carousel_arrows_together_border_style": "",
     "carousel_pagin_border_style": "",
     "products_spacing_tablet": "30",
-    "products_spacing_mobile": "10"
+    "products_spacing_mobile": "10",
+    "custom_product_tabs_enabled": "1",
+    "legacy_product_tabs_enabled": "0"
 }

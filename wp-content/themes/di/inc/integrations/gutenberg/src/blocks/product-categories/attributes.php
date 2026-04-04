@@ -1,8 +1,18 @@
 <?php
+/**
+ * Gutenberg Product Categories Block Attributes.
+ *
+ * @package woodmart
+ */
 
 use XTS\Gutenberg\Block_Attributes;
 
 if ( ! function_exists( 'wd_get_block_product_categories_attrs' ) ) {
+	/**
+	 * Get Product Categories Block Attributes.
+	 *
+	 * @return array
+	 */
 	function wd_get_block_product_categories_attrs() {
 		$attr = new Block_Attributes();
 
@@ -25,8 +35,8 @@ if ( ! function_exists( 'wd_get_block_product_categories_attrs' ) ) {
 					'default' => true,
 				),
 				'mobile_accordion'               => array(
-					'type'    => 'boolean',
-					'default' => true,
+					'type'    => 'string',
+					'default' => 'no',
 				),
 				'shop_categories_ancestors'      => array(
 					'type' => 'boolean',
@@ -62,6 +72,10 @@ if ( ! function_exists( 'wd_get_block_product_categories_attrs' ) ) {
 				),
 				'color_scheme'                   => array(
 					'type' => 'string',
+				),
+				'categories_with_shadow'         => array(
+					'type'    => 'string',
+					'default' => '',
 				),
 				'navAlignment'                   => array(
 					'type'       => 'string',
@@ -124,6 +138,17 @@ if ( ! function_exists( 'wd_get_block_product_categories_attrs' ) ) {
 				'grid_product_count'             => array(
 					'type' => 'string',
 				),
+				'icon_alignment'                 => array(
+					'type' => 'string',
+				),
+				'iconWidth'                      => array(
+					'type'       => 'string',
+					'responsive' => true,
+				),
+				'iconHeight'                     => array(
+					'type'       => 'string',
+					'responsive' => true,
+				),
 			)
 		);
 
@@ -132,8 +157,8 @@ if ( ! function_exists( 'wd_get_block_product_categories_attrs' ) ) {
 		$attr->add_attr( wd_get_color_control_attrs( 'categoriesBorderColor' ) );
 		$attr->add_attr( wd_get_color_control_attrs( 'categoriesBackground' ) );
 		$attr->add_attr( wd_get_typography_control_attrs(), 'title' );
-		$attr->add_attr( wd_get_advanced_tab_attrs() );
-		$attr->add_attr( wd_get_carousel_settings_attrs() );
+		wd_get_carousel_settings_attrs( $attr );
+		wd_get_advanced_tab_attrs( $attr );
 
 		return $attr->get_attr();
 	}

@@ -1,11 +1,16 @@
 <?php
+define( 'WP_CACHE', false ); // Added by WP Rocket
+
+
+
+
 
 //Begin Really Simple SSL session cookie settings
 @ini_set('session.cookie_httponly', true);
 @ini_set('session.cookie_secure', true);
 @ini_set('session.use_only_cookies', true);
 //END Really Simple SSL cookie settings
-define( 'WP_CACHE', true ); // Added by WP Rocket
+ // Added by WP Rocket
 define('WP_MEMORY_LIMIT', '512M');
 define( 'EWWW_IMAGE_OPTIMIZER_USE_LQIP', true );
 /*
@@ -47,11 +52,11 @@ define('WP_REDIS_CONFIG', [
  */
 // ** MySQL settings - You can get this info from your` web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'bfqaombi_dioutdoor');
+define('DB_NAME', 'bfqaombi_edit');
 /** MySQL database username */
-define('DB_USER', 'bfqaombi_dioutdoor');
+define('DB_USER', 'bfqaombi_edit');
 /** MySQL database password */
-define('DB_PASSWORD', 'P-+XlbFbKi7,^R)?Ed');
+define('DB_PASSWORD', 'J9V07rEkLB,s0y*2');
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
 /** Database Charset to use in creating database tables. */
@@ -95,12 +100,12 @@ $table_prefix  = 'erj0pc_';
  *
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
-define('WP_DEBUG', true);
-// Enable Debug logging to the /wp-content/debug.log file
-define( 'WP_DEBUG_LOG', true );
-define( 'WP_DEBUG_DISPLAY', false );
-@ini_set( 'display_errors', 0 );
+define( 'WP_DEBUG', false);
+/**
 
+ * *Enable Debug logging to the /wp-content/debug.log file */
+
+ 
 /** Absolute path to the WordPress directory. */
 if ( ! defined('ABSPATH') ){
 	define('ABSPATH', dirname(__FILE__) . '/');
@@ -108,6 +113,6 @@ if ( ! defined('ABSPATH') ){
 define('UPLOADS', 'media');
 //define( 'WPMS_ON', true );hhwfzljqhtjhuvhu
 //define( 'WPMS_SMTP_PASS', 'S!xqCzSqa5VqKK' );
-define('DOMAIN_CURRENT_SITE', 'dioutdoor.vn');
+define('DOMAIN_CURRENT_SITE', 'edit.dioutdoor.vn');
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');

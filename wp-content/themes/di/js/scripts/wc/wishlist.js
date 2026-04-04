@@ -37,25 +37,59 @@
 		woodmartThemeModule.$body.on('click', '.wd-wishlist-btn a', function(e) {
 			var $this = $(this);
 
-			if (!$this.hasClass('added')) {
-				e.preventDefault();
-			} else {
-				return true;
-			}
+			e.preventDefault();
 
 			var productId = $this.data('product-id');
+			var $buttons = $(`.wd-wishlist-btn a[data-product-id='${productId}']`);
 			var key = $this.data('key');
 
 			if ( woodmartThemeModule.$body.hasClass('logged-in') || typeof Cookies === 'undefined' ) {
-				$this.addClass('loading');
+				$buttons.addClass('loading');
 
-				if ( 'undefined' !== typeof woodmart_settings.wishlist_expanded && 'yes' === woodmart_settings.wishlist_expanded && 'disable' !== woodmart_settings.wishlist_show_popup && woodmartThemeModule.$body.hasClass('logged-in') ) {
+				if ( ! $buttons.hasClass('added') && 'undefined' !== typeof woodmart_settings.wishlist_expanded && 'yes' === woodmart_settings.wishlist_expanded && 'disable' !== woodmart_settings.wishlist_show_popup && woodmartThemeModule.$body.hasClass('logged-in') ) {
 					woodmartThemeModule.$document.trigger('wdShowWishlistGroupPopup', [ productId, key ] );
 					return;
 				}
 
-				addProductWishlistAJAX( productId, '', key );
+				if ($buttons.hasClass('added')) {
+					$.ajax({
+						url: woodmart_settings.ajaxurl,
+						data: {
+							action: 'woodmart_remove_from_wishlist',
+							product_id: productId,
+							key: woodmart_settings.wishlist_page_nonce,
+						},
+						dataType: 'json',
+						method: 'GET',
+						success: function (response) {
+							if ('undefined' !== typeof response.count) {
+								updateCountWidget(response.count);
+							}
+
+							if (response.fragments) {
+								woodmartThemeModule.$document.trigger('wdWishlistSaveFragments', [response.fragments, response.hash]);
+
+								$.each( response.fragments, function( key, html ) {
+									woodmartThemeModule.removeDuplicatedStylesFromHTML(html, function(html) {
+										$( key ).replaceWith(html);
+									});
+								});
+							}
+
+							updateButton( $buttons, false );
+						},
+						error: function () {
+							console.log('We cant remove from wishlist. Something wrong with AJAX response. Probably some PHP conflict.');
+						},
+						complete: function() {
+							$buttons.removeClass('loading');
+						}
+					});
+				} else {
+					addProductWishlistAJAX( productId, '', key );
+				}
 			} else {
+				var added = true;
 				var products = {};
 				var wishlistCookies = Cookies.get(productCookiesName);
 
@@ -67,26 +101,32 @@
 					}
 				}
 
-				products[ productId ] = {
-					'product_id' : productId
-				};
+				if ( $buttons.hasClass('added') && 'undefined' !== typeof products[ productId ] ) {
+					added = false;
+
+					delete products[ productId ];
+				} else {
+					products[ productId ] = {
+						'product_id' : productId
+					};
+				}
 
 				var count = Object.keys(products).length
 
 				updateCountWidget(count);
 
 				Cookies.set(productCookiesName, JSON.stringify(products), {
-					expires: 7,
+					expires: parseInt(woodmart_settings.wishlist_cookie_expires),
 					path   : woodmart_settings.cookie_path,
 					secure : woodmart_settings.cookie_secure_param
 				});
 				Cookies.set(countCookiesName, count, {
-					expires: 7,
+					expires: parseInt(woodmart_settings.wishlist_cookie_expires),
 					path   : woodmart_settings.cookie_path,
 					secure : woodmart_settings.cookie_secure_param
 				});
 
-				updateButton( $this );
+				updateButton( $buttons, added );
 			}
 		});
 
@@ -130,12 +170,12 @@
 				updateCountWidget( count );
 
 				Cookies.set(productCookiesName, JSON.stringify(products), {
-					expires: 7,
+					expires: parseInt(woodmart_settings.wishlist_cookie_expires),
 					path   : woodmart_settings.cookie_path,
 					secure : woodmart_settings.cookie_secure_param
 				});
 				Cookies.set(countCookiesName, count, {
-					expires: 7,
+					expires: parseInt(woodmart_settings.wishlist_cookie_expires),
 					path   : woodmart_settings.cookie_path,
 					secure : woodmart_settings.cookie_secure_param
 				});
@@ -274,7 +314,7 @@
 
 		// Add product in wishlist.
 		function addProductWishlistAJAX( productId, group, key, callback = '' ) {
-			var $this = $('a[data-product-id=' + productId + ']');
+			var $this = $('.wd-wishlist-btn a[data-product-id=' + productId + ']');
 
 			$.ajax({
 				url     : woodmart_settings.ajaxurl,
@@ -323,7 +363,7 @@
 		function removeProductWishlistAJAX( productId, groupId, $productsWrapper, callback = '' ) {
 			var productsAtts = '';
 
-			if ( 'undefined' !== typeof $productsWrapper.data('atts') ) {
+			if ( $productsWrapper && 'undefined' !== typeof $productsWrapper.data('atts') ) {
 				productsAtts = $productsWrapper.data('atts');
 
 				productsAtts.ajax_page = $productsWrapper.attr('data-paged');
@@ -371,18 +411,29 @@
 			});
 		}
 
-		function updateButton( $button ) {
-			var addedText = $button.data('added-text');
+		function updateButton( $button, added = true ) {
+			var text = woodmart_settings.wishlist_remove_button_text;
 
-			if ($button.find('span').length > 0) {
-				$button.find('span').text(addedText);
-			} else {
-				$button.text(addedText);
+			if ( ! added ) {
+				text = woodmart_settings.wishlist_add_button_text;
 			}
 
-			$button.addClass('added');
+			if ($button.find('.wd-action-text').length > 0) {
+				$button.find('.wd-action-text').text(text);
+			} else {
+				$button.text(text);
+			}
+
+			if ( added ) {
+				$button.addClass('added');
+			} else {
+				$button.removeClass('added');
+			}
 
 			woodmartThemeModule.$document.trigger('added_to_wishlist');
+			setTimeout( function() {
+				woodmartThemeModule.$document.trigger('wdUpdateTooltip', $button);
+			})
 		}
 	};
 
@@ -417,12 +468,12 @@
 
 			$button.addClass('added');
 
-			var addedText = $button.data('added-text');
+			var text = woodmart_settings.wishlist_remove_button_text;
 
-			if ($button.find('span').length > 0) {
-				$button.find('span').text(addedText);
+			if ($button.find('.wd-action-text').length > 0) {
+				$button.find('.wd-action-text').text(text);
 			} else {
-				$button.text(addedText);
+				$button.text(text);
 			}
 		});
 	};

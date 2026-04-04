@@ -1,13 +1,30 @@
 <?php
+/**
+ * Gutenberg Product Categories Block Render.
+ *
+ * @package woodmart
+ */
+
 if ( ! function_exists( 'wd_gutenberg_product_categories' ) ) {
+	/**
+	 * Render Product Categories Block.
+	 *
+	 * @param array $block_attributes Block attributes.
+	 * @return false|string
+	 */
 	function wd_gutenberg_product_categories( $block_attributes ) {
 		if ( ! woodmart_woocommerce_installed() ) {
 			return '';
 		}
 
-		wd_replace_boolean_to_yes_no( array( 'images', 'product_count', 'mobile_accordion', 'hide_empty', 'shop_categories_ancestors', 'shop_categories_ancestors', 'hide_pagination_control', 'hide_prev_next_buttons', 'scroll_per_page', 'center_mode', 'wrap', 'autoplay', 'hide_scrollbar', 'autoheight', 'disable_overflow_carousel', 'dynamic_pagination_control', 'scroll_carousel_init' ), $block_attributes );
+		woodmart_replace_boolean_to_yes_no( array( 'images', 'product_count', 'hide_empty', 'shop_categories_ancestors', 'shop_categories_ancestors', 'hide_pagination_control', 'hide_prev_next_buttons', 'scroll_per_page', 'center_mode', 'wrap', 'autoplay', 'hide_scrollbar', 'autoheight', 'disable_overflow_carousel', 'dynamic_pagination_control', 'scroll_carousel_init' ), $block_attributes );
 
-		$block_attributes['categories_design']      = ! empty( $block_attributes['categories_design'] ) ? $block_attributes['categories_design'] : woodmart_get_opt( 'categories_design' );
+		if ( true === $block_attributes['mobile_accordion'] ) {
+			$block_attributes['mobile_accordion'] = 'yes';
+		}
+
+		$block_attributes['is_wpb']            = false;
+		$block_attributes['categories_design'] = ! empty( $block_attributes['categories_design'] ) ? $block_attributes['categories_design'] : woodmart_get_opt( 'categories_design' );
 
 		$block_attributes['el_class'] = wd_get_gutenberg_element_classes( $block_attributes );
 		$block_attributes['el_id']    = wd_get_gutenberg_element_id( $block_attributes );
@@ -48,6 +65,6 @@ if ( ! function_exists( 'wd_gutenberg_product_categories' ) ) {
 			);
 		}
 
-		return woodmart_shortcode_categories( $block_attributes, '' );
+		return woodmart_shortcode_categories( $block_attributes );
 	}
 }

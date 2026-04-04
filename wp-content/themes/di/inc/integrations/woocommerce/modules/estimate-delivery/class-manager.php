@@ -9,6 +9,7 @@ namespace XTS\Modules\Estimate_Delivery;
 
 use XTS\Singleton;
 use WC_Shipping_Zones;
+use WC_Shipping_Zone;
 use WC_Product;
 
 /**
@@ -109,12 +110,82 @@ class Manager extends Singleton {
 		$current_meta_boxes = array();
 
 		foreach ( $meta_boxes_keys as $meta_box_id ) {
-			$current_meta_boxes[ $meta_box_id ] = maybe_unserialize( get_post_meta( $id, $meta_box_id, true ) );
+			$meta_box_value = get_post_meta( $id, $meta_box_id, true );
+
+			if ( 'est_del_shipping_method' === $meta_box_id && is_array( $meta_box_value ) ) {
+				$meta_box_value = array_filter( $meta_box_value );
+			}
+
+			$current_meta_boxes[ $meta_box_id ] = $meta_box_value;
 		}
 
 		set_transient( $this->transient_est_del_rule . '_' . $id, $current_meta_boxes );
 
 		return $current_meta_boxes;
+	}
+
+	/**
+	 * Helper for check product stock status.
+	 *
+	 * @param WC_Product $product Instance of WC_Product class.
+	 *
+	 * @return bool
+	 */
+	public function check_product_in_stock_on_single_page( $product ) {
+		$product_in_stock = $product->is_in_stock();
+
+		if ( $product->is_type( 'variable' ) ) {
+			$variations_ids = $product->get_children();
+			$var_in_stock   = array_filter(
+				$variations_ids,
+				function ( $id ) {
+					$variation = wc_get_product( $id );
+
+					return $variation instanceof WC_Product && $variation->is_in_stock();
+				}
+			);
+
+			$product_in_stock = ! empty( $var_in_stock );
+		}
+
+		return $product_in_stock;
+	}
+
+	/**
+	 * Helper get rules.
+	 *
+	 * @return array A list of rules where those that are not empty est_del_shipping_method go first.
+	 */
+	public function group_rules_by_shipping_method() {
+		$rule_ids = $this->get_all_rule_posts_ids();
+
+		if ( empty( $rule_ids ) ) {
+			return array();
+		}
+
+		$rules_with_shipping_method    = array();
+		$rules_without_shipping_method = array();
+
+		foreach ( $rule_ids as $id ) {
+			$rule = $this->get_single_post_meta_boxes( $id );
+
+			if ( empty( $rule['est_del_priority'] ) ) {
+				$rule['est_del_priority'] = 1;
+			}
+
+			$rule['key'] = $id;
+
+			if ( ! empty( $rule['est_del_shipping_method'] ) ) {
+				$rules_with_shipping_method[ $id ] = $rule;
+			} else {
+				$rules_without_shipping_method[ $id ] = $rule;
+			}
+		}
+
+		uasort( $rules_with_shipping_method, array( $this, 'sort_by_priority' ) );
+		uasort( $rules_without_shipping_method, array( $this, 'sort_by_priority' ) );
+
+		return array_merge( $rules_with_shipping_method, $rules_without_shipping_method );
 	}
 
 	/**
@@ -127,83 +198,38 @@ class Manager extends Singleton {
 	 */
 	public function get_rule_for_product( $product, $shipping_method_id = false ) {
 		if ( ! $product instanceof WC_Product ) {
-			return;
+			return array();
 		}
 
-		if ( is_single() ) {
-			$product_in_stock = $product->is_in_stock();
-
-			if ( $product->is_type( 'variable' ) ) {
-				$variations_ids = $product->get_children();
-				$var_in_stock   = array_filter(
-					$variations_ids,
-					function ( $id ) {
-						$variation = wc_get_product( $id );
-
-						return $variation instanceof WC_Product && $variation->is_in_stock();
-					}
-				);
-
-				$product_in_stock = ! empty( $var_in_stock );
-			}
-		} else {
-			$product_in_stock = true;
-		}
-
-		$ignore = ! $product->exists() || ! $product->is_purchasable() || ! $product_in_stock || $product->is_type( 'external' ) || $product->is_virtual();
+		$product_in_stock = is_single() || is_ajax() ? $this->check_product_in_stock_on_single_page( $product ) : true;
+		$ignore           = ! $product->exists() || ! $product->is_purchasable() || ! $product_in_stock || $product->is_type( 'external' ) || $product->is_virtual();
 
 		if ( apply_filters( 'woodmart_est_del_ignore', $ignore, $product ) ) {
 			return array();
 		}
 
-		$rule_ids = $this->get_all_rule_posts_ids();
-		$rules    = array();
-		$get_rule = array();
+		$user_method = $shipping_method_id ? $shipping_method_id : $this->get_selected_method( $product );
+		$rules       = $this->group_rules_by_shipping_method();
 
-		if ( empty( $rule_ids ) ) {
+		if ( empty( $rules ) ) {
 			return array();
 		}
 
-		foreach ( $rule_ids as $id ) {
-			$rule         = $this->get_single_post_meta_boxes( $id );
-			$rules[ $id ] = $rule;
-
-			if ( empty( $rule['est_del_shipping_method'] ) ) {
-				$rules[ $id ]['condition_priority'] = 10;
-				continue;
-			}
-
-			$conditions = array_reverse( $rule['est_del_condition'] );
-			$condition  = array_pop( $conditions );
-
-			if ( 'all' === $condition['type'] ) {
-				$rules[ $id ]['condition_priority'] = 20;
-				continue;
-			} else {
-				$rules[ $id ]['condition_priority'] = 30;
-				continue;
-			}
-		}
-
-		uasort( $rules, array( $this, 'sort_by_priority' ) );
-
 		foreach ( $rules as $id => $rule ) {
-			$user_method = $shipping_method_id ? $shipping_method_id : $this->get_selected_method();
+			if ( ! is_array( $rule['est_del_shipping_method'] ) ) {
+				$rule['est_del_shipping_method'] = array( $rule['est_del_shipping_method'] );
+			}
 
-			if ( ( ! empty( $rule['est_del_shipping_method'] ) && ( ! $user_method || ( $user_method !== $rule['est_del_shipping_method'] ) ) ) || ( is_array( $rule['est_del_skipped_date'] ) && 7 === count( $rule['est_del_skipped_date'] ) ) ) {
+			if (
+				( ! empty( array_filter( $rule['est_del_shipping_method'] ) ) && ( ! $user_method || ( ! in_array( $user_method, $rule['est_del_shipping_method'], true ) ) ) )
+				|| ( is_array( $rule['est_del_skipped_date'] ) && 7 === count( $rule['est_del_skipped_date'] ) )
+				|| ! $this->check_condition( $rule, $product )
+			) {
 				continue;
 			}
 
-			if ( ! $this->check_condition( $rule, $product ) ) {
-				continue;
-			}
-
-			$get_rule        = $rule;
-			$get_rule['key'] = $id;
-			break;
+			return $rule;
 		}
-
-		return $get_rule;
 	}
 
 	/**
@@ -219,17 +245,25 @@ class Manager extends Singleton {
 		$is_active  = false;
 		$is_exclude = false;
 
+		if ( ! is_array( $conditions ) || empty( $conditions ) ) {
+			return false;
+		}
+
 		if ( 'variation' === $product->get_type() ) {
 			$product = wc_get_product( $product->get_parent_id() );
 		}
 
 		foreach ( $conditions as $id => $condition ) {
-			$conditions[ $id ]['condition_priority'] = $this->get_condition_priority( $condition['type'] );
+			$conditions[ $id ]['est_del_priority'] = $this->get_condition_priority( $condition['type'] );
 		}
 
 		uasort( $conditions, array( $this, 'sort_by_priority' ) );
 
 		foreach ( $conditions as $condition ) {
+			if ( isset( $condition['query'] ) ) {
+				$condition['query'] = apply_filters( 'wpml_object_id', $condition['query'], $condition['type'], true, apply_filters( 'wpml_current_language', null ) );
+			}
+
 			switch ( $condition['type'] ) {
 				case 'all':
 					$is_active = 'include' === $condition['comparison'];
@@ -265,7 +299,9 @@ class Manager extends Singleton {
 					break;
 				case 'product_cat':
 				case 'product_tag':
+				case 'product_brand':
 				case 'product_attr_term':
+				case 'product_shipping_class':
 					$terms = wp_get_post_terms( $product->get_id(), get_taxonomies(), array( 'fields' => 'ids' ) );
 
 					if ( $terms ) {
@@ -298,12 +334,26 @@ class Manager extends Singleton {
 						}
 					}
 					break;
+				case 'product_stock_status':
+					$is_needed_stock_status = $product->get_stock_status() === $condition['product-stock-status'];
+
+					if ( $is_needed_stock_status ) {
+						if ( 'exclude' === $condition['comparison'] ) {
+							$is_active  = false;
+							$is_exclude = true;
+						} else {
+							$is_active = true;
+						}
+					}
+					break;
 			}
 
 			if ( $is_exclude || $is_active ) {
 				break;
 			}
 		}
+
+		$is_active = apply_filters( 'woodmart_check_estimate_delivery_condition', $is_active, $rule, $product );
 
 		return $is_active;
 	}
@@ -317,7 +367,7 @@ class Manager extends Singleton {
 	 * @return int
 	 */
 	public function sort_by_priority( $a, $b ) {
-		return $b['condition_priority'] <=> $a['condition_priority'];
+		return $b['est_del_priority'] <=> $a['est_del_priority'];
 	}
 
 	/**
@@ -340,7 +390,9 @@ class Manager extends Singleton {
 			case 'product_type':
 			case 'product_cat':
 			case 'product_tag':
+			case 'product_brand':
 			case 'product_attr_term':
+			case 'product_shipping_class':
 				$priority = 30;
 				break;
 			case 'product':
@@ -354,19 +406,95 @@ class Manager extends Singleton {
 	/**
 	 * Get current shipping method.
 	 *
+	 * @param WC_Product|null $product Product object to get vendor-specific shipping method.
+	 *
 	 * @return string|null
 	 */
-	public function get_selected_method() {
-		$selected_shipping_method = array();
-
-		if ( isset( WC()->session ) ) {
-			$selected_shipping_method = WC()->session->get( 'chosen_shipping_methods' );
+	public function get_selected_method( $product = null ) {
+		if ( ! isset( WC()->session ) ) {
+			return null;
 		}
 
-		if ( isset( $selected_shipping_method[0] ) && false !== $selected_shipping_method[0] ) {
-			$method = explode( ':', $selected_shipping_method[0] );
+		$selected_shipping_method = WC()->session->get( 'chosen_shipping_methods' );
+		$selected_shipping_method = is_array( $selected_shipping_method ) ? array_filter( $selected_shipping_method ) : $selected_shipping_method;
 
-			return isset( $method[1] ) ? $method[1] : null;
+		// If the delivery method has not yet been selected then set the first of the list.
+		if ( empty( $selected_shipping_method ) && ! empty( WC()->cart ) ) {
+			add_filter( 'woocommerce_cart_needs_shipping', '__return_true' );
+
+			WC()->cart->calculate_shipping();
+
+			remove_filter( 'woocommerce_cart_needs_shipping', '__return_true' );
+
+			$packages = WC()->shipping()->get_packages();
+
+			foreach ( $packages as $i => $package ) {
+				foreach ( $package['rates'] as $key => $rate ) {
+					$selected_shipping_method[ $i ] = $key;
+
+					break;
+				}
+			}
+
+			WC()->session->set( 'chosen_shipping_methods', $selected_shipping_method );
+		}
+
+		if ( empty( $selected_shipping_method ) ) {
+			return null;
+		}
+
+		$package_index = apply_filters( 'woodmart_get_shipping_package_index', 0, $product );
+		$method        = isset( $selected_shipping_method[ $package_index ] ) ? $selected_shipping_method[ $package_index ] : reset( $selected_shipping_method );
+
+		if ( false === $method ) {
+			return null;
+		}
+
+		if ( false !== strpos( $method, ':' ) ) {
+			$method    = explode( ':', $method );
+			$method_id = isset( $method[1] ) ? $method[1] : null;
+		} else {
+			$method_id = $this->get_shipping_method_instance_id( $method );
+		}
+
+		return $method_id ? strval( $method_id ) : null;
+	}
+
+	/**
+	 * Get shipping method instance ID by method name/slug.
+	 *
+	 * @param string $method_name Method name (e.g., 'chrono13').
+	 *
+	 * @return int|null Instance ID or null if not found.
+	 */
+	public function get_shipping_method_instance_id( $method_name ) {
+		$shipping_zones = WC_Shipping_Zones::get_zones();
+
+		foreach ( $shipping_zones as $zone ) {
+			if ( ! empty( $zone['shipping_methods'] ) ) {
+				foreach ( $zone['shipping_methods'] as $method ) {
+					if (
+						$method->id === $method_name ||
+						sanitize_title( $method->get_title() ) === $method_name ||
+						$method->get_rate_id() === $method_name
+					) {
+						return $method->get_instance_id();
+					}
+				}
+			}
+		}
+
+		$zone_0  = new WC_Shipping_Zone( 0 );
+		$methods = $zone_0->get_shipping_methods();
+
+		foreach ( $methods as $method ) {
+			if (
+				$method->id === $method_name ||
+				sanitize_title( $method->get_title() ) === $method_name ||
+				$method->get_rate_id() === $method_name
+			) {
+				return $method->get_instance_id();
+			}
 		}
 
 		return null;

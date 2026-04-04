@@ -80,7 +80,8 @@ class Cart extends Layout_Type {
 	/**
 	 * Display custom template on the shop page.
 	 */
-	private function display_template() {
+	protected function display_template() {
+		parent::display_template();
 		$this->before_template_content();
 
 		?>
@@ -113,9 +114,10 @@ class Cart extends Layout_Type {
 				return;
 			}
 
-			$product_id = woodmart_get_opt( 'single_product_builder_post_data' );
+			$product_id      = woodmart_get_opt( 'single_product_builder_post_data' );
+			$preview_product = wc_get_product( $product_id );
 
-			if ( ! $product_id ) {
+			if ( ! $product_id || 'product' !== get_post_type( $product_id ) || ! $preview_product || ! $preview_product->is_visible() ) {
 				$random_product = wc_get_products(
 					array(
 						'status' => 'publish',

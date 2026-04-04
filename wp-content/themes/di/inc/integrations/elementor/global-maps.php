@@ -2,7 +2,7 @@
 /**
  * Global map file.
  *
- * @package xts
+ * @package woodmart
  */
 
 use Elementor\Controls_Manager;
@@ -88,6 +88,21 @@ if ( ! function_exists( 'woodmart_get_animation_map' ) ) {
 				),
 				'render_type'  => 'template',
 				'prefix_class' => 'wd_delay_',
+			)
+		);
+
+		$element->add_control(
+			'wd_animation_main_classes',
+			array(
+				'type'         => 'wd_css_class',
+				'default'      => 'wd-animation wd-transform',
+				'prefix_class' => '',
+				'condition'    => array_merge(
+					array(
+						'wd_animation!' => '',
+					),
+					$condition
+				),
 			)
 		);
 	}

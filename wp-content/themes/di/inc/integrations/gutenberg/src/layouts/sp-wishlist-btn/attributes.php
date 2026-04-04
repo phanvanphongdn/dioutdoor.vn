@@ -1,20 +1,42 @@
 <?php
+/**
+ * Single Product Block Wishlist button attributes.
+ *
+ * @package woodmart
+ */
 
 use XTS\Gutenberg\Block_Attributes;
 
 if ( ! function_exists( 'wd_get_single_product_block_wishlist_btn_attrs' ) ) {
+	/**
+	 * Get Single Product Block Wishlist button attributes.
+	 *
+	 * @return array[]
+	 */
 	function wd_get_single_product_block_wishlist_btn_attrs() {
 		$attr = new Block_Attributes();
 
 		$attr->add_attr(
 			array(
-				'style'    => array(
+				'style'                 => array(
 					'type'    => 'string',
 					'default' => 'text',
 				),
-				'iconSize' => array(
+				'iconSize'              => array(
 					'type'       => 'string',
 					'responsive' => true,
+				),
+				'linkPaddingLock'       => array(
+					'type'    => 'boolean',
+					'default' => true,
+				),
+				'linkPaddingLockTablet' => array(
+					'type'    => 'boolean',
+					'default' => true,
+				),
+				'linkPaddingLockMobile' => array(
+					'type'    => 'boolean',
+					'default' => true,
 				),
 			)
 		);
@@ -27,7 +49,9 @@ if ( ! function_exists( 'wd_get_single_product_block_wishlist_btn_attrs' ) ) {
 		$attr->add_attr( wd_get_color_control_attrs( 'textColorHover' ) );
 		$attr->add_attr( wd_get_color_control_attrs( 'iconColorHover' ) );
 
-		$attr->add_attr( wd_get_advanced_tab_attrs() );
+		wd_get_padding_control_attrs( $attr, 'linkPadding' );
+
+		wd_get_advanced_tab_attrs( $attr );
 
 		return $attr->get_attr();
 	}

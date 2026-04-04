@@ -2,45 +2,75 @@
 /**
  * Form template.
  *
- * @package Woodmart
+ * @package woodmart
  *
  * @var array $layout_types Layout types.
  * @var Admin $admin        Admin instance.
  */
 
-use XTS\Modules\Layouts\Admin;
-
 $layout_default_name = 'New layout';
 $current_tab         = isset( $_GET['wd_layout_type_tab'] ) ? $_GET['wd_layout_type_tab'] : 'all';  // phpcs:ignore
-
-if ( 'single_product' === $current_tab ) {
-	$layout_default_name = 'Single product layout';
-} elseif ( 'shop_archive' === $current_tab ) {
-	$layout_default_name = 'Product archive layout';
-} elseif ( 'cart' === $current_tab ) {
-	$layout_default_name = 'Cart layout';
-} elseif ( 'checkout' === $current_tab ) {
-	$layout_default_name = 'Checkout layout';
-}
+$wrapper_classes     = ' xts-layout-type-' . $current_tab;
 
 if ( 'checkout' === $current_tab ) {
-	unset( $layout_types['cart'] );
-	unset( $layout_types['empty_cart'] );
-	unset( $layout_types['shop_archive'] );
-	unset( $layout_types['single_product'] );
-}
-if ( 'cart' === $current_tab ) {
-	unset( $layout_types['checkout_content'] );
-	unset( $layout_types['checkout_form'] );
-	unset( $layout_types['shop_archive'] );
-	unset( $layout_types['single_product'] );
+	$layout_types = array(
+		'checkout_content' => esc_html__( 'Checkout top content', 'woodmart' ),
+		'checkout_form'    => esc_html__( 'Checkout form', 'woodmart' ),
+	);
+
+	if ( 'native' === woodmart_get_opt( 'current_builder' ) ) {
+		$layout_types = array( 'checkout_form' => esc_html__( 'Checkout', 'woodmart' ) );
+	}
+
+	$layout_types['thank_you_page'] = esc_html__( 'Thank you page', 'woodmart' );
+} elseif ( 'cart' === $current_tab ) {
+	$layout_types = array(
+		'cart'       => esc_html__( 'Cart', 'woodmart' ),
+		'empty_cart' => esc_html__( 'Empty cart', 'woodmart' ),
+	);
+} elseif ( 'post' === $current_tab ) {
+	$layout_types = array(
+		'single_post'      => esc_html__( 'Single post', 'woodmart' ),
+		'single_portfolio' => esc_html__( 'Single project', 'woodmart' ),
+	);
+} elseif ( 'archive' === $current_tab ) {
+	$layout_types = array(
+		'blog_archive'      => esc_html__( 'Blog', 'woodmart' ),
+		'portfolio_archive' => esc_html__( 'Portfolio', 'woodmart' ),
+	);
+} elseif ( 'my_account' === $current_tab ) {
+	$layout_types = array(
+		'my_account_page'          => esc_html__( 'My account', 'woodmart' ),
+		'my_account_auth'          => esc_html__( 'Login/Register', 'woodmart' ),
+		'my_account_lost_password' => esc_html__( 'Lost password', 'woodmart' ),
+	);
 }
 
-$wrapper_classes = ' xts-layout-type-' . $current_tab;
+switch ( $current_tab ) {
+	case 'checkout':
+		$current_tab = 'checkout_form';
+		break;
+	case 'post':
+		$current_tab = 'single_post';
+		break;
+	case 'archive':
+		$current_tab = 'blog_archive';
+		break;
+	case 'my_account':
+		$current_tab = 'my_account_page';
+		break;
+	case 'loop_item':
+		$current_tab = 'product_loop_item';
+		break;
+}
+
+if ( 'all' !== $current_tab ) {
+	$layout_default_name = ucfirst( str_replace( '_', ' ', $current_tab ) ) . ' layout';
+}
 ?>
 <form>
-	<div class="xts-layout-fields<?php echo esc_attr( $wrapper_classes ); ?>">
-		<div class="xts-layout-field xts-layout-type-select">
+	<div class="xts-popup-fields<?php echo esc_attr( $wrapper_classes ); ?>">
+		<div class="xts-popup-field xts-layout-type-select">
 			<label for="wd_layout_type">
 				<?php esc_html_e( 'Layout type', 'woodmart' ); ?>
 			</label>
@@ -49,13 +79,6 @@ $wrapper_classes = ' xts-layout-type-' . $current_tab;
 					<?php esc_html_e( 'Select...', 'woodmart' ); ?>
 				</option>
 				<?php foreach ( $layout_types as $key => $label ) : ?>
-					<?php
-					$current_tab = isset( $_GET['wd_layout_type_tab'] ) ? $_GET['wd_layout_type_tab'] : ''; // phpcs:ignore
-
-					if ( 'checkout' === $current_tab ) {
-						$current_tab = 'checkout_form';
-					}
-					?>
 					<option value="<?php echo esc_attr( $key ); ?>" <?php selected( $current_tab, $key ); ?>>
 						<?php echo esc_html( $label ); ?>
 					</option>
@@ -63,7 +86,7 @@ $wrapper_classes = ' xts-layout-type-' . $current_tab;
 			</select>
 		</div>
 
-		<div class="xts-layout-field">
+		<div class="xts-popup-field">
 			<label for="wd_layout_name">
 				<?php esc_html_e( 'Layout name', 'woodmart' ); ?>
 			</label>
@@ -71,19 +94,19 @@ $wrapper_classes = ' xts-layout-type-' . $current_tab;
 		</div>
 	</div>
 
-	<div class="xts-layout-conditions">
-		<label class="xts-layout-conditions-title">
+	<div class="xts-popup-conditions">
+		<label for="wd_layout_condition_comparison" class="xts-popup-conditions-title xts-hidden">
 			<?php esc_html_e( 'Conditions', 'woodmart' ); ?>
 		</label>
 
-		<a href="javascript:void(0);" class="xts-layout-condition-add xts-hidden xts-inline-btn xts-color-primary xts-i-add">
+		<a href="javascript:void(0);" class="xts-popup-condition-add xts-hidden xts-inline-btn xts-color-primary xts-i-add">
 			<?php esc_html_e( 'Add condition', 'woodmart' ); ?>
 		</a>
 	</div>
 
 	<?php $admin->get_predefined_layouts(); ?>
-	<div class="xts-popup-actions xts-layout-submit-wrap">
-		<button class="xts-disabled xts-layout-submit xts-btn xts-color-primary xts-i-add" type="submit">
+	<div class="xts-popup-actions xts-popup-actions-overlap">
+		<button class="xts-layout-submit xts-btn xts-color-primary xts-i-add<?php echo empty( $layout_types[ $current_tab ] ) ? ' xts-disabled' : ''; ?>" type="submit">
 			<?php esc_html_e( 'Create layout', 'woodmart' ); ?>
 		</button>
 	</div>

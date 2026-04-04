@@ -1,6 +1,6 @@
 <?php
 /**
- * FOX — Currency Switcher Professional for WooCommerce.
+ * WOOCS — Currency Switcher Professional for WooCommerce integration.
  *
  * @package woodmart
  */
@@ -15,14 +15,13 @@ if ( ! function_exists( 'woodmart_woocs_convert_product_bundle_in_cart' ) ) {
 	/**
 	 * Back convector bundle product price.
 	 *
-	 * @param float  $price Product price.
-	 * @param object $cart_item Product cart data.
+	 * @param float $price Product price.
 	 * @return mixed|string
 	 */
-	function woodmart_woocs_convert_product_bundle_in_cart( $price, $cart_item ) {
-		global $WOOCS;
+	function woodmart_woocs_convert_product_bundle_in_cart( $price ) {
+		global $WOOCS; // phpcs:ignore WordPress.NamingConventions
 
-		return $WOOCS->woocs_back_convert_price( $price );
+		return $WOOCS->woocs_back_convert_price( $price ); // phpcs:ignore WordPress.NamingConventions
 	}
 
 	add_filter( 'woodmart_fbt_set_product_cart_price', 'woodmart_woocs_convert_product_bundle_in_cart', 10, 2 );
@@ -33,17 +32,17 @@ if ( ! function_exists( 'woodmart_woocs_shipping_progress_bar_amount' ) ) {
 	/**
 	 * Converse shipping progress bar limit
 	 *
-	 * @param float $limit
+	 * @param float $limit Shipping limit.
 	 * @return float
 	 */
 	function woodmart_woocs_shipping_progress_bar_amount( $limit ) {
-		global $WOOCS;
+		global $WOOCS; // phpcs:ignore WordPress.NamingConventions
 
 		if ( 'wc' === woodmart_get_opt( 'shipping_progress_bar_calculation', 'custom' ) ) {
 			return $limit;
 		}
 
-		$limit *= $WOOCS->get_sign_rate( array( 'sign' => $WOOCS->current_currency ) );
+		$limit *= $WOOCS->get_sign_rate( array( 'sign' => $WOOCS->current_currency ) ); // phpcs:ignore WordPress.NamingConventions
 
 		return $limit;
 	}
@@ -60,9 +59,9 @@ if ( ! function_exists( 'woodmart_woocs_convert_price' ) ) {
 	 * @return mixed|string
 	 */
 	function woodmart_woocs_convert_price( $price ) {
-		global $WOOCS; // phpcs:ignore.
+		global $WOOCS; // phpcs:ignore WordPress.NamingConventions
 
-		return $WOOCS->woocs_convert_price( $price ); // phpcs:ignore.
+		return $WOOCS->woocs_convert_price( $price ); // phpcs:ignore WordPress.NamingConventions
 	}
 
 	// Discount product price table.

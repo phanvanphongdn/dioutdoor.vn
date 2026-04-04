@@ -30,7 +30,7 @@
 			if (delta > 30) {
 				$moreBtn.addClass('wd-shown');
 			} else if (delta > 0) {
-				$content.css('height', contentHeight + delta);
+				$content.css('max-height', contentHeight + delta);
 			}
 
 			$content.addClass('wd-more-desc-calculated');
@@ -42,7 +42,7 @@
 
 			$this.parent().addClass('wd-more-desc-full');
 
-			woodmartThemeModule.$document.trigger('wdProductMoreDescriptionOpen', [$this.parents('.wd-hover-with-fade')]);
+			woodmartThemeModule.$document.trigger('wdProductHoverContentRecalc', [$this.parents('.wd-hover-with-fade')]);
 		});
 	};
 

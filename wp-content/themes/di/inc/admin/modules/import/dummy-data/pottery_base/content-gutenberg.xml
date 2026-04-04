@@ -16,7 +16,7 @@
 	<!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 	<!--    contained in this file into your site. -->
 
-	<!-- generator="WordPress/6.5.5" created="2024-11-18 12:06" -->
+	<!-- generator="WordPress/6.7.4" created="2026-02-25 15:26" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -29,88 +29,74 @@
 	<title>Pottery gutenberg</title>
 	<link>https://dummy.xtemos.com/woodmart2/pottery-gutenberg</link>
 	<description></description>
-	<pubDate>Mon, 18 Nov 2024 12:06:16 +0000</pubDate>
+	<pubDate>Wed, 25 Feb 2026 15:26:58 +0000</pubDate>
 	<language>en-US</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
 	<wp:base_site_url>https://dummy.xtemos.com/woodmart2/</wp:base_site_url>
 	<wp:base_blog_url>https://dummy.xtemos.com/woodmart2/pottery-gutenberg</wp:base_blog_url>
 
-		<wp:author><wp:author_id>1</wp:author_id><wp:author_login><![CDATA[admin]]></wp:author_login><wp:author_email><![CDATA[adad@adad.ad]]></wp:author_email><wp:author_display_name><![CDATA[admin]]></wp:author_display_name><wp:author_first_name><![CDATA[]]></wp:author_first_name><wp:author_last_name><![CDATA[]]></wp:author_last_name></wp:author>
-	<wp:author><wp:author_id>2</wp:author_id><wp:author_login><![CDATA[zakhar]]></wp:author_login><wp:author_email><![CDATA[zak@asda.as]]></wp:author_email><wp:author_display_name><![CDATA[Mr. Mackay]]></wp:author_display_name><wp:author_first_name><![CDATA[sds]]></wp:author_first_name><wp:author_last_name><![CDATA[scssc]]></wp:author_last_name></wp:author>
-
-			<wp:category>
+	
+					<wp:category>
 			<wp:term_id>1</wp:term_id>
 			<wp:category_nicename><![CDATA[uncategorized]]></wp:category_nicename>
 			<wp:category_parent><![CDATA[]]></wp:category_parent>
 			<wp:cat_name><![CDATA[Uncategorized]]></wp:cat_name>
 		</wp:category>
-			<wp:category>
+							<wp:category>
 			<wp:term_id>32</wp:term_id>
 			<wp:category_nicename><![CDATA[ideas]]></wp:category_nicename>
 			<wp:category_parent><![CDATA[]]></wp:category_parent>
 			<wp:cat_name><![CDATA[Ideas]]></wp:cat_name>
 		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-32-status]]></wp:meta_key>
-			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
 			<wp:meta_key><![CDATA[_woodmart_blog_design]]></wp:meta_key>
 			<wp:meta_value><![CDATA[inherit]]></wp:meta_value>
 		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[wd_page_css_files]]></wp:meta_key>
+			<wp:meta_value><![CDATA[a:50:{i:0;s:10:"style-base";i:1;s:13:"int-wordfence";i:2;s:16:"woocommerce-base";i:3;s:15:"mod-star-rating";i:4;s:25:"woocommerce-block-notices";i:5;s:25:"woo-opt-free-progress-bar";i:6;s:20:"woo-mod-progress-bar";i:7;s:9:"wp-blocks";i:8;s:15:"block-paragraph";i:9;s:11:"block-image";i:10;s:13:"block-gallery";i:11;s:15:"block-container";i:12;s:6:"swiper";i:13;s:13:"swiper-arrows";i:14;s:13:"header-banner";i:15;s:11:"header-base";i:16;s:9:"mod-tools";i:17;s:18:"woo-mod-login-form";i:18;s:17:"header-my-account";i:19;s:13:"header-search";i:20;s:20:"header-elements-base";i:21;s:16:"header-cart-side";i:22;s:11:"header-cart";i:23;s:20:"widget-shopping-cart";i:24;s:19:"widget-product-list";i:25;s:26:"header-mobile-nav-dropdown";i:26;s:10:"page-title";i:27;s:14:"blog-loop-base";i:28;s:25:"post-types-mod-predefined";i:29;s:21:"blog-loop-design-list";i:30;s:34:"post-types-mod-categories-style-bg";i:31;s:28:"post-types-mod-date-style-bg";i:32;s:15:"blog-mod-author";i:33;s:12:"social-icons";i:34;s:24:"blog-mod-comments-button";i:35;s:15:"widget-collapse";i:36;s:11:"footer-base";i:37;s:18:"mod-nav-menu-label";i:38;s:15:"block-menu-list";i:39;s:4:"list";i:40;s:12:"block-layout";i:41;s:16:"block-fw-section";i:42;s:10:"scroll-top";i:43;s:24:"header-search-fullscreen";i:44;s:26:"header-search-fullscreen-1";i:45;s:14:"wd-search-form";i:46;s:17:"wd-search-results";i:47;s:18:"wd-search-dropdown";i:48;s:25:"header-my-account-sidebar";i:49;s:14:"bottom-toolbar";}]]></wp:meta_value>
+		</wp:termmeta>
 		</wp:category>
-			<wp:category>
+							<wp:category>
 			<wp:term_id>33</wp:term_id>
 			<wp:category_nicename><![CDATA[inspiration]]></wp:category_nicename>
 			<wp:category_parent><![CDATA[]]></wp:category_parent>
 			<wp:cat_name><![CDATA[Inspiration]]></wp:cat_name>
 		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-33-status]]></wp:meta_key>
-			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
 			<wp:meta_key><![CDATA[_woodmart_blog_design]]></wp:meta_key>
 			<wp:meta_value><![CDATA[inherit]]></wp:meta_value>
 		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[wd_page_css_files]]></wp:meta_key>
+			<wp:meta_value><![CDATA[a:50:{i:0;s:10:"style-base";i:1;s:13:"int-wordfence";i:2;s:16:"woocommerce-base";i:3;s:15:"mod-star-rating";i:4;s:25:"woocommerce-block-notices";i:5;s:25:"woo-opt-free-progress-bar";i:6;s:20:"woo-mod-progress-bar";i:7;s:9:"wp-blocks";i:8;s:15:"block-paragraph";i:9;s:11:"block-image";i:10;s:13:"block-gallery";i:11;s:15:"block-container";i:12;s:6:"swiper";i:13;s:13:"swiper-arrows";i:14;s:13:"header-banner";i:15;s:11:"header-base";i:16;s:9:"mod-tools";i:17;s:18:"woo-mod-login-form";i:18;s:17:"header-my-account";i:19;s:13:"header-search";i:20;s:20:"header-elements-base";i:21;s:16:"header-cart-side";i:22;s:11:"header-cart";i:23;s:20:"widget-shopping-cart";i:24;s:19:"widget-product-list";i:25;s:26:"header-mobile-nav-dropdown";i:26;s:10:"page-title";i:27;s:14:"blog-loop-base";i:28;s:25:"post-types-mod-predefined";i:29;s:21:"blog-loop-design-list";i:30;s:34:"post-types-mod-categories-style-bg";i:31;s:28:"post-types-mod-date-style-bg";i:32;s:15:"blog-mod-author";i:33;s:12:"social-icons";i:34;s:24:"blog-mod-comments-button";i:35;s:15:"widget-collapse";i:36;s:11:"footer-base";i:37;s:18:"mod-nav-menu-label";i:38;s:15:"block-menu-list";i:39;s:4:"list";i:40;s:12:"block-layout";i:41;s:16:"block-fw-section";i:42;s:10:"scroll-top";i:43;s:24:"header-search-fullscreen";i:44;s:26:"header-search-fullscreen-1";i:45;s:14:"wd-search-form";i:46;s:17:"wd-search-results";i:47;s:18:"wd-search-dropdown";i:48;s:25:"header-my-account-sidebar";i:49;s:14:"bottom-toolbar";}]]></wp:meta_value>
+		</wp:termmeta>
 		</wp:category>
-			<wp:category>
+							<wp:category>
 			<wp:term_id>34</wp:term_id>
 			<wp:category_nicename><![CDATA[news]]></wp:category_nicename>
 			<wp:category_parent><![CDATA[]]></wp:category_parent>
 			<wp:cat_name><![CDATA[News]]></wp:cat_name>
 		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-34-status]]></wp:meta_key>
-			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
 			<wp:meta_key><![CDATA[_woodmart_blog_design]]></wp:meta_key>
 			<wp:meta_value><![CDATA[inherit]]></wp:meta_value>
 		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[wd_page_css_files]]></wp:meta_key>
+			<wp:meta_value><![CDATA[a:50:{i:0;s:10:"style-base";i:1;s:13:"int-wordfence";i:2;s:16:"woocommerce-base";i:3;s:15:"mod-star-rating";i:4;s:25:"woocommerce-block-notices";i:5;s:25:"woo-opt-free-progress-bar";i:6;s:20:"woo-mod-progress-bar";i:7;s:9:"wp-blocks";i:8;s:15:"block-paragraph";i:9;s:11:"block-image";i:10;s:13:"block-gallery";i:11;s:15:"block-container";i:12;s:6:"swiper";i:13;s:13:"swiper-arrows";i:14;s:13:"header-banner";i:15;s:11:"header-base";i:16;s:9:"mod-tools";i:17;s:18:"woo-mod-login-form";i:18;s:17:"header-my-account";i:19;s:13:"header-search";i:20;s:20:"header-elements-base";i:21;s:16:"header-cart-side";i:22;s:11:"header-cart";i:23;s:20:"widget-shopping-cart";i:24;s:19:"widget-product-list";i:25;s:26:"header-mobile-nav-dropdown";i:26;s:10:"page-title";i:27;s:14:"blog-loop-base";i:28;s:25:"post-types-mod-predefined";i:29;s:21:"blog-loop-design-list";i:30;s:34:"post-types-mod-categories-style-bg";i:31;s:28:"post-types-mod-date-style-bg";i:32;s:15:"blog-mod-author";i:33;s:12:"social-icons";i:34;s:24:"blog-mod-comments-button";i:35;s:15:"widget-collapse";i:36;s:11:"footer-base";i:37;s:18:"mod-nav-menu-label";i:38;s:15:"block-menu-list";i:39;s:4:"list";i:40;s:12:"block-layout";i:41;s:16:"block-fw-section";i:42;s:10:"scroll-top";i:43;s:24:"header-search-fullscreen";i:44;s:26:"header-search-fullscreen-1";i:45;s:14:"wd-search-form";i:46;s:17:"wd-search-results";i:47;s:18:"wd-search-dropdown";i:48;s:25:"header-my-account-sidebar";i:49;s:14:"bottom-toolbar";}]]></wp:meta_value>
+		</wp:termmeta>
 		</wp:category>
-					<wp:term>
+									<wp:term>
 			<wp:term_id>15</wp:term_id>
 			<wp:term_taxonomy><![CDATA[product_cat]]></wp:term_taxonomy>
 			<wp:term_slug><![CDATA[uncategorized]]></wp:term_slug>
 			<wp:term_parent><![CDATA[]]></wp:term_parent>
 			<wp:term_name><![CDATA[Uncategorized]]></wp:term_name>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-15-status]]></wp:meta_key>
-			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
-		</wp:termmeta>
 		</wp:term>
-			<wp:term>
+							<wp:term>
 			<wp:term_id>16</wp:term_id>
 			<wp:term_taxonomy><![CDATA[product_cat]]></wp:term_taxonomy>
 			<wp:term_slug><![CDATA[mugs]]></wp:term_slug>
 			<wp:term_parent><![CDATA[]]></wp:term_parent>
 			<wp:term_name><![CDATA[Mugs]]></wp:term_name>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-16-status]]></wp:meta_key>
-			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[product_count_product_cat]]></wp:meta_key>
-			<wp:meta_value><![CDATA[5]]></wp:meta_value>
-		</wp:termmeta>
 		<wp:termmeta>
 			<wp:meta_key><![CDATA[title_image]]></wp:meta_key>
 			<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
@@ -131,21 +117,17 @@
 			<wp:meta_key><![CDATA[thumbnail_id]]></wp:meta_key>
 			<wp:meta_value><![CDATA[145]]></wp:meta_value>
 		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[wd_page_css_files]]></wp:meta_key>
+			<wp:meta_value><![CDATA[a:67:{i:0;s:16:"widget-woo-other";i:1;s:19:"widget-price-filter";i:2;s:10:"style-base";i:3;s:13:"int-wordfence";i:4;s:16:"woocommerce-base";i:5;s:15:"mod-star-rating";i:6;s:25:"woocommerce-block-notices";i:7;s:25:"woo-opt-free-progress-bar";i:8;s:20:"woo-mod-progress-bar";i:9;s:21:"widget-active-filters";i:10;s:16:"woo-shop-builder";i:11;s:9:"wp-blocks";i:12;s:13:"header-banner";i:13;s:11:"header-base";i:14;s:9:"mod-tools";i:15;s:18:"woo-mod-login-form";i:16;s:17:"header-my-account";i:17;s:13:"header-search";i:18;s:20:"header-elements-base";i:19;s:16:"header-cart-side";i:20;s:11:"header-cart";i:21;s:20:"widget-shopping-cart";i:22;s:19:"widget-product-list";i:23;s:26:"header-mobile-nav-dropdown";i:24;s:15:"block-container";i:25;s:16:"block-fw-section";i:26;s:12:"block-layout";i:27;s:20:"categories-loop-side";i:28;s:19:"woo-categories-loop";i:29;s:16:"bordered-product";i:30;s:6:"swiper";i:31;s:13:"swiper-arrows";i:32;s:26:"widget-slider-price-filter";i:33;s:24:"woo-mod-swatches-style-1";i:34;s:24:"woo-mod-swatches-style-4";i:35;s:18:"el-product-filters";i:36;s:21:"woo-mod-swatches-base";i:37;s:23:"woo-mod-swatches-filter";i:38;s:29:"woo-shop-el-products-per-page";i:39;s:25:"woo-shop-el-products-view";i:40;s:20:"woo-shop-el-order-by";i:41;s:13:"sticky-loader";i:42;s:12:"product-loop";i:43;s:21:"woo-loop-prod-el-base";i:44;s:17:"product-loop-info";i:45;s:24:"woo-loop-prod-predefined";i:46;s:9:"mfp-popup";i:47;s:24:"mod-animations-transform";i:48;s:13:"mod-transform";i:49;s:22:"woo-mod-swatches-dis-1";i:50;s:22:"woo-mod-product-labels";i:51;s:27:"woo-mod-product-labels-rect";i:52;s:15:"widget-collapse";i:53;s:11:"footer-base";i:54;s:11:"block-image";i:55;s:18:"mod-nav-menu-label";i:56;s:15:"block-menu-list";i:57;s:4:"list";i:58;s:15:"block-paragraph";i:59;s:10:"scroll-top";i:60;s:24:"header-search-fullscreen";i:61;s:26:"header-search-fullscreen-1";i:62;s:14:"wd-search-form";i:63;s:17:"wd-search-results";i:64;s:18:"wd-search-dropdown";i:65;s:25:"header-my-account-sidebar";i:66;s:14:"bottom-toolbar";}]]></wp:meta_value>
+		</wp:termmeta>
 		</wp:term>
-			<wp:term>
+							<wp:term>
 			<wp:term_id>17</wp:term_id>
 			<wp:term_taxonomy><![CDATA[product_cat]]></wp:term_taxonomy>
 			<wp:term_slug><![CDATA[bowls]]></wp:term_slug>
 			<wp:term_parent><![CDATA[]]></wp:term_parent>
 			<wp:term_name><![CDATA[Bowls]]></wp:term_name>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-17-status]]></wp:meta_key>
-			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[product_count_product_cat]]></wp:meta_key>
-			<wp:meta_value><![CDATA[5]]></wp:meta_value>
-		</wp:termmeta>
 		<wp:termmeta>
 			<wp:meta_key><![CDATA[title_image]]></wp:meta_key>
 			<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
@@ -166,21 +148,17 @@
 			<wp:meta_key><![CDATA[thumbnail_id]]></wp:meta_key>
 			<wp:meta_value><![CDATA[149]]></wp:meta_value>
 		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[wd_page_css_files]]></wp:meta_key>
+			<wp:meta_value><![CDATA[a:64:{i:0;s:16:"widget-woo-other";i:1;s:19:"widget-price-filter";i:2;s:10:"style-base";i:3;s:13:"int-wordfence";i:4;s:16:"woocommerce-base";i:5;s:15:"mod-star-rating";i:6;s:25:"woocommerce-block-notices";i:7;s:25:"woo-opt-free-progress-bar";i:8;s:20:"woo-mod-progress-bar";i:9;s:21:"widget-active-filters";i:10;s:16:"woo-shop-builder";i:11;s:9:"wp-blocks";i:12;s:13:"header-banner";i:13;s:11:"header-base";i:14;s:9:"mod-tools";i:15;s:18:"woo-mod-login-form";i:16;s:17:"header-my-account";i:17;s:13:"header-search";i:18;s:20:"header-elements-base";i:19;s:16:"header-cart-side";i:20;s:11:"header-cart";i:21;s:20:"widget-shopping-cart";i:22;s:19:"widget-product-list";i:23;s:26:"header-mobile-nav-dropdown";i:24;s:15:"block-container";i:25;s:16:"block-fw-section";i:26;s:12:"block-layout";i:27;s:20:"categories-loop-side";i:28;s:19:"woo-categories-loop";i:29;s:16:"bordered-product";i:30;s:6:"swiper";i:31;s:13:"swiper-arrows";i:32;s:26:"widget-slider-price-filter";i:33;s:24:"woo-mod-swatches-style-1";i:34;s:24:"woo-mod-swatches-style-4";i:35;s:18:"el-product-filters";i:36;s:21:"woo-mod-swatches-base";i:37;s:23:"woo-mod-swatches-filter";i:38;s:29:"woo-shop-el-products-per-page";i:39;s:25:"woo-shop-el-products-view";i:40;s:20:"woo-shop-el-order-by";i:41;s:13:"sticky-loader";i:42;s:12:"product-loop";i:43;s:21:"woo-loop-prod-el-base";i:44;s:17:"product-loop-info";i:45;s:24:"woo-loop-prod-predefined";i:46;s:9:"mfp-popup";i:47;s:24:"mod-animations-transform";i:48;s:13:"mod-transform";i:49;s:15:"widget-collapse";i:50;s:11:"footer-base";i:51;s:11:"block-image";i:52;s:18:"mod-nav-menu-label";i:53;s:15:"block-menu-list";i:54;s:4:"list";i:55;s:15:"block-paragraph";i:56;s:10:"scroll-top";i:57;s:24:"header-search-fullscreen";i:58;s:26:"header-search-fullscreen-1";i:59;s:14:"wd-search-form";i:60;s:17:"wd-search-results";i:61;s:18:"wd-search-dropdown";i:62;s:25:"header-my-account-sidebar";i:63;s:14:"bottom-toolbar";}]]></wp:meta_value>
+		</wp:termmeta>
 		</wp:term>
-			<wp:term>
+							<wp:term>
 			<wp:term_id>18</wp:term_id>
 			<wp:term_taxonomy><![CDATA[product_cat]]></wp:term_taxonomy>
 			<wp:term_slug><![CDATA[plates]]></wp:term_slug>
 			<wp:term_parent><![CDATA[]]></wp:term_parent>
 			<wp:term_name><![CDATA[Plates]]></wp:term_name>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-18-status]]></wp:meta_key>
-			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[product_count_product_cat]]></wp:meta_key>
-			<wp:meta_value><![CDATA[5]]></wp:meta_value>
-		</wp:termmeta>
 		<wp:termmeta>
 			<wp:meta_key><![CDATA[title_image]]></wp:meta_key>
 			<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
@@ -201,21 +179,17 @@
 			<wp:meta_key><![CDATA[thumbnail_id]]></wp:meta_key>
 			<wp:meta_value><![CDATA[147]]></wp:meta_value>
 		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[wd_page_css_files]]></wp:meta_key>
+			<wp:meta_value><![CDATA[a:67:{i:0;s:16:"widget-woo-other";i:1;s:19:"widget-price-filter";i:2;s:10:"style-base";i:3;s:13:"int-wordfence";i:4;s:16:"woocommerce-base";i:5;s:15:"mod-star-rating";i:6;s:25:"woocommerce-block-notices";i:7;s:25:"woo-opt-free-progress-bar";i:8;s:20:"woo-mod-progress-bar";i:9;s:21:"widget-active-filters";i:10;s:16:"woo-shop-builder";i:11;s:9:"wp-blocks";i:12;s:13:"header-banner";i:13;s:11:"header-base";i:14;s:9:"mod-tools";i:15;s:18:"woo-mod-login-form";i:16;s:17:"header-my-account";i:17;s:13:"header-search";i:18;s:20:"header-elements-base";i:19;s:16:"header-cart-side";i:20;s:11:"header-cart";i:21;s:20:"widget-shopping-cart";i:22;s:19:"widget-product-list";i:23;s:26:"header-mobile-nav-dropdown";i:24;s:15:"block-container";i:25;s:16:"block-fw-section";i:26;s:12:"block-layout";i:27;s:20:"categories-loop-side";i:28;s:19:"woo-categories-loop";i:29;s:16:"bordered-product";i:30;s:6:"swiper";i:31;s:13:"swiper-arrows";i:32;s:26:"widget-slider-price-filter";i:33;s:24:"woo-mod-swatches-style-1";i:34;s:24:"woo-mod-swatches-style-4";i:35;s:18:"el-product-filters";i:36;s:21:"woo-mod-swatches-base";i:37;s:23:"woo-mod-swatches-filter";i:38;s:29:"woo-shop-el-products-per-page";i:39;s:25:"woo-shop-el-products-view";i:40;s:20:"woo-shop-el-order-by";i:41;s:13:"sticky-loader";i:42;s:12:"product-loop";i:43;s:21:"woo-loop-prod-el-base";i:44;s:17:"product-loop-info";i:45;s:24:"woo-loop-prod-predefined";i:46;s:9:"mfp-popup";i:47;s:24:"mod-animations-transform";i:48;s:13:"mod-transform";i:49;s:22:"woo-mod-swatches-dis-1";i:50;s:22:"woo-mod-product-labels";i:51;s:27:"woo-mod-product-labels-rect";i:52;s:15:"widget-collapse";i:53;s:11:"footer-base";i:54;s:11:"block-image";i:55;s:18:"mod-nav-menu-label";i:56;s:15:"block-menu-list";i:57;s:4:"list";i:58;s:15:"block-paragraph";i:59;s:10:"scroll-top";i:60;s:24:"header-search-fullscreen";i:61;s:26:"header-search-fullscreen-1";i:62;s:14:"wd-search-form";i:63;s:17:"wd-search-results";i:64;s:18:"wd-search-dropdown";i:65;s:25:"header-my-account-sidebar";i:66;s:14:"bottom-toolbar";}]]></wp:meta_value>
+		</wp:termmeta>
 		</wp:term>
-			<wp:term>
+							<wp:term>
 			<wp:term_id>19</wp:term_id>
 			<wp:term_taxonomy><![CDATA[product_cat]]></wp:term_taxonomy>
 			<wp:term_slug><![CDATA[pots]]></wp:term_slug>
 			<wp:term_parent><![CDATA[]]></wp:term_parent>
 			<wp:term_name><![CDATA[Pots]]></wp:term_name>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-19-status]]></wp:meta_key>
-			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[product_count_product_cat]]></wp:meta_key>
-			<wp:meta_value><![CDATA[5]]></wp:meta_value>
-		</wp:termmeta>
 		<wp:termmeta>
 			<wp:meta_key><![CDATA[title_image]]></wp:meta_key>
 			<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
@@ -236,21 +210,17 @@
 			<wp:meta_key><![CDATA[thumbnail_id]]></wp:meta_key>
 			<wp:meta_value><![CDATA[146]]></wp:meta_value>
 		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[wd_page_css_files]]></wp:meta_key>
+			<wp:meta_value><![CDATA[a:66:{i:0;s:16:"widget-woo-other";i:1;s:19:"widget-price-filter";i:2;s:10:"style-base";i:3;s:13:"int-wordfence";i:4;s:16:"woocommerce-base";i:5;s:15:"mod-star-rating";i:6;s:25:"woocommerce-block-notices";i:7;s:25:"woo-opt-free-progress-bar";i:8;s:20:"woo-mod-progress-bar";i:9;s:21:"widget-active-filters";i:10;s:16:"woo-shop-builder";i:11;s:9:"wp-blocks";i:12;s:13:"header-banner";i:13;s:11:"header-base";i:14;s:9:"mod-tools";i:15;s:18:"woo-mod-login-form";i:16;s:17:"header-my-account";i:17;s:13:"header-search";i:18;s:20:"header-elements-base";i:19;s:16:"header-cart-side";i:20;s:11:"header-cart";i:21;s:20:"widget-shopping-cart";i:22;s:19:"widget-product-list";i:23;s:26:"header-mobile-nav-dropdown";i:24;s:15:"block-container";i:25;s:16:"block-fw-section";i:26;s:12:"block-layout";i:27;s:20:"categories-loop-side";i:28;s:19:"woo-categories-loop";i:29;s:16:"bordered-product";i:30;s:6:"swiper";i:31;s:13:"swiper-arrows";i:32;s:26:"widget-slider-price-filter";i:33;s:24:"woo-mod-swatches-style-1";i:34;s:24:"woo-mod-swatches-style-4";i:35;s:18:"el-product-filters";i:36;s:21:"woo-mod-swatches-base";i:37;s:23:"woo-mod-swatches-filter";i:38;s:29:"woo-shop-el-products-per-page";i:39;s:25:"woo-shop-el-products-view";i:40;s:20:"woo-shop-el-order-by";i:41;s:13:"sticky-loader";i:42;s:12:"product-loop";i:43;s:21:"woo-loop-prod-el-base";i:44;s:17:"product-loop-info";i:45;s:24:"woo-loop-prod-predefined";i:46;s:9:"mfp-popup";i:47;s:24:"mod-animations-transform";i:48;s:13:"mod-transform";i:49;s:22:"woo-mod-product-labels";i:50;s:27:"woo-mod-product-labels-rect";i:51;s:15:"widget-collapse";i:52;s:11:"footer-base";i:53;s:11:"block-image";i:54;s:18:"mod-nav-menu-label";i:55;s:15:"block-menu-list";i:56;s:4:"list";i:57;s:15:"block-paragraph";i:58;s:10:"scroll-top";i:59;s:24:"header-search-fullscreen";i:60;s:26:"header-search-fullscreen-1";i:61;s:14:"wd-search-form";i:62;s:17:"wd-search-results";i:63;s:18:"wd-search-dropdown";i:64;s:25:"header-my-account-sidebar";i:65;s:14:"bottom-toolbar";}]]></wp:meta_value>
+		</wp:termmeta>
 		</wp:term>
-			<wp:term>
+							<wp:term>
 			<wp:term_id>20</wp:term_id>
 			<wp:term_taxonomy><![CDATA[product_cat]]></wp:term_taxonomy>
 			<wp:term_slug><![CDATA[decor]]></wp:term_slug>
 			<wp:term_parent><![CDATA[]]></wp:term_parent>
 			<wp:term_name><![CDATA[Decor]]></wp:term_name>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-20-status]]></wp:meta_key>
-			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[product_count_product_cat]]></wp:meta_key>
-			<wp:meta_value><![CDATA[5]]></wp:meta_value>
-		</wp:termmeta>
 		<wp:termmeta>
 			<wp:meta_key><![CDATA[title_image]]></wp:meta_key>
 			<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
@@ -271,17 +241,17 @@
 			<wp:meta_key><![CDATA[thumbnail_id]]></wp:meta_key>
 			<wp:meta_value><![CDATA[148]]></wp:meta_value>
 		</wp:termmeta>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[wd_page_css_files]]></wp:meta_key>
+			<wp:meta_value><![CDATA[a:66:{i:0;s:16:"widget-woo-other";i:1;s:19:"widget-price-filter";i:2;s:10:"style-base";i:3;s:13:"int-wordfence";i:4;s:16:"woocommerce-base";i:5;s:15:"mod-star-rating";i:6;s:25:"woocommerce-block-notices";i:7;s:25:"woo-opt-free-progress-bar";i:8;s:20:"woo-mod-progress-bar";i:9;s:21:"widget-active-filters";i:10;s:16:"woo-shop-builder";i:11;s:9:"wp-blocks";i:12;s:13:"header-banner";i:13;s:11:"header-base";i:14;s:9:"mod-tools";i:15;s:18:"woo-mod-login-form";i:16;s:17:"header-my-account";i:17;s:13:"header-search";i:18;s:20:"header-elements-base";i:19;s:16:"header-cart-side";i:20;s:11:"header-cart";i:21;s:20:"widget-shopping-cart";i:22;s:19:"widget-product-list";i:23;s:26:"header-mobile-nav-dropdown";i:24;s:15:"block-container";i:25;s:16:"block-fw-section";i:26;s:12:"block-layout";i:27;s:20:"categories-loop-side";i:28;s:19:"woo-categories-loop";i:29;s:16:"bordered-product";i:30;s:6:"swiper";i:31;s:13:"swiper-arrows";i:32;s:26:"widget-slider-price-filter";i:33;s:24:"woo-mod-swatches-style-1";i:34;s:24:"woo-mod-swatches-style-4";i:35;s:18:"el-product-filters";i:36;s:21:"woo-mod-swatches-base";i:37;s:23:"woo-mod-swatches-filter";i:38;s:29:"woo-shop-el-products-per-page";i:39;s:25:"woo-shop-el-products-view";i:40;s:20:"woo-shop-el-order-by";i:41;s:13:"sticky-loader";i:42;s:12:"product-loop";i:43;s:21:"woo-loop-prod-el-base";i:44;s:17:"product-loop-info";i:45;s:24:"woo-loop-prod-predefined";i:46;s:9:"mfp-popup";i:47;s:24:"mod-animations-transform";i:48;s:13:"mod-transform";i:49;s:22:"woo-mod-product-labels";i:50;s:27:"woo-mod-product-labels-rect";i:51;s:15:"widget-collapse";i:52;s:11:"footer-base";i:53;s:11:"block-image";i:54;s:18:"mod-nav-menu-label";i:55;s:15:"block-menu-list";i:56;s:4:"list";i:57;s:15:"block-paragraph";i:58;s:10:"scroll-top";i:59;s:24:"header-search-fullscreen";i:60;s:26:"header-search-fullscreen-1";i:61;s:14:"wd-search-form";i:62;s:17:"wd-search-results";i:63;s:18:"wd-search-dropdown";i:64;s:25:"header-my-account-sidebar";i:65;s:14:"bottom-toolbar";}]]></wp:meta_value>
+		</wp:termmeta>
 		</wp:term>
-			<wp:term>
+							<wp:term>
 			<wp:term_id>21</wp:term_id>
 			<wp:term_taxonomy><![CDATA[pa_color]]></wp:term_taxonomy>
 			<wp:term_slug><![CDATA[bone]]></wp:term_slug>
 			<wp:term_parent><![CDATA[]]></wp:term_parent>
 			<wp:term_name><![CDATA[Bone]]></wp:term_name>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-21-status]]></wp:meta_key>
-			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
-		</wp:termmeta>
 		<wp:termmeta>
 			<wp:meta_key><![CDATA[image]]></wp:meta_key>
 			<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
@@ -291,16 +261,12 @@
 			<wp:meta_value><![CDATA[rgb(225,213,206)]]></wp:meta_value>
 		</wp:termmeta>
 		</wp:term>
-			<wp:term>
+							<wp:term>
 			<wp:term_id>22</wp:term_id>
 			<wp:term_taxonomy><![CDATA[pa_color]]></wp:term_taxonomy>
 			<wp:term_slug><![CDATA[brown]]></wp:term_slug>
 			<wp:term_parent><![CDATA[]]></wp:term_parent>
 			<wp:term_name><![CDATA[Brown]]></wp:term_name>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-22-status]]></wp:meta_key>
-			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
-		</wp:termmeta>
 		<wp:termmeta>
 			<wp:meta_key><![CDATA[image]]></wp:meta_key>
 			<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
@@ -310,16 +276,12 @@
 			<wp:meta_value><![CDATA[rgb(129,88,52)]]></wp:meta_value>
 		</wp:termmeta>
 		</wp:term>
-			<wp:term>
+							<wp:term>
 			<wp:term_id>23</wp:term_id>
 			<wp:term_taxonomy><![CDATA[pa_color]]></wp:term_taxonomy>
 			<wp:term_slug><![CDATA[platinum]]></wp:term_slug>
 			<wp:term_parent><![CDATA[]]></wp:term_parent>
 			<wp:term_name><![CDATA[Platinum]]></wp:term_name>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-23-status]]></wp:meta_key>
-			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
-		</wp:termmeta>
 		<wp:termmeta>
 			<wp:meta_key><![CDATA[image]]></wp:meta_key>
 			<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
@@ -329,16 +291,12 @@
 			<wp:meta_value><![CDATA[rgb(237,221,229)]]></wp:meta_value>
 		</wp:termmeta>
 		</wp:term>
-			<wp:term>
+							<wp:term>
 			<wp:term_id>24</wp:term_id>
 			<wp:term_taxonomy><![CDATA[pa_color]]></wp:term_taxonomy>
 			<wp:term_slug><![CDATA[ash-gray]]></wp:term_slug>
 			<wp:term_parent><![CDATA[]]></wp:term_parent>
 			<wp:term_name><![CDATA[Ash Gray]]></wp:term_name>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-24-status]]></wp:meta_key>
-			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
-		</wp:termmeta>
 		<wp:termmeta>
 			<wp:meta_key><![CDATA[image]]></wp:meta_key>
 			<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
@@ -348,16 +306,12 @@
 			<wp:meta_value><![CDATA[rgb(187,188,180)]]></wp:meta_value>
 		</wp:termmeta>
 		</wp:term>
-			<wp:term>
+							<wp:term>
 			<wp:term_id>25</wp:term_id>
 			<wp:term_taxonomy><![CDATA[pa_color]]></wp:term_taxonomy>
 			<wp:term_slug><![CDATA[green]]></wp:term_slug>
 			<wp:term_parent><![CDATA[]]></wp:term_parent>
 			<wp:term_name><![CDATA[Green]]></wp:term_name>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-25-status]]></wp:meta_key>
-			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
-		</wp:termmeta>
 		<wp:termmeta>
 			<wp:meta_key><![CDATA[image]]></wp:meta_key>
 			<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
@@ -367,16 +321,12 @@
 			<wp:meta_value><![CDATA[rgb(62,92,73)]]></wp:meta_value>
 		</wp:termmeta>
 		</wp:term>
-			<wp:term>
+							<wp:term>
 			<wp:term_id>26</wp:term_id>
 			<wp:term_taxonomy><![CDATA[pa_color]]></wp:term_taxonomy>
 			<wp:term_slug><![CDATA[blue]]></wp:term_slug>
 			<wp:term_parent><![CDATA[]]></wp:term_parent>
 			<wp:term_name><![CDATA[Blue]]></wp:term_name>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-26-status]]></wp:meta_key>
-			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
-		</wp:termmeta>
 		<wp:termmeta>
 			<wp:meta_key><![CDATA[image]]></wp:meta_key>
 			<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
@@ -386,16 +336,12 @@
 			<wp:meta_value><![CDATA[rgb(80,102,132)]]></wp:meta_value>
 		</wp:termmeta>
 		</wp:term>
-			<wp:term>
+							<wp:term>
 			<wp:term_id>27</wp:term_id>
 			<wp:term_taxonomy><![CDATA[pa_color]]></wp:term_taxonomy>
 			<wp:term_slug><![CDATA[gray]]></wp:term_slug>
 			<wp:term_parent><![CDATA[]]></wp:term_parent>
 			<wp:term_name><![CDATA[Gray]]></wp:term_name>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-27-status]]></wp:meta_key>
-			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
-		</wp:termmeta>
 		<wp:termmeta>
 			<wp:meta_key><![CDATA[image]]></wp:meta_key>
 			<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
@@ -405,16 +351,12 @@
 			<wp:meta_value><![CDATA[rgb(211,211,212)]]></wp:meta_value>
 		</wp:termmeta>
 		</wp:term>
-			<wp:term>
+							<wp:term>
 			<wp:term_id>28</wp:term_id>
 			<wp:term_taxonomy><![CDATA[pa_color]]></wp:term_taxonomy>
 			<wp:term_slug><![CDATA[black]]></wp:term_slug>
 			<wp:term_parent><![CDATA[]]></wp:term_parent>
 			<wp:term_name><![CDATA[Black]]></wp:term_name>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-28-status]]></wp:meta_key>
-			<wp:meta_value><![CDATA[invalid]]></wp:meta_value>
-		</wp:termmeta>
 		<wp:termmeta>
 			<wp:meta_key><![CDATA[image]]></wp:meta_key>
 			<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
@@ -424,20 +366,20 @@
 			<wp:meta_value><![CDATA[rgb(40,39,40)]]></wp:meta_value>
 		</wp:termmeta>
 		</wp:term>
-			<wp:term><wp:term_id>31</wp:term_id><wp:term_taxonomy>nav_menu</wp:term_taxonomy><wp:term_slug><![CDATA[category-menu]]></wp:term_slug><wp:term_name><![CDATA[Category menu]]></wp:term_name>
+					<wp:term><wp:term_id>31</wp:term_id><wp:term_taxonomy>nav_menu</wp:term_taxonomy><wp:term_slug><![CDATA[category-menu]]></wp:term_slug><wp:term_name><![CDATA[Category menu]]></wp:term_name>
 </wp:term>
 	<wp:term><wp:term_id>29</wp:term_id><wp:term_taxonomy>nav_menu</wp:term_taxonomy><wp:term_slug><![CDATA[main-navigation]]></wp:term_slug><wp:term_name><![CDATA[Main navigation]]></wp:term_name>
 </wp:term>
 	<wp:term><wp:term_id>30</wp:term_id><wp:term_taxonomy>nav_menu</wp:term_taxonomy><wp:term_slug><![CDATA[mobile-navigation]]></wp:term_slug><wp:term_name><![CDATA[Mobile navigation]]></wp:term_name>
 </wp:term>
 
-	<generator>https://wordpress.org/?v=6.5.5</generator>
+	<generator>https://wordpress.org/?v=6.7.4</generator>
 
 					<item>
 					<title><![CDATA[White Glazed Mug]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/pottery-gutenberg/product/white-glazed-mug/</link>
 					<pubDate>Wed, 31 Jul 2024 12:17:42 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/pottery-gutenberg/?post_type=product&#038;p=75</guid>
 																<excerpt:encoded><![CDATA[You begin with a text, you sculpt information, you chisel away what's not needed, you come to the point, make things clear, add value, you're a content person, you like words. Design is no afterthought, far from it, but it comes in a deserved second. Anyway, you still use Lorem Ipsum and rightly so, as it will always have a place in the web workers toolbox, as things happen, not always the way you like it, not always in the preferred order. Even if your less into design and more into content strategy you may find some redeeming value with, wait for it.]]></excerpt:encoded>
 										<wp:post_id>75</wp:post_id>
@@ -469,14 +411,6 @@
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_stock_status]]></wp:meta_key>
 							<wp:meta_value><![CDATA[instock]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[import-placeholder-for-88]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_regular_price]]></wp:meta_key>
@@ -543,7 +477,7 @@
 					<title><![CDATA[Americano Mug]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/pottery-gutenberg/product/americano-mug/</link>
 					<pubDate>Wed, 31 Jul 2024 12:17:42 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/pottery-gutenberg/?post_type=product&#038;p=76</guid>
 																<excerpt:encoded><![CDATA[You begin with a text, you sculpt information, you chisel away what's not needed, you come to the point, make things clear, add value, you're a content person, you like words. Design is no afterthought, far from it, but it comes in a deserved second. Anyway, you still use Lorem Ipsum and rightly so, as it will always have a place in the web workers toolbox, as things happen, not always the way you like it, not always in the preferred order. Even if your less into design and more into content strategy you may find some redeeming value with, wait for it.]]></excerpt:encoded>
 										<wp:post_id>76</wp:post_id>
@@ -575,14 +509,6 @@
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_stock_status]]></wp:meta_key>
 							<wp:meta_value><![CDATA[instock]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[import-placeholder-for-91]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_regular_price]]></wp:meta_key>
@@ -645,7 +571,7 @@
 					<title><![CDATA[Red Clay Mug]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/pottery-gutenberg/product/red-clay-mug/</link>
 					<pubDate>Wed, 31 Jul 2024 12:17:42 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/pottery-gutenberg/?post_type=product&#038;p=77</guid>
 																<excerpt:encoded><![CDATA[You begin with a text, you sculpt information, you chisel away what's not needed, you come to the point, make things clear, add value, you're a content person, you like words. Design is no afterthought, far from it, but it comes in a deserved second. Anyway, you still use Lorem Ipsum and rightly so, as it will always have a place in the web workers toolbox, as things happen, not always the way you like it, not always in the preferred order. Even if your less into design and more into content strategy you may find some redeeming value with, wait for it.]]></excerpt:encoded>
 										<wp:post_id>77</wp:post_id>
@@ -677,14 +603,6 @@
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_stock_status]]></wp:meta_key>
 							<wp:meta_value><![CDATA[instock]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[import-placeholder-for-93]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_regular_price]]></wp:meta_key>
@@ -747,7 +665,7 @@
 					<title><![CDATA[Cocktail Cup]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/pottery-gutenberg/product/cocktail-cup/</link>
 					<pubDate>Wed, 31 Jul 2024 12:17:42 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/pottery-gutenberg/?post_type=product&#038;p=78</guid>
 																<excerpt:encoded><![CDATA[You begin with a text, you sculpt information, you chisel away what's not needed, you come to the point, make things clear, add value, you're a content person, you like words. Design is no afterthought, far from it, but it comes in a deserved second. Anyway, you still use Lorem Ipsum and rightly so, as it will always have a place in the web workers toolbox, as things happen, not always the way you like it, not always in the preferred order. Even if your less into design and more into content strategy you may find some redeeming value with, wait for it.]]></excerpt:encoded>
 										<wp:post_id>78</wp:post_id>
@@ -780,14 +698,6 @@
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_stock_status]]></wp:meta_key>
 							<wp:meta_value><![CDATA[instock]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[import-placeholder-for-94]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
@@ -846,7 +756,7 @@
 					<title><![CDATA[Cocktail Cup - Ash Gray]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/pottery-gutenberg/product/cocktail-cup/?attribute_pa_color=ash-gray</link>
 					<pubDate>Wed, 31 Jul 2024 12:17:42 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/pottery-gutenberg/?post_type=product&#038;p=79</guid>
 																<excerpt:encoded><![CDATA[Color: Ash Gray]]></excerpt:encoded>
 										<wp:post_id>79</wp:post_id>
@@ -873,14 +783,6 @@
 							<wp:meta_value><![CDATA[instock]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[import-placeholder-for-95]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[_regular_price]]></wp:meta_key>
 							<wp:meta_value><![CDATA[45]]></wp:meta_value>
 						</wp:postmeta>
@@ -901,7 +803,7 @@
 					<title><![CDATA[Cocktail Cup - Platinum]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/pottery-gutenberg/product/cocktail-cup/?attribute_pa_color=platinum</link>
 					<pubDate>Wed, 31 Jul 2024 12:17:42 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/pottery-gutenberg/?post_type=product&#038;p=80</guid>
 																<excerpt:encoded><![CDATA[Color: Platinum]]></excerpt:encoded>
 										<wp:post_id>80</wp:post_id>
@@ -928,14 +830,6 @@
 							<wp:meta_value><![CDATA[instock]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[import-placeholder-for-96]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[_regular_price]]></wp:meta_key>
 							<wp:meta_value><![CDATA[45]]></wp:meta_value>
 						</wp:postmeta>
@@ -952,7 +846,7 @@
 					<title><![CDATA[Short Mug]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/pottery-gutenberg/product/short-mug/</link>
 					<pubDate>Wed, 31 Jul 2024 12:17:42 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/pottery-gutenberg/?post_type=product&#038;p=81</guid>
 																<excerpt:encoded><![CDATA[You begin with a text, you sculpt information, you chisel away what's not needed, you come to the point, make things clear, add value, you're a content person, you like words. Design is no afterthought, far from it, but it comes in a deserved second. Anyway, you still use Lorem Ipsum and rightly so, as it will always have a place in the web workers toolbox, as things happen, not always the way you like it, not always in the preferred order. Even if your less into design and more into content strategy you may find some redeeming value with, wait for it.]]></excerpt:encoded>
 										<wp:post_id>81</wp:post_id>
@@ -985,14 +879,6 @@
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_stock_status]]></wp:meta_key>
 							<wp:meta_value><![CDATA[instock]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[import-placeholder-for-99]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_regular_price]]></wp:meta_key>
@@ -1055,7 +941,7 @@
 					<title><![CDATA[Dawn Bowl]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/pottery-gutenberg/product/dawn-bowl/</link>
 					<pubDate>Wed, 31 Jul 2024 12:17:42 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/pottery-gutenberg/?post_type=product&#038;p=82</guid>
 																<excerpt:encoded><![CDATA[You begin with a text, you sculpt information, you chisel away what's not needed, you come to the point, make things clear, add value, you're a content person, you like words. Design is no afterthought, far from it, but it comes in a deserved second. Anyway, you still use Lorem Ipsum and rightly so, as it will always have a place in the web workers toolbox, as things happen, not always the way you like it, not always in the preferred order. Even if your less into design and more into content strategy you may find some redeeming value with, wait for it.]]></excerpt:encoded>
 										<wp:post_id>82</wp:post_id>
@@ -1087,14 +973,6 @@
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_stock_status]]></wp:meta_key>
 							<wp:meta_value><![CDATA[instock]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[import-placeholder-for-101]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_regular_price]]></wp:meta_key>
@@ -1157,7 +1035,7 @@
 					<title><![CDATA[Entree Bowl]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/pottery-gutenberg/product/entree-bowl/</link>
 					<pubDate>Wed, 31 Jul 2024 12:17:42 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/pottery-gutenberg/?post_type=product&#038;p=83</guid>
 																<excerpt:encoded><![CDATA[You begin with a text, you sculpt information, you chisel away what's not needed, you come to the point, make things clear, add value, you're a content person, you like words. Design is no afterthought, far from it, but it comes in a deserved second. Anyway, you still use Lorem Ipsum and rightly so, as it will always have a place in the web workers toolbox, as things happen, not always the way you like it, not always in the preferred order. Even if your less into design and more into content strategy you may find some redeeming value with, wait for it.]]></excerpt:encoded>
 										<wp:post_id>83</wp:post_id>
@@ -1189,14 +1067,6 @@
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_stock_status]]></wp:meta_key>
 							<wp:meta_value><![CDATA[instock]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[import-placeholder-for-103]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_regular_price]]></wp:meta_key>
@@ -1259,7 +1129,7 @@
 					<title><![CDATA[Breakfast Bowl]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/pottery-gutenberg/product/breakfast-bowl/</link>
 					<pubDate>Wed, 31 Jul 2024 12:17:42 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/pottery-gutenberg/?post_type=product&#038;p=84</guid>
 																<excerpt:encoded><![CDATA[You begin with a text, you sculpt information, you chisel away what's not needed, you come to the point, make things clear, add value, you're a content person, you like words. Design is no afterthought, far from it, but it comes in a deserved second. Anyway, you still use Lorem Ipsum and rightly so, as it will always have a place in the web workers toolbox, as things happen, not always the way you like it, not always in the preferred order. Even if your less into design and more into content strategy you may find some redeeming value with, wait for it.]]></excerpt:encoded>
 										<wp:post_id>84</wp:post_id>
@@ -1291,14 +1161,6 @@
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_stock_status]]></wp:meta_key>
 							<wp:meta_value><![CDATA[instock]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[import-placeholder-for-107]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_regular_price]]></wp:meta_key>
@@ -1361,7 +1223,7 @@
 					<title><![CDATA[Caramel Bowl]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/pottery-gutenberg/product/caramel-bowl/</link>
 					<pubDate>Wed, 31 Jul 2024 12:17:42 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/pottery-gutenberg/?post_type=product&#038;p=85</guid>
 																<excerpt:encoded><![CDATA[You begin with a text, you sculpt information, you chisel away what's not needed, you come to the point, make things clear, add value, you're a content person, you like words. Design is no afterthought, far from it, but it comes in a deserved second. Anyway, you still use Lorem Ipsum and rightly so, as it will always have a place in the web workers toolbox, as things happen, not always the way you like it, not always in the preferred order. Even if your less into design and more into content strategy you may find some redeeming value with, wait for it.]]></excerpt:encoded>
 										<wp:post_id>85</wp:post_id>
@@ -1393,14 +1255,6 @@
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_stock_status]]></wp:meta_key>
 							<wp:meta_value><![CDATA[instock]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[import-placeholder-for-110]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_regular_price]]></wp:meta_key>
@@ -1463,7 +1317,7 @@
 					<title><![CDATA[Pasta Bowl]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/pottery-gutenberg/product/pasta-bowl/</link>
 					<pubDate>Wed, 31 Jul 2024 12:17:42 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/pottery-gutenberg/?post_type=product&#038;p=86</guid>
 																<excerpt:encoded><![CDATA[You begin with a text, you sculpt information, you chisel away what's not needed, you come to the point, make things clear, add value, you're a content person, you like words. Design is no afterthought, far from it, but it comes in a deserved second. Anyway, you still use Lorem Ipsum and rightly so, as it will always have a place in the web workers toolbox, as things happen, not always the way you like it, not always in the preferred order. Even if your less into design and more into content strategy you may find some redeeming value with, wait for it.]]></excerpt:encoded>
 										<wp:post_id>86</wp:post_id>
@@ -1495,14 +1349,6 @@
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_stock_status]]></wp:meta_key>
 							<wp:meta_value><![CDATA[instock]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[import-placeholder-for-113]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_regular_price]]></wp:meta_key>
@@ -1565,7 +1411,7 @@
 					<title><![CDATA[Bump Plate]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/pottery-gutenberg/product/bump-plate/</link>
 					<pubDate>Wed, 31 Jul 2024 12:17:42 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/pottery-gutenberg/?post_type=product&#038;p=87</guid>
 																<excerpt:encoded><![CDATA[You begin with a text, you sculpt information, you chisel away what's not needed, you come to the point, make things clear, add value, you're a content person, you like words. Design is no afterthought, far from it, but it comes in a deserved second. Anyway, you still use Lorem Ipsum and rightly so, as it will always have a place in the web workers toolbox, as things happen, not always the way you like it, not always in the preferred order. Even if your less into design and more into content strategy you may find some redeeming value with, wait for it.]]></excerpt:encoded>
 										<wp:post_id>87</wp:post_id>
@@ -1598,14 +1444,6 @@
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_stock_status]]></wp:meta_key>
 							<wp:meta_value><![CDATA[instock]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[import-placeholder-for-190]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
@@ -1672,7 +1510,7 @@
 					<title><![CDATA[Bump Plate - Brown]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/pottery-gutenberg/product/bump-plate/?attribute_pa_color=brown</link>
 					<pubDate>Wed, 31 Jul 2024 12:17:42 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/pottery-gutenberg/?post_type=product&#038;p=88</guid>
 																<excerpt:encoded><![CDATA[Color: Brown]]></excerpt:encoded>
 										<wp:post_id>88</wp:post_id>
@@ -1699,14 +1537,6 @@
 							<wp:meta_value><![CDATA[instock]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[import-placeholder-for-191]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[_regular_price]]></wp:meta_key>
 							<wp:meta_value><![CDATA[56]]></wp:meta_value>
 						</wp:postmeta>
@@ -1723,7 +1553,7 @@
 					<title><![CDATA[Bump Plate - Green]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/pottery-gutenberg/product/bump-plate/?attribute_pa_color=green</link>
 					<pubDate>Wed, 31 Jul 2024 12:17:42 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/pottery-gutenberg/?post_type=product&#038;p=89</guid>
 																<excerpt:encoded><![CDATA[Color: Green]]></excerpt:encoded>
 										<wp:post_id>89</wp:post_id>
@@ -1750,14 +1580,6 @@
 							<wp:meta_value><![CDATA[instock]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[import-placeholder-for-192]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[_regular_price]]></wp:meta_key>
 							<wp:meta_value><![CDATA[56]]></wp:meta_value>
 						</wp:postmeta>
@@ -1778,7 +1600,7 @@
 					<title><![CDATA[Dinner Plate]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/pottery-gutenberg/product/dinner-plate/</link>
 					<pubDate>Wed, 31 Jul 2024 12:17:42 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/pottery-gutenberg/?post_type=product&#038;p=90</guid>
 																<excerpt:encoded><![CDATA[You begin with a text, you sculpt information, you chisel away what's not needed, you come to the point, make things clear, add value, you're a content person, you like words. Design is no afterthought, far from it, but it comes in a deserved second. Anyway, you still use Lorem Ipsum and rightly so, as it will always have a place in the web workers toolbox, as things happen, not always the way you like it, not always in the preferred order. Even if your less into design and more into content strategy you may find some redeeming value with, wait for it.]]></excerpt:encoded>
 										<wp:post_id>90</wp:post_id>
@@ -1810,14 +1632,6 @@
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_stock_status]]></wp:meta_key>
 							<wp:meta_value><![CDATA[instock]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[import-placeholder-for-194]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_regular_price]]></wp:meta_key>
@@ -1880,7 +1694,7 @@
 					<title><![CDATA[Bump Platter]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/pottery-gutenberg/product/bump-platter/</link>
 					<pubDate>Wed, 31 Jul 2024 12:17:42 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/pottery-gutenberg/?post_type=product&#038;p=91</guid>
 																<excerpt:encoded><![CDATA[You begin with a text, you sculpt information, you chisel away what's not needed, you come to the point, make things clear, add value, you're a content person, you like words. Design is no afterthought, far from it, but it comes in a deserved second. Anyway, you still use Lorem Ipsum and rightly so, as it will always have a place in the web workers toolbox, as things happen, not always the way you like it, not always in the preferred order. Even if your less into design and more into content strategy you may find some redeeming value with, wait for it.]]></excerpt:encoded>
 										<wp:post_id>91</wp:post_id>
@@ -1912,14 +1726,6 @@
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_stock_status]]></wp:meta_key>
 							<wp:meta_value><![CDATA[instock]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[import-placeholder-for-196]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_regular_price]]></wp:meta_key>
@@ -1982,7 +1788,7 @@
 					<title><![CDATA[Salad Plate]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/pottery-gutenberg/product/salad-plate/</link>
 					<pubDate>Wed, 31 Jul 2024 12:17:42 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/pottery-gutenberg/?post_type=product&#038;p=92</guid>
 																<excerpt:encoded><![CDATA[You begin with a text, you sculpt information, you chisel away what's not needed, you come to the point, make things clear, add value, you're a content person, you like words. Design is no afterthought, far from it, but it comes in a deserved second. Anyway, you still use Lorem Ipsum and rightly so, as it will always have a place in the web workers toolbox, as things happen, not always the way you like it, not always in the preferred order. Even if your less into design and more into content strategy you may find some redeeming value with, wait for it.]]></excerpt:encoded>
 										<wp:post_id>92</wp:post_id>
@@ -2015,14 +1821,6 @@
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_stock_status]]></wp:meta_key>
 							<wp:meta_value><![CDATA[instock]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[import-placeholder-for-197]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_regular_price]]></wp:meta_key>
@@ -2085,7 +1883,7 @@
 					<title><![CDATA[21cm Side Plate]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/pottery-gutenberg/product/21cm-side-plate/</link>
 					<pubDate>Wed, 31 Jul 2024 12:17:42 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/pottery-gutenberg/?post_type=product&#038;p=93</guid>
 																<excerpt:encoded><![CDATA[You begin with a text, you sculpt information, you chisel away what's not needed, you come to the point, make things clear, add value, you're a content person, you like words. Design is no afterthought, far from it, but it comes in a deserved second. Anyway, you still use Lorem Ipsum and rightly so, as it will always have a place in the web workers toolbox, as things happen, not always the way you like it, not always in the preferred order. Even if your less into design and more into content strategy you may find some redeeming value with, wait for it.]]></excerpt:encoded>
 										<wp:post_id>93</wp:post_id>
@@ -2117,14 +1915,6 @@
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_stock_status]]></wp:meta_key>
 							<wp:meta_value><![CDATA[instock]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[import-placeholder-for-201]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_regular_price]]></wp:meta_key>
@@ -2187,7 +1977,7 @@
 					<title><![CDATA[Footer Pottery]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/pottery-gutenberg/?cms_block=footer-pottery</link>
 					<pubDate>Wed, 31 Jul 2024 12:32:42 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/pottery-gutenberg/?post_type=cms_block&#038;p=171</guid>
 											<content:encoded><![CDATA[<!-- wp:wd/section {"blockId":"7a54401b-5003-488d-b9b1-e96072de9923","blockGap":0,"paddingRight":"0","paddingLeft":"0","marginBottom":"0","borderWidthLock":false} -->
 <div id="wd-7a54401b" class="wp-block-wd-section"><!-- wp:wd/row {"blockId":"2c67c45b-c6b3-4982-8295-f548fd8a4ccf","columnsGap":0,"borderType":"solid","borderColorCode":"#101010","borderWidthTop":"1","borderWidthBottom":"1","borderWidthLock":false,"displayWidth":"full-width"} -->
@@ -2284,7 +2074,7 @@
 					<title><![CDATA[All products]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/pottery-gutenberg/shop/</link>
 					<pubDate>Wed, 31 Jul 2024 11:18:55 +0000</pubDate>
-					<dc:creator><![CDATA[admin]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/pottery-gutenberg/shop/</guid>
 															<wp:post_id>7</wp:post_id>
 					<wp:post_date><![CDATA[2024-07-31 11:18:55]]></wp:post_date>
@@ -2314,7 +2104,7 @@
 					<title><![CDATA[Contact form 1]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/pottery-gutenberg/?post_type=wpcf7_contact_form&#038;p=12</link>
 					<pubDate>Wed, 31 Jul 2024 11:19:01 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/pottery-gutenberg/?post_type=wpcf7_contact_form&#038;p=12</guid>
 											<content:encoded><![CDATA[<label> Your name
     [text* your-name autocomplete:name] </label>
@@ -2432,162 +2222,162 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[Home Pottery]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/pottery-gutenberg/</link>
 					<pubDate>Wed, 31 Jul 2024 12:13:26 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/pottery-gutenberg/?page_id=59</guid>
-											<content:encoded><![CDATA[<!-- wp:wd/slider {"blockId":"55018ef3-71d2-41c0-a7c2-f7c025f048c3","effect":"parallax","arrows":false,"arrowsTablet":false,"arrowsMobile":false,"paginationAlign":"end","paginationStyle":"3","autoplay":true,"autoplaySpeed":"25000","stretch":true,"fullWidthContent":true,"height":"580","marginTop":"-40","marginBottom":"0","heightTablet":"500"} -->
-<div id="wd-55018ef3" class="wp-block-wd-slider wd-slider wd-carousel-container wd-anim-parallax wd-stretched wd-container-full-width"><div class="wd-carousel-inner"><div class="wd-carousel wd-grid" data-effect="parallax" data-wrap="yes" data-autoheight="yes" data-sliding_speed="700" style="--wd-col-lg:1;--wd-col-md:1;--wd-col-sm:1" data-autoplay="yes" data-speed="25000"><div class="wd-carousel-wrap"><!-- wp:wd/slider-item {"blockId":"9d5faf03-f8a6-49cc-bf99-5c2030e35ef3","justify":"flex-end","align":"flex-start","effect":"parallax","colorScheme":"light","bgImage":{"id":175,"url":"http://dummy.xtemos.com/woodmart2/pottery-gutenberg/wp-content/uploads/sites/36/2024/07/w-hmp-slide-1-opt.jpg"},"bgColorCode":"#797162","paddingTop":"60","paddingRight":"60","paddingBottom":"60","paddingLeft":"60","paddingLock":true,"paddingRightMobile":"15","paddingLeftMobile":"15"} -->
-<div id="wd-9d5faf03" class="wp-block-wd-slider-item wd-slide wd-carousel-item color-scheme-light"><div class="wd-slide-container"><!-- wp:wd/title {"blockId":"5f8caeef-3823-4692-85b1-29bb834b7528","content":"A large selection of pots, mugs and decors.","tpFontSize":"64","tpLineHeight":"1.2","displayWidth":"custom","customWidth":"700","tpFontSizeTablet":"46","tpFontSizeMobile":"32","tpLineHeightUnits":"em","displayWidthTablet":"custom","displayWidthMobile":"custom","customWidthTablet":"525","customWidthMobile":"365"} -->
-<h2 id="wd-5f8caeef" class="wp-block-wd-title title wd-custom-width">A large selection of pots, mugs and decors.</h2>
+											<content:encoded><![CDATA[<!-- wp:wd/slider {"blockId":"55018ef3-71d2-41c0-a7c2-f7c025f048c3","blockVersion":"2","effect":"parallax","arrows":false,"arrowsTablet":false,"arrowsMobile":false,"paginationAlign":"end","paginationStyle":"3","autoplay":true,"autoplaySpeed":"25000","stretch":true,"fullWidthContent":true,"height":"580","marginTop":"-40","marginBottom":"0","heightTablet":"500"} -->
+<div class="wp-block-wd-slider wd-slider wd-carousel-container wd-anim-parallax wd-stretched wd-container-full-width wd-autoplay-on wd-55018ef3"><div class="wd-carousel-inner"><div class="wd-carousel wd-grid" data-effect="parallax" data-wrap="yes" data-autoheight="yes" data-sliding_speed="700" style="--wd-col-lg:1;--wd-col-md:1;--wd-col-sm:1;" data-autoplay="yes" data-speed="25000"><div class="wd-carousel-wrap"><!-- wp:wd/slider-item {"blockId":"9d5faf03-f8a6-49cc-bf99-5c2030e35ef3","blockVersion":"2","justify":"flex-end","align":"flex-start","effect":"parallax","colorScheme":"light","aspectRatio":"","image":{"id":175,"url":"http://dummy.xtemos.com/woodmart2/pottery-gutenberg/wp-content/uploads/sites/36/2024/07/w-hmp-slide-1-opt.jpg","width":2048,"height":740},"bgImage":{"id":"","url":""},"bgColorCode":"#797162","paddingTop":"60","paddingRight":"60","paddingBottom":"60","paddingLeft":"60","paddingLock":true,"paddingRightMobile":"15","paddingLeftMobile":"15"} -->
+<div class="wp-block-wd-slider-item wd-slide wd-carousel-item color-scheme-light wd-9d5faf03"><div class="wd-slide-container"><!-- wp:wd/title {"blockId":"5f8caeef-3823-4692-85b1-29bb834b7528","blockVersion":"2","content":"A large selection of pots, mugs and decors.","tpFontSize":"64","tpLineHeight":"1.2","displayWidth":"custom","customWidth":"700","tpFontSizeTablet":"46","tpFontSizeMobile":"32","tpLineHeightUnits":"em","displayWidthTablet":"custom","displayWidthMobile":"custom","customWidthTablet":"525","customWidthMobile":"365"} -->
+<h2 class="wp-block-wd-title title wd-5f8caeef wd-custom-width">A large selection of pots, mugs and decors.</h2>
 <!-- /wp:wd/title -->
 
-<!-- wp:wd/paragraph {"blockId":"24849894-2f40-44df-b3a8-8089d6eab343","displayWidth":"custom","customWidth":"590"} -->
-<p id="wd-24849894" class="wp-block-wd-paragraph wd-custom-width">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring possession of my entire soul which I enjoy with my whole heart.</p>
+<!-- wp:wd/paragraph {"blockId":"24849894-2f40-44df-b3a8-8089d6eab343","blockVersion":"2","displayWidth":"custom","customWidth":"590"} -->
+<p class="wp-block-wd-paragraph wd-24849894 wd-custom-width">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring possession of my entire soul which I enjoy with my whole heart.</p>
 <!-- /wp:wd/paragraph -->
 
-<!-- wp:wd/container {"blockId":"01459e39-2eb1-4a12-859b-3004c1478b62","direction":"row","align":"center","colGap":"15","rowGap":"","displayWidth":"","directionTablet":"row","directionMobile":"row"} -->
-<div id="wd-01459e39" class="wp-block-wd-container wd-dir-row wd-dir-row-md wd-dir-row-sm wd-align-is-lg-center"><!-- wp:wd/button {"blockId":"2998ea55-559b-4240-8d2c-eba2f830612b","predefinedColor":"primary"} -->
-<a id="wd-2998ea55" class="wp-block-wd-button btn btn-style-default btn-color-primary btn-size-default btn-shape-rectangle" href="#"><span>Shop now</span></a>
+<!-- wp:wd/container {"blockId":"01459e39-2eb1-4a12-859b-3004c1478b62","blockVersion":"2","direction":"row","align":"center","colGap":"15","rowGap":"","displayWidth":"","directionTablet":"row","directionMobile":"row"} -->
+<div class="wp-block-wd-container wd-dir-row wd-dir-row-md wd-dir-row-sm wd-align-is-lg-center wd-01459e39"><!-- wp:wd/button {"blockId":"2998ea55-559b-4240-8d2c-eba2f830612b","blockVersion":"2","predefinedColor":"primary"} -->
+<a class="wp-block-wd-button btn btn-style-default btn-color-primary btn-size-default btn-shape-rectangle wd-2998ea55" href="#"><span>Shop now</span></a>
 <!-- /wp:wd/button -->
 
-<!-- wp:wd/paragraph {"blockId":"dfab58ed-fbc4-426d-82af-0dad754448f9","colorCode":"#fefefe","hideOnMobile":true} -->
-<p id="wd-dfab58ed" class="wp-block-wd-paragraph wd-hide-sm">Rated 4.9 / 5 based on 374 reviews</p>
+<!-- wp:wd/paragraph {"blockId":"dfab58ed-fbc4-426d-82af-0dad754448f9","blockVersion":"2","colorCode":"#fefefe","hideOnMobile":true} -->
+<p class="wp-block-wd-paragraph wd-hide-sm wd-dfab58ed">Rated 4.9 / 5 based on 374 reviews</p>
 <!-- /wp:wd/paragraph -->
 
-<!-- wp:wd/icon {"blockId":"b176c620-380e-4ead-afe2-e90b4496c4e2","image":{"id":178,"url":"http://dummy.xtemos.com/woodmart2/pottery-gutenberg/wp-content/uploads/sites/36/2024/07/logo-white.svg"},"width":"93","height":"23","hideOnMobile":true} -->
-<div id="wd-b176c620" class="wp-block-wd-icon wd-hide-sm"><img class="wp-image-178" src="http://dummy.xtemos.com/woodmart2/pottery-gutenberg/wp-content/uploads/sites/36/2024/07/logo-white.svg" alt="" /></div>
+<!-- wp:wd/icon {"blockId":"b176c620-380e-4ead-afe2-e90b4496c4e2","blockVersion":"2","image":{"id":178,"url":"http://dummy.xtemos.com/woodmart2/pottery-gutenberg/wp-content/uploads/sites/36/2024/07/logo-white.svg"},"width":"93","height":"23","hideOnMobile":true} -->
+<div class="wp-block-wd-icon wd-hide-sm wd-b176c620"><img class="wp-image-178" src="http://dummy.xtemos.com/woodmart2/pottery-gutenberg/wp-content/uploads/sites/36/2024/07/logo-white.svg" alt=""/></div>
 <!-- /wp:wd/icon --></div>
-<!-- /wp:wd/container --></div><div class="wd-slide-bg wd-fill"></div></div>
+<!-- /wp:wd/container --></div><div class="wd-slide-bg wd-fill"><img src="http://dummy.xtemos.com/woodmart2/pottery-gutenberg/wp-content/uploads/sites/36/2024/07/w-hmp-slide-1-opt.jpg" class="wp-image-175" alt=""/></div></div>
 <!-- /wp:wd/slider-item -->
 
-<!-- wp:wd/slider-item {"blockId":"fd499f97-61ef-4959-abc4-0a3f393f6c3e","justify":"flex-end","align":"flex-start","effect":"parallax","colorScheme":"light","bgImage":{"id":183,"url":"http://dummy.xtemos.com/woodmart2/pottery-gutenberg/wp-content/uploads/sites/36/2024/07/w-hmp-slide-2-opt.jpg"},"bgColorCode":"#9b9b9b","paddingTop":"60","paddingRight":"60","paddingBottom":"60","paddingLeft":"60","paddingLock":true,"paddingRightMobile":"15","paddingLeftMobile":"15"} -->
-<div id="wd-fd499f97" class="wp-block-wd-slider-item wd-slide wd-carousel-item color-scheme-light"><div class="wd-slide-container"><!-- wp:wd/title {"blockId":"f1b872dc-d19d-4d60-bcd0-97a0a9d209c2","content":"Discover the pinnacle of craftsmanship.","tpFontSize":"64","tpLineHeight":"1.2","displayWidth":"custom","customWidth":"700","tpFontSizeTablet":"46","tpFontSizeMobile":"32","tpLineHeightUnits":"em","displayWidthTablet":"custom","displayWidthMobile":"custom","customWidthTablet":"525","customWidthMobile":"365"} -->
-<h2 id="wd-f1b872dc" class="wp-block-wd-title title wd-custom-width">Discover the pinnacle of craftsmanship.</h2>
+<!-- wp:wd/slider-item {"blockId":"fd499f97-61ef-4959-abc4-0a3f393f6c3e","blockVersion":"2","justify":"flex-end","align":"flex-start","effect":"parallax","colorScheme":"light","aspectRatio":"","image":{"id":183,"url":"http://dummy.xtemos.com/woodmart2/pottery-gutenberg/wp-content/uploads/sites/36/2024/07/w-hmp-slide-2-opt.jpg","width":2048,"height":740},"bgImage":{"id":"","url":""},"bgColorCode":"#9b9b9b","paddingTop":"60","paddingRight":"60","paddingBottom":"60","paddingLeft":"60","paddingLock":true,"paddingRightMobile":"15","paddingLeftMobile":"15"} -->
+<div class="wp-block-wd-slider-item wd-slide wd-carousel-item color-scheme-light wd-fd499f97"><div class="wd-slide-container"><!-- wp:wd/title {"blockId":"f1b872dc-d19d-4d60-bcd0-97a0a9d209c2","blockVersion":"2","content":"Discover the pinnacle of craftsmanship.","tpFontSize":"64","tpLineHeight":"1.2","displayWidth":"custom","customWidth":"700","tpFontSizeTablet":"46","tpFontSizeMobile":"32","tpLineHeightUnits":"em","displayWidthTablet":"custom","displayWidthMobile":"custom","customWidthTablet":"525","customWidthMobile":"365"} -->
+<h2 class="wp-block-wd-title title wd-f1b872dc wd-custom-width">Discover the pinnacle of craftsmanship.</h2>
 <!-- /wp:wd/title -->
 
-<!-- wp:wd/paragraph {"blockId":"60591962-1c17-4f4d-bfef-c66f7461d99a","displayWidth":"custom","customWidth":"590"} -->
-<p id="wd-60591962" class="wp-block-wd-paragraph wd-custom-width">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring possession of my entire soul which I enjoy with my whole heart.</p>
+<!-- wp:wd/paragraph {"blockId":"60591962-1c17-4f4d-bfef-c66f7461d99a","blockVersion":"2","displayWidth":"custom","customWidth":"590"} -->
+<p class="wp-block-wd-paragraph wd-60591962 wd-custom-width">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring possession of my entire soul which I enjoy with my whole heart.</p>
 <!-- /wp:wd/paragraph -->
 
-<!-- wp:wd/container {"blockId":"3df68dfc-d7cf-45e5-8188-54d019beb35f","direction":"row","align":"center","colGap":"15","rowGap":"","displayWidth":"","directionTablet":"row","directionMobile":"row"} -->
-<div id="wd-3df68dfc" class="wp-block-wd-container wd-dir-row wd-dir-row-md wd-dir-row-sm wd-align-is-lg-center"><!-- wp:wd/button {"blockId":"d41d863f-1cb4-4eea-b162-e90c1e937b72","predefinedColor":"primary"} -->
-<a id="wd-d41d863f" class="wp-block-wd-button btn btn-style-default btn-color-primary btn-size-default btn-shape-rectangle" href="#"><span>Shop now</span></a>
+<!-- wp:wd/container {"blockId":"3df68dfc-d7cf-45e5-8188-54d019beb35f","blockVersion":"2","direction":"row","align":"center","colGap":"15","rowGap":"","displayWidth":"","directionTablet":"row","directionMobile":"row"} -->
+<div class="wp-block-wd-container wd-dir-row wd-dir-row-md wd-dir-row-sm wd-align-is-lg-center wd-3df68dfc"><!-- wp:wd/button {"blockId":"d41d863f-1cb4-4eea-b162-e90c1e937b72","blockVersion":"2","predefinedColor":"primary"} -->
+<a class="wp-block-wd-button btn btn-style-default btn-color-primary btn-size-default btn-shape-rectangle wd-d41d863f" href="#"><span>Shop now</span></a>
 <!-- /wp:wd/button -->
 
-<!-- wp:wd/paragraph {"blockId":"57e74984-2f29-4f86-a85c-b349da75e946","colorCode":"#fefefe","hideOnMobile":true} -->
-<p id="wd-57e74984" class="wp-block-wd-paragraph wd-hide-sm">Rated 4.9 / 5 based on 374 reviews</p>
+<!-- wp:wd/paragraph {"blockId":"57e74984-2f29-4f86-a85c-b349da75e946","blockVersion":"2","colorCode":"#fefefe","hideOnMobile":true} -->
+<p class="wp-block-wd-paragraph wd-hide-sm wd-57e74984">Rated 4.9 / 5 based on 374 reviews</p>
 <!-- /wp:wd/paragraph -->
 
-<!-- wp:wd/icon {"blockId":"bfdd6584-ba6a-4902-a037-57a47306dbdf","image":{"id":178,"url":"http://dummy.xtemos.com/woodmart2/pottery-gutenberg/wp-content/uploads/sites/36/2024/07/logo-white.svg"},"width":"93","height":"23","hideOnMobile":true} -->
-<div id="wd-bfdd6584" class="wp-block-wd-icon wd-hide-sm"><img class="wp-image-178" src="http://dummy.xtemos.com/woodmart2/pottery-gutenberg/wp-content/uploads/sites/36/2024/07/logo-white.svg" alt="" /></div>
+<!-- wp:wd/icon {"blockId":"bfdd6584-ba6a-4902-a037-57a47306dbdf","blockVersion":"2","image":{"id":178,"url":"http://dummy.xtemos.com/woodmart2/pottery-gutenberg/wp-content/uploads/sites/36/2024/07/logo-white.svg"},"width":"93","height":"23","hideOnMobile":true} -->
+<div class="wp-block-wd-icon wd-hide-sm wd-bfdd6584"><img class="wp-image-178" src="http://dummy.xtemos.com/woodmart2/pottery-gutenberg/wp-content/uploads/sites/36/2024/07/logo-white.svg" alt=""/></div>
 <!-- /wp:wd/icon --></div>
-<!-- /wp:wd/container --></div><div class="wd-slide-bg wd-fill"></div></div>
+<!-- /wp:wd/container --></div><div class="wd-slide-bg wd-fill"><img src="http://dummy.xtemos.com/woodmart2/pottery-gutenberg/wp-content/uploads/sites/36/2024/07/w-hmp-slide-2-opt.jpg" class="wp-image-183" alt=""/></div></div>
 <!-- /wp:wd/slider-item -->
 
-<!-- wp:wd/slider-item {"blockId":"595a5197-42e1-45e2-b6b5-9b788109aa1b","justify":"flex-end","align":"flex-start","effect":"parallax","colorScheme":"light","bgImage":{"id":185,"url":"http://dummy.xtemos.com/woodmart2/pottery-gutenberg/wp-content/uploads/sites/36/2024/07/w-hmp-slide-3-opt.jpg"},"bgColorCode":"#797162","paddingTop":"60","paddingRight":"60","paddingBottom":"60","paddingLeft":"60","paddingLock":true,"paddingRightMobile":"15","paddingLeftMobile":"15"} -->
-<div id="wd-595a5197" class="wp-block-wd-slider-item wd-slide wd-carousel-item color-scheme-light"><div class="wd-slide-container"><!-- wp:wd/title {"blockId":"a2b440c9-e88e-4668-b0fb-caca8eeaada0","content":"Get to know pottery, book a class now!","tpFontSize":"64","tpLineHeight":"1.2","displayWidth":"custom","customWidth":"700","tpFontSizeTablet":"46","tpFontSizeMobile":"32","tpLineHeightUnits":"em","displayWidthTablet":"custom","displayWidthMobile":"custom","customWidthTablet":"525","customWidthMobile":"365"} -->
-<h2 id="wd-a2b440c9" class="wp-block-wd-title title wd-custom-width">Get to know pottery, book a class now!</h2>
+<!-- wp:wd/slider-item {"blockId":"595a5197-42e1-45e2-b6b5-9b788109aa1b","blockVersion":"2","justify":"flex-end","align":"flex-start","effect":"parallax","colorScheme":"light","aspectRatio":"","image":{"id":185,"url":"http://dummy.xtemos.com/woodmart2/pottery-gutenberg/wp-content/uploads/sites/36/2024/07/w-hmp-slide-3-opt.jpg","width":2048,"height":740},"bgImage":{"id":"","url":""},"bgColorCode":"#797162","paddingTop":"60","paddingRight":"60","paddingBottom":"60","paddingLeft":"60","paddingLock":true,"paddingRightMobile":"15","paddingLeftMobile":"15"} -->
+<div class="wp-block-wd-slider-item wd-slide wd-carousel-item color-scheme-light wd-595a5197"><div class="wd-slide-container"><!-- wp:wd/title {"blockId":"a2b440c9-e88e-4668-b0fb-caca8eeaada0","blockVersion":"2","content":"Get to know pottery, book a class now!","tpFontSize":"64","tpLineHeight":"1.2","displayWidth":"custom","customWidth":"700","tpFontSizeTablet":"46","tpFontSizeMobile":"32","tpLineHeightUnits":"em","displayWidthTablet":"custom","displayWidthMobile":"custom","customWidthTablet":"525","customWidthMobile":"365"} -->
+<h2 class="wp-block-wd-title title wd-a2b440c9 wd-custom-width">Get to know pottery, book a class now!</h2>
 <!-- /wp:wd/title -->
 
-<!-- wp:wd/paragraph {"blockId":"601f0a45-96e1-4d52-9a09-fee44b4feae9","displayWidth":"custom","customWidth":"590"} -->
-<p id="wd-601f0a45" class="wp-block-wd-paragraph wd-custom-width">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring possession of my entire soul which I enjoy with my whole heart.</p>
+<!-- wp:wd/paragraph {"blockId":"601f0a45-96e1-4d52-9a09-fee44b4feae9","blockVersion":"2","displayWidth":"custom","customWidth":"590"} -->
+<p class="wp-block-wd-paragraph wd-601f0a45 wd-custom-width">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring possession of my entire soul which I enjoy with my whole heart.</p>
 <!-- /wp:wd/paragraph -->
 
-<!-- wp:wd/container {"blockId":"59d37ba3-88ce-4a34-9746-67b122e13902","direction":"row","align":"center","colGap":"15","rowGap":"","displayWidth":"","directionTablet":"row","directionMobile":"row"} -->
-<div id="wd-59d37ba3" class="wp-block-wd-container wd-dir-row wd-dir-row-md wd-dir-row-sm wd-align-is-lg-center"><!-- wp:wd/button {"blockId":"8bcab466-c2dd-4aa2-a2cb-9bdd0942af57","predefinedColor":"primary"} -->
-<a id="wd-8bcab466" class="wp-block-wd-button btn btn-style-default btn-color-primary btn-size-default btn-shape-rectangle" href="#"><span>Shop now</span></a>
+<!-- wp:wd/container {"blockId":"59d37ba3-88ce-4a34-9746-67b122e13902","blockVersion":"2","direction":"row","align":"center","colGap":"15","rowGap":"","displayWidth":"","directionTablet":"row","directionMobile":"row"} -->
+<div class="wp-block-wd-container wd-dir-row wd-dir-row-md wd-dir-row-sm wd-align-is-lg-center wd-59d37ba3"><!-- wp:wd/button {"blockId":"8bcab466-c2dd-4aa2-a2cb-9bdd0942af57","blockVersion":"2","predefinedColor":"primary"} -->
+<a class="wp-block-wd-button btn btn-style-default btn-color-primary btn-size-default btn-shape-rectangle wd-8bcab466" href="#"><span>Shop now</span></a>
 <!-- /wp:wd/button -->
 
-<!-- wp:wd/paragraph {"blockId":"94b62e2d-c397-416b-94b5-73c6b95b1e9b","colorCode":"#fefefe","hideOnMobile":true} -->
-<p id="wd-94b62e2d" class="wp-block-wd-paragraph wd-hide-sm">Rated 4.9 / 5 based on 374 reviews</p>
+<!-- wp:wd/paragraph {"blockId":"94b62e2d-c397-416b-94b5-73c6b95b1e9b","blockVersion":"2","colorCode":"#fefefe","hideOnMobile":true} -->
+<p class="wp-block-wd-paragraph wd-hide-sm wd-94b62e2d">Rated 4.9 / 5 based on 374 reviews</p>
 <!-- /wp:wd/paragraph -->
 
-<!-- wp:wd/icon {"blockId":"e4c7e2f1-d27d-4194-a8a0-7cbd02483e1c","image":{"id":178,"url":"http://dummy.xtemos.com/woodmart2/pottery-gutenberg/wp-content/uploads/sites/36/2024/07/logo-white.svg"},"width":"93","height":"23","hideOnMobile":true} -->
-<div id="wd-e4c7e2f1" class="wp-block-wd-icon wd-hide-sm"><img class="wp-image-178" src="http://dummy.xtemos.com/woodmart2/pottery-gutenberg/wp-content/uploads/sites/36/2024/07/logo-white.svg" alt="" /></div>
+<!-- wp:wd/icon {"blockId":"e4c7e2f1-d27d-4194-a8a0-7cbd02483e1c","blockVersion":"2","image":{"id":178,"url":"http://dummy.xtemos.com/woodmart2/pottery-gutenberg/wp-content/uploads/sites/36/2024/07/logo-white.svg"},"width":"93","height":"23","hideOnMobile":true} -->
+<div class="wp-block-wd-icon wd-hide-sm wd-e4c7e2f1"><img class="wp-image-178" src="http://dummy.xtemos.com/woodmart2/pottery-gutenberg/wp-content/uploads/sites/36/2024/07/logo-white.svg" alt=""/></div>
 <!-- /wp:wd/icon --></div>
-<!-- /wp:wd/container --></div><div class="wd-slide-bg wd-fill"></div></div>
+<!-- /wp:wd/container --></div><div class="wd-slide-bg wd-fill"><img src="http://dummy.xtemos.com/woodmart2/pottery-gutenberg/wp-content/uploads/sites/36/2024/07/w-hmp-slide-3-opt.jpg" class="wp-image-185" alt=""/></div></div>
 <!-- /wp:wd/slider-item --></div></div></div><div class="wd-nav-pagin-wrap wd-slider-pagin wd-custom-style wd-style-shape-3 wd-align color-scheme-dark"><ul class="wd-nav-pagin"></ul></div></div>
 <!-- /wp:wd/slider -->
 
-<!-- wp:wd/section {"blockId":"eb7c997f-21bc-4877-912e-7e8adea18f54","paddingRight":"0","paddingLeft":"0","marginBottom":"80","marginBottomTablet":"60","marginBottomMobile":"40"} -->
-<div id="wd-eb7c997f" class="wp-block-wd-section"><!-- wp:wd/product-categories {"blockId":"8a897f79-485a-49b0-bcb7-f63d13c3471a","categories_design":"side","style":"carousel","spacing":"30","img_size":"full","categories_bordered_grid":true,"subcategories":"disable","grid_product_count":"disable","slides_per_view":"5","carouselArrowsOffsetH":"-30","hide_pagination_control":true,"sync_parent_id":"wd_1cb89a26","categoriesBorderColorCode":"#000000","hide_pagination_controlTablet":true,"hide_pagination_controlMobile":true} /--></div>
+<!-- wp:wd/section {"blockId":"eb7c997f-21bc-4877-912e-7e8adea18f54","blockVersion":"2","paddingRight":"0","paddingLeft":"0","marginBottom":"80","marginBottomTablet":"60","marginBottomMobile":"40"} -->
+<div class="wp-block-wd-section wd-eb7c997f"><!-- wp:wd/product-categories {"blockId":"8a897f79-485a-49b0-bcb7-f63d13c3471a","blockVersion":"2","categories_design":"side","style":"carousel","spacing":"30","img_size":"full","categories_bordered_grid":true,"subcategories":"disable","grid_product_count":"disable","slides_per_view":"5","carouselArrowsOffsetH":"-30","hide_pagination_control":true,"sync_parent_id":"wd_1cb89a26","categoriesBorderColorCode":"#000000","hide_pagination_controlTablet":true,"hide_pagination_controlMobile":true} /--></div>
 <!-- /wp:wd/section -->
 
-<!-- wp:wd/title {"blockId":"23e40926-660c-4fda-b00e-b047a9bdefbe","content":"Popular of The Week","tpFontSize":"28","marginBottom":"10","tpFontSizeTablet":"26","tpFontSizeMobile":"22"} -->
-<h2 id="wd-23e40926" class="wp-block-wd-title title">Popular of The Week</h2>
+<!-- wp:wd/title {"blockId":"23e40926-660c-4fda-b00e-b047a9bdefbe","blockVersion":"2","content":"Popular of The Week","tpFontSize":"28","marginBottom":"10","tpFontSizeTablet":"26","tpFontSizeMobile":"22"} -->
+<h2 class="wp-block-wd-title title wd-23e40926">Popular of The Week</h2>
 <!-- /wp:wd/title -->
 
-<!-- wp:wd/paragraph {"blockId":"171029f4-208b-4e08-877f-7d76219a7dd4"} -->
-<p id="wd-171029f4" class="wp-block-wd-paragraph">The most popular products from the collection</p>
+<!-- wp:wd/paragraph {"blockId":"171029f4-208b-4e08-877f-7d76219a7dd4","blockVersion":"2"} -->
+<p class="wp-block-wd-paragraph wd-171029f4">The most popular products from the collection</p>
 <!-- /wp:wd/paragraph -->
 
-<!-- wp:wd/products {"blockId":"d2fb1b6e-62b9-4562-83d0-837ca8dbe9f5","items_per_page":"8","pagination":"arrows","img_size":"custom","imgSizeCustomWidth":"333","imgSizeCustomHeight":"380","marginBottom":"80","columnsTablet":3,"marginBottomTablet":"60","marginBottomMobile":"40"} /-->
+<!-- wp:wd/products {"blockId":"d2fb1b6e-62b9-4562-83d0-837ca8dbe9f5","blockVersion":"2","items_per_page":"8","pagination":"arrows","img_size":"custom","imgSizeCustomWidth":"333","imgSizeCustomHeight":"380","marginBottom":"80","columnsTablet":3,"marginBottomTablet":"60","marginBottomMobile":"40"} /-->
 
-<!-- wp:wd/row {"blockId":"e7204f9b-376a-465d-bbe7-efaedbe3fc49","columnsGap":100,"marginBottom":"80","columnsGapTablet":30,"columnsGapMobile":20,"marginBottomTablet":"60","marginBottomMobile":"40"} -->
-<div id="wd-e7204f9b" class="wp-block-wd-row"><!-- wp:wd/column {"blockId":"10575009-3439-4eb5-9dac-562288eb59ca","adjacentCount":2,"textAlign":"end","textAlignMobile":"start"} -->
-<div id="wd-10575009" class="wp-block-wd-column wd-align"><!-- wp:wd/title {"blockId":"978806d4-f1e6-4fab-8d17-486938492e5e","content":"Get to know pottery, book a class now!","tpFontSize":"54","tpLineHeight":"1.2","displayWidth":"","customWidth":"","tpFontSizeTablet":"32","tpFontSizeMobile":"20","tpLineHeightUnits":"em"} -->
-<h2 id="wd-978806d4" class="wp-block-wd-title title">Get to know pottery, book a class now!</h2>
+<!-- wp:wd/row {"blockId":"e7204f9b-376a-465d-bbe7-efaedbe3fc49","blockVersion":"2","columnsGap":100,"marginBottom":"80","columnsGapTablet":30,"columnsGapMobile":20,"marginBottomTablet":"60","marginBottomMobile":"40"} -->
+<div class="wp-block-wd-row wd-e7204f9b"><!-- wp:wd/column {"blockId":"10575009-3439-4eb5-9dac-562288eb59ca","blockVersion":"2","adjacentCount":2,"textAlign":"end","textAlignMobile":"start"} -->
+<div class="wp-block-wd-column wd-align wd-10575009"><!-- wp:wd/title {"blockId":"978806d4-f1e6-4fab-8d17-486938492e5e","blockVersion":"2","content":"Get to know pottery, book a class now!","tpFontSize":"54","tpLineHeight":"1.2","displayWidth":"","customWidth":"","tpFontSizeTablet":"32","tpFontSizeMobile":"20","tpLineHeightUnits":"em"} -->
+<h2 class="wp-block-wd-title title wd-978806d4">Get to know pottery, book a class now!</h2>
 <!-- /wp:wd/title --></div>
 <!-- /wp:wd/column -->
 
-<!-- wp:wd/column {"blockId":"076b8848-fda0-49b7-a114-3eac0d2ed4ce","adjacentCount":2} -->
-<div id="wd-076b8848" class="wp-block-wd-column"><!-- wp:wd/image {"blockId":"10c13e49-2b1d-459d-90e4-46cfeebc0e8b","image":{"id":202,"url":"http://dummy.xtemos.com/woodmart2/pottery-gutenberg/wp-content/uploads/sites/36/2024/07/w-hmp-potteries-opt.jpg"},"imageData":{"url":"https://dummy.xtemos.com/woodmart2/pottery-gutenberg/wp-content/uploads/sites/36/2024/07/w-hmp-potteries-opt.jpg","width":344,"height":128},"displayWidth":"custom","customWidth":"172"} -->
-<div id="wd-10c13e49" class="wp-block-wd-image wd-block-image wd-custom-width"><img class="wp-image-202" src="http://dummy.xtemos.com/woodmart2/pottery-gutenberg/wp-content/uploads/sites/36/2024/07/w-hmp-potteries-opt.jpg" alt="" /></div>
+<!-- wp:wd/column {"blockId":"076b8848-fda0-49b7-a114-3eac0d2ed4ce","blockVersion":"2","adjacentCount":2} -->
+<div class="wp-block-wd-column wd-076b8848"><!-- wp:wd/image {"blockId":"10c13e49-2b1d-459d-90e4-46cfeebc0e8b","blockVersion":"2","image":{"id":202,"url":"http://dummy.xtemos.com/woodmart2/pottery-gutenberg/wp-content/uploads/sites/36/2024/07/w-hmp-potteries-opt.jpg"},"imageData":{"url":"https://dummy.xtemos.com/woodmart2/pottery-gutenberg/wp-content/uploads/sites/36/2024/07/w-hmp-potteries-opt.jpg","width":344,"height":128},"displayWidth":"custom","customWidth":"172"} -->
+<div class="wp-block-wd-image wd-block-image wd-10c13e49 wd-custom-width"><img class="wp-image-202" src="http://dummy.xtemos.com/woodmart2/pottery-gutenberg/wp-content/uploads/sites/36/2024/07/w-hmp-potteries-opt.jpg" alt=""/></div>
 <!-- /wp:wd/image -->
 
-<!-- wp:wd/paragraph {"blockId":"78588558-c968-4297-b83f-d38109d69986","displayWidth":"custom","customWidth":"530"} -->
-<p id="wd-78588558" class="wp-block-wd-paragraph wd-custom-width">Are you interested in pottery and want to learn how to create unique models from clay? Then my pottery course is just the place for you! Make your own masterpiece according to your wishes and ideas.</p>
+<!-- wp:wd/paragraph {"blockId":"78588558-c968-4297-b83f-d38109d69986","blockVersion":"2","displayWidth":"custom","customWidth":"530"} -->
+<p class="wp-block-wd-paragraph wd-78588558 wd-custom-width">Are you interested in pottery and want to learn how to create unique models from clay? Then my pottery course is just the place for you! Make your own masterpiece according to your wishes and ideas.</p>
 <!-- /wp:wd/paragraph -->
 
-<!-- wp:wd/button {"blockId":"6456cd6b-14f8-412d-9e77-8b002e271caf","predefinedColor":"primary"} -->
-<a id="wd-6456cd6b" class="wp-block-wd-button btn btn-style-default btn-color-primary btn-size-default btn-shape-rectangle" href="#"><span>Book A Class</span></a>
+<!-- wp:wd/button {"blockId":"6456cd6b-14f8-412d-9e77-8b002e271caf","blockVersion":"2","predefinedColor":"primary"} -->
+<a class="wp-block-wd-button btn btn-style-default btn-color-primary btn-size-default btn-shape-rectangle wd-6456cd6b" href="#"><span>Book A Class</span></a>
 <!-- /wp:wd/button --></div>
 <!-- /wp:wd/column --></div>
 <!-- /wp:wd/row -->
 
-<!-- wp:wd/section {"blockId":"8aabfbfc-a583-4f12-bea3-34acf11ac339","blockGap":80,"marginBottom":"80","blockGapTablet":60,"blockGapMobile":30,"marginBottomTablet":"60","marginBottomMobile":"40"} -->
-<div id="wd-8aabfbfc" class="wp-block-wd-section"><!-- wp:wd/row {"blockId":"49424f81-8342-465c-aecf-6602612e4e06","displayWidth":"full-width"} -->
-<div id="wd-49424f81" class="wp-block-wd-row wd-custom-width"><!-- wp:wd/column {"blockId":"8ef33289-7f5c-4a7b-9dd0-1c6480fa995b","adjacentCount":2,"textAlign":"center"} -->
-<div id="wd-8ef33289" class="wp-block-wd-column wd-align"><!-- wp:wd/image {"blockId":"2ac40cf6-de4c-492c-bb64-200b408d5da7","image":{"id":211,"url":"https://dummy.xtemos.com/woodmart2/pottery-gutenberg/wp-content/uploads/sites/36/2024/07/w-hmp-img-1-opt.jpg"},"imageData":{"url":"https://dummy.xtemos.com/woodmart2/pottery-gutenberg/wp-content/uploads/sites/36/2024/07/w-hmp-img-1-opt.jpg","width":720,"height":780}} -->
-<div id="wd-2ac40cf6" class="wp-block-wd-image wd-block-image"><img class="wp-image-211" src="https://dummy.xtemos.com/woodmart2/pottery-gutenberg/wp-content/uploads/sites/36/2024/07/w-hmp-img-1-opt.jpg" alt="" /></div>
+<!-- wp:wd/section {"blockId":"8aabfbfc-a583-4f12-bea3-34acf11ac339","blockVersion":"2","blockGap":80,"marginBottom":"80","blockGapTablet":60,"blockGapMobile":30,"marginBottomTablet":"60","marginBottomMobile":"40"} -->
+<div class="wp-block-wd-section wd-8aabfbfc"><!-- wp:wd/row {"blockId":"49424f81-8342-465c-aecf-6602612e4e06","blockVersion":"2","displayWidth":"full-width"} -->
+<div class="wp-block-wd-row wd-49424f81 wd-custom-width"><!-- wp:wd/column {"blockId":"8ef33289-7f5c-4a7b-9dd0-1c6480fa995b","blockVersion":"2","adjacentCount":2,"textAlign":"center"} -->
+<div class="wp-block-wd-column wd-align wd-8ef33289"><!-- wp:wd/image {"blockId":"2ac40cf6-de4c-492c-bb64-200b408d5da7","blockVersion":"2","image":{"id":211,"url":"https://dummy.xtemos.com/woodmart2/pottery-gutenberg/wp-content/uploads/sites/36/2024/07/w-hmp-img-1-opt.jpg"},"imageData":{"url":"https://dummy.xtemos.com/woodmart2/pottery-gutenberg/wp-content/uploads/sites/36/2024/07/w-hmp-img-1-opt.jpg","width":720,"height":780}} -->
+<div class="wp-block-wd-image wd-block-image wd-2ac40cf6"><img class="wp-image-211" src="https://dummy.xtemos.com/woodmart2/pottery-gutenberg/wp-content/uploads/sites/36/2024/07/w-hmp-img-1-opt.jpg" alt=""/></div>
 <!-- /wp:wd/image --></div>
 <!-- /wp:wd/column -->
 
-<!-- wp:wd/column {"blockId":"169d33c5-a464-4e1a-9d86-67f328b3da44","adjacentCount":2,"justifyContent":"center","textAlign":"center"} -->
-<div id="wd-169d33c5" class="wp-block-wd-column wd-align"><!-- wp:wd/video {"blockId":"c4f1cb5f-edaf-43d2-99b5-aab61d1fcaec","videoHosted":{"id":216,"url":"https://dummy.xtemos.com/woodmart2/pottery-gutenberg/wp-content/uploads/sites/36/2024/07/w-hmp-gallery-video-2.mp4"},"videoAutoplay":true,"videoMute":true,"videoLoop":true,"videoControls":false,"videoPoster":{"id":218,"url":"http://dummy.xtemos.com/woodmart2/pottery-gutenberg/wp-content/uploads/sites/36/2024/07/w-hmp-video-2-image.jpg"},"videoSize":"aspect_ratio","videoAspectRatio":"1/1","displayWidth":"custom","customWidth":"434","displayWidthTablet":"full-width"} -->
-<div id="wd-c4f1cb5f" class="wp-block-wd-video wd-el-video wd-action-without wd-video-hosted wd-with-aspect-ratio wd-custom-width"><video playsinline loop muted autoplay poster="http://dummy.xtemos.com/woodmart2/pottery-gutenberg/wp-content/uploads/sites/36/2024/07/w-hmp-video-2-image.jpg" src="https://dummy.xtemos.com/woodmart2/pottery-gutenberg/wp-content/uploads/sites/36/2024/07/w-hmp-gallery-video-2.mp4"></video></div>
+<!-- wp:wd/column {"blockId":"169d33c5-a464-4e1a-9d86-67f328b3da44","blockVersion":"2","adjacentCount":2,"justifyContent":"center","textAlign":"center"} -->
+<div class="wp-block-wd-column wd-align wd-169d33c5"><!-- wp:wd/video {"blockId":"c4f1cb5f-edaf-43d2-99b5-aab61d1fcaec","blockVersion":"2","videoHosted":{"id":216,"url":"https://dummy.xtemos.com/woodmart2/pottery-gutenberg/wp-content/uploads/sites/36/2024/07/w-hmp-gallery-video-2.mp4"},"videoAutoplay":true,"videoMute":true,"videoLoop":true,"videoControls":false,"videoPoster":{"id":218,"url":"http://dummy.xtemos.com/woodmart2/pottery-gutenberg/wp-content/uploads/sites/36/2024/07/w-hmp-video-2-image.jpg"},"videoSize":"aspect_ratio","videoAspectRatio":"1/1","displayWidth":"custom","customWidth":"434","displayWidthTablet":"full-width"} -->
+<div class="wp-block-wd-video wd-el-video wd-action-without wd-video-hosted wd-with-aspect-ratio wd-c4f1cb5f wd-custom-width"><video playsinline loop muted autoplay poster="http://dummy.xtemos.com/woodmart2/pottery-gutenberg/wp-content/uploads/sites/36/2024/07/w-hmp-video-2-image.jpg" src="https://dummy.xtemos.com/woodmart2/pottery-gutenberg/wp-content/uploads/sites/36/2024/07/w-hmp-gallery-video-2.mp4"></video></div>
 <!-- /wp:wd/video --></div>
 <!-- /wp:wd/column --></div>
 <!-- /wp:wd/row -->
 
-<!-- wp:wd/row {"blockId":"39755af3-a843-4ece-a919-ab9f4211f750","displayWidth":"full-width"} -->
-<div id="wd-39755af3" class="wp-block-wd-row wd-custom-width"><!-- wp:wd/column {"blockId":"c83184ef-0f5e-47bb-b93b-f98f827a6afc","adjacentCount":2,"justifyContent":"center","textAlign":"center","flexOrderMobile":"1"} -->
-<div id="wd-c83184ef" class="wp-block-wd-column wd-align"><!-- wp:wd/video {"blockId":"e8db6bca-ac60-49d9-b1f2-00655f278bcf","videoHosted":{"id":224,"url":"http://dummy.xtemos.com/woodmart2/pottery-gutenberg/wp-content/uploads/sites/36/2024/07/w-hmp-gallery-video-1.mp4"},"videoAutoplay":true,"videoMute":true,"videoLoop":true,"videoControls":false,"videoPoster":{"id":225,"url":"http://dummy.xtemos.com/woodmart2/pottery-gutenberg/wp-content/uploads/sites/36/2024/07/w-hmp-video-1-image.jpg"},"videoSize":"aspect_ratio","videoAspectRatio":"1/1","displayWidth":"custom","customWidth":"434","displayWidthTablet":"full-width"} -->
-<div id="wd-e8db6bca" class="wp-block-wd-video wd-el-video wd-action-without wd-video-hosted wd-with-aspect-ratio wd-custom-width"><video playsinline loop muted autoplay poster="http://dummy.xtemos.com/woodmart2/pottery-gutenberg/wp-content/uploads/sites/36/2024/07/w-hmp-video-1-image.jpg" src="http://dummy.xtemos.com/woodmart2/pottery-gutenberg/wp-content/uploads/sites/36/2024/07/w-hmp-gallery-video-1.mp4"></video></div>
+<!-- wp:wd/row {"blockId":"39755af3-a843-4ece-a919-ab9f4211f750","blockVersion":"2","displayWidth":"full-width"} -->
+<div class="wp-block-wd-row wd-39755af3 wd-custom-width"><!-- wp:wd/column {"blockId":"c83184ef-0f5e-47bb-b93b-f98f827a6afc","blockVersion":"2","adjacentCount":2,"justifyContent":"center","textAlign":"center","flexOrderMobile":"1"} -->
+<div class="wp-block-wd-column wd-align wd-c83184ef"><!-- wp:wd/video {"blockId":"e8db6bca-ac60-49d9-b1f2-00655f278bcf","blockVersion":"2","videoHosted":{"id":224,"url":"http://dummy.xtemos.com/woodmart2/pottery-gutenberg/wp-content/uploads/sites/36/2024/07/w-hmp-gallery-video-1.mp4"},"videoAutoplay":true,"videoMute":true,"videoLoop":true,"videoControls":false,"videoPoster":{"id":225,"url":"http://dummy.xtemos.com/woodmart2/pottery-gutenberg/wp-content/uploads/sites/36/2024/07/w-hmp-video-1-image.jpg"},"videoSize":"aspect_ratio","videoAspectRatio":"1/1","displayWidth":"custom","customWidth":"434","displayWidthTablet":"full-width"} -->
+<div class="wp-block-wd-video wd-el-video wd-action-without wd-video-hosted wd-with-aspect-ratio wd-e8db6bca wd-custom-width"><video playsinline loop muted autoplay poster="http://dummy.xtemos.com/woodmart2/pottery-gutenberg/wp-content/uploads/sites/36/2024/07/w-hmp-video-1-image.jpg" src="http://dummy.xtemos.com/woodmart2/pottery-gutenberg/wp-content/uploads/sites/36/2024/07/w-hmp-gallery-video-1.mp4"></video></div>
 <!-- /wp:wd/video --></div>
 <!-- /wp:wd/column -->
 
-<!-- wp:wd/column {"blockId":"9b583638-e177-46e9-98be-f76e829b0075","adjacentCount":2,"justifyContent":"center","textAlign":"center"} -->
-<div id="wd-9b583638" class="wp-block-wd-column wd-align"><!-- wp:wd/image {"blockId":"45d289c2-e283-4012-acba-f942a06ec809","image":{"id":223,"url":"http://dummy.xtemos.com/woodmart2/pottery-gutenberg/wp-content/uploads/sites/36/2024/07/w-hmp-img-2-opt.jpg"},"imageData":{"url":"https://dummy.xtemos.com/woodmart2/pottery-gutenberg/wp-content/uploads/sites/36/2024/07/w-hmp-img-2-opt.jpg","width":754,"height":580}} -->
-<div id="wd-45d289c2" class="wp-block-wd-image wd-block-image"><img class="wp-image-223" src="http://dummy.xtemos.com/woodmart2/pottery-gutenberg/wp-content/uploads/sites/36/2024/07/w-hmp-img-2-opt.jpg" alt="" /></div>
+<!-- wp:wd/column {"blockId":"9b583638-e177-46e9-98be-f76e829b0075","blockVersion":"2","adjacentCount":2,"justifyContent":"center","textAlign":"center"} -->
+<div class="wp-block-wd-column wd-align wd-9b583638"><!-- wp:wd/image {"blockId":"45d289c2-e283-4012-acba-f942a06ec809","blockVersion":"2","image":{"id":223,"url":"http://dummy.xtemos.com/woodmart2/pottery-gutenberg/wp-content/uploads/sites/36/2024/07/w-hmp-img-2-opt.jpg"},"imageData":{"url":"https://dummy.xtemos.com/woodmart2/pottery-gutenberg/wp-content/uploads/sites/36/2024/07/w-hmp-img-2-opt.jpg","width":754,"height":580}} -->
+<div class="wp-block-wd-image wd-block-image wd-45d289c2"><img class="wp-image-223" src="http://dummy.xtemos.com/woodmart2/pottery-gutenberg/wp-content/uploads/sites/36/2024/07/w-hmp-img-2-opt.jpg" alt=""/></div>
 <!-- /wp:wd/image --></div>
 <!-- /wp:wd/column --></div>
 <!-- /wp:wd/row --></div>
 <!-- /wp:wd/section -->
 
-<!-- wp:wd/title {"blockId":"9ae9095e-569b-4bc4-986f-bc1cb1831e46","content":"My Blog","tpFontSize":"28","marginBottom":"10","tpFontSizeTablet":"26","tpFontSizeMobile":"22"} -->
-<h2 id="wd-9ae9095e" class="wp-block-wd-title title">My Blog</h2>
+<!-- wp:wd/title {"blockId":"9ae9095e-569b-4bc4-986f-bc1cb1831e46","blockVersion":"2","content":"My Blog","tpFontSize":"28","marginBottom":"10","tpFontSizeTablet":"26","tpFontSizeMobile":"22"} -->
+<h2 class="wp-block-wd-title title wd-9ae9095e">My Blog</h2>
 <!-- /wp:wd/title -->
 
-<!-- wp:wd/paragraph {"blockId":"fe7a9060-1816-43dc-ab46-0dddbd0e9387"} -->
-<p id="wd-fe7a9060" class="wp-block-wd-paragraph">The most popular products from the collection</p>
+<!-- wp:wd/paragraph {"blockId":"fe7a9060-1816-43dc-ab46-0dddbd0e9387","blockVersion":"2"} -->
+<p class="wp-block-wd-paragraph wd-fe7a9060">The most popular products from the collection</p>
 <!-- /wp:wd/paragraph -->
 
-<!-- wp:wd/blog {"blockId":"cf7343d3-f522-4261-8143-69eb7592c0d1","items_per_page":"3","layout":"list","blog_list_design":"list","img_size":"large","marginBottom":"40","marginBottomTablet":"20","marginBottomMobile":"0"} /-->]]></content:encoded>
+<!-- wp:wd/blog {"blockId":"cf7343d3-f522-4261-8143-69eb7592c0d1","blockVersion":"2","items_per_page":"3","layout":"list","blog_list_design":"list","img_size":"large","marginBottom":"40","marginBottomTablet":"20","marginBottomMobile":"0"} /-->]]></content:encoded>
 															<wp:post_id>59</wp:post_id>
 					<wp:post_date><![CDATA[2024-07-31 12:13:26]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2024-07-31 12:13:26]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-10-30 13:52:51]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-10-30 13:52:51]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2026-02-25 14:18:00]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2026-02-25 14:18:00]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[home-pottery]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -2595,20 +2385,8 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<wp:menu_order>0</wp:menu_order>
 					<wp:post_type><![CDATA[page]]></wp:post_type>
 																					<wp:postmeta>
-							<wp:meta_key><![CDATA[_woodmart_whb_header]]></wp:meta_key>
-							<wp:meta_value><![CDATA[none]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[_woodmart_title_off]]></wp:meta_key>
 							<wp:meta_value><![CDATA[on]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_woodmart_page-title-size]]></wp:meta_key>
-							<wp:meta_value><![CDATA[inherit]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_woodmart_title_image]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:3:"url";s:0:"";s:2:"id";s:0:"";}]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_woodmart_main_layout]]></wp:meta_key>
@@ -2619,7 +2397,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[About Me]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/pottery-gutenberg/about-me/</link>
 					<pubDate>Wed, 31 Jul 2024 12:13:49 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/pottery-gutenberg/?page_id=61</guid>
 											<content:encoded><![CDATA[<!-- wp:wd/section {"blockId":"0088fa88-c279-4c58-9fdf-4339595c0184","blockGap":30,"colorScheme":"light","bgColorCode":"#c96e4b","paddingTop":"150","paddingBottom":"120","marginBottom":"0","paddingTopTablet":"110","paddingTopMobile":"80","paddingBottomTablet":"60","paddingBottomMobile":"40"} -->
 <div id="wd-0088fa88" class="wp-block-wd-section color-scheme-light"><!-- wp:wd/row {"blockId":"1cf1d580-bf42-42ce-ad02-8f9dbdcc3f8a","columnsGap":100,"columnsGapTablet":50,"columnsGapMobile":30} -->
@@ -2872,7 +2650,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[Blog]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/pottery-gutenberg/blog/</link>
 					<pubDate>Wed, 31 Jul 2024 12:14:33 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/pottery-gutenberg/?page_id=64</guid>
 															<wp:post_id>64</wp:post_id>
 					<wp:post_date><![CDATA[2024-07-31 12:14:33]]></wp:post_date>
@@ -2906,7 +2684,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[Pottery Class]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/pottery-gutenberg/pottery-class/</link>
 					<pubDate>Wed, 31 Jul 2024 12:14:46 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/pottery-gutenberg/?page_id=66</guid>
 											<content:encoded><![CDATA[<!-- wp:wd/section {"blockId":"8021962f-329a-40ef-9699-4e5d6ebe0d97","blockGap":80,"colorScheme":"light","bgColorCode":"#151515","paddingTop":"190","paddingBottom":"80","marginBottom":"0","blockGapTablet":60,"blockGapMobile":40,"paddingTopTablet":"110","paddingTopMobile":"80","paddingBottomTablet":"60","paddingBottomMobile":"40"} -->
 <div id="wd-8021962f" class="wp-block-wd-section color-scheme-light"><!-- wp:wd/container {"blockId":"5a2df64e-813d-42d0-ae72-6c80f6c3fc48","rowGap":"40","paddingRight":"15","paddingLeft":"15"} -->
@@ -3177,7 +2955,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[Wishlist]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/pottery-gutenberg/wishlist/</link>
 					<pubDate>Wed, 31 Jul 2024 12:15:13 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/pottery-gutenberg/?page_id=68</guid>
 											<content:encoded><![CDATA[<!-- wp:shortcode -->
 [woodmart_wishlist]
@@ -3214,7 +2992,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[Chad Pot Terra]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/pottery-gutenberg/product/chad-pot-terra/</link>
 					<pubDate>Wed, 31 Jul 2024 12:17:42 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/pottery-gutenberg/?post_type=product&#038;p=94</guid>
 																<excerpt:encoded><![CDATA[You begin with a text, you sculpt information, you chisel away what's not needed, you come to the point, make things clear, add value, you're a content person, you like words. Design is no afterthought, far from it, but it comes in a deserved second. Anyway, you still use Lorem Ipsum and rightly so, as it will always have a place in the web workers toolbox, as things happen, not always the way you like it, not always in the preferred order. Even if your less into design and more into content strategy you may find some redeeming value with, wait for it.]]></excerpt:encoded>
 										<wp:post_id>94</wp:post_id>
@@ -3247,14 +3025,6 @@ This email is a receipt for your contact form submission on our website ([_site_
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_stock_status]]></wp:meta_key>
 							<wp:meta_value><![CDATA[instock]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[import-placeholder-for-205]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_regular_price]]></wp:meta_key>
@@ -3317,7 +3087,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[Caterpillar Ceramic Plant Pot]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/pottery-gutenberg/product/caterpillar-ceramic-plant-pot/</link>
 					<pubDate>Wed, 31 Jul 2024 12:17:42 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/pottery-gutenberg/?post_type=product&#038;p=95</guid>
 																<excerpt:encoded><![CDATA[You begin with a text, you sculpt information, you chisel away what's not needed, you come to the point, make things clear, add value, you're a content person, you like words. Design is no afterthought, far from it, but it comes in a deserved second. Anyway, you still use Lorem Ipsum and rightly so, as it will always have a place in the web workers toolbox, as things happen, not always the way you like it, not always in the preferred order. Even if your less into design and more into content strategy you may find some redeeming value with, wait for it.]]></excerpt:encoded>
 										<wp:post_id>95</wp:post_id>
@@ -3349,14 +3119,6 @@ This email is a receipt for your contact form submission on our website ([_site_
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_stock_status]]></wp:meta_key>
 							<wp:meta_value><![CDATA[instock]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[import-placeholder-for-206]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_regular_price]]></wp:meta_key>
@@ -3419,7 +3181,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[Canvas Ceramic Plant Pot]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/pottery-gutenberg/product/canvas-ceramic-plant-pot/</link>
 					<pubDate>Wed, 31 Jul 2024 12:17:42 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/pottery-gutenberg/?post_type=product&#038;p=96</guid>
 																<excerpt:encoded><![CDATA[You begin with a text, you sculpt information, you chisel away what's not needed, you come to the point, make things clear, add value, you're a content person, you like words. Design is no afterthought, far from it, but it comes in a deserved second. Anyway, you still use Lorem Ipsum and rightly so, as it will always have a place in the web workers toolbox, as things happen, not always the way you like it, not always in the preferred order. Even if your less into design and more into content strategy you may find some redeeming value with, wait for it.]]></excerpt:encoded>
 										<wp:post_id>96</wp:post_id>
@@ -3451,14 +3213,6 @@ This email is a receipt for your contact form submission on our website ([_site_
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_stock_status]]></wp:meta_key>
 							<wp:meta_value><![CDATA[instock]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[import-placeholder-for-207]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_regular_price]]></wp:meta_key>
@@ -3525,7 +3279,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[White Speckle Plant Pot]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/pottery-gutenberg/product/white-speckle-plant-pot/</link>
 					<pubDate>Wed, 31 Jul 2024 12:17:42 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/pottery-gutenberg/?post_type=product&#038;p=97</guid>
 																<excerpt:encoded><![CDATA[You begin with a text, you sculpt information, you chisel away what's not needed, you come to the point, make things clear, add value, you're a content person, you like words. Design is no afterthought, far from it, but it comes in a deserved second. Anyway, you still use Lorem Ipsum and rightly so, as it will always have a place in the web workers toolbox, as things happen, not always the way you like it, not always in the preferred order. Even if your less into design and more into content strategy you may find some redeeming value with, wait for it.]]></excerpt:encoded>
 										<wp:post_id>97</wp:post_id>
@@ -3557,14 +3311,6 @@ This email is a receipt for your contact form submission on our website ([_site_
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_stock_status]]></wp:meta_key>
 							<wp:meta_value><![CDATA[instock]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[import-placeholder-for-209]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_regular_price]]></wp:meta_key>
@@ -3627,7 +3373,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[Black Windows Pot]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/pottery-gutenberg/product/black-windows-pot/</link>
 					<pubDate>Wed, 31 Jul 2024 12:17:42 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/pottery-gutenberg/?post_type=product&#038;p=98</guid>
 																<excerpt:encoded><![CDATA[You begin with a text, you sculpt information, you chisel away what's not needed, you come to the point, make things clear, add value, you're a content person, you like words. Design is no afterthought, far from it, but it comes in a deserved second. Anyway, you still use Lorem Ipsum and rightly so, as it will always have a place in the web workers toolbox, as things happen, not always the way you like it, not always in the preferred order. Even if your less into design and more into content strategy you may find some redeeming value with, wait for it.]]></excerpt:encoded>
 										<wp:post_id>98</wp:post_id>
@@ -3659,14 +3405,6 @@ This email is a receipt for your contact form submission on our website ([_site_
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_stock_status]]></wp:meta_key>
 							<wp:meta_value><![CDATA[instock]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[import-placeholder-for-212]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_regular_price]]></wp:meta_key>
@@ -3729,7 +3467,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[Clay Napkin Holder]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/pottery-gutenberg/product/clay-napkin-holder/</link>
 					<pubDate>Wed, 31 Jul 2024 12:17:42 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/pottery-gutenberg/?post_type=product&#038;p=99</guid>
 																<excerpt:encoded><![CDATA[You begin with a text, you sculpt information, you chisel away what's not needed, you come to the point, make things clear, add value, you're a content person, you like words. Design is no afterthought, far from it, but it comes in a deserved second. Anyway, you still use Lorem Ipsum and rightly so, as it will always have a place in the web workers toolbox, as things happen, not always the way you like it, not always in the preferred order. Even if your less into design and more into content strategy you may find some redeeming value with, wait for it.]]></excerpt:encoded>
 										<wp:post_id>99</wp:post_id>
@@ -3761,14 +3499,6 @@ This email is a receipt for your contact form submission on our website ([_site_
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_stock_status]]></wp:meta_key>
 							<wp:meta_value><![CDATA[instock]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[import-placeholder-for-218]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_regular_price]]></wp:meta_key>
@@ -3835,7 +3565,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[Ceramic Licht Pendant]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/pottery-gutenberg/product/ceramic-licht-pendant/</link>
 					<pubDate>Wed, 31 Jul 2024 12:17:42 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/pottery-gutenberg/?post_type=product&#038;p=100</guid>
 																<excerpt:encoded><![CDATA[You begin with a text, you sculpt information, you chisel away what's not needed, you come to the point, make things clear, add value, you're a content person, you like words. Design is no afterthought, far from it, but it comes in a deserved second. Anyway, you still use Lorem Ipsum and rightly so, as it will always have a place in the web workers toolbox, as things happen, not always the way you like it, not always in the preferred order. Even if your less into design and more into content strategy you may find some redeeming value with, wait for it.]]></excerpt:encoded>
 										<wp:post_id>100</wp:post_id>
@@ -3867,14 +3597,6 @@ This email is a receipt for your contact form submission on our website ([_site_
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_stock_status]]></wp:meta_key>
 							<wp:meta_value><![CDATA[instock]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[import-placeholder-for-219]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_regular_price]]></wp:meta_key>
@@ -3937,7 +3659,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[Catch-All Dish]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/pottery-gutenberg/product/catch-all-dish/</link>
 					<pubDate>Wed, 31 Jul 2024 12:17:42 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/pottery-gutenberg/?post_type=product&#038;p=101</guid>
 																<excerpt:encoded><![CDATA[You begin with a text, you sculpt information, you chisel away what's not needed, you come to the point, make things clear, add value, you're a content person, you like words. Design is no afterthought, far from it, but it comes in a deserved second. Anyway, you still use Lorem Ipsum and rightly so, as it will always have a place in the web workers toolbox, as things happen, not always the way you like it, not always in the preferred order. Even if your less into design and more into content strategy you may find some redeeming value with, wait for it.]]></excerpt:encoded>
 										<wp:post_id>101</wp:post_id>
@@ -3969,14 +3691,6 @@ This email is a receipt for your contact form submission on our website ([_site_
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_stock_status]]></wp:meta_key>
 							<wp:meta_value><![CDATA[instock]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[import-placeholder-for-308]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_regular_price]]></wp:meta_key>
@@ -4035,7 +3749,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[Oil Burner]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/pottery-gutenberg/product/oil-burner/</link>
 					<pubDate>Wed, 31 Jul 2024 12:17:42 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/pottery-gutenberg/?post_type=product&#038;p=102</guid>
 																<excerpt:encoded><![CDATA[You begin with a text, you sculpt information, you chisel away what's not needed, you come to the point, make things clear, add value, you're a content person, you like words. Design is no afterthought, far from it, but it comes in a deserved second. Anyway, you still use Lorem Ipsum and rightly so, as it will always have a place in the web workers toolbox, as things happen, not always the way you like it, not always in the preferred order. Even if your less into design and more into content strategy you may find some redeeming value with, wait for it.]]></excerpt:encoded>
 										<wp:post_id>102</wp:post_id>
@@ -4068,14 +3782,6 @@ This email is a receipt for your contact form submission on our website ([_site_
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_stock_status]]></wp:meta_key>
 							<wp:meta_value><![CDATA[instock]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[import-placeholder-for-314]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_regular_price]]></wp:meta_key>
@@ -4138,7 +3844,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[Ceramic Incense Holder]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/pottery-gutenberg/product/ceramic-incense-holder/</link>
 					<pubDate>Wed, 31 Jul 2024 12:17:42 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/pottery-gutenberg/?post_type=product&#038;p=103</guid>
 																<excerpt:encoded><![CDATA[You begin with a text, you sculpt information, you chisel away what's not needed, you come to the point, make things clear, add value, you're a content person, you like words. Design is no afterthought, far from it, but it comes in a deserved second. Anyway, you still use Lorem Ipsum and rightly so, as it will always have a place in the web workers toolbox, as things happen, not always the way you like it, not always in the preferred order. Even if your less into design and more into content strategy you may find some redeeming value with, wait for it.]]></excerpt:encoded>
 										<wp:post_id>103</wp:post_id>
@@ -4170,14 +3876,6 @@ This email is a receipt for your contact form submission on our website ([_site_
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_stock_status]]></wp:meta_key>
 							<wp:meta_value><![CDATA[instock]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_product_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9.1.2]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
-							<wp:meta_value><![CDATA[import-placeholder-for-316]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_regular_price]]></wp:meta_key>
@@ -4240,7 +3938,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[Our Most Frequently Asked Questions Explained]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/pottery-gutenberg/2024/06/13/our-most-frequently-asked-questions-explained/</link>
 					<pubDate>Thu, 13 Jun 2024 12:26:00 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/pottery-gutenberg/?p=153</guid>
 											<content:encoded><![CDATA[<!-- wp:wd/paragraph {"blockId":"f4a0d11d-9f7b-4960-bcd8-90db74154114"} -->
 <p id="wd-f4a0d11d" class="wp-block-wd-paragraph"><em>It’s unreal, uncanny, makes you wonder if something is wrong, it seems to seek your attention for all the wrong reasons. Usually, we prefer the real thing, wine without sulfur based preservatives, real butter, not margarine, and so we’d like our layouts and designs to be filled with real words, with thoughts that count, information that has value. I’d say, there are some redeeming factors in favor of greeking text, as its use is merely.</em></p>
@@ -4328,7 +4026,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[Our Top 5 Pottery Gift Ideas]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/pottery-gutenberg/2024/05/24/our-top-5-pottery-gift-ideas/</link>
 					<pubDate>Fri, 24 May 2024 12:26:00 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/pottery-gutenberg/?p=156</guid>
 											<content:encoded><![CDATA[<!-- wp:wd/paragraph {"blockId":"f4a0d11d-9f7b-4960-bcd8-90db74154114"} -->
 <p id="wd-f4a0d11d" class="wp-block-wd-paragraph"><em>It’s unreal, uncanny, makes you wonder if something is wrong, it seems to seek your attention for all the wrong reasons. Usually, we prefer the real thing, wine without sulfur based preservatives, real butter, not margarine, and so we’d like our layouts and designs to be filled with real words, with thoughts that count, information that has value. I’d say, there are some redeeming factors in favor of greeking text, as its use is merely.</em></p>
@@ -4416,7 +4114,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[The Inspiration Behind the Dust to Dust Necklace]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/pottery-gutenberg/2024/04/01/the-inspiration-behind-the-dust-to-dust-necklace/</link>
 					<pubDate>Mon, 01 Apr 2024 12:27:00 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/pottery-gutenberg/?p=159</guid>
 											<content:encoded><![CDATA[<!-- wp:wd/paragraph {"blockId":"f4a0d11d-9f7b-4960-bcd8-90db74154114"} -->
 <p id="wd-f4a0d11d" class="wp-block-wd-paragraph"><em>It’s unreal, uncanny, makes you wonder if something is wrong, it seems to seek your attention for all the wrong reasons. Usually, we prefer the real thing, wine without sulfur based preservatives, real butter, not margarine, and so we’d like our layouts and designs to be filled with real words, with thoughts that count, information that has value. I’d say, there are some redeeming factors in favor of greeking text, as its use is merely.</em></p>
@@ -4504,7 +4202,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/pottery-gutenberg/2024/07/31/130/</link>
 					<pubDate>Wed, 31 Jul 2024 12:18:45 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/pottery-gutenberg/?p=130</guid>
 											<content:encoded><![CDATA[ ]]></content:encoded>
 															<wp:post_id>130</wp:post_id>
@@ -4540,6 +4238,10 @@ This email is a receipt for your contact form submission on our website ([_site_
 							<wp:meta_value><![CDATA[default]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_image-type]]></wp:meta_key>
 							<wp:meta_value><![CDATA[image]]></wp:meta_value>
 						</wp:postmeta>
@@ -4556,7 +4258,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[Shop]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/pottery-gutenberg/2024/07/31/131/</link>
 					<pubDate>Wed, 31 Jul 2024 12:18:45 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/pottery-gutenberg/?p=131</guid>
 															<wp:post_id>131</wp:post_id>
 					<wp:post_date><![CDATA[2024-07-31 12:20:13]]></wp:post_date>
@@ -4591,6 +4293,10 @@ This email is a receipt for your contact form submission on our website ([_site_
 							<wp:meta_value><![CDATA[default]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_image-type]]></wp:meta_key>
 							<wp:meta_value><![CDATA[image]]></wp:meta_value>
 						</wp:postmeta>
@@ -4607,7 +4313,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/pottery-gutenberg/2024/07/31/132/</link>
 					<pubDate>Wed, 31 Jul 2024 12:18:45 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/pottery-gutenberg/?p=132</guid>
 											<content:encoded><![CDATA[ ]]></content:encoded>
 															<wp:post_id>132</wp:post_id>
@@ -4643,6 +4349,10 @@ This email is a receipt for your contact form submission on our website ([_site_
 							<wp:meta_value><![CDATA[default]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_image-type]]></wp:meta_key>
 							<wp:meta_value><![CDATA[image]]></wp:meta_value>
 						</wp:postmeta>
@@ -4659,7 +4369,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/pottery-gutenberg/2024/07/31/133/</link>
 					<pubDate>Wed, 31 Jul 2024 12:18:45 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/pottery-gutenberg/?p=133</guid>
 											<content:encoded><![CDATA[ ]]></content:encoded>
 															<wp:post_id>133</wp:post_id>
@@ -4695,6 +4405,10 @@ This email is a receipt for your contact form submission on our website ([_site_
 							<wp:meta_value><![CDATA[default]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_image-type]]></wp:meta_key>
 							<wp:meta_value><![CDATA[image]]></wp:meta_value>
 						</wp:postmeta>
@@ -4711,7 +4425,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/pottery-gutenberg/2024/07/31/134/</link>
 					<pubDate>Wed, 31 Jul 2024 12:19:49 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/pottery-gutenberg/?p=134</guid>
 											<content:encoded><![CDATA[ ]]></content:encoded>
 															<wp:post_id>134</wp:post_id>
@@ -4747,6 +4461,10 @@ This email is a receipt for your contact form submission on our website ([_site_
 							<wp:meta_value><![CDATA[default]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_image-type]]></wp:meta_key>
 							<wp:meta_value><![CDATA[image]]></wp:meta_value>
 						</wp:postmeta>
@@ -4763,7 +4481,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[Shop]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/pottery-gutenberg/2024/07/31/shop/</link>
 					<pubDate>Wed, 31 Jul 2024 12:19:49 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/pottery-gutenberg/?p=135</guid>
 															<wp:post_id>135</wp:post_id>
 					<wp:post_date><![CDATA[2024-07-31 12:19:49]]></wp:post_date>
@@ -4798,6 +4516,10 @@ This email is a receipt for your contact form submission on our website ([_site_
 							<wp:meta_value><![CDATA[default]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_image-type]]></wp:meta_key>
 							<wp:meta_value><![CDATA[image]]></wp:meta_value>
 						</wp:postmeta>
@@ -4814,7 +4536,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/pottery-gutenberg/2024/07/31/136/</link>
 					<pubDate>Wed, 31 Jul 2024 12:19:49 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/pottery-gutenberg/?p=136</guid>
 											<content:encoded><![CDATA[ ]]></content:encoded>
 															<wp:post_id>136</wp:post_id>
@@ -4850,6 +4572,10 @@ This email is a receipt for your contact form submission on our website ([_site_
 							<wp:meta_value><![CDATA[default]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_image-type]]></wp:meta_key>
 							<wp:meta_value><![CDATA[image]]></wp:meta_value>
 						</wp:postmeta>
@@ -4866,7 +4592,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[Home]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/pottery-gutenberg/2024/07/31/home-2/</link>
 					<pubDate>Wed, 31 Jul 2024 12:19:49 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/pottery-gutenberg/?p=137</guid>
 															<wp:post_id>137</wp:post_id>
 					<wp:post_date><![CDATA[2024-07-31 12:19:49]]></wp:post_date>
@@ -4901,6 +4627,10 @@ This email is a receipt for your contact form submission on our website ([_site_
 							<wp:meta_value><![CDATA[default]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_image-type]]></wp:meta_key>
 							<wp:meta_value><![CDATA[image]]></wp:meta_value>
 						</wp:postmeta>
@@ -4917,7 +4647,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/pottery-gutenberg/2024/07/31/138/</link>
 					<pubDate>Wed, 31 Jul 2024 12:19:49 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/pottery-gutenberg/?p=138</guid>
 											<content:encoded><![CDATA[ ]]></content:encoded>
 															<wp:post_id>138</wp:post_id>
@@ -4953,6 +4683,10 @@ This email is a receipt for your contact form submission on our website ([_site_
 							<wp:meta_value><![CDATA[default]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_image-type]]></wp:meta_key>
 							<wp:meta_value><![CDATA[image]]></wp:meta_value>
 						</wp:postmeta>
@@ -4969,7 +4703,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[Home]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/pottery-gutenberg/2024/07/31/home-3/</link>
 					<pubDate>Wed, 31 Jul 2024 12:20:13 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/pottery-gutenberg/?p=139</guid>
 															<wp:post_id>139</wp:post_id>
 					<wp:post_date><![CDATA[2024-07-31 12:20:13]]></wp:post_date>
@@ -5004,6 +4738,10 @@ This email is a receipt for your contact form submission on our website ([_site_
 							<wp:meta_value><![CDATA[default]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_image-type]]></wp:meta_key>
 							<wp:meta_value><![CDATA[image]]></wp:meta_value>
 						</wp:postmeta>
@@ -5020,7 +4758,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/pottery-gutenberg/2024/07/31/140/</link>
 					<pubDate>Wed, 31 Jul 2024 12:20:45 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/pottery-gutenberg/?p=140</guid>
 											<content:encoded><![CDATA[ ]]></content:encoded>
 															<wp:post_id>140</wp:post_id>
@@ -5056,6 +4794,10 @@ This email is a receipt for your contact form submission on our website ([_site_
 							<wp:meta_value><![CDATA[default]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_image-type]]></wp:meta_key>
 							<wp:meta_value><![CDATA[image]]></wp:meta_value>
 						</wp:postmeta>
@@ -5076,7 +4818,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/pottery-gutenberg/2024/07/31/141/</link>
 					<pubDate>Wed, 31 Jul 2024 12:20:45 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/pottery-gutenberg/?p=141</guid>
 											<content:encoded><![CDATA[ ]]></content:encoded>
 															<wp:post_id>141</wp:post_id>
@@ -5112,6 +4854,10 @@ This email is a receipt for your contact form submission on our website ([_site_
 							<wp:meta_value><![CDATA[default]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_image-type]]></wp:meta_key>
 							<wp:meta_value><![CDATA[image]]></wp:meta_value>
 						</wp:postmeta>
@@ -5132,7 +4878,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/pottery-gutenberg/2024/07/31/142/</link>
 					<pubDate>Wed, 31 Jul 2024 12:20:45 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/pottery-gutenberg/?p=142</guid>
 											<content:encoded><![CDATA[ ]]></content:encoded>
 															<wp:post_id>142</wp:post_id>
@@ -5168,6 +4914,10 @@ This email is a receipt for your contact form submission on our website ([_site_
 							<wp:meta_value><![CDATA[default]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_image-type]]></wp:meta_key>
 							<wp:meta_value><![CDATA[image]]></wp:meta_value>
 						</wp:postmeta>
@@ -5188,7 +4938,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/pottery-gutenberg/2024/07/31/143/</link>
 					<pubDate>Wed, 31 Jul 2024 12:20:45 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/pottery-gutenberg/?p=143</guid>
 											<content:encoded><![CDATA[ ]]></content:encoded>
 															<wp:post_id>143</wp:post_id>
@@ -5224,6 +4974,10 @@ This email is a receipt for your contact form submission on our website ([_site_
 							<wp:meta_value><![CDATA[default]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_image-type]]></wp:meta_key>
 							<wp:meta_value><![CDATA[image]]></wp:meta_value>
 						</wp:postmeta>
@@ -5244,7 +4998,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/pottery-gutenberg/2024/07/31/144/</link>
 					<pubDate>Wed, 31 Jul 2024 12:20:45 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/pottery-gutenberg/?p=144</guid>
 											<content:encoded><![CDATA[ ]]></content:encoded>
 															<wp:post_id>144</wp:post_id>
@@ -5280,6 +5034,10 @@ This email is a receipt for your contact form submission on our website ([_site_
 							<wp:meta_value><![CDATA[default]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
+							<wp:meta_key><![CDATA[_menu_item_padding]]></wp:meta_key>
+							<wp:meta_value><![CDATA[]]></wp:meta_value>
+						</wp:postmeta>
+												<wp:postmeta>
 							<wp:meta_key><![CDATA[_menu_item_image-type]]></wp:meta_key>
 							<wp:meta_value><![CDATA[image]]></wp:meta_value>
 						</wp:postmeta>
@@ -5300,7 +5058,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[Keeeps Pottery Classes: Wheel Throwing Courses]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/pottery-gutenberg/2024/03/23/keeeps-pottery-classes-wheel-throwing-courses/</link>
 					<pubDate>Sat, 23 Mar 2024 12:28:00 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/pottery-gutenberg/?p=162</guid>
 											<content:encoded><![CDATA[<!-- wp:wd/paragraph {"blockId":"f4a0d11d-9f7b-4960-bcd8-90db74154114"} -->
 <p id="wd-f4a0d11d" class="wp-block-wd-paragraph"><em>It’s unreal, uncanny, makes you wonder if something is wrong, it seems to seek your attention for all the wrong reasons. Usually, we prefer the real thing, wine without sulfur based preservatives, real butter, not margarine, and so we’d like our layouts and designs to be filled with real words, with thoughts that count, information that has value. I’d say, there are some redeeming factors in favor of greeking text, as its use is merely.</em></p>
@@ -5388,7 +5146,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[5 Reasons You’ll Love Handmade Mugs]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/pottery-gutenberg/2024/02/12/5-reasons-youll-love-handmade-mugs/</link>
 					<pubDate>Mon, 12 Feb 2024 12:28:00 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/pottery-gutenberg/?p=165</guid>
 											<content:encoded><![CDATA[<!-- wp:wd/paragraph {"blockId":"f4a0d11d-9f7b-4960-bcd8-90db74154114"} -->
 <p id="wd-f4a0d11d" class="wp-block-wd-paragraph"><em>It’s unreal, uncanny, makes you wonder if something is wrong, it seems to seek your attention for all the wrong reasons. Usually, we prefer the real thing, wine without sulfur based preservatives, real butter, not margarine, and so we’d like our layouts and designs to be filled with real words, with thoughts that count, information that has value. I’d say, there are some redeeming factors in favor of greeking text, as its use is merely.</em></p>
@@ -5476,7 +5234,7 @@ This email is a receipt for your contact form submission on our website ([_site_
 					<title><![CDATA[Pottery for Beginners: The 4 Main Types of Clay]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/pottery-gutenberg/2024/01/07/pottery-for-beginners-the-4-main-types-of-clay/</link>
 					<pubDate>Sun, 07 Jan 2024 12:28:00 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">https://dummy.xtemos.com/woodmart2/pottery-gutenberg/?p=168</guid>
 											<content:encoded><![CDATA[<!-- wp:wd/paragraph {"blockId":"f4a0d11d-9f7b-4960-bcd8-90db74154114"} -->
 <p id="wd-f4a0d11d" class="wp-block-wd-paragraph"><em>It’s unreal, uncanny, makes you wonder if something is wrong, it seems to seek your attention for all the wrong reasons. Usually, we prefer the real thing, wine without sulfur based preservatives, real butter, not margarine, and so we’d like our layouts and designs to be filled with real words, with thoughts that count, information that has value. I’d say, there are some redeeming factors in favor of greeking text, as its use is merely.</em></p>

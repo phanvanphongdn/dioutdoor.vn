@@ -5,7 +5,7 @@ namespace XTS\Gutenberg;
 /**
  * Gutenberg merge element attributes.
  *
- * @package Woodmart
+ * @package woodmart
  */
 class Block_Attributes {
 	/**
@@ -14,7 +14,10 @@ class Block_Attributes {
 	 * @var array|array[]
 	 */
 	private array $attributes = array(
-		'blockId' => array(
+		'blockId'      => array(
+			'type' => 'string',
+		),
+		'blockVersion' => array(
 			'type' => 'string',
 		),
 	);

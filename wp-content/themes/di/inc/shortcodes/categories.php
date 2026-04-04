@@ -1,4 +1,9 @@
 <?php
+/**
+ * Shortcode for Categories element.
+ *
+ * @package woodmart
+ */
 
 use XTS\Modules\Layouts\Global_Data;
 
@@ -6,43 +11,42 @@ if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
 	exit( 'No direct script access allowed' );
 }
 
-/**
- * ------------------------------------------------------------------------------------------------
- * Categories grid shortcode
- * ------------------------------------------------------------------------------------------------
- */
 if ( ! function_exists( 'woodmart_shortcode_categories' ) ) {
-	function woodmart_shortcode_categories( $atts, $content ) {
-		$extra_class = $carousel_classes = '';
-
+	/**
+	 * Categories shortcode.
+	 *
+	 * @param array $atts Shortcode attributes.
+	 * @return false|string
+	 */
+	function woodmart_shortcode_categories( $atts ) {
 		$parsed_atts = shortcode_atts(
 			array_merge(
 				woodmart_get_carousel_atts(),
 				array(
 					// Query.
-					'data_source'               => 'custom_query',
-					'number'                    => null,
-					'orderby'                   => '',
-					'order'                     => 'ASC',
-					'ids'                       => '',
+					'data_source'                    => 'custom_query',
+					'number'                         => null,
+					'orderby'                        => '',
+					'order'                          => 'ASC',
+					'ids'                            => '',
 
-					'type'                      => 'grid',
-					'images'                    => 'yes',
-					'product_count'             => 'yes',
-					'mobile_accordion'          => 'yes',
-					'shop_categories_ancestors' => 'no',
-					'show_categories_neighbors' => 'no',
-					'grid_product_count'        => '',
+					'type'                           => 'grid',
+					'images'                         => 'yes',
+					'product_count'                  => 'yes',
+					'mobile_accordion'               => 'yes',
+					'shop_categories_ancestors'      => 'no',
+					'show_categories_neighbors'      => 'no',
+					'grid_product_count'             => '',
 
 					// Layout.
-					'columns'                   => '4',
-					'columns_tablet'            => '',
-					'columns_mobile'            => '',
-					'hide_empty'                => 'yes',
-					'parent'                    => '',
-					'style'                     => 'default',
-					'title'                     => esc_html__( 'Categories', 'woodmart' ),
-					'grid_different_sizes'      => '',
+					'columns'                        => '4',
+					'columns_tablet'                 => 'auto',
+					'columns_mobile'                 => 'auto',
+					'hide_empty'                     => 'yes',
+					'parent'                         => '',
+					'style'                          => 'default',
+					'title'                          => esc_html__( 'Categories', 'woodmart' ),
+					'grid_different_sizes'           => '',
 
 					// Design.
 					'categories_design'              => woodmart_get_opt( 'categories_design' ),
@@ -56,39 +60,41 @@ if ( ! function_exists( 'woodmart_shortcode_categories' ) ) {
 					'categories_bordered_grid_style' => 'outside',
 					'categories_with_background'     => '',
 					'subcategories'                  => '',
+					'icon_alignment'                 => 'inherit',
 
 					// Hidden sidebar.
-					'mobile_categories_menu_layout'            => 'dropdown',
-					'mobile_categories_drilldown_animation'    => 'slide',
+					'mobile_categories_menu_layout'  => 'dropdown',
+					'mobile_categories_drilldown_animation' => 'slide',
 					'mobile_categories_submenu_opening_action' => 'only_arrow',
-					'mobile_categories_position'               => 'left',
-					'mobile_categories_color_scheme'           => 'default',
-					'mobile_categories_close_btn'              => 'no',
+					'mobile_categories_position'     => 'left',
+					'mobile_categories_color_scheme' => 'default',
+					'mobile_categories_close_btn'    => 'no',
 
 					// Extra.
-					'spacing'                   => woodmart_get_opt( 'products_spacing' ),
-					'spacing_tablet'            => '',
-					'spacing_mobile'            => '',
-					'lazy_loading'              => 'no',
-					'scroll_carousel_init'      => 'no',
-					'el_class'                  => '',
-					'el_id'                     => 'wd-' . uniqid(),
-					'css'                       => '',
-					'woodmart_css_id'           => '',
+					'is_wpb'                         => true,
+					'spacing'                        => woodmart_get_opt( 'products_spacing' ),
+					'spacing_tablet'                 => '',
+					'spacing_mobile'                 => '',
+					'lazy_loading'                   => 'no',
+					'scroll_carousel_init'           => 'no',
+					'el_class'                       => '',
+					'el_id'                          => '',
+					'css'                            => '',
+					'woodmart_css_id'                => '',
 
 					// Width option.
-					'width_desktop'             => '',
-					'width_tablet'              => '',
-					'width_mobile'              => '',
-					'slides_per_view'           => '3',
-					'slides_per_view_tablet'    => 'auto',
-					'slides_per_view_mobile'    => 'auto',
+					'width_desktop'                  => '',
+					'width_tablet'                   => '',
+					'width_mobile'                   => '',
+					'slides_per_view'                => '3',
+					'slides_per_view_tablet'         => 'auto',
+					'slides_per_view_mobile'         => 'auto',
 				)
 			),
 			$atts
 		);
 
-		extract( $parsed_atts );
+		extract( $parsed_atts ); // phpcs:ignore WordPress.PHP.DontExtract.extract_extract
 
 		$extra_class            = '';
 		$carousel_classes       = '';
@@ -96,7 +102,7 @@ if ( ! function_exists( 'woodmart_shortcode_categories' ) ) {
 		$extra_wrapper_classes .= apply_filters( 'vc_shortcodes_css_class', '', '', $parsed_atts );
 		$extra_wrapper_classes .= $el_class ? ' ' . $el_class : '';
 
-		if ( 'wpb' === woodmart_get_current_page_builder() ) {
+		if ( $is_wpb && 'wpb' === woodmart_get_current_page_builder() ) {
 			$extra_wrapper_classes .= ' wd-wpb';
 		}
 
@@ -116,24 +122,20 @@ if ( ! function_exists( 'woodmart_shortcode_categories' ) ) {
 			$extra_class .= ' wd-img-width';
 		}
 
-		if ( isset( $ids ) ) {
-			$ids = explode( ',', $ids );
-			$ids = array_map( 'trim', $ids );
-		} else {
-			$ids = array();
-		}
+		$hide_empty = in_array( $hide_empty, array( 'yes', '1', 1 ), true ) ? 1 : 0;
 
-		$hide_empty = ( $hide_empty == 'yes' || $hide_empty == 1 ) ? 1 : 0;
-
-		// get terms and workaround WP bug with parents/pad counts.
+		// Get terms and workaround WP bug with parents/pad counts.
 		$args = array(
 			'taxonomy'   => 'product_cat',
 			'order'      => $order,
 			'hide_empty' => $hide_empty,
-			'include'    => $ids,
 			'pad_counts' => true,
 			'child_of'   => $parent,
 		);
+
+		if ( ! empty( $ids ) ) {
+			$args['include'] = array_map( 'trim', explode( ',', $ids ) );
+		}
 
 		if ( $orderby ) {
 			$args['orderby'] = $orderby;
@@ -168,7 +170,7 @@ if ( ! function_exists( 'woodmart_shortcode_categories' ) ) {
 
 			ob_start();
 			?>
-			<div id="<?php echo esc_attr( $el_id ); ?>" class="<?php echo esc_attr( $extra_wrapper_classes ); ?>">
+			<div <?php echo $el_id ? 'id="' . esc_attr( $el_id ) . '" ' : ''; ?>class="<?php echo esc_attr( $extra_wrapper_classes ); ?>">
 				<div class="<?php echo esc_attr( $wrapper_classes ); ?>">
 					<?php woodmart_product_categories_nav( $args, $parsed_atts ); ?>
 				</div>
@@ -183,7 +185,7 @@ if ( ! function_exists( 'woodmart_shortcode_categories' ) ) {
 			}
 			$product_categories = woocommerce_get_product_subcategories( is_product_category() ? get_queried_object_id() : 0 );
 		} else {
-			$product_categories = get_terms( 'product_cat', $args );
+			$product_categories = get_terms( $args );
 		}
 
 		if ( '' !== $parent ) {
@@ -192,7 +194,7 @@ if ( ! function_exists( 'woodmart_shortcode_categories' ) ) {
 
 		if ( $hide_empty ) {
 			foreach ( $product_categories as $key => $category ) {
-				if ( $category->count == 0 ) {
+				if ( ! $category->count ) {
 					unset( $product_categories[ $key ] );
 				}
 			}
@@ -232,31 +234,21 @@ if ( ! function_exists( 'woodmart_shortcode_categories' ) ) {
 			$extra_class .= ' wd-grid-g';
 		}
 
-		if ( empty( $categories_design ) || $categories_design == 'inherit' ) {
+		if ( empty( $categories_design ) || 'inherit' === $categories_design ) {
 			$categories_design = woodmart_get_opt( 'categories_design' );
 		}
 
 		woodmart_set_loop_prop( 'product_categories_design', $categories_design );
-		woodmart_set_loop_prop( 'product_categories_shadow', $categories_with_shadow );
 		woodmart_set_loop_prop( 'product_categories_style', $style );
 
-		if ( isset( $columns_desktop ) ) {
-			woodmart_set_loop_prop( 'products_columns', $columns_desktop );
+		woodmart_set_loop_prop( 'products_columns', $columns_desktop );
+		woodmart_set_loop_prop( 'products_columns_tablet', $columns_tablet );
+		woodmart_set_loop_prop( 'products_columns_mobile', $columns_mobile );
+
+		if ( ! empty( $categories_with_shadow ) ) {
+			woodmart_set_loop_prop( 'product_categories_shadow', $categories_with_shadow );
 		}
 
-		if ( ! empty( $columns_tablet ) ) {
-			woodmart_set_loop_prop( 'products_columns_tablet', $columns_tablet );
-		}
-
-		if ( ! empty( $columns_mobile ) ) {
-			woodmart_set_loop_prop( 'products_columns_mobile', $columns_mobile );
-		}
-
-		if ( ! empty( $el_id ) ) {
-			$carousel_id = $el_id;
-		} else {
-			$carousel_id = 'carousel-' . wp_rand( 100, 999 );
-		}
 		if ( ! empty( $grid_product_count ) ) {
 			woodmart_set_loop_prop( 'hide_categories_product_count', 'disable' === $grid_product_count );
 		}
@@ -267,7 +259,7 @@ if ( ! function_exists( 'woodmart_shortcode_categories' ) ) {
 
 		ob_start();
 
-		if ( $lazy_loading == 'yes' ) {
+		if ( 'yes' === $lazy_loading ) {
 			woodmart_lazy_loading_init( true );
 			woodmart_enqueue_inline_style( 'lazy-loading' );
 		}
@@ -280,7 +272,7 @@ if ( ! function_exists( 'woodmart_shortcode_categories' ) ) {
 			}
 		}
 
-		if ( 'masonry' === $style || 'masonry-first' === $style || 'carousel' === $style ) {
+		if ( 'masonry' === $style || 'masonry-first' === $style ) {
 			woodmart_enqueue_inline_style( 'woo-categories-loop-layout-masonry' );
 		}
 
@@ -292,6 +284,7 @@ if ( ! function_exists( 'woodmart_shortcode_categories' ) ) {
 
 		if ( ! empty( $categories_bordered_grid ) ) {
 			woodmart_enqueue_inline_style( 'bordered-product' );
+			woodmart_enqueue_inline_style( 'bordered-product-predefined' );
 
 			woodmart_set_loop_prop( 'products_bordered_grid', true );
 			woodmart_set_loop_prop( 'products_bordered_grid_style', $categories_bordered_grid_style );
@@ -335,13 +328,12 @@ if ( ! function_exists( 'woodmart_shortcode_categories' ) ) {
 				woodmart_enqueue_inline_style( 'owl-carousel' );
 				$custom_sizes = apply_filters( 'woodmart_categories_shortcode_custom_sizes', false );
 
-				$parsed_atts['carousel_id']  = $carousel_id;
+				$parsed_atts['carousel_id']  = $el_id;
 				$parsed_atts['post_type']    = 'product';
 				$parsed_atts['custom_sizes'] = $custom_sizes;
 				$extra_class                .= ' wd-cats';
 
 				if ( 'yes' === $scroll_carousel_init ) {
-					woodmart_enqueue_js_library( 'waypoints' );
 					$carousel_classes .= ' scroll-init';
 				}
 
@@ -376,9 +368,9 @@ if ( ! function_exists( 'woodmart_shortcode_categories' ) ) {
 				woodmart_enqueue_inline_style( 'swiper' );
 
 				?>
-				<div id="<?php echo esc_attr( $carousel_id ); ?>" class="products woocommerce wd-carousel-container <?php echo esc_attr( $extra_wrapper_classes . $extra_class ); ?>">
+				<div <?php echo $el_id ? 'id="' . esc_attr( $el_id ) . '" ' : ''; ?>class="products wd-carousel-container <?php echo esc_attr( $extra_wrapper_classes . $extra_class ); ?>">
 					<div class="wd-carousel-inner">
-						<div class="wd-carousel wd-grid<?php echo esc_attr( $carousel_classes ); ?>" <?php echo woodmart_get_carousel_attributes( $parsed_atts ); ?>>
+						<div class="wd-carousel wd-grid<?php echo esc_attr( $carousel_classes ); ?>" <?php echo woodmart_get_carousel_attributes( $parsed_atts ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 							<div class="wd-carousel-wrap">
 								<?php foreach ( $product_categories as $category ) : ?>
 									<div class="wd-carousel-item">
@@ -416,12 +408,13 @@ if ( ! function_exists( 'woodmart_shortcode_categories' ) ) {
 						'spacing'        => $parsed_atts['spacing'],
 						'spacing_tablet' => $parsed_atts['spacing_tablet'],
 						'spacing_mobile' => $parsed_atts['spacing_mobile'],
+						'post_type'      => 'product',
 					)
 				);
 
 				?>
-				<div id="<?php echo esc_attr( $el_id ); ?>" class="<?php echo esc_attr( $extra_wrapper_classes ); ?>">
-					<div class="products woocommerce <?php echo esc_attr( $extra_class ); ?> columns-<?php echo esc_attr( $columns_desktop ); ?>" style="<?php echo esc_attr( $style_attrs ); ?>">
+				<div <?php echo $el_id ? 'id="' . esc_attr( $el_id ) . '" ' : ''; ?>class="<?php echo esc_attr( $extra_wrapper_classes ); ?>">
+					<div class="products <?php echo esc_attr( $extra_class ); ?> columns-<?php echo esc_attr( $columns_desktop ); ?>" style="<?php echo esc_attr( $style_attrs ); ?>">
 					<?php
 					foreach ( $product_categories as $category ) {
 						wc_get_template( 'content-product-cat.php', array( 'category' => $category ) );
@@ -435,11 +428,11 @@ if ( ! function_exists( 'woodmart_shortcode_categories' ) ) {
 
 		woodmart_reset_loop();
 
-		if ( function_exists( 'woocommerce_reset_loop' ) ) {
-			woocommerce_reset_loop();
+		if ( function_exists( 'wc_reset_loop' ) ) {
+			wc_reset_loop();
 		}
 
-		if ( $lazy_loading == 'yes' ) {
+		if ( 'yes' === $lazy_loading ) {
 			woodmart_lazy_loading_deinit();
 		}
 

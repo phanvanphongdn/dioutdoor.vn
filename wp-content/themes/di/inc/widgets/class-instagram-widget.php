@@ -1,63 +1,67 @@
-<?php if ( ! defined('WOODMART_THEME_DIR')) exit('No direct script access allowed');
-
+<?php // phpcs:ignore WordPress.Files.FileName.InvalidClassFileName
 /**
- * Register widget based on VC_MAP parameters that display isntagram widget
+ * Instagram widget.
  *
+ * @package woodmart
  */
 
-if ( ! class_exists( 'WOODMART_Instagram_Widget' ) ) {
-	class WOODMART_Instagram_Widget extends WPH_Widget {
-	
-		function __construct() {
-			if( ! function_exists( 'woodmart_get_instagram_params' ) ) return;
-		
-			// Configure widget array
-			$args = array( 
-				// Widget Backend label
-				'label' => esc_html__( 'WOODMART Instagram', 'woodmart' ), 
-				// Widget Backend Description								
-				'description' => esc_html__( 'Instagram photos', 'woodmart' ), 		
-				'slug' => 'woodmart-instagram',
-			 );
-		
-			// Configure the widget fields
-		
-			// fields array
-			$args['fields'] = woodmart_get_instagram_params();
+if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
+	exit( 'No direct script access allowed' );
+}
 
-			// create widget
-			$this->create_widget( $args );
+/**
+ * Register widget based on VC_MAP parameters that display isntagram widget.
+ */
+class WOODMART_Instagram_Widget extends WPH_Widget {
+
+	/**
+	 * Constructor.
+	 */
+	public function __construct() {
+		if ( ! function_exists( 'woodmart_get_instagram_params' ) ) {
+			return;
 		}
-		
-		// Output function
 
-		function widget( $args, $instance )	{
-			if ( $this->is_widget_preview() ) {
-				return;
-			}
+		$args = array(
+			'label'       => esc_html__( 'WOODMART Instagram', 'woodmart' ),
+			'description' => esc_html__( 'Instagram photos', 'woodmart' ),
+			'slug'        => 'woodmart-instagram',
+		);
 
-			extract($args);
+		$args['fields'] = woodmart_get_instagram_params();
 
-			echo wp_kses_post( $before_widget );
+		$this->create_widget( $args );
+	}
 
-			if(!empty($instance['title'])) { echo wp_kses_post( $before_title ). $instance['title'] . wp_kses_post( $after_title ); };
+	/**
+	 * Render widget.
+	 *
+	 * @param array $args Widget arguments.
+	 * @param array $instance Widget instance.
+	 */
+	public function widget( $args, $instance ) {
+		extract( $args ); // phpcs:ignore WordPress.PHP.DontExtract.extract_extract
 
-			do_action( 'wpiw_before_widget', $instance );
+		echo wp_kses_post( $before_widget );
 
-			$instance['title']          = '';
-			$instance['spacing']        = 1;
-			$instance['spacing_custom'] = 6;
-			$instance['per_row']        = 3;
-			$instance['per_row_tablet'] = 3;
-			$instance['per_row_mobile'] = 3;
-			$instance['username']       = $instance['username'] ? $instance['username'] : 'flickr';
-
-			echo woodmart_shortcode_instagram( $instance );
-
-			do_action( 'wpiw_after_widget', $instance );
-
-			echo wp_kses_post( $after_widget );
+		if ( ! empty( $instance['title'] ) ) {
+			echo wp_kses_post( $before_title ) . $instance['title'] . wp_kses_post( $after_title ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
-	
-	} // class
+
+		do_action( 'wpiw_before_widget', $instance );
+
+		$instance['title']          = '';
+		$instance['spacing']        = 1;
+		$instance['spacing_custom'] = 6;
+		$instance['per_row']        = 3;
+		$instance['per_row_tablet'] = 3;
+		$instance['per_row_mobile'] = 3;
+		$instance['username']       = $instance['username'] ? $instance['username'] : 'flickr';
+
+		echo woodmart_shortcode_instagram( $instance ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+
+		do_action( 'wpiw_after_widget', $instance );
+
+		echo wp_kses_post( $after_widget );
+	}
 }

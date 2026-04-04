@@ -1,6 +1,8 @@
 <?php
 /**
  * Menu price map.
+ *
+ * @package woodmart
  */
 
 namespace XTS\Elementor;
@@ -178,7 +180,6 @@ class Menu_Price extends Widget_Base {
 				'wrapper'     => array(
 					'class' => array(
 						'wd-menu-price',
-						woodmart_get_old_classes( 'woodmart-menu-price' ),
 					),
 				),
 				'price'       => array(
@@ -206,7 +207,7 @@ class Menu_Price extends Widget_Base {
 		);
 
 		if ( isset( $settings['image']['id'] ) && $settings['image']['id'] ) {
-			$image_output ='<span class="img-wrapper">' . woodmart_otf_get_image_html( $settings['image']['id'], $settings['image_size'], $settings['image_custom_dimension'] ) . '</span>';
+			$image_output = '<span class="img-wrapper">' . woodmart_otf_get_image_html( $settings['image']['id'], $settings['image_size'], $settings['image_custom_dimension'] ) . '</span>';
 
 			if ( woodmart_is_svg( $settings['image']['url'] ) ) {
 				$custom_image_size = 'custom' !== $settings['image_size'] ? $settings['image_size'] : $custom_image_size;
@@ -226,10 +227,10 @@ class Menu_Price extends Widget_Base {
 		woodmart_enqueue_inline_style( 'menu-price' );
 
 		?>
-		<div <?php echo $this->get_render_attribute_string( 'wrapper' ); ?>>
+		<div <?php echo $this->get_render_attribute_string( 'wrapper' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 			<?php if ( $image_output ) : ?>
 				<div class="menu-price-image">
-					<?php echo $image_output; ?>
+					<?php echo $image_output; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 				</div>
 			<?php endif ?>
 
@@ -237,26 +238,26 @@ class Menu_Price extends Widget_Base {
 				<div class="menu-price-heading">
 					<?php if ( $settings['title'] ) : ?>
 						<h3 class="menu-price-title wd-entities-title">
-							<span <?php echo $this->get_render_attribute_string( 'title' ); ?>>
+							<span <?php echo $this->get_render_attribute_string( 'title' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 								<?php echo wp_kses( $settings['title'], woodmart_get_allowed_html() ); ?>
 							</span>
 						</h3>
 					<?php endif ?>
 
-					<div <?php echo $this->get_render_attribute_string( 'price' ); ?>>
+					<div <?php echo $this->get_render_attribute_string( 'price' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 						<?php echo wp_kses( $settings['price'], woodmart_get_allowed_html() ); ?>
 					</div>
 				</div>
 
 				<?php if ( $settings['description'] ) : ?>
-					<div <?php echo $this->get_render_attribute_string( 'description' ); ?>>
+					<div <?php echo $this->get_render_attribute_string( 'description' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 						<?php echo do_shortcode( $settings['description'] ); ?>
 					</div>
 				<?php endif ?>
 			</div>
 
 			<?php if ( ! empty( $settings['link']['url'] ) ) : ?>
-				<a <?php echo $this->get_render_attribute_string( 'link' )?>></a>
+				<a <?php echo $this->get_render_attribute_string( 'link' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>></a>
 			<?php endif; ?>
 
 		</div>

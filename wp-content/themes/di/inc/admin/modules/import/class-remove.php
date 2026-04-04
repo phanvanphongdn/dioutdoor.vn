@@ -2,14 +2,12 @@
 /**
  * Import remove.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Admin\Modules\Import;
 
 use Exception;
-use RevSliderFront;
-use RevSliderSlider;
 use XTS\Admin\Modules\Options\Presets;
 use XTS\Singleton;
 
@@ -44,7 +42,7 @@ class Remove extends Singleton {
 	 * Init.
 	 */
 	public function init() {
-		$this->set_categories();
+		add_action( 'init', array( $this, 'set_categories' ) );
 
 		$this->set_versions();
 
@@ -122,12 +120,6 @@ class Remove extends Singleton {
 				$this->categories['headers']['data'] = array();
 			}
 
-			if ( defined( 'RS_REVISION' ) && in_array( 'rev_sliders', $selected_categories, true ) ) {
-				$imported_data = $this->delete_rev_sliders( $imported_data );
-
-				$this->categories['rev_sliders']['data'] = array();
-			}
-
 			if ( in_array( 'woodmart_slider', $selected_categories, true ) ) {
 				$imported_data = $this->delete_terms( array( 'woodmart_slider' ), $imported_data );
 				$imported_data = $this->delete_posts( array( 'woodmart_slide' ), $imported_data );
@@ -153,6 +145,7 @@ class Remove extends Singleton {
 				$imported_data = $this->delete_terms(
 					array(
 						'product_cat',
+						'product_brand',
 						'pa_brand',
 						'pa_color',
 						'pa_size',
@@ -167,6 +160,7 @@ class Remove extends Singleton {
 						'woodmart_woo_lv',
 						'woodmart_woo_fbt',
 						'wd_woo_discounts',
+						'wd_product_tabs',
 					),
 					$imported_data
 				);
@@ -205,6 +199,16 @@ class Remove extends Singleton {
 				$this->categories['presets']['data'] = array();
 			}
 
+			if ( in_array( 'wd_floating_block', $selected_categories, true ) ) {
+				$imported_data                                 = $this->delete_posts( array( 'wd_floating_block' ), $imported_data );
+				$this->categories['wd_floating_block']['data'] = array();
+			}
+
+			if ( in_array( 'wd_popup', $selected_categories, true ) ) {
+				$imported_data                        = $this->delete_posts( array( 'wd_popup' ), $imported_data );
+				$this->categories['wd_popup']['data'] = array();
+			}
+
 			update_option( 'wd_imported_data_' . $version, $imported_data, false );
 		}
 
@@ -228,67 +232,6 @@ class Remove extends Singleton {
 		foreach ( $presets as $preset ) {
 			Presets::get_instance()->remove_preset( $preset['id'] );
 		}
-	}
-
-	/**
-	 * Delete rev sliders.
-	 *
-	 * @param array $imported_data Data.
-	 *
-	 * @return array
-	 */
-	private function delete_rev_sliders( $imported_data ) {
-		if ( ! isset( $imported_data['rev_sliders'] ) ) {
-			return $imported_data;
-		}
-
-		global $wpdb;
-
-		foreach ( $imported_data['rev_sliders'] as $slider_name => $slider_data ) {
-			if ( ! isset( $slider_data['sliderID'] ) ) {
-				unset( $imported_data['rev_sliders'][ $slider_name ] );
-				continue;
-			}
-
-			$slider_id   = $slider_data['sliderID'];
-			$slides_data = $wpdb->get_results( $wpdb->prepare( 'SELECT * FROM ' . $wpdb->prefix . RevSliderFront::TABLE_SLIDES . ' WHERE `slider_id` = %s', $slider_id ), ARRAY_A ); // phpcs:ignore
-
-			$slides_data_static = $wpdb->get_results( $wpdb->prepare( 'SELECT * FROM ' . $wpdb->prefix . RevSliderFront::TABLE_STATIC_SLIDES . ' WHERE `slider_id` = %s', $slider_id ), ARRAY_A ); // phpcs:ignore
-
-			if ( $slides_data_static ) {
-				$slides_data = array_merge( $slides_data, $slides_data_static );
-			}
-
-			foreach ( $slides_data as $slide_data ) {
-				$layers = json_decode( $slide_data['layers'], true );
-				$params = json_decode( $slide_data['params'], true );
-
-				foreach ( $layers as $layer_data ) {
-					if ( isset( $layer_data['media'] ) && isset( $layer_data['media']['imageUrl'] ) ) {
-						wp_delete_post( attachment_url_to_postid( $layer_data['media']['imageUrl'] ), true );
-					}
-
-					if ( isset( $layer_data['idle'] ) && isset( $layer_data['idle']['backgroundImage'] ) ) {
-						wp_delete_post( attachment_url_to_postid( $layer_data['idle']['backgroundImage'] ), true );
-					}
-				}
-
-				if ( isset( $params['bg'] ) && isset( $params['bg']['image'] ) ) {
-					wp_delete_post( attachment_url_to_postid( $params['bg']['image'] ), true );
-				}
-
-				if ( isset( $params['thumb'] ) && isset( $params['thumb']['customThumbSrc'] ) ) {
-					wp_delete_post( attachment_url_to_postid( $params['thumb']['customThumbSrc'] ), true );
-				}
-			}
-
-			$revslider = new RevSliderSlider();
-			$revslider->init_by_id( $slider_id );
-			$revslider->delete_slider();
-			unset( $imported_data['rev_sliders'][ $slider_name ] );
-		}
-
-		return $imported_data;
 	}
 
 	/**
@@ -514,14 +457,10 @@ class Remove extends Singleton {
 	/**
 	 * Set categories.
 	 */
-	private function set_categories() {
+	public function set_categories() {
 		$this->categories = array(
 			'page'               => array(
 				'title' => esc_html__( 'Pages', 'woodmart' ),
-				'data'  => array(),
-			),
-			'rev_sliders'        => array(
-				'title' => esc_html__( 'Revolution sliders', 'woodmart' ),
 				'data'  => array(),
 			),
 			'product'            => array(
@@ -572,6 +511,14 @@ class Remove extends Singleton {
 				'title' => esc_html__( 'Contact forms', 'woodmart' ),
 				'data'  => array(),
 			),
+			'wd_floating_block'  => array(
+				'title' => esc_html__( 'Floating blocks', 'woodmart' ),
+				'data'  => array(),
+			),
+			'wd_popup'           => array(
+				'title' => esc_html__( 'Popups', 'woodmart' ),
+				'data'  => array(),
+			),
 		);
 	}
 
@@ -613,11 +560,6 @@ class Remove extends Singleton {
 				$this->categories['headers']['data'] = $this->categories['headers']['data'] + $imported_data['headers'];
 			}
 
-			if ( ! empty( $imported_data['rev_sliders'] ) ) {
-				$this->has_data_to_remove                = true;
-				$this->categories['rev_sliders']['data'] = $this->categories['rev_sliders']['data'] + $imported_data['rev_sliders'];
-			}
-
 			if ( ! empty( $imported_data['term']['woodmart_slider'] ) ) {
 				$this->has_data_to_remove                    = true;
 				$this->categories['woodmart_slider']['data'] = $this->categories['woodmart_slider']['data'] + $imported_data['term']['woodmart_slider'];
@@ -651,6 +593,16 @@ class Remove extends Singleton {
 			if ( ! empty( $imported_data['wpcf7_contact_form'] ) ) {
 				$this->has_data_to_remove                       = true;
 				$this->categories['wpcf7_contact_form']['data'] = $this->categories['wpcf7_contact_form']['data'] + $imported_data['wpcf7_contact_form'];
+			}
+
+			if ( ! empty( $imported_data['wd_floating_block'] ) ) {
+				$this->has_data_to_remove                      = true;
+				$this->categories['wd_floating_block']['data'] = $this->categories['wd_floating_block']['data'] + $imported_data['wd_floating_block'];
+			}
+
+			if ( ! empty( $imported_data['wd_popup'] ) ) {
+				$this->has_data_to_remove             = true;
+				$this->categories['wd_popup']['data'] = $this->categories['wd_popup']['data'] + $imported_data['wd_popup'];
 			}
 		}
 	}

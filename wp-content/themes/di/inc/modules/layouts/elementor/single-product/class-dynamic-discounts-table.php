@@ -2,7 +2,7 @@
 /**
  * Product price table.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Modules\Layouts;

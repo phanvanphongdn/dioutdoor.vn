@@ -23,8 +23,8 @@
 			}
 
 			var product    = $this.parents('.wd-product'),
-			    image      = product.find('.product-image-link > img, .product-image-link > picture > img'),
-			    source     = product.find('.product-image-link picture source'),
+			    image      = product.find('.wd-product-img-link > img, .wd-product-img-link > picture > img'),
+			    source     = product.find('.wd-product-img-link picture source'),
 			    srcOrig    = image.data('original-src'),
 			    srcsetOrig = image.data('original-srcset'),
 			    sizesOrig  = image.data('original-sizes');

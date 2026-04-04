@@ -2,13 +2,14 @@
 /**
  * Slider metaboxes
  *
- * @package xts
+ * @package woodmart
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Direct access not allowed.
 }
 
+use Elementor\Plugin;
 use XTS\Admin\Modules\Options\Metaboxes;
 
 if ( ! function_exists( 'woodmart_register_slider_metaboxes' ) ) {
@@ -26,6 +27,34 @@ if ( ! function_exists( 'woodmart_register_slider_metaboxes' ) ) {
 			)
 		);
 
+		if ( woodmart_is_elementor_installed() && is_admin() && ! empty( $_GET['post'] ) ) { // phpcs:ignore.
+			$doc = Plugin::$instance->documents->get( absint( $_GET['post'] ) ); // phpcs:ignore.
+
+			if ( $doc && $doc->is_built_with_elementor() ) {
+				$slide_metabox->add_section(
+					array(
+						'id'       => 'warning',
+						'name'     => '',
+						'priority' => 10,
+					)
+				);
+
+				$slide_metabox->add_field(
+					array(
+						'id'       => 'elementor_warning',
+						'section'  => 'warning',
+						'type'     => 'notice',
+						'style'    => 'info',
+						'name'     => '',
+						'content'  => esc_html__( 'Slide metaboxes moved to Elementor Post Settings', 'woodmart' ) . woodmart_get_admin_tooltip( 'elementor-slide-settings.jpg' ),
+						'priority' => 10,
+					)
+				);
+
+				return;
+			}
+		}
+
 		$slide_metabox->add_section(
 			array(
 				'id'       => 'slide_content',
@@ -38,9 +67,18 @@ if ( ! function_exists( 'woodmart_register_slider_metaboxes' ) ) {
 		$slide_metabox->add_section(
 			array(
 				'id'       => 'image_settings',
-				'name'     => esc_html__( 'Background', 'woodmart' ),
+				'name'     => esc_html__( 'Image', 'woodmart' ),
 				'icon'     => 'xts-i-image',
 				'priority' => 20,
+			)
+		);
+
+		$slide_metabox->add_section(
+			array(
+				'id'       => 'background_settings',
+				'name'     => esc_html__( 'Background', 'woodmart' ),
+				'icon'     => 'xts-i-image',
+				'priority' => 30,
 			)
 		);
 
@@ -49,54 +87,118 @@ if ( ! function_exists( 'woodmart_register_slider_metaboxes' ) ) {
 				'id'       => 'slide_link',
 				'name'     => esc_html__( 'Settings', 'woodmart' ),
 				'icon'     => 'xts-i-setting-slider-in-square',
-				'priority' => 30,
+				'priority' => 40,
 			)
 		);
 
 		$slide_metabox->add_field(
 			array(
 				'id'        => 'bg_color',
-				'name'      => esc_html__( 'Color', 'woodmart' ),
+				'name'      => esc_html__( 'Background color', 'woodmart' ),
 				'type'      => 'color',
-				'section'   => 'image_settings',
+				'section'   => 'background_settings',
 				'default'   => '#fefefe',
 				'data_type' => 'hex',
-				'priority'  => 19,
+				'priority'  => 5,
 			)
 		);
 
-		// Desktop.
 		$slide_metabox->add_field(
 			array(
-				'id'       => 'bg_image_desktop',
-				'name'     => esc_html__( 'Background image', 'woodmart' ),
+				'id'       => 'image',
+				'name'     => esc_html__( 'Image', 'woodmart' ),
 				'type'     => 'upload',
 				'section'  => 'image_settings',
-				'requires' => array(
-					array(
-						'key'     => 'slide_image_settings_tab',
-						'compare' => 'equals',
-						'value'   => 'desktop',
-					),
-				),
-				't_tab'    => array(
-					'id'    => 'settings_tabs',
-					'tab'   => esc_html__( 'Desktop', 'woodmart' ),
-					'title' => esc_html__( 'Image', 'woodmart' ),
-					'style' => 'default',
-				),
 				'priority' => 20,
-				'class'    => 'xts-tab-field',
+				'group'    => esc_html__( 'Image', 'woodmart' ),
+				'class'    => 'xts-tab-field xts-col-6',
 			)
 		);
 
 		$slide_metabox->add_field(
 			array(
-				'id'           => 'bg_image_size_desktop',
-				'name'         => esc_html__( 'Background size', 'woodmart' ),
+				'id'       => 'image_size',
+				'name'     => esc_html__( 'Image size', 'woodmart' ),
+				'type'     => 'select',
+				'section'  => 'image_settings',
+				'options'  => woodmart_get_default_image_sizes(),
+				'default'  => 'full',
+				'requires' => array(
+					array(
+						'key'     => 'image',
+						'compare' => 'not_equals',
+						'value'   => array(),
+					),
+				),
+				'priority' => 30,
+				'group'    => esc_html__( 'Image', 'woodmart' ),
+				'class'    => 'xts-col-6',
+			)
+		);
+
+		$slide_metabox->add_field(
+			array(
+				'id'         => 'image_size_custom_width',
+				'name'       => esc_html__( 'Custom width (px)', 'woodmart' ),
+				'type'       => 'text_input',
+				'section'    => 'image_settings',
+				'attributes' => array(
+					'type' => 'number',
+				),
+				'default'    => '',
+				'requires'   => array(
+					array(
+						'key'     => 'image_size',
+						'compare' => 'equals',
+						'value'   => array( 'custom' ),
+					),
+					array(
+						'key'     => 'image',
+						'compare' => 'not_equals',
+						'value'   => array(),
+					),
+				),
+				'priority'   => 34,
+				'group'      => esc_html__( 'Image', 'woodmart' ),
+				'class'      => 'xts-col-6',
+			)
+		);
+
+		$slide_metabox->add_field(
+			array(
+				'id'         => 'image_size_custom_height',
+				'name'       => esc_html__( 'Custom height (px)', 'woodmart' ),
+				'type'       => 'text_input',
+				'section'    => 'image_settings',
+				'attributes' => array(
+					'type' => 'number',
+				),
+				'default'    => '',
+				'requires'   => array(
+					array(
+						'key'     => 'image_size',
+						'compare' => 'equals',
+						'value'   => array( 'custom' ),
+					),
+					array(
+						'key'     => 'image',
+						'compare' => 'not_equals',
+						'value'   => array(),
+					),
+				),
+				'priority'   => 35,
+				'group'      => esc_html__( 'Image', 'woodmart' ),
+				'class'      => 'xts-col-6',
+			)
+		);
+
+		$slide_metabox->add_field(
+			array(
+				'id'           => 'image_object_fit',
+				'name'         => esc_html__( 'Object-fit', 'woodmart' ),
 				'type'         => 'select',
-				'empty_option' => true,
 				'select2'      => true,
+				'empty_option' => true,
 				'section'      => 'image_settings',
 				'options'      => array(
 					'cover'   => array(
@@ -107,22 +209,133 @@ if ( ! function_exists( 'woodmart_register_slider_metaboxes' ) ) {
 						'name'  => esc_html__( 'Contain', 'woodmart' ),
 						'value' => 'contain',
 					),
+					'fill'    => array(
+						'name'  => esc_html__( 'Fill', 'woodmart' ),
+						'value' => 'fill',
+					),
+					'none'    => array(
+						'name'  => esc_html__( 'None', 'woodmart' ),
+						'value' => 'none',
+					),
 				),
-				'default'      => 'cover',
+				'default'      => '',
 				't_tab'        => array(
-					'id'   => 'settings_tabs',
-					'icon' => 'xts-i-desktop',
-					'tab'  => esc_html__( 'Desktop', 'woodmart' ),
+					'id'       => 'image_object_fit_tabs',
+					'tab'      => esc_html__( 'Desktop', 'woodmart' ),
+					'icon'     => 'xts-i-desktop',
+					'style'    => 'devices',
+					'requires' => array(
+						array(
+							'key'     => 'image',
+							'compare' => 'not_equals',
+							'value'   => array(),
+						),
+					),
 				),
-				'priority'     => 30,
-				'class'        => 'xts-tab-field xts-col-6',
+				'requires'     => array(
+					array(
+						'key'     => 'image',
+						'compare' => 'not_equals',
+						'value'   => array(),
+					),
+				),
+				'group'        => esc_html__( 'Image', 'woodmart' ),
+				'priority'     => 40,
 			)
 		);
 
 		$slide_metabox->add_field(
 			array(
-				'id'           => 'bg_image_position_desktop',
-				'name'         => esc_html__( 'Background position', 'woodmart' ),
+				'id'           => 'image_object_fit_tablet',
+				'name'         => esc_html__( 'Object-fit', 'woodmart' ),
+				'type'         => 'select',
+				'select2'      => true,
+				'empty_option' => true,
+				'section'      => 'image_settings',
+				'options'      => array(
+					'cover'   => array(
+						'name'  => esc_html__( 'Cover', 'woodmart' ),
+						'value' => 'cover',
+					),
+					'contain' => array(
+						'name'  => esc_html__( 'Contain', 'woodmart' ),
+						'value' => 'contain',
+					),
+					'fill'    => array(
+						'name'  => esc_html__( 'Fill', 'woodmart' ),
+						'value' => 'fill',
+					),
+					'none'    => array(
+						'name'  => esc_html__( 'None', 'woodmart' ),
+						'value' => 'none',
+					),
+				),
+				'default'      => '',
+				't_tab'        => array(
+					'id'   => 'image_object_fit_tabs',
+					'tab'  => esc_html__( 'Tablet', 'woodmart' ),
+					'icon' => 'xts-i-tablet',
+				),
+				'requires'     => array(
+					array(
+						'key'     => 'image',
+						'compare' => 'not_equals',
+						'value'   => array(),
+					),
+				),
+				'group'        => esc_html__( 'Image', 'woodmart' ),
+				'priority'     => 41,
+			)
+		);
+
+		$slide_metabox->add_field(
+			array(
+				'id'           => 'image_object_fit_mobile',
+				'name'         => esc_html__( 'Object-fit', 'woodmart' ),
+				'type'         => 'select',
+				'select2'      => true,
+				'empty_option' => true,
+				'section'      => 'image_settings',
+				'options'      => array(
+					'cover'   => array(
+						'name'  => esc_html__( 'Cover', 'woodmart' ),
+						'value' => 'cover',
+					),
+					'contain' => array(
+						'name'  => esc_html__( 'Contain', 'woodmart' ),
+						'value' => 'contain',
+					),
+					'fill'    => array(
+						'name'  => esc_html__( 'Fill', 'woodmart' ),
+						'value' => 'fill',
+					),
+					'none'    => array(
+						'name'  => esc_html__( 'None', 'woodmart' ),
+						'value' => 'none',
+					),
+				),
+				'default'      => '',
+				't_tab'        => array(
+					'id'   => 'image_object_fit_tabs',
+					'tab'  => esc_html__( 'Mobile', 'woodmart' ),
+					'icon' => 'xts-i-phone',
+				),
+				'requires'     => array(
+					array(
+						'key'     => 'image',
+						'compare' => 'not_equals',
+						'value'   => array(),
+					),
+				),
+				'group'        => esc_html__( 'Image', 'woodmart' ),
+				'priority'     => 42,
+			)
+		);
+
+		$slide_metabox->add_field(
+			array(
+				'id'           => 'image_object_position',
+				'name'         => esc_html__( 'Object position', 'woodmart' ),
 				'type'         => 'select',
 				'empty_option' => true,
 				'select2'      => true,
@@ -169,14 +382,586 @@ if ( ! function_exists( 'woodmart_register_slider_metaboxes' ) ) {
 						'value' => 'custom',
 					),
 				),
-				'default'      => 'center center',
+				'default'      => '',
+				't_tab'        => array(
+					'id'       => 'image_object_position_tabs',
+					'tab'      => esc_html__( 'Desktop', 'woodmart' ),
+					'icon'     => 'xts-i-desktop',
+					'style'    => 'devices',
+					'requires' => array(
+						array(
+							'key'     => 'image',
+							'compare' => 'not_equals',
+							'value'   => array(),
+						),
+					),
+				),
+				'requires'     => array(
+					array(
+						'key'     => 'image',
+						'compare' => 'not_equals',
+						'value'   => array(),
+					),
+				),
+				'priority'     => 50,
+				'group'        => esc_html__( 'Image', 'woodmart' ),
+				'class'        => 'xts-col-4',
+			)
+		);
+
+		$slide_metabox->add_field(
+			array(
+				'id'       => 'image_object_position_x',
+				'type'     => 'text_input',
+				'name'     => esc_html__( 'Position by X (px)', 'woodmart' ),
+				'section'  => 'image_settings',
+				'requires' => array(
+					array(
+						'key'     => 'image_object_position',
+						'compare' => 'equals',
+						'value'   => 'custom',
+					),
+					array(
+						'key'     => 'image',
+						'compare' => 'not_equals',
+						'value'   => array(),
+					),
+				),
+				't_tab'    => array(
+					'id'   => 'image_object_position_tabs',
+					'icon' => 'xts-i-desktop',
+					'tab'  => esc_html__( 'Desktop', 'woodmart' ),
+				),
+				'priority' => 51,
+				'group'    => esc_html__( 'Image', 'woodmart' ),
+				'class'    => 'xts-col-4',
+			)
+		);
+
+		$slide_metabox->add_field(
+			array(
+				'id'       => 'image_object_position_y',
+				'type'     => 'text_input',
+				'name'     => esc_html__( 'Position by Y (px)', 'woodmart' ),
+				'section'  => 'image_settings',
+				'requires' => array(
+					array(
+						'key'     => 'image_object_position',
+						'compare' => 'equals',
+						'value'   => 'custom',
+					),
+					array(
+						'key'     => 'image',
+						'compare' => 'not_equals',
+						'value'   => array(),
+					),
+				),
+				't_tab'    => array(
+					'id'   => 'image_object_position_tabs',
+					'icon' => 'xts-i-desktop',
+					'tab'  => esc_html__( 'Desktop', 'woodmart' ),
+				),
+				'priority' => 52,
+				'group'    => esc_html__( 'Image', 'woodmart' ),
+				'class'    => 'xts-col-4',
+			)
+		);
+
+		$slide_metabox->add_field(
+			array(
+				'id'           => 'image_object_position_tablet',
+				'name'         => esc_html__( 'Object position', 'woodmart' ),
+				'type'         => 'select',
+				'empty_option' => true,
+				'select2'      => true,
+				'section'      => 'image_settings',
+				'options'      => array(
+					'left-top'      => array(
+						'name'  => esc_html__( 'Left Top', 'woodmart' ),
+						'value' => 'left top',
+					),
+					'left-center'   => array(
+						'name'  => esc_html__( 'Left Center', 'woodmart' ),
+						'value' => 'left center',
+					),
+					'left-bottom'   => array(
+						'name'  => esc_html__( 'Left Bottom', 'woodmart' ),
+						'value' => 'left bottom',
+					),
+					'center-top'    => array(
+						'name'  => esc_html__( 'Center Top', 'woodmart' ),
+						'value' => 'center top',
+					),
+					'center-center' => array(
+						'name'  => esc_html__( 'Center Center', 'woodmart' ),
+						'value' => 'center center',
+					),
+					'center-bottom' => array(
+						'name'  => esc_html__( 'Center Bottom', 'woodmart' ),
+						'value' => 'center bottom',
+					),
+					'right-top'     => array(
+						'name'  => esc_html__( 'Right Top', 'woodmart' ),
+						'value' => 'right top',
+					),
+					'right-center'  => array(
+						'name'  => esc_html__( 'Right Center', 'woodmart' ),
+						'value' => 'right center',
+					),
+					'right-bottom'  => array(
+						'name'  => esc_html__( 'Right Bottom', 'woodmart' ),
+						'value' => 'right bottom',
+					),
+					'custom'        => array(
+						'name'  => esc_html__( 'Custom', 'woodmart' ),
+						'value' => 'custom',
+					),
+				),
+				'default'      => '',
+				't_tab'        => array(
+					'id'   => 'image_object_position_tabs',
+					'tab'  => esc_html__( 'Tablet', 'woodmart' ),
+					'icon' => 'xts-i-tablet',
+				),
+				'requires'     => array(
+					array(
+						'key'     => 'image',
+						'compare' => 'not_equals',
+						'value'   => array(),
+					),
+				),
+				'class'        => 'xts-col-4',
+				'group'        => esc_html__( 'Image', 'woodmart' ),
+				'priority'     => 53,
+			)
+		);
+
+		$slide_metabox->add_field(
+			array(
+				'id'       => 'image_object_position_x_tablet',
+				'type'     => 'text_input',
+				'name'     => esc_html__( 'Position by X (px)', 'woodmart' ),
+				'section'  => 'image_settings',
+				'requires' => array(
+					array(
+						'key'     => 'image_object_position_tablet',
+						'compare' => 'equals',
+						'value'   => 'custom',
+					),
+					array(
+						'key'     => 'image',
+						'compare' => 'not_equals',
+						'value'   => array(),
+					),
+				),
+				't_tab'    => array(
+					'id'   => 'image_object_position_tabs',
+					'tab'  => esc_html__( 'Tablet', 'woodmart' ),
+					'icon' => 'xts-i-tablet',
+				),
+				'priority' => 54,
+				'group'    => esc_html__( 'Image', 'woodmart' ),
+				'class'    => 'xts-col-4',
+			)
+		);
+
+		$slide_metabox->add_field(
+			array(
+				'id'       => 'image_object_position_y_tablet',
+				'type'     => 'text_input',
+				'name'     => esc_html__( 'Position by Y (px)', 'woodmart' ),
+				'section'  => 'image_settings',
+				'requires' => array(
+					array(
+						'key'     => 'image_object_position_tablet',
+						'compare' => 'equals',
+						'value'   => 'custom',
+					),
+					array(
+						'key'     => 'image',
+						'compare' => 'not_equals',
+						'value'   => array(),
+					),
+				),
+				't_tab'    => array(
+					'id'   => 'image_object_position_tabs',
+					'tab'  => esc_html__( 'Tablet', 'woodmart' ),
+					'icon' => 'xts-i-tablet',
+				),
+				'priority' => 55,
+				'group'    => esc_html__( 'Image', 'woodmart' ),
+				'class'    => 'xts-col-4',
+			)
+		);
+
+		$slide_metabox->add_field(
+			array(
+				'id'           => 'image_object_position_mobile',
+				'name'         => esc_html__( 'Object position', 'woodmart' ),
+				'type'         => 'select',
+				'empty_option' => true,
+				'select2'      => true,
+				'section'      => 'image_settings',
+				'options'      => array(
+					'left-top'      => array(
+						'name'  => esc_html__( 'Left Top', 'woodmart' ),
+						'value' => 'left top',
+					),
+					'left-center'   => array(
+						'name'  => esc_html__( 'Left Center', 'woodmart' ),
+						'value' => 'left center',
+					),
+					'left-bottom'   => array(
+						'name'  => esc_html__( 'Left Bottom', 'woodmart' ),
+						'value' => 'left bottom',
+					),
+					'center-top'    => array(
+						'name'  => esc_html__( 'Center Top', 'woodmart' ),
+						'value' => 'center top',
+					),
+					'center-center' => array(
+						'name'  => esc_html__( 'Center Center', 'woodmart' ),
+						'value' => 'center center',
+					),
+					'center-bottom' => array(
+						'name'  => esc_html__( 'Center Bottom', 'woodmart' ),
+						'value' => 'center bottom',
+					),
+					'right-top'     => array(
+						'name'  => esc_html__( 'Right Top', 'woodmart' ),
+						'value' => 'right top',
+					),
+					'right-center'  => array(
+						'name'  => esc_html__( 'Right Center', 'woodmart' ),
+						'value' => 'right center',
+					),
+					'right-bottom'  => array(
+						'name'  => esc_html__( 'Right Bottom', 'woodmart' ),
+						'value' => 'right bottom',
+					),
+					'custom'        => array(
+						'name'  => esc_html__( 'Custom', 'woodmart' ),
+						'value' => 'custom',
+					),
+				),
+				'default'      => '',
+				't_tab'        => array(
+					'id'   => 'image_object_position_tabs',
+					'tab'  => esc_html__( 'Mobile', 'woodmart' ),
+					'icon' => 'xts-i-phone',
+				),
+				'requires'     => array(
+					array(
+						'key'     => 'image',
+						'compare' => 'not_equals',
+						'value'   => array(),
+					),
+				),
+				'group'        => esc_html__( 'Image', 'woodmart' ),
+				'class'        => 'xts-col-4',
+				'priority'     => 56,
+			)
+		);
+
+		$slide_metabox->add_field(
+			array(
+				'id'       => 'image_object_position_x_mobile',
+				'type'     => 'text_input',
+				'name'     => esc_html__( 'Position by X (px)', 'woodmart' ),
+				'section'  => 'image_settings',
+				'requires' => array(
+					array(
+						'key'     => 'image_object_position_mobile',
+						'compare' => 'equals',
+						'value'   => 'custom',
+					),
+					array(
+						'key'     => 'image',
+						'compare' => 'not_equals',
+						'value'   => array(),
+					),
+				),
+				't_tab'    => array(
+					'id'   => 'image_object_position_tabs',
+					'tab'  => esc_html__( 'Mobile', 'woodmart' ),
+					'icon' => 'xts-i-phone',
+				),
+				'group'    => esc_html__( 'Image', 'woodmart' ),
+				'priority' => 57,
+				'class'    => 'xts-col-4',
+			)
+		);
+
+		$slide_metabox->add_field(
+			array(
+				'id'       => 'image_object_position_y_mobile',
+				'type'     => 'text_input',
+				'name'     => esc_html__( 'Position by Y (px)', 'woodmart' ),
+				'section'  => 'image_settings',
+				'requires' => array(
+					array(
+						'key'     => 'image_object_position_mobile',
+						'compare' => 'equals',
+						'value'   => 'custom',
+					),
+					array(
+						'key'     => 'image',
+						'compare' => 'not_equals',
+						'value'   => array(),
+					),
+				),
+				't_tab'    => array(
+					'id'   => 'image_object_position_tabs',
+					'tab'  => esc_html__( 'Mobile', 'woodmart' ),
+					'icon' => 'xts-i-phone',
+				),
+				'group'    => esc_html__( 'Image', 'woodmart' ),
+				'priority' => 58,
+				'class'    => 'xts-col-4',
+			)
+		);
+
+		$slide_metabox->add_field(
+			array(
+				'id'       => 'bg_image_notice',
+				'type'     => 'notice',
+				'style'    => 'info',
+				'name'     => '',
+				'content'  => __( 'The Background image option uses CSS to set a background. For maximum performance and loading speed, we recommend using the Image option, which uses the "img" tag instead of the "background-image" CSS property. This approach allows the browser to prioritize the image for LCP (Largest Contentful Paint) and leverage the benefits of srcset, enabling it to select the most appropriate image size for the user\'s device and screen resolution.', 'woodmart' ),
+				'section'  => 'background_settings',
+				'priority' => 59,
+			)
+		);
+
+		// Desktop.
+		$slide_metabox->add_field(
+			array(
+				'id'       => 'bg_image_desktop',
+				'name'     => esc_html__( 'Background image', 'woodmart' ),
+				'type'     => 'upload',
+				'section'  => 'background_settings',
+				'requires' => array(
+					array(
+						'key'     => 'slide_image_settings_tab',
+						'compare' => 'equals',
+						'value'   => 'desktop',
+					),
+				),
+				't_tab'    => array(
+					'id'    => 'settings_tabs',
+					'tab'   => esc_html__( 'Desktop', 'woodmart' ),
+					'title' => esc_html__( 'Background image', 'woodmart' ),
+					'style' => 'default',
+				),
+				'priority' => 60,
+				'class'    => 'xts-tab-field xts-col-6',
+			)
+		);
+
+		$slide_metabox->add_field(
+			array(
+				'id'       => 'bg_image_desktop_size',
+				'name'     => esc_html__( 'Image size', 'woodmart' ),
+				'type'     => 'select',
+				'section'  => 'background_settings',
+				'options'  => woodmart_get_default_image_sizes(),
+				'default'  => 'full',
+				'requires' => array(
+					array(
+						'key'     => 'bg_image_desktop',
+						'compare' => 'not_equals',
+						'value'   => '',
+					),
+				),
+				't_tab'    => array(
+					'id'   => 'settings_tabs',
+					'icon' => 'xts-i-desktop',
+					'tab'  => esc_html__( 'Desktop', 'woodmart' ),
+				),
+				'priority' => 62,
+				'class'    => 'xts-col-6',
+			)
+		);
+
+		$slide_metabox->add_field(
+			array(
+				'id'         => 'bg_image_desktop_size_custom_width',
+				'name'       => esc_html__( 'Custom width (px)', 'woodmart' ),
+				'type'       => 'text_input',
+				'section'    => 'background_settings',
+				'attributes' => array(
+					'type' => 'number',
+				),
+				'default'    => '',
+				'requires'   => array(
+					array(
+						'key'     => 'bg_image_desktop',
+						'compare' => 'not_equals',
+						'value'   => '',
+					),
+					array(
+						'key'     => 'bg_image_desktop_size',
+						'compare' => 'equals',
+						'value'   => array( 'custom' ),
+					),
+				),
+				't_tab'      => array(
+					'id'   => 'settings_tabs',
+					'icon' => 'xts-i-desktop',
+					'tab'  => esc_html__( 'Desktop', 'woodmart' ),
+				),
+				'priority'   => 63,
+				'class'      => 'xts-col-6',
+			)
+		);
+
+		$slide_metabox->add_field(
+			array(
+				'id'         => 'bg_image_desktop_size_custom_height',
+				'name'       => esc_html__( 'Custom height (px)', 'woodmart' ),
+				'type'       => 'text_input',
+				'section'    => 'background_settings',
+				'attributes' => array(
+					'type' => 'number',
+				),
+				'default'    => '',
+				'requires'   => array(
+					array(
+						'key'     => 'bg_image_desktop',
+						'compare' => 'not_equals',
+						'value'   => '',
+					),
+					array(
+						'key'     => 'bg_image_desktop_size',
+						'compare' => 'equals',
+						'value'   => array( 'custom' ),
+					),
+				),
+				't_tab'      => array(
+					'id'   => 'settings_tabs',
+					'icon' => 'xts-i-desktop',
+					'tab'  => esc_html__( 'Desktop', 'woodmart' ),
+				),
+				'priority'   => 64,
+				'class'      => 'xts-col-6',
+			)
+		);
+
+		$slide_metabox->add_field(
+			array(
+				'id'       => 'clear',
+				'type'     => 'clear',
+				'section'  => 'background_settings',
+				't_tab'    => array(
+					'id'   => 'settings_tabs',
+					'icon' => 'xts-i-desktop',
+					'tab'  => esc_html__( 'Desktop', 'woodmart' ),
+				),
+				'priority' => 65,
+			)
+		);
+
+		$slide_metabox->add_field(
+			array(
+				'id'           => 'bg_image_size_desktop',
+				'name'         => esc_html__( 'Background size', 'woodmart' ),
+				'type'         => 'select',
+				'empty_option' => true,
+				'select2'      => true,
+				'section'      => 'background_settings',
+				'options'      => array(
+					'cover'   => array(
+						'name'  => esc_html__( 'Cover', 'woodmart' ),
+						'value' => 'cover',
+					),
+					'contain' => array(
+						'name'  => esc_html__( 'Contain', 'woodmart' ),
+						'value' => 'contain',
+					),
+				),
+				'default'      => '',
 				't_tab'        => array(
 					'id'   => 'settings_tabs',
 					'icon' => 'xts-i-desktop',
 					'tab'  => esc_html__( 'Desktop', 'woodmart' ),
 				),
-				'priority'     => 40,
-				'class'        => 'xts-tab-field xts-last-tab-field xts-col-6',
+				'requires'     => array(
+					array(
+						'key'     => 'bg_image_desktop',
+						'compare' => 'not_equals',
+						'value'   => '',
+					),
+				),
+				'priority'     => 65,
+				'class'        => 'xts-tab-field',
+			)
+		);
+
+		$slide_metabox->add_field(
+			array(
+				'id'           => 'bg_image_position_desktop',
+				'name'         => esc_html__( 'Background position', 'woodmart' ),
+				'type'         => 'select',
+				'empty_option' => true,
+				'select2'      => true,
+				'section'      => 'background_settings',
+				'options'      => array(
+					'left-top'      => array(
+						'name'  => esc_html__( 'Left Top', 'woodmart' ),
+						'value' => 'left top',
+					),
+					'left-center'   => array(
+						'name'  => esc_html__( 'Left Center', 'woodmart' ),
+						'value' => 'left center',
+					),
+					'left-bottom'   => array(
+						'name'  => esc_html__( 'Left Bottom', 'woodmart' ),
+						'value' => 'left bottom',
+					),
+					'center-top'    => array(
+						'name'  => esc_html__( 'Center Top', 'woodmart' ),
+						'value' => 'center top',
+					),
+					'center-center' => array(
+						'name'  => esc_html__( 'Center Center', 'woodmart' ),
+						'value' => 'center center',
+					),
+					'center-bottom' => array(
+						'name'  => esc_html__( 'Center Bottom', 'woodmart' ),
+						'value' => 'center bottom',
+					),
+					'right-top'     => array(
+						'name'  => esc_html__( 'Right Top', 'woodmart' ),
+						'value' => 'right top',
+					),
+					'right-center'  => array(
+						'name'  => esc_html__( 'Right Center', 'woodmart' ),
+						'value' => 'right center',
+					),
+					'right-bottom'  => array(
+						'name'  => esc_html__( 'Right Bottom', 'woodmart' ),
+						'value' => 'right bottom',
+					),
+					'custom'        => array(
+						'name'  => esc_html__( 'Custom', 'woodmart' ),
+						'value' => 'custom',
+					),
+				),
+				'default'      => '',
+				't_tab'        => array(
+					'id'   => 'settings_tabs',
+					'icon' => 'xts-i-desktop',
+					'tab'  => esc_html__( 'Desktop', 'woodmart' ),
+				),
+				'requires'     => array(
+					array(
+						'key'     => 'bg_image_desktop',
+						'compare' => 'not_equals',
+						'value'   => '',
+					),
+				),
+				'priority'     => 70,
+				'class'        => 'xts-tab-field xts-last-tab-field xts-col-4',
 			)
 		);
 
@@ -185,12 +970,17 @@ if ( ! function_exists( 'woodmart_register_slider_metaboxes' ) ) {
 				'id'       => 'bg_image_position_x_desktop',
 				'type'     => 'text_input',
 				'name'     => esc_html__( 'Position by X (px)', 'woodmart' ),
-				'section'  => 'image_settings',
+				'section'  => 'background_settings',
 				'requires' => array(
 					array(
 						'key'     => 'bg_image_position_desktop',
 						'compare' => 'equals',
 						'value'   => 'custom',
+					),
+					array(
+						'key'     => 'bg_image_desktop',
+						'compare' => 'not_equals',
+						'value'   => '',
 					),
 				),
 				't_tab'    => array(
@@ -198,8 +988,8 @@ if ( ! function_exists( 'woodmart_register_slider_metaboxes' ) ) {
 					'icon' => 'xts-i-desktop',
 					'tab'  => esc_html__( 'Desktop', 'woodmart' ),
 				),
-				'priority' => 50,
-				'class'    => 'xts-tab-field xts-col-6',
+				'priority' => 80,
+				'class'    => 'xts-tab-field xts-col-4',
 			)
 		);
 
@@ -208,12 +998,17 @@ if ( ! function_exists( 'woodmart_register_slider_metaboxes' ) ) {
 				'id'       => 'bg_image_position_y_desktop',
 				'type'     => 'text_input',
 				'name'     => esc_html__( 'Position by Y (px)', 'woodmart' ),
-				'section'  => 'image_settings',
+				'section'  => 'background_settings',
 				'requires' => array(
 					array(
 						'key'     => 'bg_image_position_desktop',
 						'compare' => 'equals',
 						'value'   => 'custom',
+					),
+					array(
+						'key'     => 'bg_image_desktop',
+						'compare' => 'not_equals',
+						'value'   => '',
 					),
 				),
 				't_tab'    => array(
@@ -221,8 +1016,8 @@ if ( ! function_exists( 'woodmart_register_slider_metaboxes' ) ) {
 					'icon' => 'xts-i-desktop',
 					'tab'  => esc_html__( 'Desktop', 'woodmart' ),
 				),
-				'priority' => 60,
-				'class'    => 'xts-tab-field xts-last-tab-field xts-col-6',
+				'priority' => 90,
+				'class'    => 'xts-tab-field xts-last-tab-field xts-col-4',
 			)
 		);
 
@@ -232,7 +1027,7 @@ if ( ! function_exists( 'woodmart_register_slider_metaboxes' ) ) {
 				'id'       => 'bg_image_tablet',
 				'name'     => esc_html__( 'Background image', 'woodmart' ),
 				'type'     => 'upload',
-				'section'  => 'image_settings',
+				'section'  => 'background_settings',
 				'requires' => array(
 					array(
 						'key'     => 'slide_image_settings_tab',
@@ -245,8 +1040,118 @@ if ( ! function_exists( 'woodmart_register_slider_metaboxes' ) ) {
 					'icon' => 'xts-i-tablet',
 					'tab'  => esc_html__( 'Tablet', 'woodmart' ),
 				),
-				'priority' => 80,
-				'class'    => 'xts-tab-field',
+				'priority' => 100,
+				'class'    => 'xts-tab-field xts-col-6',
+			)
+		);
+
+		$slide_metabox->add_field(
+			array(
+				'id'       => 'bg_image_tablet_size',
+				'name'     => esc_html__( 'Image size', 'woodmart' ),
+				'type'     => 'select',
+				'section'  => 'background_settings',
+				'options'  => woodmart_get_default_image_sizes(),
+				'default'  => 'full',
+				'requires' => array(
+					array(
+						'key'     => 'bg_image_tablet',
+						'compare' => 'not_equals',
+						'value'   => '',
+					),
+				),
+				't_tab'    => array(
+					'id'   => 'settings_tabs',
+					'icon' => 'xts-i-tablet',
+					'tab'  => esc_html__( 'Tablet', 'woodmart' ),
+				),
+				'priority' => 102,
+				'class'    => 'xts-col-6',
+			)
+		);
+
+		$slide_metabox->add_field(
+			array(
+				'id'         => 'bg_image_tablet_size_custom_width',
+				'name'       => esc_html__( 'Custom width (px)', 'woodmart' ),
+				'type'       => 'text_input',
+				'section'    => 'background_settings',
+				'attributes' => array(
+					'type' => 'number',
+				),
+				'default'    => '',
+				'requires'   => array(
+					array(
+						'key'     => 'bg_image_tablet',
+						'compare' => 'not_equals',
+						'value'   => '',
+					),
+					array(
+						'key'     => 'bg_image_tablet_size',
+						'compare' => 'equals',
+						'value'   => array( 'custom' ),
+					),
+				),
+				't_tab'      => array(
+					'id'   => 'settings_tabs',
+					'icon' => 'xts-i-tablet',
+					'tab'  => esc_html__( 'Tablet', 'woodmart' ),
+				),
+				'priority'   => 103,
+				'class'      => 'xts-col-6',
+			)
+		);
+
+		$slide_metabox->add_field(
+			array(
+				'id'         => 'bg_image_tablet_size_custom_height',
+				'name'       => esc_html__( 'Custom height (px)', 'woodmart' ),
+				'type'       => 'text_input',
+				'section'    => 'background_settings',
+				'attributes' => array(
+					'type' => 'number',
+				),
+				'default'    => '',
+				'requires'   => array(
+					array(
+						'key'     => 'bg_image_tablet',
+						'compare' => 'not_equals',
+						'value'   => '',
+					),
+					array(
+						'key'     => 'bg_image_tablet_size',
+						'compare' => 'equals',
+						'value'   => array( 'custom' ),
+					),
+				),
+				't_tab'      => array(
+					'id'   => 'settings_tabs',
+					'icon' => 'xts-i-tablet',
+					'tab'  => esc_html__( 'Tablet', 'woodmart' ),
+				),
+				'priority'   => 104,
+				'class'      => 'xts-col-6',
+			)
+		);
+
+		$slide_metabox->add_field(
+			array(
+				'id'       => 'clear_tablet',
+				'type'     => 'clear',
+				'section'  => 'background_settings',
+				't_tab'    => array(
+					'id'   => 'settings_tabs',
+					'icon' => 'xts-i-tablet',
+					'tab'  => esc_html__( 'Tablet', 'woodmart' ),
+				),
+				'requires' => array(
+					array(
+						'key'     => 'bg_image_tablet',
+						'compare' => 'not_equals',
+						'value'   => '',
+					),
+				),
+				'priority' => 105,
 			)
 		);
 
@@ -257,7 +1162,7 @@ if ( ! function_exists( 'woodmart_register_slider_metaboxes' ) ) {
 				'type'         => 'select',
 				'empty_option' => true,
 				'select2'      => true,
-				'section'      => 'image_settings',
+				'section'      => 'background_settings',
 				'options'      => array(
 					'cover'   => array(
 						'name'  => esc_html__( 'Cover', 'woodmart' ),
@@ -277,8 +1182,15 @@ if ( ! function_exists( 'woodmart_register_slider_metaboxes' ) ) {
 					'icon' => 'xts-i-tablet',
 					'tab'  => esc_html__( 'Tablet', 'woodmart' ),
 				),
-				'priority'     => 90,
-				'class'        => 'xts-tab-field xts-col-6',
+				'requires'     => array(
+					array(
+						'key'     => 'bg_image_tablet',
+						'compare' => 'not_equals',
+						'value'   => '',
+					),
+				),
+				'priority'     => 110,
+				'class'        => 'xts-tab-field',
 			)
 		);
 
@@ -289,7 +1201,7 @@ if ( ! function_exists( 'woodmart_register_slider_metaboxes' ) ) {
 				'type'         => 'select',
 				'empty_option' => true,
 				'select2'      => true,
-				'section'      => 'image_settings',
+				'section'      => 'background_settings',
 				'options'      => array(
 					'left-top'      => array(
 						'name'  => esc_html__( 'Left Top', 'woodmart' ),
@@ -337,8 +1249,15 @@ if ( ! function_exists( 'woodmart_register_slider_metaboxes' ) ) {
 					'icon' => 'xts-i-tablet',
 					'tab'  => esc_html__( 'Tablet', 'woodmart' ),
 				),
-				'priority'     => 100,
-				'class'        => 'xts-tab-field xts-last-tab-field xts-col-6',
+				'requires'     => array(
+					array(
+						'key'     => 'bg_image_tablet',
+						'compare' => 'not_equals',
+						'value'   => '',
+					),
+				),
+				'priority'     => 120,
+				'class'        => 'xts-tab-field xts-last-tab-field xts-col-4',
 			)
 		);
 
@@ -347,12 +1266,17 @@ if ( ! function_exists( 'woodmart_register_slider_metaboxes' ) ) {
 				'id'       => 'bg_image_position_x_tablet',
 				'type'     => 'text_input',
 				'name'     => esc_html__( 'Position by X (px)', 'woodmart' ),
-				'section'  => 'image_settings',
+				'section'  => 'background_settings',
 				'requires' => array(
 					array(
 						'key'     => 'bg_image_position_tablet',
 						'compare' => 'equals',
 						'value'   => 'custom',
+					),
+					array(
+						'key'     => 'bg_image_tablet',
+						'compare' => 'not_equals',
+						'value'   => '',
 					),
 				),
 				't_tab'    => array(
@@ -360,8 +1284,8 @@ if ( ! function_exists( 'woodmart_register_slider_metaboxes' ) ) {
 					'icon' => 'xts-i-tablet',
 					'tab'  => esc_html__( 'Tablet', 'woodmart' ),
 				),
-				'priority' => 110,
-				'class'    => 'xts-tab-field xts-col-6',
+				'priority' => 130,
+				'class'    => 'xts-tab-field xts-col-4',
 			)
 		);
 
@@ -370,12 +1294,17 @@ if ( ! function_exists( 'woodmart_register_slider_metaboxes' ) ) {
 				'id'       => 'bg_image_position_y_tablet',
 				'type'     => 'text_input',
 				'name'     => esc_html__( 'Position by Y (px)', 'woodmart' ),
-				'section'  => 'image_settings',
+				'section'  => 'background_settings',
 				'requires' => array(
 					array(
 						'key'     => 'bg_image_position_tablet',
 						'compare' => 'equals',
 						'value'   => 'custom',
+					),
+					array(
+						'key'     => 'bg_image_tablet',
+						'compare' => 'not_equals',
+						'value'   => '',
 					),
 				),
 				't_tab'    => array(
@@ -383,8 +1312,8 @@ if ( ! function_exists( 'woodmart_register_slider_metaboxes' ) ) {
 					'icon' => 'xts-i-tablet',
 					'tab'  => esc_html__( 'Tablet', 'woodmart' ),
 				),
-				'priority' => 120,
-				'class'    => 'xts-tab-field xts-last-tab-field xts-col-6',
+				'priority' => 140,
+				'class'    => 'xts-tab-field xts-last-tab-field xts-col-4',
 			)
 		);
 
@@ -394,14 +1323,124 @@ if ( ! function_exists( 'woodmart_register_slider_metaboxes' ) ) {
 				'id'       => 'bg_image_mobile',
 				'name'     => esc_html__( 'Background image', 'woodmart' ),
 				'type'     => 'upload',
-				'section'  => 'image_settings',
+				'section'  => 'background_settings',
 				't_tab'    => array(
 					'id'   => 'settings_tabs',
 					'icon' => 'xts-i-phone',
 					'tab'  => esc_html__( 'Mobile', 'woodmart' ),
 				),
-				'priority' => 140,
-				'class'    => 'xts-tab-field',
+				'priority' => 150,
+				'class'    => 'xts-tab-field xts-col-6',
+			)
+		);
+
+		$slide_metabox->add_field(
+			array(
+				'id'       => 'bg_image_mobile_size',
+				'name'     => esc_html__( 'Image size', 'woodmart' ),
+				'type'     => 'select',
+				'section'  => 'background_settings',
+				'options'  => woodmart_get_default_image_sizes(),
+				'default'  => 'full',
+				'requires' => array(
+					array(
+						'key'     => 'bg_image_mobile',
+						'compare' => 'not_equals',
+						'value'   => '',
+					),
+				),
+				't_tab'    => array(
+					'id'   => 'settings_tabs',
+					'icon' => 'xts-i-phone',
+					'tab'  => esc_html__( 'Mobile', 'woodmart' ),
+				),
+				'priority' => 152,
+				'class'    => 'xts-col-6',
+			)
+		);
+
+		$slide_metabox->add_field(
+			array(
+				'id'         => 'bg_image_mobile_size_custom_width',
+				'name'       => esc_html__( 'Custom width (px)', 'woodmart' ),
+				'type'       => 'text_input',
+				'section'    => 'background_settings',
+				'attributes' => array(
+					'type' => 'number',
+				),
+				'default'    => '',
+				'requires'   => array(
+					array(
+						'key'     => 'bg_image_mobile',
+						'compare' => 'not_equals',
+						'value'   => '',
+					),
+					array(
+						'key'     => 'bg_image_mobile_size',
+						'compare' => 'equals',
+						'value'   => array( 'custom' ),
+					),
+				),
+				't_tab'      => array(
+					'id'   => 'settings_tabs',
+					'icon' => 'xts-i-phone',
+					'tab'  => esc_html__( 'Mobile', 'woodmart' ),
+				),
+				'priority'   => 153,
+				'class'      => 'xts-col-6',
+			)
+		);
+
+		$slide_metabox->add_field(
+			array(
+				'id'         => 'bg_image_mobile_size_custom_height',
+				'name'       => esc_html__( 'Custom height (px)', 'woodmart' ),
+				'type'       => 'text_input',
+				'section'    => 'background_settings',
+				'attributes' => array(
+					'type' => 'number',
+				),
+				'default'    => '',
+				'requires'   => array(
+					array(
+						'key'     => 'bg_image_mobile',
+						'compare' => 'not_equals',
+						'value'   => '',
+					),
+					array(
+						'key'     => 'bg_image_mobile_size',
+						'compare' => 'equals',
+						'value'   => array( 'custom' ),
+					),
+				),
+				't_tab'      => array(
+					'id'   => 'settings_tabs',
+					'icon' => 'xts-i-phone',
+					'tab'  => esc_html__( 'Mobile', 'woodmart' ),
+				),
+				'priority'   => 154,
+				'class'      => 'xts-col-6',
+			)
+		);
+
+		$slide_metabox->add_field(
+			array(
+				'id'       => 'clear_mobile',
+				'type'     => 'clear',
+				'section'  => 'background_settings',
+				't_tab'    => array(
+					'id'   => 'settings_tabs',
+					'icon' => 'xts-i-phone',
+					'tab'  => esc_html__( 'Mobile', 'woodmart' ),
+				),
+				'requires' => array(
+					array(
+						'key'     => 'bg_image_mobile',
+						'compare' => 'not_equals',
+						'value'   => '',
+					),
+				),
+				'priority' => 155,
 			)
 		);
 
@@ -412,7 +1451,7 @@ if ( ! function_exists( 'woodmart_register_slider_metaboxes' ) ) {
 				'type'         => 'select',
 				'empty_option' => true,
 				'select2'      => true,
-				'section'      => 'image_settings',
+				'section'      => 'background_settings',
 				'options'      => array(
 					'cover'   => array(
 						'name'  => esc_html__( 'Cover', 'woodmart' ),
@@ -432,8 +1471,14 @@ if ( ! function_exists( 'woodmart_register_slider_metaboxes' ) ) {
 					'icon' => 'xts-i-phone',
 					'tab'  => esc_html__( 'Mobile', 'woodmart' ),
 				),
-				'priority'     => 150,
-				'class'        => 'xts-tab-field xts-col-6',
+				'requires'     => array(
+					array(
+						'key'     => 'bg_image_mobile',
+						'compare' => 'not_equals',
+						'value'   => '',
+					),
+				),
+				'priority'     => 160,
 			)
 		);
 
@@ -444,7 +1489,7 @@ if ( ! function_exists( 'woodmart_register_slider_metaboxes' ) ) {
 				'type'         => 'select',
 				'empty_option' => true,
 				'select2'      => true,
-				'section'      => 'image_settings',
+				'section'      => 'background_settings',
 				'options'      => array(
 					'left-top'      => array(
 						'name'  => esc_html__( 'Left Top', 'woodmart' ),
@@ -492,8 +1537,15 @@ if ( ! function_exists( 'woodmart_register_slider_metaboxes' ) ) {
 					'icon' => 'xts-i-phone',
 					'tab'  => esc_html__( 'Mobile', 'woodmart' ),
 				),
-				'priority'     => 160,
-				'class'        => 'xts-tab-field xts-last-tab-field xts-col-6',
+				'requires'     => array(
+					array(
+						'key'     => 'bg_image_mobile',
+						'compare' => 'not_equals',
+						'value'   => '',
+					),
+				),
+				'priority'     => 170,
+				'class'        => 'xts-tab-field xts-last-tab-field xts-col-4',
 			)
 		);
 
@@ -502,20 +1554,25 @@ if ( ! function_exists( 'woodmart_register_slider_metaboxes' ) ) {
 				'id'       => 'bg_image_position_x_mobile',
 				'type'     => 'text_input',
 				'name'     => esc_html__( 'Position by X (px)', 'woodmart' ),
-				'section'  => 'image_settings',
+				'section'  => 'background_settings',
 				'requires' => array(
 					array(
 						'key'     => 'bg_image_position_mobile',
 						'compare' => 'equals',
 						'value'   => 'custom',
 					),
+					array(
+						'key'     => 'bg_image_mobile',
+						'compare' => 'not_equals',
+						'value'   => '',
+					),
 				),
 				't_tab'    => array(
 					'id'  => 'settings_tabs',
 					'tab' => esc_html__( 'Mobile', 'woodmart' ),
 				),
-				'priority' => 170,
-				'class'    => 'xts-tab-field xts-col-6',
+				'priority' => 180,
+				'class'    => 'xts-tab-field xts-col-4',
 			)
 		);
 
@@ -524,12 +1581,17 @@ if ( ! function_exists( 'woodmart_register_slider_metaboxes' ) ) {
 				'id'       => 'bg_image_position_y_mobile',
 				'type'     => 'text_input',
 				'name'     => esc_html__( 'Position by Y (px)', 'woodmart' ),
-				'section'  => 'image_settings',
+				'section'  => 'background_settings',
 				'requires' => array(
 					array(
 						'key'     => 'bg_image_position_mobile',
 						'compare' => 'equals',
 						'value'   => 'custom',
+					),
+					array(
+						'key'     => 'bg_image_mobile',
+						'compare' => 'not_equals',
+						'value'   => '',
 					),
 				),
 				't_tab'    => array(
@@ -537,8 +1599,8 @@ if ( ! function_exists( 'woodmart_register_slider_metaboxes' ) ) {
 					'icon' => 'xts-i-phone',
 					'tab'  => esc_html__( 'Mobile', 'woodmart' ),
 				),
-				'priority' => 180,
-				'class'    => 'xts-tab-field xts-last-tab-field xts-col-6',
+				'priority' => 190,
+				'class'    => 'xts-tab-field xts-last-tab-field xts-col-4',
 			)
 		);
 
@@ -670,17 +1732,17 @@ if ( ! function_exists( 'woodmart_register_slider_metaboxes' ) ) {
 					'top'    => array(
 						'name'  => esc_html__( 'Top', 'woodmart' ),
 						'value' => 'top',
-						'image' => WOODMART_ASSETS_IMAGES . '/settings/cmb2-align/top.jpg',
+						'image' => WOODMART_ASSETS_IMAGES . '/settings/cmb2-align/top.svg',
 					),
 					'middle' => array(
 						'name'  => esc_html__( 'Middle', 'woodmart' ),
 						'value' => 'middle',
-						'image' => WOODMART_ASSETS_IMAGES . '/settings/cmb2-align/middle.jpg',
+						'image' => WOODMART_ASSETS_IMAGES . '/settings/cmb2-align/middle.svg',
 					),
 					'bottom' => array(
 						'name'  => esc_html__( 'Bottom', 'woodmart' ),
 						'value' => 'bottom',
-						'image' => WOODMART_ASSETS_IMAGES . '/settings/cmb2-align/bottom.jpg',
+						'image' => WOODMART_ASSETS_IMAGES . '/settings/cmb2-align/bottom.svg',
 					),
 				),
 				't_tab'    => array(
@@ -705,17 +1767,17 @@ if ( ! function_exists( 'woodmart_register_slider_metaboxes' ) ) {
 					'left'   => array(
 						'name'  => esc_html__( 'Left', 'woodmart' ),
 						'value' => 'left',
-						'image' => WOODMART_ASSETS_IMAGES . '/settings/cmb2-align/left.jpg',
+						'image' => WOODMART_ASSETS_IMAGES . '/settings/cmb2-align/left.svg',
 					),
 					'center' => array(
 						'name'  => esc_html__( 'Center', 'woodmart' ),
 						'value' => 'center',
-						'image' => WOODMART_ASSETS_IMAGES . '/settings/cmb2-align/center.jpg',
+						'image' => WOODMART_ASSETS_IMAGES . '/settings/cmb2-align/center.svg',
 					),
 					'right'  => array(
 						'name'  => esc_html__( 'Right', 'woodmart' ),
 						'value' => 'right',
-						'image' => WOODMART_ASSETS_IMAGES . '/settings/cmb2-align/right.jpg',
+						'image' => WOODMART_ASSETS_IMAGES . '/settings/cmb2-align/right.svg',
 					),
 				),
 				't_tab'    => array(
@@ -739,17 +1801,17 @@ if ( ! function_exists( 'woodmart_register_slider_metaboxes' ) ) {
 					'top'    => array(
 						'name'  => esc_html__( 'Top', 'woodmart' ),
 						'value' => 'top',
-						'image' => WOODMART_ASSETS_IMAGES . '/settings/cmb2-align/top.jpg',
+						'image' => WOODMART_ASSETS_IMAGES . '/settings/cmb2-align/top.svg',
 					),
 					'middle' => array(
 						'name'  => esc_html__( 'Middle', 'woodmart' ),
 						'value' => 'middle',
-						'image' => WOODMART_ASSETS_IMAGES . '/settings/cmb2-align/middle.jpg',
+						'image' => WOODMART_ASSETS_IMAGES . '/settings/cmb2-align/middle.svg',
 					),
 					'bottom' => array(
 						'name'  => esc_html__( 'Bottom', 'woodmart' ),
 						'value' => 'bottom',
-						'image' => WOODMART_ASSETS_IMAGES . '/settings/cmb2-align/bottom.jpg',
+						'image' => WOODMART_ASSETS_IMAGES . '/settings/cmb2-align/bottom.svg',
 					),
 				),
 				't_tab'    => array(
@@ -772,17 +1834,17 @@ if ( ! function_exists( 'woodmart_register_slider_metaboxes' ) ) {
 					'left'   => array(
 						'name'  => esc_html__( 'Left', 'woodmart' ),
 						'value' => 'left',
-						'image' => WOODMART_ASSETS_IMAGES . '/settings/cmb2-align/left.jpg',
+						'image' => WOODMART_ASSETS_IMAGES . '/settings/cmb2-align/left.svg',
 					),
 					'center' => array(
 						'name'  => esc_html__( 'Center', 'woodmart' ),
 						'value' => 'center',
-						'image' => WOODMART_ASSETS_IMAGES . '/settings/cmb2-align/center.jpg',
+						'image' => WOODMART_ASSETS_IMAGES . '/settings/cmb2-align/center.svg',
 					),
 					'right'  => array(
 						'name'  => esc_html__( 'Right', 'woodmart' ),
 						'value' => 'right',
-						'image' => WOODMART_ASSETS_IMAGES . '/settings/cmb2-align/right.jpg',
+						'image' => WOODMART_ASSETS_IMAGES . '/settings/cmb2-align/right.svg',
 					),
 				),
 				't_tab'    => array(
@@ -805,17 +1867,17 @@ if ( ! function_exists( 'woodmart_register_slider_metaboxes' ) ) {
 					'top'    => array(
 						'name'  => esc_html__( 'Top', 'woodmart' ),
 						'value' => 'top',
-						'image' => WOODMART_ASSETS_IMAGES . '/settings/cmb2-align/top.jpg',
+						'image' => WOODMART_ASSETS_IMAGES . '/settings/cmb2-align/top.svg',
 					),
 					'middle' => array(
 						'name'  => esc_html__( 'Middle', 'woodmart' ),
 						'value' => 'middle',
-						'image' => WOODMART_ASSETS_IMAGES . '/settings/cmb2-align/middle.jpg',
+						'image' => WOODMART_ASSETS_IMAGES . '/settings/cmb2-align/middle.svg',
 					),
 					'bottom' => array(
 						'name'  => esc_html__( 'Bottom', 'woodmart' ),
 						'value' => 'bottom',
-						'image' => WOODMART_ASSETS_IMAGES . '/settings/cmb2-align/bottom.jpg',
+						'image' => WOODMART_ASSETS_IMAGES . '/settings/cmb2-align/bottom.svg',
 					),
 				),
 				't_tab'    => array(
@@ -838,17 +1900,17 @@ if ( ! function_exists( 'woodmart_register_slider_metaboxes' ) ) {
 					'left'   => array(
 						'name'  => esc_html__( 'Left', 'woodmart' ),
 						'value' => 'left',
-						'image' => WOODMART_ASSETS_IMAGES . '/settings/cmb2-align/left.jpg',
+						'image' => WOODMART_ASSETS_IMAGES . '/settings/cmb2-align/left.svg',
 					),
 					'center' => array(
 						'name'  => esc_html__( 'Center', 'woodmart' ),
 						'value' => 'center',
-						'image' => WOODMART_ASSETS_IMAGES . '/settings/cmb2-align/center.jpg',
+						'image' => WOODMART_ASSETS_IMAGES . '/settings/cmb2-align/center.svg',
 					),
 					'right'  => array(
 						'name'  => esc_html__( 'Right', 'woodmart' ),
 						'value' => 'right',
-						'image' => WOODMART_ASSETS_IMAGES . '/settings/cmb2-align/right.jpg',
+						'image' => WOODMART_ASSETS_IMAGES . '/settings/cmb2-align/right.svg',
 					),
 				),
 				't_tab'    => array(
@@ -865,7 +1927,7 @@ if ( ! function_exists( 'woodmart_register_slider_metaboxes' ) ) {
 			array(
 				'id'           => 'slide_animation',
 				'name'         => esc_html__( 'Animation', 'woodmart' ),
-				'description'  => esc_html__( 'Select a content appearance animation', 'woodmart' ),
+				'description'  => esc_html__( 'Select a content appearance animation.', 'woodmart' ),
 				'type'         => 'select',
 				'section'      => 'slide_link',
 				'group'        => esc_html__( 'Animation', 'woodmart' ),
@@ -1042,85 +2104,282 @@ $slider_metabox->add_field(
 
 $slider_metabox->add_field(
 	array(
-		'id'          => 'height',
-		'name'        => esc_html__( 'Height on desktop', 'woodmart' ),
-		'description' => esc_html__( 'Set your value in pixels.', 'woodmart' ),
-		'group'       => esc_html__( 'Layout', 'woodmart' ),
-		'type'        => 'range',
-		'min'         => '100',
-		'max'         => '1200',
-		'step'        => '5',
-		'default'     => '500',
-		'section'     => 'slide_content',
-		'selectors'   => array(
-			'{{WRAPPER}} .wd-slide' => array(
-				'min-height: {{VALUE}}px;',
+		'id'       => 'height_type',
+		'name'     => esc_html__( 'Height', 'woodmart' ),
+		'type'     => 'buttons',
+		'group'    => esc_html__( 'Layout', 'woodmart' ),
+		'section'  => 'slide_content',
+		'default'  => 'height',
+		'options'  => array(
+			'height'       => array(
+				'name'  => esc_html__( 'Custom height', 'woodmart' ),
+				'value' => 'height',
+			),
+			'as_image'     => array(
+				'name'  => esc_html__( 'As image', 'woodmart' ),
+				'value' => 'as_image',
+			),
+			'aspect_ratio' => array(
+				'name'  => esc_html__( 'Aspect ratio', 'woodmart' ),
+				'value' => 'aspect_ratio',
 			),
 		),
-		't_tab'       => array(
-			'id'    => 'slider_height_settings_tabs',
-			'tab'   => esc_html__( 'Desktop', 'woodmart' ),
-			'icon'  => 'xts-i-desktop',
-			'style' => 'devices',
-		),
-		'priority'    => 20,
-		'unit'        => 'px',
+		'priority' => 15,
 	)
 );
 
 $slider_metabox->add_field(
 	array(
-		'id'          => 'height_tablet',
-		'name'        => esc_html__( 'Height on tablet', 'woodmart' ),
-		'description' => esc_html__( 'Set your value in pixels.', 'woodmart' ),
-		'group'       => esc_html__( 'Layout', 'woodmart' ),
-		'type'        => 'range',
-		'min'         => '100',
-		'max'         => '1200',
-		'step'        => '5',
-		'default'     => '500',
-		'section'     => 'slide_content',
-		'selectors'   => array(
-			'{{WRAPPER}} .wd-slide' => array(
-				'min-height: {{VALUE}}px;',
+		'id'            => 'height',
+		'name'          => esc_html__( 'Custom height on desktop', 'woodmart' ),
+		'group'         => esc_html__( 'Layout', 'woodmart' ),
+		'type'          => 'responsive_range',
+		'generate_zero' => true,
+		'devices'       => array(
+			'desktop' => array(
+				'value' => 500,
+				'unit'  => 'px',
 			),
 		),
-		'css_device'  => 'tablet',
-		't_tab'       => array(
+		'range'         => array(
+			'px' => array(
+				'min'  => 100,
+				'max'  => 1200,
+				'step' => 1,
+			),
+			'vh' => array(
+				'min'  => 1,
+				'max'  => 100,
+				'step' => 1,
+			),
+		),
+		'section'       => 'slide_content',
+		'css_device'    => 'desktop',
+		'selectors'     => array(
+			'{{WRAPPER}} .wd-slide' => array(
+				'min-height: {{VALUE}}{{UNIT}};',
+			),
+		),
+		't_tab'         => array(
+			'id'       => 'slider_height_settings_tabs',
+			'tab'      => esc_html__( 'Desktop', 'woodmart' ),
+			'icon'     => 'xts-i-desktop',
+			'style'    => 'devices',
+			'requires' => array(
+				array(
+					'key'     => 'height_type',
+					'compare' => 'not_equals',
+					'value'   => array( 'as_image', 'aspect_ratio' ),
+				),
+			),
+		),
+		'requires'      => array(
+			array(
+				'key'     => 'height_type',
+				'compare' => 'not_equals',
+				'value'   => array( 'as_image', 'aspect_ratio' ),
+			),
+		),
+		'priority'      => 20,
+	)
+);
+
+$slider_metabox->add_field(
+	array(
+		'id'            => 'height_tablet',
+		'name'          => esc_html__( 'Custom height on tablet', 'woodmart' ),
+		'group'         => esc_html__( 'Layout', 'woodmart' ),
+		'type'          => 'responsive_range',
+		'generate_zero' => true,
+		'devices'       => array(
+			'desktop' => array(
+				'value' => 500,
+				'unit'  => 'px',
+			),
+		),
+		'range'         => array(
+			'px' => array(
+				'min'  => 100,
+				'max'  => 1200,
+				'step' => 1,
+			),
+			'vh' => array(
+				'min'  => 1,
+				'max'  => 100,
+				'step' => 1,
+			),
+		),
+		'css_device'    => 'tablet',
+		'section'       => 'slide_content',
+		'selectors'     => array(
+			'{{WRAPPER}} .wd-slide' => array(
+				'min-height: {{VALUE}}{{UNIT}};',
+			),
+		),
+		't_tab'         => array(
 			'id'   => 'slider_height_settings_tabs',
 			'tab'  => esc_html__( 'Tablet', 'woodmart' ),
 			'icon' => 'xts-i-tablet',
 		),
-		'priority'    => 30,
-		'unit'        => 'px',
+		'requires'      => array(
+			array(
+				'key'     => 'height_type',
+				'compare' => 'not_equals',
+				'value'   => array( 'as_image', 'aspect_ratio' ),
+			),
+		),
+		'priority'      => 30,
 	)
 );
 
 $slider_metabox->add_field(
 	array(
-		'id'          => 'height_mobile',
-		'name'        => esc_html__( 'Height on mobile', 'woodmart' ),
-		'description' => esc_html__( 'Set your value in pixels.', 'woodmart' ),
-		'group'       => esc_html__( 'Layout', 'woodmart' ),
-		'type'        => 'range',
-		'min'         => '100',
-		'max'         => '1200',
-		'step'        => '5',
-		'default'     => '500',
-		'section'     => 'slide_content',
-		'selectors'   => array(
-			'{{WRAPPER}} .wd-slide' => array(
-				'min-height: {{VALUE}}px;',
+		'id'            => 'height_mobile',
+		'name'          => esc_html__( 'Custom height on mobile', 'woodmart' ),
+		'group'         => esc_html__( 'Layout', 'woodmart' ),
+		'type'          => 'responsive_range',
+		'generate_zero' => true,
+		'devices'       => array(
+			'desktop' => array(
+				'value' => 500,
+				'unit'  => 'px',
 			),
 		),
-		'css_device'  => 'mobile',
-		't_tab'       => array(
+		'range'         => array(
+			'px' => array(
+				'min'  => 100,
+				'max'  => 1200,
+				'step' => 1,
+			),
+			'vh' => array(
+				'min'  => 1,
+				'max'  => 100,
+				'step' => 1,
+			),
+		),
+		'css_device'    => 'mobile',
+		'section'       => 'slide_content',
+		'selectors'     => array(
+			'{{WRAPPER}} .wd-slide' => array(
+				'min-height: {{VALUE}}{{UNIT}};',
+			),
+		),
+		't_tab'         => array(
 			'id'   => 'slider_height_settings_tabs',
 			'tab'  => esc_html__( 'Mobile', 'woodmart' ),
 			'icon' => 'xts-i-phone',
 		),
-		'priority'    => 40,
-		'unit'        => 'px',
+		'requires'      => array(
+			array(
+				'key'     => 'height_type',
+				'compare' => 'not_equals',
+				'value'   => array( 'as_image', 'aspect_ratio' ),
+			),
+		),
+		'priority'      => 40,
+	)
+);
+
+$slider_metabox->add_field(
+	array(
+		'id'         => 'custom_aspect_ratio',
+		'name'       => esc_html__( 'Aspect ratio on desktop', 'woodmart' ),
+		'type'       => 'text_input',
+		'group'      => esc_html__( 'Layout', 'woodmart' ),
+		'section'    => 'slide_content',
+		'attributes' => array(
+			'placeholder' => '16/9',
+		),
+		'selectors'  => array(
+			'{{WRAPPER}} .wd-slide' => array(
+				'--wd-aspect-ratio: {{VALUE}};',
+			),
+		),
+		'requires'   => array(
+			array(
+				'key'     => 'height_type',
+				'compare' => 'equals',
+				'value'   => 'aspect_ratio',
+			),
+		),
+		't_tab'      => array(
+			'id'       => 'custom_aspect_ratio_tabs',
+			'tab'      => esc_html__( 'Desktop', 'woodmart' ),
+			'icon'     => 'xts-i-desktop',
+			'style'    => 'devices',
+			'requires' => array(
+				array(
+					'key'     => 'height_type',
+					'compare' => 'equals',
+					'value'   => 'aspect_ratio',
+				),
+			),
+		),
+		'priority'   => 42,
+	)
+);
+
+$slider_metabox->add_field(
+	array(
+		'id'         => 'custom_aspect_ratio_tablet',
+		'name'       => esc_html__( 'Aspect ratio on tablet', 'woodmart' ),
+		'type'       => 'text_input',
+		'group'      => esc_html__( 'Layout', 'woodmart' ),
+		'section'    => 'slide_content',
+		'attributes' => array(
+			'placeholder' => '16/9',
+		),
+		'selectors'  => array(
+			'{{WRAPPER}} .wd-slide' => array(
+				'--wd-aspect-ratio: {{VALUE}};',
+			),
+		),
+		'css_device' => 'tablet',
+		'requires'   => array(
+			array(
+				'key'     => 'height_type',
+				'compare' => 'equals',
+				'value'   => 'aspect_ratio',
+			),
+		),
+		't_tab'      => array(
+			'id'   => 'custom_aspect_ratio_tabs',
+			'tab'  => esc_html__( 'Tablet', 'woodmart' ),
+			'icon' => 'xts-i-tablet',
+		),
+		'priority'   => 43,
+	)
+);
+
+$slider_metabox->add_field(
+	array(
+		'id'         => 'custom_aspect_ratio_mobile',
+		'name'       => esc_html__( 'Aspect ratio on mobile', 'woodmart' ),
+		'type'       => 'text_input',
+		'group'      => esc_html__( 'Layout', 'woodmart' ),
+		'section'    => 'slide_content',
+		'attributes' => array(
+			'placeholder' => '16/9',
+		),
+		'css_device' => 'mobile',
+		'selectors'  => array(
+			'{{WRAPPER}} .wd-slide' => array(
+				'--wd-aspect-ratio: {{VALUE}};',
+			),
+		),
+		'requires'   => array(
+			array(
+				'key'     => 'height_type',
+				'compare' => 'equals',
+				'value'   => 'aspect_ratio',
+			),
+		),
+		't_tab'      => array(
+			'id'   => 'custom_aspect_ratio_tabs',
+			'tab'  => esc_html__( 'Mobile', 'woodmart' ),
+			'icon' => 'xts-i-phone',
+		),
+		'priority'   => 44,
 	)
 );
 
@@ -1862,6 +3121,11 @@ $slider_metabox->add_field(
 				'value' => '3',
 				'image' => WOODMART_ASSETS_IMAGES . '/settings/slider-navigation/pagination-style-3.jpg',
 			),
+			'4' => array(
+				'name'  => esc_html__( 'Style 4', 'woodmart' ),
+				'value' => '4',
+				'image' => WOODMART_ASSETS_IMAGES . '/settings/slider-navigation/pagination-style-4.jpg',
+			),
 			'0' => array(
 				'name'  => esc_html__( 'Disable', 'woodmart' ),
 				'value' => '0',
@@ -1869,6 +3133,35 @@ $slider_metabox->add_field(
 			),
 		),
 		'priority' => 200,
+	)
+);
+
+$slider_metabox->add_field(
+	array(
+		'id'       => 'pagination_display',
+		'name'     => esc_html__( 'Display', 'woodmart' ),
+		'type'     => 'buttons',
+		'group'    => esc_html__( 'Pagination style', 'woodmart' ),
+		'section'  => 'slide_content',
+		'default'  => 'numbers',
+		'options'  => array(
+			'numbers' => array(
+				'name'  => esc_html__( 'Numbers', 'woodmart' ),
+				'value' => 'numbers',
+			),
+			'text'    => array(
+				'name'  => esc_html__( 'Text', 'woodmart' ),
+				'value' => 'text',
+			),
+		),
+		'requires' => array(
+			array(
+				'key'     => 'pagination_style',
+				'compare' => 'equals',
+				'value'   => '2',
+			),
+		),
+		'priority' => 205,
 	)
 );
 
@@ -1998,7 +3291,7 @@ $slider_metabox->add_field(
 			array(
 				'key'     => 'pagination_style',
 				'compare' => 'not_equals',
-				'value'   => '0',
+				'value'   => array( '0', '2', '4' ),
 			),
 			array(
 				'key'     => 'pagination_custom_settings',
@@ -2086,7 +3379,7 @@ $slider_metabox->add_field(
 			array(
 				'key'     => 'pagination_style',
 				'compare' => 'not_equals',
-				'value'   => array( '0', '2' ),
+				'value'   => array( '0', '2', '4' ),
 			),
 			array(
 				'key'     => 'pagination_custom_settings',
@@ -2095,6 +3388,219 @@ $slider_metabox->add_field(
 			),
 		),
 		'priority'     => 250,
+	)
+);
+
+$slider_metabox->add_field(
+	array(
+		'id'           => 'pagination_typography_group',
+		'name'         => esc_html__( 'Typography', 'woodmart' ),
+		'group'        => esc_html__( 'Pagination style', 'woodmart' ),
+		'section'      => 'slide_content',
+		'type'         => 'group',
+		'style'        => 'dropdown',
+		'btn_settings' => array(
+			'label'   => esc_html__( 'Edit settings', 'woodmart' ),
+			'classes' => 'xts-i-cog',
+		),
+		'inner_fields' => array(
+			array(
+				'id'            => 'pagination_font_size',
+				'name'          => esc_html__( 'Font size', 'woodmart' ),
+				'type'          => 'responsive_range',
+				'selectors'     => array(
+					'{{WRAPPER}} .wd-nav-pagin li' => array(
+						'font-size: {{VALUE}}{{UNIT}};',
+					),
+				),
+				'generate_zero' => true,
+				'devices'       => array(
+					'desktop' => array(
+						'value' => '',
+						'unit'  => 'px',
+					),
+					'tablet'  => array(
+						'value' => '',
+						'unit'  => 'px',
+					),
+					'mobile'  => array(
+						'value' => '',
+						'unit'  => 'px',
+					),
+				),
+				'range'         => array(
+					'px' => array(
+						'min'  => 1,
+						'max'  => 200,
+						'step' => 1,
+					),
+				),
+				'priority'      => 10,
+			),
+			array(
+				'id'        => 'pagination_font_weight',
+				'name'      => esc_html__( 'Font weight', 'woodmart' ),
+				'type'      => 'select',
+				'selectors' => array(
+					'{{WRAPPER}} .wd-nav-pagin li' => array(
+						'font-weight: {{VALUE}};',
+					),
+				),
+				'options'   => array(
+					''    => array(
+						'name'  => esc_html__( 'Default', 'woodmart' ),
+						'value' => '',
+					),
+					'100' => array(
+						'name'  => esc_html__( 'Thin 100', 'woodmart' ),
+						'value' => '100',
+					),
+					'200' => array(
+						'name'  => esc_html__( 'Light 200', 'woodmart' ),
+						'value' => '200',
+					),
+					'300' => array(
+						'name'  => esc_html__( 'Regular 300', 'woodmart' ),
+						'value' => '300',
+					),
+					'400' => array(
+						'name'  => esc_html__( 'Normal 400', 'woodmart' ),
+						'value' => '400',
+					),
+					'500' => array(
+						'name'  => esc_html__( 'Medium 500', 'woodmart' ),
+						'value' => '500',
+					),
+					'600' => array(
+						'name'  => esc_html__( 'Semi Bold 600', 'woodmart' ),
+						'value' => '600',
+					),
+					'700' => array(
+						'name'  => esc_html__( 'Bold 700', 'woodmart' ),
+						'value' => '700',
+					),
+					'800' => array(
+						'name'  => esc_html__( 'Extra Bold 800', 'woodmart' ),
+						'value' => '800',
+					),
+					'900' => array(
+						'name'  => esc_html__( 'Black 900', 'woodmart' ),
+						'value' => '900',
+					),
+				),
+				'default'   => '',
+				'priority'  => 20,
+			),
+			array(
+				'id'        => 'pagination_font_transform',
+				'name'      => esc_html__( 'Text transform', 'woodmart' ),
+				'type'      => 'select',
+				'selectors' => array(
+					'{{WRAPPER}} .wd-nav-pagin li' => array(
+						'text-transform: {{VALUE}};',
+					),
+				),
+				'options'   => array(
+					''           => array(
+						'name'  => esc_html__( 'Default', 'woodmart' ),
+						'value' => '',
+					),
+					'uppercase'  => array(
+						'name'  => esc_html__( 'Uppercase', 'woodmart' ),
+						'value' => 'uppercase',
+					),
+					'lowercase'  => array(
+						'name'  => esc_html__( 'Lowercase', 'woodmart' ),
+						'value' => 'lowercase',
+					),
+					'capitalize' => array(
+						'name'  => esc_html__( 'Capitalize', 'woodmart' ),
+						'value' => 'capitalize',
+					),
+					'none'       => array(
+						'name'  => esc_html__( 'Normal', 'woodmart' ),
+						'value' => 'none',
+					),
+				),
+				'default'   => '',
+				'priority'  => 30,
+			),
+			array(
+				'id'        => 'pagination_font_style',
+				'name'      => esc_html__( 'Font style', 'woodmart' ),
+				'type'      => 'select',
+				'selectors' => array(
+					'{{WRAPPER}} .wd-nav-pagin li' => array(
+						'font-style: {{VALUE}};',
+					),
+				),
+				'options'   => array(
+					''        => array(
+						'name'  => esc_html__( 'Default', 'woodmart' ),
+						'value' => '',
+					),
+					'normal'  => array(
+						'name'  => esc_html__( 'Normal', 'woodmart' ),
+						'value' => 'normal',
+					),
+					'italic'  => array(
+						'name'  => esc_html__( 'Italic', 'woodmart' ),
+						'value' => 'italic',
+					),
+					'oblique' => array(
+						'name'  => esc_html__( 'Oblique', 'woodmart' ),
+						'value' => 'oblique',
+					),
+				),
+				'default'   => '',
+				'priority'  => 40,
+			),
+			array(
+				'id'        => 'pagination_line_height',
+				'name'      => esc_html__( 'Line height', 'woodmart' ),
+				'type'      => 'responsive_range',
+				'selectors' => array(
+					'{{WRAPPER}} .wd-nav-pagin li' => array(
+						'line-height: {{VALUE}}{{UNIT}};',
+					),
+				),
+				'devices'   => array(
+					'desktop' => array(
+						'value' => '',
+						'unit'  => 'em',
+					),
+					'tablet'  => array(
+						'value' => '',
+						'unit'  => 'em',
+					),
+					'mobile'  => array(
+						'value' => '',
+						'unit'  => 'em',
+					),
+				),
+				'range'     => array(
+					'em' => array(
+						'min'  => 0.1,
+						'max'  => 10,
+						'step' => 0.1,
+					),
+				),
+				'priority'  => 50,
+			),
+		),
+		'requires'     => array(
+			array(
+				'key'     => 'pagination_style',
+				'compare' => 'equals',
+				'value'   => array( '2', '4' ),
+			),
+			array(
+				'key'     => 'pagination_custom_settings',
+				'compare' => 'equals',
+				'value'   => 'on',
+			),
+		),
+		'priority'     => 255,
 	)
 );
 
@@ -2153,7 +3659,7 @@ $slider_metabox->add_field(
 			array(
 				'key'     => 'pagination_style',
 				'compare' => 'equals',
-				'value'   => '2',
+				'value'   => array( '2', '4' ),
 			),
 			array(
 				'key'     => 'pagination_custom_settings',
@@ -2181,7 +3687,8 @@ $slider_metabox->add_field(
 		),
 		'selectors'    => array(
 			'{{WRAPPER}} .wd-nav-pagin-wrap' => array(
-				'--wd-pagin-brd: {{PAGINATION_BORDER_WIDTH}} {{PAGINATION_BORDER_STYLE}};',
+				'--wd-pagin-brd-width: {{PAGINATION_BORDER_WIDTH}};',
+				'--wd-pagin-brd-style: {{PAGINATION_BORDER_STYLE}};',
 			),
 		),
 		'section'      => 'slide_content',
@@ -2373,18 +3880,23 @@ $slider_metabox->add_field(
 
 $slider_metabox->add_field(
 	array(
-		'id'       => 'autoplay_speed',
-		'name'     => esc_html__( 'Autoplay speed', 'woodmart' ),
-		'group'    => esc_html__( 'Settings', 'woodmart' ),
-		'type'     => 'range',
-		'min'      => '1000',
-		'max'      => '30000',
-		'step'     => '100',
-		'default'  => '9000',
-		'section'  => 'slide_content',
-		'priority' => 300,
-		'unit'     => 'ms',
-		'requires' => array(
+		'id'        => 'autoplay_speed',
+		'name'      => esc_html__( 'Autoplay speed', 'woodmart' ),
+		'group'     => esc_html__( 'Settings', 'woodmart' ),
+		'type'      => 'range',
+		'min'       => '1000',
+		'max'       => '30000',
+		'step'      => '100',
+		'default'   => '9000',
+		'section'   => 'slide_content',
+		'priority'  => 300,
+		'unit'      => 'ms',
+		'selectors' => array(
+			'{{WRAPPER}} .wd-nav-pagin-wrap' => array(
+				'--wd-autoplay-speed: {{VALUE}}ms;',
+			),
+		),
+		'requires'  => array(
 			array(
 				'key'     => 'autoplay',
 				'compare' => 'equals',
@@ -2407,5 +3919,3 @@ $slider_metabox->add_field(
 		'priority'    => 310,
 	)
 );
-
-

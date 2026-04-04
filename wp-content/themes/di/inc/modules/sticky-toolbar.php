@@ -1,4 +1,9 @@
 <?php
+/**
+ * Sticky toolbar functions
+ *
+ * @package woodmart
+ */
 
 use XTS\Modules\Layouts\Global_Data;
 use XTS\Modules\Layouts\Main as Builder;
@@ -7,33 +12,33 @@ if ( ! function_exists( 'woodmart_get_sticky_toolbar_fields' ) ) {
 	/**
 	 * All available fields for Theme Settings sorter option.
 	 *
-	 * @since 3.6
+	 * @param bool $new_format New format.
 	 */
-	function woodmart_get_sticky_toolbar_fields( $new = false ) {
+	function woodmart_get_sticky_toolbar_fields( $new_format = false ) {
 
-		if ( $new ) {
+		if ( $new_format ) {
 			$options = array(
-				'shop' => array(
+				'shop'              => array(
 					'name'  => esc_html__( 'Shop page', 'woodmart' ),
 					'value' => 'shop',
 				),
-				'sidebar' => array(
+				'sidebar'           => array(
 					'name'  => esc_html__( 'Off canvas sidebar', 'woodmart' ),
 					'value' => 'sidebar',
 				),
-				'wishlist' => array(
+				'wishlist'          => array(
 					'name'  => esc_html__( 'Wishlist', 'woodmart' ),
 					'value' => 'wishlist',
 				),
-				'cart' => array(
+				'cart'              => array(
 					'name'  => esc_html__( 'Cart', 'woodmart' ),
 					'value' => 'cart',
 				),
-				'account' => array(
+				'account'           => array(
 					'name'  => esc_html__( 'My account', 'woodmart' ),
 					'value' => 'account',
 				),
-				'mobile' => array(
+				'mobile'            => array(
 					'name'  => esc_html__( 'Mobile menu', 'woodmart' ),
 					'value' => 'mobile',
 				),
@@ -41,35 +46,35 @@ if ( ! function_exists( 'woodmart_get_sticky_toolbar_fields' ) ) {
 					'name'  => esc_html__( 'Mobile categories menu', 'woodmart' ),
 					'value' => 'mobile_categories',
 				),
-				'home' => array(
+				'home'              => array(
 					'name'  => esc_html__( 'Home page', 'woodmart' ),
 					'value' => 'home',
 				),
-				'blog' => array(
+				'blog'              => array(
 					'name'  => esc_html__( 'Blog page', 'woodmart' ),
 					'value' => 'blog',
 				),
-				'compare' => array(
+				'compare'           => array(
 					'name'  => esc_html__( 'Compare', 'woodmart' ),
 					'value' => 'compare',
 				),
-				'link_1' => array(
+				'link_1'            => array(
 					'name'  => esc_html__( 'Button [1]', 'woodmart' ),
 					'value' => 'link_1',
 				),
-				'link_2' => array(
+				'link_2'            => array(
 					'name'  => esc_html__( 'Button [2]', 'woodmart' ),
 					'value' => 'link_2',
 				),
-				'link_3' => array(
+				'link_3'            => array(
 					'name'  => esc_html__( 'Button [3]', 'woodmart' ),
 					'value' => 'link_3',
 				),
-				'link_4' => array(
+				'link_4'            => array(
 					'name'  => esc_html__( 'Button [4]', 'woodmart' ),
 					'value' => 'link_4',
 				),
-				'link_5' => array(
+				'link_5'            => array(
 					'name'  => esc_html__( 'Button [5]', 'woodmart' ),
 					'value' => 'link_5',
 				),
@@ -94,15 +99,15 @@ if ( ! function_exists( 'woodmart_get_sticky_toolbar_fields' ) ) {
 				'account'  => esc_html__( 'My account', 'woodmart' ),
 			),
 			'disabled' => array(
-				'mobile'   => esc_html__( 'Mobile menu', 'woodmart' ),
-				'home'     => esc_html__( 'Home page', 'woodmart' ),
-				'blog'     => esc_html__( 'Blog page', 'woodmart' ),
-				'compare'  => esc_html__( 'Compare', 'woodmart' ),
-				'link_1'   => esc_html__( 'Button [1]', 'woodmart' ),
-				'link_2'   => esc_html__( 'Button [2]', 'woodmart' ),
-				'link_3'   => esc_html__( 'Button [3]', 'woodmart' ),
-				'link_4'   => esc_html__( 'Button [4]', 'woodmart' ),
-				'link_5'   => esc_html__( 'Button [5]', 'woodmart' ),
+				'mobile'  => esc_html__( 'Mobile menu', 'woodmart' ),
+				'home'    => esc_html__( 'Home page', 'woodmart' ),
+				'blog'    => esc_html__( 'Blog page', 'woodmart' ),
+				'compare' => esc_html__( 'Compare', 'woodmart' ),
+				'link_1'  => esc_html__( 'Button [1]', 'woodmart' ),
+				'link_2'  => esc_html__( 'Button [2]', 'woodmart' ),
+				'link_3'  => esc_html__( 'Button [3]', 'woodmart' ),
+				'link_4'  => esc_html__( 'Button [4]', 'woodmart' ),
+				'link_5'  => esc_html__( 'Button [5]', 'woodmart' ),
 			),
 		);
 
@@ -128,6 +133,10 @@ if ( ! function_exists( 'woodmart_sticky_toolbar_template' ) ) {
 		$fields  = woodmart_get_opt( 'sticky_toolbar_fields' );
 		$classes = '';
 
+		if ( is_array( $fields ) ) {
+			$fields = array_filter( $fields );
+		}
+
 		if ( isset( $fields['enabled']['placebo'] ) ) {
 			unset( $fields['enabled']['placebo'] );
 		}
@@ -140,16 +149,13 @@ if ( ! function_exists( 'woodmart_sticky_toolbar_template' ) ) {
 
 		if ( woodmart_get_opt( 'sticky_toolbar_label' ) ) {
 			$classes .= ' wd-toolbar-label-show';
-			$classes .= woodmart_get_old_classes( ' woodmart-toolbar-label-show' );
 		}
 
 		woodmart_enqueue_inline_style( 'bottom-toolbar' );
+		woodmart_enqueue_inline_style( 'mod-tools' );
 		woodmart_enqueue_inline_style( 'header-elements-base' );
-
-		$classes .= woodmart_get_old_classes( ' woodmart-toolbar' );
-
 		?>
-		<div class="wd-toolbar<?php echo esc_attr( $classes ); ?>">
+		<div class="wd-toolbar<?php echo esc_attr( $classes ); ?>" role="complementary" aria-label="<?php esc_attr_e( 'Sticky toolbar', 'woodmart' ); ?>">
 			<?php
 			foreach ( $enabled_fields as $key => $value ) {
 				$key = class_exists( 'XTS\Admin\Modules\Options' ) ? $value : $key;
@@ -176,17 +182,17 @@ if ( ! function_exists( 'woodmart_sticky_toolbar_template' ) ) {
 						woodmart_sticky_toolbar_mobile_categories_menu_template();
 						break;
 					case 'sidebar':
-						woodmart_sticky_sidebar_button( false, true );
+						woodmart_sticky_sidebar_button( true );
 						break;
-					case 'link_1';
-					case 'link_2';
-					case 'link_3';
-					case 'link_4';
-					case 'link_5';
+					case 'link_1':
+					case 'link_2':
+					case 'link_3':
+					case 'link_4':
+					case 'link_5':
 						woodmart_sticky_toolbar_custom_link_template( $key );
 						break;
-					case 'home';
-					case 'blog';
+					case 'home':
+					case 'blog':
 					case 'shop':
 						woodmart_sticky_toolbar_page_link_template( $key );
 						break;
@@ -195,7 +201,6 @@ if ( ! function_exists( 'woodmart_sticky_toolbar_template' ) ) {
 			?>
 		</div>
 		<?php
-
 	}
 
 	add_action( 'wp_footer', 'woodmart_sticky_toolbar_template' );
@@ -262,7 +267,7 @@ if ( ! function_exists( 'woodmart_sticky_toolbar_cart_template' ) ) {
 		$icon_classes = ' wd-icon-alt';
 
 		if ( isset( $settings['cart']['position'] ) ) {
-			$opener = $settings['cart']['position'] == 'side';
+			$opener = 'side' === $settings['cart']['position'];
 		}
 
 		if ( ! empty( $settings['cart']['icon_type'] ) && 'cart' === $settings['cart']['icon_type'] ) {
@@ -276,8 +281,6 @@ if ( ! function_exists( 'woodmart_sticky_toolbar_cart_template' ) ) {
 		}
 
 		woodmart_enqueue_inline_style( 'header-cart' );
-
-		$classes .= woodmart_get_old_classes( ' woodmart-shopping-cart' );
 
 		?>
 		<div class="wd-header-cart wd-tools-element wd-design-5<?php echo esc_attr( $classes ); ?>" title="<?php echo esc_attr__( 'My cart', 'woodmart' ); ?>">
@@ -323,7 +326,7 @@ if ( ! function_exists( 'woodmart_sticky_toolbar_compare_template' ) ) {
 			<a href="<?php echo esc_url( woodmart_get_compare_page_url() ); ?>">
 				<span class="wd-tools-icon">
 					<?php if ( $product_count ) : ?>
-						<span class="wd-tools-count"><?php echo woodmart_get_compare_count(); ?></span>
+						<span class="wd-tools-count"><?php echo esc_attr( woodmart_get_compare_count() ); ?></span>
 					<?php endif; ?>
 				</span>
 				<span class="wd-toolbar-label">
@@ -344,9 +347,9 @@ if ( ! function_exists( 'woodmart_sticky_toolbar_search_template' ) ) {
 	function woodmart_sticky_toolbar_search_template() {
 		woodmart_enqueue_js_script( 'mobile-search' );
 		?>
-		<div class="wd-header-search wd-header-search-mobile<?php echo woodmart_get_old_classes( ' mobile-search-icon search-button' ); ?>">
+		<div class="wd-header-search wd-header-search-mobile">
 			<a href="#" rel="nofollow" aria-label="<?php esc_attr_e( 'Search', 'woodmart' ); ?>">
-				<span class="wd-tools-icon<?php echo woodmart_get_old_classes( ' search-button-icon' ); ?>"></span>
+				<span class="wd-tools-icon"></span>
 				<span class="wd-toolbar-label">
 					<?php esc_html_e( 'Search', 'woodmart' ); ?>
 				</span>
@@ -395,7 +398,7 @@ if ( ! function_exists( 'woodmart_sticky_toolbar_page_link_template' ) ) {
 	/**
 	 * Sticky toolbar page link template
 	 *
-	 * @since 3.6
+	 * @param string $key Key.
 	 */
 	function woodmart_sticky_toolbar_page_link_template( $key ) {
 		$url = '';
@@ -415,17 +418,12 @@ if ( ! function_exists( 'woodmart_sticky_toolbar_page_link_template' ) ) {
 				break;
 		}
 
-		$classes = '';
-
-		$classes .= woodmart_get_old_classes( ' woodmart-toolbar-' . $key );
-		$classes .= woodmart_get_old_classes( ' woodmart-toolbar-item' );
-
 		?>
-		<div class="wd-toolbar-<?php echo esc_attr( $key ); ?> wd-toolbar-item wd-tools-element<?php echo esc_attr( $classes ); ?>">
+		<div class="wd-toolbar-<?php echo esc_attr( $key ); ?> wd-toolbar-item wd-tools-element">
 			<a href="<?php echo esc_url( $url ); ?>">
 				<span class="wd-tools-icon"></span>
 				<span class="wd-toolbar-label">
-					<?php echo $text; ?>
+					<?php echo esc_html( $text ); ?>
 				</span>
 			</a>
 		</div>
@@ -450,13 +448,12 @@ if ( ! function_exists( 'woodmart_sticky_toolbar_custom_link_template' ) ) {
 		$icon            = woodmart_get_opt( $key . '_icon' );
 
 		$wrapper_classes .= isset( $icon['id'] ) && $icon['id'] ? ' wd-tools-custom-icon' : '';
-
-		$wrapper_classes .= woodmart_get_old_classes( ' woodmart-toolbar-item woodmart-toolbar-link' );
+		$wrapper_classes .= ' wd-toolbar-' . str_replace( '_', '-', $key );
 
 		?>
 		<?php if ( $url && $text ) : ?>
 			<div class="wd-toolbar-link wd-tools-element wd-toolbar-item<?php echo esc_attr( $wrapper_classes ); ?>">
-				<a href="<?php echo esc_url( $url ); ?>">
+				<a href="<?php echo wp_kses( $url, true ); ?>">
 					<span class="wd-toolbar-icon wd-tools-icon wd-icon wd-custom-icon">
 						<?php if ( isset( $icon['id'] ) && $icon['id'] ) : ?>
 							<?php echo wp_get_attachment_image( $icon['id'] ); ?>
@@ -483,9 +480,9 @@ if ( ! function_exists( 'woodmart_sticky_toolbar_mobile_menu_template' ) ) {
 	 */
 	function woodmart_sticky_toolbar_mobile_menu_template() {
 		?>
-		<div class="wd-header-mobile-nav whb-wd-header-mobile-nav mobile-style-icon wd-tools-element<?php echo woodmart_get_old_classes( ' woodmart-burger-icon' ); ?>">
+		<div class="wd-header-mobile-nav whb-wd-header-mobile-nav mobile-style-icon wd-tools-element">
 			<a href="#" rel="nofollow">
-				<span class="wd-tools-icon<?php echo woodmart_get_old_classes( ' woodmart-burger' ); ?>"></span>
+				<span class="wd-tools-icon"></span>
 				<span class="wd-toolbar-label">
 					<?php esc_html_e( 'Menu', 'woodmart' ); ?>
 				</span>

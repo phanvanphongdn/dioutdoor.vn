@@ -2,8 +2,10 @@
 /**
  * Portfolio template function
  *
- * @package xts
+ * @package woodmart
  */
+
+use XTS\Modules\Layouts\Main;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Direct access not allowed.
@@ -36,6 +38,11 @@ if ( ! function_exists( 'woodmart_elementor_portfolio_template' ) ) {
 			'elementor'               => true,
 			'custom_sizes'            => apply_filters( 'woodmart_portfolio_shortcode_custom_sizes', false ),
 			'image_size'              => 'large',
+
+			// Title.
+			'element_title'           => '',
+			'element_title_tag'       => 'h4',
+			
 			// Carousel.
 			'speed'                   => '5000',
 			'slides_per_view'         => array( 'size' => 3 ),
@@ -110,10 +117,11 @@ if ( ! function_exists( 'woodmart_elementor_portfolio_template' ) ) {
 			woodmart_set_loop_prop( 'portfolio_image_size_custom', $settings['image_size_custom'] );
 		}
 
-		if ( isset( $settings['columns_tablet']['size'] ) && $settings['columns_tablet']['size'] ) {
+		if ( isset( $settings['columns_tablet']['size'] ) ) {
 			woodmart_set_loop_prop( 'portfolio_columns_tablet', $settings['columns_tablet']['size'] );
 		}
-		if ( isset( $settings['columns_mobile']['size'] ) && $settings['columns_mobile']['size'] ) {
+
+		if ( isset( $settings['portfolio_columns_mobile']['size'] ) ) {
 			woodmart_set_loop_prop( 'portfolio_columns_mobile', $settings['columns_mobile']['size'] );
 		}
 
@@ -131,6 +139,16 @@ if ( ! function_exists( 'woodmart_elementor_portfolio_template' ) ) {
 		woodmart_enqueue_js_script( 'portfolio-photoswipe' );
 
 		woodmart_enqueue_portfolio_loop_styles( $settings['style'] );
+
+		if ( 'ids' === $settings['post_type'] && $settings['include'] ) {
+			$args['post__in'] = $settings['include'];
+		}
+
+		if ( 'related_projects' === $settings['post_type'] ) {
+			Main::setup_preview();
+			$args = array_merge( $args, woodmart_get_related_projects_args( get_the_ID() ) );
+			Main::restore_preview();
+		}
 
 		$query = new WP_Query( $args );
 
@@ -184,7 +202,14 @@ if ( ! function_exists( 'woodmart_elementor_portfolio_template' ) ) {
 		?>
 		<?php if ( $query->have_posts() ) : ?>
 			<?php if ( ! $is_ajax ) : ?>
-				<div class="wd-portfolio-element">
+				<div class="wd-portfolio-element<?php echo $settings['element_title'] ? ' with-title' : ''; ?>">
+					<?php if ( $settings['element_title'] ) : ?>
+						<?php
+						$title_tag = in_array( $settings['element_title_tag'], array_keys( woodmart_get_allowed_html() ), true ) ? $settings['element_title_tag'] : 'h4';
+
+						printf( '<%1$s class="wd-el-title title element-title">%2$s</%1$s>', esc_attr( $title_tag ), esc_html( $settings['element_title'] ) );
+						?>
+					<?php endif; ?>
 
 					<?php if ( ! is_tax() && $settings['filters'] && ! $s && 'carousel' !== $settings['layout'] ) : ?>
 						<?php woodmart_portfolio_filters( $settings['categories'], $settings['filters_type'] ); ?>

@@ -2,13 +2,14 @@
 /**
  * Off canvas sidebar button element.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Modules\Layouts;
 
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Image_Size;
+use Elementor\Group_Control_Typography;
 use Elementor\Plugin;
 use Elementor\Utils;
 use Elementor\Widget_Base;
@@ -105,22 +106,49 @@ class Off_Canvas_Column_Btn extends Widget_Base {
 			$sticky_key,
 			array(
 				'label'        => esc_html__( 'Sticky', 'woodmart' ),
-				'description'  => esc_html__( 'Make the off canvas sidebar button sticky.', 'woodmart' ),
+				'description'  => esc_html__( 'Add an additional sticky button.', 'woodmart' ),
 				'type'         => Controls_Manager::SWITCHER,
 				'default'      => 'no',
 				'return_value' => 'yes',
 			)
 		);
 
+		$this->add_control(
+			'only_sticky_button',
+			array(
+				'label'        => esc_html__( 'Only sticky button', 'woodmart' ),
+				'description'  => esc_html__( 'Hide the static button and show only the sticky one.', 'woodmart' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'default'      => 'no',
+				'return_value' => 'yes',
+				'condition'    => array(
+					$sticky_key => 'yes',
+				),
+			)
+		);
+
+		$this->add_control(
+			'css_classes',
+			array(
+				'type'         => 'wd_css_class',
+				'default'      => 'wd-action-hide-btn',
+				'prefix_class' => '',
+				'condition'    => array(
+					$sticky_key          => 'yes',
+					'only_sticky_button' => array( 'yes' ),
+				),
+			)
+		);
+
 		$this->end_controls_section();
 
 		/**
-		 * Icon settings.
+		 * General style settings
 		 */
 		$this->start_controls_section(
-			'icon_style_section',
+			'general_style_section',
 			array(
-				'label' => esc_html__( 'Icon', 'woodmart' ),
+				'label' => esc_html__( 'General', 'woodmart' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			)
 		);
@@ -128,7 +156,7 @@ class Off_Canvas_Column_Btn extends Widget_Base {
 		$this->add_control(
 			'icon_type',
 			array(
-				'label'   => esc_html__( 'Type', 'woodmart' ),
+				'label'   => esc_html__( 'Icon type', 'woodmart' ),
 				'type'    => Controls_Manager::SELECT,
 				'options' => array(
 					'without' => esc_html__( 'Without icon', 'woodmart' ),
@@ -164,6 +192,112 @@ class Off_Canvas_Column_Btn extends Widget_Base {
 				),
 			)
 		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			array(
+				'name'     => 'button_typography',
+				'label'    => esc_html__( 'Typography', 'woodmart' ),
+				'selector' => '{{WRAPPER}} .wd-action-text',
+			)
+		);
+
+		$this->add_responsive_control(
+			'default_icon_size',
+			array(
+				'label'     => esc_html__( 'Icon size', 'woodmart' ),
+				'type'      => Controls_Manager::SLIDER,
+				'range'     => array(
+					'px' => array(
+						'min'  => 0,
+						'max'  => 50,
+						'step' => 1,
+					),
+				),
+				'selectors' => array(
+					'{{WRAPPER}} .wd-action-btn' => '--wd-action-icon-size: {{SIZE}}px;',
+				),
+				'condition' => array(
+					'icon_type' => 'default',
+				),
+			)
+		);
+
+		$this->start_controls_tabs( 'general_style_tabs' );
+
+		$this->start_controls_tab(
+			'general_style_idle_tab',
+			array(
+				'label' => esc_html__( 'Idle', 'woodmart' ),
+			)
+		);
+
+		$this->add_control(
+			'btn_text_color',
+			array(
+				'label'     => esc_html__( 'Text color', 'woodmart' ),
+				'type'      => Controls_Manager::COLOR,
+				'default'   => '',
+				'selectors' => array(
+					'{{WRAPPER}} .wd-action-btn' => '--wd-action-text-color: {{VALUE}};',
+				),
+			)
+		);
+
+		$this->add_control(
+			'btn_icon_color',
+			array(
+				'label'     => esc_html__( 'Icon color', 'woodmart' ),
+				'type'      => Controls_Manager::COLOR,
+				'default'   => '',
+				'selectors' => array(
+					'{{WRAPPER}} .wd-action-btn' => '--wd-action-icon-color: {{VALUE}};',
+				),
+				'condition' => array(
+					'icon_type' => 'default',
+				),
+			)
+		);
+
+		$this->end_controls_tab();
+
+		$this->start_controls_tab(
+			'general_style_hover_tab',
+			array(
+				'label' => esc_html__( 'Hover', 'woodmart' ),
+			)
+		);
+
+		$this->add_control(
+			'btn_text_hover_color',
+			array(
+				'label'     => esc_html__( 'Text color', 'woodmart' ),
+				'type'      => Controls_Manager::COLOR,
+				'default'   => '',
+				'selectors' => array(
+					'{{WRAPPER}} .wd-action-btn' => '--wd-action-text-color-hover: {{VALUE}};',
+				),
+			)
+		);
+
+		$this->add_control(
+			'btn_icon_hover_color',
+			array(
+				'label'     => esc_html__( 'Icon color', 'woodmart' ),
+				'type'      => Controls_Manager::COLOR,
+				'default'   => '',
+				'selectors' => array(
+					'{{WRAPPER}} .wd-action-btn' => '--wd-action-icon-color-hover: {{VALUE}};',
+				),
+				'condition' => array(
+					'icon_type' => 'default',
+				),
+			)
+		);
+
+		$this->end_controls_tab();
+
+		$this->end_controls_tabs();
 
 		$this->end_controls_section();
 	}
@@ -208,8 +342,6 @@ class Off_Canvas_Column_Btn extends Widget_Base {
 			$sticky_off_canvas_classes .= ' wd-action-custom-icon';
 		}
 
-		$off_canvas_classes .= woodmart_get_old_classes( ' woodmart-show-sidebar-btn' );
-
 		if ( 'custom' === $settings['icon_type'] && ! empty( $settings['icon']['id'] ) ) {
 			if ( woodmart_is_svg( $settings['icon']['url'] ) ) {
 				$icon_output = woodmart_get_svg_html(
@@ -231,23 +363,21 @@ class Off_Canvas_Column_Btn extends Widget_Base {
 
 		<div class="wd-off-canvas-btn wd-action-btn wd-style-text<?php echo esc_html( $off_canvas_classes ); ?>">
 			<a href="#" rel="nofollow">
-				<?php if ( ! empty( $icon_output ) ) : ?>
-					<span class="wd-action-icon">
-						<?php echo $icon_output; //phpcs:ignore; ?>
-					</span>
-				<?php endif; ?>
-				<?php echo esc_html( $settings['button_text'] ); ?>
+				<span class="wd-action-icon">
+					<?php echo $icon_output; //phpcs:ignore; ?>
+				</span>
+				<span class="wd-action-text">
+					<?php echo esc_html( $settings['button_text'] ); ?>
+				</span>
 			</a>
 		</div>
 
 		<?php if ( 'yes' === $settings['sticky'] || 'yes' === $settings['wd_sticky'] ) : ?>
 			<div class="wd-sidebar-opener wd-show-on-scroll wd-action-btn wd-style-icon<?php echo esc_html( $sticky_off_canvas_classes ); ?>">
 				<a href="#" rel="nofollow">
-					<?php if ( ! empty( $icon_output ) ) : ?>
-						<span class="wd-action-icon">
-							<?php echo $icon_output; //phpcs:ignore; ?>
-						</span>
-					<?php endif; ?>
+					<span class="wd-action-icon">
+						<?php echo $icon_output; //phpcs:ignore; ?>
+					</span>
 				</a>
 			</div>
 		<?php endif; ?>

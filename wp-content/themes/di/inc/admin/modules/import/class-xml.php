@@ -2,7 +2,7 @@
 /**
  * Import XML.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Admin\Modules\Import;
@@ -45,17 +45,30 @@ class XML {
 	private $helpers;
 
 	/**
+	 * File name.
+	 *
+	 * @var string
+	 */
+	private $file;
+
+	/**
 	 * Constructor.
 	 *
 	 * @param string $version Version name.
 	 * @param string $type    File type.
+	 * @param string $file_path File path.
 	 */
-	public function __construct( $version, $type ) {
+	public function __construct( $version = '', $type = '', $file_path = '' ) {
+		if ( ! $version || ! $type ) {
+			return;
+		}
+
 		$this->helpers = Helpers::get_instance();
 		$this->version = $version;
 		$this->type    = $type;
+		$this->file    = $file_path ? $file_path : $this->helpers->get_file_path( $this->get_file_name(), $this->version );
 
-		define( 'WP_IMPORTING', true );
+		define( 'WP_IMPORTING', true ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedConstantFound
 
 		$this->import_xml();
 
@@ -66,6 +79,7 @@ class XML {
 
 		if ( 'elementor' === $this->helpers->get_page_builder() ) {
 			$this->elementor_post_content_replace();
+			$this->elementor_page_settings_replace();
 		} elseif ( 'gutenberg' === $this->helpers->get_page_builder() ) {
 			$this->gutenberg_post_content_replace();
 		} else {
@@ -101,13 +115,13 @@ class XML {
 		ob_start();
 
 		$importer = $this->get_importer();
-		$file     = $this->helpers->get_file_path( $this->get_file_name(), $this->version );
 
-		if ( ! $file ) {
+		if ( ! $this->file ) {
 			return;
 		}
 
 		try {
+			add_filter( 'wp_revisions_to_keep', '__return_zero' );
 			add_filter(
 				'intermediate_image_sizes',
 				function () {
@@ -117,7 +131,7 @@ class XML {
 
 			$importer->fetch_attachments = true;
 
-			$importer->import( $file, $this->version );
+			$importer->import( $this->file, $this->version );
 		} catch ( Exception $e ) {
 			echo esc_html( '[ERROR] XML import<br>' );
 		}
@@ -130,7 +144,7 @@ class XML {
 	 *
 	 * @return WOODCORE_Import|bool;
 	 */
-	private function get_importer() {
+	public function get_importer() {
 		require_once ABSPATH . 'wp-admin/includes/import.php';
 
 		if ( ! function_exists( 'WOODMART_Theme_Plugin' ) ) {
@@ -251,6 +265,12 @@ class XML {
 			'_menu_item_block',
 			'woodmart_sguide_select',
 			'wd_layout_conditions',
+			'wd_backgroundImage',
+			'background',
+			'background_tablet',
+			'background_mobile',
+			'background_image',
+			'image',
 		);
 		if ( ! empty( $this->imported_data['all_posts'] ) ) {
 			foreach ( $this->imported_data['all_posts'] as $value ) {
@@ -299,11 +319,9 @@ class XML {
 							continue;
 						}
 
-						$flag      = true;
-						$post_meta = array(
-							'url' => wp_get_attachment_image_url( $this->imported_data['attachment'][ $post_meta['id'] ]['new'], 'full' ),
-							'id'  => $this->imported_data['attachment'][ $post_meta['id'] ]['new'],
-						);
+						$flag             = true;
+						$post_meta['id']  = $this->imported_data['attachment'][ $post_meta['id'] ]['new'];
+						$post_meta['url'] = wp_get_attachment_image_url( $post_meta['id'], 'full' );
 					} elseif ( 'wd_layout_conditions' === $meta_key && is_array( $post_meta ) ) {
 						foreach ( $post_meta as $key => $condition ) {
 							if ( ! isset( $this->imported_data['term']['product_cat'][ $condition['condition_query'] ] ) ) {
@@ -321,6 +339,63 @@ class XML {
 						update_post_meta( $value['new'], $meta_key, $post_meta );
 					}
 				}
+
+				if ( woodmart_is_import_demo_content() && 'product_loop_item' === get_post_meta( $value['new'], 'wd_layout_type', true ) ) {
+					wp_update_post(
+						array(
+							'ID'            => $value['new'],
+							'post_modified' => current_time( 'mysql' ),
+						)
+					);
+				}
+			}
+		}
+	}
+
+	/**
+	 * Update Elementor page settings URLs to local base.
+	 *
+	 * @since 1.0.0
+	 */
+	private function elementor_page_settings_replace() {
+		if ( empty( $this->imported_data['all_posts'] ) ) {
+			return;
+		}
+
+		$image_keys = array(
+			'wd_fb_background_image',
+			'wd_bg_image',
+			'wd_image',
+			'background_image',
+			'wd__woodmart_title_image',
+		);
+
+		foreach ( $this->imported_data['all_posts'] as $imported_post ) {
+			$post_id  = $imported_post['new'];
+			$settings = get_post_meta( $post_id, '_elementor_page_settings', true );
+
+			if ( ! $settings || ! is_array( $settings ) ) {
+				continue;
+			}
+
+			if ( ! str_contains( maybe_serialize( $settings ), 'dummy.xtemos.com' ) ) {
+				continue;
+			}
+
+			$flag = false;
+
+			foreach ( $image_keys as $key ) {
+				if ( ! empty( $settings[ $key ]['id'] ) && ! empty( $this->imported_data['attachment'][ $settings[ $key ]['id'] ] ) ) {
+					$new_id = $this->imported_data['attachment'][ $settings[ $key ]['id'] ]['new'];
+
+					$settings[ $key ]['id']  = $new_id;
+					$settings[ $key ]['url'] = wp_get_attachment_image_url( $new_id, 'full' );
+					$flag                    = true;
+				}
+			}
+
+			if ( $flag ) {
+				update_post_meta( $post_id, '_elementor_page_settings', $settings );
 			}
 		}
 	}
@@ -360,8 +435,8 @@ class XML {
 					$value['new'],
 					array(
 						'/"ids":"([^"]*)"/i',
-						'/"tagsIds"="([^"]*)"/i',
-						'/"categoriesIds"="([^"]*)"/i',
+						'/"tagsIds":"([^"]*)"/i',
+						'/"categoriesIds":"([^"]*)"/i',
 						'/"nav_menu":"([^"]*)"/i',
 					)
 				);
@@ -382,25 +457,28 @@ class XML {
 				$wd_post_content = str_replace( '{/{', '', $wd_post_content );
 				$wd_post_content = str_replace( '}/}', '', $wd_post_content );
 
-				if ( str_contains( $wd_post_content, 'dummy.xtemos.com' ) ) {
-					$links = $this->helpers->links;
-
-					foreach ( $links as $key => $link_value ) {
-						if ( 'uploads' === $key ) {
-							foreach ( $link_value as $link ) {
-								$url_data = wp_upload_dir();
-
-								$wd_post_content = str_replace( $link, $url_data['baseurl'] . '/', $wd_post_content );
-							}
+				$wd_post_content = preg_replace_callback(
+					'/<!-- wp:wd\/countdown-timer\s+({.*?"date":"[^"]+.*?})\s+-->(.*?)<!-- \/wp:wd\/countdown-timer -->/s',
+					function ( $matches ) {
+						$block_data = json_decode( $matches[1], true );
+						if ( isset( $block_data['date'] ) ) {
+							$block_data['date'] = ( gmdate( 'Y' ) + 1 ) . '/01/01';
 						}
+						$updated_json = wp_json_encode( $block_data, JSON_UNESCAPED_SLASHES );
 
-						if ( 'simple' === $key ) {
-							foreach ( $link_value as $link ) {
-								$wd_post_content = str_replace( $link, get_home_url() . '/', $wd_post_content );
-							}
-						}
-					}
-				}
+						$html_content         = $matches[2];
+						$updated_html_content = preg_replace(
+							'/data-end-date="[^"]+"/',
+							'data-end-date="' . ( gmdate( 'Y' ) + 1 ) . '/01/01"',
+							$html_content
+						);
+
+						return '<!-- wp:wd/countdown-timer ' . $updated_json . ' -->' . $updated_html_content . '<!-- /wp:wd/countdown-timer -->';
+					},
+					$wd_post_content
+				);
+
+				$wd_post_content = $this->replace_url_in_content( $wd_post_content );
 
 				wp_update_post(
 					array(
@@ -461,14 +539,12 @@ class XML {
 						}
 
 						$replaced_value = implode( ',', $ids );
-					} else {
-						if ( (int) $data['old'] === (int) $found_value ) {
-							$flag           = true;
-							$replaced_value = '{/{' . $data['new'] . '}/}';
+					} elseif ( (int) $data['old'] === (int) $found_value ) {
+						$flag           = true;
+						$replaced_value = '{/{' . $data['new'] . '}/}';
 
-							// Diff.
-							$diff[ $data['old'] ] = $data['new'];
-						}
+						// Diff.
+						$diff[ $data['old'] ] = $data['new'];
 					}
 
 					if ( $flag ) {
@@ -491,7 +567,7 @@ class XML {
 	private function wpb_post_content_replace() {
 		if ( ! empty( $this->imported_data['all_posts'] ) ) {
 			foreach ( $this->imported_data['all_posts'] as $value ) {
-				if ( isset( $value['type'] ) || $this->is_replaced( $value['new'], 'post_content' ) ) {
+				if ( isset( $value['type'] ) ) {
 					continue;
 				}
 
@@ -520,6 +596,8 @@ class XML {
 					$value['new'],
 					array(
 						'/ids="([^"]*)"/i',
+						'/taxonomies="([^"]*)"/i',
+						'/categories="([^"]*)"/i',
 					)
 				);
 
@@ -533,6 +611,7 @@ class XML {
 						'/images="([^"]*)"/i',
 						'/image="([^"]*)"/i',
 						'/img_id="([^"]*)"/i',
+						'/img="([^"]*)"/i',
 						'/form_id="([^"]*)"/i',
 						'/contact-form-7 id="([^"]*)"/i',
 						'/html_block id="([^"]*)"/i',
@@ -541,11 +620,23 @@ class XML {
 						'/include="([^"]*)"/i',
 						'/sidebar_id="([^"]*)"/i',
 						'/html_block_id="([^"]*)"/i',
+						'/wp-image-([^"]*)/i',
+						'/marquee_contents="([^"]*)"/i',
 					)
 				);
 
 				$wd_post_content = str_replace( '{/{', '', $wd_post_content );
 				$wd_post_content = str_replace( '}/}', '', $wd_post_content );
+
+				$wd_post_content = preg_replace_callback(
+					'/\[(woodmart_countdown_timer|promo_banner)([^\]]*?)date="([^"]+)"([^\]]*?)\]/',
+					function ( $matches ) {
+						return '[' . $matches[1] . $matches[2] . 'date="' . ( gmdate( 'Y' ) + 1 ) . '/01/01"' . $matches[4] . ']';
+					},
+					$wd_post_content
+				);
+
+				$wd_post_content = $this->replace_url_in_content( $wd_post_content );
 
 				wp_update_post(
 					array(
@@ -584,7 +675,7 @@ class XML {
 					$replaced_value = $found_value;
 					$diff           = array();
 
-					if ( strpos( $found_value, 'list-content' ) ) {
+					if ( strpos( $found_value, 'list-content' ) || strpos( $attr, 'marquee_contents' ) ) {
 						$data_decoded = json_decode( urldecode( $found_value ), true );
 						foreach ( $data_decoded as $key => $list_data ) {
 							if ( ! isset( $list_data['image_id'] ) ) {
@@ -623,14 +714,12 @@ class XML {
 						}
 
 						$replaced_value = implode( ',', $ids );
-					} else {
-						if ( (int) $data['old'] === (int) $found_value ) {
-							$flag           = true;
-							$replaced_value = '{/{' . $data['new'] . '}/}';
+					} elseif ( (int) $data['old'] === (int) $found_value ) {
+						$flag           = true;
+						$replaced_value = '{/{' . $data['new'] . '}/}';
 
-							// Diff.
-							$diff[ $data['old'] ] = $data['new'];
-						}
+						// Diff.
+						$diff[ $data['old'] ] = $data['new'];
 					}
 
 					if ( $flag ) {
@@ -653,7 +742,7 @@ class XML {
 	private function elementor_post_content_replace() {
 		if ( ! empty( $this->imported_data['all_posts'] ) ) {
 			foreach ( $this->imported_data['all_posts'] as $value ) {
-				if ( ! isset( $value['type'] ) || ( isset( $value['type'] ) && 'elementor' !== $value['type'] ) || $this->is_replaced( $value['new'], 'post_content' ) ) {
+				if ( ! isset( $value['type'] ) || ( isset( $value['type'] ) && 'elementor' !== $value['type'] ) ) {
 					continue;
 				}
 
@@ -676,9 +765,11 @@ class XML {
 
 						$terms_data = array();
 
-						foreach ( $imported_data['term'] as $terms ) {
-							foreach ( $terms as $key => $term ) {
-								$terms_data[ $key ] = $term;
+						if ( isset( $imported_data['term'] ) ) {
+							foreach ( $imported_data['term'] as $terms ) {
+								foreach ( $terms as $key => $term ) {
+									$terms_data[ $key ] = $term;
+								}
 							}
 						}
 
@@ -699,16 +790,21 @@ class XML {
 									'exclude',
 									'product_id',
 									'include_products',
+									'marquee_contents',
 								);
+
 								if ( 'repeater' === $control['type'] ) {
 									foreach ( $repeater_id_fields as $field ) {
 										foreach ( $settings as $key => $value ) {
-											if ( empty( $value ) || ! isset( $value[ $field ] ) ) {
+											if ( empty( $value ) ) {
 												continue;
 											}
 
-											if ( (int) $value[ $field ] === (int) $data['old'] ) {
+											if ( isset( $value[ $field ] ) && (int) $value[ $field ] === (int) $data['old'] ) {
 												$settings[ $key ][ $field ] = strval( '{/{' . $data['new'] . '}/}' );
+											} elseif ( ! empty( $value['image']['id'] ) && (int) $value['image']['id'] === (int) $data['old'] ) {
+												$settings[ $key ]['image']['id']  = '{/{' . $data['new'] . '}/}';
+												$settings[ $key ]['image']['url'] = wp_get_attachment_image_url( $data['new'], 'full' );
 											}
 										}
 									}
@@ -768,6 +864,10 @@ class XML {
 											$settings[ $key ]['id']  = '{/{' . $data['new'] . '}/}';
 										}
 									}
+								}
+
+								if ( 'date_time' === $control['type'] && 'date' === $control['name'] && $settings ) {
+									$settings = ( gmdate( 'Y' ) + 1 ) . '/01/01';
 								}
 
 								$element_data['settings'][ $control['name'] ] = $settings;
@@ -849,6 +949,36 @@ class XML {
 				update_post_meta( $value['new'], '_elementor_data', wp_slash( $post_meta ) );
 			}
 		}
+	}
+
+	/**
+	 * Replace URL in content.
+	 *
+	 * @param string $content Content to replace URLs in.
+	 * @return string
+	 */
+	private function replace_url_in_content( $content ) {
+		if ( str_contains( $content, 'dummy.xtemos.com' ) ) {
+			$links    = $this->helpers->links;
+			$url_data = wp_upload_dir();
+			$home_url = get_home_url();
+
+			foreach ( $links as $key => $link_value ) {
+				if ( 'uploads' === $key ) {
+					foreach ( $link_value as $link ) {
+						$content = str_replace( $link, $url_data['baseurl'] . '/', $content );
+					}
+				}
+
+				if ( 'simple' === $key ) {
+					foreach ( $link_value as $link ) {
+						$content = str_replace( $link, $home_url . '/', $content );
+					}
+				}
+			}
+		}
+
+		return $content;
 	}
 
 	/**

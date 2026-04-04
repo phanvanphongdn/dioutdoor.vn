@@ -17,6 +17,14 @@
 				return;
 			}
 
+			if ($form.parents('.wd-sticky-btn-cart').length > 0) {
+				var $stickyBtnWrap = $form.parents('.wd-sticky-btn-cart');
+
+				if ($stickyBtnWrap.hasClass('wd-product-type-external')) {
+					return;
+				}
+			}
+
 			e.preventDefault();
 
 			var $thisbutton = $form.find('.single_add_to_cart_button'),
@@ -62,7 +70,7 @@
 
 						$thisbutton.removeClass('loading');
 
-						var fragments = response.fragments;
+						var fragments = response.fragments || {};
 						var cart_hash = response.cart_hash;
 
 						// Block fragments class
@@ -70,10 +78,8 @@
 							$.each(fragments, function(key) {
 								$(key).addClass('updating');
 							});
-						}
 
-						// Replace fragments
-						if (fragments) {
+							// Replace fragments
 							$.each(fragments, function(key, value) {
 								$(key).replaceWith(value);
 							});
@@ -82,7 +88,7 @@
 						// Show notices
 						var $noticeWrapper = $('.woocommerce-notices-wrapper');
 						$noticeWrapper.empty();
-						if (response.notices.indexOf('error') > 0) {
+						if (response.notices && response.notices.indexOf('error') > 0) {
 							$noticeWrapper.append(response.notices);
 							$thisbutton.addClass('not-added');
 

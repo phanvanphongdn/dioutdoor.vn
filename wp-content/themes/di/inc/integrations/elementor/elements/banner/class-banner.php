@@ -2,17 +2,19 @@
 /**
  * Promo banner map.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Elementor;
 
+use Elementor\Group_Control_Background;
 use Elementor\Group_Control_Image_Size;
 use Elementor\Group_Control_Typography;
 use Elementor\Modules\DynamicTags\Module as TagsModule;
 use Elementor\Utils;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
+use Elementor\Group_Control_Box_Shadow;
 use Elementor\Plugin;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -217,22 +219,28 @@ class Banner extends Widget_Base {
 		$this->add_responsive_control(
 			'image_height',
 			array(
-				'label'     => esc_html__( 'Banner height', 'woodmart' ),
-				'type'      => Controls_Manager::SLIDER,
-				'default'   => array(
+				'label'      => esc_html__( 'Banner height', 'woodmart' ),
+				'type'       => Controls_Manager::SLIDER,
+				'size_units' => array( 'px', 'vh' ),
+				'default'    => array(
 					'size' => 340,
 				),
-				'range'     => array(
+				'range'      => array(
 					'px' => array(
 						'min'  => 100,
 						'max'  => 2000,
 						'step' => 1,
 					),
+					'vh' => array(
+						'min'  => 0,
+						'max'  => 100,
+						'step' => 1,
+					),
 				),
-				'selectors' => array(
+				'selectors'  => array(
 					'{{WRAPPER}}' => '--wd-img-height: {{SIZE}}{{UNIT}};',
 				),
-				'condition' => array(
+				'condition'  => array(
 					'custom_height' => array( 'Yes' ),
 				),
 			)
@@ -338,7 +346,7 @@ class Banner extends Widget_Base {
 			array(
 				'label'     => esc_html__( 'Date', 'woodmart' ),
 				'type'      => Controls_Manager::DATE_TIME,
-				'default'   => date( 'Y-m-d', strtotime( ' +2 months' ) ),
+				'default'   => gmdate( 'Y-m-d', strtotime( ' +2 months' ) ),
 				'condition' => array(
 					'show_countdown' => array( 'yes' ),
 				),
@@ -537,22 +545,6 @@ class Banner extends Widget_Base {
 		);
 
 		$this->add_control(
-			'title_decoration_style',
-			array(
-				'label'       => esc_html__( 'Highlight text style', 'woodmart' ),
-				'description' => esc_html__( 'The text must be wrapped with the <u></u> tag to highlight it.', 'woodmart' ),
-				'type'        => Controls_Manager::SELECT,
-				'options'     => array(
-					'default'     => esc_html__( 'Default', 'woodmart' ),
-					'colored'     => esc_html__( 'Primary color', 'woodmart' ),
-					'colored-alt' => esc_html__( 'Primary color + secondary font', 'woodmart' ),
-					'bordered'    => esc_html__( 'Bordered', 'woodmart' ),
-				),
-				'default'     => 'default',
-			)
-		);
-
-		$this->add_control(
 			'custom_title_color',
 			array(
 				'label'     => esc_html__( 'Color', 'woodmart' ),
@@ -569,6 +561,35 @@ class Banner extends Widget_Base {
 				'name'     => 'title_typography',
 				'label'    => esc_html__( 'Custom typography', 'woodmart' ),
 				'selector' => '{{WRAPPER}} .banner-title',
+			)
+		);
+
+		$this->add_control(
+			'title_decoration_style',
+			array(
+				'label'       => esc_html__( 'Highlight text style', 'woodmart' ),
+				'description' => esc_html__( 'The text must be wrapped with the <u></u> tag to highlight it.', 'woodmart' ),
+				'type'        => Controls_Manager::SELECT,
+				'options'     => array(
+					'default'     => esc_html__( 'Default', 'woodmart' ),
+					'colored'     => esc_html__( 'Primary color', 'woodmart' ),
+					'colored-alt' => esc_html__( 'Primary color + secondary font', 'woodmart' ),
+					'bordered'    => esc_html__( 'Bordered', 'woodmart' ),
+					'gradient'    => esc_html__( 'Gradient', 'woodmart' ),
+				),
+				'default'     => 'default',
+			)
+		);
+
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
+			array(
+				'name'      => 'title_decoration_gradient',
+				'types'     => array( 'gradient' ),
+				'selector'  => '{{WRAPPER}} .wd-underline-gradient u',
+				'condition' => array(
+					'title_decoration_style' => 'gradient',
+				),
 			)
 		);
 
@@ -709,15 +730,28 @@ class Banner extends Widget_Base {
 		$this->add_control(
 			'countdown_style',
 			array(
-				'label'   => esc_html__( 'Style', 'woodmart' ),
+				'label'   => esc_html__( 'Background', 'woodmart' ),
 				'type'    => Controls_Manager::SELECT,
-				'options' => [
-					'simple'      => esc_html__( 'Default', 'woodmart' ),
-					'standard'    => esc_html__( 'Shadow', 'woodmart' ),
-					'transparent' => esc_html__( 'Transparent', 'woodmart' ),
-					'active'      => esc_html__( 'Primary color', 'woodmart' ),
-				],
-				'default' => 'standard',
+				'options' => array(
+					'simple' => esc_html__( 'Default', 'woodmart' ),
+					'active' => esc_html__( 'Primary color', 'woodmart' ),
+					'custom' => esc_html__( 'Custom', 'woodmart' ),
+				),
+				'default' => 'simple',
+			)
+		);
+
+		$this->add_control(
+			'countdown_bg_color',
+			array(
+				'label'     => esc_html__( 'Background color', 'woodmart' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'{{WRAPPER}} .wd-timer' => '--wd-timer-bg: {{VALUE}}',
+				),
+				'condition' => array(
+					'countdown_style' => 'custom',
+				),
 			)
 		);
 
@@ -732,6 +766,14 @@ class Banner extends Widget_Base {
 					'dark'  => esc_html__( 'Dark', 'woodmart' ),
 				),
 				'default' => '',
+			)
+		);
+
+		$this->add_group_control(
+			Group_Control_Box_Shadow::get_type(),
+			array(
+				'name'     => 'countdown_shadow',
+				'selector' => '{{WRAPPER}} .wd-item',
 			)
 		);
 

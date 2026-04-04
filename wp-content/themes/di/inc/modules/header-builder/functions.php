@@ -1,4 +1,9 @@
 <?php
+/**
+ * Header Builder functions.
+ *
+ * @package woodmart
+ */
 
 use XTS\Modules\Header_Builder\Frontend;
 
@@ -9,7 +14,11 @@ if ( ! function_exists( 'whb_get_header' ) ) {
 	 * @return mixed|null
 	 */
 	function whb_get_header() {
-		return Frontend::get_instance()->header;
+		if ( ! isset( $GLOBALS['woodmart_hb_frontend'] ) ) {
+			return null;
+		}
+
+		return $GLOBALS['woodmart_hb_frontend']->header;
 	}
 }
 
@@ -21,6 +30,7 @@ if ( ! function_exists( 'whb_generate_header' ) ) {
 	 */
 	function whb_generate_header() {
 		woodmart_enqueue_inline_style( 'header-base' );
+		woodmart_enqueue_inline_style( 'mod-tools' );
 
 		Frontend::get_instance()->generate_header();
 	}
@@ -33,7 +43,7 @@ if ( ! function_exists( 'whb_get_builder' ) ) {
 	 * @return object
 	 */
 	function whb_get_builder() {
-		return Frontend::get_instance()->builder;
+		return $GLOBALS['woodmart_hb_frontend']->builder;
 	}
 }
 
@@ -136,8 +146,15 @@ if ( ! function_exists( 'whb_get_custom_icon' ) ) {
 	}
 }
 
-if ( ! function_exists('woodmart_get_whb_headers_array' ) ) {
-	function woodmart_get_whb_headers_array( $get_from_options = false, $new = false ) {
+if ( ! function_exists( 'woodmart_get_whb_headers_array' ) ) {
+	/**
+	 * Function to get array of WHB headers.
+	 *
+	 * @param bool $get_from_options Get headers from options.
+	 * @param bool $is_new New format.
+	 * @return array
+	 */
+	function woodmart_get_whb_headers_array( $get_from_options = false, $is_new = false ) {
 		if ( $get_from_options ) {
 			$list = get_option( 'whb_saved_headers' );
 		} else {
@@ -147,7 +164,7 @@ if ( ! function_exists('woodmart_get_whb_headers_array' ) ) {
 
 		$headers = array();
 
-		if ( $new ) {
+		if ( $is_new ) {
 			$headers['none'] = array(
 				'name'  => 'none',
 				'value' => 'none',
@@ -158,7 +175,7 @@ if ( ! function_exists('woodmart_get_whb_headers_array' ) ) {
 
 		if ( ! empty( $list ) && is_array( $list ) ) {
 			foreach ( $list as $key => $header ) {
-				if ( $new ) {
+				if ( $is_new ) {
 					$headers[ $key ] = array(
 						'name'  => $header['name'],
 						'value' => $key,
@@ -210,14 +227,24 @@ if ( ! function_exists( 'woodmart_get_header_classes' ) ) {
 	/**
 	 * Header classes.
 	 *
-	 * @return void
+	 * @param bool   $render  Echo or return the classes.
+	 * @param array  $settings Header settings.
+	 * @param string $id Header ID.
+	 *
+	 * @return void|string
 	 */
-	function woodmart_get_header_classes() {
-		$settings              = whb_get_settings();
+	function woodmart_get_header_classes( $render = true, $settings = array(), $id = '' ) {
 		$custom_product_header = woodmart_get_opt( 'single_product_header' );
 
+		if ( ! $settings ) {
+			$settings = whb_get_settings();
+		}
+		if ( ! $id ) {
+			$id = Frontend::get_instance()->get_current_id();
+		}
+
 		$header_class  = 'whb-header';
-		$header_class .= ' whb-' . Frontend::get_instance()->get_current_id();
+		$header_class .= ' whb-' . $id;
 		$header_class .= ( $settings['overlap'] ) ? ' whb-overcontent' : '';
 		$header_class .= ( $settings['overlap'] && $settings['boxed'] ) ? ' whb-boxed' : '';
 		$header_class .= ( $settings['full_width'] ) ? ' whb-full-width' : '';
@@ -232,7 +259,11 @@ if ( ! function_exists( 'woodmart_get_header_classes' ) ) {
 			$header_class .= ' whb-custom-header';
 		}
 
-		echo 'class="' . esc_attr( $header_class ) . '"';
+		if ( ! $render ) {
+			return 'class="' . $header_class . '"';
+		} else {
+			echo 'class="' . esc_attr( $header_class ) . '"';
+		}
 	}
 }
 
@@ -243,7 +274,7 @@ if ( ! function_exists( 'woodmart_set_default_header' ) ) {
 	 * @since 1.0.0
 	 */
 	function woodmart_set_default_header() {
-		if ( ! isset( $_GET['settings-updated'] ) || isset( $_GET['preset'] ) ) { // phpcs:ignore
+		if ( ! isset( $_GET['settings-updated'] ) || isset( $_GET['preset'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 			return;
 		}
 
@@ -269,7 +300,6 @@ if ( ! function_exists( 'woodmart_get_header_body_classes' ) ) {
 
 		if ( isset( $settings['overlap'] ) && $settings['overlap'] ) {
 			$classes[] = 'wd-header-overlap';
-			$classes[] = woodmart_get_old_classes( 'woodmart-header-overcontent' );
 		}
 
 		if ( 'light' === whb_get_dropdowns_color() ) {
@@ -277,5 +307,16 @@ if ( ! function_exists( 'woodmart_get_header_body_classes' ) ) {
 		}
 
 		return $classes;
+	}
+}
+
+if ( ! function_exists( 'woodmart_is_header_frontend_editor' ) ) {
+	/**
+	 * Check if header is edited in frontend editor.
+	 *
+	 * @return bool
+	 */
+	function woodmart_is_header_frontend_editor() {
+		return ! empty( $_GET['whb-header-frontend'] ) || ( ! empty( $_GET['action'] ) && 'woodmart_get_header_html' === $_GET['action'] ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 	}
 }

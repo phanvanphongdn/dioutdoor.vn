@@ -2,7 +2,7 @@
 /**
  * CSS and JS code editor.
  *
- * @package xts
+ * @package woodmart
  */
 
 namespace XTS\Admin\Modules\Options\Controls;

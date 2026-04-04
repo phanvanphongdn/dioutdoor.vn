@@ -1,15 +1,24 @@
-<?php if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
-	exit( 'No direct script access allowed' );}
-
+<?php
 /**
-* ------------------------------------------------------------------------------------------------
-* Section divider shortcode
-* ------------------------------------------------------------------------------------------------
-*/
+ * Shortcode for Row Divider element.
+ *
+ * @package woodmart
+ */
+
+if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
+	exit( 'No direct script access allowed' );
+}
 
 if ( ! function_exists( 'woodmart_row_divider' ) ) {
+	/**
+	 * Shortcode to display row divider.
+	 *
+	 * @param array $atts Shortcode attributes.
+	 *
+	 * @return string
+	 */
 	function woodmart_row_divider( $atts ) {
-		extract(
+		extract( // phpcs:ignore WordPress.PHP.DontExtract.extract_extract
 			shortcode_atts(
 				array(
 					'position'        => 'top',
@@ -32,17 +41,16 @@ if ( ! function_exists( 'woodmart_row_divider' ) ) {
 		$classes  = $divider_id;
 		$classes .= ' dvr-position-' . $position;
 		$classes .= ' dvr-style-' . $style;
-		$classes .= woodmart_get_old_classes( ' woodmart-row-divider' );
 
-		( $content_overlap == 'enable' ) ? $classes .= ' dvr-overlap-enable' : false;
-		( $el_class != '' ) ? $classes              .= ' ' . $el_class : false;
+		( 'enable' === $content_overlap ) ? $classes .= ' dvr-overlap-enable' : false;
+		( '' !== $el_class ) ? $classes              .= ' ' . $el_class : false;
 
 		ob_start();
 
 		woodmart_enqueue_inline_style( 'dividers' );
 		?>
 			<div id="<?php echo esc_attr( $divider_id ); ?>" class="wd-row-divider <?php echo esc_attr( $classes ); ?>">
-				<?php echo woodmart_get_svg_content( $style . '-' . $position ); ?>
+				<?php echo woodmart_get_svg_content( $style . '-' . $position ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 				<?php
 				if ( ( $color && ! woodmart_is_css_encode( $color ) ) || $custom_height ) {
 					$css = '.' . esc_attr( $divider_id ) . ' svg {';
@@ -51,7 +59,7 @@ if ( ! function_exists( 'woodmart_row_divider' ) ) {
 					}
 
 					if ( $custom_height ) {
-						$css .= 'height: ' . esc_attr( $custom_height  ) . ';';
+						$css .= 'height: ' . esc_attr( $custom_height ) . ';';
 					}
 					$css .= '}';
 					wp_add_inline_style( 'woodmart-inline-css', $css );

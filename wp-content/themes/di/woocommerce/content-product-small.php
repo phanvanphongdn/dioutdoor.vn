@@ -3,7 +3,7 @@
  * Render file for 'Small' product design.
  * Products(grid or carousel) element.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 global $product;
@@ -17,9 +17,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 <?php do_action( 'woodmart_before_shop_loop_thumbnail' ); ?>
 
 
-<div class="product-wrapper">
-	<div class="product-element-top">
-		<a href="<?php echo esc_url( get_permalink() ); ?>" class="product-image-link">
+<div class="wd-product-wrapper product-wrapper">
+	<div class="wd-product-thumb product-element-top">
+		<a href="<?php echo esc_url( get_permalink() ); ?>" class="wd-product-img-link product-image-link" aria-label="<?php echo esc_attr( get_the_title() ); ?>">
 			<?php do_action( 'woocommerce_before_shop_loop_item_title' ); ?>
 		</a>
 	</div>

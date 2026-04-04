@@ -6,6 +6,7 @@
 
 	$.each([
 		'frontend/element_ready/wd_blog.default',
+		'frontend/element_ready/wd_blog_archive.default',
 		'frontend/element_ready/wd_portfolio.default',
 	], function(index, value) {
 		woodmartThemeModule.wdElementorAddAction(value, function() {
@@ -18,7 +19,7 @@
 			return;
 		}
 
-		var $container = $('.wd-masonry');
+		var $container = $('.wd-masonry:not(.wd-cats)');
 
 		$container.imagesLoaded(function() {
 			$container.isotope({

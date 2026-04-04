@@ -1,13 +1,22 @@
-<?php if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
-	exit( 'No direct script access allowed' );}
-
+<?php
 /**
- * ------------------------------------------------------------------------------------------------
- * Section title shortcode
- * ------------------------------------------------------------------------------------------------
+ * Shortcode for Title element.
+ *
+ * @package woodmart
  */
 
+if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
+	exit( 'No direct script access allowed' );
+}
+
 if ( ! function_exists( 'woodmart_shortcode_title' ) ) {
+	/**
+	 * Title shortcode
+	 *
+	 * @param array $atts Shortcode attributes.
+	 *
+	 * @return string
+	 */
 	function woodmart_shortcode_title( $atts ) {
 		$title_class = apply_filters( 'vc_shortcodes_css_class', '', '', $atts );
 
@@ -55,7 +64,7 @@ if ( ! function_exists( 'woodmart_shortcode_title' ) ) {
 			$atts
 		);
 
-		extract( $atts );
+		extract( $atts ); // phpcs:ignore
 
 		if ( ! $woodmart_css_id ) {
 			$woodmart_css_id = uniqid();
@@ -63,7 +72,11 @@ if ( ! function_exists( 'woodmart_shortcode_title' ) ) {
 		$title_id   = 'wd-' . $woodmart_css_id;
 		$style_attr = '';
 
-		$subtitle_class = $title_container_class = $after_title_class = '';
+		$subtitle_class        = '';
+		$title_container_class = '';
+		$after_title_class     = '';
+
+		$tag = ! in_array( $tag, array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'div', 'span' ), true ) ? 'h4' : $tag;
 
 		$title_class .= ' wd-title-color-' . $color;
 		$title_class .= ' wd-title-style-' . $style;
@@ -99,7 +112,7 @@ if ( ! function_exists( 'woodmart_shortcode_title' ) ) {
 
 		$after_title_class .= ' ' . woodmart_get_new_size_classes( 'title', $size, 'after_title' );
 
-		$gradient_style = ( $color == 'gradient' ) ? 'style="' . woodmart_get_gradient_css( $woodmart_color_gradient ) . ';"' : '';
+		$gradient_style = ( 'gradient' === $color ) ? 'style="' . woodmart_get_gradient_css( $woodmart_color_gradient ) . ';"' : '';
 
 		ob_start();
 
@@ -118,26 +131,26 @@ if ( ! function_exists( 'woodmart_shortcode_title' ) ) {
 		?>
 
 		<div id="<?php echo esc_attr( $title_id ); ?>" class="title-wrapper wd-wpb wd-set-mb reset-last-child <?php echo esc_attr( $title_class ); ?>"<?php echo wp_kses( $style_attr, true ); ?>>
-			<?php if ( $subtitle != '' ) : ?>
+			<?php if ( '' !== $subtitle ) : ?>
 				<?php woodmart_enqueue_inline_style( 'el-subtitle-style' ); ?>
 
 				<div class="title-subtitle <?php echo esc_attr( $subtitle_class ); ?>"><?php echo wp_kses( $subtitle, woodmart_get_allowed_html() ); ?></div>
 			<?php endif; ?>
 
 			<div class="liner-continer">
-				<?php echo '<' . $tag . ' class="woodmart-title-container title ' . $title_container_class . '" ' . $gradient_style . '>' . $title . '</' . $tag . '>'; ?>
+				<?php echo '<' . $tag . ' class="woodmart-title-container title ' . $title_container_class . '" ' . $gradient_style . '>' . $title . '</' . $tag . '>'; // phpcs:ignore ?>
 
 				<?php if ( $image ) : ?>
-					<?php echo woodmart_display_icon( $image, $img_size, 128 ); ?>
+					<?php echo woodmart_display_icon( $image, $img_size, 128 ); // phpcs:ignore ?>
 				<?php endif; ?>
 			</div>
 			
-			<?php if ( $after_title != '' ) : ?>
+			<?php if ( '' !== $after_title ) : ?>
 				<div class="title-after_title reset-last-child <?php echo esc_attr( $after_title_class ); ?>"><?php echo wp_kses( $after_title, woodmart_get_allowed_html() ); ?></div>
 			<?php endif; ?>
 
 			<?php
-			if ( $size == 'custom' && ! $title_font_size  ) {
+			if ( function_exists( 'woodmart_responsive_text_size_css' ) && 'custom' === $size && ! $title_font_size ) {
 				$css = '';
 
 				if ( $desktop_text_size ) {
@@ -150,7 +163,7 @@ if ( ! function_exists( 'woodmart_shortcode_title' ) ) {
 					$css .= '}';
 				}
 
-				if ( $mobile_text_size  ) {
+				if ( $mobile_text_size ) {
 					$css .= '@media (max-width: 767px) {';
 					$css .= woodmart_responsive_text_size_css( $title_id, 'woodmart-title-container', $mobile_text_size, 'return' );
 					$css .= '}';
@@ -167,6 +180,5 @@ if ( ! function_exists( 'woodmart_shortcode_title' ) ) {
 		ob_end_clean();
 
 		return $output;
-
 	}
 }

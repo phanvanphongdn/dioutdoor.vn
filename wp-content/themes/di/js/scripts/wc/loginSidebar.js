@@ -9,10 +9,7 @@
 		var loginFormSide = $('.login-form-side');
 		var closeSide = $('.wd-close-side');
 
-
-		$('.login-side-opener')
-			.off('click')
-			.on('click', function(e) {
+		woodmartThemeModule.$document.on('click', '.login-side-opener', function(e) {
 				if (!loginFormSide.length) {
 					return
 				}
@@ -48,11 +45,13 @@
 		});
 
 		var closeWidget = function() {
+			loginFormSide.trigger('wdCloseSide');
 			loginFormSide.removeClass('wd-opened');
 			closeSide.removeClass('wd-close-side-opened');
 		};
 
 		var openWidget = function() {
+			loginFormSide.trigger('wdOpenSide');
 			loginFormSide.find('form').removeClass('hidden-form');
 			loginFormSide.addClass('wd-opened');
 			closeSide.addClass('wd-close-side-opened');

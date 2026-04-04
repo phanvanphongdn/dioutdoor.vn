@@ -1,10 +1,23 @@
 <?php
+/**
+ * Shortcode for Text Block element.
+ *
+ * @package woodmart
+ */
 
 if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
 	exit( 'No direct script access allowed' );
 }
 
 if ( ! function_exists( 'woodmart_shortcode_text_block' ) ) {
+	/**
+	 * Text block shortcode
+	 *
+	 * @param array  $atts    Shortcode attributes.
+	 * @param string $content Shortcode content.
+	 *
+	 * @return false|string
+	 */
 	function woodmart_shortcode_text_block( $atts, $content ) {
 		$wrapper_classes = apply_filters( 'vc_shortcodes_css_class', '', '', $atts );
 

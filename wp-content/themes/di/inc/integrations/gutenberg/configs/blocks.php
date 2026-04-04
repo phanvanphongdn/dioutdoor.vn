@@ -10,7 +10,9 @@
 		'wd/button'                       => array(),
 		'wd/icon'                         => array(),
 		'wd/image'                        => array(),
-		'wd/cover'                        => array(),
+		'wd/cover'                        => array(
+			'attributes' => wd_get_block_cover_attrs(),
+		),
 		'wd/divider'                      => array(),
 		'wd/gallery'                      => array(),
 		'wd/gallery-item'                 => array(),
@@ -60,6 +62,10 @@
 		'wd/blog'                         => array(
 			'attributes'      => wd_get_block_blog_attrs(),
 			'render_callback' => 'wd_gutenberg_blog',
+		),
+		'wd/breadcrumbs'                  => array(
+			'attributes'      => wd_get_block_breadcrumbs_attrs(),
+			'render_callback' => 'wd_gutenberg_breadcrumbs',
 		),
 		'wd/portfolio'                    => array(
 			'attributes'      => wd_get_block_portfolio_attrs(),
@@ -164,9 +170,13 @@
 		'wd/open-street-map'              => array(
 			'attributes' => wd_get_block_open_street_map_attrs(),
 		),
+		'wd/page-heading'                 => array(
+			'attributes'      => wd_get_page_heading_block_title_attrs(),
+			'render_callback' => 'wd_gutenberg_page_heading',
+		),
 		'wd/degree-view'                  => array(),
 		'wd/menu-anchor'                  => array(),
-//		'wd/design-library'               => array(),
+		'wd/design-library'               => array(),
 		'wd/compare-images'               => array(),
 		'wd/size-guide'                   => array(
 			'attributes'      => wd_get_block_size_guide_attrs(),

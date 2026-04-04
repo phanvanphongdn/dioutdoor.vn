@@ -64,6 +64,9 @@ if ( ! function_exists( 'woodmart_get_vc_map_marquee' ) ) {
 							'--wd-marquee-speed: {{VALUE}}s;',
 						),
 					),
+					'min'              => 1,
+					'max'              => 200,
+					'step'             => 1,
 					'edit_field_class' => 'vc_col-sm-12 vc_column',
 				),
 
@@ -271,7 +274,7 @@ if ( ! function_exists( 'woodmart_get_vc_map_marquee' ) ) {
 					'heading'    => esc_html__( 'Icon', 'woodmart' ),
 					'group'      => esc_html__( 'Icon', 'woodmart' ),
 					'param_name' => 'icon_fontawesome',
-					'value'      => 'far fa-bell',
+					'value'      => 'fa fa-regular fa-bell',
 					'settings'   => array(
 						'emptyIcon'    => false,
 						'iconsPerPage' => 50,
@@ -377,29 +380,22 @@ if ( ! function_exists( 'woodmart_get_vc_map_marquee' ) ) {
 					),
 					'hint'       => esc_html__( 'Select icon from library.', 'woodmart' ),
 				),
-				// array(
-				// 'type'       => 'woodmart_title_divider',
-				// 'holder'     => 'div',
-				// 'title'      => esc_html__( 'Icon', 'woodmart' ),
-				// 'group'      => esc_html__( 'Icon', 'woodmart' ),
-				// 'param_name' => 'style_icon_divider',
-				// ),
-					array(
-						'type'             => 'woodmart_colorpicker',
-						'heading'          => esc_html__( 'Icons color', 'woodmart' ),
-						'group'            => esc_html__( 'Icon', 'woodmart' ),
-						'param_name'       => 'marquee_icon_color',
-						'css_args'         => array(
-							'color' => array(
-								' .wd-icon',
-							),
+				array(
+					'type'             => 'woodmart_colorpicker',
+					'heading'          => esc_html__( 'Icons color', 'woodmart' ),
+					'group'            => esc_html__( 'Icon', 'woodmart' ),
+					'param_name'       => 'marquee_icon_color',
+					'css_args'         => array(
+						'color' => array(
+							' .wd-icon',
 						),
-						'dependency'       => array(
-							'element' => 'icon_type',
-							'value'   => array( 'icon' ),
-						),
-						'edit_field_class' => 'vc_col-sm-6 vc_column',
 					),
+					'dependency'       => array(
+						'element' => 'icon_type',
+						'value'   => array( 'icon' ),
+					),
+					'edit_field_class' => 'vc_col-sm-6 vc_column',
+				),
 				array(
 					'heading'    => esc_html__( 'Icon size', 'woodmart' ),
 					'group'      => esc_html__( 'Icon', 'woodmart' ),
@@ -440,8 +436,8 @@ if ( ! function_exists( 'woodmart_get_vc_map_marquee' ) ) {
 				),
 				function_exists( 'woodmart_get_vc_responsive_spacing_map' ) ? woodmart_get_vc_responsive_spacing_map() : '',
 
-				woodmart_get_vc_z_index_map('wd_z_index'),
-				woodmart_get_vc_z_index_map('wd_z_index_custom'),
+				woodmart_get_vc_z_index_map( 'wd_z_index' ),
+				woodmart_get_vc_z_index_map( 'wd_z_index_custom' ),
 
 				woodmart_get_responsive_dependency_width_map( 'responsive_tabs' ),
 				woodmart_get_responsive_dependency_width_map( 'width_desktop' ),

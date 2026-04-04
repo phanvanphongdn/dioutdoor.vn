@@ -73,6 +73,23 @@
             "color": "#333"
         }
     ],
+    "navigation-font": [
+        {
+            "google": "1",
+            "font-family": "Lato",
+            "font-weight": "700",
+            "font-style": "",
+            "font-subset": "",
+            "text-transform": "uppercase",
+            "font-size": "13",
+            "tablet": {
+                "font-size": ""
+            },
+            "mobile": {
+                "font-size": ""
+            }
+        }
+    ],
     "advanced_typography": {
         "0": {
             "custom": "",
@@ -193,5 +210,11 @@
     "prefooter_html_block": "258",
     "promo_popup": "1",
     "promo_popup_content_type": "html_block",
-    "categories_with_shadow": "disable"
+    "categories_with_shadow": "disable",
+    "blog_design": "masonry",
+    "blog_columns": "3",
+    "blog_masonry": "0",
+    "blog_archive_layout": "full-width",
+    "custom_product_tabs_enabled": "1",
+    "legacy_product_tabs_enabled": "0"
 }

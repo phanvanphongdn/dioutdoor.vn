@@ -1,51 +1,57 @@
-<?php if ( ! defined('WOODMART_THEME_DIR')) exit('No direct script access allowed');
-
+<?php // phpcs:ignore WordPress.Files.FileName.InvalidClassFileName
 /**
- * Register widget that displays HTML static block
+ * Static block widget.
  *
+ * @package woodmart
  */
 
-if ( ! class_exists( 'WOODMART_Static_Block_Widget' ) ) {
-	class WOODMART_Static_Block_Widget extends WPH_Widget {
-	
-		function __construct() {
-			
-		
-			// Configure widget array
-			$args = array( 
-				// Widget Backend label
-				'label' => esc_html__( 'WOODMART HTML Block', 'woodmart' ), 
-				// Widget Backend Description								
-				'description' => esc_html__( 'Display HTML block', 'woodmart' ), 	
-				'slug' => 'woodmart-html-block',
-			 );
-		
-		
-			// fields array
+if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
+	exit( 'No direct script access allowed' );
+}
 
-			$args['fields'] = array(
-				array(
-					'id'              => 'id',
-					'type'            => 'dropdown',
-					'heading'         => esc_html__( 'Select block', 'woodmart' ),
-					'callback_global' => 'woodmart_get_static_blocks_array',
-					'description'     => function_exists( 'woodmart_get_html_block_links' ) ? woodmart_get_html_block_links() : '',
-				),
-			); // fields array
+/**
+ * Register widget that displays selected HTML block.
+ */
+class WOODMART_Static_Block_Widget extends WPH_Widget {
 
-			// create widget
-			$this->create_widget( $args );
+	/**
+	 * Constructor.
+	 */
+	public function __construct() {
+		$args = array(
+			'label'       => esc_html__( 'WOODMART HTML Block', 'woodmart' ),
+			'description' => esc_html__( 'Display HTML block', 'woodmart' ),
+			'slug'        => 'woodmart-html-block',
+		);
+
+		$args['fields'] = array(
+			array(
+				'id'              => 'id',
+				'type'            => 'dropdown',
+				'heading'         => esc_html__( 'Select block', 'woodmart' ),
+				'callback_global' => 'woodmart_get_static_blocks_array',
+				'description'     => function_exists( 'woodmart_get_html_block_links' ) ? woodmart_get_html_block_links() : '',
+			),
+		);
+
+		$this->create_widget( $args );
+	}
+
+	/**
+	 * Render widget.
+	 *
+	 * @param array $args Widget arguments.
+	 * @param array $instance Widget instance.
+	 */
+	public function widget( $args, $instance ) {
+		if ( $this->is_widget_preview() ) {
+			return;
 		}
-		
-		// Output function
 
-		function widget( $args, $instance )	{
-			if ( $this->is_widget_preview() ) {
-				return;
-			}
+		echo wp_kses_post( $args['before_widget'] );
 
-			echo woodmart_get_html_block( $instance['id'] );
-		}
-	
-	} // class
+		echo woodmart_get_html_block( $instance['id'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+
+		echo wp_kses_post( $args['after_widget'] );
+	}
 }

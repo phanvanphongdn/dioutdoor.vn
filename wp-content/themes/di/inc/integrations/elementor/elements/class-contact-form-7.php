@@ -112,6 +112,15 @@ class Contact_Form_7 extends Widget_Base {
 		);
 
 		$this->add_control(
+			'css_classes',
+			array(
+				'type'         => 'wd_css_class',
+				'default'      => 'wd-cf7',
+				'prefix_class' => '',
+			)
+		);
+
+		$this->add_control(
 			'form_id',
 			[
 				'label'       => esc_html__( 'Select contact form', 'woodmart' ),
@@ -315,9 +324,36 @@ class Contact_Form_7 extends Widget_Base {
 
 		$settings = wp_parse_args( $this->get_settings_for_display(), $default_settings );
 
+		woodmart_enqueue_inline_style( 'wpcf7', true );
+
 		if ( ! $settings['form_id'] || ! defined( 'WPCF7_PLUGIN' ) ) {
 			echo '<div class="wd-notice wd-info">' . esc_html__( 'You need to create a form using Contact form 7 plugin to be able to display it using this element.', 'woodmart' ) . '</div>';
 			return;
+		}
+
+		if ( function_exists( 'wpcf7_enqueue_scripts' ) && ! wp_script_is( 'contact-form-7', 'registered' ) ) {
+			$assets = include wpcf7_plugin_path( 'includes/js/index.asset.php' );
+
+			$assets = wp_parse_args(
+				$assets,
+				array(
+					'dependencies' => array(),
+					'version'      => WPCF7_VERSION,
+				)
+			);
+
+			wp_register_script(
+				'contact-form-7',
+				wpcf7_plugin_url( 'includes/js/index.js' ),
+				array_merge(
+					$assets['dependencies'],
+					array( 'swv' )
+				),
+				$assets['version'],
+				array( 'in_footer' => true )
+			);
+
+			wpcf7_enqueue_scripts();
 		}
 
 		echo do_shortcode( '[contact-form-7 html_class="' . esc_attr( $settings['style'] ) . '" id="' . esc_attr( $settings['form_id'] ) . '"]' );

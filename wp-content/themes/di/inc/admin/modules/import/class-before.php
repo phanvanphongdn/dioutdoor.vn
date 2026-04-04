@@ -2,7 +2,7 @@
 /**
  * Import before.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Admin\Modules\Import;
@@ -37,11 +37,6 @@ class Before extends Singleton {
 			'color' => array(
 				'name'         => 'Color',
 				'slug'         => 'color',
-				'has_archives' => false,
-			),
-			'brand' => array(
-				'name'         => 'Brand',
-				'slug'         => 'brand',
 				'has_archives' => false,
 			),
 			'size'  => array(

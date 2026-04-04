@@ -1,16 +1,28 @@
-<?php if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
-	exit( 'No direct script access allowed' );}
-
+<?php
 /**
-* ------------------------------------------------------------------------------------------------
-* Menu price element
-* ------------------------------------------------------------------------------------------------
-*/
+ * Shortcode for Menu Price element.
+ *
+ * @package woodmart
+ */
+
+if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
+	exit( 'No direct script access allowed' );
+}
 
 if ( ! function_exists( 'woodmart_shortcode_menu_price' ) ) {
-	function woodmart_shortcode_menu_price( $atts, $content ) {
-		$click = $output = $class = '';
-		extract(
+	/**
+	 * Menu price shortcode.
+	 *
+	 * @param array $atts    Shortcode attributes.
+	 *
+	 * @return string
+	 */
+	function woodmart_shortcode_menu_price( $atts ) {
+		$click  = '';
+		$output = '';
+		$class  = '';
+
+		extract( // phpcs:ignore WordPress.PHP.DontExtract.extract_extract
 			shortcode_atts(
 				array(
 					'img_id'          => '',
@@ -36,7 +48,6 @@ if ( ! function_exists( 'woodmart_shortcode_menu_price' ) ) {
 
 		$class .= ' ' . $el_class;
 		$class .= woodmart_get_css_animation( $css_animation );
-		$class .= woodmart_get_old_classes( ' woodmart-menu-price' );
 
 		if ( ! empty( $woodmart_css_id ) ) {
 			$class .= ' wd-rs-' . $woodmart_css_id;
@@ -54,7 +65,7 @@ if ( ! function_exists( 'woodmart_shortcode_menu_price' ) ) {
 				<?php if ( $img_id ) : ?>
 					<div class="menu-price-image">
 						<?php
-							echo woodmart_otf_get_image_html( $img_id, $img_size );
+							echo woodmart_otf_get_image_html( $img_id, $img_size ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 						?>
 					</div>
 				<?php endif ?>

@@ -8,39 +8,18 @@
 namespace XTS\Modules\Frequently_Bought_Together;
 
 use XTS\Admin\Modules\Options;
-use XTS\Singleton;
 
 /**
  * Frequently bought together class.
  */
-class Main extends Singleton {
+class Main {
 	/**
-	 * Init.
+	 * Constructor.
 	 */
-	public function init() {
-		$this->add_options();
+	public function __construct() {
+		add_action( 'init', array( $this, 'add_options' ) );
 
-		if ( woodmart_get_opt( 'bought_together_enabled', 1 ) ) {
-			$this->include_files();
-		}
-	}
-
-	/**
-	 * Include files.
-	 *
-	 * @return void
-	 */
-	public function include_files() {
-		$files = array(
-			'class-controls',
-			'class-table',
-			'class-frontend',
-			'class-render',
-		);
-
-		foreach ( $files as $file ) {
-			require_once get_parent_theme_file_path( WOODMART_FRAMEWORK . '/integrations/woocommerce/modules/frequently-bought-together/' . $file . '.php' );
-		}
+		woodmart_include_files( __DIR__, $this->get_include_files() );
 	}
 
 	/**
@@ -205,6 +184,30 @@ class Main extends Singleton {
 		);
 	}
 
+	/**
+	 * Get list of module include files.
+	 *
+	 * @return array
+	 */
+	protected function get_include_files() {
+		$files = array();
+
+		if ( ! class_exists( 'WP_List_Table' ) ) {
+			$files[] = ABSPATH . 'wp-admin/includes/class-wp-list-table.php';
+		}
+
+		$files = array_merge(
+			$files,
+			array(
+				'./class-controls',
+				'./class-frontend',
+				'./class-render',
+				'./class-table',
+			)
+		);
+
+		return $files;
+	}
 }
 
-Main::get_instance();
+new Main();

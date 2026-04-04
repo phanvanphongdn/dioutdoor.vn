@@ -1,20 +1,27 @@
-<?php if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
+<?php
+/**
+ * Shortcode for Posts Slider element.
+ *
+ * @package woodmart
+ */
+
+use XTS\Gutenberg\Blocks_Assets;
+use XTS\Gutenberg\Post_CSS;
+
+if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
 	exit( 'No direct script access allowed' );
 }
 
-/**
- * ------------------------------------------------------------------------------------------------
- * Shortcode function to display posts as a slider or as a grid
- * ------------------------------------------------------------------------------------------------
- */
-
 if ( ! function_exists( 'woodmart_generate_posts_slider' ) ) {
+	/**
+	 * Generate posts slider shortcode.
+	 *
+	 * @param array  $atts Attributes.
+	 * @param object $query WP_Query instance.
+	 * @param array  $products Array of products.
+	 * @return false|string|void
+	 */
 	function woodmart_generate_posts_slider( $atts, $query = false, $products = false ) {
-		$posts_query     = $el_class = $args = $my_query = $speed = '';
-		$slides_per_view = $wrap = $scroll_per_page = $title_out = '';
-		$autoplay        = $hide_pagination_control = $hide_prev_next_buttons = $output = $owl_atts = '';
-		$posts           = array();
-
 		$parsed_atts = shortcode_atts(
 			array_merge(
 				woodmart_get_carousel_atts(),
@@ -32,6 +39,8 @@ if ( ! function_exists( 'woodmart_generate_posts_slider' ) ) {
 					'products_shadow'              => woodmart_get_opt( 'products_shadow' ),
 					'products_color_scheme'        => 'default',
 					'product_hover'                => woodmart_get_opt( 'products_hover' ),
+					'product_custom_hover'         => woodmart_get_opt( 'product_custom_hover' ),
+					'is_predefined_hover'          => false,
 					'stretch_product'              => woodmart_get_opt( 'stretch_product_desktop' ),
 					'stretch_product_tablet'       => woodmart_get_opt( 'stretch_product_tablet' ),
 					'stretch_product_mobile'       => woodmart_get_opt( 'stretch_product_mobile' ),
@@ -67,29 +76,10 @@ if ( ! function_exists( 'woodmart_generate_posts_slider' ) ) {
 			$atts
 		);
 
-		extract( $parsed_atts );
+		extract( $parsed_atts ); // phpcs:ignore WordPress.PHP.DontExtract.extract_extract
+		$is_ajax = ( defined( 'DOING_AJAX' ) && DOING_AJAX && isset( $_POST['action'] ) && $_POST['action'] === 'woodmart_get_recently_viewed_products' ); // phpcs:ignore
 
-		if ( empty( $product_hover ) || $product_hover == 'inherit' ) {
-			$product_hover = woodmart_get_opt( 'products_hover' );
-		}
-
-		woodmart_set_loop_prop( 'product_hover', $product_hover );
-		woodmart_set_loop_prop( 'img_size', $img_size );
-		woodmart_set_loop_prop( 'products_color_scheme', $products_color_scheme );
-
-		if ( ! empty( $grid_gallery ) ) {
-			woodmart_set_loop_prop( 'grid_gallery', $grid_gallery );
-
-			if ( ! empty( $grid_gallery_enable_arrows ) ) {
-				woodmart_set_loop_prop( 'grid_gallery_enable_arrows', $grid_gallery_enable_arrows );
-			}
-
-			if ( ! empty( $grid_gallery_control ) ) {
-				woodmart_set_loop_prop( 'grid_gallery_control', $grid_gallery_control );
-			}
-		}
-
-		if ( $blog_design == 'carousel' ) {
+		if ( 'carousel' === $blog_design ) {
 			woodmart_set_loop_prop( 'blog_layout', 'carousel' );
 			woodmart_set_loop_prop( 'blog_design', $blog_carousel_design );
 		}
@@ -111,15 +101,9 @@ if ( ! function_exists( 'woodmart_generate_posts_slider' ) ) {
 		$carousel_classes .= ' wd-carousel';
 		$carousel_classes .= ' wd-grid';
 
-		if ( $highlighted_products ) {
-			$wrapper_classes .= ' wd-highlighted-products' . woodmart_get_old_classes( ' woodmart-highlighted-products' );
-
-			woodmart_enqueue_inline_style( 'highlighted-product' );
-		}
-
 		$wrapper_classes .= ( $element_title ) ? ' with-title' : '';
 
-		if ( $lazy_loading == 'yes' ) {
+		if ( 'yes' === $lazy_loading ) {
 			woodmart_lazy_loading_init( true );
 			woodmart_enqueue_inline_style( 'lazy-loading' );
 		}
@@ -168,7 +152,7 @@ if ( ! function_exists( 'woodmart_generate_posts_slider' ) ) {
 			$nav_classes .= ' wd-hover-' . $arrows_hover_style;
 		}
 
-		if ( $post_type == 'post' ) {
+		if ( 'post' === $post_type ) {
 			$wrapper_classes .= ' wd-posts wd-blog-element';
 
 			woodmart_set_loop_prop( 'parts_title', $parts_title );
@@ -177,7 +161,24 @@ if ( ! function_exists( 'woodmart_generate_posts_slider' ) ) {
 			woodmart_set_loop_prop( 'parts_btn', $parts_btn );
 		}
 
-		if ( $post_type == 'product' ) {
+		if ( 'product' === $post_type ) {
+			if ( empty( $product_hover ) || 'inherit' === $product_hover ) {
+				$product_hover_type         = woodmart_get_opt( 'products_hover_type' );
+				$maybe_product_custom_hover = woodmart_get_opt( 'product_custom_hover' );
+
+				$is_predefined_hover = true;
+
+				if ( 'custom' === $product_hover_type && $maybe_product_custom_hover && 'publish' === get_post_status( $maybe_product_custom_hover ) ) {
+					$product_hover        = 'custom';
+					$product_custom_hover = $maybe_product_custom_hover;
+				} else {
+					$product_hover = woodmart_get_opt( 'products_hover' );
+				}
+			}
+
+			woodmart_set_loop_prop( 'product_hover', $product_hover );
+			woodmart_set_loop_prop( 'img_size', $img_size );
+
 			$wrapper_classes .= ' wd-products-element wd-products products';
 
 			if ( 'yes' === $ajax_recently_viewed ) {
@@ -200,83 +201,122 @@ if ( ! function_exists( 'woodmart_generate_posts_slider' ) ) {
 				}
 			}
 
-			if ( 'no' !== woodmart_loop_prop( 'grid_gallery' ) && woodmart_loop_prop( 'grid_gallery' ) ) {
-				$carousel_atts .= ' data-grid-gallery=\'' . wp_json_encode(
-					array(
-						'grid_gallery'               => woodmart_loop_prop( 'grid_gallery' ),
-						'grid_gallery_control'       => woodmart_loop_prop( 'grid_gallery_control' ),
-						'grid_gallery_enable_arrows' => woodmart_loop_prop( 'grid_gallery_enable_arrows' ),
-					)
-				) . '\' ';
+			if ( $highlighted_products ) {
+				$wrapper_classes .= ' wd-highlighted-products';
+
+				woodmart_enqueue_inline_style( 'highlighted-product' );
 			}
 
-			if ( 'default' !== $products_color_scheme && ( $products_bordered_grid || 'enable' === $products_bordered_grid ) && 'disable' !== $products_bordered_grid && 'outside' === $products_bordered_grid_style ) {
-				$wrapper_classes .= ' wd-bordered-' . woodmart_loop_prop( 'products_color_scheme' );
-			}
+			if ( 'custom' === $product_hover && ! empty( $product_custom_hover ) ) {
+				if ( woodmart_is_gutenberg_blocks_enabled() ) {
+					echo Blocks_Assets::get_instance()->get_inline_scripts( $product_custom_hover ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					echo Post_CSS::get_instance()->get_inline_blocks_css( $product_custom_hover ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				}
 
-			if ( ! empty( $products_divider ) && 'small' === $product_hover ) {
-				$wrapper_classes .= ' wd-with-divider';
-			}
+				if ( ! $is_predefined_hover ) {
+					woodmart_set_loop_prop( 'products_color_scheme', 'default' );
+				}
 
-			if ( $products_with_background ) {
-				woodmart_enqueue_inline_style( 'woo-opt-products-bg' );
+				$wrapper_classes .= ' wd-loop-builder-on';
+				$wrapper_classes .= ' wd-loop-item-wrap-' . $product_custom_hover;
 
-				$wrapper_classes .= ' wd-products-with-bg';
-			}
+				if ( get_post_meta( $product_custom_hover, 'wd_bordered_grid', true ) ) {
+					woodmart_enqueue_inline_style( 'bordered-product' );
 
-			if ( $products_shadow ) {
-				woodmart_enqueue_inline_style( 'woo-opt-products-shadow' );
+					$wrapper_classes .= ' products-bordered-grid';
+				}
 
-				$wrapper_classes .= ' wd-products-with-shadow';
-			}
+				if ( get_post_meta( $product_custom_hover, 'wd_stretch_product', true ) ) {
+					woodmart_enqueue_inline_style( 'woo-opt-stretch-cont' );
 
-			if ( ( woodmart_loop_prop( 'stretch_product_desktop' ) || woodmart_loop_prop( 'stretch_product_tablet' ) || woodmart_loop_prop( 'stretch_product_mobile' ) ) && in_array( $product_hover, array( 'icons', 'alt', 'button', 'standard', 'tiled', 'quick', 'base', 'fw-button', 'buttons-on-hover' ) ) ) {
-				woodmart_enqueue_inline_style( 'woo-opt-stretch-cont' );
-				if ( woodmart_loop_prop( 'stretch_product_desktop' ) ) {
 					$wrapper_classes .= ' wd-stretch-cont-lg';
 				}
-				if ( woodmart_loop_prop( 'stretch_product_tablet' ) ) {
+				if ( get_post_meta( $product_custom_hover, 'wd_stretch_productTablet', true ) ) {
+					woodmart_enqueue_inline_style( 'woo-opt-stretch-cont' );
+
 					$wrapper_classes .= ' wd-stretch-cont-md';
 				}
-				if ( woodmart_loop_prop( 'stretch_product_mobile' ) ) {
+				if ( get_post_meta( $product_custom_hover, 'wd_stretch_productMobile', true ) ) {
+					woodmart_enqueue_inline_style( 'woo-opt-stretch-cont' );
+
 					$wrapper_classes .= ' wd-stretch-cont-sm';
 				}
-			}
+			} else {
+				$wrapper_classes    .= ' wd-loop-builder-off';
+				$is_predefined_hover = true;
 
-			if ( woodmart_loop_prop( 'product_quantity' ) ) {
-				$wrapper_classes .= ' wd-quantity-enabled';
-			}
+				if ( ! empty( $grid_gallery ) ) {
+					woodmart_set_loop_prop( 'grid_gallery', $grid_gallery );
 
-			if ( $products_bordered_grid && ! $highlighted_products ) {
-				woodmart_enqueue_inline_style( 'bordered-product' );
+					if ( ! empty( $grid_gallery_enable_arrows ) ) {
+						woodmart_set_loop_prop( 'grid_gallery_enable_arrows', $grid_gallery_enable_arrows );
+					}
 
-				if ( 'outside' === $products_bordered_grid_style ) {
-					$wrapper_classes .= ' products-bordered-grid';
-				} elseif ( 'inside' === $products_bordered_grid_style ) {
-					$wrapper_classes .= ' products-bordered-grid-ins';
+					if ( ! empty( $grid_gallery_control ) ) {
+						woodmart_set_loop_prop( 'grid_gallery_control', $grid_gallery_control );
+					}
+				}
+
+				woodmart_set_loop_prop( 'products_color_scheme', $products_color_scheme );
+
+				if ( 'default' !== $products_color_scheme && ( $products_bordered_grid || 'enable' === $products_bordered_grid ) && 'disable' !== $products_bordered_grid && 'outside' === $products_bordered_grid_style ) {
+					$wrapper_classes .= ' wd-bordered-' . woodmart_loop_prop( 'products_color_scheme' );
+				}
+
+				if ( ! empty( $products_divider ) && 'small' === $product_hover ) {
+					$wrapper_classes .= ' wd-with-divider';
+				}
+
+				if ( ( woodmart_loop_prop( 'stretch_product_desktop' ) || woodmart_loop_prop( 'stretch_product_tablet' ) || woodmart_loop_prop( 'stretch_product_mobile' ) ) && in_array( $product_hover, array( 'icons', 'alt', 'button', 'standard', 'tiled', 'quick', 'base', 'fw-button', 'buttons-on-hover' ), true ) ) {
+					woodmart_enqueue_inline_style( 'woo-opt-stretch-cont' );
+					woodmart_enqueue_inline_style( 'woo-opt-stretch-cont-predefined' );
+					if ( woodmart_loop_prop( 'stretch_product_desktop' ) ) {
+						$wrapper_classes .= ' wd-stretch-cont-lg';
+					}
+					if ( woodmart_loop_prop( 'stretch_product_tablet' ) ) {
+						$wrapper_classes .= ' wd-stretch-cont-md';
+					}
+					if ( woodmart_loop_prop( 'stretch_product_mobile' ) ) {
+						$wrapper_classes .= ' wd-stretch-cont-sm';
+					}
+				}
+
+				if ( woodmart_loop_prop( 'product_quantity' ) ) {
+					$wrapper_classes .= ' wd-quantity-enabled';
 				}
 			}
 
-			if ( ( woodmart_loop_prop( 'stretch_product_desktop' ) || woodmart_loop_prop( 'stretch_product_tablet' ) || woodmart_loop_prop( 'stretch_product_mobile' ) ) && in_array( $product_hover, array( 'icons', 'alt', 'button', 'standard', 'tiled', 'quick', 'base', 'fw-button', 'buttons-on-hover' ) ) ) {
-				woodmart_enqueue_inline_style( 'woo-opt-stretch-cont' );
-				if ( woodmart_loop_prop( 'stretch_product_desktop' ) ) {
-					$carousel_classes .= ' wd-stretch-cont-lg';
+			if ( $is_predefined_hover ) {
+				if ( $products_bordered_grid && ! $highlighted_products ) {
+					woodmart_enqueue_inline_style( 'bordered-product' );
+					woodmart_enqueue_inline_style( 'bordered-product-predefined' );
+
+					if ( 'outside' === $products_bordered_grid_style ) {
+						$wrapper_classes .= ' products-bordered-grid';
+					} elseif ( 'inside' === $products_bordered_grid_style ) {
+						$wrapper_classes .= ' products-bordered-grid-ins';
+					}
 				}
-				if ( woodmart_loop_prop( 'stretch_product_tablet' ) ) {
-					$carousel_classes .= ' wd-stretch-cont-md';
+
+				if ( $products_with_background ) {
+					woodmart_enqueue_inline_style( 'woo-opt-products-bg' );
+
+					$wrapper_classes .= ' wd-products-with-bg';
 				}
-				if ( woodmart_loop_prop( 'stretch_product_mobile' ) ) {
-					$carousel_classes .= ' wd-stretch-cont-sm';
+
+				if ( $products_shadow ) {
+					woodmart_enqueue_inline_style( 'woo-opt-products-shadow' );
+
+					$wrapper_classes .= ' wd-products-with-shadow';
 				}
 			}
 		}
 
-		if ( $post_type == 'portfolio' ) {
+		if ( 'portfolio' === $post_type ) {
 			$wrapper_classes .= ' wd-projects wd-portfolio-element';
 		}
 
-		if ( $scroll_carousel_init == 'yes' ) {
-			woodmart_enqueue_js_library( 'waypoints' );
+		if ( 'yes' === $scroll_carousel_init ) {
 			$carousel_classes .= ' scroll-init';
 		}
 
@@ -285,7 +325,7 @@ if ( ! function_exists( 'woodmart_generate_posts_slider' ) ) {
 		}
 
 		if ( 'none' !== woodmart_get_opt( 'product_title_lines_limit' ) ) {
-			woodmart_enqueue_inline_style( 'woo-opt-title-limit' );
+			woodmart_enqueue_inline_style( 'woo-opt-title-limit-predefined' );
 			$wrapper_classes .= ' title-line-' . woodmart_get_opt( 'product_title_lines_limit' );
 		}
 
@@ -304,6 +344,8 @@ if ( ! function_exists( 'woodmart_generate_posts_slider' ) ) {
 
 		if ( ( $query && $query->have_posts() ) || $products || 'yes' === $ajax_recently_viewed ) {
 			?>
+			<?php if ( ! $is_ajax ) : ?>
+
 			<div id="<?php echo esc_attr( $carousel_id ); ?>" class="wd-carousel-container <?php echo esc_attr( $wrapper_classes ); ?>">
 				<?php if ( $inner_content ) : ?>
 					<?php echo do_shortcode( $inner_content ); ?>
@@ -311,13 +353,16 @@ if ( ! function_exists( 'woodmart_generate_posts_slider' ) ) {
 
 				<?php if ( $title || $element_title ) : ?>
 					<?php
+					$element_title_tag = in_array( $element_title_tag, array_keys( woodmart_get_allowed_html() ), true ) ? $element_title_tag : 'h4';
+
 					printf(
 						'<%1$s class="wd-el-title title slider-title element-title"><span>%2$s</span></%1$s>',
 						esc_attr( apply_filters( 'woodmart_products_title_tag', $element_title_tag ) ),
-						esc_html( $title ? $title : $element_title )
+						( $title ? esc_html( $title ) : esc_html( $element_title ) )
 					);
 					?>
 				<?php endif; ?>
+			<?php endif; ?>
 
 				<div class="wd-carousel-inner">
 					<div class="<?php echo esc_attr( $carousel_classes ); ?>" <?php echo wp_kses( $carousel_atts, true ); ?>>
@@ -339,9 +384,11 @@ if ( ! function_exists( 'woodmart_generate_posts_slider' ) ) {
 					<?php woodmart_get_carousel_nav_template( $nav_classes, $parsed_atts ); ?>
 				</div>
 
+			<?php if ( ! $is_ajax ) : ?>
 				<?php woodmart_get_carousel_pagination_template( $parsed_atts ); ?>
 				<?php woodmart_get_carousel_scrollbar_template( $parsed_atts ); ?>
 			</div>
+			<?php endif; ?>
 			<?php
 		}
 		wp_reset_postdata();
@@ -352,7 +399,7 @@ if ( ! function_exists( 'woodmart_generate_posts_slider' ) ) {
 			wc_reset_loop();
 		}
 
-		if ( $lazy_loading == 'yes' ) {
+		if ( 'yes' === $lazy_loading ) {
 			woodmart_lazy_loading_deinit();
 		}
 
@@ -366,13 +413,20 @@ if ( ! function_exists( 'woodmart_generate_posts_slider' ) ) {
 }
 
 if ( ! function_exists( 'woodmart_carousel_query_item' ) ) {
+	/**
+	 * Carousel query item template.
+	 *
+	 * @param object $query WP_Query instance.
+	 * @param object $product WC_Product instance.
+	 * @return void
+	 */
 	function woodmart_carousel_query_item( $query = false, $product = false ) {
 		global $post;
 		if ( $query ) {
 			$query->the_post(); // Get post from query
 		} elseif ( $product ) {
 			$post_object = get_post( $product->get_id() );
-			$post        = $post_object;
+			$post        = $post_object; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
 			setup_postdata( $post );
 		}
 
@@ -387,10 +441,10 @@ if ( ! function_exists( 'woodmart_carousel_query_item' ) ) {
 
 		?>
 		<div class="wd-carousel-item">
-			<?php if ( get_post_type() == 'product' || get_post_type() == 'product_variation' && woodmart_woocommerce_installed() ) : ?>
+			<?php if ( in_array( get_post_type(), array( 'product', 'product_variation' ), true ) && woodmart_woocommerce_installed() ) : ?>
 				<?php woodmart_set_loop_prop( 'is_slider', true ); ?>
 				<?php wc_get_template_part( 'content-product' ); ?>
-			<?php elseif ( get_post_type() == 'portfolio' ) : ?>
+			<?php elseif ( 'portfolio' === get_post_type() ) : ?>
 				<?php get_template_part( 'content', 'portfolio-slider' ); ?>
 			<?php else : ?>
 				<?php get_template_part( 'templates/content', woodmart_get_blog_design_name( woodmart_loop_prop( 'blog_design' ), 'slider' ) ); ?>

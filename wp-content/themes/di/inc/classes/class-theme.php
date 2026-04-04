@@ -2,10 +2,10 @@
 /**
  * Main theme class.
  *
- * @package xts
+ * @package woodmart
  */
 
-namespace XTS;
+namespace XTS; // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedNamespaceFound
 
 if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
 	exit( 'No direct script access allowed' );
@@ -45,9 +45,9 @@ class Theme {
 			$this->admin_files_include();
 		}
 
-		if ( 'elementor' === woodmart_get_current_page_builder() ) {
-			require_once get_parent_theme_file_path( WOODMART_FRAMEWORK . '/integrations/elementor/class-elementor.php' );
-		}
+		add_action( 'init', array( $this, 'enqueue_theme_settings_options' ), 5 );
+		add_action( 'init', array( __CLASS__, 'check_version' ), 5 );
+		add_action( 'woodmart_scheduled_update', array( __CLASS__, 'run_update' ), 10, 1 );
 	}
 
 	/**
@@ -60,6 +60,7 @@ class Theme {
 			'helpers',
 			'functions',
 			'actions',
+			'template-tags/class-woodmart-custom-walker-category',
 			'template-tags/template-tags',
 			'template-tags/portfolio',
 			'theme-setup',
@@ -71,11 +72,18 @@ class Theme {
 			// Import.
 			'admin/modules/import/class-import',
 
+			// Woocommerce integration.
+			'integrations/woocommerce/functions',
+			'integrations/woocommerce/helpers',
+			'integrations/woocommerce/class-woodmart-wc-product-cat-list-walker',
+			'integrations/woocommerce/template-tags',
+			'integrations/woocommerce/class-woodmart-walker-category',
+
 			// General modules.
 			'modules/parts-css-files/class-parts-css-files',
+			'modules/inline-css-files/class-inline-css-files',
 			'modules/styles-storage/class-styles-storage',
 			'modules/lazy-loading',
-			'modules/search',
 			'modules/mobile-optimization',
 			'modules/nav-menu-images/nav-menu-images',
 			'modules/sticky-toolbar',
@@ -86,16 +94,20 @@ class Theme {
 			'modules/theme-settings-backup/class-main',
 			'modules/images/functions',
 			'modules/mega-menu-walker/class-mega-menu-walker',
+			'modules/header-builder/functions',
 			'modules/header-builder/class-header-builder',
 			'modules/twitter',
-			'modules/seo-scheme/class-faq-schema',
+			'modules/seo-scheme/class-faq',
+			'modules/seo-scheme/class-breadcrumbs',
+			'modules/search/class-main',
+			'modules/floating-blocks/class-main',
+			'modules/performance/class-lcp',
 
-			// Woocommerce integration.
-			'integrations/woocommerce/functions',
-			'integrations/woocommerce/helpers',
-			'integrations/woocommerce/template-tags',
+			'admin/modules/options/class-themesettingscss',
+			'admin/modules/options/class-options',
 
 			// Woocommerce modules.
+			'integrations/woocommerce/managers/class-module-endpoints-manager',
 			'integrations/woocommerce/modules/attributes-meta-boxes',
 			'integrations/woocommerce/modules/product-360-view',
 			'integrations/woocommerce/modules/size-guide',
@@ -114,6 +126,27 @@ class Theme {
 			'integrations/woocommerce/modules/sticky-navigation/class-main',
 			'integrations/woocommerce/modules/product-gallery-video/class-main',
 			'integrations/woocommerce/modules/checkout-fields/class-main',
+			'integrations/woocommerce/modules/variation-gallery',
+			'integrations/woocommerce/modules/variation-gallery-new',
+			'integrations/woocommerce/modules/wishlist/class-wc-wishlist',
+			'integrations/woocommerce/modules/shipping-progress-bar/class-main',
+			'integrations/woocommerce/modules/quick-buy/class-main',
+			'integrations/woocommerce/modules/counter-visitors/class-main',
+			'integrations/woocommerce/modules/linked-variations/class-main',
+			'integrations/woocommerce/modules/unit-of-measure/class-main',
+			'integrations/woocommerce/modules/show-single-variations/class-main',
+			'integrations/woocommerce/modules/frequently-bought-together/class-main',
+			'integrations/woocommerce/modules/sold-counter/class-main',
+			'integrations/woocommerce/modules/dynamic-discounts/class-main',
+			'integrations/woocommerce/modules/free-gifts/class-main',
+			'integrations/woocommerce/modules/out-of-stock-manager/class-main',
+			'integrations/woocommerce/modules/waitlist/class-main',
+			'integrations/woocommerce/modules/estimate-delivery/class-main',
+			'integrations/woocommerce/modules/product-tabs/class-main',
+			'integrations/woocommerce/modules/abandoned-cart/class-main',
+			'integrations/woocommerce/modules/review-reminder/class-main',
+			'integrations/woocommerce/modules/price-tracker/class-main',
+			'integrations/woocommerce/modules/marketing-consent/class-main',
 
 			// Plugin integrations.
 			'integrations/wcmp',
@@ -131,63 +164,23 @@ class Theme {
 			'integrations/rocket',
 			'integrations/woo-preview-emails',
 			'integrations/woocs',
+			'integrations/woosb',
+			'integrations/wooco',
 			'integrations/wcpay',
 			'integrations/curcy',
 			'integrations/rank-math',
-
-			'admin/modules/options/class-themesettingscss',
-			'admin/modules/options/class-options',
-
-			'admin/settings/sections',
-			'admin/settings/api-integrations',
-			'admin/settings/product-archive',
-			'admin/settings/general',
-			'admin/settings/general-layout',
-			'admin/settings/page-title',
-			'admin/settings/footer',
-			'admin/settings/typography',
-			'admin/settings/colors',
-			'admin/settings/carousel',
-			'admin/settings/blog',
-			'admin/settings/portfolio',
-			'admin/settings/shop',
-			'admin/settings/product',
-			'admin/settings/login',
-			'admin/settings/custom-css',
-			'admin/settings/custom-js',
-			'admin/settings/social',
-			'admin/settings/performance',
-			'admin/settings/other',
-			'admin/settings/maintenance',
-			'admin/settings/white-label',
-			'admin/settings/import',
-			'admin/settings/wishlist',
-
-			'integrations/woocommerce/modules/variation-gallery',
-			'integrations/woocommerce/modules/variation-gallery-new',
-			'integrations/woocommerce/modules/wishlist/class-wc-wishlist',
-			'integrations/woocommerce/modules/shipping-progress-bar/class-main',
-			'integrations/woocommerce/modules/quick-buy/class-main',
-			'integrations/woocommerce/modules/counter-visitors/class-main',
-			'integrations/woocommerce/modules/linked-variations/class-main',
-			'integrations/woocommerce/modules/unit-of-measure/class-main',
-			'integrations/woocommerce/modules/show-single-variations/class-main',
-			'integrations/woocommerce/modules/frequently-bought-together/class-main',
-			'integrations/woocommerce/modules/sold-counter/class-main',
-			'integrations/woocommerce/modules/dynamic-discounts/class-main',
-			'integrations/woocommerce/modules/free-gifts/class-main',
-			'integrations/woocommerce/modules/out-of-stock-manager/class-main',
-			'integrations/woocommerce/modules/waitlist/class-main',
-			'integrations/woocommerce/modules/estimate-delivery/class-main',
+			'integrations/cartflows',
+			'integrations/vgse',
+			'integrations/woo-subscriptions',
+			'integrations/revslider',
 		);
 
 		if ( did_action( 'elementor/loaded' ) ) {
 			$files[] = 'integrations/elementor/helpers';
+			$files[] = '/integrations/elementor/class-elementor';
 		}
 
-		foreach ( $files as $file ) {
-			require_once get_parent_theme_file_path( WOODMART_FRAMEWORK . '/' . $file . '.php' );
-		}
+		$this->enqueue_files( $files );
 	}
 
 	/**
@@ -197,7 +190,7 @@ class Theme {
 	 */
 	private function register_classes() {
 		foreach ( $this->register_classes as $class ) {
-			Registry::getInstance()->$class;
+			Registry::get_instance()->$class;
 		}
 	}
 
@@ -246,9 +239,7 @@ class Theme {
 			'integrations/visual-composer/fields/new/notice',
 		);
 
-		foreach ( $files as $file ) {
-			require_once get_parent_theme_file_path( WOODMART_FRAMEWORK . '/' . $file . '.php' );
-		}
+		$this->enqueue_files( $files );
 	}
 
 	/**
@@ -286,6 +277,7 @@ class Theme {
 			'counter',
 			'blog',
 			'brands',
+			'breadcrumbs',
 			'countdown-timer',
 			'extra-menu',
 			'google-map',
@@ -294,6 +286,8 @@ class Theme {
 			'mega-menu',
 			'menu-price',
 			'nested-carousel',
+			'page-heading',
+			'page-title',
 			'popup',
 			'portfolio',
 			'pricing-tables',
@@ -303,6 +297,7 @@ class Theme {
 			'responsive-text-block',
 			'text-block',
 			'marquee',
+			'contact-form-7',
 			'image',
 			'mailchimp',
 			'title',
@@ -325,9 +320,10 @@ class Theme {
 			'table',
 			'video',
 			'compare-images',
+			'toggle',
 		);
 
-		if ( 'wpb' === woodmart_get_current_page_builder() && defined( 'WPB_VC_VERSION' ) ) {
+		if ( defined( 'WPB_VC_VERSION' ) ) {
 			$files = array_merge( $files, $wpb_files );
 
 			if ( ! woodmart_woocommerce_installed() ) {
@@ -380,6 +376,7 @@ class Theme {
 			'responsive-text-block',
 			'text-block',
 			'marquee',
+			'contact-form-7',
 			'image',
 			'mailchimp',
 			'row-divider',
@@ -391,6 +388,8 @@ class Theme {
 			'list',
 			'image-hotspot',
 			'products-tabs',
+			'page-heading',
+			'page-title',
 			'brands',
 			'categories',
 			'product-filters',
@@ -402,6 +401,8 @@ class Theme {
 			'table',
 			'video',
 			'compare-images',
+			'breadcrumbs',
+			'toggle',
 		);
 
 		$woo_files = array(
@@ -430,16 +431,15 @@ class Theme {
 	 * @return void
 	 */
 	private function dashboard_files() {
-		$files = array(
-			'admin/modules/dashboard/class-dashboard',
-			'admin/modules/dashboard/class-menu',
-			'admin/modules/dashboard/class-slider',
-			'admin/modules/dashboard/class-status-button',
+		$this->enqueue_files(
+			array(
+				'admin/modules/dashboard/class-dashboard',
+				'admin/modules/dashboard/class-menu',
+				'admin/modules/dashboard/class-slider',
+				'admin/modules/dashboard/class-status-button',
+				'admin/modules/guide-tour/class-main',
+			)
 		);
-
-		foreach ( $files as $file ) {
-			require_once get_parent_theme_file_path( WOODMART_FRAMEWORK . '/' . $file . '.php' );
-		}
 	}
 
 	/**
@@ -448,16 +448,14 @@ class Theme {
 	 * @return void
 	 */
 	private function admin_files_include() {
-		$files = array(
-			'admin/modules/setup-wizard/class-setup-wizard',
-			'admin/modules/setup-wizard/class-install-child-theme',
-			'admin/modules/setup-wizard/class-install-plugins',
-			'admin/init',
+		$this->enqueue_files(
+			array(
+				'admin/modules/setup-wizard/class-setup-wizard',
+				'admin/modules/setup-wizard/class-install-child-theme',
+				'admin/modules/setup-wizard/class-install-plugins',
+				'admin/init',
+			)
 		);
-
-		foreach ( $files as $file ) {
-			require_once get_parent_theme_file_path( WOODMART_FRAMEWORK . '/' . $file . '.php' );
-		}
 	}
 
 	/**
@@ -478,5 +476,80 @@ class Theme {
 
 			$this->register_classes[] = 'auth';
 		}
+	}
+
+	/**
+	 * Enqueue theme settings options.
+	 *
+	 * @return void
+	 */
+	public function enqueue_theme_settings_options() {
+		$this->enqueue_files(
+			array(
+				'admin/settings/sections',
+				'admin/settings/general',
+				'admin/settings/general-layout',
+				'admin/settings/api-integrations',
+				'admin/settings/product-archive',
+				'admin/settings/page-title',
+				'admin/settings/footer',
+				'admin/settings/typography',
+				'admin/settings/colors',
+				'admin/settings/carousel',
+				'admin/settings/blog',
+				'admin/settings/portfolio',
+				'admin/settings/shop',
+				'admin/settings/product',
+				'admin/settings/login',
+				'admin/settings/custom-css',
+				'admin/settings/custom-js',
+				'admin/settings/social',
+				'admin/settings/performance',
+				'admin/settings/other',
+				'admin/settings/maintenance',
+				'admin/settings/white-label',
+				'admin/settings/import',
+				'admin/settings/wishlist',
+			)
+		);
+	}
+
+	/**
+	 * Enqueue files.
+	 *
+	 * @param array $files List with files to include.
+	 * @return void
+	 */
+	private function enqueue_files( $files ) {
+		foreach ( $files as $file ) {
+			require_once get_parent_theme_file_path( WOODMART_FRAMEWORK . '/' . $file . '.php' );
+		}
+	}
+
+	/**
+	 * Check theme version and run the updater is required.
+	 */
+	public static function check_version() {
+		$current_version = get_option( 'woodmart_version' );
+		$target_version  = woodmart_get_theme_info( 'Version' );
+
+		if ( version_compare( $current_version, $target_version, '<' ) ) {
+			if ( defined( 'DISABLE_WP_CRON' ) && DISABLE_WP_CRON ) {
+				self::run_update( $target_version );
+			} elseif ( ! wp_next_scheduled( 'woodmart_scheduled_update' ) ) {
+				wp_schedule_single_event( time() + 10, 'woodmart_scheduled_update', array( $target_version ) );
+			}
+		}
+	}
+
+	/**
+	 * Do action and update theme version in db.
+	 *
+	 * @param string $version Actual theme version.
+	 */
+	public static function run_update( $version ) {
+		do_action( 'woodmart_updated', $version );
+
+		update_option( 'woodmart_version', $version );
 	}
 }

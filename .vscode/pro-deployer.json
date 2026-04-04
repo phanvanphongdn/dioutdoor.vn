@@ -1,0 +1,41 @@
+{
+	"enableStatusBarItem": true,
+	"enableQuickPick": true,
+	"uploadOnSave": false,
+	"autoDelete": false,
+	"checkGitignore": false,
+	"activeTargets": [
+		"edit","di"
+	],
+	"concurrency": 5,
+	"ignore": [
+		".git/**/*",
+		".vscode/**/*"
+	],
+	"include": [],
+	"targets": [
+		{
+			"name": "edit",
+			"type": "ftp",
+			"host": "45.252.248.83",
+			"port": 21,
+			"user": "bfqaombi",
+			"password": "-14F6Ved0lFe;T",
+			"dir": "/edit.dioutdoor.vn",
+			"baseDir": "/",
+			"privateKey": null,
+			"passphrase": null
+		},
+		{
+			"name": "di",
+			"type": "ftp",
+			"host": "45.252.248.83",
+			"port": 21,
+			"user": "bfqaombi",
+			"password": "-14F6Ved0lFe;T",
+			"dir": "/public_html",
+			"baseDir": "/",
+			"secure": false
+		}
+	]
+}

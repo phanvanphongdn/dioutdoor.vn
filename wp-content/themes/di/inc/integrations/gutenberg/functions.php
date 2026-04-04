@@ -2,7 +2,7 @@
 /**
  * Gutenberg.
  *
- * @package xts
+ * @package woodmart
  */
 
 use XTS\Modules\Layouts\Global_Data;
@@ -22,8 +22,8 @@ if ( ! function_exists( 'woodmart_gutenberg_deregister_styles' ) ) {
 		}
 
 		$styles->add( 'wp-editor-classic-layout-styles', '', array(), false, 'all' );
-
 	}
+
 	add_action( 'wp_default_styles', 'woodmart_gutenberg_deregister_styles', 20 );
 }
 
@@ -31,18 +31,27 @@ if ( ! function_exists( 'woodmart_filter_block_categories_when_post_provided' ) 
 	/**
 	 * Added xtemos category from blocks.
 	 *
-	 * @param array[]                 $block_categories Array of categories for block types.
-	 * @param WP_Block_Editor_Context $editor_context The current block editor context.
+	 * @param array[] $block_categories Array of categories for block types.
+	 *
 	 * @return array[]
 	 */
-	function woodmart_filter_block_categories_when_post_provided( $block_categories, $editor_context ) {
+	function woodmart_filter_block_categories_when_post_provided( $block_categories ) {
 		array_unshift(
 			$block_categories,
 			array(
-				'slug'  => 'xtemos_woo_elements',
-				'title' => __( '[XTemos] WooCommerce', 'woodmart' ),
+				'slug'  => 'xtemos',
+				'title' => __( 'Xtemos', 'woodmart' ),
 				'icon'  => null,
 			),
+			array(
+				'slug'  => 'xtemos_site_elements',
+				'title' => __( '[XTemos] Site', 'woodmart' ),
+				'icon'  => null,
+			),
+		);
+
+		array_unshift(
+			$block_categories,
 			array(
 				'slug'  => 'xtemos_single_product',
 				'title' => __( '[XTemos] Single product', 'woodmart' ),
@@ -54,6 +63,11 @@ if ( ! function_exists( 'woodmart_filter_block_categories_when_post_provided' ) 
 				'icon'  => null,
 			),
 			array(
+				'slug'  => 'xtemos_posts_elements',
+				'title' => __( '[XTemos] Posts elements', 'woodmart' ),
+				'icon'  => null,
+			),
+			array(
 				'slug'  => 'xtemos_cart_elements',
 				'title' => __( '[XTemos] Cart', 'woodmart' ),
 				'icon'  => null,
@@ -62,22 +76,33 @@ if ( ! function_exists( 'woodmart_filter_block_categories_when_post_provided' ) 
 				'slug'  => 'xtemos_checkout_elements',
 				'title' => __( '[XTemos] Checkout', 'woodmart' ),
 				'icon'  => null,
-			)
-		);
-
-		array_unshift(
-			$block_categories,
+			),
 			array(
-				'slug'  => 'xtemos',
-				'title' => __( 'Xtemos', 'woodmart' ),
+				'slug'  => 'xtemos_my_account_elements',
+				'title' => __( '[XTemos] My account', 'woodmart' ),
 				'icon'  => null,
-			)
+			),
+			array(
+				'slug'  => 'xtemos_thank_you_page_elements',
+				'title' => __( '[XTemos] Thank you page', 'woodmart' ),
+				'icon'  => null,
+			),
+			array(
+				'slug'  => 'xtemos_post_archive_elements',
+				'title' => __( '[XTemos] Post archive', 'woodmart' ),
+				'icon'  => null,
+			),
+			array(
+				'slug'  => 'xtemos_loop_builder',
+				'title' => __( '[XTemos] Loop items', 'woodmart' ),
+				'icon'  => null,
+			),
 		);
 
 		return $block_categories;
 	}
 
-	add_filter( 'block_categories_all', 'woodmart_filter_block_categories_when_post_provided', 100000, 2 );
+	add_filter( 'block_categories_all', 'woodmart_filter_block_categories_when_post_provided', 100000, 1 );
 }
 
 // Make custom sizes selectable from WordPress admin.
@@ -134,11 +159,13 @@ if ( ! function_exists( 'woodmart_gutenberg_custom_scripts' ) ) {
 	 * @since 1.0.0
 	 */
 	function woodmart_gutenberg_custom_scripts() {
-		if ( ! woodmart_get_opt( 'gutenberg_blocks' ) || ! is_admin() ) {
+		if ( ! woodmart_is_gutenberg_blocks_enabled() || ! is_admin() ) {
 			return;
 		}
 
 		add_filter( 'woodmart_localized_string_array', 'woodmart_gutenberg_update_localized' );
+
+		wp_enqueue_script( 'jquery' );
 
 		woodmart_register_libraries_scripts();
 		woodmart_register_scripts();
@@ -158,7 +185,6 @@ if ( ! function_exists( 'woodmart_gutenberg_custom_scripts' ) ) {
 
 		woodmart_enqueue_js_library( 'panr-parallax-bundle' );
 		woodmart_enqueue_js_script( 'portfolio-effect' );
-		woodmart_enqueue_js_script( 'portfolio-wd-nav-portfolios' );
 
 		woodmart_enqueue_js_library( 'countdown-bundle' );
 
@@ -186,7 +212,7 @@ if ( ! function_exists( 'woodmart_gutenberg_editor_custom_styles' ) ) {
 
 		wp_enqueue_style( 'wd-gutenberg-editor-style', WOODMART_THEME_DIR . '/css/parts/wp-editor' . $rtl . '.min.css', array(), woodmart_get_theme_info( 'Version' ) );
 
-		if ( woodmart_get_opt( 'gutenberg_blocks' ) ) {
+		if ( woodmart_is_gutenberg_blocks_enabled() ) {
 			wp_enqueue_style( 'wd-gutenberg-editor-blocks-style', WOODMART_THEME_DIR . '/css/parts/wp-editor-blocks' . $rtl . '.min.css', array(), woodmart_get_theme_info( 'Version' ) );
 		}
 
@@ -221,7 +247,7 @@ if ( ! function_exists( 'woodmart_gutenberg_editor_custom_styles' ) ) {
 
 		<?php foreach ( $bg_settings as $selector => $value ) : ?>
 			<?php if ( ! empty( $value['color'] ) || ! empty( $value['url'] ) ) : ?>
-				<?php echo $selector; ?> {
+				<?php echo $selector; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> {
 					<?php if ( ! empty( $value['color'] ) ) : ?>
 						background-color: <?php echo esc_attr( $value['color'] ); ?>!important;
 					<?php endif; ?>
@@ -261,7 +287,7 @@ if ( ! function_exists( 'woodmart_gutenberg_editor_custom_styles' ) ) {
 
 		$style = ob_get_clean();
 
-		wp_register_style( 'wd-gutenberg-editor-custom', false );
+		wp_register_style( 'wd-gutenberg-editor-custom', false, array(), woodmart_get_theme_info( 'Version' ) );
 		wp_enqueue_style( 'wd-gutenberg-editor-custom' );
 		wp_add_inline_style( 'wd-gutenberg-editor-custom', $style );
 	}
@@ -278,7 +304,8 @@ if ( ! function_exists( 'woodmart_gutenberg_update_localized' ) ) {
 	 * @return array
 	 */
 	function woodmart_gutenberg_update_localized( $localized ) {
-		$localized['google_map_api_key'] = woodmart_get_opt( 'google_map_api_key', '' );
+		$localized['google_map_api_key']       = woodmart_get_opt( 'google_map_api_key', '' );
+		$localized['deferred_block_rendering'] = woodmart_get_opt( 'deferred_block_rendering' ) ? 'yes' : 'no';
 
 		return $localized;
 	}

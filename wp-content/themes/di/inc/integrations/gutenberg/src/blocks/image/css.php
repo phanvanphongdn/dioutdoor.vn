@@ -31,14 +31,15 @@ $block_css->merge_with(
 		array(
 			'selector'                     => $block_selector,
 			'selector_hover'               => $block_selector_hover,
+			'selector_parent_hover'        => $block_selector_parent_hover,
 
 			'selector_border'              => $block_selector . ' img',
 			'selector_border_hover'        => $block_selector . ' img:hover',
-			'selector_border_parent_hover' => '.wd-hover-parent:hover ' . $block_selector . ' img',
+			'selector_border_parent_hover' => $block_selector_parent_hover . ' img',
 
 			'selector_shadow'              => $block_selector . ' img',
 			'selector_shadow_hover'        => $block_selector . ' img:hover',
-			'selector_shadow_parent_hover' => '.wd-hover-parent:hover ' . $block_selector . ' img',
+			'selector_shadow_parent_hover' => $block_selector_parent_hover . ' img',
 
 			'selector_transition'          => $block_selector . ',' . $block_selector . ' img',
 		),

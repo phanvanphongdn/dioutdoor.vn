@@ -1,23 +1,34 @@
 <?php
+/**
+ * Header categories element template.
+ *
+ * @var array $params
+ * @var string $id
+ */
+
 use XTS\Modules\Mega_Menu_Walker;
 
-if ( $params['menu_id'] == '' ) {
+if ( '' === $params['menu_id'] ) {
 	return;
 }
 
 $categories_title  = ! empty( $params['categories_title'] ) ? $params['categories_title'] : esc_html__( 'Browse Categories', 'woodmart' );
 $extra_class       = '';
 $dropdowns_classes = '';
-$opened            = get_post_meta( woodmart_get_the_ID(), '_woodmart_open_categories', true );
+$opened            = woodmart_get_post_meta_value( woodmart_get_the_ID(), '_woodmart_open_categories' );
 $icon_type         = $params['icon_type'];
-$menu_class        = woodmart_get_old_classes( ' vertical-navigation' );
+$menu_class        = '';
 $icon_classes      = 'menu-opener-icon';
 
 if ( woodmart_woocommerce_installed() && is_product() ) {
 	$opened = false;
 }
 
-$class = ( $params['color_scheme'] != 'inherit' ) ? 'color-scheme-' . $params['color_scheme'] : '';
+if ( ! empty( $params['icon_alignment'] ) && 'inherit' !== $params['icon_alignment'] ) {
+	$menu_class .= ' wd-icon-' . $params['icon_alignment'];
+}
+
+$class = ( 'inherit' !== $params['color_scheme'] ) ? 'color-scheme-' . $params['color_scheme'] : '';
 
 if ( ! empty( $params['background'] ) && ! empty( $params['background']['background-color'] ) ) {
 	$class .= ' has-bg';
@@ -41,14 +52,13 @@ if ( ! empty( $params['bg_overlay'] ) ) {
 	$extra_class .= ' wd-with-overlay';
 }
 
-$menu_class  .= ' wd-design-' . $params['design'];
-$extra_class .= ( $opened ) ? woodmart_get_old_classes( ' opened-menu' ) : woodmart_get_old_classes( ' show-on-hover' );
+$menu_class .= ' wd-design-' . $params['design'];
 
 if ( 'light' === whb_get_dropdowns_color() ) {
 	$dropdowns_classes .= ' color-scheme-light';
 }
 
-if ( $icon_type == 'custom' ) {
+if ( 'custom' === $icon_type ) {
 	$extra_class .= ' woodmart-cat-custom-icon';
 }
 
@@ -62,10 +72,6 @@ if ( $params['more_cat_button'] ) {
 
 $extra_class .= ' whb-' . $id;
 
-$extra_class       .= woodmart_get_old_classes( ' header-categories-nav' );
-$class             .= woodmart_get_old_classes( ' header-categories-nav-wrap' );
-$dropdowns_classes .= woodmart_get_old_classes( ' categories-menu-dropdown' );
-
 woodmart_enqueue_js_script( 'header-categories-menu' );
 woodmart_enqueue_inline_style( 'header-categories-nav' );
 woodmart_enqueue_inline_style( 'mod-nav-vertical' );
@@ -74,10 +80,10 @@ woodmart_enqueue_inline_style( 'mod-nav-vertical-design-' . $params['design'] );
 
 <div class="wd-header-cats<?php echo esc_attr( $extra_class ); ?>" role="navigation" aria-label="<?php esc_attr_e( 'Header categories navigation', 'woodmart' ); ?>">
 	<span class="menu-opener <?php echo esc_attr( $class ); ?>">
-		<?php if ( $icon_type == 'custom' ) : ?>
-			<span class="<?php echo esc_attr( $icon_classes ); ?> custom-icon"><?php echo whb_get_custom_icon( $params['custom_icon'] ); ?></span>
+		<?php if ( 'custom' === $icon_type ) : ?>
+			<span class="<?php echo esc_attr( $icon_classes ); ?> custom-icon"><?php echo whb_get_custom_icon( $params['custom_icon'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
 		<?php else : ?>
-			<span class="<?php echo esc_attr( $icon_classes . woodmart_get_old_classes( ' woodmart-burger' ) ); ?>"></span>
+			<span class="<?php echo esc_attr( $icon_classes ); ?>"></span>
 		<?php endif; ?>
 
 		<span class="menu-open-label">
@@ -90,7 +96,7 @@ woodmart_enqueue_inline_style( 'mod-nav-vertical-design-' . $params['design'] );
 			array(
 				'container'  => '',
 				'menu'       => $params['menu_id'],
-				'menu_class' => 'menu wd-nav wd-nav-vertical' . $menu_class,
+				'menu_class' => 'menu wd-nav wd-nav-vertical wd-dis-act' . $menu_class,
 				'walker'     => new Mega_Menu_Walker(),
 				'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s' . $html . '</ul>',
 			)

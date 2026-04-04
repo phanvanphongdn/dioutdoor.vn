@@ -23,16 +23,32 @@
 
 	woodmartThemeModule.btnsToolTips = function() {
 		// Bootstrap tooltips
-		$(woodmart_settings.tooltip_top_selector).on('mouseenter touchstart', function() {
-			initTooltip($(this), 'top');
+		$(woodmart_settings.tooltip_top_selector).on('mouseenter', function() {
+			var $this = $(this);
+			var placement = getTooltipPosition($this);
+
+			initTooltip($this, placement);
+		});
+		document.querySelectorAll(woodmart_settings.tooltip_top_selector).forEach(el => {
+			el.addEventListener('touchstart', function(event) {
+				var $this = $(this);
+				var placement = getTooltipPosition($this);
+
+				initTooltip($this, placement);
+			}, { passive: true });
 		});
 
-		$(woodmart_settings.tooltip_left_selector).on('mouseenter touchstart', function() {
+		$(woodmart_settings.tooltip_left_selector).on('mouseenter', function() {
 			initTooltip($(this), woodmartThemeModule.$body.hasClass('rtl') ? 'right' : 'left');
+		});
+		document.querySelectorAll(woodmart_settings.tooltip_left_selector).forEach(el => {
+			el.addEventListener('touchstart', function(event) {
+				initTooltip($(this), woodmartThemeModule.$body.hasClass('rtl') ? 'right' : 'left');
+			}, { passive: true });
 		});
 
 		function initTooltip( $this, placement ) {
-			if ((! $this.hasClass('wd-hint') && ! $this.closest('.wd-review-likes').length && woodmartThemeModule.windowWidth <= 1024) || $this.hasClass('wd-tooltip-inited')) {
+			if ((! $this.hasClass('wd-hint') && ! $this.closest('.wd-review-likes').length && woodmartThemeModule.windowWidth <= 1024) || $this.hasClass('wd-tooltip-inited') || $this.hasClass('wd-with-html')) {
 				return;
 			}
 
@@ -69,6 +85,81 @@
 
 			$this.addClass('wd-tooltip-inited');
 		}
+
+		$('.wd-tooltip.wd-with-html').each(function() {
+			var $this = $(this);
+			var timeout;
+
+			$this.on('mouseenter touchstart', { passive: true }, function() {
+				if (!$(this).hasClass('wd-tooltip-inited')) {
+					initHtmlTooltips($this);
+				}
+
+				$this.tooltip('show');
+
+				$('#' + $this.attr('aria-describedby'))
+					.on('mouseenter touchstart', { passive: true }, function() {
+						clearTimeout(timeout);
+					})
+					.on('mouseleave touchend', { passive: true }, function() {
+						clearTimeout(timeout);
+
+						timeout = setTimeout(function() {
+							$this.tooltip('hide');
+						}, 100);
+					});
+			});
+
+			$this.on('mouseleave touchend', { passive: true }, function() {
+				clearTimeout(timeout);
+
+				timeout = setTimeout(function() {
+					$this.tooltip('hide');
+
+					$('#' + $this.attr('aria-describedby')).off('mouseenter mouseleave touchstart touchend');
+				}, 100);
+			});
+		});
+
+		function initHtmlTooltips($el) {
+			$el.tooltip({
+				animation: false,
+				container: 'body',
+				trigger: 'manual',
+				boundary: 'window',
+				placement: 'top',
+				sanitize: false,
+				html: true,
+				title: function() {
+					return $(this).html();
+				}
+			});
+
+			$el.addClass('wd-tooltip-inited');
+		}
+
+		function getTooltipPosition($el) {
+			if ( ! $el.is('[class*="wd-tooltip-"]') ) {
+				return 'top';
+			}
+
+			let placement = 'top';
+			const classes = $el.attr('class').split(' ');
+
+			for (let i = 0; i < classes.length; i++) {
+				if (classes[i].indexOf('wd-tooltip-') === 0) {
+					placement = classes[i].replace('wd-tooltip-', '');
+				}
+			}
+
+			if ('start' === placement) {
+				placement = woodmartThemeModule.$body.hasClass('rtl') ? 'right' : 'left';
+			} else if ('end' === placement) {
+				placement = woodmartThemeModule.$body.hasClass('rtl') ? 'left' : 'right';
+			}
+
+			return placement;
+		}
 	};
 
 	woodmartThemeModule.updateTooltip = function($this) {
@@ -82,7 +173,7 @@
 			return;
 		}
 
-		$tooltip.tooltip('update').tooltip('show');
+		$tooltip.tooltip('show');
 	};
 
 	$(document).ready(function() {

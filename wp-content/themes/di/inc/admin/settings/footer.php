@@ -1,4 +1,10 @@
 <?php
+/**
+ * Footer settings.
+ *
+ * @package woodmart
+ */
+
 if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
 	exit( 'No direct script access allowed' );
 }
@@ -21,7 +27,7 @@ Options::add_field(
 	array(
 		'id'       => 'footer_content_type',
 		'name'     => esc_html__( 'Footer content', 'woodmart' ),
-		'group'       => esc_html__( 'Content', 'woodmart' ),
+		'group'    => esc_html__( 'Content', 'woodmart' ),
 		'type'     => 'buttons',
 		'section'  => 'footer_section',
 		'options'  => array(
@@ -133,7 +139,8 @@ Options::add_field(
 		'type'         => 'select',
 		'section'      => 'footer_section',
 		'name'         => esc_html__( 'HTML Block', 'woodmart' ),
-		'group'       => esc_html__( 'Content', 'woodmart' ),
+		'group'        => esc_html__( 'Content', 'woodmart' ),
+		'description'  => function_exists( 'woodmart_get_html_block_links' ) ? woodmart_get_html_block_links() : '',
 		'select2'      => true,
 		'empty_option' => true,
 		'autocomplete' => array(
@@ -265,12 +272,12 @@ Options::add_field(
 		'options'     => array(
 			'two-columns' => array(
 				'name'  => esc_html__( 'Two columns', 'woodmart' ),
-				'hint'        => '<video data-src="' . WOODMART_TOOLTIP_URL . 'footer-copyrights-2-column.mp4" autoplay loop muted></video>',
+				'hint'  => '<video data-src="' . WOODMART_TOOLTIP_URL . 'footer-copyrights-2-column.mp4" autoplay loop muted></video>',
 				'value' => 'two-columns',
 			),
 			'centered'    => array(
 				'name'  => esc_html__( 'Centered', 'woodmart' ),
-				'hint'        => '<video data-src="' . WOODMART_TOOLTIP_URL . 'footer-copyrights-1-column.mp4" autoplay loop muted></video>',
+				'hint'  => '<video data-src="' . WOODMART_TOOLTIP_URL . 'footer-copyrights-1-column.mp4" autoplay loop muted></video>',
 				'value' => 'centered',
 			),
 		),
@@ -288,7 +295,7 @@ Options::add_field(
 		'type'        => 'textarea',
 		'wysiwyg'     => false,
 		'description' => esc_html__( 'Place here text you want to see in the copyrights area. You can use shortocdes. Ex.: [social_buttons]', 'woodmart' ),
-		'default'     => 'Based on <a href="http://woodmart.xtemos.com"><strong>WoodMart</strong></a> theme<i class="fa fa-copyright"></i> ' . date( 'Y' ) . ' <a href="https://themeforest.net/item/woodmart-woocommerce-wordpress-theme/20264492"><strong>WooCommerce Themes</strong></a>.',
+		'default'     => 'Based on <a href="http://woodmart.xtemos.com"><strong>WoodMart</strong></a> theme© ' . gmdate( 'Y' ) . ' <a href="https://themeforest.net/item/woodmart-woocommerce-wordpress-theme/20264492"><strong>WooCommerce Themes</strong></a>.',
 		'section'     => 'copyrights_section',
 		'priority'    => 30,
 	)
@@ -339,7 +346,7 @@ Options::add_field(
 		'type'     => 'textarea',
 		'wysiwyg'  => false,
 		'name'     => esc_html__( 'Text', 'woodmart' ),
-		'default'  => '[html_block id="258"]',
+		'default'  => '',
 		'section'  => 'prefooter_section',
 		'tags'     => 'prefooter',
 		'requires' => array(
@@ -357,6 +364,7 @@ Options::add_field(
 	array(
 		'id'           => 'prefooter_html_block',
 		'name'         => esc_html__( 'HTML Block', 'woodmart' ),
+		'description'  => function_exists( 'woodmart_get_html_block_links' ) ? woodmart_get_html_block_links() : '',
 		'type'         => 'select',
 		'section'      => 'prefooter_section',
 		'select2'      => true,

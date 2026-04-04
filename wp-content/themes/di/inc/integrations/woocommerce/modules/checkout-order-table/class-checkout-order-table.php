@@ -15,7 +15,7 @@ if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
 }
 
 /**
- * Product_Reviews class.
+ * Checkout order table class.
  */
 class Checkout_Order_Table extends Singleton {
 	/**
@@ -31,6 +31,21 @@ class Checkout_Order_Table extends Singleton {
 	public function hooks() {
 		add_action( 'init', array( $this, 'add_options' ) );
 		add_action( 'woocommerce_review_order_before_cart_contents', array( $this, 'checkout_table_content_replacement' ) );
+		add_filter( 'woocommerce_get_cart_url', array( $this, 'restore_checkout_undo' ), 10, 1 );
+	}
+
+	/**
+	 * Appends removed_item to cart URL when redirecting from checkout with empty cart,
+	 * so Undo link continues to work after redirect.
+	 *
+	 * @param string $url The cart URL.
+	 * @return string The cart URL with the removed_item param.
+	 */
+	public function restore_checkout_undo( $url ) {
+		if ( is_checkout() && isset( $_GET['removed_item'] ) && woodmart_get_opt( 'checkout_remove_button' ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			$url = add_query_arg( 'removed_item', '1', $url );
+		}
+		return $url;
 	}
 
 	/**
@@ -92,7 +107,9 @@ class Checkout_Order_Table extends Singleton {
 	 * @return bool
 	 */
 	public function is_enable_woodmart_product_table_template() {
-		return woodmart_get_opt( 'checkout_show_product_image' ) || woodmart_get_opt( 'checkout_product_quantity' ) || woodmart_get_opt( 'checkout_remove_button' ) || woodmart_get_opt( 'checkout_link_to_product' ) || woodmart_get_opt( 'show_sku_in_checkout_page' ) || woodmart_get_opt( 'estimate_delivery_show_on_checkout_page' );
+		$condition = woodmart_get_opt( 'checkout_show_product_image' ) || woodmart_get_opt( 'checkout_product_quantity' ) || woodmart_get_opt( 'checkout_remove_button' ) || woodmart_get_opt( 'checkout_link_to_product' ) || woodmart_get_opt( 'show_sku_in_checkout_page' ) || woodmart_get_opt( 'estimate_delivery_show_on_checkout_page' );
+
+		return apply_filters( 'woodmart_replace_checkout_template_condition', $condition );
 	}
 
 	/**

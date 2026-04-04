@@ -2,11 +2,12 @@
 /**
  * Gutenberg blocks class.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Gutenberg;
 
+use WP_Roles;
 use XTS\Singleton;
 
 if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
@@ -16,7 +17,7 @@ if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
 /**
  * Gutenberg module.
  *
- * @package Woodmart
+ * @package woodmart
  */
 class Gutenberg extends Singleton {
 	/**
@@ -28,6 +29,7 @@ class Gutenberg extends Singleton {
 		add_action( 'init', array( $this, 'files_include' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'scripts_styles' ), 30 );
 		add_filter( 'pre_render_block', array( $this, 'pre_render_block' ), 10, 2 );
+		add_action( 'rest_api_init', array( $this, 'register_rest_fields' ) );
 	}
 
 	/**
@@ -36,7 +38,7 @@ class Gutenberg extends Singleton {
 	 * @since 1.0.0
 	 */
 	public function files_include() {
-		if ( ! woodmart_get_opt( 'gutenberg_blocks' ) ) {
+		if ( ! woodmart_is_gutenberg_blocks_enabled() ) {
 			return;
 		}
 
@@ -45,11 +47,19 @@ class Gutenberg extends Singleton {
 			'integrations/gutenberg/inc/class-block-css',
 			'integrations/gutenberg/inc/class-block-attributes',
 			'integrations/gutenberg/inc/class-template-library',
+
 			'integrations/gutenberg/class-block',
 			'integrations/gutenberg/class-post-css',
 			'integrations/gutenberg/class-blocks-assets',
 			'integrations/gutenberg/class-google-fonts',
 			'integrations/gutenberg/class-widget-block',
+
+			// Required layout shortcodes.
+			'modules/layouts/wpb/shortcodes/archive-loop/blog-archive',
+			'modules/layouts/wpb/shortcodes/archive-loop/portfolio-archive',
+			'modules/layouts/wpb/shortcodes/single-post/post-categories',
+			'modules/layouts/wpb/shortcodes/single-post/post-comments',
+			'modules/layouts/wpb/shortcodes/single-post/post-image',
 
 			// Controls CSS helpers.
 			'/integrations/gutenberg/src/components/controls/position/css',
@@ -87,6 +97,7 @@ class Gutenberg extends Singleton {
 			'/integrations/gutenberg/src/blocks/products/attributes',
 			'/integrations/gutenberg/src/blocks/product-categories/attributes',
 			'/integrations/gutenberg/src/blocks/blog/attributes',
+			'/integrations/gutenberg/src/blocks/breadcrumbs/attributes',
 			'/integrations/gutenberg/src/blocks/portfolio/attributes',
 			'/integrations/gutenberg/src/blocks/product-filters/product-filters/attributes',
 			'/integrations/gutenberg/src/blocks/product-filters/product-filters-attributes/attributes',
@@ -109,6 +120,8 @@ class Gutenberg extends Singleton {
 			'/integrations/gutenberg/src/blocks/google-map/attributes',
 			'/integrations/gutenberg/src/blocks/open-street-map/attributes',
 			'/integrations/gutenberg/src/blocks/size-guide/attributes',
+			'/integrations/gutenberg/src/blocks/page-heading/attributes',
+			'/integrations/gutenberg/src/blocks/cover/attributes',
 
 			// Single product blocks.
 			'/integrations/gutenberg/src/layouts/sp-add-to-cart/attributes',
@@ -139,6 +152,7 @@ class Gutenberg extends Singleton {
 			'/integrations/gutenberg/src/layouts/sp-countdown/attributes',
 			'/integrations/gutenberg/src/layouts/sp-tabs/attributes',
 			'/integrations/gutenberg/src/layouts/sp-estimate-delivery/attributes',
+			'/integrations/gutenberg/src/layouts/sp-price-tracker/attributes',
 
 			// Shop archive blocks.
 			'/integrations/gutenberg/src/layouts/sa-active-filters/attributes',
@@ -152,6 +166,27 @@ class Gutenberg extends Singleton {
 			'/integrations/gutenberg/src/layouts/sa-per-page/attributes',
 			'/integrations/gutenberg/src/layouts/sa-result-count/attributes',
 			'/integrations/gutenberg/src/layouts/sa-view/attributes',
+
+			// Post archive blocks.
+			'/integrations/gutenberg/src/layouts/pa-blog/attributes',
+			'/integrations/gutenberg/src/layouts/pa-portfolio/attributes',
+			'/integrations/gutenberg/src/layouts/pa-portfolio-cats/attributes',
+
+			// Single post blocks.
+			'/integrations/gutenberg/src/layouts/author-bio/attributes',
+			'/integrations/gutenberg/src/layouts/post-author-meta/attributes',
+			'/integrations/gutenberg/src/layouts/post-categories/attributes',
+			'/integrations/gutenberg/src/layouts/post-comments/attributes',
+			'/integrations/gutenberg/src/layouts/post-comments-button/attributes',
+			'/integrations/gutenberg/src/layouts/post-comments-form/attributes',
+			'/integrations/gutenberg/src/layouts/post-content/attributes',
+			'/integrations/gutenberg/src/layouts/post-date-meta/attributes',
+			'/integrations/gutenberg/src/layouts/post-excerpt/attributes',
+			'/integrations/gutenberg/src/layouts/post-image/attributes',
+			'/integrations/gutenberg/src/layouts/post-meta-value/attributes',
+			'/integrations/gutenberg/src/layouts/post-navigation/attributes',
+			'/integrations/gutenberg/src/layouts/post-tags/attributes',
+			'/integrations/gutenberg/src/layouts/post-title/attributes',
 
 			// WooCommerce blocks.
 			'/integrations/gutenberg/src/layouts/woo-breadcrumbs/attributes',
@@ -169,11 +204,47 @@ class Gutenberg extends Singleton {
 			'/integrations/gutenberg/src/layouts/ch-payment-methods/attributes',
 			'/integrations/gutenberg/src/layouts/ch-shipping-details/attributes',
 
+			// Thank you page blocks.
+			'/integrations/gutenberg/src/layouts/tp-customer-details/attributes',
+			'/integrations/gutenberg/src/layouts/tp-order-details/attributes',
+			'/integrations/gutenberg/src/layouts/tp-order-overview/attributes',
+			'/integrations/gutenberg/src/layouts/tp-order-message/attributes',
+			'/integrations/gutenberg/src/layouts/tp-payment-instructions/attributes',
+			'/integrations/gutenberg/src/layouts/tp-order-meta/attributes',
+
+			// My account blocks.
+			'/integrations/gutenberg/src/layouts/ma-content/attributes',
+			'/integrations/gutenberg/src/layouts/ma-navigation/attributes',
+			'/integrations/gutenberg/src/layouts/ma-login/attributes',
+			'/integrations/gutenberg/src/layouts/ma-register/attributes',
+			'/integrations/gutenberg/src/layouts/ma-lost-password/attributes',
+
 			// Cart blocks.
 			'/integrations/gutenberg/src/layouts/ct-table/attributes',
 			'/integrations/gutenberg/src/layouts/ct-totals/attributes',
 			'/integrations/gutenberg/src/layouts/ct-empty-cart/attributes',
 			'/integrations/gutenberg/src/layouts/ct-free-gifts/attributes',
+
+			// Loop builder blocks.
+			'/integrations/gutenberg/src/layouts/li-product-add-to-cart/attributes',
+			'/integrations/gutenberg/src/layouts/li-product-compare/attributes',
+			'/integrations/gutenberg/src/layouts/li-product-description/attributes',
+			'/integrations/gutenberg/src/layouts/li-product-labels/attributes',
+			'/integrations/gutenberg/src/layouts/li-product-thumbnail/attributes',
+			'/integrations/gutenberg/src/layouts/li-product-price/attributes',
+			'/integrations/gutenberg/src/layouts/li-product-quick-view/attributes',
+			'/integrations/gutenberg/src/layouts/li-product-title/attributes',
+			'/integrations/gutenberg/src/layouts/li-product-wishlist/attributes',
+			'/integrations/gutenberg/src/layouts/li-product-additional-info/attributes',
+			'/integrations/gutenberg/src/layouts/li-product-brands/attributes',
+			'/integrations/gutenberg/src/layouts/li-product-categories-list/attributes',
+			'/integrations/gutenberg/src/layouts/li-product-countdown/attributes',
+			'/integrations/gutenberg/src/layouts/li-product-rating/attributes',
+			'/integrations/gutenberg/src/layouts/li-product-sku/attributes',
+			'/integrations/gutenberg/src/layouts/li-product-stock-progress-bar/attributes',
+			'/integrations/gutenberg/src/layouts/li-product-stock-status/attributes',
+			'/integrations/gutenberg/src/layouts/li-product-variations/attributes',
+			'/integrations/gutenberg/src/layouts/li-product-label/attributes',
 
 			'integrations/gutenberg/class-blocks',
 		);
@@ -189,7 +260,7 @@ class Gutenberg extends Singleton {
 	 * @return void
 	 */
 	public function scripts_styles() {
-		if ( ! woodmart_get_opt( 'gutenberg_blocks' ) || ! is_admin() ) {
+		if ( ! woodmart_is_gutenberg_blocks_enabled() || ! is_admin() ) {
 			return;
 		}
 
@@ -256,13 +327,454 @@ class Gutenberg extends Singleton {
 	 * @param array       $block The block being rendered.
 	 */
 	public function pre_render_block( $value, $block ) {
-		if ( woodmart_get_opt( 'gutenberg_blocks' ) && wp_is_serving_rest_request() && woodmart_woocommerce_installed() && ! empty( $block['blockName'] ) && ( 'wd/products' === $block['blockName'] || 'wd/products-tabs-products' === $block['blockName'] ) ) {
+		if ( woodmart_is_gutenberg_blocks_enabled() && wp_is_serving_rest_request() && woodmart_woocommerce_installed() && ! empty( $block['blockName'] ) && ( 'wd/products' === $block['blockName'] || 'wd/products-tabs-products' === $block['blockName'] ) ) {
 			include_once WC_ABSPATH . 'includes/wc-template-hooks.php';
 
 			woodmart_woocommerce_init_hooks();
 		}
 
 		return $value;
+	}
+
+	/**
+	 * Register REST fields.
+	 *
+	 * @return void
+	 */
+	public function register_rest_fields() {
+		if ( ! woodmart_is_gutenberg_blocks_enabled() ) {
+			return;
+		}
+
+		register_rest_route(
+			'wd/v1',
+			'/attribute-terms',
+			array(
+				'methods'             => 'GET',
+				'callback'            => array( $this, 'get_attribute_terms' ),
+				'permission_callback' => function () {
+					return is_user_logged_in();
+				},
+			)
+		);
+
+		register_rest_route(
+			'wd/v1',
+			'/all-posts',
+			array(
+				'methods'             => 'GET',
+				'callback'            => array( $this, 'get_all_posts' ),
+				'permission_callback' => function () {
+					return is_user_logged_in();
+				},
+			)
+		);
+
+		register_rest_route(
+			'wd/v1',
+			'/all-terms',
+			array(
+				'methods'             => 'GET',
+				'callback'            => array( $this, 'get_all_terms' ),
+				'permission_callback' => function () {
+					return is_user_logged_in();
+				},
+			)
+		);
+
+		register_rest_route(
+			'wd/v1',
+			'/taxonomies',
+			array(
+				'methods'             => 'GET',
+				'callback'            => array( $this, 'get_taxonomies' ),
+				'permission_callback' => function () {
+					return is_user_logged_in();
+				},
+			)
+		);
+
+		register_rest_route(
+			'wd/v1',
+			'/all-taxonomies',
+			array(
+				'methods'             => 'GET',
+				'callback'            => array( $this, 'get_all_taxonomies' ),
+				'permission_callback' => function () {
+					return is_user_logged_in();
+				},
+			)
+		);
+
+		register_rest_route(
+			'wd/v1',
+			'/user-roles',
+			array(
+				'methods'             => 'GET',
+				'callback'            => array( $this, 'get_user_roles' ),
+				'permission_callback' => function () {
+					return is_user_logged_in();
+				},
+			)
+		);
+
+		register_rest_route(
+			'wd/v1',
+			'/product-loop-items',
+			array(
+				'methods'             => 'GET',
+				'callback'            => array( $this, 'get_product_loop_items' ),
+				'permission_callback' => function () {
+					return is_user_logged_in();
+				},
+			)
+		);
+	}
+
+	/**
+	 * Get attribute terms.
+	 *
+	 * @param object $request Request object.
+	 * @return \WP_Error|\WP_HTTP_Response|\WP_REST_Response
+	 */
+	public function get_attribute_terms( $request ) {
+		$search_term  = $request->get_param( 'search' );
+		$selected_ids = $request->get_param( 'selected' );
+		$results      = array();
+
+		if ( ! woodmart_woocommerce_installed() ) {
+			return rest_ensure_response( $results );
+		}
+
+		$raw_taxonomies = wc_get_attribute_taxonomies();
+		$taxonomies     = array();
+
+		if ( ! $raw_taxonomies ) {
+			return rest_ensure_response( $results );
+		}
+
+		foreach ( $raw_taxonomies as $taxonomy ) {
+			$taxonomies[] = 'pa_' . $taxonomy->attribute_name;
+		}
+
+		$args = array(
+			'taxonomy'   => $taxonomies,
+			'hide_empty' => false,
+			'search'     => $search_term,
+			'exclude'    => $search_term && ! empty( $selected_ids ) ? $selected_ids : array(),
+			'include'    => ! $search_term && ! empty( $selected_ids ) ? $selected_ids : array(),
+		);
+
+		$terms = get_terms( $args );
+
+		if ( is_array( $terms ) && ! empty( $terms ) ) {
+			foreach ( $terms as $term ) {
+				if ( is_object( $term ) ) {
+					$results[] = array(
+						'value' => $term->term_id,
+						'label' => $term->name . ' (' . $term->taxonomy . ')',
+					);
+				}
+			}
+		}
+
+		return rest_ensure_response( $results );
+	}
+
+	/**
+	 * Get all posts.
+	 *
+	 * @param object $request Request object.
+	 * @return \WP_Error|\WP_HTTP_Response|\WP_REST_Response
+	 */
+	public function get_all_posts( $request ) {
+		$search  = $request->get_param( 'search' );
+		$exclude = $request->get_param( 'exclude' );
+		$include = $request->get_param( 'include' );
+		$results = array();
+
+		$args = array(
+			'post_type'   => 'any',
+			'post_status' => 'publish',
+			'numberposts' => 50,
+			'exclude'     => ! empty( $exclude ) ? explode( ',', $exclude ) : array(),
+			'include'     => ! empty( $include ) ? explode( ',', $include ) : array(),
+		);
+
+		if ( $search ) {
+			$args['s'] = $search;
+		}
+
+		$posts = get_posts( $args );
+
+		if ( $posts ) {
+			foreach ( $posts as $post ) {
+				$results[] = array(
+					'id'    => $post->ID,
+					'title' => $post->post_title . ' - ' . $post->post_type . ' (ID: ' . $post->ID . ')',
+				);
+			}
+		}
+
+		return rest_ensure_response( $results );
+	}
+
+	/**
+	 * Get all posts.
+	 *
+	 * @param object $request Request object.
+	 * @return \WP_Error|\WP_HTTP_Response|\WP_REST_Response
+	 */
+	public function get_all_terms( $request ) {
+		$search  = $request->get_param( 'search' );
+		$include = $request->get_param( 'include' );
+		$exclude = $request->get_param( 'exclude' );
+		$results = array();
+
+		$taxonomies = get_taxonomies( array( 'public' => true ) );
+
+		if ( woodmart_woocommerce_installed() ) {
+			$product_attribute_taxonomies = wc_get_attribute_taxonomies();
+
+			foreach ( $product_attribute_taxonomies as $attr ) {
+				$taxonomies[] = 'pa_' . $attr->attribute_name;
+			}
+		}
+
+		$taxonomies = array_unique( $taxonomies );
+
+		if ( ! empty( $include ) && ! $search ) {
+			$args = array(
+				'include'    => $include,
+				'hide_empty' => false,
+			);
+
+			$terms = get_terms( $args );
+
+			if ( ! is_wp_error( $terms ) && ! empty( $terms ) ) {
+				$term      = $terms[0];
+				$results[] = array(
+					'id'   => $term->term_id,
+					'name' => $term->name . ' (' . $term->taxonomy . ')',
+				);
+
+				return rest_ensure_response( $results );
+			}
+		}
+
+		foreach ( $taxonomies as $tax ) {
+			$args = array(
+				'taxonomy'   => $tax,
+				'hide_empty' => false,
+			);
+
+			if ( ! empty( $include ) ) {
+				$args['include'] = array_map( 'intval', $include );
+			}
+
+			if ( ! empty( $exclude ) ) {
+				$args['exclude'] = array_map( 'intval', $exclude );
+			}
+
+			if ( $search ) {
+				$args['name__like'] = $search;
+			}
+
+			$terms = get_terms( $args );
+
+			if ( ! is_wp_error( $terms ) ) {
+				foreach ( $terms as $term ) {
+					$results[] = array(
+						'id'   => $term->term_id,
+						'name' => $term->name . ' (' . $term->taxonomy . ')',
+					);
+				}
+			}
+		}
+
+		return rest_ensure_response( $results );
+	}
+
+	/**
+	 * Get taxonomies for a post.
+	 *
+	 * @param object $request Request object.
+	 * @return \WP_Error|\WP_HTTP_Response|\WP_REST_Response
+	 */
+	public function get_taxonomies( $request ) {
+		$post_id = $request->get_param( 'post_id' );
+
+		if ( ! $post_id ) {
+			return rest_ensure_response( array() );
+		}
+
+		$post_type = get_post_type( $post_id );
+
+		if ( 'woodmart_layout' === $post_type ) {
+			$layout_type = get_post_meta( $post_id, 'wd_layout_type', true );
+
+			if ( in_array( $layout_type, array( 'single_product', 'shop_archive' ), true ) ) {
+				$post_type = 'product';
+			} elseif ( in_array( $layout_type, array( 'blog_archive', 'single_post' ), true ) ) {
+				$post_type = 'post';
+			} elseif ( in_array( $layout_type, array( 'single_portfolio', 'portfolio_archive' ), true ) ) {
+				$post_type = 'portfolio';
+			}
+		}
+
+		$taxonomies = get_object_taxonomies( $post_type, 'objects' );
+		$results    = array();
+
+		if ( ! $taxonomies ) {
+			return rest_ensure_response( $results );
+		}
+
+		foreach ( $taxonomies as $taxonomy ) {
+			$results[] = array(
+				'slug' => $taxonomy->name,
+				'name' => $taxonomy->label,
+			);
+		}
+
+		return rest_ensure_response( $results );
+	}
+
+	/**
+	 * Get all taxonomies.
+	 *
+	 * @param object $request Request object.
+	 * @return \WP_Error|\WP_HTTP_Response|\WP_REST_Response
+	 */
+	public function get_all_taxonomies( $request ) {
+		$search  = $request->get_param( 'search' );
+		$include = $request->get_param( 'include' );
+		$exclude = $request->get_param( 'exclude' );
+
+		$taxonomies = get_taxonomies( array(), 'objects' );
+		$results    = array();
+
+		foreach ( $taxonomies as $taxonomy ) {
+			if ( $search && stripos( $taxonomy->label, $search ) === false && stripos( $taxonomy->name, $search ) === false ) {
+				continue;
+			}
+
+			if ( ! empty( $include ) ) {
+				$include_arr = array_map( 'trim', explode( ',', $include ) );
+				if ( ! in_array( $taxonomy->name, $include_arr, true ) ) {
+					continue;
+				}
+			}
+
+			if ( ! empty( $exclude ) ) {
+				$exclude_arr = array_map( 'trim', explode( ',', $exclude ) );
+				if ( in_array( $taxonomy->name, $exclude_arr, true ) ) {
+					continue;
+				}
+			}
+
+			$results[] = array(
+				'slug' => $taxonomy->name,
+				'name' => $taxonomy->label . ' (' . $taxonomy->name . ')',
+			);
+		}
+
+		return rest_ensure_response( $results );
+	}
+
+	/**
+	 * Get user roles.
+	 *
+	 * @param object $request Request object.
+	 * @return \WP_Error|\WP_HTTP_Response|\WP_REST_Response
+	 */
+	public function get_user_roles( $request ) {
+		$search  = $request->get_param( 'search' );
+		$include = $request->get_param( 'include' );
+		$exclude = $request->get_param( 'exclude' );
+
+		global $wp_roles;
+
+		if ( ! isset( $wp_roles ) ) {
+			$wp_roles = new WP_Roles(); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
+		}
+
+		$all_roles = $wp_roles->roles;
+		$results   = array();
+
+		if ( ! empty( $include ) && ! is_array( $include ) ) {
+			$include = array_map( 'trim', explode( ',', $include ) );
+		}
+
+		if ( ! empty( $exclude ) && ! is_array( $exclude ) ) {
+			$exclude = array_map( 'trim', explode( ',', $exclude ) );
+		}
+
+		foreach ( $all_roles as $slug => $role ) {
+			$name = translate_user_role( $role['name'] );
+
+			if ( $search && false === stripos( $name, $search ) && false === stripos( $slug, $search ) ) {
+				continue;
+			}
+
+			if ( ! empty( $include ) && ! in_array( $slug, $include, true ) ) {
+				continue;
+			}
+
+			if ( ! empty( $exclude ) && in_array( $slug, $exclude, true ) ) {
+				continue;
+			}
+
+			$results[] = array(
+				'value' => $slug,
+				'label' => $name,
+			);
+		}
+
+		return rest_ensure_response( $results );
+	}
+
+	/**
+	 * Get product loop items.
+	 *
+	 * @param object $request Request object.
+	 * @return \WP_Error|\WP_HTTP_Response|\WP_REST_Response
+	 */
+	public function get_product_loop_items( $request ) {
+		$search  = $request->get_param( 'search' );
+		$exclude = $request->get_param( 'exclude' );
+		$include = $request->get_param( 'include' );
+		$results = array();
+
+		$args = array(
+			'post_type'   => 'woodmart_layout',
+			'post_status' => 'publish',
+			'numberposts' => 50,
+			'exclude'     => ! empty( $exclude ) ? explode( ',', $exclude ) : array(),
+			'include'     => ! empty( $include ) ? explode( ',', $include ) : array(),
+			'meta_query'  => array(
+				array(
+					'key'   => 'wd_layout_type',
+					'value' => 'product_loop_item',
+				),
+			),
+		);
+
+		if ( $search ) {
+			$args['s'] = $search;
+		}
+
+		$posts = get_posts( $args );
+
+		if ( $posts ) {
+			foreach ( $posts as $post ) {
+				$results[] = array(
+					'id'    => $post->ID,
+					'title' => $post->post_title . ' (ID: ' . $post->ID . ')',
+				);
+			}
+		}
+
+		return rest_ensure_response( $results );
 	}
 }
 

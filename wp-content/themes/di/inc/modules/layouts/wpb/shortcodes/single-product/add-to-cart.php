@@ -2,7 +2,7 @@
 /**
  * Add to cart shortcode.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 use XTS\Modules\Layouts\Global_Data as Builder;
@@ -24,6 +24,8 @@ if ( ! function_exists( 'woodmart_shortcode_single_product_add_to_cart' ) ) {
 			'alignment'             => 'left',
 			'button_design'         => 'default',
 			'design'                => 'default',
+			'add_to_cart_design'    => 'default',
+			'buy_now_design'        => 'default',
 			'swatch_layout'         => 'default',
 			'reset_button_position' => 'side',
 			'label_position'        => 'side',
@@ -37,7 +39,7 @@ if ( ! function_exists( 'woodmart_shortcode_single_product_add_to_cart' ) ) {
 
 		$settings = wp_parse_args( $settings, $default_settings );
 
-		if ( woodmart_get_opt( 'catalog_mode' ) || ! is_user_logged_in() && woodmart_get_opt( 'login_prices' ) ) {
+		if ( woodmart_get_opt( 'catalog_mode' ) || ( ! is_user_logged_in() && woodmart_get_opt( 'login_prices' ) ) ) {
 			return '';
 		}
 
@@ -55,9 +57,20 @@ if ( ! function_exists( 'woodmart_shortcode_single_product_add_to_cart' ) ) {
 			$wrapper_classes .= ' ' . vc_shortcode_custom_css_class( $settings['css'] );
 		}
 		$wrapper_classes .= ' text-' . woodmart_vc_get_control_data( $settings['alignment'], 'desktop' );
-		$wrapper_classes .= ' wd-btn-design-' . $settings['button_design'];
 		$wrapper_classes .= ' wd-design-' . $settings['design'];
 		$wrapper_classes .= ' wd-swatch-layout-' . $settings['swatch_layout'];
+
+		if ( ! empty( $settings['button_design'] ) && in_array( $settings['button_design'], array( 'full', 'yes' ), true ) ) {
+			$wrapper_classes .= ' wd-btn-design-full';
+		}
+
+		if ( ! empty( $settings['add_to_cart_design'] ) ) {
+			$wrapper_classes .= ' wd-atc-btn-style-' . $settings['add_to_cart_design'];
+		}
+
+		if ( ! empty( $settings['buy_now_design'] ) ) {
+			$wrapper_classes .= ' wd-bn-btn-style-' . $settings['buy_now_design'];
+		}
 
 		if ( 'justify' === $settings['design'] ) {
 			woodmart_enqueue_inline_style( 'woo-single-prod-el-add-to-cart-opt-design-justify-builder' );
@@ -67,7 +80,7 @@ if ( ! function_exists( 'woodmart_shortcode_single_product_add_to_cart' ) ) {
 		}
 
 		if ( 'no' === $settings['enable_stock_status'] ) {
-			$wrapper_classes .=  ' wd-stock-status-off';
+			$wrapper_classes .= ' wd-stock-status-off';
 		}
 
 		Builder::get_instance()->set_data( 'form_classes', $form_classes );
@@ -81,7 +94,7 @@ if ( ! function_exists( 'woodmart_shortcode_single_product_add_to_cart' ) ) {
 			<?php woocommerce_template_single_add_to_cart(); ?>
 
 			<?php
-		if ( woodmart_get_opt( 'waitlist_enabled' ) && ( ! woodmart_get_opt( 'waitlist_for_loggined' ) || is_user_logged_in() ) ) {
+			if ( woodmart_get_opt( 'waitlist_enabled' ) && ( ! woodmart_get_opt( 'waitlist_for_loggined' ) || is_user_logged_in() ) ) {
 				$waitlist_frontend = Waitlist_Frontend::get_instance();
 
 				if ( ( 'variable' === $product->get_type() && ! empty( $waitlist_frontend->get_out_of_stock_variations_ids( $product ) ) ) || ( 'simple' === $product->get_type() && ! $product->is_in_stock() ) ) {

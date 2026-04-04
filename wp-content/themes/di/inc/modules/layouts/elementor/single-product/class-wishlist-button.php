@@ -2,7 +2,7 @@
 /**
  * Wishlist button map.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Modules\Layouts;
@@ -143,7 +143,7 @@ class Wishlist_Button extends Widget_Base {
 			array(
 				'label'     => esc_html__( 'Typography', 'woodmart' ),
 				'name'      => 'typography',
-				'selector'  => '{{WRAPPER}} .wd-wishlist-btn > a span',
+				'selector'  => '{{WRAPPER}} .wd-action-text',
 				'condition' => array(
 					'style' => array( 'text' ),
 				),
@@ -163,7 +163,7 @@ class Wishlist_Button extends Widget_Base {
 					),
 				),
 				'selectors' => array(
-					'{{WRAPPER}} .wd-wishlist-btn[class*="wd-style-"] > a:before, {{WRAPPER}} .wd-wishlist-btn[class*="wd-style-"] > a:after' => 'font-size: {{SIZE}}px;',
+					'{{WRAPPER}} .wd-action-btn' => '--wd-action-icon-size: {{SIZE}}px;',
 				),
 			)
 		);
@@ -181,7 +181,7 @@ class Wishlist_Button extends Widget_Base {
 				'label'     => esc_html__( 'Text color', 'woodmart' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
-					'{{WRAPPER}} .wd-wishlist-btn > a span' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .wd-action-btn' => '--wd-action-text-color: {{VALUE}}',
 				),
 				'condition' => array(
 					'style' => array( 'text' ),
@@ -194,7 +194,7 @@ class Wishlist_Button extends Widget_Base {
 				'label'     => esc_html__( 'Icon color', 'woodmart' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
-					'{{WRAPPER}} .wd-wishlist-btn > a:before' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .wd-action-btn' => '--wd-action-icon-color: {{VALUE}}',
 				),
 			)
 		);
@@ -211,7 +211,7 @@ class Wishlist_Button extends Widget_Base {
 				'label'     => esc_html__( 'Text color', 'woodmart' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
-					'{{WRAPPER}} .wd-wishlist-btn > a:hover span' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .wd-action-btn' => '--wd-action-text-color-hover: {{VALUE}}',
 				),
 				'condition' => array(
 					'style' => array( 'text' ),
@@ -224,12 +224,25 @@ class Wishlist_Button extends Widget_Base {
 				'label'     => esc_html__( 'Icon color', 'woodmart' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
-					'{{WRAPPER}} .wd-wishlist-btn > a:hover:before' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .wd-action-btn' => '--wd-action-icon-color-hover: {{VALUE}}',
 				),
 			)
 		);
 		$this->end_controls_tab();
 		$this->end_controls_tabs();
+
+		$this->add_responsive_control(
+			'link_padding',
+			array(
+				'label'      => esc_html__( 'Padding', 'woodmart' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => array( 'px' ),
+				'selectors'  => array(
+					'{{WRAPPER}} .wd-action-btn > a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				),
+				'separator'  => 'before',
+			)
+		);
 
 		$this->end_controls_section();
 	}
@@ -248,7 +261,7 @@ class Wishlist_Button extends Widget_Base {
 		$classes  = 'wd-action-btn wd-wishlist-icon';
 		$classes .= ' wd-style-' . $settings['style'];
 
-		if ( ! woodmart_get_opt( 'wishlist' ) || ! is_user_logged_in() && woodmart_get_opt( 'wishlist_logged' ) ) {
+		if ( ! woodmart_get_opt( 'wishlist' ) || ( ! is_user_logged_in() && woodmart_get_opt( 'wishlist_logged' ) ) ) {
 			return;
 		}
 

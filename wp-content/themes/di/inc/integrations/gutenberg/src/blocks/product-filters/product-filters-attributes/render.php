@@ -1,5 +1,17 @@
 <?php
+/**
+ * Gutenberg Product Filters Attributes Block Render.
+ *
+ * @package woodmart
+ */
+
 if ( ! function_exists( 'wd_gutenberg_product_filters_attributes' ) ) {
+	/**
+	 * Render Product Filters Attributes Block.
+	 *
+	 * @param array $block_attributes Block attributes.
+	 * @return string
+	 */
 	function wd_gutenberg_product_filters_attributes( $block_attributes ) {
 		if ( ! woodmart_woocommerce_installed() ) {
 			return '';
@@ -16,7 +28,7 @@ if ( ! function_exists( 'wd_gutenberg_product_filters_attributes' ) ) {
 			}
 		}
 
-		wd_replace_boolean_to_yes_no( array( 'show_selected_values' ), $block_attributes );
+		woodmart_replace_boolean_to_yes_no( array( 'show_selected_values' ), $block_attributes );
 
 		return woodmart_filters_attribute_shortcode( $block_attributes, '' );
 	}

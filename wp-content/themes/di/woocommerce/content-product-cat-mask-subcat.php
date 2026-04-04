@@ -23,8 +23,8 @@ $sub_categories = array();
 
 if ( ! woodmart_loop_prop( 'hide_categories_subcategories' ) && 'mask-subcat' === woodmart_loop_prop( 'product_categories_design' ) ) {
 	$sub_categories = get_terms(
-		'product_cat',
 		array(
+			'taxonomy'     => 'product_cat',
 			'fields'       => 'all',
 			'parent'       => $category->term_id,
 			'hierarchical' => true,
@@ -35,7 +35,7 @@ if ( ! woodmart_loop_prop( 'hide_categories_subcategories' ) && 'mask-subcat' ==
 ?>
 
 <div <?php wc_product_cat_class( $args['classes'], $args['category'] ); ?> data-loop="<?php echo esc_attr( $args['woocommerce_loop'] ); ?>">
-	<?php if ( woodmart_loop_prop( 'products_with_background' ) || woodmart_loop_prop( 'products_bordered_grid' ) && 'inside' === woodmart_loop_prop( 'products_bordered_grid_style' ) ) : ?>
+	<?php if ( woodmart_loop_prop( 'products_with_background' ) || ( woodmart_loop_prop( 'products_bordered_grid' ) && 'inside' === woodmart_loop_prop( 'products_bordered_grid_style' ) ) ) : ?>
 		<div class="wd-cat-wrap">
 	<?php endif; ?>
 
@@ -47,7 +47,7 @@ if ( ! woodmart_loop_prop( 'hide_categories_subcategories' ) && 'mask-subcat' ==
 
 				<?php
 				/**
-				 * woocommerce_before_subcategory_title hook
+				 * Trigger woocommerce_before_subcategory_title hook.
 				 *
 				 * @hooked woodmart_category_thumb_double_size - 10
 				 */
@@ -58,7 +58,7 @@ if ( ! woodmart_loop_prop( 'hide_categories_subcategories' ) && 'mask-subcat' ==
 		<div class="wd-cat-content wd-scroll wd-fill">
 			<a class="wd-fill" href="<?php echo esc_url( get_term_link( $args['category']->slug, 'product_cat' ) ); ?>"></a>
 			<div class="wd-cat-header">
-				<h3 class="wd-entities-title<?php echo esc_attr( woodmart_get_old_classes( ' category-title' ) ); ?>">
+				<h3 class="wd-entities-title">
 					<a href="<?php echo esc_url( get_term_link( $args['category']->slug, 'product_cat' ) ); ?>">
 						<?php
 							echo esc_html( $args['category']->name );
@@ -88,7 +88,7 @@ if ( ! woodmart_loop_prop( 'hide_categories_subcategories' ) && 'mask-subcat' ==
 		</div>
 	</div>
 
-	<?php if ( woodmart_loop_prop( 'products_with_background' ) || woodmart_loop_prop( 'products_bordered_grid' ) && 'inside' === woodmart_loop_prop( 'products_bordered_grid_style' ) ) : ?>
+	<?php if ( woodmart_loop_prop( 'products_with_background' ) || ( woodmart_loop_prop( 'products_bordered_grid' ) && 'inside' === woodmart_loop_prop( 'products_bordered_grid_style' ) ) ) : ?>
 		</div>
 	<?php endif; ?>
 </div>

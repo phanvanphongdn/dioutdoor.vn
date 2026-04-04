@@ -1,43 +1,53 @@
-<?php if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
-	exit( 'No direct script access allowed' );}
-
+<?php
 /**
-* ------------------------------------------------------------------------------------------------
-* Woodmart responsive text block shortcode
-* ------------------------------------------------------------------------------------------------
-*/
+ * Shortcode for Responsive Text Block element.
+ *
+ * @package woodmart
+ */
+
+if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
+	exit( 'No direct script access allowed' );
+}
 
 if ( ! function_exists( 'woodmart_shortcode_responsive_text_block' ) ) {
+	/**
+	 * Shortcode to display responsive text block.
+	 *
+	 * @param array  $atts Shortcode attributes.
+	 * @param string $content Shortcode content.
+	 *
+	 * @return string
+	 */
 	function woodmart_shortcode_responsive_text_block( $atts, $content ) {
 		$text_wrapper_class = apply_filters( 'vc_shortcodes_css_class', '', '', $atts );
 
 		$atts = shortcode_atts(
 			array(
-				'text'               => 'Title',
-				'font'               => 'primary',
-				'font_weight'        => '',
-				'content_width'      => '100',
-				'color_scheme'       => '',
-				'color'              => '',
-				'size'               => 'default',
-				'align'              => 'center',
-				'text_font_size'     => '',
-				'inline'             => 'no',
+				'text'              => 'Title',
+				'font'              => 'primary',
+				'font_weight'       => '',
+				'content_width'     => '100',
+				'color_scheme'      => '',
+				'color'             => '',
+				'size'              => 'default',
+				'align'             => 'center',
+				'text_font_size'    => '',
+				'inline'            => 'no',
 
 				// Old size
-				'desktop_text_size'  => '',
-				'tablet_text_size'   => '',
-				'mobile_text_size'   => '',
+				'desktop_text_size' => '',
+				'tablet_text_size'  => '',
+				'mobile_text_size'  => '',
 
-				'woodmart_css_id'    => '',
-				'css_animation'      => 'none',
-				'el_class'           => '',
-				'css'                => '',
+				'woodmart_css_id'   => '',
+				'css_animation'     => 'none',
+				'el_class'          => '',
+				'css'               => '',
 			),
 			$atts
 		);
 
-		extract( $atts );
+		extract( $atts ); // phpcs:ignore WordPress.PHP.DontExtract.extract_extract
 
 		if ( ! $woodmart_css_id ) {
 			$woodmart_css_id = uniqid();
@@ -48,7 +58,7 @@ if ( ! function_exists( 'woodmart_shortcode_responsive_text_block' ) ) {
 
 		$text_wrapper_class .= ' color-scheme-' . $color_scheme;
 		$text_wrapper_class .= ' text-' . $align;
-		$text_wrapper_class .= $inline == 'yes' ? ' inline-element' : '';
+		$text_wrapper_class .= 'yes' === $inline ? ' inline-element' : '';
 		$text_wrapper_class .= woodmart_get_css_animation( $css_animation );
 
 		if ( $content_width && 'custom' !== $content_width && '100' !== $content_width ) {
@@ -66,7 +76,7 @@ if ( ! function_exists( 'woodmart_shortcode_responsive_text_block' ) ) {
 			$text_wrapper_class .= ' ' . vc_shortcode_custom_css_class( $css );
 		}
 
-		if ( $el_class != '' ) {
+		if ( '' !== $el_class ) {
 			$text_wrapper_class .= ' ' . $el_class;
 		}
 
@@ -80,7 +90,7 @@ if ( ! function_exists( 'woodmart_shortcode_responsive_text_block' ) ) {
 				</div>
 
 				<?php
-				if ( ( $size == 'custom' && ! $text_font_size ) || ( $color_scheme == 'custom' && ! woodmart_is_css_encode( $color ) ) ) {
+				if ( ( 'custom' === $size && ! $text_font_size ) || ( 'custom' === $color_scheme && ! woodmart_is_css_encode( $color ) ) ) {
 					$css = '';
 
 					if ( $desktop_text_size || $color ) {
@@ -96,16 +106,18 @@ if ( ! function_exists( 'woodmart_shortcode_responsive_text_block' ) ) {
 						$css .= '}';
 					}
 
-					if ( $tablet_text_size ) {
-						$css .= '@media (max-width: 1199px) {';
-						$css .= woodmart_responsive_text_size_css( $text_id, 'woodmart-text-block', $tablet_text_size, 'return' );
-						$css .= '}';
-					}
+					if ( function_exists( 'woodmart_responsive_text_size_css' ) ) {
+						if ( $tablet_text_size ) {
+							$css .= '@media (max-width: 1199px) {';
+							$css .= woodmart_responsive_text_size_css( $text_id, 'woodmart-text-block', $tablet_text_size, 'return' );
+							$css .= '}';
+						}
 
-					if ( $mobile_text_size ) {
-						$css .= '@media (max-width: 767px) {';
-						$css .= woodmart_responsive_text_size_css( $text_id, 'woodmart-text-block', $mobile_text_size, 'return' );
-						$css .= '}';
+						if ( $mobile_text_size ) {
+							$css .= '@media (max-width: 767px) {';
+							$css .= woodmart_responsive_text_size_css( $text_id, 'woodmart-text-block', $mobile_text_size, 'return' );
+							$css .= '}';
+						}
 					}
 
 					wp_add_inline_style( 'woodmart-inline-css', $css );
@@ -117,6 +129,5 @@ if ( ! function_exists( 'woodmart_shortcode_responsive_text_block' ) ) {
 		ob_end_clean();
 
 		return $output;
-
 	}
 }

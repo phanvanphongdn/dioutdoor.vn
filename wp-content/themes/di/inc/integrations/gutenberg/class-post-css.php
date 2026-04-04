@@ -2,7 +2,7 @@
 /**
  * Gutenberg post CSS class.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Gutenberg;
@@ -13,7 +13,7 @@ use XTS\Modules\Styles_Storage;
 /**
  * Post CSS module.
  *
- * @package Woodmart
+ * @package woodmart
  */
 class Post_CSS extends Singleton {
 
@@ -34,7 +34,8 @@ class Post_CSS extends Singleton {
 	/**
 	 * Generate CSS for blocks.
 	 *
-	 * @param int $post_id Post ID.
+	 * @param int    $post_id Post ID.
+	 * @param object $post Post object.
 	 * @return void
 	 */
 	public function prepare_assets( $post_id, $post ) {
@@ -42,8 +43,16 @@ class Post_CSS extends Singleton {
 			return;
 		}
 
+		$css = array(
+			'only_desktop' => '',
+			'desktop'      => '',
+			'tablet'       => '',
+			'only_tablet'  => '',
+			'mobile'       => '',
+		);
+
 		if ( has_blocks( $post->post_content ) && ! empty( $post->post_content ) ) {
-			$blocks = xts_parse_blocks_from_content( $post->post_content );
+			$blocks = woodmart_parse_blocks_from_content( $post->post_content );
 
 			if ( ! is_array( $blocks ) || empty( $blocks ) ) {
 				return;
@@ -53,6 +62,8 @@ class Post_CSS extends Singleton {
 		}
 
 		$storage = new Styles_Storage( $this->get_storage_key( $post_id ), 'post_meta', $post_id );
+
+		$css = apply_filters( 'woodmart_post_blocks_css', $css, $post_id, $post );
 
 		if ( empty( $css ) || ( empty( $css['desktop'] ) && empty( $css['only_desktop'] ) && empty( $css['tablet'] ) && empty( $css['only_tablet'] ) && empty( $css['mobile'] ) ) ) {
 			$storage->delete_css();
@@ -92,6 +103,8 @@ class Post_CSS extends Singleton {
 	/**
 	 * Print blocks CSS.
 	 *
+	 * @param int  $post_id Post ID.
+	 * @param bool $inline_css Whether to return inline CSS.
 	 * @return string
 	 */
 	public function get_inline_blocks_css( $post_id, $inline_css = false ) {
@@ -110,6 +123,8 @@ class Post_CSS extends Singleton {
 		}
 
 		ob_start();
+
+		Google_Fonts::get_instance()->enqueue_inline_google_fonts( $post_id );
 
 		if ( $inline_css ) {
 			$storage->inline_css();
@@ -186,7 +201,12 @@ class Post_CSS extends Singleton {
 				continue;
 			}
 
-			$config    = Blocks::get_instance()->get_block_config( $block['blockName'] );
+			$config = Blocks::get_instance()->get_block_config( $block['blockName'] );
+
+			if ( ! $config ) {
+				continue;
+			}
+
 			$block_obj = new Block( $block['blockName'], $config, $block['attrs'] );
 
 			$block_css = $block_obj->generate_frontend_css();
@@ -266,12 +286,12 @@ class Post_CSS extends Singleton {
 	/**
 	 * Get storage key.
 	 *
+	 * @param int $post_id Post ID.
 	 * @return string
 	 */
 	public function get_storage_key( $post_id ) {
 		return 'blocks-' . $post_id;
 	}
-
 }
 
 Post_CSS::get_instance();

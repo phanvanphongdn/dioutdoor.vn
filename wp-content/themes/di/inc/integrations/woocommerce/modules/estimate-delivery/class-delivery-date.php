@@ -7,7 +7,7 @@
 
 namespace XTS\Modules\Estimate_Delivery;
 
-use XTS\Admin\Modules\Options;
+use DateTime;
 
 /**
  * Estimate delivery class.
@@ -16,7 +16,7 @@ class Delivery_Date {
 	/**
 	 * Manager instance.
 	 *
-	 * @var Manager instanse.
+	 * @var Manager instance.
 	 */
 	public $manager;
 
@@ -43,22 +43,35 @@ class Delivery_Date {
 	public $format;
 
 	/**
+	 * If set, the delivery date will be calculated from this day.
+	 *
+	 * @var string|false
+	 */
+	public $start_date;
+
+	/**
 	 * Constructor.
 	 *
 	 * @param WC_Product $product Instance of WC_Product class.
 	 * @param int|false  $shipping_method_id Shipping method id for calculate date on admin panel.
+	 * @param int|false  $start_date Date of order.
 	 *
 	 * @return void
 	 */
-	public function __construct( $product, $shipping_method_id = false ) {
-		$this->manager = Manager::get_instance();
-		$this->product = $product;
-		$this->rule    = $this->manager->get_rule_for_product( $product, $shipping_method_id );
-		$this->format  = self::get_format( $this->get_rule_meta_box( 'est_del_day_min' ), $this->get_rule_meta_box( 'est_del_day_max' ) );
+	public function __construct( $product, $shipping_method_id = false, $start_date = false ) {
+		if ( ! woodmart_get_opt( 'estimate_delivery_enabled' ) || ! woodmart_woocommerce_installed() ) {
+			return;
+		}
+
+		$this->manager    = Manager::get_instance();
+		$this->product    = $product;
+		$this->start_date = $start_date;
+		$this->rule       = $this->manager->get_rule_for_product( $product, $shipping_method_id );
+		$this->format     = self::get_format( $this->get_rule_meta_box( 'est_del_day_min' ), $this->get_rule_meta_box( 'est_del_day_max' ) );
 	}
 
 	/**
-	 * Get product date string. Example: 'Oct 2, 2024 - Oct 4, 2024'.
+	 * Get product date string.
 	 *
 	 * @return string
 	 */
@@ -67,12 +80,26 @@ class Delivery_Date {
 			return '';
 		}
 
-		$skipped_date = $this->get_rule_meta_box( 'est_del_skipped_date' );
+		$skipped_date = $this->get_all_skipped_dates();
 
-		if ( ! empty( $skipped_date ) && 7 === count( $skipped_date ) ) {
+		if ( false === $skipped_date ) {
 			return '';
 		}
 
+		if ( 'days' === woodmart_get_opt( 'estimate_delivery_display_format' ) ) {
+			return $this->get_days_count( $skipped_date );
+		} else {
+			return $this->get_specific_dates( $skipped_date );
+		}
+	}
+
+	/**
+	 * Get specific dates string. Example: 'Oct 2, 2024 - Oct 4, 2024'.
+	 *
+	 * @param array $skipped_date List of skipped dates index.
+	 * @return string
+	 */
+	public function get_specific_dates( $skipped_date ) {
 		$delivery_date = '';
 		$date_format   = woodmart_get_opt( 'estimate_delivery_date_format', 'M j, Y' );
 		$date_format   = 'default' === $date_format ? get_option( 'date_format' ) : $date_format;
@@ -82,11 +109,11 @@ class Delivery_Date {
 
 		switch ( $this->format ) {
 			case 'min':
-				$min_time       = self::get_date_after( $min_days, $skipped_date );
+				$min_time       = $this->get_date_after( $min_days, $skipped_date );
 				$delivery_date .= wp_date( $date_format, $min_time );
 				break;
 			case 'max':
-				$max_time       = self::get_date_after( $max_days, $skipped_date );
+				$max_time       = $this->get_date_after( $max_days, $skipped_date );
 				$delivery_date .= wp_date( $date_format, $max_time );
 				break;
 			case 'day':
@@ -94,22 +121,82 @@ class Delivery_Date {
 					$max_days = '0';
 				}
 
-				$delivery_time = self::get_date_after( $max_days, $skipped_date );
+				$delivery_time = $this->get_date_after( $max_days, $skipped_date );
 				$delivery_date = wp_date( $date_format, $delivery_time );
 				break;
 			case 'days':
-				$min_time = self::get_date_after( $min_days, $skipped_date );
-				$max_time = self::get_date_after( $max_days, $skipped_date );
+				$min_time = $this->get_date_after( $min_days, $skipped_date );
+				$max_time = $this->get_date_after( $max_days, $skipped_date );
 
 				$delivery_date .= wp_date( $date_format, $min_time );
-				$delivery_date .= apply_filters( 'woodmart_dates_separator', ' - ' );
+				$delivery_date .= apply_filters( 'woodmart_dates_separator', ' – ' );
 				$delivery_date .= wp_date( $date_format, $max_time );
 				break;
-			default:
-				$delivery_date = '';
 		}
 
 		return $delivery_date;
+	}
+
+	/**
+	 * Get delivery days range string. Example: '2-4 days'.
+	 *
+	 * @param array $skipped_date List of skipped dates index.
+	 * @return string
+	 */
+	public function get_days_count( $skipped_date ) {
+		$min_days = $this->get_date_after( $this->get_rule_meta_box( 'est_del_day_min' ), $skipped_date );
+		$max_days = $this->get_date_after( $this->get_rule_meta_box( 'est_del_day_max' ), $skipped_date );
+
+		if ( ! empty( $this->start_date ) ) {
+			$start_date_time_obj = new DateTime( $this->start_date );
+			$current_time        = $start_date_time_obj->getTimestamp();
+		} else {
+			$current_time = wp_date( 'U' );
+		}
+
+		if ( ! empty( $min_days ) ) {
+			$min_days = max( 1, ceil( ( $min_days - $current_time ) / DAY_IN_SECONDS ) );
+		} else {
+			$min_days = 1;
+		}
+
+		if ( ! empty( $max_days ) ) {
+			$max_days = max( 1, ceil( ( $max_days - $current_time ) / DAY_IN_SECONDS ) );
+		} else {
+			$max_days = 1;
+		}
+
+		switch ( $this->format ) {
+			case 'min':
+				return sprintf(
+					'%s %s',
+					$min_days,
+					_n( 'day', 'days', $min_days, 'woodmart' )
+				);
+			case 'max':
+				return sprintf(
+					'%s %s',
+					$max_days,
+					_n( 'day', 'days', $max_days, 'woodmart' )
+				);
+			case 'day':
+				$days = empty( $max_days ) ? 1 : $max_days;
+				return sprintf(
+					'%s %s',
+					$days,
+					_n( 'day', 'days', $days, 'woodmart' )
+				);
+			case 'days':
+				return sprintf(
+					'%s%s%s %s',
+					$min_days,
+					apply_filters( 'woodmart_days_range_separator', '-' ),
+					$max_days,
+					_n( 'day', 'days', $max_days, 'woodmart' )
+				);
+			default:
+				return '';
+		}
 	}
 
 	/**
@@ -124,14 +211,14 @@ class Delivery_Date {
 
 		switch ( $this->format ) {
 			case 'min':
-				return esc_html__( 'Earliest estimated delivery date', 'woodmart' );
+				return esc_html__( 'Earliest estimated delivery', 'woodmart' );
 			case 'max':
-				return esc_html__( 'Latest estimated delivery date', 'woodmart' );
+				return esc_html__( 'Latest estimated delivery', 'woodmart' );
 			case 'day':
 			case 'days':
 				$number = 'day' === $this->format ? 1 : 2;
 
-				return _n( 'Estimated delivery date', 'Estimated delivery dates', $number, 'woodmart' );
+				return _n( 'Estimated delivery', 'Estimated delivery', $number, 'woodmart' );
 			default:
 				return '';
 		}
@@ -150,7 +237,17 @@ class Delivery_Date {
 		$text = $this->get_label();
 		$date = $this->get_date();
 
-		return ! empty( $text ) && ! empty( $date ) ? sprintf( '<strong>%s:</strong> %s', $text, $date ) : '';
+		$date_string = '';
+
+		if ( ! empty( $text ) ) {
+			$date_string = '<strong>' . $text . ':</strong> ';
+		}
+
+		if ( ! empty( $date ) ) {
+			$date_string .= $date;
+		}
+
+		return $date_string;
 	}
 
 	/**
@@ -158,7 +255,7 @@ class Delivery_Date {
 	 *
 	 * @param string $key Meta box key.
 	 *
-	 * @return array
+	 * @return array|string
 	 */
 	public function get_rule_meta_box( $key ) {
 		if ( isset( $this->rule[ $key ] ) ) {
@@ -169,13 +266,53 @@ class Delivery_Date {
 	}
 
 	/**
+	 * Merge est_del_skipped_date and est_del_exclusion_dates option and return result.
+	 *
+	 * @return array|false
+	 */
+	public function get_all_skipped_dates() {
+		$skipped_date    = $this->get_rule_meta_box( 'est_del_skipped_date' );
+		$exclusion_dates = $this->get_rule_meta_box( 'est_del_exclusion_dates' );
+
+		if ( is_array( $skipped_date ) && 7 === count( $skipped_date ) ) {
+			return false;
+		}
+
+		if ( empty( $skipped_date ) ) {
+			$skipped_date = array();
+		}
+
+		if ( ! empty( $exclusion_dates ) ) {
+			foreach ( $exclusion_dates as $date ) {
+				if ( ! isset( $date['date_type'] ) ) {
+					continue;
+				}
+
+				if ( 'single' === $date['date_type'] && ! empty( $date['single_day'] ) ) {
+					$skipped_date[] = $date['single_day'];
+				} elseif ( 'period' === $date['date_type'] && ! empty( $date['first_day'] ) && ! empty( $date['last_day'] ) ) {
+					$current_date = strtotime( $date['first_day'] );
+					$end_date     = strtotime( $date['last_day'] );
+
+					while ( $current_date <= $end_date ) {
+						$skipped_date[] = wp_date( 'Y-m-d', $current_date );
+						$current_date   = strtotime( '+1 day', $current_date );
+					}
+				}
+			}
+		}
+
+		return $skipped_date;
+	}
+
+	/**
 	 * Get delivery date format.
 	 * Depending on the rules there are 4 types: min, max, day, days or False.
 	 *
 	 * @param string|false $min Minimum delivery days.
 	 * @param string|false $max Maximum delivery days.
 	 *
-	 * @return string|false
+	 * @return string
 	 */
 	public static function get_format( $min = false, $max = false ) {
 		if ( empty( $max ) && '0' !== $max && ( ! empty( $min ) || '0' === $min ) ) {
@@ -197,23 +334,41 @@ class Delivery_Date {
 	 *
 	 * @return int
 	 */
-	public static function get_date_after( $number_of_days, $skipped_dates = array() ) {
-		$current_date   = current_time( 'm/d/Y' );
-		$j              = 1;
-		$i              = 1;
-		$available      = array();
-		$number_of_days = intval( $number_of_days );
+	public function get_date_after( $number_of_days, $skipped_dates = array() ) {
+		$current_date         = current_time( 'm/d/Y' );
+		$current_time         = current_time( 'h:i a' );
+		$j                    = 1;
+		$i                    = 1;
+		$available            = array();
+		$number_of_days       = intval( $number_of_days );
+		$current_date_skipped = false;
+		$daily_deadline       = $this->get_rule_meta_box( 'est_del_daily_deadline' );
+
+		if ( ! empty( $this->start_date ) ) {
+			$start_date_time_obj = new DateTime( $this->start_date );
+			$current_date        = $start_date_time_obj->format( 'm/d/Y' );
+			$current_time        = $start_date_time_obj->format( 'h:i a' );
+		}
 
 		while ( self::is_skip_day( strtotime( $current_date ), $skipped_dates ) && ( $j <= 100 ) ) {
-			$current_date = wp_date( 'm/d/Y', strtotime( $current_date . ' + 1 day' ) );
+			$current_date         = wp_date( 'm/d/Y', strtotime( $current_date . ' + 1 day' ) );
+			$current_date_skipped = true;
 			++$j;
 		}
 
-		if ( 0 === $number_of_days ) {
+		if ( $daily_deadline && ! $current_date_skipped ) {
+			$time_format_pattern = '/^(?:2[0-3]|[01][0-9]):[0-5][0-9](?::[0-5][0-9])?$/';
+
+			if ( preg_match( $time_format_pattern, $daily_deadline ) && strtotime( $current_date . ' ' . $current_time ) > strtotime( $current_date . ' ' . $daily_deadline ) ) {
+				++$number_of_days;
+			} elseif ( 0 === $number_of_days ) {
+				return strtotime( $current_date );
+			}
+		} elseif ( 0 === $number_of_days ) {
 			return strtotime( $current_date );
 		}
 
-		while ( ( count( $available ) < $number_of_days ) && ( $i <= 100 ) ) {
+		while ( ( count( $available ) < $number_of_days ) && ( $i <= 100 ) ) { // phpcs:ignore.
 			$time = strtotime( $current_date ) + DAY_IN_SECONDS * $i;
 
 			if ( ! self::is_skip_day( $time, $skipped_dates ) ) {
@@ -236,8 +391,14 @@ class Delivery_Date {
 	 */
 	public static function is_skip_day( $timestamp, $skipped_dates = array() ) {
 		if ( ! empty( $skipped_dates ) && is_array( $skipped_dates ) ) {
+			$pattern = '/^\d{4}-\d{2}-\d{2}$/';
+
 			foreach ( $skipped_dates as $skipped_date ) {
 				if ( wp_date( 'w', $timestamp ) === $skipped_date ) {
+					return true;
+				}
+
+				if ( preg_match( $pattern, $skipped_date ) && wp_date( 'Y-m-d', $timestamp ) === $skipped_date ) {
 					return true;
 				}
 			}

@@ -2,7 +2,7 @@
 /**
  * Cart totals shortcode.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 use XTS\Modules\Layouts\Main;
@@ -58,6 +58,8 @@ if ( ! function_exists( 'woodmart_shortcode_cart_totals' ) ) {
 			$shortcode_cart = new WC_Shortcode_Cart();
 			$shortcode_cart->calculate_shipping();
 		}
+
+		do_action( 'woocommerce_check_cart_items' );
 
 		?>
 		<div class="wd-cart-totals wd-wpb<?php echo esc_attr( $wrapper_classes ); ?>">

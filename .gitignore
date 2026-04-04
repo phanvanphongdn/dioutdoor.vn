@@ -2,3 +2,7 @@
 /wp-content/plugins/seo-by-rank-math/
 /wp-content/plugins/seo-by-rank-math-pro/
 /.history/
+.vscode/sftp.json
+.vscode/sftp.json
+.gitignore
+.vscode/pro-deployer.json

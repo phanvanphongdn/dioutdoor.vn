@@ -2,7 +2,7 @@
 /**
  * Instagram template function.
  *
- * @package xts
+ * @package woodmart
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -101,7 +101,6 @@ if ( ! function_exists( 'woodmart_elementor_instagram_template' ) ) {
 			);
 
 			if ( 'yes' === $settings['scroll_carousel_init'] ) {
-				woodmart_enqueue_js_library( 'waypoints' );
 				$pics_classes .= ' scroll-init';
 			}
 
@@ -144,8 +143,7 @@ if ( ! function_exists( 'woodmart_elementor_instagram_template' ) ) {
 
 		$encoded_attributes = json_encode( $settings );
 
-		if ( is_wp_error( $media_array ) && ( $media_array->get_error_code() === 'invalid_response_429' || apply_filters( 'woodmart_intagram_user_ajax_load', false ) || 'ajax' === $settings['data_source'] ) ) {
-			woodmart_enqueue_js_script( 'instagram-element' );
+		if ( is_wp_error( $media_array ) && ( $media_array->get_error_code() === 'invalid_response_429' || apply_filters( 'woodmart_intagram_user_ajax_load', false ) ) ) {
 			$wrapper_classes      .= ' wd-error';
 			$media_array           = array();
 			$settings['hide_mask'] = true;

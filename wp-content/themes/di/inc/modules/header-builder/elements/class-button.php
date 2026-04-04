@@ -1,22 +1,33 @@
 <?php
+/**
+ * Button element class file.
+ *
+ * @package woodmart
+ */
 
 namespace XTS\Modules\Header_Builder\Elements;
 
 use XTS\Modules\Header_Builder\Element;
 
 /**
- * ------------------------------------------------------------------------------------------------
- *  Button element
- * ------------------------------------------------------------------------------------------------
+ *  Button element.
  */
 class Button extends Element {
 
+	/**
+	 * Constructor.
+	 */
 	public function __construct() {
 		parent::__construct();
 
 		$this->template_name = 'button';
 	}
 
+	/**
+	 * Map element.
+	 *
+	 * @return void
+	 */
 	public function map() {
 		$this->args = array(
 			'type'            => 'button',
@@ -64,7 +75,7 @@ class Button extends Element {
 					'group'       => esc_html__( 'Extra', 'woodmart' ),
 					'type'        => 'text',
 					'value'       => '',
-					'requires'    => array(
+					'condition'   => array(
 						'button_smooth_scroll' => array(
 							'comparison' => 'equal',
 							'value'      => true,
@@ -79,7 +90,7 @@ class Button extends Element {
 					'group'       => esc_html__( 'Extra', 'woodmart' ),
 					'type'        => 'text',
 					'value'       => '',
-					'requires'    => array(
+					'condition'   => array(
 						'button_smooth_scroll' => array(
 							'comparison' => 'equal',
 							'value'      => true,
@@ -127,13 +138,13 @@ class Button extends Element {
 					),
 				),
 				'shape'                       => array(
-					'id'       => 'shape',
-					'title'    => esc_html__( 'Button shape', 'woodmart' ),
-					'tab'      => esc_html__( 'Style', 'woodmart' ),
-					'group'    => esc_html__( 'General', 'woodmart' ),
-					'type'     => 'selector',
-					'value'    => 'rectangle',
-					'options'  => array(
+					'id'        => 'shape',
+					'title'     => esc_html__( 'Button shape', 'woodmart' ),
+					'tab'       => esc_html__( 'Style', 'woodmart' ),
+					'group'     => esc_html__( 'General', 'woodmart' ),
+					'type'      => 'selector',
+					'value'     => 'rectangle',
+					'options'   => array(
 						'rectangle'  => array(
 							'label' => esc_html__( 'Rectangle', 'woodmart' ),
 							'value' => 'rectangle',
@@ -150,7 +161,7 @@ class Button extends Element {
 							'image' => WOODMART_ASSETS_IMAGES . '/settings/buttons/shape/round.jpeg',
 						),
 					),
-					'requires' => array(
+					'condition' => array(
 						'style' => array(
 							'comparison' => 'not_equal',
 							'value'      => array( 'round', 'link' ),
@@ -286,7 +297,7 @@ class Button extends Element {
 					),
 					'type'        => 'color',
 					'value'       => '',
-					'requires'    => array(
+					'condition'   => array(
 						'color_scheme' => array(
 							'comparison' => 'equal',
 							'value'      => 'custom',
@@ -336,7 +347,7 @@ class Button extends Element {
 					),
 					'type'        => 'color',
 					'value'       => '',
-					'requires'    => array(
+					'condition'   => array(
 						'color_scheme_hover' => array(
 							'comparison' => 'equal',
 							'value'      => 'custom',
@@ -391,7 +402,7 @@ class Button extends Element {
 					'group'       => esc_html__( 'Image', 'woodmart' ),
 					'type'        => 'text',
 					'value'       => '',
-					'requires'    => array(
+					'condition'   => array(
 						'icon_library' => array(
 							'comparison' => 'equal',
 							'value'      => 'fontawesome',
@@ -407,7 +418,7 @@ class Button extends Element {
 					'group'       => esc_html__( 'Image', 'woodmart' ),
 					'type'        => 'text',
 					'value'       => '',
-					'requires'    => array(
+					'condition'   => array(
 						'icon_library' => array(
 							'comparison' => 'equal',
 							'value'      => 'openiconic',
@@ -423,7 +434,7 @@ class Button extends Element {
 					'group'       => esc_html__( 'Image', 'woodmart' ),
 					'type'        => 'text',
 					'value'       => '',
-					'requires'    => array(
+					'condition'   => array(
 						'icon_library' => array(
 							'comparison' => 'equal',
 							'value'      => 'typicons',
@@ -439,7 +450,7 @@ class Button extends Element {
 					'group'       => esc_html__( 'Image', 'woodmart' ),
 					'type'        => 'text',
 					'value'       => '',
-					'requires'    => array(
+					'condition'   => array(
 						'icon_library' => array(
 							'comparison' => 'equal',
 							'value'      => 'entypo',
@@ -455,7 +466,7 @@ class Button extends Element {
 					'group'       => esc_html__( 'Image', 'woodmart' ),
 					'type'        => 'text',
 					'value'       => '',
-					'requires'    => array(
+					'condition'   => array(
 						'icon_library' => array(
 							'comparison' => 'equal',
 							'value'      => 'linecons',
@@ -471,7 +482,7 @@ class Button extends Element {
 					'group'       => esc_html__( 'Image', 'woodmart' ),
 					'type'        => 'text',
 					'value'       => '',
-					'requires'    => array(
+					'condition'   => array(
 						'icon_library' => array(
 							'comparison' => 'equal',
 							'value'      => 'monosocial',
@@ -487,7 +498,7 @@ class Button extends Element {
 					'group'       => esc_html__( 'Image', 'woodmart' ),
 					'type'        => 'text',
 					'value'       => '',
-					'requires'    => array(
+					'condition'   => array(
 						'icon_library' => array(
 							'comparison' => 'equal',
 							'value'      => 'material',

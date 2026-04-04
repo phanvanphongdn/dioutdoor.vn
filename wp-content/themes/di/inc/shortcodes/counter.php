@@ -1,12 +1,22 @@
-<?php if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
-	exit( 'No direct script access allowed' );}
-
+<?php
 /**
-* ------------------------------------------------------------------------------------------------
-* Counter shortcode
-* ------------------------------------------------------------------------------------------------
-*/
+ * Shortcode for Animated Counter element.
+ *
+ * @package woodmart
+ */
+
+if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
+	exit( 'No direct script access allowed' );
+}
+
 if ( ! function_exists( 'woodmart_shortcode_animated_counter' ) ) {
+	/**
+	 * Animated Counter shortcode.
+	 *
+	 * @param array $atts Shortcode attributes.
+	 *
+	 * @return string
+	 */
 	function woodmart_shortcode_animated_counter( $atts ) {
 		$output   = '';
 		$el_class = apply_filters( 'vc_shortcodes_css_class', '', '', $atts );

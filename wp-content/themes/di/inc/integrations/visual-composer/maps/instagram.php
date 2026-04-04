@@ -66,12 +66,10 @@ if ( ! function_exists( 'woodmart_get_instagram_params' ) ) {
 						esc_html__( 'API', 'woodmart' )    => 'api',
 						esc_html__( 'Images', 'woodmart' ) => 'images',
 						esc_html__( 'Scrape (deprecated)', 'woodmart' ) => 'scrape',
-						esc_html__( 'AJAX (deprecated)', 'woodmart' ) => 'ajax',
 					),
 					'std'        => 'images',
 					'hint'       => 'API request type<br>
 Scrape - parse Instagram page and take photos by username. Now deprecated and may be blocked by Instagram.<br>
-AJAX - send AJAX request to the Instagram page on frontend. Works more stable then simple scrape.<br>
 API - the best safe and legal option to obtain Instagram photos. Requires Instagram APP configuration. <br>
 Follow our documentation <a href="https://xtemos.com/docs/woodmart/faq-guides/setup-instagram-api/" target="_blank">here</a>',
 				),
@@ -104,6 +102,27 @@ Follow our documentation <a href="https://xtemos.com/docs/woodmart/faq-guides/se
 					'dependency'       => array(
 						'element' => 'data_source',
 						'value'   => array( 'images' ),
+					),
+					'edit_field_class' => 'vc_col-sm-6 vc_column',
+				),
+				array(
+					'heading'          => esc_html__( 'Aspect Ratio', 'woodmart' ),
+					'param_name'       => 'aspect_ratio',
+					'type'             => 'wd_select',
+					'style'            => 'select',
+					'selectors'        => array(
+						'{{WRAPPER}}.wd-insta' => array(
+							'--wd-aspect-ratio: {{VALUE}};',
+						),
+					),
+					'devices'          => array(
+						'desktop' => array(
+							'value' => '1/1',
+						),
+					),
+					'value'            => array(
+						'1:1' => '1/1',
+						'4:5' => '4/5',
 					),
 					'edit_field_class' => 'vc_col-sm-6 vc_column',
 				),

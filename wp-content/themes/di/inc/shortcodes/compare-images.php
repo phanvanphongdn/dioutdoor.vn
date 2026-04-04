@@ -1,8 +1,8 @@
 <?php
 /**
- * Compare images shortcode.
+ * Shortcode for Compare Images element.
  *
- * @package WoodMart
+ * @package woodmart
  */
 
 if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
@@ -10,6 +10,13 @@ if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
 }
 
 if ( ! function_exists( 'woodmart_shortcode_compare_images' ) ) {
+	/**
+	 * Compare images shortcode.
+	 *
+	 * @param array $atts Shortcode attributes.
+	 *
+	 * @return false|string
+	 */
 	function woodmart_shortcode_compare_images( $atts ) {
 		$wrapper_classes = apply_filters( 'vc_shortcodes_css_class', '', '', $atts );
 

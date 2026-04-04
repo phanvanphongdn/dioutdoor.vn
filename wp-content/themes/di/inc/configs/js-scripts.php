@@ -3,7 +3,7 @@
  * JS scripts.
  *
  * @version 1.0
- * @package xts
+ * @package woodmart
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -12,11 +12,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 return array(
 	// Admin.
-	'admin-bar-slider-menu'           => array(
+	'admin-bar-menu'                  => array(
 		array(
-			'title'     => esc_html__( 'Admin bar slider menu', 'woodmart' ),
-			'name'      => 'admin-bar-slider-menu',
-			'file'      => '/js/scripts/admin/adminBarSliderMenu',
+			'title'     => esc_html__( 'Admin bar menu', 'woodmart' ),
+			'name'      => 'admin-bar-menu',
+			'file'      => '/js/scripts/admin/adminBarMenu',
 			'in_footer' => true,
 		),
 	),
@@ -26,6 +26,14 @@ return array(
 			'title'     => esc_html__( 'Helpers', 'woodmart' ),
 			'name'      => 'woodmart-theme',
 			'file'      => '/js/scripts/global/helpers',
+			'in_footer' => true,
+		),
+	),
+	'elementor-integration'           => array(
+		array(
+			'title'     => esc_html__( 'Elementor integration', 'woodmart' ),
+			'name'      => 'elementor-integration',
+			'file'      => '/js/scripts/global/elementor-integration',
 			'in_footer' => true,
 		),
 	),
@@ -61,11 +69,27 @@ return array(
 			'in_footer' => true,
 		),
 	),
+	'before-search-content'           => array(
+		array(
+			'title'     => esc_html__( 'Before search content', 'woodmart' ),
+			'name'      => 'before-search-content',
+			'file'      => '/js/scripts/global/beforeSearchContent',
+			'in_footer' => true,
+		),
+	),
 	'ajax-search'                     => array(
 		array(
 			'title'     => esc_html__( 'AJAX search', 'woodmart' ),
 			'name'      => 'ajax-search',
 			'file'      => '/js/scripts/global/ajaxSearch',
+			'in_footer' => true,
+		),
+	),
+	'search-history'                  => array(
+		array(
+			'title'     => esc_html__( 'Search history', 'woodmart' ),
+			'name'      => 'search-history',
+			'file'      => '/js/scripts/global/searchHistory',
 			'in_footer' => true,
 		),
 	),
@@ -163,11 +187,11 @@ return array(
 			'in_footer' => true,
 		),
 	),
-	'promo-popup'                     => array(
+	'floating-blocks'                 => array(
 		array(
-			'title'     => esc_html__( 'Promo popup', 'woodmart' ),
-			'name'      => 'promo-popup',
-			'file'      => '/js/scripts/global/promoPopup',
+			'title'     => esc_html__( 'Floating blocks', 'woodmart' ),
+			'name'      => 'floating-blocks',
+			'file'      => '/js/scripts/global/floatingBlocks',
 			'in_footer' => true,
 		),
 	),
@@ -224,6 +248,30 @@ return array(
 			'title'     => esc_html__( 'Masonry', 'woodmart' ),
 			'name'      => 'masonry-layout',
 			'file'      => '/js/scripts/global/masonryLayout',
+			'in_footer' => true,
+		),
+	),
+	'clear-search'                    => array(
+		array(
+			'title'     => esc_html__( 'Clear search button', 'woodmart' ),
+			'name'      => 'clear-search',
+			'file'      => '/js/scripts/global/clearSearch',
+			'in_footer' => true,
+		),
+	),
+	'lcp-tracker'                     => array(
+		array(
+			'title'     => esc_html__( 'LCP image tracker', 'woodmart' ),
+			'name'      => 'lcp-tracker',
+			'file'      => '/js/scripts/global/lcpTracker',
+			'in_footer' => true,
+		),
+	),
+	'preloader'                       => array(
+		array(
+			'title'     => esc_html__( 'Preloader', 'woodmart' ),
+			'name'      => 'preloader',
+			'file'      => '/js/scripts/global/preloader',
 			'in_footer' => true,
 		),
 	),
@@ -315,14 +363,6 @@ return array(
 			'in_footer' => true,
 		),
 	),
-	'instagram-element'               => array(
-		array(
-			'title'     => esc_html__( 'Instagram element', 'woodmart' ),
-			'name'      => 'instagram-element',
-			'file'      => '/js/scripts/elements/instagram',
-			'in_footer' => true,
-		),
-	),
 	'slider-element'                  => array(
 		array(
 			'title'     => esc_html__( 'Slider element', 'woodmart' ),
@@ -361,7 +401,7 @@ return array(
 	),
 	'view3d-element'                  => array(
 		array(
-			'title'     => esc_html__( 'View 3D element', 'woodmart' ),
+			'title'     => esc_html__( '360 degree view element', 'woodmart' ),
 			'name'      => 'view3d-element',
 			'file'      => '/js/scripts/elements/view3d',
 			'in_footer' => true,
@@ -436,6 +476,14 @@ return array(
 			'title'     => esc_html__( 'Compare images element', 'woodmart' ),
 			'name'      => 'compare-images-element',
 			'file'      => '/js/scripts/elements/compareImages',
+			'in_footer' => true,
+		),
+	),
+	'sticky-columns-element'          => array(
+		array(
+			'title'     => esc_html__( 'Sticky columns element', 'woodmart' ),
+			'name'      => 'sticky-columns-element',
+			'file'      => '/js/scripts/elements/stickyColumns',
 			'in_footer' => true,
 		),
 	),
@@ -539,9 +587,9 @@ return array(
 	),
 	'simple-dropdown'                 => array(
 		array(
-			'title'     => esc_html__( 'Simple dropdown', 'woodmart' ),
+			'title'     => esc_html__( 'Search category dropdown', 'woodmart' ),
 			'name'      => 'simple-dropdown',
-			'file'      => '/js/scripts/menu/simpleDropdown',
+			'file'      => '/js/scripts/menu/searchCatDropdown',
 			'in_footer' => true,
 		),
 	),
@@ -1159,6 +1207,22 @@ return array(
 			'in_footer' => true,
 		),
 	),
+	'pt-subscribe-form'               => array(
+		array(
+			'title'     => esc_html__( 'Price tracker subscribe form', 'woodmart' ),
+			'name'      => 'pt-subscribe-form',
+			'file'      => '/js/scripts/wc/ptSubscribeForm',
+			'in_footer' => true,
+		),
+	),
+	'pt-table'                        => array(
+		array(
+			'title'     => esc_html__( 'Price tracker table in my account page', 'woodmart' ),
+			'name'      => 'pt-table',
+			'file'      => '/js/scripts/wc/ptTable',
+			'in_footer' => true,
+		),
+	),
 	'update-delivery-dates'           => array(
 		array(
 			'title'     => esc_html__( 'Update estimate delivery dates using ajax.', 'woodmart' ),
@@ -1172,6 +1236,22 @@ return array(
 			'title'     => esc_html__( 'Estimate delivery on cart page', 'woodmart' ),
 			'name'      => 'estimate-delivery-on-cart',
 			'file'      => '/js/scripts/wc/estimateDeliveryOnCart',
+			'in_footer' => true,
+		),
+	),
+	'abandoned-cart'                  => array(
+		array(
+			'title'     => esc_html__( 'Abandoned cart', 'woodmart' ),
+			'name'      => 'abandoned-cart',
+			'file'      => '/js/scripts/wc/abandonedCart',
+			'in_footer' => true,
+		),
+	),
+	'email-subscription-checkboxes'   => array(
+		array(
+			'title'     => esc_html__( 'Email subscription checkboxes', 'woodmart' ),
+			'name'      => 'email-subscription-checkboxes',
+			'file'      => '/js/scripts/wc/emailSubscriptionCheckboxes',
 			'in_footer' => true,
 		),
 	),

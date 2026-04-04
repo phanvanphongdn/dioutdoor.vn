@@ -2,7 +2,7 @@
 /**
  * Gutenberg Blocks Assets class.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 namespace XTS\Gutenberg;
@@ -12,7 +12,7 @@ use XTS\Singleton;
 /**
  * Blocks Assets module.
  *
- * @package Woodmart
+ * @package woodmart
  */
 class Blocks_Assets extends Singleton {
 
@@ -45,7 +45,7 @@ class Blocks_Assets extends Singleton {
 		}
 
 		if ( ! empty( $post->post_content ) && has_blocks( $post->post_content ) ) {
-			$blocks = xts_parse_blocks_from_content( $post->post_content );
+			$blocks = woodmart_parse_blocks_from_content( $post->post_content );
 
 			if ( ! is_array( $blocks ) || empty( $blocks ) ) {
 				return;
@@ -108,7 +108,7 @@ class Blocks_Assets extends Singleton {
 
 		if ( ! empty( $assets['styles'] ) ) {
 			foreach ( $assets['styles'] as $style ) {
-				woodmart_enqueue_inline_style( $style );
+				woodmart_enqueue_inline_style( $style, woodmart_is_combined_needed( 'combined_css' ) );
 			}
 		}
 		if ( ! empty( $assets['libraries'] ) ) {
@@ -222,7 +222,12 @@ class Blocks_Assets extends Singleton {
 				continue;
 			}
 
-			$config    = Blocks::get_instance()->get_block_config( $block['blockName'] );
+			$config = Blocks::get_instance()->get_block_config( $block['blockName'] );
+
+			if ( ! $config ) {
+				continue;
+			}
+
 			$block_obj = new Block( $block['blockName'], $config, $block['attrs'] );
 
 			$block_assets = $this->get_block_advanced_assets( $block_obj->get_assets(), $block['attrs'] );
@@ -254,15 +259,22 @@ class Blocks_Assets extends Singleton {
 		if ( ! empty( $attrs['animation'] ) ) {
 			$assets['scripts'][] = 'css-animations';
 
-			$assets['styles'][] = 'block-animation';
-			$assets['styles'][] = 'block-transform';
+			$assets['styles'][] = 'mod-animations-transform-base';
+			$assets['styles'][] = 'mod-animations-transform';
+			$assets['styles'][] = 'mod-transform';
 		}
 
-		if ( ! empty( $attrs['overlay'] ) || ! empty( $attrs['bgType'] ) && 'video' === $attrs['bgType'] && ( ! empty( $attrs['bgExternalVideo'] ) || ! empty( $attrs['bgVideo'] ) ) ) {
+		if ( ! empty( $attrs['overlay'] ) || ( ! empty( $attrs['bgType'] ) && 'video' === $attrs['bgType'] && ( ! empty( $attrs['bgExternalVideo'] ) || ! empty( $attrs['bgVideo'] ) ) ) ) {
 			$assets['styles'][] = 'block-background';
 		}
 
-		$transform_attrs = array_merge( wd_get_transform_control_attrs( 'transform' ), wd_get_transform_control_attrs( 'transformHover' ), wd_get_transform_control_attrs( 'transformParentHover' ) );
+		$transform_attrs_raw = new Block_Attributes();
+
+		$transform_attrs_raw->add_attr( wd_get_transform_control_attrs( $transform_attrs_raw, 'transform' ) );
+		$transform_attrs_raw->add_attr( wd_get_transform_control_attrs( $transform_attrs_raw, 'transformHover' ) );
+		$transform_attrs_raw->add_attr( wd_get_transform_control_attrs( $transform_attrs_raw, 'transformParentHover' ) );
+
+		$transform_attrs = $transform_attrs_raw->get_attr();
 
 		if ( isset( $transform_attrs['blockId'] ) ) {
 			unset( $transform_attrs['blockId'] );
@@ -273,7 +285,7 @@ class Blocks_Assets extends Singleton {
 		if ( $transform_attrs_keys ) {
 			foreach ( $transform_attrs_keys as $key ) {
 				if ( ! empty( $attrs[ $key ] ) && ! stripos( $key, 'units' ) && ( is_string( $attrs[ $key ] ) || is_numeric( $attrs[ $key ] ) ) ) {
-					$assets['styles'][] = 'block-transform';
+					$assets['styles'][] = 'mod-transform';
 
 					break;
 				}
@@ -319,7 +331,6 @@ class Blocks_Assets extends Singleton {
 		wp_enqueue_script( 'wd-google-map-api', 'https://maps.google.com/maps/api/js?libraries=geometry&callback=woodmartThemeModule.googleMapsCallback&v=weekly&key=' . woodmart_get_opt( 'google_map_api_key' ), array( 'woodmart-theme' ), $version, true );
 		wp_enqueue_script( 'wd-maplace', WOODMART_THEME_DIR . '/js/libs/maplace' . $minified . '.js', array( 'wd-google-map-api' ), $version, true );
 	}
-
 }
 
 Blocks_Assets::get_instance();

@@ -1,12 +1,20 @@
-<?php if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
-	exit( 'No direct script access allowed' );}
+<?php // phpcs:ignore WordPress.Files.FileName.InvalidClassFileName
 /**
-* ------------------------------------------------------------------------------------------------
-* Promo Banner element map
-* ------------------------------------------------------------------------------------------------
-*/
+ * WoodMart Theme
+ *
+ * @package woodmart
+ */
+
+if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
+	exit( 'No direct script access allowed' );
+}
 
 if ( ! function_exists( 'woodmart_get_vc_map_promo_banner' ) ) {
+	/**
+	 * Get vc map for promo banner.
+	 *
+	 * @return array
+	 */
 	function woodmart_get_vc_map_promo_banner() {
 		return array(
 			'name'        => esc_html__( 'Promo Banner', 'woodmart' ),
@@ -22,6 +30,11 @@ if ( ! function_exists( 'woodmart_get_vc_map_promo_banner' ) ) {
 }
 
 if ( ! function_exists( 'woodmart_get_vc_map_banners_carousel' ) ) {
+	/**
+	 * Get vc map for banners carousel.
+	 *
+	 * @return array
+	 */
 	function woodmart_get_vc_map_banners_carousel() {
 		return array(
 			'name'                    => esc_html__( 'Banners carousel', 'woodmart' ),
@@ -76,14 +89,17 @@ if ( ! function_exists( 'woodmart_get_vc_map_banners_carousel' ) ) {
 }
 
 if ( ! function_exists( 'woodmart_get_banner_params' ) ) {
+	/**
+	 * Get banner params.
+	 */
 	function woodmart_get_banner_params() {
 		$secondary_font = woodmart_get_opt( 'secondary-font' );
 		$text_font      = woodmart_get_opt( 'text-font' );
 		$primary_font   = woodmart_get_opt( 'primary-font' );
 
-		$secondary_font_title = isset( $secondary_font[0] ) ? esc_html__( 'Secondary font', 'woodmart' ) . ' (' . $secondary_font[0]['font-family'] . ')' : esc_html__( 'Secondary font', 'woodmart' );
-		$text_font_title      = isset( $text_font[0] ) ? esc_html__( 'Text font', 'woodmart' ) . ' (' . $text_font[0]['font-family'] . ')' : esc_html__( 'Text', 'woodmart' );
-		$primary_font_title   = isset( $primary_font[0] ) ? esc_html__( 'Title font', 'woodmart' ) . ' (' . $primary_font[0]['font-family'] . ')' : esc_html__( 'Title font', 'woodmart' );
+		$secondary_font_title = isset( $secondary_font[0]['font-family'] ) ? esc_html__( 'Secondary font', 'woodmart' ) . ' (' . $secondary_font[0]['font-family'] . ')' : esc_html__( 'Secondary font', 'woodmart' );
+		$text_font_title      = isset( $text_font[0]['font-family'] ) ? esc_html__( 'Text font', 'woodmart' ) . ' (' . $text_font[0]['font-family'] . ')' : esc_html__( 'Text', 'woodmart' );
+		$primary_font_title   = isset( $primary_font[0]['font-family'] ) ? esc_html__( 'Title font', 'woodmart' ) . ' (' . $primary_font[0]['font-family'] . ')' : esc_html__( 'Title font', 'woodmart' );
 
 		return apply_filters(
 			'woodmart_get_banner_params',
@@ -170,23 +186,23 @@ if ( ! function_exists( 'woodmart_get_banner_params' ) ) {
 					),
 				),
 				array(
-					'type'             => 'woodmart_switch',
-					'heading'          => esc_html__( 'Fixed height', 'woodmart' ),
-					'param_name'       => 'custom_height',
-					'true_state'       => 'yes',
-					'false_state'      => 'no',
-					'default'          => 'no',
+					'type'        => 'woodmart_switch',
+					'heading'     => esc_html__( 'Fixed height', 'woodmart' ),
+					'param_name'  => 'custom_height',
+					'true_state'  => 'yes',
+					'false_state' => 'no',
+					'default'     => 'no',
 				),
 				array(
 					'type'             => 'wd_slider',
 					'heading'          => esc_html__( 'Banner Height', 'woodmart' ),
 					'param_name'       => 'new_height',
-					'selectors'  => array(
+					'selectors'        => array(
 						'{{WRAPPER}}' => array(
 							'--wd-img-height: {{VALUE}}{{UNIT}};',
 						),
 					),
-					'devices'    => array(
+					'devices'          => array(
 						'desktop' => array(
 							'value' => '',
 							'unit'  => 'px',
@@ -200,10 +216,15 @@ if ( ! function_exists( 'woodmart_get_banner_params' ) ) {
 							'unit'  => 'px',
 						),
 					),
-					'range'      => array(
+					'range'            => array(
 						'px' => array(
 							'min'  => 0,
 							'max'  => 2000,
+							'step' => 1,
+						),
+						'vh' => array(
+							'min'  => 0,
+							'max'  => 100,
 							'step' => 1,
 						),
 					),
@@ -550,6 +571,37 @@ if ( ! function_exists( 'woodmart_get_banner_params' ) ) {
 					),
 					'edit_field_class' => 'vc_col-sm-6 vc_column',
 				),
+				array(
+					'type'             => 'dropdown',
+					'heading'          => esc_html__( 'Highlight text style', 'woodmart' ),
+					'hint'             => esc_html__( 'The text must be wrapped with the <u></u> tag to highlight it.', 'woodmart' ),
+					'group'            => esc_html__( 'Title and Subtitle', 'woodmart' ),
+					'param_name'       => 'title_decoration_style',
+					'value'            => array(
+						esc_html__( 'Default', 'woodmart' )  => 'default',
+						esc_html__( 'Primary color', 'woodmart' )  => 'colored',
+						esc_html__( 'Primary color + secondary font', 'woodmart' ) => 'colored-alt',
+						esc_html__( 'Bordered', 'woodmart' ) => 'bordered',
+						esc_html__( 'Gradient', 'woodmart' ) => 'gradient',
+					),
+					'std'              => 'colored',
+					'edit_field_class' => 'vc_col-sm-6 vc_column',
+				),
+				array(
+					'type'       => 'woodmart_gradient',
+					'heading'    => esc_html__( 'Highlight text gradient', 'woodmart' ),
+					'group'      => esc_html__( 'Title and Subtitle', 'woodmart' ),
+					'param_name' => 'title_decoration_gradient',
+					'selectors'  => array(
+						'{{WRAPPER}} .wd-underline-gradient .banner-title u' => array(
+							'background-image: {{VALUE}};',
+						),
+					),
+					'dependency' => array(
+						'element' => 'title_decoration_style',
+						'value'   => array( 'gradient' ),
+					),
+				),
 				/**
 				* Subtitle
 				*/
@@ -799,17 +851,33 @@ if ( ! function_exists( 'woodmart_get_banner_params' ) ) {
 				),
 				array(
 					'type'       => 'woodmart_dropdown',
-					'heading'    => esc_html__( 'Style', 'woodmart' ),
+					'heading'    => esc_html__( 'Background', 'woodmart' ),
 					'group'      => esc_html__( 'Countdown', 'woodmart' ),
 					'param_name' => 'countdown_style',
 					'value'      => array(
 						esc_html__( 'Default', 'woodmart' ) => 'simple',
-						esc_html__( 'Shadow', 'woodmart' ) => 'standard',
-						esc_html__( 'Transparent', 'woodmart' ) => 'transparent',
 						esc_html__( 'Primary color', 'woodmart' ) => 'active',
+						esc_html__( 'Custom', 'woodmart' ) => 'custom',
 					),
+					'std'        => 'simple',
 					'style'      => array(
 						'active' => woodmart_get_color_value( 'primary-color', '#7eb934' ),
+					),
+				),
+				array(
+					'type'             => 'wd_colorpicker',
+					'heading'          => esc_html__( 'Background color', 'woodmart' ),
+					'group'            => esc_html__( 'Countdown', 'woodmart' ),
+					'param_name'       => 'countdown_bg_color',
+					'selectors'        => array(
+						'{{WRAPPER}} .wd-timer' => array(
+							'--wd-timer-bg:{{VALUE}};',
+						),
+					),
+					'edit_field_class' => 'vc_col-sm-6 vc_column',
+					'dependency'       => array(
+						'element' => 'countdown_style',
+						'value'   => array( 'custom' ),
 					),
 				),
 				array(
@@ -820,7 +888,39 @@ if ( ! function_exists( 'woodmart_get_banner_params' ) ) {
 					'value'      => array(
 						esc_html__( 'Inherit', 'woodmart' ) => '',
 						esc_html__( 'Light', 'woodmart' ) => 'light',
-						esc_html__( 'Dark', 'woodmart' ) => 'dark',
+						esc_html__( 'Dark', 'woodmart' )  => 'dark',
+					),
+				),
+				array(
+					'type'             => 'woodmart_switch',
+					'heading'          => esc_html__( 'Box shadow', 'woodmart' ),
+					'group'            => esc_html__( 'Countdown', 'woodmart' ),
+					'param_name'       => 'enable_shadow',
+					'true_state'       => 'yes',
+					'false_state'      => 'no',
+					'default'          => 'no',
+					'edit_field_class' => 'vc_col-sm-12 vc_column',
+				),
+				array(
+					'type'             => 'wd_box_shadow',
+					'group'            => esc_html__( 'Countdown', 'woodmart' ),
+					'param_name'       => 'items_shadow',
+					'selectors'        => array(
+						'{{WRAPPER}} .wd-item' => array(
+							'box-shadow: {{HORIZONTAL}}px {{VERTICAL}}px {{BLUR}}px {{SPREAD}}px {{COLOR}};',
+						),
+					),
+					'edit_field_class' => 'vc_col-sm-12 vc_column',
+					'dependency'       => array(
+						'element' => 'enable_shadow',
+						'value'   => array( 'yes' ),
+					),
+					'default'          => array(
+						'horizontal' => '0',
+						'vertical'   => '0',
+						'blur'       => '9',
+						'spread'     => '0',
+						'color'      => '',
 					),
 				),
 				array(
@@ -876,7 +976,7 @@ if ( ! function_exists( 'woodmart_get_banner_params' ) ) {
 						esc_html__( 'Flat', 'woodmart' ) => 'default',
 						esc_html__( 'Bordered', 'woodmart' ) => 'bordered',
 						esc_html__( 'Link button', 'woodmart' ) => 'link',
-						esc_html__( '3D', 'woodmart' ) => '3d',
+						esc_html__( '3D', 'woodmart' )   => '3d',
 					),
 					'images_value'     => array(
 						'default'  => WOODMART_ASSETS_IMAGES . '/settings/buttons/style/default.png',
@@ -1553,21 +1653,6 @@ if ( ! function_exists( 'woodmart_get_banner_params' ) ) {
 				/**
 				 * Advanced.
 				 */
-				array(
-					'type'             => 'dropdown',
-					'heading'          => esc_html__( 'Highlight text style', 'woodmart' ),
-					'hint'             => esc_html__( 'The text must be wrapped with the <u></u> tag to highlight it.', 'woodmart' ),
-					'group'            => esc_html__( 'Advanced', 'woodmart' ),
-					'param_name'       => 'title_decoration_style',
-					'value'            => array(
-						esc_html__( 'Default', 'woodmart' )  => 'default',
-						esc_html__( 'Primary color', 'woodmart' )  => 'colored',
-						esc_html__( 'Primary color + secondary font', 'woodmart' ) => 'colored-alt',
-						esc_html__( 'Bordered', 'woodmart' ) => 'bordered',
-					),
-					'std'              => 'colored',
-					'edit_field_class' => 'vc_col-sm-6 vc_column',
-				),
 				function_exists( 'woodmart_get_vc_responsive_visible_map' ) ? woodmart_get_vc_responsive_visible_map( 'responsive_tabs_hide' ) : '',
 				function_exists( 'woodmart_get_vc_responsive_visible_map' ) ? woodmart_get_vc_responsive_visible_map( 'wd_hide_on_desktop' ) : '',
 				function_exists( 'woodmart_get_vc_responsive_visible_map' ) ? woodmart_get_vc_responsive_visible_map( 'wd_hide_on_tablet' ) : '',
@@ -1578,5 +1663,5 @@ if ( ! function_exists( 'woodmart_get_banner_params' ) ) {
 }
 
 if ( class_exists( 'WPBakeryShortCode' ) ) {
-	class WPBakeryShortCode_banners_carousel extends WPBakeryShortCodesContainer {}
+	class WPBakeryShortCode_banners_carousel extends WPBakeryShortCodesContainer {} // phpcs:ignore
 }

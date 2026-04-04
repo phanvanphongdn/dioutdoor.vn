@@ -36,22 +36,23 @@ class Select_With_Table extends Field {
 				<div class="xts-bundle-discount">
 					<div class="xts-input-append">
 						<input type="number" min="0" max="100" name="<?php echo esc_attr( $this->get_input_name() . '[{{index}}][discount]' ); ?>">
-						<span class="add-on">%</span>
+						<span class="xts-add-on">%</span>
 					</div>
 				</div>
-				<div class="xts-bundle-close">
+				<div class="xts-close">
 					<a href="#" class="xts-remove-item xts-bordered-btn xts-color-warning xts-style-icon xts-i-close"></a>
 				</div>
 			</div>
 		</div>
 		<div class="xts-controls-wrapper">
-			<div class="xts-table-controls xts-bundle">
+			<div class="xts-table-controls xts-bundle xts-table-heading">
 				<div class="xts-bundle-name">
 					<label><?php esc_html_e( 'Products', 'woodmart' ); ?></label>
 				</div>
 				<div class="xts-bundle-discount">
 				<label><?php esc_html_e( 'Discount', 'woodmart' ); ?></label>
 				</div>
+				<div class="xts-close"></div>
 			</div>
 			<?php if ( $value ) : ?>
 				<?php foreach ( $value as $id => $product ) : ?>
@@ -62,10 +63,10 @@ class Select_With_Table extends Field {
 						<div class="xts-bundle-discount">
 							<div class="xts-input-append">
 								<input type="number" min="0" max="100" step="0.01" name="<?php echo esc_attr( $this->get_input_name() . '[' . $id . '][discount]' ); ?>" value="<?php echo esc_attr( $product['discount'] ); ?>">
-								<span class="add-on">%</span>
+								<span class="xts-add-on">%</span>
 							</div>
 						</div>
-						<div class="xts-bundle-close">
+						<div class="xts-close">
 							<a href="#" class="xts-remove-item xts-bordered-btn xts-color-warning xts-style-icon xts-i-close"></a>
 						</div>
 					</div>

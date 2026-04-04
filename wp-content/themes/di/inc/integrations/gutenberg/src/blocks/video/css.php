@@ -137,7 +137,7 @@ if ( isset( $attrs['videoActionButton'] ) && in_array( $attrs['videoActionButton
 	);
 
 	$block_css->add_css_rules(
-		'.wd-hover-parent:hover ' . $block_selector . ' .wd-el-video-play-btn',
+		$block_selector_parent_hover . ' .wd-el-video-play-btn',
 		array(
 			array(
 				'attr_name' => 'playBtnIconParentHoverColorCode',
@@ -156,8 +156,9 @@ if ( isset( $attrs['videoActionButton'] ) && in_array( $attrs['videoActionButton
 $block_css->merge_with(
 	wd_get_block_advanced_css(
 		array(
-			'selector'       => $block_selector,
-			'selector_hover' => $block_selector_hover,
+			'selector'              => $block_selector,
+			'selector_hover'        => $block_selector_hover,
+			'selector_parent_hover' => $block_selector_parent_hover,
 		),
 		$attrs
 	)

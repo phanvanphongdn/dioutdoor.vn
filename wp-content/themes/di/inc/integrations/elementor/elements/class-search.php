@@ -1,6 +1,8 @@
 <?php
 /**
  * Search map.
+ *
+ * @package woodmart
  */
 
 namespace XTS\Elementor;
@@ -60,7 +62,7 @@ class Search extends Widget_Base {
 	 * @access public
 	 */
 	public function get_categories() {
-		return [ 'wd-elements' ];
+		return array( 'wd-elements' );
 	}
 
 	/**
@@ -79,68 +81,89 @@ class Search extends Widget_Base {
 		 */
 		$this->start_controls_section(
 			'general_content_section',
-			[
+			array(
 				'label' => esc_html__( 'General', 'woodmart' ),
-			]
+			)
 		);
 
 		$this->add_control(
 			'number',
-			[
+			array(
 				'label'   => esc_html__( 'Number results to show', 'woodmart' ),
 				'default' => 12,
 				'type'    => Controls_Manager::NUMBER,
-			]
+			)
 		);
 
 		$this->add_control(
 			'search_post_type',
-			[
+			array(
 				'label'   => esc_html__( 'Search post type', 'woodmart' ),
 				'type'    => Controls_Manager::SELECT,
-				'options' => [
+				'options' => array(
 					'product'   => esc_html__( 'Product', 'woodmart' ),
 					'post'      => esc_html__( 'Post', 'woodmart' ),
 					'portfolio' => esc_html__( 'Portfolio', 'woodmart' ),
-				],
+				),
 				'default' => 'product',
-			]
+			)
 		);
 
 		$this->add_control(
 			'price',
-			[
+			array(
 				'label'        => esc_html__( 'Show price', 'woodmart' ),
 				'type'         => Controls_Manager::SWITCHER,
 				'default'      => '1',
 				'label_on'     => esc_html__( 'Yes', 'woodmart' ),
 				'label_off'    => esc_html__( 'No', 'woodmart' ),
 				'return_value' => '1',
-			]
+				'condition'    => array(
+					'search_post_type' => array( 'product' ),
+				),
+			)
 		);
 
 		$this->add_control(
 			'thumbnail',
-			[
+			array(
 				'label'        => esc_html__( 'Show thumbnail', 'woodmart' ),
 				'type'         => Controls_Manager::SWITCHER,
 				'default'      => '1',
 				'label_on'     => esc_html__( 'Yes', 'woodmart' ),
 				'label_off'    => esc_html__( 'No', 'woodmart' ),
 				'return_value' => '1',
-			]
+			)
 		);
 
 		$this->add_control(
 			'category',
-			[
+			array(
 				'label'        => esc_html__( 'Show category', 'woodmart' ),
 				'type'         => Controls_Manager::SWITCHER,
 				'default'      => '1',
 				'label_on'     => esc_html__( 'Yes', 'woodmart' ),
 				'label_off'    => esc_html__( 'No', 'woodmart' ),
 				'return_value' => '1',
-			]
+				'condition'    => array(
+					'search_post_type' => array( 'product' ),
+				),
+			)
+		);
+
+		$this->add_control(
+			'include_cat_search',
+			array(
+				'label'        => esc_html__( 'Include categories in search', 'woodmart' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'default'      => '0',
+				'label_on'     => esc_html__( 'Yes', 'woodmart' ),
+				'label_off'    => esc_html__( 'No', 'woodmart' ),
+				'return_value' => '1',
+				'condition'    => array(
+					'search_post_type' => array( 'product' ),
+				),
+			)
 		);
 
 		$this->end_controls_section();
@@ -151,10 +174,10 @@ class Search extends Widget_Base {
 
 		$this->start_controls_section(
 			'color_style_section',
-			[
+			array(
 				'label' => esc_html__( 'Form', 'woodmart' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
-			]
+			)
 		);
 
 		$this->add_control(
@@ -209,16 +232,16 @@ class Search extends Widget_Base {
 
 		$this->add_control(
 			'woodmart_color_scheme',
-			[
+			array(
 				'label'   => esc_html__( 'Color scheme', 'woodmart' ),
 				'type'    => Controls_Manager::SELECT,
-				'options' => [
+				'options' => array(
 					''      => esc_html__( 'Inherit', 'woodmart' ),
 					'light' => esc_html__( 'Light', 'woodmart' ),
 					'dark'  => esc_html__( 'Dark', 'woodmart' ),
-				],
+				),
 				'default' => '',
-			]
+			)
 		);
 
 		$this->add_control(
@@ -282,23 +305,23 @@ class Search extends Widget_Base {
 				'label'     => esc_html__( 'Form shape', 'woodmart' ),
 				'type'      => Controls_Manager::SELECT,
 				'options'   => array(
-					'' => array(
-						'title'  => esc_html__( 'Inherit', 'woodmart' ),
+					''   => array(
+						'title' => esc_html__( 'Inherit', 'woodmart' ),
 					),
 					'0'  => array(
 						'title' => esc_html__( 'Square', 'woodmart' ),
 					),
 					'5'  => array(
-						'title'  => esc_html__( 'Rounded', 'woodmart' ),
+						'title' => esc_html__( 'Rounded', 'woodmart' ),
 					),
-					'35'  => array(
-						'title'  => esc_html__( 'Round', 'woodmart' ),
+					'35' => array(
+						'title' => esc_html__( 'Round', 'woodmart' ),
 					),
 				),
 				'selectors' => array(
 					'{{WRAPPER}}' => '--wd-form-brd-radius: {{VALUE}}px;',
 				),
-				'default' => '',
+				'default'   => '',
 			)
 		);
 
@@ -306,27 +329,28 @@ class Search extends Widget_Base {
 
 		$this->start_controls_section(
 			'category_style_section',
-			[
+			array(
 				'label'     => esc_html__( 'Category', 'woodmart' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
-				'condition' => [
-					'category' => '1',
-				],
-			]
+				'condition' => array(
+					'category'         => '1',
+					'search_post_type' => array( 'product' ),
+				),
+			)
 		);
 
 		$this->add_control(
 			'cat_selector_style',
-			[
+			array(
 				'label'   => esc_html__( 'Categories selector style', 'woodmart' ),
 				'type'    => Controls_Manager::SELECT,
-				'options' => [
+				'options' => array(
 					'default'   => esc_html__( 'Default', 'woodmart' ),
 					'bordered'  => esc_html__( 'Bordered', 'woodmart' ),
 					'separated' => esc_html__( 'Separated', 'woodmart' ),
-				],
+				),
 				'default' => 'bordered',
-			]
+			)
 		);
 
 		$this->end_controls_section();
@@ -342,38 +366,39 @@ class Search extends Widget_Base {
 	 * @access protected
 	 */
 	protected function render() {
-		$default_settings = [
+		$default_settings = array(
 			'number'                => 3,
 			'price'                 => 1,
 			'thumbnail'             => 1,
 			'category'              => 1,
+			'include_cat_search'    => 0,
 			'search_post_type'      => 'product',
 			'woodmart_color_scheme' => 'dark',
 			'form_style'            => 'default',
 			'cat_selector_style'    => 'bordered',
-		];
+		);
 
 		$settings = wp_parse_args( $this->get_settings_for_display(), $default_settings );
 
 		$this->add_render_attribute(
-			[
-				'wrapper' => [
-					'class' => [
+			array(
+				'wrapper' => array(
+					'class' => array(
 						'wd-el-search',
 						'woodmart-ajax-search',
-						woodmart_get_old_classes( 'woodmart-vc-ajax-search' ),
 						'wd-color-' . $settings['woodmart_color_scheme'],
-					],
-				],
-			]
+					),
+				),
+			)
 		);
 
 		?>
-		<div <?php echo $this->get_render_attribute_string( 'wrapper' ); ?>>
+		<div <?php echo $this->get_render_attribute_string( 'wrapper' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 			<?php
 			woodmart_search_form(
 				array(
 					'ajax'               => true,
+					'include_cat_search' => $settings['include_cat_search'],
 					'post_type'          => $settings['search_post_type'],
 					'count'              => $settings['number'],
 					'thumbnail'          => $settings['thumbnail'],

@@ -2,7 +2,7 @@
 /**
  * Tabs shortcode.
  *
- * @package Woodmart
+ * @package woodmart
  */
 
 use XTS\Modules\Layouts\Global_Data;
@@ -24,6 +24,8 @@ if ( ! function_exists( 'woodmart_shortcode_single_product_tabs' ) ) {
 			'accordion_on_mobile'                 => 'no',
 			'attr_hide_name'                      => 'no',
 			'attr_hide_image'                     => 'no',
+			'hide_term_label'                     => 'no',
+			'term_hide_image'                     => 'no',
 			'enable_additional_info'              => 'yes',
 			'enable_reviews'                      => 'yes',
 			'enable_description'                  => 'yes',
@@ -42,6 +44,16 @@ if ( ! function_exists( 'woodmart_shortcode_single_product_tabs' ) ) {
 			'tabs_title_text_color_scheme'        => 'inherit',
 			'tabs_alignment'                      => 'center',
 			'tabs_content_text_color_scheme'      => 'inherit',
+
+			'tabs_bg_color_enable'                => 'no',
+			'tabs_bg_hover_color_enable'          => 'no',
+			'tabs_bg_active_color_enable'         => 'no',
+			'tabs_border_enable'                  => 'no',
+			'tabs_border_hover_enable'            => 'no',
+			'tabs_border_active_enable'           => 'no',
+			'tabs_box_shadow_enable'              => 'no',
+			'tabs_box_shadow_hover_enable'        => 'no',
+			'tabs_box_shadow_active_enable'       => 'no',
 
 			/**
 			 * Accordion Settings.
@@ -73,7 +85,7 @@ if ( ! function_exists( 'woodmart_shortcode_single_product_tabs' ) ) {
 			Global_Data::get_instance()->set_data( $key, $value );
 		}
 
-		$wrapper_classes  = apply_filters( 'vc_shortcodes_css_class', '', '', $settings );
+		$wrapper_classes = apply_filters( 'vc_shortcodes_css_class', '', '', $settings );
 
 		if ( $settings['css'] ) {
 			$wrapper_classes .= ' ' . vc_shortcode_custom_css_class( $settings['css'] );
@@ -90,11 +102,6 @@ if ( ! function_exists( 'woodmart_shortcode_single_product_tabs' ) ) {
 		$reviews_classes         .= ' wd-form-pos-' . woodmart_get_opt( 'reviews_form_location', 'after' );
 		$args                     = array();
 		$title_content_classes    = '';
-
-		if ( 'yes' === $settings['enable_additional_info'] ) {
-			$additional_info_classes .= 'yes' === $settings['attr_hide_name'] ? ' wd-hide-name' : '';
-			$additional_info_classes .= 'yes' === $settings['attr_hide_image'] ? ' wd-hide-image' : '';
-		}
 
 		if ( 'inherit' !== $settings['tabs_content_text_color_scheme'] ) {
 			$title_content_classes .= ' color-scheme-' . $settings['tabs_content_text_color_scheme'];
@@ -116,6 +123,16 @@ if ( ! function_exists( 'woodmart_shortcode_single_product_tabs' ) ) {
 
 			if ( 'inherit' !== $settings['tabs_title_text_color_scheme'] && 'custom' !== $settings['tabs_title_text_color_scheme'] ) {
 				$title_wrapper_classes .= ' color-scheme-' . $settings['tabs_title_text_color_scheme'];
+			}
+
+			$title_wrapper_classes .= ' wd-mb-action-swipe';
+
+			$tabs_title_bg_activated      = 'yes' === $settings['tabs_bg_color_enable'] || 'yes' === $settings['tabs_bg_hover_color_enable'] || 'yes' === $settings['tabs_bg_active_color_enable'];
+			$tabs_title_box_shadow_active = 'yes' === $settings['tabs_box_shadow_enable'] || 'yes' === $settings['tabs_box_shadow_hover_enable'] || 'yes' === $settings['tabs_box_shadow_active_enable'];
+			$tabs_title_border_active     = 'yes' === $settings['tabs_border_enable'] || 'yes' === $settings['tabs_border_hover_enable'] || 'yes' === $settings['tabs_border_active_enable'];
+
+			if ( $tabs_title_bg_activated || $tabs_title_box_shadow_active || $tabs_title_border_active ) {
+				$title_classes .= ' wd-add-pd';
 			}
 
 			$args = array(
@@ -159,17 +176,25 @@ if ( ! function_exists( 'woodmart_shortcode_single_product_tabs' ) ) {
 
 		$args = array_merge( $default_args, $args );
 
-		if ( 'yes' !== $settings['enable_additional_info'] ) {
-			add_filter( 'woocommerce_product_tabs', 'woodmart_single_product_remove_additional_information_tab', 98 );
-		}
+		add_filter(
+			'woocommerce_product_tabs',
+			function ( $tabs ) use ( $settings ) {
+				if ( isset( $tabs['description'] ) ) {
+					$tabs['description']['wd_show'] = $settings['enable_description'];
+				}
 
-		if ( 'yes' !== $settings['enable_reviews'] ) {
-			add_filter( 'woocommerce_product_tabs', 'woodmart_single_product_remove_reviews_tab', 98 );
-		}
+				if ( isset( $tabs['additional_information'] ) ) {
+					$tabs['additional_information']['wd_show'] = $settings['enable_additional_info'];
+				}
 
-		if ( 'yes' !== $settings['enable_description'] ) {
-			add_filter( 'woocommerce_product_tabs', 'woodmart_single_product_remove_description_tab', 98 );
-		}
+				if ( isset( $tabs['reviews'] ) ) {
+					$tabs['reviews']['wd_show'] = $settings['enable_reviews'];
+				}
+
+				return $tabs;
+			},
+			97 // The priority must be lower than the one used in the woodmart_maybe_unset_wc_tabs fucntion.
+		);
 
 		ob_start();
 
@@ -177,8 +202,12 @@ if ( ! function_exists( 'woodmart_shortcode_single_product_tabs' ) ) {
 
 		Main::setup_preview();
 
+		if ( 'yes' === $settings['enable_additional_info'] ) {
+			woodmart_enqueue_inline_style( 'woo-mod-shop-attributes-builder' );
+		}
+
 		if ( 'yes' === $settings['enable_reviews'] ) {
-			woodmart_enqueue_inline_style( 'mod-comments' );
+			woodmart_enqueue_inline_style( 'post-types-mod-comments' );
 		}
 
 		if ( comments_open() ) {
@@ -195,16 +224,33 @@ if ( ! function_exists( 'woodmart_shortcode_single_product_tabs' ) ) {
 			woodmart_enqueue_inline_style( 'accordion-elem-wpb' );
 		}
 
+		if ( 'yes' === $settings['enable_additional_info'] ) {
+			Global_Data::get_instance()->set_data(
+				'wd_additional_info_table_args',
+				array(
+					// Attributes.
+					'attr_image' => isset( $settings['attr_hide_image'] ) && 'yes' !== $settings['attr_hide_image'],
+					'attr_name'  => isset( $settings['attr_hide_name'] ) && 'yes' !== $settings['attr_hide_name'],
+					// Terms.
+					'term_label' => isset( $settings['hide_term_label'] ) && 'yes' !== $settings['hide_term_label'],
+					'term_image' => isset( $settings['term_hide_image'] ) && 'yes' !== $settings['term_hide_image'],
+				)
+			);
+		}
+
 		?>
 		<div class="wd-single-tabs wd-wpb<?php echo esc_attr( $wrapper_classes ); ?>">
 			<?php
 			wc_get_template(
-				'single-product/tabs/tabs-' . $settings['layout'] . '.php',
+				'single-product/tabs/tabs-' . sanitize_file_name( $settings['layout'] ) . '.php',
 				$args
 			);
 			?>
 		</div>
 		<?php
+
+		Global_Data::get_instance()->set_data( 'wd_additional_info_table_args', array() );
+
 		Main::restore_preview();
 
 		return ob_get_clean();

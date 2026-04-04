@@ -1,19 +1,28 @@
-<?php if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
-	exit( 'No direct script access allowed' );}
-
+<?php
 /**
-* ------------------------------------------------------------------------------------------------
-* List shortcode
-* ------------------------------------------------------------------------------------------------
-*/
+ * Shortcode for List element.
+ *
+ * @package woodmart
+ */
+
+if ( ! defined( 'WOODMART_THEME_DIR' ) ) {
+	exit( 'No direct script access allowed' );
+}
 
 if ( ! function_exists( 'woodmart_list_shortcode' ) ) {
+	/**
+	 * List shortcode
+	 *
+	 * @param array $atts Shortcode attributes.
+	 *
+	 * @return string
+	 */
 	function woodmart_list_shortcode( $atts ) {
 		$list_class = apply_filters( 'vc_shortcodes_css_class', '', '', $atts );
 
 		$atts = shortcode_atts(
 			array(
-				'icon_fontawesome' => 'far fa-bell',
+				'icon_fontawesome' => 'fa fa-regular fa-bell',
 				'icon_openiconic'  => 'vc-oi vc-oi-dial',
 				'icon_typicons'    => 'typcn typcn-adjust-brightness',
 				'icon_entypo'      => 'entypo-icon entypo-icon-note',
@@ -47,13 +56,14 @@ if ( ! function_exists( 'woodmart_list_shortcode' ) ) {
 			$atts
 		);
 
-		extract( $atts );
+		extract( $atts ); // phpcs:ignore WordPress.PHP.DontExtract.extract_extract
 
 		if ( 'icon' === $list_type && function_exists( 'vc_icon_element_fonts_enqueue' ) ) {
 			vc_icon_element_fonts_enqueue( $icon_library );
 		}
 
-		$list_items = $img = '';
+		$list_items = '';
+		$img        = '';
 
 		if ( function_exists( 'vc_param_group_parse_atts' ) ) {
 			$list_items = vc_param_group_parse_atts( $list );
@@ -68,8 +78,8 @@ if ( ! function_exists( 'woodmart_list_shortcode' ) ) {
 		}
 		$list_id = 'wd-' . $woodmart_css_id;
 
-		$icon_class = 'wd-icon list-icon';
-		if ( $list_type == 'icon' ) {
+		$icon_class = 'wd-icon';
+		if ( 'icon' === $list_type ) {
 			$icon_class .= ' ' . ${'icon_' . $icon_library};
 		}
 
@@ -86,7 +96,7 @@ if ( ! function_exists( 'woodmart_list_shortcode' ) ) {
 			$list_class .= ' wd-design-' . $design;
 		}
 
-		if ( $list_style == 'rounded' || $list_style == 'square' ) {
+		if ( 'rounded' === $list_style || 'square' === $list_style ) {
 			$list_class .= ' wd-shape-icon';
 		}
 		if ( function_exists( 'vc_shortcode_custom_css_class' ) ) {
@@ -151,22 +161,27 @@ if ( ! function_exists( 'woodmart_list_shortcode' ) ) {
 				<li>
 					<?php echo $item_icon_output; // phpcs:ignore ?>
 
-					<span class="wd-list-content list-content"><?php echo do_shortcode( $item['list-content'] ); ?></span>
-					<?php if ( isset( $item['link'] ) ) : ?>
-						<a class="wd-fill" <?php echo $link_attrs; ?> aria-label="<?php esc_attr_e( 'List link', 'woodmart' ); ?>"></a>
-					<?php endif; ?>
+					<span class="wd-list-content list-content">
+						<?php if ( isset( $item['link'] ) ) : ?>
+							<a <?php echo $link_attrs; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+								<?php echo do_shortcode( $item['list-content'] ); ?>
+							</a>
+						<?php else : ?>
+							<?php echo do_shortcode( $item['list-content'] ); ?>
+						<?php endif; ?>
+					</span>
 				</li>
 			<?php endforeach ?>
 		</ul>
 		<?php
 		if ( ( $icons_color && ! woodmart_is_css_encode( $icons_color ) ) || ( $icons_bg_color && ! woodmart_is_css_encode( $icons_bg_color ) ) ) {
-			$css = '#' . esc_attr( $list_id ) . ' .wd-icon {';
+			$css  = '#' . esc_attr( $list_id ) . ' .wd-icon {';
 			$css .= 'color: ' . esc_attr( $icons_color ) . ';';
 			$css .= '}';
 
-			if ( $list_style == 'rounded' || $list_style == 'square' ) {
+			if ( 'rounded' === $list_style || 'square' === $list_style ) {
 				$css .= '#' . esc_attr( $list_id ) . ' .wd-icon {';
-				$css .= 'background-color: ' . esc_attr( $icons_bg_color  ) . ';';
+				$css .= 'background-color: ' . esc_attr( $icons_bg_color ) . ';';
 				$css .= '}';
 			}
 

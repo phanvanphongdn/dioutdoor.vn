@@ -16,7 +16,7 @@
 	<!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 	<!--    contained in this file into your site. -->
 
-	<!-- generator="WordPress/6.5.5" created="2024-11-08 15:03" -->
+	<!-- generator="WordPress/6.7.4" created="2026-02-26 12:31" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -29,21 +29,14 @@
 	<title>Accessories elementor</title>
 	<link>https://dummy.xtemos.com/woodmart2/accessories-elementor</link>
 	<description>Just another WoodMart Dummy 2.0 Sites site</description>
-	<pubDate>Fri, 08 Nov 2024 15:03:28 +0000</pubDate>
+	<pubDate>Thu, 26 Feb 2026 12:31:47 +0000</pubDate>
 	<language>en-US</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
 	<wp:base_site_url>https://dummy.xtemos.com/woodmart2/</wp:base_site_url>
 	<wp:base_blog_url>https://dummy.xtemos.com/woodmart2/accessories-elementor</wp:base_blog_url>
 
-		<wp:author><wp:author_id>2</wp:author_id><wp:author_login><![CDATA[zakhar]]></wp:author_login><wp:author_email><![CDATA[zak@asda.as]]></wp:author_email><wp:author_display_name><![CDATA[Mr. Mackay]]></wp:author_display_name><wp:author_first_name><![CDATA[sds]]></wp:author_first_name><wp:author_last_name><![CDATA[scssc]]></wp:author_last_name></wp:author>
-
-					<wp:term>
-			<wp:term_id>0</wp:term_id>
-			<wp:term_taxonomy><![CDATA[]]></wp:term_taxonomy>
-			<wp:term_slug><![CDATA[]]></wp:term_slug>
-			<wp:term_parent><![CDATA[]]></wp:term_parent>
-					</wp:term>
-			<wp:term>
+	
+										<wp:term>
 			<wp:term_id>18</wp:term_id>
 			<wp:term_taxonomy><![CDATA[woodmart_slider]]></wp:term_taxonomy>
 			<wp:term_slug><![CDATA[accessories-slider]]></wp:term_slug>
@@ -89,54 +82,61 @@
 			<wp:meta_key><![CDATA[autoplay_speed]]></wp:meta_key>
 			<wp:meta_value><![CDATA[20000]]></wp:meta_value>
 		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-18-status]]></wp:meta_key>
-			<wp:meta_value><![CDATA[valid]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-18-css-data]]></wp:meta_key>
-			<wp:meta_value><![CDATA[#slider-18 .wd-slide {
-	min-height: 700px;
-}
-
-@media (max-width: 1024px) {
-	#slider-18 .wd-slide {
-		min-height: 500px;
-	}
-}
-
-@media (max-width: 767px) {
-	#slider-18 .wd-slide {
-		min-height: 420px;
-	}
-}
-]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-18-version]]></wp:meta_key>
-			<wp:meta_value><![CDATA[7.6.0]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-18-site-url]]></wp:meta_key>
-			<wp:meta_value><![CDATA[76485e8ec444a2fc729eb2294c73db02]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-18-credentials]]></wp:meta_key>
-			<wp:meta_value><![CDATA[requested]]></wp:meta_value>
-		</wp:termmeta>
-		<wp:termmeta>
-			<wp:meta_key><![CDATA[xts-term-18-file-data]]></wp:meta_key>
-			<wp:meta_value><![CDATA[a:3:{s:4:"path";s:35:"/2024/11/xts-term-18-1731078142.css";s:13:"theme_version";s:5:"7.6.0";s:8:"site_url";s:32:"76485e8ec444a2fc729eb2294c73db02";}]]></wp:meta_value>
-		</wp:termmeta>
 		</wp:term>
-		
-	<generator>https://wordpress.org/?v=6.5.5</generator>
+				
+	<generator>https://wordpress.org/?v=6.7.4</generator>
 
 					<item>
+					<title><![CDATA[accessories-slide-2]]></title>
+					<link>https://dummy.xtemos.com/woodmart2/accessories-elementor/woodmart_slide/accessories-slide-2/accessories-slide-2/</link>
+					<pubDate>Wed, 07 Sep 2022 14:23:11 +0000</pubDate>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
+					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/accessories-slide-2.jpg</guid>
+															<wp:post_id>91</wp:post_id>
+					<wp:post_date><![CDATA[2022-09-07 14:23:11]]></wp:post_date>
+					<wp:post_date_gmt><![CDATA[2022-09-07 14:23:11]]></wp:post_date_gmt>
+					<wp:post_modified><![CDATA[2022-09-07 14:23:11]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2022-09-07 14:23:11]]></wp:post_modified_gmt>
+					<wp:comment_status><![CDATA[open]]></wp:comment_status>
+					<wp:post_name><![CDATA[accessories-slide-2]]></wp:post_name>
+					<wp:status><![CDATA[inherit]]></wp:status>
+					<wp:post_parent>90</wp:post_parent>
+					<wp:menu_order>0</wp:menu_order>
+					<wp:post_type><![CDATA[attachment]]></wp:post_type>
+											<wp:attachment_url><![CDATA[http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/accessories-slide-2.jpg]]></wp:attachment_url>
+																					<wp:postmeta>
+							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+							<wp:meta_value><![CDATA[2022/09/accessories-slide-2.jpg]]></wp:meta_value>
+						</wp:postmeta>
+										</item>
+								<item>
+					<title><![CDATA[accessories-slide-3]]></title>
+					<link>https://dummy.xtemos.com/woodmart2/accessories-elementor/woodmart_slide/accessories-slide-3/accessories-slide-3/</link>
+					<pubDate>Wed, 07 Sep 2022 14:24:36 +0000</pubDate>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
+					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/accessories-slide-3.jpg</guid>
+															<wp:post_id>98</wp:post_id>
+					<wp:post_date><![CDATA[2022-09-07 14:24:36]]></wp:post_date>
+					<wp:post_date_gmt><![CDATA[2022-09-07 14:24:36]]></wp:post_date_gmt>
+					<wp:post_modified><![CDATA[2022-09-07 14:24:36]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2022-09-07 14:24:36]]></wp:post_modified_gmt>
+					<wp:comment_status><![CDATA[open]]></wp:comment_status>
+					<wp:post_name><![CDATA[accessories-slide-3]]></wp:post_name>
+					<wp:status><![CDATA[inherit]]></wp:status>
+					<wp:post_parent>97</wp:post_parent>
+					<wp:menu_order>0</wp:menu_order>
+					<wp:post_type><![CDATA[attachment]]></wp:post_type>
+											<wp:attachment_url><![CDATA[http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/accessories-slide-3.jpg]]></wp:attachment_url>
+																					<wp:postmeta>
+							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+							<wp:meta_value><![CDATA[2022/09/accessories-slide-3.jpg]]></wp:meta_value>
+						</wp:postmeta>
+										</item>
+								<item>
 					<title><![CDATA[hkgroteskpro-semibold]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/accessories-elementor/hkgroteskpro-semibold/</link>
 					<pubDate>Wed, 07 Sep 2022 14:59:20 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/hkgroteskpro-semibold.woff2</guid>
 															<wp:post_id>229</wp:post_id>
 					<wp:post_date><![CDATA[2022-09-07 14:59:20]]></wp:post_date>
@@ -159,7 +159,7 @@
 					<title><![CDATA[hkgroteskpro-semibold]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/accessories-elementor/hkgroteskpro-semibold-2/</link>
 					<pubDate>Wed, 07 Sep 2022 14:59:20 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/hkgroteskpro-semibold.woff</guid>
 															<wp:post_id>230</wp:post_id>
 					<wp:post_date><![CDATA[2022-09-07 14:59:20]]></wp:post_date>
@@ -179,10 +179,33 @@
 						</wp:postmeta>
 										</item>
 								<item>
+					<title><![CDATA[w-accessories-slider]]></title>
+					<link>https://dummy.xtemos.com/woodmart2/accessories-elementor/woodmart_slide/accessories-slide-1/w-accessories-slider/</link>
+					<pubDate>Tue, 13 Sep 2022 14:58:29 +0000</pubDate>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
+					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/w-accessories-slider.jpg</guid>
+															<wp:post_id>9036</wp:post_id>
+					<wp:post_date><![CDATA[2022-09-13 14:58:29]]></wp:post_date>
+					<wp:post_date_gmt><![CDATA[2022-09-13 14:58:29]]></wp:post_date_gmt>
+					<wp:post_modified><![CDATA[2022-09-13 14:58:29]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2022-09-13 14:58:29]]></wp:post_modified_gmt>
+					<wp:comment_status><![CDATA[open]]></wp:comment_status>
+					<wp:post_name><![CDATA[w-accessories-slider]]></wp:post_name>
+					<wp:status><![CDATA[inherit]]></wp:status>
+					<wp:post_parent>83</wp:post_parent>
+					<wp:menu_order>0</wp:menu_order>
+					<wp:post_type><![CDATA[attachment]]></wp:post_type>
+											<wp:attachment_url><![CDATA[http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/w-accessories-slider.jpg]]></wp:attachment_url>
+																					<wp:postmeta>
+							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+							<wp:meta_value><![CDATA[2022/09/w-accessories-slider.jpg]]></wp:meta_value>
+						</wp:postmeta>
+										</item>
+								<item>
 					<title><![CDATA[accessories-popup]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/accessories-elementor/accessories-popup/</link>
 					<pubDate>Thu, 15 Sep 2022 11:16:43 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/accessories-popup.jpg</guid>
 															<wp:post_id>9072</wp:post_id>
 					<wp:post_date><![CDATA[2022-09-15 11:16:43]]></wp:post_date>
@@ -205,7 +228,7 @@
 					<title><![CDATA[product archive layout Cases]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/accessories-elementor/woodmart_layout/product-archive-layout-case/</link>
 					<pubDate>Fri, 16 Sep 2022 11:04:54 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/accessories-elementor/?post_type=woodmart_layout&#038;p=9421</guid>
 											<content:encoded><![CDATA[<link rel="stylesheet" id="wd-el-page-title-builder-css" href="https://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/themes/woodmart/css/parts/el-page-title-builder.min.css?ver=7.3.4" type="text/css" media="all" /> 						<link rel="stylesheet" id="wd-woo-shop-page-title-css" href="https://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/themes/woodmart/css/parts/woo-shop-page-title.min.css?ver=7.3.4" type="text/css" media="all" /> 						<link rel="stylesheet" id="wd-shop-title-categories-css" href="https://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/themes/woodmart/css/parts/woo-categories-loop-nav.min.css?ver=7.3.4" type="text/css" media="all" /> 						<link rel="stylesheet" id="wd-woo-categories-loop-nav-mobile-accordion-css" href="https://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/themes/woodmart/css/parts/woo-categories-loop-nav-mobile-accordion.min.css?ver=7.3.4" type="text/css" media="all" /> 						<link rel="stylesheet" id="wd-page-title-css" href="https://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/themes/woodmart/css/parts/page-title.min.css?ver=7.3.4" type="text/css" media="all" /> 										
 													<h1>
@@ -532,85 +555,12 @@
 							<wp:meta_key><![CDATA[_elementor_data]]></wp:meta_key>
 							<wp:meta_value><![CDATA[[{"id":"cdbfc92","elType":"container","settings":{"flex_gap":{"size":null,"column":"","row":"","unit":"px","isLinked":true},"wd_section_stretch":"stretch-content","margin":{"unit":"px","top":"-40","right":"0","bottom":"60","left":"0","isLinked":false},"margin_tablet":{"unit":"px","top":"-40","right":"0","bottom":"40","left":"0","isLinked":false},"flex_direction":"column","scroll_y":-80,"container_sticky_offset":50},"elements":[{"id":"d0b41d9","elType":"widget","settings":{"full_width":"yes","scroll_y":-80},"elements":[],"widgetType":"wd_page_title"}],"isInner":false},{"id":"e6396e2","elType":"container","settings":{"margin":{"unit":"px","top":"0","right":"0","bottom":"80","left":"0","isLinked":false},"margin_tablet":{"unit":"px","top":"0","right":"0","bottom":"60","left":"0","isLinked":false},"margin_mobile":{"unit":"px","top":"0","right":"0","bottom":"40","left":"0","isLinked":false},"flex_direction":"column","flex_gap":{"size":null,"column":"","row":"","unit":"px","isLinked":true},"scroll_y":-80,"container_sticky_offset":50},"elements":[{"id":"6dd1cc5","elType":"widget","settings":{"scroll_y":-80},"elements":[],"widgetType":"wd_wc_notices"},{"id":"d10cf8c","elType":"container","settings":{"flex_direction":"row","flex_justify_content":"space-between","flex_align_items":"center","flex_gap":{"column":"10","row":"10","isLinked":true,"unit":"px","size":10},"scroll_y":-80,"container_sticky_offset":50},"elements":[{"id":"6f1d674","elType":"widget","settings":{"subtitle":"","title":"Choose Your Phone","after_title":"","size":"medium","align":"left","title_typography_typography":"custom","title_typography_font_family":"hkgroteskpro","_element_width":"auto","scroll_y":-80},"elements":[],"widgetType":"wd_title"},{"id":"ee1591d","elType":"widget","settings":{"text":"MORE MODELS","style":"link","_element_width":"auto","scroll_y":-80,"_margin_mobile":{"unit":"px","top":"0","right":"0","bottom":"0","left":"0","isLinked":false}},"elements":[],"widgetType":"wd_button"}],"isInner":true},{"id":"a999b45","elType":"widget","settings":{"data_source":"wc_query","hide_empty":"","categories_design":"alt","img_size":"full","image_container_width":{"unit":"px","size":100,"sizes":[]},"rounding_size":"custom","custom_rounding_size":{"unit":"%","size":50,"sizes":[]},"img_size_custom":{"width":"100","height":"100"},"categories_with_shadow":"disable","style":"carousel","spacing":"30","slides_per_view":{"unit":"px","size":6,"sizes":[]},"hide_pagination_control":"yes","scroll_y":-80,"slides_per_view_tablet":{"unit":"px","size":3,"sizes":[]},"slides_per_view_mobile":{"unit":"px","size":2,"sizes":[]},"sync_parent_id":"wd_658c39cb50ace"},"elements":[],"widgetType":"wd_product_categories"},{"id":"4beb901","elType":"widget","settings":{"number":6,"filter_in_current_category":"yes","style":"grid","columns":{"unit":"px","size":6,"sizes":[]},"_margin":{"unit":"px","top":"10","right":"0","bottom":"10","left":"0","isLinked":false},"scroll_y":-80,"columns_tablet":{"unit":"px","size":3,"sizes":[]},"columns_mobile":{"unit":"px","size":2,"sizes":[]},"sync_parent_id":"wd_658c39cb5234f"},"elements":[],"widgetType":"wd_products_brands"},{"id":"15cc6be","elType":"widget","settings":{"content_repeater":[{"title":"MagSafe Case","subtitle":"Safe yout phone","_id":"f7b5976","image":{"url":"http:\/\/dummy.xtemos.com\/woodmart2\/accessories-elementor\/wp-content\/uploads\/sites\/6\/2022\/09\/mag-safe-case-category.jpg","id":9430,"alt":"","source":"library"},"image_size":"full","btn_text":"View more"},{"title":"Fabric Case","subtitle":"Popular","image":{"url":"http:\/\/dummy.xtemos.com\/woodmart2\/accessories-elementor\/wp-content\/uploads\/sites\/6\/2022\/09\/fabric-case-category.jpg","id":9434,"alt":"","source":"library"},"image_size":"full","btn_text":"View more","_id":"3432ef0"},{"title":"Silicone Case","subtitle":"Your style","image":{"url":"http:\/\/dummy.xtemos.com\/woodmart2\/accessories-elementor\/wp-content\/uploads\/sites\/6\/2022\/09\/silicone-case-category.jpg","id":9435,"alt":"","source":"library"},"image_size":"full","btn_text":"View more","_id":"e1e5978"}],"hover":"parallax","woodmart_color_scheme":"dark","title_size":"large","title_typography_typography":"custom","title_typography_font_family":"hkgroteskpro","subtitle_color":"primary","subtitle_typography_typography":"custom","subtitle_typography_font_family":"hkgroteskpro","subtitle_typography_font_size":{"unit":"px","size":15,"sizes":[]},"subtitle_typography_font_size_tablet":{"unit":"px","size":13,"sizes":[]},"subtitle_typography_font_size_mobile":{"unit":"px","size":12,"sizes":[]},"btn_position":"static","btn_color":"primary","btn_shape":"semi-round","scroll_y":-80,"hide_pagination_control":"yes","slides_per_view_tablet":{"unit":"px","size":2,"sizes":[]},"slides_per_view_mobile":{"unit":"px","size":1,"sizes":[]},"sync_parent_id":"wd_658c39cb52c72"},"elements":[],"widgetType":"wd_banner_carousel"}],"isInner":false},{"id":"91afd51","elType":"container","settings":{"flex_direction":"column","flex_gap":{"size":null,"column":"","row":"","unit":"px","isLinked":true},"margin":{"unit":"px","top":"0","right":"0","bottom":"40","left":"0","isLinked":false},"margin_tablet":{"unit":"px","top":"0","right":"0","bottom":"20","left":"0","isLinked":false},"scroll_y":-80,"container_sticky_offset":50},"elements":[{"id":"daccb66","elType":"widget","settings":{"subtitle":"Hurry up to buy","title":"Popular Products","after_title":"<p>How can you evaluate content without design<\/p>","color":"primary","size":"large","subtitle_typography_typography":"custom","subtitle_typography_font_size":{"unit":"px","size":"15","sizes":[]},"subtitle_typography_font_size_tablet":{"unit":"px","size":"13","sizes":[]},"subtitle_typography_font_size_mobile":{"unit":"px","size":"12","sizes":[]},"subtitle_typography_font_weight":"600","scroll_y":"-80","subtitle_typography_font_family":"hkgroteskpro","title_typography_typography":"custom","title_typography_font_family":"hkgroteskpro"},"elements":[],"widgetType":"wd_title"},{"id":"bb7dc03","elType":"widget","settings":{"taxonomies":["23"],"query_type":"AND","layout":"carousel","items_per_page":6,"slides_per_view":{"unit":"px","size":5,"sizes":[]},"hide_pagination_control":"yes","img_size":"full","scroll_y":-80,"slides_per_view_tablet":{"unit":"px","size":3,"sizes":[]},"slides_per_view_mobile":{"unit":"px","size":2,"sizes":[]},"sync_parent_id":"wd_658c39cb53d3e"},"elements":[],"widgetType":"wd_products"}],"isInner":false}]]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
-										</item>
-								<item>
-					<title><![CDATA[mag-safe-case-category]]></title>
-					<link>https://dummy.xtemos.com/woodmart2/accessories-elementor/woodmart_layout/product-archive-layout-case/mag-safe-case-category/</link>
-					<pubDate>Fri, 16 Sep 2022 11:26:22 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
-					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/mag-safe-case-category.jpg</guid>
-															<wp:post_id>9430</wp:post_id>
-					<wp:post_date><![CDATA[2022-09-16 11:26:22]]></wp:post_date>
-					<wp:post_date_gmt><![CDATA[2022-09-16 11:26:22]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2022-09-16 11:26:22]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2022-09-16 11:26:22]]></wp:post_modified_gmt>
-					<wp:comment_status><![CDATA[open]]></wp:comment_status>
-					<wp:post_name><![CDATA[mag-safe-case-category]]></wp:post_name>
-					<wp:status><![CDATA[inherit]]></wp:status>
-					<wp:post_parent>9421</wp:post_parent>
-					<wp:menu_order>0</wp:menu_order>
-					<wp:post_type><![CDATA[attachment]]></wp:post_type>
-											<wp:attachment_url><![CDATA[http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/mag-safe-case-category.jpg]]></wp:attachment_url>
-																					<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-							<wp:meta_value><![CDATA[2022/09/mag-safe-case-category.jpg]]></wp:meta_value>
-						</wp:postmeta>
-										</item>
-								<item>
-					<title><![CDATA[fabric-case-category]]></title>
-					<link>https://dummy.xtemos.com/woodmart2/accessories-elementor/woodmart_layout/product-archive-layout-case/fabric-case-category/</link>
-					<pubDate>Fri, 16 Sep 2022 11:30:11 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
-					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/fabric-case-category.jpg</guid>
-															<wp:post_id>9434</wp:post_id>
-					<wp:post_date><![CDATA[2022-09-16 11:30:11]]></wp:post_date>
-					<wp:post_date_gmt><![CDATA[2022-09-16 11:30:11]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2022-09-16 11:30:11]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2022-09-16 11:30:11]]></wp:post_modified_gmt>
-					<wp:comment_status><![CDATA[open]]></wp:comment_status>
-					<wp:post_name><![CDATA[fabric-case-category]]></wp:post_name>
-					<wp:status><![CDATA[inherit]]></wp:status>
-					<wp:post_parent>9421</wp:post_parent>
-					<wp:menu_order>0</wp:menu_order>
-					<wp:post_type><![CDATA[attachment]]></wp:post_type>
-											<wp:attachment_url><![CDATA[http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/fabric-case-category.jpg]]></wp:attachment_url>
-																					<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-							<wp:meta_value><![CDATA[2022/09/fabric-case-category.jpg]]></wp:meta_value>
-						</wp:postmeta>
-										</item>
-								<item>
-					<title><![CDATA[silicone-case-category]]></title>
-					<link>https://dummy.xtemos.com/woodmart2/accessories-elementor/woodmart_layout/product-archive-layout-case/silicone-case-category/</link>
-					<pubDate>Fri, 16 Sep 2022 11:30:28 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
-					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/silicone-case-category.jpg</guid>
-															<wp:post_id>9435</wp:post_id>
-					<wp:post_date><![CDATA[2022-09-16 11:30:28]]></wp:post_date>
-					<wp:post_date_gmt><![CDATA[2022-09-16 11:30:28]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2022-09-16 11:30:28]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2022-09-16 11:30:28]]></wp:post_modified_gmt>
-					<wp:comment_status><![CDATA[open]]></wp:comment_status>
-					<wp:post_name><![CDATA[silicone-case-category]]></wp:post_name>
-					<wp:status><![CDATA[inherit]]></wp:status>
-					<wp:post_parent>9421</wp:post_parent>
-					<wp:menu_order>0</wp:menu_order>
-					<wp:post_type><![CDATA[attachment]]></wp:post_type>
-											<wp:attachment_url><![CDATA[http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/silicone-case-category.jpg]]></wp:attachment_url>
-																					<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-							<wp:meta_value><![CDATA[2022/09/silicone-case-category.jpg]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[product archive layout Shop Accessories]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/accessories-elementor/woodmart_layout/product-archive-layout-accessories/</link>
 					<pubDate>Fri, 16 Sep 2022 13:25:42 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/accessories-elementor/?post_type=woodmart_layout&#038;p=9502</guid>
 											<content:encoded><![CDATA[<link rel="stylesheet" id="wd-section-title-css" href="https://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/themes/woodmart/css/parts/el-section-title.min.css?ver=7.3.4" type="text/css" media="all" /> 					
 					There are some redeeming factors				
@@ -861,7 +811,7 @@
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[wd_layout_conditions]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:1:{i:0;a:3:{s:20:"condition_comparison";s:7:"include";s:14:"condition_type";s:9:"shop_page";s:15:"condition_query";s:0:"";}}]]></wp:meta_value>
+							<wp:meta_value><![CDATA[a:2:{i:0;a:3:{s:20:"condition_comparison";s:7:"include";s:14:"condition_type";s:9:"shop_page";s:15:"condition_query";s:0:"";}i:1;a:3:{s:20:"condition_comparison";s:7:"exclude";s:14:"condition_type";s:14:"product_search";s:15:"condition_query";s:0:"";}}]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_elementor_edit_mode]]></wp:meta_key>
@@ -883,16 +833,12 @@
 							<wp:meta_key><![CDATA[_elementor_data]]></wp:meta_key>
 							<wp:meta_value><![CDATA[[{"id":"a14b960","elType":"container","settings":{"margin":{"unit":"px","top":"0","right":"0","bottom":"60","left":"0","isLinked":false},"margin_tablet":{"unit":"px","top":"-20","right":"0","bottom":"40","left":"0","isLinked":false},"flex_direction":"column","flex_gap":{"size":null,"column":"","row":"","unit":"px","isLinked":true},"scroll_y":-80,"container_sticky_offset":50},"elements":[{"id":"c44ff7f","elType":"widget","settings":{"scroll_y":-80},"elements":[],"widgetType":"wd_shop_archive_archive_description"},{"id":"0295ed9","elType":"container","settings":{"flex_gap":{"column":"40","row":"40","isLinked":true,"unit":"px","size":40},"margin":{"unit":"px","top":"0","right":"0","bottom":"40","left":"0","isLinked":false},"margin_tablet":{"unit":"px","top":"0","right":"0","bottom":"20","left":"0","isLinked":false},"container_sticky_offset":50,"scroll_y":-80},"elements":[{"id":"a2afc9f","elType":"widget","settings":{"subtitle":"There are some redeeming factors","title":"Recommended Categories","after_title":"<p>A client that's unhappy for a reason is a problem, a client that's unhappy though he or her can't<\/p>","color":"primary","size":"large","subtitle_typography_typography":"custom","subtitle_typography_font_size":{"unit":"px","size":"15","sizes":[]},"subtitle_typography_font_size_tablet":{"unit":"px","size":"13","sizes":[]},"subtitle_typography_font_size_mobile":{"unit":"px","size":"12","sizes":[]},"subtitle_typography_font_weight":"600","scroll_y":"-80","subtitle_typography_font_family":"hkgroteskpro","title_typography_typography":"custom","title_typography_font_family":"hkgroteskpro"},"elements":[],"widgetType":"wd_title"},{"id":"0ce7ced","elType":"widget","settings":{"categories_design":"alt","columns":{"unit":"px","size":"6","sizes":[]},"spacing":"10","scroll_y":"-80","style":"carousel","slides_per_view":{"unit":"px","size":"6","sizes":[]},"categories_with_shadow":"disable","orderby":"id","order":"ASC","ids":["23","34","19","31","41","37"],"hide_empty":"","img_size":"full","image_container_width":{"unit":"px","size":132,"sizes":[]},"rounding_size":"custom","custom_rounding_size":{"unit":"%","size":50,"sizes":[]},"img_size_custom":{"width":"132","height":"132"},"hide_pagination_control":"yes","slides_per_view_tablet":{"unit":"px","size":3,"sizes":[]},"slides_per_view_mobile":{"unit":"px","size":2,"sizes":[]},"_margin_mobile":{"unit":"px","top":"0","right":"0","bottom":"20","left":"0","isLinked":false},"sync_parent_id":"wd_658c39cdb5255"},"elements":[],"widgetType":"wd_product_categories"}],"isInner":true},{"id":"2af5d6d","elType":"widget","settings":{"scroll_y":-80},"elements":[],"widgetType":"wd_wc_notices"},{"id":"896cb7f","elType":"container","settings":{"flex_gap":{"column":"60","row":"60","isLinked":true,"unit":"px","size":60},"flex_gap_tablet":{"column":"40","row":"40","isLinked":true,"unit":"px","size":40},"container_sticky_offset":50,"scroll_y":-80},"elements":[{"id":"2fd33d0","elType":"widget","settings":{"content_repeater":[{"title":"Protective Cases","subtitle":"Safe yout phone","_id":"f7b5976","image":{"url":"http:\/\/dummy.xtemos.com\/woodmart2\/accessories-elementor\/wp-content\/uploads\/sites\/6\/2022\/09\/protective-cases-category-1.jpg","id":9756,"alt":"","source":"library"},"image_size":"full","btn_text":"View more"},{"title":"MagSafe Accessories","subtitle":"Popular accessories","image":{"url":"http:\/\/dummy.xtemos.com\/woodmart2\/accessories-elementor\/wp-content\/uploads\/sites\/6\/2022\/09\/mag-safe-accessories-category-1.jpg","id":9757,"alt":"","source":"library"},"image_size":"full","btn_text":"View more","_id":"3432ef0"},{"title":"Watches Straps","subtitle":"Update your style","image":{"url":"http:\/\/dummy.xtemos.com\/woodmart2\/accessories-elementor\/wp-content\/uploads\/sites\/6\/2022\/09\/watches-straps-category-1.jpg","id":9758,"alt":"","source":"library"},"image_size":"full","btn_text":"View more","_id":"e1e5978"}],"hover":"parallax","woodmart_color_scheme":"dark","title_size":"large","title_typography_typography":"custom","title_typography_font_family":"hkgroteskpro","subtitle_color":"primary","subtitle_typography_typography":"custom","subtitle_typography_font_family":"hkgroteskpro","subtitle_typography_font_size":{"unit":"px","size":15,"sizes":[]},"subtitle_typography_font_size_tablet":{"unit":"px","size":13,"sizes":[]},"subtitle_typography_font_size_mobile":{"unit":"px","size":12,"sizes":[]},"btn_position":"static","btn_color":"primary","btn_shape":"semi-round","scroll_y":-80,"hide_pagination_control":"yes","slides_per_view_tablet":{"unit":"px","size":2,"sizes":[]},"slides_per_view_mobile":{"unit":"px","size":1,"sizes":[]},"sync_parent_id":"wd_658c39cdb6e71"},"elements":[],"widgetType":"wd_banner_carousel"},{"id":"43c3fac","elType":"widget","settings":{"number":12,"filter_in_current_category":"yes","style":"grid","columns":{"unit":"px","size":6,"sizes":[]},"scroll_y":-80,"_margin_tablet":{"unit":"px","top":"0","right":"0","bottom":"10","left":"0","isLinked":false},"columns_tablet":{"unit":"px","size":3,"sizes":[]},"columns_mobile":{"unit":"px","size":2,"sizes":[]},"sync_parent_id":"wd_658c39cdb7b24"},"elements":[],"widgetType":"wd_products_brands"}],"isInner":true}],"isInner":false},{"id":"d324d9b","elType":"container","settings":{"background_background":"classic","background_image":{"url":"http:\/\/dummy.xtemos.com\/woodmart2\/accessories-elementor\/wp-content\/uploads\/sites\/6\/2022\/09\/new-arrivals-banner-1.jpg","id":9510,"alt":"","source":"library"},"background_position":"center center","background_repeat":"no-repeat","background_size":"cover","margin":{"unit":"px","top":"0","right":"0","bottom":"80","left":"0","isLinked":false},"margin_tablet":{"unit":"px","top":"0","right":"0","bottom":"60","left":"0","isLinked":false},"margin_mobile":{"unit":"px","top":"0","right":"0","bottom":"40","left":"0","isLinked":false},"padding":{"unit":"px","top":"130","right":"55","bottom":"130","left":"55","isLinked":false},"padding_tablet":{"unit":"px","top":"90","right":"30","bottom":"90","left":"30","isLinked":false},"border_radius":{"unit":"px","top":"8","right":"8","bottom":"8","left":"8","isLinked":true},"flex_direction":"column","flex_align_items":"flex-start","flex_gap":{"size":30,"column":"30","row":"30","unit":"px","isLinked":true},"scroll_y":-80,"container_sticky_offset":50},"elements":[{"id":"a52be17","elType":"widget","settings":{"subtitle":"","title":"New arrivals accessories for your Apple devices","after_title":"<p>Discover accessories that will make your devices more secure<\/p>","color":"primary","size":"large","subtitle_typography_typography":"custom","subtitle_typography_font_size":{"unit":"px","size":"15","sizes":[]},"subtitle_typography_font_size_tablet":{"unit":"px","size":"13","sizes":[]},"subtitle_typography_font_size_mobile":{"unit":"px","size":"12","sizes":[]},"subtitle_typography_font_weight":"600","scroll_y":"-80","subtitle_typography_font_family":"hkgroteskpro","title_typography_typography":"custom","title_typography_font_family":"hkgroteskpro","align":"left","width":{"unit":"px","size":633,"sizes":[]},"width_tablet":{"unit":"px","size":376,"sizes":[]},"width_mobile":{"unit":"px","size":"","sizes":[]},"title_typography_font_size":{"unit":"px","size":48,"sizes":[]},"title_typography_font_size_tablet":{"unit":"px","size":28,"sizes":[]},"title_typography_font_size_mobile":{"unit":"px","size":22,"sizes":[]}},"elements":[],"widgetType":"wd_title"},{"id":"cde4c06","elType":"container","settings":{"_column_size":100,"width":{"size":null,"unit":"%"},"column_sticky_offset":50,"scroll_y":-80,"content_width":"full","flex_direction":"row","flex_gap":{"column":"15","row":"10","isLinked":false,"unit":"px","size":15},"container_sticky_offset":50},"elements":[{"id":"eafa390","elType":"widget","settings":{"text":"For Iphone","color":"primary","shape":"semi-round","align":"left","_element_width":"auto","scroll_y":-80},"elements":[],"widgetType":"wd_button"},{"id":"e05b4b5","elType":"widget","settings":{"text":"For Watches","color":"primary","shape":"semi-round","align":"left","_element_width":"auto","scroll_y":-80},"elements":[],"widgetType":"wd_button"}],"isInner":true}],"isInner":false},{"id":"3a3ff9a","elType":"container","settings":{"flex_direction":"column","flex_gap":{"size":null,"column":"","row":"","unit":"px","isLinked":true},"margin":{"unit":"px","top":"0","right":"0","bottom":"40","left":"0","isLinked":false},"margin_tablet":{"unit":"px","top":"0","right":"0","bottom":"20","left":"0","isLinked":false},"scroll_y":-80,"container_sticky_offset":50},"elements":[{"id":"a4652e3","elType":"widget","settings":{"subtitle":"Hurry up to buy","title":"Popular Products","after_title":"<p>How can you evaluate content without design<\/p>","color":"primary","size":"large","subtitle_typography_typography":"custom","subtitle_typography_font_size":{"unit":"px","size":"15","sizes":[]},"subtitle_typography_font_size_tablet":{"unit":"px","size":"13","sizes":[]},"subtitle_typography_font_size_mobile":{"unit":"px","size":"12","sizes":[]},"subtitle_typography_font_weight":"600","scroll_y":"-80","subtitle_typography_font_family":"hkgroteskpro","title_typography_typography":"custom","title_typography_font_family":"hkgroteskpro"},"elements":[],"widgetType":"wd_title"},{"id":"128dfe6","elType":"widget","settings":{"taxonomies":[],"query_type":"AND","layout":"carousel","items_per_page":6,"slides_per_view":{"unit":"px","size":5,"sizes":[]},"hide_pagination_control":"yes","img_size":"full","_margin":{"unit":"px","top":"0","right":"0","bottom":"40","left":"0","isLinked":false},"_margin_tablet":{"unit":"px","top":"0","right":"0","bottom":"20","left":"0","isLinked":false},"scroll_y":-80,"slides_per_view_tablet":{"unit":"px","size":3,"sizes":[]},"slides_per_view_mobile":{"unit":"px","size":2,"sizes":[]},"sync_parent_id":"wd_658c39cdb95b6"},"elements":[],"widgetType":"wd_products"}],"isInner":false}]]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[new-arrivals-banner]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/accessories-elementor/woodmart_layout/product-archive-layout-accessories/new-arrivals-banner-2/</link>
 					<pubDate>Fri, 16 Sep 2022 13:33:03 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/new-arrivals-banner-1.jpg</guid>
 															<wp:post_id>9510</wp:post_id>
 					<wp:post_date><![CDATA[2022-09-16 13:33:03]]></wp:post_date>
@@ -915,7 +861,7 @@
 					<title><![CDATA[Product archive layout attribute]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/accessories-elementor/woodmart_layout/product-archive-layout-attribute/</link>
 					<pubDate>Fri, 16 Sep 2022 13:40:06 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/accessories-elementor/?post_type=woodmart_layout&#038;p=9516</guid>
 											<content:encoded><![CDATA[<link rel="stylesheet" id="wd-el-page-title-builder-css" href="https://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/themes/woodmart/css/parts/el-page-title-builder.min.css?ver=7.3.2" type="text/css" media="all" /> 						<link rel="stylesheet" id="wd-woo-shop-page-title-css" href="https://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/themes/woodmart/css/parts/woo-shop-page-title.min.css?ver=7.3.2" type="text/css" media="all" /> 						<link rel="stylesheet" id="wd-shop-title-categories-css" href="https://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/themes/woodmart/css/parts/woo-categories-loop-nav.min.css?ver=7.3.2" type="text/css" media="all" /> 						<link rel="stylesheet" id="wd-woo-categories-loop-nav-mobile-accordion-css" href="https://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/themes/woodmart/css/parts/woo-categories-loop-nav-mobile-accordion.min.css?ver=7.3.2" type="text/css" media="all" /> 						<link rel="stylesheet" id="wd-page-title-css" href="https://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/themes/woodmart/css/parts/page-title.min.css?ver=7.3.2" type="text/css" media="all" /> 										
 													<h1>
@@ -1111,7 +1057,7 @@
 					<title><![CDATA[placeholder.png]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/accessories-elementor/placeholder-png/</link>
 					<pubDate>Fri, 16 Sep 2022 13:40:06 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/placeholder.png</guid>
 															<wp:post_id>9517</wp:post_id>
 					<wp:post_date><![CDATA[2022-09-16 13:40:06]]></wp:post_date>
@@ -1138,7 +1084,7 @@
 					<title><![CDATA[protective-cases-category]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/accessories-elementor/woodmart_layout/product-archive-layout-accessories/protective-cases-category-2/</link>
 					<pubDate>Wed, 28 Sep 2022 16:02:26 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/protective-cases-category-1.jpg</guid>
 															<wp:post_id>9756</wp:post_id>
 					<wp:post_date><![CDATA[2022-09-28 16:02:26]]></wp:post_date>
@@ -1161,7 +1107,7 @@
 					<title><![CDATA[mag-safe-accessories-category]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/accessories-elementor/woodmart_layout/product-archive-layout-accessories/mag-safe-accessories-category-2/</link>
 					<pubDate>Wed, 28 Sep 2022 16:02:36 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/mag-safe-accessories-category-1.jpg</guid>
 															<wp:post_id>9757</wp:post_id>
 					<wp:post_date><![CDATA[2022-09-28 16:02:36]]></wp:post_date>
@@ -1184,7 +1130,7 @@
 					<title><![CDATA[watches-straps-category]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/accessories-elementor/woodmart_layout/product-archive-layout-accessories/watches-straps-category-2/</link>
 					<pubDate>Wed, 28 Sep 2022 16:02:44 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/watches-straps-category-1.jpg</guid>
 															<wp:post_id>9758</wp:post_id>
 					<wp:post_date><![CDATA[2022-09-28 16:02:44]]></wp:post_date>
@@ -1207,7 +1153,7 @@
 					<title><![CDATA[guaranteed-safe-checkout-bordered]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/accessories-elementor/woodmart_layout/single-product-layout-accessories/guaranteed-safe-checkout-bordered/</link>
 					<pubDate>Thu, 29 Sep 2022 11:59:25 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/guaranteed-safe-checkout-bordered.jpg</guid>
 															<wp:post_id>9762</wp:post_id>
 					<wp:post_date><![CDATA[2022-09-29 11:59:25]]></wp:post_date>
@@ -1230,7 +1176,7 @@
 					<title><![CDATA[Home Accessories]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/accessories-elementor/</link>
 					<pubDate>Wed, 07 Sep 2022 13:52:36 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/accessories-elementor/?page_id=25</guid>
 											<content:encoded><![CDATA[<link rel="stylesheet" id="wd-swiper-css" href="https://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/themes/woodmart/css/parts/lib-swiper.min.css?ver=7.3.4" type="text/css" media="all" /> 						<link rel="stylesheet" id="wd-slider-css" href="https://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/themes/woodmart/css/parts/el-slider.min.css?ver=7.3.4" type="text/css" media="all" /> 						<link rel="stylesheet" id="xts-style-term-18-css" href="https://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2023/12/xts-term-18-1703246630.css?ver=7.3.4" type="text/css" media="all">  			<style>							#slide-83 .wd-slide-container {
 										--wd-align-items: center;
@@ -2094,16 +2040,12 @@ Off the Second							</h4>
 							<wp:meta_key><![CDATA[_elementor_data]]></wp:meta_key>
 							<wp:meta_value><![CDATA[[{"id":"b2274a8","elType":"container","settings":{"flex_gap":{"size":null,"column":"","row":"","unit":"px","isLinked":true},"margin":{"unit":"px","top":"0","right":"0","bottom":"80","left":"0","isLinked":""},"margin_mobile":{"unit":"px","top":"0","right":"0","bottom":"60","left":"0","isLinked":""},"padding":{"unit":"px","top":"0","right":"0","bottom":"0","left":"0","isLinked":"1"},"flex_direction":"row","scroll_y":-80,"container_sticky_offset":50},"elements":[{"id":"bb5530e","elType":"widget","settings":{"slider":"accessories-slider","scroll_y":"-80","sync_parent_id":"wd_6578706bc6bd1"},"elements":[],"widgetType":"wd_slider"}],"isInner":false},{"id":"4f0ccb7","elType":"container","settings":{"margin":{"unit":"px","top":"0","right":"0","bottom":"80","left":"0","isLinked":""},"margin_mobile":{"unit":"px","top":"0","right":"0","bottom":"60","left":"0","isLinked":""},"flex_direction":"column","flex_gap":{"size":null,"column":"","row":"","unit":"px","isLinked":true},"scroll_y":-80,"container_sticky_offset":50},"elements":[{"id":"28c7d78","elType":"widget","settings":{"categories_design":"alt","columns":{"unit":"px","size":"6","sizes":[]},"spacing":"10","scroll_y":"-80","style":"carousel","slides_per_view":{"unit":"px","size":"6","sizes":[]},"categories_with_shadow":"disable","orderby":"id","order":"ASC","ids":["23","34","19","31","41","37"],"hide_empty":"","img_size":"full","image_container_width":{"unit":"px","size":132,"sizes":[]},"rounding_size":"custom","custom_rounding_size":{"unit":"%","size":50,"sizes":[]},"img_size_custom":{"width":"132","height":"132"},"hide_pagination_control":"yes","slides_per_view_tablet":{"unit":"px","size":3,"sizes":[]},"slides_per_view_mobile":{"unit":"px","size":2,"sizes":[]},"sync_parent_id":"wd_6578706bcd74a"},"elements":[],"widgetType":"wd_product_categories"}],"isInner":false},{"id":"32711ec","elType":"container","settings":{"margin":{"unit":"px","top":"0","right":"0","bottom":"80","left":"0","isLinked":""},"margin_mobile":{"unit":"px","top":"0","right":"0","bottom":"60","left":"0","isLinked":""},"flex_direction":"column","flex_gap":{"size":null,"column":"","row":"","unit":"px","isLinked":true},"scroll_y":-80,"container_sticky_offset":50},"elements":[{"id":"63ede17","elType":"widget","settings":{"subtitle":"Hurry up to buy","title":"New Arrivals","after_title":"<p>How can you evaluate content without design<\/p>","color":"primary","size":"large","subtitle_typography_typography":"custom","subtitle_typography_font_size":{"unit":"px","size":"15","sizes":[]},"subtitle_typography_font_size_tablet":{"unit":"px","size":"13","sizes":[]},"subtitle_typography_font_size_mobile":{"unit":"px","size":"12","sizes":[]},"subtitle_typography_font_weight":"600","scroll_y":"-80","subtitle_typography_font_family":"hkgroteskpro","title_typography_typography":"custom","title_typography_font_family":"hkgroteskpro"},"elements":[],"widgetType":"wd_title"},{"id":"91a16a3","elType":"widget","settings":{"title":"","tabs_items":[{"title":"Cases","_id":"fb2c28e","post_type":"ids","include":["9202","9197","9213","9226","9098","9207","9119","9181","9236","9231"],"orderby":"id"},{"title":"STRAPS","_id":"07299e1"},{"title":"MAGSAFE","_id":"4761f46"}],"color":"#2E6BC6","items_per_page":10,"img_size":"custom","img_size_custom":{"width":"400","height":"457"},"scroll_y":"-80","columns":{"unit":"px","size":5,"sizes":[]},"tabs_heading_typography_font_family":"hkgroteskpro","tabs_title_typography_typography":"custom","tabs_title_typography_font_family":"hkgroteskpro","columns_mobile":{"unit":"px","size":2,"sizes":[]},"columns_tablet":{"unit":"px","size":3,"sizes":[]},"sync_parent_id":"wd_6578706bcd0de"},"elements":[],"widgetType":"wd_products_tabs"}],"isInner":false},{"id":"c74c04d","elType":"container","settings":{"margin":{"unit":"px","top":"0","right":"0","bottom":"80","left":"0","isLinked":""},"margin_mobile":{"unit":"px","top":"0","right":"0","bottom":"60","left":"0","isLinked":""},"flex_direction":"column","flex_gap":{"size":30,"column":"30","row":"30","unit":"px","isLinked":true},"scroll_y":-80,"container_sticky_offset":50},"elements":[{"id":"72d83e1","elType":"widget","settings":{"subtitle":"There are some redeeming factors","title":"We Provide High Quality Goods","after_title":"<p>A client that's unhappy for a reason is a problem, a client that's unhappy though he or her can't<\/p>","color":"primary","size":"large","subtitle_typography_typography":"custom","subtitle_typography_font_size":{"unit":"px","size":"15","sizes":[]},"subtitle_typography_font_size_tablet":{"unit":"px","size":"13","sizes":[]},"subtitle_typography_font_size_mobile":{"unit":"px","size":"12","sizes":[]},"subtitle_typography_font_weight":"600","scroll_y":"-80","subtitle_typography_font_family":"hkgroteskpro","title_typography_typography":"custom","title_typography_font_family":"hkgroteskpro"},"elements":[],"widgetType":"wd_title"},{"id":"1f7287a","elType":"widget","settings":{"content_repeater":[{"title":"Fast Delivery","subtitle":"","_id":"ea7510b","link":{"url":"","is_external":"","nofollow":"","custom_attributes":""},"icon_type":"icon","icon_text":"01.","image":{"id":38,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/accessories-elementor\/wp-content\/uploads\/sites\/6\/2022\/09\/accessories-infobox-1.svg","alt":"","source":"library","size":""},"image_size":"custom","image_custom_dimension":{"width":"60","height":"60"},"content":"<p>Chances are there wasn\u2019t collaboration and checkpoints, there wasn\u2019t a process.<\/p>","btn_text":""},{"title":"Best Quality","subtitle":"","link":{"url":"","is_external":"","nofollow":"","custom_attributes":""},"icon_type":"icon","icon_text":"01.","image":{"id":39,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/accessories-elementor\/wp-content\/uploads\/sites\/6\/2022\/09\/accessories-infobox-2.svg","alt":"","source":"library","size":""},"image_size":"custom","image_custom_dimension":{"width":"60","height":"60"},"content":"<p>It\u2019s content strategy gone awry right from the start. Forswearing the use of Lorem Ipsum.<\/p>","btn_text":"","_id":"3d12955"},{"title":"Free Return","subtitle":"","link":{"url":"","is_external":"","nofollow":"","custom_attributes":""},"icon_type":"icon","icon_text":"01.","image":{"id":40,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/accessories-elementor\/wp-content\/uploads\/sites\/6\/2022\/09\/accessories-infobox-3.svg","alt":"","source":"library","size":""},"image_size":"custom","image_custom_dimension":{"width":"60","height":"60"},"content":"<p>True enough, but that\u2019s not all that it takes to get things back on track out there for a text.<\/p>","btn_text":"","_id":"436686a"}],"hide_pagination_control":"yes","title_typography_typography":"custom","title_typography_font_size":{"unit":"px","size":"24","sizes":[]},"title_typography_font_size_mobile":{"unit":"px","size":"20","sizes":[]},"scroll_y":"-80","title_typography_font_family":"hkgroteskpro","content_typography_typography":"custom","content_typography_font_size":{"unit":"px","size":16,"sizes":[]},"content_typography_font_size_tablet":{"unit":"px","size":14,"sizes":[]},"slides_per_view_mobile":{"unit":"px","size":1,"sizes":[]},"slides_per_view_tablet":{"unit":"px","size":2,"sizes":[]},"sync_parent_id":"wd_6578706bca677","title_typography_font_size_tablet":{"unit":"px","size":20,"sizes":[]}},"elements":[],"widgetType":"wd_infobox_carousel"}],"isInner":false},{"id":"b5d86ba","elType":"container","settings":{"structure":"20","flex_direction":"row","flex_gap":{"size":null,"column":"","row":"","unit":"px","isLinked":true},"margin":{"unit":"px","top":"0","right":"0","bottom":"20","left":"0","isLinked":false},"scroll_y":-80,"container_sticky_offset":50},"elements":[{"id":"64f4a63","elType":"widget","settings":{"image_size":"full","image_custom_dimension":{"width":"485","height":"344"},"image_height":{"unit":"px","size":"340","sizes":[]},"image_height_tablet":{"unit":"px","size":"340","sizes":[]},"subtitle":"Something completely new","title":"Cases for Phone","content":"","btn_text":"TO SHOP","hover":"parallax","title_size":"extra-large","custom_subtitle_color":"#2E6BC6","subtitle_typography_typography":"custom","subtitle_typography_font_size":{"unit":"px","size":"15","sizes":[]},"subtitle_typography_font_size_tablet":{"unit":"px","size":"13","sizes":[]},"subtitle_typography_font_size_mobile":{"unit":"px","size":"12","sizes":[]},"subtitle_typography_font_weight":"600","btn_position":"static","btn_color":"primary","btn_shape":"semi-round","scroll_y":"-80","image":{"id":9287,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/accessories-elementor\/wp-content\/uploads\/sites\/6\/2022\/09\/accessories-banner-1-1.jpg","alt":"","source":"library"},"title_typography_typography":"custom","title_typography_font_family":"hkgroteskpro","subtitle_typography_font_family":"hkgroteskpro","_element_width":"initial","_element_custom_width":{"unit":"%","size":41.3,"sizes":[]},"_element_custom_width_mobile":{"unit":"%","size":100,"sizes":[]}},"elements":[],"widgetType":"wd_banner"},{"id":"07537ef","elType":"widget","settings":{"image_size":"full","image_custom_dimension":{"width":"687","height":"344"},"image_height":{"unit":"px","size":"340","sizes":[]},"image_height_tablet":{"unit":"px","size":"340","sizes":[]},"subtitle":"Accessories for watch","title":"Straps of Any Color","content":"","btn_text":"TO SHOP","hover":"parallax","title_size":"extra-large","custom_subtitle_color":"#2E6BC6","subtitle_typography_typography":"custom","subtitle_typography_font_size":{"unit":"px","size":"15","sizes":[]},"subtitle_typography_font_size_tablet":{"unit":"px","size":"13","sizes":[]},"subtitle_typography_font_size_mobile":{"unit":"px","size":"12","sizes":[]},"subtitle_typography_font_weight":"600","btn_position":"static","btn_style":"bordered","btn_shape":"semi-round","scroll_y":"-80","image":{"id":9291,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/accessories-elementor\/wp-content\/uploads\/sites\/6\/2022\/09\/accessories-banner-2-1.jpg","alt":"","source":"library"},"title_typography_typography":"custom","title_typography_font_family":"hkgroteskpro","subtitle_typography_font_family":"hkgroteskpro","_element_width":"initial","_element_custom_width":{"unit":"%","size":58.4,"sizes":[]},"_element_custom_width_mobile":{"unit":"%","size":100,"sizes":[]}},"elements":[],"widgetType":"wd_banner"}],"isInner":false},{"id":"aa20af6","elType":"container","settings":{"structure":"20","margin":{"unit":"px","top":"0","right":"0","bottom":"80","left":"0","isLinked":""},"margin_mobile":{"unit":"px","top":"0","right":"0","bottom":"60","left":"0","isLinked":""},"flex_direction":"row","flex_gap":{"size":null,"column":"","row":"","unit":"px","isLinked":true},"scroll_y":-80,"container_sticky_offset":50},"elements":[{"id":"4d5e0d4","elType":"widget","settings":{"image_size":"full","image_custom_dimension":{"width":"687","height":"344"},"image_height":{"unit":"px","size":"340","sizes":[]},"image_height_tablet":{"unit":"px","size":"340","sizes":[]},"subtitle":"Special offer","title":"Buy One and Get 50%\nOff the Second","content":"","btn_text":"READ MORE","hover":"parallax","title_size":"extra-large","custom_subtitle_color":"#2E6BC6","subtitle_typography_typography":"custom","subtitle_typography_font_size":{"unit":"px","size":"15","sizes":[]},"subtitle_typography_font_size_tablet":{"unit":"px","size":"13","sizes":[]},"subtitle_typography_font_size_mobile":{"unit":"px","size":"12","sizes":[]},"subtitle_typography_font_weight":"600","btn_position":"static","btn_style":"bordered","btn_shape":"semi-round","width":{"unit":"%","size":"60","sizes":[]},"width_tablet":{"unit":"%","size":"76","sizes":[]},"width_mobile":{"unit":"%","size":"100","sizes":[]},"scroll_y":"-80","image":{"id":9292,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/accessories-elementor\/wp-content\/uploads\/sites\/6\/2022\/09\/accessories-banner-3-1.jpg","alt":"","source":"library"},"title_typography_typography":"custom","title_typography_font_family":"hkgroteskpro","subtitle_typography_font_family":"hkgroteskpro","_element_width":"initial","_element_custom_width":{"unit":"%","size":58.4,"sizes":[]},"_element_custom_width_mobile":{"unit":"%","size":100,"sizes":[]}},"elements":[],"widgetType":"wd_banner"},{"id":"c7f9584","elType":"widget","settings":{"image_size":"full","image_custom_dimension":{"width":"485","height":"344"},"image_height":{"unit":"px","size":"340","sizes":[]},"image_height_tablet":{"unit":"px","size":"340","sizes":[]},"subtitle":"Try something completely","title":"Charger Discount","content":"","btn_text":"BUY NOW","hover":"parallax","title_size":"extra-large","custom_subtitle_color":"#2E6BC6","subtitle_typography_typography":"custom","subtitle_typography_font_size":{"unit":"px","size":"15","sizes":[]},"subtitle_typography_font_size_tablet":{"unit":"px","size":"13","sizes":[]},"subtitle_typography_font_size_mobile":{"unit":"px","size":"12","sizes":[]},"subtitle_typography_font_weight":"600","btn_position":"static","btn_color":"primary","btn_shape":"semi-round","scroll_y":"-80","image":{"id":9293,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/accessories-elementor\/wp-content\/uploads\/sites\/6\/2022\/09\/accessories-banner-4-1.jpg","alt":"","source":"library"},"title_typography_typography":"custom","title_typography_font_family":"hkgroteskpro","subtitle_typography_font_family":"hkgroteskpro","_element_width":"initial","_element_custom_width":{"unit":"%","size":41.3,"sizes":[]},"_element_custom_width_mobile":{"unit":"%","size":100,"sizes":[]}},"elements":[],"widgetType":"wd_banner"}],"isInner":false},{"id":"3549d93","elType":"container","settings":{"margin":{"unit":"px","top":"0","right":"0","bottom":"70","left":"0","isLinked":""},"margin_mobile":{"unit":"px","top":"0","right":"0","bottom":"40","left":"0","isLinked":""},"flex_direction":"column","flex_gap":{"size":30,"column":"30","row":"30","unit":"px","isLinked":true},"scroll_y":-80,"container_sticky_offset":50},"elements":[{"id":"4e3f175","elType":"widget","settings":{"subtitle":"Learn how to get a discount","title":"Most Popular Products","after_title":"<p>Proponents of content strategy may shun of dummy copy designers<\/p>","color":"primary","size":"large","subtitle_typography_typography":"custom","subtitle_typography_font_size":{"unit":"px","size":"15","sizes":[]},"subtitle_typography_font_size_tablet":{"unit":"px","size":"13","sizes":[]},"subtitle_typography_font_size_mobile":{"unit":"px","size":"12","sizes":[]},"subtitle_typography_font_weight":"600","scroll_y":"-80","subtitle_typography_font_family":"hkgroteskpro","title_typography_typography":"custom","title_typography_font_family":"hkgroteskpro"},"elements":[],"widgetType":"wd_title"},{"id":"ee7746e","elType":"widget","settings":{"layout":"carousel","items_per_page":6,"slides_per_view":{"unit":"px","size":5,"sizes":[]},"scroll_y":"-80","post_type":"ids","include":["9250","9255","9260","9109","9265","9270"],"orderby":"id","slides_per_view_tablet":{"unit":"px","size":3,"sizes":[]},"slides_per_view_mobile":{"unit":"px","size":2,"sizes":[]},"sync_parent_id":"wd_6578706bcca0e"},"elements":[],"widgetType":"wd_products"}],"isInner":false},{"id":"786ca42","elType":"container","settings":{"margin":{"unit":"px","top":"0","right":"0","bottom":"90","left":"0","isLinked":""},"margin_mobile":{"unit":"px","top":"0","right":"0","bottom":"70","left":"0","isLinked":""},"flex_direction":"column","flex_gap":{"size":30,"column":"30","row":"30","unit":"px","isLinked":true},"scroll_y":-80,"container_sticky_offset":50},"elements":[{"id":"f6feadb","elType":"widget","settings":{"subtitle":"Our new article best news","title":"Interesting About Gadgets","after_title":"<p>Whenever draft copy comes up in a meeting confused questions about<\/p>","color":"primary","size":"large","subtitle_typography_typography":"custom","subtitle_typography_font_size":{"unit":"px","size":"15","sizes":[]},"subtitle_typography_font_size_tablet":{"unit":"px","size":"13","sizes":[]},"subtitle_typography_font_size_mobile":{"unit":"px","size":"12","sizes":[]},"subtitle_typography_font_weight":"600","scroll_y":"-80","subtitle_typography_font_family":"hkgroteskpro","title_typography_typography":"custom","title_typography_font_family":"hkgroteskpro"},"elements":[],"widgetType":"wd_title"},{"id":"9811ee7","elType":"widget","settings":{"blog_design":"carousel","items_per_page":5,"hide_pagination_control":"yes","hide_prev_next_buttons":"","scroll_y":"-80","slides_per_view":{"unit":"px","size":4,"sizes":[]},"parts_text":"","blog_spacing":"20","slides_per_view_tablet":{"unit":"px","size":3,"sizes":[]},"slides_per_view_mobile":{"unit":"px","size":1,"sizes":[]},"parts_btn":"","sync_parent_id":"wd_6578706bc8df9"},"elements":[],"widgetType":"wd_blog"}],"isInner":false},{"id":"479c755","elType":"container","settings":{"flex_gap":{"size":null,"column":"","row":"","unit":"px","isLinked":true},"wd_section_stretch":"stretch-content","margin":{"unit":"px","top":"0","right":"0","bottom":"-40","left":"0","isLinked":""},"padding":{"unit":"px","top":"0","right":"0","bottom":"0","left":"0","isLinked":""},"scroll_y":-80,"container_sticky_offset":50,"flex_direction_tablet":"row"},"elements":[{"id":"905d794","elType":"widget","settings":{"data_source":"images","username":"pods.wear","per_row":{"unit":"px","size":"8","sizes":[]},"number":{"unit":"px","size":"8","sizes":[]},"scroll_y":"-80","images_size":"full","images_likes":"1000-10000","images_comments":"0-1000","images":[{"id":65,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/accessories-elementor\/accessories-elementor\/accessories-elementor\/accessories-elementor\/wp-content\/uploads\/sites\/6\/2022\/09\/accessories-inst-9.jpg"},{"id":58,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/accessories-elementor\/accessories-elementor\/accessories-elementor\/accessories-elementor\/wp-content\/uploads\/sites\/6\/2022\/09\/accessories-inst-2-1.jpg"},{"id":59,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/accessories-elementor\/accessories-elementor\/accessories-elementor\/accessories-elementor\/wp-content\/uploads\/sites\/6\/2022\/09\/accessories-inst-3-1.jpg"},{"id":60,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/accessories-elementor\/accessories-elementor\/accessories-elementor\/accessories-elementor\/wp-content\/uploads\/sites\/6\/2022\/09\/accessories-inst-4-1.jpg"},{"id":61,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/accessories-elementor\/accessories-elementor\/accessories-elementor\/accessories-elementor\/wp-content\/uploads\/sites\/6\/2022\/09\/accessories-inst-5-1.jpg"},{"id":62,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/accessories-elementor\/accessories-elementor\/accessories-elementor\/accessories-elementor\/wp-content\/uploads\/sites\/6\/2022\/09\/accessories-inst-6-1.jpg"},{"id":63,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/accessories-elementor\/accessories-elementor\/accessories-elementor\/accessories-elementor\/wp-content\/uploads\/sites\/6\/2022\/09\/accessories-inst-7-1.jpg"},{"id":64,"url":"http:\/\/dummy.xtemos.com\/woodmart2\/accessories-elementor\/accessories-elementor\/accessories-elementor\/accessories-elementor\/wp-content\/uploads\/sites\/6\/2022\/09\/accessories-inst-8-1.jpg"}],"size":"medium","rounded":"","rounding_size":"0","per_row_tablet":{"unit":"px","size":4,"sizes":[]},"per_row_mobile":{"unit":"px","size":2,"sizes":[]},"sync_parent_id":"wd_6578706bcabef"},"elements":[],"widgetType":"wd_instagram"}],"isInner":false}]]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[accessories-infobox-1.svg]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/accessories-elementor/accessories-infobox-1-svg/</link>
 					<pubDate>Wed, 07 Sep 2022 14:08:26 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/accessories-infobox-1.svg</guid>
 															<wp:post_id>38</wp:post_id>
 					<wp:post_date><![CDATA[2022-09-07 14:08:26]]></wp:post_date>
@@ -2130,7 +2072,7 @@ Off the Second							</h4>
 					<title><![CDATA[accessories-infobox-2.svg]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/accessories-elementor/accessories-infobox-2-svg/</link>
 					<pubDate>Wed, 07 Sep 2022 14:08:26 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/accessories-infobox-2.svg</guid>
 															<wp:post_id>39</wp:post_id>
 					<wp:post_date><![CDATA[2022-09-07 14:08:26]]></wp:post_date>
@@ -2157,7 +2099,7 @@ Off the Second							</h4>
 					<title><![CDATA[accessories-infobox-3.svg]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/accessories-elementor/accessories-infobox-3-svg/</link>
 					<pubDate>Wed, 07 Sep 2022 14:08:26 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/accessories-infobox-3.svg</guid>
 															<wp:post_id>40</wp:post_id>
 					<wp:post_date><![CDATA[2022-09-07 14:08:26]]></wp:post_date>
@@ -2181,79 +2123,10 @@ Off the Second							</h4>
 						</wp:postmeta>
 										</item>
 								<item>
-					<title><![CDATA[accessories-inst-2]]></title>
-					<link>https://dummy.xtemos.com/woodmart2/accessories-elementor/accessories-inst-2/</link>
-					<pubDate>Wed, 07 Sep 2022 14:09:39 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
-					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/accessories-inst-2-1.jpg</guid>
-															<wp:post_id>58</wp:post_id>
-					<wp:post_date><![CDATA[2022-09-07 14:09:39]]></wp:post_date>
-					<wp:post_date_gmt><![CDATA[2022-09-07 14:09:39]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2022-09-07 14:09:39]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2022-09-07 14:09:39]]></wp:post_modified_gmt>
-					<wp:comment_status><![CDATA[open]]></wp:comment_status>
-					<wp:post_name><![CDATA[accessories-inst-2]]></wp:post_name>
-					<wp:status><![CDATA[inherit]]></wp:status>
-					<wp:post_parent>0</wp:post_parent>
-					<wp:menu_order>0</wp:menu_order>
-					<wp:post_type><![CDATA[attachment]]></wp:post_type>
-											<wp:attachment_url><![CDATA[http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/accessories-inst-2-1.jpg]]></wp:attachment_url>
-																					<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-							<wp:meta_value><![CDATA[2022/09/accessories-inst-2-1.jpg]]></wp:meta_value>
-						</wp:postmeta>
-										</item>
-								<item>
-					<title><![CDATA[accessories-inst-3]]></title>
-					<link>https://dummy.xtemos.com/woodmart2/accessories-elementor/accessories-inst-3/</link>
-					<pubDate>Wed, 07 Sep 2022 14:09:40 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
-					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/accessories-inst-3-1.jpg</guid>
-															<wp:post_id>59</wp:post_id>
-					<wp:post_date><![CDATA[2022-09-07 14:09:40]]></wp:post_date>
-					<wp:post_date_gmt><![CDATA[2022-09-07 14:09:40]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2022-09-07 14:09:40]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2022-09-07 14:09:40]]></wp:post_modified_gmt>
-					<wp:comment_status><![CDATA[open]]></wp:comment_status>
-					<wp:post_name><![CDATA[accessories-inst-3]]></wp:post_name>
-					<wp:status><![CDATA[inherit]]></wp:status>
-					<wp:post_parent>0</wp:post_parent>
-					<wp:menu_order>0</wp:menu_order>
-					<wp:post_type><![CDATA[attachment]]></wp:post_type>
-											<wp:attachment_url><![CDATA[http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/accessories-inst-3-1.jpg]]></wp:attachment_url>
-																					<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-							<wp:meta_value><![CDATA[2022/09/accessories-inst-3-1.jpg]]></wp:meta_value>
-						</wp:postmeta>
-										</item>
-								<item>
-					<title><![CDATA[accessories-inst-4]]></title>
-					<link>https://dummy.xtemos.com/woodmart2/accessories-elementor/accessories-inst-4/</link>
-					<pubDate>Wed, 07 Sep 2022 14:09:40 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
-					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/accessories-inst-4-1.jpg</guid>
-															<wp:post_id>60</wp:post_id>
-					<wp:post_date><![CDATA[2022-09-07 14:09:40]]></wp:post_date>
-					<wp:post_date_gmt><![CDATA[2022-09-07 14:09:40]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2022-09-07 14:09:40]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2022-09-07 14:09:40]]></wp:post_modified_gmt>
-					<wp:comment_status><![CDATA[open]]></wp:comment_status>
-					<wp:post_name><![CDATA[accessories-inst-4]]></wp:post_name>
-					<wp:status><![CDATA[inherit]]></wp:status>
-					<wp:post_parent>0</wp:post_parent>
-					<wp:menu_order>0</wp:menu_order>
-					<wp:post_type><![CDATA[attachment]]></wp:post_type>
-											<wp:attachment_url><![CDATA[http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/accessories-inst-4-1.jpg]]></wp:attachment_url>
-																					<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-							<wp:meta_value><![CDATA[2022/09/accessories-inst-4-1.jpg]]></wp:meta_value>
-						</wp:postmeta>
-										</item>
-								<item>
 					<title><![CDATA[accessories-inst-9]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/accessories-elementor/accessories-inst-9/</link>
 					<pubDate>Wed, 07 Sep 2022 14:09:41 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/accessories-inst-9.jpg</guid>
 															<wp:post_id>65</wp:post_id>
 					<wp:post_date><![CDATA[2022-09-07 14:09:41]]></wp:post_date>
@@ -2276,7 +2149,7 @@ Off the Second							</h4>
 					<title><![CDATA[wood-logo-white-reserve]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/accessories-elementor/wood-logo-white-reserve/</link>
 					<pubDate>Wed, 07 Sep 2022 14:14:58 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/wood-logo-white-reserve.svg</guid>
 															<wp:post_id>76</wp:post_id>
 					<wp:post_date><![CDATA[2022-09-07 14:14:58]]></wp:post_date>
@@ -2299,7 +2172,7 @@ Off the Second							</h4>
 					<title><![CDATA[Footer Accessories]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/accessories-elementor/?cms_block=footer-accessories</link>
 					<pubDate>Thu, 08 Sep 2022 11:26:12 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/accessories-elementor/?post_type=cms_block&#038;p=232</guid>
 											<content:encoded><![CDATA[<img  src="http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/wood-logo-white-reserve.svg" title="wood-logo-white-reserve" width="180" height="29">					
 						<link rel="stylesheet" id="wd-widget-nav-mega-menu-css" href="https://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/themes/woodmart/css/parts/widget-nav-mega-menu.min.css?ver=7.3.2" type="text/css" media="all" /> 					
@@ -2342,16 +2215,12 @@ Off the Second							</h4>
 							<wp:meta_key><![CDATA[_elementor_data]]></wp:meta_key>
 							<wp:meta_value><![CDATA[[{"id":"e71185a","elType":"container","settings":{"content_position":"middle","padding":{"unit":"px","top":"35","right":"0","bottom":"35","left":"0","isLinked":false},"flex_direction":"row","flex_align_items":"center","flex_gap":{"size":10,"column":"10","row":"10","unit":"px"},"flex_direction_tablet":"column","flex_justify_content":"space-between","scroll_y":-80},"elements":[{"id":"4e915ec","elType":"widget","settings":{"image":{"url":"http:\/\/dummy.xtemos.com\/woodmart2\/accessories-elementor\/accessories-elementor\/accessories-elementor\/accessories-elementor\/wp-content\/uploads\/sites\/6\/2022\/09\/wood-logo-white-reserve.svg","id":76,"alt":"","source":"library"},"image_size":"custom","image_custom_dimension":{"width":"180","height":"29"},"alignment":"center","scroll_y":-80,"_element_width":"auto","_element_width_tablet":"inherit"},"elements":[],"widgetType":"wd_image_or_svg"},{"id":"3569096","elType":"widget","settings":{"title":"","nav_menu":"48","design":"horizontal","alignment":"center","scroll_y":-80,"_element_width":"auto","_element_width_tablet":"inherit"},"elements":[],"widgetType":"wd_mega_menu"},{"id":"6236063","elType":"widget","settings":{"text":"<p><a href=\"https:\/\/xtemos.com\/\">Xtemos Studio<\/a> Copyright \u00a9 2022<\/p>","text_alignment":"center","scroll_y":-80,"_element_width":"auto","_element_width_tablet":"inherit","_element_width_mobile":"inherit"},"elements":[],"widgetType":"wd_text_block"}],"isInner":false}]]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[Promo popup]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/accessories-elementor/?cms_block=promo-popup</link>
 					<pubDate>Thu, 15 Sep 2022 11:07:31 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/accessories-elementor/?post_type=cms_block&#038;p=9065</guid>
 											<content:encoded><![CDATA[<link rel="stylesheet" id="wd-section-title-css" href="https://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/themes/woodmart/css/parts/el-section-title.min.css?ver=7.3.2" type="text/css" media="all" /> 					
 				<h4>HEY YOU, SIGN UP AND CONNECT TO WOODMART!</h4> 
@@ -2397,16 +2266,12 @@ Off the Second							</h4>
 							<wp:meta_key><![CDATA[_elementor_data]]></wp:meta_key>
 							<wp:meta_value><![CDATA[[{"id":"fc43e3f","elType":"container","settings":{"flex_direction":"column","flex_gap":{"size":null,"column":"","row":"","unit":"px","isLinked":true},"scroll_y":-80},"elements":[{"id":"abfb905","elType":"widget","settings":{"subtitle":"","title":"HEY YOU, SIGN UP AND CONNECT TO WOODMART!","after_title":"<p>Be the first to learn about our latest trends and get exclusive offers<\/p>","size":"large","width":{"unit":"%","size":70,"sizes":[]},"scroll_y":-80},"elements":[],"widgetType":"wd_title"},{"id":"8cd6c4b","elType":"widget","settings":{"scroll_y":-80,"content_width":{"unit":"px","size":420,"sizes":[]},"content_width_tablet":{"unit":"px","size":"","sizes":[]},"content_width_mobile":{"unit":"px","size":"","sizes":[]}},"elements":[],"widgetType":"wd_mailchimp"},{"id":"07a8464","elType":"widget","settings":{"text":"<p>Will be used in accordance with our\u00a0<strong><a href=\"#\">Privacy Policy<\/a><\/strong><\/p>","text_alignment":"center","scroll_y":-80},"elements":[],"widgetType":"wd_text_block"}],"isInner":false}]]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[accessories-banner-1]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/accessories-elementor/accessories-banner-1/</link>
 					<pubDate>Thu, 15 Sep 2022 14:28:24 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/accessories-banner-1-1.jpg</guid>
 															<wp:post_id>9287</wp:post_id>
 					<wp:post_date><![CDATA[2022-09-15 14:28:24]]></wp:post_date>
@@ -2429,7 +2294,7 @@ Off the Second							</h4>
 					<title><![CDATA[accessories-banner-2]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/accessories-elementor/home/accessories-banner-2/</link>
 					<pubDate>Thu, 15 Sep 2022 14:29:05 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/accessories-banner-2-1.jpg</guid>
 															<wp:post_id>9291</wp:post_id>
 					<wp:post_date><![CDATA[2022-09-15 14:29:05]]></wp:post_date>
@@ -2452,7 +2317,7 @@ Off the Second							</h4>
 					<title><![CDATA[accessories-banner-3]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/accessories-elementor/home/accessories-banner-3/</link>
 					<pubDate>Thu, 15 Sep 2022 14:29:14 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/accessories-banner-3-1.jpg</guid>
 															<wp:post_id>9292</wp:post_id>
 					<wp:post_date><![CDATA[2022-09-15 14:29:14]]></wp:post_date>
@@ -2475,7 +2340,7 @@ Off the Second							</h4>
 					<title><![CDATA[accessories-banner-4]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/accessories-elementor/home/accessories-banner-4-2/</link>
 					<pubDate>Thu, 15 Sep 2022 14:29:22 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/accessories-banner-4-1.jpg</guid>
 															<wp:post_id>9293</wp:post_id>
 					<wp:post_date><![CDATA[2022-09-15 14:29:22]]></wp:post_date>
@@ -2498,7 +2363,7 @@ Off the Second							</h4>
 					<title><![CDATA[Single product layout Accessories]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/accessories-elementor/woodmart_layout/single-product-layout-accessories/</link>
 					<pubDate>Thu, 15 Sep 2022 14:34:53 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/accessories-elementor/?post_type=woodmart_layout&#038;p=9297</guid>
 											<content:encoded><![CDATA[ 			<nav aria-label="Breadcrumb">				
 					Home				
@@ -2533,7 +2398,7 @@ Off the Second							</h4>
 			<p>16 in stock</p>
 	
 			
-	<label for="quantity_671fc84be03fb">Woven Nylon Apple quantity</label>
+	<label for="quantity_6785083172733">Woven Nylon Apple quantity</label>
 	
 			
 		<button type="submit" name="add-to-cart" value="9497">Add to cart</button>
@@ -2541,7 +2406,7 @@ Off the Second							</h4>
 			<a href="https://dummy.xtemos.com/woodmart2/accessories-elementor/compare/" data-id="9497" rel="nofollow" data-added-text="Compare products">
 				Compare
 			</a>
-				<a href="https://dummy.xtemos.com/woodmart2/accessories-elementor/wishlist/" data-key="ddeae1b8c7" data-product-id="9497" rel="nofollow" data-added-text="Browse Wishlist">
+				<a href="https://dummy.xtemos.com/woodmart2/accessories-elementor/wishlist/" data-key="feb95f3cb4" data-product-id="9497" rel="nofollow" data-added-text="Browse Wishlist">
 					Add to wishlist
 				</a>
 						 			
@@ -2672,7 +2537,7 @@ Off the Second							</h4>
 			Rated <strong>5.00</strong> out of 5		
 					Features Using dummy content or fake information in the Web design process can result in products with unrealistic assumptions and potentially serious design flaws. A seemingly elegant design can quickly begin to bloat with unexpected content or break under the weight of actual activity. Fake data can ensure a nice looking layout but it doesn’t reflect what a living, breathing application must endure. Ecology Chargers Creativity MagSafe Materials Power &#038; Cables All-rounded Protection Rated for drops up to 6 feet, these cases include additional internal shock-absorbing geometry to protect your phone. A series of ribs surround the phone and are				
 				<a href="#" rel="nofollow" aria-label="Read more description"></a>
-				<a href="https://dummy.xtemos.com/woodmart2/accessories-elementor/wishlist/" data-key="ddeae1b8c7" data-product-id="9482" rel="nofollow" data-added-text="Browse Wishlist">
+				<a href="https://dummy.xtemos.com/woodmart2/accessories-elementor/wishlist/" data-key="feb95f3cb4" data-product-id="9482" rel="nofollow" data-added-text="Browse Wishlist">
 					Add to wishlist
 				</a>
 					<a href="?add-to-cart=9482" aria-describedby="woocommerce_loop_add_to_cart_link_describedby_9482" data-quantity="1" data-product_id="9482" data-product_sku="" aria-label="Add to cart: &ldquo;Nylon Apple Watch&rdquo;" rel="nofollow" data-success_message="&ldquo;Nylon Apple Watch&rdquo; has been added to your cart">Add to cart</a>
@@ -2688,7 +2553,7 @@ Off the Second							</h4>
 	&#036;199.00
 					Features Using dummy content or fake information in the Web design process can result in products with unrealistic assumptions and potentially serious design flaws. A seemingly elegant design can quickly begin to bloat with unexpected content or break under the weight of actual activity. Fake data can ensure a nice looking layout but it doesn’t reflect what a living, breathing application must endure. Ecology Chargers Creativity MagSafe Materials Power &#038; Cables All-rounded Protection Rated for drops up to 6 feet, these cases include additional internal shock-absorbing geometry to protect your phone. A series of ribs surround the phone and are				
 				<a href="#" rel="nofollow" aria-label="Read more description"></a>
-				<a href="https://dummy.xtemos.com/woodmart2/accessories-elementor/wishlist/" data-key="ddeae1b8c7" data-product-id="9485" rel="nofollow" data-added-text="Browse Wishlist">
+				<a href="https://dummy.xtemos.com/woodmart2/accessories-elementor/wishlist/" data-key="feb95f3cb4" data-product-id="9485" rel="nofollow" data-added-text="Browse Wishlist">
 					Add to wishlist
 				</a>
 					<a href="?add-to-cart=9485" aria-describedby="woocommerce_loop_add_to_cart_link_describedby_9485" data-quantity="1" data-product_id="9485" data-product_sku="" aria-label="Add to cart: &ldquo;Pearl Woven Nylon&rdquo;" rel="nofollow" data-success_message="&ldquo;Pearl Woven Nylon&rdquo; has been added to your cart">Add to cart</a>
@@ -2703,7 +2568,7 @@ Off the Second							</h4>
 	&#036;178.00
 					Features Using dummy content or fake information in the Web design process can result in products with unrealistic assumptions and potentially serious design flaws. A seemingly elegant design can quickly begin to bloat with unexpected content or break under the weight of actual activity. Fake data can ensure a nice looking layout but it doesn’t reflect what a living, breathing application must endure. Ecology Chargers Creativity MagSafe Materials Power &#038; Cables All-rounded Protection Rated for drops up to 6 feet, these cases include additional internal shock-absorbing geometry to protect your phone. A series of ribs surround the phone and are				
 				<a href="#" rel="nofollow" aria-label="Read more description"></a>
-				<a href="https://dummy.xtemos.com/woodmart2/accessories-elementor/wishlist/" data-key="ddeae1b8c7" data-product-id="9488" rel="nofollow" data-added-text="Browse Wishlist">
+				<a href="https://dummy.xtemos.com/woodmart2/accessories-elementor/wishlist/" data-key="feb95f3cb4" data-product-id="9488" rel="nofollow" data-added-text="Browse Wishlist">
 					Add to wishlist
 				</a>
 					<a href="?add-to-cart=9488" aria-describedby="woocommerce_loop_add_to_cart_link_describedby_9488" data-quantity="1" data-product_id="9488" data-product_sku="" aria-label="Add to cart: &ldquo;Sport Loop Original&rdquo;" rel="nofollow" data-success_message="&ldquo;Sport Loop Original&rdquo; has been added to your cart">Add to cart</a>
@@ -2718,7 +2583,7 @@ Off the Second							</h4>
 	&#036;179.00
 					Features Using dummy content or fake information in the Web design process can result in products with unrealistic assumptions and potentially serious design flaws. A seemingly elegant design can quickly begin to bloat with unexpected content or break under the weight of actual activity. Fake data can ensure a nice looking layout but it doesn’t reflect what a living, breathing application must endure. Ecology Chargers Creativity MagSafe Materials Power &#038; Cables All-rounded Protection Rated for drops up to 6 feet, these cases include additional internal shock-absorbing geometry to protect your phone. A series of ribs surround the phone and are				
 				<a href="#" rel="nofollow" aria-label="Read more description"></a>
-				<a href="https://dummy.xtemos.com/woodmart2/accessories-elementor/wishlist/" data-key="ddeae1b8c7" data-product-id="9491" rel="nofollow" data-added-text="Browse Wishlist">
+				<a href="https://dummy.xtemos.com/woodmart2/accessories-elementor/wishlist/" data-key="feb95f3cb4" data-product-id="9491" rel="nofollow" data-added-text="Browse Wishlist">
 					Add to wishlist
 				</a>
 					<a href="?add-to-cart=9491" aria-describedby="woocommerce_loop_add_to_cart_link_describedby_9491" data-quantity="1" data-product_id="9491" data-product_sku="" aria-label="Add to cart: &ldquo;Sport Loop Pink&rdquo;" rel="nofollow" data-success_message="&ldquo;Sport Loop Pink&rdquo; has been added to your cart">Add to cart</a>
@@ -2733,19 +2598,19 @@ Off the Second							</h4>
 	&#036;159.00
 					Features Using dummy content or fake information in the Web design process can result in products with unrealistic assumptions and potentially serious design flaws. A seemingly elegant design can quickly begin to bloat with unexpected content or break under the weight of actual activity. Fake data can ensure a nice looking layout but it doesn’t reflect what a living, breathing application must endure. Ecology Chargers Creativity MagSafe Materials Power &#038; Cables All-rounded Protection Rated for drops up to 6 feet, these cases include additional internal shock-absorbing geometry to protect your phone. A series of ribs surround the phone and are				
 				<a href="#" rel="nofollow" aria-label="Read more description"></a>
-				<a href="https://dummy.xtemos.com/woodmart2/accessories-elementor/wishlist/" data-key="ddeae1b8c7" data-product-id="9494" rel="nofollow" data-added-text="Browse Wishlist">
+				<a href="https://dummy.xtemos.com/woodmart2/accessories-elementor/wishlist/" data-key="feb95f3cb4" data-product-id="9494" rel="nofollow" data-added-text="Browse Wishlist">
 					Add to wishlist
 				</a>
 					<a href="?add-to-cart=9494" aria-describedby="woocommerce_loop_add_to_cart_link_describedby_9494" data-quantity="1" data-product_id="9494" data-product_sku="" aria-label="Add to cart: &ldquo;Sport Loop Vitamin C&rdquo;" rel="nofollow" data-success_message="&ldquo;Sport Loop Vitamin C&rdquo; has been added to your cart">Add to cart</a>
 			<a href="https://dummy.xtemos.com/woodmart2/accessories-elementor/product/sport-loop-vitamin-c/" class="open-quick-view quick-view-button" rel="nofollow" data-id="9494">Quick view</a>
 							 					
 			<ul></ul>
-									<!-- end #carousel-188 -->]]></content:encoded>
+									<!-- end #carousel-406 -->]]></content:encoded>
 															<wp:post_id>9297</wp:post_id>
 					<wp:post_date><![CDATA[2022-09-15 14:34:53]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2022-09-15 14:34:53]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-10-28 17:22:20]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-10-28 17:22:20]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-01-13 12:33:53]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-01-13 12:33:53]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[single-product-layout-accessories]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -2762,7 +2627,7 @@ Off the Second							</h4>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_elementor_data]]></wp:meta_key>
-							<wp:meta_value><![CDATA[[{"id":"05db7dd","elType":"container","settings":{"margin":{"unit":"px","top":"-30","right":"0","bottom":"30","left":"0","isLinked":""},"margin_tablet":{"unit":"px","top":"-20","right":"0","bottom":"20","left":"0","isLinked":""},"flex_direction":"column","flex_gap":{"size":"","column":"","row":"","unit":"px","isLinked":"1"},"scroll_y":"-80","container_sticky_offset":"50"},"elements":[{"id":"29a5063","elType":"container","settings":{"flex_direction":"row","flex_direction_mobile":"column","flex_justify_content":"space-between","flex_gap":{"column":"10","row":"10","isLinked":"1","unit":"px","size":"10"},"scroll_y":"-80","container_sticky_offset":"50"},"elements":[{"id":"c29a628","elType":"widget","settings":{"scroll_y":"-80","nowrap_md":"md"},"elements":[],"widgetType":"wd_wc_breadcrumb"},{"id":"fac18d7","elType":"widget","settings":{"alignment":"right","scroll_y":"-80","_offset_orientation_h":"end","hide_mobile":"hidden-mobile"},"elements":[],"widgetType":"wd_single_product_nav"}],"isInner":"1"},{"id":"3f0a2a0","elType":"widget","settings":{"scroll_y":"-80"},"elements":[],"widgetType":"wd_wc_notices"}],"isInner":""},{"id":"3305cbf","elType":"container","settings":{"structure":"20","wd_section_stretch":"stretch","border_border":"solid","border_width":{"unit":"px","top":"0","right":"0","bottom":"1","left":"0","isLinked":""},"border_color":"#1010101A","padding":{"unit":"px","top":"0","right":"15","bottom":"40","left":"15","isLinked":""},"flex_direction":"column","flex_gap":{"size":"","column":"","row":"","unit":"px","isLinked":"1"},"flex_gap_tablet":{"column":"","row":"","isLinked":"1","unit":"px","size":""},"scroll_y":"-80","container_sticky_offset":"50"},"elements":[{"id":"119703e","elType":"container","settings":{"flex_direction":"row","flex_direction_mobile":"column","flex_gap":{"column":"35","row":"35","isLinked":"1","unit":"px","size":"35"},"flex_gap_tablet":{"column":"30","row":"20","isLinked":"","unit":"px","size":"30"},"container_sticky_offset":"50","scroll_y":"-80"},"elements":[{"id":"35d4530","elType":"container","settings":{"_column_size":"50","width":{"size":"58.3","unit":"%"},"column_sticky_offset":"20","scroll_y":"-80","width_tablet":{"size":"50","unit":"%"},"content_width":"full","container_sticky_offset":"50"},"elements":[{"id":"2f9d105","elType":"widget","settings":{"thumbnails_position":"left","scroll_y":"-80"},"elements":[],"widgetType":"wd_single_product_gallery"}],"isInner":"1"},{"id":"19e8a00","elType":"container","settings":{"_column_size":"50","width":{"size":"41.7","unit":"%"},"column_sticky_offset":"150","scroll_y":"-80","width_tablet":{"size":"50","unit":"%"},"column_sticky":"sticky-column","content_width":"full","container_sticky":"yes","container_sticky_offset":"150","container_sticky_tablet":"yes"},"elements":[{"id":"726b008","elType":"container","settings":{"flex_gap":{"size":"","column":"","row":"","unit":"px","isLinked":"1"},"reverse_order_tablet":"reverse-tablet","reverse_order_mobile":"reverse-mobile","flex_direction":"row","flex_align_items":"center","content_width":"full","flex_direction_tablet":"column","scroll_y":"-80","flex_justify_content":"space-between","flex_align_items_tablet":"flex-start","flex_wrap":"nowrap","container_sticky_offset":"50"},"elements":[{"id":"7ae26e9","elType":"widget","settings":{"scroll_y":"-80","_element_width_mobile":"inherit","_element_custom_width":{"unit":"%","size":"80","sizes":[]},"_element_custom_width_tablet":{"unit":"%","size":"","sizes":[]},"_element_custom_width_mobile":{"unit":"%","size":"","sizes":[]},"typography_typography":"custom","typography_font_family":"hkgroteskpro"},"elements":[],"widgetType":"wd_single_product_title"},{"id":"f488c99","elType":"widget","settings":{"style":"shadow","max_width":{"unit":"px","size":"80","sizes":[]},"scroll_y":"-80","max_width_tablet":{"unit":"px","size":"60","sizes":[]},"_element_custom_width_tablet":{"unit":"%","size":"100","sizes":[]},"_element_custom_width_mobile":{"unit":"%","size":"","sizes":[]},"show_label":"","label_text":"Brands:","_element_custom_width":{"unit":"%","size":"20","sizes":[]}},"elements":[],"widgetType":"wd_single_product_brands"}],"isInner":"1"},{"id":"0c75b50","elType":"widget","settings":{"scroll_y":"-80"},"elements":[],"widgetType":"wd_single_product_short_description"},{"id":"f5c1552","elType":"container","settings":{"flex_direction":"row","flex_align_items":"center","flex_gap":{"column":"20","row":"20","isLinked":"1","unit":"px","size":"20"},"scroll_y":"-80","container_sticky_offset":"50"},"elements":[{"id":"eea8442","elType":"widget","settings":{"main_price_typography_typography":"custom","main_price_typography_font_size":{"unit":"px","size":"28","sizes":[]},"main_price_typography_font_size_tablet":{"unit":"px","size":"18","sizes":[]},"scroll_y":"-80"},"elements":[],"widgetType":"wd_single_product_price"},{"id":"c1cd464","elType":"widget","settings":{"scroll_y":"-80","_element_width":"auto"},"elements":[],"widgetType":"wd_single_product_rating"}],"isInner":"1"},{"id":"ccb4c5c","elType":"widget","settings":{"scroll_y":"-80"},"elements":[],"widgetType":"wd_single_product_linked_variations"},{"id":"1181483","elType":"widget","settings":{"scroll_y":"-80","_element_custom_width":{"unit":"%","size":"80","sizes":[]},"_element_custom_width_tablet":{"unit":"%","size":"100","sizes":[]},"_element_custom_width_mobile":{"unit":"%","size":"","sizes":[]},"button_design":"full"},"elements":[],"widgetType":"wd_single_product_add_to_cart"},{"id":"7a968f4","elType":"container","settings":{"flex_gap":{"size":"","column":"","row":"","unit":"px","isLinked":"1"},"structure":"20","flex_direction":"row","flex_align_items":"center","content_width":"full","flex_direction_tablet":"column","scroll_y":"-80","container_sticky_offset":"50"},"elements":[{"id":"1f68fae","elType":"container","settings":{"_column_size":"50","width":{"size":"58","unit":"%"},"width_tablet":{"size":"100","unit":"%"},"column_sticky_offset":"50","scroll_y":"-80","content_width":"full","flex_direction":"row","container_sticky_offset":"50"},"elements":[{"id":"9eb26bf","elType":"widget","settings":{"scroll_y":"-80","_element_width":"auto","icon_size":{"unit":"px","size":"16","sizes":[]}},"elements":[],"widgetType":"wd_single_product_compare_button"},{"id":"11c30d2","elType":"widget","settings":{"scroll_y":"-80","_element_width":"auto","icon_size":{"unit":"px","size":"16","sizes":[]}},"elements":[],"widgetType":"wd_single_product_wishlist_button"}],"isInner":"1"},{"id":"8f816a0","elType":"container","settings":{"_column_size":"50","width":{"size":"42","unit":"%"},"width_tablet":{"size":"100","unit":"%"},"align":"flex-end","align_tablet":"flex-start","column_sticky_offset":"50","scroll_y":"-80","content_width":"full","flex_align_items":"flex-end","flex_align_items_tablet":"flex-start","container_sticky_offset":"50"},"elements":[{"id":"5bdc734","elType":"widget","settings":{"show_label":"yes","label_text":"Share:","layout":"inline","size":"small","title_typography_font_size":{"unit":"px","size":"16","sizes":[]},"scroll_y":"-80","align":"left","_element_width":"auto","_margin":{"unit":"px","top":"0","right":"-4","bottom":"0","left":"0","isLinked":""},"fb_link":"#","twitter_link":"#","isntagram_link":"#","pinterest_link":"#","youtube_link":"#","_margin_tablet":{"unit":"px","top":"0","right":"0","bottom":"0","left":"0","isLinked":""}},"elements":[],"widgetType":"wd_social_buttons"}],"isInner":"1"}],"isInner":"1"},{"id":"dbb83cd","elType":"widget","settings":{"scroll_y":"-80","_element_width":"auto"},"elements":[],"widgetType":"wd_single_product_size_guide_button"},{"id":"4828fd9","elType":"widget","settings":{"text":"Divider","color":"#1010101A","gap":{"unit":"px","size":"0","sizes":[]},"scroll_y":"-80"},"elements":[],"widgetType":"divider"},{"id":"7ebce1d","elType":"container","settings":{"flex_gap":{"size":"10","column":"10","row":"10","unit":"px","isLinked":"1"},"margin":{"unit":"px","top":"0","right":"0","bottom":"-5","left":"0","isLinked":""},"flex_direction":"row","flex_align_items":"flex-end","content_width":"full","flex_direction_tablet":"column","scroll_y":"-80","container_sticky_offset":"50"},"elements":[{"id":"328c474","elType":"widget","settings":{"scroll_y":"-80","_element_width_tablet":"inherit","_element_custom_width":{"unit":"%","size":"50","sizes":[]},"_element_custom_width_tablet":{"unit":"%","size":"","sizes":[]},"_element_custom_width_mobile":{"unit":"%","size":"","sizes":[]},"_element_width":"initial","_margin_tablet":{"unit":"px","top":"0","right":"0","bottom":"20","left":"0","isLinked":""},"title":"Last chance! Sale ends in","title_typography_typography":"custom","title_typography_font_family":"Jost","title_typography_font_size":{"unit":"px","size":"14","sizes":[]},"title_typography_font_weight":"600"},"elements":[],"widgetType":"wd_single_product_countdown"},{"id":"0ecc4ba","elType":"widget","settings":{"scroll_y":"-80","_margin":{"unit":"px","top":"0","right":"0","bottom":"10","left":"0","isLinked":""},"_element_width":"initial","_element_custom_width":{"unit":"%","size":"50","sizes":[]},"_margin_tablet":{"unit":"px","top":"0","right":"0","bottom":"0","left":"0","isLinked":"1"},"_element_custom_width_tablet":{"unit":"%","size":"100","sizes":[]},"_element_custom_width_mobile":{"unit":"%","size":"","sizes":[]}},"elements":[],"widgetType":"wd_single_product_stock_progress_bar"}],"isInner":"1"},{"id":"a54a273","elType":"widget","settings":{"text":"Divider","color":"#1010101A","gap":{"unit":"px","size":"0","sizes":[]},"scroll_y":"-80"},"elements":[],"widgetType":"divider"},{"id":"8881f24","elType":"widget","settings":{"text":"<p><strong>Guaranteed Safe Checkout<\/strong><\/p>","text_color":"title","scroll_y":"-80","_margin":{"unit":"px","top":"0","right":"0","bottom":"-10","left":"0","isLinked":""},"_element_width":"auto"},"elements":[],"widgetType":"wd_text_block"},{"id":"cf9f6fc","elType":"widget","settings":{"image":{"url":"http:\/\/dummy.xtemos.com\/woodmart2\/accessories-elementor\/wp-content\/uploads\/sites\/6\/2022\/09\/guaranteed-safe-checkout-bordered.jpg","id":"9762","alt":"","source":"library"},"rounding_size":"0","scroll_y":"-80"},"elements":[],"widgetType":"wd_image_or_svg"}],"isInner":"1"}],"isInner":"1"}],"isInner":""},{"id":"30406a4","elType":"container","settings":{"flex_direction":"column","flex_gap":{"size":"","column":"","row":"","unit":"px","isLinked":"1"},"scroll_y":"-80","container_sticky_offset":"50"},"elements":[{"id":"6270b15","elType":"widget","settings":{"title":"Frequently Bought Together","scroll_y":"-80","_margin":{"unit":"px","top":"35","right":"0","bottom":"30","left":"0","isLinked":""},"title_typography_typography":"custom","title_typography_font_family":"hkgroteskpro"},"elements":[],"widgetType":"wd_single_product_fbt_products"}],"isInner":""},{"id":"aa67a64","elType":"container","settings":{"wd_section_stretch":"stretch","margin":{"unit":"px","top":"0","right":"0","bottom":"30","left":"0","isLinked":""},"padding":{"unit":"px","top":"30","right":"15","bottom":"0","left":"15","isLinked":""},"flex_direction":"column","flex_gap":{"size":"30","column":"30","row":"30","unit":"px","isLinked":"1"},"scroll_y":"-80","wd_collapsible_content_switcher":"collapsible-content","wd_collapsible_content_height":{"unit":"px","size":"750","sizes":[]},"wd_collapsible_content_height_tablet":{"unit":"px","size":"500","sizes":[]},"wd_collapsible_content_fade_out_color":"#FFFFFF","container_sticky_offset":"50"},"elements":[{"id":"81ef30d","elType":"widget","settings":{"subtitle":"","title":"Features &amp; Compatibility","after_title":"","align":"left","title_typography_typography":"custom","title_typography_font_family":"hkgroteskpro","scroll_y":"-80"},"elements":[],"widgetType":"wd_title"},{"id":"832e588","elType":"widget","settings":{"scroll_y":"-80"},"elements":[],"widgetType":"wd_single_product_content"},{"id":"c127cd8","elType":"widget","settings":{"text":"SHOW MORE","button_collapsible_content":"yes","style":"link","color":"primary","icon":{"value":"fas fa-chevron-down","library":"fa-solid"},"scroll_y":"-80"},"elements":[],"widgetType":"wd_button"}],"isInner":""},{"id":"cafb1da","elType":"container","settings":{"wd_section_stretch":"stretch","border_border":"solid","border_width":{"unit":"px","top":"1","right":"0","bottom":"0","left":"0","isLinked":""},"border_color":"#0000001C","margin":{"unit":"px","top":"0","right":"0","bottom":"35","left":"0","isLinked":""},"padding":{"unit":"px","top":"30","right":"15","bottom":"0","left":"15","isLinked":""},"flex_direction":"column","flex_gap":{"size":"30","column":"30","row":"30","unit":"px","isLinked":"1"},"scroll_y":"-80","wd_collapsible_content_height":{"unit":"px","size":"750","sizes":[]},"wd_collapsible_content_height_tablet":{"unit":"px","size":"500","sizes":[]},"wd_collapsible_content_fade_out_color":"#FFFFFF","container_sticky_offset":"50"},"elements":[{"id":"716ea74","elType":"widget","settings":{"subtitle":"","title":"Additional information","after_title":"","align":"left","title_typography_typography":"custom","title_typography_font_family":"hkgroteskpro","scroll_y":"-80"},"elements":[],"widgetType":"wd_title"},{"id":"7b52e2b","elType":"widget","settings":{"columns":{"unit":"px","size":"2","sizes":[]},"scroll_y":"-80"},"elements":[],"widgetType":"wd_single_product_additional_info_table"}],"isInner":""},{"id":"0a0595d","elType":"container","settings":{"flex_direction":"column","flex_gap":{"size":"30","column":"30","row":"30","unit":"px","isLinked":"1"},"border_border":"solid","border_width":{"unit":"px","top":"1","right":"0","bottom":"0","left":"0","isLinked":""},"border_color":"#0000001C","padding":{"unit":"px","top":"35","right":"15","bottom":"30","left":"15","isLinked":""},"scroll_y":"-80","wd_section_stretch":"stretch","container_sticky_offset":"50"},"elements":[{"id":"af9438b","elType":"widget","settings":{"subtitle":"","title":"Customer Reviews","after_title":"","align":"left","title_typography_typography":"custom","title_typography_font_family":"hkgroteskpro","scroll_y":"-80"},"elements":[],"widgetType":"wd_title"},{"id":"f9aa755","elType":"widget","settings":{"layout":"two-column","scroll_y":"-80"},"elements":[],"widgetType":"wd_single_product_reviews"}],"isInner":""},{"id":"e5632f4","elType":"container","settings":{"wd_section_stretch":"stretch","border_border":"solid","border_width":{"unit":"px","top":"1","right":"0","bottom":"0","left":"0","isLinked":""},"border_color":"#1010101A","padding":{"unit":"px","top":"35","right":"15","bottom":"0","left":"15","isLinked":""},"flex_direction":"column","flex_gap":{"size":"","column":"","row":"","unit":"px","isLinked":"1"},"scroll_y":"-80","container_sticky_offset":"50"},"elements":[{"id":"ccc4f0e","elType":"widget","settings":{"post_type":"related","layout":"carousel","items_per_page":"6","slides_per_view":{"unit":"px","size":"5","sizes":[]},"scroll_y":"-80","element_title":"Related Products","slides_per_view_tablet":{"unit":"px","size":"3","sizes":[]},"slides_per_view_mobile":{"unit":"px","size":"2","sizes":[]},"sync_parent_id":"wd_6565d6fb9ebfb"},"elements":[],"widgetType":"wd_products"}],"isInner":""}]]]></wp:meta_value>
+							<wp:meta_value><![CDATA[[{"id":"05db7dd","elType":"container","settings":{"margin":{"unit":"px","top":"-30","right":"0","bottom":"30","left":"0","isLinked":""},"margin_tablet":{"unit":"px","top":"-20","right":"0","bottom":"20","left":"0","isLinked":""},"flex_direction":"column","flex_gap":{"size":"","column":"","row":"","unit":"px","isLinked":"1"},"scroll_y":"-80","container_sticky_offset":"50"},"elements":[{"id":"29a5063","elType":"container","settings":{"flex_direction":"row","flex_direction_mobile":"column","flex_justify_content":"space-between","flex_gap":{"column":"10","row":"10","isLinked":"1","unit":"px","size":"10"},"scroll_y":"-80","container_sticky_offset":"50"},"elements":[{"id":"c29a628","elType":"widget","settings":{"scroll_y":"-80","nowrap_md":"md"},"elements":[],"widgetType":"wd_wc_breadcrumb"},{"id":"fac18d7","elType":"widget","settings":{"alignment":"right","scroll_y":"-80","_offset_orientation_h":"end","hide_mobile":"hidden-mobile"},"elements":[],"widgetType":"wd_single_product_nav"}],"isInner":"1"},{"id":"3f0a2a0","elType":"widget","settings":{"scroll_y":"-80"},"elements":[],"widgetType":"wd_wc_notices"}],"isInner":""},{"id":"3305cbf","elType":"container","settings":{"structure":"20","wd_section_stretch":"stretch","border_border":"solid","border_width":{"unit":"px","top":"0","right":"0","bottom":"1","left":"0","isLinked":""},"border_color":"#1010101A","padding":{"unit":"px","top":"0","right":"15","bottom":"40","left":"15","isLinked":""},"flex_direction":"column","flex_gap":{"size":"","column":"","row":"","unit":"px","isLinked":"1"},"flex_gap_tablet":{"column":"","row":"","isLinked":"1","unit":"px","size":""},"scroll_y":"-80","container_sticky_offset":"50"},"elements":[{"id":"119703e","elType":"container","settings":{"flex_direction":"row","flex_direction_mobile":"column","flex_gap":{"column":"35","row":"35","isLinked":"1","unit":"px","size":"35"},"flex_gap_tablet":{"column":"30","row":"20","isLinked":"","unit":"px","size":"30"},"container_sticky_offset":"50","scroll_y":"-80"},"elements":[{"id":"35d4530","elType":"container","settings":{"_column_size":"50","width":{"size":"58.3","unit":"%"},"column_sticky_offset":"20","scroll_y":"-80","width_tablet":{"size":"50","unit":"%"},"content_width":"full","container_sticky_offset":"50"},"elements":[{"id":"2f9d105","elType":"widget","settings":{"thumbnails_position":"left","scroll_y":"-80"},"elements":[],"widgetType":"wd_single_product_gallery"}],"isInner":"1"},{"id":"19e8a00","elType":"container","settings":{"_column_size":"50","width":{"size":"41.7","unit":"%"},"column_sticky_offset":"150","scroll_y":"-80","width_tablet":{"size":"50","unit":"%"},"column_sticky":"sticky-column","content_width":"full","container_sticky":"yes","container_sticky_offset":"150","container_sticky_tablet":"yes"},"elements":[{"id":"726b008","elType":"container","settings":{"flex_gap":{"size":"","column":"","row":"","unit":"px","isLinked":"1"},"reverse_order_tablet":"reverse-tablet","reverse_order_mobile":"reverse-mobile","flex_direction":"row","flex_align_items":"center","content_width":"full","flex_direction_tablet":"column","scroll_y":"-80","flex_justify_content":"space-between","flex_align_items_tablet":"flex-start","flex_wrap":"nowrap","container_sticky_offset":"50"},"elements":[{"id":"7ae26e9","elType":"widget","settings":{"scroll_y":"-80","_element_width_mobile":"inherit","_element_custom_width":{"unit":"%","size":"80","sizes":[]},"_element_custom_width_tablet":{"unit":"%","size":"","sizes":[]},"_element_custom_width_mobile":{"unit":"%","size":"","sizes":[]},"typography_typography":"custom","typography_font_family":"hkgroteskpro"},"elements":[],"widgetType":"wd_single_product_title"},{"id":"f488c99","elType":"widget","settings":{"style":"shadow","max_width":{"unit":"px","size":"80","sizes":[]},"scroll_y":"-80","max_width_tablet":{"unit":"px","size":"60","sizes":[]},"_element_custom_width_tablet":{"unit":"%","size":"100","sizes":[]},"_element_custom_width_mobile":{"unit":"%","size":"","sizes":[]},"show_label":"","label_text":"Brands:","_element_custom_width":{"unit":"%","size":"20","sizes":[]}},"elements":[],"widgetType":"wd_single_product_brands"}],"isInner":"1"},{"id":"0c75b50","elType":"widget","settings":{"scroll_y":"-80"},"elements":[],"widgetType":"wd_single_product_short_description"},{"id":"f5c1552","elType":"container","settings":{"flex_direction":"row","flex_align_items":"center","flex_gap":{"column":"20","row":"20","isLinked":"1","unit":"px","size":"20"},"scroll_y":"-80","container_sticky_offset":"50"},"elements":[{"id":"eea8442","elType":"widget","settings":{"main_price_typography_typography":"custom","main_price_typography_font_size":{"unit":"px","size":"28","sizes":[]},"main_price_typography_font_size_tablet":{"unit":"px","size":"18","sizes":[]},"scroll_y":"-80"},"elements":[],"widgetType":"wd_single_product_price"},{"id":"c1cd464","elType":"widget","settings":{"scroll_y":"-80","_element_width":"auto"},"elements":[],"widgetType":"wd_single_product_rating"}],"isInner":"1"},{"id":"ccb4c5c","elType":"widget","settings":{"scroll_y":"-80"},"elements":[],"widgetType":"wd_single_product_linked_variations"},{"id":"1181483","elType":"widget","settings":{"scroll_y":"-80","_element_custom_width":{"unit":"%","size":"80","sizes":[]},"_element_custom_width_tablet":{"unit":"%","size":"100","sizes":[]},"_element_custom_width_mobile":{"unit":"%","size":"","sizes":[]},"button_design":"full"},"elements":[],"widgetType":"wd_single_product_add_to_cart"},{"id":"0b47564","elType":"widget","settings":{"content_width":"full","hook":"woocommerce_single_product_summary","scroll_y":"-80"},"elements":[],"widgetType":"wd_wc_hook"},{"id":"7a968f4","elType":"container","settings":{"flex_gap":{"size":"","column":"","row":"","unit":"px","isLinked":"1"},"structure":"20","flex_direction":"row","flex_align_items":"center","content_width":"full","flex_direction_tablet":"column","scroll_y":"-80","container_sticky_offset":"50"},"elements":[{"id":"1f68fae","elType":"container","settings":{"_column_size":"50","width":{"size":"58","unit":"%"},"width_tablet":{"size":"100","unit":"%"},"column_sticky_offset":"50","scroll_y":"-80","content_width":"full","flex_direction":"row","container_sticky_offset":"50"},"elements":[{"id":"9eb26bf","elType":"widget","settings":{"scroll_y":"-80","_element_width":"auto","icon_size":{"unit":"px","size":"16","sizes":[]}},"elements":[],"widgetType":"wd_single_product_compare_button"},{"id":"11c30d2","elType":"widget","settings":{"scroll_y":"-80","_element_width":"auto","icon_size":{"unit":"px","size":"16","sizes":[]}},"elements":[],"widgetType":"wd_single_product_wishlist_button"}],"isInner":"1"},{"id":"8f816a0","elType":"container","settings":{"_column_size":"50","width":{"size":"42","unit":"%"},"width_tablet":{"size":"100","unit":"%"},"align":"flex-end","align_tablet":"flex-start","column_sticky_offset":"50","scroll_y":"-80","content_width":"full","flex_align_items":"flex-end","flex_align_items_tablet":"flex-start","container_sticky_offset":"50"},"elements":[{"id":"5bdc734","elType":"widget","settings":{"show_label":"yes","label_text":"Share:","layout":"inline","size":"small","title_typography_font_size":{"unit":"px","size":"16","sizes":[]},"scroll_y":"-80","align":"left","_element_width":"auto","_margin":{"unit":"px","top":"0","right":"-4","bottom":"0","left":"0","isLinked":""},"fb_link":"#","twitter_link":"#","isntagram_link":"#","pinterest_link":"#","youtube_link":"#","_margin_tablet":{"unit":"px","top":"0","right":"0","bottom":"0","left":"0","isLinked":""}},"elements":[],"widgetType":"wd_social_buttons"}],"isInner":"1"}],"isInner":"1"},{"id":"dbb83cd","elType":"widget","settings":{"scroll_y":"-80","_element_width":"auto"},"elements":[],"widgetType":"wd_single_product_size_guide_button"},{"id":"4828fd9","elType":"widget","settings":{"text":"Divider","color":"#1010101A","gap":{"unit":"px","size":"0","sizes":[]},"scroll_y":"-80"},"elements":[],"widgetType":"divider"},{"id":"7ebce1d","elType":"container","settings":{"flex_gap":{"size":"10","column":"10","row":"10","unit":"px","isLinked":"1"},"margin":{"unit":"px","top":"0","right":"0","bottom":"-5","left":"0","isLinked":""},"flex_direction":"row","flex_align_items":"flex-end","content_width":"full","flex_direction_tablet":"column","scroll_y":"-80","container_sticky_offset":"50"},"elements":[{"id":"328c474","elType":"widget","settings":{"scroll_y":"-80","_element_width_tablet":"inherit","_element_custom_width":{"unit":"%","size":"50","sizes":[]},"_element_custom_width_tablet":{"unit":"%","size":"","sizes":[]},"_element_custom_width_mobile":{"unit":"%","size":"","sizes":[]},"_element_width":"initial","_margin_tablet":{"unit":"px","top":"0","right":"0","bottom":"20","left":"0","isLinked":""},"title":"Last chance! Sale ends in","title_typography_typography":"custom","title_typography_font_family":"Jost","title_typography_font_size":{"unit":"px","size":"14","sizes":[]},"title_typography_font_weight":"600"},"elements":[],"widgetType":"wd_single_product_countdown"},{"id":"0ecc4ba","elType":"widget","settings":{"scroll_y":"-80","_margin":{"unit":"px","top":"0","right":"0","bottom":"10","left":"0","isLinked":""},"_element_width":"initial","_element_custom_width":{"unit":"%","size":"50","sizes":[]},"_margin_tablet":{"unit":"px","top":"0","right":"0","bottom":"0","left":"0","isLinked":"1"},"_element_custom_width_tablet":{"unit":"%","size":"100","sizes":[]},"_element_custom_width_mobile":{"unit":"%","size":"","sizes":[]}},"elements":[],"widgetType":"wd_single_product_stock_progress_bar"}],"isInner":"1"},{"id":"a54a273","elType":"widget","settings":{"text":"Divider","color":"#1010101A","gap":{"unit":"px","size":"0","sizes":[]},"scroll_y":"-80"},"elements":[],"widgetType":"divider"},{"id":"8881f24","elType":"widget","settings":{"text":"<p><strong>Guaranteed Safe Checkout<\/strong><\/p>","text_color":"title","scroll_y":"-80","_margin":{"unit":"px","top":"0","right":"0","bottom":"-10","left":"0","isLinked":""},"_element_width":"auto"},"elements":[],"widgetType":"wd_text_block"},{"id":"cf9f6fc","elType":"widget","settings":{"image":{"url":"http:\/\/dummy.xtemos.com\/woodmart2\/accessories-elementor\/wp-content\/uploads\/sites\/6\/2022\/09\/guaranteed-safe-checkout-bordered.jpg","id":"9762","alt":"","source":"library"},"rounding_size":"0","scroll_y":"-80"},"elements":[],"widgetType":"wd_image_or_svg"}],"isInner":"1"}],"isInner":"1"}],"isInner":""},{"id":"30406a4","elType":"container","settings":{"flex_direction":"column","flex_gap":{"size":"","column":"","row":"","unit":"px","isLinked":"1"},"scroll_y":"-80","container_sticky_offset":"50"},"elements":[{"id":"6270b15","elType":"widget","settings":{"title":"Frequently Bought Together","scroll_y":"-80","_margin":{"unit":"px","top":"35","right":"0","bottom":"30","left":"0","isLinked":""},"title_typography_typography":"custom","title_typography_font_family":"hkgroteskpro"},"elements":[],"widgetType":"wd_single_product_fbt_products"}],"isInner":""},{"id":"aa67a64","elType":"container","settings":{"wd_section_stretch":"stretch","margin":{"unit":"px","top":"0","right":"0","bottom":"30","left":"0","isLinked":""},"padding":{"unit":"px","top":"30","right":"15","bottom":"0","left":"15","isLinked":""},"flex_direction":"column","flex_gap":{"size":"30","column":"30","row":"30","unit":"px","isLinked":"1"},"scroll_y":"-80","wd_collapsible_content_switcher":"collapsible-content","wd_collapsible_content_height":{"unit":"px","size":"750","sizes":[]},"wd_collapsible_content_height_tablet":{"unit":"px","size":"500","sizes":[]},"wd_collapsible_content_fade_out_color":"#FFFFFF","container_sticky_offset":"50"},"elements":[{"id":"81ef30d","elType":"widget","settings":{"subtitle":"","title":"Features &amp; Compatibility","after_title":"","align":"left","title_typography_typography":"custom","title_typography_font_family":"hkgroteskpro","scroll_y":"-80"},"elements":[],"widgetType":"wd_title"},{"id":"832e588","elType":"widget","settings":{"scroll_y":"-80"},"elements":[],"widgetType":"wd_single_product_content"},{"id":"c127cd8","elType":"widget","settings":{"text":"SHOW MORE","button_collapsible_content":"yes","style":"link","color":"primary","icon":{"value":"fas fa-chevron-down","library":"fa-solid"},"scroll_y":"-80"},"elements":[],"widgetType":"wd_button"}],"isInner":""},{"id":"cafb1da","elType":"container","settings":{"wd_section_stretch":"stretch","border_border":"solid","border_width":{"unit":"px","top":"1","right":"0","bottom":"0","left":"0","isLinked":""},"border_color":"#0000001C","margin":{"unit":"px","top":"0","right":"0","bottom":"35","left":"0","isLinked":""},"padding":{"unit":"px","top":"30","right":"15","bottom":"0","left":"15","isLinked":""},"flex_direction":"column","flex_gap":{"size":"30","column":"30","row":"30","unit":"px","isLinked":"1"},"scroll_y":"-80","wd_collapsible_content_height":{"unit":"px","size":"750","sizes":[]},"wd_collapsible_content_height_tablet":{"unit":"px","size":"500","sizes":[]},"wd_collapsible_content_fade_out_color":"#FFFFFF","container_sticky_offset":"50"},"elements":[{"id":"716ea74","elType":"widget","settings":{"subtitle":"","title":"Additional information","after_title":"","align":"left","title_typography_typography":"custom","title_typography_font_family":"hkgroteskpro","scroll_y":"-80"},"elements":[],"widgetType":"wd_title"},{"id":"7b52e2b","elType":"widget","settings":{"columns":{"unit":"px","size":"2","sizes":[]},"scroll_y":"-80"},"elements":[],"widgetType":"wd_single_product_additional_info_table"}],"isInner":""},{"id":"0a0595d","elType":"container","settings":{"flex_direction":"column","flex_gap":{"size":"30","column":"30","row":"30","unit":"px","isLinked":"1"},"border_border":"solid","border_width":{"unit":"px","top":"1","right":"0","bottom":"0","left":"0","isLinked":""},"border_color":"#0000001C","padding":{"unit":"px","top":"35","right":"15","bottom":"30","left":"15","isLinked":""},"scroll_y":"-80","wd_section_stretch":"stretch","container_sticky_offset":"50"},"elements":[{"id":"af9438b","elType":"widget","settings":{"subtitle":"","title":"Customer Reviews","after_title":"","align":"left","title_typography_typography":"custom","title_typography_font_family":"hkgroteskpro","scroll_y":"-80"},"elements":[],"widgetType":"wd_title"},{"id":"f9aa755","elType":"widget","settings":{"layout":"two-column","scroll_y":"-80"},"elements":[],"widgetType":"wd_single_product_reviews"}],"isInner":""},{"id":"e5632f4","elType":"container","settings":{"wd_section_stretch":"stretch","border_border":"solid","border_width":{"unit":"px","top":"1","right":"0","bottom":"0","left":"0","isLinked":""},"border_color":"#1010101A","padding":{"unit":"px","top":"35","right":"15","bottom":"0","left":"15","isLinked":""},"flex_direction":"column","flex_gap":{"size":"","column":"","row":"","unit":"px","isLinked":"1"},"scroll_y":"-80","container_sticky_offset":"50"},"elements":[{"id":"ccc4f0e","elType":"widget","settings":{"post_type":"related","layout":"carousel","items_per_page":"6","slides_per_view":{"unit":"px","size":"5","sizes":[]},"scroll_y":"-80","element_title":"Related Products","slides_per_view_tablet":{"unit":"px","size":"3","sizes":[]},"slides_per_view_mobile":{"unit":"px","size":"2","sizes":[]},"sync_parent_id":"wd_6565d6fb9ebfb"},"elements":[],"widgetType":"wd_products"}],"isInner":""}]]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_elementor_edit_mode]]></wp:meta_key>
@@ -2784,16 +2649,81 @@ Off the Second							</h4>
 							<wp:meta_key><![CDATA[_elementor_template_type]]></wp:meta_key>
 							<wp:meta_value><![CDATA[wp-post]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:2:{s:7:"scripts";a:2:{i:0;s:4:"zoom";i:1;s:17:"wc-single-product";}s:6:"styles";a:1:{i:0;s:14:"widget-divider";}}]]></wp:meta_value>
+										</item>
+								<item>
+					<title><![CDATA[mag-safe-case-category]]></title>
+					<link>https://dummy.xtemos.com/woodmart2/accessories-elementor/woodmart_layout/product-archive-layout-case/mag-safe-case-category/</link>
+					<pubDate>Fri, 16 Sep 2022 11:26:22 +0000</pubDate>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
+					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/mag-safe-case-category.jpg</guid>
+															<wp:post_id>9430</wp:post_id>
+					<wp:post_date><![CDATA[2022-09-16 11:26:22]]></wp:post_date>
+					<wp:post_date_gmt><![CDATA[2022-09-16 11:26:22]]></wp:post_date_gmt>
+					<wp:post_modified><![CDATA[2022-09-16 11:26:22]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2022-09-16 11:26:22]]></wp:post_modified_gmt>
+					<wp:comment_status><![CDATA[open]]></wp:comment_status>
+					<wp:post_name><![CDATA[mag-safe-case-category]]></wp:post_name>
+					<wp:status><![CDATA[inherit]]></wp:status>
+					<wp:post_parent>9421</wp:post_parent>
+					<wp:menu_order>0</wp:menu_order>
+					<wp:post_type><![CDATA[attachment]]></wp:post_type>
+											<wp:attachment_url><![CDATA[http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/mag-safe-case-category.jpg]]></wp:attachment_url>
+																					<wp:postmeta>
+							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+							<wp:meta_value><![CDATA[2022/09/mag-safe-case-category.jpg]]></wp:meta_value>
+						</wp:postmeta>
+										</item>
+								<item>
+					<title><![CDATA[fabric-case-category]]></title>
+					<link>https://dummy.xtemos.com/woodmart2/accessories-elementor/woodmart_layout/product-archive-layout-case/fabric-case-category/</link>
+					<pubDate>Fri, 16 Sep 2022 11:30:11 +0000</pubDate>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
+					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/fabric-case-category.jpg</guid>
+															<wp:post_id>9434</wp:post_id>
+					<wp:post_date><![CDATA[2022-09-16 11:30:11]]></wp:post_date>
+					<wp:post_date_gmt><![CDATA[2022-09-16 11:30:11]]></wp:post_date_gmt>
+					<wp:post_modified><![CDATA[2022-09-16 11:30:11]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2022-09-16 11:30:11]]></wp:post_modified_gmt>
+					<wp:comment_status><![CDATA[open]]></wp:comment_status>
+					<wp:post_name><![CDATA[fabric-case-category]]></wp:post_name>
+					<wp:status><![CDATA[inherit]]></wp:status>
+					<wp:post_parent>9421</wp:post_parent>
+					<wp:menu_order>0</wp:menu_order>
+					<wp:post_type><![CDATA[attachment]]></wp:post_type>
+											<wp:attachment_url><![CDATA[http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/fabric-case-category.jpg]]></wp:attachment_url>
+																					<wp:postmeta>
+							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+							<wp:meta_value><![CDATA[2022/09/fabric-case-category.jpg]]></wp:meta_value>
+						</wp:postmeta>
+										</item>
+								<item>
+					<title><![CDATA[silicone-case-category]]></title>
+					<link>https://dummy.xtemos.com/woodmart2/accessories-elementor/woodmart_layout/product-archive-layout-case/silicone-case-category/</link>
+					<pubDate>Fri, 16 Sep 2022 11:30:28 +0000</pubDate>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
+					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/silicone-case-category.jpg</guid>
+															<wp:post_id>9435</wp:post_id>
+					<wp:post_date><![CDATA[2022-09-16 11:30:28]]></wp:post_date>
+					<wp:post_date_gmt><![CDATA[2022-09-16 11:30:28]]></wp:post_date_gmt>
+					<wp:post_modified><![CDATA[2022-09-16 11:30:28]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2022-09-16 11:30:28]]></wp:post_modified_gmt>
+					<wp:comment_status><![CDATA[open]]></wp:comment_status>
+					<wp:post_name><![CDATA[silicone-case-category]]></wp:post_name>
+					<wp:status><![CDATA[inherit]]></wp:status>
+					<wp:post_parent>9421</wp:post_parent>
+					<wp:menu_order>0</wp:menu_order>
+					<wp:post_type><![CDATA[attachment]]></wp:post_type>
+											<wp:attachment_url><![CDATA[http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/silicone-case-category.jpg]]></wp:attachment_url>
+																					<wp:postmeta>
+							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+							<wp:meta_value><![CDATA[2022/09/silicone-case-category.jpg]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[product archive layout Straps]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/accessories-elementor/woodmart_layout/product-archive-layout-straps/</link>
 					<pubDate>Fri, 16 Sep 2022 11:43:13 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/accessories-elementor/?post_type=woodmart_layout&#038;p=9446</guid>
 											<content:encoded><![CDATA[<link rel="stylesheet" id="wd-el-page-title-builder-css" href="https://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/themes/woodmart/css/parts/el-page-title-builder.min.css?ver=7.3.4" type="text/css" media="all" /> 						<link rel="stylesheet" id="wd-woo-shop-page-title-css" href="https://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/themes/woodmart/css/parts/woo-shop-page-title.min.css?ver=7.3.4" type="text/css" media="all" /> 						<link rel="stylesheet" id="wd-shop-title-categories-css" href="https://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/themes/woodmart/css/parts/woo-categories-loop-nav.min.css?ver=7.3.4" type="text/css" media="all" /> 						<link rel="stylesheet" id="wd-woo-categories-loop-nav-mobile-accordion-css" href="https://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/themes/woodmart/css/parts/woo-categories-loop-nav-mobile-accordion.min.css?ver=7.3.4" type="text/css" media="all" /> 						<link rel="stylesheet" id="wd-page-title-css" href="https://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/themes/woodmart/css/parts/page-title.min.css?ver=7.3.4" type="text/css" media="all" /> 										
 													<h1>
@@ -3165,16 +3095,12 @@ Off the Second							</h4>
 							<wp:meta_key><![CDATA[_elementor_data]]></wp:meta_key>
 							<wp:meta_value><![CDATA[[{"id":"9f29163","elType":"container","settings":{"flex_gap":{"size":null,"column":"","row":"","unit":"px","isLinked":true},"wd_section_stretch":"stretch-content","margin":{"unit":"px","top":"-40","right":"0","bottom":"60","left":"0","isLinked":false},"margin_tablet":{"unit":"px","top":"-40","right":"0","bottom":"40","left":"0","isLinked":false},"flex_direction":"column","scroll_y":-80,"container_sticky_offset":50},"elements":[{"id":"b7a98b3","elType":"widget","settings":{"full_width":"yes","scroll_y":-80},"elements":[],"widgetType":"wd_page_title"}],"isInner":false},{"id":"517e8cf","elType":"container","settings":{"margin":{"unit":"px","top":"0","right":"0","bottom":"60","left":"0","isLinked":false},"margin_tablet":{"unit":"px","top":"0","right":"0","bottom":"40","left":"0","isLinked":false},"flex_direction":"column","flex_gap":{"size":60,"column":"60","row":"60","unit":"px","isLinked":true},"flex_gap_tablet":{"column":"40","row":"40","isLinked":true,"unit":"px","size":40},"scroll_y":-80,"container_sticky_offset":50},"elements":[{"id":"1e51418","elType":"widget","settings":{"data_source":"wc_query","hide_empty":"","categories_design":"alt","img_size":"full","image_container_width":{"unit":"px","size":100,"sizes":[]},"rounding_size":"custom","custom_rounding_size":{"unit":"%","size":50,"sizes":[]},"img_size_custom":{"width":"100","height":"100"},"categories_with_shadow":"disable","style":"carousel","spacing":"30","slides_per_view":{"unit":"px","size":6,"sizes":[]},"hide_pagination_control":"yes","scroll_y":-80,"slides_per_view_tablet":{"unit":"px","size":3,"sizes":[]},"slides_per_view_mobile":{"unit":"px","size":2,"sizes":[]},"sync_parent_id":"wd_6585b9602a934"},"elements":[],"widgetType":"wd_product_categories"},{"id":"050f1f2","elType":"widget","settings":{"scroll_y":-80},"elements":[],"widgetType":"wd_wc_notices"},{"id":"89e7452","elType":"widget","settings":{"content_repeater":[{"title":"Limited Edition Straps","subtitle":"Hurry up to buy","_id":"f7b5976","image":{"url":"http:\/\/dummy.xtemos.com\/woodmart2\/accessories-elementor\/wp-content\/uploads\/sites\/6\/2022\/09\/limited-edition-straps-category.jpg","id":9450,"alt":"","source":"library"},"image_size":"full","btn_text":"View more"},{"title":"New Straps for 44mm Watches","subtitle":"New arrivals","image":{"url":"http:\/\/dummy.xtemos.com\/woodmart2\/accessories-elementor\/wp-content\/uploads\/sites\/6\/2022\/09\/new-44mm-straps-category.jpg","id":9451,"alt":"","source":"library"},"image_size":"full","btn_text":"View more","_id":"3432ef0"}],"hover":"parallax","woodmart_color_scheme":"dark","title_size":"large","title_typography_typography":"custom","title_typography_font_family":"hkgroteskpro","subtitle_color":"primary","subtitle_typography_typography":"custom","subtitle_typography_font_family":"hkgroteskpro","subtitle_typography_font_size":{"unit":"px","size":15,"sizes":[]},"subtitle_typography_font_size_tablet":{"unit":"px","size":13,"sizes":[]},"subtitle_typography_font_size_mobile":{"unit":"px","size":12,"sizes":[]},"btn_position":"static","btn_color":"primary","btn_shape":"semi-round","scroll_y":-80,"slides_per_view":{"unit":"px","size":2,"sizes":[]},"slider_spacing":"20","hide_pagination_control":"yes","slides_per_view_tablet":{"unit":"px","size":2,"sizes":[]},"slides_per_view_mobile":{"unit":"px","size":1,"sizes":[]},"sync_parent_id":"wd_6585b96026aa8"},"elements":[],"widgetType":"wd_banner_carousel"}],"isInner":false},{"id":"82da6f4","elType":"container","settings":{"flex_direction":"column","flex_gap":{"size":null,"column":"","row":"","unit":"px","isLinked":true},"margin":{"unit":"px","top":"0","right":"0","bottom":"40","left":"0","isLinked":false},"margin_tablet":{"unit":"px","top":"0","right":"0","bottom":"20","left":"0","isLinked":false},"scroll_y":-80,"container_sticky_offset":50},"elements":[{"id":"4ea4217","elType":"widget","settings":{"subtitle":"Hurry up to buy","title":"Popular Products","after_title":"<p>How can you evaluate content without design<\/p>","color":"primary","size":"large","subtitle_typography_typography":"custom","subtitle_typography_font_size":{"unit":"px","size":"15","sizes":[]},"subtitle_typography_font_size_tablet":{"unit":"px","size":"13","sizes":[]},"subtitle_typography_font_size_mobile":{"unit":"px","size":"12","sizes":[]},"subtitle_typography_font_weight":"600","scroll_y":"-80","subtitle_typography_font_family":"hkgroteskpro","title_typography_typography":"custom","title_typography_font_family":"hkgroteskpro"},"elements":[],"widgetType":"wd_title"},{"id":"6ed0a0a","elType":"widget","settings":{"taxonomies":["41"],"query_type":"AND","items_per_page":10,"slides_per_view":{"unit":"px","size":5,"sizes":[]},"hide_pagination_control":"yes","img_size":"full","scroll_y":-80,"columns":{"unit":"px","size":5,"sizes":[]},"columns_tablet":{"unit":"px","size":3,"sizes":[]},"columns_mobile":{"unit":"px","size":2,"sizes":[]},"sync_parent_id":"wd_6585b96029c04"},"elements":[],"widgetType":"wd_products"}],"isInner":false}]]]></wp:meta_value>
 						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:0:{}]]></wp:meta_value>
-						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[limited-edition-straps-category]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/accessories-elementor/woodmart_layout/product-archive-layout-straps/limited-edition-straps-category/</link>
 					<pubDate>Fri, 16 Sep 2022 11:44:16 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/limited-edition-straps-category.jpg</guid>
 															<wp:post_id>9450</wp:post_id>
 					<wp:post_date><![CDATA[2022-09-16 11:44:16]]></wp:post_date>
@@ -3197,7 +3123,7 @@ Off the Second							</h4>
 					<title><![CDATA[new-44mm-straps-category]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/accessories-elementor/woodmart_layout/product-archive-layout-straps/new-44mm-straps-category/</link>
 					<pubDate>Fri, 16 Sep 2022 11:45:39 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/new-44mm-straps-category.jpg</guid>
 															<wp:post_id>9451</wp:post_id>
 					<wp:post_date><![CDATA[2022-09-16 11:45:39]]></wp:post_date>
@@ -3220,7 +3146,7 @@ Off the Second							</h4>
 					<title><![CDATA[guaranteed-safe-checkout-bordered]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/accessories-elementor/woodmart_layout/single-product-layout-accessories/guaranteed-safe-checkout-bordered/</link>
 					<pubDate>Thu, 29 Sep 2022 11:59:25 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/guaranteed-safe-checkout-bordered.jpg</guid>
 															<wp:post_id>9762</wp:post_id>
 					<wp:post_date><![CDATA[2022-09-29 11:59:25]]></wp:post_date>
@@ -3240,10 +3166,79 @@ Off the Second							</h4>
 						</wp:postmeta>
 										</item>
 								<item>
+					<title><![CDATA[accessories-inst-2]]></title>
+					<link>https://dummy.xtemos.com/woodmart2/accessories-elementor/accessories-inst-2/</link>
+					<pubDate>Wed, 07 Sep 2022 14:09:39 +0000</pubDate>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
+					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/accessories-inst-2-1.jpg</guid>
+															<wp:post_id>58</wp:post_id>
+					<wp:post_date><![CDATA[2022-09-07 14:09:39]]></wp:post_date>
+					<wp:post_date_gmt><![CDATA[2022-09-07 14:09:39]]></wp:post_date_gmt>
+					<wp:post_modified><![CDATA[2022-09-07 14:09:39]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2022-09-07 14:09:39]]></wp:post_modified_gmt>
+					<wp:comment_status><![CDATA[open]]></wp:comment_status>
+					<wp:post_name><![CDATA[accessories-inst-2]]></wp:post_name>
+					<wp:status><![CDATA[inherit]]></wp:status>
+					<wp:post_parent>0</wp:post_parent>
+					<wp:menu_order>0</wp:menu_order>
+					<wp:post_type><![CDATA[attachment]]></wp:post_type>
+											<wp:attachment_url><![CDATA[http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/accessories-inst-2-1.jpg]]></wp:attachment_url>
+																					<wp:postmeta>
+							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+							<wp:meta_value><![CDATA[2022/09/accessories-inst-2-1.jpg]]></wp:meta_value>
+						</wp:postmeta>
+										</item>
+								<item>
+					<title><![CDATA[accessories-inst-3]]></title>
+					<link>https://dummy.xtemos.com/woodmart2/accessories-elementor/accessories-inst-3/</link>
+					<pubDate>Wed, 07 Sep 2022 14:09:40 +0000</pubDate>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
+					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/accessories-inst-3-1.jpg</guid>
+															<wp:post_id>59</wp:post_id>
+					<wp:post_date><![CDATA[2022-09-07 14:09:40]]></wp:post_date>
+					<wp:post_date_gmt><![CDATA[2022-09-07 14:09:40]]></wp:post_date_gmt>
+					<wp:post_modified><![CDATA[2022-09-07 14:09:40]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2022-09-07 14:09:40]]></wp:post_modified_gmt>
+					<wp:comment_status><![CDATA[open]]></wp:comment_status>
+					<wp:post_name><![CDATA[accessories-inst-3]]></wp:post_name>
+					<wp:status><![CDATA[inherit]]></wp:status>
+					<wp:post_parent>0</wp:post_parent>
+					<wp:menu_order>0</wp:menu_order>
+					<wp:post_type><![CDATA[attachment]]></wp:post_type>
+											<wp:attachment_url><![CDATA[http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/accessories-inst-3-1.jpg]]></wp:attachment_url>
+																					<wp:postmeta>
+							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+							<wp:meta_value><![CDATA[2022/09/accessories-inst-3-1.jpg]]></wp:meta_value>
+						</wp:postmeta>
+										</item>
+								<item>
+					<title><![CDATA[accessories-inst-4]]></title>
+					<link>https://dummy.xtemos.com/woodmart2/accessories-elementor/accessories-inst-4/</link>
+					<pubDate>Wed, 07 Sep 2022 14:09:40 +0000</pubDate>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
+					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/accessories-inst-4-1.jpg</guid>
+															<wp:post_id>60</wp:post_id>
+					<wp:post_date><![CDATA[2022-09-07 14:09:40]]></wp:post_date>
+					<wp:post_date_gmt><![CDATA[2022-09-07 14:09:40]]></wp:post_date_gmt>
+					<wp:post_modified><![CDATA[2022-09-07 14:09:40]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2022-09-07 14:09:40]]></wp:post_modified_gmt>
+					<wp:comment_status><![CDATA[open]]></wp:comment_status>
+					<wp:post_name><![CDATA[accessories-inst-4]]></wp:post_name>
+					<wp:status><![CDATA[inherit]]></wp:status>
+					<wp:post_parent>0</wp:post_parent>
+					<wp:menu_order>0</wp:menu_order>
+					<wp:post_type><![CDATA[attachment]]></wp:post_type>
+											<wp:attachment_url><![CDATA[http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/accessories-inst-4-1.jpg]]></wp:attachment_url>
+																					<wp:postmeta>
+							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+							<wp:meta_value><![CDATA[2022/09/accessories-inst-4-1.jpg]]></wp:meta_value>
+						</wp:postmeta>
+										</item>
+								<item>
 					<title><![CDATA[accessories-inst-5]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/accessories-elementor/accessories-inst-5/</link>
 					<pubDate>Wed, 07 Sep 2022 14:09:40 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/accessories-inst-5-1.jpg</guid>
 															<wp:post_id>61</wp:post_id>
 					<wp:post_date><![CDATA[2022-09-07 14:09:40]]></wp:post_date>
@@ -3266,7 +3261,7 @@ Off the Second							</h4>
 					<title><![CDATA[accessories-inst-6]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/accessories-elementor/accessories-inst-6/</link>
 					<pubDate>Wed, 07 Sep 2022 14:09:40 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/accessories-inst-6-1.jpg</guid>
 															<wp:post_id>62</wp:post_id>
 					<wp:post_date><![CDATA[2022-09-07 14:09:40]]></wp:post_date>
@@ -3289,7 +3284,7 @@ Off the Second							</h4>
 					<title><![CDATA[accessories-inst-7]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/accessories-elementor/accessories-inst-7/</link>
 					<pubDate>Wed, 07 Sep 2022 14:09:40 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/accessories-inst-7-1.jpg</guid>
 															<wp:post_id>63</wp:post_id>
 					<wp:post_date><![CDATA[2022-09-07 14:09:40]]></wp:post_date>
@@ -3312,7 +3307,7 @@ Off the Second							</h4>
 					<title><![CDATA[accessories-inst-8]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/accessories-elementor/accessories-inst-8/</link>
 					<pubDate>Wed, 07 Sep 2022 14:09:41 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/accessories-inst-8-1.jpg</guid>
 															<wp:post_id>64</wp:post_id>
 					<wp:post_date><![CDATA[2022-09-07 14:09:41]]></wp:post_date>
@@ -3335,11 +3330,12 @@ Off the Second							</h4>
 					<title><![CDATA[Accessories slide 1]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/accessories-elementor/woodmart_slide/accessories-slide-1/</link>
 					<pubDate>Wed, 07 Sep 2022 14:21:11 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/accessories-elementor/?post_type=woodmart_slide&#038;p=83</guid>
-											<content:encoded><![CDATA[<link rel="stylesheet" id="wd-section-title-css" href="https://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/themes/woodmart/css/parts/el-section-title.min.css?ver=7.3.2" type="text/css" media="all" /> 					
+											<content:encoded><![CDATA[<link rel="stylesheet" id="wd-section-title-css" href="https://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/themes/woodmart8/css/parts/el-section-title.min.css?ver=8.4.0" type="text/css" media="all" /> 					
 				<h4>Charge Your Phone Safely!</h4> 
 		<p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>		
+								<link rel="stylesheet" id="wd-button-css" href="https://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/themes/woodmart8/css/parts/el-button.min.css?ver=8.4.0" type="text/css" media="all" /> 					
 			<a  href="#">
 					To shop				
 							</a>
@@ -3349,8 +3345,8 @@ Off the Second							</h4>
 															<wp:post_id>83</wp:post_id>
 					<wp:post_date><![CDATA[2022-09-07 14:21:11]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2022-09-07 14:21:11]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2023-11-21 14:44:22]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2023-11-21 14:44:22]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2026-02-25 13:54:44]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2026-02-25 13:54:44]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[accessories-slide-1]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -3359,10 +3355,6 @@ Off the Second							</h4>
 					<wp:post_type><![CDATA[woodmart_slide]]></wp:post_type>
 												<category domain="woodmart_slider" nicename="accessories-slider"><![CDATA[Accessories slider]]></category>
 											<wp:postmeta>
-							<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
-							<wp:meta_value><![CDATA[9036]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
 							<wp:meta_value><![CDATA[default]]></wp:meta_value>
 						</wp:postmeta>
@@ -3424,26 +3416,27 @@ Off the Second							</h4>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_elementor_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[3.16.6]]></wp:meta_value>
+							<wp:meta_value><![CDATA[3.33.6]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_elementor_data]]></wp:meta_key>
 							<wp:meta_value><![CDATA[[{"id":"772b223","elType":"container","settings":{"margin":{"unit":"px","top":"60","right":"0","bottom":"10","left":"0","isLinked":false},"flex_direction":"column","flex_gap":{"size":null,"column":"","row":"","unit":"px","isLinked":true},"scroll_y":-80},"elements":[{"id":"f491042","elType":"widget","settings":{"subtitle":"","title":"Charge Your Phone Safely!","after_title":"","align":"left","title_typography_typography":"custom","title_typography_font_size":{"unit":"px","size":"72","sizes":[]},"title_typography_font_size_tablet":{"unit":"px","size":"42","sizes":[]},"title_typography_font_size_mobile":{"unit":"px","size":"30","sizes":[]},"scroll_y":"-80","text_typography_font_size":{"unit":"px","size":"16","sizes":[]},"text_typography_font_size_tablet":{"unit":"px","size":"14","sizes":[]},"text_typography_font_size_mobile":{"unit":"px","size":"0","sizes":[]},"_margin_mobile":{"unit":"px","top":"0","right":"0","bottom":"20","left":"0","isLinked":""},"title_typography_line_height":{"unit":"px","size":"82","sizes":[]},"title_typography_line_height_tablet":{"unit":"px","size":"52","sizes":[]},"title_typography_line_height_mobile":{"unit":"px","size":"40","sizes":[]},"wd_animation":"slide-from-bottom","wd_animation_delay":"150","title_typography_font_family":"hkgroteskpro","width_mobile":{"unit":"px","size":226,"sizes":[]},"width":{"unit":"px","size":439,"sizes":[]},"width_tablet":{"unit":"px","size":270,"sizes":[]}},"elements":[],"widgetType":"wd_title"},{"id":"cc3dbb5","elType":"widget","settings":{"editor":"<p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.<\/p>","typography_typography":"custom","typography_font_size":{"unit":"px","size":"16","sizes":[]},"typography_font_size_tablet":{"unit":"px","size":"14","sizes":[]},"_margin":{"unit":"px","top":"0","right":"0","bottom":"10","left":"0","isLinked":""},"scroll_y":"-80","hide_mobile":"hidden-mobile","wd_animation":"slide-from-bottom","wd_animation_delay":"250","wd_content_width":{"unit":"px","size":483,"sizes":[]},"wd_content_width_tablet":{"unit":"%","size":100,"sizes":[]},"wd_content_width_mobile":{"unit":"px","size":"","sizes":[]}},"elements":[],"widgetType":"text-editor"},{"id":"92930bc","elType":"container","settings":{"_column_size":100,"width":{"size":null,"unit":"%"},"width_tablet":{"size":100,"unit":"%"},"width_mobile":{"size":"100","unit":"%"},"column_sticky_offset":"50","scroll_y":"-80","content_width":"full","flex_direction":"row","flex_gap":{"column":"","row":"","isLinked":true,"unit":"px","size":null}},"elements":[{"id":"3b71080","elType":"widget","settings":{"text":"To shop","color":"primary","shape":"semi-round","align":"left","scroll_y":"-80","_element_width":"auto","wd_animation":"slide-from-bottom","wd_animation_delay":"350"},"elements":[],"widgetType":"wd_button"},{"id":"2e62bbb","elType":"widget","settings":{"text":"Read more","style":"bordered","shape":"semi-round","align":"left","scroll_y":"-80","_element_width":"auto","wd_animation":"slide-from-bottom","wd_animation_delay":"350","hide_mobile":"hidden-mobile"},"elements":[],"widgetType":"wd_button"}],"isInner":true}],"isInner":false}]]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:1:{s:6:"styles";a:1:{i:0;s:18:"widget-text-editor";}}]]></wp:meta_value>
+							<wp:meta_key><![CDATA[_elementor_page_settings]]></wp:meta_key>
+							<wp:meta_value><![CDATA[a:5:{s:10:"hide_title";s:0:"";s:8:"wd_image";a:5:{s:3:"url";s:115:"http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/w-accessories-slider.jpg";s:2:"id";i:9036;s:4:"size";s:0:"";s:3:"alt";s:0:"";s:6:"source";s:7:"library";}s:6:"margin";a:6:{s:4:"unit";s:2:"px";s:3:"top";s:0:"";s:5:"right";s:0:"";s:6:"bottom";s:0:"";s:4:"left";s:0:"";s:8:"isLinked";b:1;}s:7:"padding";a:6:{s:4:"unit";s:2:"px";s:3:"top";s:0:"";s:5:"right";s:0:"";s:6:"bottom";s:0:"";s:4:"left";s:0:"";s:8:"isLinked";b:1;}s:21:"background_background";s:0:"";}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[Accessories slide 2]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/accessories-elementor/woodmart_slide/accessories-slide-2/</link>
 					<pubDate>Wed, 07 Sep 2022 14:23:30 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/accessories-elementor/?post_type=woodmart_slide&#038;p=90</guid>
-											<content:encoded><![CDATA[<link rel="stylesheet" id="wd-section-title-css" href="https://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/themes/woodmart/css/parts/el-section-title.min.css?ver=7.3.2" type="text/css" media="all" /> 					
+											<content:encoded><![CDATA[<link rel="stylesheet" id="wd-section-title-css" href="https://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/themes/woodmart8/css/parts/el-section-title.min.css?ver=8.4.0" type="text/css" media="all" /> 					
 				<h4>For Everything and Everyone</h4> 
 		<p>Even if your less into design and more into content strategy you may find some redeeming value with, wait for it, dummy copy.</p>		
+								<link rel="stylesheet" id="wd-button-css" href="https://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/themes/woodmart8/css/parts/el-button.min.css?ver=8.4.0" type="text/css" media="all" /> 					
 			<a  href="#">
 					To shop				
 							</a>
@@ -3453,8 +3446,8 @@ Off the Second							</h4>
 															<wp:post_id>90</wp:post_id>
 					<wp:post_date><![CDATA[2022-09-07 14:23:30]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2022-09-07 14:23:30]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2023-11-21 14:44:36]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2023-11-21 14:44:36]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2026-02-25 13:55:16]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2026-02-25 13:55:16]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[accessories-slide-2]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -3463,10 +3456,6 @@ Off the Second							</h4>
 					<wp:post_type><![CDATA[woodmart_slide]]></wp:post_type>
 												<category domain="woodmart_slider" nicename="accessories-slider"><![CDATA[Accessories slider]]></category>
 											<wp:postmeta>
-							<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
-							<wp:meta_value><![CDATA[91]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
 							<wp:meta_value><![CDATA[default]]></wp:meta_value>
 						</wp:postmeta>
@@ -3528,49 +3517,27 @@ Off the Second							</h4>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_elementor_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[3.16.6]]></wp:meta_value>
+							<wp:meta_value><![CDATA[3.33.6]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_elementor_data]]></wp:meta_key>
 							<wp:meta_value><![CDATA[[{"id":"02e809b","elType":"container","settings":{"margin":{"unit":"px","top":"60","right":"0","bottom":"10","left":"0","isLinked":false},"flex_direction":"column","flex_gap":{"size":null,"column":"","row":"","unit":"px","isLinked":true},"scroll_y":-80},"elements":[{"id":"cbc6b8e","elType":"widget","settings":{"subtitle":"","title":"For Everything and Everyone","after_title":"","align":"left","title_typography_typography":"custom","title_typography_font_size":{"unit":"px","size":"72","sizes":[]},"title_typography_font_size_tablet":{"unit":"px","size":"42","sizes":[]},"title_typography_font_size_mobile":{"unit":"px","size":"30","sizes":[]},"scroll_y":"-80","_margin_mobile":{"unit":"px","top":"0","right":"0","bottom":"20","left":"0","isLinked":""},"title_typography_line_height":{"unit":"px","size":"82","sizes":[]},"title_typography_line_height_tablet":{"unit":"px","size":"52","sizes":[]},"title_typography_line_height_mobile":{"unit":"px","size":"40","sizes":[]},"wd_animation":"slide-from-bottom","wd_animation_delay":"150","title_typography_font_family":"hkgroteskpro","width":{"unit":"px","size":567,"sizes":[]},"width_tablet":{"unit":"px","size":334,"sizes":[]},"width_mobile":{"unit":"px","size":213,"sizes":[]}},"elements":[],"widgetType":"wd_title"},{"id":"69583c3","elType":"widget","settings":{"editor":"<p>Even if your less into design and more into content strategy you may find some redeeming value with, wait for it, dummy copy.<\/p>","typography_typography":"custom","typography_font_size":{"unit":"px","size":"16","sizes":[]},"typography_font_size_tablet":{"unit":"px","size":"14","sizes":[]},"_margin":{"unit":"px","top":"0","right":"0","bottom":"10","left":"0","isLinked":""},"scroll_y":"-80","hide_mobile":"hidden-mobile","wd_animation":"slide-from-bottom","wd_animation_delay":"250","wd_content_width":{"unit":"px","size":483,"sizes":[]},"wd_content_width_tablet":{"unit":"%","size":100,"sizes":[]},"wd_content_width_mobile":{"unit":"px","size":"","sizes":[]}},"elements":[],"widgetType":"text-editor"},{"id":"baa84d4","elType":"container","settings":{"_column_size":100,"width":{"size":null,"unit":"%"},"width_tablet":{"size":100,"unit":"%"},"width_mobile":{"size":"100","unit":"%"},"column_sticky_offset":"50","scroll_y":"-80","content_width":"full","flex_direction":"row"},"elements":[{"id":"6f0be39","elType":"widget","settings":{"text":"To shop","color":"primary","shape":"semi-round","align":"left","scroll_y":"-80","_element_width":"auto","wd_animation":"slide-from-bottom","wd_animation_delay":"350"},"elements":[],"widgetType":"wd_button"},{"id":"d979c1b","elType":"widget","settings":{"text":"Read more","style":"bordered","shape":"semi-round","align":"left","scroll_y":"-80","_element_width":"auto","wd_animation":"slide-from-bottom","wd_animation_delay":"350","hide_mobile":"hidden-mobile"},"elements":[],"widgetType":"wd_button"}],"isInner":true}],"isInner":false}]]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:1:{s:6:"styles";a:1:{i:0;s:18:"widget-text-editor";}}]]></wp:meta_value>
-						</wp:postmeta>
-										</item>
-								<item>
-					<title><![CDATA[accessories-slide-2]]></title>
-					<link>https://dummy.xtemos.com/woodmart2/accessories-elementor/woodmart_slide/accessories-slide-2/accessories-slide-2/</link>
-					<pubDate>Wed, 07 Sep 2022 14:23:11 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
-					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/accessories-slide-2.jpg</guid>
-															<wp:post_id>91</wp:post_id>
-					<wp:post_date><![CDATA[2022-09-07 14:23:11]]></wp:post_date>
-					<wp:post_date_gmt><![CDATA[2022-09-07 14:23:11]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2022-09-07 14:23:11]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2022-09-07 14:23:11]]></wp:post_modified_gmt>
-					<wp:comment_status><![CDATA[open]]></wp:comment_status>
-					<wp:post_name><![CDATA[accessories-slide-2]]></wp:post_name>
-					<wp:status><![CDATA[inherit]]></wp:status>
-					<wp:post_parent>90</wp:post_parent>
-					<wp:menu_order>0</wp:menu_order>
-					<wp:post_type><![CDATA[attachment]]></wp:post_type>
-											<wp:attachment_url><![CDATA[http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/accessories-slide-2.jpg]]></wp:attachment_url>
-																					<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-							<wp:meta_value><![CDATA[2022/09/accessories-slide-2.jpg]]></wp:meta_value>
+							<wp:meta_key><![CDATA[_elementor_page_settings]]></wp:meta_key>
+							<wp:meta_value><![CDATA[a:5:{s:10:"hide_title";s:0:"";s:8:"wd_image";a:5:{s:3:"url";s:114:"http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/accessories-slide-2.jpg";s:2:"id";i:91;s:4:"size";s:0:"";s:3:"alt";s:0:"";s:6:"source";s:7:"library";}s:6:"margin";a:6:{s:4:"unit";s:2:"px";s:3:"top";s:0:"";s:5:"right";s:0:"";s:6:"bottom";s:0:"";s:4:"left";s:0:"";s:8:"isLinked";b:1;}s:7:"padding";a:6:{s:4:"unit";s:2:"px";s:3:"top";s:0:"";s:5:"right";s:0:"";s:6:"bottom";s:0:"";s:4:"left";s:0:"";s:8:"isLinked";b:1;}s:21:"background_background";s:0:"";}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[Accessories slide 3]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/accessories-elementor/woodmart_slide/accessories-slide-3/</link>
 					<pubDate>Wed, 07 Sep 2022 14:24:48 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/accessories-elementor/?post_type=woodmart_slide&#038;p=97</guid>
-											<content:encoded><![CDATA[<link rel="stylesheet" id="wd-section-title-css" href="https://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/themes/woodmart/css/parts/el-section-title.min.css?ver=7.3.2" type="text/css" media="all" /> 					
+											<content:encoded><![CDATA[<link rel="stylesheet" id="wd-section-title-css" href="https://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/themes/woodmart8/css/parts/el-section-title.min.css?ver=8.4.0" type="text/css" media="all" /> 					
 				<h4>Featured Accessories</h4> 
 		<p>A client that's unhappy for a reason is a problem, a client that's unhappy though required he or her can't quite put a finger.</p>		
+								<link rel="stylesheet" id="wd-button-css" href="https://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/themes/woodmart8/css/parts/el-button.min.css?ver=8.4.0" type="text/css" media="all" /> 					
 			<a  href="#">
 					To shop				
 							</a>
@@ -3580,8 +3547,8 @@ Off the Second							</h4>
 															<wp:post_id>97</wp:post_id>
 					<wp:post_date><![CDATA[2022-09-07 14:24:48]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2022-09-07 14:24:48]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2023-11-21 14:44:45]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2023-11-21 14:44:45]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2026-02-25 13:55:44]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2026-02-25 13:55:44]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[accessories-slide-3]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -3590,10 +3557,6 @@ Off the Second							</h4>
 					<wp:post_type><![CDATA[woodmart_slide]]></wp:post_type>
 												<category domain="woodmart_slider" nicename="accessories-slider"><![CDATA[Accessories slider]]></category>
 											<wp:postmeta>
-							<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
-							<wp:meta_value><![CDATA[98]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
 							<wp:meta_value><![CDATA[default]]></wp:meta_value>
 						</wp:postmeta>
@@ -3655,87 +3618,41 @@ Off the Second							</h4>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_elementor_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[3.16.6]]></wp:meta_value>
+							<wp:meta_value><![CDATA[3.33.6]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_elementor_data]]></wp:meta_key>
 							<wp:meta_value><![CDATA[[{"id":"558a1e8","elType":"container","settings":{"margin":{"unit":"px","top":"60","right":"0","bottom":"10","left":"0","isLinked":false},"flex_direction":"column","flex_gap":{"size":null,"column":"","row":"","unit":"px","isLinked":true},"scroll_y":-80},"elements":[{"id":"d02c33a","elType":"widget","settings":{"subtitle":"","title":"Featured Accessories","after_title":"","align":"left","title_typography_typography":"custom","title_typography_font_size":{"unit":"px","size":"72","sizes":[]},"title_typography_font_size_tablet":{"unit":"px","size":"42","sizes":[]},"title_typography_font_size_mobile":{"unit":"px","size":"30","sizes":[]},"scroll_y":"-80","_margin_mobile":{"unit":"px","top":"0","right":"0","bottom":"20","left":"0","isLinked":""},"title_typography_line_height":{"unit":"px","size":"82","sizes":[]},"title_typography_line_height_tablet":{"unit":"px","size":"52","sizes":[]},"title_typography_line_height_mobile":{"unit":"px","size":"40","sizes":[]},"wd_animation":"slide-from-bottom","wd_animation_delay":"150","title_typography_font_family":"hkgroteskpro","width":{"unit":"px","size":274,"sizes":[]},"width_tablet":{"unit":"px","size":"","sizes":[]},"width_mobile":{"unit":"px","size":"","sizes":[]}},"elements":[],"widgetType":"wd_title"},{"id":"1a4fa73","elType":"widget","settings":{"editor":"<p>A client that's unhappy for a reason is a problem, a client that's unhappy though required he or her can't quite put a finger.<\/p>","typography_typography":"custom","typography_font_size":{"unit":"px","size":"16","sizes":[]},"typography_font_size_tablet":{"unit":"px","size":"14","sizes":[]},"_margin":{"unit":"px","top":"0","right":"0","bottom":"10","left":"0","isLinked":false},"scroll_y":"-80","hide_mobile":"hidden-mobile","wd_animation":"slide-from-bottom","wd_animation_delay":"250","wd_content_width":{"unit":"px","size":483,"sizes":[]},"wd_content_width_tablet":{"unit":"%","size":100,"sizes":[]},"wd_content_width_mobile":{"unit":"px","size":"","sizes":[]}},"elements":[],"widgetType":"text-editor"},{"id":"501b376","elType":"container","settings":{"_column_size":100,"width":{"size":null,"unit":"%"},"width_tablet":{"size":100,"unit":"%"},"width_mobile":{"size":"100","unit":"%"},"column_sticky_offset":"50","scroll_y":"-80","content_width":"full","flex_direction":"row"},"elements":[{"id":"d5cf943","elType":"widget","settings":{"text":"To shop","color":"primary","shape":"semi-round","align":"left","scroll_y":"-80","_element_width":"auto","wd_animation":"slide-from-bottom","wd_animation_delay":"350"},"elements":[],"widgetType":"wd_button"},{"id":"0c951f8","elType":"widget","settings":{"text":"Read more","style":"bordered","shape":"semi-round","align":"left","scroll_y":"-80","_element_width":"auto","wd_animation":"slide-from-bottom","wd_animation_delay":"350","hide_mobile":"hidden-mobile"},"elements":[],"widgetType":"wd_button"}],"isInner":true}],"isInner":false}]]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:1:{s:6:"styles";a:1:{i:0;s:18:"widget-text-editor";}}]]></wp:meta_value>
-						</wp:postmeta>
-										</item>
-								<item>
-					<title><![CDATA[accessories-slide-3]]></title>
-					<link>https://dummy.xtemos.com/woodmart2/accessories-elementor/woodmart_slide/accessories-slide-3/accessories-slide-3/</link>
-					<pubDate>Wed, 07 Sep 2022 14:24:36 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
-					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/accessories-slide-3.jpg</guid>
-															<wp:post_id>98</wp:post_id>
-					<wp:post_date><![CDATA[2022-09-07 14:24:36]]></wp:post_date>
-					<wp:post_date_gmt><![CDATA[2022-09-07 14:24:36]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2022-09-07 14:24:36]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2022-09-07 14:24:36]]></wp:post_modified_gmt>
-					<wp:comment_status><![CDATA[open]]></wp:comment_status>
-					<wp:post_name><![CDATA[accessories-slide-3]]></wp:post_name>
-					<wp:status><![CDATA[inherit]]></wp:status>
-					<wp:post_parent>97</wp:post_parent>
-					<wp:menu_order>0</wp:menu_order>
-					<wp:post_type><![CDATA[attachment]]></wp:post_type>
-											<wp:attachment_url><![CDATA[http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/accessories-slide-3.jpg]]></wp:attachment_url>
-																					<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-							<wp:meta_value><![CDATA[2022/09/accessories-slide-3.jpg]]></wp:meta_value>
-						</wp:postmeta>
-										</item>
-								<item>
-					<title><![CDATA[w-accessories-slider]]></title>
-					<link>https://dummy.xtemos.com/woodmart2/accessories-elementor/woodmart_slide/accessories-slide-1/w-accessories-slider/</link>
-					<pubDate>Tue, 13 Sep 2022 14:58:29 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
-					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/w-accessories-slider.jpg</guid>
-															<wp:post_id>9036</wp:post_id>
-					<wp:post_date><![CDATA[2022-09-13 14:58:29]]></wp:post_date>
-					<wp:post_date_gmt><![CDATA[2022-09-13 14:58:29]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2022-09-13 14:58:29]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2022-09-13 14:58:29]]></wp:post_modified_gmt>
-					<wp:comment_status><![CDATA[open]]></wp:comment_status>
-					<wp:post_name><![CDATA[w-accessories-slider]]></wp:post_name>
-					<wp:status><![CDATA[inherit]]></wp:status>
-					<wp:post_parent>83</wp:post_parent>
-					<wp:menu_order>0</wp:menu_order>
-					<wp:post_type><![CDATA[attachment]]></wp:post_type>
-											<wp:attachment_url><![CDATA[http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/w-accessories-slider.jpg]]></wp:attachment_url>
-																					<wp:postmeta>
-							<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-							<wp:meta_value><![CDATA[2022/09/w-accessories-slider.jpg]]></wp:meta_value>
+							<wp:meta_key><![CDATA[_elementor_page_settings]]></wp:meta_key>
+							<wp:meta_value><![CDATA[a:5:{s:10:"hide_title";s:0:"";s:8:"wd_image";a:5:{s:3:"url";s:114:"http://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/uploads/sites/6/2022/09/accessories-slide-3.jpg";s:2:"id";i:98;s:4:"size";s:0:"";s:3:"alt";s:0:"";s:6:"source";s:7:"library";}s:6:"margin";a:6:{s:4:"unit";s:2:"px";s:3:"top";s:0:"";s:5:"right";s:0:"";s:6:"bottom";s:0:"";s:4:"left";s:0:"";s:8:"isLinked";b:1;}s:7:"padding";a:6:{s:4:"unit";s:2:"px";s:3:"top";s:0:"";s:5:"right";s:0:"";s:6:"bottom";s:0:"";s:4:"left";s:0:"";s:8:"isLinked";b:1;}s:21:"background_background";s:0:"";}]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[Checkout top layout Accessories]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/accessories-elementor/woodmart_layout/checkout-layout-accesspries/</link>
 					<pubDate>Wed, 05 Oct 2022 11:31:16 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/accessories-elementor/?post_type=woodmart_layout&#038;p=9858</guid>
 											<content:encoded><![CDATA[Have a coupon? <a href="#">Click here to enter your code</a>	
-<form method="post" style="display:none">
+
 	<p>If you have a coupon code, please apply it below.</p>
 	<p>
 		<label for="coupon_code">Coupon:</label>
-		<input type="text" name="coupon_code" placeholder="Coupon code" id="coupon_code" value="" />
+		
 	</p>
 	<p>
 		<button type="submit" name="apply_coupon" value="Apply coupon">Apply coupon</button>
 	</p>
-</form>
-						<link rel="stylesheet" id="wd-woo-opt-free-progress-bar-css" href="https://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/themes/woodmart/css/parts/woo-opt-free-progress-bar.min.css?ver=7.3.2" type="text/css" media="all" /> 						<link rel="stylesheet" id="wd-woo-mod-progress-bar-css" href="https://dummy.xtemos.com/woodmart2/accessories-elementor/wp-content/themes/woodmart/css/parts/woo-mod-progress-bar.min.css?ver=7.3.2" type="text/css" media="all" /> 					
+
+						 						 					
 				Add &#036;701.00 to cart and get free shipping!]]></content:encoded>
 															<wp:post_id>9858</wp:post_id>
 					<wp:post_date><![CDATA[2022-10-05 11:31:16]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2022-10-05 11:31:16]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2023-11-21 15:50:13]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2023-11-21 15:50:13]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-01-13 13:47:43]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-01-13 13:47:43]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[checkout-layout-accesspries]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -3760,7 +3677,7 @@ Off the Second							</h4>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_elementor_version]]></wp:meta_key>
-							<wp:meta_value><![CDATA[3.16.6]]></wp:meta_value>
+							<wp:meta_value><![CDATA[3.24.7]]></wp:meta_value>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
@@ -3768,14 +3685,14 @@ Off the Second							</h4>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_elementor_data]]></wp:meta_key>
-							<wp:meta_value><![CDATA[[{"id":"082d38d","elType":"container","settings":{"structure":"33","flex_direction":"column","flex_gap":{"size":25,"column":"25","row":"25","unit":"px","isLinked":true},"boxed_width":{"unit":"%","size":50,"sizes":[]},"boxed_width_tablet":{"unit":"%","size":"","sizes":[]},"boxed_width_mobile":{"unit":"%","size":100,"sizes":[]},"scroll_y":-80},"elements":[{"id":"9bb60bd","elType":"widget","settings":{"scroll_y":-80},"elements":[],"widgetType":"wd_wc_notices"},{"id":"b570c0d","elType":"widget","settings":{"scroll_y":-80},"elements":[],"widgetType":"wd_checkout_login_form"},{"id":"8652dd5","elType":"widget","settings":{"_element_width":"auto","scroll_y":-80,"alignment":"center"},"elements":[],"widgetType":"wd_checkout_coupon_form"},{"id":"f38d938","elType":"widget","settings":{"alignment":"center","style":"default","_padding":{"unit":"px","top":"30","right":"30","bottom":"30","left":"30","isLinked":true},"scroll_y":-80,"_background_background":"classic","_background_color":"#2E6BC60A","_border_radius":{"unit":"px","top":"8","right":"8","bottom":"8","left":"8","isLinked":true}},"elements":[],"widgetType":"wd_single_product_shipping_progress_bar"}],"isInner":false}]]]></wp:meta_value>
+							<wp:meta_value><![CDATA[[{"id":"082d38d","elType":"container","settings":{"structure":"33","flex_direction":"column","flex_gap":{"size":"25","column":"25","row":"25","unit":"px","isLinked":"1"},"boxed_width":{"unit":"%","size":"50","sizes":[]},"boxed_width_tablet":{"unit":"%","size":"","sizes":[]},"boxed_width_mobile":{"unit":"%","size":"100","sizes":[]},"scroll_y":"-80","container_sticky_offset":"50"},"elements":[{"id":"9bb60bd","elType":"widget","settings":{"scroll_y":"-80"},"elements":[],"widgetType":"wd_wc_notices"},{"id":"3d99d83","elType":"widget","settings":{"content_width":"full","hook":"woocommerce_before_checkout_form","scroll_y":"-80"},"elements":[],"widgetType":"wd_wc_hook"},{"id":"b570c0d","elType":"widget","settings":{"scroll_y":"-80"},"elements":[],"widgetType":"wd_checkout_login_form"},{"id":"8652dd5","elType":"widget","settings":{"_element_width":"auto","scroll_y":"-80","alignment":"center"},"elements":[],"widgetType":"wd_checkout_coupon_form"},{"id":"43f2e10","elType":"widget","settings":{"content_width":"full","hook":"woocommerce_checkout_before_customer_details","scroll_y":"-80"},"elements":[],"widgetType":"wd_wc_hook"},{"id":"f38d938","elType":"widget","settings":{"alignment":"center","style":"default","_padding":{"unit":"px","top":"30","right":"30","bottom":"30","left":"30","isLinked":"1"},"scroll_y":"-80","_background_background":"classic","_background_color":"#2E6BC60A","_border_radius":{"unit":"px","top":"8","right":"8","bottom":"8","left":"8","isLinked":"1"}},"elements":[],"widgetType":"wd_single_product_shipping_progress_bar"}],"isInner":""}]]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 								<item>
 					<title><![CDATA[Checkout layout Accessories]]></title>
 					<link>https://dummy.xtemos.com/woodmart2/accessories-elementor/woodmart_layout/checkout-layout-accessories/</link>
 					<pubDate>Wed, 05 Oct 2022 11:35:58 +0000</pubDate>
-					<dc:creator><![CDATA[zakhar]]></dc:creator>
+					<dc:creator><![CDATA[Mr. Mackay]]></dc:creator>
 					<guid isPermaLink="false">http://dummy.xtemos.com/woodmart2/accessories-elementor/?post_type=woodmart_layout&#038;p=9863</guid>
 											<content:encoded><![CDATA[ 					
 					1.				
@@ -3852,8 +3769,8 @@ Off the Second							</h4>
 															<wp:post_id>9863</wp:post_id>
 					<wp:post_date><![CDATA[2022-10-05 11:35:58]]></wp:post_date>
 					<wp:post_date_gmt><![CDATA[2022-10-05 11:35:58]]></wp:post_date_gmt>
-					<wp:post_modified><![CDATA[2024-11-08 15:03:09]]></wp:post_modified>
-					<wp:post_modified_gmt><![CDATA[2024-11-08 15:03:09]]></wp:post_modified_gmt>
+					<wp:post_modified><![CDATA[2025-01-20 14:35:01]]></wp:post_modified>
+					<wp:post_modified_gmt><![CDATA[2025-01-20 14:35:01]]></wp:post_modified_gmt>
 					<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 					<wp:post_name><![CDATA[checkout-layout-accessories]]></wp:post_name>
 					<wp:status><![CDATA[publish]]></wp:status>
@@ -3886,11 +3803,7 @@ Off the Second							</h4>
 						</wp:postmeta>
 												<wp:postmeta>
 							<wp:meta_key><![CDATA[_elementor_data]]></wp:meta_key>
-							<wp:meta_value><![CDATA[[{"id":"7b25928","elType":"container","settings":{"structure":"33","flex_direction":"column","flex_gap":{"size":"30","column":"30","row":"30","unit":"px","isLinked":"1"},"boxed_width":{"unit":"%","size":"50","sizes":[]},"boxed_width_tablet":{"unit":"%","size":"84","sizes":[]},"boxed_width_mobile":{"unit":"%","size":"100","sizes":[]},"scroll_y":"-80","container_sticky_offset":"50"},"elements":[{"id":"fa564fb","elType":"widget","settings":{"subtitle":"1.","title":"Billing details","after_title":"","color":"primary","size":"extra-large","subtitle_typography_typography":"custom","subtitle_typography_font_family":"Jost","subtitle_typography_font_size":{"unit":"px","size":"120","sizes":[]},"subtitle_typography_font_size_tablet":{"unit":"px","size":"80","sizes":[]},"subtitle_typography_font_size_mobile":{"unit":"px","size":"40","sizes":[]},"subtitle_typography_font_weight":"700","subtitle_typography_line_height":{"unit":"em","size":"1.3","sizes":[]},"tag":"div","scroll_y":"-80"},"elements":[],"widgetType":"wd_title"},{"id":"69c030a","elType":"widget","settings":{"title":"","scroll_y":"-80"},"elements":[],"widgetType":"wd_checkout_billing_details_form"},{"id":"65dedde","elType":"widget","settings":{"title":"","scroll_y":"-80"},"elements":[],"widgetType":"wd_checkout_shipping_details_from"},{"id":"0520a01","elType":"widget","settings":{"subtitle":"2.","title":"Check Your Order","after_title":"","color":"primary","size":"extra-large","subtitle_typography_typography":"custom","subtitle_typography_font_family":"Jost","subtitle_typography_font_size":{"unit":"px","size":"120","sizes":[]},"subtitle_typography_font_size_tablet":{"unit":"px","size":"80","sizes":[]},"subtitle_typography_font_size_mobile":{"unit":"px","size":"40","sizes":[]},"subtitle_typography_font_weight":"700","subtitle_typography_line_height":{"unit":"em","size":"1.3","sizes":[]},"tag":"div","scroll_y":"-80"},"elements":[],"widgetType":"wd_title"},{"id":"8703700","elType":"widget","settings":{"_padding":{"unit":"px","top":"20","right":"30","bottom":"20","left":"30","isLinked":""},"scroll_y":"-80","_border_border":"solid","_border_width":{"unit":"px","top":"1","right":"1","bottom":"1","left":"1","isLinked":"1"},"_border_color":"#00000014","_border_radius":{"unit":"px","top":"8","right":"8","bottom":"8","left":"8","isLinked":"1"},"_margin":{"unit":"px","top":"0","right":"0","bottom":"10","left":"0","isLinked":""}},"elements":[],"widgetType":"wd_checkout_order_review"},{"id":"85ff99c","elType":"widget","settings":{"subtitle":"3.","title":"Payment Information","after_title":"","color":"primary","size":"extra-large","subtitle_typography_typography":"custom","subtitle_typography_font_family":"Jost","subtitle_typography_font_size":{"unit":"px","size":"120","sizes":[]},"subtitle_typography_font_size_tablet":{"unit":"px","size":"80","sizes":[]},"subtitle_typography_font_size_mobile":{"unit":"px","size":"40","sizes":[]},"subtitle_typography_font_weight":"700","subtitle_typography_line_height":{"unit":"em","size":"1.3","sizes":[]},"tag":"div","scroll_y":"-80"},"elements":[],"widgetType":"wd_title"},{"id":"e727bdc","elType":"widget","settings":{"button_alignment":"full-width","_padding":{"unit":"px","top":"30","right":"30","bottom":"30","left":"30","isLinked":"1"},"scroll_y":"-80","_border_border":"solid","_border_width":{"unit":"px","top":"5","right":"5","bottom":"5","left":"5","isLinked":"1"},"_border_color":"#2E6BC652","_border_radius":{"unit":"px","top":"8","right":"8","bottom":"8","left":"8","isLinked":"1"},"payment_description_background-color":"#F9F9F9","terms_conditions_background_color":"#F9F9F9"},"elements":[],"widgetType":"wd_checkout_payment_methods"}],"isInner":""}]]]></wp:meta_value>
-						</wp:postmeta>
-												<wp:postmeta>
-							<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-							<wp:meta_value><![CDATA[a:1:{s:7:"scripts";a:2:{i:0;s:11:"wc-checkout";i:1;s:21:"wc-add-payment-method";}}]]></wp:meta_value>
+							<wp:meta_value><![CDATA[[{"id":"7b25928","elType":"container","settings":{"structure":"33","flex_direction":"column","flex_gap":{"size":"30","column":"30","row":"30","unit":"px","isLinked":"1"},"boxed_width":{"unit":"%","size":"50","sizes":[]},"boxed_width_tablet":{"unit":"%","size":"84","sizes":[]},"boxed_width_mobile":{"unit":"%","size":"100","sizes":[]},"scroll_y":"-80","container_sticky_offset":"50"},"elements":[{"id":"fa564fb","elType":"widget","settings":{"subtitle":"1.","title":"Billing details","after_title":"","color":"primary","size":"extra-large","subtitle_typography_typography":"custom","subtitle_typography_font_family":"Jost","subtitle_typography_font_size":{"unit":"px","size":"120","sizes":[]},"subtitle_typography_font_size_tablet":{"unit":"px","size":"80","sizes":[]},"subtitle_typography_font_size_mobile":{"unit":"px","size":"40","sizes":[]},"subtitle_typography_font_weight":"700","subtitle_typography_line_height":{"unit":"em","size":"1.3","sizes":[]},"tag":"div","scroll_y":"-80"},"elements":[],"widgetType":"wd_title"},{"id":"69c030a","elType":"widget","settings":{"title":"","scroll_y":"-80"},"elements":[],"widgetType":"wd_checkout_billing_details_form"},{"id":"e2de51d","elType":"widget","settings":{"content_width":"full","hook":"woocommerce_checkout_after_customer_details","scroll_y":"-80"},"elements":[],"widgetType":"wd_wc_hook"},{"id":"b80377a","elType":"widget","settings":{"content_width":"full","hook":"woocommerce_checkout_billing","scroll_y":"-80"},"elements":[],"widgetType":"wd_wc_hook"},{"id":"65dedde","elType":"widget","settings":{"title":"","scroll_y":"-80"},"elements":[],"widgetType":"wd_checkout_shipping_details_from"},{"id":"0f7ef24","elType":"widget","settings":{"content_width":"full","hook":"woocommerce_checkout_shipping","scroll_y":"-80"},"elements":[],"widgetType":"wd_wc_hook"},{"id":"0520a01","elType":"widget","settings":{"subtitle":"2.","title":"Check Your Order","after_title":"","color":"primary","size":"extra-large","subtitle_typography_typography":"custom","subtitle_typography_font_family":"Jost","subtitle_typography_font_size":{"unit":"px","size":"120","sizes":[]},"subtitle_typography_font_size_tablet":{"unit":"px","size":"80","sizes":[]},"subtitle_typography_font_size_mobile":{"unit":"px","size":"40","sizes":[]},"subtitle_typography_font_weight":"700","subtitle_typography_line_height":{"unit":"em","size":"1.3","sizes":[]},"tag":"div","scroll_y":"-80"},"elements":[],"widgetType":"wd_title"},{"id":"ba214cd","elType":"widget","settings":{"content_width":"full","hook":"woocommerce_checkout_before_order_review_heading","scroll_y":"-80"},"elements":[],"widgetType":"wd_wc_hook"},{"id":"8703700","elType":"widget","settings":{"_padding":{"unit":"px","top":"20","right":"30","bottom":"20","left":"30","isLinked":""},"scroll_y":"-80","_border_border":"solid","_border_width":{"unit":"px","top":"1","right":"1","bottom":"1","left":"1","isLinked":"1"},"_border_color":"#00000014","_border_radius":{"unit":"px","top":"8","right":"8","bottom":"8","left":"8","isLinked":"1"},"_margin":{"unit":"px","top":"0","right":"0","bottom":"10","left":"0","isLinked":""}},"elements":[],"widgetType":"wd_checkout_order_review"},{"id":"74ce420","elType":"widget","settings":{"content_width":"full","hook":"woocommerce_checkout_before_order_review","scroll_y":"-80"},"elements":[],"widgetType":"wd_wc_hook"},{"id":"c03f6ee","elType":"widget","settings":{"content_width":"full","hook":"woocommerce_checkout_order_review","scroll_y":"-80"},"elements":[],"widgetType":"wd_wc_hook"},{"id":"85ff99c","elType":"widget","settings":{"subtitle":"3.","title":"Payment Information","after_title":"","color":"primary","size":"extra-large","subtitle_typography_typography":"custom","subtitle_typography_font_family":"Jost","subtitle_typography_font_size":{"unit":"px","size":"120","sizes":[]},"subtitle_typography_font_size_tablet":{"unit":"px","size":"80","sizes":[]},"subtitle_typography_font_size_mobile":{"unit":"px","size":"40","sizes":[]},"subtitle_typography_font_weight":"700","subtitle_typography_line_height":{"unit":"em","size":"1.3","sizes":[]},"tag":"div","scroll_y":"-80"},"elements":[],"widgetType":"wd_title"},{"id":"e727bdc","elType":"widget","settings":{"button_alignment":"full-width","_padding":{"unit":"px","top":"30","right":"30","bottom":"30","left":"30","isLinked":"1"},"scroll_y":"-80","_border_border":"solid","_border_width":{"unit":"px","top":"5","right":"5","bottom":"5","left":"5","isLinked":"1"},"_border_color":"#2E6BC652","_border_radius":{"unit":"px","top":"8","right":"8","bottom":"8","left":"8","isLinked":"1"},"payment_description_background-color":"#F9F9F9","terms_conditions_background_color":"#F9F9F9"},"elements":[],"widgetType":"wd_checkout_payment_methods"},{"id":"8b0274d","elType":"widget","settings":{"content_width":"full","hook":"woocommerce_checkout_after_order_review","scroll_y":"-80"},"elements":[],"widgetType":"wd_wc_hook"},{"id":"07dcf3c","elType":"widget","settings":{"content_width":"full","hook":"woocommerce_after_checkout_form","scroll_y":"-80"},"elements":[],"widgetType":"wd_wc_hook"}],"isInner":""}]]]></wp:meta_value>
 						</wp:postmeta>
 										</item>
 				</channel>

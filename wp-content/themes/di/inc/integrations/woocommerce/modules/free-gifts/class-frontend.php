@@ -33,11 +33,19 @@ class Frontend extends Singleton {
 	 * Init.
 	 */
 	public function init() {
+		if ( ! woodmart_get_opt( 'free_gifts_enabled', 0 ) || woodmart_get_opt( 'free_gifts_limit', 5 ) < 1 || ! woodmart_woocommerce_installed() ) {
+			return;
+		}
+
 		$this->manager = Manager::get_instance();
+
+		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 
 		add_action( 'woocommerce_before_mini_cart_contents', array( $this, 'enqueue_style' ) );
 
-		add_action( woodmart_get_opt( 'free_gifts_table_location', 'woocommerce_after_cart_table' ), array( $this, 'output_free_gifts_table' ) );
+		add_action( woodmart_get_opt( 'free_gifts_table_location', 'woocommerce_after_cart_table' ), array( $this, 'output_free_gifts_table' ), 11 );
+
+		add_action( 'woocommerce_checkout_order_review', array( $this, 'output_free_gifts_table' ), 14 );
 
 		add_action( 'wp_ajax_woodmart_update_gifts_table', array( $this, 'update_gifts_table' ) );
 		add_action( 'wp_ajax_nopriv_woodmart_update_gifts_table', array( $this, 'update_gifts_table' ) );
@@ -75,6 +83,18 @@ class Frontend extends Singleton {
 	}
 
 	/**
+	 * Enqueue scripts.
+	 */
+	public function enqueue_scripts() {
+		if ( ! woodmart_get_opt( 'free_gifts_enabled' ) || ( ! is_cart() && ! is_checkout() ) ) {
+			return;
+		}
+
+		woodmart_enqueue_js_library( 'tooltips' );
+		woodmart_enqueue_js_script( 'btns-tooltips' );
+	}
+
+	/**
 	 * Add render actions.
 	 *
 	 * @codeCoverageIgnore
@@ -82,7 +102,7 @@ class Frontend extends Singleton {
 	 * @return void
 	 */
 	public function output_free_gifts_table() {
-		if ( ! woodmart_get_opt( 'free_gifts_enabled', 0 ) || woodmart_get_opt( 'free_gifts_limit', 5 ) < 1 || Layouts::get_instance()->has_custom_layout( 'cart' ) ) {
+		if ( ! woodmart_get_opt( 'free_gifts_enabled', 0 ) || woodmart_get_opt( 'free_gifts_limit', 5 ) < 1 || ( is_cart() && ! woodmart_get_opt( 'free_gift_on_cart', true ) ) || ( is_checkout() && ! woodmart_get_opt( 'free_gift_on_checkout' ) ) || Layouts::get_instance()->has_custom_layout( 'cart' ) || Layouts::get_instance()->has_custom_layout( 'checkout_form' ) ) {
 			return;
 		}
 
@@ -121,7 +141,7 @@ class Frontend extends Singleton {
 
 		wp_send_json(
 			array(
-				'html' => '<div class="wd-fg">' . $table_html . '</div>',
+				'html' => $table_html,
 			)
 		);
 		die();
@@ -130,30 +150,44 @@ class Frontend extends Singleton {
 	/**
 	 * Render free gifts table.
 	 *
+	 * @param array $settings Settings.
+	 *
+	 * @codeCoverageIgnore
+	 *
 	 * @return void
 	 */
 	public function render_free_gifts_table( $settings = array() ) {
 		$manual_gifts_ids  = array();
 		$allowed_rules     = array();
+		$excluded_rules    = array();
 		$manual_gifts_rule = $this->manager->get_rules( 'manual' );
 
-		foreach ( WC()->cart->get_cart() as $cart ) {
-			if ( isset( $cart['wd_is_free_gift'] ) ) {
+		foreach ( WC()->cart->get_cart() as $cart_item ) {
+			if ( isset( $cart_item['wd_is_free_gift'] ) ) {
 				continue;
 			}
-
-			$product = $cart['data'];
 
 			foreach ( $manual_gifts_rule as $gift_rule_id => $gift_rule ) {
 				if ( empty( $gift_rule['free_gifts'] ) ) {
 					continue;
 				}
 
-				if ( ! in_array( $gift_rule_id, $allowed_rules, true ) && $this->manager->check_free_gifts_condition( $gift_rule, $product ) && $this->manager->check_free_gifts_totals( $gift_rule ) ) {
-					$manual_gifts_ids = array_merge( $manual_gifts_ids, $gift_rule['free_gifts'] );
-					$allowed_rules[]  = $gift_rule_id;
+				if ( ! empty( $gift_rule['free_gifts_strict_exclude_mode'] ) && ! in_array( $gift_rule_id, $excluded_rules, true ) && ! $this->manager->check_free_gifts_condition( $gift_rule, $cart_item['data'] ) ) {
+					$excluded_rules[] = $gift_rule_id;
+					continue;
+				}
+
+				if ( ! in_array( $gift_rule_id, $allowed_rules, true ) && $this->manager->check_free_gifts_condition( $gift_rule, $cart_item['data'] ) && $this->manager->check_free_gifts_totals( $gift_rule ) ) {
+					$allowed_rules[] = $gift_rule_id;
 				}
 			}
+		}
+
+		$allowed_rules = array_diff( $allowed_rules, $excluded_rules );
+
+		foreach ( $allowed_rules as $allowed_rule_id ) {
+			$gift_rule        = $this->manager->get_single_post_rules( $allowed_rule_id );
+			$manual_gifts_ids = array_merge( $manual_gifts_ids, $gift_rule['free_gifts'] );
 		}
 
 		$manual_gifts_ids = array_unique( $manual_gifts_ids );
@@ -205,9 +239,6 @@ class Frontend extends Singleton {
 	public function cart_item_name( $item_name, $item ) {
 		if ( ! empty( $item['wd_is_free_gift'] ) ) {
 			ob_start();
-
-			woodmart_enqueue_js_library( 'tooltips' );
-			woodmart_enqueue_js_script( 'btns-tooltips' );
 
 			?>
 			<span class="wd-cart-label wd-fg-label wd-tooltip">
